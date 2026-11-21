@@ -26,7 +26,7 @@ public:
 	void sub_10163410();	// "ExperienceTable::PurgeExperience": scope trace, frees the two strings of every record and purges the memory
 	void sub_10163290();	// "ExperienceTable::~ExperienceTable": scope trace, PurgeExperience, then the inlined CUtlVector destructor (RemoveAll + Purge, then the CUtlMemory Purge)
 		// "ExperienceTable::FindIndex": scope trace, index of the record whose name equals pszName (case-insensitive, compared over the longer length), else a warning and -1
-		// "ExperienceTable::ParseLine": scope trace, splits "name|desc|number" in place at the two '|' and fills out with heap copies of name and desc and atoi(number); false when a part is missing or empty
+	bool sub_101637f0(char *line, CExperienceAward *out);	// "ExperienceTable::ParseLine": scope trace, splits "name|desc|number" in place at the two '|' and fills out with heap copies of name and desc and atoi(number); false when a part is missing or empty
 		// "ExperienceTable::LoadFile": scope trace, reads lines of the file through slot 20 of the global at 0x1070b238 into a 0x1000 byte buffer; skips lines starting with '>' and lines shorter than 3 characters, parses the others and appends them (inlined CUtlVector::AddToTail); stops at the end of the file or on a parse failure
 		// "ExperienceTable::PreCache": scope trace, unless already loaded opens "vdata\system\Experience_Table.txt" through the file system (global 0x1070b238, slot 0), LoadFile, closes it (slot 1) and sets the flag at +0x14; DevWarning and the flag cleared when the file cannot be opened
 };

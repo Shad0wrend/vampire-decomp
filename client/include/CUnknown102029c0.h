@@ -17,5 +17,8 @@ public:
 	CUnknown102029c0(int a);
 	~CUnknown102029c0();
 	const char *sub_1015ecd0(int nStat);	// the text of the stat nStat for this record (stub 0x10010c8f)
-		// the value this record holds for the stat named pszName (stub 0x1001197d)
+	const char *sub_10174470(int nStat);
+	const char *sub_10186a90(int nStat);
+	const char *sub_10186620(int nStat);
+	int sub_1015ed00(const char *pszName);	// the value this record holds for the stat named pszName (stub 0x1001197d)
 };

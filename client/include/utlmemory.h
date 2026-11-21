@@ -77,6 +77,7 @@ public:
 	void Grow(int num = 1);
 	void sub_10132d30(int num = 1);
 	void sub_100be200(int num = 1);
+	void sub_10138700(int num = 1);
 	void EnsureCapacity(int num);
 	void Purge();
 	void sub_1012d830();

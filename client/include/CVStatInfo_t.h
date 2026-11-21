@@ -60,9 +60,9 @@ public:
 	CVStatInfo_t();	// 0x101fdaf0 (called through the stub at 0x1000dfb2): constructs the five records, the cost and the list, then scope trace and the plain fields
 	~CVStatInfo_t();	// 0x101fdc30 (called through the stub at 0x1000f0a6): scope trace around the free of the level table, frees the action pointer array (each action's part at +0x18 first), clears the fields, then the list at +0x10c (sub_101fd4c0) and the five records (+0x9c .. +0x4c, last first)
 	void *sub_1015c440(unsigned int flags);	// vector deleting destructor
-		// "CVStatInfo_t::PreLoad"-like (stub 0x100135fc): loads the record from its "Stat" key
+	void sub_1015b420(CVStatKV *pKV);	// "CVStatInfo_t::PreLoad"-like (stub 0x100135fc): loads the record from its "Stat" key
 	CVStatInfo_t *sub_1015b050();	// "CVStatInfo_t::CVStatInfo_t": constructs the five records, the cost and the list, then scope trace and the plain fields
-		// "CVStatInfo_t::Get_Duration_Initial": scope trace, duration of the level (clamped to 5), 0 without a table
+	int sub_1015bec0(int level);	// "CVStatInfo_t::Get_Duration_Initial": scope trace, duration of the level (clamped to 5), 0 without a table
 	int sub_1015bf50(int level);	// "CVStatInfo_t::Get_Duration_Add": same shape, the second dword of the level entry
 	char sub_1015b3b0();	// a flag of the stat record (called through the stub at 0x1000308f), picks the one-name form of the detailed dump
 	bool sub_1015bdb0();	// "CVStatInfo_t::IsPassive": scope trace, bit 2 of the flags, false when the global at 0x1074e6b4 is set up for it
@@ -74,7 +74,7 @@ public:
 		// "CVStatInfo_t::MinSell": scope trace (empty entity name), the larger of the third value record (+0x74) and sub_101ff010 for arg (each evaluated again for the result)
 		// "CVStatInfo_t::MaxBuy": scope trace (empty entity name), the smaller of the value record at +0x88 and sub_101ff060 for arg (each evaluated again for the result)
 	const char *sub_1015b270(int arg);	// "CVStatInfo_t::GetValueName": scope trace (empty entity name), with an id at +8 hands (id, arg) to the global table at 0x1074e968, else calls the function pointer at +0 (when set) with arg; returns the name text
-		// "CVStatInfo_t::GetNameValue": scope trace (empty entity name), with an id at +8 looks the id and the string up in the global table at 0x1074e968 (sub_10203190) and evaluates the result, else calls the function pointer at +4 (when set) with the string, else atoi(string); returns the value
+	int sub_1015b300(const char *pszValue);	// "CVStatInfo_t::GetNameValue": scope trace (empty entity name), with an id at +8 looks the id and the string up in the global table at 0x1074e968 (sub_10203190) and evaluates the result, else calls the function pointer at +4 (when set) with the string, else atoi(string); returns the value
 		// "CVStatInfo_t::MidLoad": scope trace (empty entity name); Msg when there is no data, else loads the value-name hooks: a "NameMapping" id (+8), else the "NameFunc" picks the function pair at +0 / +4 (ClanNameFunc, CharTemplateNameFunc, StartingEquipFunc, ExcludedEquipFunc), else the default function at +0
 		// "CVStatInfo_t::PostLoad": scope trace (empty entity name); Msg when there is no data, else loads the value records +0x4c "Min", +0x60 "Max", +0x74 "MinSell" (a copy of Min when unset), +0x88 "MaxBuy" (a copy of Max when unset), +0x9c "Default", the action list (+0x10c), the "IncPredependency" list (+0x120) and the cost (+0xb0), which is copied from pDefaults+0x30 when the cost is missing
 		// "CVStatInfo_t::Debug_Display" (stub 0x1001339a), called by the list's Debug_Display with the list's dword at +0x2c

@@ -25,7 +25,7 @@ public:
 		Name m_Name;	// 0x08
 	};
 	Entry *sub_10157c20(int id);	// stub 0x1000c5d1: the entry of a trait effect id
-		// stub 0x1000ee67: the id of the named trait effect
+	int sub_10157b80(const char *pszEffect);	// stub 0x1000ee67: the id of the named trait effect
 };
 
 class CUnknown101dff00;
@@ -36,8 +36,8 @@ struct CUnknown101dff00List	// the list of hit groups: count at +4, pointer arra
 	int m_nCount;	// 0x4
 	class CUnknown101dff00 **m_ppGroups;	// 0x8
 
-		// Debug_Display: prints "[[Hit_Group_List]]:" and then every hit group
-		// the hit group at index, or a lazily created default group when out of range
+	void sub_10149310();	// Debug_Display: prints "[[Hit_Group_List]]:" and then every hit group
+	CUnknown101dff00 *sub_101492b0(int index);	// the hit group at index, or a lazily created default group when out of range
 };
 
 class CUnknown101dff00
@@ -55,5 +55,5 @@ public:
 
 	void sub_10148ed0();	// debug print: "Hit Group: <name>", the trait effect (when set), the duration range and the five action records (Begin, End, Callback, Interrupt, InterruptSchedule)
 	bool sub_10148da0(int a, void *pKV, const char *pszName);	// loads the hit group from its key (ret 0xc): the name, "InheritFrom" (another hit group, sub_101df340), the five action records, "Duration", the "TraitEffect" sub key's "Effect" and the "DoPossession" / "DoFrenzy" flags; false without a key or when the inherited group is unknown
-		// stub 0x10002699: copies the hit group named pszParent
+	char sub_10148840(int a, const char *pszParent);	// stub 0x10002699: copies the hit group named pszParent
 };

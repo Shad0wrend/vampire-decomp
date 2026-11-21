@@ -48,7 +48,9 @@ public:
 	bool IsLeftChild(I i) const;
 	bool sub_10138770(I i) const;
 	bool sub_1013ddc0(I i) const;
+	bool sub_101130d0(I i) const;
 	bool IsRightChild(I i) const;
+	bool sub_10114560(I i) const;
 	bool IsRoot(I i) const;
 	bool IsLeaf(I i) const;
 	bool IsValidIndex(I i) const;
@@ -130,7 +132,9 @@ public:
 	void sub_101389f0(I i);
 	void sub_1013e040(I i);
 	void sub_10139ad0(I i);
+	void sub_10133080(I i);
 	void InsertRebalance(I i);
+	void sub_10131f80(I i);
 	void RemoveRebalance(I i);
 	void sub_101131f0(I i);
 	void sub_10132460(I i);

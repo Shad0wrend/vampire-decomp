@@ -6,6 +6,9 @@ class CUnknown10202ba0
 public:
 	void sub_1015ee00();	// prints the name and then every entry as "(%d):\t\t%s\n"
 	const char *sub_1015ecd0(int index);	// the entry's text (stub 0x10010c8f)
+	const char *sub_10174470(int index);
+	const char *sub_10186a90(int index);
+	const char *sub_10186620(int index);
 
 	int m_pad0000;
 	int m_pad0004;

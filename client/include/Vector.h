@@ -11,6 +11,7 @@ class Vector;
 extern float (*pfSqrt)(float x);	// 0x10579660
 extern float (*g_102be4dc)(float x);
 extern float (__fastcall *pfVectorNormalize)(Vector &v);	// 0x1057966c
+extern float (__fastcall *g_102be4e8)(Vector &v);
 
 #define FastSqrt(x) (*pfSqrt)(x)
 

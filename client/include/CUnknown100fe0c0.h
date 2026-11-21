@@ -47,4 +47,5 @@ public:
 
 	void sub_100e2c10(int a0, int a1, float a2, int a3, float a4);
 	void sub_100e2c80(float flTime);
+	float sub_100e2dd0(float flTime);
 };

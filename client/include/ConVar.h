@@ -46,7 +46,7 @@ public:
 	float m_fMaxVal;	// 0x003c
 	void (*m_fnChangeCallback)(ConVar *pVar, const char *pOldString);	// 0x0040
 		// as in CDataObjectAccessSystem (transplant)
-		// ConCommandBase destructor body (stub 0x100049d0), called directly
+	void sub_100df230();	// ConCommandBase destructor body (stub 0x100049d0), called directly
 	void sub_100df1c0();	// ConCommandBase constructor (stub 0x10007f3b, jumps to 0x102454e0), called directly first by the constructors
 		// ConCommandBase::Create, called directly (stub 0x1000de4f)
 	void sub_100dfa90(int nValue);	// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)

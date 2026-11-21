@@ -11,5 +11,5 @@ public:
 
 	bool sub_10155cc0(const char *pszName);	// appends a new record, growing the pointer array by one
 	void sub_10155ca0(const char *pszName);	// opens a scheme group of that name (stub 0x10004043), as the sound scheme setup does ("SndScheme_Char", ...)
-		// closes the group opened by sub_101f5120 (stub 0x100033c8)
+	void sub_10155d50();	// closes the group opened by sub_101f5120 (stub 0x100033c8)
 };
