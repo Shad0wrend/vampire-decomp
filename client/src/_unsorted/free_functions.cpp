@@ -12220,6 +12220,14 @@ void S1011d6a0::sub_1010f8c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101104a0 size=0x3
+struct CUnknown101104a0 { int sub_101104a0(); };
+int CUnknown101104a0::sub_101104a0()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112250 size=0x19
 struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
 
