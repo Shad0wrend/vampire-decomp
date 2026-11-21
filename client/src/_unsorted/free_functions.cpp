@@ -13464,3 +13464,22 @@ void UtlMem::sub_101c2cf0(int num)
 		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101d0d28 size=0x18
+// TARGET: sub_101d0d28
+void sub_101d0d40();
+int sub_101d3581();
+void sub_101d3531();
+extern int g_10680710;
+
+void sub_101d0d28()
+{
+    sub_101d0d40();
+    g_10680710 = sub_101d3581();
+    sub_101d3531();
+    __asm {
+        fnclex
+        ret
+    }
+}
+// END FUNCTION
