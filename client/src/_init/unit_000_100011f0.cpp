@@ -1607,6 +1607,13 @@ int g_102e4240 = ClientClassInit((DT_ItemGBailbondReceipt::ignored *)0);
 RecvTable g_102e3378;
 // END FUNCTION
 
+// FUNCTION: 0x100198d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDriversLicenseGimble { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDriversLicenseGimble::ignored>(DT_ItemGDriversLicenseGimble::ignored *);
+int g_102e3374 = ClientClassInit((DT_ItemGDriversLicenseGimble::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10019b10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e4a84;
