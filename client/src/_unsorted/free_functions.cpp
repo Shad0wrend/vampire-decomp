@@ -37523,6 +37523,33 @@ int CIndexTables::sub_1013f2a0(int type, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f2f0 size=0x24
+#include "CUnknown10203240.h"
+
+extern char g_102de300[];
+extern CUnknown10203240 g_105f93c0;
+
+struct CClanStrsRec
+{
+	int sub_1015ed00(const char *psz);
+};
+
+struct CUnit101d4d80
+{
+	char m_pad0000[0xc];
+	const char *m_psz0c;
+	int sub_1013f2f0();
+};
+
+int CUnit101d4d80::sub_1013f2f0()
+{
+	const char *p = m_psz0c;
+	if (!p)
+		p = g_102de300;
+	return ((CClanStrsRec *)g_105f93c0.sub_1015f2f0("ClanStrs"))->sub_1015ed00(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f320 size=0x42
 #include <stdio.h>
 #include <string.h>
