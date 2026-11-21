@@ -22253,6 +22253,25 @@ bool CUnknown10202b10::sub_1015ed90(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ee00 size=0x73
+#include "CUnknown10202ba0.h"
+
+extern char g_102de300[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+void sub_1015fbb0(const char *text);
+
+void CUnknown10202ba0::sub_1015ee00()
+{
+	char buf[128];
+	sprintf(buf, "\n\t%s:\n", m_pszName ? m_pszName : g_102de300);
+	sub_1015fbb0(buf);
+	for (int i = 0; i < m_nEntries; i++) {
+		sprintf(buf, "(%d):\t\t%s\n", i, sub_1015ecd0(i));
+		sub_1015fbb0(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f010 size=0x48
 #include "CUnknown10202d10.h"
 #include "CUnknown10202b10.h"
