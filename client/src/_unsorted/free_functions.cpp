@@ -10895,6 +10895,14 @@ int sub_100ae5d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aef00 size=0xa
+struct CUnknown100aef00 { int sub_100aef00(); };
+int CUnknown100aef00::sub_100aef00()
+{
+    return ((unsigned)(*(int *)((char *)this + 0x70)) >> 0xa) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeff0 size=0x8
 namespace lifted {
 struct C100af150 { int sub_100af150(); };
