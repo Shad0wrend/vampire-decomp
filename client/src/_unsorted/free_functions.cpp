@@ -20904,6 +20904,37 @@ char *CFoo::sub_10152660(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101528c0 size=0xac
+extern char g_102de300[];
+int sub_101d159d(char *, const char *, ...);
+int sub_101e28e0(const char *, const char *);
+void sub_1015fbb0(char *);
+struct Str { const char *p; const char *Get() const { return p ? p : g_102de300; } };
+struct Item { int a; Str s; void sub_10152590(); };
+struct Holder {
+    int a, b, c;
+    const char *name;
+    int d;
+    int count;
+    Item **items;
+};
+void __fastcall sub_101528c0(Holder *self, int, const char *filter)
+{
+    char buf[128];
+    sub_101d159d(buf, "\n   %s:\n\n", self->name ? self->name : g_102de300);
+    sub_1015fbb0(buf);
+    if (filter == 0) {
+        for (int i = 0; i < self->count; i++)
+            self->items[i]->sub_10152590();
+    } else {
+        for (int i = 0; i < self->count; i++) {
+            if (sub_101e28e0(self->items[i]->s.Get(), filter) == 0)
+                self->items[i]->sub_10152590();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101529b0 size=0x4f
 struct CUnknown101f08a0 {
     int m_0, m_4, m_8, m_c, m_10, m_14, m_18, m_1c, m_20, m_24, m_28, m_2c, m_30;
