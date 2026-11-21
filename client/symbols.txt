@@ -2816,6 +2816,7 @@
 0x1015f060 func   ?sub_1015f060@CUnknown10202ec0@@QAEHHHH@Z CUnknown10202ec0::sub_1015f060
 0x1015f080 func   ?sub_1015f080@CUnknown10202d10@@QAE_NH@Z CUnknown10202d10::sub_1015f080
 0x1015f120 func   ?sub_1015f120@CUnknown10202fd0@@QAEXPAUCSlotIter@@@Z CUnknown10202fd0::sub_1015f120
+0x1015f160 func   ?sub_1015f160@CNamedList10203020@@QAEHPBD@Z CNamedList10203020::sub_1015f160
 0x1015f1c0 func   ?sub_1015f1c0@CTableList@@QAEPBDHH@Z CTableList::sub_1015f1c0
 0x1015f210 func   ?sub_1015f210@CUnknown10203110@@QAEHH@Z CUnknown10203110::sub_1015f210
 0x1015f240 func   ?sub_1015f240@CUnknown10203150@@QAE_NH@Z CUnknown10203150::sub_1015f240
