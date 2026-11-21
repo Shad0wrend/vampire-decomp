@@ -1157,3 +1157,8 @@ ConCommand g_104d19d4("snapto", sub_100fbdf0, 0, 0, 0);
 #include "ConVar.h"
 ConVar g_104d2860("joyname", "joystick", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101004a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2bc0("joyadvanced", "0", 0);
+// END FUNCTION
