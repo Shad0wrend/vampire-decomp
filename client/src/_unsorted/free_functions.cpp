@@ -2081,6 +2081,25 @@ void bf_write::sub_10087380(const Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087650 size=0x19e
+#include "bf_write.h"
+#include "Vector.h"
+
+void bf_write::sub_10087650(const Vector &fa)
+{
+	int xflag, yflag;
+	xflag = (fa[0] >= 0.0004885197850512946) || (fa[0] <= -0.0004885197850512946);
+	yflag = (fa[1] >= 0.0004885197850512946) || (fa[1] <= -0.0004885197850512946);
+	WriteOneBit(xflag);
+	WriteOneBit(yflag);
+	if (xflag)
+		sub_10087530(fa[0]);
+	if (yflag)
+		sub_10087530(fa[1]);
+	WriteOneBit(fa[2] <= -0.0004885197850512946);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087bb0 size=0x233
 #include "bf_read.h"
 
