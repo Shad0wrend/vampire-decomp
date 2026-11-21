@@ -44823,6 +44823,22 @@ void CVTraitEffect_t::sub_10156c60(void *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156ed0 size=0x21
+namespace lifted {
+extern char g_10248398;
+}
+struct CUnknown101f7310 { void * sub_10156ed0(int); };
+void * CUnknown101f7310::sub_10156ed0(int a0)
+{
+    *(int *)((char *)this + 4) = a0;
+    *(int *)this = (int)&lifted::g_10248398;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0xc) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156f40 size=0x2a
 #include "CUnknown101f73b0.h"
 
