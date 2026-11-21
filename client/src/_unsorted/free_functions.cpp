@@ -27785,6 +27785,14 @@ char sub_10189c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189c20 size=0x4
+struct CUnknown10189c20 { int sub_10189c20(); };
+int CUnknown10189c20::sub_10189c20()
+{
+    return *(int *)((char *)this + 0x28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c710 size=0x1
 void sub_1018c710()
 {
