@@ -3748,6 +3748,63 @@ void UtlMem::sub_100e12c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e21f0 size=0x144
+#include "utlrbtree.h"
+#include "CBaseEntityList.h"
+
+extern void *vt_10234ad4[];
+extern void (*g_101e30fc)(void *);
+
+inline void ListRemoveAll(CBaseEntityListLL *p)
+{
+    if (p->m_NumAlloced) {
+        unsigned short prev = CBaseEntityListLL::InvalidIndex();
+        for (int i = (int)p->m_NumAlloced; --i >= 0; ) {
+            p->InternalElement(i).m_Next = prev;
+            p->InternalElement(i).m_Previous = i;
+            prev = i;
+        }
+        p->m_FirstFree = 0;
+        p->m_Head = CBaseEntityListLL::InvalidIndex();
+        p->m_Tail = CBaseEntityListLL::InvalidIndex();
+        p->m_ElementCount = 0;
+    }
+}
+
+inline void ListPurge(CBaseEntityListLL *p)
+{
+    if (p->m_growSize != -1) {
+        if (p->m_pMemory) {
+            g_101e30fc(p->m_pMemory);
+            p->m_pMemory = 0;
+        }
+        p->m_allocationCount = 0;
+    }
+}
+
+void CBaseEntityList::sub_100e21f0()
+{
+    unsigned short i = m_Live.m_Head;
+    *(void **)this = vt_10234ad4;
+    while (i != CBaseEntityListLL::InvalidIndex()) {
+        unsigned short element = m_Live.InternalElement(i).m_Element;
+        unsigned short next = m_Live.InternalElement(i).m_Next;
+        sub_100e2590(element);
+        i = next;
+    }
+    {
+        CBaseEntityListLL *pSecond = &m_Second;
+        ListRemoveAll(pSecond);
+        ListPurge(pSecond);
+    }
+    {
+        CBaseEntityListLL *pLive = &m_Live;
+        ListRemoveAll(pLive);
+        ListPurge(pLive);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2590 size=0x1ec
 #include "utlrbtree.h"
 #include "utlvector.h"
