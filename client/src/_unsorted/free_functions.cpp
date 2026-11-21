@@ -56614,6 +56614,39 @@ char CVStatListManager_t::sub_1015e580(int time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015eb20 size=0xa3
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_101e3120)(int, const char *, ...);
+
+struct ParticleAttachName_t {
+	const char *m_pName;
+	int m_nType;
+};
+extern ParticleAttachName_t g_102483a0[25];
+
+int sub_1015eb20(const char *pszType)
+{
+	g_101e3124[*g_101e3128].a = "ParseParticleAttachType";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	for (unsigned int i = 0; i < 25; i++) {
+		if (!_strcmpi(g_102483a0[i].m_pName, pszType)) {
+			int type = g_102483a0[i].m_nType;
+			(*g_101e3128)--;
+			return type;
+		}
+	}
+	g_101e3120(1, "Invalid particle attach type '%s'\n", pszType);
+	(*g_101e3128)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ebd0 size=0x8c
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
