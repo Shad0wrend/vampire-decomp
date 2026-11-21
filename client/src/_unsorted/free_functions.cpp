@@ -7650,6 +7650,42 @@ float __cdecl sub_101075e0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107630 size=0x8a
+// TARGET: sub_10107630
+#include "Vector.h"
+
+float __fastcall sub_10107630(Vector &v)
+{
+    float flLen = 0.0f;
+    if (v.x != 0.0f || v.y != 0.0f || v.z != 0.0f)
+    {
+        __asm
+        {
+            mov eax, v
+            femms
+            movq mm0, qword ptr [eax]
+            movd mm1, dword ptr [eax+8]
+            movq mm2, mm0
+            movq mm3, mm1
+            pfmul mm0, mm0
+            pfmul mm1, mm1
+            pfacc mm0, mm0
+            pfadd mm1, mm0
+            pfrsqrt mm0, mm1
+            punpckldq mm1, mm1
+            pfmul mm1, mm0
+            pfmul mm2, mm0
+            pfmul mm3, mm0
+            movq qword ptr [eax], mm2
+            movd dword ptr [eax+8], mm3
+            movd flLen, mm1
+            femms
+        }
+    }
+    return flLen;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107be0 size=0xc7
 // mathlib _SSE2_cos (SSE2 cos), verbatim
 // TARGET: sub_10107be0
