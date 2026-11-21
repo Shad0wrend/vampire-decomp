@@ -613,3 +613,8 @@ ConCommand g_104a41e8("soundscape_flush", sub_100c0ec0, "Flushes the client side
 #include "ConVar.h"
 ConVar g_104a4330("r_traceglow", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100c2010 size=0xa
+#include "ConVar.h"
+ConVar g_104a43c0("r_occlusionglow", "1", 0);
+// END FUNCTION
