@@ -1835,6 +1835,13 @@ int g_102e7624 = ClientClassInit((DT_ItemGBadluckTalisman::ignored *)0);
 RecvTable g_102e5f58;
 // END FUNCTION
 
+// FUNCTION: 0x1001c850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrens4Passkey { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrens4Passkey::ignored>(DT_ItemGWarrens4Passkey::ignored *);
+int g_102e5f54 = ClientClassInit((DT_ItemGWarrens4Passkey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001ca90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3c70;
