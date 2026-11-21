@@ -443,6 +443,7 @@
 0x10025350 func   ?sub_10025350@@YAHXZ sub_10025350
 0x10025470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKKikiKey@@@Z ClientClassInit
 0x100255d0 func   ?sub_100255d0@@YAHXZ sub_100255d0
+0x100256f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKSarcophagusKey@@@Z ClientClassInit
 0x10025850 func   ?sub_10025850@@YAHXZ sub_10025850
 0x10025ad0 func   ?sub_10025ad0@@YAHXZ sub_10025ad0
 0x10025d50 func   ?sub_10025d50@@YAHXZ sub_10025d50
