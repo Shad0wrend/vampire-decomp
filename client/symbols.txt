@@ -1276,6 +1276,7 @@
 0x100bd720 func   ?sub_100bd720@@YAHXZ sub_100bd720
 0x100bd820 func   ?ClientClassInit@@YAHPAUignored@DT_DynamicProp@@@Z ClientClassInit
 0x100bd950 func   ?sub_100bd950@@YAHXZ sub_100bd950
+0x100bda50 func   ?ClientClassInit@@YAHPAUignored@DT_OrnamentProp@@@Z ClientClassInit
 0x100bde20 func   ?sub_100bde20@CUnknown100bde20@@QAEHXZ CUnknown100bde20::sub_100bde20
 0x100bde50 func   ?sub_100bde50@CUnknown100bde50@@QAEXXZ CUnknown100bde50::sub_100bde50
 0x100be030 func   ?sub_100be030@@YGHH@Z sub_100be030
