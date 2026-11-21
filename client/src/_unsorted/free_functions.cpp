@@ -5551,6 +5551,12 @@ void SInit::sub_100a5420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa490 size=0x1
+void sub_100aa490()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aacb0 size=0x59
 struct CUnknown101a5290 {
     void *m_pMemory;
