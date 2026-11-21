@@ -329,3 +329,8 @@ CUtlVector<int> g_1049bfcc;
 #include "ConVar.h"
 ConVar g_1049c448("vcollide_wireframe", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10092920 size=0xa
+#include "ConVar.h"
+ConVar g_1049bf70("r_disable_highlight", "0", 0);
+// END FUNCTION
