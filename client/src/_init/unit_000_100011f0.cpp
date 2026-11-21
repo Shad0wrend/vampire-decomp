@@ -1871,3 +1871,8 @@ ConVar g_104df788("sv_wateramp", "0", 8448);
 #include "ConVar.h"
 ConVar g_104dfaa0("sv_footsteps", "1", 8448, "Play footstep sound for players");
 // END FUNCTION
+
+// FUNCTION: 0x1010fd40 size=0xa
+#include "ConVar.h"
+ConVar g_104df860("sv_rollspeed", "200", 8448);
+// END FUNCTION
