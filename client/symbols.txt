@@ -193,6 +193,7 @@
 0x10011ad0 func   ?sub_10011ad0@@YAHXZ sub_10011ad0
 0x10011bf0 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_HG_MELEE@@@Z ClientClassInit
 0x10011d50 func   ?sub_10011d50@@YAHXZ sub_10011d50
+0x10011e70 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_HG_DODGE@@@Z ClientClassInit
 0x10011fd0 func   ?sub_10011fd0@@YAHXZ sub_10011fd0
 0x10012250 func   ?sub_10012250@@YAHXZ sub_10012250
 0x100124d0 func   ?sub_100124d0@@YAHXZ sub_100124d0
