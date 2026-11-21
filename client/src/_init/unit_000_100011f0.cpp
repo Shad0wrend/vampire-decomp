@@ -3566,6 +3566,13 @@ ConVar g_103eeaa0("cl_hud_health", "", 0);
 RecvTable g_103eecbc;
 // END FUNCTION
 
+// FUNCTION: 0x1005d990 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HudTimer { struct ignored; }
+template <> int ClientClassInit<DT_HudTimer::ignored>(DT_HudTimer::ignored *);
+int g_103eecb8 = ClientClassInit((DT_HudTimer::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10063730 size=0x5
 inline int pcd_initial_103eef34() { return 0xffffffff; }
 int g_103eef34 = pcd_initial_103eef34();
