@@ -2703,3 +2703,8 @@ ConVar g_10619650("r_drawopaqueworld", "1", 0);
 #include "ConVar.h"
 ConVar g_10619338("r_drawtranslucentrenderables", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197fe0 size=0xa
+#include "ConVar.h"
+ConVar g_10618950("r_drawopaquerenderables", "1", 0);
+// END FUNCTION
