@@ -24470,6 +24470,18 @@ void *sub_101a4770(unsigned short index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5a50 size=0x24
+extern int g_1061993c;
+
+// TARGET: sub_101a5a50
+int sub_101a5a50(unsigned int index)
+{
+    if (index == 0xffff)
+        return 0;
+    return (index & 0xffff) * 0x5f324 + g_1061993c + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x10b
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
