@@ -36154,6 +36154,17 @@ int CUnknown101606b0::sub_101606b0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101606d0 size=0x17
+struct CUnknown101606d0 { int sub_101606d0(int, int); };
+int CUnknown101606d0::sub_101606d0(int a0, int a1)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 0xc) = 1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101606f0 size=0x19
 struct CUnknown10204330 { void * sub_101606f0(int); };
 void * CUnknown10204330::sub_101606f0(int a0)
