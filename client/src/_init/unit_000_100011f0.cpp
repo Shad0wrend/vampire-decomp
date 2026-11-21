@@ -1544,3 +1544,9 @@ ConCommand g_104d3afc("+klook", sub_10101f60, 0, 0, 0);
 void sub_10101f70(void);
 ConCommand g_104d2dec("-klook", sub_10101f70, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105350 size=0xa
+#include "ConCommand.h"
+void sub_10101fa0(void);
+ConCommand g_104d32fc("+mlook", sub_10101fa0, 0, 0, 0);
+// END FUNCTION
