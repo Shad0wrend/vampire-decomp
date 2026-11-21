@@ -1331,6 +1331,7 @@
 0x1007a6f0 func   ??_GCBaseAnimatedTextureProxy@@UAEPAXI@Z ??_GCBaseAnimatedTextureProxy@@UAEPAXI@Z
 0x1007a710 func   ??1CBaseAnimatedTextureProxy@@UAE@XZ CBaseAnimatedTextureProxy::~CBaseAnimatedTextureProxy
 0x1007a800 func   ?sub_1007a800@CUnknown1007a800@@QAEHXZ CUnknown1007a800::sub_1007a800
+0x1007ab20 func   ??_GC_BaseCombatWeapon@@UAEPAXI@Z ??_GC_BaseCombatWeapon@@UAEPAXI@Z
 0x1007ab40 func   ??1C_BaseCombatWeapon@@UAE@XZ C_BaseCombatWeapon::~C_BaseCombatWeapon
 0x1007aca0 func   ?sub_1007aca0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_1007aca0
 0x1007b150 func   ?sub_1007b150@@YAMXZ sub_1007b150
