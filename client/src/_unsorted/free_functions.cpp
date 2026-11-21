@@ -10739,6 +10739,24 @@ void sub_1010be50(float *a, float *b, float *c, float *out, float *pT)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bf60 size=0x79
+float sub_1010bde0(const float *a, const float *b, const float *c, float *dir);
+
+void sub_1010bf60(const float *a, const float *b, const float *c, float *out, float *pT)
+{
+	float dir[2];
+	float t = sub_1010bde0(a, b, c, dir);
+	if (t > 1.0f)
+		t = 1.0f;
+	else if (t < 0.0f)
+		t = 0.0f;
+	if (pT)
+		*pT = t;
+	out[0] = dir[0] * t + b[0];
+	out[1] = dir[1] * t + b[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c230 size=0x4b
 // mathlib's _SSE_RSqrtAccurate (Intel / Kipps SSE RSqrt), verbatim
 // TARGET: sub_1010c230

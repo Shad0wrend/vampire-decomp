@@ -420,6 +420,7 @@
 0x1010bc90 func   ?sub_1010bc90@@YAXABVVector@@00AAV1@PAM@Z sub_1010bc90
 0x1010bde0 func   ?sub_1010bde0@@YAMPAM000@Z sub_1010bde0
 0x1010be50 func   ?sub_1010be50@@YAXPAM0000@Z sub_1010be50
+0x1010bf60 func   ?sub_1010bf60@@YAXPBM00PAM1@Z sub_1010bf60
 0x1010c230 func   ?sub_1010c230@@YAMM@Z sub_1010c230
 0x1010c2e0 func   ?sub_1010c2e0@@YAMMMM@Z sub_1010c2e0
 0x1010c320 func   ?sub_1010c320@@YAMMMM@Z sub_1010c320
