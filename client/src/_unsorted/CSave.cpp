@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10128f00 size=0x13
+#include "CSave.h"
+namespace lifted {
+int __stdcall sub_10129640(int, int, int);
+}
+void CSave::vfunc2(void * a0, const char * a1)
+{
+    lifted::sub_10129640(*(int *)&a0, *(int *)&a1, *(int *)&a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128f20 size=0x4
 #include "CSave.h"
 int CSave::vfunc38()
