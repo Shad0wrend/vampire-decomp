@@ -18228,6 +18228,16 @@ int sub_1011abe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011abf0 size=0x8
+namespace lifted {
+int __stdcall sub_100a29b0(int);
+}
+int sub_1011abf0()
+{
+    return lifted::sub_100a29b0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ac80 size=0x7
 struct CUnknown1011ac80 { char sub_1011ac80(); };
 char CUnknown1011ac80::sub_1011ac80()
