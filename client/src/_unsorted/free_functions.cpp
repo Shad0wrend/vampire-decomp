@@ -9193,6 +9193,16 @@ int sub_1008e7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ede0 size=0x6
+namespace lifted {
+extern char g_10498fa4;
+}
+int sub_1008ede0()
+{
+    return (int)&lifted::g_10498fa4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095b90 size=0x5
 int __stdcall sub_10095b90(int a0, int a1, int a2)
 {
