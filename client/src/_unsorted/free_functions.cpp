@@ -18443,6 +18443,28 @@ int sub_1009d500(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d580 size=0x8b
+#include "RecvTable.h"
+extern RecvTable g_1049e170;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void sub_1009d4e0(const CRecvProxyData *, void *, void *);
+void sub_1009d500(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Edict { struct ignored; }
+template <> int ClientClassInit<DT_Edict::ignored>(DT_Edict::ignored *)
+{
+	char *pRecvTableName = "DT_Edict";
+	RecvTable &RecvTable = g_1049e170;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("solid", 0, -1, 0, sub_1009d4e0),
+		RecvPropInt("solidflags", 0, -1, 0, sub_1009d500),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009db70 size=0x1
 void sub_1009db70()
 {
