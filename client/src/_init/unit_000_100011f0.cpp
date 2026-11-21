@@ -2915,3 +2915,9 @@ ConCommand g_10678d1c("cancelselect", sub_101a74f0, 0, 0, 0);
 void sub_101a7510(void);
 ConCommand g_10678da0("invnext", sub_101a7510, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101a75f0 size=0xa
+#include "ConCommand.h"
+void sub_101a7530(void);
+ConCommand g_10678cc8("invprev", sub_101a7530, 0, 0, 0);
+// END FUNCTION
