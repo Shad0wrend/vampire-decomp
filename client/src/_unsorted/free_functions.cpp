@@ -11929,6 +11929,38 @@ TList *TList::sub_1015ab20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c8f0 size=0xb8
+#include "CVStatInfoList_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern "C" int __cdecl sub_101e28e0(const char *, const char *);
+
+struct StrWrap
+{
+	const char *p;
+	const char *Get() const { return p ? p : g_102de300; }
+};
+
+int CVStatInfoList_t::sub_1015c8f0(const char *name)
+{
+	g_101e3124[*g_101e3128].a = "CVStatInfoList_t::Lookup( char *name )";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	++*g_101e3128;
+	for (int i = 0; i < m_nStats; i++) {
+		if (sub_101e28e0(((StrWrap *)&m_pStats[i].m_pszName)->Get(), name) == 0) {
+			--*g_101e3128;
+			return i;
+		}
+	}
+	--*g_101e3128;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
