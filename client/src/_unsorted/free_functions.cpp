@@ -86,6 +86,14 @@ int sub_100025c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100026a0 size=0x7
+struct CUnknown100026a0 { char sub_100026a0(); };
+char CUnknown100026a0::sub_100026a0()
+{
+    return *(char *)((char *)this + 0x78c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002900 size=0x6
 namespace lifted {
 extern char g_102de74c;
