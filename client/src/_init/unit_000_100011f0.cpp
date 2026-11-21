@@ -2863,3 +2863,8 @@ ConVar g_10618dd0("cl_overlay_redvision_dx6", "85", 0);
 #include "ConVar.h"
 ConVar g_10618cf8("cl_overlay_obfuscate_scale", "0.6", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019fe50 size=0xa
+#include "ConVar.h"
+ConVar g_10619780("cl_overlay_obfuscate_blur", "0.002", 0);
+// END FUNCTION
