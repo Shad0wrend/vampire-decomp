@@ -449,6 +449,7 @@
 0x10042ca0 func   ?sub_10042ca0@@YI_NPAD@Z sub_10042ca0
 0x10042cd0 func   ?vfunc1@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc1
 0x10042dc0 func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
+0x10042fc0 func   ?sub_10042fc0@@YAHHH@Z sub_10042fc0
 0x100430e0 func   ?sub_100430e0@CUnknown100430e0@@QAEHXZ CUnknown100430e0::sub_100430e0
 0x10043150 func   ?sub_10043150@Rec64@@QAEXH@Z Rec64::sub_10043150
 0x10043220 func   ?sub_10043220@@YAXXZ sub_10043220

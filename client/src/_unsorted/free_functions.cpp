@@ -4780,6 +4780,16 @@ void * CUnknown10042370::sub_10042370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042fc0 size=0x12
+namespace lifted {
+struct C10043230 { int sub_10043230(int); };
+}
+int sub_10042fc0(int a0, int a1)
+{
+    return ((lifted::C10043230 *)a1)->sub_10043230(*(int *)((char *)a0 + 4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100430e0 size=0xb
 namespace lifted {
 extern char g_10227adc;
