@@ -6942,6 +6942,27 @@ void sub_100dd570(const V2 *p0, const V2 *p1, const V2 *p2, float s, float t, V2
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd6f0 size=0x9c
+#include "matrix3x4_t.h"
+#include "Vector.h"
+
+void sub_101094e0(const Vector &angles, matrix3x4_t &matrix);
+void sub_101080e0(const Vector &in, const matrix3x4_t &matrix, Vector &out);
+void sub_10108540(const Vector &in, int column, matrix3x4_t &matrix);
+
+void sub_100dd6f0(const Vector &origin, const Vector &angles, const Vector &mins, const Vector &maxs, matrix3x4_t &matrix)
+{
+	Vector vecWorld;
+	Vector vecCenter;
+	VectorAdd(mins, maxs, vecCenter);
+	VectorScale(vecCenter, 0.5f, vecCenter);
+	sub_101094e0(angles, matrix);
+	sub_101080e0(vecCenter, matrix, vecWorld);
+	vecWorld += origin;
+	sub_10108540(vecWorld, 3, matrix);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df0f0 size=0x9b
 #include "Vector.h"
 
