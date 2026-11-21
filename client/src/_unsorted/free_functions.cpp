@@ -27069,6 +27069,16 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144b30 size=0x11
+struct CUnknown10144b30 { int sub_10144b30(int, int); };
+int CUnknown10144b30::sub_10144b30(int a0, int a1)
+{
+    *(int *)((char *)this + 0x34) = a0;
+    *(int *)((char *)this + 0x38) = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144d30 size=0x1
 void sub_10144d30()
 {
