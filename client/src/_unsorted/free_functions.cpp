@@ -8297,6 +8297,39 @@ int sub_10030c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030d50 size=0x17b
+#include "RecvTable.h"
+extern RecvTable g_102eb550;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ac968;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_SteamJet { struct ignored; }
+template <> int ClientClassInit<DT_SteamJet::ignored>(DT_SteamJet::ignored *)
+{
+	char *pRecvTableName = "DT_SteamJet";
+	RecvTable &RecvTable = g_102eb550;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ac968, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_SpreadSpeed", 1132, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_Speed", 1136, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_StartSize", 1140, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_EndSize", 1144, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_Rate", 1148, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_JetLength", 1152, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bEmit", 1156, 4, 0, 0),
+		RecvPropInt("m_bFaceLeft", 1164, 1, 0, 0),
+		RecvPropInt("m_nType", 1160, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100310b0 size=0x3
 char sub_100310b0()
 {
