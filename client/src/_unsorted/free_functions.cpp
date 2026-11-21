@@ -18506,6 +18506,61 @@ template <> int ClientClassInit<DT_PredictableId::ignored>(DT_PredictableId::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d860 size=0x2f4
+#include "RecvTable.h"
+extern RecvTable g_1049dabc;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable g_1049e328;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropEHandle(char *, int, int);
+void sub_1009d4a0(const CRecvProxyData *, void *, void *);
+void sub_1009d4c0(const CRecvProxyData *, void *, void *);
+extern RecvTable g_103ecc30;
+extern RecvTable g_1049e190;
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseEntity::ignored>(DT_BaseEntity::ignored *)
+{
+	char *pRecvTableName = "DT_BaseEntity";
+	RecvTable &RecvTable = g_1049dabc;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("AnimTimeMustBeFirst", 0, 0, &g_1049e328, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecAbsOrigin", 692, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_angAbsRotation[0]", 704, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angAbsRotation[1]", 708, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angAbsRotation[2]", 712, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nModelIndex", 128, 4, 0, 0),
+		RecvPropInt("m_fEffects", 116, 4, 0, 0),
+		RecvPropInt("m_nRenderMode", 72, 4, 0, 0),
+		RecvPropInt("m_nRenderFX", 76, 4, 0, 0),
+		RecvPropInt("m_clrRender.r", 80, 1, 0, 0),
+		RecvPropInt("m_clrRender.g", 81, 1, 0, 0),
+		RecvPropInt("m_clrRender.b", 82, 1, 0, 0),
+		RecvPropInt("m_clrRender.a", 83, 1, 0, 0),
+		RecvPropInt("m_iTeamNum", 164, 4, 0, 0),
+		RecvPropInt("m_nWaterLevel", 144, 4, 0, 0),
+		RecvPropInt("m_CollisionGroup", 720, 4, 0, 0),
+		RecvPropEHandle("m_hAimEnt", 392, 4),
+		RecvPropEHandle("m_hOwnerEntity", 996, 4),
+		RecvPropEHandle("m_hSoundOverrideEnt", 1032, 4),
+		RecvPropInt("m_bFakeSilence", 1036, 1, 0, 0),
+		RecvPropInt("movetype", 0, -1, 0, sub_1009d4a0),
+		RecvPropInt("movecollide", 0, -1, 0, sub_1009d4c0),
+		RecvPropVector("m_vecViewOffset", 328, 12, 0, RecvProxy_VectorToVector),
+		RecvPropDataTable("m_Collision", 400, 0, &g_103ecc30, DataTableRecvProxy_StaticDataTable),
+		RecvPropDataTable("predictable_id", 0, 0, &g_1049e190, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009db70 size=0x1
 void sub_1009db70()
 {
