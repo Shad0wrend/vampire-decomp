@@ -40262,6 +40262,71 @@ CUnknown101b45b0 *CUnknown101b45b0::sub_1012f490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f5c0 size=0x160
+#include "CSoundEmitterSystemBase.h"
+
+struct FileSysView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual bool FileExists(const char *pszFileName, const char *pszPathID);
+};
+extern FileSysView *g_104a580c;
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+namespace block_101b4740 {
+struct CSoundEmitterUnit : CSoundEmitterSystemBase
+{
+	int sub_1012e570();
+};
+int CSoundEmitterUnit::sub_1012e570()
+{
+	return m_i64;
+}
+}
+using namespace block_101b4740;
+
+// TARGET: CSoundEmitterSystemBase::sub_1012f5c0
+int CSoundEmitterSystemBase::sub_1012f5c0(bool bVerbose)
+{
+	int nMissing;
+	int i;
+	int nSounds;
+	nMissing = 0;
+	nSounds = ((CSoundEmitterUnit *)this)->sub_1012e570();
+	for (i = 0; i < nSounds; i++) {
+		CSoundParametersInternal *pSound = sub_1012e940(i);
+		if (!pSound)
+			continue;
+		int nWaves = pSound->m_nWaves;
+		for (int j = 0; j < nWaves; j++) {
+			CUnknown1024b2d0Id id;
+			id.m_id = pSound->m_pWaves[j].m_symbol;
+			const char *pszWave = m_listb0.sub_1013d6f0(id);
+			if (pszWave && pszWave[0] && pszWave[0] != '!') {
+				const char *psz = pszWave;
+				for (int k = 0; k < 2; k++) {
+					char c = *psz;
+					if (c != '*' && c != '?' && c != '!' && c != '#' && c != '@' && c != '>' && c != '<' && c != '^' && c != ')')
+						break;
+					psz++;
+				}
+				char szFile[512];
+				Q_snprintf(szFile, sizeof(szFile), "sound/%s", psz);
+				if (!g_104a580c->FileExists(szFile, 0)) {
+					nMissing++;
+					pSound->m_bMissingWave48 = 1;
+					if (bVerbose)
+						DevMsg("Sound %s references missing file %s\n", sub_1012e530(i), pszWave);
+				}
+			}
+		}
+	}
+	return nMissing;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f8c0 size=0x4a
 struct Entry { float value; const char *text; };
 extern Entry g_102c4260[1];
