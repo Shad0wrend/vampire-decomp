@@ -2303,3 +2303,9 @@ ConVar g_105fb6a0("vchar_skip_intro", "0", 128);
 void sub_10184360(void);
 ConCommand g_105fb730("showhotkeys", sub_10184360, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10184450 size=0xa
+#include "ConCommand.h"
+void sub_10184420(void);
+ConCommand g_105fb708("hidehotkeys", sub_10184420, 0, 0, 0);
+// END FUNCTION
