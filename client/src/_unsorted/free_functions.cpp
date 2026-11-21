@@ -44775,6 +44775,19 @@ int __fastcall sub_10156770(CUnknownStat101f69a0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156b30 size=0x2e
+// TARGET: CUnknown101f6c50::sub_10156b30
+#include "CUnknown101f6c50.h"
+
+void CUnknown101f6c50::sub_10156b30(int nType, CTraitStatBlock *pBlock, int *pOut) {
+    if (m_nType == nType) {
+        if (sub_101613e0((char *)pBlock + 4)) {
+            *pOut = m_nValue;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156f40 size=0x2a
 #include "CUnknown101f73b0.h"
 
