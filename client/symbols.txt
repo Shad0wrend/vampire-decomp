@@ -2084,6 +2084,7 @@
 0x1012db70 func   ?sub_1012db70@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012db70
 0x1012dbc0 func   ?sub_1012dbc0@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012dbc0
 0x1012dbf0 func   ?sub_1012dbf0@@YAHPBD@Z sub_1012dbf0
+0x1012dc70 func   ?sub_1012dc70@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012dc70
 0x1012dd00 func   ?sub_1012dd00@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012dd00
 0x1012dd70 func   ?sub_1012dd70@CSoundEmitterSystemBase@@QAEPAV1@XZ CSoundEmitterSystemBase::sub_1012dd70
 0x1012de10 func   ?sub_1012de10@CUnknown101b2790@@QAEXXZ CUnknown101b2790::sub_1012de10

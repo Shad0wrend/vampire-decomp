@@ -39773,6 +39773,31 @@ int sub_1012dbf0(const char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dc70 size=0x88
+#include "CUnknown101b2570.h"
+
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *a, const char *b);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+SFloatPair sub_10107010(const char *s);
+
+void CUnknown101b2570::sub_1012dc70(const char *pitch)
+{
+	if (Q_strcasecmp(pitch, "PITCH_NORM") == 0) {
+		m_pitch.a = 100.0f;
+		m_pitch.b = 0.0f;
+	} else if (Q_strcasecmp(pitch, "PITCH_LOW") == 0) {
+		m_pitch.a = 95.0f;
+		m_pitch.b = 0.0f;
+	} else if (Q_strcasecmp(pitch, "PITCH_HIGH") == 0) {
+		m_pitch.a = 120.0f;
+		m_pitch.b = 0.0f;
+	} else {
+		m_pitch = sub_10107010(pitch);
+	}
+	Q_strncpy(m_szPitch, pitch, 32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
