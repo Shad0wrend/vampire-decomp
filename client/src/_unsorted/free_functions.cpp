@@ -2462,6 +2462,13 @@ int sub_100285e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100285f0 size=0x6
+int sub_100285f0()
+{
+    return 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028610 size=0x3
 char sub_10028610()
 {
