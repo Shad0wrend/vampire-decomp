@@ -806,3 +806,8 @@ ConVar g_104d2058("cam_idealdist", "85", 0);
 #include "ConVar.h"
 ConVar g_104d1b00("cam_targetangle", "15", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb000 size=0xa
+#include "ConVar.h"
+ConVar g_104d2590("cam_yaw", "0", 0);
+// END FUNCTION
