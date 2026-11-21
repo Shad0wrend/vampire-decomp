@@ -38763,6 +38763,108 @@ yes:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129350 size=0x1f0
+#include "datamap.h"
+#include "CSave.h"
+
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+struct CSaveFieldView
+{
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	short fieldSize;
+	short flags;
+	const char *externalName;
+	struct COpsView *pSaveRestoreOps;
+	void *inputFunc;
+	datamap_t *td;
+};
+
+struct CSaveFieldInfo
+{
+	void *pField;
+	void *pOwner;
+	CSaveFieldView *pTypeDesc;
+};
+
+struct COpsView
+{
+	virtual void Save(CSaveFieldInfo *pInfo, void *pSave);
+};
+
+struct CSaveWriteView
+{
+	virtual void v0(); virtual void v1();
+	virtual void WriteAll(const void *pData, datamap_t *pMap);
+	virtual void v3(); virtual void v4();
+	virtual void StartBlock(const char *pszName);
+	virtual void EndBlock();
+	virtual void v7(); virtual void v8();
+	virtual void v9(const char *pszName, void *pData, int count);
+	virtual void v10();
+	virtual void v11(const char *pszName, void *pData, int count);
+	virtual void v12();
+	virtual void v13(const char *pszName, void *pData, int count);
+	virtual void v14();
+	virtual void v15(const char *pszName, int nBytes, void *pData);
+	virtual void v16();
+	virtual void v17(const char *pszName, void *pData, int count);
+	virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(const char *pszName, void *pData, int count);
+};
+
+bool CSave::sub_10129350(const unsigned short *pToken, void *pData, void *pRootMap, typedescription_t *pDesc)
+{
+	CSaveWriteView *pSave = (CSaveWriteView *)this;
+	CSaveFieldView *pField = (CSaveFieldView *)pDesc;
+	switch (pField->fieldType) {
+	case 1:
+		pSave->v13(pField->fieldName, pData, pField->fieldSize);
+		break;
+	case 2:
+		pSave->v17(pField->fieldName, pData, pField->fieldSize);
+		break;
+	case 3:
+		pSave->v21(pField->fieldName, pData, pField->fieldSize);
+		break;
+	case 4:
+		pSave->v9(pField->fieldName, pData, pField->fieldSize);
+		break;
+	case 5:
+		pSave->v11(pField->fieldName, pData, pField->fieldSize);
+		break;
+	case 6:
+		pSave->v15(pField->fieldName, pField->fieldSize * 2, pData);
+		break;
+	case 7:
+		pSave->v15(pField->fieldName, pField->fieldSize, pData);
+		break;
+	case 8:
+		pSave->v15(pField->fieldName, pField->fieldSize * 4, pData);
+		break;
+	case 9:
+		pSave->StartBlock(pField->fieldName);
+		pSave->WriteAll(!(pField->flags & 0x40) ? pData : *((void **)pData), pField->td);
+		pSave->EndBlock();
+		break;
+	case 10:
+	{
+		pSave->StartBlock(pField->fieldName);
+		CSaveFieldInfo info = { pData, (char *)pData - pField->fieldOffset[0], pField };
+		pField->pSaveRestoreOps->Save(&info, pSave);
+		pSave->EndBlock();
+		break;
+	}
+	default:
+		Warning("Bad field type\n");
+		return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129560 size=0x4c
 #include "CSave.h"
 
