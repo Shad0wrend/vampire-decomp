@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x1001ae10 size=0x1e
+#include "C_ItemGPishaFetish.h"
+
+// VC6 writes C_ItemGPishaFetish's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_ItemGPishaFetish *pcd_emit_1001ae10() { return new C_ItemGPishaFetish; }
+
+// TARGET: ??_GC_ItemGPishaFetish@@UAEPAXI@Z
+// END FUNCTION
