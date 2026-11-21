@@ -39119,6 +39119,33 @@ int sub_10145d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145d90 size=0x7f
+#include "CUnknown101d9210.h"
+
+struct SHandleMgr { void sub_1015f110(int handle); };
+extern SHandleMgr g_105f93c0;
+
+void CUnknown101d9210::sub_10145d90()
+{
+    if (m_pBuf0c != 0) {
+        delete m_pBuf0c;
+        m_pBuf0c = 0;
+        m_count0 = 0;
+    }
+    g_105f93c0.sub_1015f110(m_handle10);
+    m_handle10 = -1;
+    g_105f93c0.sub_1015f110(m_handle14);
+    m_handle14 = -1;
+    g_105f93c0.sub_1015f110(m_handle18);
+    m_handle18 = -1;
+    if (m_pBuf20 != 0) {
+        delete m_pBuf20;
+        m_pBuf20 = 0;
+        m_count1c = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101460e0 size=0x1d
 namespace lifted {
 extern char g_105f93c0;
