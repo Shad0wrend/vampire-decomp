@@ -20602,6 +20602,38 @@ int sub_100bc330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc4b0 size=0x15b
+#include "RecvTable.h"
+extern RecvTable g_104a2e0c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_HudEntity { struct ignored; }
+template <> int ClientClassInit<DT_HudEntity::ignored>(DT_HudEntity::ignored *)
+{
+	char *pRecvTableName = "DT_HudEntity";
+	RecvTable &RecvTable = g_104a2e0c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nSpriteIndex", 1040, 4, 0, 0),
+		RecvPropInt("m_nPlayerIndex", 1044, 4, 0, 0),
+		RecvPropInt("m_nFrame", 1048, 4, 0, 0),
+		RecvPropFloat("m_flXPos", 1052, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flYPos", 1056, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flXSize", 1060, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flYSize", 1064, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bIsAdditive", 1072, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc680 size=0x5
 int __stdcall sub_100bc680(int a0, int a1)
 {
