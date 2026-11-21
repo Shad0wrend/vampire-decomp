@@ -6161,6 +6161,13 @@ void UtlMem::sub_100b4e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b56b0 size=0x3
+char sub_100b56b0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9b80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_100b9b80(const Vector &v) const
