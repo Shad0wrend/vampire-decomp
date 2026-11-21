@@ -1212,3 +1212,8 @@ ConVar g_104d2d10("joypitchthreshold", "0.15", 0);
 #include "ConVar.h"
 ConVar g_104d2c50("joyyawthreshold", "0.15", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100810 size=0xa
+#include "ConVar.h"
+ConVar g_104d2c08("joyforwardsensitivity", "-1", 0);
+// END FUNCTION
