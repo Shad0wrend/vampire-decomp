@@ -578,6 +578,7 @@
 0x10087a50 func   ?sub_10087a50@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_10087a50
 0x10087a80 func   ?sub_10087a80@bf_write@@QAEPAV1@PBDPAXHH@Z bf_write::sub_10087a80
 0x10087ab0 func   ?sub_10087ab0@bf_write@@QAEXPAXHHH@Z bf_write::sub_10087ab0
+0x10087af0 func   ?sub_10087af0@CUnknown10087af0@@QAEHXZ CUnknown10087af0::sub_10087af0
 0x10087b10 func   ?sub_10087b10@CUnknown10087b10@@QAEHXZ CUnknown10087b10::sub_10087b10
 0x10087b30 func   ?sub_10087b30@bf_readX@@QAEIH@Z bf_readX::sub_10087b30
 0x10087bb0 func   ?sub_10087bb0@bf_read@@QAE_NPAXH@Z bf_read::sub_10087bb0

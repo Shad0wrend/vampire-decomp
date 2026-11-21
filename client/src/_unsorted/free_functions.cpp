@@ -6730,6 +6730,16 @@ void bf_write::sub_10087ab0(void *pData, int nBytes, int iStartBit, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087af0 size=0x9
+struct CUnknown10087af0 { int sub_10087af0(); };
+int CUnknown10087af0::sub_10087af0()
+{
+    *(int *)((char *)this + 0xc) = 0;
+    *(char *)((char *)this + 0x10) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087b10 size=0x4
 struct CUnknown10087b10 { int sub_10087b10(); };
 int CUnknown10087b10::sub_10087b10()
