@@ -125,6 +125,24 @@ linker name), and 10 are the `s_default` / `s_Sentinel` statics spelled at two a
 7,754 matched rows; the panel counts 7,727 of 16,009 functions / 377,023 of 1,690,556 bytes (22.30%). Backup:
 cache/`project.db.pre-carry10-20261121`.
 
+Naming pass 3 and carry run 11 (2026-11-21, pcdecomp main bbf0381). Own names: `rename_symbol` (agent
+`carry-names`) gave 17 constructors, destructors and operators the name of vtmb's matched twin, each proven by a
+one-to-one carry group (equal bodies, no other function in either DLL has the body), eight of them also by the same
+class's vtable store on both sides (CSave, CRestore, CBaseEntityList, CMeasureSection, CMeasureSectionInstance,
+VKeyValues). Five more were refused because their class is not declared in include/ (CVFeat_t x2, CEntryX,
+StatDefault2, CVStatAction_t); a 1:2 group (??0CUnknown10248a50), a 2:1 group (??4CBaseHandle: vtmb has the body
+twice under two names) and six names with a vampire.dll address in a class this project does not use were left
+out. Statics: carry used to attach a data operand to the nearest vtmb data symbol below it however far away (vtmb's
+symbol map has no `g_` placeholders), so a field of `g_1089d7c8` read as `s_Sentinel + 0x1d522a` and statics got two
+spellings; carry now also counts the block's `g_` placeholders as object starts and trusts an exact pair, or inner
+pairs that agree. Run 11 planned 174 and matched 23 (+2 initializer rows), 6,896 bytes: 14 of the 17 named
+(`CValRecord::operator=` 2,703 B, CBaseEntityList's constructor 383 B; VKeyValues' constructor score 6, destructor
+score 2, StatDefault's constructor an unpaired placeholder) and 5 of the 7 the statics fix freed (two `bf_write`
+functions reached only through fields of a `g_` placeholder). Name conflicts 62 -> 35 (19 of them the one-body
+`??_G` interface destructors). A `verify` of 19 still matched (the 20th sample was an initializer row). Totals now:
+7,779 matched rows; the panel counts 7,750 of 16,011 functions / 383,669 of 1,690,576 bytes (22.69%). Backups:
+cache/`project.db.pre-names3-20261121`, cache/`project.db.pre-carry11-20261121`.
+
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
 functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the
