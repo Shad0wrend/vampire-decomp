@@ -20346,6 +20346,44 @@ int sub_100ba0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba1e0 size=0x1f5
+#include "RecvTable.h"
+extern RecvTable g_104a2554;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable g_103ecc30;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Func_Dust { struct ignored; }
+template <> int ClientClassInit<DT_Func_Dust::ignored>(DT_Func_Dust::ignored *)
+{
+	char *pRecvTableName = "DT_Func_Dust";
+	RecvTable &RecvTable = g_104a2554;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_Color.r", 1040, 1, 0, 0),
+		RecvPropInt("m_Color.g", 1041, 1, 0, 0),
+		RecvPropInt("m_Color.b", 1042, 1, 0, 0),
+		RecvPropInt("m_Color.a", 1043, 1, 0, 0),
+		RecvPropInt("m_SpawnRate", 1044, 4, 0, 0),
+		RecvPropFloat("m_flSizeMin", 1048, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flSizeMax", 1052, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_LifetimeMin", 1060, 4, 0, 0),
+		RecvPropInt("m_LifetimeMax", 1064, 4, 0, 0),
+		RecvPropInt("m_DustFlags", 1076, 4, 0, 0),
+		RecvPropInt("m_SpeedMax", 1056, 4, 0, 0),
+		RecvPropInt("m_DistMax", 1068, 4, 0, 0),
+		RecvPropInt("m_iszSpriteName", 1072, 4, 0, 0),
+		RecvPropInt("m_nModelIndex", 128, 4, 0, 0),
+		RecvPropDataTable("m_Collision", 400, 0, &g_103ecc30, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100baba0 size=0x3
 char sub_100baba0()
 {
