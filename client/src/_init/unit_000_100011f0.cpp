@@ -399,3 +399,8 @@ ConVar g_1049d680("damage_floaters_color_max_r", "255", 0, "Red Color Component 
 #include "ConVar.h"
 ConVar g_1049d710("damage_floaters_color_max_g", "200", 0, "Green Color Component (0-255) of damage floaters when at full health.");
 // END FUNCTION
+
+// FUNCTION: 0x1009a6e0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d6c8("damage_floaters_color_max_b", "0", 0, "Blue Color Component (0-255) of damage floaters when at full health.");
+// END FUNCTION
