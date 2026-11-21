@@ -47160,6 +47160,30 @@ const char *sub_1015f680(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f6d0 size=0x48
+#include "CUnknown10203240.h"
+#include "CUnknown10202ba0.h"
+struct S10203780Entry { int m_pad0; const char *m_pText; };
+struct T10203780 { S10203780Entry *sub_1014e6d0(int i); };
+extern T10203780 g_105e8544;
+extern int g_105e8548;
+extern CUnknown10203240 g_105f93c0;
+extern char g_102de300[];
+// TARGET: sub_1015f6d0
+const char *sub_1015f6d0(int index)
+{
+	if (index >= 0) {
+		if (index < g_105e8548) {
+			const char **pp = &g_105e8544.sub_1014e6d0(index)->m_pText;
+			if (*pp)
+				return *pp;
+		}
+	} else if (index == -1)
+		return ((CUnknown10202ba0 *)g_105f93c0.sub_1015f2f0("MiscStrs"))->sub_1015ecd0(0);
+	return g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
