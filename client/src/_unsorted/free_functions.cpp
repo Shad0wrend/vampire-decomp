@@ -7121,6 +7121,16 @@ int CGameMovement::sub_100ec3a0(const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecfb0 size=0x21
+// TARGET: sub_100ecfb0
+float __stdcall sub_100ecfb0(float a, float b)
+{
+    float x = a * b;
+    float y = x * x * x;
+    return 3.0f * x * x - (y + y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
