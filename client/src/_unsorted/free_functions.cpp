@@ -2283,6 +2283,18 @@ bool bf_read::sub_10087bb0(void *pOutData, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087df0 size=0xa1
+#include "bf_read.h"
+
+float bf_read::sub_10087df0(int numbits)
+{
+	float shift = (float)(1 << numbits);
+	int i = ReadUBitLong(numbits);
+	float fReturn = (float)i * (360.0 / shift);
+	return fReturn;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088410 size=0xd1
 #include "bf_read.h"
 
