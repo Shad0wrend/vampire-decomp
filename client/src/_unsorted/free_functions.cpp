@@ -1927,6 +1927,29 @@ void sub_1008b810(CUnknownFreeList100c4980 *pList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b850 size=0x3b
+extern int g_10498e78;
+extern int g_10498e74;
+extern int g_10491338[];
+void sub_1008b810(int *p);
+
+// TARGET: sub_1008b850
+void sub_1008b850()
+{
+    int i = g_10498e78 + 1;
+    if (i != g_10498e78) {
+        do {
+            i &= 0xf;
+            sub_1008b810(&g_10491338[i * 11]);
+            if (g_10498e74) {
+                return;
+            }
+            i++;
+        } while (i != g_10498e78);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d930 size=0x9f
 struct SPoseHdr;
 
