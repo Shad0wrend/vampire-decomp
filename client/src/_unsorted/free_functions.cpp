@@ -50665,6 +50665,59 @@ void * CUnknown10150220::sub_10150220(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150260 size=0xf6
+#include "CUnknown101ec6f0.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+#define SV(n) virtual void s##n();
+struct CRecKVX {
+	virtual const char *s0();
+	SV(1)
+	virtual CRecKVX *s2(const char *pszKey);
+	SV(3)
+	virtual CRecKVX *s4();
+	virtual CRecKVX *s5();
+	SV(6) SV(7) SV(8) SV(9)
+	virtual int s10(const char *pszKey, int nDefault);
+};
+
+struct CPooledStringX {
+	int m_iString;
+	CPooledStringX() {}
+};
+CPooledStringX sub_1015f7e0(CRecKVX *pKV, const char *pszKey);
+CPooledStringX sub_1015f810(CRecKVX *pKV);
+
+bool CUnknown101ec6f0::sub_10150260(CVFeatKV *pKVIn)
+{
+	CRecKVX *pKV = (CRecKVX *)pKVIn;
+	if (pKV) {
+		m_iInternalName = sub_1015f7e0(pKV, "InternalName").m_iString;
+		m_name = (const char *)sub_1015f810(pKV).m_iString;
+		m_money = pKV->s10("Money", 0);
+		CRecKVX *pItems = pKV->s2("Items");
+		if (pItems) {
+			for (CRecKVX *pItem = pItems->s4(); pItem; pItem = pItem->s5()) {
+				if (_strcmpi(pItem->s0(), "Item") != 0)
+					return false;
+				m_itemCount++;
+			}
+			if (m_itemCount > 0) {
+				m_items = (const char **)new int[m_itemCount];
+				CRecKVX *pItem = pItems->s4();
+				int i = 0;
+				while (pItem) {
+					((int *)m_items)[i++] = sub_1015f7e0(pItem, 0).m_iString;
+					pItem = pItem->s5();
+				}
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101503a0 size=0x9c
 #include "CUnknown101ec6f0.h"
 
