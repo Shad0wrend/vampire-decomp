@@ -271,6 +271,7 @@
 0x10017c50 func   ?sub_10017c50@@YAHXZ sub_10017c50
 0x10017d70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGCarStereo@@@Z ClientClassInit
 0x10017ed0 func   ?sub_10017ed0@@YAHXZ sub_10017ed0
+0x10017ff0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGhostPendant@@@Z ClientClassInit
 0x10018150 func   ?sub_10018150@@YAHXZ sub_10018150
 0x100183d0 func   ?sub_100183d0@@YAHXZ sub_100183d0
 0x10018650 func   ?sub_10018650@@YAHXZ sub_10018650
