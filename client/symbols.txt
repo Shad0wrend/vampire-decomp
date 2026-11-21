@@ -1397,6 +1397,7 @@
 0x100bbbc0 func   ??1C_GameRules@@UAE@XZ C_GameRules::~C_GameRules
 0x100bbe40 func   ?sub_100bbe40@@YAHXZ sub_100bbe40
 0x100bbf40 func   ?ClientClassInit@@YAHPAUignored@DT_HudCounter@@@Z ClientClassInit
+0x100bc0d0 func   ??1C_HudCounter@@UAE@XZ C_HudCounter::~C_HudCounter
 0x100bc170 func   ?sub_100bc170@@YGHHH@Z sub_100bc170
 0x100bc330 func   ?sub_100bc330@@YAHXZ sub_100bc330
 0x100bc4b0 func   ?ClientClassInit@@YAHPAUignored@DT_HudEntity@@@Z ClientClassInit
