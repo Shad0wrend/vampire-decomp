@@ -20465,6 +20465,31 @@ int sub_100bb4f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb5f0 size=0x92
+#include "RecvTable.h"
+extern RecvTable g_104a2b7c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Func_LOD { struct ignored; }
+template <> int ClientClassInit<DT_Func_LOD::ignored>(DT_Func_LOD::ignored *)
+{
+	char *pRecvTableName = "DT_Func_LOD";
+	RecvTable &RecvTable = g_104a2b7c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_fDisappearDist", 1048, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb9a0 size=0x6
 namespace lifted {
 extern char g_104a2c34;
