@@ -8207,6 +8207,31 @@ void sub_1002ebc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f6c0 size=0xa1
+#include "RecvTable.h"
+extern RecvTable g_102eaeb0;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_SmokeStackLightInfo { struct ignored; }
+template <> int ClientClassInit<DT_SmokeStackLightInfo::ignored>(DT_SmokeStackLightInfo::ignored *)
+{
+	char *pRecvTableName = "DT_SmokeStackLightInfo";
+	RecvTable &RecvTable = g_102eaeb0;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropVector("m_vPos", 0, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vColor", 12, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flIntensity", 24, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f7a0 size=0x6
 namespace lifted {
 extern char g_102eae78;
