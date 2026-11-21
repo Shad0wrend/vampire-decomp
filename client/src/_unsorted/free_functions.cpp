@@ -15919,6 +15919,28 @@ void StatDefault3::sub_1013e530(StatDefault3 *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f2a0 size=0x45
+struct CIndexTables {
+	char m_pad[0xd0];
+	int *m_pTable0;
+	int *m_pTable1;
+	int *m_pTable2;
+	int sub_1013f2a0(int type, int index);
+};
+int CIndexTables::sub_1013f2a0(int type, int index)
+{
+	switch (type) {
+	case 0:
+		return m_pTable0[index];
+	case 1:
+		return m_pTable1[index];
+	case 2:
+		return m_pTable2[index];
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f320 size=0x42
 #include <stdio.h>
 #include <string.h>

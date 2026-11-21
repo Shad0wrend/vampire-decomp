@@ -647,6 +647,7 @@
 0x1013ddc0 func   ?sub_1013ddc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_1013ddc0
 0x1013e3a0 func   ?sub_1013e3a0@CUnknown101d3a10@@QAEXXZ CUnknown101d3a10::sub_1013e3a0
 0x1013e530 func   ?sub_1013e530@StatDefault3@@QAEXPAU1@@Z StatDefault3::sub_1013e530
+0x1013f2a0 func   ?sub_1013f2a0@CIndexTables@@QAEHHH@Z CIndexTables::sub_1013f2a0
 0x1013f320 func   ?sub_1013f320@CClanInfoView@@QAEPADXZ CClanInfoView::sub_1013f320
 0x1013fc80 func   ?sub_1013fc80@CClanDocLoader@@QAEXXZ CClanDocLoader::sub_1013fc80
 0x1013fdc0 func   ?sub_1013fdc0@CStatDefault3List@@QAEXXZ CStatDefault3List::sub_1013fdc0
