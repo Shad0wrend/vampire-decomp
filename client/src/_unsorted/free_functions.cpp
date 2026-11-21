@@ -8108,6 +8108,30 @@ int CNamedListX::sub_10157b80(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101594e0 size=0x6d
+#include "CVStatCost_t.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+
+CVStatSubCost_t *CVStatSubCost_t::sub_101594e0()
+{
+	g_101e3124[*g_101e3128].fn = "CVStatSubCost_t::CVStatSubCost_t";
+	g_101e3124[*g_101e3128].name = "";
+	g_101e3124[*g_101e3128].extra = "";
+	(*g_101e3128)++;
+	*(int *)&m_data[0x10] = 0;
+	sub_10159550();
+	(*g_101e3128)--;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159f20 size=0x4c
 struct S5_101fc4d0 { int v[5]; };
 struct T_101fc4d0 : S5_101fc4d0 {

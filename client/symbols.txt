@@ -342,6 +342,7 @@
 0x10157480 func   ?sub_10157480@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_10157480
 0x10157b30 func   ?sub_10157b30@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b30
 0x10157b80 func   ?sub_10157b80@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b80
+0x101594e0 func   ?sub_101594e0@CVStatSubCost_t@@QAEPAU1@XZ CVStatSubCost_t::sub_101594e0
 0x10159f20 func   ?sub_10159f20@C101fc4d0@@QAEDUT_101fc4d0@@0@Z C101fc4d0::sub_10159f20
 0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
 0x1015f810 func   ?sub_1015f810@@YAHHH@Z sub_1015f810
