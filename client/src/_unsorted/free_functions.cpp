@@ -5903,6 +5903,16 @@ void sub_1007ddd0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ddf0 size=0x6
+namespace lifted {
+extern int g_1049e358;
+}
+int sub_1007ddf0()
+{
+    return lifted::g_1049e358;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f6e0 size=0x3
 char sub_1007f6e0()
 {
