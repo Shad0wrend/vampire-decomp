@@ -19403,6 +19403,12 @@ int sub_10146f90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147200 size=0x1
+void sub_10147200()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101475e0 size=0x14f
 #include "CUnknown101dc5a0.h"
 
