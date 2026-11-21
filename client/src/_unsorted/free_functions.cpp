@@ -1002,6 +1002,21 @@ int bf_readX::sub_10088660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100886e0 size=0x65
+#include "bf_read.h"
+
+struct bf_readX : bf_read
+{
+	int sub_100886e0();
+};
+
+// TARGET: bf_readX::sub_100886e0
+int bf_readX::sub_100886e0()
+{
+	return ReadUBitLong(16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
