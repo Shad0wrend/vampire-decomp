@@ -62413,6 +62413,13 @@ int sub_101a5bf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5cd0 size=0xa8f
+#include "CValRecord.h"
+
+// TARGET: ??4CValRecord@@QAEAAU0@ABU0@@Z
+CValRecord &(CValRecord::*pcd_force)(const CValRecord &) = &CValRecord::operator=;
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x10b
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
