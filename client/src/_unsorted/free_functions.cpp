@@ -6949,6 +6949,16 @@ void bf_read::sub_10088620(Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088650 size=0x8
+namespace lifted {
+int __stdcall sub_10087f50(int);
+}
+int sub_10088650()
+{
+    return lifted::sub_10087f50(8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088660 size=0x65
 #include "bf_read.h"
 
