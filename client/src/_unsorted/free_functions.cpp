@@ -27594,6 +27594,14 @@ void *CUnkDelete101d7c90::sub_101667f0(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101668c0 size=0x4
+struct CUnknown101668c0 { int sub_101668c0(); };
+int CUnknown101668c0::sub_101668c0()
+{
+    return *(int *)((char *)this + 0x64);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a690 size=0x1
 void sub_1016a690()
 {
