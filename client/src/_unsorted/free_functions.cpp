@@ -2295,6 +2295,20 @@ float bf_read::sub_10087df0(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087f50 size=0xd4
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_10087f50
+int bf_read::sub_10087f50(int numbits)
+{
+    int bits = numbits - 1;
+    int ret = ReadUBitLong(bits);
+    if (ReadOneBit())
+        ret -= (1 << bits);
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088410 size=0xd1
 #include "bf_read.h"
 
