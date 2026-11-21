@@ -1743,6 +1743,11 @@ RecvTable g_10486410;
 RecvTable g_10477278;
 // END FUNCTION
 
+// FUNCTION: 0x1007d160 size=0xa
+#include "RecvTable.h"
+RecvTable g_104863f8;
+// END FUNCTION
+
 // FUNCTION: 0x10081370 size=0xa
 #include "ConVar.h"
 ConVar g_104870e0("r_DrawBeams", "1", 0);
