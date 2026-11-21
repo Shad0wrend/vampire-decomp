@@ -13782,6 +13782,41 @@ unsigned char CUnknown101b52d0::sub_1012fea0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130800 size=0x59
+struct CUnknown101a5290 {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+    void sub_10130800();
+};
+
+extern void (__cdecl *g_101e30fc)(void *);
+
+// TARGET: sub_10130800
+void CUnknown101a5290::sub_10130800()
+{
+    void (__cdecl *pFree)(void *) = g_101e30fc;
+    m_size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
