@@ -11538,6 +11538,15 @@ int sub_100cd130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd290 size=0x9
+struct CUnknown100cd290 { void * sub_100cd290(); };
+void * CUnknown100cd290::sub_100cd290()
+{
+    *(int *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd330 size=0xdb
 #include "Vector.h"
 #include "CUnknown1070b254.h"
