@@ -4642,6 +4642,16 @@ char CUnknown10055f40::sub_10055f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100561f0 size=0x6
+namespace lifted {
+extern int g_103eea74;
+}
+int sub_100561f0()
+{
+    return lifted::g_103eea74;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057470 size=0x72
 struct Elem { char data[0x88]; };
 struct Mem {
