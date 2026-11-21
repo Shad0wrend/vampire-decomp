@@ -3605,6 +3605,34 @@ void UtlMem::sub_100d90b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df190 size=0x24
+struct CUnknown10753434
+{
+    virtual void a0();
+    virtual void a1();
+    virtual void a2();
+    virtual void vfunc3();
+    int m_pad4;
+    CUnknown10753434 *m_pNext;	// +0x8
+};
+
+extern CUnknown10753434 *g_104cf3d4;
+extern int g_104cf3d8;
+
+// TARGET: sub_100df190
+void sub_100df190(int a)
+{
+    g_104cf3d8 = a;
+    CUnknown10753434 *p = g_104cf3d4;
+    while (p != 0)
+    {
+        CUnknown10753434 *next = p->m_pNext;
+        p->vfunc3();
+        p = next;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
