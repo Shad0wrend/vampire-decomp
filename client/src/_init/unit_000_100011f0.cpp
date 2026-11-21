@@ -1931,6 +1931,13 @@ int g_102e7550 = ClientClassInit((DT_ItemGStake::ignored *)0);
 RecvTable g_102e1bd4;
 // END FUNCTION
 
+// FUNCTION: 0x1001dc50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrClipboard { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrClipboard::ignored>(DT_ItemGWarrClipboard::ignored *);
+int g_102e1bd0 = ClientClassInit((DT_ItemGWarrClipboard::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001de90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0fd4;
