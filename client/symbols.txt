@@ -979,6 +979,7 @@
 0x1003ec10 func   ?sub_1003ec10@@YAHXZ sub_1003ec10
 0x1003ecb0 func   ?sub_1003ecb0@@YAHXZ sub_1003ecb0
 0x1003ed20 func   ?ClientClassInit@@YAHPAUignored@DT_TEShowLine@@@Z ClientClassInit
+0x1003ee40 func   ??_GC_TESmoke@@UAEPAXI@Z ??_GC_TESmoke@@UAEPAXI@Z
 0x1003ee60 func   ??1C_TESmoke@@UAE@XZ C_TESmoke::~C_TESmoke
 0x1003ee60 func   ?sub_1003ee60@CUnknown1003ee60@@QAEHXZ CUnknown1003ee60::sub_1003ee60
 0x1003ef00 func   ?sub_1003ef00@@YAHXZ sub_1003ef00
