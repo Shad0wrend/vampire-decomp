@@ -1796,3 +1796,8 @@ Vector g_104db5a0(3.4028235e+38f, 3.4028235e+38f, 3.4028235e+38f);
 #include "ConVar.h"
 ConVar g_104df6b8("measure_resort", "1.0", 0, "How often to re-sort profiling sections\n");
 // END FUNCTION
+
+// FUNCTION: 0x1010de10 size=0xa
+#include "ConVar.h"
+ConVar g_104df670("game_speeds", "0", 0);
+// END FUNCTION
