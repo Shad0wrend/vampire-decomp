@@ -2658,3 +2658,8 @@ ConVar g_106194e8("r_watercullenable", "0", 0);
 #include "ConVar.h"
 ConVar g_10618b90("cl_drawmaterial", "", 0, "Draw a particular material over the frame");
 // END FUNCTION
+
+// FUNCTION: 0x10197d10 size=0xa
+#include "ConVar.h"
+ConVar g_10619458("r_drawtranslucentworld", "1", 0);
+// END FUNCTION
