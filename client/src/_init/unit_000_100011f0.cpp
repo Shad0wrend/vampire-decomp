@@ -3960,6 +3960,11 @@ void * sub_10125180(void);
 InterfaceReg g_104e17fc(sub_10125180, "EntityRandom_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x10125f10 size=0xa
+#include "RecvTable.h"
+RecvTable g_104e1b88;
+// END FUNCTION
+
 // FUNCTION: 0x10126ab0 size=0xa
 #include "ConVar.h"
 ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
