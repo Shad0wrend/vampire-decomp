@@ -21064,6 +21064,49 @@ void CUnknown101f0b80::sub_10152bd0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152cc0 size=0x66
+void __fastcall sub_101451d0(int *pThis);
+void operator delete(void *);
+
+struct CMem101d8250
+{
+	int m_n0;
+	int m_p4;
+	~CMem101d8250() { sub_101451d0((int *)this); }
+};
+
+// A 16-byte class with a virtual destructor; 0x101f0cb0 is its vector deleting destructor (??_E), written out by hand
+struct CUnknown101f0cb0
+{
+	void *m_vt;
+	int m_n4;
+	CMem101d8250 m_mem8;
+	void *sub_10152cc0(unsigned int flags);
+};
+
+void *CUnknown101f0cb0::sub_10152cc0(unsigned int flags)
+{
+	if (flags & 2)
+	{
+		int *pBlock = (int *)this - 1;
+		int n = *pBlock;
+		CUnknown101f0cb0 *p = this + n;
+		while (--n >= 0)
+		{
+			p--;
+			p->m_mem8.~CMem101d8250();
+		}
+		if (flags & 1)
+			operator delete(pBlock);
+		return pBlock;
+	}
+	m_mem8.~CMem101d8250();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152e30 size=0xeb
 #include "CUnknown101f0ea0.h"
 
