@@ -274,6 +274,7 @@
 0x100eb150 func   ?sub_100eb150@CUnknown100353c0@@QAEPAV1@PBV1@@Z CUnknown100353c0::sub_100eb150
 0x100eb1f0 func   ?vfunc21@CGameMovement@@UAEDPAX@Z CGameMovement::vfunc21
 0x100ebb50 func   ?sub_100ebb50@CGameMovement@@QAEHAAVVector@@00M@Z CGameMovement::sub_100ebb50
+0x100ebee0 func   ?sub_100ebee0@@YAHHHAAVVector@@@Z sub_100ebee0
 0x100ec3a0 func   ?sub_100ec3a0@CGameMovement@@QAEHABVVector@@@Z CGameMovement::sub_100ec3a0
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
 0x100eff70 func   ?sub_100eff70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100eff70

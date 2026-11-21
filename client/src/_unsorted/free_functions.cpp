@@ -7079,6 +7079,20 @@ int CGameMovement::sub_100ebb50(Vector &in, Vector &normal, Vector &out, float o
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ebee0 size=0x4c
+#include "Vector.h"
+extern int g_104cfab8[][2];
+extern Vector g_104cf810[];
+
+int sub_100ebee0(int nIndex, int server, Vector &offset)
+{
+	int idx;
+	idx = g_104cfab8[nIndex][server]++;
+	VectorCopy(g_104cf810[idx % 54], offset);
+	return (idx % 54);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec3a0 size=0xae
 #include "CGameMovement.h"
 
