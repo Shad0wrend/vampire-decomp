@@ -1333,6 +1333,34 @@ int sub_100797e0(StudioHdr *pHdr, int activity, int *pSeqOut, int *pWeightOut, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100799d0 size=0x6d
+extern int g_102aaee0;
+int sub_100799d0(int n, int *items, int *w)
+{
+    int sum, i, r;
+    if (n < 1)
+        return -1;
+    if (n == 1)
+        return items[0];
+    sum = 0;
+    for (i = 0; i < n; i++)
+        sum += w[i];
+    if (sum < 1) {
+        i = g_102aaee0;
+        if (i >= 0 && i < n)
+            return items[i];
+        return items[0];
+    }
+    r = g_102aaee0;
+    for (i = 0; i < n; i++) {
+        if (r < w[i])
+            return items[i];
+        r -= w[i];
+    }
+    return items[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079a40 size=0x47
 int sub_10079a40(int n, int *values, int *weights)
 {
