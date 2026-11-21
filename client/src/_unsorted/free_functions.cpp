@@ -11718,6 +11718,34 @@ void CUnknown101f40f0::sub_10155400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155510 size=0x2c
+struct CUnkSub101f4330
+{
+	void sub_10154f60(int a, int b, int c);
+};
+
+struct CUnk101f4330
+{
+	char m_pad00[0xc];
+	int *m_pArr;	// 0x0c
+	CUnkSub101f4330 m_sub;	// 0x10
+
+	void sub_10155510(int a, int b);
+};
+
+// TARGET: CUnk101f4330::sub_10155510
+void CUnk101f4330::sub_10155510(int a, int b)
+{
+	int nNew = b + 1;
+	int cur = m_pArr[a];
+	if (cur < nNew)
+	{
+		m_pArr[a] = nNew;
+		m_sub.sub_10154f60(a, nNew - 1, cur - 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
