@@ -102,3 +102,8 @@ ConVar g_103eac38("clip_x", "0", 0);
 #include "ConVar.h"
 ConVar g_103eac80("clip_y", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1003ab30 size=0xa
+#include "ConVar.h"
+ConVar g_103eacc8("clip_z", "0", 0);
+// END FUNCTION
