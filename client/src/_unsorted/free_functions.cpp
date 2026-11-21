@@ -4728,6 +4728,18 @@ void sub_10109470(const Vector *pVec, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101094b0 size=0x22
+void __cdecl sub_101094e0(int a, int b);
+void __cdecl sub_10108540(int a, int b, int c);
+
+// TARGET: sub_101094b0
+void __cdecl sub_101094b0(int a, int b, int c)
+{
+    sub_101094e0(a, c);
+    sub_10108540(b, 3, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
