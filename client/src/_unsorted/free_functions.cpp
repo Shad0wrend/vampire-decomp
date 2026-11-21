@@ -13391,6 +13391,61 @@ void CUnknown101b2790::sub_1012de10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e0e0 size=0xe8
+#include "utlvector.h"
+#include "CSoundEmitterSystemBase.h"
+#include "UtlMem2.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void (__cdecl *g_101e3140)(const char *fmt, ...);
+
+struct CUtlVecOpsX : public UtlMem2 {
+	void GrowVector(int num = 1)
+	{
+		if (m_size + num > m_allocationCount)
+			sub_100be200(m_size - m_allocationCount + num);
+		m_size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num = 1)
+	{
+		int numToMove = m_size - elem - num;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(int));
+	}
+	int InsertBefore(int elem, const int &src)
+	{
+		GrowVector();
+		ShiftElementsRight(elem);
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+		return elem;
+	}
+	int AddToTail(const int &src) { return InsertBefore(m_size, src); }
+};
+
+void CSoundEmitterSystemBase::sub_1012e0e0(const char *pszScript, UtlMem2 *pOut)
+{
+	pOut->m_size = 0;
+	int iScript = sub_1012f9e0(pszScript);
+	if (iScript == -1) {
+		g_101e3140("Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'\n", pszScript, "scripts/game_sounds_manifest.txt");
+		return;
+	}
+	int nSounds = sub_1012e570();
+	if (nSounds > 0) {
+		int i = 0;
+		int off = 0;
+		do {
+			if (*(int *)(off + (int)m_i54 + 0x18) == iScript)
+				((CUtlVecOpsX *)pOut)->AddToTail(i);
+			i++;
+			off += 0xe8;
+		} while (i < nSounds);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e940 size=0x28
 #include "CUnknown101b3730.h"
 // TARGET: CUnknown101b3730::sub_1012e940
