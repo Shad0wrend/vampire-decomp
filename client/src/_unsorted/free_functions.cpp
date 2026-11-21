@@ -22334,6 +22334,16 @@ int CSave::sub_1012ab00(int a, int b, CSaveDesc *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012abd0 size=0xf
+namespace lifted {
+int __stdcall sub_1012ab60(int, int);
+}
+int __stdcall sub_1012abd0(int a0)
+{
+    return lifted::sub_1012ab60(0, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aec0 size=0x34
 #include "CRestore.h"
 struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };

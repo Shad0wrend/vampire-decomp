@@ -1461,6 +1461,7 @@
 0x1012aaa0 func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
 0x1012aae0 func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
 0x1012ab00 func   ?sub_1012ab00@CSave@@QAEHHHPAUCSaveDesc@@@Z CSave::sub_1012ab00
+0x1012abd0 func   ?sub_1012abd0@@YGHH@Z sub_1012abd0
 0x1012abe0 func   ?vfunc12@CRestore@@UAEIHHH@Z CRestore::vfunc12
 0x1012ac70 func   ?vfunc17@CRestore@@UAEHPAXHH@Z CRestore::vfunc17
 0x1012ad70 func   ?vfunc20@CRestore@@UAEHPAHHH@Z CRestore::vfunc20
