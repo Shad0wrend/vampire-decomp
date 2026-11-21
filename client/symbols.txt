@@ -153,6 +153,7 @@
 0x1000e8d0 func   ?sub_1000e8d0@@YAHXZ sub_1000e8d0
 0x1000e9f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_Remington@@@Z ClientClassInit
 0x1000eb50 func   ?sub_1000eb50@@YAHXZ sub_1000eb50
+0x1000ec70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_SteyrAug@@@Z ClientClassInit
 0x1000edd0 func   ?sub_1000edd0@@YAHXZ sub_1000edd0
 0x1000f050 func   ?sub_1000f050@@YAHXZ sub_1000f050
 0x1000f2d0 func   ?sub_1000f2d0@@YAHXZ sub_1000f2d0
