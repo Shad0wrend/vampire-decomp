@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012a220 size=0x13
+#include "CRestore.h"
+namespace lifted {
+int __stdcall sub_1012ab00(int, int, int);
+}
+int CRestore::vfunc2(CBaseEntity * a0, int a1)
+{
+    return lifted::sub_1012ab00(*(int *)&a0, a1, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a270 size=0x4
 #include "CRestore.h"
 int CRestore::vfunc33()
