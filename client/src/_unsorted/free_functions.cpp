@@ -22065,6 +22065,30 @@ char CVStatList_t::sub_1015ddc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015dfa0 size=0x89
+#include "CVStatList_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+
+bool CVStatList_t::sub_1015dfa0(int a, int b)
+{
+	g_101e3124[*g_101e3128].a = "CVStatList_t::IsEqual";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	int x = sub_1015dbd0(a);
+	int y = sub_1015dbd0(b);
+	if (x == y) {
+		(*g_101e3128)--;
+		return true;
+	}
+	(*g_101e3128)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e490 size=0xf0
 #include "CVStatListManager_t.h"
 
