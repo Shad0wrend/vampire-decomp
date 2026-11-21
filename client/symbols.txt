@@ -164,6 +164,7 @@
 0x1000bb90 func   ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z
 0x1000bbd0 func   ?sub_1000bbd0@@YAHXZ sub_1000bbd0
 0x1000bcf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_GargoyleFist@@@Z ClientClassInit
+0x1000be10 func   ??_GC_WeaponMelee_HengeyokaiFist@@UAEPAXI@Z ??_GC_WeaponMelee_HengeyokaiFist@@UAEPAXI@Z
 0x1000be50 func   ?sub_1000be50@@YAHXZ sub_1000be50
 0x1000bf70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_HengeyokaiFist@@@Z ClientClassInit
 0x1000c0d0 func   ?sub_1000c0d0@@YAHXZ sub_1000c0d0
