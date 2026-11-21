@@ -1242,3 +1242,8 @@ ConVar g_104d2aa0("joywwhack1", "0", 0);
 #include "ConVar.h"
 ConVar g_104d2a58("joywwhack2", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101016c0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3d98("cl_anglespeedkey", "0.67", 0);
+// END FUNCTION
