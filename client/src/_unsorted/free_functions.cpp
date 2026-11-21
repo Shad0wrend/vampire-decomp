@@ -10159,6 +10159,16 @@ char sub_100ae060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae5d0 size=0x6
+namespace lifted {
+extern char g_104a1520;
+}
+int sub_100ae5d0()
+{
+    return (int)&lifted::g_104a1520;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4d30 size=0x8f
 #include "CUtlVector40.h"
 
