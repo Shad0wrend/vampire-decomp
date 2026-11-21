@@ -95,6 +95,7 @@
 0x10008210 func   ??_GC_WeaponMelee_BushHook@@UAEPAXI@Z ??_GC_WeaponMelee_BushHook@@UAEPAXI@Z
 0x10008250 func   ?sub_10008250@@YAHXZ sub_10008250
 0x10008370 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_BushHook@@@Z ClientClassInit
+0x10008490 func   ??_GC_WeaponMelee_Claws@@UAEPAXI@Z ??_GC_WeaponMelee_Claws@@UAEPAXI@Z
 0x100084d0 func   ?sub_100084d0@@YAHXZ sub_100084d0
 0x100085f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Claws@@@Z ClientClassInit
 0x10008750 func   ?sub_10008750@@YAHXZ sub_10008750
