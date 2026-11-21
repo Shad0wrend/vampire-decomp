@@ -2177,6 +2177,21 @@ bool CStrParser::sub_100879e0(const char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087a30 size=0x1e
+struct CUnknown100bc460 { void * sub_10087a30(); };
+void * CUnknown100bc460::sub_10087a30()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = 0;
+    *(char *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x11) = 1;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087bb0 size=0x233
 #include "bf_read.h"
 
