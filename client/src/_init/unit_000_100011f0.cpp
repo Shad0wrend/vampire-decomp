@@ -1906,3 +1906,8 @@ ConVar g_104df818("sv_stepsize", "18", 8448);
 #include "ConVar.h"
 ConVar g_104df7d0("sv_skyname", "sky_urb01", 8320, "Current name of the skybox texture");
 // END FUNCTION
+
+// FUNCTION: 0x1010ff70 size=0xa
+#include "ConVar.h"
+ConVar g_104dfb30("sv_backspeed", "0.6", 8320, "How much to slow down backwards motion");
+// END FUNCTION
