@@ -9768,6 +9768,18 @@ void sub_1010b090(const Vector &p1, const Vector &p2, const Vector &d1, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b140 size=0x53
+float sub_1010b140(float p1, float p2, float d1, float d2, float t)
+{
+    float t2 = t * t;
+    float t3 = t * t2;
+    float r = (2.0f * t3 - 3.0f * t2 + 1.0f) * p1 + (3.0f * t2 - 2.0f * t3) * p2;
+    r += (t3 - 2.0f * t2 + t) * d1;
+    r += (t3 - t2) * d2;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010ba80 size=0x56
 #include "Vector.h"
 void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out)
