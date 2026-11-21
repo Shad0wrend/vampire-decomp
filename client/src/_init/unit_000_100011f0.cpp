@@ -1981,3 +1981,8 @@ ConVar g_104e1798("cl_lagcompensation", "0", 0, "Perform server side lag compens
 #include "ConVar.h"
 ConVar g_104e1668("cl_showerror", "0", 0, "Show prediction errors, 2 for above plus detailed field deltas.");
 // END FUNCTION
+
+// FUNCTION: 0x10120bd0 size=0xa
+#include "ConVar.h"
+ConVar g_104e1538("cl_smooth", "1", 0, "Smooth view/eye origin after prediction errors");
+// END FUNCTION
