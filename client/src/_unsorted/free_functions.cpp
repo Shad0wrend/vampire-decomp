@@ -11063,6 +11063,16 @@ int sub_100cd100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd130 size=0x6
+namespace lifted {
+extern int g_104a5838;
+}
+int sub_100cd130()
+{
+    return lifted::g_104a5838;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd330 size=0xdb
 #include "Vector.h"
 #include "CUnknown1070b254.h"
