@@ -5517,6 +5517,12 @@ void Mem1c::sub_100a35f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3990 size=0x1
+void sub_100a3990()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5420 size=0x53
 struct SInit {
 	int m_n0;
