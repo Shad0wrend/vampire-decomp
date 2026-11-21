@@ -2741,6 +2741,7 @@
 0x1015c440 func   ?sub_1015c440@CVStatInfo_t@@QAEPAXI@Z CVStatInfo_t::sub_1015c440
 0x1015c8f0 func   ?sub_1015c8f0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_1015c8f0
 0x1015ca70 func   ?sub_1015ca70@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_1015ca70
+0x1015cfe0 func   ?sub_1015cfe0@CVStatInfoList_t@@QAEPAVCVStatInfo_t@@H@Z CVStatInfoList_t::sub_1015cfe0
 0x1015d1e0 func   ??0CVStatList_t@@QAE@H@Z CVStatList_t::CVStatList_t
 0x1015d350 func   ?sub_1015d350@CVStatList_t@@QAEXHPAHH@Z CVStatList_t::sub_1015d350
 0x1015d6e0 func   ?sub_1015d6e0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_1015d6e0

@@ -54389,6 +54389,17 @@ int CVStatInfoList_t::sub_1015ca70(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015cfe0 size=0x53
+#include "CVStatInfoList_t.h"
+CVStatInfo_t *CVStatInfoList_t::sub_1015cfe0(int idx)
+{
+	if (idx >= 0 && idx < m_nStats)
+		return &m_pStats[idx];
+	static CVStatInfo_t s_default;
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d350 size=0x87
 #include "CVStatList_t.h"
 
