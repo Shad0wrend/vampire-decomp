@@ -1499,6 +1499,13 @@ int g_102e55ac = ClientClassInit((DT_ItemGGhostPendant::ignored *)0);
 RecvTable g_102e6eb4;
 // END FUNCTION
 
+// FUNCTION: 0x10018250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRing03 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRing03::ignored>(DT_ItemGRing03::ignored *);
+int g_102e6eb0 = ClientClassInit((DT_ItemGRing03::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10018490 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e6e9c;
