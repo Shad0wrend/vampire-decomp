@@ -353,6 +353,7 @@
 0x1001e2d0 func   ?sub_1001e2d0@@YAHXZ sub_1001e2d0
 0x1001e3f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGMercurioJournal@@@Z ClientClassInit
 0x1001e550 func   ?sub_1001e550@@YAHXZ sub_1001e550
+0x1001e670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHannahsApptBook@@@Z ClientClassInit
 0x1001e7d0 func   ?sub_1001e7d0@@YAHXZ sub_1001e7d0
 0x1001ea50 func   ?sub_1001ea50@@YAHXZ sub_1001ea50
 0x1001ecd0 func   ?sub_1001ecd0@@YAHXZ sub_1001ecd0
