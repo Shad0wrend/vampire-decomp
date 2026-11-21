@@ -9501,6 +9501,43 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145140 size=0x7c
+#include <stdio.h>
+#include "CUnknown101d82d0.h"
+struct CNameRecord { int m_unk0; const char *m_pszText; int m_kind; };
+struct CNameRecords { CNameRecord *sub_10145090(int index); };
+struct CNameTable { const char *sub_1013ffa0(int index); };
+extern CNameRecords g_105e7910;
+extern CNameTable g_105e74fc;
+extern char g_105e7890[];
+extern char g_102de300[];
+const char *CUnknown101d82d0_Elem::sub_10145140()
+{
+	const char **ppsz;
+	switch (g_105e7910.sub_10145090(m_a)->m_kind) {
+	case 0:
+		if (m_b > -1) {
+			if (!(m_c & 1))
+				return g_105e74fc.sub_1013ffa0(m_b);
+			sprintf(g_105e7890, "!%s", g_105e74fc.sub_1013ffa0(m_b));
+			return g_105e7890;
+		}
+		break;
+	case 2:
+		ppsz = &g_105e7910.sub_10145090(m_a)->m_pszText;
+		if (*ppsz)
+			return *ppsz;
+		break;
+	case 1:
+		ppsz = &g_105e7910.sub_10145090(m_a)->m_pszText;
+		if (*ppsz)
+			return *ppsz;
+		break;
+	}
+	return g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145d40 size=0x1c
 struct CUnk101d9190 {
 	int m_00[3];
