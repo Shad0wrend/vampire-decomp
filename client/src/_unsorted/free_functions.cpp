@@ -9112,6 +9112,39 @@ void StatDefault3::sub_1013e530(StatDefault3 *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f320 size=0x42
+#include <stdio.h>
+#include <string.h>
+
+extern char g_105e76d8[];
+extern char g_102de300[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_102de300; }
+
+struct CClanInfoView
+{
+	int m_n0;
+	int m_n4;
+	const char *m_psz8;
+	int m_nC;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	const char *m_pszIcon;	// 0x1c
+	char *sub_1013f320();
+};
+
+char *CClanInfoView::sub_1013f320()
+{
+	if (m_pszIcon) {
+		sprintf(g_105e76d8, "Interface/CharacterMaintenance/%s", STRINGR(m_pszIcon));
+		return g_105e76d8;
+	}
+	strcpy(g_105e76d8, "Interface/CharacterMaintenance/cm_clan_symbol_mercenary");
+	return g_105e76d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fdc0 size=0x2f
 #include "CStatDefault3List.h"
 // TARGET: sub_1013fdc0
