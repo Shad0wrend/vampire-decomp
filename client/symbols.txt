@@ -1317,6 +1317,7 @@
 0x100a5290 func   ?sub_100a5290@CUnknown100a5290@@QAEHH@Z CUnknown100a5290::sub_100a5290
 0x100a5410 func   ?sub_100a5410@CUnknown100a5410@@QAEPAXXZ CUnknown100a5410::sub_100a5410
 0x100a5420 func   ?sub_100a5420@SInit@@QAEXXZ SInit::sub_100a5420
+0x100a5540 func   ??1C_BasePlayer@@UAE@XZ C_BasePlayer::~C_BasePlayer
 0x100a5a30 func   ?sub_100a5a30@@YAHXZ sub_100a5a30
 0x100a5a40 func   ?sub_100a5a40@@YAHXZ sub_100a5a40
 0x100a6740 func   ?sub_100a6740@CUnknown100a6740@@QAEHH@Z CUnknown100a6740::sub_100a6740
