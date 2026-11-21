@@ -23728,6 +23728,19 @@ VMatrix sub_101a1210(const Vector &vOrigin, const VPlane &thePlane)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1410 size=0x2e
+#include "VMatrix.h"
+// TARGET: sub_101a1410
+void sub_101a2430(int a, VMatrix *pOut);
+
+VMatrix sub_101a1410(int a)
+{
+    VMatrix m;
+    sub_101a2430(a, &m);
+    return m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
