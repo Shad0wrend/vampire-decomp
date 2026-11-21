@@ -1418,3 +1418,9 @@ ConCommand g_104d2e14("+lookup", sub_10102070, 0, 0, 0);
 void sub_10102080(void);
 ConCommand g_104d3b24("-lookup", sub_10102080, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104cc0 size=0xa
+#include "ConCommand.h"
+void sub_10102090(void);
+ConCommand g_104d3424("+lookdown", sub_10102090, 0, 0, 0);
+// END FUNCTION
