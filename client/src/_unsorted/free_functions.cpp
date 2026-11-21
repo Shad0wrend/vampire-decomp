@@ -17270,6 +17270,23 @@ int sub_10146f10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146f90 size=0x63
+#include <string.h>
+extern const char *g_102c7c04[4];
+const char *sub_1015fb60(int);
+
+// TARGET: sub_10146f90
+int sub_10146f90(int a)
+{
+    const char *s = sub_1015fb60(a);
+    for (int i = 0; i < 4; i++) {
+        if (strcmp(g_102c7c04[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
