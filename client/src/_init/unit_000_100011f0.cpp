@@ -530,3 +530,8 @@ ConVar g_104a0f30("money", "1", 0);
 #include "ConVar.h"
 ConVar g_104a0dc8("bc_fade", "0.2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ac830 size=0xa
+#include "ConVar.h"
+ConVar g_104a0e58("bc_ground", "1", 0);
+// END FUNCTION
