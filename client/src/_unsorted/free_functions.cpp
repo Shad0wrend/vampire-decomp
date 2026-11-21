@@ -46487,6 +46487,45 @@ int sub_10146f90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101470d0 size=0x10e
+#include "CUnknown101dbc60.h"
+
+extern int (*g_101e3190)(char *pDest, int maxLen, const char *pFormat, ...);
+extern void (*g_101e3108)(const char *pMsg, ...);
+extern char g_1028653c[];
+extern char g_102c7f50[];
+extern char g_102c7f40[];
+extern char g_102c7f30[];
+extern char g_102c7f20[];
+extern char g_102c7f0c[];
+extern char g_102c7ef8[];
+const char *sub_10146f80(int index);
+const char *sub_10147000(int index);
+
+void CUnknown101dbc60::sub_101470d0()
+{
+    char buf[512];
+    int (*Q_snprintf)(char *, int, const char *, ...) = g_101e3190;
+    Q_snprintf(buf, 512, g_102c7f50);
+    void (*Msg)(const char *, ...) = g_101e3108;
+    Msg(g_1028653c, buf);
+    Q_snprintf(buf, 512, g_102c7f40, m_nRange);
+    Msg(g_1028653c, buf);
+    Q_snprintf(buf, 512, g_102c7f30, sub_10146f80(m_iSource));
+    Msg(g_1028653c, buf);
+    Q_snprintf(buf, 512, g_102c7f20, sub_10147000(m_iAffects));
+    Msg(g_1028653c, buf);
+    if (m_nMinRadius) {
+        Q_snprintf(buf, 512, g_102c7f0c, m_nMinRadius);
+        Msg(g_1028653c, buf);
+    }
+    Q_snprintf(buf, 512, g_102c7ef8, m_nMaxRadius);
+    Msg(g_1028653c, buf);
+    ((CUnknown101da960 *)m_filter)->sub_10146750();
+    ((CUnknown101dbc60Tail *)m_tail)->sub_10146e70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101471e0 size=0x16
 struct CUnknown101471e0 { void * sub_101471e0(int); };
 void * CUnknown101471e0::sub_101471e0(int a0)
