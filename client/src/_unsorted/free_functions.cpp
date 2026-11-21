@@ -18603,6 +18603,19 @@ void CDiscValues_101e9080::sub_1014dae0(int *pA, int *pB, int *pC, int *pD)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ddf0 size=0x23
+char __fastcall sub_1008eb70(void *pOther);
+
+// TARGET: sub_1014ddf0
+int __fastcall sub_1014ddf0(void *pSelf, int unused, void *pOther)
+{
+    if (sub_1008eb70(pOther)) {
+        return *(int *)((char *)pSelf + 0x3bc);
+    }
+    return 100;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();

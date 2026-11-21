@@ -742,6 +742,7 @@
 0x1014d270 func   ?sub_1014d270@@YGHPAUCCharView@@HE@Z sub_1014d270
 0x1014d860 func   ?sub_1014d860@CUnknown101e8080@@QAE_NPBDPAH11@Z CUnknown101e8080::sub_1014d860
 0x1014dae0 func   ?sub_1014dae0@CDiscValues_101e9080@@QAEXPAH000@Z CDiscValues_101e9080::sub_1014dae0
+0x1014ddf0 func   ?sub_1014ddf0@@YIHPAXH0@Z sub_1014ddf0
 0x1014de80 func   ?sub_1014de80@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_1014de80
 0x1014dea0 func   ?sub_1014dea0@CHistoryItem@@QAE_NPAUCKVNode@@@Z CHistoryItem::sub_1014dea0
 0x1014df20 func   ?sub_1014df20@CUnknown101e98c0Item@@QAE_NPAUCDataNode@@@Z CUnknown101e98c0Item::sub_1014df20
