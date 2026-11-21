@@ -1652,3 +1652,9 @@ ConCommand g_104d3b9c("force_centerview", sub_10101b20, 0, 0, 0);
 void sub_10101b70(void);
 ConCommand g_104d3e10("joyadvancedupdate", sub_10101b70, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101058f0 size=0xa
+#include "ConCommand.h"
+void sub_101022f0(void);
+ConCommand g_104d3474("+chareditor", sub_101022f0, 0, 0, 0);
+// END FUNCTION
