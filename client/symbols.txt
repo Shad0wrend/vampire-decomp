@@ -1950,6 +1950,7 @@
 0x10127000 func   ?sub_10127000@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@1H@Z sub_10127000
 0x101270e0 func   ?sub_101270e0@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@@Z sub_101270e0
 0x101271e0 func   ?sub_101271e0@@YAXPAH@Z sub_101271e0
+0x10127260 func   ?sub_10127260@@YAHPAHH0@Z sub_10127260
 0x10127320 func   ?sub_10127320@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_10127320
 0x101273b0 func   ?sub_101273b0@@YAXPAUSBoundsList@@ABVVector@@AAV2@2@Z sub_101273b0
 0x101274d0 func   ?sub_101274d0@@YA_NPAUCBoolListView@@@Z sub_101274d0
