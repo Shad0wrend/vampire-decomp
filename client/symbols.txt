@@ -590,6 +590,7 @@
 0x10021e90 func   ??_GC_ItemKClinicStairsKey@@UAEPAXI@Z ??_GC_ItemKClinicStairsKey@@UAEPAXI@Z
 0x10021ed0 func   ?sub_10021ed0@@YAHXZ sub_10021ed0
 0x10021ff0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKClinicStairsKey@@@Z ClientClassInit
+0x10022110 func   ??_GC_ItemKClinicCSKey@@UAEPAXI@Z ??_GC_ItemKClinicCSKey@@UAEPAXI@Z
 0x10022150 func   ?sub_10022150@@YAHXZ sub_10022150
 0x10022270 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKClinicCSKey@@@Z ClientClassInit
 0x100223d0 func   ?sub_100223d0@@YAHXZ sub_100223d0
