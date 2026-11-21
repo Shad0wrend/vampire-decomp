@@ -197,6 +197,7 @@
 0x100cd000 func   ?sub_100cd000@@YAXMPBM0PAM@Z sub_100cd000
 0x100cd330 func   ?sub_100cd330@@YAMABVVector@@MM@Z sub_100cd330
 0x100cdb00 func   ?sub_100cdb00@@YAXPADPBD@Z sub_100cdb00
+0x100cdb60 func   ?sub_100cdb60@@YAXPAII@Z sub_100cdb60
 0x100cdb90 func   ?sub_100cdb90@@YAXPAIPBXH@Z sub_100cdb90
 0x100d05d0 func   ?sub_100d05d0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d05d0
 0x100d1190 func   ?sub_100d1190@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100d1190

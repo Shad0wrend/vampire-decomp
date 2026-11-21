@@ -5457,6 +5457,17 @@ void sub_100cdb00(char *pTable, const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdb60 size=0x26
+extern unsigned int g_10234000[256];
+
+// TARGET: sub_100cdb60
+void sub_100cdb60(unsigned int *pCrc, unsigned int value)
+{
+	unsigned int x = (value & 0xff) ^ *pCrc;
+	*pCrc = g_10234000[x & 0xff] ^ (x >> 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb90 size=0x26c
 extern unsigned int g_10234000[256];
 #define pulCRCTable g_10234000
