@@ -1052,6 +1052,7 @@
 0x1007f300 func   ?sub_1007f300@@YAHXZ sub_1007f300
 0x1007f400 func   ?ClientClassInit@@YAHPAUignored@DT_BaseParticleEntity@@@Z ClientClassInit
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0
+0x1007f710 func   ??1C_BaseViewModel@@UAE@XZ C_BaseViewModel::~C_BaseViewModel
 0x1007f860 func   ?sub_1007f860@CUnknown1007f860@@QAEHH@Z CUnknown1007f860::sub_1007f860
 0x1007f870 func   ?sub_1007f870@CUnknown1007f870@@QAEHXZ CUnknown1007f870::sub_1007f870
 0x1007f960 func   ?sub_1007f960@@YAHXZ sub_1007f960
