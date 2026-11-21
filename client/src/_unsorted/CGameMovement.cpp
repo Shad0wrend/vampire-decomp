@@ -49,3 +49,25 @@ char CGameMovement::vfunc21(void *pTrace)
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ebc00 size=0x8d
+#include "CGameMovement.h"
+#include <math.h>
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+// TARGET: CGameMovement::vfunc6
+float CGameMovement::vfunc6(const QAngle &angles, const Vector &vec, float scale, float threshold)
+{
+	Vector forward, right, up;
+	sub_101090a0(angles, &forward, &right, &up);
+	int sign = -1;
+	float d = right.x * vec.x + right.y * vec.y + right.z * vec.z;
+	if (!(d < 0.0f))
+		sign = 1;
+	float s = (float)sign;
+	float a = fabs(d);
+	if (a < threshold)
+		return s * (a / threshold * scale);
+	return s * scale;
+}
+// END FUNCTION
