@@ -6259,6 +6259,13 @@ int g_104e1b84 = ClientClassInit((DT_Ragdoll::ignored *)0);
 RecvTable g_104e196c;
 // END FUNCTION
 
+// FUNCTION: 0x10126650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Ragdoll_Attached { struct ignored; }
+template <> int ClientClassInit<DT_Ragdoll_Attached::ignored>(DT_Ragdoll_Attached::ignored *);
+int g_104e1968 = ClientClassInit((DT_Ragdoll_Attached::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10126ab0 size=0xa
 #include "ConVar.h"
 ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
