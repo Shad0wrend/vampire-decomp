@@ -981,3 +981,8 @@ ConVar g_104d1768("camseduct_forward_base", "-40.0", 0);
 #include "ConVar.h"
 ConVar g_104d1cb8("camseduct_forward_pow", "0.5", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fbaf0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1a00("camseduct_forward_powm1", "-7.0", 0);
+// END FUNCTION
