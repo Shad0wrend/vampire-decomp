@@ -1976,3 +1976,8 @@ ConVar g_104e14a8("cl_predictweapons", "1", 0, "Perform client side prediction o
 #include "ConVar.h"
 ConVar g_104e1798("cl_lagcompensation", "0", 0, "Perform server side lag compensation of weapon firing events.");
 // END FUNCTION
+
+// FUNCTION: 0x10120b80 size=0xa
+#include "ConVar.h"
+ConVar g_104e1668("cl_showerror", "0", 0, "Show prediction errors, 2 for above plus detailed field deltas.");
+// END FUNCTION
