@@ -2363,6 +2363,13 @@ int g_102e55c4 = ClientClassInit((DT_ItemKMuseumStorageKey::ignored *)0);
 RecvTable g_102e3534;
 // END FUNCTION
 
+// FUNCTION: 0x10023650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKNetcafeOfficeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKNetcafeOfficeKey::ignored>(DT_ItemKNetcafeOfficeKey::ignored *);
+int g_102e3530 = ClientClassInit((DT_ItemKNetcafeOfficeKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10023890 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e7120;
