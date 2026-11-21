@@ -13764,6 +13764,24 @@ char *CUnit101b5290::sub_1012fe70(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fea0 size=0x28
+struct CUnknown101b52d0 {
+    char pad_0000[0x9c];
+    unsigned char *m_pData;
+    int pad_00a0[2];
+    int m_nCount;
+    unsigned char sub_1012fea0(int i);
+};
+
+// TARGET: CUnknown101b52d0::sub_1012fea0
+unsigned char CUnknown101b52d0::sub_1012fea0(int i)
+{
+    if (i >= 0 && i < m_nCount)
+        return m_pData[i * 0x82];
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
