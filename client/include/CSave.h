@@ -64,7 +64,8 @@ public:
 	void *m_pData;	// +0x18
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
-		// walks the chain of descriptions (p->m_pParent at +0xc, parents first) and calls slot 3 with the five dwords of each; stub 0x10008d4b
+	int sub_10129640(int a, int b, struct CSaveDesc *p);	// walks the chain of descriptions (p->m_pParent at +0xc, parents first) and calls slot 3 with the five dwords of each; stub 0x10008d4b
+	int sub_1012ab00(int a, int b, struct CSaveDesc *p);
 		// the jump stub of sub_101a0320, used by its recursive call
 
 		// ORs flags into the entity table entry (0x30 bytes, flags at +0x20); returns the new flags, 0 when out of range

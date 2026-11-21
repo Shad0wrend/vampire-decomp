@@ -81,7 +81,7 @@ public:
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
-		// provisional, like sub_1002cbd0 (transplant)
+	void sub_1012d830();	// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)

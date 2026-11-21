@@ -80,8 +80,8 @@ public:
 
 		// compares the float at the player's +0xb4 with the global time (+0xc of 0x1070b228) minus the player's +0xb8, returns one of two constants (0x104454c0 / 0x104454c4)
 		// movement speed scale: 0.8 * a tuning value chosen by the player's state at +0xc0 (0 for other states)
-		// plays a random "surfaces/wade/step*.wav" footstep sound at the player's origin (+0x70) with a clamped volume
-		// copies the player's +0x24 to +0x28 and the move data's +0x3e0 / +0x3e4 to the player's +0xc8 / +0xcc
+	void sub_100ea590();	// plays a random "surfaces/wade/step*.wav" footstep sound at the player's origin (+0x70) with a clamped volume
+	void sub_100e7e90();	// copies the player's +0x24 to +0x28 and the move data's +0x3e0 / +0x3e4 to the player's +0xc8 / +0xcc
 		// when the move data's +0x2314 is zero, subtracts 0.5 * frame time * (global 0x109ef2d4 value) * (move +0x3ec or 1) from the player's +0x48, then runs sub_10004ebc
 		// like sub_10120f30 without the +0x2314 test: applies the 0.5 * frame time * gravity * scale term to the player's +0x48, then adds the player's +0x54 * frame time to +0x48, clears +0x54 and runs sub_10004ebc
 		// when the move data's +0x2314 is zero: subtracts frame time * gravity * (move +0x3ec or 1) from the player's +0x48, adds the move data's +0x3b8 * frame time, clears the z of the move data's vector at +0x3b0, then runs sub_10004ebc
@@ -89,7 +89,7 @@ public:
 		// "CGameMovement::SetGroundEntity": asks the move data (slot 209) for the old ground entity; going from none to pNewGround subtracts its base velocity (+0x3bc) from the player's velocity (+0x40), going from one to none adds it back (an entity with bit 12 of its flags (+0x268) set is first refreshed by sub_100b1d10); then slot 208(pNewGround)
 	int sub_100ebb50(Vector &in, Vector &normal, Vector &out, float overbounce);	// "CGameMovement::ClipVelocity": blocked flags (1 for a floor normal with z > 0, 2 for a step normal with z == 0); out = in - normal * (in . normal * overbounce), components within +-0.1 are zeroed
 		// "CGameMovement::WaterJump": the water jump time at +0x2314 of the object at +8 is capped at 10000, counted down by frame time * 1000 and ends (cleared, flag 4 removed) when it runs out or the object at +8 has no value at +0x3e0; while it runs the velocity x / y (+0x40 / +0x44 of the object at +4) are set from the object at +8 (+0x2318 / +0x231c)
-		// "CGameMovement::GetPointContentsCached": with the global movement optimisation flag at 0x10572420 set, asks the engine trace object (global 0x1070b254, slot 0) for the contents of the point only when nothing is cached or the point moved more than 1 unit from the cached one, and returns the cached value; without the flag always asks
+	int sub_100ec3a0(const Vector &point);	// "CGameMovement::GetPointContentsCached": with the global movement optimisation flag at 0x10572420 set, asks the engine trace object (global 0x1070b254, slot 0) for the contents of the point only when nothing is cached or the point moved more than 1 unit from the cached one, and returns the cached value; without the flag always asks
 		// "CGameMovement::AirAccelerate": unless the object at +8 is dead (+0x2068) or in a water jump (+0x2314), adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, min(wishspeed, 30.0f) - velocity . wishdir) along wishdir to the velocity (+0x40 of the object at +4) and to the wish velocity (+0x80)
 		// "CGameMovement::TracePlayerBBox"-like (profiled as such): traces the player hull from the player's origin (+0x70) by vecOffset, moves the player's origin to where the trace ended, tells the global at 0x1071a278 (slot 2) about a partial hit that did not start solid (with the player's velocity at +0x40), and returns the trace
 		// stub 0x1000991c: the hull maxs for the player's stance (ducked / observer / standing)

@@ -11,4 +11,5 @@ public:
 	char *m_pElements;
 
 	void sub_10096d80(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements (initial allocation 1)
+	void sub_10096e20(int elem, int num);
 };

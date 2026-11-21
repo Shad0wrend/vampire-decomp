@@ -89,14 +89,15 @@ public:
 	CRestore(void *pData);	// 0x101a12a0
 
 	// Searches the field table starting from the remembered position, wrapping around.
+	CRestoreField *sub_1012a560(const char *name, CRestoreField *fields, int count, int *pStart);
 		// "CRestore::ReadField": dispatches on the field type (0xb..0x13) to the matching read slot, "Bad field type" warning otherwise (stub 0x10001f5a)
-		// dispatches on the field type: <= 10 CSave::sub_101a1520 (basic write), else sub_101a2820 (ReadField)
-		// "CRestore::ShouldReadField" (stub 0x100092cd)
+	void sub_1012a510(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField);	// dispatches on the field type: <= 10 CSave::sub_101a1520 (basic write), else sub_101a2820 (ReadField)
+	char sub_1012a5e0(typedescription_t *pField);	// "CRestore::ShouldReadField" (stub 0x100092cd)
 	void sub_1012a6d0(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_1012ab60(void *pData, int size);	// reads size bytes into pData
 	int sub_1012ab50();	// CUnknown101a1f70::sub_101a1f70 (stub 0x10007df6), the int at the record of +0x18, called directly
 		// the callee of slots 12 / 17 (stub 0x1000fe9d)
-		// the callee of slots 12 / 17 (stub 0x1000910b): the short-read tail
+	void sub_1012abd0(int n);	// the callee of slots 12 / 17 (stub 0x1000910b): the short-read tail
 	char vfunc16();	// slot 16: reads one byte
 	CBaseEntity *sub_1012ae60(int index);	// the entity of the given save index (stub 0x10014a3d)
 	CRestoreSaveEnt *sub_1012aec0(int index);	// the save index record (stub 0x10012ff8)

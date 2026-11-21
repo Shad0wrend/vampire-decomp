@@ -53,9 +53,9 @@ struct StatDefault3
 		// the hands model: +0x70 (bMale 0) / +0x74 (1), stored to *pOut and returned	// like sub_101d4e70 for the array at +0x58
 		// stub 0x1000295a: index of the n-th used slot
 		// stub 0x100054ca
-		// stub 0x10012a12: resets the item before it is loaded from a data node
-		// stub 0x1000a245: fills every unset field (the zero ints, the lists, the flag bytes and floats) from the parent item
+	void sub_1013e3a0();	// stub 0x10012a12: resets the item before it is loaded from a data node
+	void sub_1013e530(StatDefault3 *pParent);	// stub 0x1000a245: fills every unset field (the zero ints, the lists, the flag bytes and floats) from the parent item
 		// stub 0x10005ba5: loads the item from a "ClanData" node (called by Loader::sub_101d56f0)
-		// stub 0x1000a32b: loads the item from a "ClanData" node
+	void sub_1013f180(void *pNode, char *pTable, int *pOut);	// stub 0x1000a32b: loads the item from a "ClanData" node
 		// stub 0x100135a7: applies the clan item to its owner (run by the clan console command)
 };

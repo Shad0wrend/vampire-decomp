@@ -30,7 +30,7 @@ struct CDataNode
 
 struct CEffectTable
 {
-		// the id of the effect record of that name (stub 0x1000ee67)
+	int sub_10157b80(const char *pszName);	// the id of the effect record of that name (stub 0x1000ee67)
 };
 
 struct CUnknown101e98c0Item
@@ -42,7 +42,7 @@ struct CUnknown101e98c0Item
 	CUnknown101e98c0ItemSub m_sub;	// 0x1c
 	char m_genders[1];	// 0x24: the disallowed genders (parsed by sub_101e9710)
 
-		// reads the "General" block of a history item: InternalName, CritterScope, Genders_Disallowed, Effect; always true
+	bool sub_1014df20(CDataNode *pNode);	// reads the "General" block of a history item: InternalName, CritterScope, Genders_Disallowed, Effect; always true
 };
 
 class CUnknown101e98c0

@@ -10,5 +10,5 @@ public:
 
 		// constructor (stub 0x1000238d)
 	void sub_10154b70(int a, CUnknown101f3d80 *pOwner, int b, int c);	// stub 0x1000364d
-		// stub 0x100045f2
+	bool sub_10154c40();	// stub 0x100045f2
 };

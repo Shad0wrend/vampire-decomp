@@ -15,15 +15,15 @@ public:
 #endif
 	~QuestJournal();	// "QuestJournal::~QuestJournal": scope trace around PurgeQuestData, then the two utl-vector destructors (+0x14.. then +0x0..)
 		// "QuestJournal::GetQuestIndex": scope trace, index of the quest record (0x68 bytes each, name pointer first) whose name is a case-insensitive prefix match of the argument's length, or a warning and -1
-		// "QuestJournal::GetQuest": scope trace, record `index` (0x68 bytes each) of the array whose base is m_field[5], or a warning and the base when the index is invalid
-		// "QuestJournal::IsQuestIndexValid": 0 <= index < m_field[8]
+	char *sub_10162f00(int index);	// "QuestJournal::GetQuest": scope trace, record `index` (0x68 bytes each) of the array whose base is m_field[5], or a warning and the base when the index is invalid
+	char sub_10162fa0(int index);	// "QuestJournal::IsQuestIndexValid": 0 <= index < m_field[8]
 		// "QuestJournal::IsCompletionIndexValid": 0 <= index < m_field[3]
 		// "QuestJournal::GetCompletionState": scope trace, GetCompletionState(dword `index` (0 <= index < 20) at +0x14 of quest record `quest`), or a warning and the base when invalid
 		// "QuestJournal::GetCompletionState": scope trace, record `index` (0x18 bytes each) of the array whose base is m_field[0], or a warning and the base when invalid
-		// "QuestJournal::PurgeQuestData": scope trace, clears the flag, frees the strings of every completion (0x18 byte records at m_field[0]) and quest (0x68 byte records at m_field[5]) record, then empties and releases both vectors
+	void sub_10162710();	// "QuestJournal::PurgeQuestData": scope trace, clears the flag, frees the strings of every completion (0x18 byte records at m_field[0]) and quest (0x68 byte records at m_field[5]) record, then empties and releases both vectors
 	void sub_10162840();	// resets every quest record (0x68 bytes each at m_field[5], count m_field[8]): the dword at +0x10 = -1, the dword at +0xc = 0
-		// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0
-		// "QuestJournal::LoadQuestFile": scope trace, loads the script file into a key/value tree ("QuestTable") and hands each of its top level keys to sub_102213c0 (called through the stub at 0x100125b7)
+	void sub_10162650();	// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0
+	void sub_10162870(const char *pszFile, int index);	// "QuestJournal::LoadQuestFile": scope trace, loads the script file into a key/value tree ("QuestTable") and hands each of its top level keys to sub_102213c0 (called through the stub at 0x100125b7)
 		// dumps the quest log to the open log file (stub 0x1000be3d): per area its quests with the completion states of the player; works on the global journal
 		// "QuestJournal::AddCompletion": scope trace, reads one completion record (ID, Description, Event, Type, AwardMoney, AwardXP) from the key and appends it to the completion vector at +0; returns its index, -1 without an ID
 		// "QuestJournal::AddQuest": reads one quest block of the script (stub 0x10010820)

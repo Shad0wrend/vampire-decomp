@@ -73,6 +73,8 @@ public:
 	void sub_1011f170();
 	void sub_1011f260();
 	void Purge();
+	void sub_1012d830();
+	void sub_10135350();
 	void FreeNode(I i);
 
 	I FirstInorder() const;

@@ -22,9 +22,10 @@ public:
 	int sub_10157b30(const char *name);
 	int sub_10157b80(const char *name);
 		// same as sub_101d5d20 (another instance)
-		// purges the list, then loads the "LevelingTemplate" data files (vdata/system) one by one
+	void sub_10140a70();	// purges the list, then loads the "LevelingTemplate" data files (vdata/system) one by one
+	void sub_101499f0();
 		// provisional, like sub_101d6de0 (transplant)
 	void sub_10149980();	// deletes every entry and the pointer array, then clears the count and the first field and sets the flag byte at +0x18
-		// loads the "TraitEffects" data files (vdata/system): counts the TraitEffects_*.txt files with the file system, then loads TraitEffects%03d.txt one by one through sub_101f7e90
-		// loads one trait effect file (called through the stub at 0x100024d7)
+	void sub_10157a20();	// loads the "TraitEffects" data files (vdata/system): counts the TraitEffects_*.txt files with the file system, then loads TraitEffects%03d.txt one by one through sub_101f7e90
+	bool sub_101577a0(const char *pszFile);	// loads one trait effect file (called through the stub at 0x100024d7)
 };

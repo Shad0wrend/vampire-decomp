@@ -66,5 +66,5 @@ public:
 #ifdef PCD_INITIALIZERS	// the initializer unit: CGlobalEntityList g_EntityList's destroy jumps to it
 	~CBaseEntityList();	// function 0x100f9c40
 #endif
-		// destructor body: stores the vtable, releases every live node, then RemoveAll + Purge of both linked lists
+	void sub_100e21f0();	// destructor body: stores the vtable, releases every live node, then RemoveAll + Purge of both linked lists
 };

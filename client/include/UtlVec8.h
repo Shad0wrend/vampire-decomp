@@ -40,7 +40,7 @@ public:
 	void sub_1008e5a0(int num);
 	void sub_10130f00(int num);	// same shape as GrowVector (initial allocation 4)
 		// same shape as GrowVector (initial allocation 4)
-		// copy constructor-like: constructs num elements, then copies them
+	void sub_10130b30(const SElem8 *src, int num);	// copy constructor-like: constructs num elements, then copies them
 	void sub_10055890(int elem, int num);	// provisional, like sub_10032f00 (transplant)
 	void sub_1008e630(int elem, int num);
 	void sub_1009cea0(int elem, int num);

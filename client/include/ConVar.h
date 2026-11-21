@@ -12,7 +12,7 @@ public:
 	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString);	// function 0x10245ac0 (145 callers): base constructor, vftable, then Create(name, default, flags, help, no limits, no callback)
 	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, void (*pCallback)(ConVar *, const char *));	// function 0x10245b80: calls the ConCommandBase constructor (sub_10007f3b), stores the vftable, then Create(name, default, flags, help, no limits, callback)
 	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax);	// function 0x10245b10: base constructor, vftable, then Create(..., min, max, no callback)
-		// the full constructor written as a plain member (the real one stores the vftable after the base constructor call): the ConCommandBase constructor, the vftable, then Create with everything
+	ConVar *sub_100df670(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *));	// the full constructor written as a plain member (the real one stores the vftable after the base constructor call): the ConCommandBase constructor, the vftable, then Create with everything
 	~ConVar();	// "ConVar::~ConVar" (stub 0x100108bb): the atexit destroy of such a static jumps to it
 
 	typedef ConCommandBase *Vfunc0Ret;	// slot 0 returns the base's type (VC6 has no covariant returns)
@@ -47,7 +47,7 @@ public:
 	void (*m_fnChangeCallback)(ConVar *pVar, const char *pOldString);	// 0x0040
 		// as in CDataObjectAccessSystem (transplant)
 		// ConCommandBase destructor body (stub 0x100049d0), called directly
-		// ConCommandBase constructor (stub 0x10007f3b, jumps to 0x102454e0), called directly first by the constructors
+	void sub_100df1c0();	// ConCommandBase constructor (stub 0x10007f3b, jumps to 0x102454e0), called directly first by the constructors
 		// ConCommandBase::Create, called directly (stub 0x1000de4f)
 		// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)
 
@@ -76,5 +76,5 @@ public:
 	// 0x107092bc: CFire damage base (same form)
 	// 0x107093e4: CFire damage per heat (same form)
 	// 0x1070959c: CFire spread rate to neighbouring fires (same form)
-	// 0x109ef2d4: the gravity convar (sv_gravity-like; GetFloat form: vfunc1() ? 0 : m_fValue +0x28): read by 0x1012bae0 (grenade throw velocity) and 9 other functions
+extern ConVar *g_104dfce4;	// 0x109ef2d4: the gravity convar (sv_gravity-like; GetFloat form: vfunc1() ? 0 : m_fValue +0x28): read by 0x1012bae0 (grenade throw velocity) and 9 other functions
 	// 0x1094ab14: the PhysCannon mass-scale convar (vfunc1 = unset, else m_fValue +0x28)

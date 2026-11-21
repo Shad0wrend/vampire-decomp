@@ -21,20 +21,20 @@ struct CVDmgBlock16_t
 	CVDmgBlock16_t(int a, int b);	// calls sub_102042a0(a, b) (0x102053a0, stub 0x10004561)
 		// the constructor's body (stub 0x10004b7e), called directly on a block that is a part of an int array
 		// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
-		// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
+	void sub_10160690(int a, int b);	// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
 	bool sub_101613e0(const CVDmgBlock16_t *pOther);	// whether kind, number and multiplier (not m_c) equal pOther's
 		// a copy of sub_10204360 in another unit
-		// whether the block is empty (stub 0x100051f0)
-		// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
+	bool sub_10160660();	// whether the block is empty (stub 0x100051f0)
+	int sub_10160b40(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
 		// the part of sub_10204900 for a feat block (kind 4), without the null character test: the feat record of the id (m_b) answers for the character; 0 for other kinds or an empty block
-		// the block's name text (stub 0x10001af0)
+	const char *sub_10160740();	// the block's name text (stub 0x10001af0)
 	int sub_10160db0(int value);	// scales value by the multiplier m_d (stub 0x1000c45f): 1 keeps it, a negative multiplier divides (negated), else multiplies
-		// the value of a block without a character (type m_a: 0 the plain number m_b, 1 the default value of the stat info record the number m_b names, 2 the value of the stat owner entry m_b, 3 zero, else -1)
-		// stub 0x10005786: sets the block from a stat info number
+	int sub_10161510();	// the value of a block without a character (type m_a: 0 the plain number m_b, 1 the default value of the stat info record the number m_b names, 2 the value of the stat owner entry m_b, 3 zero, else -1)
+	void sub_101613c0(int *pNumber);	// stub 0x10005786: sets the block from a stat info number
 		// the text form (sub_10204570) then returns this (0x102053d0)
 		// the text form (sub_10310b90) then returns this (0x10310b40)
 		// the text copy into the block (stub 0x1000ae8e, body at 0x10310b90)
-		// stub 0x100045e3: sets the block from its text form: "<name>[ ]/<n>": the name is looked up in the stat lists (kinds 0..3), the feats (4), the reactions (5), the trait strings (8), "ObfuscateCanInc" (9, a function pointer), else a hook (global 0x1074eec4) or the empty block; a "/n" suffix makes the multiplier -n
+	void sub_101608a0(const char *pszText);	// stub 0x100045e3: sets the block from its text form: "<name>[ ]/<n>": the name is looked up in the stat lists (kinds 0..3), the feats (4), the reactions (5), the trait strings (8), "ObfuscateCanInc" (9, a function pointer), else a hook (global 0x1074eec4) or the empty block; a "/n" suffix makes the multiplier -n
 		// stub 0x10009bba: stores the kind and a value (here a function pointer) and sets the multiplier to 1
 		// stub 0x1001067c: constructs the block (the constructor, then the reset), returns this; the construction the stat owner code of the 0x10230xxx unit uses
 		// stub 0x10014790: copies the first two dwords (kind and number) of pOther, returns this

@@ -78,6 +78,8 @@ public:
 	void sub_10132d30(int num = 1);
 	void EnsureCapacity(int num);
 	void Purge();
+	void sub_1012d830();
+	void sub_10135350();
 
 	bool IsExternallyAllocated() const;
 	void SetGrowSize(int size);

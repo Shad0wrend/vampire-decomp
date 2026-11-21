@@ -23,5 +23,5 @@ public:
 
 	CUnknown101f40f0 *sub_10155380();	// constructor (stub 0x1001097e)
 	void sub_101553d0(CUnknown101f5150 *pOwner, const char *pszName);	// stub 0x1000364d
-		// allocates the dword array, builds the "<parent name> <name>" text and hands it to the inner record (sub_101f3690, then sub_101f37a0)
+	void sub_10155400();	// allocates the dword array, builds the "<parent name> <name>" text and hands it to the inner record (sub_101f3690, then sub_101f37a0)
 };

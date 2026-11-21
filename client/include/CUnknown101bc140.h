@@ -7,7 +7,7 @@ class CBaseEntity;
 
 struct CCopyRecipientFilter_101bc140	// the recipient filter object embedded at +0x44
 {
-		// the constructor (stub 0x100124a9)
+	void sub_101347f0();	// the constructor (stub 0x100124a9)
 };
 
 class CUnknown101bc140
@@ -37,7 +37,7 @@ public:
 	CUtlVector<int> m_Recipients;	// 0x4c: entity indices of the filter's recipients (memory +0x4c, alloc +0x50, grow +0x54, size +0x58, elements +0x5c); sub_101bb990 AddToTail()s each non-negative filter slot 3(i), i < slot 2()
 
 		// "CSoundPatch::Update": the sound expires (sub_101bbd10, false) once its time at +0x24 has passed; a sound whose entity is gone is removed with a warning (false); else steps its two envelopes (+0x00 volume, +0x10 pitch) by flDelta and, when one of them is active and the sound is playing (bit 0 of +0x48), emits it through the engine; true
-		// sets m_fl24 to the engine's slot 9 value plus flValue (after sub_100139e4(0, flValue))
+	void sub_101339c0(float flValue);	// sets m_fl24 to the engine's slot 9 value plus flValue (after sub_100139e4(0, flValue))
 		// m_flPitchScale * m_flScale (stub 0x10007851)
 	void sub_10133980(float flTarget, float flTime);	// "CSoundPatch::ChangeVolume" (stub 0x100139e4, called first by sub_101bbc70 with (0, duration)): sets bit 0 of m_n38, clamps flTarget to 1.0 and hands it to the CFloatUnit at +0x10 (the volume envelope, see m_flPitchScale; the unit at +0x00 is the pitch) as its target over flTime (CFloatUnit::sub_101bb650, tail call)
 		// when the sound is set up and playing (bit 0 of the flags) emits it through the engine sound object (sub_101b14d0) from its entity
