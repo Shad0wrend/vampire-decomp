@@ -6999,6 +6999,16 @@ int bf_readX::sub_100886e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088750 size=0x8
+namespace lifted {
+int __stdcall sub_10087f50(int);
+}
+int sub_10088750()
+{
+    return lifted::sub_10087f50(0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088880 size=0x2f
 // TARGET: bf_read::sub_10088880
 #include "bf_read.h"
