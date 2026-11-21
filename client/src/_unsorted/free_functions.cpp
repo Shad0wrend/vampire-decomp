@@ -19070,6 +19070,29 @@ const char *__fastcall sub_101501f0(void *pThis, int dummy, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101503a0 size=0x9c
+#include "CUnknown101ec6f0.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+void sub_1015fbb0(char *text);
+extern char g_102de300[];
+
+void CUnknown101ec6f0::sub_101503a0()
+{
+	char buf[128];
+	sprintf(buf, "(%d): %s\n", m_index, m_name ? m_name : g_102de300);
+	sub_1015fbb0(buf);
+	sprintf(buf, "\t\tMoney: %d\n", m_money);
+	sub_1015fbb0(buf);
+	for (int i = 0; i < m_itemCount; i++)
+	{
+		const char **p = &m_items[i];
+		sprintf(buf, "\t\t(%d): %s\n", i, *p ? *p : g_102de300);
+		sub_1015fbb0(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
