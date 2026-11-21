@@ -246,6 +246,7 @@
 0x100ccb30 func   ?sub_100ccb30@CMem16_t@@QAEXH@Z CMem16_t::sub_100ccb30
 0x100cd000 func   ?sub_100cd000@@YAXMPBM0PAM@Z sub_100cd000
 0x100cd330 func   ?sub_100cd330@@YAMABVVector@@MM@Z sub_100cd330
+0x100cd530 func   ?sub_100cd530@@YAXXZ sub_100cd530
 0x100cdb00 func   ?sub_100cdb00@@YAXPADPBD@Z sub_100cdb00
 0x100cdb60 func   ?sub_100cdb60@@YAXPAII@Z sub_100cdb60
 0x100cdb90 func   ?sub_100cdb90@@YAXPAIPBXH@Z sub_100cdb90

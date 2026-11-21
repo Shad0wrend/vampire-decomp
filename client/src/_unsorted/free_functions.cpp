@@ -6174,6 +6174,12 @@ float sub_100cd330(const Vector &position, float minz, float maxz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd530 size=0x1
+void sub_100cd530()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb00 size=0x36
 #include <string.h>
 
