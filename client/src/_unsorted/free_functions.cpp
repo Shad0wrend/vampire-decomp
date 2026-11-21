@@ -1125,6 +1125,14 @@ void CUtlVector16::sub_10050100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100509a0 size=0x4
+struct CUnknown100509a0 { char sub_100509a0(); };
+char CUnknown100509a0::sub_100509a0()
+{
+    return *(char *)((char *)this + 0x34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051b20 size=0x3
 void __stdcall sub_10051b20(int a0)
 {
