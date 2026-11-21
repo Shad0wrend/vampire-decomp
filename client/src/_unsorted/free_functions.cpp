@@ -12675,6 +12675,17 @@ int sub_100d58f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5d30 size=0xb
+namespace lifted {
+struct C100d5140 { int sub_100d5140(); };
+}
+struct CUnknown100d5d30 { int sub_100d5d30(int); };
+int CUnknown100d5d30::sub_100d5d30(int a0)
+{
+    return ((lifted::C100d5140 *)(this + 0x48))->sub_100d5140();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8260 size=0x7
 namespace lifted {
 extern char g_10227c5c;
