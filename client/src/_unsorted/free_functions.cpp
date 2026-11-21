@@ -34898,6 +34898,39 @@ int sub_10135da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135ed0 size=0x15a
+#include "RecvTable.h"
+extern RecvTable g_105e5d5c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropEHandle(char *, int, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Sprite { struct ignored; }
+template <> int ClientClassInit<DT_Sprite::ignored>(DT_Sprite::ignored *)
+{
+	char *pRecvTableName = "DT_Sprite";
+	RecvTable &RecvTable = g_105e5d5c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropEHandle("m_hAttachedToEntity", 1064, 4),
+		RecvPropInt("m_nAttachment", 1068, 4, 0, 0),
+		RecvPropFloat("m_flScaleTime", 1096, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flSpriteScale", 1092, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flSpriteFramerate", 1072, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flFrame", 1076, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flBrightnessTime", 1088, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nBrightness", 1084, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136580 size=0x17
 struct CUnknown10136580 { int sub_10136580(int, int); };
 int CUnknown10136580::sub_10136580(int a0, int a1)
