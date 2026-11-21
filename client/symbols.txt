@@ -3483,6 +3483,7 @@
 0x101e2b1b func   __i64toa _i64toa
 0x101e2bd2 func   __ui64toa _ui64toa
 0x101e3118 data   ?DevMsg@@YAXHPBDZZ DevMsg
+0x101e3118 data   DevMsg DevMsg
 0x101e311c data   ?DevMsg@@YAXPBDZZ DevMsg
 0x101e3140 data   ?DevWarning@@YAXPBDZZ DevWarning
 0x101e319c data   __imp_?CommandLine@@YAPAUICommandLine@@XZ _imp_?CommandLine
