@@ -47,6 +47,13 @@ int g_102de690 = ClientClassInit((DT_HL2_Player::ignored *)0);
 RecvTable g_102de784;
 // END FUNCTION
 
+// FUNCTION: 0x10002cc0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Corpse { struct ignored; }
+template <> int ClientClassInit<DT_Corpse::ignored>(DT_Corpse::ignored *);
+int g_102de780 = ClientClassInit((DT_Corpse::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10002e80 size=0xa
 #include "RecvTable.h"
 RecvTable g_102de840;
