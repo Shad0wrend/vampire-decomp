@@ -2384,3 +2384,8 @@ ConVar g_105fba08("modelpanel_light_y", "30", 0, "Blah");
 #include "ConVar.h"
 ConVar g_105fba50("modelpanel_light_z", "60", 0, "Blah");
 // END FUNCTION
+
+// FUNCTION: 0x1018b520 size=0xa
+#include "ConVar.h"
+ConVar g_105fb930("modelpanel_light_ang1", "1", 0, "Blah");
+// END FUNCTION
