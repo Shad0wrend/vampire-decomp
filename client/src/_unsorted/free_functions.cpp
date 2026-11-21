@@ -5946,6 +5946,12 @@ void SInit::sub_100a5420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9be0 size=0x3
+void __stdcall sub_100a9be0(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa490 size=0x1
 void sub_100aa490()
 {
