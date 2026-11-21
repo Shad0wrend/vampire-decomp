@@ -35633,6 +35633,15 @@ void CUtlRBTreeBig::sub_101a7290(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8c60 size=0x9
+struct CUnknown101a8c60 { void * sub_101a8c60(); };
+void * CUnknown101a8c60::sub_101a8c60()
+{
+    *(int *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8c90 size=0x1
 void sub_101a8c90()
 {
