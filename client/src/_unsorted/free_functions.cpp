@@ -53067,6 +53067,56 @@ bool CUnknown101f3d80::sub_10154c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154df0 size=0xe9
+#include "CUnknown101f39d0.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" __declspec(dllimport) void Q_FixSlashes(char *, char);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CNodeV { int sub_10154df0(const char *pszPath); };
+extern char g_105eb340[];
+extern char g_105f8970[];
+extern char g_105eb4c0[];
+extern char g_102de300[];
+
+int CUnknown101f39d0::sub_10154df0(const char *pszPath)
+{
+	char *pRest;
+	int len = 0;
+	Q_strncpy(g_105eb340, pszPath, 0x104);
+	Q_FixSlashes(g_105eb340, '\\');
+	char *pSlash = strchr(g_105eb340, '\\');
+	if (pSlash == 0) {
+		pRest = g_105eb340;
+		pszPath = pRest;
+	} else {
+		pRest = g_105eb340;
+		len = pSlash - g_105eb340 + 1;
+		pszPath = g_105f8970;
+		Q_strncpy(g_105f8970, g_105eb340, len);
+	}
+	if (*pszPath != 0) {
+		const char *pName = m_pszName;
+		if (pName == 0)
+			pName = g_102de300;
+		if (_strcmpi(pName, pszPath) == 0) {
+			if (pSlash == 0)
+				return m_nId;
+			pRest = g_105eb4c0;
+			strcpy(pRest, g_105eb340 + len);
+		}
+		for (int i = 0; i < m_nChildren; i++) {
+			int r = ((CNodeV *)m_ppChildren[i])->sub_10154df0(pRest);
+			if (r != -1)
+				return r;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154f60 size=0x102
 #include "CVSoundFileFolder_t.h"
 #include <string.h>
