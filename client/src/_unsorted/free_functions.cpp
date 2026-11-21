@@ -16276,6 +16276,14 @@ const char *CSoundEmitterSystemBase::sub_1012e530(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e570 size=0x4
+struct CUnknown1012e570 { int sub_1012e570(); };
+int CUnknown1012e570::sub_1012e570()
+{
+    return *(int *)((char *)this + 0x64);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e940 size=0x28
 #include "CUnknown101b3730.h"
 // TARGET: CUnknown101b3730::sub_1012e940
