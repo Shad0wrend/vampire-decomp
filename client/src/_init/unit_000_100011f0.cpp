@@ -157,3 +157,8 @@ ConVar g_103ee050("ic_bg_x", "886", 0);
 #include "ConVar.h"
 ConVar g_103ee008("ic_bg_y", "20", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10052450 size=0xa
+#include "ConVar.h"
+ConVar g_103edf30("ic_yaw", "0", 0);
+// END FUNCTION
