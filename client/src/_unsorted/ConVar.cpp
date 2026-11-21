@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df730 size=0x6e
+#include "ConVar.h"
+extern "C" double atof(const char *);
+extern int (*g_101e3190)(char *, int, const char *, ...);
+
+void ConVar::vfunc7(const char *value)
+{
+    float fNewValue = (float)atof(value);
+    char tempVal[32];
+    if (vfunc10(&fNewValue)) {
+        g_101e3190(tempVal, 32, "%f", fNewValue);
+        value = tempVal;
+    }
+    m_fValue = fNewValue;
+    m_nValue = (int)m_fValue;
+    vfunc11(value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df7a0 size=0xad
 #include "ConVar.h"
 
