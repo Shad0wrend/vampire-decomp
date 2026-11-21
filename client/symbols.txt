@@ -231,6 +231,7 @@
 0x10014a50 func   ?sub_10014a50@@YAHXZ sub_10014a50
 0x10014b70 func   ?ClientClassInit@@YAHPAUignored@DT_BloodPack@@@Z ClientClassInit
 0x10014cd0 func   ?sub_10014cd0@@YAHXZ sub_10014cd0
+0x10014df0 func   ?ClientClassInit@@YAHPAUignored@DT_BlueBloodPack@@@Z ClientClassInit
 0x10014f50 func   ?sub_10014f50@@YAHXZ sub_10014f50
 0x100151d0 func   ?sub_100151d0@@YAHXZ sub_100151d0
 0x10015450 func   ?sub_10015450@@YAHXZ sub_10015450
