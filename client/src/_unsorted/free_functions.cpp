@@ -33327,6 +33327,19 @@ void CVTraitEffectGroup_t::sub_10157280(void *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157360 size=0x13
+struct CUnknown10157360 { void * sub_10157360(); };
+void * CUnknown10157360::sub_10157360()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157380 size=0x5
 namespace lifted {
 int sub_10157480();
