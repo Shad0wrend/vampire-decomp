@@ -35782,6 +35782,16 @@ int CUnknown10204c60::sub_10160de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101613c0 size=0x13
+struct CUnknown101613c0 { void * sub_101613c0(int); };
+void * CUnknown101613c0::sub_101613c0(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101613e0 size=0x30
 #include "CVDmg_t.h"
 
