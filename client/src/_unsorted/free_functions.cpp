@@ -8202,6 +8202,50 @@ void sub_101080e0(const float *in1, const float in2[3][4], float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108140 size=0x8d
+// TARGET: sub_10108140
+#include "Vector.h"
+
+void __cdecl sub_10108140(const Vector *v, const float *m, Vector *out)
+{
+    __asm
+    {
+        mov eax, dword ptr [esp+4]
+        mov ecx, dword ptr [esp+8]
+        mov edx, dword ptr [esp+0xc]
+        movss xmm0, dword ptr [eax]
+        mulss xmm0, dword ptr [ecx]
+        movss xmm1, dword ptr [eax+4]
+        mulss xmm1, dword ptr [ecx+4]
+        movss xmm2, dword ptr [eax+8]
+        mulss xmm2, dword ptr [ecx+8]
+        addss xmm0, xmm1
+        addss xmm0, xmm2
+        movss dword ptr [edx], xmm0
+        add ecx, 0x10
+        movss xmm0, dword ptr [eax]
+        mulss xmm0, dword ptr [ecx]
+        movss xmm1, dword ptr [eax+4]
+        mulss xmm1, dword ptr [ecx+4]
+        movss xmm2, dword ptr [eax+8]
+        mulss xmm2, dword ptr [ecx+8]
+        addss xmm0, xmm1
+        addss xmm0, xmm2
+        movss dword ptr [edx+4], xmm0
+        add ecx, 0x10
+        movss xmm0, dword ptr [eax]
+        mulss xmm0, dword ptr [ecx]
+        movss xmm1, dword ptr [eax+4]
+        mulss xmm1, dword ptr [ecx+4]
+        movss xmm2, dword ptr [eax+8]
+        mulss xmm2, dword ptr [ecx+8]
+        addss xmm0, xmm1
+        addss xmm0, xmm2
+        movss dword ptr [edx+8], xmm0
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108450 size=0xb2
 #include "matrix3x4_t.h"
 
