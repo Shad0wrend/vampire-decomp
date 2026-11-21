@@ -1715,6 +1715,13 @@ int g_102e2240 = ClientClassInit((DT_ItemGVampyrApocrypha::ignored *)0);
 RecvTable g_102e3344;
 // END FUNCTION
 
+// FUNCTION: 0x1001af50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGPishaFetish { struct ignored; }
+template <> int ClientClassInit<DT_ItemGPishaFetish::ignored>(DT_ItemGPishaFetish::ignored *);
+int g_102e3340 = ClientClassInit((DT_ItemGPishaFetish::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001b190 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1020;
