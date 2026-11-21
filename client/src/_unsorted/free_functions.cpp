@@ -4093,6 +4093,22 @@ int sub_1008c1f0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c270 size=0x58
+void sub_1008c060(int a, int b, int c, float **ppOut, float *pWeights);
+float sub_1008c270(int a, int b, int c)
+{
+	float *ptrs[4];
+	float weights[4];
+	sub_1008c060(a, b, c, ptrs, weights);
+	float sum = 0.0f;
+	for (int i = 0; i < 4; i++) {
+		if (weights[i] > 0.0f)
+			sum += ptrs[i][1] * weights[i];
+	}
+	return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008c530 size=0x96
 #include "Vector.h"
 struct mstudiomovement_t
