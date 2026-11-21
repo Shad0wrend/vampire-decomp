@@ -24978,6 +24978,16 @@ char *CUnknown101d9840::sub_10146270(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146300 size=0x6
+namespace lifted {
+extern char g_105e809c;
+}
+int sub_10146300()
+{
+    return (int)&lifted::g_105e809c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101465b0 size=0x19
 struct CUnknown101da880 { void * sub_101465b0(); };
 void * CUnknown101da880::sub_101465b0()
