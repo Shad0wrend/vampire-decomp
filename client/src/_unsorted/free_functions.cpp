@@ -1395,6 +1395,21 @@ int sub_10079a90(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079b70 size=0x6e
+int sub_100797e0(int, int, char *, char *, int, int, int, int);
+int sub_10079a40(int, char *, char *);
+
+int sub_10079b70(int a, int b, int c, int d, int e)
+{
+	char x[0x2000];
+	char y[0x2000];
+	if (a == 0)
+		return 0;
+	int r = sub_100797e0(a, b, x, y, 0, c, d, e);
+	return sub_10079a40(r, x, y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079cf0 size=0x40
 int sub_10079d30(int a, int b);
 int sub_10079c20(int a, int b);
