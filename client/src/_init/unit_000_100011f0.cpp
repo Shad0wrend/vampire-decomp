@@ -2117,3 +2117,8 @@ ConVar g_105faa80("scr_centertime", "2", 0);
 #include "ConVar.h"
 ConVar g_105fab38("cl_showfps", "0", 0, "Draw fps meter at top of screen");
 // END FUNCTION
+
+// FUNCTION: 0x10165e90 size=0xa
+#include "ConVar.h"
+ConVar g_105fab88("cl_showpos", "0", 0, "Draw current position at top of screen");
+// END FUNCTION
