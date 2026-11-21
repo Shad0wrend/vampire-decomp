@@ -10,3 +10,8 @@ ConVar g_102de308("camera_fov", "-1", 0);
 #include "ConVar.h"
 ConVar g_102e32e0("torchlight_minradius", "190", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10027110 size=0xa
+#include "ConVar.h"
+ConVar g_102e0ed0("torchlight_maxradius", "240", 0);
+// END FUNCTION
