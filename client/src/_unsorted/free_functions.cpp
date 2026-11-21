@@ -23640,6 +23640,12 @@ void __stdcall sub_10156030(int a0, int a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156040 size=0x3
+void __stdcall sub_10156040(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101560f0 size=0x27
 void __fastcall sub_101560f0(void **pThis)
 {
