@@ -14523,6 +14523,49 @@ void CUnknown101bc750::sub_10134200(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101345d0 size=0xa3
+#include "CUnknown101bcc40.h"
+struct ISaveSlots {
+	virtual void v0();
+	virtual void v1();
+	virtual void Write(const void *p, const char *name);
+	virtual void v3();
+	virtual void StartBlock();
+	virtual void v5();
+	virtual void EndBlock();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void WriteInts(int *p, int n);
+};
+extern char g_102c50d4[], g_102c532c[];
+
+void CUnknown101bcc40::sub_101345d0(int id, void *pSave)
+{
+	ISaveSlots *save = (ISaveSlots *)pSave;
+	save->StartBlock();
+	save->Write((void *)id, g_102c50d4);
+	save->EndBlock();
+	int count = 0;
+	int i = m_count;
+	while (--i >= 0) {
+		if (*m_items[i] == id)
+			count++;
+	}
+	save->StartBlock();
+	save->WriteInts(&count, 1);
+	for (i = m_count - 1; i >= 0; i--) {
+		int *rec = m_items[i];
+		if (*rec == id) {
+			save->StartBlock();
+			save->Write(rec, g_102c532c);
+			save->EndBlock();
+		}
+	}
+	save->EndBlock();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101347f0 size=0x2a
 namespace lifted {
 extern char g_102366ac;
