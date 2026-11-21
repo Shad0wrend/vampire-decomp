@@ -6765,6 +6765,109 @@ float sub_100db420(const Vector &a, const Vector &b, int i, float c, float d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db470 size=0x273
+#include "CGameTrace.h"
+#include "Vector.h"
+extern Vector g_104d4970;
+void sub_100da050(const Vector &vecStart, const Vector &vecDelta, CGameTrace *pTrace);
+void sub_10108fd0(const float *start, float scale, const Vector &dir, float *dest);
+
+bool sub_100db470(const Vector &vecRayStart, const Vector &vecRayDelta, const Vector &boxMins, const Vector &boxMaxs, float flTolerance, CGameTrace *pTrace)
+{
+	int i;
+	float d1, d2;
+	float f;
+
+	int hitside = -1;
+	float enterfrac = -1.0f;
+	float leavefrac = 1.0f;
+
+	sub_100da050(vecRayStart, vecRayDelta, pTrace);
+	pTrace->m_startsolid = true;
+
+	for (i = 0; i < 6; ++i)
+	{
+		if (i >= 3)
+		{
+			d1 = pTrace->m_startpos[i - 3] - boxMaxs[i - 3];
+			d2 = pTrace->m_endpos[i - 3] - boxMaxs[i - 3];
+		}
+		else
+		{
+			d1 = -pTrace->m_startpos[i] + boxMins[i];
+			d2 = -pTrace->m_endpos[i] + boxMins[i];
+		}
+
+		if (d1 > 0 && d2 > 0)
+		{
+			pTrace->m_startsolid = false;
+			return false;
+		}
+
+		if (d1 <= 0 && d2 <= 0)
+			continue;
+
+		if (d1 > 0)
+			pTrace->m_startsolid = false;
+
+		if (d1 > d2)
+		{
+			f = d1 - flTolerance;
+			if (f < 0)
+				f = 0;
+			f = f / (d1 - d2);
+			if (f > enterfrac)
+			{
+				enterfrac = f;
+				hitside = i;
+			}
+		}
+		else
+		{
+			f = (d1 + flTolerance) / (d1 - d2);
+			if (f < leavefrac)
+				leavefrac = f;
+		}
+	}
+
+	if (enterfrac < leavefrac && enterfrac >= 0.0f)
+	{
+		pTrace->m_fraction = enterfrac;
+		sub_10108fd0(pTrace->m_startpos, enterfrac, vecRayDelta, pTrace->m_endpos);
+		pTrace->m_contents = 1;
+		*(Vector *)pTrace->m_planeNormal = g_104d4970;
+		if (hitside >= 3)
+		{
+			hitside -= 3;
+			pTrace->m_planeDist = boxMaxs[hitside];
+			pTrace->m_planeNormal[hitside] = 1.0f;
+			pTrace->m_planeType = hitside;
+		}
+		else
+		{
+			pTrace->m_planeDist = -boxMins[hitside];
+			pTrace->m_planeNormal[hitside] = -1.0f;
+			pTrace->m_planeType = hitside;
+		}
+		return true;
+	}
+
+	if (pTrace->m_startsolid)
+	{
+		pTrace->m_allsolid = (leavefrac <= 0.0f) || (leavefrac >= 1.0f);
+		pTrace->m_fraction = 0;
+		*(Vector *)pTrace->m_endpos = *(Vector *)pTrace->m_startpos;
+		pTrace->m_contents = 1;
+		pTrace->m_planeDist = (*(Vector *)pTrace->m_startpos)[0];
+		((Vector *)pTrace->m_planeNormal)->Init(1.0f, 0.0f, 0.0f);
+		pTrace->m_planeType = 0;
+		return true;
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd3a0 size=0xb7
 #include "Vector.h"
 struct S2D { float x, y; };
