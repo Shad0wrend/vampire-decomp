@@ -52860,6 +52860,26 @@ int CUnknown101544d0::sub_101544d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154540 size=0x49
+#include "VKeyValues.h"
+#include <string.h>
+
+VKeyValues *VKeyValues::sub_10154540(const char *pszName)
+{
+	VKeyValues *p;
+	for (p = m_pChild1c; p; p = p->m_pNext18) {
+		if (!_strcmpi(p->NameOf()->vfunc0(), pszName))
+			return p;
+	}
+	if (m_pParent20) {
+		VKeyValues *pFound = m_pParent20->sub_10154540(pszName);
+		if (pFound)
+			return pFound;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154590 size=0x25
 extern int g_102ca678[];
 extern int g_102ca694[];
