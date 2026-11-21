@@ -4222,6 +4222,17 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b0a0 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown1004b0a0 { void sub_1004b0a0(); };
+void CUnknown1004b0a0::sub_1004b0a0()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b220 size=0x4b
 #include "Vector.h"
 #include <math.h>
