@@ -52389,6 +52389,67 @@ bool CUnknown101f5150::sub_10155cc0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155d50 size=0x129
+#include "CUnknown101f40f0.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown101f5d60.h"
+#include <stdio.h>
+typedef void (__cdecl *FnDevWarning)(int, const char *, ...);
+extern FnDevWarning g_101e3120;
+extern int g_104a580c;
+void *sub_101545c0(const char *pszName, int pathID);
+char __fastcall sub_10155400(CUnknown101f40f0 *pChild);
+
+struct SSchemeStream {
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+
+struct SSchemeFile {
+	char m_pad0000[4];
+	int *m_pVbTable;	// 0x04
+	SSchemeStream *Stream() { return (SSchemeStream *)((char *)this + 4 + m_pVbTable[1]); }
+};
+
+// TARGET: CUnknown101f5d60::sub_10155d50
+bool CUnknown101f5d60::sub_10155d50()
+{
+	char szFile[128];
+	bool bOk = true;
+	if (m_pRecords) {
+		for (int i = 0; i < m_nCount; i++) {
+			CUnknown101f4c80 *pRecord = m_pRecords[i];
+			if (pRecord)
+				delete pRecord;
+			m_pRecords[i] = 0;
+		}
+		delete m_pRecords;
+		m_pRecords = 0;
+	}
+	m_nNextId = 0;
+	m_nCount = 0;
+	m_nAlloc = 0;
+	sprintf(szFile, "%s%s.txt", "vdata\\system\\", ((CUnknown101f4c80Str *)&m_pszUnk24)->Get());
+	SSchemeFile *pKV = (SSchemeFile *)sub_101545c0(szFile, g_104a580c);
+	if (pKV) {
+		if (!sub_10155e80(pKV)) {
+			g_101e3120(1, "ERROR: Unable to open data file for: %s\n", szFile);
+			bOk = false;
+		}
+		pKV->Stream()->vfunc1();
+	} else {
+		g_101e3120(1, "ERROR: Unable to load data for: %s\n", szFile);
+	}
+	if (bOk) {
+		for (int j = 0; j < m_nChildren; j++) {
+			if (!sub_10155400(m_ppChildren[j]))
+				bOk = false;
+		}
+	}
+	return bOk;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155e80 size=0x198
 #include "CUnknown101f5d60.h"
 #include "CUnknown101f4c80.h"
