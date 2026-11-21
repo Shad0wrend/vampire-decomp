@@ -10858,6 +10858,16 @@ void CUnknown100bde50::sub_100bde50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be030 size=0x8
+namespace lifted {
+int sub_100bdeb0();
+}
+int __stdcall sub_100be030(int a0)
+{
+    return lifted::sub_100bdeb0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be0c0 size=0x5
 struct CUnknown100be0c0 { void sub_100be0c0(); };
 void CUnknown100be0c0::sub_100be0c0()
