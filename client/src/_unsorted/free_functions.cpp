@@ -1708,6 +1708,20 @@ unsigned char __fastcall sub_1007cdc0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d930 size=0x1a
+char *sub_1007b160();
+
+// TARGET: sub_1007d930
+char sub_1007d930()
+{
+	int v = *(int *)(sub_1007b160() + 0x24d0);
+	if (v >= 0 && v <= 2) {
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
