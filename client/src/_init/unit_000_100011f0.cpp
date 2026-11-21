@@ -2883,3 +2883,8 @@ ConVar g_10619810("cl_overlay_bloodshield_blur", "0.002", 0);
 #include "ConVar.h"
 ConVar g_10618e60("cl_cinebar_fuzz", "0.1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101a02b0 size=0xa
+#include "ConVar.h"
+ConVar g_106195c0("cl_cinebar_time", "0.5", 0);
+// END FUNCTION
