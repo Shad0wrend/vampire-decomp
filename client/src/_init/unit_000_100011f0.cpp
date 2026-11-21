@@ -3699,6 +3699,13 @@ int g_104863f4 = ClientClassInit((DT_BaseCombatWeapon::ignored *)0);
 RecvTable g_104865bc;
 // END FUNCTION
 
+// FUNCTION: 0x1007e310 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseGrenade { struct ignored; }
+template <> int ClientClassInit<DT_BaseGrenade::ignored>(DT_BaseGrenade::ignored *);
+int g_104865b8 = ClientClassInit((DT_BaseGrenade::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1007f3a0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104867b4;
