@@ -959,6 +959,7 @@
 0x101a2930 func   ?sub_101a2930@@YAXABVVMatrix@@ABVVector@@AAV2@@Z sub_101a2930
 0x101a29b0 func   ?sub_101a29b0@@YAXABVVMatrix@@ABVVector4D@@AAV2@@Z sub_101a29b0
 0x101a2a80 func   ?sub_101a2a80@@YAXABVVMatrix@@ABVVector@@AAV2@@Z sub_101a2a80
+0x101a2b60 func   ?sub_101a2b60@@YAXAAVVMatrix@@ABVVector@@M@Z sub_101a2b60
 0x101a2e30 func   ?sub_101a2e30@@YAXAAVVMatrix@@M@Z sub_101a2e30
 0x101a3900 func   ?sub_101a3900@@YAXPAVCUnknown10258b00@@@Z sub_101a3900
 0x101a3de0 func   ?sub_101a3de0@@YA_NPAUSKeyValues@@PADPBD@Z sub_101a3de0

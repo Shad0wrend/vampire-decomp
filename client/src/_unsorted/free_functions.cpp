@@ -24278,6 +24278,42 @@ void sub_101a2a80(const VMatrix &src1, const Vector &src2, Vector &dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2b60 size=0x112
+#include <math.h>
+#include "Vector.h"
+#include "VMatrix.h"
+
+void sub_101a2b60(VMatrix &dst, const Vector &v, float angleDegrees)
+{
+	float radians = angleDegrees * (3.14159265358979323846 / 180.0);
+	float fSin = (float)sin(radians);
+	float fCos = (float)cos(radians);
+	float axisXSquared = v[0] * v[0];
+	float axisYSquared = v[1] * v[1];
+	float axisZSquared = v[2] * v[2];
+
+	dst[0][0] = axisXSquared + (1 - axisXSquared) * fCos;
+	dst[1][0] = v[0] * v[1] * (1 - fCos) + v[2] * fSin;
+	dst[2][0] = v[2] * v[0] * (1 - fCos) - v[1] * fSin;
+	dst[3][0] = 0;
+
+	dst[0][1] = v[0] * v[1] * (1 - fCos) - v[2] * fSin;
+	dst[1][1] = axisYSquared + (1 - axisYSquared) * fCos;
+	dst[2][1] = v[1] * v[2] * (1 - fCos) + v[0] * fSin;
+	dst[3][1] = 0;
+
+	dst[0][2] = v[2] * v[0] * (1 - fCos) + v[1] * fSin;
+	dst[1][2] = v[1] * v[2] * (1 - fCos) - v[0] * fSin;
+	dst[2][2] = axisZSquared + (1 - axisZSquared) * fCos;
+	dst[3][2] = 0;
+
+	dst[0][3] = 0;
+	dst[1][3] = 0;
+	dst[2][3] = 0;
+	dst[3][3] = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2e30 size=0x59
 #include "VMatrix.h"
 #include <math.h>
