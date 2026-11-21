@@ -12249,6 +12249,60 @@ void *sub_10127df0(int *p, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127e20 size=0xf6
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+class IFileSys
+{
+public:
+	virtual int vfunc0(const char *pszName, const char *pszMode, int nPath);	// opens a file, 0 when it is missing
+	virtual void vfunc1(int hFile);	// closes it
+	virtual int vfunc2(void *pBuffer, int nBytes, int hFile);	// reads from it
+	virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5();
+	virtual int vfunc6(int hFile);	// the size of the file
+};
+
+void sub_100cdb40(int *pCRC);	// CRC32 init
+void sub_100cdb50(unsigned int *pCRC);	// CRC32 final
+void sub_100cdb90(unsigned int *pCRC, const char *pBuffer, int nLength);	// CRC32 process (stub 0x100143b7)
+
+extern int g_105e5438;	// the number of cached files (the cache memory ends right before it)
+extern unsigned int g_104e1bf8[];	// their name hashes
+extern char *g_104e2c38[];	// their contents
+extern int g_102c3330;	// bytes left in the cache memory
+extern char g_102b6618[];	// the file open mode
+
+char *sub_10127e20(const char *pszName, IFileSys *pFileSys)
+{
+	unsigned int nHash;
+	sub_100cdb40((int *)&nHash);
+	sub_100cdb90(&nHash, pszName, strlen(pszName));
+	sub_100cdb50(&nHash);
+	for (int i = 0; i < g_105e5438; i++) {
+		if (nHash == g_104e1bf8[i])
+			return g_104e2c38[i];
+	}
+	int hFile = pFileSys->vfunc0(pszName, g_102b6618, 0);
+	if (hFile) {
+		int nSize = pFileSys->vfunc6(hFile) + 1;
+		if (nSize < g_102c3330) {
+			char *pDest = (char *)&g_105e5438 - g_102c3330;
+			pFileSys->vfunc2(pDest, nSize - 1, hFile);
+			pFileSys->vfunc1(hFile);
+			pDest[nSize - 1] = 0;
+			g_104e1bf8[g_105e5438] = nHash;
+			g_104e2c38[g_105e5438] = pDest;
+			g_102c3330 -= nSize;
+			g_105e5438++;
+			return pDest;
+		}
+		pFileSys->vfunc1(hFile);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128270 size=0x70
 struct CLinkNode1c {
     char m_pad[0x10];
