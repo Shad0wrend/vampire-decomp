@@ -1211,6 +1211,13 @@ int g_102e5a34 = ClientClassInit((DT_OccultPassiveDurations::ignored *)0);
 RecvTable g_102e6988;
 // END FUNCTION
 
+// FUNCTION: 0x10014650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultHealRate { struct ignored; }
+template <> int ClientClassInit<DT_OccultHealRate::ignored>(DT_OccultHealRate::ignored *);
+int g_102e6984 = ClientClassInit((DT_OccultHealRate::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10014890 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1a7c;
