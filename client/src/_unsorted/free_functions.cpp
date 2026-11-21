@@ -5509,6 +5509,27 @@ void CUnknown102496d0::sub_1012c740(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dd00 size=0x6b
+#include "CUnknown101b2570.h"
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+extern int (__cdecl *g_101e31dc)(const char *, const char *, int);
+extern void (__cdecl *g_101e3188)(char *, const char *, int);
+int sub_1012f7e0(const char *name);
+SFloatPair sub_10107010(const char *str);
+
+void CUnknown101b2570::sub_1012dd00(const char *soundlevel)
+{
+    if (g_101e31dc(soundlevel, "SNDLVL_", strlen("SNDLVL_")) == 0) {
+        m_soundlevel.a = (float)sub_1012f7e0(soundlevel);
+        m_soundlevel.b = 0;
+    } else {
+        m_soundlevel = sub_10107010(soundlevel);
+    }
+    g_101e3188(m_szSoundLevel, soundlevel, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e940 size=0x28
 #include "CUnknown101b3730.h"
 // TARGET: CUnknown101b3730::sub_1012e940
