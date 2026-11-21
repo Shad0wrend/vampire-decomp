@@ -9748,6 +9748,26 @@ void sub_1010af20(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b090 size=0xa2
+#include "Vector.h"
+void sub_10108fd0(const Vector &start, float scale, const Vector &direction, Vector &dest);
+
+// TARGET: sub_1010b090
+void sub_1010b090(const Vector &p1, const Vector &p2, const Vector &d1, const Vector &d2, float t, Vector &output)
+{
+	float tSqr = t * t;
+	float tCube = t * tSqr;
+	float b1 = 2.0f * tCube - 3.0f * tSqr + 1.0f;
+	float b2 = -2.0f * tCube + 3.0f * tSqr;
+	float b3 = tCube - 2 * tSqr + t;
+	float b4 = tCube - tSqr;
+	VectorScale(p1, b1, output);
+	sub_10108fd0(output, b2, p2, output);
+	sub_10108fd0(output, b3, d1, output);
+	sub_10108fd0(output, b4, d2, output);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010ba80 size=0x56
 #include "Vector.h"
 void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out)
