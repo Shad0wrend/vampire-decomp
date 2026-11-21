@@ -37813,6 +37813,15 @@ char CUnknown101b1830::sub_101b1830(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1870 size=0xd
+struct CUnknown101b1870 { int sub_101b1870(int); };
+int CUnknown101b1870::sub_101b1870(int a0)
+{
+    *(int *)((char *)this + 0xf8) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1880 size=0x7
 struct CUnknown101b1880 { int sub_101b1880(); };
 int CUnknown101b1880::sub_101b1880()
