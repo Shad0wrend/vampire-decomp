@@ -2678,3 +2678,8 @@ ConVar g_10618b48("r_3dsky", "1", 0, "Enable the rendering of 3d sky boxes");
 #include "ConVar.h"
 ConVar g_10618cb0("cl_drawhud", "1", 0, "Enable the rendering of the hud");
 // END FUNCTION
+
+// FUNCTION: 0x10197e50 size=0xa
+#include "ConVar.h"
+ConVar g_106196f0("cl_overlayframebuffer", "0", 0);
+// END FUNCTION
