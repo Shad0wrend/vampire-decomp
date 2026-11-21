@@ -17134,6 +17134,23 @@ S6 *CUnknown101db210::sub_10146a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146c20 size=0x6a
+#include "CUnknown101db210.h"
+extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
+extern void (__cdecl *g_101e3108)(const char *, ...);
+
+void CUnknown101db210::sub_10146c20()
+{
+	char buf[512];
+	g_101e3190(buf, 512, "[Affects_Table -- %d]:\n", m_id);
+	g_101e3108("%s", buf);
+	Filter()->sub_10146750();
+	m_first.sub_10146890();
+	for (int i = 0; i < m_count; i++)
+		((CUnknown101daf60 *)m_pItems[i])->sub_10146890();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146cb0 size=0x55
 #include "CStatDefault60List.h"
 
