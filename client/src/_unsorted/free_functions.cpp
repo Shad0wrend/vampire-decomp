@@ -16731,6 +16731,18 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144d60 size=0x25
+// TARGET: sub_10144d60
+void __fastcall sub_10144d60(int *pThis)
+{
+    if (pThis[1] != 0) {
+        operator delete((void *)(pThis[1] - 4));
+        pThis[1] = 0;
+    }
+    pThis[0] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145140 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"
