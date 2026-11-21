@@ -18858,6 +18858,12 @@ CUnknown101d7ec0_Entry *CUnknown101d7ec0::sub_10145090(int iKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145130 size=0x1
+void sub_10145130()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145140 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"
