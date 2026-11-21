@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10014010 size=0x1e
+#include "C_OccultThaumDamage.h"
+
+// VC6 writes C_OccultThaumDamage's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_OccultThaumDamage *pcd_emit_10014010() { return new C_OccultThaumDamage; }
+
+// TARGET: ??_GC_OccultThaumDamage@@UAEPAXI@Z
+// END FUNCTION
