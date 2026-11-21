@@ -9418,6 +9418,16 @@ void S101859a0::sub_10097160(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097380 size=0x6
+namespace lifted {
+extern char g_1049c4fc;
+}
+int sub_10097380()
+{
+    return (int)&lifted::g_1049c4fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098720 size=0x59
 float sub_10098720(float x, float lo, float hi)
 {
