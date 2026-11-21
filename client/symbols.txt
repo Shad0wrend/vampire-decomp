@@ -383,6 +383,7 @@
 0x10020850 func   ?sub_10020850@@YAHXZ sub_10020850
 0x10020970 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGVVPhoto@@@Z ClientClassInit
 0x10020ad0 func   ?sub_10020ad0@@YAHXZ sub_10020ad0
+0x10020bf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGSewerBook1@@@Z ClientClassInit
 0x10020d50 func   ?sub_10020d50@@YAHXZ sub_10020d50
 0x10020fd0 func   ?sub_10020fd0@@YAHXZ sub_10020fd0
 0x10021250 func   ?sub_10021250@@YAHXZ sub_10021250
