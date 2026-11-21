@@ -13420,6 +13420,15 @@ int CUnknown100df3a0::sub_100df3a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df3b0 size=0xa
+struct CUnknown100df3b0 { int sub_100df3b0(int); };
+int CUnknown100df3b0::sub_100df3b0(int a0)
+{
+    *(int *)((char *)this + 8) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df3c0 size=0x49
 #include <string.h>
 char *__stdcall sub_100df3c0(char *s)
