@@ -44,10 +44,26 @@ initializer chain names. Totals now: 2,575 matched; the progress counts 2,549 of
 1,635,862 bytes (8.50%). Lift saved them under placeholder names (`CUnknown<address>::sub_<address>`, this binary's
 addresses). Backups: cache/`project.db.pre-chaincuts-20261121`, `.pre-skipinit2-`, `.pre-lift-`.
 
-Globals: `pcdecomp globals` writes only initializers already skip, and its generators fit 33 of the 2,067: 945
-constructs call a constructor with no linker name (client.dll's functions are unnamed; a `??0Class@@` name gives the
-class), 47 call InterfaceReg's constructor under a provisional name, about 1,000 are shapes no generator has yet.
-Naming the constructors (from byte-equal vtmb twins or RTTI) is the lever, not more splitting.
+Globals: `pcdecomp globals` writes only initializers already skip, and at first its generators fit 33 of the 2,067:
+945 constructs called a constructor with no linker name (client.dll's functions are unnamed; a `??0Class@@` name
+gives the class), 47 call InterfaceReg's constructor under a provisional name, about 1,000 are shapes no generator
+has yet. A hand naming pass then gave 9 constructors and destructors vtmb's names with `rename_symbol` (four ConVar
+constructors and ~ConVar, ConCommand's constructor and destructor, CGameMovement's), each reason citing the
+byte-equal vtmb twin, the RTTI vftable it stores and the pushes of the initializers that call it. `pcdecomp globals`
+then saved 557 definitions (522 through a named constructor), all in `src/_init/unit_000_100011f0.cpp`: client.dll's
+initializer table is one run (vtmb's incremental link gave 251), so that file says nothing about units. Their 2,174
+initializer pieces went from skip to matched. Totals now: 4,749 matched; the progress counts 4,723 of 13,585
+functions / 171,313 of 1,668,122 bytes (10.27%; the pieces count now, so the total grew). Still blocked: 331
+constructs call 0x100e1590, whose bytes equal vtmb's SendTable constructor (on the client side probably RecvTable:
+a RecvTable/ClientClass generator, not a name); InterfaceReg's 47; classes only RTTI names, with no header here.
+Backups: cache/`project.db.pre-ctornames-20261121`, `.pre-globals-`.
+
+Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
+line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
+functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the
+game's (pcdecomp a4c86c9). Doubtful: the 658 guesses of `cl_dll/vgui_scorepanel.cpp` come from one 113 KB gap
+between two CLabelHeader vtable slots (0x10171330, 0x1018ce30) with no hint between them. Backup
+cache/`project.db.pre-units-20261121`.
 
 Names: client.dll has almost no linker names, so carried functions are saved under this binary's placeholders
 (`Class::sub_<address here>`, `g_`, `vt_`), even where the vtmb twin has a real name; a naming pass with
