@@ -2444,6 +2444,7 @@
 0x10149e10 func   ?sub_10149e10@List@@QAEHPBD@Z List::sub_10149e10
 0x10149ec0 func   ?sub_10149ec0@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_10149ec0
 0x10149f70 func   ?sub_10149f70@CStatusFlagList@@QAEIHH@Z CStatusFlagList::sub_10149f70
+0x10149fc0 func   ?sub_10149fc0@CList101e1590@@QAEHPBD@Z CList101e1590::sub_10149fc0
 0x1014a020 func   ?sub_1014a020@CStatusFlagList@@QAEIH@Z CStatusFlagList::sub_1014a020
 0x1014a050 func   ?sub_1014a050@CDiscTable_101e1720@@QAEHH@Z CDiscTable_101e1720::sub_1014a050
 0x1014a090 func   ?sub_1014a090@CDiscTable_101e1770@@QAEHH@Z CDiscTable_101e1770::sub_1014a090

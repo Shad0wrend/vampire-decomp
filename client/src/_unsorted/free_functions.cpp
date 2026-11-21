@@ -48781,6 +48781,30 @@ unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149fc0 size=0x53
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_102de300[];
+struct SName101e1590 {
+    const char *m_psz;
+    const char *Get() const { return m_psz ? m_psz : g_102de300; }
+};
+struct SEntry101e1590 { int m0; int m4; SName101e1590 m_Name; int m_nValue; };
+struct CList101e1590 {
+    int m0;
+    int m_Count;
+    SEntry101e1590 **m_pEntries;
+    int sub_10149fc0(const char *name);
+};
+int CList101e1590::sub_10149fc0(const char *name)
+{
+    for (int i = 0; i < m_Count; i++) {
+        if (_strcmpi(m_pEntries[i]->m_Name.Get(), name) == 0)
+            return m_pEntries[i]->m_nValue;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a020 size=0x27
 // TARGET: CStatusFlagList::sub_1014a020
 #include "CStatusFlagList.h"
