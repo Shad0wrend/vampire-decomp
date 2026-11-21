@@ -7735,6 +7735,22 @@ bool CUnknown101f27b0::sub_101540f0(int a, bool b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154670 size=0x1d
+typedef void (*PFN_109f383c)(int, void *);
+extern PFN_109f383c g_101e31d4;
+
+// TARGET: sub_10154670
+void __cdecl sub_10154670(int a, char *p)
+{
+	char *q;
+	if (p == 0)
+		q = 0;
+	else
+		q = p + ((int *)*(int *)p)[1];
+	g_101e31d4(a, q);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101546c0 size=0x3f
 #include <string.h>
 #include <stdlib.h>
