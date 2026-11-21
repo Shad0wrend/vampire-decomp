@@ -2526,3 +2526,8 @@ ConVar g_105fc958("cl_bob", "0.01", 0);
 #include "ConVar.h"
 ConVar g_105fca80("cl_bobup", "0.5", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018ee40 size=0xa
+#include "ConVar.h"
+ConVar g_105fc688("cl_waterdist", "4", 0);
+// END FUNCTION
