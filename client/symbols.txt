@@ -1007,6 +1007,7 @@
 0x10162f00 func   ?sub_10162f00@QuestJournal@@QAEPADH@Z QuestJournal::sub_10162f00
 0x10162fa0 func   ?sub_10162fa0@QuestJournal@@QAEDH@Z QuestJournal::sub_10162fa0
 0x10163030 func   ?sub_10163030@QuestJournal@@QAEDH@Z QuestJournal::sub_10163030
+0x101630c0 func   ?sub_101630c0@QuestJournal@@QAEPADHH@Z QuestJournal::sub_101630c0
 0x10163180 func   ?sub_10163180@QuestJournal@@QAEPADH@Z QuestJournal::sub_10163180
 0x10163260 func   ?sub_10163260@CUnknown102221d0@@QAEPAXXZ CUnknown102221d0::sub_10163260
 0x10163290 func   ?sub_10163290@CExperienceTable@@QAEXXZ CExperienceTable::sub_10163290
