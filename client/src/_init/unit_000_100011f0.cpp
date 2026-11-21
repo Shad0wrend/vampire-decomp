@@ -1682,3 +1682,9 @@ ConCommand g_104d30cc("+questlog", sub_10102370, 0, 0, 0);
 void sub_101023a0(void);
 ConCommand g_104d344c("-questlog", sub_101023a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105a80 size=0xa
+#include "ConCommand.h"
+void sub_10102230(void);
+ConCommand g_104d3b74("+feed", sub_10102230, 0, 0, 0);
+// END FUNCTION
