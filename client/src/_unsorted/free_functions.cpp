@@ -15354,6 +15354,12 @@ void sub_1012eb10(char *pSrc, int split, int skip, char *dst, int max, char *dst
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ec80 size=0x1
+void sub_1012ec80()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f090 size=0x99
 struct S101b40a0 {
     int a;
