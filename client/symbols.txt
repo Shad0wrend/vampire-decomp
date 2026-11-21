@@ -1129,6 +1129,7 @@
 0x100509b0 func   ?sub_100509b0@@YAHXZ sub_100509b0
 0x10050a60 func   ?sub_10050a60@CUnknown10050a60@@QAEDXZ CUnknown10050a60::sub_10050a60
 0x10050a70 func   ?sub_10050a70@@YAHXZ sub_10050a70
+0x10050a80 func   ??_GCFrenzyBar@@UAEPAXI@Z ??_GCFrenzyBar@@UAEPAXI@Z
 0x10050aa0 func   ??1CFrenzyBar@@UAE@XZ CFrenzyBar::~CFrenzyBar
 0x10051070 func   ??1CHealthAnkh@@UAE@XZ CHealthAnkh::~CHealthAnkh
 0x10051b20 func   ?sub_10051b20@@YGXH@Z sub_10051b20
