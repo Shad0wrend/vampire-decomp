@@ -1896,3 +1896,8 @@ ConVar g_104df980("sv_bounce", "1", 8448, "Bounce multiplier for when physically
 #include "ConVar.h"
 ConVar g_104df8f0("sv_maxvelocity", "3500", 8192, "Maximum speed any ballistically moving object is allowed to attain per axis.");
 // END FUNCTION
+
+// FUNCTION: 0x1010fed0 size=0xa
+#include "ConVar.h"
+ConVar g_104df818("sv_stepsize", "18", 8448);
+// END FUNCTION
