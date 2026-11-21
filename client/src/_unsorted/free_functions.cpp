@@ -721,6 +721,14 @@ void * CUnknown100421e0::sub_100421e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042370 size=0x3
+struct CUnknown10042370 { void * sub_10042370(); };
+void * CUnknown10042370::sub_10042370()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043150 size=0x76
 extern int g_104d4970, g_104d4974, g_104d4978;
 struct Rec64 {
