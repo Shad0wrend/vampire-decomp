@@ -17053,6 +17053,14 @@ void CUnknown101bc140::sub_101339c0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101339f0 size=0x3
+struct CUnknown101339f0 { float sub_101339f0(); };
+float CUnknown101339f0::sub_101339f0()
+{
+    return *(float *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134010 size=0x1a
 namespace lifted {
 extern int g_102c532c;
