@@ -2753,6 +2753,71 @@ void UtlMem::sub_100e12c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2590 size=0x1ec
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CBaseEntityList.h"
+#include "CUtlLinkedList6.h"
+#include "CBaseHandle.h"
+struct S100fa600 { void sub_100e2970(int n); };
+struct EntView { virtual void v0(int *p); };
+struct ListView { virtual void v0(int, int); virtual void v1(void *pEnt, CBaseHandle h); };
+extern void (__cdecl *g_101e310c)(const char *, ...);
+struct LL6 : CUtlLinkedList6 {
+	CUtlLinkedList6Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
+	CUtlLinkedList6Node &InternalElementW(unsigned short i) { return *(CUtlLinkedList6Node *)((char *)m_pMemory + i * sizeof(CUtlLinkedList6Node)); }
+	unsigned short Alloc()
+	{
+		unsigned short elem;
+		if (m_FirstFree == InvalidIndex()) {
+			if (m_TotalElements == m_allocationCount)
+				((S100fa600 *)this)->sub_100e2970(1);
+			elem = m_TotalElements;
+			++m_TotalElements;
+			if (elem == InvalidIndex())
+				g_101e310c("CUtlLinkedList overflow!\n");
+		} else {
+			elem = m_FirstFree;
+			m_FirstFree = InternalElement(m_FirstFree).m_Next;
+		}
+		InternalElementW(elem).m_Next = InternalElementW(elem).m_Previous = elem;
+		m_pElements = m_pMemory;
+		return elem;
+	}
+	void LinkToTail(unsigned short elem)
+	{
+		sub_100e27a0(elem);
+		CUtlLinkedList6Node &newElem = InternalElement(elem);
+		newElem.m_Next = InvalidIndex();
+		newElem.m_Previous = m_Tail;
+		m_Tail = elem;
+		if (newElem.m_Previous == InvalidIndex())
+			m_Head = elem;
+		else
+			InternalElement(newElem.m_Previous).m_Next = elem;
+		++m_ElementCount;
+	}
+};
+void CBaseEntityList::sub_100e2590(unsigned int element)
+{
+	CBaseEntityListEntry *pEntry = &*(m_EntPtrArray + (int)element);
+	if (!(pEntry->m_pEntity)) return; int hTmp = -1;
+		((EntView *)pEntry->m_pEntity)->v0(&hTmp);
+		int t0; int t1 = pEntry->m_SerialNumber; t0 = t1; ((ListView *)this)->v1(pEntry->m_pEntity, CBaseHandle(element, t0));
+		pEntry->m_SerialNumber = pEntry->m_SerialNumber + 1;
+		pEntry->m_pEntity = 0;
+		((CUtlLinkedList6 *)&m_Live)->Remove(*(unsigned short *)&pEntry->m_pad);
+		if ((int)element >= 0x800) {
+			unsigned short newElem;
+			LL6 *l = (LL6 *)&m_Second; newElem = l->Alloc();
+			l->LinkToTail(newElem);
+			unsigned short *pe = &l->Element(newElem);
+			if (pe)
+				*pe = (unsigned short)element;
+		}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e27a0 size=0x99
 #include "CUtlLinkedList6.h"
 
