@@ -19155,6 +19155,12 @@ void * CUnknown101da880::sub_101465b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101465d0 size=0x1
+void sub_101465d0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101465e0 size=0x67
 #include <string.h>
 extern const char *g_102c7bc0[15];
