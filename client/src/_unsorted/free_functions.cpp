@@ -21772,6 +21772,16 @@ char *CUnk101e09c0::sub_101496b0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149880 size=0x5
+namespace lifted {
+int sub_10149980();
+}
+int sub_10149880()
+{
+    return lifted::sub_10149980();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149890 size=0xee
 #include "CUnknown101e0c30.h"
 
