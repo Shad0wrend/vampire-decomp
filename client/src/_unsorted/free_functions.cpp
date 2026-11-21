@@ -23424,6 +23424,14 @@ void E101f2140::sub_10153c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153ee0 size=0x4
+struct CUnknown10153ee0 { int sub_10153ee0(); };
+int CUnknown10153ee0::sub_10153ee0()
+{
+    return *(int *)((char *)this + -32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153f10 size=0x20
 struct CVBaseA { int a; };
 struct CVBaseB { int b; };
