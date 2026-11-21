@@ -534,6 +534,7 @@
 0x100f7d40 func   ?sub_100f7d40@@YAXXZ sub_100f7d40
 0x100f7d50 func   ?sub_100f7d50@@YAXXZ sub_100f7d50
 0x100f7d60 func   ?sub_100f7d60@@YAHXZ sub_100f7d60
+0x100f7d70 func   ?sub_100f7d70@@YAHXZ sub_100f7d70
 0x100f7d90 func   ?sub_100f7d90@@YAXXZ sub_100f7d90
 0x100f7da0 func   ?sub_100f7da0@@YAXXZ sub_100f7da0
 0x100f7db0 func   ?sub_100f7db0@@YAXXZ sub_100f7db0
