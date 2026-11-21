@@ -2344,3 +2344,8 @@ ConCommand g_105fb84c("hidemapscreen", sub_10187f00, 0, 0, 0);
 #include "Vector.h"
 Vector g_105fb90c[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
 // END FUNCTION
+
+// FUNCTION: 0x10189e90 size=0xa
+#include "ConVar.h"
+ConVar g_105fbb28("vgui_eyetarget_x", "-1000", 0);
+// END FUNCTION
