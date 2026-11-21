@@ -1478,3 +1478,9 @@ ConCommand g_104d2f7c("+speed", sub_101020f0, 0, 0, 0);
 void sub_10102100(void);
 ConCommand g_104d311c("-speed", sub_10102100, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104fe0 size=0xa
+#include "ConCommand.h"
+void sub_10102270(void);
+ConCommand g_104d37b0("+attack", sub_10102270, 0, 0, 0);
+// END FUNCTION
