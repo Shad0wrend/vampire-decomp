@@ -4,3 +4,7 @@ project.db-wal
 project.db-shm
 .pcdecomp.lock
 .pcdecomp.verify.lock
+build/
+build.ninja
+.ninja_*
+orig/*.dll

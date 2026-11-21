@@ -1,0 +1,7 @@
+# every clone keeps these files with LF line ends, so the build reads the same text on every system
+*.cpp text eol=lf
+*.h text eol=lf
+*.asm.in text eol=lf
+*.txt text eol=lf
+*.def text eol=lf
+*.toml text eol=lf
