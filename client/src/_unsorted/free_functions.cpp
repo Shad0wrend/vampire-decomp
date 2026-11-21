@@ -32438,6 +32438,21 @@ int sub_10151570(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151600 size=0x1f
+struct CUnknown10151600 { void * sub_10151600(int); };
+void * CUnknown10151600::sub_10151600(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151620 size=0x1
 void sub_10151620()
 {
