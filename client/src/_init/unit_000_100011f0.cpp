@@ -1007,6 +1007,13 @@ int g_102e6afc = ClientClassInit((DT_ResearchBook_LG_DODGE::ignored *)0);
 RecvTable g_102e1aac;
 // END FUNCTION
 
+// FUNCTION: 0x10011bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_HG_MELEE { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_HG_MELEE::ignored>(DT_ResearchBook_HG_MELEE::ignored *);
+int g_102e1aa8 = ClientClassInit((DT_ResearchBook_HG_MELEE::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10011e10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e2d10;
