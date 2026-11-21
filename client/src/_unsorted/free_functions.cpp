@@ -20223,6 +20223,28 @@ void CUnknown101f40f0::sub_10155400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101554b0 size=0x1b
+// TARGET: sub_101554b0
+struct CUnk101f42a0Inner {
+    int m_first;
+    int sub_10154df0(int a);
+};
+struct CUnk101f42a0 {
+    char pad[0x10];
+    CUnk101f42a0Inner m_inner;
+    int sub_101554b0(int a);
+};
+int CUnk101f42a0::sub_101554b0(int a)
+{
+    CUnk101f42a0Inner *p = &m_inner;
+    int r = p->sub_10154df0(a);
+    if (r == -1) {
+        r = p->m_first;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155510 size=0x2c
 struct CUnkSub101f4330
 {
