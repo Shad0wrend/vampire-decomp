@@ -2769,6 +2769,7 @@
 0x1013a190 func   ?sub_1013a190@CUnknown1013a190@@QAEPAXXZ CUnknown1013a190::sub_1013a190
 0x1013a1d0 func   ?sub_1013a1d0@CUnknown1013a1d0@@QAEXXZ CUnknown1013a1d0::sub_1013a1d0
 0x1013a7d0 func   ?sub_1013a7d0@@YAXXZ sub_1013a7d0
+0x1013bae0 func   ??_GCTimeMaterialProxy@@UAEPAXI@Z ??_GCTimeMaterialProxy@@UAEPAXI@Z
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
 0x1013c7b0 func   ?sub_1013c7b0@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_1013c7b0
 0x1013c850 func   ??0CUtlBuffer@@QAE@HHH@Z CUtlBuffer::CUtlBuffer
