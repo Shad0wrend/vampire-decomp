@@ -13817,6 +13817,33 @@ void CUnknown101a5290::sub_10130800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130860 size=0x6b
+#include "CUnknown101b61a0.h"
+
+CUnknown101b61a0 &CUnknown101b61a0::sub_10130860(const CUnknown101b61a0 &other)
+{
+    int n = other.m_Size;
+    CUnknown101b61a0Elem *src = (CUnknown101b61a0Elem *)other.m_pMemory;
+    int i = 0;
+    m_Size = 0;
+    if (n != 0) {
+        sub_10130f00(n);
+        sub_10130f90(0, n);
+        for (i = 0; i < n; i++) {
+            CUnknown101b61a0Elem *e = &((CUnknown101b61a0Elem *)m_pMemory)[i];
+            if (e)
+                e->sub_10133290();
+        }
+    }
+    for (i = 0; i < n; i++) {
+        CUnknown101b61a0Elem *dst = &((CUnknown101b61a0Elem *)m_pMemory)[i];
+        dst->m_a = src[i].m_a;
+        dst->m_b = src[i].m_b;
+    }
+    return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
