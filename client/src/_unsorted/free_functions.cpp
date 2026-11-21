@@ -45285,6 +45285,28 @@ int CUnknown101454c0::sub_101454c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145500 size=0x3f
+#include "CVDmg_t.h"
+
+struct CUnknown101d86d0
+{
+	char m_pad0000[0x1c];
+	CVDmgBlock16_t m_block1c;	// 0x1c
+
+	CUnknown101d86d0 *sub_10145500(int a, int b, int c);
+	void sub_10145660(int a, int b, CVDmgBlock16_t *pBlock, int c, int d, int e);	// stub 0x101d88b0, called directly
+};
+
+// TARGET: CUnknown101d86d0::sub_10145500
+CUnknown101d86d0 *CUnknown101d86d0::sub_10145500(int a, int b, int c)
+{
+	m_block1c.CVDmgBlock16_t::CVDmgBlock16_t();
+	CVDmgBlock16_t block;
+	sub_10145660(a, 0, &block, b, c, 0);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145650 size=0xa
 namespace lifted {
 extern int g_105e7b24;
