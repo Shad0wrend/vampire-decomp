@@ -6938,6 +6938,18 @@ void CUnknown10248a50::sub_101279a0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127df0 size=0x23
+extern int g_104e3438;
+int sub_100e3130(int a, void *b, int c);
+
+// TARGET: sub_10127df0
+void *sub_10127df0(int *p, int value)
+{
+    *p = sub_100e3130(*p, &g_104e3438, value);
+    return &g_104e3438;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128d80 size=0x4d
 struct SFuncField {
     int fieldType;
