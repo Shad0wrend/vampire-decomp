@@ -18773,6 +18773,12 @@ void CPtrList101d6400::sub_10143a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101444b0 size=0x1
+void sub_101444b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144770 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
