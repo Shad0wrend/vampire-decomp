@@ -5041,6 +5041,15 @@ int sub_1005edb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f150 size=0xa
+struct CUnknown1005f150 { int sub_1005f150(int); };
+int CUnknown1005f150::sub_1005f150(int a0)
+{
+    *(int *)((char *)this + 4) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f160 size=0x4
 struct CUnknown1005f160 { int sub_1005f160(); };
 int CUnknown1005f160::sub_1005f160()
