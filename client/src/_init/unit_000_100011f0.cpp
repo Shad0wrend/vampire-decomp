@@ -887,6 +887,13 @@ int g_102e4614 = ClientClassInit((DT_WeaponWallet::ignored *)0);
 RecvTable g_102e4c7c;
 // END FUNCTION
 
+// FUNCTION: 0x100102d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemMWallet { struct ignored; }
+template <> int ClientClassInit<DT_ItemMWallet::ignored>(DT_ItemMWallet::ignored *);
+int g_102e4c78 = ClientClassInit((DT_ItemMWallet::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10010510 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e03b8;
