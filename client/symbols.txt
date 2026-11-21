@@ -1265,6 +1265,7 @@
 0x100652e0 func   ?sub_100652e0@@YAXXZ sub_100652e0
 0x10065390 func   ??_GCVMenuButton@@UAEPAXI@Z ??_GCVMenuButton@@UAEPAXI@Z
 0x10065660 func   ?sub_10065660@@YAHXZ sub_10065660
+0x10065840 func   ??_GCVMainMenu@@UAEPAXI@Z ??_GCVMainMenu@@UAEPAXI@Z
 0x10065860 func   ??1CVMainMenu@@UAE@XZ CVMainMenu::~CVMainMenu
 0x10067a50 func   ?sub_10067a50@UtlMem@@QAEXH@Z UtlMem::sub_10067a50
 0x10067d00 func   ?sub_10067d00@@YAXXZ sub_10067d00
