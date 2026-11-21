@@ -34952,6 +34952,19 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163b90 size=0xb
+namespace lifted {
+extern char g_102484ac;
+int sub_101a9780();
+}
+struct CUnknown10163b90 { int sub_10163b90(); };
+int CUnknown10163b90::sub_10163b90()
+{
+    *(int *)this = (int)&lifted::g_102484ac;
+    return lifted::sub_101a9780();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101642d0 size=0x5
 char __stdcall sub_101642d0(int a0)
 {
