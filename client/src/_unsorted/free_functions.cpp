@@ -1840,6 +1840,12 @@ CWeaponCopy *CWeaponCopy::sub_1007b250(const CWeaponCopy *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bf40 size=0x1
+void sub_1007bf40()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cdc0 size=0x1c
 namespace block_10256200 {
 unsigned char __fastcall sub_1007cd70(unsigned char *self)
