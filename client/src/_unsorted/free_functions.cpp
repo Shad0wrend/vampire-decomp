@@ -33842,6 +33842,17 @@ int sub_101932a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193340 size=0x7
+namespace lifted {
+extern char g_1024faec;
+}
+struct CUnknown10193340 { void sub_10193340(); };
+void CUnknown10193340::sub_10193340()
+{
+    *(int *)this = (int)&lifted::g_1024faec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197a20 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
