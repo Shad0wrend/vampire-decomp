@@ -11594,6 +11594,29 @@ void CUnknown101d5bd0::sub_10157a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157ac0 size=0x29
+extern char g_102ca648[];
+extern char g_102de300[];
+
+struct CUnknown101f18b0 {
+    char pad_0000[0x14];
+    int m_nCount;
+    char **m_ppElements;
+    char *sub_10157ac0(int i);
+};
+
+// TARGET: CUnknown101f18b0::sub_10157ac0
+char *CUnknown101f18b0::sub_10157ac0(int i)
+{
+    if (i < 0 || i >= m_nCount)
+        return g_102ca648;
+    char **pp = &m_ppElements[i];
+    if (*pp == 0)
+        return g_102de300;
+    return *pp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157b30 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
