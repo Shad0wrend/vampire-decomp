@@ -695,6 +695,25 @@ char *sub_1004ba40(const char *format, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ba90 size=0x1f
+extern char g_103ecd98[];
+
+// TARGET: sub_1004ba90
+bool sub_1004ba90(char *p)
+{
+    char *q = g_103ecd98;
+    do
+    {
+        if (q == p)
+        {
+            return true;
+        }
+        q += 0x400;
+    } while (q < g_103ecd98 + 0x1000);
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
