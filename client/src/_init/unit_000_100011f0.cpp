@@ -633,3 +633,8 @@ ConVar g_104a42a0("r_traceglowfast", "1", 0);
 #include "ConVar.h"
 ConVar g_104a4408("r_traceglowbackoff", "16", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100c2150 size=0xa
+#include "ConVar.h"
+ConVar g_104a4378("r_glowfadein", "0.2", 0);
+// END FUNCTION
