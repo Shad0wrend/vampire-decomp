@@ -11858,6 +11858,30 @@ int CVStatSubCost_t::sub_101597d0(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159e90 size=0x89
+#include "CVStatCost_t.h"
+
+extern int *g_101e3128;
+extern int *g_101e3124;
+extern char g_102de300[];
+
+int CVStatCost_t::sub_10159e90(int level, bool bFirst)
+{
+    g_101e3124[*g_101e3128 * 3] = (int)"CVStatCost_t::GetCostToSell";
+    g_101e3124[*g_101e3128 * 3 + 1] = (int)g_102de300;
+    g_101e3124[*g_101e3128 * 3 + 2] = (int)g_102de300;
+    ++*g_101e3128;
+    if (bFirst) {
+        int r = m_first.sub_10159880(level, true);
+        --*g_101e3128;
+        return r;
+    }
+    int r = m_second.sub_10159880(level, false);
+    --*g_101e3128;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159f20 size=0x4c
 struct S5_101fc4d0 { int v[5]; };
 struct T_101fc4d0 : S5_101fc4d0 {
