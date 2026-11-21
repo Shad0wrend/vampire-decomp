@@ -6247,6 +6247,13 @@ InterfaceReg g_104e17fc(sub_10125180, "EntityRandom_IMaterialProxy003");
 RecvTable g_104e1b88;
 // END FUNCTION
 
+// FUNCTION: 0x10125f50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Ragdoll { struct ignored; }
+template <> int ClientClassInit<DT_Ragdoll::ignored>(DT_Ragdoll::ignored *);
+int g_104e1b84 = ClientClassInit((DT_Ragdoll::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10126610 size=0xa
 #include "RecvTable.h"
 RecvTable g_104e196c;
