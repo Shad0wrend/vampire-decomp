@@ -1996,6 +1996,7 @@
 0x1014ee70 func   ?sub_1014ee70@@YAXXZ sub_1014ee70
 0x1014ee80 func   ?sub_1014ee80@CEntryY@@QAE_NPAX@Z CEntryY::sub_1014ee80
 0x1014eee0 func   ?sub_1014eee0@CUnknown101eac50@@QAEXXZ CUnknown101eac50::sub_1014eee0
+0x1014f1d0 func   ?sub_1014f1d0@CUnknown1014f1d0@@QAEPAXH@Z CUnknown1014f1d0::sub_1014f1d0
 0x1014f1f0 func   ?sub_1014f1f0@@YAXXZ sub_1014f1f0
 0x1014f300 func   ?sub_1014f300@CKey101eb190@@QAEHXZ CKey101eb190::sub_1014f300
 0x1014f6f0 func   ?sub_1014f6f0@CUnknown1014f6f0@@QAEHXZ CUnknown1014f6f0::sub_1014f6f0
