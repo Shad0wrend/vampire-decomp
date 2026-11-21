@@ -13120,6 +13120,12 @@ void sub_10120140(CObj *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101201b0 size=0x1
+void sub_101201b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101201c0 size=0x6a
 #include <malloc.h>
 
