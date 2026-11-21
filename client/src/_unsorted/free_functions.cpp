@@ -5118,6 +5118,14 @@ int sub_1005edb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005eee0 size=0xb
+struct CUnknown1005eee0 { void sub_1005eee0(); };
+void CUnknown1005eee0::sub_1005eee0()
+{
+    *(int *)((char *)this + 0x190) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f150 size=0xa
 struct CUnknown1005f150 { int sub_1005f150(int); };
 int CUnknown1005f150::sub_1005f150(int a0)

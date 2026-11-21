@@ -494,6 +494,7 @@
 0x1005ed00 func   ?sub_1005ed00@@YAHXZ sub_1005ed00
 0x1005ed10 func   ?sub_1005ed10@CUnknown1005ed10@@QAEDXZ CUnknown1005ed10::sub_1005ed10
 0x1005edb0 func   ?sub_1005edb0@@YAHXZ sub_1005edb0
+0x1005eee0 func   ?sub_1005eee0@CUnknown1005eee0@@QAEXXZ CUnknown1005eee0::sub_1005eee0
 0x1005f150 func   ?sub_1005f150@CUnknown1005f150@@QAEHH@Z CUnknown1005f150::sub_1005f150
 0x1005f160 func   ?sub_1005f160@CUnknown1005f160@@QAEHXZ CUnknown1005f160::sub_1005f160
 0x1005f280 func   ?sub_1005f280@@YAHXZ sub_1005f280
