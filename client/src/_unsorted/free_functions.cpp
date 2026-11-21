@@ -13144,6 +13144,16 @@ single:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e40f0 size=0x6
+namespace lifted {
+extern char g_104cf75c;
+}
+int sub_100e40f0()
+{
+    return (int)&lifted::g_104cf75c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6ce0 size=0x7f
 #include <stdarg.h>
 struct IFileSys {
