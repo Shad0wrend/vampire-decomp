@@ -2889,6 +2889,26 @@ void sub_10088d00(float s, const Quaternion &p, const Quaternion &q, Quaternion 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088d60 size=0x5a
+#include "Quaternion.h"
+
+void sub_1010a320(const float *p, float t, float *qt);
+void sub_1010a450(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+float sub_1010a2b0(Quaternion &q);
+
+void sub_10088d60(const Quaternion &p, float s, const Quaternion &q, Quaternion &qt)
+{
+	Quaternion q1, q2;
+	sub_1010a320(&q.x, s, &q1.x);
+	sub_1010a450(p, q1, q2);
+	sub_1010a2b0(q2);
+	qt[0] = q2[0];
+	qt[1] = q2[1];
+	qt[2] = q2[2];
+	qt[3] = q2[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088e10 size=0x35b
 #include "Quaternion.h"
 #include "Vector.h"
