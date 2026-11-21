@@ -2465,6 +2465,7 @@
 0x1014aa40 func   ?sub_1014aa40@CUnknown101e0f00@@QAEXHPADPAHPAIPAM1@Z CUnknown101e0f00::sub_1014aa40
 0x1014aba0 func   ?sub_1014aba0@CUnknown101e44c0@@QAE_NPADPBDI@Z CUnknown101e44c0::sub_1014aba0
 0x1014b580 func   ?sub_1014b580@@YGHH@Z sub_1014b580
+0x1014cee0 func   ?sub_1014cee0@CUnknown101e7c50@@QAEPAUCVDmgBlock16_t@@PBD@Z CUnknown101e7c50::sub_1014cee0
 0x1014cf80 func   ?sub_1014cf80@CUnknown1014cf80@@QAEMXZ CUnknown1014cf80::sub_1014cf80
 0x1014cf90 func   ?sub_1014cf90@CUnknown1014cf90@@QAEMXZ CUnknown1014cf90::sub_1014cf90
 0x1014cfa0 func   ?sub_1014cfa0@CUnknown1014cfa0@@QAEMXZ CUnknown1014cfa0::sub_1014cfa0

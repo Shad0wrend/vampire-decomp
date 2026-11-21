@@ -49089,6 +49089,30 @@ int __stdcall sub_1014b580(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014cee0 size=0x8e
+#include "CUnknown101e7c50.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+inline int FindId(CUnknown101e7c50 *pTable, const char *pszName)
+{
+	for (int i = 0; i < pTable->m_nEntries; i++)
+	{
+		if (_strcmpi(pTable->m_pEntries[i]->m_name.Get(), pszName) == 0)
+			return pTable->m_pEntries[i]->m_id;
+	}
+	return -1;
+}
+
+// TARGET: CUnknown101e7c50::sub_1014cee0
+CVDmgBlock16_t *CUnknown101e7c50::sub_1014cee0(const char *pszName)
+{
+	static CVDmgBlock16_t s_block;
+	s_block.sub_10160690(4, FindId(this, pszName));
+	return &s_block;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cf80 size=0x7
 struct CUnknown1014cf80 { float sub_1014cf80(); };
 float CUnknown1014cf80::sub_1014cf80()
