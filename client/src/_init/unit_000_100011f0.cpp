@@ -299,3 +299,8 @@ ConVar g_104772a8("debug_infinite_ammo", "0", 8192, "Set this to 1 to give playe
 #include "ConVar.h"
 ConVar g_104870e0("r_DrawBeams", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1008ec30 size=0xa
+#include "ConVar.h"
+ConVar g_1049bee0("r_drawmrmmodels", "1", 0);
+// END FUNCTION
