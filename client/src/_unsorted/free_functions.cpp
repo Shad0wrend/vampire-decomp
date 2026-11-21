@@ -19036,6 +19036,26 @@ void sub_1007a440(char *pObj, int index, const float *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a470 size=0x59
+#include <string.h>
+struct CStudioHdrView {
+	char pad[0x100];
+	int m_nCount;
+	int m_nIndex;
+};
+int sub_1007a470(CStudioHdrView *pHdr, const char *pszName)
+{
+	if (pHdr) {
+		for (int i = 0; i < pHdr->m_nCount; i++) {
+			int *pEntry = (int *)((char *)pHdr + pHdr->m_nIndex + i * 12);
+			if (pEntry && !_strcmpi((char *)pEntry + *pEntry, pszName))
+				return i;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a4d0 size=0x2d
 extern char g_102de300[];
 
