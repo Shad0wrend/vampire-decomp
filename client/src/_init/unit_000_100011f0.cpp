@@ -1523,6 +1523,13 @@ int g_102e6e98 = ClientClassInit((DT_ItemGRingGold::ignored *)0);
 RecvTable g_102e0e68;
 // END FUNCTION
 
+// FUNCTION: 0x10018750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRingSilver { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRingSilver::ignored>(DT_ItemGRingSilver::ignored *);
+int g_102e0e64 = ClientClassInit((DT_ItemGRingSilver::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10018990 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3138;
