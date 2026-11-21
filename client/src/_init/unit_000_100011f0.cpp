@@ -131,6 +131,13 @@ int g_102ded38 = ClientClassInit((DT_ParticleStorm::ignored *)0);
 RecvTable g_102df168;
 // END FUNCTION
 
+// FUNCTION: 0x10005d00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlasmaBeamNode { struct ignored; }
+template <> int ClientClassInit<DT_PlasmaBeamNode::ignored>(DT_PlasmaBeamNode::ignored *);
+int g_102df164 = ClientClassInit((DT_PlasmaBeamNode::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10005f50 size=0xa
 #include "RecvTable.h"
 RecvTable g_102df2a8;
