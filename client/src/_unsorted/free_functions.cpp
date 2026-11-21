@@ -52549,6 +52549,33 @@ void sub_10153fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154010 size=0x4b
+#include <string.h>
+struct SNode101f2680 {
+    int *m_pVBase;	// 0x00: the vbtable (+8 = offset of the interface)
+    char m_pad04[0x10];
+    const char *m_pszName;	// 0x14
+    SNode101f2680 *m_pNext;	// 0x18
+};
+struct SHead101f2680 {
+    SNode101f2680 *m_pHead;	// this - 0x14
+    char m_pad[0x10];
+};
+extern char g_105e8ac8[];
+// TARGET: sub_10154010
+int __fastcall sub_10154010(SHead101f2680 *pThis, int unused, const char *name)
+{
+    SNode101f2680 *p = (pThis - 1)->m_pHead;
+    strcpy(g_105e8ac8, name);
+    while (p) {
+        if (_strcmpi(name, p->m_pszName) == 0)
+            return p->m_pVBase[2] + (int)p;
+        p = p->m_pNext;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101540a0 size=0x49
 #include "VKeyValues.h"
 #include <stdlib.h>
