@@ -9654,6 +9654,16 @@ void __cdecl sub_100f42a0(void (__fastcall *pfn)(void *))
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f71d0 size=0x5
+namespace lifted {
+int sub_100f6ce0();
+}
+int sub_100f71d0()
+{
+    return lifted::sub_100f6ce0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f79a0 size=0x1
 void sub_100f79a0()
 {
