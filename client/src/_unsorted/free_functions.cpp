@@ -6643,6 +6643,14 @@ void CUnknown100bde50::sub_100bde50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be0c0 size=0x5
+struct CUnknown100be0c0 { void sub_100be0c0(); };
+void CUnknown100be0c0::sub_100be0c0()
+{
+    *(char *)((char *)this + 5) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be130 size=0x4
 struct CUnknown100be130 { char sub_100be130(); };
 char CUnknown100be130::sub_100be130()
