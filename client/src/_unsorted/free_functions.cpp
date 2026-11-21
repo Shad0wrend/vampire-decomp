@@ -27517,6 +27517,12 @@ int sub_101a5a50(unsigned int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5a80 size=0x1
+void sub_101a5a80()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x10b
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
