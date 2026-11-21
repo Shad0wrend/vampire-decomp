@@ -2790,6 +2790,16 @@ void * CUnknown1002b4e0::sub_1002b4e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c020 size=0x8
+namespace lifted {
+extern char g_102eacf8;
+}
+void sub_1002c020()
+{
+    lifted::g_102eacf8 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c080 size=0x8d
 #include "CUtlLinkedList8.h"
 
