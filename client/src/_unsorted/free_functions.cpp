@@ -9541,6 +9541,16 @@ void UtlMem::sub_1009cf00(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d400 size=0x6
+namespace lifted {
+extern char g_1049d9d8;
+}
+int sub_1009d400()
+{
+    return (int)&lifted::g_1049d9d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009db70 size=0x1
 void sub_1009db70()
 {
