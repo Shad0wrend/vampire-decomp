@@ -2364,3 +2364,8 @@ ConVar g_105fbae0("vgui_eyetarget_z", "64", 0);
 #include "ConVar.h"
 ConVar g_105fb880("modelpanel_fov", "35", 0, "Use this to set the field of view for the 'orthogonal' view for a model in vgui.", true, 20.0f, true, 120.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1018b3e0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb8c8("modelpanel_scalar", "1.2", 0, "Use this to adjust the width of the screen for the model.  Increase if there is clipping.  Shrink if model looks too small.");
+// END FUNCTION
