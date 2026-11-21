@@ -3111,6 +3111,7 @@
 0x1016b070 func   ??1VBarterFrameLabel@@UAE@XZ VBarterFrameLabel::~VBarterFrameLabel
 0x1016b1a0 func   ??1VBarterLabel@@UAE@XZ VBarterLabel::~VBarterLabel
 0x1016b1a0 func   ?sub_1016b1a0@CUnknown1016b1a0@@QAEHXZ CUnknown1016b1a0::sub_1016b1a0
+0x1016b740 func   ??1VBarterUI@@UAE@XZ VBarterUI::~VBarterUI
 0x1016f530 func   ?sub_1016f530@CUnknown1016f530@@QAEPADXZ CUnknown1016f530::sub_1016f530
 0x10170170 func   ?sub_10170170@@YAHXZ sub_10170170
 0x10170430 func   ?sub_10170430@CUnknown10170430@@QAEDD@Z CUnknown10170430::sub_10170430
