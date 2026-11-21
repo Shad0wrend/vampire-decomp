@@ -4222,6 +4222,40 @@ float sub_1008c690(SegTable *tbl, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c770 size=0x168
+#include "Vector.h"
+
+void sub_1008c060(void *pStudioHdr, int iSequence, const float *poseParameter, void **panim, float *weight);
+char sub_1008c5d0(void *panim, float flCycleFrom, float flCycleTo, Vector &deltaPos, Vector &deltaAngles);
+
+bool sub_1008c770(void *pStudioHdr, int iSequence, float flCycleFrom, float flCycleTo, const float *poseParameter, Vector &deltaPos, Vector &deltaAngles)
+{
+	void *panim[4];
+	float weight[4];
+	sub_1008c060(pStudioHdr, iSequence, poseParameter, panim, weight);
+	deltaPos.Init();
+	deltaAngles.Init();
+	bool found = false;
+	for (int i = 0; i < 4; i++)
+	{
+		if (weight[i])
+		{
+			Vector localPos;
+			Vector localAngles;
+			localPos.Init();
+			localAngles.Init();
+			if (sub_1008c5d0(panim[i], flCycleFrom, flCycleTo, localPos, localAngles))
+			{
+				found = true;
+				deltaPos = deltaPos + localPos * weight[i];
+				deltaAngles = deltaAngles + localAngles * weight[i];
+			}
+		}
+	}
+	return found;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ce40 size=0x154
 #include "CUnknown101dff00.h"
 #include "CRestore.h"
