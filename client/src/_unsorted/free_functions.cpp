@@ -9244,6 +9244,14 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f10c0 size=0x4
+struct CUnknown100f10c0 { float sub_100f10c0(); };
+float CUnknown100f10c0::sub_100f10c0()
+{
+    return *(float *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2490 size=0x3
 void __stdcall sub_100f2490(int a0)
 {
