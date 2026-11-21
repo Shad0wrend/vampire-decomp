@@ -2693,6 +2693,13 @@ int g_102ea134 = ClientClassInit((DT_WeaponRanged_FlameThrower::ignored *)0);
 RecvTable g_102ea254;
 // END FUNCTION
 
+// FUNCTION: 0x100284e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponPhysCannon { struct ignored; }
+template <> int ClientClassInit<DT_WeaponPhysCannon::ignored>(DT_WeaponPhysCannon::ignored *);
+int g_102ea250 = ClientClassInit((DT_WeaponPhysCannon::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100299b0 size=0xa
 #include "ConVar.h"
 ConVar g_102ea548("ft_link_velocity", "800", 8192, "The initial velocity of a flamethrower link");
