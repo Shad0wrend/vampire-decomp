@@ -734,6 +734,7 @@
 0x1002c2c0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseTempEntity@@@Z ClientClassInit
 0x1002c320 func   ?sub_1002c320@@YAHXZ sub_1002c320
 0x1002c330 func   ?sub_1002c330@@YAHXZ sub_1002c330
+0x1002c370 func   ??_GC_BaseTempEntity@@UAEPAXI@Z ??_GC_BaseTempEntity@@UAEPAXI@Z
 0x1002c390 func   ??1C_BaseTempEntity@@UAE@XZ C_BaseTempEntity::~C_BaseTempEntity
 0x1002c390 func   ?sub_1002c390@CUnknown1002c390@@QAEXXZ CUnknown1002c390::sub_1002c390
 0x1002c3a0 func   ?sub_1002c3a0@CUnknown1002c3a0@@QAEHXZ CUnknown1002c3a0::sub_1002c3a0
