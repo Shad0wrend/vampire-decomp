@@ -18411,6 +18411,27 @@ int *COwner101e80c0::sub_1014d120(int *pResult, int a, int unused, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d160 size=0x2b
+struct CUnk101e8210Inner {
+    int sub_1014b3b0(int a);
+};
+
+struct R101e8210 { int v; R101e8210(int x) { v = x; } };
+
+struct CUnit101e8210 {
+    char pad[0x1c];
+    struct CMid { char pad[0x10]; CUnk101e8210Inner *p; } *m_pMid;
+    R101e8210 sub_1014d160(int a, int b);
+};
+
+R101e8210 CUnit101e8210::sub_1014d160(int a, int b)
+{
+    if (m_pMid->p->sub_1014b3b0(a) >= 2)
+        return R101e8210(3);
+    return R101e8210(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
