@@ -7833,6 +7833,36 @@ int sub_1002a430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a530 size=0xfa
+#include "RecvTable.h"
+extern RecvTable g_102eab98;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ad768;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+template <typename T> int ClientClassInit(T *);
+namespace DT_BatSwarm { struct ignored; }
+template <> int ClientClassInit<DT_BatSwarm::ignored>(DT_BatSwarm::ignored *)
+{
+	char *pRecvTableName = "DT_BatSwarm";
+	RecvTable &RecvTable = g_102eab98;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ad768, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_BatDrawnBits", 1964, 4, 0, 0),
+		RecvPropVector("m_vecBatPosition[0]", 1968, 12, 0, RecvProxy_VectorToVector),
+		InternalRecvPropArray(32, 12, "m_vecBatPosition", 0),
+		RecvPropVector("m_vecBatVelocity[0]", 2352, 12, 0, RecvProxy_VectorToVector),
+		InternalRecvPropArray(32, 12, "m_vecBatVelocity", 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b4e0 size=0x3
 struct CUnknown1002b4e0 { void * sub_1002b4e0(); };
 void * CUnknown1002b4e0::sub_1002b4e0()
