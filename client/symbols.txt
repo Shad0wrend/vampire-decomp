@@ -171,6 +171,7 @@
 0x1011ecd0 func   ?sub_1011ecd0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ecd0
 0x1011ed80 func   ?sub_1011ed80@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ed80
 0x1011ee30 func   ?sub_1011ee30@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ee30
+0x1011eee0 func   ?sub_1011eee0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011eee0
 0x1011f350 func   ?sub_1011f350@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_1011f350
 0x1011f490 func   ?sub_1011f490@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_1011f490
 0x1011f550 func   ?sub_1011f550@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1011f550
