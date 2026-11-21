@@ -9,6 +9,14 @@ RecvTable::RecvTable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e15b0 size=0x1f
+#include "RecvTable.h"
+RecvTable::RecvTable(RecvProp *pProps, int nProps, char *pNetTableName)
+{
+    Construct(pProps, nProps, pNetTableName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e15e0 size=0x22
 #include "RecvTable.h"
 void RecvTable::Construct(RecvProp *pProps, int nProps, char *pNetTableName)
