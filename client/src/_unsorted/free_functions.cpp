@@ -12411,6 +12411,16 @@ bool CVDmgBlock16_t::sub_101613e0(const CVDmgBlock16_t *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101615d0 size=0x2b
+#include "CParsedValue.h"
+
+// TARGET: CParsedValue::sub_101615d0
+void CParsedValue::sub_101615d0(CVStatKV *pKV, const char *pszKey)
+{
+	sub_10161600(sub_1015fb60(pKV->vfunc13(pszKey, "")));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161db0 size=0x20
 struct CUnknown10206400 { void * sub_10161db0(int); };
 void * CUnknown10206400::sub_10161db0(int a0)
