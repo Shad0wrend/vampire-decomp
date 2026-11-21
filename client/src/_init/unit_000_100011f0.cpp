@@ -2291,6 +2291,13 @@ int g_102dfe9c = ClientClassInit((DT_ItemKMalcomOfficeKey::ignored *)0);
 RecvTable g_102e0784;
 // END FUNCTION
 
+// FUNCTION: 0x10022750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKGimbleKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKGimbleKey::ignored>(DT_ItemKGimbleKey::ignored *);
+int g_102e0780 = ClientClassInit((DT_ItemKGimbleKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10022990 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3f34;
