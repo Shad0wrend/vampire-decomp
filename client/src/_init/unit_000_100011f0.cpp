@@ -107,6 +107,13 @@ int g_102dea34 = ClientClassInit((DT_ItemKeyGeneric::ignored *)0);
 RecvTable g_102decf0;
 // END FUNCTION
 
+// FUNCTION: 0x10003e80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultRegen { struct ignored; }
+template <> int ClientClassInit<DT_OccultRegen::ignored>(DT_OccultRegen::ignored *);
+int g_102decec = ClientClassInit((DT_OccultRegen::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10004060 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ded3c;
