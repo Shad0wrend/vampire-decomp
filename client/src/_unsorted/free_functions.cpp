@@ -19178,6 +19178,28 @@ char * CUnknown100a3b50::sub_100a3b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3d00 size=0x88
+#include "RecvTable.h"
+extern RecvTable g_104a0c18;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerState { struct ignored; }
+template <> int ClientClassInit<DT_PlayerState::ignored>(DT_PlayerState::ignored *)
+{
+	char *pRecvTableName = "DT_PlayerState";
+	RecvTable &RecvTable = g_104a0c18;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("deadflag", 0, 4, 0, 0),
+		RecvPropVector("v_angle", 4, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4a10 size=0x6
 namespace lifted {
 extern char g_1049fdac;
