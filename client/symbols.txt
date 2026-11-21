@@ -319,6 +319,7 @@
 0x100dfb60 func   ?sub_100dfb60@@YAXXZ sub_100dfb60
 0x100dfb70 func   ?sub_100dfb70@@YAXXZ sub_100dfb70
 0x100e00f0 func   ?sub_100e00f0@@YAXXZ sub_100e00f0
+0x100e0100 func   ?sub_100e0100@@YAXXZ sub_100e0100
 0x100e1040 func   ?sub_100e1040@UtlMem@@QAEXXZ UtlMem::sub_100e1040
 0x100e1290 func   ?sub_100e1290@UtlMem@@QAEXXZ UtlMem::sub_100e1290
 0x100e12c0 func   ?sub_100e12c0@UtlMem@@QAEXH@Z UtlMem::sub_100e12c0
