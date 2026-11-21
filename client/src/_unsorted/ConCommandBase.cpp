@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df240 size=0x3
+#include "ConCommandBase.h"
+bool ConCommandBase::vfunc1()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df250 size=0x4d
 #include "ConCommandBase.h"
 struct CConCmdView {
