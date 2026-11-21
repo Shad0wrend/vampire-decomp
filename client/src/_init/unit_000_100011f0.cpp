@@ -2039,6 +2039,11 @@ ConVar g_1049fe08("test_room_dsp", "-1", 0);
 RecvTable g_104a0c18;
 // END FUNCTION
 
+// FUNCTION: 0x100a3da0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a0d34;
+// END FUNCTION
+
 // FUNCTION: 0x100a7260 size=0xa
 #include "ConVar.h"
 ConVar g_1049e838("vamplight_enabled", "0", 0);
