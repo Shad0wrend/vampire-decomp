@@ -18104,6 +18104,13 @@ int sub_1011e820(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e850 size=0x7
+int sub_1011e850(int a0)
+{
+    return *(int *)((char *)a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ecd0 size=0xb0
 #include "UtlVec8.h"
 

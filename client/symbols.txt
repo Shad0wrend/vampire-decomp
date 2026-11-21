@@ -1178,6 +1178,7 @@
 0x1011d900 func   ?vfunc1@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEHI@Z CEntityDataInstantiator<touchlink_t>::vfunc1
 0x1011e7f0 func   ?sub_1011e7f0@@YAHH@Z sub_1011e7f0
 0x1011e820 func   ?sub_1011e820@@YAHH@Z sub_1011e820
+0x1011e850 func   ?sub_1011e850@@YAHH@Z sub_1011e850
 0x1011ecd0 func   ?sub_1011ecd0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ecd0
 0x1011ed80 func   ?sub_1011ed80@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ed80
 0x1011ee30 func   ?sub_1011ee30@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ee30
