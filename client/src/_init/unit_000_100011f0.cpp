@@ -856,3 +856,8 @@ ConVar g_104d24f0("c_orthoheight", "100", 128);
 #include "ConVar.h"
 ConVar g_104d1ee8("cam_fadestart", "32", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb320 size=0xa
+#include "ConVar.h"
+ConVar g_104d22c0("cam_fadeend", "18", 0);
+// END FUNCTION
