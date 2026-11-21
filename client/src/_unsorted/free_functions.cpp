@@ -465,6 +465,45 @@ int sub_10003fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100040c0 size=0x1fb
+#include "RecvTable.h"
+extern RecvTable g_102ded3c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ac968;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_ParticleStorm { struct ignored; }
+template <> int ClientClassInit<DT_ParticleStorm::ignored>(DT_ParticleStorm::ignored *)
+{
+	char *pRecvTableName = "DT_ParticleStorm";
+	RecvTable &RecvTable = g_102ded3c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ac968, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_SpawnRate", 1232, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_StartColor", 1236, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_EndColor", 1248, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_ParticleLifetime", 1260, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_MinSpeed", 1264, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_MaxSpeed", 1268, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_StartSize", 1272, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_EndSize", 1276, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_SpawnRadius", 1280, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bEmit", 1308, 1, 0, 0),
+		RecvPropVector("m_vecAttachVel", 1312, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flSuck", 1324, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flDim", 1328, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100044d0 size=0xd
 struct CUnknown100044d0 { char sub_100044d0(char); };
 char CUnknown100044d0::sub_100044d0(char a0)
