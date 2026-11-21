@@ -4389,6 +4389,17 @@ bool sub_1004ba90(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bb80 size=0xb
+namespace lifted {
+struct C101a9890 { int sub_101a9890(); };
+}
+struct CUnknown1004bb80 { int sub_1004bb80(); };
+int CUnknown1004bb80::sub_1004bb80()
+{
+    return ((lifted::C101a9890 *)(this + -368))->sub_101a9890();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004bbb0 size=0x6
 int sub_1004bbb0()
 {
