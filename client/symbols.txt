@@ -869,6 +869,7 @@
 0x10035e90 func   ?sub_10035e90@@YAHXZ sub_10035e90
 0x10035f30 func   ?sub_10035f30@@YAHXZ sub_10035f30
 0x10035fa0 func   ?ClientClassInit@@YAHPAUignored@DT_TEDecal@@@Z ClientClassInit
+0x10036100 func   ??_GC_TEDynamicLight@@UAEPAXI@Z ??_GC_TEDynamicLight@@UAEPAXI@Z
 0x10036120 func   ??1C_TEDynamicLight@@UAE@XZ C_TEDynamicLight::~C_TEDynamicLight
 0x10036120 func   ?sub_10036120@CUnknown10036120@@QAEHXZ CUnknown10036120::sub_10036120
 0x10036290 func   ?sub_10036290@@YAHXZ sub_10036290
