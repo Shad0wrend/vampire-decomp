@@ -4020,6 +4020,13 @@ int g_1049e16c = ClientClassInit((DT_Edict::ignored *)0);
 RecvTable g_1049e328;
 // END FUNCTION
 
+// FUNCTION: 0x1009d660 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_AnimTimeMustBeFirst { struct ignored; }
+template <> int ClientClassInit<DT_AnimTimeMustBeFirst::ignored>(DT_AnimTimeMustBeFirst::ignored *);
+int g_1049e324 = ClientClassInit((DT_AnimTimeMustBeFirst::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1009d700 size=0xa
 #include "RecvTable.h"
 RecvTable g_1049e190;
