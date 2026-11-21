@@ -8995,6 +8995,53 @@ bool CUtlRBTree12::sub_1013ddc0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e3a0 size=0x18b
+#include "CUnknown101d3a10.h"
+#include "CVStatInfoList_t.h"
+
+extern CVStatInfoList_t g_105f9220;
+extern CVStatInfoList_t g_105f90b8;
+extern CVStatInfoList_t g_105f8c60;
+extern int g_105e7500;
+
+void CUnknown101d3a10::sub_1013e3a0()
+{
+	int i;
+	int n = g_105f9220.m_nStats;
+	if (n > 0) {
+		if (m_pArray0d0)
+			delete m_pArray0d0;
+		m_pArray0d0 = new int[n];
+		for (i = 0; i < n; i++)
+			m_pArray0d0[i] = g_105f9220.sub_1015cfe0(i)->DefaultValue();
+	}
+	n = g_105f90b8.m_nStats;
+	if (n > 0) {
+		if (m_pArray0d4)
+			delete m_pArray0d4;
+		m_pArray0d4 = new int[n];
+		for (i = 0; i < n; i++)
+			m_pArray0d4[i] = g_105f90b8.sub_1015cfe0(i)->DefaultValue();
+	}
+	n = g_105f8c60.m_nStats;
+	if (n > 0) {
+		if (m_pArray0d8)
+			delete m_pArray0d8;
+		m_pArray0d8 = new int[n];
+		for (i = 0; i < n; i++)
+			m_pArray0d8[i] = -1;
+		for (i = 0; i < n; i++)
+			m_pArray0d8[i] = g_105f8c60.sub_1015cfe0(i)->DefaultValue();
+	}
+	if (m_pArray0dc)
+		delete m_pArray0dc;
+	n = g_105e7500;
+	m_pArray0dc = new int[n];
+	for (i = 0; i < g_105e7500; i++)
+		m_pArray0dc[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fdc0 size=0x2f
 #include "CStatDefault3List.h"
 // TARGET: sub_1013fdc0

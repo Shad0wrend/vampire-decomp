@@ -380,6 +380,7 @@
 0x1013dd10 func   ?sub_1013dd10@UtlVec8@@QAEXHH@Z UtlVec8::sub_1013dd10
 0x1013dd50 func   ?sub_1013dd50@UtlMem@@QAEXH@Z UtlMem::sub_1013dd50
 0x1013ddc0 func   ?sub_1013ddc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_1013ddc0
+0x1013e3a0 func   ?sub_1013e3a0@CUnknown101d3a10@@QAEXXZ CUnknown101d3a10::sub_1013e3a0
 0x1013fdc0 func   ?sub_1013fdc0@CStatDefault3List@@QAEXXZ CStatDefault3List::sub_1013fdc0
 0x1013ffa0 func   ?sub_1013ffa0@CUnit101d5e00@@QAEPBDH@Z CUnit101d5e00::sub_1013ffa0
 0x101401e0 func   ?sub_101401e0@CUnknown101d61e0@@QAEPAU1@H@Z CUnknown101d61e0::sub_101401e0
