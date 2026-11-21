@@ -35,6 +35,13 @@ int g_102de34c = ClientClassInit((DT_CCameraAnimated::ignored *)0);
 RecvTable g_102de694;
 // END FUNCTION
 
+// FUNCTION: 0x100029e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HL2_Player { struct ignored; }
+template <> int ClientClassInit<DT_HL2_Player::ignored>(DT_HL2_Player::ignored *);
+int g_102de690 = ClientClassInit((DT_HL2_Player::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10002c80 size=0xa
 #include "RecvTable.h"
 RecvTable g_102de784;
