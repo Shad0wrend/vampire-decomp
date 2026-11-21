@@ -6981,6 +6981,16 @@ int sub_100ca7f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca8c0 size=0x5
+namespace lifted {
+int sub_10068330();
+}
+int sub_100ca8c0()
+{
+    return lifted::sub_10068330();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100caa00 size=0x7b
 #include "CUtlLinkedList12.h"
 
