@@ -3651,6 +3651,31 @@ void * CUnknown102454e0::sub_100df1c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df2c0 size=0x3d
+int sub_101e28e0(const char *, const char *);
+
+struct CUnk10245660Node {
+    const char *sub_100df330();
+    CUnk10245660Node *sub_100df3a0();
+};
+
+CUnk10245660Node *sub_100df300();
+
+CUnk10245660Node *sub_100df2c0(const char *pName)
+{
+    CUnk10245660Node *pNode;
+
+    pNode = sub_100df300();
+    while (pNode != 0) {
+        if (sub_101e28e0(pName, pNode->sub_100df330()) == 0) {
+            return pNode;
+        }
+        pNode = pNode->sub_100df3a0();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
