@@ -1821,3 +1821,8 @@ ConVar g_104dfb78("sv_stopspeed", "16", 8448, "Minimum stopping speed when on gr
 #include "ConVar.h"
 ConVar g_104dfdb8("sv_noclipaccelerate", "15", 8576);
 // END FUNCTION
+
+// FUNCTION: 0x1010fa20 size=0xa
+#include "ConVar.h"
+ConVar g_104df8a8("sv_noclipspeed", "2000", 8576);
+// END FUNCTION
