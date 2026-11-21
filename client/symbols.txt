@@ -206,6 +206,7 @@
 0x1000de90 func   ??_GC_WeaponRanged_Pistol_DesertEagle@@UAEPAXI@Z ??_GC_WeaponRanged_Pistol_DesertEagle@@UAEPAXI@Z
 0x1000ded0 func   ?sub_1000ded0@@YAHXZ sub_1000ded0
 0x1000dff0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Pistol_DesertEagle@@@Z ClientClassInit
+0x1000e110 func   ??_GC_WeaponRanged_Pistol_Glock@@UAEPAXI@Z ??_GC_WeaponRanged_Pistol_Glock@@UAEPAXI@Z
 0x1000e150 func   ?sub_1000e150@@YAHXZ sub_1000e150
 0x1000e270 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Pistol_Glock@@@Z ClientClassInit
 0x1000e3d0 func   ?sub_1000e3d0@@YAHXZ sub_1000e3d0
