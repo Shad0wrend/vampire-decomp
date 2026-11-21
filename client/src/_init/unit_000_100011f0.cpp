@@ -1583,6 +1583,13 @@ int g_102e143c = ClientClassInit((DT_ItemGLillyDiary::ignored *)0);
 RecvTable g_102e7588;
 // END FUNCTION
 
+// FUNCTION: 0x100193d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGLillyPurse { struct ignored; }
+template <> int ClientClassInit<DT_ItemGLillyPurse::ignored>(DT_ItemGLillyPurse::ignored *);
+int g_102e7584 = ClientClassInit((DT_ItemGLillyPurse::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10019610 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e4244;
