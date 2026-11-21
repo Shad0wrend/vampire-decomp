@@ -9167,6 +9167,24 @@ float sub_10109c20(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109c80 size=0x58
+extern float g_104d4980[];
+float sub_10109c80(float f)
+{
+	if (f < 0.0f)
+		return 0.0f;
+	if (f > 1.0f)
+		return 1.0f;
+	f = f * 255.0f;
+	int i;
+	__asm {
+		fld f
+		fistp i
+	}
+	return g_104d4980[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
