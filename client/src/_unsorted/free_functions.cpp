@@ -9940,6 +9940,17 @@ int CUnknown10095b40::sub_10095b40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095b70 size=0x11
+namespace lifted {
+int sub_1007a500(int);
+int __stdcall sub_1008f900(int);
+}
+int sub_10095b70()
+{
+    return lifted::sub_1007a500(lifted::sub_1008f900(-1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095b90 size=0x5
 int __stdcall sub_10095b90(int a0, int a1, int a2)
 {
