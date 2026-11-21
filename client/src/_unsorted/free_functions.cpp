@@ -1263,6 +1263,24 @@ void CUnk10427970::sub_100792d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079480 size=0x63
+struct SEntry { char pad[0x1c]; float a[3]; float b[3]; };
+SEntry *sub_1008d9d0(int, int);
+// TARGET: sub_10079480
+int sub_10079480(int a, int b, float *pA, float *pB)
+{
+	SEntry *p = sub_1008d9d0(a, b);
+	if (p == 0) {
+		pA[0] = 0; pA[1] = 0; pA[2] = 0;
+		pB[0] = 0; pB[1] = 0; pB[2] = 0;
+		return 0;
+	}
+	pA[0] = p->a[0]; pA[1] = p->a[1]; pA[2] = p->a[2];
+	pB[0] = p->b[0]; pB[1] = p->b[1]; pB[2] = p->b[2];
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100797c0 size=0x1c
 void sub_10079520(void *p);
 
