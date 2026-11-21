@@ -29379,6 +29379,16 @@ void __cdecl sub_101a2ee0(void *m, const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2f30 size=0x5
+namespace lifted {
+int sub_101a3000();
+}
+int sub_101a2f30()
+{
+    return lifted::sub_101a3000();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
