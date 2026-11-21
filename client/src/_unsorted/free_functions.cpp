@@ -4244,6 +4244,43 @@ void CUnknown100c81b0::sub_1008e420(const CBitVecWords *pSource, int count, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e4b0 size=0xaa
+#include "CUtlVector4.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+int CUtlVector4::sub_1008e4b0(int elem, const int *src)
+{
+	if (1 + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (1 + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 8;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (int *)Plat_Realloc(m_pMemory, m_allocationCount * 4);
+		else
+			m_pMemory = (int *)Plat_Alloc(m_allocationCount * 4);
+	}
+	m_size += 1;
+	m_pElements = m_pMemory;
+	int numToMove = m_size - elem - 1;
+	if (numToMove > 0)
+		sub_101d0f30(m_pMemory + elem + 1, m_pMemory + elem, numToMove * 4);
+	int *p = m_pMemory + elem;
+	if (p)
+		*p = *src;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e5a0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
