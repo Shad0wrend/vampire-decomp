@@ -40039,6 +40039,36 @@ void CSoundEmitterSystemBase::sub_1012e970(void *pTable, const char *pszName, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ea00 size=0x10f
+#include "CUnknown101b3830.h"
+__declspec(dllimport) const char *Q_stristr(const char *, const char *);
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern char g_102c4864[];
+extern char g_102c4854[];
+extern char g_102c485c[];
+extern char g_102c484c[];
+void sub_1012eb10(const char *pszName, int nPrefixLen, int nSkip, char *pPrefix, int nPrefixSize, char *pSuffix, int nSuffixSize);
+void CUnknown101b3830::sub_1012ea00(int nKey, const char *pszName)
+{
+	const char *pMarker = Q_stristr(pszName, g_102c4864);
+	if (!pMarker) {
+		sub_1012e970(nKey, pszName, (int)pMarker);
+		return;
+	}
+	char prefix[256];
+	char suffix[256];
+	char out[256];
+	memset(prefix, 0, 256);
+	memset(suffix, 0, 256);
+	sub_1012eb10(pszName, pMarker - pszName, 7, prefix, 256, suffix, 256);
+	Q_snprintf(out, 256, g_102c4854, prefix, g_102c485c, suffix);
+	sub_1012e970(nKey, out, 1);
+	Q_snprintf(out, 256, g_102c4854, prefix, g_102c484c, suffix);
+	sub_1012e970(nKey, out, 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012eb10 size=0x58
 void sub_1012eb10(char *pSrc, int split, int skip, char *dst, int max, char *dst2, int max2)
 {
