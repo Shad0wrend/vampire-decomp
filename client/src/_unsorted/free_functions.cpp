@@ -412,6 +412,14 @@ void sub_1002a0e0(Node60 *list, Node60 *src, int parent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b4e0 size=0x3
+struct CUnknown1002b4e0 { void * sub_1002b4e0(); };
+void * CUnknown1002b4e0::sub_1002b4e0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c080 size=0x8d
 #include "CUtlLinkedList8.h"
 
