@@ -12119,6 +12119,12 @@ void sub_1011d590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d5a0 size=0x1
+void sub_1011d5a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ecd0 size=0xb0
 #include "UtlVec8.h"
 
