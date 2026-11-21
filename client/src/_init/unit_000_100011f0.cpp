@@ -3932,6 +3932,13 @@ void * sub_10124d70(void);
 InterfaceReg g_104e1820(sub_10124d70, "PlayerView_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x10124e50 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10124e80(void);
+InterfaceReg g_104e1808(sub_10124e80, "PlayerSpeed_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x10126ab0 size=0xa
 #include "ConVar.h"
 ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
