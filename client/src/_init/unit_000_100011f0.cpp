@@ -866,3 +866,8 @@ ConVar g_104d22c0("cam_fadeend", "18", 0);
 #include "ConVar.h"
 ConVar g_104d2350("camfeed_yaw", "50", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb3c0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2308("camfeed_yaw_end", "2.0", 0);
+// END FUNCTION
