@@ -2759,6 +2759,13 @@ InterfaceReg g_102ea898(sub_1002a2e0, "VClientPrediction001");
 RecvTable g_102eab98;
 // END FUNCTION
 
+// FUNCTION: 0x1002a510 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BatSwarm { struct ignored; }
+template <> int ClientClassInit<DT_BatSwarm::ignored>(DT_BatSwarm::ignored *);
+int g_102eab94 = ClientClassInit((DT_BatSwarm::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1002c030 size=0xa
 #include "ConCommand.h"
 void sub_1002c020(void);
