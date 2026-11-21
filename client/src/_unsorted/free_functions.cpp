@@ -4489,6 +4489,14 @@ void CUtlVector16::sub_10050100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050140 size=0x8
+struct CUnknown10050140 { void sub_10050140(); };
+void CUnknown10050140::sub_10050140()
+{
+    *(int *)((char *)this + 0xc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100509a0 size=0x4
 struct CUnknown100509a0 { char sub_100509a0(); };
 char CUnknown100509a0::sub_100509a0()
