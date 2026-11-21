@@ -21015,6 +21015,15 @@ int CUnknown101283b0::sub_101283b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101283c0 size=0xa
+struct CUnknown101283c0 { int sub_101283c0(int); };
+int CUnknown101283c0::sub_101283c0(int a0)
+{
+    *(int *)((char *)this + 0x10) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101283d0 size=0x2c
 extern int g_105e543c;
 extern char g_104e2438[32][64];
