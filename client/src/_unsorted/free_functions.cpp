@@ -1155,6 +1155,16 @@ int sub_10013650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100138d0 size=0x6
+namespace lifted {
+extern char g_102e57dc;
+}
+int sub_100138d0()
+{
+    return (int)&lifted::g_102e57dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
