@@ -16482,6 +16482,46 @@ bool CUnknown101d7380::sub_10140cb0(const char *name, int *pIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140e00 size=0xa8
+extern "C" char *_strlwr(char *);
+extern "C" char *strstr(const char *, const char *);
+extern char g_102de300[];
+struct Sub {
+	const char *name;
+	const char *Get() { return name ? name : g_102de300; }
+};
+struct Entry {
+	int a, b, c, d, e;
+	Sub sub;
+};
+struct List {
+	int pad;
+	int m_count;
+	Entry **m_items;
+	int sub_10140e00(const char *name);
+};
+static inline void Cpy(char *d, const char *s)
+{
+	while ((*d++ = *s++))
+		;
+}
+int List::sub_10140e00(const char *name)
+{
+	char lowName[128];
+	char lowEntry[128];
+	Cpy(lowName, name);
+	_strlwr(lowName);
+	for (int i = 0; i < m_count; i++) {
+		const char *n = m_items[i]->sub.Get();
+		Cpy(lowEntry, n);
+		_strlwr(lowEntry);
+		if (strstr(lowEntry, lowName) == lowEntry)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142000 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
