@@ -13873,6 +13873,27 @@ int sub_1007ce10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cf60 size=0x7d
+#include "RecvTable.h"
+extern RecvTable g_10486410;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropTime(char *, int, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalActiveWeaponData { struct ignored; }
+template <> int ClientClassInit<DT_LocalActiveWeaponData::ignored>(DT_LocalActiveWeaponData::ignored *)
+{
+	char *pRecvTableName = "DT_LocalActiveWeaponData";
+	RecvTable &RecvTable = g_10486410;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropTime("m_flNextThink", 120, 4),
+		RecvPropTime("m_flTimeWeaponIdle", 2328, 4),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
