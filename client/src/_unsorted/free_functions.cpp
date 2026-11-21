@@ -6487,6 +6487,14 @@ void UtlMem::sub_100ac080(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac780 size=0x5
+struct CUnknown100ac780 { void sub_100ac780(); };
+void CUnknown100ac780::sub_100ac780()
+{
+    *(char *)((char *)this + 0x4c) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae060 size=0x3
 char sub_100ae060()
 {
