@@ -18098,6 +18098,30 @@ void S101859a0::sub_10097160(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097290 size=0xc0
+#include "RecvTable.h"
+extern RecvTable g_1049c4e4;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Animationlayer { struct ignored; }
+template <> int ClientClassInit<DT_Animationlayer::ignored>(DT_Animationlayer::ignored *)
+{
+	char *pRecvTableName = "DT_Animationlayer";
+	RecvTable &RecvTable = g_1049c4e4;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("sequence", 0, 4, 0, 0),
+		RecvPropFloat("cycle", 4, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("playbackrate", 8, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("weight", 12, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097380 size=0x6
 namespace lifted {
 extern char g_1049c4fc;
