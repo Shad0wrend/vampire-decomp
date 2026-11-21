@@ -2399,3 +2399,9 @@ ConVar g_105fb978("modelpanel_light_ang2", "1", 0, "Blah");
 #include "ConVar.h"
 ConVar g_105fbb70("v_hidevgui", "0", 256);
 // END FUNCTION
+
+// FUNCTION: 0x1018cda0 size=0xa
+#include "ConCommand.h"
+void sub_1018cdd0(void);
+ConCommand g_105fbbb4("vconsole_notify", sub_1018cdd0, 0, 0, 0);
+// END FUNCTION
