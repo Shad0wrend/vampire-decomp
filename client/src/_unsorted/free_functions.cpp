@@ -6983,6 +6983,30 @@ CLinkNode1c *CLinkList::sub_10128270(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128540 size=0x4f
+#include "CKeyValuesX.h"
+extern "C" double __cdecl atof(const char *);
+float CKeyValuesX::sub_10128540(const char *pszKey, float flDefault)
+{
+	CKeyValuesX *pKey = this;
+	if (pszKey)
+		pKey = sub_101282e0(pszKey, 0);
+	if (pKey) {
+		switch (pKey->m_iDataType) {
+		case 0:
+			return (float)atof(pKey->m_sValue);
+		case 1:
+			return (float)pKey->m_nValue;
+		case 2:
+			return pKey->m_flValue;
+		default:
+			return 0.0f;
+		}
+	}
+	return flDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128d80 size=0x4d
 struct SFuncField {
     int fieldType;
