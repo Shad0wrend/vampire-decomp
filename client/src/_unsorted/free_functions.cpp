@@ -1870,6 +1870,63 @@ SeqDesc *sub_1008d9d0(StudioHdr *pHdr, int iSequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008da80 size=0xb8
+struct CStudioSub
+{
+	virtual void v0();
+	virtual char *vfunc1(char *hdr, int index);
+};
+
+struct CStudioInclude	// 0x74 byte record
+{
+	int m_0;
+	CStudioSub *m_pSub;	// 0x04
+	int m_nStart;	// 0x08
+	int m_nCount;	// 0x0c
+};
+
+struct CStudioHdr
+{
+	char m_pad0[0x110];
+	int m_numSeq;	// 0x110
+	int m_seqOffset;	// 0x114
+	char m_pad118[0x194 - 0x118];
+	int m_numInc;	// 0x194
+	int m_incOffset;	// 0x198
+};
+
+char *sub_1008da80(CStudioHdr *pHdr, int index, CStudioHdr **ppOwner);
+
+// TARGET: sub_1008da80
+char *sub_1008da80(CStudioHdr *pHdr, int index, CStudioHdr **ppOwner)
+{
+	int i = 0;
+	if (pHdr != 0 && index >= 0) {
+		if (index < pHdr->m_numSeq) {
+			*ppOwner = pHdr;
+			return (char *)pHdr + pHdr->m_seqOffset + index * 0x2fc;
+		}
+		if (pHdr->m_numInc > 0) {
+			int off = 0;
+			do {
+				CStudioInclude *pInc = (CStudioInclude *)((char *)pHdr + pHdr->m_incOffset + off);
+				if (pInc->m_nStart <= index && pInc->m_nStart + pInc->m_nCount > index && pInc->m_pSub != 0) {
+					char *pSub = pInc->m_pSub->vfunc1((char *)pHdr, i);
+					if (pSub != 0) {
+						char *r = sub_1008da80((CStudioHdr *)pSub, index - pInc->m_nStart, ppOwner);
+						if (r != 0)
+							return r;
+					}
+				}
+				i++;
+				off += 0x74;
+			} while (i < pHdr->m_numInc);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
