@@ -297,6 +297,7 @@
 0x100326e0 func   ?sub_100326e0@@YGXH@Z sub_100326e0
 0x100326f0 func   ?sub_100326f0@@YGXH@Z sub_100326f0
 0x10032720 func   ?sub_10032720@@YAHXZ sub_10032720
+0x10032ba0 func   ?sub_10032ba0@@YAHXZ sub_10032ba0
 0x10039080 func   ?sub_10039080@Vector@@QAEAAV1@ABV1@@Z Vector::sub_10039080
 0x10039460 func   ?sub_10039460@@YGXH@Z sub_10039460
 0x10039e60 func   ?sub_10039e60@UtlMem@@QAEXXZ UtlMem::sub_10039e60
