@@ -19584,6 +19584,15 @@ int sub_101206d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120720 size=0x9
+struct CUnknown10120720 { void * sub_10120720(); };
+void * CUnknown10120720::sub_10120720()
+{
+    *(int *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120730 size=0x25
 struct CUnknown109ef590
 {
