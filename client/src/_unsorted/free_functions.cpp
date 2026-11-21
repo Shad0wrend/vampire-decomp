@@ -23224,6 +23224,17 @@ RecvProp RecvPropTime(char *pVarName, int offset, int sizeofVar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101277e0 size=0x28
+#include "RecvTable.h"
+
+int sub_10127810(int, int, int);
+
+RecvProp RecvPropPredictableId(char *pVarName, int offset, int sizeofVar)
+{
+	return RecvPropInt(pVarName, offset, sizeofVar, 0, (RecvVarProxyFn)sub_10127810);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127810 size=0x12
 namespace lifted {
 struct C10120a00 { int sub_10120a00(int); };
