@@ -1,9 +1,10 @@
 // CSoundEnvelopeController: the abstract base of CSoundControllerImp (primary vtable, 18 slots, all pure).
-// Slot 16 is declared void here: the sound controller's slot 15 calls it and discards the result.
+// Slots 15 and 16 are Source's two SoundPlayEnvelope overloads (both float; MSVC puts overloads in reverse order).
 #pragma once
 #include "PcdVirtual.h"	// PCD_PURE: the sound controller global's class is not abstract in the initializer units
 
 class CUnknown101bc140;
+struct envelopePoint_t;
 
 class CSoundEnvelopeController
 {
@@ -23,7 +24,7 @@ public:
 	virtual void vfunc12() PCD_PURE;
 	virtual int vfunc13(int) PCD_PURE;
 	virtual int vfunc14(int) PCD_PURE;
-	virtual void vfunc15(void *pSound, int command, int *pPoints) PCD_PURE;
-	virtual void vfunc16(void *pSound, int command, void *points, int numPoints) PCD_PURE;
+	virtual float vfunc15(void *pSound, int command, int *pPoints) PCD_PURE;	// the envelope description form
+	virtual float vfunc16(void *pSound, int command, envelopePoint_t *points, int numPoints) PCD_PURE;
 	virtual void vfunc17(int a) PCD_PURE;
 };
