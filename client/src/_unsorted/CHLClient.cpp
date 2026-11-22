@@ -19,6 +19,14 @@ void CHLClient::vfunc12(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbec0 size=0x6
+#include "CHLClient.h"
+int CHLClient::vfunc29()
+{
+    return 0x38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbed0 size=0x3
 #include "CHLClient.h"
 void CHLClient::vfunc30(int a0, int a1)
