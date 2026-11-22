@@ -148,3 +148,11 @@ int vgui2::BuildGroup::vfunc10()
     return *(int *)((char *)this + 0x54);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c23b0 size=0x4
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc2()
+{
+    return *(int *)((char *)this + 0x3c);
+}
+// END FUNCTION
