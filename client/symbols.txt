@@ -4831,6 +4831,7 @@
 0x10168ca0 func   ?sub_10168ca0@CUnknown10168ca0@@QAEHXZ CUnknown10168ca0::sub_10168ca0
 0x1016a690 func   ?sub_1016a690@@YAXXZ sub_1016a690
 0x1016a6a0 func   ?sub_1016a6a0@@YAXXZ sub_1016a6a0
+0x1016a760 func   ?vfunc7@CTextMessagePanel@@UAEHHHH@Z CTextMessagePanel::vfunc7
 0x1016a770 func   ??_GCTextMessagePanel@@UAEPAXI@Z ??_GCTextMessagePanel@@UAEPAXI@Z
 0x1016a790 func   ??1CTextMessagePanel@@UAE@XZ CTextMessagePanel::~CTextMessagePanel
 0x1016a790 func   ?sub_1016a790@CUnknown1016a790@@QAEHXZ CUnknown1016a790::sub_1016a790
