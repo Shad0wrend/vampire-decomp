@@ -19,6 +19,23 @@ CTextMessagePanel *pcd_emit_1016a770() { return new CTextMessagePanel; }
 // TARGET: ??_GCTextMessagePanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1016a8c0 size=0x20
+#include "CTextMessagePanel.h"
+namespace lifted {
+int sub_1016a870();
+}
+int CTextMessagePanel::vfunc107(int a0, int a1)
+{
+    int t0 = lifted::sub_1016a870();
+    if (t0 != 0) {
+        *(int *)((char *)t0) = 1;
+        *(int *)((char *)t0 + 8) = a0;
+        *(int *)((char *)t0 + 0xc) = a1;
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a990 size=0xd
 #include "CTextMessagePanel.h"
 namespace lifted {
