@@ -188,6 +188,14 @@ void C_BaseCombatWeapon::vfunc249(int a0, int a1, int a2, int a3, int a4, int a5
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003c80 size=0x8
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::vfunc246(int a0, int a1, int a2)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ab20 size=0x1e
 #include "C_BaseCombatWeapon.h"
 
