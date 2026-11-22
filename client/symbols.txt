@@ -2357,6 +2357,7 @@
 0x100bd820 func   ?ClientClassInit@@YAHPAUignored@DT_DynamicProp@@@Z ClientClassInit
 0x100bd8e0 func   ??_GC_DynamicProp@@UAEPAXI@Z ??_GC_DynamicProp@@UAEPAXI@Z
 0x100bd900 func   ??1C_DynamicProp@@UAE@XZ C_DynamicProp::~C_DynamicProp
+0x100bd940 func   ?vfunc15@C_OrnamentProp@@UAEHXZ C_OrnamentProp::vfunc15
 0x100bd950 func   ?sub_100bd950@@YAHXZ sub_100bd950
 0x100bda50 func   ?ClientClassInit@@YAHPAUignored@DT_OrnamentProp@@@Z ClientClassInit
 0x100bdb10 func   ??_GC_OrnamentProp@@UAEPAXI@Z ??_GC_OrnamentProp@@UAEPAXI@Z
