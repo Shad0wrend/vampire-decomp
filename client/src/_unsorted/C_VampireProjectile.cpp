@@ -9,6 +9,14 @@ bool C_VampireProjectile::vfunc144()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6880 size=0x3
+#include "C_VampireProjectile.h"
+int C_VampireProjectile::vfunc86()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152010 size=0x1e
 #include "C_VampireProjectile.h"
 
