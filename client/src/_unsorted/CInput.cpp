@@ -25,6 +25,16 @@ float CInput::vfunc52()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a210 size=0x17
+#include "CInput.h"
+int CInput::vfunc46(int a0, int a1)
+{
+    *(int *)((char *)this + 0x1b0) = a0;
+    *(int *)((char *)this + 0x1b4) = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff7c0 size=0x14
 #include "CInput.h"
 namespace lifted {
