@@ -1731,6 +1731,7 @@
 0x100a3b20 func   ?GetIClientEntity@C_BaseNetworkable@@UAEPAVIClientEntity@@XZ C_BaseNetworkable::GetIClientEntity
 0x100a3b30 func   ?GetBaseEntity@C_BaseNetworkable@@UAEPAVC_BaseEntity@@XZ C_BaseNetworkable::GetBaseEntity
 0x100a3b40 func   ?GetClientThinkable@C_BaseNetworkable@@UAEPAVIClientThinkable@@XZ C_BaseNetworkable::GetClientThinkable
+0x100a3b50 func   ?GetIClientUnknown@C_BaseNetworkable@@UAEPAVIClientUnknown@@XZ C_BaseNetworkable::GetIClientUnknown
 0x100a3b50 func   ?sub_100a3b50@CUnknown100a3b50@@QAEPADXZ CUnknown100a3b50::sub_100a3b50
 0x100a3d00 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerState@@@Z ClientClassInit
 0x100a3e00 func   ?ClientClassInit@@YAHPAUignored@DT_Local@@@Z ClientClassInit
