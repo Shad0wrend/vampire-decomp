@@ -34,3 +34,11 @@ IClientEntity * C_BaseNetworkable::GetIClientEntity()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a3b30 size=0x3
+#include "C_BaseNetworkable.h"
+C_BaseEntity * C_BaseNetworkable::GetBaseEntity()
+{
+    return 0;
+}
+// END FUNCTION
