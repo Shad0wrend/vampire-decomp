@@ -10,15 +10,15 @@ public:
 	virtual ~C_BaseViewModel();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseViewModel's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
-	virtual void vfunc17();
+	virtual int vfunc15();
+	virtual int vfunc16();
+	virtual int vfunc17();
 	virtual void vfunc19();
 	virtual void vfunc21();
 	virtual void vfunc29();
 	virtual void vfunc37();
 	virtual int vfunc86();
-	virtual void vfunc118();
+	virtual void vfunc118(int);
 	virtual void vfunc120();
 	virtual void vfunc122();
 	virtual void vfunc127();

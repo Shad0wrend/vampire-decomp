@@ -10,9 +10,9 @@ public:
 	virtual ~C_BaseGrenade();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseGrenade's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
-	virtual void vfunc17();
+	virtual int vfunc15();
+	virtual int vfunc16();
+	virtual int vfunc17();
 	virtual void vfunc21();
 	// the slots C_BaseGrenade adds to its base's vtable: 149-160, vfuncK at slot K
 	virtual void vfunc149(int, int);

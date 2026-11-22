@@ -10,29 +10,29 @@ public:
 	virtual ~C_BasePlayer();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BasePlayer's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
-	virtual void vfunc17();
+	virtual int vfunc15();
+	virtual int vfunc16();
+	virtual int vfunc17();
 	virtual void vfunc19();
 	virtual void vfunc37();
 	virtual void vfunc62();
 	virtual void vfunc73();
-	virtual void vfunc74();
-	virtual void vfunc84();
+	virtual bool vfunc74();
+	virtual int vfunc84();
 	virtual int vfunc86();
-	virtual void vfunc94();
+	virtual bool vfunc94();
 	virtual void vfunc107();
 	virtual void vfunc108();
-	virtual void vfunc109();
-	virtual void vfunc119();
+	virtual char * vfunc109();
+	virtual void vfunc119(int);
 	virtual void vfunc147();
 	// the slots C_BasePlayer adds to its base's vtable: 149-196, vfuncK at slot K
 	virtual void vfunc149();
 	virtual void vfunc150();
-	virtual void vfunc151();
+	virtual void vfunc151(int, int, int, int, int, int, int, int, int, int, int);
 	virtual void vfunc152();
 	virtual void vfunc153();
-	virtual void vfunc154();
+	virtual void vfunc154(int);
 	virtual void vfunc155();
 	virtual void vfunc156();
 	virtual void vfunc157();
@@ -53,8 +53,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc172();
 	virtual void vfunc173();
 	virtual void vfunc174();
-	virtual void vfunc175();
-	virtual void vfunc176();
+	virtual int vfunc175(int, int);
+	virtual float vfunc176();
 	virtual void vfunc177();
 	virtual void vfunc178();
 	virtual void vfunc179();
@@ -67,12 +67,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc186();
 	virtual void vfunc187();
 	virtual void vfunc188();
-	virtual void vfunc189();
+	virtual void vfunc189(int);
 	virtual void vfunc190();
 	virtual void vfunc191();
 	virtual void vfunc192();
 	virtual void vfunc193();
 	virtual void vfunc194();
-	virtual void vfunc195();
-	virtual void vfunc196();
+	virtual char * vfunc195();
+	virtual int vfunc196(int, int, int);
 };

@@ -10,13 +10,13 @@ public:
 	virtual ~C_BaseCombatCharacter();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseCombatCharacter's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
-	virtual void vfunc17();
+	virtual int vfunc15();
+	virtual int vfunc16();
+	virtual int vfunc17();
 	virtual void vfunc121();
 	virtual void vfunc127();
 	virtual void vfunc130();
-	virtual void vfunc143();
+	virtual int vfunc143();
 	// the slots C_BaseCombatCharacter adds to its base's vtable: 146-148, vfuncK at slot K
 	virtual void vfunc146();
 	virtual void vfunc147();

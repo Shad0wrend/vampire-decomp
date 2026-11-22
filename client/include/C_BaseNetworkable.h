@@ -34,7 +34,7 @@ public:
 	virtual unsigned int *vfunc1();	// overrides IHandleEntity::vfunc1, pure there; C_BaseNetworkable has a vtable of its own in the game
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_BaseNetworkable adds to its base's vtable: 8-10, vfuncK at slot K
-	virtual void vfunc8();
+	virtual int vfunc8();
 	virtual int vfunc9();
 	virtual ~C_BaseNetworkable();
 };

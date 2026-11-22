@@ -7,8 +7,8 @@ class C_ItemKeyGeneric : public C_BaseCombatWeapon
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with C_ItemKeyGeneric's own function
-    virtual void vfunc15();
-    virtual void vfunc16();
-    virtual void vfunc17();
+    virtual int vfunc15();
+    virtual int vfunc16();
+    virtual int vfunc17();
     virtual char*vfunc114();
 };

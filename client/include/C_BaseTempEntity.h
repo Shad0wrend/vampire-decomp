@@ -30,12 +30,12 @@ public:
 	virtual unsigned int *vfunc1();	// overrides IHandleEntity::vfunc1, pure there; C_BaseTempEntity has a vtable of its own in the game
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_BaseTempEntity adds to its base's vtable: 8-15, vfuncK at slot K
-	virtual void vfunc8();
+	virtual int vfunc8();
 	virtual int vfunc9();
 	virtual ~C_BaseTempEntity();
-	virtual void vfunc11();
-	virtual void vfunc12();
+	virtual void vfunc11(int);
+	virtual bool vfunc12(int, int);
 	virtual void vfunc13();
-	virtual void vfunc14();
-	virtual void vfunc15();
+	virtual bool vfunc14();
+	virtual bool vfunc15();
 };

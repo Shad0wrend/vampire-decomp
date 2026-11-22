@@ -7,9 +7,9 @@ class C_BaseAnimatingOverlay : public C_BaseAnimating
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with C_BaseAnimatingOverlay's own function
-    virtual void vfunc15();
-    virtual void vfunc16();
-    virtual void vfunc17();
-    virtual void vfunc70();
+    virtual int vfunc15();
+    virtual int vfunc16();
+    virtual int vfunc17();
+    virtual int vfunc70();
     virtual void vfunc130();
 };

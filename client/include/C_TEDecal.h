@@ -10,7 +10,7 @@ public:
 	virtual ~C_TEDecal();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEDecal's own function
-	virtual void vfunc8();
+	virtual int vfunc8();
 	virtual int vfunc9();
 	virtual void vfunc13();
 };

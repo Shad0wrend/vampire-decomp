@@ -10,8 +10,8 @@ public:
 	virtual ~C_World();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_World's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual int vfunc15();
+	virtual int vfunc16();
 	virtual void vfunc19();
 	virtual void vfunc21();
 	virtual int vfunc66();

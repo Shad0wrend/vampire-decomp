@@ -10,18 +10,18 @@ public:
 	virtual ~C_VampireProjectile();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_VampireProjectile's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual int vfunc15();
+	virtual int vfunc16();
 	virtual void vfunc19();
 	virtual void vfunc21();
 	virtual int vfunc86();
 	virtual void vfunc95();
-	virtual void vfunc96();
+	virtual void vfunc96(int, int, int, int);
 	virtual void vfunc113();
 	// the slots C_VampireProjectile adds to its base's vtable: 143-147, vfuncK at slot K
 	virtual void vfunc143();
-	virtual void vfunc144();
-	virtual void vfunc145();
+	virtual bool vfunc144();
+	virtual float vfunc145();
 	virtual void vfunc146();
-	virtual void vfunc147();
+	virtual void vfunc147(int);
 };

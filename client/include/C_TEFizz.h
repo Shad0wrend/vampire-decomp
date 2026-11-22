@@ -10,6 +10,6 @@ public:
 	virtual ~C_TEFizz();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEFizz's own function
-	virtual void vfunc8();
+	virtual int vfunc8();
 	virtual int vfunc9();
 };

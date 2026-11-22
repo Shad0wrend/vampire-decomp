@@ -10,18 +10,18 @@ public:
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
-	virtual void vfunc17();
-	virtual void vfunc27();
+	virtual int vfunc15();
+	virtual int vfunc16();
+	virtual int vfunc17();
+	virtual bool vfunc27(int, int, int);
 	virtual void vfunc37();
 	virtual void vfunc57();
 	virtual void vfunc61();
 	virtual void vfunc62();
 	virtual int vfunc66();
-	virtual void vfunc67();
-	virtual void vfunc70();
-	virtual void vfunc71();
+	virtual bool vfunc67();
+	virtual int vfunc70();
+	virtual bool vfunc71();
 	virtual void vfunc72();
 	virtual void vfunc73();
 	virtual int vfunc86();
@@ -31,14 +31,14 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc121();
 	virtual void vfunc122();
 	virtual void vfunc123();
-	virtual void vfunc124();
+	virtual void vfunc124(int, int);
 	virtual void vfunc125();
 	virtual void vfunc126();
 	virtual void vfunc127();
 	virtual void vfunc128();
 	virtual void vfunc129();
 	virtual void vfunc130();
-	virtual void vfunc131();
+	virtual void vfunc131(int, int, int, int, int, int);
 	virtual void vfunc132();
 	virtual void vfunc133();
 	virtual void vfunc134();

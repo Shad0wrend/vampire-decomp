@@ -10,6 +10,6 @@ public:
 	virtual ~C_TEBubbles();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEBubbles's own function
-	virtual void vfunc8();
+	virtual int vfunc8();
 	virtual int vfunc9();
 };

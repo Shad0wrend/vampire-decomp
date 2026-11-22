@@ -10,7 +10,7 @@ public:
 	virtual ~C_TEExplosion();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEExplosion's own function
-	virtual void vfunc8();
+	virtual int vfunc8();
 	virtual int vfunc9();
 	// the slots C_TEExplosion adds to its base's vtable: 16-16, vfuncK at slot K
 	virtual bool vfunc16(int, int, int);

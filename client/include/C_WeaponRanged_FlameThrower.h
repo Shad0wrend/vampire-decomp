@@ -7,10 +7,10 @@ class C_WeaponRanged_FlameThrower : public C_BaseCombatWeapon
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with C_WeaponRanged_FlameThrower's own function
-    virtual void vfunc15();
-    virtual void vfunc16();
-    virtual void vfunc17();
-    virtual void vfunc116();
-    virtual void vfunc118();
+    virtual int vfunc15();
+    virtual int vfunc16();
+    virtual int vfunc17();
+    virtual bool vfunc116(int, int);
+    virtual void vfunc118(int);
     virtual void vfunc143();
 };

@@ -10,8 +10,8 @@ public:
 	virtual ~C_PlayerResource();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_PlayerResource's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual int vfunc15();
+	virtual int vfunc16();
 	// the slots C_PlayerResource adds to its base's vtable: 120-138, vfuncK at slot K
 	virtual void vfunc120();
 	virtual void vfunc121();

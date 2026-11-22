@@ -10,6 +10,6 @@ public:
 	virtual ~C_HudCounter();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_HudCounter's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual int vfunc15();
+	virtual int vfunc16();
 };

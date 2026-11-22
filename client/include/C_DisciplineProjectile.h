@@ -10,7 +10,7 @@ public:
 	virtual ~C_DisciplineProjectile();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_DisciplineProjectile's own function
-	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual int vfunc15();
+	virtual int vfunc16();
 	virtual void vfunc143();
 };
