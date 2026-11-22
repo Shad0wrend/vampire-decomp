@@ -32683,6 +32683,17 @@ int sub_100f7f30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101b70 size=0xb
+namespace lifted {
+extern int g_1027ba58;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual int f13(); };
+}
+int sub_10101b70()
+{
+    return ((lifted::V *)lifted::g_1027ba58)->f13();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101b80 size=0x6
 namespace lifted {
 extern char g_104d3e48;
