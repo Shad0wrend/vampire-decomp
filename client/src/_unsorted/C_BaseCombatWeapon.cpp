@@ -42,3 +42,10 @@ int __stdcall sub_1007b650(int nIndex)
 	return *(int *)((char *)sub_1007b160() + 0x2668 + nIndex * 0x1093c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1007bee0 size=0x1
+#include "C_BaseCombatWeapon.h"
+void C_BaseCombatWeapon::vfunc173()
+{
+}
+// END FUNCTION
