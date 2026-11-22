@@ -10681,6 +10681,22 @@ template <> int ClientClassInit<DT_TEGunshotDecal::ignored>(DT_TEGunshotDecal::i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039a50 size=0x19
+namespace lifted {
+extern char g_10226954;
+extern char g_1022698c;
+int sub_100389a0();
+}
+struct CUnknown10039a50 { void * sub_10039a50(); };
+void * CUnknown10039a50::sub_10039a50()
+{
+    int t0 = lifted::sub_100389a0();
+    *(int *)this = (int)&lifted::g_1022698c;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10226954;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039a90 size=0x12
 namespace lifted {
 extern char g_10226954;
