@@ -70927,6 +70927,20 @@ char CUnknown101beb60::sub_101beb60(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101beb70 size=0x16
+namespace lifted {
+extern int g_1067b410;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+struct CUnknown101beb70 { int sub_101beb70(); };
+int CUnknown101beb70::sub_101beb70()
+{
+    int t0 = ((lifted::V *)lifted::g_1067b410)->f21(0);
+    *(char *)((char *)this + 0x14) = 0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0760 size=0xd
 struct CUnknown101c0760 { int sub_101c0760(); };
 int CUnknown101c0760::sub_101c0760()
