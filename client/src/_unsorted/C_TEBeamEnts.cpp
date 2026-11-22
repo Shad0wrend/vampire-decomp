@@ -21,3 +21,11 @@ int C_TEBeamEnts::vfunc9()
     return (int)&lifted::g_1027d6a0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10032f30 size=0x3
+#include "C_TEBeamEnts.h"
+int C_TEBeamEnts::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
