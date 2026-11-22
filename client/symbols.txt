@@ -1731,6 +1731,7 @@
 0x100a3a70 func   ?sub_100a3a70@CUnknown100a3a70@@QAEDXZ CUnknown100a3a70::sub_100a3a70
 0x100a3a80 func   ?entindex@C_BaseNetworkable@@UAEHXZ C_BaseNetworkable::entindex
 0x100a3a90 func   ?ReceiveMessage@C_BaseNetworkable@@UAEXHAAVbf_read@@@Z C_BaseNetworkable::ReceiveMessage
+0x100a3ab0 func   ?GetDataTableBasePtr@C_BaseNetworkable@@UAEPAXXZ C_BaseNetworkable::GetDataTableBasePtr
 0x100a3ab0 func   ?sub_100a3ab0@CUnknown100a3ab0@@QAEPADXZ CUnknown100a3ab0::sub_100a3ab0
 0x100a3ac0 func   ?vfunc0@C_BaseNetworkable@@UAEHH@Z C_BaseNetworkable::vfunc0
 0x100a3ad0 func   ?vfunc1@C_BaseNetworkable@@UAEPAIXZ C_BaseNetworkable::vfunc1
