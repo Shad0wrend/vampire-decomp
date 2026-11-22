@@ -20,6 +20,17 @@ int C_BaseGrenade::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e4d0 size=0x6
+#include "C_BaseGrenade.h"
+namespace lifted {
+extern char g_102ac6b4;
+}
+int C_BaseGrenade::vfunc17()
+{
+    return (int)&lifted::g_102ac6b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e4e0 size=0x3
 #include "C_BaseGrenade.h"
 void C_BaseGrenade::vfunc149(int a0, int a1)
