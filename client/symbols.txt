@@ -2152,6 +2152,7 @@
 0x10058fd0 func   ?vfunc30@CHudManagerPanel@@UAEXXZ CHudManagerPanel::vfunc30
 0x10059000 func   ?vfunc31@CHudManagerPanel@@UAEXXZ CHudManagerPanel::vfunc31
 0x10059030 func   ?vfunc32@CHudManagerPanel@@UAEXXZ CHudManagerPanel::vfunc32
+0x10059060 func   ?vfunc33@CHudManagerPanel@@UAEXXZ CHudManagerPanel::vfunc33
 0x10059090 func   ?vfunc34@CHudManagerPanel@@UAEXXZ CHudManagerPanel::vfunc34
 0x100590b0 func   ?vfunc35@CHudManagerPanel@@UAEXXZ CHudManagerPanel::vfunc35
 0x10059330 func   ??_GCHUDSprite@@UAEPAXI@Z ??_GCHUDSprite@@UAEPAXI@Z
