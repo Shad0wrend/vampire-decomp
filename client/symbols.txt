@@ -5486,6 +5486,7 @@
 0x10183ad0 func   ?sub_10183ad0@CUnknown10183ad0@@QAEHXZ CUnknown10183ad0::sub_10183ad0
 0x10183af0 func   ?sub_10183af0@CUnknown10183af0@@QAEHXZ CUnknown10183af0::sub_10183af0
 0x10183b60 func   ?sub_10183b60@@YAHXZ sub_10183b60
+0x10184420 func   ?sub_10184420@@YAXXZ sub_10184420
 0x10184500 func   ?sub_10184500@@YAHXZ sub_10184500
 0x101847f0 func   ??_GVItemInfoUI@@UAEPAXI@Z ??_GVItemInfoUI@@UAEPAXI@Z
 0x10184810 func   ??1VItemInfoUI@@UAE@XZ VItemInfoUI::~VItemInfoUI
