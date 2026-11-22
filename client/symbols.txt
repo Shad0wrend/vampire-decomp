@@ -5091,6 +5091,7 @@
 0x1018e8c0 func   ?vfunc25@CViewRender@@UAEHXZ CViewRender::vfunc25
 0x1018e8d0 func   ?vfunc26@CViewRender@@UAEHXZ CViewRender::vfunc26
 0x1018e8e0 func   ?vfunc27@CViewRender@@UAEHXZ CViewRender::vfunc27
+0x1018e8f0 func   ?vfunc28@CViewRender@@UAEHXZ CViewRender::vfunc28
 0x1018f340 func   ?sub_1018f340@@YAHXZ sub_1018f340
 0x1018f350 func   ?sub_1018f350@@YAHXZ sub_1018f350
 0x1018f360 func   ?sub_1018f360@@YAHXZ sub_1018f360
