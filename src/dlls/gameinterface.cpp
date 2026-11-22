@@ -1255,19 +1255,14 @@ CServerGameEnts g_1070b1c4;
 // END FUNCTION
 
 // FUNCTION: 0x1011bd30 size=0x20
-#include "IServerGameEnts.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameEnts.h"
 
-extern char g_10462780;
-void sub_10430964(void *p);
+// VC6 writes IServerGameEnts's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_1011bd30(IServerGameEnts *p) { p->IServerGameEnts::~IServerGameEnts(); }
 
-// TARGET: IServerGameEnts::vfunc0
-void *IServerGameEnts::vfunc0(unsigned char bFree)
-{
-	*(void **)this = &g_10462780;
-	if (bFree & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GIServerGameEnts@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bd60 size=0x20
