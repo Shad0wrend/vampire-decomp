@@ -48714,6 +48714,19 @@ void sub_10147780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101479b0 size=0x11
+namespace lifted {
+struct C10147300 { int sub_10147300(); };
+int sub_10147b80();
+}
+struct CUnknown101479b0 { int sub_101479b0(); };
+int CUnknown101479b0::sub_101479b0()
+{
+    lifted::sub_10147b80();
+    return ((lifted::C10147300 *)((char *)this + 0xc))->sub_10147300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101479d0 size=0x64
 struct CItemVec {
     int m_growBy;
