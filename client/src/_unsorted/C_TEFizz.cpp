@@ -10,3 +10,14 @@ C_TEFizz *pcd_emit_10037040() { return new C_TEFizz; }
 
 // TARGET: ??_GC_TEFizz@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100370e0 size=0x6
+#include "C_TEFizz.h"
+namespace lifted {
+extern char g_1027f3dc;
+}
+int C_TEFizz::vfunc9()
+{
+    return (int)&lifted::g_1027f3dc;
+}
+// END FUNCTION
