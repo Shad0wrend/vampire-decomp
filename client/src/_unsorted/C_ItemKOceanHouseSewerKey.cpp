@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10021400 size=0x6
+#include "C_ItemKOceanHouseSewerKey.h"
+namespace lifted {
+extern char g_10273a58;
+}
+int C_ItemKOceanHouseSewerKey::vfunc17()
+{
+    return (int)&lifted::g_10273a58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021490 size=0x1e
 #include "C_ItemKOceanHouseSewerKey.h"
 
