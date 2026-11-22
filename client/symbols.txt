@@ -373,6 +373,7 @@
 0x1000ff50 func   ?sub_1000ff50@@YAHXZ sub_1000ff50
 0x10010070 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponWallet@@@Z ClientClassInit
 0x10010190 func   ??_GC_ItemMWallet@@UAEPAXI@Z ??_GC_ItemMWallet@@UAEPAXI@Z
+0x100101c0 func   ?vfunc15@C_ItemMWallet@@UAEHXZ C_ItemMWallet::vfunc15
 0x100101d0 func   ?sub_100101d0@@YAHXZ sub_100101d0
 0x100102f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMWallet@@@Z ClientClassInit
 0x10010410 func   ??_GC_ItemMMoneyClip@@UAEPAXI@Z ??_GC_ItemMMoneyClip@@UAEPAXI@Z

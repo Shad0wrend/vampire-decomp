@@ -10,3 +10,11 @@ C_ItemMWallet *pcd_emit_10010190() { return new C_ItemMWallet; }
 
 // TARGET: ??_GC_ItemMWallet@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100101c0 size=0x3
+#include "C_ItemMWallet.h"
+int C_ItemMWallet::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
