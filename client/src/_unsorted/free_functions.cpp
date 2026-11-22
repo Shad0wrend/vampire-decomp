@@ -41754,6 +41754,17 @@ void sub_10120730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120770 size=0x14
+struct CUnknown10120770 { int sub_10120770(int); };
+int CUnknown10120770::sub_10120770(int a0)
+{
+    int t0 = (((a0 + a0) ^ (*(int *)this)) & 0x3e) ^ (*(int *)this);
+    int t1 = *(int *)this;
+    *(int *)this = t0;
+    return t1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120790 size=0x8
 struct CUnknown10120790 { int sub_10120790(); };
 int CUnknown10120790::sub_10120790()
