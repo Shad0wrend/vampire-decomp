@@ -67966,36 +67966,14 @@ void __fastcall sub_101bd960(void **p) { void **q = p - 1; ((Fn *)*q)[0](q); }
 // END FUNCTION
 
 // FUNCTION: 0x101bd980 size=0x9e
-#include "CDirtySpatialPartitionEntityList.h"
-#include "utlvector.h"
-#include "UtlMem.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CSoundControllerImp.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CSoundControllerImp's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSoundControllerImp *pcd_emit_101bd980() { return new CSoundControllerImp; }
 
-class CPrimaryBase { public: virtual void pv(); };
-
-class CMyComplete : public CPrimaryBase, public CAutoGameSystem { };
-
-void *CAutoGameSystem::sub_101bd980(unsigned int flags)
-{
-	int *v2 = (int *)((char *)this + 0x1c);
-	v2[3] = 0;
-	((UtlMem *)v2)->sub_101bde70();
-	v2[4] = v2[0];
-	if (v2[2] != -1) {
-		if (v2[0] != 0) { Plat_Free((void *)v2[0]); v2[0] = 0; }
-		v2[1] = 0;
-	}
-
-	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
-
-	CAutoGameSystem *base = ((char *)this - 4) ? this : 0;
-	base->sub_1000cfbd();
-
-	if (flags & 1)
-		sub_10430964((char *)this - 4);
-	return (char *)this - 4;
-}
+// TARGET: ??_GCSoundControllerImp@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101bdb50 size=0x6
