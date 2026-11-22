@@ -3,22 +3,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1011a020 size=0x20
-#include "vampire.h"
-extern char g_1046257c;
-void sub_10430964(void *p);
-struct CUnk1011a020
-{
-    void *sub_1011a020(unsigned char bFree);
-};
-// TARGET: CUnk1011a020::sub_1011a020
-void *CUnk1011a020::sub_1011a020(unsigned char bFree)
-{
-    *(void **)this = &g_1046257c;
-    if (bFree & 1) {
-        sub_10430964(this);
-    }
-    return this;
-}
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameDLL.h"
+
+// VC6 writes CServerGameDLL's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CServerGameDLL *pcd_emit_1011a020() { return new CServerGameDLL; }
+
+// TARGET: ??_GCServerGameDLL@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011a050 size=0x5

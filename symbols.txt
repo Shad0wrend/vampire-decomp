@@ -9789,7 +9789,6 @@
 0x1000d15c func   ?sub_1006e130@CBaseCineCam@@QAE_NPBDHH@Z CBaseCineCam::sub_1006e130
 0x1000d161 func   ?vfunc39@CGameRules@@UAEPAVCBaseEntity@@PAV2@@Z CGameRules::vfunc39
 0x1000d166 func   ??_GCServerGameDLL@@UAEPAXI@Z ??_GCServerGameDLL@@UAEPAXI@Z
-0x1000d166 func   ?sub_1011a020@CUnk1011a020@@QAEPAXE@Z CUnk1011a020::sub_1011a020
 0x1000d16b func   _filter_activator_inventory filter_activator_inventory
 0x1000d170 func   ?sub_100bc4d0@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100bc4d0
 0x1000d175 func   _item_k_shrekhub_one_key item_k_shrekhub_one_key
