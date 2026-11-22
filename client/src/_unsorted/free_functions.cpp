@@ -243,6 +243,30 @@ template <> int ClientClassInit<DT_HL2_Player::ignored>(DT_HL2_Player::ignored *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002ab0 size=0x39
+namespace lifted {
+extern char g_101e3824;
+extern char g_101e3838;
+extern char g_101e3874;
+extern char g_101e38ac;
+extern char g_101e3904;
+struct C10002f60 { int sub_10002f60(); };
+int sub_100a52a0();
+}
+struct CUnknown10002ab0 { void * sub_10002ab0(); };
+void * CUnknown10002ab0::sub_10002ab0()
+{
+    lifted::sub_100a52a0();
+    int t0 = ((lifted::C10002f60 *)((char *)this + 0x1b10))->sub_10002f60();
+    *(int *)this = (int)&lifted::g_101e3904;
+    *(int *)((char *)this + 4) = (int)&lifted::g_101e38ac;
+    *(int *)((char *)this + 8) = (int)&lifted::g_101e3874;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_101e3838;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_101e3824;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002bb0 size=0x5
 namespace lifted {
 int sub_100a5b60();
