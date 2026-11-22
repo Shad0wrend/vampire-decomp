@@ -7942,6 +7942,7 @@
 0x1000acae func   ?vfunc81@CWeaponMelee_Sledgehammer@@QAEHXZ CWeaponMelee_Sledgehammer::vfunc81
 0x1000acb3 func   _npc_VLasombra npc_VLasombra
 0x1000acb8 func   ??1CUnknown101f4c80@@QAE@XZ CUnknown101f4c80::~CUnknown101f4c80
+0x1000acbd func   ?OnEntityDeleted@CPhysSaveRestoreBlockHandler@@UAEXPAVCBaseEntity@@@Z CPhysSaveRestoreBlockHandler::OnEntityDeleted
 0x1000acbd func   ?sub_10044a90@CUnknown10044a90@@QAEXI@Z CUnknown10044a90::sub_10044a90
 0x1000acc2 func   ?sub_10329560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10329560
 0x1000accc func   ?sub_100df240@@YA_NPAUCAutoEndSource@@@Z sub_100df240
