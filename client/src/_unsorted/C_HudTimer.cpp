@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1005d850 size=0x6
+#include "C_HudTimer.h"
+namespace lifted {
+extern char g_10286f34;
+}
+int C_HudTimer::vfunc16()
+{
+    return (int)&lifted::g_10286f34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d860 size=0x3
 #include "C_HudTimer.h"
 int C_HudTimer::vfunc15()
