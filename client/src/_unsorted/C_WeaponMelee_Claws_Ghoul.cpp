@@ -10,3 +10,11 @@ C_WeaponMelee_Claws_Ghoul *pcd_emit_1000cd10() { return new C_WeaponMelee_Claws_
 
 // TARGET: ??_GC_WeaponMelee_Claws_Ghoul@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000cd40 size=0x3
+#include "C_WeaponMelee_Claws_Ghoul.h"
+int C_WeaponMelee_Claws_Ghoul::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
