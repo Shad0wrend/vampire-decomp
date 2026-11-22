@@ -10,3 +10,11 @@ C_ItemKChineseTheatreKey *pcd_emit_10025d10() { return new C_ItemKChineseTheatre
 
 // TARGET: ??_GC_ItemKChineseTheatreKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10025d40 size=0x3
+#include "C_ItemKChineseTheatreKey.h"
+int C_ItemKChineseTheatreKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
