@@ -10,3 +10,11 @@ C_ItemGHorrorTape_2 *pcd_emit_1001a410() { return new C_ItemGHorrorTape_2; }
 
 // TARGET: ??_GC_ItemGHorrorTape_2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001a440 size=0x3
+#include "C_ItemGHorrorTape_2.h"
+int C_ItemGHorrorTape_2::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
