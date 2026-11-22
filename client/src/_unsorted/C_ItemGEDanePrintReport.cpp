@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001b000 size=0x6
+#include "C_ItemGEDanePrintReport.h"
+namespace lifted {
+extern char g_102735f8;
+}
+int C_ItemGEDanePrintReport::vfunc17()
+{
+    return (int)&lifted::g_102735f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b090 size=0x1e
 #include "C_ItemGEDanePrintReport.h"
 
