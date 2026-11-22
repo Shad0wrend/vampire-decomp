@@ -10,3 +10,11 @@ C_ItemKSarcophagusKey *pcd_emit_10025590() { return new C_ItemKSarcophagusKey; }
 
 // TARGET: ??_GC_ItemKSarcophagusKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100255c0 size=0x3
+#include "C_ItemKSarcophagusKey.h"
+int C_ItemKSarcophagusKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
