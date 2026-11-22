@@ -38133,6 +38133,21 @@ int CUnknown10110450::sub_10110450(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110480 size=0x1f
+namespace lifted {
+int sub_101104b0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int); };
+}
+struct CUnknown10110480 { void sub_10110480(); };
+void CUnknown10110480::sub_10110480()
+{
+    if ((*(int *)this) != 0) {
+        int t0 = ((lifted::V *)(lifted::sub_101104b0()))->f3(*(int *)this);
+        *(int *)this = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101104a0 size=0x3
 struct CUnknown101104a0 { int sub_101104a0(); };
 int CUnknown101104a0::sub_101104a0()
