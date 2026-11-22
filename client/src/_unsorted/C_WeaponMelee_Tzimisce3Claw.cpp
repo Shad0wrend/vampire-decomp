@@ -10,3 +10,11 @@ C_WeaponMelee_Tzimisce3Claw *pcd_emit_1000b910() { return new C_WeaponMelee_Tzim
 
 // TARGET: ??_GC_WeaponMelee_Tzimisce3Claw@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000b940 size=0x3
+#include "C_WeaponMelee_Tzimisce3Claw.h"
+int C_WeaponMelee_Tzimisce3Claw::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
