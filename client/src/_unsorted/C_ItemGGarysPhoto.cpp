@@ -22,6 +22,17 @@ C_ItemGGarysPhoto *pcd_emit_1001f910() { return new C_ItemGGarysPhoto; }
 // TARGET: ??_GC_ItemGGarysPhoto@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001f930 size=0x6
+#include "C_ItemGGarysPhoto.h"
+namespace lifted {
+extern char g_102742c4;
+}
+int C_ItemGGarysPhoto::vfunc16()
+{
+    return (int)&lifted::g_102742c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f940 size=0x3
 #include "C_ItemGGarysPhoto.h"
 int C_ItemGGarysPhoto::vfunc15()
