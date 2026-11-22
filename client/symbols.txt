@@ -1954,6 +1954,7 @@
 0x10041450 func   ?vfunc15@C_TestTraceline@@UAEHXZ C_TestTraceline::vfunc15
 0x10041460 func   ?sub_10041460@@YAHXZ sub_10041460
 0x10041560 func   ?ClientClassInit@@YAHPAUignored@DT_TestTraceline@@@Z ClientClassInit
+0x100416e0 func   ?sub_100416e0@CUnknown100416e0@@QAEPAXXZ CUnknown100416e0::sub_100416e0
 0x10041730 func   ?sub_10041730@@YADXZ sub_10041730
 0x10041740 func   ??_GC_TestTraceline@@UAEPAXI@Z ??_GC_TestTraceline@@UAEPAXI@Z
 0x10041760 func   ??1C_TestTraceline@@UAE@XZ C_TestTraceline::~C_TestTraceline

@@ -12229,6 +12229,33 @@ template <> int ClientClassInit<DT_TestTraceline::ignored>(DT_TestTraceline::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x100416e0 size=0x48
+namespace lifted {
+extern char g_10227748;
+extern char g_1022775c;
+extern char g_10227798;
+extern char g_102277cc;
+extern char g_10227824;
+extern char g_10282850;
+extern int g_104a57ec;
+int sub_1009db90();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual int f25(int, int, int); };
+}
+struct CUnknown100416e0 { void * sub_100416e0(); };
+void * CUnknown100416e0::sub_100416e0()
+{
+    int t0 = lifted::sub_1009db90();
+    *(int *)this = (int)&lifted::g_10227824;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102277cc;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10227798;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_1022775c;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10227748;
+    int t1 = ((lifted::V *)lifted::g_104a57ec)->f25((int)&lifted::g_10282850, 0, 1);
+    *(int *)((char *)this + 0x410) = t1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041730 size=0x3
 char sub_10041730()
 {
