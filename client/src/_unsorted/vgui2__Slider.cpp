@@ -54,6 +54,20 @@ int vgui2::Slider::vfunc116(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc2b0 size=0x18
+#include "vgui2__Slider.h"
+namespace lifted {
+int sub_101ac8b0();
+struct V { virtual void u0(); virtual int f1(int); };
+}
+void vgui2::Slider::vfunc89(int a0)
+{
+    *(char *)((char *)this + 0x5c) = 0;
+    a0 = 0;
+    ((lifted::V *)(lifted::sub_101ac8b0()))->f1(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc2f0 size=0xd
 #include "vgui2__Slider.h"
 int vgui2::Slider::vfunc113(int a0)
