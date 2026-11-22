@@ -58216,6 +58216,17 @@ void CUnknown101f40f0::sub_10155400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101554a0 size=0x8
+struct CUnknown101554a0 { int sub_101554a0(); };
+int CUnknown101554a0::sub_101554a0()
+{
+    int t0 = *(int *)this;
+    char * t1 = (char *)(*(int *)this) + 1;
+    *(int *)this = (int)t1;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101554b0 size=0x1b
 // TARGET: sub_101554b0
 struct CUnk101f42a0Inner {
