@@ -30464,6 +30464,17 @@ void CUnk10245c80::sub_100df6f0(void (__cdecl *fn)(void *, int))
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfad0 size=0xd
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(int); };
+}
+struct CUnknown100dfad0 { int sub_100dfad0(); };
+int CUnknown100dfad0::sub_100dfad0()
+{
+    return ((lifted::V *)(*(int *)((char *)this + 4)))->f6(*(int *)((char *)(*(int *)((char *)this + 4)) + 0x1c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfae0 size=0x26
 struct CNode102461d0
 {
