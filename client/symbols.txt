@@ -817,6 +817,7 @@
 0x100322b0 func   ?sub_100322b0@@YAHXZ sub_100322b0
 0x10032350 func   ?sub_10032350@@YAHXZ sub_10032350
 0x100323c0 func   ?ClientClassInit@@YAHPAUignored@DT_TEMetalSparks@@@Z ClientClassInit
+0x10032460 func   ?vfunc9@C_TEArmorRicochet@@UAEHXZ C_TEArmorRicochet::vfunc9
 0x10032480 func   ?sub_10032480@@YAHXZ sub_10032480
 0x100324e0 func   ??_GC_TEArmorRicochet@@UAEPAXI@Z ??_GC_TEArmorRicochet@@UAEPAXI@Z
 0x10032550 func   ?sub_10032550@@YAHXZ sub_10032550
