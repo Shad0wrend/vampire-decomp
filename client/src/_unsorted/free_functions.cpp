@@ -29088,6 +29088,53 @@ void UtlMem::sub_100d8830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8c90 size=0x128
+#include "CUtlLinkedList240.h"
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+extern void (__cdecl *g_101e310c)(const char *, ...);
+// TARGET: CUtlLinkedList240::sub_100d8c90
+unsigned short CUtlLinkedList240::sub_100d8c90(bool multilist)
+{
+	unsigned short elem;
+	unsigned short first = m_FirstFree;
+	if (first == InvalidIndex()) {
+		if (m_TotalElements == m_allocationCount) {
+			if (m_growSize != -1) {
+				int req = m_allocationCount + 1;
+				while (m_allocationCount < req) {
+					if (m_allocationCount) {
+						if (m_growSize)
+							m_allocationCount += m_growSize;
+						else
+							m_allocationCount += m_allocationCount;
+					} else {
+						m_allocationCount = 1;
+					}
+				}
+				if (m_pMemory)
+					m_pMemory = (CUtlLinkedList240Node *)g_101e3104(m_pMemory, m_allocationCount * sizeof(CUtlLinkedList240Node));
+				else
+					m_pMemory = (CUtlLinkedList240Node *)g_101e3100(m_allocationCount * sizeof(CUtlLinkedList240Node));
+			}
+		}
+		elem = m_TotalElements;
+		++m_TotalElements;
+		if (elem == InvalidIndex())
+			g_101e310c("CUtlLinkedList overflow!\n");
+	} else {
+		elem = first;
+		m_FirstFree = InternalElement(first).m_Next;
+	}
+	if (!multilist)
+		InternalElement(elem).m_Next = InternalElement(elem).m_Previous = elem;
+	else
+		InternalElement(elem).m_Next = InternalElement(elem).m_Previous = InvalidIndex();
+	m_pElements = m_pMemory;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8dc0 size=0x9
 struct CUnknown100d8dc0 { void * sub_100d8dc0(); };
 void * CUnknown100d8dc0::sub_100d8dc0()
