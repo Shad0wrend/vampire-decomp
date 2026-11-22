@@ -10,3 +10,11 @@ vgui2::PropertySheet *pcd_emit_101c84a0() { return new vgui2::PropertySheet; }
 
 // TARGET: ??_GPropertySheet@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101c89f0 size=0x4
+#include "vgui2__PropertySheet.h"
+int vgui2::PropertySheet::vfunc112()
+{
+    return *(int *)((char *)this + 0x70);
+}
+// END FUNCTION
