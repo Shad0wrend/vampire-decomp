@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c8260 size=0x44
+#include "vgui2__PageTab.h"
+namespace lifted {
+extern char g_102d3884;
+extern char g_102d3890;
+struct C101aa220 { int sub_101aa220(); };
+struct C101ac8c0 { int sub_101ac8c0(); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int); virtual int f4(int); };
+}
+int vgui2::PageTab::vfunc164(int a0, int a1, int a2, int a3)
+{
+    int t0 = ((lifted::C101ac8c0 *)this)->sub_101ac8c0();
+    int t1 = ((lifted::V *)t0)->f4(((lifted::C101aa220 *)this)->sub_101aa220());
+    if ((*(char *)((char *)this + 0xf0)) != 0) {
+        return ((lifted::V *)t1)->f3((int)&lifted::g_102d3890);
+    }
+    return ((lifted::V *)t1)->f3((int)&lifted::g_102d3884);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c82b0 size=0x24
 #include "vgui2__PageTab.h"
 int vgui2::PageTab::vfunc156(int a0)
