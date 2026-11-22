@@ -5284,6 +5284,7 @@
 0x101c5d50 func   ??1RadioButton@vgui2@@UAE@XZ vgui2::RadioButton::~RadioButton
 0x101c5eb0 func   ?vfunc164@RadioButton@vgui2@@UAEHHHHH@Z vgui2::RadioButton::vfunc164
 0x101c5ec0 func   ?vfunc166@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc166
+0x101c5ee0 func   ?vfunc168@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc168
 0x101c64f0 func   ?vfunc102@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc102
 0x101c6530 func   ??_GProgressBar@vgui2@@UAEPAXI@Z ??_GProgressBar@vgui2@@UAEPAXI@Z
 0x101c6760 func   ?vfunc102@ProgressBar@vgui2@@UAEHXZ vgui2::ProgressBar::vfunc102

@@ -27,6 +27,14 @@ int vgui2::RadioButton::vfunc166()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5ee0 size=0x7
+#include "vgui2__RadioButton.h"
+int vgui2::RadioButton::vfunc168()
+{
+    return *(int *)((char *)this + 0xf8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c64f0 size=0x6
 #include "vgui2__RadioButton.h"
 namespace lifted {
