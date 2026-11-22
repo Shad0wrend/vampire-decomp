@@ -22,6 +22,17 @@ C_ItemGGuyMagazine *pcd_emit_1001ba90() { return new C_ItemGGuyMagazine; }
 // TARGET: ??_GC_ItemGGuyMagazine@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001bab0 size=0x6
+#include "C_ItemGGuyMagazine.h"
+namespace lifted {
+extern char g_102744e8;
+}
+int C_ItemGGuyMagazine::vfunc16()
+{
+    return (int)&lifted::g_102744e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001bac0 size=0x3
 #include "C_ItemGGuyMagazine.h"
 int C_ItemGGuyMagazine::vfunc15()
