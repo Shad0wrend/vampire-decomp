@@ -332,6 +332,17 @@ void C_BaseCombatWeapon::vfunc200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cde0 size=0x6
+#include "C_BaseCombatWeapon.h"
+namespace lifted {
+extern char g_102abc88;
+}
+int C_BaseCombatWeapon::vfunc17()
+{
+    return (int)&lifted::g_102abc88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ce00 size=0x3
 #include "C_BaseCombatWeapon.h"
 int C_BaseCombatWeapon::vfunc15()
