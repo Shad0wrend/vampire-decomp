@@ -8,6 +8,13 @@ void vgui2::MenuButton::vfunc166(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b8800 size=0x3
+#include "vgui2__MenuButton.h"
+void vgui2::MenuButton::vfunc167(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c95b0 size=0x1e
 #include "vgui2__MenuButton.h"
 
