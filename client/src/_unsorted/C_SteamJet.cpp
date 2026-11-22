@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10030c30 size=0x6
+#include "C_SteamJet.h"
+namespace lifted {
+extern char g_1027ce9c;
+}
+int C_SteamJet::vfunc16()
+{
+    return (int)&lifted::g_1027ce9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030c40 size=0x3
 #include "C_SteamJet.h"
 int C_SteamJet::vfunc15()
