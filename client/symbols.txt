@@ -5271,6 +5271,7 @@
 0x101aad70 func   ?vfunc79@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc79
 0x101ab040 func   ?vfunc61@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc61
 0x101ab050 func   ?vfunc62@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc62
+0x101ab060 func   ?vfunc63@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc63
 0x101ab210 func   ?vfunc47@Panel@vgui2@@UAE_NXZ vgui2::Panel::vfunc47
 0x101ab290 func   ?vfunc50@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc50
 0x101ab2a0 func   ?vfunc51@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc51
