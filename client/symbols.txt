@@ -2674,6 +2674,7 @@
 0x1009db70 func   ?sub_1009db70@@YAXXZ sub_1009db70
 0x1009db80 func   ?sub_1009db80@@YADD@Z sub_1009db80
 0x1009dd60 func   ?sub_1009dd60@CUnknown1009dd60@@QAEPAXXZ CUnknown1009dd60::sub_1009dd60
+0x1009dd70 func   ?vfunc0@CMouthInfo@@UAEPAXD@Z CMouthInfo::vfunc0
 0x1009dda0 func   ??_GC_BaseEntity@@UAEPAXI@Z ??_GC_BaseEntity@@UAEPAXI@Z
 0x1009ddc0 func   ??1C_BaseEntity@@UAE@XZ C_BaseEntity::~C_BaseEntity
 0x1009e040 func   ?vfunc19@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc19
