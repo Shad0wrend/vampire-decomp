@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1007fcf0 size=0x3
+#include "C_Beam.h"
+int C_Beam::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080300 size=0x1e
 #include "C_Beam.h"
 
