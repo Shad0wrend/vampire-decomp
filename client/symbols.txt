@@ -2277,6 +2277,7 @@
 0x1007f7b0 func   ?vfunc21@C_BaseViewModel@@UAEXXZ C_BaseViewModel::vfunc21
 0x1007f860 func   ?sub_1007f860@CUnknown1007f860@@QAEHH@Z CUnknown1007f860::sub_1007f860
 0x1007f870 func   ?sub_1007f870@CUnknown1007f870@@QAEHXZ CUnknown1007f870::sub_1007f870
+0x1007f940 func   ?vfunc16@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc16
 0x1007f950 func   ?vfunc15@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc15
 0x1007f960 func   ?sub_1007f960@@YAHXZ sub_1007f960
 0x1007fa60 func   ?ClientClassInit@@YAHPAUignored@DT_BaseViewModel@@@Z ClientClassInit
