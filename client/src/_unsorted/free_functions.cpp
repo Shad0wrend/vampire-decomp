@@ -30492,6 +30492,20 @@ char sub_100e0240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e02c0 size=0x31
+namespace lifted {
+struct C100dfe80 { int sub_100dfe80(int, int, int, int); };
+}
+struct CUnknown100e02c0 { int sub_100e02c0(int, int, int, int, int, int, char); };
+int CUnknown100e02c0::sub_100e02c0(int a0, int a1, int a2, int a3, int a4, int a5, char a6)
+{
+    *(int *)((char *)this + 0x41) = a4;
+    *(char *)((char *)this + 0x40) = a6;
+    *(int *)((char *)this + 0x48) = a5;
+    return ((lifted::C100dfe80 *)this)->sub_100dfe80(a0, a1, a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);

@@ -2141,6 +2141,7 @@
 0x100e0280 func   ?vfunc0@CDetailModel@@UAEHH@Z CDetailModel::vfunc0
 0x100e0290 func   ?vfunc1@CDetailModel@@UAEPAIXZ CDetailModel::vfunc1
 0x100e02a0 func   ??_GCDetailModel@@UAEPAXI@Z ??_GCDetailModel@@UAEPAXI@Z
+0x100e02c0 func   ?sub_100e02c0@CUnknown100e02c0@@QAEHHHHHHHD@Z CUnknown100e02c0::sub_100e02c0
 0x100e1040 func   ?sub_100e1040@UtlMem@@QAEXXZ UtlMem::sub_100e1040
 0x100e1290 func   ?sub_100e1290@UtlMem@@QAEXXZ UtlMem::sub_100e1290
 0x100e12c0 func   ?sub_100e12c0@UtlMem@@QAEXH@Z UtlMem::sub_100e12c0
