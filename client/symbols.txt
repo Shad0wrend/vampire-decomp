@@ -3288,6 +3288,7 @@
 0x100ccb30 func   ?sub_100ccb30@CMem16_t@@QAEXH@Z CMem16_t::sub_100ccb30
 0x100ccba0 func   ?vfunc0@CDLL_ConVarAccessor@@UAE_NH@Z CDLL_ConVarAccessor::vfunc0
 0x100ccc10 func   ?sub_100ccc10@@YAXHHHHHH@Z sub_100ccc10
+0x100ccc60 func   ?sub_100ccc60@@YAXHHHHHHHH@Z sub_100ccc60
 0x100cccc0 func   ?sub_100cccc0@@YAXHHHHHH@Z sub_100cccc0
 0x100ccd10 func   ?sub_100ccd10@@YAXHHHHHH@Z sub_100ccd10
 0x100ccdc0 func   ?sub_100ccdc0@@YAHH@Z sub_100ccdc0

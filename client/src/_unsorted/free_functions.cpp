@@ -30494,6 +30494,20 @@ void sub_100ccc10(int a0, int a1, int a2, int a3, int a4, int a5)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccc60 size=0x54
+namespace lifted {
+extern int g_102bc800;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(int, int, int, int); virtual void u7(); virtual void u8(); virtual int f9(int, int, int, int, int, int); };
+}
+void sub_100ccc60(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+    if (a4 != 0) {
+        ((lifted::V *)lifted::g_102bc800)->f6(*(int *)((char *)a4 + 0x80), a5, a6, a7);
+        ((lifted::V *)lifted::g_102bc800)->f9(0, a0, a1, a2, a3, a4 + 0x88);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cccc0 size=0x4a
 namespace lifted {
 extern int g_102bc800;
