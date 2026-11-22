@@ -10,3 +10,11 @@ CGlowOverlay *pcd_emit_100eed70() { return new CGlowOverlay; }
 
 // TARGET: ??_GCGlowOverlay@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100eee50 size=0x3
+#include "CGlowOverlay.h"
+bool CGlowOverlay::vfunc1()
+{
+    return 1;
+}
+// END FUNCTION
