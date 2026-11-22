@@ -15794,6 +15794,7 @@
 0x1001479a func   ?vfunc363@CWeaponRanged_Rifle_RemingtonBach@@UAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc363
 0x100147a4 func   ?sub_102ee660@CUnknown102ee660@@QAEHXZ CUnknown102ee660::sub_102ee660
 0x100147a9 func   ?vfunc82@CTriggerCheckVolume@@UAEPAUdatamap_t@@XZ CTriggerCheckVolume::vfunc82
+0x100147ae func   ?Save@CPython_SaveRestoreBlockHandler@@UAEXPAVISave@@@Z CPython_SaveRestoreBlockHandler::Save
 0x100147ae func   ?vfunc2@CPython_SaveRestoreBlockHandler@@UAEXPAVIWritePy@@@Z CPython_SaveRestoreBlockHandler::vfunc2
 0x100147b3 func   ?sub_1006e8b0@CUnknown1006e8b0@@QAEXM@Z CUnknown1006e8b0::sub_1006e8b0
 0x100147b8 func   ?sub_10212da0@CGameSign@@QAE_NXZ CGameSign::sub_10212da0
