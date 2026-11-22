@@ -1279,6 +1279,7 @@
 0x100242f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKTatooParlorKey@@@Z ClientClassInit
 0x10024380 func   ?vfunc17@C_ItemKMalkavianRefrigeratorKey@@UAEHXZ C_ItemKMalkavianRefrigeratorKey::vfunc17
 0x10024410 func   ??_GC_ItemKMalkavianRefrigeratorKey@@UAEPAXI@Z ??_GC_ItemKMalkavianRefrigeratorKey@@UAEPAXI@Z
+0x10024430 func   ?vfunc16@C_ItemKMalkavianRefrigeratorKey@@UAEHXZ C_ItemKMalkavianRefrigeratorKey::vfunc16
 0x10024440 func   ?vfunc15@C_ItemKMalkavianRefrigeratorKey@@UAEHXZ C_ItemKMalkavianRefrigeratorKey::vfunc15
 0x10024450 func   ?sub_10024450@@YAHXZ sub_10024450
 0x10024570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMalkavianRefrigeratorKey@@@Z ClientClassInit
