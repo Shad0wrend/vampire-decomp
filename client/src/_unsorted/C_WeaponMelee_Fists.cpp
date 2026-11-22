@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10008680 size=0x6
+#include "C_WeaponMelee_Fists.h"
+namespace lifted {
+extern char g_102728f4;
+}
+int C_WeaponMelee_Fists::vfunc17()
+{
+    return (int)&lifted::g_102728f4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008710 size=0x1e
 #include "C_WeaponMelee_Fists.h"
 
