@@ -53559,6 +53559,20 @@ void * CUnknown10151630::sub_10151630(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151780 size=0xd
+namespace lifted {
+extern char g_102de300;
+}
+struct CUnknown10151780 { int sub_10151780(); };
+int CUnknown10151780::sub_10151780()
+{
+    if ((*(int *)((char *)this + 4)) == 0) {
+        return (int)&lifted::g_102de300;
+    }
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151820 size=0x1e
 struct CUnknown10151820 { void * sub_10151820(); };
 void * CUnknown10151820::sub_10151820()
