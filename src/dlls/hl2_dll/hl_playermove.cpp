@@ -3,21 +3,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x10356330 size=0x20
-extern int g_10471730;
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CHLPlayerMove.h"
 
-struct Helper
-{
-	void* sub_10356330(unsigned char flags);
-};
+// VC6 writes CHLPlayerMove's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CHLPlayerMove *pcd_emit_10356330() { return new CHLPlayerMove; }
 
-// TARGET: Helper::sub_10356330
-void* Helper::sub_10356330(unsigned char flags)
-{
-	*(void**)this = &g_10471730;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCHLPlayerMove@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x10356360 size=0x5

@@ -9253,7 +9253,6 @@
 0x1000c6c6 func   ?vfunc104@CBatSwarm@@UAEXXZ CBatSwarm::vfunc104
 0x1000c6cb func   ?vfunc502@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc502
 0x1000c6d0 func   ??_GCHLPlayerMove@@UAEPAXI@Z ??_GCHLPlayerMove@@UAEPAXI@Z
-0x1000c6d0 func   ?sub_10356330@Helper@@QAEPAXE@Z Helper::sub_10356330
 0x1000c6d5 func   ?RemoveRebalance@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEXG@Z CUtlRBTree<CAI_ExpresserUse,unsigned short>::RemoveRebalance
 0x1000c6da func   ?sub_101a8930@CCineNPC@@QAEDXZ CCineNPC::sub_101a8930
 0x1000c6df func   ?sub_103f6d30@@YAHXZ sub_103f6d30
