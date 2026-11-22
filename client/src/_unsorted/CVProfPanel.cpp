@@ -10,3 +10,12 @@ CVProfPanel *pcd_emit_1018da50() { return new CVProfPanel; }
 
 // TARGET: ??_GCVProfPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1018dd70 size=0x1e
+#include "CVProfPanel.h"
+// TARGET: CVProfPanel::vfunc9
+bool CVProfPanel::vfunc9()
+{
+	return CHudElement::sub_100f05b0() && *(int *)((char *)this + 0x68) != 0;
+}
+// END FUNCTION
