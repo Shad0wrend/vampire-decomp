@@ -533,6 +533,7 @@
 0x10016350 func   ?sub_10016350@@YAHXZ sub_10016350
 0x10016470 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIThrownGrenade@@@Z ClientClassInit
 0x10016590 func   ??_GC_WeaponThrown_Grenade_Frag@@UAEPAXI@Z ??_GC_WeaponThrown_Grenade_Frag@@UAEPAXI@Z
+0x100165c0 func   ?vfunc15@C_WeaponThrown_Grenade_Frag@@UAEHXZ C_WeaponThrown_Grenade_Frag::vfunc15
 0x100165d0 func   ?sub_100165d0@@YAHXZ sub_100165d0
 0x100166f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponThrown_Grenade_Frag@@@Z ClientClassInit
 0x10016810 func   ??_GC_WeaponThrown_Chang_Energy_Ball@@UAEPAXI@Z ??_GC_WeaponThrown_Chang_Energy_Ball@@UAEPAXI@Z
