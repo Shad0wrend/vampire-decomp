@@ -5355,6 +5355,7 @@
 0x101b41b0 func   ?vfunc77@Button@vgui2@@UAEHXZ vgui2::Button::vfunc77
 0x101b4620 func   ?vfunc102@Button@vgui2@@UAEHXZ vgui2::Button::vfunc102
 0x101b4630 func   ?sub_101b4630@CUnknown101b4630@@QAEHXZ CUnknown101b4630::sub_101b4630
+0x101b4640 func   ?sub_101b4640@CUnknown101b4640@@QAEHXZ CUnknown101b4640::sub_101b4640
 0x101b46c0 func   ??_GEditablePanel@vgui2@@UAEPAXI@Z ??_GEditablePanel@vgui2@@UAEPAXI@Z
 0x101b4740 func   ??1EditablePanel@vgui2@@UAE@XZ vgui2::EditablePanel::~EditablePanel
 0x101b4e70 func   ?vfunc109@EditablePanel@vgui2@@UAEHXZ vgui2::EditablePanel::vfunc109
