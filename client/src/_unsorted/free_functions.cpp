@@ -48969,6 +48969,19 @@ CUnknown101dd480 *CUnknown101dd480::sub_10147e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147e60 size=0x14
+namespace lifted {
+struct C10147300 { int sub_10147300(); };
+struct C101479b0 { int sub_101479b0(); };
+}
+struct CUnknown10147e60 { int sub_10147e60(); };
+int CUnknown10147e60::sub_10147e60()
+{
+    ((lifted::C101479b0 *)((char *)this + 0x20))->sub_101479b0();
+    return ((lifted::C10147300 *)((char *)this + 0x10))->sub_10147300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148040 size=0x52
 #include <stdlib.h>
 #include <string.h>

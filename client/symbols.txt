@@ -4364,6 +4364,7 @@
 0x10147be0 func   ?sub_10147be0@CUnknown101dce30@@QAE_NPAUCUnknown101dc5a0Keys@@PBD@Z CUnknown101dce30::sub_10147be0
 0x10147da0 func   ?sub_10147da0@CUnknown101e0f00Src@@QAEXPBD@Z CUnknown101e0f00Src::sub_10147da0
 0x10147e30 func   ?sub_10147e30@CUnknown101dd480@@QAEPAV1@XZ CUnknown101dd480::sub_10147e30
+0x10147e60 func   ?sub_10147e60@CUnknown10147e60@@QAEHXZ CUnknown10147e60::sub_10147e60
 0x10148040 func   ?sub_10148040@SRange@@QAEXPBD@Z SRange::sub_10148040
 0x101480a0 func   ?sub_101480a0@Range@@QAEXPBD@Z Range::sub_101480a0
 0x10148120 func   ?sub_10148120@CUnknown10148120@@QAEPAXXZ CUnknown10148120::sub_10148120
