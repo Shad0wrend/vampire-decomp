@@ -5100,6 +5100,7 @@
 0x101aad70 func   ?vfunc79@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc79
 0x101ab2f0 func   ?vfunc101@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc101
 0x101ab3e0 func   ?vfunc80@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc80
+0x101ab3f0 func   ?vfunc81@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc81
 0x101ab450 func   ?sub_101ab450@CUnknown101ab450@@QAEHH@Z CUnknown101ab450::sub_101ab450
 0x101ab460 func   ?sub_101ab460@CUnknown101ab460@@QAEHXZ CUnknown101ab460::sub_101ab460
 0x101ab470 func   ?sub_101ab470@CUnknown101ab470@@QAEHH@Z CUnknown101ab470::sub_101ab470
