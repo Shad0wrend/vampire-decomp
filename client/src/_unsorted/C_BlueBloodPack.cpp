@@ -10,3 +10,11 @@ C_BlueBloodPack *pcd_emit_10014c90() { return new C_BlueBloodPack; }
 
 // TARGET: ??_GC_BlueBloodPack@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10014cc0 size=0x3
+#include "C_BlueBloodPack.h"
+int C_BlueBloodPack::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
