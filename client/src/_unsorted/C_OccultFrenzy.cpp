@@ -22,6 +22,17 @@ C_OccultFrenzy *pcd_emit_10012990() { return new C_OccultFrenzy; }
 // TARGET: ??_GC_OccultFrenzy@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100129b0 size=0x6
+#include "C_OccultFrenzy.h"
+namespace lifted {
+extern char g_102749e4;
+}
+int C_OccultFrenzy::vfunc16()
+{
+    return (int)&lifted::g_102749e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100129c0 size=0x3
 #include "C_OccultFrenzy.h"
 int C_OccultFrenzy::vfunc15()
