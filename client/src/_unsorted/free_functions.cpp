@@ -56639,6 +56639,16 @@ void *CUnknown101f0cb0::sub_10152cc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152d30 size=0xd
+struct CUnknown10152d30 { int sub_10152d30(int); };
+int CUnknown10152d30::sub_10152d30(int a0)
+{
+    int t0 = *(int *)((char *)this + 8);
+    *(int *)((char *)a0 + 0x34) = t0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152d40 size=0xbe
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 extern char g_102de300[];
