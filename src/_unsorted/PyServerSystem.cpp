@@ -4,14 +4,11 @@
 // FUNCTION: 0x10199f40 size=0x1e
 #include "PyServerSystem.h"
 
-// TARGET: PyServerSystem::vfunc8
-PyServerSystem *PyServerSystem::vfunc8(unsigned int flags)
-{
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes PyServerSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+PyServerSystem *pcd_emit_10199f40() { return new PyServerSystem; }
+
+// TARGET: ??_GPyServerSystem@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x10199f70 size=0x373
