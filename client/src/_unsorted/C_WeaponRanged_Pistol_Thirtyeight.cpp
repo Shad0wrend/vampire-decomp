@@ -10,3 +10,11 @@ C_WeaponRanged_Pistol_Thirtyeight *pcd_emit_1000f290() { return new C_WeaponRang
 
 // TARGET: ??_GC_WeaponRanged_Pistol_Thirtyeight@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000f2c0 size=0x3
+#include "C_WeaponRanged_Pistol_Thirtyeight.h"
+int C_WeaponRanged_Pistol_Thirtyeight::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
