@@ -2037,6 +2037,7 @@
 0x10050f10 func   ?vfunc97@CFrenzyBar@@UAEXXZ CFrenzyBar::vfunc97
 0x10051050 func   ??_GCHealthAnkh@@UAEPAXI@Z ??_GCHealthAnkh@@UAEPAXI@Z
 0x10051070 func   ??1CHealthAnkh@@UAE@XZ CHealthAnkh::~CHealthAnkh
+0x100511b0 func   ?vfunc114@CHealthAnkh@@UAEXH@Z CHealthAnkh::vfunc114
 0x10051ad0 func   ?vfunc97@CHealthAnkh@@UAEXXZ CHealthAnkh::vfunc97
 0x10051b20 func   ?sub_10051b20@@YGXH@Z sub_10051b20
 0x10051b30 func   ?sub_10051b30@@YGXH@Z sub_10051b30
