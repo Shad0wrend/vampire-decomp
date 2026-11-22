@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10019e80 size=0x6
+#include "C_ItemGLarryBriefcase.h"
+namespace lifted {
+extern char g_10273534;
+}
+int C_ItemGLarryBriefcase::vfunc17()
+{
+    return (int)&lifted::g_10273534;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019f10 size=0x1e
 #include "C_ItemGLarryBriefcase.h"
 

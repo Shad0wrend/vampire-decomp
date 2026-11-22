@@ -881,6 +881,7 @@
 0x10019cc0 func   ?vfunc15@C_ItemGJumblesFlyer@@UAEHXZ C_ItemGJumblesFlyer::vfunc15
 0x10019cd0 func   ?sub_10019cd0@@YAHXZ sub_10019cd0
 0x10019df0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGJumblesFlyer@@@Z ClientClassInit
+0x10019e80 func   ?vfunc17@C_ItemGLarryBriefcase@@UAEHXZ C_ItemGLarryBriefcase::vfunc17
 0x10019f10 func   ??_GC_ItemGLarryBriefcase@@UAEPAXI@Z ??_GC_ItemGLarryBriefcase@@UAEPAXI@Z
 0x10019f40 func   ?vfunc15@C_ItemGLarryBriefcase@@UAEHXZ C_ItemGLarryBriefcase::vfunc15
 0x10019f50 func   ?sub_10019f50@@YAHXZ sub_10019f50
