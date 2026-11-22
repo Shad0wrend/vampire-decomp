@@ -10,3 +10,11 @@ C_ItemGJumblesFlyer *pcd_emit_10019c90() { return new C_ItemGJumblesFlyer; }
 
 // TARGET: ??_GC_ItemGJumblesFlyer@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10019cc0 size=0x3
+#include "C_ItemGJumblesFlyer.h"
+int C_ItemGJumblesFlyer::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
