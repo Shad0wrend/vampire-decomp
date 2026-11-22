@@ -4434,6 +4434,7 @@
 0x10006785 func   ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::vfunc309
 0x1000678f func   ?vfunc316@CNPC_VPlaceholder@@UAEXHHH@Z CNPC_VPlaceholder::vfunc316
 0x10006794 func   ?sub_102cc6a0@@YAXXZ sub_102cc6a0
+0x10006799 func   ?Restore@CAI_SaveRestoreBlockHandler@@UAEXPAVIRestore@@_NH@Z CAI_SaveRestoreBlockHandler::Restore
 0x10006799 func   ?vfunc7@CAI_SaveRestoreBlockHandler@@UAEXPAVCRestore@@HH@Z CAI_SaveRestoreBlockHandler::vfunc7
 0x1000679e func   ?sub_100bba10@CBeam@@QAEXPAVCBaseEntity@@0@Z CBeam::sub_100bba10
 0x100067ad func   ?sub_102e5d00@@YAMPAM@Z sub_102e5d00
