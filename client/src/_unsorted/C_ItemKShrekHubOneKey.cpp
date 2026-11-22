@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10024b00 size=0x6
+#include "C_ItemKShrekHubOneKey.h"
+namespace lifted {
+extern char g_10273cc0;
+}
+int C_ItemKShrekHubOneKey::vfunc17()
+{
+    return (int)&lifted::g_10273cc0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024b90 size=0x1e
 #include "C_ItemKShrekHubOneKey.h"
 
