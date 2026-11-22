@@ -11150,6 +11150,29 @@ template <> int ClientClassInit<DT_TEShowLine::ignored>(DT_TEShowLine::ignored *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003edc0 size=0x47
+namespace lifted {
+extern char g_103eb1f0;
+extern int g_103eb1fc;
+extern int g_103eb200;
+extern int g_103eb204;
+extern int g_103eb208;
+extern int g_103eb20c;
+extern int g_103eb210;
+struct C1003ead0 { int sub_1003ead0(int); };
+}
+int sub_1003edc0(int a0, int a1, int a2, int a3)
+{
+    lifted::g_103eb1fc = *(int *)((char *)a2);
+    lifted::g_103eb200 = *(int *)((char *)a2 + 4);
+    lifted::g_103eb204 = *(int *)((char *)a2 + 8);
+    lifted::g_103eb208 = *(int *)((char *)a3);
+    lifted::g_103eb20c = *(int *)((char *)a3 + 4);
+    lifted::g_103eb210 = *(int *)((char *)a3 + 8);
+    return ((lifted::C1003ead0 *)((int)&lifted::g_103eb1f0))->sub_1003ead0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ee60 size=0x12
 namespace lifted {
 extern char g_10227210;
