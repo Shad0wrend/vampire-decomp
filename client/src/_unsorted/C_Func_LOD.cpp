@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bb4d0 size=0x6
+#include "C_Func_LOD.h"
+namespace lifted {
+extern char g_102b47b0;
+}
+int C_Func_LOD::vfunc16()
+{
+    return (int)&lifted::g_102b47b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb4e0 size=0x3
 #include "C_Func_LOD.h"
 int C_Func_LOD::vfunc15()
