@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bb380 size=0x3
+#include "C_TEDust.h"
+bool C_TEDust::vfunc16()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb390 size=0x1e
 #include "C_TEDust.h"
 
