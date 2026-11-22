@@ -29,7 +29,8 @@ typedef CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> RBTree12_10194f30;
 typedef const RBTree12_10194f30::Links_t &(RBTree12_10194f30::*LinksPtr_t)(unsigned short) const;
 
 // TARGET: CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::Links
-LinksPtr_t g_linksForce = &RBTree12_10194f30::Links;
+// taken in a function nothing calls (a global taking it would be a dynamic initializer the game does not have): VC6 emits the inline member here
+LinksPtr_t pcd_emit_10194d20() { return &RBTree12_10194f30::Links; }
 // END FUNCTION
 
 // FUNCTION: 0x10194f30 size=0x1bc
