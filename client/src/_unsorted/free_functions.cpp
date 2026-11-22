@@ -55399,6 +55399,34 @@ void CUnknown101f7bb0::sub_10157480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101574f0 size=0x6b
+#include "CUnknown101f1050.h"
+
+extern void (*g_101e3108)(const char *, ...);
+
+int *CUnknown101f1050::sub_101574f0()
+{
+    int *p = (int *)operator new(m_nCount * 4 + 4);
+    if (p) {
+        int i = 0;
+        if (m_nCount > 0) {
+            do {
+                i++;
+                p[i - 1] = m_pData[i - 1];
+            } while (i < m_nCount);
+        }
+        delete m_pData;
+        int n = m_nCount + 1;
+        m_pData = p;
+        m_nCount = n;
+        int *q = &m_pData[m_nCount - 1];
+        return q;
+    }
+    g_101e3108("Unable to allocate memory for strings in TraitEffectInfoList!.\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157630 size=0xb4
 #include "CUnknown101f7cc0.h"
 #include "CVTraitEffectGroup_t.h"
