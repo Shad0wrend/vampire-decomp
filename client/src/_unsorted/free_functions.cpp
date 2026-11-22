@@ -36724,6 +36724,20 @@ void CMem8b_t::sub_10117d70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118080 size=0x24
+namespace lifted {
+struct C101166d0 { int sub_101166d0(int, int, int); };
+}
+struct CUnknown10118080 { int sub_10118080(int); };
+int CUnknown10118080::sub_10118080(int a0)
+{
+    *(int *)((char *)this + 0x5c) = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x60) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x64) = *(int *)((char *)a0 + 8);
+    return ((lifted::C101166d0 *)(this + 8))->sub_101166d0(a0, a0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101180b0 size=0x8
 namespace lifted {
 struct C101163a0 { int sub_101163a0(); };

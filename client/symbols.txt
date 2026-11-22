@@ -2528,6 +2528,7 @@
 0x10117d70 func   ?sub_10117d70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d70
 0x10117f60 func   ??_GCParticleEffect@@UAEPAXI@Z ??_GCParticleEffect@@UAEPAXI@Z
 0x10117f80 func   ??1CParticleEffect@@UAE@XZ CParticleEffect::~CParticleEffect
+0x10118080 func   ?sub_10118080@CUnknown10118080@@QAEHH@Z CUnknown10118080::sub_10118080
 0x101180b0 func   ?sub_101180b0@CUnknown101180b0@@QAEHXZ CUnknown101180b0::sub_101180b0
 0x10118130 func   ??_GCSimpleEmitter@@UAEPAXI@Z ??_GCSimpleEmitter@@UAEPAXI@Z
 0x10118150 func   ??1CSimpleEmitter@@UAE@XZ CSimpleEmitter::~CSimpleEmitter
