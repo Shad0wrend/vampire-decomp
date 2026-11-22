@@ -1107,6 +1107,7 @@
 0x10033160 func   ??1C_TEBeamLaser@@UAE@XZ C_TEBeamLaser::~C_TEBeamLaser
 0x10033160 func   ?sub_10033160@CUnknown10033160@@QAEHXZ CUnknown10033160::sub_10033160
 0x10033290 func   ?vfunc9@C_TEBeamLaser@@UAEHXZ C_TEBeamLaser::vfunc9
+0x100332a0 func   ?vfunc8@C_TEBeamLaser@@UAEHXZ C_TEBeamLaser::vfunc8
 0x100332b0 func   ?sub_100332b0@@YAHXZ sub_100332b0
 0x10033350 func   ?sub_10033350@@YAHXZ sub_10033350
 0x100333c0 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamLaser@@@Z ClientClassInit
