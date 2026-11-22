@@ -1686,6 +1686,7 @@
 0x100a13e0 func   ?sub_100a13e0@CUnknown100a13e0@@QAEHXZ CUnknown100a13e0::sub_100a13e0
 0x100a13f0 func   ?SetThinkHandle@C_BaseEntity@@UAEXPAX@Z C_BaseEntity::SetThinkHandle
 0x100a13f0 func   ?sub_100a13f0@CUnknown100a13f0@@QAEHH@Z CUnknown100a13f0::sub_100a13f0
+0x100a1400 func   ?ComputeFxBlend@C_BaseEntity@@UAEHXZ C_BaseEntity::ComputeFxBlend
 0x100a1400 func   ?ComputeFxBlend@C_BaseEntity@@UAEXXZ C_BaseEntity::ComputeFxBlend
 0x100a1eb0 func   ?sub_100a1eb0@@YAHH@Z sub_100a1eb0
 0x100a1ec0 func   ??3C_BaseEntity@@SAXPAX@Z ??3C_BaseEntity@@SAXPAX@Z
