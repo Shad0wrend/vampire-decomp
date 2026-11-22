@@ -12,6 +12,15 @@ int vgui2::Image::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164490 size=0xa
+#include "vgui2__Image.h"
+bool vgui2::Image::vfunc4(char a0)
+{
+    *(char *)((char *)this + 0x18) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b68e0 size=0x1e
 #include "vgui2__Image.h"
 
