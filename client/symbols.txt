@@ -3117,6 +3117,7 @@
 0x10146400 func   ?ClientClassInit@@YAHPAUignored@DT_DisciplineProjectile@@@Z ClientClassInit
 0x10146550 func   ??_GC_DisciplineProjectile@@UAEPAXI@Z ??_GC_DisciplineProjectile@@UAEPAXI@Z
 0x10146570 func   ??1C_DisciplineProjectile@@UAE@XZ C_DisciplineProjectile::~C_DisciplineProjectile
+0x101465a0 func   ?vfunc143@C_DisciplineProjectile@@UAEXXZ C_DisciplineProjectile::vfunc143
 0x101465b0 func   ?sub_101465b0@CUnknown101da880@@QAEPAXXZ CUnknown101da880::sub_101465b0
 0x101465d0 func   ?sub_101465d0@@YAXXZ sub_101465d0
 0x101465e0 func   ?sub_101465e0@@YGHH@Z sub_101465e0
