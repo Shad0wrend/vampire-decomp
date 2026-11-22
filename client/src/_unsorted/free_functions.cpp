@@ -26290,6 +26290,21 @@ int __stdcall sub_100a2910(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2970 size=0x2a
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+struct CUnknown100a2970 { void sub_100a2970(int); };
+void CUnknown100a2970::sub_100a2970(int a0)
+{
+    if (a0 != 0) {
+        *(int *)((char *)this + 0x188) = *(int *)((char *)(((lifted::V *)a0)->f1()));
+        return;
+    }
+    *(int *)((char *)this + 0x188) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a29a0 size=0x7
 struct CUnknown100a29a0 { char sub_100a29a0(); };
 char CUnknown100a29a0::sub_100a29a0()
