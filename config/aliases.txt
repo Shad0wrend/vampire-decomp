@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 6e1df5a35822; do not edit by hand
+# written by pcdecomp standalone from vtmb b83c9583dd4c; do not edit by hand
 ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z
 ??0CAI_InterestTarget@@QAE@XZ ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ
 ??0CAI_LocalIdSpace@@QAE@_N@Z ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z
@@ -300,7 +300,6 @@
 ?g_10454154@lifted@@3DA ??_7CCollisionProperty@@6B@
 ?g_10460df8@lifted@@3DA ??_7CTEDust@@6B@
 ?g_104612ac@lifted@@3DA ??_7CFunc_LOD@@6B@
-?g_104625f4@@3PAHA ??_7ISave@@6B@
 ?g_104626bc@@3DA ??_7IRestore@@6B@
 ?g_104626bc@@3PADA ??_7IRestore@@6B@
 ?g_104626bc@@3PAHA ??_7IRestore@@6B@
@@ -8379,7 +8378,6 @@
 ?sub_1019e740@CRopeEndView@@QAE_NPAUEntVt@block_1019e7d0@@HPAM@Z ?sub_1019e740@@YG_NPAUEntVt@@HPAM@Z
 ?sub_1019f760@@YAPBDPAXH@Z ?sub_1019f760@@YAPBDPAUSFuncMap@@H@Z
 ?sub_1019f7d0@@YAHPAXPBD@Z ?sub_1019f7d0@@YAPAXPAUdatamap_t@@PBD@Z
-?sub_1019f870@CSave@@QAEPAV1@PAX@Z ??0CSave@@QAE@PAX@Z
 ?sub_1019f870@CUnk1011b8b0List@@QAEXPAX@Z ??0CSave@@QAE@PAX@Z
 ?sub_101a0570@CSave@@QAEHPBXH@Z ?sub_101a0570@@YGHPBDH@Z
 ?sub_101a07b0@CUnknown1019fbd0@@QAEXHH@Z ?sub_1000643d@CSave@@QAE_NPBXH@Z

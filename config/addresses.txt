@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 6e1df5a35822; do not edit by hand
+# written by pcdecomp standalone from vtmb b83c9583dd4c; do not edit by hand
 089d52a6 ?ResetDbgInfo@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ
 100019d3 ?s_default@?5??Find@CUnknown101ec4f0Set@@QAEPAVCUnknown101ec4f0@@H@Z@$AV2@A
 1000229d ?ops@?1??Ops_109f0a78@@YAPAVISaveRestoreOps@@XZ@$AV?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@A
@@ -10591,11 +10591,10 @@
 1019f7d0 ?sub_1019f7d0@@YAHPAXPBD@Z
 1019f7d0 ?sub_1019f7d0@@YAPAXPAUdatamap_t@@PBD@Z
 1019f870 ??0CSave@@QAE@PAX@Z
-1019f870 ?sub_1019f870@CSave@@QAEPAV1@PAX@Z
 1019f870 ?sub_1019f870@CUnk1011b8b0List@@QAEXPAX@Z
 1019f930 ?vfunc2@CSave@@UAEXPAXPBD@Z
 1019f960 ?vfunc38@CSave@@UAEHXZ
-1019f980 ?sub_1019f980@SSave@@QAEPAU1@E@Z
+1019f980 ??_GCSave@@UAEPAXI@Z
 1019fa10 ?vfunc0@CSave@@UAEHXZ
 1019fa30 ?vfunc1@CSave@@UAEXH@Z
 1019fa60 ?vfunc8@CSave@@UAE_NPBXH@Z
@@ -27848,7 +27847,6 @@
 10462504 ??_7CServerGameDLL@@6B@
 1046257c ??_7IServerGameDLL@@6B@
 104625f4 ??_7ISave@@6B@
-104625f4 ?g_104625f4@@3PAHA
 104626bc ??_7IRestore@@6B@
 104626bc ?g_104626bc@@3DA
 104626bc ?g_104626bc@@3PADA

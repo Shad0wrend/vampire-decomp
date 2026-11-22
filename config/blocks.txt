@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 6e1df5a35822; do not edit by hand
+# written by pcdecomp standalone from vtmb b83c9583dd4c; do not edit by hand
 10025e50 0x2a b ?sub_10025e50@@YGXPADIHP8CUnkElem@@AEXXZ@Z 4f6c62a3a157
 10025ed0 0x1a b ?sub_10025ed0@@YAHXZ 38b0de5140fe
 10025f00 0x51 b ?sub_10025f00@CConstantForceController@@QAEXPBVVector@@0@Z 894f4e0356b0
@@ -805,7 +805,7 @@
 100578e0 0x9f b ?sub_100578e0@CUnknown10057680@@QAEHPAVCRestore@@@Z 7f67b5ca0716
 100579b0 0x2e b ?sub_100579b0@CUnknown10057680@@QAEXPBD0@Z 1d0da93fbee6
 100579f0 0x25 b ?sub_100579f0@@YIXPAH@Z deb82899d263
-10057a30 0x70 b ?sub_10057a30@@YAXPAX@Z d194375d964a
+10057a30 0x70 b ?sub_10057a30@@YAXPAX@Z b2fa5b46e17b
 10057ac0 0x70 b ?sub_10057ac0@@YAXPAX@Z 50cd8e238154
 10057b50 0x1c b ?sub_10057b50@@YAXXZ 1c89bcae4367
 10057bf0 0x6 b ?vfunc80@CSteamJet@@UAEHXZ 347d77065be5
@@ -4119,11 +4119,11 @@
 1011ae30 0x5 b ?vfunc10@CServerGameDLL@@UAEPBDXZ a618077a0046
 1011ae50 0x3e b ?vfunc11@CServerGameDLL@@UAEXXZ d252597e1442
 1011aea0 0x10 b ?vfunc12@CServerGameDLL@@UAEHH@Z d7719b23fe88
-1011aec0 0x85 b ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z 5992aeda613a
+1011aec0 0x85 b ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z ec3e6b8ced72
 1011af80 0x85 b ?vfunc14@CServerGameDLL@@UAEXPAXHHHHH@Z ba6768ed9bca
 1011b040 0xe b ?sub_1011b040@@YGXH@Z a7f92d21a6e8
 1011b060 0xe b ?sub_1011b060@@YGXH@Z f54bba9cbe6f
-1011b080 0x1cb b ?vfunc18@CServerGameDLL@@UAEHPAX@Z 26a302b264cc
+1011b080 0x1cb b ?vfunc18@CServerGameDLL@@UAEHPAX@Z 834936ff27e9
 1011b2d0 0x20 b ??_GISave@@UAEPAXI@Z 6682d5e158b1
 1011b300 0x1db b ?vfunc21@CServerGameDLL@@UAEXPAXHH@Z d02522daadfa
 1011b560 0x20 b ?vfunc34@IRestore@@UAEPAXE@Z 4059615de9e4
@@ -6226,10 +6226,10 @@
 1019f690 0x1a b ?vfunc86@CRopeKeyframe@@UAEDHHHHH@Z 366b57226aec
 1019f760 0x4d b ?sub_1019f760@@YAPBDPAUSFuncMap@@H@Z a38000f9a985
 1019f7d0 0x71 b ?sub_1019f7d0@@YAPAXPAUdatamap_t@@PBD@Z 00d642b0b150
-1019f870 0x84 b ??0CSave@@QAE@PAX@Z 0f1bad3855a8
+1019f870 0x84 b ??0CSave@@QAE@PAX@Z 791acb6f6ad6
 1019f930 0x13 b ?vfunc2@CSave@@UAEXPAXPBD@Z a11dfd706826
 1019f960 0x4 b ?vfunc38@CSave@@UAEHXZ c0f0ba0b9db4
-1019f980 0x68 b ?sub_1019f980@SSave@@QAEPAU1@E@Z 849f86b73c5d
+1019f980 0x68 b ??_GCSave@@UAEPAXI@Z 0bfcab9918f9
 1019fa10 0x7 b ?vfunc0@CSave@@UAEHXZ 276a2a8a96b0
 1019fa30 0x1d b ?vfunc1@CSave@@UAEXH@Z e7068a216022
 1019fa60 0x10 b ?vfunc8@CSave@@UAE_NPBXH@Z e1224ce01535
@@ -6256,9 +6256,9 @@
 101a01f0 0x4c b ?sub_101a01f0@CSave@@QAEHPBXPAUtypedescription_t@@H@Z 7ea1be33799e
 101a0260 0x8a b ?vfunc3@CSave@@UAEHHHHHH@Z 072f5f405a0d
 101a0320 0x47 b ?sub_101a0320@CSave@@QAEHHHPAUCSaveDesc@@@Z 86f3f9cef69d
-101a0390 0xb9 b ?vfunc5@CSave@@UAEXPBX@Z 6bdd1ad7985e
+101a0390 0xb9 b ?vfunc5@CSave@@UAEXPBX@Z d054010c456f
 101a0480 0xb b ?vfunc4@CSave@@UAEXXZ 77b346ab679d
-101a04a0 0x6d b ?vfunc6@CSave@@UAEXXZ dadce593f936
+101a04a0 0x6d b ?vfunc6@CSave@@UAEXXZ 5d8b346b9a31
 101a0530 0x2d b ?sub_101a0530@CUnk101a0530@@QAEXHH@Z 750e35bb4513
 101a0570 0x26 b ?sub_101a0570@@YGHPBDH@Z b08c04d0ae1f
 101a05b0 0x25 b ?sub_101a05b0@CSave@@QAEXHHH@Z e3011d2c2f8e
@@ -7136,7 +7136,7 @@
 101c7e00 0x123 b ?sub_101c7e00@@YAHPAUSEntry101c7e00@@HPBD1PAUSEdictView@@@Z df6141852087
 101c7f80 0x5 b ?sub_101c7f80@@YAHPAUlevellist_t@@HPBD1@Z 6e8fa2df1136
 101c7fa0 0x3c b ?sub_101c7fa0@@YAHPAX@Z 2ccdcec21410
-101c7ff0 0x640 b ?sub_101c7ff0@@YAHPAUlevellist_t@@HPBD1@Z 29b32f767267
+101c7ff0 0x640 b ?sub_101c7ff0@@YAHPAUlevellist_t@@HPBD1@Z e7fc1a88c577
 101c87c0 0x6 b ?vfunc82@CTriggerPush@@UAEPAUdatamap_t@@XZ c492ddaf9e14
 101c8820 0x1a b ?sub_101c8820@@YAHXZ 3267f9ac3325
 101c8850 0x43 b _trigger_push 09ee8b8442b1
