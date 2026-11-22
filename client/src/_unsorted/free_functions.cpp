@@ -59690,6 +59690,19 @@ void CVStatList_t::sub_1015d350(int a, int *pSource, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d3e0 size=0x17
+struct CUnknown1015d3e0 { char sub_1015d3e0(int); };
+char CUnknown1015d3e0::sub_1015d3e0(int a0)
+{
+    if (a0 >= 0) {
+        if (a0 < (*(int *)((char *)this + 4))) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d6e0 size=0x83
 #include "CVStatList_t.h"
 
