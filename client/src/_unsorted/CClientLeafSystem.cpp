@@ -7,3 +7,10 @@ void CClientLeafSystem::vfunc22()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d1520 size=0x1
+#include "CClientLeafSystem.h"
+void CClientLeafSystem::vfunc23()
+{
+}
+// END FUNCTION
