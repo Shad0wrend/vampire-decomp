@@ -11216,6 +11216,7 @@
 0x1000ed59 func   ?sub_101a5a80@@YA_NPAXPAUtypedescription_t@@HPBD2@Z sub_101a5a80
 0x1000ed5e func   ?vfunc127@CScriptedTarget@@UAEHH@Z CScriptedTarget::vfunc127
 0x1000ed63 func   ?sub_1026c540@CAI_BaseNPC@@QAEMXZ CAI_BaseNPC::sub_1026c540
+0x1000ed68 func   ?ForgetModel@CPhysSaveRestoreBlockHandler@@UAEXPAVIPhysicsObject@@@Z CPhysSaveRestoreBlockHandler::ForgetModel
 0x1000ed68 func   ?sub_10045110@CUnknown10045110@@QAEXH@Z CUnknown10045110::sub_10045110
 0x1000ed6d func   ?sub_10383130@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::sub_10383130
 0x1000ed72 func   ?sub_10412520@@YAHH@Z sub_10412520
