@@ -32553,6 +32553,22 @@ int CUnknown101063f0::sub_101063f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106b40 size=0x27
+namespace lifted {
+extern int g_104d404c;
+}
+struct CUnknown10106b40 { void * sub_10106b40(int, int, int); };
+void * CUnknown10106b40::sub_10106b40(int a0, int a1, int a2)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = a2;
+    *(int *)((char *)this + 0xc) = lifted::g_104d404c;
+    lifted::g_104d404c = (int)this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106be0 size=0x7c
 #include "InterfaceReg.h"
 
