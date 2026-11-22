@@ -27396,6 +27396,38 @@ int CUnknown100bf700::sub_100bf700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c08b0 size=0x63
+struct Vector3 { float x, y, z; };
+struct IFace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual Vector3 *v23(Vector3 *pOut, int a, int b); };
+extern IFace *g_104a57d4;
+struct CUnknown100c08b0
+{
+	char m_pad0[0x460];
+	int m_nBase;
+	int m_nCount;
+	char m_pad1[0x640 - 0x468];
+	Vector3 m_Pos[1];
+	void sub_100c08b0();
+};
+
+// TARGET: CUnknown100c08b0::sub_100c08b0
+void CUnknown100c08b0::sub_100c08b0()
+{
+	for (int i = 0; i < m_nCount; i++)
+	{
+		Vector3 tmp;
+		int idx = m_nBase + i * 0x24 + 0x18;
+		Vector3 *v = g_104a57d4->v23(&tmp, idx, 1);
+		Vector3 &d = m_Pos[i];
+		d.x = v->x;
+		d.y = v->y;
+		d.z = v->z;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0960 size=0x3
 struct CUnknown100c0960 { void * sub_100c0960(); };
 void * CUnknown100c0960::sub_100c0960()
