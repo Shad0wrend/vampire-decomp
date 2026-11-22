@@ -2282,6 +2282,7 @@
 0x1007f960 func   ?sub_1007f960@@YAHXZ sub_1007f960
 0x1007fa60 func   ?ClientClassInit@@YAHPAUignored@DT_BaseViewModel@@@Z ClientClassInit
 0x1007fbb0 func   ?vfunc17@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc17
+0x1007fce0 func   ?vfunc16@C_Beam@@UAEHXZ C_Beam::vfunc16
 0x1007fcf0 func   ?vfunc15@C_Beam@@UAEHXZ C_Beam::vfunc15
 0x1007fd00 func   ?sub_1007fd00@@YAHXZ sub_1007fd00
 0x1007fe00 func   ?ClientClassInit@@YAHPAUignored@DT_BeamPredictableId@@@Z ClientClassInit
