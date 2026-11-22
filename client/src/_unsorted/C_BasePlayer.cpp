@@ -205,6 +205,21 @@ void C_BasePlayer::vfunc151(int a0, int a1, int a2, int a3, int a4, int a5, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9c10 size=0x2a
+#include "C_BasePlayer.h"
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+void C_BasePlayer::vfunc185(int a0)
+{
+    if (a0 != 0) {
+        *(int *)((char *)this + 0x1a10) = *(int *)((char *)(((lifted::V *)a0)->f1()));
+        return;
+    }
+    *(int *)((char *)this + 0x1a10) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9df0 size=0x1
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc184()
