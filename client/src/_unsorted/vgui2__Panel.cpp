@@ -27,6 +27,18 @@ vgui2::Panel *pcd_emit_101a9460() { return new vgui2::Panel; }
 // TARGET: ??_GPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101a9a20 size=0x1e
+#include "vgui2__Panel.h"
+namespace lifted {
+int sub_101ac900();
+struct V { virtual int f0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(int); };
+}
+int vgui2::Panel::vfunc22()
+{
+    return ((lifted::V *)(lifted::sub_101ac900()))->f14(((lifted::V *)this)->f0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9e80 size=0x17
 #include "vgui2__Panel.h"
 namespace lifted {
