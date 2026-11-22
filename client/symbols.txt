@@ -4947,6 +4947,7 @@
 0x10165730 func   ??_GCDebugOverlay@@UAEPAXI@Z ??_GCDebugOverlay@@UAEPAXI@Z
 0x10165750 func   ??1CDebugOverlay@@UAE@XZ CDebugOverlay::~CDebugOverlay
 0x10165750 func   ?sub_10165750@CUnknown10165750@@QAEHXZ CUnknown10165750::sub_10165750
+0x10165790 func   ?vfunc2@CDebugOverlay@@UAEXXZ CDebugOverlay::vfunc2
 0x10165b00 func   ??_GCDownloadSliderPanel@@UAEPAXI@Z ??_GCDownloadSliderPanel@@UAEPAXI@Z
 0x10165b20 func   ??1CDownloadSliderPanel@@UAE@XZ CDownloadSliderPanel::~CDownloadSliderPanel
 0x10165b20 func   ?sub_10165b20@CUnknown10165b20@@QAEHXZ CUnknown10165b20::sub_10165b20
