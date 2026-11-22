@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b3040 size=0x3
+#include "C_FuncParticle.h"
+int C_FuncParticle::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3110 size=0x1e
 #include "C_FuncParticle.h"
 
