@@ -39,6 +39,17 @@ void vgui2::PropertyPage::vfunc121()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb440 size=0x8
+#include "vgui2__PropertyPage.h"
+namespace lifted {
+struct C101ac6b0 { int sub_101ac6b0(); };
+}
+int vgui2::PropertyPage::vfunc122()
+{
+    return ((lifted::C101ac6b0 *)((int)this + 0x78))->sub_101ac6b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb690 size=0x6
 #include "vgui2__PropertyPage.h"
 namespace lifted {
