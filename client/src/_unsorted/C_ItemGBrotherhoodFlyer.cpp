@@ -22,6 +22,17 @@ C_ItemGBrotherhoodFlyer *pcd_emit_1001bd10() { return new C_ItemGBrotherhoodFlye
 // TARGET: ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001bd30 size=0x6
+#include "C_ItemGBrotherhoodFlyer.h"
+namespace lifted {
+extern char g_102744d0;
+}
+int C_ItemGBrotherhoodFlyer::vfunc16()
+{
+    return (int)&lifted::g_102744d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001bd40 size=0x3
 #include "C_ItemGBrotherhoodFlyer.h"
 int C_ItemGBrotherhoodFlyer::vfunc15()
