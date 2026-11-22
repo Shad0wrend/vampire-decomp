@@ -2987,6 +2987,7 @@
 0x100ab510 func   ?vfunc139@C_BaseViewModel@@UAEHH@Z C_BaseViewModel::vfunc139
 0x100ab7e0 func   ?sub_100ab7e0@CUnknown100ab7e0@@QAEHHHHHD@Z CUnknown100ab7e0::sub_100ab7e0
 0x100abdb0 func   ?sub_100abdb0@CUnknown100abdb0@@QAEHXZ CUnknown100abdb0::sub_100abdb0
+0x100abdf0 func   ?sub_100abdf0@CUnknown100abdf0@@QAEHXZ CUnknown100abdf0::sub_100abdf0
 0x100abf90 func   ?sub_100abf90@@YADXZ sub_100abf90
 0x100abfa0 func   ?vfunc37@C_BaseViewModel@@UAEXXZ C_BaseViewModel::vfunc37
 0x100abfc0 func   ?vfunc120@C_BaseViewModel@@UAEXHH@Z C_BaseViewModel::vfunc120
