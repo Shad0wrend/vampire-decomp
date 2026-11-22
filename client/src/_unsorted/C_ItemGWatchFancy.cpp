@@ -10,3 +10,11 @@ C_ItemGWatchFancy *pcd_emit_10018b10() { return new C_ItemGWatchFancy; }
 
 // TARGET: ??_GC_ItemGWatchFancy@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10018b40 size=0x3
+#include "C_ItemGWatchFancy.h"
+int C_ItemGWatchFancy::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
