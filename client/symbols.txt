@@ -1319,6 +1319,7 @@
 0x10025340 func   ?vfunc15@C_ItemKKikiKey@@UAEHXZ C_ItemKKikiKey::vfunc15
 0x10025350 func   ?sub_10025350@@YAHXZ sub_10025350
 0x10025470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKKikiKey@@@Z ClientClassInit
+0x10025500 func   ?vfunc17@C_ItemKSarcophagusKey@@UAEHXZ C_ItemKSarcophagusKey::vfunc17
 0x10025590 func   ??_GC_ItemKSarcophagusKey@@UAEPAXI@Z ??_GC_ItemKSarcophagusKey@@UAEPAXI@Z
 0x100255c0 func   ?vfunc15@C_ItemKSarcophagusKey@@UAEHXZ C_ItemKSarcophagusKey::vfunc15
 0x100255d0 func   ?sub_100255d0@@YAHXZ sub_100255d0
