@@ -66009,6 +66009,23 @@ void * CUnknown101b5670::sub_101b5670(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5770 size=0x29
+namespace lifted {
+int sub_101ac930();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int); };
+}
+struct CUnknown101b5770 { int sub_101b5770(int); };
+int CUnknown101b5770::sub_101b5770(int a0)
+{
+    *(int *)((char *)this + 4) = ((lifted::V *)(lifted::sub_101ac930()))->f3(a0);
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 8) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6840 size=0x12
 namespace lifted {
 int sub_101ac930();
