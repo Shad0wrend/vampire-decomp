@@ -10,3 +10,11 @@ C_ItemGHannahsApptBook *pcd_emit_1001e510() { return new C_ItemGHannahsApptBook;
 
 // TARGET: ??_GC_ItemGHannahsApptBook@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001e540 size=0x3
+#include "C_ItemGHannahsApptBook.h"
+int C_ItemGHannahsApptBook::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
