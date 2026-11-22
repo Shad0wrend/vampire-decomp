@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10025f00 size=0x6
+#include "C_ItemKHitmanLuKey.h"
+namespace lifted {
+extern char g_10273da0;
+}
+int C_ItemKHitmanLuKey::vfunc17()
+{
+    return (int)&lifted::g_10273da0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025f90 size=0x1e
 #include "C_ItemKHitmanLuKey.h"
 
