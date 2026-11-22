@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001a880 size=0x6
+#include "C_ItemGBachJournal.h"
+namespace lifted {
+extern char g_102735a4;
+}
+int C_ItemGBachJournal::vfunc17()
+{
+    return (int)&lifted::g_102735a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a910 size=0x1e
 #include "C_ItemGBachJournal.h"
 
