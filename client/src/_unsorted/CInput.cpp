@@ -157,6 +157,18 @@ void CInput::vfunc8(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104730 size=0x15
+#include "CInput.h"
+namespace lifted {
+extern int g_104d3e38;
+}
+int CInput::vfunc55(int a0)
+{
+    lifted::g_104d3e38 = lifted::g_104d3e38 | a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105f20 size=0x8
 #include "CInput.h"
 void CInput::vfunc54()
