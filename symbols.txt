@@ -5100,6 +5100,7 @@
 0x100074aa func   ?vfunc34@CSave@@UAEXPBQAUCSaveEdict@@H@Z CSave::vfunc34
 0x100074af func   ?vfunc244@CBaseTrigger@@UAEXH@Z CBaseTrigger::vfunc244
 0x100074b9 func   ?sub_10234400@@YAHXZ sub_10234400
+0x100074be func   ?SystemUpdate@CSoundControllerImp@@UAEXXZ CSoundControllerImp::SystemUpdate
 0x100074be func   ?vfunc1@CSoundControllerImp@@UAEXXZ CSoundControllerImp::vfunc1
 0x100074c3 func   _activity_copy_prop activity_copy_prop
 0x100074c8 func   ?vfunc433@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc433
