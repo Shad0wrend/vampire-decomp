@@ -14,3 +14,10 @@ void CClientShadowMgr::vfunc4()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d53b0 size=0x3
+#include "CClientShadowMgr.h"
+void CClientShadowMgr::vfunc7(int a0)
+{
+}
+// END FUNCTION
