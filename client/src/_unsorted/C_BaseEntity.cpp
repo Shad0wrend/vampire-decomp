@@ -229,6 +229,20 @@ int C_BaseEntity::vfunc31(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007df40 size=0x23
+#include "C_BaseEntity.h"
+namespace lifted {
+int sub_10120190(int, int);
+}
+void C_BaseEntity::vfunc88()
+{
+    if ((*(int *)((char *)this + 0xec)) != 0) {
+        int t0 = lifted::sub_10120190(*(int *)((char *)this + 0xec), (int)this);
+        *(int *)((char *)this + 0xec) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007df70 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc87()
