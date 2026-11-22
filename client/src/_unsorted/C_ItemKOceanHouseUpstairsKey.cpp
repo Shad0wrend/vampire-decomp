@@ -10,3 +10,11 @@ C_ItemKOceanHouseUpstairsKey *pcd_emit_10021990() { return new C_ItemKOceanHouse
 
 // TARGET: ??_GC_ItemKOceanHouseUpstairsKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100219c0 size=0x3
+#include "C_ItemKOceanHouseUpstairsKey.h"
+int C_ItemKOceanHouseUpstairsKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
