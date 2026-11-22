@@ -31,6 +31,17 @@ int vgui2::Label::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b29e0 size=0x8
+#include "vgui2__Label.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual int f31(); };
+}
+int vgui2::Label::vfunc119()
+{
+    return ((lifted::V *)(*(int *)((char *)this + 0x5c)))->f31();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2a70 size=0xd
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc113(int a0)
