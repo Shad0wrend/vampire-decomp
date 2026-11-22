@@ -22,3 +22,11 @@ C_ItemPhysicsHand *pcd_emit_10003230() { return new C_ItemPhysicsHand; }
 
 // TARGET: ??_GC_ItemPhysicsHand@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10003260 size=0x3
+#include "C_ItemPhysicsHand.h"
+int C_ItemPhysicsHand::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

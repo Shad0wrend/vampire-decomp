@@ -72,6 +72,7 @@
 0x100031c0 func   ?vfunc249@C_BaseCombatWeapon@@UAEXHHHHHHHH@Z C_BaseCombatWeapon::vfunc249
 0x10003220 func   ?vfunc188@C_ItemPhysicsHand@@UAE_NXZ C_ItemPhysicsHand::vfunc188
 0x10003230 func   ??_GC_ItemPhysicsHand@@UAEPAXI@Z ??_GC_ItemPhysicsHand@@UAEPAXI@Z
+0x10003260 func   ?vfunc15@C_ItemPhysicsHand@@UAEHXZ C_ItemPhysicsHand::vfunc15
 0x10003270 func   ?sub_10003270@@YAHXZ sub_10003270
 0x10003390 func   ?ClientClassInit@@YAHPAUignored@DT_ItemPhysicsHand@@@Z ClientClassInit
 0x10003580 func   ?sub_10003580@@YAHXZ sub_10003580
