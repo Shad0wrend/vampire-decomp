@@ -20,6 +20,15 @@ int vgui2::Label::vfunc113(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2a80 size=0xd
+#include "vgui2__Label.h"
+int vgui2::Label::vfunc114(int a0)
+{
+    *(int *)((char *)this + 0x94) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2ab0 size=0x4
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc127()
