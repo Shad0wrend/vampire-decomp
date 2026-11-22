@@ -10,3 +10,11 @@ C_WeaponIThrownGrenade *pcd_emit_10016310() { return new C_WeaponIThrownGrenade;
 
 // TARGET: ??_GC_WeaponIThrownGrenade@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10016340 size=0x3
+#include "C_WeaponIThrownGrenade.h"
+int C_WeaponIThrownGrenade::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
