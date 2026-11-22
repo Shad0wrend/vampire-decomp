@@ -12113,6 +12113,21 @@ void CUnknown1004b0a0::sub_1004b0a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b1b0 size=0x18
+namespace lifted {
+struct C1004b050 { int sub_1004b050(); };
+int sub_101d12a1(int);
+}
+int sub_1004b1b0()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        return ((lifted::C1004b050 *)t0)->sub_1004b050();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b220 size=0x4b
 #include "Vector.h"
 #include <math.h>
