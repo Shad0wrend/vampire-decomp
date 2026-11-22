@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c3100 size=0xa
+#include "vgui2__FocusNavGroup.h"
+bool vgui2::FocusNavGroup::vfunc8(char a0)
+{
+    *(char *)((char *)this + 0x10) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c31f0 size=0x8
 #include "vgui2__FocusNavGroup.h"
 namespace lifted {
