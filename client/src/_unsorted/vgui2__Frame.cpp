@@ -31,3 +31,10 @@ void vgui2::Frame::vfunc95()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b9970 size=0x3
+#include "vgui2__Frame.h"
+void vgui2::Frame::vfunc93(int a0)
+{
+}
+// END FUNCTION
