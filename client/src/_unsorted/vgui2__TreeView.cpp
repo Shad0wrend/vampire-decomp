@@ -11,6 +11,14 @@ vgui2::TreeView *pcd_emit_101bc700() { return new vgui2::TreeView; }
 // TARGET: ??_GTreeView@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bd3d0 size=0x7
+#include "vgui2__TreeView.h"
+int vgui2::TreeView::vfunc108()
+{
+    return *(int *)((char *)this + 0x90);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be150 size=0x6
 #include "vgui2__TreeView.h"
 namespace lifted {
