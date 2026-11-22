@@ -5708,6 +5708,7 @@
 0x101c6770 func   ?sub_101c6770@CUnknown101c6770@@QAEHXZ CUnknown101c6770::sub_101c6770
 0x101c68c0 func   ??_GMessageBox@vgui2@@UAEPAXI@Z ??_GMessageBox@vgui2@@UAEPAXI@Z
 0x101c68e0 func   ??1MessageBox@vgui2@@UAE@XZ vgui2::MessageBox::~MessageBox
+0x101c6af0 func   ?vfunc146@MessageBox@vgui2@@UAEHH@Z vgui2::MessageBox::vfunc146
 0x101c6b50 func   ?vfunc147@MessageBox@vgui2@@UAEHM@Z vgui2::MessageBox::vfunc147
 0x101c6bf0 func   ?vfunc102@MessageBox@vgui2@@UAEHXZ vgui2::MessageBox::vfunc102
 0x101c6c00 func   ?sub_101c6c00@CUnknown101c6c00@@QAEHXZ CUnknown101c6c00::sub_101c6c00
