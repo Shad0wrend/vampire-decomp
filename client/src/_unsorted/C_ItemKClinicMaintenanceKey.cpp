@@ -10,3 +10,11 @@ C_ItemKClinicMaintenanceKey *pcd_emit_10021c10() { return new C_ItemKClinicMaint
 
 // TARGET: ??_GC_ItemKClinicMaintenanceKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10021c40 size=0x3
+#include "C_ItemKClinicMaintenanceKey.h"
+int C_ItemKClinicMaintenanceKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
