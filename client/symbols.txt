@@ -1159,6 +1159,7 @@
 0x100210f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLillyKey@@@Z ClientClassInit
 0x10021180 func   ?vfunc17@C_ItemKMuriettaKey@@UAEHXZ C_ItemKMuriettaKey::vfunc17
 0x10021210 func   ??_GC_ItemKMuriettaKey@@UAEPAXI@Z ??_GC_ItemKMuriettaKey@@UAEPAXI@Z
+0x10021230 func   ?vfunc16@C_ItemKMuriettaKey@@UAEHXZ C_ItemKMuriettaKey::vfunc16
 0x10021240 func   ?vfunc15@C_ItemKMuriettaKey@@UAEHXZ C_ItemKMuriettaKey::vfunc15
 0x10021250 func   ?sub_10021250@@YAHXZ sub_10021250
 0x10021370 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuriettaKey@@@Z ClientClassInit

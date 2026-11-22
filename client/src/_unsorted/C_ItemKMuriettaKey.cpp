@@ -22,6 +22,17 @@ C_ItemKMuriettaKey *pcd_emit_10021210() { return new C_ItemKMuriettaKey; }
 // TARGET: ??_GC_ItemKMuriettaKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10021230 size=0x6
+#include "C_ItemKMuriettaKey.h"
+namespace lifted {
+extern char g_102741f0;
+}
+int C_ItemKMuriettaKey::vfunc16()
+{
+    return (int)&lifted::g_102741f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021240 size=0x3
 #include "C_ItemKMuriettaKey.h"
 int C_ItemKMuriettaKey::vfunc15()
