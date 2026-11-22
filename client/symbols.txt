@@ -3094,6 +3094,7 @@
 0x100cb590 func   ?vfunc41@CHLClient@@UAEHH@Z CHLClient::vfunc41
 0x100cba20 func   ?vfunc6@CHLClient@@UAEHXZ CHLClient::vfunc6
 0x100cba40 func   ?vfunc7@CHLClient@@UAEHHH@Z CHLClient::vfunc7
+0x100cba60 func   ?vfunc8@CHLClient@@UAEHM@Z CHLClient::vfunc8
 0x100cbad0 func   ?vfunc10@CHLClient@@UAEHXZ CHLClient::vfunc10
 0x100cbae0 func   ?vfunc5@CHLClient@@UAEHXZ CHLClient::vfunc5
 0x100cbaf0 func   ?vfunc11@CHLClient@@UAEHHHHH@Z CHLClient::vfunc11
