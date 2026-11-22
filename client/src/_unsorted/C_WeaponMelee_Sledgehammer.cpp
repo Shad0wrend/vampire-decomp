@@ -10,3 +10,11 @@ C_WeaponMelee_Sledgehammer *pcd_emit_10009610() { return new C_WeaponMelee_Sledg
 
 // TARGET: ??_GC_WeaponMelee_Sledgehammer@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10009640 size=0x3
+#include "C_WeaponMelee_Sledgehammer.h"
+int C_WeaponMelee_Sledgehammer::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
