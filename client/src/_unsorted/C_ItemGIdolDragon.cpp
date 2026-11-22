@@ -10,3 +10,11 @@ C_ItemGIdolDragon *pcd_emit_1001ef10() { return new C_ItemGIdolDragon; }
 
 // TARGET: ??_GC_ItemGIdolDragon@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001ef40 size=0x3
+#include "C_ItemGIdolDragon.h"
+int C_ItemGIdolDragon::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

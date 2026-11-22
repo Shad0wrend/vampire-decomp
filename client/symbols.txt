@@ -753,6 +753,7 @@
 0x1001ecd0 func   ?sub_1001ecd0@@YAHXZ sub_1001ecd0
 0x1001edf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGIdolCrane@@@Z ClientClassInit
 0x1001ef10 func   ??_GC_ItemGIdolDragon@@UAEPAXI@Z ??_GC_ItemGIdolDragon@@UAEPAXI@Z
+0x1001ef40 func   ?vfunc15@C_ItemGIdolDragon@@UAEHXZ C_ItemGIdolDragon::vfunc15
 0x1001ef50 func   ?sub_1001ef50@@YAHXZ sub_1001ef50
 0x1001f070 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGIdolDragon@@@Z ClientClassInit
 0x1001f190 func   ??_GC_ItemGIdolElephant@@UAEPAXI@Z ??_GC_ItemGIdolElephant@@UAEPAXI@Z
