@@ -3479,6 +3479,7 @@
 0x100f0690 func   ?sub_100f0690@@YAHHHH@Z sub_100f0690
 0x100f06b0 func   ?sub_100f06b0@CUnknown100f06b0@@QAEPAXXZ CUnknown100f06b0::sub_100f06b0
 0x100f10c0 func   ?sub_100f10c0@CUnknown100f10c0@@QAEMXZ CUnknown100f10c0::sub_100f10c0
+0x100f1330 func   ?sub_100f1330@@YGHH@Z sub_100f1330
 0x100f1420 func   ??_GCHudChatLine@@UAEPAXI@Z ??_GCHudChatLine@@UAEPAXI@Z
 0x100f14a0 func   ?sub_100f14a0@CUnknown100f14a0@@QAEHHHH@Z CUnknown100f14a0::sub_100f14a0
 0x100f17e0 func   ?sub_100f17e0@CUnknown100f17e0@@QAEHXZ CUnknown100f17e0::sub_100f17e0
