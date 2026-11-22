@@ -3720,6 +3720,7 @@
 0x10117360 func   ??1CParticleMgr@@UAE@XZ CParticleMgr::~CParticleMgr
 0x101175a0 func   ?sub_101175a0@CUnknown101175a0@@QAEHXZ CUnknown101175a0::sub_101175a0
 0x10117ae0 func   ?sub_10117ae0@@YAHXZ sub_10117ae0
+0x10117b40 func   ?sub_10117b40@@YAHXZ sub_10117b40
 0x10117ba0 func   ?sub_10117ba0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117ba0
 0x10117c70 func   ?sub_10117c70@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117c70
 0x10117d00 func   ?sub_10117d00@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d00
