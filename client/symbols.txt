@@ -1423,6 +1423,7 @@
 0x1007f1e0 func   ??_GC_BaseGrenade@@UAEPAXI@Z ??_GC_BaseGrenade@@UAEPAXI@Z
 0x1007f300 func   ?sub_1007f300@@YAHXZ sub_1007f300
 0x1007f400 func   ?ClientClassInit@@YAHPAUignored@DT_BaseParticleEntity@@@Z ClientClassInit
+0x1007f6d0 func   ?vfunc86@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc86
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0
 0x1007f6f0 func   ??_GC_BaseViewModel@@UAEPAXI@Z ??_GC_BaseViewModel@@UAEPAXI@Z
 0x1007f710 func   ??1C_BaseViewModel@@UAE@XZ C_BaseViewModel::~C_BaseViewModel

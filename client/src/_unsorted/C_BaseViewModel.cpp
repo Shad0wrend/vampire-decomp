@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1007f6d0 size=0x3
+#include "C_BaseViewModel.h"
+int C_BaseViewModel::vfunc86()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f6f0 size=0x1e
 #include "C_BaseViewModel.h"
 
