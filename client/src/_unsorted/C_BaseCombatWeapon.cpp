@@ -432,6 +432,15 @@ bool C_BaseCombatWeapon::vfunc175()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bdf0 size=0xd
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::vfunc183(int a0)
+{
+    *(int *)((char *)this + 0x918) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007be00 size=0x7
 #include "C_BaseCombatWeapon.h"
 float C_BaseCombatWeapon::vfunc184()
