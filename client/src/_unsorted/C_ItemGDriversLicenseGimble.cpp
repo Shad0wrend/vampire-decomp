@@ -10,3 +10,11 @@ C_ItemGDriversLicenseGimble *pcd_emit_10019790() { return new C_ItemGDriversLice
 
 // TARGET: ??_GC_ItemGDriversLicenseGimble@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100197c0 size=0x3
+#include "C_ItemGDriversLicenseGimble.h"
+int C_ItemGDriversLicenseGimble::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

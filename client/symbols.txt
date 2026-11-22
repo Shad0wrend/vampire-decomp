@@ -613,6 +613,7 @@
 0x10019550 func   ?sub_10019550@@YAHXZ sub_10019550
 0x10019670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBailbondReceipt@@@Z ClientClassInit
 0x10019790 func   ??_GC_ItemGDriversLicenseGimble@@UAEPAXI@Z ??_GC_ItemGDriversLicenseGimble@@UAEPAXI@Z
+0x100197c0 func   ?vfunc15@C_ItemGDriversLicenseGimble@@UAEHXZ C_ItemGDriversLicenseGimble::vfunc15
 0x100197d0 func   ?sub_100197d0@@YAHXZ sub_100197d0
 0x100198f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGDriversLicenseGimble@@@Z ClientClassInit
 0x10019a10 func   ??_GC_ItemGWerewolfBlood@@UAEPAXI@Z ??_GC_ItemGWerewolfBlood@@UAEPAXI@Z
