@@ -15,6 +15,14 @@ void CClientThinkList::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d00e0 size=0x3
+#include "CClientThinkList.h"
+bool CClientThinkList::vfunc0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d00f0 size=0x1
 #include "CClientThinkList.h"
 void CClientThinkList::vfunc1()
