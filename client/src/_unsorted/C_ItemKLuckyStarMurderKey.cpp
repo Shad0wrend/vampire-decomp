@@ -10,3 +10,11 @@ C_ItemKLuckyStarMurderKey *pcd_emit_10022890() { return new C_ItemKLuckyStarMurd
 
 // TARGET: ??_GC_ItemKLuckyStarMurderKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100228c0 size=0x3
+#include "C_ItemKLuckyStarMurderKey.h"
+int C_ItemKLuckyStarMurderKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
