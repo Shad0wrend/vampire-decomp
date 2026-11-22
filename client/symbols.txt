@@ -229,6 +229,7 @@
 0x10008d70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Katana@@@Z ClientClassInit
 0x10008e00 func   ?vfunc17@C_WeaponMelee_Knife@@UAEHXZ C_WeaponMelee_Knife::vfunc17
 0x10008e90 func   ??_GC_WeaponMelee_Knife@@UAEPAXI@Z ??_GC_WeaponMelee_Knife@@UAEPAXI@Z
+0x10008eb0 func   ?vfunc16@C_WeaponMelee_Knife@@UAEHXZ C_WeaponMelee_Knife::vfunc16
 0x10008ec0 func   ?vfunc15@C_WeaponMelee_Knife@@UAEHXZ C_WeaponMelee_Knife::vfunc15
 0x10008ed0 func   ?sub_10008ed0@@YAHXZ sub_10008ed0
 0x10008ff0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Knife@@@Z ClientClassInit

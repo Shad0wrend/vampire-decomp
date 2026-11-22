@@ -22,6 +22,17 @@ C_WeaponMelee_Knife *pcd_emit_10008e90() { return new C_WeaponMelee_Knife; }
 // TARGET: ??_GC_WeaponMelee_Knife@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10008eb0 size=0x6
+#include "C_WeaponMelee_Knife.h"
+namespace lifted {
+extern char g_1027505c;
+}
+int C_WeaponMelee_Knife::vfunc16()
+{
+    return (int)&lifted::g_1027505c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008ec0 size=0x3
 #include "C_WeaponMelee_Knife.h"
 int C_WeaponMelee_Knife::vfunc15()
