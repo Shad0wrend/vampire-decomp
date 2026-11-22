@@ -10,3 +10,11 @@ C_WeaponIThrown *pcd_emit_10016090() { return new C_WeaponIThrown; }
 
 // TARGET: ??_GC_WeaponIThrown@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100160c0 size=0x3
+#include "C_WeaponIThrown.h"
+int C_WeaponIThrown::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
