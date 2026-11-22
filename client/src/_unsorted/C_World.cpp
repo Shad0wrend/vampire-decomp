@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100ca620 size=0x3
+#include "C_World.h"
+int C_World::vfunc66()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca630 size=0x1e
 #include "C_World.h"
 
