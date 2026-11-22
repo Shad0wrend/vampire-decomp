@@ -25,3 +25,14 @@ void vgui2::CheckButton::vfunc166(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101badd0 size=0x6
+#include "vgui2__CheckButton.h"
+namespace lifted {
+extern char g_102d9288;
+}
+int vgui2::CheckButton::vfunc102()
+{
+    return (int)&lifted::g_102d9288;
+}
+// END FUNCTION
