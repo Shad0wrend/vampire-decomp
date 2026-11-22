@@ -41,6 +41,14 @@ C_BaseEntity * C_BaseTempEntity::GetBaseEntity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100072e0 size=0x3
+#include "C_BaseTempEntity.h"
+IClientThinkable * C_BaseTempEntity::GetClientThinkable()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c370 size=0x1e
 #include "C_BaseTempEntity.h"
 
