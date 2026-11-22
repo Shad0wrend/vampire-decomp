@@ -1521,6 +1521,7 @@
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0
 0x1007f6f0 func   ??_GC_BaseViewModel@@UAEPAXI@Z ??_GC_BaseViewModel@@UAEPAXI@Z
 0x1007f710 func   ??1C_BaseViewModel@@UAE@XZ C_BaseViewModel::~C_BaseViewModel
+0x1007f7b0 func   ?vfunc21@C_BaseViewModel@@UAEXXZ C_BaseViewModel::vfunc21
 0x1007f860 func   ?sub_1007f860@CUnknown1007f860@@QAEHH@Z CUnknown1007f860::sub_1007f860
 0x1007f870 func   ?sub_1007f870@CUnknown1007f870@@QAEHXZ CUnknown1007f870::sub_1007f870
 0x1007f960 func   ?sub_1007f960@@YAHXZ sub_1007f960

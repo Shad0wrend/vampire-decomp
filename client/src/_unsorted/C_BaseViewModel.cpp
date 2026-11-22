@@ -19,6 +19,13 @@ C_BaseViewModel *pcd_emit_1007f6f0() { return new C_BaseViewModel; }
 // TARGET: ??_GC_BaseViewModel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1007f7b0 size=0x1
+#include "C_BaseViewModel.h"
+void C_BaseViewModel::vfunc21()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab500 size=0x3
 #include "C_BaseViewModel.h"
 bool C_BaseViewModel::vfunc142()
