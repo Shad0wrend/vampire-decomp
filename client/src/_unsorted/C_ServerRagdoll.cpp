@@ -10,3 +10,11 @@ C_ServerRagdoll *pcd_emit_10125770() { return new C_ServerRagdoll; }
 
 // TARGET: ??_GC_ServerRagdoll@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10125e60 size=0x3
+#include "C_ServerRagdoll.h"
+int C_ServerRagdoll::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
