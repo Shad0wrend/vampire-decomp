@@ -12709,6 +12709,7 @@
 0x10010b27 func   ?sub_1019c810@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@@Z sub_1019c810
 0x10010b2c func   ?vfunc473@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc473
 0x10010b31 func   ?sub_101c2200@@YAHXZ sub_101c2200
+0x10010b36 func   ?GetBlockName@CEntitySaveRestoreBlockHandler@@UAEPBDXZ CEntitySaveRestoreBlockHandler::GetBlockName
 0x10010b36 func   ?vfunc0@CEntitySaveRestoreBlockHandler@@UAEHXZ CEntitySaveRestoreBlockHandler::vfunc0
 0x10010b3b func   ?vfunc366@CNPC_VPedestrian@@UAE_NHHH@Z CNPC_VPedestrian::vfunc366
 0x10010b40 func   ?sub_10207680@CThisView10207680@@QAEXHPAVCBaseCombatCharacter@@@Z CThisView10207680::sub_10207680
