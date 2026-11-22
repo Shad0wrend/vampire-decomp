@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b5090 size=0x3
+#include "C_FireSmoke.h"
+int C_FireSmoke::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5490 size=0x1e
 #include "C_FireSmoke.h"
 
