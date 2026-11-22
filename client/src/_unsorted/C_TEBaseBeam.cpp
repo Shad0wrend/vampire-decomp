@@ -10,3 +10,11 @@ C_TEBaseBeam *pcd_emit_100326a0() { return new C_TEBaseBeam; }
 
 // TARGET: ??_GC_TEBaseBeam@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10032710 size=0x3
+#include "C_TEBaseBeam.h"
+int C_TEBaseBeam::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
