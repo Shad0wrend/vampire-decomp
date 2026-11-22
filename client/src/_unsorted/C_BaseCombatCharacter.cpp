@@ -40,3 +40,20 @@ int C_BaseCombatCharacter::vfunc17()
     return (int)&lifted::g_102ae794;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10099850 size=0x14
+#include "C_BaseCombatCharacter.h"
+namespace lifted {
+extern char g_102aea5c;
+extern char g_102aea78;
+bool sub_10099870();
+}
+int C_BaseCombatCharacter::vfunc143()
+{
+    bool t0 = lifted::sub_10099870();
+    if (t0 != 0) {
+        return (int)&lifted::g_102aea78;
+    }
+    return (int)&lifted::g_102aea5c;
+}
+// END FUNCTION
