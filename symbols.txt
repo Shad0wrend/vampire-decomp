@@ -14093,7 +14093,6 @@
 0x10012652 func   ?vfunc440@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc440
 0x10012657 func   ?sub_100f5140@@YAHXZ sub_100f5140
 0x1001265c func   ??_GCAI_MoveProbe@@UAEPAXI@Z ??_GCAI_MoveProbe@@UAEPAXI@Z
-0x1001265c func   ?sub_1027cf30@Helper@@QAEPAXE@Z Helper::sub_1027cf30
 0x10012661 func   ?vfunc440@CNPC_VYukie@@QAEHH@Z CNPC_VYukie::vfunc440
 0x10012666 func   ?sub_1014f8f0@@YIXPAX@Z sub_1014f8f0
 0x1001266b func   ?sub_100ee560@CBaseDoor@@QAEXD@Z CBaseDoor::sub_100ee560
