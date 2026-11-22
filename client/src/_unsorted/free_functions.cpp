@@ -47672,6 +47672,20 @@ unsigned short CUtlRBTree16::sub_10139340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139d00 size=0x19
+namespace lifted {
+extern char g_10247bc0;
+int __stdcall sub_100f0510(int);
+}
+struct CUnknown10139d00 { void * sub_10139d00(int); };
+void * CUnknown10139d00::sub_10139d00(int a0)
+{
+    int t0 = lifted::sub_100f0510(a0);
+    *(int *)this = (int)&lifted::g_10247bc0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139e50 size=0x17
 namespace lifted {
 extern char g_105e6aa0;
