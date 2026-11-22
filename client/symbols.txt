@@ -289,6 +289,7 @@
 0x1000a670 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_TzimisceMelee@@@Z ClientClassInit
 0x1000a700 func   ?vfunc17@C_WeaponMelee_WerewolfAttacks@@UAEHXZ C_WeaponMelee_WerewolfAttacks::vfunc17
 0x1000a790 func   ??_GC_WeaponMelee_WerewolfAttacks@@UAEPAXI@Z ??_GC_WeaponMelee_WerewolfAttacks@@UAEPAXI@Z
+0x1000a7b0 func   ?vfunc16@C_WeaponMelee_WerewolfAttacks@@UAEHXZ C_WeaponMelee_WerewolfAttacks::vfunc16
 0x1000a7c0 func   ?vfunc15@C_WeaponMelee_WerewolfAttacks@@UAEHXZ C_WeaponMelee_WerewolfAttacks::vfunc15
 0x1000a7d0 func   ?sub_1000a7d0@@YAHXZ sub_1000a7d0
 0x1000a8f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_WerewolfAttacks@@@Z ClientClassInit
