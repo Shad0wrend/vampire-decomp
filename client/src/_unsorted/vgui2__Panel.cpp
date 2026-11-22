@@ -321,6 +321,20 @@ bool vgui2::Panel::vfunc47()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab260 size=0xf
+#include "vgui2__Panel.h"
+namespace lifted {
+struct V { virtual void u0(); virtual bool f1(); };
+}
+bool vgui2::Panel::vfunc67()
+{
+    if ((*(int *)((char *)this + 0x1c)) == 0) {
+        return 0;
+    }
+    return ((lifted::V *)(*(int *)((char *)this + 0x1c)))->f1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab290 size=0xa
 #include "vgui2__Panel.h"
 int vgui2::Panel::vfunc50(int a0)
