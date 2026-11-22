@@ -60,6 +60,14 @@ void TEV::sub_101ace00(IScheme *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af140 size=0x8
+#include "vgui2__TextEntry.h"
+void vgui2::TextEntry::vfunc85()
+{
+    *(char *)((char *)this + 0x8d) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1c60 size=0x6
 #include "vgui2__TextEntry.h"
 namespace lifted {
