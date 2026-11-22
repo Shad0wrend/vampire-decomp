@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bd320 size=0x3
+#include "C_PlayerResource.h"
+void C_PlayerResource::vfunc138(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd330 size=0x1e
 #include "C_PlayerResource.h"
 
