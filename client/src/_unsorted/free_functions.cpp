@@ -125,6 +125,28 @@ char CUnknown10001990::sub_10001990(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100019d0 size=0x50
+namespace lifted {
+int sub_10001a20();
+}
+struct CUnknown100019d0 { int sub_100019d0(int, int); };
+int CUnknown100019d0::sub_100019d0(int a0, int a1)
+{
+    lifted::sub_10001a20();
+    if (a0 != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)this + 0x474);
+        *(int *)((char *)a0 + 4) = *(int *)((char *)this + 0x478);
+        *(int *)((char *)a0 + 8) = *(int *)((char *)this + 0x47c);
+    }
+    if (a1 != 0) {
+        *(int *)((char *)a1) = *(int *)((char *)this + 0x468);
+        *(int *)((char *)a1 + 4) = *(int *)((char *)this + 0x46c);
+        *(int *)((char *)a1 + 8) = *(int *)((char *)this + 0x470);
+    }
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001f20 size=0x12
 namespace lifted {
 extern char g_102ea298;
