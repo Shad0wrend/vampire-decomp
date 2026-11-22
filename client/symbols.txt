@@ -5494,6 +5494,7 @@
 0x101c2e30 func   ?sub_101c2e30@CUnknown101c2e30@@QAEXXZ CUnknown101c2e30::sub_101c2e30
 0x101c31f0 func   ?vfunc2@FocusNavGroup@vgui2@@UAEHXZ vgui2::FocusNavGroup::vfunc2
 0x101c32a0 func   ?vfunc6@FocusNavGroup@vgui2@@UAEHXZ vgui2::FocusNavGroup::vfunc6
+0x101c32b0 func   ?vfunc7@FocusNavGroup@vgui2@@UAEHXZ vgui2::FocusNavGroup::vfunc7
 0x101c3a40 func   ??_GBuildModeDialog@vgui2@@UAEPAXI@Z ??_GBuildModeDialog@vgui2@@UAEPAXI@Z
 0x101c3a60 func   ??1BuildModeDialog@vgui2@@UAE@XZ vgui2::BuildModeDialog::~BuildModeDialog
 0x101c54d0 func   ?vfunc102@BuildModeDialog@vgui2@@UAEHXZ vgui2::BuildModeDialog::vfunc102
