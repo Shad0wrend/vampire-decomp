@@ -18,6 +18,13 @@ void vgui2::Frame::vfunc91(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b95f0 size=0x3
+#include "vgui2__Frame.h"
+void vgui2::Frame::vfunc94(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9600 size=0x1
 #include "vgui2__Frame.h"
 void vgui2::Frame::vfunc95()
