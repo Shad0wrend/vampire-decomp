@@ -14154,6 +14154,45 @@ void CUnknown10067520::sub_10067520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100678a0 size=0x75
+namespace lifted {
+extern char g_1028837c;
+extern char g_1028838c;
+extern char g_102883a4;
+extern char g_102883b0;
+int sub_10067850();
+}
+int __stdcall sub_100678a0(int a0)
+{
+    int t0 = lifted::sub_10067850();
+    if (t0 == 0) {
+        if (a0 != 0) {
+            *(int *)((char *)a0) = 4;
+        }
+        return (int)&lifted::g_1028837c;
+    }
+    if (t0 == 1) {
+        if (a0 != 0) {
+            *(int *)((char *)a0) = 6;
+        }
+        return (int)&lifted::g_1028838c;
+    }
+    if (t0 == 2) {
+        if (a0 != 0) {
+            *(int *)((char *)a0) = 5;
+        }
+        return (int)&lifted::g_102883b0;
+    }
+    if (t0 == 3) {
+        if (a0 != 0) {
+            *(int *)((char *)a0) = 3;
+        }
+        return (int)&lifted::g_102883a4;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067920 size=0x2c
 namespace lifted {
 extern char g_10288884;
