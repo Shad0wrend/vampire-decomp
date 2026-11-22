@@ -5,10 +5,13 @@
 - localize NAME: the object's external definition of NAME becomes static (a block that holds a same-unit copy of
   another block's function: its own calls go to its copy, everyone else's to the real one);
 - promote NAME: the object's static definition of NAME becomes external (a file static other blocks name);
-- inner NAME SECTION VALUE: a public symbol NAME inside the object (code addresses a game global that lies inside
-  another object, at A + offset);
-- rename OBJ SECTION NAME (bss_layout.txt): a `.bss` section takes a `.bss$<addr>` name, so the linker places it
-  among the items in the game's order."""
+- inner NAME SECTION SECTION-NAME VALUE: a public symbol NAME inside the object (code addresses a game global that
+  lies inside another object, at A + offset);
+- rename OBJ SECTION CURRENT-NAME NAME (bss_layout.txt): a `.bss` section takes a `.bss$<addr>` name, so the linker
+  places it among the items in the game's order.
+
+The records name sections by number and by the name they had when config/ was written: a section with another name
+stops the build (the block changed since; `pcdecomp standalone` writes config/ again)."""
 
 from __future__ import annotations
 
@@ -37,15 +40,26 @@ def promote(c: Coff, names: set[str]) -> set[str]:
     return _set_class(c, names, SYM_CLASS_STATIC, SYM_CLASS_EXTERNAL)
 
 
-def inner(c: Coff, name: str, section: int, value: int) -> int:
-    if not 0 < section <= len(c.sections):
-        raise SystemExit(f"{name}: section {section} is not in the object")
+STALE = " (config/ is older than src/: run pcdecomp standalone)"
+
+
+def _section(c: Coff, number: int, expected: str | None, what: str) -> None:
+    """Section `number` exists and, where config/ names it, still has that name: config/ keeps section numbers, and a
+    block edited since config/ was written may number its sections otherwise."""
+    if not 0 < number <= len(c.sections):
+        raise SystemExit(f"{what}: section {number} is not in the object{STALE}")
+    actual = c.sections[number - 1].name
+    if expected is not None and actual != expected:
+        raise SystemExit(f"{what}: section {number} is {actual}, not {expected}{STALE}")
+
+
+def inner(c: Coff, name: str, section: int, value: int, expected: str | None = None) -> int:
+    _section(c, section, expected, name)
     return c.add_symbol(name, section, value, SYM_CLASS_EXTERNAL)
 
 
-def rename_section(c: Coff, number: int, name: str) -> None:
-    if not 0 < number <= len(c.sections):
-        raise SystemExit(f"section {number} is not in the object")
+def rename_section(c: Coff, number: int, name: str, expected: str | None = None) -> None:
+    _section(c, number, expected, f"rename to {name}")
     c.set_section_name(number, name)
 
 
@@ -71,13 +85,13 @@ def apply(data: bytes, name: str, config: Path) -> bytes:
         if wanted:
             missing = wanted - edit(c, wanted)
             if missing:
-                raise SystemExit(f"{name}: {op} {', '.join(sorted(missing))}: no such definition in the object "
-                                 f"(config/ is older than src/: run pcdecomp standalone)")
+                raise SystemExit(f"{name}: {op} {', '.join(sorted(missing))}: no such definition in the object"
+                                 f"{STALE}")
     for f in fixups:
         if f.op == "inner":
-            inner(c, f.name, f.section, f.value)
+            inner(c, f.name, f.section, f.value, f.section_name)
     for r in renames:
-        rename_section(c, r.section, r.name)
+        rename_section(c, r.section, r.name, r.current)
     return c.to_bytes()
 
 

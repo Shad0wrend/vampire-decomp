@@ -86,6 +86,13 @@ def main(argv: list[str] | None = None) -> int:
         n = len(unlisted)
         print(f"{n} block{'s' if n != 1 else ''} in src/ {'is' if n == 1 else 'are'} not in config/blocks.txt: "
               f"run pcdecomp standalone")
+    # an edited block may need other fix-ups, vtable patches or known differences than config/ lists; a fix-up that
+    # no longer fits stops the build (tools/fixup.py), anything else only shows in `ninja verify`
+    changed = [b.addr for b in listed if b.digest and blocks.unit_digest(units[b.addr].read_bytes()) != b.digest]
+    if changed:
+        n = len(changed)
+        print(f"{n} listed block{'s' if n != 1 else ''} changed since config/ was written "
+              f"({', '.join(f'0x{a:08x}' for a in changed[:5])}{' ...' if n > 5 else ''}): run pcdecomp standalone")
 
     lines = [
         "# Written by configure.py; ninja runs it again when src/, config/ or tools/ change.",
@@ -101,8 +108,11 @@ def main(argv: list[str] | None = None) -> int:
         f"map = {_win(Path('build') / Path(target).with_suffix('.map'))}",
         "",
         "rule cc",
-        f"  command = $python -m tools.vc6 --vc6 \"$vc6\" cl {' '.join(cc_args(['$flags'], '$incdir', '$out', '$in'))}",
+        f"  command = $python -m tools.vc6 --vc6 \"$vc6\" --depfile $out.d cl "
+        f"{' '.join(cc_args(['$flags'], '$incdir', '$out', '$in'))}",
         "  description = cc $in",
+        "  depfile = $out.d",  # the headers the unit includes (tools.vc6 scans them): a header edit rebuilds it
+        "  deps = gcc",
         "rule cc_plain",
         f"  command = $python -m tools.vc6 --vc6 \"$vc6\" cl {' '.join(plain_args(['$flags'], '$out', '$in'))}",
         "  description = cc $in",

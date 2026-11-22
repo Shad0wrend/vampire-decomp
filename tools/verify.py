@@ -12,14 +12,23 @@ config/addresses.txt (and config/aliases.txt):
   function of the object with no address of its own (an initializer's `$E` steps, a local static's destroy) is placed
   where the game's word reaches, and checked there the same way; so is code of the object at a game address no block
   covers (an inline function's static destroy, which every unit may have a copy of and the game has once);
+- a block's data: every symbol of the object's initialized data with a game address (a local static's initial
+  value, a string, an exception-handling table, RTTI, a global the block defines) has the game's bytes there, to
+  the next symbol of its section (trailing zeros up to the next symbol's alignment may be padding, as pcdecomp's
+  judge reads it), and each relocated word there reaches the counterpart of its target (a constant with no game
+  address of its own: the game's word points at the same bytes);
 - initializers: each initializer object's `.CRT$XCU` entries are the game's table entries from the block's address
   on, checked as functions; the built table runs the game's initializers in the game's order;
-- data: each relocated word of a data object (`DD OFFSET`) reaches, in the game, the game address of its symbol (the
-  word's game address comes from the label before it, or from the label after it for an item's prefix word, which the
-  head comments of src/_data/*.asm.in name);
+- data: every byte of each data item (its address, extent and prefix from the head comments of src/_data/*.asm.in)
+  outside its relocated words is the game's, and each relocated word (`DD OFFSET`) reaches, in the game, the game
+  address of its symbol (the word's game address comes from the label before it, or from the label after it for an
+  item's prefix word);
 - vtables: each slot of a vtable the objects emit runs, in the build, the counterpart of the game's slot (a slot
   config/vtable_patches.txt patches is reported as a `slot` difference all the same: its source is not right yet);
-- exports and imports: names and ordinals equal the game's; each export runs the counterpart of the game's.
+- exports and imports: names and ordinals equal the game's; each export runs the counterpart of the game's;
+- every block in src/ is in config/blocks.txt (configure.py builds an unlisted one, and nothing would check it).
+An object config/fixups.txt or config/bss_layout.txt names is read from build/link/ (the fixed-up copy the link
+takes), any other from build/obj/.
 A difference config/known_differences.txt names is shown apart; any other one fails verify (exit code 1).
 Writes build/report.json."""
 
@@ -35,7 +44,9 @@ from collections import Counter
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-from .cfg import Block, read_addresses, read_aliases, read_blocks, read_build, read_known, read_patches
+from .blocks import sources
+from .cfg import (Block, read_addresses, read_aliases, read_blocks, read_build, read_fixups, read_known,
+                  read_layout, read_patches)
 from .coff import SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
 from .mapfile import read_map
 from .pe import PE
@@ -50,11 +61,14 @@ FILL = (0x90, 0xCC)  # VC6's alignment fill after a /Gy function
 MIN_RUN = 8  # back-to-back stubs that make an incremental-link table (pcdecomp's ilt.MIN_RUN)
 STUB_RUN = re.compile(rb"(?:\xe9[\x00-\xff]{4}){%d,}" % MIN_RUN)
 PREFIXED = re.compile(r"^; 0x([0-9a-f]{8}) \+\d+ prefix \d+:", re.M)  # an item head `pcdecomp data` writes
+ITEM = re.compile(r"^; 0x([0-9a-f]{8}) \+(\d+)(?: prefix (\d+))?: (\S+)", re.M)  # address, extent, prefix, label
+UNINITIALIZED = 0x00000080  # IMAGE_SCN_CNT_UNINITIALIZED_DATA: no bytes in the object (.bss)
+NOT_DATA = (".CRT$", ".debug$", ".drectve")  # the initializer table is checked as a table; the rest is not loaded
 
 
 @dataclass
 class Difference:
-    kind: str  # function / initializer / data / slot / slot-patch / vtable / xcu-* / export-* / import-*
+    kind: str  # function / initializer / data / slot / slot-patch / vtable / xcu-* / export-* / import-* / unlisted
     place: str
     detail: str = ""
 
@@ -154,6 +168,23 @@ def prefixed_items(text: str) -> set[int]:
     return {int(m.group(1), 16) for m in PREFIXED.finditer(text)}
 
 
+def data_items(text: str) -> list[tuple[int, int, int, str]]:
+    """(game address, extent, prefix, label) of every item of a data template, from the head comments `pcdecomp
+    data` writes: the item's bytes are [address - prefix, address + extent) in the game, around its label's offset
+    in the object."""
+    return [(int(m.group(1), 16), int(m.group(2)), int(m.group(3) or 0), m.group(4)) for m in ITEM.finditer(text)]
+
+
+def padding_after(data: bytes, follows: int | None, last_word: int) -> int:
+    """How many of `data`'s bytes to compare: trailing zeros up to the next symbol's alignment - 1 (at most 7) may
+    be padding that the game's unit filled with its own next item, as pcdecomp's judge reads a static's initial
+    value; never the bytes of a relocated word (`last_word`: the end of the last one)."""
+    size, padding = len(data), (min(follows & -follows, 8) - 1 if follows else 0)
+    while padding and size > last_word and data[size - 1] == 0:
+        size, padding = size - 1, padding - 1
+    return size
+
+
 def _original(path: Path, sha1: str, target: str) -> PE:
     if not path.exists():
         raise SystemExit(f"{path} not found: copy your game's {target} there (orig/README.txt)")
@@ -204,9 +235,26 @@ class Verifier:
         self.patched = {(p.vtable, p.slot): p for p in patches}
         self.known = read_known(config / "known_differences.txt") \
             if (config / "known_differences.txt").exists() else []
+        fixups = read_fixups(config / "fixups.txt") if (config / "fixups.txt").exists() else []
+        layout = read_layout(config / "bss_layout.txt") if (config / "bss_layout.txt").exists() else []
+        self.fixed = {f.obj for f in fixups} | {r.obj for r in layout if r.op == "rename"}  # as configure.py links
         self.stubs = 0
         self.ilt = ilt_stubs(self.orig)
         self.game_xcu = self._game_xcu()
+
+    @classmethod
+    def for_objects(cls, orig, addresses: dict[str, int], aliases: dict[str, str], blocks: list[Block],
+                    values: dict, ilt) -> Verifier:
+        """A verifier of the objects alone, before any build (pcdecomp standalone finds the known differences with
+        it): `orig` reads the game's bytes (`read(va, n)`, ValueError outside its sections), `ilt` maps a stub to
+        its function (`in` and `[]`), `values` is config/build.toml. Code is compared as the object holds it."""
+        v = cls.__new__(cls)
+        v.root, v.values, v.orig, v.built, v.map = None, values, orig, None, None
+        v.addresses, v.aliases, v.blocks = addresses, aliases, blocks
+        v.block_addresses = {b.addr for b in blocks}
+        v.patched, v.known, v.fixed, v.stubs, v.ilt = {}, [], set(), 0, ilt
+        v.game_xcu = v._game_xcu()
+        return v
 
     # --- addresses ---------------------------------------------------------------------------------------------
     def lookup(self, name: str) -> int | None:
@@ -253,20 +301,22 @@ class Verifier:
 
     # --- objects -----------------------------------------------------------------------------------------------
     def load(self, name: str) -> _Object | None:
-        for folder in ("link", "obj"):
-            path = self.build_dir / folder / f"{name}.obj"
-            if path.exists():
-                try:
-                    return _Object(name, Coff.parse(path.read_bytes()))
-                except CoffError:
-                    return None
-        return None
+        """The object the link read: the fixed-up copy for an object config/ fixes up (build/link/ may still hold
+        an older copy of another one), else the compiled one."""
+        path = self.build_dir / ("link" if name in self.fixed else "obj") / f"{name}.obj"
+        try:
+            return _Object(name, Coff.parse(path.read_bytes()))
+        except (FileNotFoundError, CoffError):
+            return None
 
     # --- code --------------------------------------------------------------------------------------------------
-    def check_code(self, obj: _Object, roots: list[tuple[Symbol, int, int | None]]) -> list[tuple[int, int, str]]:
+    def check_code(self, obj: _Object, roots: list[tuple[Symbol, int, int | None]],
+                   placed: dict[int, int] | None = None) -> list[tuple[int, int, str]]:
         """Problems (game function address, offset, why) of the functions `roots` (symbol, game address, size or
-        None for the whole section) and every static function they reach that has no game address of its own."""
-        placed = {sym.index: addr for sym, addr, _ in roots}
+        None for the whole section) and every static function they reach that has no game address of its own.
+        `placed` receives the game address of every function checked (symbol index -> address)."""
+        placed = {} if placed is None else placed
+        placed.update({sym.index: addr for sym, addr, _ in roots})
         todo = list(roots)
         problems = []
         while todo:
@@ -284,7 +334,7 @@ class Verifier:
             except ValueError:
                 problems.append((addr, 0, "outside the original's sections"))
                 continue
-            at = self.map.address(sym.name, obj.name)
+            at = self.map.address(sym.name, obj.name) if self.map is not None else None
             try:
                 built = self.built.read(at, n) if at is not None else data[:n]
             except ValueError:
@@ -364,12 +414,54 @@ class Verifier:
         roots, why = self.roots(block, obj)
         if why:
             return "missing", [why]
-        problems = sorted(self.check_code(obj, roots), key=lambda p: (p[0] != block.addr, p[0], p[1]))
+        placed: dict[int, int] = {}
+        problems = self.check_code(obj, roots, placed)
+        problems = sorted(problems + self.check_block_data(obj, placed), key=lambda p: (p[0] != block.addr, p[0], p[1]))
         if not problems:
             return "identical", []
         a, offset, _ = problems[0]
         status = f"differs@0x{offset:x}" if a == block.addr else f"differs@0x{a:08x}+0x{offset:x}"
         return status, [f"0x{a:08x}+0x{o:x}: {w}" for a, o, w in problems]
+
+    def check_block_data(self, obj: _Object, placed: dict[int, int]) -> list[tuple[int, int, str]]:
+        """Problems (game address, offset, why) of the initialized data a block's object defines at game addresses
+        (a function-local static's initial value, a string, an exception-handling table, a global the block
+        defines): each symbol's bytes to the next symbol of its section (padding_after) equal the game's, and each
+        relocated word there reaches the counterpart of its target (a label of a function checked here: from the
+        function's game address). Vtables are checked slot by slot (check_vtables); zero-initialized data has no
+        bytes to compare."""
+        problems, seen = [], set()
+        for section in obj.coff.sections:
+            if section.characteristics & (CODE | NOT_LOADED | UNINITIALIZED) or not section.data \
+                    or section.name.startswith(NOT_DATA):
+                continue
+            symbols = sorted((s for s in obj.coff.symbols if s.section_number == section.number), key=lambda s: s.value)
+            for sym in symbols:
+                addr = None if sym.name.startswith("??_7") else self.resolve(obj, sym)
+                if addr is None or addr in seen:
+                    continue
+                seen.add(addr)
+                follows = next((s.value for s in symbols if s.value > sym.value), None)
+                ours = section.data[sym.value:len(section.data) if follows is None else follows]
+                words = {r.offset - sym.value: r for r in section.relocations
+                         if 0 <= r.offset - sym.value < len(ours)}
+                masked = set()
+                for k, r in sorted(words.items()):
+                    masked.update(range(k, k + 4))
+                    why = self._data_word(obj, section, r, addr + k, placed)
+                    if why:
+                        problems.append((addr, k, f"{sym.name}: {why}"))
+                size = padding_after(ours, follows, max((k + 4 for k in words), default=0))
+                try:
+                    game = self.orig.read(addr, size)
+                except ValueError:
+                    problems.append((addr, 0, f"{sym.name}: outside the original's sections"))
+                    continue
+                first = next((i for i in range(size) if i not in masked and ours[i] != game[i]), None)
+                if first is not None:
+                    problems.append((addr, first, f"{sym.name}: byte 0x{ours[first]:02x}, the game's "
+                                                  f"0x{game[first]:02x}"))
+        return problems
 
     # --- vtables -----------------------------------------------------------------------------------------------
     def check_vtables(self, obj: _Object, seen: set[str], report: Report, out: list[Difference]) -> None:
@@ -418,7 +510,8 @@ class Verifier:
                 out.append(Difference("data", stem, f"{stem}.obj not built"))
                 continue
             first = None
-            prefixed = prefixed_items(template.read_text(encoding="latin-1"))
+            text = template.read_text(encoding="latin-1")
+            prefixed = prefixed_items(text)
             for section in obj.coff.sections:
                 if section.characteristics & (NOT_LOADED | CODE) or not section.relocations:
                     continue
@@ -435,13 +528,79 @@ class Verifier:
                     if why:
                         out.append(Difference("data", place, why))
                         first = first or place
+            for addr, extent, prefix, label in data_items(text):
+                why = self._item_bytes(obj, addr, extent, prefix, label)
+                if why:
+                    out.append(Difference("data", f"0x{addr:08x}", why))
+                    first = first or f"0x{addr:08x}"
             report.data[stem] = "identical" if first is None else f"differs@{first}"
 
-    def _data_word(self, obj: _Object, section: Section, r, site: int) -> str | None:
+    def _item_bytes(self, obj: _Object, addr: int, extent: int, prefix: int, label: str) -> str | None:
+        """Why a data item's bytes outside its relocated words are not the game's, or None."""
+        sym = obj.defined(label)
+        if sym is None:
+            return f"{label} is not in {obj.name}.obj"
+        section = obj.sections[sym.section_number]
+        start, end = sym.value - prefix, sym.value + extent
+        ours = section.data[max(start, 0):end]
+        if start < 0 or len(ours) != end - start:
+            return f"{label}: the object holds {len(ours)} of its {end - start} bytes"
+        try:
+            game = self.orig.read(addr - prefix, end - start)
+        except ValueError:
+            return f"{label}: outside the original's sections"
+        masked = {i for r in section.relocations if start <= r.offset < end
+                  for i in range(r.offset - start, r.offset - start + 4)}
+        first = next((i for i in range(end - start) if i not in masked and ours[i] != game[i]), None)
+        if first is None:
+            return None
+        return f"{label} {first - prefix:+#x}: byte 0x{ours[first]:02x}, the game's 0x{game[first]:02x}"
+
+    def _label(self, obj: _Object, target: Symbol, placed: dict[int, int]) -> int | None:
+        """The game address of a symbol checked as code, or of a label in the section of a function checked here
+        (an exception-handling table's handler, an unwind funclet), or None."""
+        if target.index in placed:
+            return placed[target.index]
+        for index, addr in placed.items():
+            fn = obj.symbols[index]
+            if target.is_defined and fn.section_number == target.section_number:
+                return (addr + target.value - fn.value) & MASK
+        return None
+
+    def _constant_word(self, obj: _Object, section: Section, r, site: int) -> str | None:
+        """A word of a block's data naming a constant of the object that has no game address of its own (a string
+        a table points at, as pcdecomp's judge finds a constant by its content): the game's word must point at the
+        same bytes."""
+        target = obj.symbols[r.symbol_index]
+        home = obj.sections.get(target.section_number) if target.is_defined else None
+        if home is None or home.characteristics & (CODE | NOT_LOADED | UNINITIALIZED):
+            return f"{target.name} has no game address (config/addresses.txt)"
+        follows = min((s.value for s in obj.coff.symbols if s.section_number == target.section_number
+                       and s.value > target.value), default=None)
+        ours = home.data[target.value:len(home.data) if follows is None else follows]
+        ours = ours[:padding_after(ours, follows, 0)]
+        word = self._word(self.orig, site)
+        if word is None:
+            return "outside the original's sections"
+        at = (word - struct.unpack("<I", section.data[r.offset:r.offset + 4])[0]) & MASK
+        try:
+            game = self.orig.read(at, len(ours))
+        except ValueError:
+            game = b""
+        if game != ours:
+            return f"{target.name}: the game's word points at 0x{at:08x}, which does not hold its bytes"
+        return None
+
+    def _data_word(self, obj: _Object, section: Section, r, site: int,
+                   placed: dict[int, int] | None = None) -> str | None:
         target = obj.symbols[r.symbol_index]
         if r.type not in (DIR32, DIR32NB):
             return f"relocation type 0x{r.type:x} at {target.name}"
         expected = self.resolve(obj, target)
+        if expected is None and placed:
+            expected = self._label(obj, target, placed)
+        if expected is None and placed is not None:
+            return self._constant_word(obj, section, r, site)
         if expected is None:
             return f"{target.name} has no game address (config/addresses.txt)"
         expected = (expected + struct.unpack("<I", section.data[r.offset:r.offset + 4])[0]) & MASK
@@ -500,7 +659,11 @@ class Verifier:
                 self.check_vtables(obj, seen_vtables, report, out)
         self.check_data(report, out)
         self.check_tables(report, out)
-        known = {(k.kind, k.place) for k in self.known}
+        src = self.root / "src"
+        for addr in sorted(set(sources(src)) - self.block_addresses) if src.is_dir() else []:
+            out.append(Difference("unlisted", f"0x{addr:08x}", "a block in src/ that config/blocks.txt does not "
+                                  "list: built, never checked (run pcdecomp standalone)"))
+        known ={(k.kind, k.place) for k in self.known}
         for d in out:
             (report.known if (d.kind, d.place) in known else report.unknown).append(d)
         reported = {(d.kind, d.place) for d in out}

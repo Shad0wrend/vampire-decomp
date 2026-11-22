@@ -10,1077 +10,1077 @@ b10205380 localize ?sub_10204270@CUnknown10204270@@QAEXXZ
 b10226360 localize ?vfunc275@CItemContainerLock@@QAEXXZ
 b10307c50 localize ?sub_10307aa0@CUnknown10307aa0@@QAEHXZ
 b1002dc50 promote _g_106b89bc
-i103571b0 inner ?g_1093a08c@@3PAUCCrowTimeView@@A 4 0x4
+i103571b0 inner ?g_1093a08c@@3PAUCCrowTimeView@@A 4 .bss 0x4
 bss_bss localize ?g_1093a08c@@3PAUCCrowTimeView@@A
-i1029fe30 inner ?g_109245e4@@3PAUCUnk109245e4@@A 4 0x4
+i1029fe30 inner ?g_109245e4@@3PAUCUnk109245e4@@A 4 .bss 0x4
 bss_bss localize ?g_109245e4@@3PAUCUnk109245e4@@A
-i1035c330 inner ?g_1093a438@@3PADA 4 0x18
+i1035c330 inner ?g_1093a438@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a438@@3PADA
-i1035c330 inner ?g_1093a450@@3PADA 4 0x30
+i1035c330 inner ?g_1093a450@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a450@@3PADA
-i1037a820 inner ?g_1093b110@@3PADA 4 0x18
+i1037a820 inner ?g_1093b110@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b110@@3PADA
-i100bc3c0 inner ?g_106d19d0@@3PAIA 4 0xc8
+i100bc3c0 inner ?g_106d19d0@@3PAIA 4 .bss 0xc8
 bss_bss localize ?g_106d19d0@@3PAIA
-i102f3060 inner ?g_10934094@@3PAUGameL@@A 4 0x4
+i102f3060 inner ?g_10934094@@3PAUGameL@@A 4 .bss 0x4
 bss_bss localize ?g_10934094@@3PAUGameL@@A
-i103777f0 inner ?g_1093b054@@3PAUCGargScale@@A 4 0x4
+i103777f0 inner ?g_1093b054@@3PAUCGargScale@@A 4 .bss 0x4
 bss_bss localize ?g_1093b054@@3PAUCGargScale@@A
-i102ec990 inner ?g_10934064@@3HA 4 0x4
+i102ec990 inner ?g_10934064@@3HA 4 .bss 0x4
 bss_bss localize ?g_10934064@@3HA
-i100bc3c0 inner ?g_106d19b0@@3PAIA 4 0xa8
+i100bc3c0 inner ?g_106d19b0@@3PAIA 4 .bss 0xa8
 bss_bss localize ?g_106d19b0@@3PAIA
-i10228430 inner ?g_10750d80@@3DA 4 0x8
+i10228430 inner ?g_10750d80@@3DA 4 .bss 0x8
 bss_bss localize ?g_10750d80@@3DA
-i102ec990 inner ?g_10934068@@3HA 4 0x8
+i102ec990 inner ?g_10934068@@3HA 4 .bss 0x8
 bss_bss localize ?g_10934068@@3HA
-i10326150 inner ?g_10936f74@@3PAVCUnknown10738964@@A 4 0x4
+i10326150 inner ?g_10936f74@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_10936f74@@3PAVCUnknown10738964@@A
-i10068300 inner ?g_106c59f4@@3HA 4 0x10
+i10068300 inner ?g_106c59f4@@3HA 4 .bss 0x10
 bss_bss localize ?g_106c59f4@@3HA
-i1028bf70 inner ?g_109243ec@@3PAUCSoundDebugVar@@A 4 0x4
+i1028bf70 inner ?g_109243ec@@3PAUCSoundDebugVar@@A 4 .bss 0x4
 bss_bss localize ?g_109243ec@@3PAUCSoundDebugVar@@A
-i10068300 inner ?g_106c59f8@@3HA 4 0x14
+i10068300 inner ?g_106c59f8@@3HA 4 .bss 0x14
 bss_bss localize ?g_106c59f8@@3HA
-i102c7e30 inner ?g_109253b0@@3PADA 4 0x18
+i102c7e30 inner ?g_109253b0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_109253b0@@3PADA
-i102ea320 inner ?g_1093402a@@3GA 4 0x16
+i102ea320 inner ?g_1093402a@@3GA 4 .bss 0x16
 bss_bss localize ?g_1093402a@@3GA
-i10160940 inner ?g_107255ec@@3PAVConVar@@A 4 0x4
+i10160940 inner ?g_107255ec@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_107255ec@@3PAVConVar@@A
-i103604e0 inner ?g_1093a548@@3PADA 4 0x18
+i103604e0 inner ?g_1093a548@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a548@@3PADA
-i103604e0 inner ?g_1093a560@@3PADA 4 0x30
+i103604e0 inner ?g_1093a560@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a560@@3PADA
-i1040b7c0 inner ?g_1094ad14@@3PAUCEntB@@A 4 0x4
+i1040b7c0 inner ?g_1094ad14@@3PAUCEntB@@A 4 .bss 0x4
 bss_bss localize ?g_1094ad14@@3PAUCEntB@@A
-i101d98b0 inner ?g_10739a64@@3EA 4 0x18
+i101d98b0 inner ?g_10739a64@@3EA 4 .bss 0x18
 bss_bss localize ?g_10739a64@@3EA
-i10068300 inner ?g_106c59f0@@3HA 4 0xc
+i10068300 inner ?g_106c59f0@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c59f0@@3HA
-i1037a820 inner ?g_1093b128@@3PADA 4 0x30
+i1037a820 inner ?g_1093b128@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b128@@3PADA
-i1028b9c0 inner ?g_109241ac@@3PAVCUnknown109241ac@@A 4 0x4
+i1028b9c0 inner ?g_109241ac@@3PAVCUnknown109241ac@@A 4 .bss 0x4
 bss_bss localize ?g_109241ac@@3PAVCUnknown109241ac@@A
-i103ef140 inner ?g_10942f04@@3PAVConVar@@A 4 0x4
+i103ef140 inner ?g_10942f04@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10942f04@@3PAVConVar@@A
-i10356460 inner ?g_1093a01c@@3PAUCBullseyeGlobals@@A 4 0x4
+i10356460 inner ?g_1093a01c@@3PAUCBullseyeGlobals@@A 4 .bss 0x4
 bss_bss localize ?g_1093a01c@@3PAUCBullseyeGlobals@@A
-i101d37d0 inner ?g_10738d14@@3HA 4 0x4
+i101d37d0 inner ?g_10738d14@@3HA 4 .bss 0x4
 bss_bss localize ?g_10738d14@@3HA
-i10324640 inner ?g_10936e54@@3PAUCGlob10936e54@@A 4 0x4
+i10324640 inner ?g_10936e54@@3PAUCGlob10936e54@@A 4 .bss 0x4
 bss_bss localize ?g_10936e54@@3PAUCGlob10936e54@@A
-i10117b40 inner ?g_1070ae7c@@3PAVConVar@@A 4 0x4
+i10117b40 inner ?g_1070ae7c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070ae7c@@3PAVConVar@@A
-i1035aa10 inner ?g_1093a284@@3PAUSCvar@@A 4 0x4
+i1035aa10 inner ?g_1093a284@@3PAUSCvar@@A 4 .bss 0x4
 bss_bss localize ?g_1093a284@@3PAUSCvar@@A
-i1028c3f0 inner ?g_109241fc@@3PAUCDbgStats@@A 4 0x4
+i1028c3f0 inner ?g_109241fc@@3PAUCDbgStats@@A 4 .bss 0x4
 bss_bss localize ?g_109241fc@@3PAUCDbgStats@@A
-i10377ba0 inner ?g_1093b008@@3PADA 4 0x18
+i10377ba0 inner ?g_1093b008@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b008@@3PADA
-i10377ba0 inner ?g_1093b020@@3PADA 4 0x30
+i10377ba0 inner ?g_1093b020@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b020@@3PADA
-i1040bc40 inner ?g_1094ab14@@3PAVConVar@@A 4 0x4
+i1040bc40 inner ?g_1094ab14@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1094ab14@@3PAVConVar@@A
-i10411b90 inner ?g_109d301c@@3HA 4 0xc
+i10411b90 inner ?g_109d301c@@3HA 4 .bss 0xc
 bss_bss localize ?g_109d301c@@3HA
-i1028ba50 inner ?g_109244c4@@3PAVCUnknown10738964@@A 4 0x4
+i1028ba50 inner ?g_109244c4@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_109244c4@@3PAVCUnknown10738964@@A
-i102ea320 inner ?g_10934018@@3PAULLNode@@A 4 0x4
+i102ea320 inner ?g_10934018@@3PAULLNode@@A 4 .bss 0x4
 bss_bss localize ?g_10934018@@3PAULLNode@@A
-i102ea320 inner ?g_10934024@@3GA 4 0x10
+i102ea320 inner ?g_10934024@@3GA 4 .bss 0x10
 bss_bss localize ?g_10934024@@3GA
-i102ea320 inner ?g_10934026@@3GA 4 0x12
+i102ea320 inner ?g_10934026@@3GA 4 .bss 0x12
 bss_bss localize ?g_10934026@@3GA
-i103b6250 inner ?g_1093cf4c@@3PAVCObj1093cf4c@@A 4 0x4
+i103b6250 inner ?g_1093cf4c@@3PAVCObj1093cf4c@@A 4 .bss 0x4
 bss_bss localize ?g_1093cf4c@@3PAVCObj1093cf4c@@A
-i10411df0 inner ?g_109d302c@@3PAUActivityList@@A 4 0x4
+i10411df0 inner ?g_109d302c@@3PAUActivityList@@A 4 .bss 0x4
 bss_bss localize ?g_109d302c@@3PAUActivityList@@A
-i10074ee0 inner ?g_106c851c@@3PAVCUnknown10074f70_Global@@A 4 0x4
+i10074ee0 inner ?g_106c851c@@3PAVCUnknown10074f70_Global@@A 4 .bss 0x4
 bss_bss localize ?g_106c851c@@3PAVCUnknown10074f70_Global@@A
-i102ea320 inner ?g_10934028@@3GA 4 0x14
+i102ea320 inner ?g_10934028@@3GA 4 .bss 0x14
 bss_bss localize ?g_10934028@@3GA
-i101ea140 inner ?g_1073a2d4@@3PADA 4 0xc
+i101ea140 inner ?g_1073a2d4@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a2d4@@3PADA
-i103a4e40 inner ?g_1093c104@@3PAVConVar@@A 4 0x4
+i103a4e40 inner ?g_1093c104@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093c104@@3PAVConVar@@A
-i103c8060 inner ?g_1093fa84@@3PAUCWerewolfCfgView@@A 4 0x4
+i103c8060 inner ?g_1093fa84@@3PAUCWerewolfCfgView@@A 4 .bss 0x4
 bss_bss localize ?g_1093fa84@@3PAUCWerewolfCfgView@@A
-i1015a5a0 inner ?g_107258dc@@3PAVConVar@@A 4 0x4
+i1015a5a0 inner ?g_107258dc@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_107258dc@@3PAVConVar@@A
-i101ea140 inner ?g_1073a2e0@@3PAPAVCEntryY@@A 4 0x18
+i101ea140 inner ?g_1073a2e0@@3PAPAVCEntryY@@A 4 .bss 0x18
 bss_bss localize ?g_1073a2e0@@3PAPAVCEntryY@@A
-i1028c000 inner ?g_109249d4@@3PAUCDevMsgLevel@@A 4 0x4
+i1028c000 inner ?g_109249d4@@3PAUCDevMsgLevel@@A 4 .bss 0x4
 bss_bss localize ?g_109249d4@@3PAUCDevMsgLevel@@A
-i1036ebc0 inner ?g_1093a908@@3PADA 4 0x18
+i1036ebc0 inner ?g_1093a908@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a908@@3PADA
-i1036ebc0 inner ?g_1093a920@@3PADA 4 0x30
+i1036ebc0 inner ?g_1093a920@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a920@@3PADA
-i101ea380 inner ?g_1073a2c0@@3HA 4 0x14
+i101ea380 inner ?g_1073a2c0@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a2c0@@3HA
-i103678e0 inner ?g_1093a758@@3PADA 4 0x18
+i103678e0 inner ?g_1093a758@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a758@@3PADA
-i103678e0 inner ?g_1093a770@@3PADA 4 0x30
+i103678e0 inner ?g_1093a770@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a770@@3PADA
-i1037e930 inner ?g_1093b358@@3PADA 4 0x30
+i1037e930 inner ?g_1093b358@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b358@@3PADA
-i101cc8c0 inner ?g_107318bc@@3PAUPyHost@@A 4 0x4
+i101cc8c0 inner ?g_107318bc@@3PAUPyHost@@A 4 .bss 0x4
 bss_bss localize ?g_107318bc@@3PAUPyHost@@A
-i1022b270 inner ?g_10750f2c@@3PAUCUnknown10750f2c@@A 4 0x4
+i1022b270 inner ?g_10750f2c@@3PAUCUnknown10750f2c@@A 4 .bss 0x4
 bss_bss localize ?g_10750f2c@@3PAUCUnknown10750f2c@@A
-i1040b850 inner ?g_1094ac3c@@3PAUCEntA@@A 4 0x4
+i1040b850 inner ?g_1094ac3c@@3PAUCEntA@@A 4 .bss 0x4
 bss_bss localize ?g_1094ac3c@@3PAUCEntA@@A
-i1028c520 inner ?g_109248f4@@3PAUSGlobal248f4@@A 4 0x4
+i1028c520 inner ?g_109248f4@@3PAUSGlobal248f4@@A 4 .bss 0x4
 bss_bss localize ?g_109248f4@@3PAUSGlobal248f4@@A
-i103e15f0 inner ?g_10940524@@3PAVCUnknown10940524@@A 4 0x4
+i103e15f0 inner ?g_10940524@@3PAVCUnknown10940524@@A 4 .bss 0x4
 bss_bss localize ?g_10940524@@3PAVCUnknown10940524@@A
-i101ea380 inner ?g_1073a2b8@@3PADA 4 0xc
+i101ea380 inner ?g_1073a2b8@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a2b8@@3PADA
-i101ea380 inner ?g_1073a2c4@@3PAPAVCEntryX@@A 4 0x18
+i101ea380 inner ?g_1073a2c4@@3PAPAVCEntryX@@A 4 .bss 0x18
 bss_bss localize ?g_1073a2c4@@3PAPAVCEntryX@@A
-i103a1e70 inner ?g_1093bfc8@@3PADA 4 0x18
+i103a1e70 inner ?g_1093bfc8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093bfc8@@3PADA
-i103a1e70 inner ?g_1093bfe0@@3PADA 4 0x30
+i103a1e70 inner ?g_1093bfe0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093bfe0@@3PADA
-i10068300 inner ?g_106c59fc@@3HA 4 0x18
+i10068300 inner ?g_106c59fc@@3HA 4 .bss 0x18
 bss_bss localize ?g_106c59fc@@3HA
-i101ea4a0 inner ?g_1073a2f8@@3HA 4 0x14
+i101ea4a0 inner ?g_1073a2f8@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a2f8@@3HA
-i1036f3c0 inner ?g_1093a950@@3PADA 4 0x18
+i1036f3c0 inner ?g_1093a950@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a950@@3PADA
-i10387780 inner ?g_1093b550@@3PADA 4 0x18
+i10387780 inner ?g_1093b550@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b550@@3PADA
-i103b62e0 inner ?g_1093cce4@@3PAVCNPC_VTzimisceConVar@@A 4 0x4
+i103b62e0 inner ?g_1093cce4@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093cce4@@3PAVCNPC_VTzimisceConVar@@A
-i101f32c0 inner ?g_1073dbec@@3PAPAUNameEntry@@A 4 0x18
+i101f32c0 inner ?g_1073dbec@@3PAPAUNameEntry@@A 4 .bss 0x18
 bss_bss localize ?g_1073dbec@@3PAPAUNameEntry@@A
-i103e1320 inner ?g_10940644@@3PAVCUnknown103e1680@@A 4 0x4
+i103e1320 inner ?g_10940644@@3PAVCUnknown103e1680@@A 4 .bss 0x4
 bss_bss localize ?g_10940644@@3PAVCUnknown103e1680@@A
-i103880d0 inner ?g_1093b620@@3PADA 4 0x18
+i103880d0 inner ?g_1093b620@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b620@@3PADA
-i1028b6f0 inner ?g_109247ec@@3PAVConVar@@A 4 0x4
+i1028b6f0 inner ?g_109247ec@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109247ec@@3PAVConVar@@A
-i10259c10 inner ?g_1089d7cc@@3HA 4 0x4
+i10259c10 inner ?g_1089d7cc@@3HA 4 .bss 0x4
 bss_bss localize ?g_1089d7cc@@3HA
-i10117ea0 inner ?g_1070ada4@@3PAVCUnknown1070ada4@@A 4 0x4
+i10117ea0 inner ?g_1070ada4@@3PAVCUnknown1070ada4@@A 4 .bss 0x4
 bss_bss localize ?g_1070ada4@@3PAVCUnknown1070ada4@@A
-i101ea4a0 inner ?g_1073a2f0@@3PADA 4 0xc
+i101ea4a0 inner ?g_1073a2f0@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a2f0@@3PADA
-i10259c10 inner ?g_1089d7da@@3GA 4 0x12
+i10259c10 inner ?g_1089d7da@@3GA 4 .bss 0x12
 bss_bss localize ?g_1089d7da@@3GA
-i103a3b20 inner ?g_1093c058@@3PADA 4 0x18
+i103a3b20 inner ?g_1093c058@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c058@@3PADA
-i103a3b20 inner ?g_1093c070@@3PADA 4 0x30
+i103a3b20 inner ?g_1093c070@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c070@@3PADA
-i1037e340 inner ?g_1093b23c@@3PAUCHengScale@@A 4 0x4
+i1037e340 inner ?g_1093b23c@@3PAUCHengScale@@A 4 .bss 0x4
 bss_bss localize ?g_1093b23c@@3PAUCHengScale@@A
-i103ef1d0 inner ?g_10942f4c@@3PAVConVar@@A 4 0x4
+i103ef1d0 inner ?g_10942f4c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10942f4c@@3PAVConVar@@A
-i10377880 inner ?g_1093afac@@3PAUCGargScale@@A 4 0x4
+i10377880 inner ?g_1093afac@@3PAUCGargScale@@A 4 .bss 0x4
 bss_bss localize ?g_1093afac@@3PAUCGargScale@@A
-i102c7e30 inner ?g_109253c8@@3PADA 4 0x30
+i102c7e30 inner ?g_109253c8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_109253c8@@3PADA
-i10362cc0 inner ?g_1093a650@@3PADA 4 0x30
+i10362cc0 inner ?g_1093a650@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a650@@3PADA
-i103ddc50 inner ?g_10940404@@3PAVConVar@@A 4 0x4
+i103ddc50 inner ?g_10940404@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10940404@@3PAVConVar@@A
-i10362cc0 inner ?g_1093a638@@3PADA 4 0x18
+i10362cc0 inner ?g_1093a638@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a638@@3PADA
-i1039f670 inner ?g_1093bdf0@@3PADA 4 0x18
+i1039f670 inner ?g_1093bdf0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093bdf0@@3PADA
-i1031a430 inner ?g_10936e9c@@3PAUCMeleeHook@@A 4 0x4
+i1031a430 inner ?g_10936e9c@@3PAUCMeleeHook@@A 4 .bss 0x4
 bss_bss localize ?g_10936e9c@@3PAUCMeleeHook@@A
-i101f32c0 inner ?g_1073dbe8@@3HA 4 0x14
+i101f32c0 inner ?g_1073dbe8@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073dbe8@@3HA
-i1028cb80 inner ?g_109247e4@@3HA 4 0x4
+i1028cb80 inner ?g_109247e4@@3HA 4 .bss 0x4
 bss_bss localize ?g_109247e4@@3HA
-i10360260 inner ?g_1093a594@@3PAUCGameSys1093a594@@A 4 0x4
+i10360260 inner ?g_1093a594@@3PAUCGameSys1093a594@@A 4 .bss 0x4
 bss_bss localize ?g_1093a594@@3PAUCGameSys1093a594@@A
-i103dd0c0 inner ?g_10940348@@3PADA 4 0x18
+i103dd0c0 inner ?g_10940348@@3PADA 4 .bss 0x18
 bss_bss localize ?g_10940348@@3PADA
-i103dd0c0 inner ?g_10940360@@3PADA 4 0x30
+i103dd0c0 inner ?g_10940360@@3PADA 4 .bss 0x30
 bss_bss localize ?g_10940360@@3PADA
-i1032b200 inner ?g_10936f2c@@3PAUCConVarF@@A 4 0x4
+i1032b200 inner ?g_10936f2c@@3PAUCConVarF@@A 4 .bss 0x4
 bss_bss localize ?g_10936f2c@@3PAUCConVarF@@A
-i102282c0 inner ?g_10750f74@@3PAVCSoundStateView@@A 4 0x4
+i102282c0 inner ?g_10750f74@@3PAVCSoundStateView@@A 4 .bss 0x4
 bss_bss localize ?g_10750f74@@3PAVCSoundStateView@@A
-i10259c10 inner ?g_1089d7e0@@3PADA 4 0x18
+i10259c10 inner ?g_1089d7e0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1089d7e0@@3PADA
-i1037c6d0 inner ?g_1093b180@@3PADA 4 0x18
+i1037c6d0 inner ?g_1093b180@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b180@@3PADA
-i103c8da0 inner ?g_1093fa00@@3PADA 4 0x18
+i103c8da0 inner ?g_1093fa00@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093fa00@@3PADA
-i103840d0 inner ?g_1093b410@@3PADA 4 0x30
+i103840d0 inner ?g_1093b410@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b410@@3PADA
-i1024b110 inner ?g_1088ae38@@3PAUPool@@A 4 0x4
+i1024b110 inner ?g_1088ae38@@3PAUPool@@A 4 .bss 0x4
 bss_bss localize ?g_1088ae38@@3PAUPool@@A
-i10250110 inner ?g_1088ae60@@3PADA 4 0x8
+i10250110 inner ?g_1088ae60@@3PADA 4 .bss 0x8
 bss_bss localize ?g_1088ae60@@3PADA
-i10368420 inner ?g_1093a808@@3PADA 4 0x30
+i10368420 inner ?g_1093a808@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a808@@3PADA
-i1035b220 inner ?g_1093a36c@@3PAUCSabbatGlobal@@A 4 0x4
+i1035b220 inner ?g_1093a36c@@3PAUCSabbatGlobal@@A 4 .bss 0x4
 bss_bss localize ?g_1093a36c@@3PAUCSabbatGlobal@@A
-i101e4d70 inner ?g_10739d20@@3HA 4 0x18
+i101e4d70 inner ?g_10739d20@@3HA 4 .bss 0x18
 bss_bss localize ?g_10739d20@@3HA
-i1037c6d0 inner ?g_1093b198@@3PADA 4 0x30
+i1037c6d0 inner ?g_1093b198@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b198@@3PADA
-i103c8da0 inner ?g_1093fa18@@3PADA 4 0x30
+i103c8da0 inner ?g_1093fa18@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093fa18@@3PADA
-i1040bbb0 inner ?g_1094aa7c@@3PAVConVar@@A 4 0x4
+i1040bbb0 inner ?g_1094aa7c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1094aa7c@@3PAVConVar@@A
-i101e4d70 inner ?g_10739d18@@3PADA 4 0x10
+i101e4d70 inner ?g_10739d18@@3PADA 4 .bss 0x10
 bss_bss localize ?g_10739d18@@3PADA
-i101e4d70 inner ?g_10739d24@@3PAPAVCVFeat_t@@A 4 0x1c
+i101e4d70 inner ?g_10739d24@@3PAPAVCVFeat_t@@A 4 .bss 0x1c
 bss_bss localize ?g_10739d24@@3PAPAVCVFeat_t@@A
-i1037e930 inner ?g_1093b340@@3PADA 4 0x18
+i1037e930 inner ?g_1093b340@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b340@@3PADA
-i103b65b0 inner ?g_1093cad4@@3PAVCNPC_VTzimisceConVar@@A 4 0x4
+i103b65b0 inner ?g_1093cad4@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093cad4@@3PAVCNPC_VTzimisceConVar@@A
-i1006b560 inner ?g_106c7528@@3HA 4 0xc
+i1006b560 inner ?g_106c7528@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c7528@@3HA
-i1006b560 inner ?g_106c7534@@3HA 4 0x18
+i1006b560 inner ?g_106c7534@@3HA 4 .bss 0x18
 bss_bss localize ?g_106c7534@@3HA
-i101ea6e0 inner ?g_1073a314@@3HA 4 0x14
+i101ea6e0 inner ?g_1073a314@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a314@@3HA
-i103b6880 inner ?g_1093cb64@@3PAUIPhysTune2@@A 4 0x4
+i103b6880 inner ?g_1093cb64@@3PAUIPhysTune2@@A 4 .bss 0x4
 bss_bss localize ?g_1093cb64@@3PAUIPhysTune2@@A
-i1006b560 inner ?g_106c7530@@3HA 4 0x14
+i1006b560 inner ?g_106c7530@@3HA 4 .bss 0x14
 bss_bss localize ?g_106c7530@@3HA
-i10118200 inner ?g_1070ac84@@3PAUSndTimeView@@A 4 0x4
+i10118200 inner ?g_1070ac84@@3PAUSndTimeView@@A 4 .bss 0x4
 bss_bss localize ?g_1070ac84@@3PAUSndTimeView@@A
-i10158150 inner ?g_107238e4@@3HA 4 0x4
+i10158150 inner ?g_107238e4@@3HA 4 .bss 0x4
 bss_bss localize ?g_107238e4@@3HA
-i101e94f0 inner ?g_1073a290@@3HA 4 0x4
+i101e94f0 inner ?g_1073a290@@3HA 4 .bss 0x4
 bss_bss localize ?g_1073a290@@3HA
-i101ea800 inner ?g_1073a344@@3PADA 4 0xc
+i101ea800 inner ?g_1073a344@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a344@@3PADA
-i101ea800 inner ?g_1073a350@@3PAPAUStatDefault2@@A 4 0x18
+i101ea800 inner ?g_1073a350@@3PAPAUStatDefault2@@A 4 .bss 0x18
 bss_bss localize ?g_1073a350@@3PAPAUStatDefault2@@A
-i1028d1b0 inner ?g_10924984@@3HA 4 0x4
+i1028d1b0 inner ?g_10924984@@3HA 4 .bss 0x4
 bss_bss localize ?g_10924984@@3HA
-i1017dbb0 inner ?g_1072594c@@3PAUCConVarLike@@A 4 0x4
+i1017dbb0 inner ?g_1072594c@@3PAUCConVarLike@@A 4 .bss 0x4
 bss_bss localize ?g_1072594c@@3PAUCConVarLike@@A
-i1042c910 inner ?g_109ef3ac@@3PAUCMoveConVar@@A 4 0x4
+i1042c910 inner ?g_109ef3ac@@3PAUCMoveConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109ef3ac@@3PAUCMoveConVar@@A
-i101ea5c0 inner ?g_1073a360@@3PADA 4 0xc
+i101ea5c0 inner ?g_1073a360@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a360@@3PADA
-i101f3240 inner ?g_1073dc3c@@3HA 4 0x14
+i101f3240 inner ?g_1073dc3c@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073dc3c@@3HA
-i10158190 inner ?g_107238f4@@3PAVCUnknown10074f70_Global@@A 4 0x4
+i10158190 inner ?g_107238f4@@3PAVCUnknown10074f70_Global@@A 4 .bss 0x4
 bss_bss localize ?g_107238f4@@3PAVCUnknown10074f70_Global@@A
-i101ea6e0 inner ?g_1073a318@@3PAPAUSNamedEntry10203660@@A 4 0x18
+i101ea6e0 inner ?g_1073a318@@3PAPAUSNamedEntry10203660@@A 4 .bss 0x18
 bss_bss localize ?g_1073a318@@3PAPAUSNamedEntry10203660@@A
-i101ea260 inner ?g_1073a330@@3HA 4 0x14
+i101ea260 inner ?g_1073a330@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a330@@3HA
-i1017dc50 inner ?g_107250d4@@3PAVCUnknown107250d4@@A 4 0x4
+i1017dc50 inner ?g_107250d4@@3PAVCUnknown107250d4@@A 4 .bss 0x4
 bss_bss localize ?g_107250d4@@3PAVCUnknown107250d4@@A
-i101ea260 inner ?g_1073a328@@3PADA 4 0xc
+i101ea260 inner ?g_1073a328@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a328@@3PADA
-i101ea260 inner ?g_1073a334@@3PAPAUSNameEntry10259f80@@A 4 0x18
+i101ea260 inner ?g_1073a334@@3PAPAUSNameEntry10259f80@@A 4 .bss 0x18
 bss_bss localize ?g_1073a334@@3PAPAUSNameEntry10259f80@@A
-i1042c7f0 inner ?g_109ef2d4@@3PAVConVar@@A 4 0x4
+i1042c7f0 inner ?g_109ef2d4@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109ef2d4@@3PAVConVar@@A
-i1028c820 inner ?g_1092447c@@3PAUCVH461Obj@@A 4 0x4
+i1028c820 inner ?g_1092447c@@3PAUCVH461Obj@@A 4 .bss 0x4
 bss_bss localize ?g_1092447c@@3PAUCVH461Obj@@A
-i1039b100 inner ?g_1093bd68@@3PADA 4 0x30
+i1039b100 inner ?g_1093bd68@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093bd68@@3PADA
-i103a1510 inner ?g_1093bf00@@3PADA 4 0x18
+i103a1510 inner ?g_1093bf00@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093bf00@@3PADA
-i1039b100 inner ?g_1093bd50@@3PADA 4 0x18
+i1039b100 inner ?g_1093bd50@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093bd50@@3PADA
-i1028bc00 inner ?g_1092450c@@3PAUV1092450c@@A 4 0x4
+i1028bc00 inner ?g_1092450c@@3PAUV1092450c@@A 4 .bss 0x4
 bss_bss localize ?g_1092450c@@3PAUV1092450c@@A
-i102e2c70 inner ?g_10933e8c@@3PAUCMoveProbeUnk10933e8c@@A 4 0x4
+i102e2c70 inner ?g_10933e8c@@3PAUCMoveProbeUnk10933e8c@@A 4 .bss 0x4
 bss_bss localize ?g_10933e8c@@3PAUCMoveProbeUnk10933e8c@@A
-i1039f670 inner ?g_1093be08@@3PADA 4 0x30
+i1039f670 inner ?g_1093be08@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093be08@@3PADA
-i101be680 inner ?g_1072c72c@@3PAUCRules1072c72c@@A 4 0x4
+i101be680 inner ?g_1072c72c@@3PAUCRules1072c72c@@A 4 .bss 0x4
 bss_bss localize ?g_1072c72c@@3PAUCRules1072c72c@@A
-i103a1510 inner ?g_1093bf18@@3PADA 4 0x30
+i103a1510 inner ?g_1093bf18@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093bf18@@3PADA
-i1019b4e0 inner ?g_1072b2b4@@3PAUPyMgr@@A 4 0x4
+i1019b4e0 inner ?g_1072b2b4@@3PAUPyMgr@@A 4 .bss 0x4
 bss_bss localize ?g_1072b2b4@@3PAUPyMgr@@A
-i101f3240 inner ?g_1073dc40@@3PAPAUSoundRecord@@A 4 0x18
+i101f3240 inner ?g_1073dc40@@3PAPAUSoundRecord@@A 4 .bss 0x18
 bss_bss localize ?g_1073dc40@@3PAPAUSoundRecord@@A
-i1006d590 inner ?g_106c7fa4@@3PAUCUnk10071840Cvar@@A 4 0x4
+i1006d590 inner ?g_106c7fa4@@3PAUCUnk10071840Cvar@@A 4 .bss 0x4
 bss_bss localize ?g_106c7fa4@@3PAUCUnk10071840Cvar@@A
-i10390b30 inner ?g_1093ba8c@@3PAUIGameClientsX@@A 4 0x4
+i10390b30 inner ?g_1093ba8c@@3PAUIGameClientsX@@A 4 .bss 0x4
 bss_bss localize ?g_1093ba8c@@3PAUIGameClientsX@@A
-i101af970 inner ?g_1072bc88@v438@@3HA 4 0x68
+i101af970 inner ?g_1072bc88@v438@@3HA 4 .bss 0x68
 bss_bss localize ?g_1072bc88@v438@@3HA
-i101af970 inner ?g_1072bcc2@v438@@3DA 4 0xa2
+i101af970 inner ?g_1072bcc2@v438@@3DA 4 .bss 0xa2
 bss_bss localize ?g_1072bcc2@v438@@3DA
-i10390c50 inner ?g_1093bb5c@@3PAVCUnknown1093bb5c@@A 4 0x4
+i10390c50 inner ?g_1093bb5c@@3PAVCUnknown1093bb5c@@A 4 .bss 0x4
 bss_bss localize ?g_1093bb5c@@3PAVCUnknown1093bb5c@@A
-i103b6fc0 inner ?g_1093ce88@@3PADA 4 0x18
+i103b6fc0 inner ?g_1093ce88@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093ce88@@3PADA
-i1015a760 inner ?g_107251ac@@3PAVConVar@@A 4 0x4
+i1015a760 inner ?g_107251ac@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_107251ac@@3PAVConVar@@A
-i101ea800 inner ?g_1073a34c@@3HA 4 0x14
+i101ea800 inner ?g_1073a34c@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a34c@@3HA
-i101efc60 inner ?g_1073a41c@@3PAVCUnknown10924a1c@@A 4 0x4
+i101efc60 inner ?g_1073a41c@@3PAVCUnknown10924a1c@@A 4 .bss 0x4
 bss_bss localize ?g_1073a41c@@3PAVCUnknown10924a1c@@A
-i1031a2f0 inner ?g_10936d14@@3PAUCMeleeHook@@A 4 0x4
+i1031a2f0 inner ?g_10936d14@@3PAUCMeleeHook@@A 4 .bss 0x4
 bss_bss localize ?g_10936d14@@3PAUCMeleeHook@@A
-i10359110 inner ?g_1093a100@@3PADA 4 0x30
+i10359110 inner ?g_1093a100@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a100@@3PADA
-i103735a0 inner ?g_1093acf0@@3PADA 4 0x18
+i103735a0 inner ?g_1093acf0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093acf0@@3PADA
-i103b6ad0 inner ?g_1093cf94@@3PAVCNPC_VTzimisceConVar@@A 4 0x4
+i103b6ad0 inner ?g_1093cf94@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093cf94@@3PAVCNPC_VTzimisceConVar@@A
-i10411d00 inner ?g_109d3078@@3HA 4 0xc
+i10411d00 inner ?g_109d3078@@3HA 4 .bss 0xc
 bss_bss localize ?g_109d3078@@3HA
-i101ea5c0 inner ?g_1073a36c@@3PAPAUSNamedEntry10203540@@A 4 0x18
+i101ea5c0 inner ?g_1073a36c@@3PAPAUSNamedEntry10203540@@A 4 .bss 0x18
 bss_bss localize ?g_1073a36c@@3PAPAUSNamedEntry10203540@@A
-i101ea920 inner ?g_1073a37c@@3PADA 4 0xc
+i101ea920 inner ?g_1073a37c@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a37c@@3PADA
-i101ea920 inner ?g_1073a384@@3HA 4 0x14
+i101ea920 inner ?g_1073a384@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a384@@3HA
-i101ea920 inner ?g_1073a388@@3PAPAUSNameEntry@@A 4 0x18
+i101ea920 inner ?g_1073a388@@3PAPAUSNameEntry@@A 4 .bss 0x18
 bss_bss localize ?g_1073a388@@3PAPAUSNameEntry@@A
-i1028b8a0 inner ?g_1092479c@@3PAVCUnknown10738964@@A 4 0x4
+i1028b8a0 inner ?g_1092479c@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_1092479c@@3PAVCUnknown10738964@@A
-i10117ab0 inner ?g_1070aa8c@@3PAVConVar@@A 4 0x4
+i10117ab0 inner ?g_1070aa8c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070aa8c@@3PAVConVar@@A
-i10117f30 inner ?g_1070ae34@@3PAUCConVarViewAe34@@A 4 0x4
+i10117f30 inner ?g_1070ae34@@3PAUCConVarViewAe34@@A 4 .bss 0x4
 bss_bss localize ?g_1070ae34@@3PAUCConVarViewAe34@@A
-i101ea5c0 inner ?g_1073a368@@3HA 4 0x14
+i101ea5c0 inner ?g_1073a368@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a368@@3HA
-i103b6910 inner ?g_1093cb1c@@3PAUIPhysTune2@@A 4 0x4
+i103b6910 inner ?g_1093cb1c@@3PAUIPhysTune2@@A 4 .bss 0x4
 bss_bss localize ?g_1093cb1c@@3PAUIPhysTune2@@A
-i10117a20 inner ?g_1070ac3c@@3PAUSHost@@A 4 0x4
+i10117a20 inner ?g_1070ac3c@@3PAUSHost@@A 4 .bss 0x4
 bss_bss localize ?g_1070ac3c@@3PAUSHost@@A
-i103a0520 inner ?g_1093be8c@@3PADA 4 0x4
+i103a0520 inner ?g_1093be8c@@3PADA 4 .bss 0x4
 bss_bss localize ?g_1093be8c@@3PADA
-i1006b560 inner ?g_106c752c@@3HA 4 0x10
+i1006b560 inner ?g_106c752c@@3HA 4 .bss 0x10
 bss_bss localize ?g_106c752c@@3HA
-i1019c020 inner ?g_1072b3ac@@3PAUIPhysTune@@A 4 0x4
+i1019c020 inner ?g_1072b3ac@@3PAUIPhysTune@@A 4 .bss 0x4
 bss_bss localize ?g_1072b3ac@@3PAUIPhysTune@@A
-i101ea6e0 inner ?g_1073a30c@@3PADA 4 0xc
+i101ea6e0 inner ?g_1073a30c@@3PADA 4 .bss 0xc
 bss_bss localize ?g_1073a30c@@3PADA
-i10265580 inner ?g_109203dc@@3PADA 4 0x10
+i10265580 inner ?g_109203dc@@3PADA 4 .bss 0x10
 bss_bss localize ?g_109203dc@@3PADA
-i1036fb80 inner ?g_1093ab80@@3PADA 4 0x18
+i1036fb80 inner ?g_1093ab80@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093ab80@@3PADA
-i1019cd60 inner ?g_1072b40c@@3HA 4 0x10
+i1019cd60 inner ?g_1072b40c@@3HA 4 .bss 0x10
 bss_bss localize ?g_1072b40c@@3HA
-i1029bc20 inner ?g_10923dec@@3PAUSConVarX@@A 4 0x4
+i1029bc20 inner ?g_10923dec@@3PAUSConVarX@@A 4 .bss 0x4
 bss_bss localize ?g_10923dec@@3PAUSConVarX@@A
-i100b5400 inner ?g_106d056c@@3PAUIGameRules@@A 4 0x4
+i100b5400 inner ?g_106d056c@@3PAUIGameRules@@A 4 .bss 0x4
 bss_bss localize ?g_106d056c@@3PAUIGameRules@@A
-i1017db10 inner ?g_10724ffc@@3PAUCGlobal1017dd80@@A 4 0x4
+i1017db10 inner ?g_10724ffc@@3PAUCGlobal1017dd80@@A 4 .bss 0x4
 bss_bss localize ?g_10724ffc@@3PAUCGlobal1017dd80@@A
-i1015a6d0 inner ?g_1072511c@@3PAVConVar@@A 4 0x4
+i1015a6d0 inner ?g_1072511c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1072511c@@3PAVConVar@@A
-i1036acb0 inner ?g_1093aa2c@@3PAUCChangBrosConVar@@A 4 0x4
+i1036acb0 inner ?g_1093aa2c@@3PAUCChangBrosConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093aa2c@@3PAUCChangBrosConVar@@A
-i1036fb80 inner ?g_1093ab98@@3PADA 4 0x30
+i1036fb80 inner ?g_1093ab98@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093ab98@@3PADA
-i103740a0 inner ?g_1093ad24@@3PAVConVar@@A 4 0x4
+i103740a0 inner ?g_1093ad24@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093ad24@@3PAVConVar@@A
-i101673e0 inner ?g_10725cec@@3PAUCConVarView10725cec@@A 4 0x4
+i101673e0 inner ?g_10725cec@@3PAUCConVarView10725cec@@A 4 .bss 0x4
 bss_bss localize ?g_10725cec@@3PAUCConVarView10725cec@@A
-i1028c660 inner ?g_10924afc@@3PAUCTroikaGameState@@A 4 0x4
+i1028c660 inner ?g_10924afc@@3PAUCTroikaGameState@@A 4 .bss 0x4
 bss_bss localize ?g_10924afc@@3PAUCTroikaGameState@@A
-i102b9720 inner ?g_10924260@@3PADA 4 0x18
+i102b9720 inner ?g_10924260@@3PADA 4 .bss 0x18
 bss_bss localize ?g_10924260@@3PADA
-i103735a0 inner ?g_1093ad08@@3PADA 4 0x30
+i103735a0 inner ?g_1093ad08@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093ad08@@3PADA
-i1028ca60 inner ?g_10924034@@3PAUCVH375Obj@@A 4 0x4
+i1028ca60 inner ?g_10924034@@3PAUCVH375Obj@@A 4 .bss 0x4
 bss_bss localize ?g_10924034@@3PAUCVH375Obj@@A
-i1042cac0 inner ?g_109ef28c@@3PAVConVar@@A 4 0x4
+i1042cac0 inner ?g_109ef28c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109ef28c@@3PAVConVar@@A
-i100658b0 inner ?g_106c4834@@3PAHA 4 0xc
+i100658b0 inner ?g_106c4834@@3PAHA 4 .bss 0xc
 bss_bss localize ?g_106c4834@@3PAHA
-i1016d140 inner ?g_10725bcc@@3PAUCVarV@@A 4 0x4
+i1016d140 inner ?g_10725bcc@@3PAUCVarV@@A 4 .bss 0x4
 bss_bss localize ?g_10725bcc@@3PAUCVarV@@A
-i10270360 inner ?g_109202cc@@3PAUCConVar109202cc@@A 4 0x4
+i10270360 inner ?g_109202cc@@3PAUCConVar109202cc@@A 4 .bss 0x4
 bss_bss localize ?g_109202cc@@3PAUCConVar109202cc@@A
-i10099830 inner ?g_106cfe54@@3PAVCUnknown10738964@@A 4 0x4
+i10099830 inner ?g_106cfe54@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_106cfe54@@3PAVCUnknown10738964@@A
-i1017f380 inner ?g_10723984@@3PAVConVar@@A 4 0x4
+i1017f380 inner ?g_10723984@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10723984@@3PAVConVar@@A
-i10171020 inner ?g_10725de4@@3PAUCUnk10725de4@@A 4 0x4
+i10171020 inner ?g_10725de4@@3PAUCUnk10725de4@@A 4 .bss 0x4
 bss_bss localize ?g_10725de4@@3PAUCUnk10725de4@@A
-i101087f0 inner ?g_107094bc@@3PAUCFireConVar@@A 4 0x4
+i101087f0 inner ?g_107094bc@@3PAUCFireConVar@@A 4 .bss 0x4
 bss_bss localize ?g_107094bc@@3PAUCFireConVar@@A
-i101c3980 inner ?g_1072cda8@@3HA 4 0xc
+i101c3980 inner ?g_1072cda8@@3HA 4 .bss 0xc
 bss_bss localize ?g_1072cda8@@3HA
-i1017f410 inner ?g_10725804@@3PAVConVar@@A 4 0x4
+i1017f410 inner ?g_10725804@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10725804@@3PAVConVar@@A
-i101c48f0 inner ?g_1072cfcc@@3PAUCTriggerBrushConVar@@A 4 0x4
+i101c48f0 inner ?g_1072cfcc@@3PAUCTriggerBrushConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1072cfcc@@3PAUCTriggerBrushConVar@@A
-i1028bee0 inner ?g_10924edc@@3PAUS10924edc@@A 4 0x4
+i1028bee0 inner ?g_10924edc@@3PAUS10924edc@@A 4 .bss 0x4
 bss_bss localize ?g_10924edc@@3PAUS10924edc@@A
-i10375310 inner ?g_1093ae78@@3PADA 4 0x30
+i10375310 inner ?g_1093ae78@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093ae78@@3PADA
-i1042d450 inner ?g_109ef1b4@@3PAVConVar@@A 4 0x4
+i1042d450 inner ?g_109ef1b4@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109ef1b4@@3PAVConVar@@A
-i1028bd30 inner ?g_1092429c@@3PAUCDbgDoorAI@@A 4 0x4
+i1028bd30 inner ?g_1092429c@@3PAUCDbgDoorAI@@A 4 .bss 0x4
 bss_bss localize ?g_1092429c@@3PAUCDbgDoorAI@@A
-i1028bae0 inner ?g_1092435c@@3PAVCUnknown10738964@@A 4 0x4
+i1028bae0 inner ?g_1092435c@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_1092435c@@3PAVCUnknown10738964@@A
-i1017dcf0 inner ?g_10725ebc@@3PAUCGameTimeScale@@A 4 0x4
+i1017dcf0 inner ?g_10725ebc@@3PAUCGameTimeScale@@A 4 .bss 0x4
 bss_bss localize ?g_10725ebc@@3PAUCGameTimeScale@@A
-i1028b930 inner ?g_10924cdc@@3PAVCUnknown10924cdc@@A 4 0x4
+i1028b930 inner ?g_10924cdc@@3PAVCUnknown10924cdc@@A 4 .bss 0x4
 bss_bss localize ?g_10924cdc@@3PAVCUnknown10924cdc@@A
-i1028b270 inner ?g_10924434@@3PAVConVar@@A 4 0x4
+i1028b270 inner ?g_10924434@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10924434@@3PAVConVar@@A
-i1029bb90 inner ?g_10923fec@@3PAUSConVarX@@A 4 0x4
+i1029bb90 inner ?g_10923fec@@3PAUSConVarX@@A 4 .bss 0x4
 bss_bss localize ?g_10923fec@@3PAUSConVarX@@A
-i102b9720 inner ?g_10924278@@3PADA 4 0x30
+i102b9720 inner ?g_10924278@@3PADA 4 .bss 0x30
 bss_bss localize ?g_10924278@@3PADA
-i103709a0 inner ?g_1093ac78@@3PADA 4 0x18
+i103709a0 inner ?g_1093ac78@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093ac78@@3PADA
-i103709a0 inner ?g_1093ac90@@3PADA 4 0x30
+i103709a0 inner ?g_1093ac90@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093ac90@@3PADA
-i1015a7f0 inner ?g_10725fbc@@3PAUCUnk10725fbc@@A 4 0x4
+i1015a7f0 inner ?g_10725fbc@@3PAUCUnk10725fbc@@A 4 .bss 0x4
 bss_bss localize ?g_10725fbc@@3PAUCUnk10725fbc@@A
-i103770e0 inner ?g_1093af28@@3PADA 4 0x30
+i103770e0 inner ?g_1093af28@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093af28@@3PADA
-i103770e0 inner ?g_1093af10@@3PADA 4 0x18
+i103770e0 inner ?g_1093af10@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093af10@@3PADA
-i101609d0 inner ?g_10725634@@3PAVConVar@@A 4 0x4
+i101609d0 inner ?g_10725634@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10725634@@3PAVConVar@@A
-i10375310 inner ?g_1093ae60@@3PADA 4 0x18
+i10375310 inner ?g_1093ae60@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093ae60@@3PADA
-i10398770 inner ?g_1093bb14@@3PAUCTuning1093bb14@@A 4 0x4
+i10398770 inner ?g_1093bb14@@3PAUCTuning1093bb14@@A 4 .bss 0x4
 bss_bss localize ?g_1093bb14@@3PAUCTuning1093bb14@@A
-i103c8690 inner ?g_1093f8ec@@3PAVConVar@@A 4 0x4
+i103c8690 inner ?g_1093f8ec@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093f8ec@@3PAVConVar@@A
-i1028caf0 inner ?g_10924d6c@@3PAUTranslateGlobal@@A 4 0x4
+i1028caf0 inner ?g_10924d6c@@3PAUTranslateGlobal@@A 4 .bss 0x4
 bss_bss localize ?g_10924d6c@@3PAUTranslateGlobal@@A
-i101fa400 inner ?g_1074e4f4@@3HA 4 0x4
+i101fa400 inner ?g_1074e4f4@@3HA 4 .bss 0x4
 bss_bss localize ?g_1074e4f4@@3HA
-i1042ceb0 inner ?g_109ef094@@3PAUCStepVar1011e940@@A 4 0x4
+i1042ceb0 inner ?g_109ef094@@3PAUCStepVar1011e940@@A 4 .bss 0x4
 bss_bss localize ?g_109ef094@@3PAUCStepVar1011e940@@A
-i101af970 inner ?g_1072bca0@@3HA 4 0x80
+i101af970 inner ?g_1072bca0@@3HA 4 .bss 0x80
 bss_bss localize ?g_1072bca0@@3HA
-i10082410 inner ?g_106c8a30@@3HA 4 0x8
+i10082410 inner ?g_106c8a30@@3HA 4 .bss 0x8
 bss_bss localize ?g_106c8a30@@3HA
-i10191850 inner ?g_1072b020@@3PADA 4 0x8
+i10191850 inner ?g_1072b020@@3PADA 4 .bss 0x8
 bss_bss localize ?g_1072b020@@3PADA
-i10247570 inner ?g_107536f4@@3PAUCDebugGate@@A 4 0x4
+i10247570 inner ?g_107536f4@@3PAUCDebugGate@@A 4 .bss 0x4
 bss_bss localize ?g_107536f4@@3PAUCDebugGate@@A
-i101fea40 inner ?g_1074e6b4@@3PAUStatMgr@@A 4 0x4
+i101fea40 inner ?g_1074e6b4@@3PAUStatMgr@@A 4 .bss 0x4
 bss_bss localize ?g_1074e6b4@@3PAUStatMgr@@A
-i1003c580 inner ?g_106bd938@@3PAPAUDataObjL@@A 4 0x8
+i1003c580 inner ?g_106bd938@@3PAPAUDataObjL@@A 4 .bss 0x8
 bss_bss localize ?g_106bd938@@3PAPAUDataObjL@@A
-i1016d1d0 inner ?g_10725d9c@@3PAUCVarV@@A 4 0x4
+i1016d1d0 inner ?g_10725d9c@@3PAUCVarV@@A 4 .bss 0x4
 bss_bss localize ?g_10725d9c@@3PAUCVarV@@A
-i101370e0 inner ?g_1070d9d8@@3MA 4 0x8
+i101370e0 inner ?g_1070d9d8@@3MA 4 .bss 0x8
 bss_bss localize ?g_1070d9d8@@3MA
-i101089a0 inner ?g_1070959c@@3PAVConVar@@A 4 0x4
+i101089a0 inner ?g_1070959c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070959c@@3PAVConVar@@A
-i1008cf30 inner ?g_106ccf0c@@3PAUDeveloperVar@@A 4 0x4
+i1008cf30 inner ?g_106ccf0c@@3PAUDeveloperVar@@A 4 .bss 0x4
 bss_bss localize ?g_106ccf0c@@3PAUDeveloperVar@@A
-i10069290 inner ?g_106c5e8c@@3PADA 4 0xc
+i10069290 inner ?g_106c5e8c@@3PADA 4 .bss 0xc
 bss_bss localize ?g_106c5e8c@@3PADA
-i10214270 inner ?g_1074f0c4@@3PAVConVar@@A 4 0x4
+i10214270 inner ?g_1074f0c4@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1074f0c4@@3PAVConVar@@A
-i1028c700 inner ?g_10924f74@@3PAUConVarLike@@A 4 0x4
+i1028c700 inner ?g_10924f74@@3PAUConVarLike@@A 4 .bss 0x4
 bss_bss localize ?g_10924f74@@3PAUConVarLike@@A
-i1042d180 inner ?g_109eeee4@@3PAUSConVarView@@A 4 0x4
+i1042d180 inner ?g_109eeee4@@3PAUSConVarView@@A 4 .bss 0x4
 bss_bss localize ?g_109eeee4@@3PAUSConVarView@@A
-i1042d3c0 inner ?g_109ef004@@3PAUCJumpSv28@@A 4 0x4
+i1042d3c0 inner ?g_109ef004@@3PAUCJumpSv28@@A 4 .bss 0x4
 bss_bss localize ?g_109ef004@@3PAUCJumpSv28@@A
-i1042c880 inner ?g_109ef16c@@3PAVConVar@@A 4 0x4
+i1042c880 inner ?g_109ef16c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109ef16c@@3PAVConVar@@A
-i10082410 inner ?g_106c8a2c@@3HA 4 0x4
+i10082410 inner ?g_106c8a2c@@3HA 4 .bss 0x4
 bss_bss localize ?g_106c8a2c@@3HA
-i101af970 inner ?g_1072bcab@@3EA 4 0x8b
+i101af970 inner ?g_1072bcab@@3EA 4 .bss 0x8b
 bss_bss localize ?g_1072bcab@@3EA
-i1016d140 inner ?g_10725be0@@3HA 4 0x18
+i1016d140 inner ?g_10725be0@@3HA 4 .bss 0x18
 bss_bss localize ?g_10725be0@@3HA
-i101af970 inner ?g_1072bcaa@@3EA 4 0x8a
+i101af970 inner ?g_1072bcaa@@3EA 4 .bss 0x8a
 bss_bss localize ?g_1072bcaa@@3EA
-i101fa520 inner ?g_1074e5fc@@3HA 4 0x4
+i101fa520 inner ?g_1074e5fc@@3HA 4 .bss 0x4
 bss_bss localize ?g_1074e5fc@@3HA
-i10108ac0 inner ?g_107093e4@@3PAVConVar@@A 4 0x4
+i10108ac0 inner ?g_107093e4@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_107093e4@@3PAVConVar@@A
-i1028c790 inner ?g_10923cf4@@3PAUCDevFlagB@@A 4 0x4
+i1028c790 inner ?g_10923cf4@@3PAUCDevFlagB@@A 4 .bss 0x4
 bss_bss localize ?g_10923cf4@@3PAUCDevFlagB@@A
-i10104c00 inner ?g_107091bc@@3PAUCDevFlagObjView@@A 4 0x4
+i10104c00 inner ?g_107091bc@@3PAUCDevFlagObjView@@A 4 .bss 0x4
 bss_bss localize ?g_107091bc@@3PAUCDevFlagObjView@@A
-i1042cfd0 inner ?g_109ef31c@@3PAUCMoveTuneView@@A 4 0x4
+i1042cfd0 inner ?g_109ef31c@@3PAUCMoveTuneView@@A 4 .bss 0x4
 bss_bss localize ?g_109ef31c@@3PAUCMoveTuneView@@A
-i101af970 inner ?g_1072bccc@@3PAHA 4 0xac
+i101af970 inner ?g_1072bccc@@3PAHA 4 .bss 0xac
 bss_bss localize ?g_1072bccc@@3PAHA
-i10265580 inner ?g_109203d4@@3PADA 4 0x8
+i10265580 inner ?g_109203d4@@3PADA 4 .bss 0x8
 bss_bss localize ?g_109203d4@@3PADA
-i101af970 inner ?g_1072bcad@@3EA 4 0x8d
+i101af970 inner ?g_1072bcad@@3EA 4 .bss 0x8d
 bss_bss localize ?g_1072bcad@@3EA
-i101af970 inner ?g_1072bcac@@3EA 4 0x8c
+i101af970 inner ?g_1072bcac@@3EA 4 .bss 0x8c
 bss_bss localize ?g_1072bcac@@3EA
-i101af970 inner ?g_1072bcaf@@3DA 4 0x8f
+i101af970 inner ?g_1072bcaf@@3DA 4 .bss 0x8f
 bss_bss localize ?g_1072bcaf@@3DA
-i101af970 inner ?g_1072bcae@@3PADA 4 0x8e
+i101af970 inner ?g_1072bcae@@3PADA 4 .bss 0x8e
 bss_bss localize ?g_1072bcae@@3PADA
-i10108b50 inner ?g_107092bc@@3PAVConVar@@A 4 0x4
+i10108b50 inner ?g_107092bc@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_107092bc@@3PAVConVar@@A
-i1019cd60 inner ?g_1072b408@@3PAVCBaseEntity@@A 4 0xc
+i1019cd60 inner ?g_1072b408@@3PAVCBaseEntity@@A 4 .bss 0xc
 bss_bss localize ?g_1072b408@@3PAVCBaseEntity@@A
-i1028c120 inner ?g_10924ab4@@3PAUCDevFlagA@@A 4 0x4
+i1028c120 inner ?g_10924ab4@@3PAUCDevFlagA@@A 4 .bss 0x4
 bss_bss localize ?g_10924ab4@@3PAUCDevFlagA@@A
-i101af970 inner ?g_1072bcb7@@3EA 4 0x97
+i101af970 inner ?g_1072bcb7@@3EA 4 .bss 0x97
 bss_bss localize ?g_1072bcb7@@3EA
-i101af970 inner ?g_1072bcc3@@3DA 4 0xa3
+i101af970 inner ?g_1072bcc3@@3DA 4 .bss 0xa3
 bss_bss localize ?g_1072bcc3@@3DA
-i101af970 inner ?g_1072bcc8@@3DA 4 0xa8
+i101af970 inner ?g_1072bcc8@@3DA 4 .bss 0xa8
 bss_bss localize ?g_1072bcc8@@3DA
-i100fb8f0 inner ?g_107083dc@@3PAUCRateGlobal107083dc@@A 4 0x4
+i100fb8f0 inner ?g_107083dc@@3PAUCRateGlobal107083dc@@A 4 .bss 0x4
 bss_bss localize ?g_107083dc@@3PAUCRateGlobal107083dc@@A
-i101af970 inner ?g_1072bcc7@@3DA 4 0xa7
+i101af970 inner ?g_1072bcc7@@3DA 4 .bss 0xa7
 bss_bss localize ?g_1072bcc7@@3DA
-i101af970 inner ?g_1072bcc9@@3DA 4 0xa9
+i101af970 inner ?g_1072bcc9@@3DA 4 .bss 0xa9
 bss_bss localize ?g_1072bcc9@@3DA
-i101af970 inner ?g_1072bca4@@3HA 4 0x84
+i101af970 inner ?g_1072bca4@@3HA 4 .bss 0x84
 bss_bss localize ?g_1072bca4@@3HA
-i101af970 inner ?g_1072bcb0@@3DA 4 0x90
+i101af970 inner ?g_1072bcb0@@3DA 4 .bss 0x90
 bss_bss localize ?g_1072bcb0@@3DA
-i10082410 inner ?g_106c8a34@@3HA 4 0xc
+i10082410 inner ?g_106c8a34@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c8a34@@3HA
-i101af970 inner ?g_1072bca8@@3EA 4 0x88
+i101af970 inner ?g_1072bca8@@3EA 4 .bss 0x88
 bss_bss localize ?g_1072bca8@@3EA
-i10082410 inner ?g_106c8a38@@3PAUEHandleRef@@A 4 0x10
+i10082410 inner ?g_106c8a38@@3PAUEHandleRef@@A 4 .bss 0x10
 bss_bss localize ?g_106c8a38@@3PAUEHandleRef@@A
-i101af970 inner ?g_1072bcb6@@3DA 4 0x96
+i101af970 inner ?g_1072bcb6@@3DA 4 .bss 0x96
 bss_bss localize ?g_1072bcb6@@3DA
-i101af970 inner ?g_1072bca9@@3EA 4 0x89
+i101af970 inner ?g_1072bca9@@3EA 4 .bss 0x89
 bss_bss localize ?g_1072bca9@@3EA
-i101af970 inner ?g_1072bcc1@@3DA 4 0xa1
+i101af970 inner ?g_1072bcc1@@3DA 4 .bss 0xa1
 bss_bss localize ?g_1072bcc1@@3DA
-i1042d060 inner ?g_109eefbc@@3PAUCMoveConVar@@A 4 0x4
+i1042d060 inner ?g_109eefbc@@3PAUCMoveConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109eefbc@@3PAUCMoveConVar@@A
-i1003c460 inner ?g_106bd86c@@3PAVConVar@@A 4 0x4
+i1003c460 inner ?g_106bd86c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_106bd86c@@3PAVConVar@@A
-i101af970 inner ?g_1072bcd8@@3HA 4 0xb8
+i101af970 inner ?g_1072bcd8@@3HA 4 .bss 0xb8
 bss_bss localize ?g_1072bcd8@@3HA
-i10247600 inner ?g_107536ac@@3PAUConVarA@@A 4 0x4
+i10247600 inner ?g_107536ac@@3PAUConVarA@@A 4 .bss 0x4
 bss_bss localize ?g_107536ac@@3PAUConVarA@@A
-i1042ca30 inner ?g_109ef04c@@3PAUS109ef04c@@A 4 0x4
+i1042ca30 inner ?g_109ef04c@@3PAUS109ef04c@@A 4 .bss 0x4
 bss_bss localize ?g_109ef04c@@3PAUS109ef04c@@A
-i100647f0 inner ?g_106c4380@@3IA 4 0x48
+i100647f0 inner ?g_106c4380@@3IA 4 .bss 0x48
 bss_bss localize ?g_106c4380@@3IA
-i100fdde0 inner ?g_1070908c@@3MA 4 0x4
+i100fdde0 inner ?g_1070908c@@3MA 4 .bss 0x4
 bss_bss localize ?g_1070908c@@3MA
-i101fa370 inner ?g_1074e65c@@3HA 4 0x4
+i101fa370 inner ?g_1074e65c@@3HA 4 .bss 0x4
 bss_bss localize ?g_1074e65c@@3HA
-i10108880 inner ?g_10709394@@3PAUCFireScaleVar@@A 4 0x4
+i10108880 inner ?g_10709394@@3PAUCFireScaleVar@@A 4 .bss 0x4
 bss_bss localize ?g_10709394@@3PAUCFireScaleVar@@A
-i10108d00 inner ?g_10709504@@3PAVCUnknown10738964@@A 4 0x4
+i10108d00 inner ?g_10709504@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_10709504@@3PAVCUnknown10738964@@A
-i101c2b50 inner ?g_1072cb20@@3PADA 4 0x10
+i101c2b50 inner ?g_1072cb20@@3PADA 4 .bss 0x10
 bss_bss localize ?g_1072cb20@@3PADA
-i101287c0 inner ?g_1070b9cc@@3PAUCDebugConVarView@@A 4 0x4
+i101287c0 inner ?g_1070b9cc@@3PAUCDebugConVarView@@A 4 .bss 0x4
 bss_bss localize ?g_1070b9cc@@3PAUCDebugConVarView@@A
-i101af970 inner ?g_1072bc98@@3PADA 4 0x78
+i101af970 inner ?g_1072bc98@@3PADA 4 .bss 0x78
 bss_bss localize ?g_1072bc98@@3PADA
-i10108760 inner ?g_10709474@@3PAVConVar@@A 4 0x4
+i10108760 inner ?g_10709474@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10709474@@3PAVConVar@@A
-i10277c70 inner ?g_10920344@@3PAUCAIDebugSink@@A 4 0x4
+i10277c70 inner ?g_10920344@@3PAUCAIDebugSink@@A 4 .bss 0x4
 bss_bss localize ?g_10920344@@3PAUCAIDebugSink@@A
-i100def80 inner ?g_106e8764@@3PAUCDialogDebugVar@@A 4 0x4
+i100def80 inner ?g_106e8764@@3PAUCDialogDebugVar@@A 4 .bss 0x4
 bss_bss localize ?g_106e8764@@3PAUCDialogDebugVar@@A
-i101af970 inner ?g_1072bc5c@@3HA 4 0x3c
+i101af970 inner ?g_1072bc5c@@3HA 4 .bss 0x3c
 bss_bss localize ?g_1072bc5c@@3HA
-i101af970 inner ?g_1072bd1c@@3MA 4 0xfc
+i101af970 inner ?g_1072bd1c@@3MA 4 .bss 0xfc
 bss_bss localize ?g_1072bd1c@@3MA
-i100439e0 inner ?g_106bdadc@@3PADA 4 0x7c
+i100439e0 inner ?g_106bdadc@@3PADA 4 .bss 0x7c
 bss_bss localize ?g_106bdadc@@3PADA
-i101c2b50 inner ?g_1072cb48@@3HA 4 0x38
+i101c2b50 inner ?g_1072cb48@@3HA 4 .bss 0x38
 bss_bss localize ?g_1072cb48@@3HA
-i10217170 inner ?g_1074f714@@3PAUCDepConVarView@@A 4 0x4
+i10217170 inner ?g_1074f714@@3PAUCDepConVarView@@A 4 .bss 0x4
 bss_bss localize ?g_1074f714@@3PAUCDepConVarView@@A
-i1028b4a0 inner ?g_10923f14@@3PAUCNpcInitConVar@@A 4 0x4
+i1028b4a0 inner ?g_10923f14@@3PAUCNpcInitConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10923f14@@3PAUCNpcInitConVar@@A
-i101af970 inner ?g_1072bc2c@@3HA 4 0xc
+i101af970 inner ?g_1072bc2c@@3HA 4 .bss 0xc
 bss_bss localize ?g_1072bc2c@@3HA
-i10352ac0 inner ?g_109382cc@@3PAVConVar@@A 4 0x4
+i10352ac0 inner ?g_109382cc@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109382cc@@3PAVConVar@@A
-i100dedd0 inner ?g_106e8684@@3PAUCDialogGate@@A 4 0x4
+i100dedd0 inner ?g_106e8684@@3PAUCDialogGate@@A 4 .bss 0x4
 bss_bss localize ?g_106e8684@@3PAUCDialogGate@@A
-i101af970 inner ?g_1072bc3c@@3HA 4 0x1c
+i101af970 inner ?g_1072bc3c@@3HA 4 .bss 0x1c
 bss_bss localize ?g_1072bc3c@@3HA
-i101fa370 inner ?g_1074e67c@@3PADA 4 0x24
+i101fa370 inner ?g_1074e67c@@3PADA 4 .bss 0x24
 bss_bss localize ?g_1074e67c@@3PADA
-i100439e0 inner ?g_106bdabc@@3PAXA 4 0x5c
+i100439e0 inner ?g_106bdabc@@3PAXA 4 .bss 0x5c
 bss_bss localize ?g_106bdabc@@3PAXA
-i101c2b50 inner ?g_1072cb40@@3MA 4 0x30
+i101c2b50 inner ?g_1072cb40@@3MA 4 .bss 0x30
 bss_bss localize ?g_1072cb40@@3MA
-i1020a530 inner ?g_1074f04c@@3PAVCDevFlagObj@@A 4 0x4
+i1020a530 inner ?g_1074f04c@@3PAVCDevFlagObj@@A 4 .bss 0x4
 bss_bss localize ?g_1074f04c@@3PAVCDevFlagObj@@A
-i10108c70 inner ?g_10709304@@3PAVConVar@@A 4 0x4
+i10108c70 inner ?g_10709304@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10709304@@3PAVConVar@@A
-i101a5d20 inner ?g_1072bb84@@3PAHA 4 0x4
+i101a5d20 inner ?g_1072bb84@@3PAHA 4 .bss 0x4
 bss_bss localize ?g_1072bb84@@3PAHA
-i101af970 inner ?g_1072bc38@@3HA 4 0x18
+i101af970 inner ?g_1072bc38@@3HA 4 .bss 0x18
 bss_bss localize ?g_1072bc38@@3HA
-i100439e0 inner ?g_106bdaa4@@3PADA 4 0x44
+i100439e0 inner ?g_106bdaa4@@3PADA 4 .bss 0x44
 bss_bss localize ?g_106bdaa4@@3PADA
-i101af970 inner ?g_1072bc24@@3HA 4 0x4
+i101af970 inner ?g_1072bc24@@3HA 4 .bss 0x4
 bss_bss localize ?g_1072bc24@@3HA
-i101af970 inner ?g_1072bc30@@3HA 4 0x10
+i101af970 inner ?g_1072bc30@@3HA 4 .bss 0x10
 bss_bss localize ?g_1072bc30@@3HA
-i1042d4e0 inner ?g_109eef2c@@3PAUCJumpSv2c@@A 4 0x4
+i1042d4e0 inner ?g_109eef2c@@3PAUCJumpSv2c@@A 4 .bss 0x4
 bss_bss localize ?g_109eef2c@@3PAUCJumpSv2c@@A
-i100439e0 inner ?g_106bdac0@@3PADA 4 0x60
+i100439e0 inner ?g_106bdac0@@3PADA 4 .bss 0x60
 bss_bss localize ?g_106bdac0@@3PADA
-i101af970 inner ?g_1072bc28@@3HA 4 0x8
+i101af970 inner ?g_1072bc28@@3HA 4 .bss 0x8
 bss_bss localize ?g_1072bc28@@3HA
-i101af970 inner ?g_1072bc34@@3HA 4 0x14
+i101af970 inner ?g_1072bc34@@3HA 4 .bss 0x14
 bss_bss localize ?g_1072bc34@@3HA
-i101af970 inner ?g_1072bc40@@3HA 4 0x20
+i101af970 inner ?g_1072bc40@@3HA 4 .bss 0x20
 bss_bss localize ?g_1072bc40@@3HA
-i101af970 inner ?g_1072bc84@@3HA 4 0x64
+i101af970 inner ?g_1072bc84@@3HA 4 .bss 0x64
 bss_bss localize ?g_1072bc84@@3HA
-i101fa520 inner ?g_1074e61c@@3PADA 4 0x24
+i101fa520 inner ?g_1074e61c@@3PADA 4 .bss 0x24
 bss_bss localize ?g_1074e61c@@3PADA
-i101af970 inner ?g_1072bc94@@3PADA 4 0x74
+i101af970 inner ?g_1072bc94@@3PADA 4 .bss 0x74
 bss_bss localize ?g_1072bc94@@3PADA
-i1042c9a0 inner ?g_109eee9c@@3PAUCMoveConVar@@A 4 0x4
+i1042c9a0 inner ?g_109eee9c@@3PAUCMoveConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109eee9c@@3PAUCMoveConVar@@A
-i100439e0 inner ?g_106bdad8@@3PAXA 4 0x78
+i100439e0 inner ?g_106bdad8@@3PAXA 4 .bss 0x78
 bss_bss localize ?g_106bdad8@@3PAXA
-i101af970 inner ?g_1072bc58@@3HA 4 0x38
+i101af970 inner ?g_1072bc58@@3HA 4 .bss 0x38
 bss_bss localize ?g_1072bc58@@3HA
-i103d8af0 inner ?g_1093f8a4@@3PAUCWerewolfGate@@A 4 0x4
+i103d8af0 inner ?g_1093f8a4@@3PAUCWerewolfGate@@A 4 .bss 0x4
 bss_bss localize ?g_1093f8a4@@3PAUCWerewolfGate@@A
-i1015a920 inner ?g_10725e74@@3PAUCUnknown10725e74@@A 4 0x4
+i1015a920 inner ?g_10725e74@@3PAUCUnknown10725e74@@A 4 .bss 0x4
 bss_bss localize ?g_10725e74@@3PAUCUnknown10725e74@@A
-i10108910 inner ?g_1070954c@@3PAVConVar@@A 4 0x4
+i10108910 inner ?g_1070954c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070954c@@3PAVConVar@@A
-i101c2b50 inner ?g_1072cb5c@@3IA 4 0x4c
+i101c2b50 inner ?g_1072cb5c@@3IA 4 .bss 0x4c
 bss_bss localize ?g_1072cb5c@@3IA
-i1028bca0 inner ?g_10924d24@@3PAUCNTConVar@@A 4 0x4
+i1028bca0 inner ?g_10924d24@@3PAUCNTConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10924d24@@3PAUCNTConVar@@A
-i1029bcb0 inner ?g_10923e3c@@3PAUSConVarX@@A 4 0x4
+i1029bcb0 inner ?g_10923e3c@@3PAUSConVarX@@A 4 .bss 0x4
 bss_bss localize ?g_10923e3c@@3PAUSConVarX@@A
-i103c8570 inner ?g_1093f9a4@@3PAUCWWDevView@@A 4 0x4
+i103c8570 inner ?g_1093f9a4@@3PAUCWWDevView@@A 4 .bss 0x4
 bss_bss localize ?g_1093f9a4@@3PAUCWWDevView@@A
-i10264fa0 inner ?g_1092038c@@3PAUCTroikaConVarView@@A 4 0x4
+i10264fa0 inner ?g_1092038c@@3PAUCTroikaConVarView@@A 4 .bss 0x4
 bss_bss localize ?g_1092038c@@3PAUCTroikaConVarView@@A
-i101370e0 inner ?g_1070d9d4@@3MA 4 0x4
+i101370e0 inner ?g_1070d9d4@@3MA 4 .bss 0x4
 bss_bss localize ?g_1070d9d4@@3MA
-i1017eb80 inner ?g_10725f74@@3PAUCCopTimerView@@A 4 0x4
+i1017eb80 inner ?g_10725f74@@3PAUCCopTimerView@@A 4 .bss 0x4
 bss_bss localize ?g_10725f74@@3PAUCCopTimerView@@A
-i100629d0 inner ?g_106c2db4@lifted@@3HA 4 0x14
+i100629d0 inner ?g_106c2db4@lifted@@3HA 4 .bss 0x14
 bss_bss localize ?g_106c2db4@lifted@@3HA
-i1005f4d0 inner ?g_106c1468@lifted@@3HA 4 0x1c
+i1005f4d0 inner ?g_106c1468@lifted@@3HA 4 .bss 0x1c
 bss_bss localize ?g_106c1468@lifted@@3HA
-i100629d0 inner ?g_106c2db0@lifted@@3HA 4 0x10
+i100629d0 inner ?g_106c2db0@lifted@@3HA 4 .bss 0x10
 bss_bss localize ?g_106c2db0@lifted@@3HA
-i1005f4d0 inner ?g_106c1460@lifted@@3HA 4 0x14
+i1005f4d0 inner ?g_106c1460@lifted@@3HA 4 .bss 0x14
 bss_bss localize ?g_106c1460@lifted@@3HA
-i1005f4d0 inner ?g_106c1458@lifted@@3HA 4 0xc
+i1005f4d0 inner ?g_106c1458@lifted@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c1458@lifted@@3HA
-i1005f4d0 inner ?g_106c1464@lifted@@3HA 4 0x18
+i1005f4d0 inner ?g_106c1464@lifted@@3HA 4 .bss 0x18
 bss_bss localize ?g_106c1464@lifted@@3HA
-i1005f4d0 inner ?g_106c145c@lifted@@3HA 4 0x10
+i1005f4d0 inner ?g_106c145c@lifted@@3HA 4 .bss 0x10
 bss_bss localize ?g_106c145c@lifted@@3HA
-i100629d0 inner ?g_106c2dac@lifted@@3HA 4 0xc
+i100629d0 inner ?g_106c2dac@lifted@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c2dac@lifted@@3HA
-i10066f20 inner ?g_106c50f8@lifted@@3HA 4 0x1c
+i10066f20 inner ?g_106c50f8@lifted@@3HA 4 .bss 0x1c
 bss_bss localize ?g_106c50f8@lifted@@3HA
-i10066f20 inner ?g_106c50f0@lifted@@3HA 4 0x14
+i10066f20 inner ?g_106c50f0@lifted@@3HA 4 .bss 0x14
 bss_bss localize ?g_106c50f0@lifted@@3HA
-i10066f20 inner ?g_106c50e8@lifted@@3HA 4 0xc
+i10066f20 inner ?g_106c50e8@lifted@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c50e8@lifted@@3HA
-i10066f20 inner ?g_106c50f4@lifted@@3HA 4 0x18
+i10066f20 inner ?g_106c50f4@lifted@@3HA 4 .bss 0x18
 bss_bss localize ?g_106c50f4@lifted@@3HA
-i100f6930 inner ?g_10703660@lifted@@3HA 4 0x10
+i100f6930 inner ?g_10703660@lifted@@3HA 4 .bss 0x10
 bss_bss localize ?g_10703660@lifted@@3HA
-i10065d70 inner ?g_106c49a0@lifted@@3HA 4 0xc
+i10065d70 inner ?g_106c49a0@lifted@@3HA 4 .bss 0xc
 bss_bss localize ?g_106c49a0@lifted@@3HA
-i10066f20 inner ?g_106c50ec@lifted@@3HA 4 0x10
+i10066f20 inner ?g_106c50ec@lifted@@3HA 4 .bss 0x10
 bss_bss localize ?g_106c50ec@lifted@@3HA
-i10066f20 inner ?g_106c50fc@lifted@@3HA 4 0x20
+i10066f20 inner ?g_106c50fc@lifted@@3HA 4 .bss 0x20
 bss_bss localize ?g_106c50fc@lifted@@3HA
-i101fa490 inner ?g_1074e0bc@@3PADA 4 0x24
+i101fa490 inner ?g_1074e0bc@@3PADA 4 .bss 0x24
 bss_bss localize ?g_1074e0bc@@3PADA
-i1028c9d0 inner ?g_10923f5c@@3PAUCVH375Obj@@A 4 0x4
+i1028c9d0 inner ?g_10923f5c@@3PAUCVH375Obj@@A 4 .bss 0x4
 bss_bss localize ?g_10923f5c@@3PAUCVH375Obj@@A
-i1028bdc0 inner ?g_10924a6c@@3PAVCDevFlagObj@@A 4 0x4
+i1028bdc0 inner ?g_10924a6c@@3PAVCDevFlagObj@@A 4 .bss 0x4
 bss_bss localize ?g_10924a6c@@3PAVCDevFlagObj@@A
-i101af970 inner ?g_1072bc8c@@3HA 4 0x6c
+i101af970 inner ?g_1072bc8c@@3HA 4 .bss 0x6c
 bss_bss localize ?g_1072bc8c@@3HA
-i100deef0 inner ?g_106e9514@@3PAUCDebugLog100e8980@@A 4 0x4
+i100deef0 inner ?g_106e9514@@3PAUCDebugLog100e8980@@A 4 .bss 0x4
 bss_bss localize ?g_106e9514@@3PAUCDebugLog100e8980@@A
-i1028b780 inner ?g_10923e84@@3PAVConVar@@A 4 0x4
+i1028b780 inner ?g_10923e84@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10923e84@@3PAVConVar@@A
-i10108be0 inner ?g_1070934c@@3PAVConVar@@A 4 0x4
+i10108be0 inner ?g_1070934c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070934c@@3PAVConVar@@A
-i101af970 inner ?g_1072bc9c@@3HA 4 0x7c
+i101af970 inner ?g_1072bc9c@@3HA 4 .bss 0x7c
 bss_bss localize ?g_1072bc9c@@3HA
-i101afe30 inner ?g_1072bd5c@@3PAUCDevInfo@@A 4 0x4
+i101afe30 inner ?g_1072bd5c@@3PAUCDevInfo@@A 4 .bss 0x4
 bss_bss localize ?g_1072bd5c@@3PAUCDevInfo@@A
-i101feba0 inner ?g_1074e77c@@3PAUStatMgr@@A 4 0x4
+i101feba0 inner ?g_1074e77c@@3PAUStatMgr@@A 4 .bss 0x4
 bss_bss localize ?g_1074e77c@@3PAUStatMgr@@A
-i100dee60 inner ?g_106e861c@@3PAUCDialogHost106e861c@@A 4 0x4
+i100dee60 inner ?g_106e861c@@3PAUCDialogHost106e861c@@A 4 .bss 0x4
 bss_bss localize ?g_106e861c@@3PAUCDialogHost106e861c@@A
-i1040b6a0 inner ?g_1094a9d4@@3PAUConVarView9d4@@A 4 0x4
+i1040b6a0 inner ?g_1094a9d4@@3PAUConVarView9d4@@A 4 .bss 0x4
 bss_bss localize ?g_1094a9d4@@3PAUConVarView9d4@@A
-i10264e80 inner ?g_1090febc@@3PAVConVar@@A 4 0x4
+i10264e80 inner ?g_1090febc@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1090febc@@3PAVConVar@@A
-i101481a0 inner ?g_1071a4a4@@3PAUCRelVis@@A 4 0x4
+i101481a0 inner ?g_1071a4a4@@3PAUCRelVis@@A 4 .bss 0x4
 bss_bss localize ?g_1071a4a4@@3PAUCRelVis@@A
-i1028bb70 inner ?g_10924a1c@@3PAVCUnknown10924a1c@@A 4 0x4
+i1028bb70 inner ?g_10924a1c@@3PAVCUnknown10924a1c@@A 4 .bss 0x4
 bss_bss localize ?g_10924a1c@@3PAVCUnknown10924a1c@@A
-i10108a30 inner ?g_1070942c@@3PAUCFireConVar@@A 4 0x4
+i10108a30 inner ?g_1070942c@@3PAUCFireConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070942c@@3PAUCFireConVar@@A
-i1028c5c0 inner ?g_10923d3c@@3PAVCUnknown10738964@@A 4 0x4
+i1028c5c0 inner ?g_10923d3c@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_10923d3c@@3PAVCUnknown10738964@@A
-i103c7fd0 inner ?g_1093f814@@3PAUCWerewolfCfgView@@A 4 0x4
+i103c7fd0 inner ?g_1093f814@@3PAUCWerewolfCfgView@@A 4 .bss 0x4
 bss_bss localize ?g_1093f814@@3PAUCWerewolfCfgView@@A
-i103c7820 inner ?g_1093d3c8@@3PADA 4 0x18
+i103c7820 inner ?g_1093d3c8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093d3c8@@3PADA
-i103c7820 inner ?g_1093d3e0@@3PADA 4 0x30
+i103c7820 inner ?g_1093d3e0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093d3e0@@3PADA
-i101193e0 inner ?g_1070b1dc@@3PAUConVarV@@A 4 0x4
+i101193e0 inner ?g_1070b1dc@@3PAUConVarV@@A 4 .bss 0x4
 bss_bss localize ?g_1070b1dc@@3PAUConVarV@@A
-i10346c40 inner ?g_109370d4@@3PAUCMeleeGlobal@@A 4 0x4
+i10346c40 inner ?g_109370d4@@3PAUCMeleeGlobal@@A 4 .bss 0x4
 bss_bss localize ?g_109370d4@@3PAUCMeleeGlobal@@A
-i103b3040 inner ?g_1093c7d8@@3PADA 4 0x30
+i103b3040 inner ?g_1093c7d8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c7d8@@3PADA
-i103b5b40 inner ?g_1093c9b0@@3PADA 4 0x30
+i103b5b40 inner ?g_1093c9b0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c9b0@@3PADA
-i103c80f0 inner ?g_1093d4e4@@3PAUCWerewolfCfgView@@A 4 0x4
+i103c80f0 inner ?g_1093d4e4@@3PAUCWerewolfCfgView@@A 4 .bss 0x4
 bss_bss localize ?g_1093d4e4@@3PAUCWerewolfCfgView@@A
-i10147ff0 inner ?g_1071a32c@@3PAVCUnknown10738964@@A 4 0x4
+i10147ff0 inner ?g_1071a32c@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_1071a32c@@3PAVCUnknown10738964@@A
-i10327a00 inner ?g_109371c4@@3PAUCCorpseGlobal@@A 4 0x4
+i10327a00 inner ?g_109371c4@@3PAUCCorpseGlobal@@A 4 .bss 0x4
 bss_bss localize ?g_109371c4@@3PAUCCorpseGlobal@@A
-i100439e0 inner ?g_106bda9c@@3HA 4 0x3c
+i100439e0 inner ?g_106bda9c@@3HA 4 .bss 0x3c
 bss_bss localize ?g_106bda9c@@3HA
-i10265520 inner ?g_1090ff38@@3PADA 4 0x30
+i10265520 inner ?g_1090ff38@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1090ff38@@3PADA
-i103c2930 inner ?g_1093d1f0@@3PADA 4 0x18
+i103c2930 inner ?g_1093d1f0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093d1f0@@3PADA
-i1040bcd0 inner ?g_1094a944@@3PAVConVar@@A 4 0x4
+i1040bcd0 inner ?g_1094a944@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1094a944@@3PAVConVar@@A
-i100439e0 inner ?g_106bda6c@@3PADA 4 0xc
+i100439e0 inner ?g_106bda6c@@3PADA 4 .bss 0xc
 bss_bss localize ?g_106bda6c@@3PADA
-i1011d7c0 inner ?g_1070b2d4@@3PAUCStepVar1011e940@@A 4 0x4
+i1011d7c0 inner ?g_1070b2d4@@3PAUCStepVar1011e940@@A 4 .bss 0x4
 bss_bss localize ?g_1070b2d4@@3PAUCStepVar1011e940@@A
-i103b3040 inner ?g_1093c7c0@@3PADA 4 0x18
+i103b3040 inner ?g_1093c7c0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c7c0@@3PADA
-i1023e390 inner ?g_10752ddc@@3PAUCUnk10752ddc@@A 4 0x4
+i1023e390 inner ?g_10752ddc@@3PAUCUnk10752ddc@@A 4 .bss 0x4
 bss_bss localize ?g_10752ddc@@3PAUCUnk10752ddc@@A
-i100f8f60 inner ?g_107036ac@@3DA 4 0x8
+i100f8f60 inner ?g_107036ac@@3DA 4 .bss 0x8
 bss_bss localize ?g_107036ac@@3DA
-i1042d0f0 inner ?g_109eef74@@3PAVConVar@@A 4 0x4
+i1042d0f0 inner ?g_109eef74@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_109eef74@@3PAVConVar@@A
-i1042d210 inner ?g_109eee0c@@3PAUCNodeV3@@A 4 0x4
+i1042d210 inner ?g_109eee0c@@3PAUCNodeV3@@A 4 .bss 0x4
 bss_bss localize ?g_109eee0c@@3PAUCNodeV3@@A
-i10117d80 inner ?g_1070a9fc@@3PAUCPlayerConVarView@@A 4 0x4
+i10117d80 inner ?g_1070a9fc@@3PAUCPlayerConVarView@@A 4 .bss 0x4
 bss_bss localize ?g_1070a9fc@@3PAUCPlayerConVarView@@A
-i1023a5c0 inner ?g_1075329c@@3PAUConVarA@@A 4 0x4
+i1023a5c0 inner ?g_1075329c@@3PAUConVarA@@A 4 .bss 0x4
 bss_bss localize ?g_1075329c@@3PAUConVarA@@A
-i10068300 inner ?g_106c5a00@@3HA 4 0x1c
+i10068300 inner ?g_106c5a00@@3HA 4 .bss 0x1c
 bss_bss localize ?g_106c5a00@@3HA
-i10137090 inner ?g_1070d1b4@@3HA 4 0x4
+i10137090 inner ?g_1070d1b4@@3HA 4 .bss 0x4
 bss_bss localize ?g_1070d1b4@@3HA
-i1042bed0 inner ?g_109eed2c@@3PADA 4 0x4
+i1042bed0 inner ?g_109eed2c@@3PADA 4 .bss 0x4
 bss_bss localize ?g_109eed2c@@3PADA
-i10091400 inner ?g_106caf64@@3PAUCAnimConVar@@A 4 0x4
+i10091400 inner ?g_106caf64@@3PAUCAnimConVar@@A 4 .bss 0x4
 bss_bss localize ?g_106caf64@@3PAUCAnimConVar@@A
-i100fdde0 inner ?g_10709090@@3MA 4 0x8
+i100fdde0 inner ?g_10709090@@3MA 4 .bss 0x8
 bss_bss localize ?g_10709090@@3MA
-i103b6520 inner ?g_1093c9fc@@3PAVCNPC_VTzimisceConVar@@A 4 0x4
+i103b6520 inner ?g_1093c9fc@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093c9fc@@3PAVCNPC_VTzimisceConVar@@A
-i10237ba0 inner ?g_107520a4@@3PAUCWRTimeView@@A 4 0x4
+i10237ba0 inner ?g_107520a4@@3PAUCWRTimeView@@A 4 .bss 0x4
 bss_bss localize ?g_107520a4@@3PAUCWRTimeView@@A
-i102061e0 inner ?g_1074f01c@@3PAPAVCUnknown10206400@@A 4 0x18
+i102061e0 inner ?g_1074f01c@@3PAPAVCUnknown10206400@@A 4 .bss 0x18
 bss_bss localize ?g_1074f01c@@3PAPAVCUnknown10206400@@A
-i1042c150 inner ?g_109eed5c@@3HA 4 0xc
+i1042c150 inner ?g_109eed5c@@3HA 4 .bss 0xc
 bss_bss localize ?g_109eed5c@@3HA
-i10068300 inner ?g_106c5a04@@3HA 4 0x20
+i10068300 inner ?g_106c5a04@@3HA 4 .bss 0x20
 bss_bss localize ?g_106c5a04@@3HA
-i100bc3c0 inner ?g_106d1a10@@3PAIA 4 0x108
+i100bc3c0 inner ?g_106d1a10@@3PAIA 4 .bss 0x108
 bss_bss localize ?g_106d1a10@@3PAIA
-i10137090 inner ?g_1070d1b8@@3HA 4 0x8
+i10137090 inner ?g_1070d1b8@@3HA 4 .bss 0x8
 bss_bss localize ?g_1070d1b8@@3HA
-i103cb420 inner ?g_1093f95c@@3PAUCWerewolfModeSrc@@A 4 0x4
+i103cb420 inner ?g_1093f95c@@3PAUCWerewolfModeSrc@@A 4 .bss 0x4
 bss_bss localize ?g_1093f95c@@3PAUCWerewolfModeSrc@@A
-i101ae000 inner ?g_1072bc00@@3PADA 4 0x8
+i101ae000 inner ?g_1072bc00@@3PADA 4 .bss 0x8
 bss_bss localize ?g_1072bc00@@3PADA
-i103c82a0 inner ?g_1093f73c@@3PAUCDevObj@@A 4 0x4
+i103c82a0 inner ?g_1093f73c@@3PAUCDevObj@@A 4 .bss 0x4
 bss_bss localize ?g_1093f73c@@3PAUCDevObj@@A
-i1040ba90 inner ?g_1094a98c@@3PAUCMeleeRange@@A 4 0x4
+i1040ba90 inner ?g_1094a98c@@3PAUCMeleeRange@@A 4 .bss 0x4
 bss_bss localize ?g_1094a98c@@3PAUCMeleeRange@@A
-i10148230 inner ?g_1071a44c@@3PAUCRelVis@@A 4 0x4
+i10148230 inner ?g_1071a44c@@3PAUCRelVis@@A 4 .bss 0x4
 bss_bss localize ?g_1071a44c@@3PAUCRelVis@@A
-i101fa400 inner ?g_1074e514@@3PADA 4 0x24
+i101fa400 inner ?g_1074e514@@3PADA 4 .bss 0x24
 bss_bss localize ?g_1074e514@@3PADA
-i103c8450 inner ?g_1093d6f4@@3PAUCWWDevView2@@A 4 0x4
+i103c8450 inner ?g_1093d6f4@@3PAUCWWDevView2@@A 4 .bss 0x4
 bss_bss localize ?g_1093d6f4@@3PAUCWWDevView2@@A
-i102061e0 inner ?g_1074f018@@3HA 4 0x14
+i102061e0 inner ?g_1074f018@@3HA 4 .bss 0x14
 bss_bss localize ?g_1074f018@@3HA
-i1042cf40 inner ?g_109eee54@@3PAUCMoveTuneView@@A 4 0x4
+i1042cf40 inner ?g_109eee54@@3PAUCMoveTuneView@@A 4 .bss 0x4
 bss_bss localize ?g_109eee54@@3PAUCMoveTuneView@@A
-i1005c450 inner ?g_106bfb14@@3PADA 4 0xc
+i1005c450 inner ?g_106bfb14@@3PADA 4 .bss 0xc
 bss_bss localize ?g_106bfb14@@3PADA
-i101fa490 inner ?g_1074e09c@@3HA 4 0x4
+i101fa490 inner ?g_1074e09c@@3HA 4 .bss 0x4
 bss_bss localize ?g_1074e09c@@3HA
-i103d9d70 inner ?g_1093d52c@@3PAUSDifficulty@@A 4 0x4
+i103d9d70 inner ?g_1093d52c@@3PAUSDifficulty@@A 4 .bss 0x4
 bss_bss localize ?g_1093d52c@@3PAUSDifficulty@@A
-i1040b730 inner ?g_1094accc@@3PAUCGlobal1094accc@@A 4 0x4
+i1040b730 inner ?g_1094accc@@3PAUCGlobal1094accc@@A 4 .bss 0x4
 bss_bss localize ?g_1094accc@@3PAUCGlobal1094accc@@A
-i101d8580 inner ?g_10739198@@3PADA 4 0x4
+i101d8580 inner ?g_10739198@@3PADA 4 .bss 0x4
 bss_bss localize ?g_10739198@@3PADA
-i1036a2c0 inner ?g_1093a8b8@@3PADA 4 0x30
+i1036a2c0 inner ?g_1093a8b8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a8b8@@3PADA
-i103840d0 inner ?g_1093b3f8@@3PADA 4 0x18
+i103840d0 inner ?g_1093b3f8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b3f8@@3PADA
-i10386b50 inner ?g_1093b4c8@@3PADA 4 0x30
+i10386b50 inner ?g_1093b4c8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b4c8@@3PADA
-i10368420 inner ?g_1093a7f0@@3PADA 4 0x18
+i10368420 inner ?g_1093a7f0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a7f0@@3PADA
-i10386b50 inner ?g_1093b4b0@@3PADA 4 0x18
+i10386b50 inner ?g_1093b4b0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b4b0@@3PADA
-i103e13b0 inner ?g_109405b4@@3PAVCUnknown103e1680@@A 4 0x4
+i103e13b0 inner ?g_109405b4@@3PAVCUnknown103e1680@@A 4 .bss 0x4
 bss_bss localize ?g_109405b4@@3PAVCUnknown103e1680@@A
-i10250a30 inner ?g_1088aef4@@3PAUCTuningConVar@@A 4 0x4
+i10250a30 inner ?g_1088aef4@@3PAUCTuningConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1088aef4@@3PAUCTuningConVar@@A
-i103c7f40 inner ?g_1093d694@@3PAUCGlobal1093d694@@A 4 0x4
+i103c7f40 inner ?g_1093d694@@3PAUCGlobal1093d694@@A 4 .bss 0x4
 bss_bss localize ?g_1093d694@@3PAUCGlobal1093d694@@A
-i101e4d70 inner ?g_10739fa8@@3MA 4 0x2a0
+i101e4d70 inner ?g_10739fa8@@3MA 4 .bss 0x2a0
 bss_bss localize ?g_10739fa8@@3MA
-i10125d20 inner ?g_1070b70c@@3PAVConVar@@A 4 0x4
+i10125d20 inner ?g_1070b70c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070b70c@@3PAVConVar@@A
-i101e4d70 inner ?g_10739fa0@@3MA 4 0x298
+i101e4d70 inner ?g_10739fa0@@3MA 4 .bss 0x298
 bss_bss localize ?g_10739fa0@@3MA
-i101e4d70 inner ?g_10739fa4@@3MA 4 0x29c
+i101e4d70 inner ?g_10739fa4@@3MA 4 .bss 0x29c
 bss_bss localize ?g_10739fa4@@3MA
-i10148080 inner ?g_10721a1c@@3PAUGGVar@@A 4 0x4
+i10148080 inner ?g_10721a1c@@3PAUGGVar@@A 4 .bss 0x4
 bss_bss localize ?g_10721a1c@@3PAUGGVar@@A
-i103a5110 inner ?g_1093c1a8@@3PADA 4 0x18
+i103a5110 inner ?g_1093c1a8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c1a8@@3PADA
-i103a5110 inner ?g_1093c1c0@@3PADA 4 0x30
+i103a5110 inner ?g_1093c1c0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c1c0@@3PADA
-i10366ce0 inner ?g_1093a6b8@@3PADA 4 0x30
+i10366ce0 inner ?g_1093a6b8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a6b8@@3PADA
-i103c8600 inner ?g_1093d574@@3PAUWWTimerCvar@@A 4 0x4
+i103c8600 inner ?g_1093d574@@3PAUWWTimerCvar@@A 4 .bss 0x4
 bss_bss localize ?g_1093d574@@3PAUWWTimerCvar@@A
-i101f6890 inner ?g_1074df7c@@3HA 4 0x4
+i101f6890 inner ?g_1074df7c@@3HA 4 .bss 0x4
 bss_bss localize ?g_1074df7c@@3HA
-i103de3a0 inner ?g_109403c8@@3PADA 4 0x30
+i103de3a0 inner ?g_109403c8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_109403c8@@3PADA
-i101f3440 inner ?g_1074b344@@3HA 4 0x14
+i101f3440 inner ?g_1074b344@@3HA 4 .bss 0x14
 bss_bss localize ?g_1074b344@@3HA
-i103dc820 inner ?g_109402d8@@3PADA 4 0x30
+i103dc820 inner ?g_109402d8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_109402d8@@3PADA
-i103de3a0 inner ?g_109403b0@@3PADA 4 0x18
+i103de3a0 inner ?g_109403b0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_109403b0@@3PADA
-i1037e3d0 inner ?g_1093b1f4@@3PAUIPhysTune2@@A 4 0x4
+i1037e3d0 inner ?g_1093b1f4@@3PAUIPhysTune2@@A 4 .bss 0x4
 bss_bss localize ?g_1093b1f4@@3PAUIPhysTune2@@A
-i101f0820 inner ?g_1073a9bc@@3PAPBDA 4 0x1c
+i101f0820 inner ?g_1073a9bc@@3PAPBDA 4 .bss 0x1c
 bss_bss localize ?g_1073a9bc@@3PAPBDA
-i1032b170 inner ?g_10936fbc@@3PAUCConVarF@@A 4 0x4
+i1032b170 inner ?g_10936fbc@@3PAUCConVarF@@A 4 .bss 0x4
 bss_bss localize ?g_10936fbc@@3PAUCConVarF@@A
-i101f3440 inner ?g_1074b348@@3PAPAUCKeypadNameRecord@@A 4 0x18
+i101f3440 inner ?g_1074b348@@3PAPAUCKeypadNameRecord@@A 4 .bss 0x18
 bss_bss localize ?g_1074b348@@3PAPAUCKeypadNameRecord@@A
-i103b5b40 inner ?g_1093c998@@3PADA 4 0x18
+i103b5b40 inner ?g_1093c998@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c998@@3PADA
-i10115570 inner ?g_1070a87c@@3HA 4 0xc
+i10115570 inner ?g_1070a87c@@3HA 4 .bss 0xc
 bss_bss localize ?g_1070a87c@@3HA
-i1036a2c0 inner ?g_1093a8a0@@3PADA 4 0x18
+i1036a2c0 inner ?g_1093a8a0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a8a0@@3PADA
-i1040bd60 inner ?g_1094abac@@3PAUSConVarX@@A 4 0x4
+i1040bd60 inner ?g_1094abac@@3PAUSConVarX@@A 4 .bss 0x4
 bss_bss localize ?g_1094abac@@3PAUSConVarX@@A
-i1011d850 inner ?g_1070b754@@3PAUCDebugCvar@@A 4 0x4
+i1011d850 inner ?g_1070b754@@3PAUCDebugCvar@@A 4 .bss 0x4
 bss_bss localize ?g_1070b754@@3PAUCDebugCvar@@A
-i1036add0 inner ?g_1093a9cc@@3PAUCChangBrosConVar@@A 4 0x4
+i1036add0 inner ?g_1093a9cc@@3PAUCChangBrosConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093a9cc@@3PAUCChangBrosConVar@@A
-i100f8c70 inner ?g_107036b4@@3PADA 4 0x4
+i100f8c70 inner ?g_107036b4@@3PADA 4 .bss 0x4
 bss_bss localize ?g_107036b4@@3PADA
-i10119500 inner ?g_1070b0f4@@3PAUCDevCvarView@@A 4 0x4
+i10119500 inner ?g_1070b0f4@@3PAUCDevCvarView@@A 4 .bss 0x4
 bss_bss localize ?g_1070b0f4@@3PAUCDevCvarView@@A
-i101d2be0 inner ?g_10738964@@3PAVCUnknown10738964@@A 4 0x4
+i101d2be0 inner ?g_10738964@@3PAVCUnknown10738964@@A 4 .bss 0x4
 bss_bss localize ?g_10738964@@3PAVCUnknown10738964@@A
-i103abc10 inner ?g_1093c4a8@@3PADA 4 0x18
+i103abc10 inner ?g_1093c4a8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c4a8@@3PADA
-i103abc10 inner ?g_1093c4c0@@3PADA 4 0x30
+i103abc10 inner ?g_1093c4c0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c4c0@@3PADA
-i101e4d70 inner ?g_10739fac@@3MA 4 0x2a4
+i101e4d70 inner ?g_10739fac@@3MA 4 .bss 0x2a4
 bss_bss localize ?g_10739fac@@3MA
-i103e14d0 inner ?g_109405fc@@3PAVCUnknown103e1680@@A 4 0x4
+i103e14d0 inner ?g_109405fc@@3PAVCUnknown103e1680@@A 4 .bss 0x4
 bss_bss localize ?g_109405fc@@3PAVCUnknown103e1680@@A
-i100331f0 inner ?g_106bbaa4@@3PAUCDevFlagView@@A 4 0x4
+i100331f0 inner ?g_106bbaa4@@3PAUCDevFlagView@@A 4 .bss 0x4
 bss_bss localize ?g_106bbaa4@@3PAUCDevFlagView@@A
-i10265520 inner ?g_1090ff20@@3PADA 4 0x18
+i10265520 inner ?g_1090ff20@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1090ff20@@3PADA
-i10390bc0 inner ?g_1093b9b4@@3PAUCUnk1093b9b4@@A 4 0x4
+i10390bc0 inner ?g_1093b9b4@@3PAUCUnk1093b9b4@@A 4 .bss 0x4
 bss_bss localize ?g_1093b9b4@@3PAUCUnk1093b9b4@@A
-i10388e50 inner ?g_1093b6c8@@3PADA 4 0x30
+i10388e50 inner ?g_1093b6c8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b6c8@@3PADA
-i103d8b80 inner ?g_1093d64c@@3PAUCWerewolfGate@@A 4 0x4
+i103d8b80 inner ?g_1093d64c@@3PAUCWerewolfGate@@A 4 .bss 0x4
 bss_bss localize ?g_1093d64c@@3PAUCWerewolfGate@@A
-i10388e50 inner ?g_1093b6b0@@3PADA 4 0x18
+i10388e50 inner ?g_1093b6b0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b6b0@@3PADA
-i103a4db0 inner ?g_1093c1f4@@3PAUCTimer@@A 4 0x4
+i103a4db0 inner ?g_1093c1f4@@3PAUCTimer@@A 4 .bss 0x4
 bss_bss localize ?g_1093c1f4@@3PAUCTimer@@A
-i10232260 inner ?g_10751604@@3PAUCUnknown10751604@@A 4 0x4
+i10232260 inner ?g_10751604@@3PAUCUnknown10751604@@A 4 .bss 0x4
 bss_bss localize ?g_10751604@@3PAUCUnknown10751604@@A
-i100439e0 inner ?g_106bda84@@3PADA 4 0x24
+i100439e0 inner ?g_106bda84@@3PADA 4 .bss 0x24
 bss_bss localize ?g_106bda84@@3PADA
-i10389e20 inner ?g_1093b7a8@@3PADA 4 0x30
+i10389e20 inner ?g_1093b7a8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b7a8@@3PADA
-i101d8580 inner ?g_1073919c@@3PADA 4 0x8
+i101d8580 inner ?g_1073919c@@3PADA 4 .bss 0x8
 bss_bss localize ?g_1073919c@@3PADA
-i103a4ed0 inner ?g_1093c14c@@3PAVConVar@@A 4 0x4
+i103a4ed0 inner ?g_1093c14c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093c14c@@3PAVConVar@@A
-i10389e20 inner ?g_1093b790@@3PADA 4 0x18
+i10389e20 inner ?g_1093b790@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b790@@3PADA
-i10117cf0 inner ?g_1070adec@@3PAVConVar@@A 4 0x4
+i10117cf0 inner ?g_1070adec@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070adec@@3PAVConVar@@A
-i103895d0 inner ?g_1093b748@@3PADA 4 0x30
+i103895d0 inner ?g_1093b748@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b748@@3PADA
-i1038ada0 inner ?g_1093b814@@3PAUDebugCvarMB@@A 4 0x4
+i1038ada0 inner ?g_1093b814@@3PAUDebugCvarMB@@A 4 .bss 0x4
 bss_bss localize ?g_1093b814@@3PAUDebugCvarMB@@A
-i103a5d20 inner ?g_1093c408@@3PADA 4 0x18
+i103a5d20 inner ?g_1093c408@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c408@@3PADA
-i103a5d20 inner ?g_1093c420@@3PADA 4 0x30
+i103a5d20 inner ?g_1093c420@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c420@@3PADA
-i101ea4a0 inner ?g_1073a2fc@@3PAPAUSNameEntry@@A 4 0x18
+i101ea4a0 inner ?g_1073a2fc@@3PAPAUSNameEntry@@A 4 .bss 0x18
 bss_bss localize ?g_1073a2fc@@3PAPAUSNameEntry@@A
-i103e1440 inner ?g_1094056c@@3PAVCUnknown103e1680@@A 4 0x4
+i103e1440 inner ?g_1094056c@@3PAVCUnknown103e1680@@A 4 .bss 0x4
 bss_bss localize ?g_1094056c@@3PAVCUnknown103e1680@@A
-i103e1560 inner ?g_1094068c@@3HA 4 0x4
+i103e1560 inner ?g_1094068c@@3HA 4 .bss 0x4
 bss_bss localize ?g_1094068c@@3HA
-i103adb80 inner ?g_1093c538@@3PADA 4 0x18
+i103adb80 inner ?g_1093c538@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c538@@3PADA
-i103adb80 inner ?g_1093c550@@3PADA 4 0x30
+i103adb80 inner ?g_1093c550@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c550@@3PADA
-i100f6750 inner ?g_10703674@@3HA 4 0xc
+i100f6750 inner ?g_10703674@@3HA 4 .bss 0xc
 bss_bss localize ?g_10703674@@3HA
-i103b69a0 inner ?g_1093cebc@@3PAVCNPC_VTzimisceConVar@@A 4 0x4
+i103b69a0 inner ?g_1093cebc@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093cebc@@3PAVCNPC_VTzimisceConVar@@A
-i103e3870 inner ?g_10940954@@3PAVCUnknown103e1680@@A 4 0x4
+i103e3870 inner ?g_10940954@@3PAVCUnknown103e1680@@A 4 .bss 0x4
 bss_bss localize ?g_10940954@@3PAVCUnknown103e1680@@A
-i10359110 inner ?g_1093a0e8@@3PADA 4 0x18
+i10359110 inner ?g_1093a0e8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a0e8@@3PADA
-i10359d60 inner ?g_1093a1c0@@3PADA 4 0x18
+i10359d60 inner ?g_1093a1c0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a1c0@@3PADA
-i10391260 inner ?g_1093b930@@3PADA 4 0x18
+i10391260 inner ?g_1093b930@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b930@@3PADA
-i10080250 inner ?g_106c85d4@@3PAVConVar@@A 4 0x4
+i10080250 inner ?g_106c85d4@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_106c85d4@@3PAVConVar@@A
-i100f6930 inner ?g_10703654@@3PADA 4 0x4
+i100f6930 inner ?g_10703654@@3PADA 4 .bss 0x4
 bss_bss localize ?g_10703654@@3PADA
-i10117e10 inner ?g_1070aec4@@3PAVConVar@@A 4 0x4
+i10117e10 inner ?g_1070aec4@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070aec4@@3PAVConVar@@A
-i1036ad40 inner ?g_1093a984@@3PAUCChangBrosConVar@@A 4 0x4
+i1036ad40 inner ?g_1093a984@@3PAUCChangBrosConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093a984@@3PAUCChangBrosConVar@@A
-i103880d0 inner ?g_1093b638@@3PADA 4 0x30
+i103880d0 inner ?g_1093b638@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b638@@3PADA
-i103ddbc0 inner ?g_1094044c@@3PAVConVar@@A 4 0x4
+i103ddbc0 inner ?g_1094044c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1094044c@@3PAVConVar@@A
-i1037e460 inner ?g_1093b29c@@3PAUIPhysTune2@@A 4 0x4
+i1037e460 inner ?g_1093b29c@@3PAUIPhysTune2@@A 4 .bss 0x4
 bss_bss localize ?g_1093b29c@@3PAUIPhysTune2@@A
-i1036f3c0 inner ?g_1093a968@@3PADA 4 0x30
+i1036f3c0 inner ?g_1093a968@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a968@@3PADA
-i10387780 inner ?g_1093b568@@3PADA 4 0x30
+i10387780 inner ?g_1093b568@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b568@@3PADA
-i103b6fc0 inner ?g_1093cea0@@3PADA 4 0x30
+i103b6fc0 inner ?g_1093cea0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093cea0@@3PADA
-i101e4d70 inner ?g_10739f98@@3MA 4 0x290
+i101e4d70 inner ?g_10739f98@@3MA 4 .bss 0x290
 bss_bss localize ?g_10739f98@@3MA
-i101ea140 inner ?g_1073a2dc@@3HA 4 0x14
+i101ea140 inner ?g_1073a2dc@@3HA 4 .bss 0x14
 bss_bss localize ?g_1073a2dc@@3HA
-i103ddce0 inner ?g_1094049c@@3PAUCZombieGlobal@@A 4 0x4
+i103ddce0 inner ?g_1094049c@@3PAUCZombieGlobal@@A 4 .bss 0x4
 bss_bss localize ?g_1094049c@@3PAUCZombieGlobal@@A
-i1030f3f0 inner ?g_10936ba4@@3PAUCDevConVar@@A 4 0x4
+i1030f3f0 inner ?g_10936ba4@@3PAUCDevConVar@@A 4 .bss 0x4
 bss_bss localize ?g_10936ba4@@3PAUCDevConVar@@A
-i103895d0 inner ?g_1093b730@@3PADA 4 0x18
+i103895d0 inner ?g_1093b730@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b730@@3PADA
-i101177e0 inner ?g_1070accc@@3PAUCGameRulesView@@A 4 0x4
+i101177e0 inner ?g_1070accc@@3PAUCGameRulesView@@A 4 .bss 0x4
 bss_bss localize ?g_1070accc@@3PAUCGameRulesView@@A
-i103c4950 inner ?g_1093d288@@3PADA 4 0x30
+i103c4950 inner ?g_1093d288@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093d288@@3PADA
-i103c5140 inner ?g_1093d348@@3PADA 4 0x18
+i103c5140 inner ?g_1093d348@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093d348@@3PADA
-i103c5140 inner ?g_1093d360@@3PADA 4 0x30
+i103c5140 inner ?g_1093d360@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093d360@@3PADA
-i101f6890 inner ?g_1074df88@@3PADA 4 0x10
+i101f6890 inner ?g_1074df88@@3PADA 4 .bss 0x10
 bss_bss localize ?g_1074df88@@3PADA
-i1035ec80 inner ?g_1093a4c0@@3PADA 4 0x18
+i1035ec80 inner ?g_1093a4c0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a4c0@@3PADA
-i103c83c0 inner ?g_1093d414@@3PAUCWerewolfModeObj@@A 4 0x4
+i103c83c0 inner ?g_1093d414@@3PAUCWerewolfModeObj@@A 4 .bss 0x4
 bss_bss localize ?g_1093d414@@3PAUCWerewolfModeObj@@A
-i103b53a0 inner ?g_1093c918@@3PADA 4 0x18
+i103b53a0 inner ?g_1093c918@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c918@@3PADA
-i103b53a0 inner ?g_1093c930@@3PADA 4 0x30
+i103b53a0 inner ?g_1093c930@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c930@@3PADA
-i10366ce0 inner ?g_1093a6a0@@3PADA 4 0x18
+i10366ce0 inner ?g_1093a6a0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a6a0@@3PADA
-i1035ec80 inner ?g_1093a4d8@@3PADA 4 0x30
+i1035ec80 inner ?g_1093a4d8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a4d8@@3PADA
-i103b3b90 inner ?g_1093c848@@3PADA 4 0x18
+i103b3b90 inner ?g_1093c848@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c848@@3PADA
-i103b3b90 inner ?g_1093c860@@3PADA 4 0x30
+i103b3b90 inner ?g_1093c860@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c860@@3PADA
-i103dc820 inner ?g_109402c0@@3PADA 4 0x18
+i103dc820 inner ?g_109402c0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_109402c0@@3PADA
-i1003a580 inner ?g_106bbb14@@3PAUCUnkMgr@@A 4 0x4
+i1003a580 inner ?g_106bbb14@@3PAUCUnkMgr@@A 4 .bss 0x4
 bss_bss localize ?g_106bbb14@@3PAUCUnkMgr@@A
-i103a5930 inner ?g_1093c34c@@3PAUCUnk1093c34c@@A 4 0x4
+i103a5930 inner ?g_1093c34c@@3PAUCUnk1093c34c@@A 4 .bss 0x4
 bss_bss localize ?g_1093c34c@@3PAUCUnk1093c34c@@A
-i1035abb0 inner ?g_1093a2e0@@3PADA 4 0x18
+i1035abb0 inner ?g_1093a2e0@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a2e0@@3PADA
-i103b1c90 inner ?g_1093c650@@3PADA 4 0x18
+i103b1c90 inner ?g_1093c650@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c650@@3PADA
-i103c0b60 inner ?g_1093d190@@3PADA 4 0x30
+i103c0b60 inner ?g_1093d190@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093d190@@3PADA
-i103c0b60 inner ?g_1093d178@@3PADA 4 0x18
+i103c0b60 inner ?g_1093d178@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093d178@@3PADA
-i10119300 inner ?g_1070b184@@3PAVConVar@@A 4 0x4
+i10119300 inner ?g_1070b184@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1070b184@@3PAVConVar@@A
-i1031a1c0 inner ?g_10936de4@@3PAVCUnknown10936de4@@A 4 0x4
+i1031a1c0 inner ?g_10936de4@@3PAVCUnknown10936de4@@A 4 .bss 0x4
 bss_bss localize ?g_10936de4@@3PAVCUnknown10936de4@@A
-i10359d60 inner ?g_1093a1d8@@3PADA 4 0x30
+i10359d60 inner ?g_1093a1d8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a1d8@@3PADA
-i10391260 inner ?g_1093b948@@3PADA 4 0x30
+i10391260 inner ?g_1093b948@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093b948@@3PADA
-i103c2930 inner ?g_1093d208@@3PADA 4 0x30
+i103c2930 inner ?g_1093d208@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093d208@@3PADA
-i101e4d70 inner ?g_10739f9c@@3MA 4 0x294
+i101e4d70 inner ?g_10739f9c@@3MA 4 .bss 0x294
 bss_bss localize ?g_10739f9c@@3MA
-i10359bc0 inner ?g_1093a1f4@@3PAUSCvar@@A 4 0x4
+i10359bc0 inner ?g_1093a1f4@@3PAUSCvar@@A 4 .bss 0x4
 bss_bss localize ?g_1093a1f4@@3PAUSCvar@@A
-i1035abb0 inner ?g_1093a2f8@@3PADA 4 0x30
+i1035abb0 inner ?g_1093a2f8@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a2f8@@3PADA
-i103b1c90 inner ?g_1093c668@@3PADA 4 0x30
+i103b1c90 inner ?g_1093c668@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c668@@3PADA
-i101efbd0 inner ?g_1073a6dc@@3PAVCUnknown10924a1c@@A 4 0x4
+i101efbd0 inner ?g_1073a6dc@@3PAVCUnknown10924a1c@@A 4 .bss 0x4
 bss_bss localize ?g_1073a6dc@@3PAVCUnknown10924a1c@@A
-i101f0820 inner ?g_1073a9d4@@3PAHA 4 0x34
+i101f0820 inner ?g_1073a9d4@@3PAHA 4 .bss 0x34
 bss_bss localize ?g_1073a9d4@@3PAHA
-i1031a260 inner ?g_10937034@@3PAVCDevFlagObj@@A 4 0x4
+i1031a260 inner ?g_10937034@@3PAVCDevFlagObj@@A 4 .bss 0x4
 bss_bss localize ?g_10937034@@3PAVCDevFlagObj@@A
-i1035b3c0 inner ?g_1093a3c8@@3PADA 4 0x18
+i1035b3c0 inner ?g_1093a3c8@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093a3c8@@3PADA
-i1035b3c0 inner ?g_1093a3e0@@3PADA 4 0x30
+i1035b3c0 inner ?g_1093a3e0@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093a3e0@@3PADA
-i10119470 inner ?g_1070b07c@@3PAUConVarV@@A 4 0x4
+i10119470 inner ?g_1070b07c@@3PAUConVarV@@A 4 .bss 0x4
 bss_bss localize ?g_1070b07c@@3PAUConVarV@@A
-i10119590 inner ?g_1070b13c@@3PAUConVarV@@A 4 0x4
+i10119590 inner ?g_1070b13c@@3PAUConVarV@@A 4 .bss 0x4
 bss_bss localize ?g_1070b13c@@3PAUConVarV@@A
-i1038ae30 inner ?g_1093b85c@@3PAUCGameChecker@@A 4 0x4
+i1038ae30 inner ?g_1093b85c@@3PAUCGameChecker@@A 4 .bss 0x4
 bss_bss localize ?g_1093b85c@@3PAUCGameChecker@@A
-i101f0820 inner ?g_1073a9a4@@3HA 4 0x4
+i101f0820 inner ?g_1073a9a4@@3HA 4 .bss 0x4
 bss_bss localize ?g_1073a9a4@@3HA
-i103b2920 inner ?g_1093c720@@3PADA 4 0x30
+i103b2920 inner ?g_1093c720@@3PADA 4 .bss 0x30
 bss_bss localize ?g_1093c720@@3PADA
-i103b2920 inner ?g_1093c708@@3PADA 4 0x18
+i103b2920 inner ?g_1093c708@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093c708@@3PADA
-i101f0820 inner ?g_1073a9c0@@3PAPBDA 4 0x20
+i101f0820 inner ?g_1073a9c0@@3PAPBDA 4 .bss 0x20
 bss_bss localize ?g_1073a9c0@@3PAPBDA
-i103c4950 inner ?g_1093d270@@3PADA 4 0x18
+i103c4950 inner ?g_1093d270@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093d270@@3PADA
-i1023e420 inner ?g_10752c9c@@3PAUCQueueOwner@@A 4 0x4
+i1023e420 inner ?g_10752c9c@@3PAUCQueueOwner@@A 4 .bss 0x4
 bss_bss localize ?g_10752c9c@@3PAUCQueueOwner@@A
-i10346bb0 inner ?g_10936ccc@@3PAUCMeleeGlobal@@A 4 0x4
+i10346bb0 inner ?g_10936ccc@@3PAUCMeleeGlobal@@A 4 .bss 0x4
 bss_bss localize ?g_10936ccc@@3PAUCMeleeGlobal@@A
-i103b6a40 inner ?g_1093cfdc@@3PAVCNPC_VTzimisceConVar@@A 4 0x4
+i103b6a40 inner ?g_1093cfdc@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1093cfdc@@3PAVCNPC_VTzimisceConVar@@A

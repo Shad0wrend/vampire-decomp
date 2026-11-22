@@ -37,6 +37,7 @@ class Block:
     size: int
     kind: str  # "b" or "i"
     target: str | None  # the mangled symbol the block defines at addr; None for an initializer
+    digest: str | None = None  # sha1 (12 hex) of the block's unit when config/ was written (tools/blocks.unit_digest)
 
     @property
     def obj(self) -> str:
@@ -50,6 +51,7 @@ class Fixup:
     name: str
     section: int | None = None  # inner: the section the new symbol lies in
     value: int | None = None  # inner: its offset in that section
+    section_name: str | None = None  # inner: that section's name (the fix-up stops if the object's differs)
 
 
 @dataclass(frozen=True)
@@ -60,6 +62,7 @@ class LayoutRecord:
     name: str | None = None  # rename: the new section name
     addr: int | None = None  # gap: the game address the filler starts at
     size: int | None = None  # gap: its size
+    current: str | None = None  # rename: the section's name before (the fix-up stops if the object's differs)
 
 
 @dataclass(frozen=True)
@@ -114,16 +117,18 @@ def _write(path: Path, header: str, lines: Iterable[str]) -> None:
 
 def read_blocks(path: Path) -> list[Block]:
     out = []
-    for number, (addr, size, kind, target) in _fields(path, 4, 4):
+    for number, (addr, size, kind, target, *digest) in _fields(path, 4, 5):
         if kind not in KINDS:
             raise _bad(path, number, f"kind {kind!r}, expected b or i")
         out.append(Block(_int(path, number, addr, 16), _int(path, number, size, 0), kind,
-                         None if target == "-" else target))
+                         None if target == "-" else target, digest[0] if digest else None))
     return out
 
 
 def write_blocks(path: Path, blocks: Iterable[Block], header: str) -> None:
-    _write(path, header, (f"{b.addr:08x} 0x{b.size:x} {b.kind} {b.target or '-'}" for b in blocks))
+    def line(b: Block) -> str:
+        return f"{b.addr:08x} 0x{b.size:x} {b.kind} {b.target or '-'}" + (f" {b.digest}" if b.digest else "")
+    _write(path, header, (line(b) for b in blocks))
 
 
 def read_aliases(path: Path) -> dict[str, str]:
@@ -136,14 +141,15 @@ def write_aliases(path: Path, aliases: dict[str, str], header: str) -> None:
 
 def read_fixups(path: Path) -> list[Fixup]:
     out = []
-    for number, fields in _fields(path, 3, 5):
+    for number, fields in _fields(path, 3, 6):
         obj, op, name = fields[:3]
         if op not in FIXUP_OPS:
             raise _bad(path, number, f"operation {op!r}, expected one of {', '.join(FIXUP_OPS)}")
         if op == "inner":
-            if len(fields) != 5:
-                raise _bad(path, number, "inner takes NAME SECTION VALUE")
-            out.append(Fixup(obj, op, name, _int(path, number, fields[3], 10), _int(path, number, fields[4], 0)))
+            if len(fields) != 6:
+                raise _bad(path, number, "inner takes NAME SECTION SECTION-NAME VALUE")
+            out.append(Fixup(obj, op, name, _int(path, number, fields[3], 10), _int(path, number, fields[5], 0),
+                             fields[4]))
         elif len(fields) != 3:
             raise _bad(path, number, f"{op} takes one NAME")
         else:
@@ -153,26 +159,30 @@ def read_fixups(path: Path) -> list[Fixup]:
 
 def write_fixups(path: Path, fixups: Iterable[Fixup], header: str) -> None:
     def line(f: Fixup) -> str:
-        return f"{f.obj} {f.op} {f.name}" + (f" {f.section} 0x{f.value:x}" if f.op == "inner" else "")
+        return f"{f.obj} {f.op} {f.name}" + (f" {f.section} {f.section_name} 0x{f.value:x}" if f.op == "inner"
+                                             else "")
     _write(path, header, (line(f) for f in fixups))
 
 
 def read_layout(path: Path) -> list[LayoutRecord]:
     out = []
-    for number, fields in _fields(path, 3, 4):
+    for number, fields in _fields(path, 3, 5):
         op = fields[0]
-        if op == "rename" and len(fields) == 4:
-            out.append(LayoutRecord(op, obj=fields[1], section=_int(path, number, fields[2], 10), name=fields[3]))
+        if op == "rename" and len(fields) == 5:
+            out.append(LayoutRecord(op, obj=fields[1], section=_int(path, number, fields[2], 10), name=fields[4],
+                                    current=fields[3]))
         elif op == "gap" and len(fields) == 3:
             out.append(LayoutRecord(op, addr=_int(path, number, fields[1], 16), size=_int(path, number, fields[2], 0)))
         else:
-            raise _bad(path, number, "expected `rename OBJ SECTION NAME` or `gap ADDR SIZE`")
+            raise _bad(path, number, "expected `rename OBJ SECTION CURRENT-NAME NAME` or `gap ADDR SIZE`")
     return out
 
 
 def write_layout(path: Path, records: Iterable[LayoutRecord], header: str) -> None:
     def line(r: LayoutRecord) -> str:
-        return f"rename {r.obj} {r.section} {r.name}" if r.op == "rename" else f"gap {r.addr:08x} 0x{r.size:x}"
+        if r.op == "rename":
+            return f"rename {r.obj} {r.section} {r.current} {r.name}"
+        return f"gap {r.addr:08x} 0x{r.size:x}"
     _write(path, header, (line(r) for r in records))
 
 

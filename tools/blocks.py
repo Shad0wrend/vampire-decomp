@@ -6,6 +6,7 @@ after the prelude header (`#include "<prelude>"`). Merging blocks into one unit 
 
 from __future__ import annotations
 
+import hashlib
 import re
 from pathlib import Path
 
@@ -30,6 +31,11 @@ def split(text: str) -> dict[int, str]:
 
 def translation_unit(prelude: str, source: str) -> str:
     return f'#include "{prelude}"\n{source.strip()}\n'
+
+
+def unit_digest(data: bytes) -> str:
+    """A unit's digest as config/blocks.txt keeps it: the first 12 hex digits of the sha1 of its bytes."""
+    return hashlib.sha1(data).hexdigest()[:12]
 
 
 def sources(src_dir: Path) -> dict[int, tuple[Path, str]]:
