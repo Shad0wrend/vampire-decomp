@@ -32151,6 +32151,17 @@ float CUnknown100f1850::sub_100f1850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1860 size=0x8
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+struct CUnknown100f1860 { int sub_100f1860(); };
+int CUnknown100f1860::sub_100f1860()
+{
+    return ((lifted::V *)this)->f21(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2490 size=0x3
 void __stdcall sub_100f2490(int a0)
 {
