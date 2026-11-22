@@ -5751,6 +5751,7 @@
 0x101c84a0 func   ??_GPropertySheet@vgui2@@UAEPAXI@Z ??_GPropertySheet@vgui2@@UAEPAXI@Z
 0x101c84c0 func   ??1PropertySheet@vgui2@@UAE@XZ vgui2::PropertySheet::~PropertySheet
 0x101c87c0 func   ?vfunc109@PropertySheet@vgui2@@UAEHH@Z vgui2::PropertySheet::vfunc109
+0x101c87e0 func   ?vfunc110@PropertySheet@vgui2@@UAEHH@Z vgui2::PropertySheet::vfunc110
 0x101c89f0 func   ?vfunc112@PropertySheet@vgui2@@UAEHXZ vgui2::PropertySheet::vfunc112
 0x101c8a00 func   ?vfunc119@PropertySheet@vgui2@@UAEHXZ vgui2::PropertySheet::vfunc119
 0x101c8a10 func   ?vfunc123@PropertySheet@vgui2@@UAEHXZ vgui2::PropertySheet::vfunc123
