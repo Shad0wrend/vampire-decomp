@@ -15,6 +15,17 @@ void C_BaseCombatWeapon::vfunc144()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003020 size=0x7
+#include "C_BaseCombatWeapon.h"
+namespace lifted {
+extern float g_101e4408;
+}
+float C_BaseCombatWeapon::vfunc151()
+{
+    return lifted::g_101e4408;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003030 size=0x3
 #include "C_BaseCombatWeapon.h"
 bool C_BaseCombatWeapon::vfunc154()
