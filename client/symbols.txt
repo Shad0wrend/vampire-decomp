@@ -4886,6 +4886,7 @@
 0x10178830 func   ??1CharEditEquipPanel@@UAE@XZ CharEditEquipPanel::~CharEditEquipPanel
 0x10178850 func   ??_GCharEditEquipPanel@@UAEPAXI@Z ??_GCharEditEquipPanel@@UAEPAXI@Z
 0x1017a7c0 func   ?sub_1017a7c0@@YGXH@Z sub_1017a7c0
+0x1017a7d0 func   ?vfunc119@CharEditEquipPanel@@UAEXXZ CharEditEquipPanel::vfunc119
 0x1017a7e0 func   ?sub_1017a7e0@@YAXXZ sub_1017a7e0
 0x1017ac30 func   ?sub_1017ac30@@YAXXZ sub_1017ac30
 0x1017b160 func   ??_GVRButton@@UAEPAXI@Z ??_GVRButton@@UAEPAXI@Z
