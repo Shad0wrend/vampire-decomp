@@ -10,3 +10,11 @@ C_ResearchBook_HG_MELEE *pcd_emit_10011a90() { return new C_ResearchBook_HG_MELE
 
 // TARGET: ??_GC_ResearchBook_HG_MELEE@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10011ac0 size=0x3
+#include "C_ResearchBook_HG_MELEE.h"
+int C_ResearchBook_HG_MELEE::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
