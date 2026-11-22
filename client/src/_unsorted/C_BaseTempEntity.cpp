@@ -58,3 +58,10 @@ C_BaseTempEntity *pcd_emit_1002c370() { return new C_BaseTempEntity; }
 
 // TARGET: ??_GC_BaseTempEntity@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1002c3c0 size=0x1
+#include "C_BaseTempEntity.h"
+void C_BaseTempEntity::vfunc13()
+{
+}
+// END FUNCTION
