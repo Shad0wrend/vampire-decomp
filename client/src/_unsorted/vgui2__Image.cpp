@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10164480 size=0x5
+#include "vgui2__Image.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual int f11(); };
+}
+int vgui2::Image::vfunc7()
+{
+    return ((lifted::V *)this)->f11();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b68e0 size=0x1e
 #include "vgui2__Image.h"
 
