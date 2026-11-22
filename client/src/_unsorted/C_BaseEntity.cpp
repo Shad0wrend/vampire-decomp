@@ -450,6 +450,20 @@ int C_BaseEntity::vfunc62()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2000 size=0x16
+#include "C_BaseEntity.h"
+namespace lifted {
+int sub_1009e240();
+}
+void C_BaseEntity::vfunc29(char a0)
+{
+    *(char *)((char *)this + 0x12d) = a0;
+    if (a0 != 0) {
+        lifted::sub_1009e240();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2350 size=0x7
 #include "C_BaseEntity.h"
 char * C_BaseEntity::vfunc43()
