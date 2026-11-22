@@ -22,6 +22,17 @@ C_ItemGCashBox *pcd_emit_10017990() { return new C_ItemGCashBox; }
 // TARGET: ??_GC_ItemGCashBox@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100179b0 size=0x6
+#include "C_ItemGCashBox.h"
+namespace lifted {
+extern char g_10274718;
+}
+int C_ItemGCashBox::vfunc16()
+{
+    return (int)&lifted::g_10274718;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100179c0 size=0x3
 #include "C_ItemGCashBox.h"
 int C_ItemGCashBox::vfunc15()
