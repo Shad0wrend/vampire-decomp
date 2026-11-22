@@ -765,6 +765,7 @@
 0x1001f450 func   ?sub_1001f450@@YAHXZ sub_1001f450
 0x1001f570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysCD@@@Z ClientClassInit
 0x1001f690 func   ??_GC_ItemGGarysFilm@@UAEPAXI@Z ??_GC_ItemGGarysFilm@@UAEPAXI@Z
+0x1001f6c0 func   ?vfunc15@C_ItemGGarysFilm@@UAEHXZ C_ItemGGarysFilm::vfunc15
 0x1001f6d0 func   ?sub_1001f6d0@@YAHXZ sub_1001f6d0
 0x1001f7f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysFilm@@@Z ClientClassInit
 0x1001f910 func   ??_GC_ItemGGarysPhoto@@UAEPAXI@Z ??_GC_ItemGGarysPhoto@@UAEPAXI@Z

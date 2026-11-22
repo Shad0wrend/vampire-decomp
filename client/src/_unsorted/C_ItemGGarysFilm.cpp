@@ -10,3 +10,11 @@ C_ItemGGarysFilm *pcd_emit_1001f690() { return new C_ItemGGarysFilm; }
 
 // TARGET: ??_GC_ItemGGarysFilm@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001f6c0 size=0x3
+#include "C_ItemGGarysFilm.h"
+int C_ItemGGarysFilm::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
