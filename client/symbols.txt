@@ -5193,6 +5193,7 @@
 0x101b1830 func   ?sub_101b1830@CUnknown101b1830@@QAEDD@Z CUnknown101b1830::sub_101b1830
 0x101b1870 func   ?sub_101b1870@CUnknown101b1870@@QAEHH@Z CUnknown101b1870::sub_101b1870
 0x101b1880 func   ?sub_101b1880@CUnknown101b1880@@QAEHXZ CUnknown101b1880::sub_101b1880
+0x101b1a20 func   ?vfunc151@TextEntry@vgui2@@UAEHHH@Z vgui2::TextEntry::vfunc151
 0x101b1c60 func   ?vfunc102@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc102
 0x101b1e60 func   ?sub_101b1e60@UtlMem@@QAEXXZ UtlMem::sub_101b1e60
 0x101b2080 func   ??_GLabel@vgui2@@UAEPAXI@Z ??_GLabel@vgui2@@UAEPAXI@Z
