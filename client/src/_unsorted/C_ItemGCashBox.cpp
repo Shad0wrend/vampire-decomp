@@ -10,3 +10,11 @@ C_ItemGCashBox *pcd_emit_10017990() { return new C_ItemGCashBox; }
 
 // TARGET: ??_GC_ItemGCashBox@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100179c0 size=0x3
+#include "C_ItemGCashBox.h"
+int C_ItemGCashBox::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
