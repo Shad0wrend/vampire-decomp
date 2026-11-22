@@ -43119,6 +43119,18 @@ bool sub_101274d0(CBoolListView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127510 size=0x26
+int sub_10127510(int a0, int a1, int a2)
+{
+    int t0 = *(int *)((char *)a0 + 4);
+    *(char *)((char *)a2 + 3) = (char)t0;
+    *(char *)((char *)a2) = (char)((unsigned)t0 >> 0x18);
+    *(char *)((char *)a2 + 1) = (char)((unsigned)t0 >> 0x10);
+    *(char *)((char *)a2 + 2) = (char)((unsigned)t0 >> 8);
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101275e0 size=0xb
 namespace lifted {
 extern int g_104e1bf0;
