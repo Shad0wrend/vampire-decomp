@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10020a00 size=0x6
+#include "C_ItemGSewerBook1.h"
+namespace lifted {
+extern char g_102739e8;
+}
+int C_ItemGSewerBook1::vfunc17()
+{
+    return (int)&lifted::g_102739e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020a90 size=0x1e
 #include "C_ItemGSewerBook1.h"
 
