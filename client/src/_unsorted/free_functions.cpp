@@ -62188,6 +62188,17 @@ char sub_10193280()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193290 size=0x5
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual int f12(); };
+}
+struct CUnknown10193290 { int sub_10193290(); };
+int CUnknown10193290::sub_10193290()
+{
+    return ((lifted::V *)this)->f12();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101932a0 size=0x6
 int sub_101932a0()
 {
