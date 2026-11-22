@@ -5246,6 +5246,7 @@
 0x10189c40 func   ?vfunc13@CGUIClientRenderable@@UAEPADXZ CGUIClientRenderable::vfunc13
 0x1018b250 func   ??_GCStudiomodelPanel@@UAEPAXI@Z ??_GCStudiomodelPanel@@UAEPAXI@Z
 0x1018b270 func   ??1CStudiomodelPanel@@UAE@XZ CStudiomodelPanel::~CStudiomodelPanel
+0x1018b320 func   ?sub_1018b320@CUnknown1018b320@@QAEHH@Z CUnknown1018b320::sub_1018b320
 0x1018b350 func   ?sub_1018b350@CUnknown1018b350@@QAEHH@Z CUnknown1018b350::sub_1018b350
 0x1018bcc0 func   ?sub_1018bcc0@CUnknown1018bcc0@@QAEXXZ CUnknown1018bcc0::sub_1018bcc0
 0x1018be50 func   ?vfunc89@CStudiomodelPanel@@UAEXH@Z CStudiomodelPanel::vfunc89
