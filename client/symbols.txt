@@ -2352,6 +2352,7 @@
 0x100bd350 func   ??1C_PlayerResource@@UAE@XZ C_PlayerResource::~C_PlayerResource
 0x100bd4c0 func   ?sub_100bd4c0@PRView@@QAEHH@Z PRView::sub_100bd4c0
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
+0x100bd710 func   ?vfunc15@C_DynamicProp@@UAEHXZ C_DynamicProp::vfunc15
 0x100bd720 func   ?sub_100bd720@@YAHXZ sub_100bd720
 0x100bd820 func   ?ClientClassInit@@YAHPAUignored@DT_DynamicProp@@@Z ClientClassInit
 0x100bd8e0 func   ??_GC_DynamicProp@@UAEPAXI@Z ??_GC_DynamicProp@@UAEPAXI@Z
