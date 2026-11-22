@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000b600 size=0x6
+#include "C_WeaponRanged_Tzimisce2Head.h"
+namespace lifted {
+extern char g_10272b08;
+}
+int C_WeaponRanged_Tzimisce2Head::vfunc17()
+{
+    return (int)&lifted::g_10272b08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b690 size=0x1e
 #include "C_WeaponRanged_Tzimisce2Head.h"
 
