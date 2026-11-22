@@ -47029,6 +47029,19 @@ void sub_101433b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143500 size=0x11
+namespace lifted {
+struct C10142000 { int sub_10142000(); };
+int sub_101435f0();
+}
+struct CUnknown10143500 { int sub_10143500(); };
+int CUnknown10143500::sub_10143500()
+{
+    lifted::sub_101435f0();
+    return ((lifted::C10142000 *)((char *)this + 0x14))->sub_10142000();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101437b0 size=0x14
 struct CUnknown101437b0 { void * sub_101437b0(); };
 void * CUnknown101437b0::sub_101437b0()
