@@ -60432,6 +60432,18 @@ int sub_10173750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174450 size=0x1c
+struct CUnk102036e0Target { void sub_10174470(int a); };
+struct CUnk102036e0Table { CUnk102036e0Target *sub_100f0ed0(const char *name); };
+extern CUnk102036e0Table g_104cfe38;
+
+// TARGET: sub_10174450
+void sub_10174450(int a)
+{
+	g_104cfe38.sub_100f0ed0("CharEditPanel")->sub_10174470(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101745c0 size=0x6
 namespace lifted {
 extern char g_102cfdf0;
