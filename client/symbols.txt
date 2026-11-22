@@ -1105,6 +1105,7 @@
 0x1001fa70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysPhoto@@@Z ClientClassInit
 0x1001fb00 func   ?vfunc17@C_ItemGGarysTape@@UAEHXZ C_ItemGGarysTape::vfunc17
 0x1001fb90 func   ??_GC_ItemGGarysTape@@UAEPAXI@Z ??_GC_ItemGGarysTape@@UAEPAXI@Z
+0x1001fbb0 func   ?vfunc16@C_ItemGGarysTape@@UAEHXZ C_ItemGGarysTape::vfunc16
 0x1001fbc0 func   ?vfunc15@C_ItemGGarysTape@@UAEHXZ C_ItemGGarysTape::vfunc15
 0x1001fbd0 func   ?sub_1001fbd0@@YAHXZ sub_1001fbd0
 0x1001fcf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysTape@@@Z ClientClassInit
