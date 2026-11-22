@@ -22,6 +22,17 @@ C_ItemGWirelessCamera3 *pcd_emit_1001ce90() { return new C_ItemGWirelessCamera3;
 // TARGET: ??_GC_ItemGWirelessCamera3@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001ceb0 size=0x6
+#include "C_ItemGWirelessCamera3.h"
+namespace lifted {
+extern char g_10274424;
+}
+int C_ItemGWirelessCamera3::vfunc16()
+{
+    return (int)&lifted::g_10274424;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001cec0 size=0x3
 #include "C_ItemGWirelessCamera3.h"
 int C_ItemGWirelessCamera3::vfunc15()
