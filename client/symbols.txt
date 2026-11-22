@@ -4820,6 +4820,7 @@
 0x10167e70 func   ??_GCMeasureTimePanel@@UAEPAXI@Z ??_GCMeasureTimePanel@@UAEPAXI@Z
 0x10167e90 func   ??1CMeasureTimePanel@@UAE@XZ CMeasureTimePanel::~CMeasureTimePanel
 0x10167e90 func   ?sub_10167e90@CUnknown10167e90@@QAEHXZ CUnknown10167e90::sub_10167e90
+0x101681f0 func   ?vfunc25@CMessageCharsPanel@@UAE_NHH@Z CMessageCharsPanel::vfunc25
 0x10168200 func   ??_GCMessageCharsPanel@@UAEPAXI@Z ??_GCMessageCharsPanel@@UAEPAXI@Z
 0x10168220 func   ??1CMessageCharsPanel@@UAE@XZ CMessageCharsPanel::~CMessageCharsPanel
 0x10168220 func   ?sub_10168220@CUnknown10168220@@QAEHXZ CUnknown10168220::sub_10168220

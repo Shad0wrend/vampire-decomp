@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101681f0 size=0x5
+#include "CMessageCharsPanel.h"
+bool CMessageCharsPanel::vfunc25(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168200 size=0x1e
 #include "CMessageCharsPanel.h"
 
