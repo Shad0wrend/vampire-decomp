@@ -49,6 +49,31 @@ int C_BaseGrenade::vfunc153(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f080 size=0x6c
+#include "C_BaseGrenade.h"
+namespace lifted {
+extern char g_102ac770;
+extern char g_102ac78c;
+extern char g_102ac7a8;
+extern char g_102ac7c4;
+extern char g_102ac7d8;
+extern char g_102ac7ec;
+extern int g_104a5818;
+int sub_1009e060();
+struct V { virtual int f0(int, int); };
+}
+void C_BaseGrenade::vfunc21()
+{
+    lifted::sub_1009e060();
+    ((lifted::V *)lifted::g_104a5818)->f0((int)&lifted::g_102ac7ec, 0);
+    ((lifted::V *)lifted::g_104a5818)->f0((int)&lifted::g_102ac7d8, 0);
+    ((lifted::V *)lifted::g_104a5818)->f0((int)&lifted::g_102ac7c4, 0);
+    ((lifted::V *)lifted::g_104a5818)->f0((int)&lifted::g_102ac770, 0);
+    ((lifted::V *)lifted::g_104a5818)->f0((int)&lifted::g_102ac7a8, 0);
+    ((lifted::V *)lifted::g_104a5818)->f0((int)&lifted::g_102ac78c, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f160 size=0x4
 #include "C_BaseGrenade.h"
 int C_BaseGrenade::vfunc152()
