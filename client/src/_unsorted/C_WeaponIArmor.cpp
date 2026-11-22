@@ -22,6 +22,17 @@ C_WeaponIArmor *pcd_emit_10015190() { return new C_WeaponIArmor; }
 // TARGET: ??_GC_WeaponIArmor@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100151b0 size=0x6
+#include "C_WeaponIArmor.h"
+namespace lifted {
+extern char g_102748b0;
+}
+int C_WeaponIArmor::vfunc16()
+{
+    return (int)&lifted::g_102748b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100151c0 size=0x3
 #include "C_WeaponIArmor.h"
 int C_WeaponIArmor::vfunc15()
