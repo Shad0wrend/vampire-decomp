@@ -5247,6 +5247,7 @@
 0x10163a50 func   ?sub_10163a50@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10163a50
 0x10163ac0 func   ?sub_10163ac0@CUnknown10163ac0@@QAEPAXHH@Z CUnknown10163ac0::sub_10163ac0
 0x10163b10 func   ??_GCBasePanel@@UAEPAXI@Z ??_GCBasePanel@@UAEPAXI@Z
+0x10163b30 func   ?sub_10163b30@CUnknown10163b30@@QAEPAXHHHHHH@Z CUnknown10163b30::sub_10163b30
 0x10163b90 func   ??1CBasePanel@@UAE@XZ CBasePanel::~CBasePanel
 0x10163b90 func   ?sub_10163b90@CUnknown10163b90@@QAEHXZ CUnknown10163b90::sub_10163b90
 0x10163d90 func   ?vfunc110@CBasePanel@@UAEXXZ CBasePanel::vfunc110
