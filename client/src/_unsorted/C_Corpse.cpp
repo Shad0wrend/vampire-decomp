@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002bc0 size=0x6
+#include "C_Corpse.h"
+namespace lifted {
+extern char g_102710cc;
+}
+int C_Corpse::vfunc16()
+{
+    return (int)&lifted::g_102710cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002bd0 size=0x3
 #include "C_Corpse.h"
 int C_Corpse::vfunc15()
