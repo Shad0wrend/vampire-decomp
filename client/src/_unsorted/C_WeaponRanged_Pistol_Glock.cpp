@@ -10,3 +10,11 @@ C_WeaponRanged_Pistol_Glock *pcd_emit_1000e110() { return new C_WeaponRanged_Pis
 
 // TARGET: ??_GC_WeaponRanged_Pistol_Glock@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000e140 size=0x3
+#include "C_WeaponRanged_Pistol_Glock.h"
+int C_WeaponRanged_Pistol_Glock::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
