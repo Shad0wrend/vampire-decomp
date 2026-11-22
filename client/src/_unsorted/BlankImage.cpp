@@ -14,3 +14,10 @@ void BlankImage::vfunc1(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c9bb0 size=0x3
+#include "BlankImage.h"
+void BlankImage::vfunc6(int a0, int a1)
+{
+}
+// END FUNCTION
