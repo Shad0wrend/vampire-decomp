@@ -22,6 +22,17 @@ C_WeaponMelee_Baton *pcd_emit_10009b10() { return new C_WeaponMelee_Baton; }
 // TARGET: ??_GC_WeaponMelee_Baton@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10009b30 size=0x6
+#include "C_WeaponMelee_Baton.h"
+namespace lifted {
+extern char g_10274fe4;
+}
+int C_WeaponMelee_Baton::vfunc16()
+{
+    return (int)&lifted::g_10274fe4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009b40 size=0x3
 #include "C_WeaponMelee_Baton.h"
 int C_WeaponMelee_Baton::vfunc15()
