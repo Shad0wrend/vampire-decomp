@@ -10,3 +10,11 @@ C_ItemGEDaneReport *pcd_emit_1001b310() { return new C_ItemGEDaneReport; }
 
 // TARGET: ??_GC_ItemGEDaneReport@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001b340 size=0x3
+#include "C_ItemGEDaneReport.h"
+int C_ItemGEDaneReport::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
