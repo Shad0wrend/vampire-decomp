@@ -26,6 +26,14 @@ void C_BaseViewModel::vfunc21()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f950 size=0x3
+#include "C_BaseViewModel.h"
+int C_BaseViewModel::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab500 size=0x3
 #include "C_BaseViewModel.h"
 bool C_BaseViewModel::vfunc142()
