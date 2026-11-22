@@ -22,6 +22,17 @@ C_ItemKTatooParlorKey *pcd_emit_10024190() { return new C_ItemKTatooParlorKey; }
 // TARGET: ??_GC_ItemKTatooParlorKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100241b0 size=0x6
+#include "C_ItemKTatooParlorKey.h"
+namespace lifted {
+extern char g_10274010;
+}
+int C_ItemKTatooParlorKey::vfunc16()
+{
+    return (int)&lifted::g_10274010;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100241c0 size=0x3
 #include "C_ItemKTatooParlorKey.h"
 int C_ItemKTatooParlorKey::vfunc15()
