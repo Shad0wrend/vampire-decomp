@@ -22,6 +22,17 @@ C_WeaponRanged_Rifle_RemingtonBach *pcd_emit_1000cf90() { return new C_WeaponRan
 // TARGET: ??_GC_WeaponRanged_Rifle_RemingtonBach@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000cfb0 size=0x6
+#include "C_WeaponRanged_Rifle_RemingtonBach.h"
+namespace lifted {
+extern char g_10274d70;
+}
+int C_WeaponRanged_Rifle_RemingtonBach::vfunc16()
+{
+    return (int)&lifted::g_10274d70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000cfc0 size=0x3
 #include "C_WeaponRanged_Rifle_RemingtonBach.h"
 int C_WeaponRanged_Rifle_RemingtonBach::vfunc15()
