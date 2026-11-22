@@ -2115,6 +2115,7 @@
 0x100a0470 func   ?PostDataUpdate@C_BaseEntity@@UAEXH@Z C_BaseEntity::PostDataUpdate
 0x100a06e0 func   ?vfunc67@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc67
 0x100a08e0 func   ?vfunc71@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc71
+0x100a0bc0 func   ?vfunc74@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc74
 0x100a11f0 func   ?vfunc82@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc82
 0x100a1200 func   ?ClientThink@C_BaseEntity@@UAEXXZ C_BaseEntity::ClientThink
 0x100a1200 func   ?sub_100a1200@@YAXXZ sub_100a1200
