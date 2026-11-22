@@ -5715,6 +5715,7 @@
 0x101bf110 func   ?vfunc112@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc112
 0x101bf120 func   ?vfunc113@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc113
 0x101bf200 func   ?vfunc117@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc117
+0x101bf2d0 func   ?vfunc11@ScrollBar@vgui2@@UAEXHH@Z vgui2::ScrollBar::vfunc11
 0x101bf300 func   ?vfunc118@ScrollBar@vgui2@@UAEHH@Z vgui2::ScrollBar::vfunc118
 0x101bf310 func   ?vfunc110@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc110
 0x101bf320 func   ?vfunc111@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc111
