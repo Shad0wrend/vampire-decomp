@@ -19217,6 +19217,20 @@ int sub_1007a690(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a6d0 size=0x12
+namespace lifted {
+extern char g_1022b9d8;
+int sub_1007a800();
+}
+struct CUnknown1007a6d0 { void * sub_1007a6d0(); };
+void * CUnknown1007a6d0::sub_1007a6d0()
+{
+    *(int *)this = (int)&lifted::g_1022b9d8;
+    lifted::sub_1007a800();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a800 size=0x9
 struct CUnknown1007a800 { int sub_1007a800(); };
 int CUnknown1007a800::sub_1007a800()
