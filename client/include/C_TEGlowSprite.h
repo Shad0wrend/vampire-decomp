@@ -8,4 +8,6 @@ class C_TEGlowSprite : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEGlowSprite();
+public:
+	virtual int vfunc9();
 };

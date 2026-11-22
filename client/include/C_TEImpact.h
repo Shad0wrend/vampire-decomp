@@ -8,4 +8,14 @@ class C_TEImpact : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEImpact();
+public:
+	virtual int vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual void vfunc13();
+	virtual void vfunc14();
+	virtual void vfunc15();
+	virtual void vfunc16(int);
+	virtual void vfunc17(int, int);
 };

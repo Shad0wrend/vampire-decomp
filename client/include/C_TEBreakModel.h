@@ -8,4 +8,6 @@ class C_TEBreakModel : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEBreakModel();
+public:
+	virtual int vfunc9();
 };

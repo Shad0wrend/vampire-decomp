@@ -8,4 +8,6 @@ class C_TEFizz : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEFizz();
+public:
+	virtual int vfunc9();
 };

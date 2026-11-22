@@ -5,4 +5,6 @@
 
 class C_TEConcussiveExplosion : public C_TEParticleSystem
 {
+public:
+    virtual int vfunc9();
 };

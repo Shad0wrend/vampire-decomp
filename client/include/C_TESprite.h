@@ -8,4 +8,6 @@ class C_TESprite : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TESprite();
+public:
+	virtual int vfunc9();
 };

@@ -4,4 +4,6 @@
 
 class IPrototypeAppEffect
 {
+public:
+    bool vfunc2(int, int);
 };

@@ -8,4 +8,6 @@ class C_TEBloodStream : public C_TEParticleSystem
 {
 public:
 	virtual ~C_TEBloodStream();
+public:
+	virtual int vfunc9();
 };

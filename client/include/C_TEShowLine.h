@@ -8,4 +8,6 @@ class C_TEShowLine : public C_TEParticleSystem
 {
 public:
 	virtual ~C_TEShowLine();
+public:
+	virtual int vfunc9();
 };

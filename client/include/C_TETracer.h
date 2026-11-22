@@ -8,4 +8,6 @@ class C_TETracer : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TETracer();
+public:
+	virtual int vfunc9();
 };

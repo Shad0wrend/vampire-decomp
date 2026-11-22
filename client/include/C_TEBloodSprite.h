@@ -8,4 +8,6 @@ class C_TEBloodSprite : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEBloodSprite();
+public:
+	virtual int vfunc9();
 };

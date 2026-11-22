@@ -8,4 +8,6 @@ class C_TETParticle : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TETParticle();
+public:
+	virtual int vfunc9();
 };

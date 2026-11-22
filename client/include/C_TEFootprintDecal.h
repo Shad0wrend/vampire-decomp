@@ -8,4 +8,6 @@ class C_TEFootprintDecal : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEFootprintDecal();
+public:
+	virtual int vfunc9();
 };

@@ -5,4 +5,6 @@
 
 class C_TEArmorRicochet : public C_TEMetalSparks
 {
+public:
+    virtual int vfunc9();
 };

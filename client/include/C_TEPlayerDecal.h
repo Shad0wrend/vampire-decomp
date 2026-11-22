@@ -8,4 +8,6 @@ class C_TEPlayerDecal : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEPlayerDecal();
+public:
+	virtual int vfunc9();
 };

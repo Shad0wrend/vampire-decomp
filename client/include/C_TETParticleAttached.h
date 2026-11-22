@@ -5,4 +5,6 @@
 
 class C_TETParticleAttached : public C_BaseTempEntity
 {
+public:
+    virtual int vfunc9();
 };

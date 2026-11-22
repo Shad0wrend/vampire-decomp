@@ -8,4 +8,10 @@ class C_World : public C_BaseEntity
 {
 public:
 	virtual ~C_World();
+public:
+	virtual void vfunc62();
+	virtual void vfunc63();
+	virtual void vfunc64();
+	virtual void vfunc65();
+	virtual int vfunc66();
 };

@@ -8,4 +8,6 @@ class C_TEBubbleTrail : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEBubbleTrail();
+public:
+	virtual int vfunc9();
 };

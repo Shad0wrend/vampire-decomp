@@ -8,4 +8,6 @@ class C_TEBeamLaser : public C_TEBaseBeam
 {
 public:
 	virtual ~C_TEBeamLaser();
+public:
+	virtual int vfunc9();
 };

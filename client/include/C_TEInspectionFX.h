@@ -8,4 +8,10 @@ class C_TEInspectionFX : public C_TEParticleSystem
 {
 public:
 	virtual ~C_TEInspectionFX();
+public:
+	virtual int vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual void vfunc13();
 };

@@ -8,4 +8,6 @@ class C_TEMuzzleFlash : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEMuzzleFlash();
+public:
+	virtual int vfunc9();
 };

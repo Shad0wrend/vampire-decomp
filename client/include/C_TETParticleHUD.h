@@ -5,4 +5,6 @@
 
 class C_TETParticleHUD : public C_BaseTempEntity
 {
+public:
+    virtual int vfunc9();
 };

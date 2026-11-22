@@ -8,4 +8,10 @@ class CBaseAnimatedTextureProxy : public IMaterialProxy
 {
 public:
 	virtual ~CBaseAnimatedTextureProxy();
+public:
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5(int);
 };

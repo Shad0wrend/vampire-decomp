@@ -8,4 +8,6 @@ class C_TEDynamicLight : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEDynamicLight();
+public:
+	virtual int vfunc9();
 };

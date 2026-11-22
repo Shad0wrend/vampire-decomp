@@ -8,4 +8,6 @@ class C_TEBeamRingPoint : public C_TEBaseBeam
 {
 public:
 	virtual ~C_TEBeamRingPoint();
+public:
+	virtual int vfunc9();
 };

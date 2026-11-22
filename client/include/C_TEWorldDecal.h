@@ -8,4 +8,6 @@ class C_TEWorldDecal : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEWorldDecal();
+public:
+	virtual int vfunc9();
 };

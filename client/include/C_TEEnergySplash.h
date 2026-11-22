@@ -8,4 +8,10 @@ class C_TEEnergySplash : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEEnergySplash();
+public:
+	virtual int vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual void vfunc13();
 };

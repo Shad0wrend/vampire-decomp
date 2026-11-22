@@ -8,4 +8,6 @@ class C_TEKillPlayerAttachments : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEKillPlayerAttachments();
+public:
+	virtual int vfunc9();
 };

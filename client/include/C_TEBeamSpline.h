@@ -8,4 +8,6 @@ class C_TEBeamSpline : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEBeamSpline();
+public:
+	virtual int vfunc9();
 };

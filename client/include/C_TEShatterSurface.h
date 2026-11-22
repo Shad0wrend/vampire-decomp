@@ -8,4 +8,6 @@ class C_TEShatterSurface : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEShatterSurface();
+public:
+	virtual int vfunc9();
 };

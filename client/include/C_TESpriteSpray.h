@@ -8,4 +8,6 @@ class C_TESpriteSpray : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TESpriteSpray();
+public:
+	virtual int vfunc9();
 };

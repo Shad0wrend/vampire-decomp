@@ -8,4 +8,6 @@ class C_TEBeamEnts : public C_TEBaseBeam
 {
 public:
 	virtual ~C_TEBeamEnts();
+public:
+	virtual int vfunc9();
 };

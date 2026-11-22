@@ -8,4 +8,6 @@ class C_TEBubbles : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEBubbles();
+public:
+	virtual int vfunc9();
 };

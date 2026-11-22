@@ -8,4 +8,6 @@ class C_TESmoke : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TESmoke();
+public:
+	virtual int vfunc9();
 };

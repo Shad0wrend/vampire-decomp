@@ -8,4 +8,6 @@ class C_TEFogRipple : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TEFogRipple();
+public:
+	virtual int vfunc9();
 };

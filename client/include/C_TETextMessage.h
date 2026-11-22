@@ -8,4 +8,6 @@ class C_TETextMessage : public C_BaseTempEntity
 {
 public:
 	virtual ~C_TETextMessage();
+public:
+	virtual int vfunc9();
 };

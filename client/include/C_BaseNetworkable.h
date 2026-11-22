@@ -33,4 +33,6 @@ public:
 	virtual int vfunc0(int a0);	// overrides IHandleEntity::vfunc0, pure there; C_BaseNetworkable has a vtable of its own in the game
 	virtual unsigned int *vfunc1();	// overrides IHandleEntity::vfunc1, pure there; C_BaseNetworkable has a vtable of its own in the game
 	virtual ~C_BaseNetworkable();
+public:
+	virtual int vfunc9();
 };
