@@ -19,6 +19,13 @@ C_BasePlayer *pcd_emit_100a54a0() { return new C_BasePlayer; }
 // TARGET: ??_GC_BasePlayer@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100a6e50 size=0x3
+#include "C_BasePlayer.h"
+void C_BasePlayer::vfunc154(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9df0 size=0x1
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc184()
