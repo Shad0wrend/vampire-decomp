@@ -19,6 +19,14 @@ bool vgui2::Frame::vfunc120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b8e90 size=0x7
+#include "vgui2__Frame.h"
+bool vgui2::Frame::vfunc122()
+{
+    return *(bool *)((char *)this + 0x8c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9120 size=0x7
 #include "vgui2__Frame.h"
 int vgui2::Frame::vfunc138()
