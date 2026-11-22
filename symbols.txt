@@ -3002,6 +3002,7 @@
 0x10004b79 func   ?sub_1036fbe0@@YIPAXPAX@Z sub_1036fbe0
 0x10004b7e func   ??0CVDmgBlock16_t@@QAE@XZ CVDmgBlock16_t::CVDmgBlock16_t
 0x10004b83 func   ?sub_1019f640@CRopeKeyframe@@QAEXPBD@Z CRopeKeyframe::sub_1019f640
+0x10004b88 func   ?WriteSaveHeaders@CPython_SaveRestoreBlockHandler@@UAEXPAVISave@@@Z CPython_SaveRestoreBlockHandler::WriteSaveHeaders
 0x10004b88 func   ?sub_1019b0c0@@YGXPAUCUnknown1019b0c0@@@Z sub_1019b0c0
 0x10004b8d func   ?sub_10004b8d@CNPC_VAsianVampire@@QAE_NPBM@Z CNPC_VAsianVampire::sub_10004b8d
 0x10004b92 func   ?sub_100a6150@CBaseEntity@@QAEHHHH@Z CBaseEntity::sub_100a6150
