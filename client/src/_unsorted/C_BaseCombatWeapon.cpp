@@ -97,6 +97,14 @@ bool C_BaseCombatWeapon::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100030f0 size=0x7
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::vfunc169()
+{
+    return *(int *)((char *)this + 0x950);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003110 size=0x3
 #include "C_BaseCombatWeapon.h"
 bool C_BaseCombatWeapon::vfunc186()
