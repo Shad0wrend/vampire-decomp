@@ -10,3 +10,11 @@ C_ItemGHattersScreenplay *pcd_emit_1001d610() { return new C_ItemGHattersScreenp
 
 // TARGET: ??_GC_ItemGHattersScreenplay@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001d640 size=0x3
+#include "C_ItemGHattersScreenplay.h"
+int C_ItemGHattersScreenplay::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
