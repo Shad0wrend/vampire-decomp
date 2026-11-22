@@ -1602,6 +1602,7 @@
 0x1009f350 func   ?sub_1009f350@CUnknown1009f350@@QAEPADXZ CUnknown1009f350::sub_1009f350
 0x1009f360 func   ?GetRenderAngles@C_BaseEntity@@UAEABVQAngle@@XZ C_BaseEntity::GetRenderAngles
 0x1009f360 func   ?sub_1009f360@CUnknown1009f360@@QAEPADXZ CUnknown1009f360::sub_1009f360
+0x1009f370 func   ?GetRenderBounds@C_BaseEntity@@UAEXAAVVector@@0@Z C_BaseEntity::GetRenderBounds
 0x1009f5c0 func   ?GetAbsOrigin@C_BaseEntity@@UBEABVVector@@XZ C_BaseEntity::GetAbsOrigin
 0x1009f5d0 func   ?vfunc11@C_BaseEntity@@UAEABVVector@@XZ C_BaseEntity::vfunc11
 0x1009f6a0 func   ?GetAbsAngles@C_BaseEntity@@UBEABVQAngle@@XZ C_BaseEntity::GetAbsAngles
