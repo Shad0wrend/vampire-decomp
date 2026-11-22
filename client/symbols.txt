@@ -2226,6 +2226,7 @@
 0x10068330 func   ?sub_10068330@@YAXXZ sub_10068330
 0x10078da0 func   ?sub_10078da0@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10078da0
 0x10078e10 func   ?sub_10078e10@CUnknown10078e10@@QAEPAXXZ CUnknown10078e10::sub_10078e10
+0x10078e20 func   ?vfunc2@CAlphaMaterialProxy@@UAEXXZ CAlphaMaterialProxy::vfunc2
 0x10078e50 func   ?sub_10078e50@CUnknown10078e50@@QAEXXZ CUnknown10078e50::sub_10078e50
 0x10078f20 func   ?sub_10078f20@CUnk10427480@@QAEPAHH@Z CUnk10427480::sub_10078f20
 0x10078f90 func   ?sub_10078f90@CTable@@QAEHH@Z CTable::sub_10078f90
