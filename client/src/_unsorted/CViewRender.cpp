@@ -96,3 +96,11 @@ int CViewRender::vfunc31()
     return *(int *)((char *)this + 0x3d8);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018e930 size=0x7
+#include "CViewRender.h"
+int CViewRender::vfunc32()
+{
+    return *(int *)((char *)this + 0x3e0);
+}
+// END FUNCTION
