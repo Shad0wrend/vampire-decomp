@@ -29698,6 +29698,32 @@ int sub_100c87b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c87d0 size=0x3e
+namespace lifted {
+extern int g_104a57d4;
+struct C100c8a40 { int sub_100c8a40(); };
+struct C100c8ad0 { int sub_100c8ad0(); };
+int sub_101d12a1(int);
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual int f51(); };
+}
+int sub_100c87d0()
+{
+    int t0 = ((lifted::V *)lifted::g_104a57d4)->f51();
+    if (t0 == 1) {
+        int t1 = lifted::sub_101d12a1(8);
+        if (t1 != 0) {
+            return ((lifted::C100c8a40 *)t1)->sub_100c8a40();
+        }
+        return 0;
+    }
+    int t2 = lifted::sub_101d12a1(8);
+    if (t2 != 0) {
+        return ((lifted::C100c8ad0 *)t2)->sub_100c8ad0();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8a80 size=0xb
 namespace lifted {
 extern char g_10233730;
