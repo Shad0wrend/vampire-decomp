@@ -27719,6 +27719,24 @@ int sub_100aaf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab7e0 size=0x64
+struct CUnknown100ab7e0 { int sub_100ab7e0(int, int, int, int, char); };
+int CUnknown100ab7e0::sub_100ab7e0(int a0, int a1, int a2, int a3, char a4)
+{
+    *(char *)((char *)this + 0x790) = 1;
+    *(int *)((char *)this + 0x794) = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x798) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x79c) = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x7a0) = *(int *)((char *)a1);
+    *(int *)((char *)this + 0x7a4) = *(int *)((char *)a1 + 4);
+    *(int *)((char *)this + 0x7a8) = *(int *)((char *)a1 + 8);
+    *(int *)((char *)this + 0x7ac) = a2;
+    *(int *)((char *)this + 0x7b4) = a3;
+    *(char *)((char *)this + 0x7b0) = a4;
+    return a3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100abf90 size=0x3
 char sub_100abf90()
 {
