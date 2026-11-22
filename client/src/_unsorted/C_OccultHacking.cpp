@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10012680 size=0x6
+#include "C_OccultHacking.h"
+namespace lifted {
+extern char g_10272ff4;
+}
+int C_OccultHacking::vfunc17()
+{
+    return (int)&lifted::g_10272ff4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012710 size=0x1e
 #include "C_OccultHacking.h"
 
