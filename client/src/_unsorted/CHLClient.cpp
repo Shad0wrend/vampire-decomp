@@ -67,3 +67,14 @@ void CHLClient::vfunc30(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cc700 size=0x10
+#include "CHLClient.h"
+namespace lifted {
+int sub_1012b830(int);
+}
+int CHLClient::vfunc33(int a0)
+{
+    return lifted::sub_1012b830(a0);
+}
+// END FUNCTION

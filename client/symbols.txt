@@ -3048,6 +3048,7 @@
 0x100cbee0 func   ?sub_100cbee0@@YAHHHHH@Z sub_100cbee0
 0x100cc560 func   ?sub_100cc560@@YAXXZ sub_100cc560
 0x100cc620 func   ?sub_100cc620@@YAHXZ sub_100cc620
+0x100cc700 func   ?vfunc33@CHLClient@@UAEHH@Z CHLClient::vfunc33
 0x100ccb30 func   ?sub_100ccb30@CMem16_t@@QAEXH@Z CMem16_t::sub_100ccb30
 0x100cd000 func   ?sub_100cd000@@YAXMPBM0PAM@Z sub_100cd000
 0x100cd0f0 func   ?sub_100cd0f0@@YAHXZ sub_100cd0f0
