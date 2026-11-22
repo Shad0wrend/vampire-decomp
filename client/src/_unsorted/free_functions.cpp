@@ -69785,6 +69785,15 @@ void CUnknown101aab60::sub_101aab60(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aab90 size=0x13
+struct CUnknown101aab90 { void sub_101aab90(char); };
+void CUnknown101aab90::sub_101aab90(char a0)
+{
+    int t0 = (*(char *)((char *)this + 0x4c)) | ((a0 & 1) + (a0 & 1));
+    *(char *)((char *)this + 0x4c) = (char)t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab2d0 size=0x1e
 namespace lifted {
 int sub_101a9af0();
