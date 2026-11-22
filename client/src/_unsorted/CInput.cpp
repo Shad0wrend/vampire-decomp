@@ -63,6 +63,14 @@ int CInput::vfunc45()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101da0 size=0x7
+#include "CInput.h"
+int CInput::vfunc56()
+{
+    return *(int *)((char *)this + 0x1c4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103310 size=0x3
 #include "CInput.h"
 void CInput::vfunc8(int a0)
