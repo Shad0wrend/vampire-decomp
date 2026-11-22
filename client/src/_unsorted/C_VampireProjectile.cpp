@@ -17,6 +17,17 @@ int C_VampireProjectile::vfunc86()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151d00 size=0x6
+#include "C_VampireProjectile.h"
+namespace lifted {
+extern char g_102ca214;
+}
+int C_VampireProjectile::vfunc16()
+{
+    return (int)&lifted::g_102ca214;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151d10 size=0x3
 #include "C_VampireProjectile.h"
 int C_VampireProjectile::vfunc15()
