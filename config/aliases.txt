@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb c1c259a0a050; do not edit by hand
+# written by pcdecomp standalone from vtmb d81c57d6a880; do not edit by hand
 ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z
 ??0CAI_InterestTarget@@QAE@XZ ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ
 ??0CAI_LocalIdSpace@@QAE@_N@Z ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z
