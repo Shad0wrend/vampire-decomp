@@ -22,6 +22,17 @@ C_WeaponLockpick *pcd_emit_1000fa10() { return new C_WeaponLockpick; }
 // TARGET: ??_GC_WeaponLockpick@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000fa30 size=0x6
+#include "C_WeaponLockpick.h"
+namespace lifted {
+extern char g_10274b88;
+}
+int C_WeaponLockpick::vfunc16()
+{
+    return (int)&lifted::g_10274b88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000fa40 size=0x3
 #include "C_WeaponLockpick.h"
 int C_WeaponLockpick::vfunc15()
