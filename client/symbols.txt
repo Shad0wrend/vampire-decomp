@@ -595,6 +595,7 @@
 0x100125f0 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_LG_FIREARMS@@@Z ClientClassInit
 0x10012680 func   ?vfunc17@C_OccultHacking@@UAEHXZ C_OccultHacking::vfunc17
 0x10012710 func   ??_GC_OccultHacking@@UAEPAXI@Z ??_GC_OccultHacking@@UAEPAXI@Z
+0x10012730 func   ?vfunc16@C_OccultHacking@@UAEHXZ C_OccultHacking::vfunc16
 0x10012740 func   ?vfunc15@C_OccultHacking@@UAEHXZ C_OccultHacking::vfunc15
 0x10012750 func   ?sub_10012750@@YAHXZ sub_10012750
 0x10012870 func   ?ClientClassInit@@YAHPAUignored@DT_OccultHacking@@@Z ClientClassInit

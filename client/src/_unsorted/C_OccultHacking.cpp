@@ -22,6 +22,17 @@ C_OccultHacking *pcd_emit_10012710() { return new C_OccultHacking; }
 // TARGET: ??_GC_OccultHacking@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10012730 size=0x6
+#include "C_OccultHacking.h"
+namespace lifted {
+extern char g_102749f4;
+}
+int C_OccultHacking::vfunc16()
+{
+    return (int)&lifted::g_102749f4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012740 size=0x3
 #include "C_OccultHacking.h"
 int C_OccultHacking::vfunc15()
