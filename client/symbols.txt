@@ -1213,6 +1213,7 @@
 0x10022770 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKGimbleKey@@@Z ClientClassInit
 0x10022800 func   ?vfunc17@C_ItemKLuckyStarMurderKey@@UAEHXZ C_ItemKLuckyStarMurderKey::vfunc17
 0x10022890 func   ??_GC_ItemKLuckyStarMurderKey@@UAEPAXI@Z ??_GC_ItemKLuckyStarMurderKey@@UAEPAXI@Z
+0x100228b0 func   ?vfunc16@C_ItemKLuckyStarMurderKey@@UAEHXZ C_ItemKLuckyStarMurderKey::vfunc16
 0x100228c0 func   ?vfunc15@C_ItemKLuckyStarMurderKey@@UAEHXZ C_ItemKLuckyStarMurderKey::vfunc15
 0x100228d0 func   ?sub_100228d0@@YAHXZ sub_100228d0
 0x100229f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLuckyStarMurderKey@@@Z ClientClassInit
