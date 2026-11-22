@@ -42,3 +42,11 @@ unsigned int * C_BaseEntity::vfunc1()
     return (unsigned int *)((char *)this + 0xe4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1009fce0 size=0x7
+#include "C_BaseEntity.h"
+CMouthInfo * C_BaseEntity::GetMouth()
+{
+    return (CMouthInfo *)((char *)this + 0xfc);
+}
+// END FUNCTION
