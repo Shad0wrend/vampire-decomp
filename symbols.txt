@@ -10736,6 +10736,7 @@
 0x1000e3c2 func   ?vfunc292@CWeaponLockpick@@UAEXH@Z CWeaponLockpick::vfunc292
 0x1000e3c7 func   ?sub_102e2800@A@@QAEXH@Z A::sub_102e2800
 0x1000e3cc func   ?vfunc5@CResearchBook_HG_COMP@@QAEPAV1@I@Z CResearchBook_HG_COMP::vfunc5
+0x1000e3d1 func   ?ReadRestoreHeaders@CAI_SaveRestoreBlockHandler@@UAEXPAVIRestore@@@Z CAI_SaveRestoreBlockHandler::ReadRestoreHeaders
 0x1000e3d1 func   ?vfunc6@CAI_SaveRestoreBlockHandler@@UAEXPAVIRestorePy@@@Z CAI_SaveRestoreBlockHandler::vfunc6
 0x1000e3d6 func   ?vfunc124@CHudCounter@@UAEHXZ CHudCounter::vfunc124
 0x1000e3db func   _simple_physics_brush simple_physics_brush
