@@ -346,6 +346,14 @@ char * C_BaseEntity::vfunc45()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2470 size=0x7
+#include "C_BaseEntity.h"
+char * C_BaseEntity::vfunc39()
+{
+    return (char *)this + 0x254;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2840 size=0x6
 #include "C_BaseEntity.h"
 namespace lifted {
