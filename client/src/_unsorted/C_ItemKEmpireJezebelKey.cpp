@@ -10,3 +10,11 @@ C_ItemKEmpireJezebelKey *pcd_emit_10023c90() { return new C_ItemKEmpireJezebelKe
 
 // TARGET: ??_GC_ItemKEmpireJezebelKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10023cc0 size=0x3
+#include "C_ItemKEmpireJezebelKey.h"
+int C_ItemKEmpireJezebelKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
