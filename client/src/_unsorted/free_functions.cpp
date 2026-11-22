@@ -64384,6 +64384,18 @@ char sub_101a48b0(void *fs, const char *name, void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a58a0 size=0x12
+namespace lifted {
+struct C101586f0 { int sub_101586f0(); };
+}
+struct CUnknown101a58a0 { void * sub_101a58a0(); };
+void * CUnknown101a58a0::sub_101a58a0()
+{
+    ((lifted::C101586f0 *)((char *)this + 0x198))->sub_101586f0();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a58c0 size=0xb
 namespace lifted {
 struct C10158790 { int sub_10158790(); };
