@@ -10,3 +10,11 @@ C_ItemKEmpireMafiaKey *pcd_emit_10023a10() { return new C_ItemKEmpireMafiaKey; }
 
 // TARGET: ??_GC_ItemKEmpireMafiaKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10023a40 size=0x3
+#include "C_ItemKEmpireMafiaKey.h"
+int C_ItemKEmpireMafiaKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
