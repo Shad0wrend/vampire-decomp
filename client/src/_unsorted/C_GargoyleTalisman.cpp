@@ -22,6 +22,17 @@ C_GargoyleTalisman *pcd_emit_10014790() { return new C_GargoyleTalisman; }
 // TARGET: ??_GC_GargoyleTalisman@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100147b0 size=0x6
+#include "C_GargoyleTalisman.h"
+namespace lifted {
+extern char g_102748f0;
+}
+int C_GargoyleTalisman::vfunc16()
+{
+    return (int)&lifted::g_102748f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100147c0 size=0x3
 #include "C_GargoyleTalisman.h"
 int C_GargoyleTalisman::vfunc15()
