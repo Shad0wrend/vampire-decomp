@@ -67,6 +67,18 @@ int vgui2::Slider::vfunc116(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc0f0 size=0x15
+#include "vgui2__Slider.h"
+int vgui2::Slider::vfunc110(int a0, int a1)
+{
+    int t0 = *(int *)((char *)this + 0x78);
+    *(int *)((char *)a0) = t0;
+    int t1 = *(int *)((char *)this + 0x7c);
+    *(int *)((char *)a1) = t1;
+    return t1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc2b0 size=0x18
 #include "vgui2__Slider.h"
 namespace lifted {
