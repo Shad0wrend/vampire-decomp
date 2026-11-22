@@ -2620,6 +2620,7 @@
 0x100043ef func   ?sub_100a9800@@YIDPAVCBaseEntity@@@Z sub_100a9800
 0x100043f4 func   ?sub_1020db00@@YIXPAXHPAH@Z sub_1020db00
 0x100043f9 func   ?vfunc12@CGameRules@@UAEXXZ CGameRules::vfunc12
+0x100043fe func   ?PreRestore@CDefSaveRestoreBlockHandler@@UAEXXZ CDefSaveRestoreBlockHandler::PreRestore
 0x100043fe func   ?sub_10043ba0@@YIXPAX@Z sub_10043ba0
 0x10004403 func   ?sub_10271900@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10271900
 0x10004408 func   ?vfunc275@CPropDoorknobElectronic@@UAEXXZ CPropDoorknobElectronic::vfunc275
