@@ -32038,6 +32038,16 @@ unsigned short CUtlLinkedList6::sub_100e2840(bool multilist)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2950 size=0x13
+int sub_100e2950(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(short *)((char *)a0) = *(short *)((char *)a1);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2970 size=0x68
 extern void *(*g_101e3104)(void *, int);
 extern void *(*g_101e3100)(int);

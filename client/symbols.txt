@@ -3463,6 +3463,7 @@
 0x100e2790 func   ?vfunc1@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc1
 0x100e27a0 func   ?sub_100e27a0@CUtlLinkedList6@@QAEXG@Z CUtlLinkedList6::sub_100e27a0
 0x100e2840 func   ?sub_100e2840@CUtlLinkedList6@@QAEG_N@Z CUtlLinkedList6::sub_100e2840
+0x100e2950 func   ?sub_100e2950@@YAHHH@Z sub_100e2950
 0x100e2970 func   ?sub_100e2970@S100fa600@@QAEXH@Z S100fa600::sub_100e2970
 0x100e2a10 func   ?sub_100e2a10@CUnknown100fde30@@QAEPAV1@XZ CUnknown100fde30::sub_100e2a10
 0x100e2ae0 func   ?sub_100e2ae0@CUnknown100fde30@@QAEXXZ CUnknown100fde30::sub_100e2ae0
