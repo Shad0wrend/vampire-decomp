@@ -10,3 +10,11 @@ C_ElderVitaePack *pcd_emit_10014f10() { return new C_ElderVitaePack; }
 
 // TARGET: ??_GC_ElderVitaePack@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10014f40 size=0x3
+#include "C_ElderVitaePack.h"
+int C_ElderVitaePack::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
