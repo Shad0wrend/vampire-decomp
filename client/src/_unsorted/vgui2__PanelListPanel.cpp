@@ -10,3 +10,11 @@ vgui2::PanelListPanel *pcd_emit_101ca820() { return new vgui2::PanelListPanel; }
 
 // TARGET: ??_GPanelListPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101cab10 size=0x4
+#include "vgui2__PanelListPanel.h"
+int vgui2::PanelListPanel::vfunc109()
+{
+    return *(int *)((char *)this + 0x58);
+}
+// END FUNCTION
