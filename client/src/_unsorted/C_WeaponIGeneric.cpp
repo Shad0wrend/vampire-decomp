@@ -22,6 +22,17 @@ C_WeaponIGeneric *pcd_emit_1000f790() { return new C_WeaponIGeneric; }
 // TARGET: ??_GC_WeaponIGeneric@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000f7b0 size=0x6
+#include "C_WeaponIGeneric.h"
+namespace lifted {
+extern char g_10274b9c;
+}
+int C_WeaponIGeneric::vfunc16()
+{
+    return (int)&lifted::g_10274b9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f7c0 size=0x3
 #include "C_WeaponIGeneric.h"
 int C_WeaponIGeneric::vfunc15()
