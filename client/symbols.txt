@@ -2811,6 +2811,7 @@
 0x100bc680 func   ?sub_100bc680@@YGHHH@Z sub_100bc680
 0x100bc6f0 func   ?sub_100bc6f0@@YAHXZ sub_100bc6f0
 0x100bc7f0 func   ?ClientClassInit@@YAHPAUignored@DT_LightGlow@@@Z ClientClassInit
+0x100bca30 func   ?vfunc16@C_PhysBox@@UAEHXZ C_PhysBox::vfunc16
 0x100bca40 func   ?vfunc15@C_PhysBox@@UAEHXZ C_PhysBox::vfunc15
 0x100bca50 func   ?sub_100bca50@@YAHXZ sub_100bca50
 0x100bcb50 func   ?ClientClassInit@@YAHPAUignored@DT_PhysBox@@@Z ClientClassInit

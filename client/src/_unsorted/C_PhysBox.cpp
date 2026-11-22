@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bca30 size=0x6
+#include "C_PhysBox.h"
+namespace lifted {
+extern char g_102b520c;
+}
+int C_PhysBox::vfunc16()
+{
+    return (int)&lifted::g_102b520c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bca40 size=0x3
 #include "C_PhysBox.h"
 int C_PhysBox::vfunc15()
