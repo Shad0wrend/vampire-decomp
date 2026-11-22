@@ -28,3 +28,16 @@ void CharEditCharPanel::vfunc119()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10177b00 size=0x10
+#include "CharEditCharPanel.h"
+namespace lifted {
+struct C10176f80 { int sub_10176f80(); };
+struct C101ab2f0 { int sub_101ab2f0(); };
+}
+void CharEditCharPanel::vfunc101()
+{
+    ((lifted::C101ab2f0 *)this)->sub_101ab2f0();
+    ((lifted::C10176f80 *)this)->sub_10176f80();
+}
+// END FUNCTION
