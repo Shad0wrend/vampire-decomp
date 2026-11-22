@@ -960,6 +960,7 @@
 0x10026e80 func   ?sub_10026e80@@YAHXZ sub_10026e80
 0x10026f80 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Torch@@@Z ClientClassInit
 0x10027060 func   ??_GC_WeaponMelee_Torch@@UAEPAXI@Z ??_GC_WeaponMelee_Torch@@UAEPAXI@Z
+0x100275a0 func   ?vfunc15@C_WeaponRanged_FlameThrower@@UAEHXZ C_WeaponRanged_FlameThrower::vfunc15
 0x100275b0 func   ?sub_100275b0@@YAHXZ sub_100275b0
 0x100276b0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_FlameThrower@@@Z ClientClassInit
 0x10027840 func   ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z
