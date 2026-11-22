@@ -10,3 +10,11 @@ C_MachineGun *pcd_emit_10007590() { return new C_MachineGun; }
 
 // TARGET: ??_GC_MachineGun@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100075c0 size=0x3
+#include "C_MachineGun.h"
+int C_MachineGun::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
