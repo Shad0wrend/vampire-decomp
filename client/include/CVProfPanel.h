@@ -10,5 +10,5 @@ class CVProfPanel : public CHudElement, public vgui2::Panel
 public:
 	virtual ~CVProfPanel();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
-	bool vfunc9();	// as in CHudHistoryResource (transplant)
+	bool CHudElement_vfunc9();	// as in CHudHistoryResource (transplant)
 };

@@ -1,20 +1,15 @@
 // ClientModeShared: skeleton from the game's RTTI (pcdecomp gdtors)
-// declared: its bases; nothing else yet
+// declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22)
 #pragma once
 #include "IClientMode.h"
 
 class ClientModeShared : public IClientMode
 {
-public:
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+    // the base slots the game's vtable fills with ClientModeShared's own function
     virtual void vfunc1();
     virtual void vfunc2();
-    virtual void vfunc3();
-    virtual void vfunc4();
-    virtual void vfunc5();
-    virtual void vfunc6();
-    virtual void vfunc7();
     virtual int vfunc8(int);
-    virtual void vfunc9();
     virtual bool vfunc10();
     virtual bool vfunc11(int);
     virtual void vfunc12();
@@ -27,17 +22,14 @@ public:
     virtual void vfunc19();
     virtual int vfunc20();
     virtual void vfunc21();
-    virtual void vfunc22();
     virtual void vfunc23();
     virtual void vfunc24();
     virtual void vfunc25();
     virtual bool vfunc26();
-    virtual void vfunc27();
     virtual void vfunc28(int, int, int, int);
     virtual void vfunc29(int);
     virtual void vfunc30();
     virtual void vfunc31();
-    virtual void vfunc32();
     virtual void vfunc33();
     virtual void vfunc34();
     virtual void vfunc35();

@@ -1,5 +1,5 @@
 // CTempEnts: skeleton from the game's RTTI (pcdecomp gdtors)
-// declared: its bases, its destructor; nothing else yet
+// declared: its bases, its destructor, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22)
 // the destructor is slot 20 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "ITempEnts.h"
@@ -7,8 +7,9 @@
 class CTempEnts : public ITempEnts
 {
 public:
-	virtual ~CTempEnts();
-public:
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	// the base slots the game's vtable fills with CTempEnts's own function
+	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -28,9 +29,12 @@ public:
 	virtual void vfunc17();
 	virtual void vfunc18();
 	virtual void vfunc19();
-	virtual void vfunc20();
+	// the slots CTempEnts adds to its base's vtable: 20-26, vfuncK at slot K
+	virtual ~CTempEnts();
 	virtual void vfunc21();
 	virtual int vfunc22(int, int, int);
 	virtual void vfunc23();
 	virtual int vfunc24(int, int, int);
+	virtual void vfunc25();
+	virtual void vfunc26();
 };
