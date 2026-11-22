@@ -2113,6 +2113,7 @@
 0x1009fff0 func   ?NotifyShouldTransmit@C_BaseEntity@@UAEXH@Z C_BaseEntity::NotifyShouldTransmit
 0x100a0240 func   ?PreDataUpdate@C_BaseEntity@@UAEXH@Z C_BaseEntity::PreDataUpdate
 0x100a0470 func   ?PostDataUpdate@C_BaseEntity@@UAEXH@Z C_BaseEntity::PostDataUpdate
+0x100a06e0 func   ?vfunc67@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc67
 0x100a11f0 func   ?vfunc82@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc82
 0x100a1200 func   ?ClientThink@C_BaseEntity@@UAEXXZ C_BaseEntity::ClientThink
 0x100a1200 func   ?sub_100a1200@@YAXXZ sub_100a1200
