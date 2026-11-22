@@ -1,0 +1,149 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// placement guessed: the reference trees' server project lists this file; 7 blocks
+#include "vampire.h"
+
+// FUNCTION: 0x100603c0 size=0x1e
+#include "CTEDecal.h"
+
+// TARGET: CTEDecal::vfunc2
+CBaseTempEntity *CTEDecal::vfunc2(unsigned int flags)
+{
+	sub_100038eb();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100603f0 size=0xb
+namespace lifted {
+extern char g_1044dddc;
+int sub_100021d0();
+}
+struct CUnknown100603f0 { int sub_100603f0(); };
+int CUnknown100603f0::sub_100603f0()
+{
+    *(int *)this = (int)&lifted::g_1044dddc;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10060410 size=0x217
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CTEDecal.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CBroadcastRecipientFilter.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pDest);
+struct V3 { float x, y, z; };
+void sub_10146570(V3 *pStart, V3 *pEnd, int a, int b, int c, int d, int e);
+
+struct RayLocal
+{
+	float m_Start[3];
+	float m_Delta[3];
+	float m_Extents[3];
+	float m_StartOffset[3];
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+
+	void Init(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0.0f;
+		m_b33 = 0;
+	}
+};
+
+// TARGET: CTEDecal::vfunc3
+void CTEDecal::vfunc3(const Vector &vecOrigin, const QAngle &vecAngles)
+{
+	m_f24 = 0;
+	m_f2c = 0;
+
+	*(Vector *)&m_vecOrigin = vecOrigin;
+	m_vecOrigin.z += 24.0f;
+
+	RayLocal ray;
+	Vector vecForward;
+	Vector vecEnd;
+
+	sub_10139610(vecAngles, &vecForward, 0, 0);
+	vecForward.z = 0.0f;
+	VectorNormalize(vecForward);
+
+	sub_10139500((Vector *)&m_vecOrigin, 50.0f, &vecForward, (Vector *)&m_vecOrigin);
+	sub_10139500((Vector *)&m_vecOrigin, 1024.0f, &vecForward, &vecEnd);
+
+	ray.Init(*(Vector *)&m_vecOrigin, vecEnd);
+
+	CTraceFilterSimple traceFilter(0, 0);
+	CGameTrace tr;
+
+	g_1070b254->vfunc4((Ray_t *)&ray, 0x400b, (CTraceFilterNoCharacterCollide *)&traceFilter, &tr);
+
+	if (g_10738960.sub_1005f190())
+		sub_10146570((V3 *)&tr.m_startpos, (V3 *)&tr.m_endpos, 0xff, 0, 0, 1, -1082130432);
+
+	*(Vector *)&m_vecOrigin = *(Vector *)&tr.m_endpos;
+
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0.0f);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100606c0 size=0x39
+#include "CTEDecal.h"
+#include "IVEngineServerFull.h"
+
+
+void CTEDecal::vfunc4(int a, int b)
+{
+	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10060710 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106c1c78;
+extern char g_105427a0[];
+ServerClassReg g_106c1c58("CTEDecal", &g_106c1c78, g_105427a0);
+// END FUNCTION
+
+// FUNCTION: 0x10060780 size=0x6
+#include "CTEDecal.h"
+namespace lifted {
+extern char g_106c1c58;
+}
+ServerClass * CTEDecal::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c1c58);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100607a0 size=0x3
+#include "CTEDecal.h"
+int CTEDecal::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

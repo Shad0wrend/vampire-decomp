@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x1036b6b0 size=0x79
@@ -361,6 +362,495 @@ check:
         sub_10004edf(pTask);
         break;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036c6a0 size=0x5
+#include "CNPC_VChangBros.h"
+bool CNPC_VChangBros::vfunc566(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036c6c0 size=0x72
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern float g_104ad9f0;
+
+void CNPC_VChangBros::vfunc431()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VChangBros::NPCThink";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100052d6();
+	*(float *)((char *)this + 0x17c) = g_104ad9f0 + gpGlobals->curtime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036c760 size=0x64
+#include "CNPC_VChangBros.h"
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_10631094[];
+extern char g_106b8540[];
+
+// TARGET: CNPC_VChangBros::vfunc619
+void CNPC_VChangBros::vfunc619(int arg)
+{
+	g_109f3620[*g_109f3680].a = g_10631094;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1000c27a(arg);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036c7f0 size=0xd
+#include "CUnknown1036c7f0.h"
+void CUnknown1036c7f0::sub_1036c7f0(int value)
+{
+	m_unk66b8 = value;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036c810 size=0x8a
+#include "CNPC_VChangBros.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *fmt, ...);
+
+void CNPC_VChangBros::sub_1036c810(int a, int b)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CNPC_VChangBros::PrintTask";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	Msg("%s: [%s]:%s\n", a, ((CBaseEntity *)this)->sub_1009f200(), vfunc449(b));
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036c8d0 size=0x177
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CUnknown103160c0.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern char g_1054abdc[];
+extern char g_10630064[];
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+
+struct CChangBrosView : CEntityVSlots {
+	char m_pad0004[0x5bb0 - 4];
+	int m_nCount5bb0;
+	char m_pad5bb4[0x5da4 - 0x5bb4];
+	CUnknown103160c0 *m_pSquad;
+	char m_pad5da8[0x628c - 0x5da8];
+	unsigned int m_hEnemy;
+	char m_pad6290[0x66b8 - 0x6290];
+	int m_nMode;
+	char m_pad66bc[0x66cc - 0x66bc];
+	float m_flTime66cc;
+	float GetJumpTime() const { return m_flTime66cc; }
+	CUnknown103160c0 *GetSquad() const { return m_nCount5bb0 > 0 ? 0 : m_pSquad; }
+};
+
+// TARGET: CNPC_VChangBros::sub_1036c8d0
+bool CNPC_VChangBros::sub_1036c8d0()
+{
+	ScopeTrace st("CNPC_VChangBros::CheckForJumpAttack", g_106b8540);
+	CChangBrosView *p = (CChangBrosView *)this;
+	if (p->m_nMode == 0) {
+		CEntityVSlots *pEnemy = (CEntityVSlots *)g_10566458->sub_100290c0(&p->m_hEnemy);
+		if (pEnemy) {
+			if (sub_1036e580((int)pEnemy->slot217()) != 4) {
+				if (sub_1036e580((int)p->slot217()) != 4) {
+					if (gpGlobals->curtime - p->GetJumpTime() >= 16.0f) {
+						CUnknown103160c0 *pSquad = p->GetSquad();
+						if (!pSquad)
+							return true;
+						for (int i = 0; i < pSquad->sub_103160a0(); i++) {
+							CBaseEntity *pMember = pSquad->sub_103160c0(i);
+							if (pMember) {
+								CChangBrosView *pOther = (CChangBrosView *)__RTDynamicCast(pMember, 0, g_1054abdc, g_10630064, 0);
+								if (pOther && pOther != p && gpGlobals->curtime - pOther->GetJumpTime() < 16.0f)
+									return false;
+							}
+						}
+						return true;
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036cab0 size=0xd9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+struct CChangBrosUnit : CNPC_VChangBros {
+    float sub_103c6a20();
+    bool sub_1036cab0();
+};
+
+// TARGET: CChangBrosUnit::sub_1036cab0
+bool CChangBrosUnit::sub_1036cab0()
+{
+    ScopeTrace trace("CNPC_VChangBros::CheckForTeleport", g_106b8540);
+    if (*(int *)((char *)this + 0x66b8) != 1) {
+        if (sub_103c6a20() >= 0.1f)
+            return true;
+        if (sub_1036e2f0() && *(int *)((char *)this + 0x66b8) == 0) {
+            float t = gpGlobals->curtime - *(float *)((char *)this + 0x66d0);
+            if (sub_1036dc60() <= t)
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036cbd0 size=0xc4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+
+extern float g_104ada48;
+
+struct BrosView {
+	char m_pad[0x66ec];
+	float m_flTick;
+};
+
+bool CNPC_VChangBros::sub_1036cbd0()
+{
+	ScopeTrace trace("CNPC_VChangBros::CheckForUnited", g_106b8540);
+	CNPC_VChangBros *pOther = sub_1036e2f0();
+	if (pOther && gpGlobals->curtime >= (g_104ada48 + ((BrosView *)this)->m_flTick)) {
+		if (!(sub_103c6830() >= 0.5f)) {
+			if (!(pOther->sub_103c6830() >= 0.5f))
+				return false;
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036cce0 size=0x223
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CNPC_VChangBros::sub_1036cce0
+#include "CNPC_VChangBros.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Hint.h"
+#include "CAIHintSlots.h"
+#include "ehandle.h"
+#include "ScopeTrace.h"
+
+extern float g_104ad9f4;
+
+CBaseEntity *CNPC_VChangBros::sub_1036cce0()
+{
+	ScopeTrace trace("CNPC_VChangBros::SelectTeleportNode", g_106b8540);
+
+	CBaseEntity *pEnemy = m_h628c.Get();
+	if (!pEnemy)
+		return 0;
+
+	CAI_Hint *pHint = g_10925450;
+	CAI_Hint *pBest = 0;
+	CAI_Hint *pSame = 0;
+	float flBest = 3.402823466e+38F;
+	float flSame = 3.402823466e+38F;
+	int nBrother = sub_1036e580((int)((CAI_BaseNPC *)(void *)pEnemy)->vfunc217());
+
+	for (; pHint; pHint = pHint->m_pNext) {
+		if (pHint->m_n5dc == 0x4650 || pHint->m_n5dc == 0x4653 || pHint->m_n5dc == 0x4652) {
+			Vector vDist = *(Vector *)((CAI_BaseNPC *)(void *)pEnemy)->vfunc217()
+				- *(Vector *)((CAI_BaseNPC *)(void *)pHint)->vfunc217();
+			float flDistSqr = vDist.z * vDist.z;
+			flDistSqr = flDistSqr + vDist.y * vDist.y;
+			flDistSqr = flDistSqr + vDist.x * vDist.x;
+			float flDist = FastSqrt(flDistSqr);
+			if (flDist >= g_104ad9f4) {
+				if (sub_1036d350((const Vector *)((CAI_BaseNPC *)(void *)pHint)->vfunc217(), g_104ad9f4)) {
+					if (flDist < flBest) {
+						pBest = pHint;
+						flBest = flDist;
+					}
+					if (nBrother == sub_1036e580((int)((CAI_BaseNPC *)(void *)pHint)->vfunc217()) && flDist < flSame) {
+						pSame = pHint;
+						flSame = flDist;
+					}
+				}
+			}
+		}
+	}
+	if (pSame)
+		pBest = pSame;
+
+	Vector *pOrigin = (Vector *)((CAI_BaseNPC *)(void *)pBest)->vfunc217();
+	*(Vector *)((char *)this + 0x66bc) = *pOrigin;
+	*(float *)((char *)this + 0x66c8) = gpGlobals->curtime;
+	return (CBaseEntity *)pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036cfa0 size=0x105
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct ChangLedgeHintView : CEntityVSlots
+{
+    char pad[0x5d8 - 4];
+    ChangLedgeHintView *m_pNext;
+    int m_nHintType;
+};
+extern ChangLedgeHintView *g_10925450;
+
+// TARGET: CNPC_VChangBros::sub_1036cfa0
+void *CNPC_VChangBros::sub_1036cfa0()
+{
+    ScopeTrace trace("CNPC_VChangBros::SelectLedgeNode", g_106b8540);
+    ChangLedgeHintView *pBest = 0;
+    float flBest = -3.402823466e+38f;
+    for (ChangLedgeHintView *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+    {
+        if (pHint->m_nHintType == 0x4653 && sub_1036df50(pHint))
+        {
+            const Vector *pHintPos = pHint->slot217();
+            const Vector *pPos = ((CEntityVSlots *)this)->slot217();
+            Vector vecDelta;
+            VectorSubtract(*pPos, *pHintPos, vecDelta);
+            float flDist = FastSqrt(vecDelta.y * vecDelta.y + vecDelta.x * vecDelta.x + vecDelta.z * vecDelta.z);
+            if (flDist > flBest)
+            {
+                flBest = flDist;
+                pBest = pHint;
+            }
+        }
+    }
+    return pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036d100 size=0x9c
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+struct ListNode_t {
+	char m_pad0000[0x5d8];
+	ListNode_t *m_pNext;	// 0x5d8
+	int m_type;	// 0x5dc
+};
+extern ListNode_t *g_10925450;
+
+void *CNPC_VChangBros::sub_1036d100()
+{
+	g_109f3620[*g_109f3680].fn = "CNPC_VChangBros::SelectUnitedNode";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	int n = 0;
+	for (ListNode_t *p = g_10925450; p; p = p->m_pNext) {
+		if (p->m_type == 18000) {
+			int mode = *(int *)((char *)this + 0x66b8);
+			if (mode == 0 || (mode == 1 && n > 0)) {
+				(*g_109f3680)--;
+				return p;
+			}
+			n++;
+		}
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036d1d0 size=0x78
+#include "CNPC_VChangBros.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VChangBros::vfunc448(int code)
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VChangBros::TaskFail";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    if (code >= 12 && code <= 15)
+        *(int *)((char *)this + 0x5c54) = 0x15d;
+    sub_100054bb(code);
+    --*g_109f3680;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036d270 size=0xaa
+#include "CLogicAuto.h"
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern float g_104ada04;
+
+struct TeleportState_t {
+	char m_pad0000[0x66bc];
+	float m_vecPos[3];	// 0x66bc
+	float m_flTime;	// 0x66c8
+};
+
+bool CNPC_VChangBros::sub_1036d270(float *pOut)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VChangBros::GetTeleportPosition";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	TeleportState_t *p = (TeleportState_t *)this;
+	if (gpGlobals->curtime - p->m_flTime > g_104ada04) {
+		(*g_109f3680)--;
+		return false;
+	}
+	pOut[0] = p->m_vecPos[0];
+	pOut[1] = p->m_vecPos[1];
+	pOut[2] = p->m_vecPos[2];
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1036d350 size=0x220
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown103160c0.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "RTTI.h"
+#include "Vector.h"
+
+extern char g_1054abdc[];
+extern char g_10630064[];
+
+static inline float Dist(const Vector &a, const Vector &b)
+{
+	float dx = a.x - b.x;
+	float dy = a.y - b.y;
+	float dz = a.z - b.z;
+	return FastSqrt(dx * dx + dy * dy + dz * dz);
+}
+
+bool CNPC_VChangBros::sub_1036d350(const Vector *pPos, float flRadius)
+{
+	ScopeTrace trace("CNPC_VChangBros::PositionClearForTeleport", g_106b8540);
+
+	Vector *pOrigin = ((CEntityVSlots *)this)->slot217();
+	if (Dist(*pOrigin, *pPos) < flRadius)
+		return false;
+
+	if (Dist(m_vLastTeleportPosition, *pPos) < 100.0f)
+		return false;
+
+	if (m_n5bb0 > 0)
+		return true;
+	if (!m_p5da4)
+		return true;
+
+	CUnknown103160c0 *pSquad = (CUnknown103160c0 *)m_p5da4;
+	if (pSquad->sub_10315a80(pPos, flRadius))
+		return false;
+
+	for (int i = 0; i < pSquad->sub_103160a0(); i++)
+	{
+		CBaseEntity *pEnt = pSquad->sub_103160c0(i);
+		if (!pEnt)
+			continue;
+		CNPC_VChangBros *pOther = (CNPC_VChangBros *)__RTDynamicCast(pEnt, 0, g_1054abdc, g_10630064, 0);
+		if (!pOther || pOther == this)
+			continue;
+		Vector v;
+		if (!pOther->sub_1036d270(&v.x))
+			continue;
+		if (Dist(v, *pPos) < flRadius)
+			return false;
+	}
+
+	return true;
 }
 // END FUNCTION
 

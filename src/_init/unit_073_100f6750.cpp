@@ -18,18 +18,6 @@ CGlobalEntityList g_106eb5d8;
 CAimTargetManager g_10703650;
 // END FUNCTION
 
-// FUNCTION: 0x100f8b70 size=0xa
-#define PCD_INITIALIZERS
-#include "CNotifyList.h"
-CNotifyList g_10703634;
-// END FUNCTION
-
-// FUNCTION: 0x100f8c70 size=0xa
-#define PCD_INITIALIZERS
-#include "CEntityTouchManager.h"
-CEntityTouchManager g_107036b0;
-// END FUNCTION
-
 // FUNCTION: 0x100f8f60 size=0xa
 #define PCD_INITIALIZERS
 #include "CEntityListSystem.h"

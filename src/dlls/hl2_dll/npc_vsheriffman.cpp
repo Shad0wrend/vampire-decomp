@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x103aebd0 size=0x79
@@ -242,6 +243,67 @@ void CNPC_VSheriffMan::vfunc442(int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103af780 size=0x6c
+#include "CNPC_VSheriffMan.h"
+
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern const char g_106b8540[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = g_106b8540;
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+// TARGET: CNPC_VSheriffMan::vfunc444
+void CNPC_VSheriffMan::vfunc444(int *pTask)
+{
+    ScopeTrace trace("CNPC_VSheriffMan::RunTask", g_106b8540);
+    if (*pTask != 0x154)
+        sub_103c5f40(pTask);
+}
+// END FUNCTION
+
+// FUNCTION: 0x103af810 size=0x5
+#include "CNPC_VSheriffMan.h"
+bool CNPC_VSheriffMan::vfunc566(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103af830 size=0x72
+#include "CNPC_VSheriffMan.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern float g_104c6120;
+
+void CNPC_VSheriffMan::vfunc431()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VSheriffMan::NPCThink";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100052d6();
+	*(float *)((char *)this + 0x17c) = g_104c6120 + gpGlobals->curtime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103af8d0 size=0x64
 #include "CNPC_VSheriffMan.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
@@ -443,6 +505,517 @@ int CNPC_VSheriffMan::vfunc605(int unused)
 	}
 	FILE_STAMP(0x304);
 	return 0xb9;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0290 size=0x64
+#include "CNPC_VSheriffMan.h"
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_106514b8[];
+extern char g_106b8540[];
+
+// TARGET: CNPC_VSheriffMan::vfunc448
+void CNPC_VSheriffMan::vfunc448(int arg)
+{
+	g_109f3620[*g_109f3680].a = g_106514b8;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100054bb(arg);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0320 size=0x65
+#include "CNPC_VSheriffMan.h"
+struct ScopeEntry { const char *name; const void *a; const void *b; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106514d8[];
+extern char g_106b8540[];
+
+int CNPC_VSheriffMan::vfunc440(int a)
+{
+	g_109f3620[*g_109f3680].name = g_106514d8;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	int r = sub_10005e20(a);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b03b0 size=0x14d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VSheriffMan.h"
+extern const float g_104c6128;
+extern const float g_104c612c;
+extern const float g_104c6130;
+extern const float g_104c6134;
+extern const float g_104c6138;
+extern const float g_104c613c;
+extern const char g_10651504[];
+CBaseEntity *sub_10136580(const char *classname);
+
+// TARGET: CNPC_VSheriffMan::sub_103b03b0
+void CNPC_VSheriffMan::sub_103b03b0()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SpawnTeleportBats", g_106b8540);
+	CBaseEntity *pBats = m_hTeleportBats.Get();
+	if (!pBats) {
+		pBats = sub_10136580(g_10651504);
+		if (!pBats)
+			return;
+	}
+	m_hTeleportBats = pBats;
+	((CEntityVSlots *)pBats)->slot216(((CEntityVSlots *)this)->slot217());
+	pBats->vfunc103();
+	if (m_pTarget) {
+		pBats->sub_100b97b0();
+		pBats->sub_100b9880((const float *)m_pTarget->slot220(), g_104c6128, g_104c612c, g_104c6130 + m_pTarget->slot220()->z, g_104c6134 + m_pTarget->slot220()->z, g_104c6138, g_104c613c);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0560 size=0x9b
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+
+void sub_101cd940(void *pEnt);
+
+void CNPC_VSheriffMan::sub_103b0560()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::KillTeleportBats", g_106b8540);
+	CBaseEntity *pBats = m_hTeleportBats.Get();
+	if (pBats)
+		sub_101cd940(pBats);
+	m_hTeleportBats = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0630 size=0x25e
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CAIHintSlots.h"
+#include "ehandle.h"
+#include "CUnknown100290c0.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+#include "Vector.h"
+#include "globalvars.h"
+
+float __cdecl sub_1013d580(float, float);
+void __cdecl sub_10139970(const Vector &, QAngle &);
+extern float g_104c6124;
+extern float g_104c6144;
+
+struct CHintNode
+{
+	char m_pad[0x5d8];
+	CHintNode *m_pNext;
+	int m_nType;
+};
+
+CEntityVSlots *CNPC_VSheriffMan::sub_103b0630()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SelectTeleportNode", g_106b8540);
+
+	CBaseEntity *pStart = (CBaseEntity *)((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&m_hHeightTarget);
+	if (!pStart)
+		return 0;
+
+	CBaseEntity *pBest = 0;
+	float flBest = 3.4028235e38f;
+
+	for (CHintNode *pNode = (CHintNode *)g_10925450; pNode; pNode = pNode->m_pNext) {
+		int type = pNode->m_nType;
+		if (type == 17000 || type == 0x4653 || type == 0x4652) {
+			Vector *pNodeOrg = ((CEntityVSlots *)pNode)->slot217();
+			Vector *pStartOrg = ((CEntityVSlots *)pStart)->slot217();
+			Vector vec = *pStartOrg - *pNodeOrg;
+			vec.z *= 100.0f;
+			float dist = vec.Length();
+			if (dist >= g_104c6124) {
+				if (sub_103b0c70(((CEntityVSlots *)pNode)->slot217(), g_104c6124)) {
+					vec.z = 0;
+					QAngle angles;
+					sub_10139970(vec, angles);
+					Vector *pStartAng = ((CEntityVSlots *)pStart)->slot219();
+					float yaw = pStartAng->y;
+					float angleDiff = sub_1013d580(yaw, angles.y);
+					float a = (float)fabs(angleDiff) * 0.0055555557f;
+					if (dist > g_104c6144)
+						dist = g_104c6144;
+					float score = a * 0.4f + dist / g_104c6144 * 0.6f;
+					if (score < flBest) {
+						flBest = score;
+						pBest = (CBaseEntity *)pNode;
+					}
+				}
+			}
+		}
+	}
+
+	Vector *pOrg = ((CEntityVSlots *)pBest)->slot217();
+	m_nSpawnOrigin[0] = *(int *)&pOrg->x;
+	m_nSpawnOrigin[1] = *(int *)&pOrg->y;
+	m_nSpawnOrigin[2] = *(int *)&pOrg->z;
+	m_nSpawnTime = *(int *)&gpGlobals->curtime;
+	return (CEntityVSlots *)pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0930 size=0x12b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CNPC_VSheriffMan.h"
+
+struct SheriffListNode : CEntityVSlots
+{
+	char pad[0x5d8 - 4];
+	SheriffListNode *m_pNext;
+	int m_nType;
+};
+extern SheriffListNode *g_10925450;
+
+CEntityVSlots *CNPC_VSheriffMan::sub_103b0930()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SelectCenterNode", g_106b8540);
+	CEntityVSlots *pRef = (CEntityVSlots *)EHandle_Get(m_hHeightTarget);
+	if (!pRef)
+		return 0;
+	CEntityVSlots *pBest = 0;
+	float flBest = 3.4028235e+38f;
+	for (SheriffListNode *p = g_10925450; p; p = p->m_pNext)
+	{
+		if (p->m_nType == 0x4651)
+		{
+			float flDist = (*pRef->slot217() - *p->slot217()).Length();
+			if (flDist < flBest)
+			{
+				flBest = flDist;
+				pBest = p;
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0ab0 size=0x152
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct LedgeHintView : CEntityVSlots
+{
+    char pad[0x5d8 - 4];
+    LedgeHintView *m_pNext;
+    int m_nHintType;
+};
+extern LedgeHintView *g_10925450;
+
+// TARGET: CNPC_VSheriffMan::sub_103b0ab0
+CEntityVSlots *CNPC_VSheriffMan::sub_103b0ab0(char bUseSelf)
+{
+    ScopeTrace trace("CNPC_VSheriffMan::SelectLedgeNode", g_106b8540);
+    CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hHeightTarget);
+    if (!pEnt)
+        return 0;
+    LedgeHintView *pHint = g_10925450;
+    LedgeHintView *pBest = 0;
+    float flBest = 3.402823466e+38f;
+    Vector vecOrigin;
+    if (bUseSelf)
+        vecOrigin = *((CEntityVSlots *)this)->slot217();
+    else
+        vecOrigin = *((CEntityVSlots *)pEnt)->slot217();
+    while (pHint) { if (pHint->m_nHintType == 0x4653)
+        {
+            Vector vecDelta;
+            VectorSubtract(vecOrigin, *pHint->slot217(), vecDelta);
+            float t0 = (vecDelta.z * vecDelta.z) + (vecDelta.x * vecDelta.x); float flDist = FastSqrt(t0 + vecDelta.y * vecDelta.y);
+            if (flDist < flBest)
+            {
+                flBest = flDist;
+                pBest = pHint;
+            }
+        } pHint = pHint->m_pNext; }
+    return pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0c70 size=0x1a2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+bool CNPC_VSheriffMan::sub_103b0c70(const Vector *pPos, float flMinDist)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::PositionClearForTeleport", g_106b8540);
+	if ((*((CEntityVSlots *)this)->slot217() - *pPos).Length() < flMinDist)
+		return false;
+	if ((*(Vector *)m_nSpawnOrigin - *pPos).Length() < 100.0f)
+		return false;
+	CEntityVSlots *pEnt = (CEntityVSlots *)EHandle_Get(m_hHeightTarget);
+	if (pEnt) {
+		if ((*pEnt->slot217() - *pPos).Length() < flMinDist)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b0e90 size=0x1d7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+
+class SBossGlobalView
+{
+public:
+	virtual void v0();
+	virtual void vfunc1();
+};
+extern SBossGlobalView *g_10924a6c;
+
+struct SDamageInfoView	// the 0x4c byte damage record
+{
+	CVDmg_t *m_pVDmg;	// 0x00
+	char m_pad0004[0x30 - 4];
+	float m_flDamage;	// 0x30
+	char m_pad0034[0x4c - 0x34];
+};
+
+int CNPC_VSheriffMan::vfunc390(const void *pInfo)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::OnTakeDamage_Alive", g_106b8540);
+	SDamageInfoView info = *(const SDamageInfoView *)pInfo;
+	float flDamage;
+	if (info.m_pVDmg)
+		flDamage = (float)info.m_pVDmg->sub_101faa70();
+	else
+		flDamage = info.m_flDamage;
+	int nMax = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+	int nCur = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+	if ((float)nCur + flDamage >= nMax) {
+		*(int *)((char *)this + 0x1fc) = 0;
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x79);
+		m_b66e5 = 1;
+	} else {
+		if (!m_b66e4)
+			goto skip;
+	}
+	info.m_flDamage = 0;
+	if (info.m_pVDmg) {
+		*(int *)((char *)info.m_pVDmg + 4) = 0;
+		*(int *)((char *)info.m_pVDmg + 0xc) = 0;
+	}
+skip:
+	return sub_10385a50(&info);
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b10f0 size=0x199
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSheriffMan.h"
+#include "CLogicRelay.h"
+#include "CBaseCombatCharacter.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList g_106eb5d8;
+void *sub_101cda50();
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];	// CBaseEntity type descriptor
+extern char g_1057930c[];	// CLogicRelay type descriptor
+extern char g_106511cc[];	// CNPC_VSheriffMan type descriptor
+
+void CNPC_VSheriffMan::sub_103b10f0()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::KillSheriff", g_106b8540);
+	CBaseEntity *pRelayEnt = g_106eb5d8.sub_100f7770(0, "logic_zap_player", 0, 0);
+	CLogicRelay *pRelay = (CLogicRelay *)__RTDynamicCast(pRelayEnt, 0, g_10538764, g_1057930c, 0);
+	CBaseEntity *pSheriffEnt = g_106eb5d8.sub_100f7770(0, "sheriff", 0, 0);
+	CNPC_VSheriffMan *pSheriff = (CNPC_VSheriffMan *)__RTDynamicCast(pSheriffEnt, 0, g_10538764, g_106511cc, 0);
+	if (pRelay && pSheriff) {
+		inputdata_t data;
+		data.value.iValue = 0;
+		data.value.eVal = 0xffffffff;
+		data.value.fieldType = 0;
+		data.pActivator = sub_101cda50();
+		pRelay->sub_101364e0(&data);
+	}
+	CBaseEntity *pWeapon = (CBaseEntity *)((CBaseCombatCharacter *)this)->sub_1032e7b0();
+	if (pWeapon) {
+		((CEntityVSlots *)pWeapon)->slot66();
+		pWeapon->m_nEffectFlags |= 0x20;
+		{
+			ScopeTrace trace2("CBaseEntity::AddSolidFlags", pWeapon->m_name26c ? pWeapon->m_name26c : g_106b8540);
+			((CCollisionProperty *)((char *)pWeapon + 0x270))->AddSolidFlags(4);
+		}
+		pWeapon->sub_100b3b00();
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b1300 size=0x11c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VAsianVampire.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern float g_104c614c;
+
+struct SJumpView
+{
+	char m_pad0000[0x649c];
+	Vector m_vecJumpStart;	// 0x649c
+	Vector m_vecJumpEnd;	// 0x64a8
+	float m_flJumpHeight;	// 0x64b4
+};
+
+struct CNPC_VAsianVampireUnit : CNPC_VAsianVampire
+{
+	void sub_103b1300(void *pHint);	// "CNPC_VSheriffMan::SetupJump"
+	void sub_102c4e80();	// stub 0x10011a31, called directly
+};
+
+void CNPC_VAsianVampireUnit::sub_103b1300(void *pHint)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SetupJump", g_106b8540);
+	if (pHint) {
+		SJumpView *pView = (SJumpView *)this;
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		pView->m_vecJumpStart = *pThis->slot217();
+		pView->m_vecJumpEnd = *((CEntityVSlots *)m_pHint5ddc)->slot217();
+		float flZ = ((CEntityVSlots *)m_pHint5ddc)->slot217()->z;
+		if (pThis->slot217()->z > flZ)
+			flZ = pThis->slot217()->z;
+		float flDiff = flZ - pThis->slot217()->z;
+		pView->m_flJumpHeight = g_104c614c + flDiff;
+		sub_102c4e80();
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x103b1470 size=0x7b
+#include "CNPC_VSheriffMan.h"
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+struct S1070b228 { char pad[0xc]; int curtime; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+extern S1070b228 *g_1070b228;
+void CNPC_VSheriffMan::sub_103b1470(int unused)
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VSheriffMan::StartAttacking";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int t;
+    sub_10013cf5(1, 1, 10); t = g_1070b228->curtime;
+    *(int *)&m_flAttackStartTime = t;
+    m_bAttacking = 1;
+    *g_109f3680 -= 1;
 }
 // END FUNCTION
 

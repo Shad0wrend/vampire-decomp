@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x103805d0 size=0x576
@@ -236,6 +237,1180 @@ void CHengeyokaiView_103805d0::sub_103805d0(int *pTask)
 		return;
 	case 0x14b:
 		break;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10380cb0 size=0x22a
+#include "CBaseEntity.h"
+#include "CNPC_VHengeyokai.h"
+#include "CAI_Motor.h"
+
+struct CHengeyokaiEnemiesView { void sub_102dfed0(Vector *pVec, CBaseEntity *pEnemy); };
+struct CHengeyokaiTaskView { char sub_10278c80(); void sub_10382d20(); };
+struct CHengeyokaiMotorView { void sub_102e0a60(float flYaw); };
+
+// TARGET: CNPC_VHengeyokai::vfunc444
+void CNPC_VHengeyokai::vfunc444(int *pTask)
+{
+	switch (*pTask) {
+	case 0xc9:
+	{
+		CBaseEntity *pEnemy = vfunc164();
+		Vector vec;
+		((CHengeyokaiEnemiesView *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+		m_pMotor5d44->sub_102e20b0(&vec.x, -1.0f);
+		if (sub_103822a0(pEnemy)) {
+			if (sub_10269aa0(0x1b) || gpGlobals->curtime >= m_fl6674)
+				sub_10273e80(0);
+		}
+		break;
+	}
+	case 0xca:
+	{
+		CBaseEntity *pEnemy = vfunc165();
+		Vector vec;
+		((CHengeyokaiEnemiesView *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+		m_pMotor5d44->sub_102e20b0(&vec.x, -1.0f);
+		if (sub_103822a0(pEnemy))
+			sub_10273e80(0);
+		break;
+	}
+	case 0x132:
+	case 0x133:
+		((CHengeyokaiTaskView *)this)->sub_10382d20();
+		if (vfunc248()) {
+			((CHengeyokaiMotorView *)m_pMotor5d44)->sub_102e0a60(180.0f);
+			sub_10273e80(0);
+		}
+		break;
+	case 0x134:
+		if (vfunc248())
+			sub_10273e80(0);
+		break;
+	case 0x14b:
+		sub_10383470();
+		break;
+	case 200:
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+		goto chase;
+	case 0x31:
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+	chase:
+		m_pMotor5d44->sub_102e1e20(-1);
+		if (((CHengeyokaiTaskView *)this)->sub_10278c80())
+			sub_10273e80(0);
+		break;
+	default:
+		sub_10011928(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10380f70 size=0x3
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10380f90 size=0x18
+#include "CNPC_VHengeyokai.h"
+
+char CNPC_VHengeyokai::vfunc69(void *pOther)
+{
+	if (*((unsigned char *)pOther + 0x4c) & 0x16)
+		return 1;
+	return sub_1029b180(pOther);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10380fc0 size=0x3b0
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CUnknown10738964.h"
+
+struct CHengScale { virtual void vfunc0(); virtual char vfunc1(); char pad[0x24]; float m_fl28; int m_n2c; };
+struct CHengHull { virtual void vfunc0(); virtual const float *GetMins(); virtual const float *GetMaxs(); };
+struct SHengView : CEntityVSlots {
+	char pad[0x270 - 4];
+	CHengHull m_hull;
+	char pad2[0x368 - 0x274];
+	int m_n368;
+};
+extern CHengScale *g_1093b23c;
+void sub_10139610(const Vector *angles, Vector *fwd, Vector *right, Vector *up);
+void sub_10146570(const float *a, const float *b, int c, int d, int e, int f, float g);
+int __fastcall sub_1008bf00(void *p);
+int sub_1023bd00();
+struct CUnknown1004f860 { void sub_1004f860(); };
+
+// TARGET: CNPC_VHengeyokai::sub_10380fc0
+void *CNPC_VHengeyokai::sub_10380fc0(int *pState)
+{
+	SHengView *self = (SHengView *)this;
+	Vector vecStart = *self->slot220();
+	vecStart.z += 4.0f;
+	Vector vecEnd;
+	sub_10139610(self->slot221(), &vecEnd, 0, 0);
+	float flScale = g_1093b23c->vfunc1() ? g_104454c4 : g_1093b23c->m_fl28;
+	vecEnd = vecStart + vecEnd * flScale;
+	int n0 = self->m_n368;
+	CTraceFilterSimpleTwoEnt filter(self, (void *)sub_1008bf00(self), n0);
+	CGameTrace trace;
+	Ray_t ray;
+	CHengHull *pHull = &self->m_hull;
+	const float *pMins = pHull->GetMins();
+	const float *pMaxs = pHull->GetMaxs();
+	{
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540, g_106b8540);
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1006dec0(vecStart, &vecEnd.x, pMins, pMaxs, 1, 0);
+		g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570(trace.m_startpos, trace.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	if (trace.m_fraction == 1.0f)
+		return 0;
+	void *pHit = trace.m_pEnt;
+	if (pHit == (void *)sub_1023bd00())
+		return 0;
+	if (!self->slot69(pHit))
+		return 0;
+	int n368 = self->m_n368;
+	CTraceFilterSimpleTwoEnt filter2(self, (void *)sub_1008bf00(self), n368);
+	vecStart.z += self->slot522();
+	vecEnd.z += self->slot522();
+	CGameTrace trace2;
+	pMins = pHull->GetMins();
+	pMaxs = pHull->GetMaxs();
+	{
+		ScopeTrace scope2("UTIL_TraceHull", g_106b8540, g_106b8540);
+		ray.sub_1006dec0(vecStart, &vecEnd.x, pMins, pMaxs, 1, 0);
+		g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter2, &trace2);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570(trace2.m_startpos, trace2.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	void *pHit2 = trace2.m_pEnt;
+	if (trace2.m_fraction != 1.0f && pHit2 != (void *)sub_1023bd00() && self->slot69(pHit2))
+		*pState = 0;
+	else
+		*pState = 1;
+	return pHit;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381460 size=0x1f5
+#include "CNPC_VHengeyokai.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterWorldOnly.h"
+#include "UTIL_Trace.h"
+#include "IPhysicsObject.h"
+
+struct IPhysTune2
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x24];
+	float m_fl28;
+};
+extern IPhysTune2 *g_1093b29c;
+extern IPhysTune2 *g_1093b1f4;
+
+// TARGET: CNPC_VHengeyokai::sub_10381460
+void CNPC_VHengeyokai::sub_10381460(void *pTarget)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)pTarget;
+	if (!pEnt)
+		return;
+	IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+	if (!pPhys)
+		return; else { Vector vecAng;
+	Vector vecVel;
+	vecAng.Init();
+	((CEntityVSlots *)this)->slot199(&vecVel, 0);
+	float t0 = vecVel.x; float flTemp = t0;
+	vecVel.x = vecVel.y;
+	vecVel.y = -flTemp;
+	Vector vecOrigin = *((CEntityVSlots *)pEnt)->slot220();
+	CGameTrace trace;
+	CTraceFilterWorldOnly filter;
+	UTIL_TraceLine_Calls(vecOrigin, vecOrigin + vecVel, 0x202400b, &filter, &trace);
+	if (trace.m_fraction != 1.0f)
+		vecVel = -vecVel;
+	vecVel = vecVel * (g_1093b29c->vfunc1() ? 0.0f : g_1093b29c->m_fl28);
+	vecVel.z += (g_1093b1f4->vfunc1() ? 0.0f : g_1093b1f4->m_fl28);
+	pPhys->vfunc41(&vecVel, &vecAng); }
+}
+// END FUNCTION
+
+// FUNCTION: 0x103816e0 size=0x4a
+struct V3 { float x, y, z; };
+#define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct E {
+	D(a) D(b) D(c) D(d) D(e) D(f)
+	virtual void g0(); virtual void g1();
+	virtual void set(V3 *v);
+};
+typedef V3 *(__fastcall *PGetV)(E *);
+typedef float (__fastcall *PGetF)(E *);
+void __fastcall sub_103816e0(E *e, int, int)
+{
+	void **vt = *(void ***)e;
+	V3 v = *((PGetV)vt[220])(e);
+	v.z = ((PGetF)(*(void ***)e)[522])(e) + v.z;
+	e->set(&v);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381750 size=0x1a
+#include "CNPC_VHengeyokai.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+char CNPC_VHengeyokai::vfunc599(int unused)
+{
+	g_10924edc->b();
+	return m_b6078 = 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381780 size=0x17
+#include "CNPC_VHengeyokai.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+
+// TARGET: CNPC_VHengeyokai::vfunc600
+bool CNPC_VHengeyokai::vfunc600(int unused)
+{
+	m_b6078 = 1;
+	g_10924edc->b();
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103817b0 size=0xe
+#include "CNPC_VHengeyokai.h"
+struct CUnk10924edc
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern CUnk10924edc *g_10924edc;
+// TARGET: CNPC_VHengeyokai::vfunc601
+void CNPC_VHengeyokai::vfunc601(int unused)
+{
+	g_10924edc->v1();
+}
+// END FUNCTION
+
+// FUNCTION: 0x103817d0 size=0x3
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::vfunc602()
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103817f0 size=0x120
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CNPC_VHengeyokai.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_1063bd94[];
+
+void CNPC_VHengeyokai::vfunc617()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = engine->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 4, g_1063bd94[g_1070b244->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381960 size=0x120
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CNPC_VHengeyokai.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_1063bda4[];
+
+void CNPC_VHengeyokai::vfunc618()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = engine->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 4, g_1063bda4[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381ad0 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CBaseEntity.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc175
+// the game's 0x10381ad0: a tail call (jmp) of CBaseEntity::vfunc175
+void CNPC_VHengeyokai::vfunc175(CBaseEntity *a0)
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc175(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381af0 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc24
+// the game's 0x10381af0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc24
+void CNPC_VHengeyokai::vfunc24(int a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc24(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381b10 size=0x24
+extern char g_10739a4c[];
+
+struct CUnknownGlobal10739a4c {
+	void sub_1000d954(void *pArg);
+};
+
+struct CUnknown10381b10 {
+	void sub_10381b10();
+};
+
+// TARGET: CUnknown10381b10::sub_10381b10
+void CUnknown10381b10::sub_10381b10()
+{
+	((CUnknownGlobal10739a4c *)g_10739a4c)->sub_1000d954(this);
+	*(int *)((char *)this + 0xe80) = 0;
+	*(int *)((char *)this + 0xe88) = 0;
+	*(int *)((char *)this + 0xe84) = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381b50 size=0x3d
+#include "CNPC_VHengeyokai.h"
+
+bool __fastcall sub_10381c80(CNPC_VHengeyokai *p);
+
+// TARGET: CNPC_VHengeyokai::vfunc375
+int CNPC_VHengeyokai::vfunc375(int nAct)
+{
+	if (sub_10381c80(this))
+	{
+		switch (nAct)
+		{
+		case 1:
+			return 0x128;
+		case 9:
+		case 0x13:
+			return 0x129;
+		}
+	}
+	return sub_10006b40(nAct);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381ba0 size=0x24
+class CUnknown10381ba0
+{
+public:
+	char pad0[0x14b8];
+	unsigned int m_flags14b8;
+
+	void sub_10381ba0(char on);
+};
+
+// TARGET: CUnknown10381ba0::sub_10381ba0
+void CUnknown10381ba0::sub_10381ba0(char on)
+{
+	if (on)
+		m_flags14b8 |= 16;
+	else
+		m_flags14b8 &= ~16;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381be0 size=0xc
+#include "CUnknown10381be0.h"
+bool CUnknown10381be0::sub_10381be0()
+{
+	bool r = (m_flags14b8 >> 4) & 1;
+	return r;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381c00 size=0x54
+#include "CNPC_VHengeyokai.h"
+void CNPC_VHengeyokai::sub_10381c00(char bOn)
+{
+	if (bOn) {
+		m_flags14b8 |= 0x20;
+		float flDelay; flDelay = enginerandom->vfunc1(5.0f, 8.0f);
+		m_fl666c = flDelay + gpGlobals->curtime;
+		m_b667d = 0;
+	} else {
+		m_flags14b8 &= ~0x20;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381c80 size=0xc
+unsigned char __fastcall sub_10381c80(char *self)
+{
+	unsigned char v = (unsigned char)(*(unsigned int *)(self + 0x14b8) >> 5);
+	v &= 1;
+	return v;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381ca0 size=0x20
+#include "globalvars.h"
+
+// TARGET: sub_10381ca0
+int __fastcall sub_10381ca0(char *self)
+{
+    if (gpGlobals->curtime >= *(float *)(self + 0x666c))
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381cd0 size=0x155
+#include "CBaseEntity.h"
+#include "CNPC_VHengeyokai.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+bool CNPC_VHengeyokai::sub_10381cd0()
+{
+    CBaseEntity *pEnt = 0;
+    CBaseEntity *pClosest = 0;
+    float flClosest = 1050625.0f;
+    while (1) {
+        pEnt = g_106eb5d8.sub_100f7c30(pEnt, "fish", ((CEntityVSlots *)this)->slot220(), 1024.0f, (CBaseEntity *)this, 0);
+        if (pEnt == 0)
+            goto done;
+        if (sub_10382aa0((int)pEnt))
+            continue;
+        {
+            Vector vecA, vecB;
+            ((CEntityVSlots *)pEnt)->slot199(&vecA, &vecB);
+            if (vecA.x == 0.0f && vecA.y == 0.0f && vecA.z == 0.0f) {
+                Vector *pEntPos = ((CEntityVSlots *)pEnt)->slot220();
+                Vector *pThisPos = ((CEntityVSlots *)this)->slot220();
+                float dx = pThisPos->x - pEntPos->x;
+                float dy = pThisPos->y - pEntPos->y;
+                float dz = pThisPos->z - pEntPos->z;
+                float flDist = dz * dz + dx * dx + dy * dy;
+                if (flDist < flClosest) {
+                    pClosest = pEnt;
+                    flClosest = flDist;
+                }
+            }
+        }
+    }
+done:
+    EHANDLE &h = *(EHANDLE *)&m_h6664;
+    h = pClosest;
+    if (!pClosest)
+        return false;
+    sub_102c4380((CBaseEntity *)EHandle_Get(m_h6664));
+    return sub_10381e90(pClosest);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10381e90 size=0x13e
+#include "CNPC_VHengeyokai.h"
+#include "CRagdollProp.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct HengOriginView {
+    V100(a) V100(b) V10(c0) V10(c1)
+    virtual const Vector *GetOrigin();
+};
+struct HengPhysObjView {
+    V10(a) V10(b) V10(c)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+    virtual void GetPosition(Vector *pPos, Vector *pAngles);
+};
+extern const char *g_1063bd88[];
+extern char g_10538764[];
+extern char g_1057c684[];
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+bool CNPC_VHengeyokai::sub_10381e90(CBaseEntity *pEnt)
+{
+    int i;
+    bool bFound = false;
+    float flBest = 1050625.0f;
+    CRagdollProp *pRagdoll = (CRagdollProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1057c684, 0);
+    if (pRagdoll) {
+        const char **ppName = g_1063bd88;
+        i = 0;
+        while (**ppName) {
+            HengPhysObjView *pObj = (HengPhysObjView *)pRagdoll->vfunc265(*ppName);
+            if (pObj) {
+                Vector pos, ang;
+                pObj->GetPosition(&pos, &ang);
+                const Vector *pOrigin = ((HengOriginView *)this)->GetOrigin();
+                float dx = pOrigin->x - pos.x;
+                float dy = pOrigin->y - pos.y;
+                float dz = pOrigin->z - pos.z;
+                float flDist; flDist = dx * dx + dy * dy + (dz * dz);
+                if (flDist < flBest) {
+                    bFound = true;
+                    m_vecBonePos = pos;
+                    m_n6668 = i;
+                    flBest = flDist;
+                }
+            }
+            ++ppName;
+            i++;
+        }
+    } else {
+        bFound = true;
+        m_vecBonePos = *((HengOriginView *)this)->GetOrigin();
+        m_n6668 = 0;
+    }
+    return bFound;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382020 size=0x1f7
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "AITrace.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+bool CNPC_VHengeyokai::sub_10382020(void *pTarget)
+{
+	if (!pTarget)
+		return false;
+
+	CGameTrace trace;
+	Vector eye;
+	Vector vecForward;
+	Vector vecEnd;
+	Ray_t ray;
+
+	sub_10139610(*(QAngle *)((CEntityVSlots *)this)->slot221(), 0, &vecForward, 0);
+
+	{
+		Vector vecStart = *((CEntityVSlots *)this)->slot193(&eye) - vecForward * -80.0f;
+		((CEntityVSlots *)pTarget)->slot193(&vecEnd);
+		ray.Init(vecStart, vecEnd);
+	}
+	{
+		CTraceFilterSimple filter(this, 0);
+		g_1070b254->vfunc4(&ray, 0x600400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((const Vector *)&trace.m_startpos, (const Vector *)&trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+
+		if (trace.m_fraction != 1.0)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103822a0 size=0x10e
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CNPC_VHengeyokai.h"
+
+float sub_101d2c70(const Vector *pDelta);
+float sub_1013d580(float a, float b);
+
+bool CNPC_VHengeyokai::sub_103822a0(CBaseEntity *pEnt)
+{
+	CEntityVSlots *pOther = (CEntityVSlots *)pEnt;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	if (pOther && EHandle_Get(m_h6664))
+	{
+		Vector vecOther = *pOther->slot220();
+		Vector delta = vecOther - *pSelf->slot220();
+		float flYaw = sub_101d2c70(&delta);
+		float flPitch = ((float *)pSelf->slot221())[1];
+		float flDiff = sub_1013d580(flYaw, flPitch);
+		if (-20.0f <= flDiff && flDiff <= 20.0f)
+			return true;
+		return false;
+	}
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382400 size=0x1ee
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "IPhysicsObject.h"
+#include "CRagdollProp.h"
+#include "CNPC_VHengeyokai.h"
+
+void sub_101cd970(CBaseEntity *pEnt);
+
+// TARGET: CNPC_VHengeyokai::sub_10382400
+void CNPC_VHengeyokai::sub_10382400(void *pArg)
+{
+	CRagdollProp *pEnt = (CRagdollProp *)pArg;
+	if (g_10566458->sub_100290c0(&m_h6690))
+		sub_101cd970(g_10566458->sub_100290c0(&m_h6690));
+	m_h6690 = -1;
+	if (pEnt && g_10566458->sub_100290c0(&m_h6664)) {
+		Vector vecA(0, 0, 0);
+		const Vector *pOrigin = (const Vector *)pEnt->vfunc217();
+		Vector vecB;
+		vecB.x = pOrigin->x;
+		vecB.y = pOrigin->y;
+		vecB.z = pOrigin->z + 48.0f;
+		sub_102c4cc0(&vecA, ((CRagdollProp *)EHandle_Get(m_h6664))->vfunc217(), &vecB);
+		CRagdollProp *pRagdoll = dynamic_cast<CRagdollProp *>((CBaseEntity *)EHandle_Get(m_h6664));
+		if (pRagdoll) {
+			Vector vecZ(0, 0, 0);
+			pRagdoll->vfunc266((int)&vecA, (int)&vecZ);
+		} else {
+			CBaseEntity *pOwner = (CBaseEntity *)EHandle_Get(m_h6664);
+			IPhysicsObject *pPhys = (IPhysicsObject *)pOwner->m_obj36c;
+			if (pPhys) {
+				Vector vecVel, vecAng;
+				Vector vecZ(0, 0, 0);
+				pPhys->vfunc40(&vecVel.x, &vecAng.x);
+				pPhys->vfunc39(&vecA.x, &vecZ.x);
+			}
+		}
+	}
+	m_h6664 = -1;
+	sub_102c43b0(0.75f);
+	sub_10381c00(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382670 size=0x1be
+#include "CBaseAnimating.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CNPC_VHengeyokai.h"
+#include "CBaseEntity.h"
+#include "CRagdollPropSpecial.h"
+#include "CPhysicsAnimlink.h"
+#include "CUnknown101578b0.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_10538764[];
+extern char g_1057fff0[];
+extern float g_1070d1b0[];
+CPhysicsAnimlink *sub_100a9ab0(const char *pszName, const float *pA, const float *pB, void *pC);
+int sub_10430130(unsigned int v);
+
+struct CHengeyokaiAnimView
+{
+	char m_pad0[0xf0];
+	int m_nBones;
+	int m_nOffset;
+};
+
+#define HV(n) virtual void vfunc##n();
+#define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
+struct CHengeyokaiRagView
+{
+	HV(0) HV(1) HV(2) HV(3) HV(4) HV(5) HV(6) HV(7) HV(8) HV(9)
+	HV10(1) HV10(2) HV10(3) HV10(4) HV10(5) HV10(6) HV10(7) HV10(8) HV10(9)
+	HV10(10) HV10(11) HV10(12) HV10(13) HV10(14) HV10(15) HV10(16) HV10(17) HV10(18)
+	HV(190)
+	virtual void vfunc191(float value);
+	HV(192) HV(193) HV(194) HV(195) HV(196) HV(197) HV(198) HV(199)
+	HV10(20) HV10(21) HV10(22) HV10(23) HV10(24) HV10(25)
+	HV(260) HV(261) HV(262) HV(263) HV(264)
+	virtual void *vfunc265(int value);
+};
+
+namespace block_10382670 {
+struct CHengeyokaiUnit : CNPC_VHengeyokai
+{
+	void sub_10381ba0(char b);
+};
+void CHengeyokaiUnit::sub_10381ba0(char b)
+{
+	if (b)
+		m_flags14b8 |= 0x10;
+	else
+		m_flags14b8 &= ~0x10;
+}
+}
+using namespace block_10382670;
+
+namespace block_10157890 {
+#pragma auto_inline(off)
+
+struct V : CUnknown101578b0 { void sub_10157890(char value); };
+void V::sub_10157890(char value)
+{
+	m_bFlag103c = value;
+}
+
+#pragma auto_inline(on)
+}
+#define HASH(x) (((((((x) & 0x3f3c1135) ^ 0x544222df) + 0x4ba5398d) & 0xc0c3eeca) ^ (x)) ^ 0x151a77f8)
+// TARGET: CNPC_VHengeyokai::sub_10382670
+bool CNPC_VHengeyokai::sub_10382670(void *pEnt, const char *pszBone)
+{
+	if (!pEnt)
+		return false;
+	CPhysicsAnimlink *pLink = sub_100a9ab0("phys_animlink", g_1070d1b0, g_1070d9d0, 0);
+	if (!pLink)
+		return false;
+	CHengeyokaiAnimView *pAnim = sub_100952d0(-1);
+	int iBone;
+	for (int i = 0; i < pAnim->m_nBones; i++)
+	{
+		int *p = (int *)(pAnim->m_nOffset + (char *)pAnim + i * 0xa0);
+		const char *pszName = (char *)p + *p;
+		if (!_strcmpi("Bip01 R Hand", pszName))
+		{
+			iBone = i;
+			break;
+		}
+	}
+	if (0 > iBone)
+		return false;
+	void *pPhys = *(void **)((char *)pEnt + 0x36c);
+	if (!pPhys)
+		return false;
+	CHengeyokaiRagView *pRagdoll = (CHengeyokaiRagView *)__RTDynamicCast(pEnt, 0, g_10538764, g_1057fff0, 0);
+	if (pRagdoll)
+	{
+		((block_10157890::V *)(((CUnknown101578b0 *)pRagdoll)))->sub_10157890(1);
+		int h = HASH(m_Secure6698.m_Value);
+		int n = sub_10430130(h);
+		pRagdoll->vfunc191(n);
+		pPhys = pRagdoll->vfunc265((int)pszBone);
+		if (!pPhys)
+			return false;
+	}
+	Vector vecA(0, 0, 0);
+	Vector vecB(0, 0, 0);
+	pLink->sub_1014f210((CBaseAnimating *)this, iBone, pPhys, (int)&vecA, (int)&vecB);
+	m_h6690 = *pLink->vfunc1();
+	((CHengeyokaiUnit *)this)->sub_10381ba0(0);
+	sub_10381c00(1);
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103828a0 size=0x9c
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+namespace block_103828a0 {
+unsigned char __fastcall sub_10381c80(char *self)	// as its own block (0x10381c80)
+{
+	unsigned char v = (unsigned char)(*(unsigned int *)(self + 0x14b8) >> 5);
+	v &= 1;
+	return v;
+}
+}
+using namespace block_103828a0;
+struct HV {
+    char pad[0x6690];
+    volatile unsigned int m_h6690;
+    void sub_10013110(float f);
+    void sub_10014899(int a);
+};
+void sub_1000e255(CBaseEntity *pEnt);
+inline bool Valid(CGlobalEntityList *l, unsigned int h)
+{
+    if (h == 0xffffffff)
+        return false;
+    CGlobalEntityList_Slot *s = &l->m_Slots[h & 0x1fff];
+    if (s->m_Serial != (int)(h >> 13))
+        return false;
+    if (s->m_pEntity == 0)
+        return false;
+    return true;
+}
+inline CGlobalEntityList_Ent *HandleGet(CGlobalEntityList *l, unsigned int h)
+{
+    if (h == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *s = &l->m_Slots[h & 0x1fff];
+    return (unsigned int)s->m_Serial == (h >> 13) ? s->m_pEntity : 0;
+}
+// TARGET: sub_103828a0
+void __fastcall sub_103828a0(char *p)
+{
+    HV *v = (HV *)p;
+    if (sub_10381c80(p)) {
+        *(int *)(p + 0x6664) = -1;
+        v->sub_10013110(0.75f);
+        if (Valid(g_10566458, v->m_h6690))
+            sub_1000e255((CBaseEntity *)HandleGet(g_10566458, v->m_h6690));
+        v->m_h6690 = 0xffffffff;
+        v->sub_10014899(0);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382970 size=0xed
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "CUnknown10382970.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
+
+
+struct TimedElem
+{
+	int m_id;
+	float m_time;
+};
+
+struct TimedVector
+{
+	TimedElem *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+	TimedElem *m_pElements;
+
+	void Grow(int num)
+	{
+		if (m_nGrow == -1)
+			return;
+		int nAllocationRequested = m_nAlloc + num;
+		while (m_nAlloc < nAllocationRequested) {
+			if (m_nAlloc != 0) {
+				if (m_nGrow)
+					m_nAlloc = m_nAlloc + m_nGrow;
+				else
+					m_nAlloc = m_nAlloc * 2;
+			} else {
+				m_nAlloc = 4;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (TimedElem *)Plat_Realloc(m_pMemory, m_nAlloc * 8);
+		else
+			m_pMemory = (TimedElem *)Plat_Alloc(m_nAlloc << 3);
+	}
+
+	void GrowVector(int num)
+	{
+		if (m_nSize + num > m_nAlloc)
+			Grow(m_nSize + num - m_nAlloc);
+	}
+
+	void InsertBefore(int elem, const TimedElem &src)
+	{
+		GrowVector(1);
+		m_nSize++;
+		m_pElements = m_pMemory;
+		int toMove = m_nSize - elem - 1;
+		if (toMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], toMove * sizeof(TimedElem));
+		TimedElem *p = &m_pMemory[elem];
+		if (p) {
+			p->m_id = src.m_id;
+			p->m_time = src.m_time;
+		}
+	}
+};
+
+void CUnknown10382970::sub_10382970(int id)
+{
+	TimedElem e = { id, gpGlobals->curtime + 20.0f };
+	TimedVector *v = (TimedVector *)&m_pTimedMemory;
+	v->InsertBefore(v->m_nSize, e);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382aa0 size=0x69
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CNPC_VHengeyokai.h"
+bool CNPC_VHengeyokai::sub_10382aa0(int key)
+{
+	int idx = sub_10382b30(key);
+	if (idx != -1) {
+		if (gpGlobals->curtime < m_Timers.Element(idx).m_time)
+			return true;
+		m_Timers.FastRemove(idx);
+	}
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382b30 size=0x5b
+#include "CNPC_VHengeyokai.h"
+struct EntSub { void *ent; unsigned int serial; };
+struct EntInfo { int pad; EntSub s; };
+extern EntInfo *g_10566458;
+
+int CNPC_VHengeyokai::sub_10382b30(int key)
+{
+    for (int i = 0; i < m_Timers.m_size; i++) {
+        unsigned int h = m_Timers.m_pMemory[i].m_key;
+        void *ent;
+        if (h != 0xffffffff) {
+            EntSub *s = &g_10566458[h & 0x1fff].s;
+            if (s->serial == (h >> 13))
+                ent = s->ent;
+            else
+                ent = 0;
+        } else
+            ent = 0;
+        if (ent == (void *)key)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382bb0 size=0x114
+#include "CNPC_VHengeyokai.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CTargetSlots {
+	S100(0) S100(1) S10(20) S10(21)
+	virtual Vector *slot220(float f);
+};
+struct CMotorUnit : CAI_Motor {
+	void sub_102e0a40(float flYaw);
+	void sub_102e0a60(float flRate);
+	void sub_102e0b40();
+	void sub_10007248(Vector *pPos);
+	void SetIdealYaw(float flYaw);
+};
+static inline float AngleY(const Vector *p)
+{
+	return p->y;
+}
+inline void CMotorUnit::SetIdealYaw(float flYaw)
+{
+	if (m_28)
+	{
+		if (flYaw >= 180.0f)
+			flYaw = flYaw - 180.0f;
+		else
+			flYaw = flYaw + 180.0f;
+	}
+	if (*(float *)&m_1c == 180.0f)
+		m_34 = flYaw;
+	else
+		m_34 = sub_102e0a80(flYaw);
+}
+
+void CNPC_VHengeyokai::sub_10382bb0()
+{
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	if (EHandle_Get(m_h6664))
+	{
+		((CMotorUnit *)m_pMotor5d44)->sub_102e0a40(AngleY(pSelf->slot221()));
+		((CMotorUnit *)m_pMotor5d44)->sub_102e0a60(20.0f);
+		((CMotorUnit *)m_pMotor5d44)->sub_102e0b40();
+		if (pSelf->slot167())
+		{
+			CTargetSlots *pTarget = (CTargetSlots *)pSelf->slot167();
+			CMotorUnit *pMotor = (CMotorUnit *)m_pMotor5d44;
+			pMotor->sub_10007248(pTarget->slot220(-1.0f));
+			return;
+		}
+		float flYaw = AngleY(pSelf->slot221());
+		((CMotorUnit *)m_pMotor5d44)->SetIdealYaw(flYaw);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382d20 size=0xe
+namespace lifted {
+struct C1000e6e7 { int sub_1000e6e7(int); };
+}
+struct CUnknown10382d20 { int sub_10382d20(); };
+int CUnknown10382d20::sub_10382d20()
+{
+    return ((lifted::C1000e6e7 *)(*(int *)((char *)this + 0x5d44)))->sub_1000e6e7(-1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382d40 size=0x1a2
+#include "CBaseEntity.h"
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown102e0150.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+int CNPC_VHengeyokai::sub_10382d40()
+{
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	CEntityVSlots *pEnemy = (CEntityVSlots *)pThis->slot167();
+	char bBlocked;
+	if (pEnemy)
+		bBlocked = pThis->slot530(pEnemy);
+	else
+		bBlocked = 1;
+	sub_10269aa0(9);
+	if (!bBlocked)
+	{
+		if (!m_b667c)
+		{
+			if (g_1070b244->vfunc2(0, 99) >= 0x50)
+				goto fail;
+		}
+		else
+		{
+			if (g_1070b244->vfunc2(0, 99) >= 0x28)
+				goto fail;
+		}
+	}
+	if (!sub_10381cd0())
+	{
+fail:
+		m_n6678 = 2;
+		m_b667c = 0;
+		return 0;
+	}
+	CEntityVSlots *pTarget = (CEntityVSlots *)EHandle_Get(m_h6664);
+	const Vector *pMyOrigin = pThis->slot220();
+	Vector vecToTarget = *pTarget->slot220() - *pMyOrigin;
+	if (!bBlocked && pEnemy)
+	{
+		Vector vecLastKnown;
+		pThis->slot541()->sub_102dfed0(&vecLastKnown, (CBaseEntity *)pEnemy);
+		if (!(vecToTarget.LengthSqr() < (vecLastKnown - *pThis->slot220()).LengthSqr()))
+		{
+			m_h6664 = 0xffffffff;
+			sub_102c43b0(0);
+			return 0;
+		}
+	}
+	sub_10381ba0(1);
+	m_b667c = 1;
+	return 0x16b;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10382f60 size=0xee
+#include "CNPC_VHengeyokai.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+#define EV(n) virtual void ev##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+
+struct NpcV {
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15)
+	EV(160) EV(161) EV(162) EV(163) EV(164) EV(165) EV(166)
+	virtual NpcV *ev167();
+	EV(168) EV(169)
+	EV10(17) EV10(18) EV10(19) EV10(20) EV10(21)
+	virtual float *ev220();
+};
+
+int CNPC_VHengeyokai::sub_10382f60()
+{
+	*(int *)((char *)this + 0x6678) = 0;
+	if (!sub_10269d30(0x1a)) {
+		NpcV *self = (NpcV *)this;
+		if (self->ev167()) {
+			NpcV *pEnemy = self->ev167();
+			float *pOther = pEnemy->ev220();
+			float *pMine = self->ev220();
+			float dx = pMine[0] - pOther[0];
+			float dy = pMine[1] - pOther[1];
+			float dz = pMine[2] - pOther[2];
+			float flDist = dx * dx + dy * dy + dz * dz;
+			if (flDist > 160000.0f)
+				return g_1070b244->vfunc2(0, 99) < 70 ? 0x15c : 0x16a;
+			if (flDist > 40000.0f)
+				return g_1070b244->vfunc2(0, 99) < 40 ? 0x15c : 0x16a;
+			return 0x16a;
+		}
+	}
+	return 0x15c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10383090 size=0x39
+#include "CNPC_VHengeyokai.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc435
+void CNPC_VHengeyokai::vfunc435(int arg)
+{
+	sub_100048f9(arg);
+	if ((~*(unsigned int *)((char *)this + 0x14b8) & 8) != 0)
+	{
+		int n = m_n6678;
+		*(int *)((char *)this + 0x6680) = 0;
+		if (n > 0)
+		{
+			m_n6678 = n - 1;
+		}
 	}
 }
 // END FUNCTION

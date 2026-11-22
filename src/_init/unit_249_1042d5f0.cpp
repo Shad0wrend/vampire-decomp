@@ -12,26 +12,3 @@ IdTable g_109ef590;
 #include "CSharedGameRules.h"
 CSharedGameRules g_109eff34;
 // END FUNCTION
-
-// FUNCTION: 0x1042e110 size=0x5
-int sub_1042e150(void);
-int g_109f0284 = ((int (*)(int))sub_1042e150)(0);
-// END FUNCTION
-
-// FUNCTION: 0x1042e1a0 size=0x5
-#include "ServerClassReg.h"
-#include "SendTable.h"
-extern SendTable g_109f028c;
-extern char g_106af054[];
-ServerClassReg g_109f02a8("CSprite", &g_109f028c, g_106af054);
-// END FUNCTION
-
-// FUNCTION: 0x1042e250 size=0xa
-#include "SendTable.h"
-SendTable g_109f028c;
-// END FUNCTION
-
-// FUNCTION: 0x1042e2d0 size=0x5
-int sub_1042e310(void);
-int g_109f0288 = ((int (*)(int))sub_1042e310)(0);
-// END FUNCTION

@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x103ba780 size=0x26
@@ -860,6 +861,125 @@ int CNPC_VTzimisceUnit::sub_103bccc0()
 		return 0x163;
 	}
 	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103bce40 size=0x341
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CDevFlagObj.h"
+#include "globalvars.h"
+
+extern CDevFlagObj *g_10924a6c;
+extern CNPC_VTzimisceConVar *g_1093cce4;
+
+struct CZimEnemies
+{
+	void sub_102dfed0(Vector *pOut, CBaseEntity *pEnt);
+};
+
+struct CZimNpc : CNPC_VTzimisce
+{
+	void sub_102b27f0();
+	void sub_10269b50(int condition);
+	void sub_10269a20(int condition);
+	char sub_10269c70(int condition);
+	bool sub_103be130();
+	bool sub_103be150();
+};
+
+typedef CBaseEntity *(__fastcall *ZimEntFn)(void *);
+typedef CZimEnemies *(__fastcall *ZimViewFn)(void *);
+
+// TARGET: CNPC_VTzimisce::vfunc433
+void CNPC_VTzimisce::vfunc433()
+{
+	CZimNpc *pThis = (CZimNpc *)this;
+	pThis->sub_102b27f0();
+	pThis->sub_10269b50(0x77);
+	pThis->sub_10269b50(0x1b);
+	pThis->sub_10269b50(0x78);
+	if (pThis->sub_103be130()) {
+		if (EHandle_Get(m_hTarget)) {
+			CBaseEntity *pTarget = (CBaseEntity *)EHandle_Get(m_hTarget);
+			float *p4 = (float *)((CEntityVSlots *)pTarget)->slot217();
+			float *p5 = vfunc217();
+			float dx = p5[0] - p4[0];
+			float dy = p5[1] - p4[1];
+			float dz = p5[2] - p4[2];
+			if (dx * dx + dy * dy + dz * dz > 25600.0f) {
+				g_10924a6c->vfunc1();
+				pThis->sub_10269a20(0x77);
+			}
+		}
+		if (sub_10269aa0(0x4a)) {
+			if (sub_103be630((CBaseEntity *)vfunc167())) {
+				g_10924a6c->vfunc1();
+				pThis->sub_10269a20(0x1b);
+			}
+		}
+		if (pThis->sub_103be150()) {
+			g_10924a6c->vfunc1();
+			pThis->sub_10269a20(0x78);
+		}
+	}
+	if (m_p5ddc) {
+		int type = *(int *)((char *)m_p5ddc + 0x5dc);
+		if (type == 0x36b0 || type == 0x36b1) {
+			CBaseEntity *pEnt = (*(ZimEntFn **)this)[168](this);
+			if (pEnt) {
+				if (sub_103bfc20(m_p5ddc, pEnt)) {
+					pThis->sub_10269b50(0x1c);
+					pThis->sub_10269b50(0x1d);
+				} else {
+					g_10924a6c->vfunc1();
+					pThis->sub_10269a20(0x1c);
+					float *pa = (float *)((CEntityVSlots *)pEnt)->slot220();
+					float *pb = (float *)((CEntityVSlots *)m_p5ddc)->slot220();
+					float dx = pb[0] - pa[0];
+					float dy = pb[1] - pa[1];
+					float dz = pb[2] - pa[2];
+					float d = dx * dx + dy * dy + dz * dz;
+					if (10000.0f <= d && d <= 40000.0f) {
+						pThis->sub_10269b50(0x1d);
+					} else {
+						g_10924a6c->vfunc1();
+						pThis->sub_10269a20(0x1d);
+					}
+				}
+			} else {
+				g_10924a6c->vfunc1();
+				pThis->sub_10269a20(0x1c);
+				g_10924a6c->vfunc1();
+				pThis->sub_10269a20(0x1d);
+			}
+		}
+	}
+	if (gpGlobals->curtime > m_fl66ac) {
+		m_fl66ac = gpGlobals->curtime + 2.5f;
+		if (pThis->sub_10269c70(0x23)) {
+			if (vfunc167()) {
+				Vector vecPos;
+				(*(ZimViewFn **)this)[541](this)->sub_102dfed0(&vecPos, (CBaseEntity *)vfunc167());
+				if (!g_1093cce4->vfunc1() && g_1093cce4->m_n2c && sub_103bf660(vecPos)) {
+					g_10924a6c->vfunc1();
+					pThis->sub_10269a20(0x23);
+				} else {
+					pThis->sub_10269b50(0x23);
+				}
+			} else {
+				pThis->sub_10269b50(0x23);
+			}
+		} else {
+			pThis->sub_10269b50(0x23);
+		}
+	}
+	if (gpGlobals->curtime > m_fl66b0) {
+		m_fl66b0 = gpGlobals->curtime + 10.0f;
+		m_n66b8 = 0;
+	}
 }
 // END FUNCTION
 

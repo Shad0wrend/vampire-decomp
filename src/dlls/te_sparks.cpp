@@ -1,0 +1,103 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// placement guessed: the reference trees' server project lists this file; 8 blocks
+#include "vampire.h"
+
+// FUNCTION: 0x10067620 size=0x24
+#include "CTESparks.h"
+
+CTESparks::CTESparks(const char *name) : CTEParticleSystem(name)
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x10067660 size=0x1e
+#include "CTESparks.h"
+
+// TARGET: CTESparks::vfunc2
+CBaseTempEntity *CTESparks::vfunc2(unsigned int flags)
+{
+	sub_1000dc10();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10067690 size=0xb
+namespace lifted {
+extern char g_1044e064;
+int sub_100021d0();
+}
+struct CUnknown10067690 { int sub_10067690(); };
+int CUnknown10067690::sub_10067690()
+{
+    *(int *)this = (int)&lifted::g_1044e064;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100676b0 size=0xe3
+#include "CTESparks.h"
+#include "CBroadcastRecipientFilter.h"
+
+void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+void sub_10139500(const float *pStart, float flScale, const float *pDirection, float *pDest);
+
+void CTESparks::vfunc3(const Vector &pOrigin, const QAngle &pAngles)
+{
+#define pOrigin ((const float *)&pOrigin)
+#define pAngles ((const float *)&pAngles)
+	m_vecOrigin = *(const Vector *)pOrigin;
+	m_vecOrigin.z += 24.0f;
+	Vector vecForward;
+	sub_10139610(pAngles, &vecForward.x, 0, 0);
+	vecForward.z = 0;
+	VectorNormalize(vecForward);
+	sub_10139500(&m_vecOrigin.x, 100.0f, &vecForward.x, &m_vecOrigin.x);
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0);
+#undef pAngles
+#undef pOrigin
+}
+// END FUNCTION
+
+// FUNCTION: 0x100677e0 size=0x39
+#include "CRecipientFilter.h"
+#include "CTESparks.h"
+#include "CTEMetalSparks.h"
+#include "IVEngineServerFull.h"
+
+void CTESparks::vfunc4(CRecipientFilter &pFilter, float flDelay)
+{
+#define pFilter ((CRecipientFilter *)&pFilter)
+	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+#undef pFilter
+}
+// END FUNCTION
+
+// FUNCTION: 0x10067830 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106c55e0;
+extern char g_10544c20[];
+ServerClassReg g_106c55fc("CTESparks", &g_106c55e0, g_10544c20);
+// END FUNCTION
+
+// FUNCTION: 0x100678a0 size=0x6
+#include "CTESparks.h"
+namespace lifted {
+extern char g_106c55fc;
+}
+ServerClass *CTESparks::vfunc0()
+{
+    return (ServerClass *)&lifted::g_106c55fc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100678c0 size=0x3
+#include "CTESparks.h"
+int CTESparks::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION

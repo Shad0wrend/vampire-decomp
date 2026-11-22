@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x10281730 size=0x6d
@@ -39,6 +40,568 @@ void CNpcScheduleUnit::sub_10281730()
     *(const char **)(p + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC_Schedule.cpp";
     *(int *)(p + 0x1b34) = 0x2aa;
     sub_102cc1f0(r);
+}
+// END FUNCTION
+
+// FUNCTION: 0x102817c0 size=0xccd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
+#include <string.h>
+#include <stdlib.h>
+#include "ScopeTrace.h"
+
+extern double *g_109f367c;	// &g_ClockSpeedMillisecondsMultiplier (tier0 import)
+
+namespace block_102817c0 {
+class CCycleCount
+{
+public:
+	CCycleCount() { Init(); }
+	void Init() { m_Int64 = 0; }
+	void Init(float initTimeMsec)
+	{
+		if (*g_109f367c > 0)
+			m_Int64 = initTimeMsec / *g_109f367c;
+		else
+			m_Int64 = 0;
+	}
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov		ecx, pSample
+			rdtsc
+			mov		[ecx],     eax
+			mov		[ecx+4],   edx
+		}
+	}
+	bool IsLessThan(CCycleCount const &other) const { return m_Int64 < other.m_Int64; }
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	__int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void Start() { m_Duration.Sample(); }
+	void sub_100335e0();	// CFastTimer::End, out of line (0x100335e0)
+	void End()
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	void EndI()
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	CCycleCount GetDurationInProgress() const
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		CCycleCount result;
+		result.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+		return result;
+	}
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+
+class CTimeScope
+{
+public:
+	CTimeScope(CFastTimer *pTotal) { m_pTimer = pTotal; m_pTimer->Start(); }
+	~CTimeScope() { m_pTimer->End(); }
+	CFastTimer *m_pTimer;
+};
+
+}
+using namespace block_102817c0;
+
+class CVProfile;
+extern CVProfile *g_109f3648;
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);
+	void EnterScope();
+	bool ExitScope();
+	void EnterScopeI();
+	bool ExitScopeI();
+	bool ExitScopeII();
+	const char *GetName() { return m_pszName; }
+	CVProfNode *GetParent() { return m_pParent; }
+	int GetBudgetGroupID() { return m_BudgetGroupID; }
+
+	const char *m_pszName;	// 0x00
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	unsigned m_nPrevFrameCalls;
+	CCycleCount m_PrevFrameTime;
+	unsigned m_nTotalCalls;
+	CCycleCount m_TotalTime;
+	CCycleCount m_PeakTime;
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+__declspec(dllimport) void vtune(bool bEnable);
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PushGroup(int nGroupID);
+	void PopGroup();
+	void PopGroupI();
+	void EnterScopeI(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void EnterScopeII(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScopeI();
+	void ExitScopeII();
+	void ExitScopeIII();
+
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+};
+
+// node EnterScope inlined (PushGroup imported)
+inline void CVProfNode::EnterScopeI()
+{
+	m_nCurFrameCalls++;
+	if (m_nRecursions++ == 0)
+	{
+		m_Timer.Start();
+		g_109f3648->PushGroup(m_BudgetGroupID);
+	}
+}
+
+// node ExitScope inlined, timer End out of line, PopGroup imported
+inline bool CVProfNode::ExitScopeI()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.sub_100335e0();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+// node ExitScope inlined, timer End inlined, PopGroup inlined
+inline bool CVProfNode::ExitScopeII()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.EndI();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroupI();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::PopGroupI()
+{
+	--m_nGroupStackDepth;
+	int nNew = m_GroupIDStack[m_nGroupStackDepth];
+	int nOld = m_GroupIDStack[m_nGroupStackDepth + 1];
+	if (nNew != nOld && m_bVTuneGroupsEnabled && nOld == m_nVTuneGroupID)
+		vtune(false);
+}
+
+// profile EnterScope inlined, node EnterScope imported
+inline void CVProfile::EnterScopeI(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+{
+	if (m_enabled != 0 || !m_fAtRoot)
+	{
+		if (pszName != m_pCurNode->GetName())
+		{
+			m_pCurNode = m_pCurNode->GetSubNode(pszName, detailLevel, pBudgetGroupName);
+		}
+		m_pCurNode->EnterScope();
+		m_fAtRoot = false;
+	}
+}
+
+// profile EnterScope inlined, node EnterScope inlined
+inline void CVProfile::EnterScopeII(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+{
+	if (m_enabled != 0 || !m_fAtRoot)
+	{
+		if (pszName != m_pCurNode->GetName())
+		{
+			m_pCurNode = m_pCurNode->GetSubNode(pszName, detailLevel, pBudgetGroupName);
+		}
+		m_pCurNode->EnterScopeI();
+		m_fAtRoot = false;
+	}
+}
+
+inline void CVProfile::ExitScopeI()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+inline void CVProfile::ExitScopeII()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScopeI())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+inline void CVProfile::ExitScopeIII()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScopeII())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+struct Task_t { int iTask; float flTaskData; };
+struct CAI_Schedule817 { char m_pad00[0x1c]; int m_iId; char m_pad20[4]; int m_NumTasks; };
+struct AITaskTimings817
+{
+	const char *pszTask;
+	int m_pad04;
+	CFastTimer nextTask;	// 0x08
+	CFastTimer selectSchedule;	// 0x10
+	CFastTimer setSchedule;	// 0x18
+	CFastTimer startTimer;	// 0x20
+	CFastTimer runTimer;	// 0x28
+	CFastTimer maintainActivity;	// 0x30
+};
+extern AITaskTimings817 g_10923a38[10];	// g_AITaskTimings
+extern int g_10923c70;	// g_nAITasksRun
+extern bool g_10923c74;	// static fInitializedTimeLimit
+extern CFastTimer g_10920338;	// g_AIMaintainScheduleTimer
+extern unsigned int g_1092053c;	// CAI_BaseNPC::m_nDebugBits
+extern int g_105c9798;	// CAI_BaseNPC::m_nDebugPauseIndex
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// Msg
+struct GV817 { char m_pad00[0xc]; float curtime; };
+extern GV817 *g_1070b228;
+struct EList817 { char *sub_100290c0(int *pHandle); };
+extern EList817 *g_10566458;
+struct Nav817 { bool sub_102ee6a0(); };
+
+#define F(T, off) (*(T *)((char *)this + (off)))
+
+struct CMaintainScheduleView
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39();
+	virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43(); virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47(); virtual void s48(); virtual void s49();
+	virtual void s50(); virtual void s51(); virtual void s52(); virtual void s53(); virtual void s54(); virtual void s55(); virtual void s56(); virtual void s57(); virtual void s58(); virtual void s59();
+	virtual void s60(); virtual void s61(); virtual void s62(); virtual void s63(); virtual void s64(); virtual void s65(); virtual void s66(); virtual void s67(); virtual void s68(); virtual void s69();
+	virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76(); virtual void s77(); virtual void s78(); virtual void s79();
+	virtual void s80(); virtual void s81(); virtual void s82(); virtual void s83(); virtual void s84(); virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88(); virtual void s89();
+	virtual void s90(); virtual void s91(); virtual void s92(); virtual void s93(); virtual void s94(); virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99();
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105(); virtual void s106(); virtual void s107(); virtual void s108(); virtual void s109();
+	virtual void s110(); virtual void s111(); virtual void s112(); virtual void s113(); virtual void s114(); virtual void s115(); virtual void s116(); virtual void s117(); virtual void s118(); virtual void s119();
+	virtual void s120(); virtual void s121(); virtual void s122(); virtual void s123(); virtual void s124(); virtual void s125(); virtual void s126(); virtual void s127(); virtual void s128(); virtual void s129();
+	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133(); virtual void s134(); virtual void s135(); virtual void s136(); virtual void s137(); virtual void s138(); virtual void s139();
+	virtual void s140(); virtual void s141(); virtual void s142(); virtual void s143(); virtual void s144(); virtual void s145(); virtual void s146(); virtual void s147(); virtual void s148(); virtual void s149();
+	virtual void s150(); virtual void s151(); virtual void s152(); virtual void s153(); virtual void s154(); virtual void s155(); virtual void s156(); virtual void s157(); virtual void s158(); virtual void s159();
+	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163(); virtual void s164(); virtual void s165(); virtual void s166(); virtual void s167(); virtual void s168(); virtual void s169();
+	virtual void s170(); virtual void s171(); virtual void s172(); virtual void s173(); virtual void s174(); virtual void s175(); virtual void s176(); virtual void s177(); virtual void s178(); virtual void s179();
+	virtual void s180(); virtual void s181(); virtual void s182(); virtual void s183(); virtual void s184(); virtual void s185(); virtual void s186(); virtual void s187(); virtual void s188(); virtual void s189();
+	virtual void s190(); virtual void s191(); virtual void s192(); virtual void s193(); virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198(); virtual void s199();
+	virtual void s200(); virtual void s201(); virtual void s202(); virtual void s203(); virtual void s204(); virtual void s205(); virtual void s206(); virtual void s207(); virtual void s208(); virtual void s209();
+	virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216(); virtual void s217(); virtual void s218(); virtual void s219();
+	virtual void s220(); virtual void s221(); virtual void s222(); virtual void s223(); virtual void s224(); virtual void s225(); virtual void s226(); virtual void s227(); virtual void s228(); virtual void s229();
+	virtual void s230(); virtual void s231(); virtual void s232(); virtual void s233(); virtual void s234(); virtual void s235(); virtual void s236(); virtual void s237(); virtual void s238(); virtual void s239();
+	virtual void s240(); virtual void s241(); virtual void s242(); virtual void s243(); virtual void s244(); virtual void s245(); virtual void s246(); virtual void s247(); virtual void s248(); virtual void s249();
+	virtual void s250(); virtual void s251(); virtual void s252(); virtual void s253(); virtual void s254(); virtual void s255(); virtual void s256(); virtual void s257(); virtual void s258(); virtual void s259();
+	virtual void s260(); virtual void s261(); virtual void s262(); virtual void s263(); virtual void s264(); virtual void s265(); virtual void s266(); virtual void s267(); virtual void s268(); virtual void s269();
+	virtual void s270(); virtual void s271(); virtual void s272(); virtual void s273(); virtual void s274(); virtual void s275(); virtual void s276(); virtual void s277(); virtual void s278(); virtual void s279();
+	virtual void s280(); virtual void s281(); virtual void s282(); virtual void s283(); virtual void s284(); virtual void s285(); virtual void s286(); virtual void s287(); virtual void s288(); virtual void s289();
+	virtual void s290(); virtual void s291(); virtual void s292(); virtual void s293(); virtual void s294(); virtual void s295(); virtual void s296(); virtual void s297(); virtual void s298(); virtual void s299();
+	virtual void s300(); virtual void s301(); virtual void s302(); virtual void s303(); virtual void s304(); virtual void s305(); virtual void s306(); virtual void s307(); virtual void s308(); virtual void s309();
+	virtual void vfunc310(int act);
+	virtual void s311(); virtual void s312(); virtual void s313(); virtual void s314(); virtual void s315(); virtual void s316(); virtual void s317(); virtual void s318(); virtual void s319(); virtual void s320();
+	virtual void s321(); virtual void s322(); virtual void s323(); virtual void s324(); virtual void s325(); virtual void s326(); virtual void s327(); virtual void s328(); virtual void s329(); virtual void s330();
+	virtual void s331(); virtual void s332(); virtual void s333(); virtual void s334(); virtual void s335(); virtual void s336(); virtual void s337(); virtual void s338(); virtual void s339(); virtual void s340();
+	virtual void s341(); virtual void s342(); virtual void s343(); virtual void s344(); virtual void s345(); virtual void s346(); virtual void s347(); virtual void s348(); virtual void s349(); virtual void s350();
+	virtual void s351(); virtual void s352(); virtual void s353(); virtual void s354(); virtual void s355(); virtual void s356(); virtual void s357(); virtual void s358(); virtual void s359(); virtual void s360();
+	virtual void s361(); virtual void s362(); virtual void s363(); virtual void s364(); virtual void s365(); virtual void s366(); virtual void s367(); virtual void s368(); virtual void s369(); virtual void s370();
+	virtual void s371(); virtual void s372(); virtual void s373(); virtual void s374(); virtual void s375(); virtual void s376(); virtual void s377(); virtual void s378(); virtual void s379(); virtual void s380();
+	virtual void s381(); virtual void s382(); virtual void s383(); virtual void s384(); virtual void s385(); virtual void s386(); virtual void s387(); virtual void s388(); virtual void s389(); virtual void s390();
+	virtual void s391(); virtual void s392(); virtual void s393(); virtual void s394(); virtual void s395(); virtual void s396(); virtual void s397(); virtual void s398(); virtual void s399(); virtual void s400();
+	virtual void s401(); virtual void s402(); virtual void s403(); virtual void s404(); virtual void s405(); virtual void s406(); virtual void s407(); virtual void s408(); virtual void s409(); virtual void s410();
+	virtual void s411(); virtual void s412(); virtual void s413(); virtual void s414(); virtual void s415(); virtual void s416(); virtual void s417(); virtual void s418(); virtual void s419(); virtual void s420();
+	virtual void s421(); virtual void s422(); virtual void s423(); virtual void s424(); virtual void s425(); virtual void s426(); virtual void s427(); virtual void s428(); virtual void s429(); virtual void s430();
+	virtual void s431(); virtual void s432(); virtual void s433(); virtual void s434(); virtual void s435();
+	virtual void vfunc436(int id);
+	virtual void s437(); virtual void s438(); virtual void s439(); virtual void s440(); virtual void s441();
+	virtual void vfunc442(const Task_t *pTask);
+	virtual void s443();
+	virtual void vfunc444(const Task_t *pTask);
+	virtual void vfunc445();
+	virtual void s446();
+	virtual int vfunc447(int id);
+	virtual void s448();
+	virtual const char *vfunc449(int task);
+	virtual void s450(); virtual void s451(); virtual void s452(); virtual void s453(); virtual void s454(); virtual void s455(); virtual void s456(); virtual void s457(); virtual void s458(); virtual void s459();
+	virtual void s460(); virtual void s461(); virtual void s462(); virtual void s463(); virtual void s464(); virtual void s465(); virtual void s466(); virtual void s467(); virtual void s468(); virtual void s469();
+	virtual void s470(); virtual void s471(); virtual void s472(); virtual void s473(); virtual void s474(); virtual void s475(); virtual void s476(); virtual void s477(); virtual void s478(); virtual void s479();
+	virtual void s480(); virtual void s481(); virtual void s482(); virtual void s483(); virtual void s484(); virtual void s485(); virtual void s486(); virtual void s487(); virtual void s488(); virtual void s489();
+	virtual void s490(); virtual void s491(); virtual void s492(); virtual void s493(); virtual void s494(); virtual void s495(); virtual void s496(); virtual void s497(); virtual void s498(); virtual void s499();
+	virtual void s500(); virtual void s501(); virtual void s502(); virtual void s503(); virtual void s504(); virtual void s505(); virtual void s506(); virtual void s507(); virtual void s508(); virtual void s509();
+	virtual void s510(); virtual void s511(); virtual void s512(); virtual void s513(); virtual void s514(); virtual void s515(); virtual void s516(); virtual void s517(); virtual void s518(); virtual void s519();
+	virtual void s520(); virtual void s521(); virtual void s522(); virtual void s523(); virtual void s524(); virtual void s525(); virtual void s526(); virtual void s527(); virtual void s528();
+	virtual bool vfunc529();
+	void sub_10280f40();	// NextScheduledTask
+	char sub_10280ff0(char a);	// IsScheduleValid
+	char sub_10281430();	// ShouldSelectIdealState
+	int sub_1026f4d0();	// SelectIdealState
+	bool sub_10269aa0(int cond);	// HasCondition
+	CAI_Schedule817 *sub_10281730();	// GetFailSchedule
+	void sub_10280e50(CAI_Schedule817 *p);	// SetSchedule
+	void sub_1026e340(int state);	// SetState
+	CAI_Schedule817 *sub_102814d0();	// GetNewSchedule
+	const Task_t *sub_1028a150();	// GetTask
+	int sub_10273f90();	// TaskIsRunning
+	void sub_102727d0();	// MaintainActivity
+	void sub_10289c90();	// RunTaskOverlay
+	void sub_102817c0(char bOnce);
+};
+
+#define CURSCHED F(CAI_Schedule817 *, 0x5c38)
+#define TASKSTATUS F(int, 0x5c44)
+
+// TARGET: CMaintainScheduleView::sub_102817c0
+void CMaintainScheduleView::sub_102817c0(char bOnce)
+{
+	ScopeTrace trace("CAI_BaseNPC::MaintainSchedule ", this ? (F(const char *, 0x26c) ? F(const char *, 0x26c) : g_106b8540) : g_105387dc, g_106b8540);
+	g_109f3648->EnterScope("CAI_BaseNPC_RunAI_MaintainSchedule", 0, "Unaccounted", false);
+	g_10920338.Start();
+
+	CAI_Schedule817 *pNewSchedule;
+	int i;
+	bool runTask = true;
+
+	memset(g_10923a38, sizeof(g_10923a38), 0);
+
+	g_10923c70 = 0;
+
+	static CCycleCount timeLimit;	// VC6 makes its guard and its (empty) atexit destroy
+
+	if (!g_10923c74)
+	{
+		timeLimit.Init(8.0);
+		g_10923c74 = true;
+	}
+
+	CFastTimer taskTime;
+	taskTime.Start();
+
+	int nMaxTasks = 10;
+	if (bOnce)
+		nMaxTasks = 1;
+
+	for (i = 0; i < nMaxTasks; i++)
+	{
+		int curTiming = g_10923c70;
+		g_10923c70++;
+
+		g_10923a38[curTiming].nextTask.Start();
+		if (CURSCHED != 0 && TASKSTATUS == 4)
+		{
+			sub_10280f40();
+			if (g_1092053c & 2)
+			{
+				F(int, 0x5f40)++;
+				g_10920338.End();
+				g_109f3648->ExitScope();
+				return;
+			}
+		}
+		g_10923a38[curTiming].nextTask.End();
+
+		if (!sub_10280ff0(!F(char, 0x5bb8)) || F(int, 0x5cc0) != F(int, 0x5cc4))
+		{
+			if (sub_10281430())
+				sub_1026f4d0();
+
+			bool bWait = false;
+			char *pOwner = F(char *, 0x98);
+			if (pOwner && (*(int *)(pOwner + 0x14bc) & 0x200) == 0x200)
+			{
+				*(int *)(pOwner + 0x14bc) &= 0x7ffffdff;
+				char *pEnt = g_10566458->sub_100290c0(&F(int, 0x5d28));
+				if (pEnt)
+				{
+					if (*(float *)(pEnt + 0x640) <= g_1070b228->curtime)
+						F(int, 0x5d28) = -1;
+					else
+						bWait = true;
+				}
+			}
+
+			if (sub_10269aa0(0x5c) && F(int, 0x5cc0) == F(int, 0x5cc4) && !bWait)
+			{
+				g_10923a38[curTiming].selectSchedule.Start();
+				pNewSchedule = sub_10281730();
+				F(int, 0x5c3c) = pNewSchedule->m_iId;
+				g_10923a38[curTiming].selectSchedule.End();
+				g_10923a38[curTiming].setSchedule.Start();
+				sub_10280e50(pNewSchedule);
+				g_10923a38[curTiming].setSchedule.End();
+			}
+			else
+			{
+				sub_1026e340(F(int, 0x5cc4));
+
+				g_10923a38[curTiming].selectSchedule.Start();
+				if (F(int, 0x5cc0) == 4 || F(int, 0x5cc0) == 7)
+					pNewSchedule = sub_102814d0();
+				else
+					pNewSchedule = sub_102814d0();
+				g_10923a38[curTiming].selectSchedule.End();
+				g_10923a38[curTiming].setSchedule.Start();
+				sub_10280e50(pNewSchedule);
+				g_10923a38[curTiming].setSchedule.End();
+			}
+		}
+
+		if (!CURSCHED)
+		{
+			g_10923a38[curTiming].selectSchedule.Start();
+			pNewSchedule = sub_102814d0();
+			g_10923a38[curTiming].selectSchedule.End();
+			g_10923a38[curTiming].setSchedule.Start();
+			if (pNewSchedule)
+				sub_10280e50(pNewSchedule);
+			g_10923a38[curTiming].setSchedule.End();
+		}
+
+		if (!CURSCHED || CURSCHED->m_NumTasks == 0)
+		{
+			g_109f3630("ERROR: Missing or invalid schedule!\n");
+			vfunc310(1);
+			g_10920338.End();
+			g_109f3648->ExitScopeI();
+			return;
+		}
+
+		if (TASKSTATUS == 0)
+		{
+			if (F(int, 0x5c40) == 0)
+			{
+				int globalId = CURSCHED->m_iId;
+				int localId = vfunc447(globalId);
+				vfunc436((localId != -1) ? localId : globalId);
+			}
+
+			g_10923a38[curTiming].startTimer.Start();
+			const Task_t *pTask = sub_1028a150();
+			g_10923a38[i].pszTask = vfunc449(pTask->iTask);
+
+			if (F(int, 0x224) & 0x8000000)
+				g_109f3630("Task: %s\n", vfunc449(pTask->iTask));
+
+			TASKSTATUS = 1;
+			F(int, 0x5c50) = 0;
+			F(float, 0x5c4c) = g_1070b228->curtime;
+
+			g_109f3648->EnterScopeI("CAI_BaseNPC_StartTask", 0, "Unaccounted", false);
+			vfunc442(pTask);
+			g_109f3648->ExitScopeI();
+
+			if (sub_10273f90() && !sub_10269aa0(0x5c))
+				vfunc445();
+
+			g_10923a38[curTiming].startTimer.End();
+		}
+
+		g_10923a38[curTiming].maintainActivity.Start();
+		sub_102727d0();
+		g_10923a38[curTiming].maintainActivity.End();
+
+		if (TASKSTATUS != 4 && TASKSTATUS != 0)
+		{
+			if (sub_10273f90() && !sub_10269aa0(0x5c) && runTask)
+			{
+				const Task_t *pTask = sub_1028a150();
+				g_10923a38[i].pszTask = vfunc449(pTask->iTask);
+				g_10923a38[curTiming].runTimer.Start();
+
+				g_109f3648->EnterScopeII("CAI_BaseNPC_RunTask", 0, "Unaccounted", false);
+				vfunc444(pTask);
+				g_109f3648->ExitScopeII();
+
+				if (sub_10273f90() && !sub_10269aa0(0x5c))
+				{
+					if (vfunc529())
+						F(int, 0x5d8c) |= 0x40000;
+					sub_10289c90();
+				}
+
+				g_10923a38[curTiming].runTimer.End();
+
+				if (TASKSTATUS != 4)
+					break;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+		if (timeLimit.IsLessThan(taskTime.GetDurationInProgress()))
+			break;
+	}
+
+	sub_102727d0();
+
+	if (g_1092053c & 2)
+	{
+		if (!F(Nav817 *, 0x5d34)->sub_102ee6a0() && F(int, 0x5f40) >= g_105c9798)
+			F(float, 0x6f4) = 0;
+	}
+	F(char, 0x5bb8) = 1;
+	g_10920338.End();
+	g_109f3648->ExitScopeIII();
 }
 // END FUNCTION
 
@@ -1533,6 +2096,125 @@ void CSTV::sub_102827f0(const Task_t *pTask)
 	case 104:	// TASK_WAIT_INDEFINITE
 	case 116:	// TASK_FALL_TO_GROUND
 		break;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288510 size=0x16
+// TARGET: sub_10288510
+bool __fastcall sub_10288510(int *pThis, int, int *pOther)
+{
+	return *pThis != *pOther;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288540 size=0x9
+struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
+CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }
+// END FUNCTION
+
+// FUNCTION: 0x10288560 size=0x18
+// TARGET: sub_10288560
+#include <string.h>
+bool sub_10288560(const char *a, const char *b)
+{
+    return _stricmp(a, b) == 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288590 size=0x23
+// TARGET: sub_10288590
+float __cdecl sub_10288590(float a)
+{
+    int n = (int)(a * 182.04445f);
+    n &= 0xffff;
+    return (float)n * 0.005493164f;
+}
+// END FUNCTION
+
+// FUNCTION: 0x102885d0 size=0x8
+typedef void (__fastcall *Fn102885d0)(void *);
+
+void __fastcall sub_102885d0(void *p)
+{
+	(*(Fn102885d0 *)((char *)*(void **)p + 0xf8))(p);
+}
+// END FUNCTION
+
+// FUNCTION: 0x102885f0 size=0x8
+struct NPCStub;
+struct NPCStubVtbl { void (__fastcall *f[256])(NPCStub *); };
+struct NPCStub { NPCStubVtbl *vt; };
+
+void __fastcall sub_102885f0(NPCStub *o)
+{
+	o->vt->f[221](o);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288610 size=0x7
+struct CUnknown10288610 { int sub_10288610(); };
+int CUnknown10288610::sub_10288610()
+{
+    return *(int *)((char *)this + 0x6f0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288630 size=0x7
+struct CUnknown10288630 { int sub_10288630(); };
+int CUnknown10288630::sub_10288630()
+{
+    return *(int *)((char *)this + 0x5d34);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288650 size=0x7
+struct CUnknown10288650 { int sub_10288650(); };
+int CUnknown10288650::sub_10288650()
+{
+    return *(int *)((char *)this + 0x5d44);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10288670 size=0x5a
+#include "CAI_Motor.h"
+
+void CAI_Motor::sub_10288670(float flIdealYaw)
+{
+	if (m_28)
+	{
+		if (flIdealYaw >= 180.0f)
+			flIdealYaw -= 180.0f;
+		else
+			flIdealYaw += 180.0f;
+	}
+	if (*(float *)&m_1c == 180.0f)
+		m_34 = flIdealYaw;
+	else
+		m_34 = sub_102e0a80(flIdealYaw);
+}
+// END FUNCTION
+
+// FUNCTION: 0x102886f0 size=0xa
+struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
+// TARGET: CUnknown102886f0::sub_102886f0
+void CUnknown102886f0::sub_102886f0(int v) { a = v; }
+// END FUNCTION
+
+// FUNCTION: 0x10288710 size=0x4e
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102e83e0.h"
+void __fastcall sub_102e8250(float *pThis);
+void CAI_BaseNPC::vfunc445()
+{
+	CAI_BaseNPCTroika *pNPC = (CAI_BaseNPCTroika *)this;
+	if (vfunc529()) {
+		if (pNPC->vfunc575()) {
+			vfunc419();
+			((CUnknown102e83e0 *)((char *)this + 0x5cf4))->sub_102e8270(*(int *)&pNPC->m_f5bbc, *(int *)&pNPC->m_f5bc0);
+		} else {
+			sub_102e8250((float *)((char *)this + 0x5cf4));
+		}
 	}
 }
 // END FUNCTION

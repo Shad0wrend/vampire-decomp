@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x1039c480 size=0x6
@@ -6,6 +7,19 @@
 int CNPC_VMingXiaoTentacle::vfunc337()
 {
     return 0x38000;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039c4a0 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc259
+// the game's 0x1039c4a0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc259
+void CNPC_VMingXiaoTentacle::vfunc259(animevent_t *a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc259(a0);
 }
 // END FUNCTION
 
@@ -429,6 +443,198 @@ void CNPC_VMingXiaoTentacle::vfunc442(CTentTask *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039d750 size=0x54a
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CBaseEntity.h"
+#include "CAI_Motor.h"
+#include "CBaseAnimating.h"
+#include "CUnknown102e0150.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include <math.h>
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern EHANDLE g_1093bd34;
+extern float g_1093bd30;
+extern Vector g_10934060;
+extern float g_104454c4;
+extern float g_104bde70;
+
+struct CTentListEnt
+{
+	char m_pad0[0x5d8];
+	CTentListEnt *m_pNext;	// 0x5d8
+	int m_nClassId;	// 0x5dc
+};
+extern CTentListEnt *g_10925450;
+
+struct CTentStudioHdr
+{
+	char m_pad0[0x160];
+	int m_nCount;
+};
+
+struct CTentNavGoal
+{
+	CTentNavGoal(int t, const Vector &d, int act = -1, float tol = g_104bde70)
+	{
+		type = t;
+		dest = d;
+		activity = act;
+		arrivalActivity = 0x13;
+		arrivalSequence = -1;
+		pathCorner = -1;
+		tolerance = tol;
+		flags = 0;
+		maxInitialSimplificationDist = g_1093bd30;
+		arrivalDirection = g_10934060;
+		pTarget = 0;
+		unk = 0;
+	}
+	int type;
+	Vector dest;
+	int activity;
+	int arrivalActivity;
+	int arrivalSequence;
+	int pathCorner;
+	float tolerance;
+	int flags;
+	float maxInitialSimplificationDist;
+	Vector arrivalDirection;
+	int pTarget;
+	int unk;
+};
+
+struct CTentNavigator
+{
+	bool sub_102ecd20(CTentNavGoal *pGoal, int flags);
+};
+
+struct CTentHullTest
+{
+	bool sub_1039ee20(Vector *pPos);	// CNPC_VMingXiaoTentacle::sub_1039ee20, answers in al
+};
+
+void CNPC_VMingXiaoTentacle::vfunc444(void *pTask)
+{
+	switch (*(int *)pTask) {
+	case 0x8b:
+		{
+			sub_10280a50();
+			CBaseEntity *pEnemy = vfunc167();
+			if (pEnemy && *(int *)((char *)pEnemy + 0x9c)) {
+				Vector vec;
+				((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, vfunc167());
+				m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+			}
+			if (vfunc251()) {
+				sub_10273e80(0);
+				return;
+			}
+		}
+		break;
+	case 0x8e:
+		{
+			sub_10280a50();
+			CBaseEntity *pEnemy = vfunc167();
+			CBaseAnimating *pChar = 0;
+			if (pEnemy)
+				pChar = *(CBaseAnimating **)((char *)pEnemy + 0x9c);
+			if (!pChar) {
+				sub_10273e80(0);
+				return;
+			}
+			int nSeq = *(int *)((char *)pChar + 0x6f0);
+			char *pDesc = (char *)pChar->sub_1008d990(nSeq);
+			if (pDesc) {
+				float flCycle = pChar->sub_10091230(nSeq) * (gpGlobals->curtime - (*(float *)((char *)pChar + 0x174) - 0.1f)) * *(float *)((char *)pChar + 0x6f4) + *(float *)((char *)pChar + 0x6f8);
+				for (int i = 0; i < *(int *)(pDesc + 0x2c4); i++) {
+					if (flCycle < *(float *)(pDesc + *(int *)(pDesc + 0x2c8) + 4 + i * 0xbc))
+						return;
+				}
+				sub_10273e80(0);
+				return;
+			}
+		}
+		break;
+	case 0x14c:
+		{
+			CTentStudioHdr *pHdr = (CTentStudioHdr *)sub_100952d0(-1);
+			if (!pHdr || pHdr->m_nCount <= 1) {
+				vfunc416(0);
+				sub_10273e80(0);
+				return;
+			}
+			float flStart = m_f5c4c;
+			float flTime = engine->vfunc119(0) - flStart;
+			if (flTime > 4.0f)
+				flTime = 4.0f;
+			else if (flTime < g_104454c4)
+				flTime = 0.0f;
+			int nCount = pHdr->m_nCount;
+			float flStep = 4.0f / (nCount - 1);
+			for (int i = 0; i < nCount; i++) {
+				float flWeight = 1.0 - fabs(flTime - i * flStep) / flStep;
+				if (flWeight < g_104454c4)
+					flWeight = 0.0f;
+				char szName[30];
+				Q_snprintf(szName, 30, "F%02d", i + 1);
+				vfunc280(szName, flWeight);
+				m_nFlags19c |= 0x10;
+			}
+			if (flTime >= 4.0f) {
+				vfunc416(0);
+				sub_10273e80(0);
+				return;
+			}
+		}
+		break;
+	case 0x150:
+		{
+			CTentListEnt *p = (CTentListEnt *)g_1093bd34.Get();
+			if (!p)
+				p = g_10925450;
+			for (; p; p = p->m_pNext) {
+				if (p->m_nClassId == 0x4a38) {
+					Vector vec = *(Vector *)((CNPC_VMingXiaoTentacle *)p)->vfunc217();
+					if (((CTentHullTest *)this)->sub_1039ee20(&vec)) {
+						CTentNavGoal goal(4, vec);
+						if (((CTentNavigator *)m_p5d34)->sub_102ecd20(&goal, 0))
+							sub_10273e80(0);
+					}
+					g_1093bd34 = (CBaseEntity *)p->m_pNext;
+					return;
+				}
+			}
+			g_1093bd34 = (CBaseEntity *)0;
+		}
+		return;
+	case 0x154:
+		sub_10280a50();
+		if (vfunc251()) {
+			sub_10289ee0(1);
+			sub_10273e80(0);
+			return;
+		}
+		break;
+	default:
+		sub_102aacf0(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039de00 size=0xd
+#include "CNPC_VMingXiaoTentacle.h"
+struct TentacleField1b2c { char pad[0x1b2c]; int m; };
+int CNPC_VMingXiaoTentacle::vfunc437()
+{
+	((TentacleField1b2c *)this)->m = 0x1a;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039de20 size=0x3bc
 // TARGET: CNPC_VMingXiaoTentacle::vfunc438
 #include "CNPC_VMingXiaoTentacle.h"
@@ -579,6 +785,23 @@ def2:
 		m_pszFile1b30 = TENT_FILE;
 		return 0x157;
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039e2d0 size=0x2b
+// TARGET: CNPC_VMingXiaoTentacle::vfunc440
+#include "CNPC_VMingXiaoTentacle.h"
+
+int CNPC_VMingXiaoTentacle::vfunc440(int a)
+{
+    switch (a)
+    {
+    case 0xc7:
+        return 0xc8;
+    case 0x147:
+        return 0x16d;
+    }
+    return sub_102b12f0(a);
 }
 // END FUNCTION
 
@@ -773,6 +996,72 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e7e0 size=0x1
+#include "CNPC_VMingXiaoTentacle.h"
+void CNPC_VMingXiaoTentacle::vfunc434()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039e800 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
+
+struct CBasePlayerCall
+{
+    void *sub_1039ede0();
+    void sub_10001a78(CNPC_VMingXiaoTentacle *pSelf, int arg);
+};
+
+struct CTentacleUnit : CNPC_VMingXiaoTentacle
+{
+    void sub_1039e800(int arg);
+};
+
+void CTentacleUnit::sub_1039e800(int arg)
+{
+    void *pPlayer = ((CBasePlayerCall *)this)->sub_1039ede0();
+    if (pPlayer)
+        ((CBasePlayerCall *)pPlayer)->sub_10001a78(this, arg);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039e830 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
+// TARGET: CNPC_VMingXiaoTentacle::vfunc22
+struct CUnk10397dd0
+{
+    char pad[0x66c0];
+    int m_66c0;
+    void sub_10397dd0(int a, int b);
+};
+void CNPC_VMingXiaoTentacle::vfunc22(int arg)
+{
+    CUnk10397dd0 *pPlayer = (CUnk10397dd0 *)sub_1039ede0();
+    if (pPlayer)
+    {
+        pPlayer->sub_10397dd0((int)this, arg);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039e860 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
+
+struct CUnk10397dd0 {
+	void sub_10397dd0(CNPC_VMingXiaoTentacle *pSelf, int arg);
+};
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc23
+void CNPC_VMingXiaoTentacle::vfunc23(int arg)
+{
+	void *pPlayer = sub_1039ede0();
+	if (pPlayer)
+	{
+		((CUnk10397dd0 *)pPlayer)->sub_10397dd0(this, arg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e890 size=0x3d
 #include "vampire.h"
 #include "CAI_BaseNPCTroika.h"
@@ -793,6 +1082,31 @@ void CNPC_VMingXiaoTentacle::vfunc390(int a)
     m_nLine1b34 = 0x549;
     ((CAI_BaseNPCTroika *)this)->sub_102ae750(0x168, 0);
     ((CUnknownTroikaBase1039e890 *)this)->sub_10012611(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039e8e0 size=0x5
+#include "CNPC_VMingXiaoTentacle.h"
+bool CNPC_VMingXiaoTentacle::vfunc366(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1039e900 size=0x41
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CNPC_VMingXiao.h"
+void CNPC_VMingXiaoTentacle::vfunc144(int a)
+{
+	if (m_b6699) {
+		CNPC_VMingXiao *pOwner = (CNPC_VMingXiao *)sub_1039ede0();
+		if (pOwner)
+			pOwner->sub_103979d0(this);
+		sub_102bf340(a);
+		return;
+	}
+	m_nTakeDamage = 1;
+	sub_1039e970();
 }
 // END FUNCTION
 

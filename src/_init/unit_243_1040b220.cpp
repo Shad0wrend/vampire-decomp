@@ -90,36 +90,3 @@ int g_1094ab08 = ((int (*)(int))sub_1040be30)(0);
 int sub_1040bea0(void);
 int g_1094ab04 = ((int (*)(int))sub_1040bea0)(0);
 // END FUNCTION
-
-// FUNCTION: 0x1040ceb0 size=0x5
-int * sub_1040cef0(void);
-int * g_1094ad0c = ((int * (*)(int))sub_1040cef0)(0);
-// END FUNCTION
-
-// FUNCTION: 0x1040d520 size=0x5
-#include "ServerClassReg.h"
-#include "SendTable.h"
-extern SendTable g_1094aea8;
-extern char g_10683a68[];
-ServerClassReg g_1094aa5c("CWeaponPhysCannon", &g_1094aea8, g_10683a68);
-// END FUNCTION
-
-// FUNCTION: 0x1040d5d0 size=0xa
-#include "SendTable.h"
-SendTable g_1094aea8;
-// END FUNCTION
-
-// FUNCTION: 0x1040d650 size=0x5
-int sub_1040d690(void);
-int g_1094aea4 = ((int (*)(int))sub_1040d690)(0);
-// END FUNCTION
-
-// FUNCTION: 0x1040d800 size=0x5
-#include "CPrecacheRegister.h"
-CPrecacheRegister g_1094ad54(&CPrecacheRegister::PrecacheFn_Other, "weapon_physcannon");
-// END FUNCTION
-
-// FUNCTION: 0x1040d870 size=0x5
-int * sub_1040d8b0(void);
-int * g_1094ab9c = ((int * (*)(int))sub_1040d8b0)(0);
-// END FUNCTION

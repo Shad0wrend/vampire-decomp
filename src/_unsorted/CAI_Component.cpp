@@ -28,21 +28,3 @@ void __fastcall sub_102623c0(void *pThis, int dummy, char a)
 	((CAI_BaseNPC *)*(void **)((char *)pThis + 4))->sub_10273e80(a);
 }
 // END FUNCTION
-
-// FUNCTION: 0x1027c7c0 size=0x20
-extern int g_1049a0f8;
-
-struct Helper
-{
-	void* sub_1027c7c0(unsigned char flags);
-};
-
-// TARGET: Helper::sub_1027c7c0
-void* Helper::sub_1027c7c0(unsigned char flags)
-{
-	*(void**)this = &g_1049a0f8;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
-// END FUNCTION

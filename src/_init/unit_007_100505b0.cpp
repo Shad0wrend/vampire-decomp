@@ -8,13 +8,3 @@ extern SendTable g_106bdcc0;
 extern char g_106bdd34[];
 ServerClassReg g_106bdca0("CBaseTempEntity", &g_106bdcc0, g_106bdd34);
 // END FUNCTION
-
-// FUNCTION: 0x10050660 size=0xa
-#include "SendTable.h"
-SendTable g_106bdcc0;
-// END FUNCTION
-
-// FUNCTION: 0x100506e0 size=0x5
-int sub_10050720(void);
-int g_106bdcbc = ((int (*)(int))sub_10050720)(0);
-// END FUNCTION

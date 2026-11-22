@@ -17,12 +17,3 @@ Pool g_106bd904(20, 512, 0);
 #include "CDataObjectAccessSystem.h"
 CDataObjectAccessSystem g_106bd930;
 // END FUNCTION
-
-// FUNCTION: 0x1003e210 size=0x5
-// an empty inline constructor: the game's construct is a bare `ret`, no code names the global
-struct CEmpty1003e210
-{
-	CEmpty1003e210() {}
-};
-CEmpty1003e210 g_empty_1003e210;
-// END FUNCTION

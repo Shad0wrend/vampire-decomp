@@ -1,19 +1,6 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
-// FUNCTION: 0x1018fb50 size=0x25
-#include "CBreakableProp.h"
-
-void sub_10191ac0(const char *pszModel);
-
-void CBreakableProp::vfunc104()
-{
-	int unused;
-	sub_10191ac0(*vfunc9(&unused));
-	CBaseProp::vfunc104();
-}
-// END FUNCTION
-
 // FUNCTION: 0x1020ac70 size=0x21
 #include "CBaseVampireSkillEntity.h"
 
