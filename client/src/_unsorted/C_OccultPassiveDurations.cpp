@@ -10,3 +10,11 @@ C_OccultPassiveDurations *pcd_emit_10014290() { return new C_OccultPassiveDurati
 
 // TARGET: ??_GC_OccultPassiveDurations@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100142c0 size=0x3
+#include "C_OccultPassiveDurations.h"
+int C_OccultPassiveDurations::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
