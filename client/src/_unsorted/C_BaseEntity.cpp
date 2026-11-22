@@ -380,6 +380,17 @@ void C_BaseEntity::vfunc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2e70 size=0x7
+#include "C_BaseEntity.h"
+namespace lifted {
+extern float g_101e34ec;
+}
+float C_BaseEntity::vfunc28()
+{
+    return lifted::g_101e34ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a32d0 size=0x6
 #include "C_BaseEntity.h"
 namespace lifted {
