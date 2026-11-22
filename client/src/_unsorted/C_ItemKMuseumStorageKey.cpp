@@ -22,6 +22,17 @@ C_ItemKMuseumStorageKey *pcd_emit_10023290() { return new C_ItemKMuseumStorageKe
 // TARGET: ??_GC_ItemKMuseumStorageKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100232b0 size=0x6
+#include "C_ItemKMuseumStorageKey.h"
+namespace lifted {
+extern char g_1027409c;
+}
+int C_ItemKMuseumStorageKey::vfunc16()
+{
+    return (int)&lifted::g_1027409c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100232c0 size=0x3
 #include "C_ItemKMuseumStorageKey.h"
 int C_ItemKMuseumStorageKey::vfunc15()
