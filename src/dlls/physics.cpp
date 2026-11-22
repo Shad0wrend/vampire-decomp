@@ -4,18 +4,12 @@
 
 // FUNCTION: 0x1002d6c0 size=0x68
 #include "CPhysicsHook.h"
-#include "utlvector.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CPhysicsHook's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CPhysicsHook *pcd_emit_1002d6c0() { return new CPhysicsHook; }
 
-CPhysicsHook *CPhysicsHook::vfunc8(unsigned int flags)
-{
-	((CUtlVector<int> *)((char *)this + 0x4))->~CUtlVector<int>();
-	sub_1000cfbd();
-	if (flags & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GCPhysicsHook@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1002d750 size=0x5e
