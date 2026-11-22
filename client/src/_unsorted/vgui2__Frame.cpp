@@ -75,6 +75,22 @@ bool vgui2::Frame::vfunc122()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b8ea0 size=0x33
+#include "vgui2__Frame.h"
+int vgui2::Frame::vfunc141(int a0, int a1, int a2, int a3)
+{
+    int t0 = *(int *)((char *)this + 0xd4);
+    *(int *)((char *)a0) = t0;
+    int t1 = *(int *)((char *)this + 0xd8);
+    *(int *)((char *)a1) = t1;
+    int t2 = *(int *)((char *)this + 0xdc);
+    *(int *)((char *)a2) = t2;
+    int t3 = *(int *)((char *)this + 0xe0);
+    *(int *)((char *)a3) = t3;
+    return t3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9120 size=0x7
 #include "vgui2__Frame.h"
 int vgui2::Frame::vfunc138()
