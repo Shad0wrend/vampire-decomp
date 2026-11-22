@@ -317,3 +317,10 @@ void C_BaseCombatWeapon::vfunc238(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1009bd90 size=0x3
+#include "C_BaseCombatWeapon.h"
+void C_BaseCombatWeapon::vfunc236(int a0)
+{
+}
+// END FUNCTION
