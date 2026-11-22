@@ -22,6 +22,17 @@ C_MachineGun *pcd_emit_10007590() { return new C_MachineGun; }
 // TARGET: ??_GC_MachineGun@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100075b0 size=0x6
+#include "C_MachineGun.h"
+namespace lifted {
+extern char g_1027513c;
+}
+int C_MachineGun::vfunc16()
+{
+    return (int)&lifted::g_1027513c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100075c0 size=0x3
 #include "C_MachineGun.h"
 int C_MachineGun::vfunc15()
