@@ -4562,6 +4562,7 @@
 0x1014f1f0 func   ?sub_1014f1f0@@YAXXZ sub_1014f1f0
 0x1014f300 func   ?sub_1014f300@CKey101eb190@@QAEHXZ CKey101eb190::sub_1014f300
 0x1014f330 func   ?sub_1014f330@CUnknown101eb1d0@@QAEXXZ CUnknown101eb1d0::sub_1014f330
+0x1014f6c0 func   ?sub_1014f6c0@CUnknown1014f6c0@@QAEPAXH@Z CUnknown1014f6c0::sub_1014f6c0
 0x1014f6f0 func   ?sub_1014f6f0@CUnknown1014f6f0@@QAEHXZ CUnknown1014f6f0::sub_1014f6f0
 0x1014f820 func   ?sub_1014f820@CUnknown101eb820@@QAEXXZ CUnknown101eb820::sub_1014f820
 0x1014fc00 func   ?sub_1014fc00@@YAXXZ sub_1014fc00
