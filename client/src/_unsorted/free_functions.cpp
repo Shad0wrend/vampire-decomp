@@ -65410,6 +65410,23 @@ void sub_1018d6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018dd40 size=0x29
+namespace lifted {
+struct C1018e280 { int sub_1018e280(); };
+struct C1018e290 { int sub_1018e290(); };
+int __stdcall sub_101a99f0(int);
+}
+struct CUnknown1018dd40 { int sub_1018dd40(int); };
+int CUnknown1018dd40::sub_1018dd40(int a0)
+{
+    int t0 = lifted::sub_101a99f0(a0);
+    if (((char)a0) != 0) {
+        return ((lifted::C1018e290 *)((char *)this + -16))->sub_1018e290();
+    }
+    return ((lifted::C1018e280 *)((char *)this + -16))->sub_1018e280();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018dd90 size=0x5
 namespace lifted {
 int sub_101a9f00();
