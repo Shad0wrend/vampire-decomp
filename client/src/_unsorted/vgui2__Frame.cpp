@@ -57,3 +57,15 @@ int vgui2::Frame::vfunc102()
     return (int)&lifted::g_102d8ee8;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b9b50 size=0x2b
+#include "vgui2__Frame.h"
+int vgui2::Frame::vfunc137(int a0, int a1, int a2, int a3)
+{
+    *(int *)((char *)this + 0xd4) = a0;
+    *(int *)((char *)this + 0xd8) = a1;
+    *(int *)((char *)this + 0xdc) = a2;
+    *(int *)((char *)this + 0xe0) = a3;
+    return a2;
+}
+// END FUNCTION
