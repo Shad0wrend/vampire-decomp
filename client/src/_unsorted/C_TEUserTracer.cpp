@@ -21,3 +21,11 @@ int C_TEUserTracer::vfunc9()
     return (int)&lifted::g_10282414;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10040e80 size=0x3
+#include "C_TEUserTracer.h"
+int C_TEUserTracer::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
