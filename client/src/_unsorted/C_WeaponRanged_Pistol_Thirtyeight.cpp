@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000f200 size=0x6
+#include "C_WeaponRanged_Pistol_Thirtyeight.h"
+namespace lifted {
+extern char g_10272da8;
+}
+int C_WeaponRanged_Pistol_Thirtyeight::vfunc17()
+{
+    return (int)&lifted::g_10272da8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f290 size=0x1e
 #include "C_WeaponRanged_Pistol_Thirtyeight.h"
 
@@ -9,4 +20,23 @@
 C_WeaponRanged_Pistol_Thirtyeight *pcd_emit_1000f290() { return new C_WeaponRanged_Pistol_Thirtyeight; }
 
 // TARGET: ??_GC_WeaponRanged_Pistol_Thirtyeight@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000f2b0 size=0x6
+#include "C_WeaponRanged_Pistol_Thirtyeight.h"
+namespace lifted {
+extern char g_10274bc4;
+}
+int C_WeaponRanged_Pistol_Thirtyeight::vfunc16()
+{
+    return (int)&lifted::g_10274bc4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000f2c0 size=0x3
+#include "C_WeaponRanged_Pistol_Thirtyeight.h"
+int C_WeaponRanged_Pistol_Thirtyeight::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

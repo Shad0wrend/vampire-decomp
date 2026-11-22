@@ -2,19 +2,12 @@
 #include "vampire.h"
 
 // FUNCTION: 0x103531c0 size=0x20
-extern int g_104a3078;
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CVoiceGameMgr.h"
 
-struct Helper
-{
-	void* sub_103531c0(unsigned char flags);
-};
+// VC6 writes IVoiceGameMgrHelper's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_103531c0(IVoiceGameMgrHelper *p) { p->IVoiceGameMgrHelper::~IVoiceGameMgrHelper(); }
 
-// TARGET: Helper::sub_103531c0
-void* Helper::sub_103531c0(unsigned char flags)
-{
-	*(void**)this = &g_104a3078;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GIVoiceGameMgrHelper@@UAEPAXI@Z
 // END FUNCTION

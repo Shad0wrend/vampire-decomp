@@ -59,3 +59,413 @@ void TEV::sub_101ace00(IScheme *s)
 	SetBorder(s->GetBorder("ButtonDepressedBorder"));
 }
 // END FUNCTION
+
+// FUNCTION: 0x101acf00 size=0xd
+#include "vgui2__TextEntry.h"
+int vgui2::TextEntry::vfunc137(int a0)
+{
+    *(int *)((char *)this + 0xc0) = a0;
+    return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ad530 size=0x12
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::TextEntry::vfunc133(char a0)
+{
+    *(char *)((char *)this + 0x89) = a0;
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ae2b0 size=0x35
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct C101b18c0 { int sub_101b18c0(); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual int f149(); virtual int f150(); };
+}
+void vgui2::TextEntry::vfunc101()
+{
+    *(char *)((char *)this + 0x100) = 1;
+    ((lifted::V *)this)->f149();
+    ((lifted::C101b18c0 *)this)->sub_101b18c0();
+    if ((*(char *)((char *)this + 0xb2)) != 0) {
+        ((lifted::V *)this)->f150();
+    }
+    ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ae5d0 size=0x1b
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual int f120(int); };
+}
+int vgui2::TextEntry::vfunc147()
+{
+    ((lifted::V *)this)->f120(1);
+    return ((lifted::V *)this)->f120(3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ae5f0 size=0x1b
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual int f120(int); };
+}
+int vgui2::TextEntry::vfunc148()
+{
+    ((lifted::V *)this)->f120(1);
+    return ((lifted::V *)this)->f120(4);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aeef0 size=0x18
+#include "vgui2__TextEntry.h"
+namespace lifted {
+int __stdcall sub_101ab220(int);
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::TextEntry::vfunc46(int a0)
+{
+    lifted::sub_101ab220(a0);
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aef10 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc138(char a0)
+{
+    *(char *)((char *)this + 0xb1) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aef20 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc141(char a0)
+{
+    *(char *)((char *)this + 0xf4) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aefc0 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc139(char a0)
+{
+    *(char *)((char *)this + 0x8b) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aefd0 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc134(char a0)
+{
+    *(char *)((char *)this + 0x8a) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101af110 size=0x7
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc135()
+{
+    return *(bool *)((char *)this + 0x8a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101af120 size=0x17
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual int f84(int, int); };
+}
+void vgui2::TextEntry::vfunc96()
+{
+    if ((*(char *)((char *)this + 0x8d)) != 0) {
+        ((lifted::V *)this)->f84(0, 0);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101af140 size=0x8
+#include "vgui2__TextEntry.h"
+void vgui2::TextEntry::vfunc85()
+{
+    *(char *)((char *)this + 0x8d) = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101af150 size=0x12
+#include "vgui2__TextEntry.h"
+void vgui2::TextEntry::vfunc86()
+{
+    if ((*(char *)((char *)this + 0x8c)) != 0) {
+        *(char *)((char *)this + 0x8d) = 1;
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101af3c0 size=0x8
+#include "vgui2__TextEntry.h"
+void vgui2::TextEntry::vfunc79()
+{
+    *(char *)((char *)this + 0x8c) = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101afac0 size=0xd
+#include "vgui2__TextEntry.h"
+int vgui2::TextEntry::vfunc143(int a0)
+{
+    *(int *)((char *)this + 0xac) = a0;
+    return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101afad0 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc144(char a0)
+{
+    *(char *)((char *)this + 0xf5) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101afae0 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc142(char a0)
+{
+    *(char *)((char *)this + 0xf6) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b0160 size=0x35
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual int f109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual void u149(); virtual int f150(); virtual void u151(); virtual void u152(); virtual void u153(); virtual void u154(); virtual void u155(); virtual void u156(); virtual void u157(); virtual void u158(); virtual void u159(); virtual void u160(); virtual void u161(); virtual void u162(); virtual void u163(); virtual void u164(); virtual int f165(); };
+}
+int vgui2::TextEntry::vfunc118()
+{
+    ((lifted::V *)this)->f165();
+    *(int *)((char *)this + 0x70) = 0;
+    *(char *)((char *)this + 0x75) = 0;
+    *(int *)((char *)this + 0xd0) = 0;
+    ((lifted::V *)this)->f150();
+    ((lifted::V *)this)->f109();
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b01a0 size=0x38
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct C101aff20 { int sub_101aff20(); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual int f109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual void u149(); virtual int f150(); virtual void u151(); virtual void u152(); virtual void u153(); virtual void u154(); virtual void u155(); virtual void u156(); virtual void u157(); virtual void u158(); virtual void u159(); virtual void u160(); virtual void u161(); virtual void u162(); virtual void u163(); virtual void u164(); virtual int f165(); };
+}
+int vgui2::TextEntry::vfunc119()
+{
+    int t0 = ((lifted::V *)this)->f165();
+    int t1 = *(int *)((char *)this + 0x58);
+    *(char *)((char *)this + 0x75) = 1;
+    *(int *)((char *)this + 0x70) = t1;
+    ((lifted::C101aff20 *)this)->sub_101aff20();
+    ((lifted::V *)this)->f150();
+    ((lifted::V *)this)->f109();
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b01e0 size=0x3b
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct C101b0220 { int sub_101b0220(); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual int f109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual void u149(); virtual int f150(); virtual void u151(); virtual void u152(); virtual void u153(); virtual void u154(); virtual void u155(); virtual void u156(); virtual void u157(); virtual void u158(); virtual void u159(); virtual void u160(); virtual void u161(); virtual void u162(); virtual void u163(); virtual void u164(); virtual int f165(); };
+}
+int vgui2::TextEntry::vfunc116()
+{
+    ((lifted::V *)this)->f165();
+    *(int *)((char *)this + 0x70) = ((lifted::C101b0220 *)this)->sub_101b0220();
+    *(char *)((char *)this + 0x75) = 0;
+    *(int *)((char *)this + 0xd0) = *(int *)((char *)this + 0x70);
+    ((lifted::V *)this)->f150();
+    ((lifted::V *)this)->f109();
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b02b0 size=0x3c
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct C101aff20 { int sub_101aff20(); };
+struct C101b02f0 { int sub_101b02f0(); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual int f109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual void u149(); virtual int f150(); virtual void u151(); virtual void u152(); virtual void u153(); virtual void u154(); virtual void u155(); virtual void u156(); virtual void u157(); virtual void u158(); virtual void u159(); virtual void u160(); virtual void u161(); virtual void u162(); virtual void u163(); virtual void u164(); virtual int f165(); };
+}
+int vgui2::TextEntry::vfunc117()
+{
+    ((lifted::V *)this)->f165();
+    *(int *)((char *)this + 0x70) = ((lifted::C101b02f0 *)this)->sub_101b02f0();
+    *(char *)((char *)this + 0x75) = 1;
+    ((lifted::C101aff20 *)this)->sub_101aff20();
+    ((lifted::V *)this)->f150();
+    ((lifted::V *)this)->f109();
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b09c0 size=0xf
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::TextEntry::vfunc124()
+{
+    *(int *)((char *)this + 0x9c) = -1;
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b09d0 size=0x33
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc158(int a0, int a1)
+{
+    int t0 = *(int *)((char *)this + 0x9c);
+    if (t0 == -1) {
+        return 0;
+    }
+    *(int *)((char *)a0) = t0;
+    int t1 = *(int *)((char *)this + 0xa0);
+    *(int *)((char *)a1) = t1;
+    int t2 = *(int *)((char *)a0);
+    if (t1 < t2) {
+        *(int *)((char *)a0) = t1;
+        *(int *)((char *)a1) = t2;
+    }
+    return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b0bb0 size=0x2a
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(int); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual int f127(); virtual void u128(); virtual int f129(); };
+}
+void vgui2::TextEntry::vfunc126()
+{
+    if ((*(char *)((char *)this + 0x8a)) != 0) {
+        ((lifted::V *)this)->f127();
+        ((lifted::V *)this)->f129();
+        ((lifted::V *)this)->f15(0);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b13e0 size=0x24
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual int f57(int, int); };
+}
+int vgui2::TextEntry::vfunc132(int a0)
+{
+    *(int *)((char *)this + 0x124) = a0;
+    ((lifted::V *)this)->f57(0, 0);
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1410 size=0xc
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::TextEntry::vfunc168()
+{
+    *(char *)((char *)this + 0x100) = 1;
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1420 size=0x17
+#include "vgui2__TextEntry.h"
+namespace lifted {
+int sub_101b1760();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::TextEntry::vfunc169()
+{
+    lifted::sub_101b1760();
+    *(char *)((char *)this + 0x100) = 1;
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b14c0 size=0x8
+#include "vgui2__TextEntry.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual int f107(); };
+}
+void vgui2::TextEntry::vfunc167()
+{
+    ((lifted::V *)this)->f107();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b16b0 size=0x23
+#include "vgui2__TextEntry.h"
+namespace lifted {
+extern char g_102d8820;
+extern char g_10678e00;
+int sub_101ab860();
+int sub_101d3192(int, int, int, int);
+}
+int vgui2::TextEntry::vfunc77()
+{
+    lifted::sub_101d3192((int)&lifted::g_10678e00, 0x400, (int)&lifted::g_102d8820, lifted::sub_101ab860());
+    return (int)&lifted::g_10678e00;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1840 size=0x29
+#include "vgui2__TextEntry.h"
+namespace lifted {
+int sub_101ab3e0();
+}
+void vgui2::TextEntry::vfunc80()
+{
+    if ((*(char *)((char *)this + 0x118)) != 0) {
+        *(int *)((char *)this + 0x9c) = 0;
+        *(int *)((char *)this + 0xa0) = *(int *)((char *)this + 0x58);
+        *(int *)((char *)this + 0x70) = *(int *)((char *)this + 0x58);
+        *(char *)((char *)this + 0x118) = 0;
+    }
+    lifted::sub_101ab3e0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1a20 size=0x1e
+#include "vgui2__TextEntry.h"
+int vgui2::TextEntry::vfunc151(int a0, int a1)
+{
+    *(char *)((char *)this + 0x11a) = 1;
+    *(int *)((char *)this + 0x11c) = a0;
+    *(int *)((char *)this + 0x120) = a1;
+    return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1c60 size=0x6
+#include "vgui2__TextEntry.h"
+namespace lifted {
+extern char g_102d8650;
+}
+int vgui2::TextEntry::vfunc102()
+{
+    return (int)&lifted::g_102d8650;
+}
+// END FUNCTION

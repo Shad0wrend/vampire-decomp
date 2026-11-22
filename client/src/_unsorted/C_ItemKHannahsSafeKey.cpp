@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10026400 size=0x6
+#include "C_ItemKHannahsSafeKey.h"
+namespace lifted {
+extern char g_10273dd8;
+}
+int C_ItemKHannahsSafeKey::vfunc17()
+{
+    return (int)&lifted::g_10273dd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026490 size=0x1e
 #include "C_ItemKHannahsSafeKey.h"
 
@@ -9,4 +20,23 @@
 C_ItemKHannahsSafeKey *pcd_emit_10026490() { return new C_ItemKHannahsSafeKey; }
 
 // TARGET: ??_GC_ItemKHannahsSafeKey@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x100264b0 size=0x6
+#include "C_ItemKHannahsSafeKey.h"
+namespace lifted {
+extern char g_10273ebc;
+}
+int C_ItemKHannahsSafeKey::vfunc16()
+{
+    return (int)&lifted::g_10273ebc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100264c0 size=0x3
+#include "C_ItemKHannahsSafeKey.h"
+int C_ItemKHannahsSafeKey::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

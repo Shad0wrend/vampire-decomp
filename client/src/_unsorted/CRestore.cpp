@@ -36,6 +36,14 @@ int CRestore::vfunc2(CBaseEntity * a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a260 size=0x4
+#include "CRestore.h"
+bool CRestore::vfunc32()
+{
+    return *(bool *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a270 size=0x4
 #include "CRestore.h"
 int CRestore::vfunc33()

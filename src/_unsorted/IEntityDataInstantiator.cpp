@@ -4,13 +4,9 @@
 // FUNCTION: 0x1003c920 size=0x20
 #include "IEntityDataInstantiator.h"
 
-struct DummyInstantiator : IEntityDataInstantiator
-{
-	void vfunc1(unsigned int) {}
-	void *vfunc2(unsigned int) { return 0; }
-	void vfunc3(unsigned int) {}
-};
+// VC6 writes IEntityDataInstantiator's scalar deleting destructor where it emits the class's vtable; its inline destructor (it stores the vptr) called in a function
+// nothing calls makes it emit both here
+void pcd_emit_1003c920(IEntityDataInstantiator *p) { p->IEntityDataInstantiator::~IEntityDataInstantiator(); }
 
-DummyInstantiator g_dummyInstantiator;
 // TARGET: ??_GIEntityDataInstantiator@@UAEPAXI@Z
 // END FUNCTION

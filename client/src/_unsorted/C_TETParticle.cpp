@@ -21,3 +21,11 @@ int C_TETParticle::vfunc9()
     return (int)&lifted::g_10281fa8;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10040140 size=0x3
+#include "C_TETParticle.h"
+int C_TETParticle::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

@@ -336,7 +336,7 @@ void __stdcall sub_101bc540(CUnknown101bc540Rec *p)
 
 void CSoundControllerImp::sub_101bc590(void *pSound)
 {
-	((CUtlVector<CUnknown101bc140 *> *)&m_Sounds)->FindAndRemove((CUnknown101bc140 *)pSound);
+	((CUtlVector<CUnknown101bc140 *> *)&m_soundList)->FindAndRemove((CUnknown101bc140 *)pSound);
 	((CUnknown101bbd10 *)pSound)->sub_101bbd10();
 }
 // END FUNCTION
@@ -361,7 +361,7 @@ void CSoundControllerImp::vfunc2(CUnknown101bc140 *pSound, float flVolume, float
 	if (pSound->m_pEmitter) {
 		vfunc4(pSound);
 	} else {
-		((CUtlVector<CUnknown101bc140 *> *)&m_Sounds)->AddToTail(pSound);
+		((CUtlVector<CUnknown101bc140 *> *)&m_soundList)->AddToTail(pSound);
 		pSound->sub_101bc020();
 	}
 }
@@ -424,10 +424,10 @@ void CSoundControllerImp::vfunc3(void *pSound, float executeDeltaTime, int comma
 #include "CUnknown101bbd10.h"
 #include "utlvector.h"
 
-// TARGET: CSoundControllerImp::vfunc0
-void CSoundControllerImp::vfunc0()
+// TARGET: CSoundControllerImp::SystemReset
+void CSoundControllerImp::SystemReset()
 {
-	CUtlVector<CUnknown101bbd10 *> *pSounds = (CUtlVector<CUnknown101bbd10 *> *)&m_Sounds;
+	CUtlVector<CUnknown101bbd10 *> *pSounds = (CUtlVector<CUnknown101bbd10 *> *)&m_soundList;
 	for (int i = pSounds->Count() - 1; i >= 0; i--)
 		(*pSounds)[i]->sub_101bbd10();
 	pSounds->Purge();
@@ -518,7 +518,7 @@ struct CSoundCmdQueue101bc8e0
 struct CSoundCtlView101bc8e0 : CSoundControllerImp
 {
 	void sub_101bc540(SoundCommand_t *p);
-	CSoundCmdQueue101bc8e0 &CommandList() { return *(CSoundCmdQueue101bc8e0 *)&m_Second20; }
+	CSoundCmdQueue101bc8e0 &CommandList() { return *(CSoundCmdQueue101bc8e0 *)&m_commandList; }
 	void ProcessCommands(float time)
 	{
 		while (CommandList().Count())
@@ -538,7 +538,7 @@ struct CSoundCtlView101bc8e0 : CSoundControllerImp
 	}
 };
 
-void CSoundControllerImp::vfunc1()
+void CSoundControllerImp::SystemUpdate()
 {
 	float time = g_10566258->vfunc9();
 	float deltaTime = time - m_flLastTime;
@@ -548,17 +548,17 @@ void CSoundControllerImp::vfunc1()
 
 	((CSoundCtlView101bc8e0 *)this)->ProcessCommands(time);
 
-	int i = m_Sounds.m_size - 1;
+	int i = (*(CUtlVector4 *)&m_soundList).m_size - 1;
 	while (i >= 0)
 	{
-		CUnknown101bc140 *pNode = ((CUnknown101bc140 **)m_Sounds.m_pMemory)[i];
+		CUnknown101bc140 *pNode = ((CUnknown101bc140 **)(*(CUtlVector4 *)&m_soundList).m_pMemory)[i];
 		if (!pNode->sub_101bbde0(time, deltaTime))
 		{
 			sub_101bc000((int *)pNode);
-			if (m_Sounds.m_size > 0)
+			if ((*(CUtlVector4 *)&m_soundList).m_size > 0)
 			{
-				memmove(&m_Sounds.m_pMemory[i], &m_Sounds.m_pMemory[m_Sounds.m_size - 1], 4);
-				--m_Sounds.m_size;
+				memmove(&(*(CUtlVector4 *)&m_soundList).m_pMemory[i], &(*(CUtlVector4 *)&m_soundList).m_pMemory[(*(CUtlVector4 *)&m_soundList).m_size - 1], 4);
+				--(*(CUtlVector4 *)&m_soundList).m_size;
 			}
 		}
 		i--;
@@ -816,7 +816,7 @@ void CSoundControllerImp::sub_101bcd20(CUnknown101bc140 **ppSoundPatch, ISoundRe
 	bValidData = bValidData && (pPatch->m_pEmitter != 0);
 
 	if (bValidData) {
-		((SoundList_101bcd20 *)&m_Sounds)->AddToTail(pPatch);
+		((SoundList_101bcd20 *)&m_soundList)->AddToTail(pPatch);
 	}
 
 	pRestore->vfunc5();
@@ -1337,9 +1337,9 @@ float CSoundControllerImp::vfunc16(void *pSound, int command, envelopePoint_t *p
 #include "CSoundControllerImp.h"
 #include "CSoundEnvelopeController.h"
 // TARGET: CSoundControllerImp::vfunc15
-void CSoundControllerImp::vfunc15(void *pSound, int command, int *pPoints)
+float CSoundControllerImp::vfunc15(void *pSound, int command, int *pPoints)
 {
-    ((CSoundEnvelopeController *)this)->vfunc16(pSound, command, (void *)pPoints[0], pPoints[1]);
+    return ((CSoundEnvelopeController *)this)->vfunc16(pSound, command, (envelopePoint_t *)pPoints[0], pPoints[1]);
 }
 // END FUNCTION
 

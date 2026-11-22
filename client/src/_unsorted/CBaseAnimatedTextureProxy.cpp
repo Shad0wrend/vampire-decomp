@@ -17,3 +17,16 @@ CBaseAnimatedTextureProxy *pcd_emit_1007a6f0() { return new CBaseAnimatedTexture
 
 // TARGET: ??_GCBaseAnimatedTextureProxy@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1007a730 size=0xc
+#include "CBaseAnimatedTextureProxy.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int); };
+}
+void CBaseAnimatedTextureProxy::vfunc2()
+{
+    if (((int)this) != 0) {
+        ((lifted::V *)this)->f3(1);
+    }
+}
+// END FUNCTION

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10023480 size=0x6
+#include "C_ItemKNetcafeOfficeKey.h"
+namespace lifted {
+extern char g_10273bc4;
+}
+int C_ItemKNetcafeOfficeKey::vfunc17()
+{
+    return (int)&lifted::g_10273bc4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023510 size=0x1e
 #include "C_ItemKNetcafeOfficeKey.h"
 
@@ -9,4 +20,23 @@
 C_ItemKNetcafeOfficeKey *pcd_emit_10023510() { return new C_ItemKNetcafeOfficeKey; }
 
 // TARGET: ??_GC_ItemKNetcafeOfficeKey@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10023530 size=0x6
+#include "C_ItemKNetcafeOfficeKey.h"
+namespace lifted {
+extern char g_10274084;
+}
+int C_ItemKNetcafeOfficeKey::vfunc16()
+{
+    return (int)&lifted::g_10274084;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10023540 size=0x3
+#include "C_ItemKNetcafeOfficeKey.h"
+int C_ItemKNetcafeOfficeKey::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

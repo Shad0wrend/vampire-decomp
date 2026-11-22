@@ -21,3 +21,11 @@ int C_TEShowLine::vfunc9()
     return (int)&lifted::g_102814d4;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003ec00 size=0x3
+#include "C_TEShowLine.h"
+int C_TEShowLine::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

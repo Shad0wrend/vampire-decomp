@@ -12,6 +12,7 @@ class CVTraitEffectGroup_t
 public:
 	CVTraitEffectGroup_t(int nUnk);	// constructor (0x101f7310): stores nUnk at +4, vptr, +0xc = -1, +0x10 / +0x14 = 0
 	virtual CVTraitEffectGroup_t *vfunc0(unsigned int flags);	// slot 0: scalar deleting destructor
+	~CVTraitEffectGroup_t();	// 0x101f7380 (stub 0x1000a38f): sets the vptr, frees the effects; the destroy 0x101f84f0 of 0x101f8480's static default jumps to it
 	int m_n0004;	// 0x04
 	const char *m_pszName;	// 0x08
 	int m_nId;	// 0x0c: -1 for an empty group

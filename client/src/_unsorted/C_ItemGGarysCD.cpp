@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001f380 size=0x6
+#include "C_ItemGGarysCD.h"
+namespace lifted {
+extern char g_102738ec;
+}
+int C_ItemGGarysCD::vfunc17()
+{
+    return (int)&lifted::g_102738ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f410 size=0x1e
 #include "C_ItemGGarysCD.h"
 
@@ -9,4 +20,23 @@
 C_ItemGGarysCD *pcd_emit_1001f410() { return new C_ItemGGarysCD; }
 
 // TARGET: ??_GC_ItemGGarysCD@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1001f430 size=0x6
+#include "C_ItemGGarysCD.h"
+namespace lifted {
+extern char g_102742ec;
+}
+int C_ItemGGarysCD::vfunc16()
+{
+    return (int)&lifted::g_102742ec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001f440 size=0x3
+#include "C_ItemGGarysCD.h"
+int C_ItemGGarysCD::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

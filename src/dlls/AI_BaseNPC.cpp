@@ -11439,21 +11439,13 @@ void* Helper::sub_1027c790(unsigned char flags)
 // END FUNCTION
 
 // FUNCTION: 0x1027c7c0 size=0x20
-extern int g_1049a0f8;
+#include "CAI_Component.h"
 
-struct Helper
-{
-	void* sub_1027c7c0(unsigned char flags);
-};
+// VC6 writes CAI_Component's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CAI_Component *pcd_emit_1027c7c0() { return new CAI_Component; }
 
-// TARGET: Helper::sub_1027c7c0
-void* Helper::sub_1027c7c0(unsigned char flags)
-{
-	*(void**)this = &g_1049a0f8;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCAI_Component@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1027c7f0 size=0x1e
@@ -11757,21 +11749,13 @@ CAI_MoveProbe *__fastcall sub_1027cef0(void *pOuter)
 // END FUNCTION
 
 // FUNCTION: 0x1027cf30 size=0x20
-extern int g_1049a0f8;
+#include "CAI_MoveProbe.h"
 
-struct Helper
-{
-	void* sub_1027cf30(unsigned char flags);
-};
+// VC6 writes CAI_MoveProbe's scalar deleting destructor where it emits the class's vtable; `new` (its inline
+// constructor) in a function nothing calls makes it emit both here
+CAI_MoveProbe *pcd_emit_1027cf30() { return new CAI_MoveProbe(0); }
 
-// TARGET: Helper::sub_1027cf30
-void* Helper::sub_1027cf30(unsigned char flags)
-{
-	*(void**)this = &g_1049a0f8;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCAI_MoveProbe@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1027cf60 size=0x1f
@@ -11809,21 +11793,13 @@ CAI_Pathfinder *CAI_BaseNPC::vfunc430()
 // END FUNCTION
 
 // FUNCTION: 0x1027d000 size=0x20
-extern int g_1049a0f8;
+#include "CAI_Pathfinder.h"
 
-struct Helper
-{
-	void* sub_1027d000(unsigned char flags);
-};
+// VC6 writes CAI_Pathfinder's scalar deleting destructor where it emits the class's vtable; `new` (its inline
+// constructor) in a function nothing calls makes it emit both here
+CAI_Pathfinder *pcd_emit_1027d000() { return new CAI_Pathfinder(0); }
 
-// TARGET: Helper::sub_1027d000
-void* Helper::sub_1027d000(unsigned char flags)
-{
-	*(void**)this = &g_1049a0f8;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCAI_Pathfinder@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1027d030 size=0x43

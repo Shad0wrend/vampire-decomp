@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10009800 size=0x6
+#include "C_WeaponMelee_TireIron.h"
+namespace lifted {
+extern char g_102729b8;
+}
+int C_WeaponMelee_TireIron::vfunc17()
+{
+    return (int)&lifted::g_102729b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009890 size=0x1e
 #include "C_WeaponMelee_TireIron.h"
 
@@ -9,4 +20,23 @@
 C_WeaponMelee_TireIron *pcd_emit_10009890() { return new C_WeaponMelee_TireIron; }
 
 // TARGET: ??_GC_WeaponMelee_TireIron@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x100098b0 size=0x6
+#include "C_WeaponMelee_TireIron.h"
+namespace lifted {
+extern char g_10274ff8;
+}
+int C_WeaponMelee_TireIron::vfunc16()
+{
+    return (int)&lifted::g_10274ff8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100098c0 size=0x3
+#include "C_WeaponMelee_TireIron.h"
+int C_WeaponMelee_TireIron::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

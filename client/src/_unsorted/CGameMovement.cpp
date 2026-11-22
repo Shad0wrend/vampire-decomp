@@ -40,6 +40,22 @@ void CGameMovement::vfunc13(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6e20 size=0x1e
+#include "CGameMovement.h"
+namespace lifted {
+int sub_100e6e40();
+int sub_101d1296(int);
+}
+CGameMovement * CGameMovement::vfunc0(unsigned int a0)
+{
+    int t0 = lifted::sub_100e6e40();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6e70 size=0x2f
 #include "CGameMovement.h"
 
@@ -55,6 +71,39 @@ int CGameMovement::vfunc14(int type)
 		return 0xd;
 	}
 	return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e6eb0 size=0x11
+#include "CGameMovement.h"
+float * CGameMovement::vfunc2(char a0, int a1)
+{
+    if (a0 != 0) {
+        return (float *)((char *)this + 0x2c);
+    }
+    return (float *)((char *)this + 0x14);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e6ed0 size=0x11
+#include "CGameMovement.h"
+float * CGameMovement::vfunc3(char a0, int a1)
+{
+    if (a0 != 0) {
+        return (float *)((char *)this + 0x38);
+    }
+    return (float *)((char *)this + 0x20);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e6f50 size=0x11
+#include "CGameMovement.h"
+float * CGameMovement::vfunc4(char a0, int a1)
+{
+    if (a0 != 0) {
+        return (float *)((char *)this + 0x68);
+    }
+    return (float *)((char *)this + 0x5c);
 }
 // END FUNCTION
 

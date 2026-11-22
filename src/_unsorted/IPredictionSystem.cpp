@@ -4,12 +4,9 @@
 // FUNCTION: 0x10059db0 size=0x20
 #include "IPredictionSystem.h"
 
-struct DummyPredictionSystem : IPredictionSystem
-{
-};
+// VC6 writes IPredictionSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+IPredictionSystem *pcd_emit_10059db0() { return new IPredictionSystem; }
 
-// built in a function nothing calls (a local one is optimized away): a global one would link itself into
-// g_pPredictionSystems at load
-IPredictionSystem *pcd_emit_10059db0() { return new DummyPredictionSystem; }
 // TARGET: ??_GIPredictionSystem@@UAEPAXI@Z
 // END FUNCTION

@@ -2,34 +2,11 @@
 #include "vampire.h"
 
 // FUNCTION: 0x100509b0 size=0x68
-extern "C" __declspec(dllimport) void Plat_Free(void *);
-extern int g_10447108[];
-struct SFilter {
-    void *vt;
-    int m4;
-    void *m8;
-    int mc;
-    int m10;
-    int m14;
-    void *m18;
-    SFilter *sub_100509b0(unsigned char flag);
-};
-// TARGET: SFilter::sub_100509b0
-SFilter *SFilter::sub_100509b0(unsigned char flag)
-{
-    m14 = 0;
-    if (m10 != -1) {
-        if (m8) { Plat_Free(m8); m8 = 0; }
-        mc = 0;
-    }
-    m18 = m8;
-    if (m10 != -1) {
-        if (m8) { Plat_Free(m8); m8 = 0; }
-        mc = 0;
-    }
-    vt = g_10447108;
-    if (flag & 1)
-        delete this;
-    return this;
-}
+#include "CBroadcastRecipientFilter.h"
+
+// VC6 writes CBroadcastRecipientFilter's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CBroadcastRecipientFilter *pcd_emit_100509b0() { return new CBroadcastRecipientFilter; }
+
+// TARGET: ??_GCBroadcastRecipientFilter@@UAEPAXI@Z
 // END FUNCTION

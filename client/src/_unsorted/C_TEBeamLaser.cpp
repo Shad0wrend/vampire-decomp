@@ -21,3 +21,11 @@ int C_TEBeamLaser::vfunc9()
     return (int)&lifted::g_1027d838;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100332a0 size=0x3
+#include "C_TEBeamLaser.h"
+int C_TEBeamLaser::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

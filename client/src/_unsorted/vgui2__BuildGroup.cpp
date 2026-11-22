@@ -1,6 +1,88 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c11b0 size=0x45
+#include "vgui2__BuildGroup.h"
+namespace lifted {
+int sub_101c2180();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(int); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+void vgui2::BuildGroup::vfunc0(char a0)
+{
+    if ((*(char *)((char *)this + 4)) != a0) {
+        *(int *)((char *)this + 0x3c) = 0;
+        if (a0 != 0) {
+            int t0 = lifted::sub_101c2180();
+            *(char *)((char *)this + 4) = a0;
+            return;
+        }
+        if ((*(int *)((char *)this + 0x58)) != 0) {
+            ((lifted::V *)(*(int *)((char *)this + 0x58)))->f21(0);
+        }
+        ((lifted::V *)(*(int *)((char *)this + 0x60)))->f15(0);
+    }
+    *(char *)((char *)this + 4) = a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c1200 size=0x4
+#include "vgui2__BuildGroup.h"
+bool vgui2::BuildGroup::vfunc1()
+{
+    return *(bool *)((char *)this + 4);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c1210 size=0x4
+#include "vgui2__BuildGroup.h"
+char * vgui2::BuildGroup::vfunc14()
+{
+    return (char *)this + 0x64;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c1220 size=0x7
+#include "vgui2__BuildGroup.h"
+bool vgui2::BuildGroup::vfunc17()
+{
+    return *(bool *)((char *)this + 0xb0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c1330 size=0x3d
+#include "vgui2__BuildGroup.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+int vgui2::BuildGroup::vfunc16(int a0)
+{
+    ((lifted::V *)(*(int *)((char *)this + 0xa0)))->f21(a0);
+    ((lifted::V *)(*(int *)((char *)this + 0xa4)))->f21(a0);
+    ((lifted::V *)(*(int *)((char *)this + 0xa8)))->f21(a0);
+    return ((lifted::V *)(*(int *)((char *)this + 0xac)))->f21(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c1db0 size=0x15
+#include "vgui2__BuildGroup.h"
+namespace lifted {
+int sub_101ac8b0();
+struct V { virtual void u0(); virtual int f1(int); };
+}
+int vgui2::BuildGroup::vfunc13(int a0, int a1)
+{
+    *(char *)((char *)this + 0x24) = 0;
+    return ((lifted::V *)(lifted::sub_101ac8b0()))->f1(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c1dd0 size=0x3
+#include "vgui2__BuildGroup.h"
+void vgui2::BuildGroup::vfunc20(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1de0 size=0x2eb
 struct KV {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
@@ -123,5 +205,38 @@ void BG::sub_101c1de0(int code, PanelV *panel)
 			sub_101ac8f0()->PostMessage(m_pOwner->GetVPanel(), kv, 0, 0);
 		}
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c2300 size=0x4
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc10()
+{
+    return *(int *)((char *)this + 0x54);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c23b0 size=0x4
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc2()
+{
+    return *(int *)((char *)this + 0x3c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c2b00 size=0xa
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc8(int a0)
+{
+    *(int *)((char *)this + 0x5c) = a0;
+    return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c2b10 size=0x4
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc9()
+{
+    return *(int *)((char *)this + 0x5c);
 }
 // END FUNCTION

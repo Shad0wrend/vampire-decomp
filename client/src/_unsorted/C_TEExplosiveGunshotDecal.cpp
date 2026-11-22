@@ -28,3 +28,11 @@ int C_TEExplosiveGunshotDecal::vfunc9()
     return (int)&lifted::g_10280068;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039c30 size=0x3
+#include "C_TEExplosiveGunshotDecal.h"
+int C_TEExplosiveGunshotDecal::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

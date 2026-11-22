@@ -1,5 +1,5 @@
 // vgui2::ScrollBarSlider: skeleton from the game's RTTI (pcdecomp gdtors)
-// declared: its bases; nothing else yet
+// declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22)
 #pragma once
 #include "vgui2__Panel.h"
 
@@ -7,5 +7,30 @@ namespace vgui2
 {
 class ScrollBarSlider : public vgui2::Panel
 {
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+    // the base slots the game's vtable fills with ScrollBarSlider's own function
+    virtual int vfunc74(int);
+    virtual void vfunc84(int, int);
+    virtual void vfunc87(int);
+    virtual void vfunc88(int);
+    virtual void vfunc89(int);
+    virtual void vfunc97();
+    virtual void vfunc98();
+    virtual void vfunc101();
+    // the slots ScrollBarSlider adds to its base's vtable: 107-120, vfuncK at slot K
+    virtual int vfunc107(int);
+    virtual int vfunc108();
+    virtual bool vfunc109();
+    virtual int vfunc110(int, int);
+    virtual int vfunc111(int, int);
+    virtual int vfunc112(int);
+    virtual int vfunc113();
+    virtual int vfunc114(int, int);
+    virtual int vfunc115(int, int);
+    virtual void vfunc116();
+    virtual int vfunc117(int);
+    virtual void vfunc118();
+    virtual void vfunc119();
+    virtual int vfunc120();
 };
 }

@@ -21,3 +21,11 @@ int C_TEFogRipple::vfunc9()
     return (int)&lifted::g_1027f588;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10037600 size=0x3
+#include "C_TEFogRipple.h"
+int C_TEFogRipple::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

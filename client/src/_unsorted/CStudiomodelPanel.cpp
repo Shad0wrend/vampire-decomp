@@ -10,3 +10,33 @@ CStudiomodelPanel *pcd_emit_1018b250() { return new CStudiomodelPanel; }
 
 // TARGET: ??_GCStudiomodelPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1018bc10 size=0x16
+#include "CStudiomodelPanel.h"
+namespace lifted {
+struct C1018b110 { int sub_1018b110(); };
+}
+void CStudiomodelPanel::vfunc3()
+{
+    if ((*(int *)((char *)this + 0x58)) != 0) {
+        if ((*(char *)((char *)this + 0x74)) == 0) {
+            ((lifted::C1018b110 *)(*(int *)((char *)this + 0x58)))->sub_1018b110(); return;
+        }
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018be50 size=0x1c
+#include "CStudiomodelPanel.h"
+namespace lifted {
+int sub_101ac8b0();
+struct V { virtual void u0(); virtual int f1(int); };
+}
+void CStudiomodelPanel::vfunc89(int a0)
+{
+    *(char *)((char *)this + 0x74) = 0;
+    *(char *)((char *)this + 0x75) = 0;
+    a0 = 0;
+    ((lifted::V *)(lifted::sub_101ac8b0()))->f1(a0);
+}
+// END FUNCTION

@@ -1,0 +1,35 @@
+// vgui2::BuildGroup: skeleton from the game's RTTI (vtable-slot skeletons, 2026-11-22)
+// declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22) (its vtable has no deleting destructor: no virtual destructor)
+#pragma once
+
+namespace vgui2
+{
+class BuildGroup
+{
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+    // the slots BuildGroup adds to its base's vtable: 0-22, vfuncK at slot K
+    virtual void vfunc0(char);
+    virtual bool vfunc1();
+    virtual int vfunc2();
+    virtual void vfunc3();
+    virtual int vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual int vfunc8(int);
+    virtual int vfunc9();
+    virtual int vfunc10();
+    virtual void vfunc11();
+    virtual void vfunc12();
+    virtual int vfunc13(int, int);
+    virtual char * vfunc14();
+    virtual void vfunc15();
+    virtual int vfunc16(int);
+    virtual bool vfunc17();
+    virtual void vfunc18();
+    virtual void vfunc19();
+    virtual void vfunc20(int, int);
+    virtual void vfunc21();
+    virtual void vfunc22();
+};
+}

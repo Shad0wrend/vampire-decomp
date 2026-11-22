@@ -3,9 +3,9 @@
 
 // FUNCTION: 0x101a4830 size=0x4
 #include "CSaveRestoreBlockSet.h"
-char * CSaveRestoreBlockSet::vfunc0()
+const char *CSaveRestoreBlockSet::GetBlockName()
 {
-    return (char *)this + 4;
+    return m_Name;
 }
 // END FUNCTION
 
@@ -16,17 +16,15 @@ struct IHandlerView {
 	virtual const char *GetBlockName() = 0;
 	virtual void Slot1(void *) = 0;
 };
-__declspec(dllimport) char *__cdecl Q_strncpy(char *, const char *, int);
-// TARGET: CSaveRestoreBlockSet::vfunc1
-void CSaveRestoreBlockSet::vfunc1(void *pSave)
+void CSaveRestoreBlockSet::PreSave(CSaveRestoreData *pData)
 {
-	CUnknown101a5800 *p = (CUnknown101a5800 *)&m_pEntries;
-	int n = m_nHandlers;
+	CUnknown101a5800 *p = (CUnknown101a5800 *)&m_BlockHeaders;
+	int n = m_Handlers.Count();
 	p->sub_101a5800(p->m_size = 0, n, 0);
-	for (int i = 0; i < m_nHandlers; i++) {
-		char *base = m_pEntries;
-		Q_strncpy(base + i * 0x28, ((IHandlerView *)m_pHandlers[i])->GetBlockName(), 0x20);
-		((IHandlerView *)m_pHandlers[i])->Slot1(pSave);
+	for (int i = 0; i < m_Handlers.Count(); i++) {
+		char *base = (char *)m_BlockHeaders.Base();
+		Q_strncpy(base + i * 0x28, ((IHandlerView *)m_Handlers[i])->GetBlockName(), 0x20);
+		((IHandlerView *)m_Handlers[i])->Slot1(pData);
 	}
 }
 // END FUNCTION
@@ -36,16 +34,16 @@ void CSaveRestoreBlockSet::vfunc1(void *pSave)
 struct SaveStream { virtual int vfunc0(); };
 struct BlockHandler { virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(SaveStream *s); };
 
-void CSaveRestoreBlockSet::vfunc2(void *pSave)
+void CSaveRestoreBlockSet::Save(ISave *pSave)
 {
 	SaveStream *s = (SaveStream *)pSave;
 	int start = s->vfunc0();
-	for (int i = 0; i < m_nHandlers; i++) {
-		char *e = m_pEntries;
+	for (int i = 0; i < m_Handlers.Count(); i++) {
+		char *e = (char *)m_BlockHeaders.Base();
 		*(int *)(e + i * 0x28 + 0x24) = s->vfunc0() - start;
-		((BlockHandler *)m_pHandlers[i])->vfunc2(s);
+		((BlockHandler *)m_Handlers[i])->vfunc2(s);
 	}
-	m_nSize = s->vfunc0() - start;
+	m_SizeBodies = s->vfunc0() - start;
 }
 // END FUNCTION
 
@@ -109,15 +107,13 @@ struct LocalHeaders
 	SaveRestoreBlockHeader_t &operator[](int i) { return ((SaveRestoreBlockHeader_t *)m_Memory.m_pMemory)[i]; }
 };
 
-#define pad38I (*(int *)pad38)
-
-void CSaveRestoreBlockSet::vfunc3(void *pSaveArg)
+void CSaveRestoreBlockSet::WriteSaveHeaders(ISave *pSaveArg)
 {
 	SBSave *pSave = (SBSave *)pSaveArg;
 	int start = pSave->Tell();
 	int nTemp = -1;
 	LocalHeaders headers;
-	headers.SetCount(BlockHeaders().Count());
+	headers.SetCount(m_BlockHeaders.Count());
 	memset(&headers[0], 0xff, headers.Count() * sizeof(SaveRestoreBlockHeader_t));
 	pSave->WriteInt(&nTemp, 1);
 	pSave->WriteInt(&nTemp, 1);
@@ -127,17 +123,17 @@ void CSaveRestoreBlockSet::vfunc3(void *pSaveArg)
 	info.pOwner = 0;
 	info.pTypeDesc = 0;
 	ops->vfunc0((SaveRestoreFieldInfo_t *)&info, (ISave *)pSave);
-	for (int i = 0; i < m_nHandlers; i++) {
-		BlockHeaders()[i].m_nLocHeader = pSave->Tell() - start;
-		((SBHandler *)m_pHandlers[i])->Save(pSave);
+	for (int i = 0; i < m_Handlers.Count(); i++) {
+		m_BlockHeaders[i].m_nLocHeader = pSave->Tell() - start;
+		((SBHandler *)m_Handlers[i])->Save(pSave);
 	}
-	pad38I = pSave->Tell() - start;
+	m_SizeHeaders = pSave->Tell() - start;
 	int end = pSave->Tell();
 	pSave->Seek(start);
-	pSave->WriteInt(&pad38I, 1);
-	pSave->WriteInt(&m_nSize, 1);
+	pSave->WriteInt(&m_SizeHeaders, 1);
+	pSave->WriteInt(&m_SizeBodies, 1);
 	ops = HeaderOpsOf();
-	info.pField = &BlockHeaders();
+	info.pField = &m_BlockHeaders;
 	info.pOwner = 0;
 	info.pTypeDesc = 0;
 	ops->vfunc0((SaveRestoreFieldInfo_t *)&info, (ISave *)pSave);
@@ -153,24 +149,12 @@ struct sub_BlockHandler4
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
 	virtual void vfunc4();
 };
-extern "C" __declspec(dllimport) void Plat_Free(void *);
 
-// TARGET: CSaveRestoreBlockSet::vfunc4
-void CSaveRestoreBlockSet::vfunc4()
+void CSaveRestoreBlockSet::PostSave()
 {
-	for (int i = 0; i < m_nHandlers; i++)
-		((sub_BlockHandler4 *)m_pHandlers[i])->vfunc4();
-	m_nEntries = 0;
-	if (m_nEntriesGrow != -1)
-	{
-		if (m_pEntries)
-		{
-			Plat_Free(m_pEntries);
-			m_pEntries = 0;
-		}
-		m_nEntriesAlloc = 0;
-	}
-	m_pEntryElements = m_pEntries;
+	for (int i = 0; i < m_Handlers.Count(); i++)
+		((sub_BlockHandler4 *)m_Handlers[i])->vfunc4();
+	m_BlockHeaders.Purge();
 }
 // END FUNCTION
 
@@ -186,11 +170,10 @@ struct CSaveRestoreBlockHandlerSlots {
 	virtual void vfunc5();
 };
 
-// TARGET: CSaveRestoreBlockSet::vfunc5
-void CSaveRestoreBlockSet::vfunc5()
+void CSaveRestoreBlockSet::PreRestore()
 {
-	for (int i = 0; i < m_nHandlers; i++) {
-		((CSaveRestoreBlockHandlerSlots *)m_pHandlers[i])->vfunc5();
+	for (int i = 0; i < m_Handlers.Count(); i++) {
+		((CSaveRestoreBlockHandlerSlots *)m_Handlers[i])->vfunc5();
 	}
 }
 // END FUNCTION
@@ -238,32 +221,28 @@ inline HeaderOps *HeaderOpsOf()
 	return &s_ops;
 }
 
-struct BlockSetView : public CSaveRestoreBlockSet
+void CSaveRestoreBlockSet::ReadRestoreHeaders(IRestore *pRestore)
 {
-    void sub_101a4cb0(SaveView *pSave);
-};
-
-void BlockSetView::sub_101a4cb0(SaveView *pSave)
-{
+    SaveView *pSave = (SaveView *)pRestore;
     int base = pSave->vfunc0();
-    int *pVersion = (int *)pad38;
+    int *pVersion = &m_SizeHeaders;
     pSave->vfunc15(pVersion, 1, 0);
-    pSave->vfunc15(&m_nSize, 1, 0);
+    pSave->vfunc15(&m_SizeBodies, 1, 0);
     HeaderOps *pOps = HeaderOpsOf();
     FieldInfoView info;
-    info.m_pField = &m_pEntries;
+    info.m_pField = &m_BlockHeaders;
     info.m_pOwner = 0;
     info.m_pTypeDesc = 0;
     pOps->vfunc1((SaveRestoreFieldInfo_t *)&info, (IRestore *)pSave);
-    for (int i = 0; i < m_nHandlers; i++) {
-        const char *pName = ((HandlerView *)m_pHandlers[i])->vfunc0();
-        for (int j = 0; j < m_nEntries; j++) {
-            char *pEntry = m_pEntries + j * 0x28;
+    for (int i = 0; i < m_Handlers.Count(); i++) {
+        const char *pName = ((HandlerView *)m_Handlers[i])->vfunc0();
+        for (int j = 0; j < m_BlockHeaders.Count(); j++) {
+            char *pEntry = (char *)m_BlockHeaders.Base() + j * 0x28;
             if (strcmp(pEntry, pName) == 0) {
-                int offset = *(int *)(m_pEntries + j * 0x28 + 0x20);
+                int offset = *(int *)((char *)m_BlockHeaders.Base() + j * 0x28 + 0x20);
                 if (offset != -1) {
                     pSave->vfunc1(offset + base);
-                    ((HandlerView *)m_pHandlers[i])->vfunc6(pSave);
+                    ((HandlerView *)m_Handlers[i])->vfunc6(pSave);
                 }
                 break;
             }
@@ -288,28 +267,27 @@ struct SBlockHandler
 {
     virtual const char *GetBlockName();
     virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
-    virtual void Process(SSaveStream *pSave, int a, int b);	// slot 7
+    virtual void Process(SSaveStream *pSave, bool fCreatePlayers, int nUnused);	// slot 7
 };
 
-// TARGET: CSaveRestoreBlockSet::vfunc7
-void CSaveRestoreBlockSet::vfunc7(void *pSave, int a, int b)
+void CSaveRestoreBlockSet::Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused)
 {
-    SSaveStream *stream = (SSaveStream *)pSave;
+    SSaveStream *stream = (SSaveStream *)pRestore;
     int base = stream->GetBase();
-    for (int i = 0; i < m_nHandlers; i++) {
-        const char *name = ((SBlockHandler *)m_pHandlers[i])->GetBlockName();
-        for (int j = 0; j < m_nEntries; j++) {
-            if (strcmp(m_pEntries + j * 0x28, name) == 0) {
-                int off = *(int *)(m_pEntries + j * 0x28 + 0x24);
+    for (int i = 0; i < m_Handlers.Count(); i++) {
+        const char *name = ((SBlockHandler *)m_Handlers[i])->GetBlockName();
+        for (int j = 0; j < m_BlockHeaders.Count(); j++) {
+            if (strcmp((char *)m_BlockHeaders.Base() + j * 0x28, name) == 0) {
+                int off = *(int *)((char *)m_BlockHeaders.Base() + j * 0x28 + 0x24);
                 if (off != -1) {
                     stream->Seek(off + base);
-                    ((SBlockHandler *)m_pHandlers[i])->Process(stream, a, b);
+                    ((SBlockHandler *)m_Handlers[i])->Process(stream, fCreatePlayers, nUnused);
                 }
                 break;
             }
         }
     }
-    stream->Seek(m_nSize + base);
+    stream->Seek(m_SizeBodies + base);
 }
 // END FUNCTION
 
@@ -322,53 +300,27 @@ struct sub_BlockHandler8
 	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
 	virtual void vfunc8();
 };
-extern "C" __declspec(dllimport) void Plat_Free(void *);
 
-// TARGET: CSaveRestoreBlockSet::vfunc8
-void CSaveRestoreBlockSet::vfunc8()
+void CSaveRestoreBlockSet::PostRestore()
 {
-	for (int i = 0; i < m_nHandlers; i++)
-		((sub_BlockHandler8 *)m_pHandlers[i])->vfunc8();
-	m_nEntries = 0;
-	if (m_nEntriesGrow != -1)
-	{
-		if (m_pEntries)
-		{
-			Plat_Free(m_pEntries);
-			m_pEntries = 0;
-		}
-		m_nEntriesAlloc = 0;
-	}
-	m_pEntryElements = m_pEntries;
+	for (int i = 0; i < m_Handlers.Count(); i++)
+		((sub_BlockHandler8 *)m_Handlers[i])->vfunc8();
+	m_BlockHeaders.Purge();
 }
 // END FUNCTION
 
 // FUNCTION: 0x101a5020 size=0xa7
 #include "CSaveRestoreBlockSet.h"
-void CSaveRestoreBlockSet::vfunc9(void *pHandler)
+void CSaveRestoreBlockSet::AddBlockHandler(ISaveRestoreBlockHandler *pHandler)
 {
-	int idx = m_nHandlers;
-	GrowVector();
-	ShiftElementsRight(idx);
-	void **p = &m_pHandlers[idx];
-	if (p)
-		*p = pHandler;
+	m_Handlers.AddToTail(pHandler);
 }
 // END FUNCTION
 
 // FUNCTION: 0x101a5100 size=0x53
-#include <string.h>
-#include "utlvector.h"
-
-struct SBlockSetView {
-	char m_pad[0x24];
-	CUtlVector<int> m_List;
-
-	void sub_101a5100(int elem);
-};
-
-void SBlockSetView::sub_101a5100(int elem)
+#include "CSaveRestoreBlockSet.h"
+void CSaveRestoreBlockSet::RemoveBlockHandler(ISaveRestoreBlockHandler *pHandler)
 {
-	m_List.FindAndRemove(elem);
+	m_Handlers.FindAndRemove(pHandler);
 }
 // END FUNCTION

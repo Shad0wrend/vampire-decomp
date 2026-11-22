@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10009300 size=0x6
+#include "C_WeaponMelee_Stake.h"
+namespace lifted {
+extern char g_10272980;
+}
+int C_WeaponMelee_Stake::vfunc17()
+{
+    return (int)&lifted::g_10272980;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009390 size=0x1e
 #include "C_WeaponMelee_Stake.h"
 
@@ -9,4 +20,23 @@
 C_WeaponMelee_Stake *pcd_emit_10009390() { return new C_WeaponMelee_Stake; }
 
 // TARGET: ??_GC_WeaponMelee_Stake@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x100093b0 size=0x6
+#include "C_WeaponMelee_Stake.h"
+namespace lifted {
+extern char g_1027502c;
+}
+int C_WeaponMelee_Stake::vfunc16()
+{
+    return (int)&lifted::g_1027502c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100093c0 size=0x3
+#include "C_WeaponMelee_Stake.h"
+int C_WeaponMelee_Stake::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

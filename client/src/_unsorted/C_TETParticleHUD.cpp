@@ -21,3 +21,11 @@ int C_TETParticleHUD::vfunc9()
     return (int)&lifted::g_102820bc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10040710 size=0x3
+#include "C_TETParticleHUD.h"
+int C_TETParticleHUD::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

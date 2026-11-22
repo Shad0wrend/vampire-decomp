@@ -235,29 +235,32 @@ struct CPhysQueuedMap
 	static unsigned short InvalidIndex() { return CPhysTree24::InvalidIndex(); }
 };
 
-// TARGET: CPhysSaveRestoreBlockHandler::vfunc8
-void CPhysSaveRestoreBlockHandler::vfunc8()
+// TARGET: CPhysSaveRestoreBlockHandler::PostRestore
+void CPhysSaveRestoreBlockHandler::PostRestore()
 {
 	if (g_10723940)
 		g_10723940->vfunc51();
 
-	CPhysQueuedMap &m = *(CPhysQueuedMap *)&m_Tree24;
-	CPhysTree24N *t = (CPhysTree24N *)&m_Tree24;
+	CPhysQueuedMap &m = *(CPhysQueuedMap *)&m_QueuedRestores;
+	CPhysTree24N *t = (CPhysTree24N *)&m_QueuedRestores;
 	for (unsigned short i = t->FirstInorder(); i != t->InvalidIndex(); i = pcd_stage(t->Next(i)))
-		delete (CPhysQueuedVec *)m_Tree24[i].m_pVec;
+		delete (CPhysQueuedVec *)(*(CPhysTree24 *)&m_QueuedRestores)[i].m_pVec;
 	m.m_Tree.RemoveAll2004();
 	g_106eb5d8.sub_100f6e40(this ? (char *)this + 8 : 0);
 }
 // END FUNCTION
 
 // FUNCTION: 0x10044a70 size=0x3
-void __stdcall sub_10044a70(int a0)
+#include "CPhysSaveRestoreBlockHandler.h"
+
+void CPhysSaveRestoreBlockHandler::OnEntityCreated(CBaseEntity *pEntity)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x10044a90 size=0x140
 #include "CUnknown10044a90.h"
+#include "CPhysSaveRestoreBlockHandler.h"
 
 extern int g_109f0b7c;
 extern "C" __declspec(dllimport) void Plat_Free(void *);
@@ -270,11 +273,11 @@ struct CProbe44a90
 	int m_value;
 };
 
-void CUnknown10044a90::sub_10044a90(unsigned int key)
+void CPhysSaveRestoreBlockHandler::OnEntityDeleted(CBaseEntity *pEntity)
 {
-	CUtlRBTree16 *t = &m_Tree;
+	CUtlRBTree16 *t = (CUtlRBTree16 *)&m_QueuedRestores;
 	CProbe44a90 probe;
-	probe.m_key = key;
+	probe.m_key = (unsigned int)pEntity;
 	int owner = ((int *)t)[6];
 	if (owner)
 		g_109f0b7c = owner;
@@ -290,7 +293,7 @@ void CUnknown10044a90::sub_10044a90(unsigned int key)
 	}
 	if (i == 0xffff)
 		return;
-	CUtlVector4 *pVec = *(CUtlVector4 **)(m_Tree.m_pElements[i].m_Data + 4);
+	CUtlVector4 *pVec = *(CUtlVector4 **)(((CUtlRBTree16 *)&m_QueuedRestores)->m_pElements[i].m_Data + 4);
 	if (pVec) {
 		pVec->m_size = 0;
 		if (pVec->m_growSize != -1) {
@@ -320,6 +323,7 @@ void CUnknown10044a90::sub_10044a90(unsigned int key)
 
 // FUNCTION: 0x10044c20 size=0x13f
 #include "CUnknown10044c20.h"
+#include "CPhysSaveRestoreBlockHandler.h"
 extern int g_109f0b74;
 struct ElemData {
     Vector a; Vector b;
@@ -359,19 +363,19 @@ struct CTree36Ctx : public CUtlRBTree36
     }
 };
 
-void CUnknown10044c20::sub_10044c20(const Vector *pA, const Vector *pB, unsigned int key)
+void CPhysSaveRestoreBlockHandler::NoteBBox(const Vector &mins, const Vector &maxs, CPhysCollide *pCollide)
 {
-    if (!key)
+    if (!pCollide)
         return;
-    CTree36Ctx *t = (CTree36Ctx *)&m_Tree;
+    CTree36Ctx *t = (CTree36Ctx *)&m_PhysCollideBBoxModels;
     ElemX e;
-    e.key = key;
+    e.key = (unsigned int)pCollide;
     if (t->FindCtx(e) != 0xffff)
         return;
     ElemData d;
-    d.a = *pA;
-    d.b = *pB;
-    e.key = key;
+    d.a = mins;
+    d.b = maxs;
+    e.key = (unsigned int)pCollide;
     e.data = d;
     t->InsertCtx(e);
 }
@@ -389,6 +393,7 @@ void CUnknown10044c20::sub_10044c20(const Vector *pA, const Vector *pB, unsigned
 #include "CUtlRBTreeOf.h"
 struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlMap16.h"
+#include "CPhysSaveRestoreBlockHandler.h"
 
 extern void *g_109f0b6c;
 
@@ -409,13 +414,13 @@ struct CMapPair
 	unsigned int m_elem;
 };
 
-void CUtlMap16::sub_10044db0(unsigned int key, unsigned int elem)
+void CPhysSaveRestoreBlockHandler::AssociateModel(IPhysicsObject *pObject, int modelIndex)
 {
-	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)&m_Tree;
+	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)&m_PhysObjectModels;
 	const CUtlRBTree16Of<CUtlMap16Pair> *links = (const CUtlRBTree16Of<CUtlMap16Pair> *)tree;
 	CMapPair insert;
-	insert.m_key = key;
-	insert.m_elem = elem;
+	insert.m_key = (unsigned int)pObject;
+	insert.m_elem = (unsigned int)modelIndex;
 	if (tree->m_pLessContext)
 		g_109f0b6c = tree->m_pLessContext;
 	unsigned short parent = 0xffff;
@@ -461,6 +466,7 @@ void CUtlMap16::sub_10044db0(unsigned int key, unsigned int elem)
 #include "CUtlRBTreeOf.h"
 struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlMap16.h"
+#include "CPhysSaveRestoreBlockHandler.h"
 
 extern void *g_109f0b64;
 
@@ -481,13 +487,13 @@ struct CMapPair
 	unsigned int m_elem;
 };
 
-void CUtlMap16::sub_10044f60(unsigned int key, unsigned int elem)
+void CPhysSaveRestoreBlockHandler::AssociateModel(IPhysicsObject *pObject, const CPhysCollide *pModel)
 {
-	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)((char *)this + 0x5c);
+	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)&m_PhysObjectCustomModels;
 	const CUtlRBTree16Of<CRBTree16Entry8B> *links = (const CUtlRBTree16Of<CRBTree16Entry8B> *)tree;
 	CMapPair insert;
-	insert.m_key = key;
-	insert.m_elem = elem;
+	insert.m_key = (unsigned int)pObject;
+	insert.m_elem = (unsigned int)pModel;
 	if (tree->m_pLessContext)
 		g_109f0b64 = tree->m_pLessContext;
 	unsigned short parent = 0xffff;
@@ -523,6 +529,7 @@ void CUtlMap16::sub_10044f60(unsigned int key, unsigned int elem)
 
 // FUNCTION: 0x10045110 size=0x1c9
 #include "utlvector.h"
+#include "CPhysSaveRestoreBlockHandler.h"
 struct Node8 { int key; int val; };
 struct Links_t { unsigned short left, right, parent, tag; };
 struct RBNode { Links_t links; Node8 data; };
@@ -633,27 +640,18 @@ struct Tree2
 	}
 };
 
-class CUnknown10045110
+void CPhysSaveRestoreBlockHandler::ForgetModel(IPhysicsObject *pObject)
 {
-public:
-	char pad0[0x40];
-	Tree1 m_Tree1;
-	Tree2 m_Tree2;
-
-	void sub_10045110(int key);
-};
-
-void CUnknown10045110::sub_10045110(int key)
-{
-	if (m_Tree1.Remove(key))
+	if (((Tree1 *)&m_PhysObjectModels)->Remove((int)pObject))
 		return;
-	m_Tree2.Remove(key);
+	((Tree2 *)&m_PhysObjectCustomModels)->Remove((int)pObject);
 }
 // END FUNCTION
 
 // FUNCTION: 0x10045360 size=0x112
 #include "utlrbtree.h"
 #include "utlvector.h"
+#include "CPhysSaveRestoreBlockHandler.h"
 struct RBLinks { unsigned short m_Left, m_Right, m_Parent, m_Tag; };
 struct RBNode16 { RBLinks m_Links; char m_Data[8]; };
 struct RBNode36 { RBLinks m_Links; char m_Data[28]; };
@@ -722,20 +720,11 @@ struct RBTreeC {
 	}
 };
 
-struct CUnknown10045360 {
-	char pad[0x40];
-	RBTreeA m_TreeA;	// 0x40
-	RBTreeB m_TreeB;	// 0x5c
-	RBTreeC m_TreeC;	// 0x78
-
-	void sub_10045360();
-};
-
-void CUnknown10045360::sub_10045360()
+void CPhysSaveRestoreBlockHandler::ForgetAllModels()
 {
-	m_TreeA.RemoveAll();
-	m_TreeB.RemoveAll();
-	m_TreeC.RemoveAll();
+	((RBTreeA *)&m_PhysObjectModels)->RemoveAll();
+	((RBTreeB *)&m_PhysObjectCustomModels)->RemoveAll();
+	((RBTreeC *)&m_PhysCollideBBoxModels)->RemoveAll();
 }
 // END FUNCTION
 

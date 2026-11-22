@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10014980 size=0x6
+#include "C_BloodPack.h"
+namespace lifted {
+extern char g_1027317c;
+}
+int C_BloodPack::vfunc17()
+{
+    return (int)&lifted::g_1027317c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014a10 size=0x1e
 #include "C_BloodPack.h"
 
@@ -9,4 +20,23 @@
 C_BloodPack *pcd_emit_10014a10() { return new C_BloodPack; }
 
 // TARGET: ??_GC_BloodPack@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10014a30 size=0x6
+#include "C_BloodPack.h"
+namespace lifted {
+extern char g_102748e4;
+}
+int C_BloodPack::vfunc16()
+{
+    return (int)&lifted::g_102748e4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10014a40 size=0x3
+#include "C_BloodPack.h"
+int C_BloodPack::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

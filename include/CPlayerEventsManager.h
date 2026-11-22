@@ -1,10 +1,8 @@
 // CPlayerEventsManager (RTTI .?AVCPlayerEventsManager@@): a CAutoGameSystem-like manager that owns one
 // utl-vector of 0x14-byte elements at +0x08 (memory, allocation count, grow size, size, element pointer).
 #pragma once
-#ifdef PCD_INITIALIZERS
-#include "utlvector.h"	// the initializer units: the vector member is Source's CUtlVector
-#endif
-#include "CDirtySpatialPartitionEntityList.h"
+#include "utlvector.h"
+#include "GameSystemRoot.h"
 
 #include "CAnchorList.h"	// g_109f3624 (Plat_Free)
 
@@ -15,15 +13,7 @@ public:
 	void vfunc5();	// slot 5: the same Purge of the vector at +0x08
 	CAutoGameSystem *vfunc8(unsigned int flags);	// slot 8: scalar deleting destructor (vector at +0x08, CBaseGameSystem::~CBaseGameSystem, then the delete)
 
-#ifdef PCD_INITIALIZERS	// the vector at +0x08
 	CUtlVector<int> m_vec;	// 0x08
-#else
-	void *m_pMemory;	// 0x08
-	int m_allocationCount;	// 0x0c
-	int m_growSize;	// 0x10
-	int m_Size;	// 0x14
-	void *m_pElements;	// 0x18
-#endif
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual void vfunc4();	// slot 4 (0x10227710): a tail call of sub_100828d0::vfunc4
 	virtual void vfunc3();	// slot 3: 0x102276f0 (matched as a free function)

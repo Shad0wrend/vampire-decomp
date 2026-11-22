@@ -1,0 +1,44 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x100c0a30 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc9()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c0a40 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc2()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c0a50 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc3()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c0a60 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc4()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c0a70 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc5()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c0a80 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc6()
+{
+}
+// END FUNCTION

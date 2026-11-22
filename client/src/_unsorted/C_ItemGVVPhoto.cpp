@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10020780 size=0x6
+#include "C_ItemGVVPhoto.h"
+namespace lifted {
+extern char g_102739cc;
+}
+int C_ItemGVVPhoto::vfunc17()
+{
+    return (int)&lifted::g_102739cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020810 size=0x1e
 #include "C_ItemGVVPhoto.h"
 
@@ -9,4 +20,23 @@
 C_ItemGVVPhoto *pcd_emit_10020810() { return new C_ItemGVVPhoto; }
 
 // TARGET: ??_GC_ItemGVVPhoto@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10020830 size=0x6
+#include "C_ItemGVVPhoto.h"
+namespace lifted {
+extern char g_10274240;
+}
+int C_ItemGVVPhoto::vfunc16()
+{
+    return (int)&lifted::g_10274240;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10020840 size=0x3
+#include "C_ItemGVVPhoto.h"
+int C_ItemGVVPhoto::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

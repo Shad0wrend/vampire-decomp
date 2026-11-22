@@ -1,4 +1,5 @@
-// CSoundEmitterSystemBase: sound emitter system (3 virtual slots; only the layout the constructor sets up is declared).
+// CSoundEmitterSystemBase: sound emitter system (3 virtual slots; the SDK's layout with a second dict, as the game's
+// constructor builds it).
 // sub_101b31a0 is its own block; 0x101b4200 compiles a copy before itself in namespace block_101b4200 (one name,
 // one definition: link audit B).
 #pragma once
@@ -136,7 +137,6 @@ struct CSoundRecordFull
 	CSoundParamsFull m_params;
 };
 
-#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x1072be18 (CSoundEmitterSystem g_SoundEmitterSystem)
 #include "CUtlSymbolTable.h"
 #include "utlvector.h"
 // The 2003 SDK's CUtlDict (utldict.h): a tree of (name, element) records over an int index, then the symbol table of
@@ -167,20 +167,50 @@ public:
 
 	CSoundEmitterSystemBase();	// function 0x101b26c0
 	virtual ~CSoundEmitterSystemBase() {}
-	virtual bool BaseInit();
-	virtual void BaseShutdown();	// slot 2 (0x101b2e30): empties the sound tables; CSoundEmitterSystem's LogMessage is
-								// its own slot 3
+	virtual bool BaseInit();	// slot 1: matched as the plain sub_101b2c60 below
+	virtual void BaseShutdown();	// slot 2 (0x101b2e30): empties the sound tables (matched under the view
+								// CSoundEmitterSystemBaseV); CSoundEmitterSystem's LogMessage is its own slot 3
+
+	// the flat form's functions (matched under these names; they read the members through CSoundEmitterSystemBaseFlat)
+	bool sub_101b3bb0(const char *pszSoundName, CUnknown10248a50 *pKeys, CUnknown101b2570 *pParams);	// 0x101b3bb0: applies one sound-script block (channel/volume/pitch/wave/rndwave/attenuation/soundlevel/play_to_owner_only/precache) to the parameter record
+	CSoundEmitterSystemBase *sub_101b26c0();
+	bool sub_101b2c60();	// slot 1 (0x101b2c60, stub 0x10005597), "BaseInit"-like: when the count at +0xa8 is positive calls slot 2 (through the vtable word: (*(void (__fastcall **)(CSoundEmitterSystemBase *))((char *)vtable + 8))(this)), sub_101b3b70(), loads "scripts/game_sounds_manifest.txt" into a new CUnknown10248a50 (g_1070b238, 0, true), for each sub key: name "precache_file" -> sub_101b4240(key->GetString(0, ""), true), "declare_file" -> sub_101b4240(key->GetString(0, ""), false), else DevWarning("CSoundEmitterSystemBase::BaseInit:  Manifest '%s' with bogus file type '%s', expecting 'declare_file' or 'precache_file'\n"); Error-like message when the file is missing; deletes the tree; DevMsg(1, "Registered %i sounds ( %i missing )") using sub_101b4740(false); returns true
+	float sub_101b4900(const char *pszAttenuation);	// stub 0x10001c85: TranslateAttenuation, the attenuation of an ATTN_ name
+	void sub_101b3b70();	// empty (a plain ret), called by slot 1 before the manifest load
+	void sub_101b4240(const char *pszScriptFile, bool bPrecache);	// stub 0x1000924b, AddSoundsFromFile: grows the script file table (0x82 byte entries, memory +0x9c, count +0xa8), loads the script file into a CUnknown10248a50 and adds each sound record (tree at +0x50); DevMsg "No such file" (and removes the table entry again) / "Entry '%s' already exists" cases
+	void sub_101b3770(void *pTable, const char *pszName, int value);	// interns pszName in the string table at +0xb0 and appends the 8 byte record (16 bit symbol, value) to the vector (memory at +0x20, size at +0x2c) of pTable
+	int sub_101b2f60(const char *pszName);	// index of the sound record (0xe8 bytes each, table at +0x54) named pszName, -1 when unknown
+	char sub_101b31a0(int index);	// true when index is within the sound record count at +0x64
+	char sub_101b4200(int index);	// when index is valid, the byte at +0x15 of its sound record (0xe8 bytes, table at +0x54)
+	void sub_101b50f0(const char *pszName);	// flags the sound record and its script file (record dword +0x18, flag table at +0x9c, 0x82 bytes each) as changed; DevWarning when there is no such sound
+	int sub_101b2870(int i);	// "CUtlRBTree::NextInorder" of the sound record tree at +0x50 (sentinel 0x1072c414)
+	int sub_101b3220();	// "GetSoundCount" (stub 0x100070a9)
+	const char *sub_101b31d0(int index);	// "GetSoundName" (stub 0x1000e732): the name of the sound record, null when the index is invalid
+	int sub_101b4cc0(const char *pszScript);	// the index of a script file in the manifest (stub 0x1000b113), -1 when it is not in it
+	bool sub_101b4d30(const char *pszName, const char *pszWave, const void *pParams);	// "CSoundEmitterSystemBase::AddSound" (DevWarning format 0x10599780): 3 stack args, copies a sound record into the +0x54 table (0xe8 each at +0x14 + index*0xe8) and flags the script file in the 0x82-byte table at +0x9c; returns true
+	void sub_101b2b30(const char *pszScript, UtlMem2 *pOut);	// "GetSoundIndexesForScript"-like: clears the output vector, then appends the index of every sound record whose script file is pszScript; DevWarning "Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'" when the script is unknown
+	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
+	CSoundParametersInternal *sub_101b3730(int index);	// the sound record of the index (stub 0x100130a7 is sub_101b2f60, this one is 0x10007469), null when the index is out of range
+	int sub_101b3240(void *pWaves, int nStart);	// index of the first wave (from nStart) of the vector pWaves, -1 when none (stub 0x1000bfff)
+	int sub_101b3b90(const char *pszName);	// stub returning 0 (ret 4)
+	char sub_101b33f0(const char *pszName, CSoundParameters &params);	// "GetParametersForSound": fills the parameters of the sound record named pszName; false (DevMsg) when it is unknown or has no wave
+	int sub_101b4170(const char *pszName);	// "LookupSoundLevel"-like: the sound level of the named sound, 75 when it cannot be resolved
+	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
+	void sub_101b5870(const char *pszOld, const char *pszNew);	// "CSoundEmitterSystemBase::RenameSound" (ret 8): _strcmpi equal -> nothing; sub_101b2f60(old) / sub_101b31a0 check -> DevMsg "Can't rename %s, no such sound\n"; new name known -> DevMsg "Can't rename %s to %s, new name already in list\n"; else copies the 0xe8 byte record (m_i54 table +0x14 + index * 0xe8: 8 bytes into a local, +8 into CUnknown101b6320Params::sub_101b5b70 (stub 0x10006e6f)), removes the old name from the RB tree at +0x50 (string table m_list70 = tree +0x20: sub_1024b5e0 -> CUtlRBTreeFind232::sub_101b68f0, 0x101b7970 / 0x101b7370 remove, --count at +0x64), inserts the new name (0x101b6d60, 0x101b6bd0, 0x101b6ea0, 0x101b6320), destroys two 0x14 byte CUtlVector temps (0x101b6120), sets the changed byte m_i9c[recordScript * 0x82] = 1, then two local CUtlVector purges (0x100076f8 + 0x101b6b90 + Plat_Free)
+	void sub_101b5310(int scriptindex);
+	void sub_101b5dd0(const char *pszName, const CSoundParamsFull &params);
+	int sub_101b4740(bool bVerbose);	// "CheckForMissingWavFiles": counts the sound records whose waves are not on disk ("sound/<name>" without the leading wave characters), flags them (+0x48) and DevMsg's each missing file when bVerbose
 
 	CUtlDict<CSoundEmitterRecord, int> m_Sounds;	// 0x04
 	CUtlDict<CSoundEmitterRecord, int> m_SavedOverrides;	// 0x50
 	CUtlVector<CSoundScriptFile> m_SoundKeyValues;	// 0x9c
 	CUtlSymbolTable m_Waves;	// 0xb0
 };
-#else
-class CSoundEmitterSystemBase
+
+// The words of CSoundEmitterSystemBase as the matched bodies read them (vptr word, the two dicts' trees and symbol
+// tables, the script file vector): the bodies cast `this` (or the global) to this view.
+struct CSoundEmitterSystemBaseFlat
 {
-public:
-	bool sub_101b3bb0(const char *pszSoundName, CUnknown10248a50 *pKeys, CUnknown101b2570 *pParams);	// 0x101b3bb0: applies one sound-script block (channel/volume/pitch/wave/rndwave/attenuation/soundlevel/play_to_owner_only/precache) to the parameter record
 	void *m_vtbl;	// 0x00
 	void *m_pfn04;
 	int m_i08;
@@ -207,35 +237,4 @@ public:
 	int m_iac;
 	CUnknown1024b2d0 m_listb0;	// 0xb0
 
-	CSoundEmitterSystemBase *sub_101b26c0();
-	bool sub_101b2c60();	// slot 1 (0x101b2c60, stub 0x10005597), "BaseInit"-like: when the count at +0xa8 is positive calls slot 2 (the class has no real virtuals yet: call (*(void (__fastcall **)(CSoundEmitterSystemBase *))((char *)m_vtbl + 8))(this)), sub_101b3b70(), loads "scripts/game_sounds_manifest.txt" into a new CUnknown10248a50 (g_1070b238, 0, true), for each sub key: name "precache_file" -> sub_101b4240(key->GetString(0, ""), true), "declare_file" -> sub_101b4240(key->GetString(0, ""), false), else DevWarning("CSoundEmitterSystemBase::BaseInit:  Manifest '%s' with bogus file type '%s', expecting 'declare_file' or 'precache_file'\n"); Error-like message when the file is missing; deletes the tree; DevMsg(1, "Registered %i sounds ( %i missing )") using sub_101b4740(false); returns true
-	float sub_101b4900(const char *pszAttenuation);	// stub 0x10001c85: TranslateAttenuation, the attenuation of an ATTN_ name
-	void sub_101b3b70();	// empty (a plain ret), called by slot 1 before the manifest load
-	void sub_101b4240(const char *pszScriptFile, bool bPrecache);	// stub 0x1000924b, AddSoundsFromFile: grows the script file table (0x82 byte entries, memory +0x9c, count +0xa8), loads the script file into a CUnknown10248a50 and adds each sound record (tree at +0x50); DevMsg "No such file" (and removes the table entry again) / "Entry '%s' already exists" cases
-	CSoundEmitterSystemBase *sub_101b0200(unsigned char flags);	// slot 0, scalar deleting destructor: purges the lists at +0xb0, +0x70, +0x24 and the memory blocks at +0x9c, +0x54, +0x8; deletes this when bit 0 of flags is set
-	void sub_101b3770(void *pTable, const char *pszName, int value);	// interns pszName in the string table at +0xb0 and appends the 8 byte record (16 bit symbol, value) to the vector (memory at +0x20, size at +0x2c) of pTable
-	int sub_101b2f60(const char *pszName);	// index of the sound record (0xe8 bytes each, table at +0x54) named pszName, -1 when unknown
-	char sub_101b31a0(int index);	// true when index is within the sound record count at +0x64
-	char sub_101b4200(int index);	// when index is valid, the byte at +0x15 of its sound record (0xe8 bytes, table at +0x54)
-	void sub_101b50f0(const char *pszName);	// flags the sound record and its script file (record dword +0x18, flag table at +0x9c, 0x82 bytes each) as changed; DevWarning when there is no such sound
-	int sub_101b2870(int i);	// "CUtlRBTree::NextInorder" of the sound record tree at +0x50 (sentinel 0x1072c414)
-	int sub_101b3220();	// "GetSoundCount" (stub 0x100070a9)
-	const char *sub_101b31d0(int index);	// "GetSoundName" (stub 0x1000e732): the name of the sound record, null when the index is invalid
-	int sub_101b4cc0(const char *pszScript);	// the index of a script file in the manifest (stub 0x1000b113), -1 when it is not in it
-	bool sub_101b4d30(const char *pszName, const char *pszWave, const void *pParams);	// "CSoundEmitterSystemBase::AddSound" (DevWarning format 0x10599780): 3 stack args, copies a sound record into the +0x54 table (0xe8 each at +0x14 + index*0xe8) and flags the script file in the 0x82-byte table at +0x9c; returns true
-	void sub_101b2b30(const char *pszScript, UtlMem2 *pOut);	// "GetSoundIndexesForScript"-like: clears the output vector, then appends the index of every sound record whose script file is pszScript; DevWarning "Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'" when the script is unknown
-	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
-	CSoundParametersInternal *sub_101b3730(int index);	// the sound record of the index (stub 0x100130a7 is sub_101b2f60, this one is 0x10007469), null when the index is out of range
-	int sub_101b3240(void *pWaves, int nStart);	// index of the first wave (from nStart) of the vector pWaves, -1 when none (stub 0x1000bfff)
-	int sub_101b3b90(const char *pszName);	// stub returning 0 (ret 4)
-	char sub_101b33f0(const char *pszName, CSoundParameters &params);	// "GetParametersForSound": fills the parameters of the sound record named pszName; false (DevMsg) when it is unknown or has no wave
-	int sub_101b4170(const char *pszName);	// "LookupSoundLevel"-like: the sound level of the named sound, 75 when it cannot be resolved
-	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
-	void sub_101b5870(const char *pszOld, const char *pszNew);	// "CSoundEmitterSystemBase::RenameSound" (ret 8): _strcmpi equal -> nothing; sub_101b2f60(old) / sub_101b31a0 check -> DevMsg "Can't rename %s, no such sound\n"; new name known -> DevMsg "Can't rename %s to %s, new name already in list\n"; else copies the 0xe8 byte record (m_i54 table +0x14 + index * 0xe8: 8 bytes into a local, +8 into CUnknown101b6320Params::sub_101b5b70 (stub 0x10006e6f)), removes the old name from the RB tree at +0x50 (string table m_list70 = tree +0x20: sub_1024b5e0 -> CUtlRBTreeFind232::sub_101b68f0, 0x101b7970 / 0x101b7370 remove, --count at +0x64), inserts the new name (0x101b6d60, 0x101b6bd0, 0x101b6ea0, 0x101b6320), destroys two 0x14 byte CUtlVector temps (0x101b6120), sets the changed byte m_i9c[recordScript * 0x82] = 1, then two local CUtlVector purges (0x100076f8 + 0x101b6b90 + Plat_Free)
-	void sub_101b5310(int scriptindex);
-	void sub_101b5dd0(const char *pszName, const CSoundParamsFull &params);
-	int sub_101b4740(bool bVerbose);	// "CheckForMissingWavFiles": counts the sound records whose waves are not on disk ("sound/<name>" without the leading wave characters), flags them (+0x48) and DevMsg's each missing file when bVerbose
 };
-
-extern CSoundEmitterSystemBase g_1072be18;	// the sound emitter system object (at 0x1072be18, an object not a pointer; used by the "play" command 0x101b06a0 and 9 matched readers)
-#endif

@@ -6,5 +6,7 @@
 // TARGET: ?Base@?$CUtlMemory@H@@QAEPAHXZ
 #include "utlmemory.h"
 // one member, not a definition of its own: utlmemory.h's inline Base, so every block's copy is the same COMDAT
-static int *(CUtlMemory<int>::*s_Base)() = &CUtlMemory<int>::Base;
+typedef int *(CUtlMemory<int>::*BasePtr_t)();
+// taken in a function nothing calls (a global taking it would be a dynamic initializer the game does not have): VC6 emits the inline member here
+BasePtr_t pcd_emit_1002cca0() { return &CUtlMemory<int>::Base; }
 // END FUNCTION

@@ -1,0 +1,34 @@
+// vgui2::KeyValues: skeleton from the game's RTTI (vtable-slot skeletons, 2026-11-22)
+// declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22) (its vtable has no deleting destructor: no virtual destructor)
+#pragma once
+
+namespace vgui2
+{
+class KeyValues
+{
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+    // the slots KeyValues adds to its base's vtable: 0-21, vfuncK at slot K
+    virtual int vfunc0();
+    virtual int vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual int vfunc7();
+    virtual int vfunc8();
+    virtual void vfunc9();
+    virtual void vfunc10();
+    virtual void vfunc11();
+    virtual int vfunc12(int, int);
+    virtual bool vfunc13(int);
+    virtual void vfunc14();
+    virtual int vfunc15(int, int);
+    virtual int vfunc16(int, int);
+    virtual int vfunc17(int, int);
+    virtual void vfunc18();
+    virtual void vfunc19();
+    virtual int vfunc20(int);
+    virtual void vfunc21();
+};
+}

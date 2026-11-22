@@ -4,18 +4,12 @@
 
 // FUNCTION: 0x1002d6c0 size=0x68
 #include "CPhysicsHook.h"
-#include "utlvector.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CPhysicsHook's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CPhysicsHook *pcd_emit_1002d6c0() { return new CPhysicsHook; }
 
-CPhysicsHook *CPhysicsHook::vfunc8(unsigned int flags)
-{
-	((CUtlVector<int> *)((char *)this + 0x4))->~CUtlVector<int>();
-	sub_1000cfbd();
-	if (flags & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GCPhysicsHook@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1002d750 size=0x5e
@@ -402,7 +396,7 @@ void CPhysicsHook::vfunc7()
     TraceScope_ trace("CPhysicsHook::FrameUpdatePostEntityThink");
     VPScope_ vp("CPhysicsHook::FrameUpdatePostEntityThink", 0, "Physics");
     sub_1002ea40(gpGlobals->frametime);
-    sub_1000a8cb(m_04);
+    sub_1000a8cb(&m_list);
 }
 // END FUNCTION
 
@@ -2676,7 +2670,7 @@ void sub_10031990(CBaseEntity *ent, int a2, int a3, unsigned int a4, unsigned sh
 {
     ScopeTrace scope("PhysicsImpactSound", g_106b8540);
     int edict = ent->m_pEdict2e0;
-    sub_1002d070((S10032fb0 *)g_106b88ec.m_04, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
+    sub_1002d070((S10032fb0 *)&g_106b88ec.m_list, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
 }
 // END FUNCTION
 

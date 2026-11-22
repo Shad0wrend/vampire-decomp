@@ -3,22 +3,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1011a020 size=0x20
-#include "vampire.h"
-extern char g_1046257c;
-void sub_10430964(void *p);
-struct CUnk1011a020
-{
-    void *sub_1011a020(unsigned char bFree);
-};
-// TARGET: CUnk1011a020::sub_1011a020
-void *CUnk1011a020::sub_1011a020(unsigned char bFree)
-{
-    *(void **)this = &g_1046257c;
-    if (bFree & 1) {
-        sub_10430964(this);
-    }
-    return this;
-}
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameDLL.h"
+
+// VC6 writes CServerGameDLL's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CServerGameDLL *pcd_emit_1011a020() { return new CServerGameDLL; }
+
+// TARGET: ??_GCServerGameDLL@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011a050 size=0x5
@@ -636,20 +628,12 @@ int CServerGameDLL::vfunc12(int a0)
 // FUNCTION: 0x1011aec0 size=0x85
 #include "CServerGameDLL.h"
 #include "CSave.h"
-#include "CRestore.h"
-
-struct CSaveLocal
-{
-	CSave save;
-	CSaveLocal(void *pData) : save(pData) {}
-	~CSaveLocal() { ((CRestoreVec *)&save.m_pSections)->~CRestoreVec(); }
-};
 
 // TARGET: CServerGameDLL::vfunc13
 void CServerGameDLL::vfunc13(void *pData, int a, int b, int c, int d, int e)
 {
-	CSaveLocal local(pData);
-	local.save.CSave::vfunc3(a, b, c, d, e);
+	CSave save(pData);
+	save.CSave::vfunc3(a, b, c, d, e);
 }
 // END FUNCTION
 
@@ -754,19 +738,12 @@ struct CVProfScopeX
 	}
 };
 
-struct CSaveVecX
-{
-	CUtlVector<int> m_Sections;
-	void Destroy() { m_Sections.~CUtlVector<int>(); }
-};
-
 // TARGET: CServerGameDLL::vfunc18
 int CServerGameDLL::vfunc18(void *pSaveData)
 {
 	CVProfScopeX scope("CServerGameDLL::Save", 0, "Unaccounted");
 	CSave save(pSaveData);
 	g_10592db0->Save(&save);
-	((CSaveVecX *)&save.m_pSections)->Destroy();
 	return 1;
 }
 // END FUNCTION
@@ -774,17 +751,11 @@ int CServerGameDLL::vfunc18(void *pSaveData)
 // FUNCTION: 0x1011b2d0 size=0x20
 #include "ISave.h"
 
-extern char g_104625f4;
-void sub_10430964(void *p);
+// VC6 writes ISave's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_1011b2d0(ISave *p) { p->ISave::~ISave(); }
 
-// TARGET: ISave::vfunc39
-void *ISave::vfunc39(unsigned char bFree)
-{
-	*(void **)this = &g_104625f4;
-	if (bFree & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GISave@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011b300 size=0x1db
@@ -1269,38 +1240,25 @@ CServerGameEnts g_1070b1c4;
 // END FUNCTION
 
 // FUNCTION: 0x1011bd30 size=0x20
-#include "IServerGameEnts.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameEnts.h"
 
-extern char g_10462780;
-void sub_10430964(void *p);
+// VC6 writes IServerGameEnts's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_1011bd30(IServerGameEnts *p) { p->IServerGameEnts::~IServerGameEnts(); }
 
-// TARGET: IServerGameEnts::vfunc0
-void *IServerGameEnts::vfunc0(unsigned char bFree)
-{
-	*(void **)this = &g_10462780;
-	if (bFree & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GIServerGameEnts@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bd60 size=0x20
-#include "vampire.h"
-extern char g_10462780;
-void sub_10430964(void *p);
-struct CUnk1011bd60
-{
-    void *sub_1011bd60(unsigned char bFree);
-};
-// TARGET: CUnk1011bd60::sub_1011bd60
-void *CUnk1011bd60::sub_1011bd60(unsigned char bFree)
-{
-    *(void **)this = &g_10462780;
-    if (bFree & 1) {
-        sub_10430964(this);
-    }
-    return this;
-}
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameEnts.h"
+
+// VC6 writes CServerGameEnts's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CServerGameEnts *pcd_emit_1011bd60() { return new CServerGameEnts; }
+
+// TARGET: ??_GCServerGameEnts@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bd90 size=0x5
@@ -1369,38 +1327,25 @@ CServerGameClients g_1070b074;
 // END FUNCTION
 
 // FUNCTION: 0x1011bf50 size=0x20
-#include "IServerGameClients.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameClients.h"
 
-extern char g_104627e0;
-void sub_10430964(void *p);
+// VC6 writes IServerGameClients's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_1011bf50(IServerGameClients *p) { p->IServerGameClients::~IServerGameClients(); }
 
-// TARGET: IServerGameClients::vfunc0
-void *IServerGameClients::vfunc0(unsigned char bFree)
-{
-	*(void **)this = &g_104627e0;
-	if (bFree & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GIServerGameClients@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bf80 size=0x20
-#include "vampire.h"
-extern char g_104627e0;
-void sub_10430964(void *p);
-struct CUnk1011bf80
-{
-    void *sub_1011bf80(unsigned char bFree);
-};
-// TARGET: CUnk1011bf80::sub_1011bf80
-void *CUnk1011bf80::sub_1011bf80(unsigned char bFree)
-{
-    *(void **)this = &g_104627e0;
-    if (bFree & 1) {
-        sub_10430964(this);
-    }
-    return this;
-}
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameClients.h"
+
+// VC6 writes CServerGameClients's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CServerGameClients *pcd_emit_1011bf80() { return new CServerGameClients; }
+
+// TARGET: ??_GCServerGameClients@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bfb0 size=0x5
@@ -1894,11 +1839,10 @@ void SInit::sub_1011cc10()
 // FUNCTION: 0x1011cc90 size=0x20
 #include "CUserCmd.h"
 
-struct DummyCmd : CUserCmd
-{
-};
+// VC6 writes CUserCmd's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CUserCmd *pcd_emit_1011cc90() { return new CUserCmd; }
 
-DummyCmd g_dummy;
 // TARGET: ??_GCUserCmd@@UAEPAXI@Z
 // END FUNCTION
 

@@ -1467,7 +1467,7 @@
 
 
 <rect x="859.8" y="174.0" width="24.6" height="15" fill="#0d1117" fill-opacity="0.82"/><text x="862.8" y="185.0" font-size="11" fill="#e6edf3">vo…</text>
-<text x="14" y="212.0" font-size="14" font-weight="600" fill="#e6edf3">vampire.dll: 100.0% (23,934/23,934) functions match, by source folder</text>
+<text x="14" y="212.0" font-size="14" font-weight="600" fill="#e6edf3">vampire.dll: 100.0% (23,935/23,935) functions match, by source folder</text>
 <rect x="14.0" y="220.0" width="413.5" height="170.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="18.8" y="224.5" width="8" height="8" fill="#2ea043"/>
 <rect x="27.8" y="224.5" width="8" height="8" fill="#2ea043"/>
@@ -3164,7 +3164,7 @@
 <rect x="870.6" y="383.6" width="13.9" height="6.4" fill="#2ea043" stroke="#0d1117"/>
 <rect x="884.4" y="383.6" width="1.6" height="5.4" fill="#2ea043" stroke="#0d1117"/>
 <rect x="884.4" y="389.0" width="1.6" height="1.0" fill="#2ea043" stroke="#0d1117"/>
-<rect x="16.0" y="222.0" width="99.0" height="15" fill="#0d1117" fill-opacity="0.82"/><text x="19.0" y="233.0" font-size="11" fill="#e6edf3">_unsorted 9,678</text>
+<rect x="16.0" y="222.0" width="99.0" height="15" fill="#0d1117" fill-opacity="0.82"/><text x="19.0" y="233.0" font-size="11" fill="#e6edf3">_unsorted 9,679</text>
 <rect x="429.5" y="222.0" width="68.0" height="15" fill="#0d1117" fill-opacity="0.82"/><text x="432.5" y="233.0" font-size="11" fill="#e6edf3">dlls 6,808</text>
 <rect x="755.3" y="222.0" width="105.2" height="15" fill="#0d1117" fill-opacity="0.82"/><text x="758.3" y="233.0" font-size="11" fill="#e6edf3">dlls/hl2_dll 793</text>
 <rect x="755.3" y="296.2" width="80.4" height="15" fill="#0d1117" fill-opacity="0.82"/><text x="758.3" y="307.2" font-size="11" fill="#e6edf3">game_shared…</text>
@@ -3218,7 +3218,7 @@
 <rect x="537.5" y="435.0" width="8" height="8" fill="#2ea043"/>
 <rect x="546.5" y="435.0" width="8" height="8" fill="#2ea043"/>
 <rect x="555.5" y="435.0" width="8" height="8" fill="#2ea043"/>
-<text x="574.0" y="442.0" font-size="11" fill="#8b949e">16,579 / 16,589 (99.9%)</text>
+<text x="574.0" y="442.0" font-size="11" fill="#8b949e">16,590 / 16,590 (100.0%)</text>
 <text x="14" y="464.0" font-size="12" fill="#e6edf3">Static initializers</text>
 <rect x="184.0" y="452.0" width="382.0" height="18.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="186.5" y="457.0" width="8" height="8" fill="#2ea043"/>
@@ -3353,7 +3353,7 @@
 <rect x="537.5" y="501.0" width="8" height="8" fill="#2ea043"/>
 <rect x="546.5" y="501.0" width="8" height="8" fill="#2ea043"/>
 <rect x="555.5" y="501.0" width="8" height="8" fill="#2ea043"/>
-<text x="574.0" y="508.0" font-size="11" fill="#8b949e">21,399 / 21,448 (99.8%); 48 patched after the link</text>
+<text x="574.0" y="508.0" font-size="11" fill="#8b949e">21,448 / 21,448 (100.0%)</text>
 <text x="14" y="530.0" font-size="12" fill="#e6edf3">Exports</text>
 <rect x="184.0" y="518.0" width="382.0" height="18.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="186.5" y="523.0" width="8" height="8" fill="#2ea043"/>
@@ -3396,9 +3396,9 @@
 <rect x="519.5" y="523.0" width="8" height="8" fill="#2ea043"/>
 <rect x="528.5" y="523.0" width="8" height="8" fill="#2ea043"/>
 <rect x="537.5" y="523.0" width="8" height="8" fill="#2ea043"/>
-<rect x="546.5" y="523.0" width="8" height="8" fill="#6e7681"/>
-<rect x="555.5" y="523.0" width="8" height="8" fill="#6e7681"/>
-<text x="574.0" y="530.0" font-size="11" fill="#8b949e">559 / 591 (94.6%); SafeDisc data exports missing</text>
+<rect x="546.5" y="523.0" width="8" height="8" fill="#2ea043"/>
+<rect x="555.5" y="523.0" width="8" height="8" fill="#2ea043"/>
+<text x="574.0" y="530.0" font-size="11" fill="#8b949e">591 / 591 (100.0%)</text>
 <text x="14" y="552.0" font-size="12" fill="#e6edf3">Imports</text>
 <rect x="184.0" y="540.0" width="382.0" height="18.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="186.5" y="545.0" width="8" height="8" fill="#2ea043"/>
@@ -5338,7 +5338,7 @@
 
 <text x="14" y="820.0" font-size="14" font-weight="600" fill="#e6edf3">Still needed</text>
 <text x="18" y="841.0" font-size="12" fill="#e6edf3">vampire.dll standalone</text>
-<text x="214" y="841.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">49 vtable slots, 32 SafeDisc exports, 10 functions differ; an in-game test</text>
+<text x="214" y="841.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">an in-game test</text>
 <text x="18" y="864.0" font-size="12" fill="#e6edf3">client.dll</text>
 <text x="214" y="864.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">7,501 functions (1,276,611 bytes) not matched yet</text>
 <text x="18" y="887.0" font-size="12" fill="#e6edf3">Not started</text>

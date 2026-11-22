@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10009f80 size=0x6
+#include "C_WeaponMelee_Claws_Protean4.h"
+namespace lifted {
+extern char g_10272a0c;
+}
+int C_WeaponMelee_Claws_Protean4::vfunc17()
+{
+    return (int)&lifted::g_10272a0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a010 size=0x1e
 #include "C_WeaponMelee_Claws_Protean4.h"
 
@@ -9,4 +20,23 @@
 C_WeaponMelee_Claws_Protean4 *pcd_emit_1000a010() { return new C_WeaponMelee_Claws_Protean4; }
 
 // TARGET: ??_GC_WeaponMelee_Claws_Protean4@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000a030 size=0x6
+#include "C_WeaponMelee_Claws_Protean4.h"
+namespace lifted {
+extern char g_10274fa8;
+}
+int C_WeaponMelee_Claws_Protean4::vfunc16()
+{
+    return (int)&lifted::g_10274fa8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000a040 size=0x3
+#include "C_WeaponMelee_Claws_Protean4.h"
+int C_WeaponMelee_Claws_Protean4::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

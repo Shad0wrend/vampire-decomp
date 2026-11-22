@@ -10,3 +10,10 @@ CMoneyBar *pcd_emit_1005f2a0() { return new CMoneyBar; }
 
 // TARGET: ??_GCMoneyBar@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1005f540 size=0x1
+#include "CMoneyBar.h"
+void CMoneyBar::vfunc97()
+{
+}
+// END FUNCTION

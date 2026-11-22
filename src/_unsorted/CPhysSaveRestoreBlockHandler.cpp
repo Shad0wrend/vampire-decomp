@@ -6,23 +6,19 @@
 namespace lifted {
 extern char g_10539b54;
 }
-int CPhysSaveRestoreBlockHandler::vfunc0()
+const char *CPhysSaveRestoreBlockHandler::GetBlockName()
 {
-    return (int)&lifted::g_10539b54;
+    return &lifted::g_10539b54;
 }
 // END FUNCTION
 
 // FUNCTION: 0x10043c40 size=0x11
-struct CSaveBlockFields10043c40 {
-    char pad[0x98];
-    int field98;
-    int field9c;
-    void sub_10043c40(int a);
-};
-void CSaveBlockFields10043c40::sub_10043c40(int a)
+#include "CPhysSaveRestoreBlockHandler.h"
+
+void CPhysSaveRestoreBlockHandler::PreSave(CSaveRestoreData *pData)
 {
-    field98 = 0;
-    field9c = 0;
+    ((int *)m_blockHeader)[0] = 0;
+    ((int *)m_blockHeader)[1] = 0;
 }
 // END FUNCTION
 
@@ -208,23 +204,23 @@ struct CPhysSaveHandlerView
 	}
 };
 
-void CPhysSaveRestoreBlockHandler::vfunc2(CSave *pSave)
+void CPhysSaveRestoreBlockHandler::Save(ISave *pSave)
 {
-	((CPhysSaveHandlerView *)this)->Save(pSave);
+	((CPhysSaveHandlerView *)this)->Save((CSave *)pSave);
 }
 // END FUNCTION
 
 // FUNCTION: 0x10043f70 size=0x2e
-// TARGET: CPhysSaveRestoreBlockHandler::vfunc3
+// TARGET: CPhysSaveRestoreBlockHandler::WriteSaveHeaders
 #include "CPhysSaveRestoreBlockHandler.h"
 #include "CSave.h"
 
 extern char g_1053c340[];
 extern char g_1053c344[];  // a datamap_t the game's initializer fills in, not a string
 
-void CPhysSaveRestoreBlockHandler::vfunc3(CSave *pSave) {
-    pSave->vfunc8(g_1053c340, 1);
-    pSave->vfunc2(m_data98, g_1053c344);
+void CPhysSaveRestoreBlockHandler::WriteSaveHeaders(ISave *pSave) {
+    ((CSave *)pSave)->vfunc8(g_1053c340, 1);
+    ((CSave *)pSave)->vfunc2(m_blockHeader, g_1053c344);
 }
 // END FUNCTION
 
@@ -232,17 +228,27 @@ void CPhysSaveRestoreBlockHandler::vfunc3(CSave *pSave) {
 #include "CPhysSaveRestoreBlockHandler.h"
 #include "CAnchorList.h"
 
-void CPhysSaveRestoreBlockHandler::vfunc4()
+// m_QueuedSaves' vector (CUtlPriorityQueue<QueuedItem_t>::m_heap) as this body reads it
+struct CPhysSaveQueueView
 {
-	m_pqSize = 0;
-	if (m_pqGrowSize != -1) {
-		if (m_pqMemory) {
-			g_109f3624(m_pqMemory);
-			m_pqMemory = 0;
+	void *m_pqMemory;
+	int m_pqAllocationCount;
+	int m_pqGrowSize;
+	int m_pqSize;
+	void *m_pqElements;
+};
+
+void CPhysSaveRestoreBlockHandler::PostSave()
+{
+	((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqSize = 0;
+	if (((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqGrowSize != -1) {
+		if (((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqMemory) {
+			g_109f3624(((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqMemory);
+			((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqMemory = 0;
 		}
-		m_pqAllocationCount = 0;
+		((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqAllocationCount = 0;
 	}
-	m_pqElements = m_pqMemory;
+	((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqElements = ((CPhysSaveQueueView *)&m_QueuedSaves)->m_pqMemory;
 }
 // END FUNCTION
 
@@ -268,8 +274,8 @@ struct CUnknown10723940
 	virtual void vfunc49(int *pResult);
 };
 
-// TARGET: CPhysSaveRestoreBlockHandler::vfunc5
-void CPhysSaveRestoreBlockHandler::vfunc5()
+// TARGET: CPhysSaveRestoreBlockHandler::PreRestore
+void CPhysSaveRestoreBlockHandler::PreRestore()
 {
 	int local[3];
 	g_106eb5d8.sub_100f6d80(this ? (int)this + 8 : 0);
@@ -295,12 +301,12 @@ struct ISaveSourceView
 	virtual short s13();
 };
 
-// TARGET: CPhysSaveRestoreBlockHandler::vfunc6
-void CPhysSaveRestoreBlockHandler::vfunc6(void *pSource)
+// TARGET: CPhysSaveRestoreBlockHandler::ReadRestoreHeaders
+void CPhysSaveRestoreBlockHandler::ReadRestoreHeaders(IRestore *pSource)
 {
 	ISaveSourceView *pView = (ISaveSourceView *)pSource;
-	m_bMatch40 = pView->s13() == g_1053c340;
-	pView->s2(&m_data98, g_1053c344);
+	m_fDoLoad = pView->s13() == g_1053c340;
+	pView->s2(&m_blockHeader, g_1053c344);
 }
 // END FUNCTION
 
@@ -366,49 +372,49 @@ struct PhysQueueMap
 	PhysItemVec *Element(unsigned short i) { return *(PhysItemVec **)((char *)((CUtlRBTreeFind16 *)this)->m_pElements + i * 16 + 0xc); }
 };
 
-void CPhysSaveRestoreBlockHandler::vfunc7(CRestore *pRestore, int unused, const char *pszName)
+void CPhysSaveRestoreBlockHandler::Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused)
 {
-	if (m_bMatch40)
+	if (m_fDoLoad)
 	{
 		if (g_10723940)
 		{
 			PhysTrace49 req;
 			req.type = 1;
 			req.ver = g_10723938;
-			req.count = *(int *)(m_data98 + 4);
+			req.count = *(int *)(m_blockHeader + 4);
 			g_10723940->v49(&req);
 		}
 		PhysHeader header;
-		while ((*(int *)m_data98)--)
+		while ((*(int *)m_blockHeader)--)
 		{
-			pRestore->vfunc2((CBaseEntity *)&header, (int)&g_1053c410);
-			pRestore->vfunc5();
+			((CRestore *)pRestore)->vfunc2((CBaseEntity *)&header, (int)&g_1053c410);
+			((CRestore *)pRestore)->vfunc5();
 			if (header.hEntity != 0)
 			{
 				CBaseEntity *pOwner = ((PhysEntList *)EHandleDetail::g_10566458)->sub_100290c0(header.hEntity);
-				unsigned short iQueued = ((PhysQueueMap *)&m_Tree24)->Find(pOwner);
+				unsigned short iQueued = ((PhysQueueMap *)&m_QueuedRestores)->Find(pOwner);
 				if (iQueued != 0xffff)
 				{
 					if (pOwner->vfunc128() && header.m_nItems > 0)
 					{
-						CPhysObjectDesc *pItem = ((PhysQueueMap *)&m_Tree24)->Element(iQueued)->FindItem(header.m_nKey);
+						CPhysObjectDesc *pItem = ((PhysQueueMap *)&m_QueuedRestores)->Element(iQueued)->FindItem(header.m_nKey);
 						if (pItem)
 						{
 							int nObjects = header.m_nItems < pItem->m_nItems ? header.m_nItems : pItem->m_nItems;
 							if (pItem->m_nType == 1 && nObjects == 1)
 							{
-								sub_100443e0(pRestore, (CPhysRestoreRecord *)&header, pItem, nObjects);
+								sub_100443e0((CRestore *)pRestore, (CPhysRestoreRecord *)&header, pItem, nObjects);
 							}
 							else
 							{
 								void **ppPhysObj = pItem->m_pItems;
 								for (int i = 0; i < nObjects; i++)
 								{
-									pRestore->vfunc5();
+									((CRestore *)pRestore)->vfunc5();
 									if (g_10723940)
 									{
 										PhysTrace50 r;
-										r.pRestore = pRestore;
+										r.pRestore = (CRestore *)pRestore;
 										r.item = ppPhysObj + i;
 										r.key = header.m_nId;
 										r.pEnt = header.hEntity.Get();
@@ -418,7 +424,7 @@ void CPhysSaveRestoreBlockHandler::vfunc7(CRestore *pRestore, int unused, const 
 										r.g = g_10580180;
 										g_10723940->v50(&r);
 									}
-									pRestore->vfunc8();
+									((CRestore *)pRestore)->vfunc8();
 								}
 							}
 						}
@@ -427,7 +433,7 @@ void CPhysSaveRestoreBlockHandler::vfunc7(CRestore *pRestore, int unused, const 
 						(*(void (__fastcall ***)(CBaseEntity *))pOwner)[223](pOwner);
 				}
 			}
-			pRestore->vfunc8();
+			((CRestore *)pRestore)->vfunc8();
 		}
 	}
 }

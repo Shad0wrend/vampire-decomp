@@ -54,9 +54,9 @@ namespace lifted {
 extern char g_10703634;
 struct C1000fd6c { int sub_1000fd6c(); };
 }
-int CEntityListSystem::vfunc4()
+void CEntityListSystem::vfunc4()
 {
-    return ((lifted::C1000fd6c *)((int)&lifted::g_10703634))->sub_1000fd6c();
+    ((lifted::C1000fd6c *)((int)&lifted::g_10703634))->sub_1000fd6c();
 }
 // END FUNCTION
 
@@ -110,21 +110,18 @@ namespace lifted {
 extern char g_107036b0;
 struct C10015b1d { int sub_10015b1d(); };
 }
-int CEntityListSystem::vfunc7()
+void CEntityListSystem::vfunc7()
 {
-    return ((lifted::C10015b1d *)((int)&lifted::g_107036b0))->sub_10015b1d();
+    ((lifted::C10015b1d *)((int)&lifted::g_107036b0))->sub_10015b1d();
 }
 // END FUNCTION
 
 // FUNCTION: 0x100f91c0 size=0x1e
 #include "CEntityListSystem.h"
 
-// TARGET: CEntityListSystem::vfunc8
-CEntityListSystem *CEntityListSystem::vfunc8(unsigned int flags)
-{
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes CEntityListSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CEntityListSystem *pcd_emit_100f91c0() { return new CEntityListSystem; }
+
+// TARGET: ??_GCEntityListSystem@@UAEPAXI@Z
 // END FUNCTION

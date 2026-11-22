@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10010d80 size=0x6
+#include "C_ResearchBook_MG_SEC.h"
+namespace lifted {
+extern char g_10272edc;
+}
+int C_ResearchBook_MG_SEC::vfunc17()
+{
+    return (int)&lifted::g_10272edc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010e10 size=0x1e
 #include "C_ResearchBook_MG_SEC.h"
 
@@ -9,4 +20,23 @@
 C_ResearchBook_MG_SEC *pcd_emit_10010e10() { return new C_ResearchBook_MG_SEC; }
 
 // TARGET: ??_GC_ResearchBook_MG_SEC@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10010e30 size=0x6
+#include "C_ResearchBook_MG_SEC.h"
+namespace lifted {
+extern char g_10274ae4;
+}
+int C_ResearchBook_MG_SEC::vfunc16()
+{
+    return (int)&lifted::g_10274ae4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10010e40 size=0x3
+#include "C_ResearchBook_MG_SEC.h"
+int C_ResearchBook_MG_SEC::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

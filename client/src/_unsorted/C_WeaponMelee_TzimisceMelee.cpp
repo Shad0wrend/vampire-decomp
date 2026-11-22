@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000a480 size=0x6
+#include "C_WeaponMelee_TzimisceMelee.h"
+namespace lifted {
+extern char g_10272a44;
+}
+int C_WeaponMelee_TzimisceMelee::vfunc17()
+{
+    return (int)&lifted::g_10272a44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a510 size=0x1e
 #include "C_WeaponMelee_TzimisceMelee.h"
 
@@ -9,4 +20,23 @@
 C_WeaponMelee_TzimisceMelee *pcd_emit_1000a510() { return new C_WeaponMelee_TzimisceMelee; }
 
 // TARGET: ??_GC_WeaponMelee_TzimisceMelee@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000a530 size=0x6
+#include "C_WeaponMelee_TzimisceMelee.h"
+namespace lifted {
+extern char g_10274f6c;
+}
+int C_WeaponMelee_TzimisceMelee::vfunc16()
+{
+    return (int)&lifted::g_10274f6c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000a540 size=0x3
+#include "C_WeaponMelee_TzimisceMelee.h"
+int C_WeaponMelee_TzimisceMelee::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

@@ -723,14 +723,9 @@ void CTempEntsSystem::vfunc43(CUnknown1019d130 *filter, int a, int b, int c, int
 // FUNCTION: 0x10059de0 size=0x20
 #include "CTempEntsSystem.h"
 
-extern char g_1044db7c[];
+// VC6 writes CTempEntsSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CTempEntsSystem *pcd_emit_10059de0() { return new CTempEntsSystem; }
 
-// TARGET: CTempEntsSystem::vfunc0
-void *CTempEntsSystem::vfunc0(unsigned int flags)
-{
-	*(void **)this = g_1044db7c;
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// TARGET: ??_GCTempEntsSystem@@UAEPAXI@Z
 // END FUNCTION

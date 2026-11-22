@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_1055e570;
 }
-int CPython_SaveRestoreBlockHandler::vfunc0()
+const char *CPython_SaveRestoreBlockHandler::GetBlockName()
 {
-    return (int)&lifted::g_1055e570;
+    return &lifted::g_1055e570;
 }
 // END FUNCTION
 
@@ -60,15 +60,15 @@ static __inline bool SaveOne(IWritePy *pSave, PyObj *pDump, PyObj *pObj)
 	return bWrote;
 }
 
-void CPython_SaveRestoreBlockHandler::vfunc2(IWritePy *pSave)
+void CPython_SaveRestoreBlockHandler::Save(ISave *pSave)
 {
 	PyObj *pDump = sub_1019be80("cPickle", "dump");
 	bool bOk = false;
 	if (pDump) {
 		Py_INCREF(pDump);
 		if (PyCallable_Check(pDump)) {
-			if (SaveOne(pSave, pDump, g_1072b370)) {
-				if (SaveOne(pSave, pDump, g_1072b374))
+			if (SaveOne((IWritePy *)pSave, pDump, g_1072b370)) {
+				if (SaveOne((IWritePy *)pSave, pDump, g_1072b374))
 					bOk = true;
 			}
 		}
@@ -80,21 +80,14 @@ void CPython_SaveRestoreBlockHandler::vfunc2(IWritePy *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x1019b0c0 size=0x13
-#include "vampire.h"
-
-struct CUnknown1019b0c0
-{
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
-	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
-	virtual void v8(const void *pData, int a);
-};
+#include "CPython_SaveRestoreBlockHandler.h"
+#include "ISave.h"
 
 extern char g_1058f650[];
 
-// TARGET: sub_1019b0c0
-void __stdcall sub_1019b0c0(CUnknown1019b0c0 *pObj)
+void CPython_SaveRestoreBlockHandler::WriteSaveHeaders(ISave *pSave)
 {
-	pObj->v8(g_1058f650, 1);
+	pSave->vfunc8(g_1058f650, 1);
 }
 // END FUNCTION
 
@@ -103,11 +96,10 @@ void __stdcall sub_1019b0c0(CUnknown1019b0c0 *pObj)
 
 extern short g_1058f650;
 
-// TARGET: CPython_SaveRestoreBlockHandler::vfunc6
-void CPython_SaveRestoreBlockHandler::vfunc6(IRestorePy *pRestore)
+void CPython_SaveRestoreBlockHandler::ReadRestoreHeaders(IRestore *pRestore)
 {
 	short version;
-	pRestore->ReadShort(&version, 1, 0);
+	((IRestorePy *)pRestore)->ReadShort(&version, 1, 0);
 	m_bEnabled = (version == g_1058f650);
 }
 // END FUNCTION
@@ -133,7 +125,7 @@ extern PyObj *g_1072b374;
 #define Py_DECREF(op) if (--(op)->ob_refcnt != 0) ; else (*(op)->ob_type->tp_dealloc)((PyObj *)(op))
 #define Py_XDECREF(op) if ((op) == 0) ; else Py_DECREF(op)
 
-void CPython_SaveRestoreBlockHandler::vfunc7(IRestorePy *pRestore, int a, int b)
+void CPython_SaveRestoreBlockHandler::Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused)
 {
 	if (m_bEnabled) {
 		PyObj *pFunc = sub_1019be80("cPickle", "load");
@@ -144,9 +136,9 @@ void CPython_SaveRestoreBlockHandler::vfunc7(IRestorePy *pRestore, int a, int b)
 			int n;
 			{
 				char bHas;
-				pRestore->ReadBool(&bHas, 1, 0);
+				((IRestorePy *)pRestore)->ReadBool(&bHas, 1, 0);
 				if (bHas) {
-					pRestore->ReadInt(&n, 1, 0);
+					((IRestorePy *)pRestore)->ReadInt(&n, 1, 0);
 					Py_INCREF(pFunc);
 					if (PyCallable_Check(pFunc)) {
 						CPyObjWrap *pWrap = sub_1019bb10((CPyObjVirt *)pRestore, n);
@@ -163,9 +155,9 @@ void CPython_SaveRestoreBlockHandler::vfunc7(IRestorePy *pRestore, int a, int b)
 			pResult = 0;
 			{
 				char bHas;
-				pRestore->ReadBool(&bHas, 1, 0);
+				((IRestorePy *)pRestore)->ReadBool(&bHas, 1, 0);
 				if (bHas) {
-					pRestore->ReadInt(&n, 1, 0);
+					((IRestorePy *)pRestore)->ReadInt(&n, 1, 0);
 					Py_INCREF(pFunc);
 					if (PyCallable_Check(pFunc)) {
 						CPyObjWrap *pWrap = sub_1019bb10((CPyObjVirt *)pRestore, n);

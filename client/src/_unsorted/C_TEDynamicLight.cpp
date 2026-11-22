@@ -21,3 +21,11 @@ int C_TEDynamicLight::vfunc9()
     return (int)&lifted::g_1027edfc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10036280 size=0x3
+#include "C_TEDynamicLight.h"
+int C_TEDynamicLight::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

@@ -12,6 +12,14 @@ int C_BaseNetworkable::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3700 size=0x3
+#include "C_BaseNetworkable.h"
+int C_BaseNetworkable::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a38c0 size=0x1e
 #include "C_BaseNetworkable.h"
 
@@ -47,6 +55,17 @@ ICollideable * C_BaseNetworkable::GetClientCollideable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3b00 size=0xb
+#include "C_BaseNetworkable.h"
+IClientNetworkable * C_BaseNetworkable::GetClientNetworkable()
+{
+    if (((int)this) != 0) {
+        return (IClientNetworkable *)((char *)this + 4);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3b10 size=0x3
 #include "C_BaseNetworkable.h"
 IClientRenderable * C_BaseNetworkable::GetClientRenderable()
@@ -67,6 +86,17 @@ IClientEntity * C_BaseNetworkable::GetIClientEntity()
 #include "C_BaseNetworkable.h"
 C_BaseEntity * C_BaseNetworkable::GetBaseEntity()
 {
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a3b40 size=0xb
+#include "C_BaseNetworkable.h"
+IClientThinkable * C_BaseNetworkable::GetClientThinkable()
+{
+    if (((int)this) != 0) {
+        return (IClientThinkable *)((char *)this + 8);
+    }
     return 0;
 }
 // END FUNCTION

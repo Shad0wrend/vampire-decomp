@@ -10,3 +10,10 @@ CStealth *pcd_emit_100624e0() { return new CStealth; }
 
 // TARGET: ??_GCStealth@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10063580 size=0x1
+#include "CStealth.h"
+void CStealth::vfunc97()
+{
+}
+// END FUNCTION

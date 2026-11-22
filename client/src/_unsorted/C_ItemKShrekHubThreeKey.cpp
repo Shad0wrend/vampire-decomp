@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10024d80 size=0x6
+#include "C_ItemKShrekHubThreeKey.h"
+namespace lifted {
+extern char g_10273cdc;
+}
+int C_ItemKShrekHubThreeKey::vfunc17()
+{
+    return (int)&lifted::g_10273cdc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024e10 size=0x1e
 #include "C_ItemKShrekHubThreeKey.h"
 
@@ -9,4 +20,23 @@
 C_ItemKShrekHubThreeKey *pcd_emit_10024e10() { return new C_ItemKShrekHubThreeKey; }
 
 // TARGET: ??_GC_ItemKShrekHubThreeKey@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10024e30 size=0x6
+#include "C_ItemKShrekHubThreeKey.h"
+namespace lifted {
+extern char g_10273f80;
+}
+int C_ItemKShrekHubThreeKey::vfunc16()
+{
+    return (int)&lifted::g_10273f80;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10024e40 size=0x3
+#include "C_ItemKShrekHubThreeKey.h"
+int C_ItemKShrekHubThreeKey::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

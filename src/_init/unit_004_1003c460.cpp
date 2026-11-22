@@ -15,5 +15,13 @@ Pool g_106bd904(20, 512, 0);
 // FUNCTION: 0x1003c580 size=0xa
 #define PCD_INITIALIZERS
 #include "CDataObjectAccessSystem.h"
+#include "ScopeTrace.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+inline CDataObjectAccessSystem::CDataObjectAccessSystem()
+{
+	ScopeTrace trace("CDataObjectAccessSystem::CDataObjectAccessSystem", g_106b8540, g_106b8540);
+	memset(m_data, 0, sizeof(m_data));
+}
 CDataObjectAccessSystem g_106bd930;
 // END FUNCTION

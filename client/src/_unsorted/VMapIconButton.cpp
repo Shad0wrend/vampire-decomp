@@ -10,3 +10,24 @@ VMapIconButton *pcd_emit_10187000() { return new VMapIconButton; }
 
 // TARGET: ??_GVMapIconButton@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10187110 size=0x11
+#include "VMapIconButton.h"
+namespace lifted {
+int sub_101aa640();
+}
+void VMapIconButton::vfunc85()
+{
+    int t0 = lifted::sub_101aa640();
+    *(char *)((char *)this + 0xc1) = 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101871a0 size=0x14
+#include "VMapIconButton.h"
+void VMapIconButton::vfunc89(int a0)
+{
+    *(int *)((char *)this + 0xc4) = 6;
+    *(char *)((char *)this + 0xc2) = 0;
+}
+// END FUNCTION

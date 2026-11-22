@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000d400 size=0x6
+#include "C_WeaponRanged.h"
+namespace lifted {
+extern char g_10272c58;
+}
+int C_WeaponRanged::vfunc17()
+{
+    return (int)&lifted::g_10272c58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d490 size=0x1e
 #include "C_WeaponRanged.h"
 
@@ -9,4 +20,23 @@
 C_WeaponRanged *pcd_emit_1000d490() { return new C_WeaponRanged; }
 
 // TARGET: ??_GC_WeaponRanged@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000d4b0 size=0x6
+#include "C_WeaponRanged.h"
+namespace lifted {
+extern char g_10274d44;
+}
+int C_WeaponRanged::vfunc16()
+{
+    return (int)&lifted::g_10274d44;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000d4c0 size=0x3
+#include "C_WeaponRanged.h"
+int C_WeaponRanged::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

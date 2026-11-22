@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10012680 size=0x6
+#include "C_OccultHacking.h"
+namespace lifted {
+extern char g_10272ff4;
+}
+int C_OccultHacking::vfunc17()
+{
+    return (int)&lifted::g_10272ff4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012710 size=0x1e
 #include "C_OccultHacking.h"
 
@@ -9,4 +20,23 @@
 C_OccultHacking *pcd_emit_10012710() { return new C_OccultHacking; }
 
 // TARGET: ??_GC_OccultHacking@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10012730 size=0x6
+#include "C_OccultHacking.h"
+namespace lifted {
+extern char g_102749f4;
+}
+int C_OccultHacking::vfunc16()
+{
+    return (int)&lifted::g_102749f4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10012740 size=0x3
+#include "C_OccultHacking.h"
+int C_OccultHacking::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

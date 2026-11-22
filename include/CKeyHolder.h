@@ -11,7 +11,7 @@ public:
 	int m_nKeys[3];	// 0x0c
 
 	CKeyHolder(int key);	// 0x101ebce0 (stub 0x100127a6): m_nKey = key, the three keys = -1
-	~CKeyHolder() {}	// the destroy behind the atexit stub 0x100070ef (-> 0x10220d70 -> 0x101ebd10) is a bare `ret`
+	~CKeyHolder();	// 0x101ebd10 (stub 0x10009f9d), an empty body: the destroy 0x10220d70 of Find's default (atexit stub 0x100070ef) jumps to it; its own unit (the loader 0x101ec180) sees the body
 
 	const char *sub_101ebf30(int index);	// the name of the entry of key number index (1..3, clamped to 3), "" when index < 1 or the entry has no name
 	void sub_101ebff0();	// prints "<name>:" and one line per key ("(1):", "(2):", "(3+):") with the entry's name, through sub_10203dd0

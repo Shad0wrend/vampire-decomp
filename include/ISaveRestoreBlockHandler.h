@@ -1,11 +1,11 @@
-// ISaveRestoreBlockHandler.h: Source's save/restore block interfaces (public/isaverestore.h, 2004 SDK) as the
-// initializer units see them, the bases of the block handler globals. Troika's ISaveRestoreBlockHandler has the SDK's
-// nine slots (CEntitySaveRestoreBlockHandler's vtable 0x10477130); its ISaveRestoreBlockSet has two of its own, no
+// ISaveRestoreBlockHandler.h: Source's save/restore block interfaces (public/isaverestore.h, 2004 SDK), the bases of
+// the block handlers. Troika's ISaveRestoreBlockHandler has the SDK's nine slots (CEntitySaveRestoreBlockHandler's
+// vtable 0x10477130) but Restore takes a third argument (CSaveRestoreBlockSet's Restore forwards its three to every
+// handler's slot 7; no handler reads the third); its ISaveRestoreBlockSet has two of its own, no
 // CallBlockHandlerRestore (CSaveRestoreBlockSet's vtable 0x10477160 has 11 slots); its CDefSaveRestoreBlockHandler
 // adds a tenth slot and leaves GetBlockName and Restore pure (vtable 0x1044949c). The game has no vtable of
 // ISaveRestoreBlockHandler or ISaveRestoreBlockSet (the derived constructors' stores replace theirs).
 #pragma once
-#ifdef PCD_INITIALIZERS	// guarded as a whole (like GameSystemRoot.h): elsewhere the handlers are flat views
 struct CSaveRestoreData;
 class ISave;
 class IRestore;
@@ -20,7 +20,7 @@ public:
 	virtual void PostSave() = 0;
 	virtual void PreRestore() = 0;
 	virtual void ReadRestoreHeaders(IRestore *pRestore) = 0;
-	virtual void Restore(IRestore *pRestore, bool fCreatePlayers) = 0;
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused) = 0;
 	virtual void PostRestore() = 0;
 };
 
@@ -42,8 +42,7 @@ public:
 	virtual void PostSave();
 	virtual void PreRestore();
 	virtual void ReadRestoreHeaders(IRestore *pRestore);
-	virtual void Restore(IRestore *pRestore, bool fCreatePlayers) = 0;
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused) = 0;
 	virtual void PostRestore();
-	virtual void vfunc9(void *p, void *q);	// slot 9, Troika's: an empty default of two arguments (0x10043be0)
+	virtual void sub_10043be0(void *p, void *q);	// slot 9, Troika's: an empty default of two arguments
 };
-#endif

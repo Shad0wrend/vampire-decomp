@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000b100 size=0x6
+#include "C_WeaponMelee_AVampBlade.h"
+namespace lifted {
+extern char g_10272ad0;
+}
+int C_WeaponMelee_AVampBlade::vfunc17()
+{
+    return (int)&lifted::g_10272ad0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b190 size=0x1e
 #include "C_WeaponMelee_AVampBlade.h"
 
@@ -9,4 +20,23 @@
 C_WeaponMelee_AVampBlade *pcd_emit_1000b190() { return new C_WeaponMelee_AVampBlade; }
 
 // TARGET: ??_GC_WeaponMelee_AVampBlade@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000b1b0 size=0x6
+#include "C_WeaponMelee_AVampBlade.h"
+namespace lifted {
+extern char g_10274ed8;
+}
+int C_WeaponMelee_AVampBlade::vfunc16()
+{
+    return (int)&lifted::g_10274ed8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000b1c0 size=0x3
+#include "C_WeaponMelee_AVampBlade.h"
+int C_WeaponMelee_AVampBlade::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

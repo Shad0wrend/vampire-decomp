@@ -21,3 +21,11 @@ int C_TEBeamRing::vfunc9()
     return (int)&lifted::g_1027db70;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10033980 size=0x3
+#include "C_TEBeamRing.h"
+int C_TEBeamRing::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

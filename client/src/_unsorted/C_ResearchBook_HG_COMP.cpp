@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10010b00 size=0x6
+#include "C_ResearchBook_HG_COMP.h"
+namespace lifted {
+extern char g_10272ec0;
+}
+int C_ResearchBook_HG_COMP::vfunc17()
+{
+    return (int)&lifted::g_10272ec0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010b90 size=0x1e
 #include "C_ResearchBook_HG_COMP.h"
 
@@ -9,4 +20,23 @@
 C_ResearchBook_HG_COMP *pcd_emit_10010b90() { return new C_ResearchBook_HG_COMP; }
 
 // TARGET: ??_GC_ResearchBook_HG_COMP@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10010bb0 size=0x6
+#include "C_ResearchBook_HG_COMP.h"
+namespace lifted {
+extern char g_10274afc;
+}
+int C_ResearchBook_HG_COMP::vfunc16()
+{
+    return (int)&lifted::g_10274afc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10010bc0 size=0x3
+#include "C_ResearchBook_HG_COMP.h"
+int C_ResearchBook_HG_COMP::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

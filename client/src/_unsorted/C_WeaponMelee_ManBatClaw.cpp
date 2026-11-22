@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000c000 size=0x6
+#include "C_WeaponMelee_ManBatClaw.h"
+namespace lifted {
+extern char g_10272b78;
+}
+int C_WeaponMelee_ManBatClaw::vfunc17()
+{
+    return (int)&lifted::g_10272b78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000c090 size=0x1e
 #include "C_WeaponMelee_ManBatClaw.h"
 
@@ -9,4 +20,23 @@
 C_WeaponMelee_ManBatClaw *pcd_emit_1000c090() { return new C_WeaponMelee_ManBatClaw; }
 
 // TARGET: ??_GC_WeaponMelee_ManBatClaw@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000c0b0 size=0x6
+#include "C_WeaponMelee_ManBatClaw.h"
+namespace lifted {
+extern char g_10274e28;
+}
+int C_WeaponMelee_ManBatClaw::vfunc16()
+{
+    return (int)&lifted::g_10274e28;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000c0c0 size=0x3
+#include "C_WeaponMelee_ManBatClaw.h"
+int C_WeaponMelee_ManBatClaw::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000b600 size=0x6
+#include "C_WeaponRanged_Tzimisce2Head.h"
+namespace lifted {
+extern char g_10272b08;
+}
+int C_WeaponRanged_Tzimisce2Head::vfunc17()
+{
+    return (int)&lifted::g_10272b08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b690 size=0x1e
 #include "C_WeaponRanged_Tzimisce2Head.h"
 
@@ -9,4 +20,23 @@
 C_WeaponRanged_Tzimisce2Head *pcd_emit_1000b690() { return new C_WeaponRanged_Tzimisce2Head; }
 
 // TARGET: ??_GC_WeaponRanged_Tzimisce2Head@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000b6b0 size=0x6
+#include "C_WeaponRanged_Tzimisce2Head.h"
+namespace lifted {
+extern char g_10274e9c;
+}
+int C_WeaponRanged_Tzimisce2Head::vfunc16()
+{
+    return (int)&lifted::g_10274e9c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000b6c0 size=0x3
+#include "C_WeaponRanged_Tzimisce2Head.h"
+int C_WeaponRanged_Tzimisce2Head::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

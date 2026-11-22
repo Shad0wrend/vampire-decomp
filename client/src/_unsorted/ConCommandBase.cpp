@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df1e0 size=0x1e
+#include "ConCommandBase.h"
+namespace lifted {
+int sub_100df230();
+int sub_101d1296(int);
+}
+ConCommandBase * ConCommandBase::vfunc0(unsigned int a0)
+{
+    int t0 = lifted::sub_100df230();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df240 size=0x3
 #include "ConCommandBase.h"
 bool ConCommandBase::vfunc1()

@@ -21,3 +21,11 @@ int C_TEGlowSprite::vfunc9()
     return (int)&lifted::g_1027fc1c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10038770 size=0x3
+#include "C_TEGlowSprite.h"
+int C_TEGlowSprite::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

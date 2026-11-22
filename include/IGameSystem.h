@@ -1,7 +1,7 @@
 // IGameSystem (RTTI .?AVIGameSystem@@, vtable 0x10516c94): Source's game-system root (game_shared/igamesystem.h) as
 // Troika's has it: eight pure slots and the virtual destructor (0x1042c2c0, stub 0x1000cfbd) whose scalar deleting
-// destructor (0x1042c2e0, stub 0x1000853a) is slot 8. CBaseGameSystem and CAutoGameSystem (GameSystemRoot.h,
-// CAnchorList.h) derive from it.
+// destructor (0x1042c2e0, stub 0x1000853a) is slot 8. CBaseGameSystem and CAutoGameSystem (GameSystemRoot.h) derive
+// from it.
 #pragma once
 
 class IGameSystem

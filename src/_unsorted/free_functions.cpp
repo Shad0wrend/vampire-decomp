@@ -5775,8 +5775,8 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 // VC6 orders `or ebx, -1` / `mov ebp, 1` of this function by the unit's count of names. WORKAROUND dial: the
-// typedefs after the includes (of 0..80, 8..32 and 72..80 match under the headers with CBaseEntity's slots 134..240 of
-// 2026-11-20; the others swap the two).
+// typedefs after the includes (of 0..80 step 4, 0..8 and 24..72 match under the headers of 2026-11-22 with one
+// game-system root; the others swap the two).
 #include "vampire_all.h"
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
@@ -5811,6 +5811,34 @@ typedef int pcd_dial16;
 typedef int pcd_dial17;
 typedef int pcd_dial18;
 typedef int pcd_dial19;
+typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
+typedef int pcd_dial25;
+typedef int pcd_dial26;
+typedef int pcd_dial27;
+typedef int pcd_dial28;
+typedef int pcd_dial29;
+typedef int pcd_dial30;
+typedef int pcd_dial31;
+typedef int pcd_dial32;
+typedef int pcd_dial33;
+typedef int pcd_dial34;
+typedef int pcd_dial35;
+typedef int pcd_dial36;
+typedef int pcd_dial37;
+typedef int pcd_dial38;
+typedef int pcd_dial39;
+typedef int pcd_dial40;
+typedef int pcd_dial41;
+typedef int pcd_dial42;
+typedef int pcd_dial43;
+typedef int pcd_dial44;
+typedef int pcd_dial45;
+typedef int pcd_dial46;
+typedef int pcd_dial47;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -6926,32 +6954,11 @@ void __fastcall sub_100579f0(int *pThis)
 struct IVisitor;
 struct SaveList { int sub_10057850(IVisitor *); };
 extern SaveList g_106be530;
-extern "C" __declspec(dllimport) void Plat_Free(void *);
-struct SaveBuf {
-    char *m_pMemory;
-    int m_allocationCount;
-    int m_growSize;
-    int m_size;
-    char *m_pElements;
-};
+
 void sub_10057a30(void *pBuffer)
 {
-    char buf[0x20];
-    CSave *pSave = (CSave *)buf;
-    pSave->sub_1019f870(pBuffer);
-    g_106be530.sub_10057850((IVisitor *)pSave);
-    SaveBuf *v = (SaveBuf *)(buf + 4);
-    v->m_size = 0;
-    if (v->m_growSize != -1) {
-        if (v->m_pMemory) {
-            Plat_Free(v->m_pMemory);
-            v->m_pMemory = 0;
-        }
-        v->m_allocationCount = 0;
-    }
-    v->m_pElements = v->m_pMemory;
-    if (v->m_growSize != -1 && v->m_pMemory)
-        Plat_Free(v->m_pMemory);
+	CSave save(pBuffer);
+	g_106be530.sub_10057850((IVisitor *)&save);
 }
 // END FUNCTION
 
@@ -65772,7 +65779,7 @@ void CSoundSysIface::sub_101afff0()
 // END FUNCTION
 
 // FUNCTION: 0x101b04a0 size=0xf7
-#include "CSoundEmitterSystemBase.h"
+#include "CSoundEmitterSystem.h"
 #include "CUnknown1070b248.h"
 
 struct S_Vt { virtual void v0(); virtual void v1(); virtual void v2(); };
@@ -65944,7 +65951,7 @@ void sub_101b0dc0(const CRecipientFilter *filter, int iEntIndex, const char *sou
 		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, 0, params.pitch, pOrigin, 0, 1, soundtime);
 		if (duration)
 			*duration = enginesound->vfunc1(params.soundname);
-		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
 	}
 }
 // END FUNCTION
@@ -66038,7 +66045,7 @@ void sub_101b1120(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 			enginesound->vfunc3(filter, iEntIndex, iChannel, soundname, flVolume, flAtten, iFlags, iPitch, (int)pOrigin, 0, 1, soundtime);
 			if (duration)
 				*duration = enginesound->vfunc1(soundname);
-			((void (__cdecl *)(void *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
+			((void (__cdecl *)(void *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
 			return;
 		}
 	}
@@ -66070,7 +66077,7 @@ void sub_101b1120(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, iFlags, params.pitch, pOrigin, 0, 1, soundtime);
 		if (duration)
 			*duration = enginesound->vfunc1(params.soundname);
-		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
 	}
 }
 // END FUNCTION
@@ -66113,7 +66120,7 @@ void sub_101b14d0(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 			enginesound->vfunc2(filter, iEntIndex, iChannel, soundname, flVolume, iSoundlevel, iFlags, iPitch, pOrigin, 0, 1, soundtime);
 			if (duration)
 				*duration = enginesound->vfunc1(soundname);
-			((void (__cdecl *)(void *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
+			((void (__cdecl *)(void *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
 			return;
 		}
 	}
@@ -66145,7 +66152,7 @@ void sub_101b14d0(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, iFlags, params.pitch, pOrigin, 0, 1, soundtime);
 		if (duration)
 			*duration = enginesound->vfunc1(params.soundname);
-		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
 	}
 }
 // END FUNCTION
@@ -66249,7 +66256,7 @@ void sub_101b1a00(CBaseEntity *pEnt, const float *pos, const char *samp, float v
 			((EngineView49 *)engine)->vfunc49(pEnt->m_pEdict2e0, pos, name, vol, soundlevel, flags, pitch);
 			if (duration)
 				*duration = enginesound->vfunc1(name);
-			((CSoundEmitterSystem *)&g_1072be18)->vfunc3("UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, ENTINDEX(pEnt->m_pEdict2e0));
+			((CSoundEmitterSystem *)&g_1072be18)->CSoundEmitterSystem::LogMessage("UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, ENTINDEX(pEnt->m_pEdict2e0));
 		}
 		return;
 	}
@@ -66299,7 +66306,7 @@ int sub_101b1dd0(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x101b1e00 size=0x14d
-#include "CSoundEmitterSystemBase.h"
+#include "CSoundEmitterSystem.h"
 #include "UtlMem.h"
 #include "UtlMem2.h"
 
@@ -66446,6 +66453,19 @@ void UtlMem::sub_101b20b0()
 		m_allocationCount = 0;
 	}
 }
+// END FUNCTION
+
+// FUNCTION: 0x101b20f0 size=0xb
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CSoundEmitterSystem.h"
+
+// VC6 writes CSoundEmitterSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSoundEmitterSystem *pcd_emit_101b20f0() { return new CSoundEmitterSystem; }
+
+// CSoundEmitterSystem's CAutoGameSystem vtable (slot 8) holds the this-adjusting thunk (this -= 0xdc) of
+// the deleting destructor; VC6 writes it with the class's vtables
+// TARGET: ??_ECSoundEmitterSystem@@WNM@AEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101b2100 size=0x4b
@@ -67938,36 +67958,14 @@ void __fastcall sub_101bd960(void **p) { void **q = p - 1; ((Fn *)*q)[0](q); }
 // END FUNCTION
 
 // FUNCTION: 0x101bd980 size=0x9e
-#include "CDirtySpatialPartitionEntityList.h"
-#include "utlvector.h"
-#include "UtlMem.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CSoundControllerImp.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CSoundControllerImp's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSoundControllerImp *pcd_emit_101bd980() { return new CSoundControllerImp; }
 
-class CPrimaryBase { public: virtual void pv(); };
-
-class CMyComplete : public CPrimaryBase, public CAutoGameSystem { };
-
-void *CAutoGameSystem::sub_101bd980(unsigned int flags)
-{
-	int *v2 = (int *)((char *)this + 0x1c);
-	v2[3] = 0;
-	((UtlMem *)v2)->sub_101bde70();
-	v2[4] = v2[0];
-	if (v2[2] != -1) {
-		if (v2[0] != 0) { Plat_Free((void *)v2[0]); v2[0] = 0; }
-		v2[1] = 0;
-	}
-
-	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
-
-	CAutoGameSystem *base = ((char *)this - 4) ? this : 0;
-	base->sub_1000cfbd();
-
-	if (flags & 1)
-		sub_10430964((char *)this - 4);
-	return (char *)this - 4;
-}
+// TARGET: ??_GCSoundControllerImp@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101bdb50 size=0x6
@@ -86157,6 +86155,8 @@ void CUnknown101eb1d0::sub_101eb1d0()
 #include "CUnknown101eb380.h"
 #include "CUnknown101eb050.h"
 
+inline CEntryZ::~CEntryZ() {}	// the destructor's own unit: deleting a record calls nothing here
+
 extern "C" int sprintf(char *, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
 
@@ -86560,6 +86560,8 @@ void CKeyHolder::sub_101ebff0()
 // FUNCTION: 0x101ec180 size=0x23f
 #include "CUnknown101ec180.h"
 #include "CUnknown101ebd30.h"
+
+inline CKeyHolder::~CKeyHolder() {}	// the destructor's own unit: deleting a record calls nothing here
 
 extern "C" int sprintf(char *, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
@@ -89484,17 +89486,11 @@ void CUnknown101f1e20::sub_101f1e20()
 // FUNCTION: 0x101f2040 size=0x36
 #include "IKeyValues.h"
 
-struct CKeyValuesEmit : public IKeyValues
-{
-	void vfunc0() {}
-	void vfunc1() {}
-};
+// VC6 writes IKeyValues's scalar deleting destructor where it emits the class's vtable; its inline destructor (it stores the vptr) called in a function
+// nothing calls makes it emit both here
+void pcd_emit_101f2040(IKeyValues *p) { p->IKeyValues::~IKeyValues(); }
 
 // TARGET: ??_GIKeyValues@@UAEPAXI@Z
-IKeyValues *IKeyValues_Emit()
-{
-	return new CKeyValuesEmit;
-}
 // END FUNCTION
 
 // FUNCTION: 0x101f2090 size=0x2d
@@ -90344,32 +90340,29 @@ void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
 // END FUNCTION
 
 // FUNCTION: 0x101f3070 size=0x8
-void __fastcall sub_10001807(char *p);
-void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
+#include "VKeyValues.h"
+
+VKeyValues::VKeyValues(const char *pszName) : m_n04(1)
+{
+	sub_101f2090(pszName);
+}
+
+// the constructor's unit (a same-unit copy of 0x101f1f50): VC6 writes VKeyValues' vtables, its deleting
+// destructor and the vtordisp thunks here; this one is the thunk of IKeyCacheable's table, slot 2 (this -= [this-4])
+// TARGET: ??_EVKeyValues@@$4PPPPPPPM@A@AEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101f3080 size=0x44
-extern int vt_10483b4c;
-extern int vt_10483b34;
-extern int vt_10483bb8;
-extern int g_1073d280;
-void __fastcall sub_101f20d0(void *pThis);
-struct CUnk1013dce0 { void sub_1013dce0(void *p); };
-// TARGET: sub_101f3080
-int *__fastcall sub_101f3080(int *pThis, int edx, unsigned char flags)
+#include "VKeyValues.h"
+
+VKeyValues::VKeyValues(const char *pszName) : m_n04(1)
 {
-	int *esi = (int *)((char *)pThis - 0x28);
-	int *edi = (int *)((char *)esi + 0x28);
-	sub_101f20d0(edi);
-	esi[0xc] = (int)&vt_10483b4c;
-	int *pVb = (int *)esi[0xd];
-	*(int *)((char *)esi + pVb[1] + 0x34) = (int)&vt_10483b34;
-	edi[0] = (int)&vt_10483bb8;
-	if (flags & 1) {
-		((CUnk1013dce0 *)&g_1073d280)->sub_1013dce0(esi);
-	}
-	return esi;
+	sub_101f2090(pszName);
 }
+
+// the constructor's unit (a same-unit copy of 0x101f1f50): VC6 writes VKeyValues' vtables, its deleting
+// destructor and the vtordisp thunks here; this one is the scalar deleting destructor (??_E is its second name)
+// TARGET: ??_GVKeyValues@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101f35c0 size=0xc
@@ -110071,13 +110064,13 @@ void CSoundSchemeManager::sub_102288b0()
 		CSoundSchemeTrack *pTracks = (CSoundSchemeTrack *)m_buf14;
 		for (int i = 0; i < 4; i++)
 			enginesound->vfunc6(0, pTracks[i].m_hSound);
-		CUtlVector<CSoundSchemeTrack> &loops = *(CUtlVector<CSoundSchemeTrack> *)&m_pLoopTracks;
-		while (m_nLoopCount) {
+		CUtlVector<CSoundSchemeTrack> &loops = *(CUtlVector<CSoundSchemeTrack> *)&m_LoopTracks;
+		while (m_LoopTracks.m_Size) {
 			enginesound->vfunc6(0, loops[0].m_hSound);
 			loops.Remove(0);
 		}
-		CUtlVector<CSoundSchemeRandom> &rands = *(CUtlVector<CSoundSchemeRandom> *)&m_pMemory;
-		while (m_nRandomCount) {
+		CUtlVector<CSoundSchemeRandom> &rands = *(CUtlVector<CSoundSchemeRandom> *)&m_RandomSounds;
+		while (m_RandomSounds.m_Size) {
 			enginesound->vfunc6(rands[0].m_x, rands[0].m_y);
 			rands.Remove(0);
 		}
@@ -110687,7 +110680,7 @@ static inline float LenGrouped(Vector v)
 	return FastSqrt(v.z * v.z + v.y * v.y + v.x * v.x);
 }
 
-#define RANDOMS (*(CUtlVector<SoundRandomTrackView> *)&m_pMemory)
+#define RANDOMS (*(CUtlVector<SoundRandomTrackView> *)&m_RandomSounds)
 
 // TARGET: CSoundSchemeManager::sub_10229c50
 void CSoundSchemeManager::sub_10229c50()
@@ -110711,24 +110704,24 @@ void CSoundSchemeManager::sub_10229c50()
 		sub_101434b0(0, iLine++, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
 	}
 
-	for (i = 0; i < m_nLoopCount; i++)
+	for (i = 0; i < m_LoopTracks.m_Size; i++)
 	{
 		g_109f388c(szBuf, 0x80, "Loop Track %d: %s  vol:%.2f  chan:%d (%.2f/%.2f)",
-			i, ((SoundLoopTrackView *)m_pLoopTracks)[i].m_szName,
-			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl44,
-			((SoundLoopTrackView *)m_pLoopTracks)[i].m_n50,
-			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl40,
-			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl4c);
+			i, ((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_szName,
+			(double)((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_fl44,
+			((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_n50,
+			(double)((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_fl40,
+			(double)((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_fl4c);
 		sub_101434b0(0, iLine++, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
 	}
 
-	g_109f388c(szBuf, 0x80, "Random Tracks: %d\t------------", m_nRandomCount);
+	g_109f388c(szBuf, 0x80, "Random Tracks: %d\t------------", m_RandomSounds.m_Size);
 	sub_101434b0(0, iLine, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
 
 	Vector vecOrigin;
 	((CEntityVSlots *)pPlayer)->slot196(&vecOrigin);
 
-	for (i = 0; i < m_nRandomCount; i++)
+	for (i = 0; i < m_RandomSounds.m_Size; i++)
 	{
 		sub_10142e90(&vecOrigin, &RANDOMS[i].m_vecPos, 0xff, 100, 100, 1, 0.0f);
 		Vector vecMaxs(8.0f, 8.0f, 8.0f);

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10023e80 size=0x6
+#include "C_ItemKCarsonApartmentKey.h"
+namespace lifted {
+extern char g_10273c34;
+}
+int C_ItemKCarsonApartmentKey::vfunc17()
+{
+    return (int)&lifted::g_10273c34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023f10 size=0x1e
 #include "C_ItemKCarsonApartmentKey.h"
 
@@ -9,4 +20,23 @@
 C_ItemKCarsonApartmentKey *pcd_emit_10023f10() { return new C_ItemKCarsonApartmentKey; }
 
 // TARGET: ??_GC_ItemKCarsonApartmentKey@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10023f30 size=0x6
+#include "C_ItemKCarsonApartmentKey.h"
+namespace lifted {
+extern char g_10274028;
+}
+int C_ItemKCarsonApartmentKey::vfunc16()
+{
+    return (int)&lifted::g_10274028;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10023f40 size=0x3
+#include "C_ItemKCarsonApartmentKey.h"
+int C_ItemKCarsonApartmentKey::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

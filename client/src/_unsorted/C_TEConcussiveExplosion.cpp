@@ -12,6 +12,14 @@ int C_TEConcussiveExplosion::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007210 size=0x3
+#include "C_TEConcussiveExplosion.h"
+int C_TEConcussiveExplosion::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007330 size=0x1e
 #include "C_TEConcussiveExplosion.h"
 

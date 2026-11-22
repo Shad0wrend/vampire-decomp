@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001b280 size=0x6
+#include "C_ItemGEDaneReport.h"
+namespace lifted {
+extern char g_10273614;
+}
+int C_ItemGEDaneReport::vfunc17()
+{
+    return (int)&lifted::g_10273614;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b310 size=0x1e
 #include "C_ItemGEDaneReport.h"
 
@@ -9,4 +20,23 @@
 C_ItemGEDaneReport *pcd_emit_1001b310() { return new C_ItemGEDaneReport; }
 
 // TARGET: ??_GC_ItemGEDaneReport@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1001b330 size=0x6
+#include "C_ItemGEDaneReport.h"
+namespace lifted {
+extern char g_1027453c;
+}
+int C_ItemGEDaneReport::vfunc16()
+{
+    return (int)&lifted::g_1027453c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001b340 size=0x3
+#include "C_ItemGEDaneReport.h"
+int C_ItemGEDaneReport::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

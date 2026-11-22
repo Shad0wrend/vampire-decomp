@@ -42,3 +42,11 @@ int C_TEImpact::vfunc9()
     return (int)&lifted::g_10280228;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039f60 size=0x3
+#include "C_TEImpact.h"
+int C_TEImpact::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

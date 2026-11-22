@@ -1,10 +1,9 @@
-// GameSystemRoot.h: Source's game-system classes as the initializer units see them (game_shared/igamesystem.h):
+// GameSystemRoot.h: Source's game-system classes (game_shared/igamesystem.h) as Troika's has them, for every unit:
 // CBaseGameSystem on the root IGameSystem (IGameSystem.h; the game has no CBaseGameSystem vtable, so no destructor of
 // its own), CAutoGameSystem with its out-of-line constructor (0x1042c260, links it into the list) and m_pNext.
-// Only units that define PCD_INITIALIZERS include it: elsewhere slot 8 stays the plain vfunc8 matched code calls
-// (a real destructor would rename them) and CAnchorList.h's 8-byte CBaseGameSystem stands.
+// Slot 8 is IGameSystem's virtual destructor; every system's scalar deleting destructor is matched written out as a
+// plain vfunc8 (IGameSystem's own 0x1042c2e0, CAutoGameSystem's 0x1042c290, ...), so its name stays the slot's.
 #pragma once
-#ifdef PCD_INITIALIZERS	// guarded as a whole: the link audit compiles every header in one unit without the define
 #include "IGameSystem.h"
 
 class CBaseGameSystem : public IGameSystem
@@ -35,9 +34,9 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
+	CAutoGameSystem *vfunc8(unsigned int flags);	// 0x1042c290 written out: the scalar deleting destructor of slot 8
 	void sub_1000cfbd();	// as in CDataObjectAccessSystem (transplant)
 	void *sub_101bd980(unsigned int flags);
 
 	CAutoGameSystem *m_pNext;	// 0x04
 };
-#endif

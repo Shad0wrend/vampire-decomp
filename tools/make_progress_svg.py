@@ -33,6 +33,14 @@ MODULES = ["Vampire/dlls/vampire.dll", "Vampire/cl_dlls/client.dll", "Vampire/cl
            "Bin/vstdlib.dll", "Bin/stdshader_dbg.dll", "Bin/vaudio_miles.dll", "Bin/stdshader_dx7.dll",
            "Bin/launcher.dll", "Bin/stdshader_dx9.dll", "Bin/voice_miles.dll"]
 BLOCK = re.compile(r"^// FUNCTION: 0x([0-9a-fA-F]{8}) size=", re.M)
+# The kinds of `ninja verify`'s known differences, as the "Still needed" row names them (kind, one, many)
+KNOWN_KINDS = [("slot", "vtable slot (patched after the link)", "vtable slots (patched after the link)"),
+               ("vtable", "extra vtable", "extra vtables"),
+               ("function", "function", "functions"),
+               ("initializer", "static initializer", "static initializers"),
+               ("xcu-extra", "extra static-initializer entry", "extra static-initializer entries"),
+               ("export-missing", "SafeDisc export", "SafeDisc exports"),
+               ("export-ordinal", "export ordinal shift", "export ordinal shifts")]
 
 # ---------------------------------------------------------------------------------------------------------- collect
 
@@ -103,7 +111,7 @@ def collect(client: Path, game: Path) -> dict:
         {"name": "Vtable slots", "done": report["slots"]["checked"] - known.get("slot", 0),
          "total": report["slots"]["checked"], "note": f"{report['slots']['patched']} patched after the link"},
         {"name": "Exports", "done": report["exports"] - known.get("export-missing", 0), "total": report["exports"],
-         "note": "SafeDisc data exports missing"},
+         **({"note": "SafeDisc data exports missing"} if known.get("export-missing") else {})},
         {"name": "Imports", "done": report["imports"], "total": report["imports"]},
     ]
     totals = lambda gs: {k: sum(g[k] for g in gs) for k in ("cpp", "asm", "open", "n_cpp", "n_asm", "n_open")}  # noqa: E731
@@ -265,10 +273,8 @@ def draw(data: dict) -> str:
     out.append(title(y, "Still needed"))
     y += 8
     k = data["known"]
-    rows = [("vampire.dll standalone", f"{k.get('slot', 0)} vtable slots, {k.get('export-missing', 0)} SafeDisc "
-                                       f"exports, {k.get('function', 0)} functions"
-                                       + (f", {k['initializer']} static initializers" if k.get("initializer") else "")
-                                       + " differ; an in-game test"),
+    left = [f"{k[kind]} {one if k[kind] == 1 else many}" for kind, one, many in KNOWN_KINDS if k.get(kind)]
+    rows = [("vampire.dll standalone", (f"known differences: {', '.join(left)}; " if left else "") + "an in-game test"),
             ("client.dll", f"{t['n_open']:,} functions ({t['open']:,} bytes) not matched yet"),
             ("Not started", ", ".join(m["name"] for m in mods if not m["done"]))]
     for name, text in rows:

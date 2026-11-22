@@ -21,3 +21,11 @@ int C_TEKillPlayerAttachments::vfunc9()
     return (int)&lifted::g_1028057c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003a460 size=0x3
+#include "C_TEKillPlayerAttachments.h"
+int C_TEKillPlayerAttachments::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

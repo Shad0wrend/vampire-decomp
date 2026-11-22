@@ -21,3 +21,11 @@ int C_TESmoke::vfunc9()
     return (int)&lifted::g_10281674;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003eef0 size=0x3
+#include "C_TESmoke.h"
+int C_TESmoke::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

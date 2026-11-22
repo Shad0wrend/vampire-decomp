@@ -1,5 +1,5 @@
 // C_BaseCombatWeapon: skeleton from the game's RTTI (pcdecomp gdtors)
-// declared: its bases, its destructor; nothing else yet
+// declared: its bases, its destructor, the game's vtable slots it adds or fills on the entity chain (vtable-slot layer, 2026-11-22)
 // the destructor is slot 8 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "C_BaseAnimating.h"
@@ -8,4 +8,125 @@ class C_BaseCombatWeapon : public C_BaseAnimating
 {
 public:
 	virtual ~C_BaseCombatWeapon();
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	// the base slots the game's vtable fills with C_BaseCombatWeapon's own function
+	virtual int vfunc15();
+	virtual int vfunc16();
+	virtual int vfunc17();
+	virtual void vfunc19();
+	virtual void vfunc21();
+	virtual void vfunc29(char);
+	virtual int vfunc35(int);
+	virtual int vfunc36(int);
+	virtual int vfunc64(int, int, int);
+	virtual int vfunc86();
+	// the slots C_BaseCombatWeapon adds to its base's vtable: 143-250, vfuncK at slot K
+	virtual void vfunc143();
+	virtual void vfunc144();
+	virtual int vfunc145();
+	virtual int vfunc146();
+	virtual int vfunc147();
+	virtual void vfunc148();
+	virtual void vfunc149();
+	virtual void vfunc150();
+	virtual float vfunc151();
+	virtual void vfunc152();
+	virtual void vfunc153();
+	virtual bool vfunc154();
+	virtual bool vfunc155();
+	virtual bool vfunc156(int);
+	virtual void vfunc157();
+	virtual bool vfunc158();
+	virtual bool vfunc159();
+	virtual int vfunc160();
+	virtual int vfunc161();
+	virtual int vfunc162();
+	virtual int vfunc163();
+	virtual void vfunc164(int);
+	virtual void vfunc165(int);
+	virtual int vfunc166();
+	virtual void vfunc167();
+	virtual bool vfunc168();
+	virtual int vfunc169();
+	virtual int vfunc170(int);
+	virtual void vfunc171(int, int);
+	virtual void vfunc172(int);
+	virtual void vfunc173();
+	virtual int vfunc174(int);
+	virtual bool vfunc175();
+	virtual void vfunc176();
+	virtual void vfunc177();
+	virtual void vfunc178();
+	virtual int vfunc179(int);
+	virtual void vfunc180(int);
+	virtual void vfunc181();
+	virtual void vfunc182();
+	virtual int vfunc183(int);
+	virtual float vfunc184();
+	virtual void vfunc185();
+	virtual bool vfunc186();
+	virtual bool vfunc187();
+	virtual bool vfunc188();
+	virtual bool vfunc189(int);
+	virtual void * vfunc190();
+	virtual void vfunc191();
+	virtual void vfunc192();
+	virtual void vfunc193();
+	virtual void vfunc194();
+	virtual void vfunc195();
+	virtual void vfunc196();
+	virtual int vfunc197();
+	virtual int vfunc198();
+	virtual void vfunc199();
+	virtual void vfunc200();
+	virtual int vfunc201();
+	virtual int vfunc202();
+	virtual int vfunc203();
+	virtual int vfunc204();
+	virtual float vfunc205();
+	virtual void vfunc206();
+	virtual void vfunc207();
+	virtual bool vfunc208();
+	virtual bool vfunc209();
+	virtual float vfunc210(int, int);
+	virtual void vfunc211();
+	virtual void vfunc212();
+	virtual int vfunc213();
+	virtual void vfunc214(int);
+	virtual int vfunc215(int);
+	virtual int vfunc216();
+	virtual int vfunc217();
+	virtual int vfunc218();
+	virtual int vfunc219();
+	virtual void vfunc220();
+	virtual void vfunc221();
+	virtual void vfunc222();
+	virtual int vfunc223();
+	virtual void vfunc224();
+	virtual void vfunc225();
+	virtual int vfunc226();
+	virtual int vfunc227();
+	virtual int vfunc228();
+	virtual int vfunc229();
+	virtual int vfunc230();
+	virtual int vfunc231();
+	virtual int vfunc232();
+	virtual int vfunc233();
+	virtual void vfunc234();
+	virtual int vfunc235(int);
+	virtual void vfunc236(int);
+	virtual void vfunc237();
+	virtual void vfunc238(int);
+	virtual void vfunc239();
+	virtual void vfunc240();
+	virtual bool vfunc241();
+	virtual bool vfunc242();
+	virtual void vfunc243();
+	virtual void vfunc244(int);
+	virtual void vfunc245(int, int);
+	virtual int vfunc246(int, int, int);
+	virtual bool vfunc247();
+	virtual void vfunc248(int, int, int);
+	virtual void vfunc249(int, int, int, int, int, int, int, int);
+	virtual void vfunc250();
 };

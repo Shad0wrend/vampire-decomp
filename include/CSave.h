@@ -54,13 +54,10 @@ public:
 
 	CSave(void *pData);	// stub 0x10009bf6
 
-	// the section stack at +4 (a CUtlVector<int> without its destructor: the game's code tears it down by hand), the
-	// buffer and the entity block; initialised by the constructor's initialiser list, before CSave's vptr store
-	int *m_pSections;	// +0x04
-	int m_nAlloc;	// +0x08
-	int m_nGrow;	// +0x0c
-	int m_nSections;	// +0x10
-	int *m_pElements;	// +0x14
+	// the SDK's members: the stack of block start positions (StartBlock / EndBlock), the buffer and the entity block.
+	// CSave declares no destructor: the one the compiler makes tears the vector down, and its scalar deleting
+	// destructor is the game's 0x1019f980 (slot 39)
+	CUtlVector<int> m_BlockStartStack;	// +0x04
 	void *m_pData;	// +0x18
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 

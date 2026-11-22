@@ -9,7 +9,7 @@ function with the game's own compiler, compares it with the original byte for by
 identical. The functions were written by AI agents working through pcdecomp, by hand, and by pcdecomp's own
 automatic passes (machine drafts, copies of already matched twin functions).
 
-## Status (2026-11-21)
+## Status (2026-11-22)
 
 ![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
 
@@ -21,14 +21,14 @@ reads the numbers again from pcdecomp's databases and the game's files.
 
 | | Functions | Code bytes |
 |---|---:|---:|
-| Game code, matched as C++ | 23,799 (99.44%) | 2,957,996 (97.00%) |
+| Game code, matched as C++ | 23,800 (99.44%) | 2,958,007 (97.00%) |
 | Game code, matched with inline assembly (counted apart) | 135 (0.56%) | 91,418 (3.00%) |
-| **Total game code** | **23,934 (100%)** | **3,049,414 (100%)** |
+| **Total game code** | **23,935 (100%)** | **3,049,425 (100%)** |
 
-The count leaves out 17,504 entries that are not the game's own code: 16,468 incremental-link jump stubs and 1,036
-C runtime and helper routines (143,459 bytes in all).
+The count leaves out 17,503 entries that are not the game's own code: 16,468 incremental-link jump stubs and 1,035
+C runtime and helper routines (143,448 bytes in all).
 
-`src/` holds 18,977 written blocks: 16,589 functions and 2,388 static initializers. The other 4,957 matched
+`src/` holds 18,978 written blocks: 16,590 functions and 2,388 static initializers. The other 4,957 matched
 functions (103,058 bytes) are code the compiler emits from those blocks for static initialization: 2,389 construct
 functions, 1,117 `atexit` registrations, 1,117 destroy functions, 333 destroys of function-local statics and 1
 initializer entry. Each one matched as part of the block it comes from.
@@ -40,22 +40,18 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 - *Hybrid build*: the original DLL with the compiled functions linked in. It loads and plays in the game.
 - *Standalone build* (2026-11-22): `ninja` builds a new `build/vampire.dll` from the sources (see
   [Building](#building)), and `ninja verify` compares it with the original:
-  - identical: 16,579 of the 16,589 function blocks in `src/`, all 2,388 static initializers and all 34 data
-    objects;
-  - checked: 282 vtables, 591 exports and 179 imports;
-  - every remaining difference is listed with its reason in `config/known_differences.txt` (117 entries).
+  - identical: all 16,590 function blocks in `src/`, all 2,388 static initializers and all 34 data objects;
+  - checked: 282 vtables (21,448 slots, every one filled by the compiler), 591 exports (the 32 SafeDisc data
+    tables among them) and 179 imports;
+  - no difference is left: `config/known_differences.txt` and `config/vtable_patches.txt` are empty (2026-11-23).
 
-  Still open before it can replace the original:
-  - 49 vtable slots, 48 of them patched after the link;
-  - 32 SafeDisc data exports not built yet;
-  - 10 functions (local-static destroys and one inline copy);
-  - an in-game test of the standalone DLL.
+  Still open before it can replace the original: an in-game test of the standalone DLL.
 
 ### The rest of the game
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in [`client/`](client/): 8,511 of 16,012 functions (53.2%), 413,966 of 1,690,577 code bytes (24.5%) as of 2026-11-22 |
+| `client.dll` (client game code) | In progress in [`client/`](client/): 10,804 of 16,012 functions (67.5%), 453,678 of 1,690,577 code bytes (26.8%) as of 2026-11-23 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |

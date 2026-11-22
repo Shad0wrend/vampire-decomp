@@ -25,16 +25,24 @@ int CAI_StandoffBehavior::vfunc19()
 // END FUNCTION
 
 // FUNCTION: 0x102c7330 size=0x20
-#include "CAI_Component.h"
+extern int g_1049a0f8;
 
-struct DummyComponent : CAI_Component
+// CAI_StandoffBehavior's scalar deleting destructor (the slot 0 of its vtable 0x1049aedc): its own and its
+// bases' vptr stores are dead, only CAI_Component's (0x1049a0f8) is left. A stand-in until the behaviour's
+// bases (CAI_Behavior<CAI_BaseNPC, 100000> ...) are modelled; CAI_Component's own is 0x1027c7c0.
+struct Helper
 {
-	void vfunc1() {}
-	void vfunc2(int a) {}
+	void* sub_102c7330(unsigned char flags);
 };
 
-DummyComponent g_dummyComp;
-// TARGET: ??_GCAI_Component@@UAEPAXI@Z
+// TARGET: Helper::sub_102c7330
+void* Helper::sub_102c7330(unsigned char flags)
+{
+	*(void**)this = &g_1049a0f8;
+	if (flags & 1)
+		::operator delete(this);
+	return this;
+}
 // END FUNCTION
 
 // FUNCTION: 0x102c7360 size=0x1e

@@ -534,7 +534,7 @@ EXTERN ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTETParticleHUD@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTETracer@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTEUserTracer@@UAEPAVCBaseTempEntity@@I@Z:BYTE
-EXTERN ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z:BYTE
+EXTERN ?vfunc2@CTEWorldDecal@@UAEPAVCBaseTempEntity@@I@Z:BYTE
 EXTERN ?vfunc30@CBaseEntity@@UAEMXZ:BYTE
 EXTERN ?vfunc31@CBaseAnimating@@UAEXH@Z:BYTE
 EXTERN ?vfunc31@CBaseAnimatingOverlay@@UAEXH@Z:BYTE
@@ -7037,7 +7037,7 @@ PUBLIC ?vt_1044e1a8@@3PAHA
 ?vt_1044e1a8@@3PAHA LABEL BYTE
   DD OFFSET ?vfunc0@CTEWorldDecal@@UAEPAUServerClass@@XZ
   DD OFFSET ?vfunc1@CTEWorldDecal@@UAEHXZ
-  DD OFFSET ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z
+  DD OFFSET ?vfunc2@CTEWorldDecal@@UAEPAVCBaseTempEntity@@I@Z
   DD OFFSET ?vfunc3@CTEWorldDecal@@UAEXABVVector@@ABVQAngle@@@Z
   DD OFFSET ?vfunc4@CTEWorldDecal@@QAEXHH@Z
   DD OFFSET ?vfunc5@CBaseTempEntity@@UAEXXZ

@@ -43,13 +43,12 @@ bool CSoundscapeSystem::vfunc0()
 // END FUNCTION
 
 // FUNCTION: 0x101ae170 size=0x28
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
 #include "CSoundscapeSystem.h"
-CSoundscapeSystem *CSoundscapeSystem::vfunc8(unsigned int flags)
-{
-	m_member.sub_100100ff();
-	CBaseGameSystem::~CBaseGameSystem();
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+
+// VC6 writes CSoundscapeSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSoundscapeSystem *pcd_emit_101ae170() { return new CSoundscapeSystem; }
+
+// TARGET: ??_GCSoundscapeSystem@@UAEPAXI@Z
 // END FUNCTION

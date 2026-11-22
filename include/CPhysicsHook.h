@@ -1,15 +1,10 @@
+// CPhysicsHook (RTTI .?AVCPhysicsHook@@): base CBaseGameSystem (IGameSystem; GameSystemRoot.h), vtable 0x1044916c.
 #pragma once
 
-#ifdef PCD_INITIALIZERS
-#include "GameSystemRoot.h"	// the initializer units: Source's CBaseGameSystem root and CUtlVector
+#include "GameSystemRoot.h"
 #include "utlvector.h"
-#endif
 
-// CPhysicsHook : CBaseGameSystem (IGameSystem), vtable 0x1044916c
-class CPhysicsHook
-#ifdef PCD_INITIALIZERS
-	: public CBaseGameSystem	// the base the flat model leaves out
-#endif
+class CPhysicsHook : public CBaseGameSystem
 {
 public:
     bool vfunc0(); // Init: scope trace, asks the factory for VPhysics030 / VPhysicsCollision007 / VPhysicsSurfaceProps001 and loads scripts/surfaceproperties.txt into the surface props
@@ -18,15 +13,9 @@ public:
     void vfunc4(); // LevelShutdownPreEntity
     void vfunc5(); // LevelShutdownPostEntity: scope trace, when the physics environment (global 0x10723940) exists tears it down and clears +0x10
     void vfunc7(); // FrameUpdatePostEntityThink
-    CPhysicsHook *vfunc8(unsigned int flags); // scalar deleting destructor: the CUtlVector at +4, then CBaseGameSystem's destructor
+    CPhysicsHook *vfunc8(unsigned int flags); // slot 8 (0x1002d6c0) written out, the scalar deleting destructor: the CUtlVector at +4, then CBaseGameSystem's destructor
     void sub_1000cfbd(); // CBaseGameSystem::~CBaseGameSystem (stub), called directly
 
-#ifdef PCD_INITIALIZERS
-    CUtlVector<int> m_list; // 0x04
-#else
-    void *m_vtbl;    // 0x00
-    char m_04[4];    // 0x04: passed by address to sub_1000a8cb
-    char m_08[0x10]; // 0x08
-#endif
+    CUtlVector<int> m_list; // 0x04: passed by address to sub_1000a8cb
     char m_18;       // 0x18
 };

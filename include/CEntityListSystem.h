@@ -1,10 +1,8 @@
-// CEntityListSystem: declared by pcdecomp transplant for 0x100f91c0 from CDataObjectAccessSystem (0x1003ca90);
-// only what matched code needs, as plain members.
+// CEntityListSystem (RTTI .?AVCEntityListSystem@@): base CAutoGameSystem (GameSystemRoot.h); the game's object is
+// 0xc bytes (CEntityTouchManager 0x107036b0 follows).
 #pragma once
 
-#ifdef PCD_INITIALIZERS
-#include "GameSystemRoot.h"	// the initializer units: Source's CAutoGameSystem root
-#endif
+#include "GameSystemRoot.h"
 
 struct CEntityListSystem_Ent
 {
@@ -13,29 +11,15 @@ struct CEntityListSystem_Ent
 	void sub_100085a8();
 };
 
-class CEntityListSystem
-#ifdef PCD_INITIALIZERS
-	: public CAutoGameSystem	// the bases the flat model leaves out
-#endif
+class CEntityListSystem : public CAutoGameSystem
 {
 public:
-#ifndef PCD_INITIALIZERS
-	char m_pad0000[0xc];	// the game's object is 0xc bytes (CEntityTouchManager 0x107036b0 follows); no vptr in this view
-#else
-	char m_pad0008[4];	// 0x08: the game's object is 0xc bytes (CEntityTouchManager 0x107036b0 follows)
-#endif
+	char m_pad0008[4];	// 0x08
 
-	CEntityListSystem *vfunc8(unsigned int flags);
+	CEntityListSystem *vfunc8(unsigned int flags);	// slot 8 written out: the scalar deleting destructor
 	void sub_1000cfbd();
 	void vfunc5();	// slot 5: hands the two global pending lists (0x107036b0, 0x10703650) to the global entity list, then empties and frees both vectors
 	void vfunc2();	// slot 2: sub_100f8960 on the global object at 0x10703634, then like slot 5 but through the (deduplicating) sub_100f6d80
-#ifndef PCD_INITIALIZERS	// the root's slots 4 and 7 return void there: these int forms would not override them
-public:
-	int vfunc4();
-	int vfunc7();
-#else
-	// own slots the game's vtable holds (matched under another name)
-	virtual void vfunc4();	// 0x100f9080
-	virtual void vfunc7();	// 0x100f9160
-#endif
+	void vfunc4();	// slot 4 (0x100f9080): a tail call of sub_1000fd6c on the global 0x10703634
+	void vfunc7();	// slot 7 (0x100f9160): a tail call of sub_10015b1d on the pending list 0x107036b0
 };

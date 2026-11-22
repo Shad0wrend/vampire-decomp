@@ -10,3 +10,16 @@ CViewRenderBeams *pcd_emit_10193320() { return new CViewRenderBeams; }
 
 // TARGET: ??_GCViewRenderBeams@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10193450 size=0x12
+#include "CViewRenderBeams.h"
+namespace lifted {
+int sub_101d1296(int);
+}
+void CViewRenderBeams::vfunc1()
+{
+    if ((*(int *)((char *)this + 0x1bc0c)) != 0) {
+        lifted::sub_101d1296(*(int *)((char *)this + 0x1bc0c));
+    }
+}
+// END FUNCTION

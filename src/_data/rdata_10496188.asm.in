@@ -3,7 +3,6 @@
 .386
 option casemap:none
 EXTERN $rtti_tail_105397cc:BYTE
-EXTERN ??_GCAI_Component@@UAEPAXI@Z:BYTE
 EXTERN ??_R4?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@6B@:BYTE
 EXTERN ??_R4?$CSecureTypeBase@UCPfnTraits2@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits2@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits2@MvsnSec@@H@2@@MvsnSec@@6B@:BYTE
 EXTERN ??_R4CAI_BaseHumanoid@@6BCAI_BaseActor@@@:BYTE
@@ -287,6 +286,7 @@ EXTERN ?sub_102c7250@@YAXXZ:BYTE
 EXTERN ?sub_102c7270@@YAXXZ:BYTE
 EXTERN ?sub_102c7290@@YAXXZ:BYTE
 EXTERN ?sub_102c72b0@@YAXXZ:BYTE
+EXTERN ?sub_102c7330@Helper@@QAEPAXE@Z:BYTE
 EXTERN ?sub_102c7600@@YIHPAUCStandoffSelf@@@Z:BYTE
 EXTERN ?sub_102c7ef0@@YAEXZ:BYTE
 EXTERN ?sub_102c8a60@Helper@@QAEPAXE@Z:BYTE
@@ -4153,7 +4153,7 @@ ORIGBYTES 0x1049aecc, 12
 ; 0x1049aedc +144: ?vt_1049aedc@@3PAHA
 PUBLIC ?vt_1049aedc@@3PAHA
 ?vt_1049aedc@@3PAHA LABEL BYTE
-  DD OFFSET ??_GCAI_Component@@UAEPAXI@Z
+  DD OFFSET ?sub_102c7330@Helper@@QAEPAXE@Z
   DD OFFSET ?vfunc1@CAI_Component@@UAEXXZ
   DD OFFSET ?sub_102623c0@@YIXPAXHD@Z
   DD OFFSET ?vfunc3@CAI_StandoffBehavior@@UAE_NXZ

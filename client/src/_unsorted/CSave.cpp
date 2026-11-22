@@ -215,6 +215,18 @@ void CSave::vfunc5(const void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129750 size=0xb
+#include "CSave.h"
+namespace lifted {
+extern char g_102de300;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual int f5(int); };
+}
+void CSave::vfunc4()
+{
+    ((lifted::V *)this)->f5((int)&lifted::g_102de300);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129760 size=0x6d
 #include "utlrbtree.h"
 #include "CSave.h"

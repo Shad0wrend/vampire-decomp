@@ -20,3 +20,19 @@ CMeasureSection::CMeasureSection(int nName)
     g_104df700++;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010dec0 size=0x1e
+#include "CMeasureSection.h"
+namespace lifted {
+int sub_1010dee0();
+int sub_101d1296(int);
+}
+CMeasureSection * CMeasureSection::vfunc0(unsigned int a0)
+{
+    int t0 = lifted::sub_1010dee0();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000f980 size=0x6
+#include "C_WeaponLockpick.h"
+namespace lifted {
+extern char g_10272dfc;
+}
+int C_WeaponLockpick::vfunc17()
+{
+    return (int)&lifted::g_10272dfc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000fa10 size=0x1e
 #include "C_WeaponLockpick.h"
 
@@ -9,4 +20,23 @@
 C_WeaponLockpick *pcd_emit_1000fa10() { return new C_WeaponLockpick; }
 
 // TARGET: ??_GC_WeaponLockpick@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000fa30 size=0x6
+#include "C_WeaponLockpick.h"
+namespace lifted {
+extern char g_10274b88;
+}
+int C_WeaponLockpick::vfunc16()
+{
+    return (int)&lifted::g_10274b88;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000fa40 size=0x3
+#include "C_WeaponLockpick.h"
+int C_WeaponLockpick::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

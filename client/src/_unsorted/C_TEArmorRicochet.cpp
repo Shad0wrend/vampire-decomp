@@ -12,6 +12,14 @@ int C_TEArmorRicochet::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032470 size=0x3
+#include "C_TEArmorRicochet.h"
+int C_TEArmorRicochet::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100324e0 size=0x1e
 #include "C_TEArmorRicochet.h"
 

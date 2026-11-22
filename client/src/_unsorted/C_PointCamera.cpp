@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10005e90 size=0x6
+#include "C_PointCamera.h"
+namespace lifted {
+extern char g_10271f44;
+}
+int C_PointCamera::vfunc16()
+{
+    return (int)&lifted::g_10271f44;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10005ea0 size=0x3
+#include "C_PointCamera.h"
+int C_PointCamera::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100060d0 size=0x1e
 #include "C_PointCamera.h"
 

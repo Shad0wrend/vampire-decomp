@@ -6,7 +6,7 @@
 #include "CTEWorldDecal.h"
 
 // TARGET: CTEWorldDecal::vfunc2
-CTEWorldDecal *CTEWorldDecal::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEWorldDecal::vfunc2(unsigned int flags)
 {
 	sub_1000e9df();
 	if (flags & 1)
@@ -105,7 +105,7 @@ void CTEWorldDecal::vfunc3(const Vector &vecOrigin, const QAngle &vecAngles)
 	m_vecPos = *(Vector *)&tr.m_endpos;
 
 	CBroadcastRecipientFilter filter;
-	vfunc4v(&filter, 0);
+	vfunc4(filter, 0);
 }
 // END FUNCTION
 

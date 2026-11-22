@@ -21,3 +21,11 @@ int C_TETextMessage::vfunc9()
     return (int)&lifted::g_10281d5c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003fcf0 size=0x3
+#include "C_TETextMessage.h"
+int C_TETextMessage::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

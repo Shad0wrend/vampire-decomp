@@ -28,3 +28,11 @@ int C_TESparks::vfunc9()
     return (int)&lifted::g_10281800;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003f1d0 size=0x3
+#include "C_TESparks.h"
+int C_TESparks::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION

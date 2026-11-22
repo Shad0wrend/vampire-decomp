@@ -10,4 +10,6 @@ public:
     void vfunc4();
     void vfunc5(int);
     int vfunc7(int, int);
+public:
+    void * vfunc0(char);
 };

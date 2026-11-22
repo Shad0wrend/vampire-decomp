@@ -10,3 +10,14 @@ vgui2::ProgressBar *pcd_emit_101c6530() { return new vgui2::ProgressBar; }
 
 // TARGET: ??_GProgressBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101c6760 size=0x6
+#include "vgui2__ProgressBar.h"
+namespace lifted {
+extern char g_102da8d0;
+}
+int vgui2::ProgressBar::vfunc102()
+{
+    return (int)&lifted::g_102da8d0;
+}
+// END FUNCTION

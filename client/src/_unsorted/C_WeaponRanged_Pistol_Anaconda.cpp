@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000d680 size=0x6
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+namespace lifted {
+extern char g_10272c74;
+}
+int C_WeaponRanged_Pistol_Anaconda::vfunc17()
+{
+    return (int)&lifted::g_10272c74;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d710 size=0x1e
 #include "C_WeaponRanged_Pistol_Anaconda.h"
 
@@ -9,4 +20,23 @@
 C_WeaponRanged_Pistol_Anaconda *pcd_emit_1000d710() { return new C_WeaponRanged_Pistol_Anaconda; }
 
 // TARGET: ??_GC_WeaponRanged_Pistol_Anaconda@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1000d730 size=0x6
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+namespace lifted {
+extern char g_10274d24;
+}
+int C_WeaponRanged_Pistol_Anaconda::vfunc16()
+{
+    return (int)&lifted::g_10274d24;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000d740 size=0x3
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+int C_WeaponRanged_Pistol_Anaconda::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10022a80 size=0x6
+#include "C_ItemKLeopoldIntKey.h"
+namespace lifted {
+extern char g_10273b54;
+}
+int C_ItemKLeopoldIntKey::vfunc17()
+{
+    return (int)&lifted::g_10273b54;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022b10 size=0x1e
 #include "C_ItemKLeopoldIntKey.h"
 
@@ -9,4 +20,23 @@
 C_ItemKLeopoldIntKey *pcd_emit_10022b10() { return new C_ItemKLeopoldIntKey; }
 
 // TARGET: ??_GC_ItemKLeopoldIntKey@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10022b30 size=0x6
+#include "C_ItemKLeopoldIntKey.h"
+namespace lifted {
+extern char g_102740ec;
+}
+int C_ItemKLeopoldIntKey::vfunc16()
+{
+    return (int)&lifted::g_102740ec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10022b40 size=0x3
+#include "C_ItemKLeopoldIntKey.h"
+int C_ItemKLeopoldIntKey::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION

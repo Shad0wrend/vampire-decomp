@@ -23,16 +23,11 @@ int sub_101da760()
 // END FUNCTION
 
 // FUNCTION: 0x101da780 size=0x20
-#include "vampire_all.h"
 #include "CDisciplineProjectileTraceFilter.h"
 
-extern char g_10483528[];
+// VC6 writes CDisciplineProjectileTraceFilter's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_101da780(CDisciplineProjectileTraceFilter *p) { p->CDisciplineProjectileTraceFilter::~CDisciplineProjectileTraceFilter(); }
 
-void *CDisciplineProjectileTraceFilter::vfunc2(char flags)
-{
-	*(void **)this = g_10483528;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCDisciplineProjectileTraceFilter@@UAEPAXI@Z
 // END FUNCTION

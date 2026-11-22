@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10022580 size=0x6
+#include "C_ItemKGimbleKey.h"
+namespace lifted {
+extern char g_10273b1c;
+}
+int C_ItemKGimbleKey::vfunc17()
+{
+    return (int)&lifted::g_10273b1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022610 size=0x1e
 #include "C_ItemKGimbleKey.h"
 
@@ -9,4 +20,23 @@
 C_ItemKGimbleKey *pcd_emit_10022610() { return new C_ItemKGimbleKey; }
 
 // TARGET: ??_GC_ItemKGimbleKey@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10022630 size=0x6
+#include "C_ItemKGimbleKey.h"
+namespace lifted {
+extern char g_10274120;
+}
+int C_ItemKGimbleKey::vfunc16()
+{
+    return (int)&lifted::g_10274120;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10022640 size=0x3
+#include "C_ItemKGimbleKey.h"
+int C_ItemKGimbleKey::vfunc15()
+{
+    return 0;
+}
 // END FUNCTION
