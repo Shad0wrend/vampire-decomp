@@ -63,6 +63,18 @@ int vgui2::Image::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6b10 size=0xc
+#include "vgui2__Image.h"
+namespace lifted {
+int sub_101ac8d0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual int f17(); };
+}
+int vgui2::Image::vfunc16()
+{
+    return ((lifted::V *)(lifted::sub_101ac8d0()))->f17();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6c90 size=0xc
 #include "vgui2__Image.h"
 int vgui2::Image::vfunc8(int a0)
