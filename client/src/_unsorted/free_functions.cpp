@@ -11332,6 +11332,26 @@ template <> int ClientClassInit<DT_TETParticle::ignored>(DT_TETParticle::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040340 size=0x2b
+namespace lifted {
+extern char g_102274f0;
+extern char g_10227524;
+int sub_1002c340();
+}
+struct CUnknown10040340 { void * sub_10040340(); };
+void * CUnknown10040340::sub_10040340()
+{
+    lifted::sub_1002c340();
+    *(int *)this = (int)&lifted::g_10227524;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102274f0;
+    *(int *)((char *)this + 0x18) = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040430 size=0x6
 namespace lifted {
 extern char g_103ec290;
