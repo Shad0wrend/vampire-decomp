@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10022300 size=0x6
+#include "C_ItemKMalcomOfficeKey.h"
+namespace lifted {
+extern char g_10273b00;
+}
+int C_ItemKMalcomOfficeKey::vfunc17()
+{
+    return (int)&lifted::g_10273b00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022390 size=0x1e
 #include "C_ItemKMalcomOfficeKey.h"
 

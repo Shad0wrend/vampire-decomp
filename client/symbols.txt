@@ -1199,6 +1199,7 @@
 0x10022140 func   ?vfunc15@C_ItemKClinicCSKey@@UAEHXZ C_ItemKClinicCSKey::vfunc15
 0x10022150 func   ?sub_10022150@@YAHXZ sub_10022150
 0x10022270 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKClinicCSKey@@@Z ClientClassInit
+0x10022300 func   ?vfunc17@C_ItemKMalcomOfficeKey@@UAEHXZ C_ItemKMalcomOfficeKey::vfunc17
 0x10022390 func   ??_GC_ItemKMalcomOfficeKey@@UAEPAXI@Z ??_GC_ItemKMalcomOfficeKey@@UAEPAXI@Z
 0x100223c0 func   ?vfunc15@C_ItemKMalcomOfficeKey@@UAEHXZ C_ItemKMalcomOfficeKey::vfunc15
 0x100223d0 func   ?sub_100223d0@@YAHXZ sub_100223d0
