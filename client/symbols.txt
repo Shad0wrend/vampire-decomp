@@ -2423,6 +2423,7 @@
 0x1011db00 func   ?vfunc3@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEXI@Z CEntityDataInstantiator<touchlink_t>::vfunc3
 0x1011de10 func   ?vfunc3@?$CEntityDataInstantiator@Ugroundlink_t@@@@UAEXI@Z CEntityDataInstantiator<groundlink_t>::vfunc3
 0x1011e110 func   ?vfunc3@?$CEntityDataInstantiator@UStepSimulationData@@@@UAEXI@Z CEntityDataInstantiator<StepSimulationData>::vfunc3
+0x1011e410 func   ?vfunc3@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEXI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc3
 0x1011e7f0 func   ?sub_1011e7f0@@YAHH@Z sub_1011e7f0
 0x1011e820 func   ?sub_1011e820@@YAHH@Z sub_1011e820
 0x1011e850 func   ?sub_1011e850@@YAHH@Z sub_1011e850
