@@ -9,6 +9,14 @@ IClientEntity * C_BaseEntity::GetIClientEntity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100015f0 size=0x3
+#include "C_BaseEntity.h"
+C_BaseEntity * C_BaseEntity::GetBaseEntity()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009dda0 size=0x1e
 #include "C_BaseEntity.h"
 
