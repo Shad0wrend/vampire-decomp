@@ -6717,7 +6717,6 @@
 0x10009485 func   ?sub_10030ba0@CCollisionEvent@@QAEXPAX000@Z CCollisionEvent::sub_10030ba0
 0x1000948a func   ?sub_101e2f50@CUnknown101e0f00@@QAEXPAXPAUCUnknown101e0f00Entry@@H@Z CUnknown101e0f00::sub_101e2f50
 0x1000948f func   ??_GCPVSFilter@@UAEPAXI@Z ??_GCPVSFilter@@UAEPAXI@Z
-0x1000948f func   ?sub_100f5fc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100f5fc0
 0x10009494 func   ?sub_100bee80@@YAHXZ sub_100bee80
 0x10009499 func   ?sub_1015a3c0@CFuncPlat@@QAEXABVVector@@M@Z CFuncPlat::sub_1015a3c0
 0x1000949e func   ?sub_10139a90@@YAXPAM@Z sub_10139a90
