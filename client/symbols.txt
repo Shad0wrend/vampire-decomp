@@ -3070,6 +3070,7 @@
 0x100d14e0 func   ?sub_100d14e0@@YAXXZ sub_100d14e0
 0x100d14f0 func   ?sub_100d14f0@@YGXH@Z sub_100d14f0
 0x100d1500 func   ?sub_100d1500@@YAXXZ sub_100d1500
+0x100d1510 func   ?vfunc22@CClientLeafSystem@@QAEXXZ CClientLeafSystem::vfunc22
 0x100d15b0 func   ?sub_100d15b0@CUnknown100b7a90@@QAEPAXI@Z CUnknown100b7a90::sub_100d15b0
 0x100d1960 func   ?sub_100d1960@@YAXXZ sub_100d1960
 0x100d27e0 func   ?sub_100d27e0@CUnknown100d27e0@@QAEDHH@Z CUnknown100d27e0::sub_100d27e0
