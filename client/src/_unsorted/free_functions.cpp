@@ -63967,6 +63967,22 @@ char CUnknown10170430::sub_10170430(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170440 size=0x2a
+namespace lifted {
+extern char g_10272378;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+int sub_101a7ac0(int);
+}
+void sub_10170440()
+{
+    int t0 = ((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_10272378);
+    if (t0 != 0) {
+        lifted::sub_101a7ac0(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_10272378));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170c20 size=0x1
 void sub_10170c20()
 {
