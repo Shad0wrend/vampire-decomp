@@ -56403,6 +56403,24 @@ void TStat::sub_1015a290(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a7e0 size=0x5f
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern int g_105f9398;
+
+void sub_1015a7e0(int callback)
+{
+	g_101e3124[*g_101e3128].a = "SetStatActionApplyCallback";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	g_105f9398 = callback;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ab20 size=0x69
 struct TScope {
 	const char *name;
