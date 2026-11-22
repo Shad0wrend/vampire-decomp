@@ -508,6 +508,18 @@ void C_BaseCombatWeapon::vfunc180(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c1d0 size=0xd
+#include "C_BaseCombatWeapon.h"
+namespace lifted {
+int sub_1005fa40(int);
+}
+bool C_BaseCombatWeapon::vfunc188()
+{
+    lifted::sub_1005fa40(0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1e0 size=0x5
 #include "C_BaseCombatWeapon.h"
 bool C_BaseCombatWeapon::vfunc189(int a0)
