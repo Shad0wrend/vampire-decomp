@@ -3949,6 +3949,7 @@
 0x10110450 func   ?sub_10110450@CUnknown10110450@@QAEHHHHH@Z CUnknown10110450::sub_10110450
 0x10110480 func   ?sub_10110480@CUnknown10110480@@QAEXXZ CUnknown10110480::sub_10110480
 0x101104a0 func   ?sub_101104a0@CUnknown101104a0@@QAEHXZ CUnknown101104a0::sub_101104a0
+0x101104b0 func   ?sub_101104b0@@YAHXZ sub_101104b0
 0x101105e0 func   ??_GCPanelMetaClassMgrImp@@UAEPAXI@Z ??_GCPanelMetaClassMgrImp@@UAEPAXI@Z
 0x10110600 func   ??1CPanelMetaClassMgrImp@@UAE@XZ CPanelMetaClassMgrImp::~CPanelMetaClassMgrImp
 0x10111ac0 func   ?sub_10111ac0@@YAHHH@Z sub_10111ac0
