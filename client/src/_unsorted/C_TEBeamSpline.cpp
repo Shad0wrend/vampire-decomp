@@ -21,3 +21,11 @@ int C_TEBeamSpline::vfunc9()
     return (int)&lifted::g_1027df30;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10033fc0 size=0x3
+#include "C_TEBeamSpline.h"
+int C_TEBeamSpline::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
