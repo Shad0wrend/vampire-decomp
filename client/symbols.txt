@@ -1725,6 +1725,7 @@
 0x1009dd60 func   ?sub_1009dd60@CUnknown1009dd60@@QAEPAXXZ CUnknown1009dd60::sub_1009dd60
 0x1009dda0 func   ??_GC_BaseEntity@@UAEPAXI@Z ??_GC_BaseEntity@@UAEPAXI@Z
 0x1009ddc0 func   ??1C_BaseEntity@@UAE@XZ C_BaseEntity::~C_BaseEntity
+0x1009e040 func   ?vfunc19@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc19
 0x1009e230 func   ?sub_1009e230@@YAHXZ sub_1009e230
 0x1009f020 func   ?sub_1009f020@CUnknown1009f020@@QAEHHHH@Z CUnknown1009f020::sub_1009f020
 0x1009f040 func   ?sub_1009f040@CUnknown1009f040@@QAEPAXXZ CUnknown1009f040::sub_1009f040
