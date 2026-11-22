@@ -10,3 +10,11 @@ C_WeaponMelee_ZombieFists *pcd_emit_1000c810() { return new C_WeaponMelee_Zombie
 
 // TARGET: ??_GC_WeaponMelee_ZombieFists@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000c840 size=0x3
+#include "C_WeaponMelee_ZombieFists.h"
+int C_WeaponMelee_ZombieFists::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
