@@ -10,3 +10,10 @@ CDownloadSliderPanel *pcd_emit_10165b00() { return new CDownloadSliderPanel; }
 
 // TARGET: ??_GCDownloadSliderPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10165bb0 size=0x1
+#include "CDownloadSliderPanel.h"
+void CDownloadSliderPanel::vfunc108()
+{
+}
+// END FUNCTION
