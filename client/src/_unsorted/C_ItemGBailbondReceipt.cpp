@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10019480 size=0x6
+#include "C_ItemGBailbondReceipt.h"
+namespace lifted {
+extern char g_102734c4;
+}
+int C_ItemGBailbondReceipt::vfunc17()
+{
+    return (int)&lifted::g_102734c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019510 size=0x1e
 #include "C_ItemGBailbondReceipt.h"
 
