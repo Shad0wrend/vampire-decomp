@@ -4973,6 +4973,7 @@
 0x10164c30 func   ??_GCCenterStringPanel@@UAEPAXI@Z ??_GCCenterStringPanel@@UAEPAXI@Z
 0x10164c50 func   ??1CCenterStringPanel@@UAE@XZ CCenterStringPanel::~CCenterStringPanel
 0x10164c50 func   ?sub_10164c50@CUnknown10164c50@@QAEHXZ CUnknown10164c50::sub_10164c50
+0x10164c60 func   ?vfunc74@CCenterStringPanel@@UAEHH@Z CCenterStringPanel::vfunc74
 0x10164dd0 func   ?vfunc108@CCenterStringPanel@@UAEHHHHH@Z CCenterStringPanel::vfunc108
 0x10164ef0 func   ?vfunc111@CCenterStringPanel@@UAEHXZ CCenterStringPanel::vfunc111
 0x10164f00 func   ?vfunc2@CCenterStringPanel@@UAEXXZ CCenterStringPanel::vfunc2
