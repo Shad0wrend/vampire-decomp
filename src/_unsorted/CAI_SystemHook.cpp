@@ -34,12 +34,9 @@ void CAI_SystemHook::vfunc5()
 // FUNCTION: 0x102cc480 size=0x1e
 #include "CAI_SystemHook.h"
 
-// TARGET: CAI_SystemHook::vfunc8
-CAutoGameSystem *CAI_SystemHook::vfunc8(unsigned int flags)
-{
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes CAI_SystemHook's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CAI_SystemHook *pcd_emit_102cc480() { return new CAI_SystemHook; }
+
+// TARGET: ??_GCAI_SystemHook@@UAEPAXI@Z
 // END FUNCTION

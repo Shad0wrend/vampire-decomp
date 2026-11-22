@@ -4014,7 +4014,6 @@
 0x10005f5b func   ?sub_101771b0@@YIXPAXHH@Z sub_101771b0
 0x10005f60 func   ?sub_103b1860@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b1860
 0x10005f65 func   ??_GCAI_SystemHook@@UAEPAXI@Z ??_GCAI_SystemHook@@UAEPAXI@Z
-0x10005f65 func   ?vfunc8@CAI_SystemHook@@QAEPAVCAutoGameSystem@@I@Z CAI_SystemHook::vfunc8
 0x10005f6a func   ?vfunc103@CTriggerLook@@UAEXXZ CTriggerLook::vfunc103
 0x10005f6f func   ?sub_100ce750@CList_t@@QAE_NPAUCListNode_t@@PAXPBD@Z CList_t::sub_100ce750
 0x10005f74 func   ?sub_1008b800@CBaseAnimating@@QAEXHMMPBVVector@@H@Z CBaseAnimating::sub_1008b800
