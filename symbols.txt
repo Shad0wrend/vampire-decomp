@@ -4459,6 +4459,7 @@
 0x1000682a func   ?sub_10412160@@YA_NHPAH0@Z sub_10412160
 0x1000682f func   ?vfunc103@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc103
 0x10006834 func   ?sub_10312930@CUnknown10312580@@QAEXH@Z CUnknown10312580::sub_10312930
+0x10006839 func   ?Restore@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestore@@_NH@Z CEQ_SaveRestoreBlockHandler::Restore
 0x10006839 func   ?vfunc7@CEQ_SaveRestoreBlockHandler@@UAEXHHH@Z CEQ_SaveRestoreBlockHandler::vfunc7
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
 0x10006843 func   ?vfunc442@CNPC_VAsianVampire@@QAEXPBUCVAsianVampireTask_t@@@Z CNPC_VAsianVampire::vfunc442
