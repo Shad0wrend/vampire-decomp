@@ -9610,7 +9610,6 @@
 0x1000cdec func   ?sub_101b4b90@@YGPBDM@Z sub_101b4b90
 0x1000cdf1 func   ?sub_1008fbe0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008fbe0
 0x1000cdf6 func   ??_GCGameStringPool@@UAEPAXI@Z ??_GCGameStringPool@@UAEPAXI@Z
-0x1000cdf6 func   ?vfunc8@CGameStringPool@@QAEPAV1@I@Z CGameStringPool::vfunc8
 0x1000cdfb func   ?sub_1029f120@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029f120
 0x1000ce00 func   _item_container item_container
 0x1000ce05 func   ?vfunc33@CRestore@@UAEHXZ CRestore::vfunc33
