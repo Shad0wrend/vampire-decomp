@@ -8,4 +8,5 @@ class CMessageCharsPanel : public vgui2::Panel
 {
 public:
 	virtual ~CMessageCharsPanel();
+	void sub_10168480();
 };
