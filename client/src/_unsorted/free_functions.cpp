@@ -35526,6 +35526,16 @@ int __stdcall sub_10106860(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106880 size=0x15
+namespace lifted {
+int sub_10166f00(int, int);
+}
+int __stdcall sub_10106880(int a0, int a1)
+{
+    return lifted::sub_10166f00(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106b40 size=0x27
 namespace lifted {
 extern int g_104d404c;
