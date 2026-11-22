@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10013d00 size=0x6
+#include "C_OccultDodge.h"
+namespace lifted {
+extern char g_102730f0;
+}
+int C_OccultDodge::vfunc17()
+{
+    return (int)&lifted::g_102730f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013d90 size=0x1e
 #include "C_OccultDodge.h"
 
