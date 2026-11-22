@@ -22,6 +22,17 @@ C_ItemGLillyPurse *pcd_emit_10019290() { return new C_ItemGLillyPurse; }
 // TARGET: ??_GC_ItemGLillyPurse@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100192b0 size=0x6
+#include "C_ItemGLillyPurse.h"
+namespace lifted {
+extern char g_10274658;
+}
+int C_ItemGLillyPurse::vfunc16()
+{
+    return (int)&lifted::g_10274658;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100192c0 size=0x3
 #include "C_ItemGLillyPurse.h"
 int C_ItemGLillyPurse::vfunc15()
