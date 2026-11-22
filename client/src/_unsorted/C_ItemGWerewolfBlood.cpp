@@ -10,3 +10,11 @@ C_ItemGWerewolfBlood *pcd_emit_10019a10() { return new C_ItemGWerewolfBlood; }
 
 // TARGET: ??_GC_ItemGWerewolfBlood@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10019a40 size=0x3
+#include "C_ItemGWerewolfBlood.h"
+int C_ItemGWerewolfBlood::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
