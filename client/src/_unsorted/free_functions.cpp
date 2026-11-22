@@ -104,6 +104,19 @@ char sub_100018f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001970 size=0x1d
+struct CUnknown10001970 { int sub_10001970(); };
+int CUnknown10001970::sub_10001970()
+{
+    if ((*(int *)((char *)this + 0x45c)) != 0) {
+        if ((*(char *)((char *)this + 0x465)) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001990 size=0x9
 struct CUnknown10001990 { char sub_10001990(int); };
 char CUnknown10001990::sub_10001990(int a0)
