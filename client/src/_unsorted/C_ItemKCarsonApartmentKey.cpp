@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10023e80 size=0x6
+#include "C_ItemKCarsonApartmentKey.h"
+namespace lifted {
+extern char g_10273c34;
+}
+int C_ItemKCarsonApartmentKey::vfunc17()
+{
+    return (int)&lifted::g_10273c34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023f10 size=0x1e
 #include "C_ItemKCarsonApartmentKey.h"
 
