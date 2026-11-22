@@ -10,3 +10,11 @@ C_BaseCombatCharacter *pcd_emit_10097ec0() { return new C_BaseCombatCharacter; }
 
 // TARGET: ??_GC_BaseCombatCharacter@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100981e0 size=0x3
+#include "C_BaseCombatCharacter.h"
+int C_BaseCombatCharacter::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
