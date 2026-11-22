@@ -1027,6 +1027,7 @@
 0x1003a3d0 func   ??_GC_TEKillPlayerAttachments@@UAEPAXI@Z ??_GC_TEKillPlayerAttachments@@UAEPAXI@Z
 0x1003a3f0 func   ??1C_TEKillPlayerAttachments@@UAE@XZ C_TEKillPlayerAttachments::~C_TEKillPlayerAttachments
 0x1003a3f0 func   ?sub_1003a3f0@CUnknown1003a3f0@@QAEHXZ CUnknown1003a3f0::sub_1003a3f0
+0x1003a450 func   ?vfunc9@C_TEKillPlayerAttachments@@UAEHXZ C_TEKillPlayerAttachments::vfunc9
 0x1003a470 func   ?sub_1003a470@@YAHXZ sub_1003a470
 0x1003a510 func   ?sub_1003a510@@YAHXZ sub_1003a510
 0x1003a580 func   ?ClientClassInit@@YAHPAUignored@DT_TEKillPlayerAttachments@@@Z ClientClassInit
