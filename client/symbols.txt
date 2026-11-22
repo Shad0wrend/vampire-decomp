@@ -785,6 +785,7 @@
 0x100174c0 func   ?vfunc15@C_ItemGDrugsDrugBox@@UAEHXZ C_ItemGDrugsDrugBox::vfunc15
 0x100174d0 func   ?sub_100174d0@@YAHXZ sub_100174d0
 0x100175f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGDrugsDrugBox@@@Z ClientClassInit
+0x10017680 func   ?vfunc17@C_ItemGAstrolite@@UAEHXZ C_ItemGAstrolite::vfunc17
 0x10017710 func   ??_GC_ItemGAstrolite@@UAEPAXI@Z ??_GC_ItemGAstrolite@@UAEPAXI@Z
 0x10017740 func   ?vfunc15@C_ItemGAstrolite@@UAEHXZ C_ItemGAstrolite::vfunc15
 0x10017750 func   ?sub_10017750@@YAHXZ sub_10017750
