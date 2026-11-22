@@ -22,6 +22,17 @@ C_ItemGGarysCD *pcd_emit_1001f410() { return new C_ItemGGarysCD; }
 // TARGET: ??_GC_ItemGGarysCD@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001f430 size=0x6
+#include "C_ItemGGarysCD.h"
+namespace lifted {
+extern char g_102742ec;
+}
+int C_ItemGGarysCD::vfunc16()
+{
+    return (int)&lifted::g_102742ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f440 size=0x3
 #include "C_ItemGGarysCD.h"
 int C_ItemGGarysCD::vfunc15()
