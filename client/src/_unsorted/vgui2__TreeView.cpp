@@ -19,6 +19,14 @@ int vgui2::TreeView::vfunc108()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd870 size=0x7
+#include "vgui2__TreeView.h"
+int vgui2::TreeView::vfunc119()
+{
+    return *(int *)((char *)this + 0x94);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be150 size=0x6
 #include "vgui2__TreeView.h"
 namespace lifted {
