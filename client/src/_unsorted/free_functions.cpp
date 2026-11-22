@@ -64391,6 +64391,23 @@ void __stdcall sub_10186bc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186bd0 size=0x20
+namespace lifted {
+extern char g_102bbe88;
+extern char g_104cfe38;
+extern char g_105fb7dc;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C10186a00 { int sub_10186a00(); };
+}
+void sub_10186bd0()
+{
+    if (lifted::g_105fb7dc != 0) {
+        int t0 = ((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbe88);
+        ((lifted::C10186a00 *)t0)->sub_10186a00(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186ce0 size=0x16
 namespace lifted {
 extern char g_102bbe88;
