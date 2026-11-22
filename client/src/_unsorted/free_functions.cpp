@@ -13894,6 +13894,21 @@ void CUnknown10067920::sub_10067920(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067950 size=0x32
+namespace lifted {
+extern char g_102888a4;
+struct C100666d0 { int sub_100666d0(int, int, int); };
+}
+struct CUnknown10067950 { void sub_10067950(int); };
+void CUnknown10067950::sub_10067950(int a0)
+{
+    if ((*(int *)((char *)this + 0x440)) == a0) {
+        int t0 = ((lifted::C100666d0 *)this)->sub_100666d0((int)&lifted::g_102888a4, 0x3f800000, 1);
+        *(int *)((char *)this + 0x440) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
