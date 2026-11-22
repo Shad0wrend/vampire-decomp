@@ -10,3 +10,11 @@ C_ItemGWarrLedger2 *pcd_emit_1001e010() { return new C_ItemGWarrLedger2; }
 
 // TARGET: ??_GC_ItemGWarrLedger2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001e040 size=0x3
+#include "C_ItemGWarrLedger2.h"
+int C_ItemGWarrLedger2::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
