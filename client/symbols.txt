@@ -3165,6 +3165,7 @@
 0x10125e60 func   ?vfunc15@C_ServerRagdoll@@UAEHXZ C_ServerRagdoll::vfunc15
 0x10125e70 func   ?sub_10125e70@@YAHXZ sub_10125e70
 0x10125f70 func   ?ClientClassInit@@YAHPAUignored@DT_Ragdoll@@@Z ClientClassInit
+0x101260c0 func   ?vfunc15@C_ServerRagdollAttached@@UAEHXZ C_ServerRagdollAttached::vfunc15
 0x101260d0 func   ?sub_101260d0@@YAHXZ sub_101260d0
 0x101265f0 func   ??_GC_ServerRagdollAttached@@UAEPAXI@Z ??_GC_ServerRagdollAttached@@UAEPAXI@Z
 0x10126670 func   ?ClientClassInit@@YAHPAUignored@DT_Ragdoll_Attached@@@Z ClientClassInit
