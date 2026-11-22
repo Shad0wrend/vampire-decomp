@@ -5373,6 +5373,7 @@
 0x1016cd90 func   ?vfunc164@VBarterButton@@UAEHHHHH@Z VBarterButton::vfunc164
 0x1016cda0 func   ??_GVBarterButton@@UAEPAXI@Z ??_GVBarterButton@@UAEPAXI@Z
 0x1016d110 func   ?sub_1016d110@@YGDH@Z sub_1016d110
+0x1016eea0 func   ?sub_1016eea0@CUnknown1016eea0@@QAEHH@Z CUnknown1016eea0::sub_1016eea0
 0x1016f530 func   ?sub_1016f530@CUnknown1016f530@@QAEPADXZ CUnknown1016f530::sub_1016f530
 0x10170030 func   ?sub_10170030@CUnknown10170030@@QAEHXZ CUnknown10170030::sub_10170030
 0x10170170 func   ?sub_10170170@@YAHXZ sub_10170170

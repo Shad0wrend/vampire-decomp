@@ -64572,6 +64572,29 @@ char __stdcall sub_1016d110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016eea0 size=0x48
+namespace lifted {
+extern char g_102bbe88;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int, int, int, int); };
+struct C1016f380 { int sub_1016f380(); };
+struct C1016f470 { int sub_1016f470(); };
+struct C10184bc0 { int sub_10184bc0(); };
+int __stdcall sub_101a99f0(int);
+}
+struct CUnknown1016eea0 { int sub_1016eea0(int); };
+int CUnknown1016eea0::sub_1016eea0(int a0)
+{
+    int t0 = lifted::sub_101a99f0(a0);
+    if (((char)a0) != 0) {
+        int t1 = ((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbe88, 0, 0, 0);
+        ((lifted::C10184bc0 *)t1)->sub_10184bc0();
+        return ((lifted::C1016f470 *)((char *)this + -16))->sub_1016f470();
+    }
+    return ((lifted::C1016f380 *)((char *)this + -16))->sub_1016f380();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016f530 size=0x7
 struct CUnknown1016f530 { char * sub_1016f530(); };
 char * CUnknown1016f530::sub_1016f530()
