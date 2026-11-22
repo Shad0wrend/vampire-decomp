@@ -55190,6 +55190,17 @@ int __fastcall sub_10153f30(void *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153f70 size=0x12
+struct CUnknown10153f70 { int sub_10153f70(); };
+int CUnknown10153f70::sub_10153f70()
+{
+    if ((*(int *)((char *)this + -20)) == 0) {
+        return 0;
+    }
+    return (*(int *)((char *)(*(int *)((char *)(*(int *)((char *)this + -20)))) + 8)) + (*(int *)((char *)this + -20));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153fb0 size=0x2c
 extern int g_105eb338;
 extern char g_105eab08[32][64];
