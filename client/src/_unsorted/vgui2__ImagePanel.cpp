@@ -18,3 +18,14 @@ int vgui2::ImagePanel::vfunc108()
     return *(int *)((char *)this + 0x58);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c5b60 size=0x6
+#include "vgui2__ImagePanel.h"
+namespace lifted {
+extern char g_102da7a8;
+}
+int vgui2::ImagePanel::vfunc102()
+{
+    return (int)&lifted::g_102da7a8;
+}
+// END FUNCTION
