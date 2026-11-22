@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001a600 size=0x6
+#include "C_ItemGOHDiary.h"
+namespace lifted {
+extern char g_10273588;
+}
+int C_ItemGOHDiary::vfunc17()
+{
+    return (int)&lifted::g_10273588;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a690 size=0x1e
 #include "C_ItemGOHDiary.h"
 
