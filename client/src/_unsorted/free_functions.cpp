@@ -51772,6 +51772,23 @@ bool CUnk101ed0f0::sub_10150b60(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150b90 size=0x25
+struct CUnknown10150b90 { void * sub_10150b90(int); };
+void * CUnknown10150b90::sub_10150b90(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
