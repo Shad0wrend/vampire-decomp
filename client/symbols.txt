@@ -1983,6 +1983,7 @@
 0x1008eee0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseAnimating@@@Z ClientClassInit
 0x1008f5a0 func   ??_GC_BaseAnimating@@UAEPAXI@Z ??_GC_BaseAnimating@@UAEPAXI@Z
 0x1008f5c0 func   ??1C_BaseAnimating@@UAE@XZ C_BaseAnimating::~C_BaseAnimating
+0x10090b60 func   ?vfunc124@C_BaseAnimating@@UAEXHH@Z C_BaseAnimating::vfunc124
 0x100923c0 func   ?sub_100923c0@@YADDD@Z sub_100923c0
 0x10093ef0 func   ?sub_10093ef0@CUnknown10093ef0@@QAEHH@Z CUnknown10093ef0::sub_10093ef0
 0x10095b00 func   ?sub_10095b00@CUnknown10095b00@@QAEHH@Z CUnknown10095b00::sub_10095b00

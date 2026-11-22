@@ -25,3 +25,10 @@ C_BaseAnimating *pcd_emit_1008f5a0() { return new C_BaseAnimating; }
 
 // TARGET: ??_GC_BaseAnimating@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10090b60 size=0x3
+#include "C_BaseAnimating.h"
+void C_BaseAnimating::vfunc124(int a0, int a1)
+{
+}
+// END FUNCTION
