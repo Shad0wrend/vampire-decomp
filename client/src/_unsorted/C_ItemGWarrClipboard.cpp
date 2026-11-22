@@ -10,3 +10,11 @@ C_ItemGWarrClipboard *pcd_emit_1001db10() { return new C_ItemGWarrClipboard; }
 
 // TARGET: ??_GC_ItemGWarrClipboard@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001db40 size=0x3
+#include "C_ItemGWarrClipboard.h"
+int C_ItemGWarrClipboard::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
