@@ -5033,6 +5033,7 @@
 0x10168200 func   ??_GCMessageCharsPanel@@UAEPAXI@Z ??_GCMessageCharsPanel@@UAEPAXI@Z
 0x10168220 func   ??1CMessageCharsPanel@@UAE@XZ CMessageCharsPanel::~CMessageCharsPanel
 0x10168220 func   ?sub_10168220@CUnknown10168220@@QAEHXZ CUnknown10168220::sub_10168220
+0x10168230 func   ?vfunc74@CMessageCharsPanel@@UAEHH@Z CMessageCharsPanel::vfunc74
 0x10168260 func   ?sub_10168260@@YAHXZ sub_10168260
 0x10168480 func   ?sub_10168480@CMessageCharsPanel@@QAEXXZ CMessageCharsPanel::sub_10168480
 0x101687c0 func   ?vfunc6@CMessageChars@@UAEHXZ CMessageChars::vfunc6
