@@ -11,6 +11,17 @@ C_ServerRagdoll *pcd_emit_10125770() { return new C_ServerRagdoll; }
 // TARGET: ??_GC_ServerRagdoll@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10125e50 size=0x6
+#include "C_ServerRagdoll.h"
+namespace lifted {
+extern char g_102c2ea0;
+}
+int C_ServerRagdoll::vfunc16()
+{
+    return (int)&lifted::g_102c2ea0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125e60 size=0x3
 #include "C_ServerRagdoll.h"
 int C_ServerRagdoll::vfunc15()

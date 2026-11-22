@@ -3650,6 +3650,7 @@
 0x10125770 func   ??_GC_ServerRagdoll@@UAEPAXI@Z ??_GC_ServerRagdoll@@UAEPAXI@Z
 0x10125790 func   ?sub_10125790@@YAHXZ sub_10125790
 0x10125dc0 func   ?sub_10125dc0@@YGHH@Z sub_10125dc0
+0x10125e50 func   ?vfunc16@C_ServerRagdoll@@UAEHXZ C_ServerRagdoll::vfunc16
 0x10125e60 func   ?vfunc15@C_ServerRagdoll@@UAEHXZ C_ServerRagdoll::vfunc15
 0x10125e70 func   ?sub_10125e70@@YAHXZ sub_10125e70
 0x10125f70 func   ?ClientClassInit@@YAHPAUignored@DT_Ragdoll@@@Z ClientClassInit
