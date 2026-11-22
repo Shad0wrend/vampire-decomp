@@ -66021,6 +66021,28 @@ void ScoreV::sub_1017f1d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f290 size=0x5c
+namespace lifted {
+bool sub_101713e0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+struct CUnknown1017f290 { int sub_1017f290(); };
+int CUnknown1017f290::sub_1017f290()
+{
+    bool t0 = lifted::sub_101713e0();
+    if (t0 != 0) {
+        if ((*(int *)((char *)this + 0x2e4)) != 0) {
+            ((lifted::V *)(*(int *)((char *)this + 0x2d8)))->f21(1);
+            return ((lifted::V *)(*(int *)((char *)this + 0x2dc)))->f21(0);
+        }
+        ((lifted::V *)(*(int *)((char *)this + 0x2d8)))->f21(0);
+        return ((lifted::V *)(*(int *)((char *)this + 0x2dc)))->f21(1);
+    }
+    ((lifted::V *)(*(int *)((char *)this + 0x2d8)))->f21(0);
+    return ((lifted::V *)(*(int *)((char *)this + 0x2dc)))->f21(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f850 size=0xb
 struct CUnknown1017f850 { void * sub_1017f850(); };
 void * CUnknown1017f850::sub_1017f850()
