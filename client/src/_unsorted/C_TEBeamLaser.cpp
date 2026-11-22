@@ -10,3 +10,14 @@ C_TEBeamLaser *pcd_emit_10033140() { return new C_TEBeamLaser; }
 
 // TARGET: ??_GC_TEBeamLaser@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10033290 size=0x6
+#include "C_TEBeamLaser.h"
+namespace lifted {
+extern char g_1027d838;
+}
+int C_TEBeamLaser::vfunc9()
+{
+    return (int)&lifted::g_1027d838;
+}
+// END FUNCTION
