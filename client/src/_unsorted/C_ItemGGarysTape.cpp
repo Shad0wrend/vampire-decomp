@@ -10,3 +10,11 @@ C_ItemGGarysTape *pcd_emit_1001fb90() { return new C_ItemGGarysTape; }
 
 // TARGET: ??_GC_ItemGGarysTape@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001fbc0 size=0x3
+#include "C_ItemGGarysTape.h"
+int C_ItemGGarysTape::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
