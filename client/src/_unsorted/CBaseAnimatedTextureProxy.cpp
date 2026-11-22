@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10079400 size=0x3
+#include "CBaseAnimatedTextureProxy.h"
+void CBaseAnimatedTextureProxy::vfunc5(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a6f0 size=0x1e
 #include "CBaseAnimatedTextureProxy.h"
 
