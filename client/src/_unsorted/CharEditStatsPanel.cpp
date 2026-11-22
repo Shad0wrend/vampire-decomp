@@ -17,3 +17,14 @@ void CharEditStatsPanel::vfunc3()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101824d0 size=0x6
+#include "CharEditStatsPanel.h"
+namespace lifted {
+extern char g_102d1750;
+}
+int CharEditStatsPanel::vfunc102()
+{
+    return (int)&lifted::g_102d1750;
+}
+// END FUNCTION
