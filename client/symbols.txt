@@ -153,6 +153,7 @@
 0x100075d0 func   ?sub_100075d0@@YAHXZ sub_100075d0
 0x100076f0 func   ?ClientClassInit@@YAHPAUignored@DT_MachineGun@@@Z ClientClassInit
 0x10007810 func   ??_GC_SelectFireMachineGun@@UAEPAXI@Z ??_GC_SelectFireMachineGun@@UAEPAXI@Z
+0x10007840 func   ?vfunc15@C_SelectFireMachineGun@@UAEHXZ C_SelectFireMachineGun::vfunc15
 0x10007850 func   ?sub_10007850@@YAHXZ sub_10007850
 0x10007970 func   ?ClientClassInit@@YAHPAUignored@DT_SelectFireMachineGun@@@Z ClientClassInit
 0x10007a90 func   ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z

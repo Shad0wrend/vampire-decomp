@@ -10,3 +10,11 @@ C_SelectFireMachineGun *pcd_emit_10007810() { return new C_SelectFireMachineGun;
 
 // TARGET: ??_GC_SelectFireMachineGun@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10007840 size=0x3
+#include "C_SelectFireMachineGun.h"
+int C_SelectFireMachineGun::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
