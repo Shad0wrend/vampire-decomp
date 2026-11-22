@@ -22,6 +22,17 @@ C_OccultLockpicking *pcd_emit_10012c10() { return new C_OccultLockpicking; }
 // TARGET: ??_GC_OccultLockpicking@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10012c30 size=0x6
+#include "C_OccultLockpicking.h"
+namespace lifted {
+extern char g_102749d0;
+}
+int C_OccultLockpicking::vfunc16()
+{
+    return (int)&lifted::g_102749d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012c40 size=0x3
 #include "C_OccultLockpicking.h"
 int C_OccultLockpicking::vfunc15()
