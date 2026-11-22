@@ -5484,6 +5484,7 @@
 0x101afae0 func   ?vfunc142@TextEntry@vgui2@@UAE_ND@Z vgui2::TextEntry::vfunc142
 0x101afed0 func   ?sub_101afed0@CUnknown101afed0@@QAEDD@Z CUnknown101afed0::sub_101afed0
 0x101b09c0 func   ?vfunc124@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc124
+0x101b13e0 func   ?vfunc132@TextEntry@vgui2@@UAEHH@Z vgui2::TextEntry::vfunc132
 0x101b1410 func   ?vfunc168@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc168
 0x101b1420 func   ?vfunc169@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc169
 0x101b14c0 func   ?vfunc167@TextEntry@vgui2@@UAEXXZ vgui2::TextEntry::vfunc167
