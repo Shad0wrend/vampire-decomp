@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1005d860 size=0x3
+#include "C_HudTimer.h"
+int C_HudTimer::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d930 size=0x1e
 #include "C_HudTimer.h"
 
