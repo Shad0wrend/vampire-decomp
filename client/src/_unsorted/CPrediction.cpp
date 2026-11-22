@@ -25,3 +25,11 @@ int CPrediction::vfunc13()
     return *(int *)((char *)this + 0x28);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10123200 size=0x4
+#include "CPrediction.h"
+int CPrediction::vfunc15()
+{
+    return *(int *)((char *)this + 0x30);
+}
+// END FUNCTION
