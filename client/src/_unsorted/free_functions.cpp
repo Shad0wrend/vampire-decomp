@@ -47676,6 +47676,20 @@ void CPtrList101d6400::sub_10142000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142610 size=0xd
+namespace lifted {
+extern char g_102de300;
+}
+struct CUnknown10142610 { int sub_10142610(); };
+int CUnknown10142610::sub_10142610()
+{
+    if ((*(int *)((char *)this + 0xc)) == 0) {
+        return (int)&lifted::g_102de300;
+    }
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101427d0 size=0x1b
 struct CUnknown101427d0 { void * sub_101427d0(); };
 void * CUnknown101427d0::sub_101427d0()
