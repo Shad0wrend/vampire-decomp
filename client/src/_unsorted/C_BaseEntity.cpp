@@ -539,6 +539,21 @@ int C_BaseEntity::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2d40 size=0x2a
+#include "C_BaseEntity.h"
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+void C_BaseEntity::vfunc103(int a0)
+{
+    if (a0 != 0) {
+        *(int *)((char *)this + 0x98) = *(int *)((char *)(((lifted::V *)a0)->f1()));
+        return;
+    }
+    *(int *)((char *)this + 0x98) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e10 size=0xd
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc49(int a0)
