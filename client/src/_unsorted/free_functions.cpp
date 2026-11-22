@@ -68461,6 +68461,32 @@ int CUnknown101880f0::sub_101880f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10188230 size=0x6a
+namespace lifted {
+extern char g_1024ebbc;
+extern char g_102862f0;
+struct C101aa220 { int sub_101aa220(); };
+int sub_101ac8c0();
+struct C101acaa0 { int sub_101acaa0(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual int f4(int); };
+}
+struct CUnknown10188230 { void * sub_10188230(int, int); };
+void * CUnknown10188230::sub_10188230(int a0, int a1)
+{
+    int t0 = ((lifted::C101acaa0 *)this)->sub_101acaa0(a0, a1);
+    *(int *)this = (int)&lifted::g_1024ebbc;
+    int t1 = lifted::sub_101ac8c0();
+    int t2 = *(int *)((char *)t1);
+    int t3 = ((lifted::V *)t1)->f4(((lifted::C101aa220 *)this)->sub_101aa220());
+    int t4 = ((lifted::V *)t3)->f4((int)&lifted::g_102862f0);
+    *(int *)((char *)this + 0x128) = t4;
+    int t5 = ((lifted::V *)t3)->f4((int)&lifted::g_102862f0);
+    *(int *)((char *)this + 0x12c) = t5;
+    *(int *)((char *)this + 0x130) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101882c0 size=0xb
 namespace lifted {
 extern char g_1024ebbc;

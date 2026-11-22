@@ -5725,6 +5725,7 @@
 0x10188180 func   ?vfunc164@VQQuestButton@@UAEHHHHH@Z VQQuestButton::vfunc164
 0x101881d0 func   ?vfunc156@VQQuestButton@@UAEHH@Z VQQuestButton::vfunc156
 0x10188200 func   ?vfunc166@VQQuestButton@@UAEHD@Z VQQuestButton::vfunc166
+0x10188230 func   ?sub_10188230@CUnknown10188230@@QAEPAXHH@Z CUnknown10188230::sub_10188230
 0x101882a0 func   ??_GVQTextEntry@@UAEPAXI@Z ??_GVQTextEntry@@UAEPAXI@Z
 0x101882c0 func   ??1VQTextEntry@@UAE@XZ VQTextEntry::~VQTextEntry
 0x101882c0 func   ?sub_101882c0@CUnknown101882c0@@QAEHXZ CUnknown101882c0::sub_101882c0
