@@ -10,3 +10,10 @@ CBloodBar *pcd_emit_1004c690() { return new CBloodBar; }
 
 // TARGET: ??_GCBloodBar@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1004d2f0 size=0x1
+#include "CBloodBar.h"
+void CBloodBar::vfunc97()
+{
+}
+// END FUNCTION
