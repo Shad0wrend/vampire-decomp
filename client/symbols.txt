@@ -5176,6 +5176,7 @@
 0x1018f390 func   ?sub_1018f390@@YAHXZ sub_1018f390
 0x1018f3a0 func   ?sub_1018f3a0@@YAHXZ sub_1018f3a0
 0x1018f3b0 func   ?sub_1018f3b0@@YAHXZ sub_1018f3b0
+0x1018f600 func   ?sub_1018f600@@YAHXZ sub_1018f600
 0x10191700 func   ?vfunc16@CViewRender@@UAEXXZ CViewRender::vfunc16
 0x10192870 func   ?vfunc45@CViewRender@@UAEMXZ CViewRender::vfunc45
 0x10192cb0 func   ?sub_10192cb0@CUnknown10192cb0@@QAEXXZ CUnknown10192cb0::sub_10192cb0

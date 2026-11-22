@@ -62274,6 +62274,17 @@ int sub_1018f3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f600 size=0xb
+namespace lifted {
+extern int g_102d43d8;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual int f8(); };
+}
+int sub_1018f600()
+{
+    return ((lifted::V *)lifted::g_102d43d8)->f8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192cb0 size=0x8
 struct CUnknown10192cb0 { void sub_10192cb0(); };
 void CUnknown10192cb0::sub_10192cb0()
