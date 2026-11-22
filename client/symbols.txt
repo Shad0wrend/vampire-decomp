@@ -797,6 +797,7 @@
 0x10020850 func   ?sub_10020850@@YAHXZ sub_10020850
 0x10020970 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGVVPhoto@@@Z ClientClassInit
 0x10020a90 func   ??_GC_ItemGSewerBook1@@UAEPAXI@Z ??_GC_ItemGSewerBook1@@UAEPAXI@Z
+0x10020ac0 func   ?vfunc15@C_ItemGSewerBook1@@UAEHXZ C_ItemGSewerBook1::vfunc15
 0x10020ad0 func   ?sub_10020ad0@@YAHXZ sub_10020ad0
 0x10020bf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGSewerBook1@@@Z ClientClassInit
 0x10020d10 func   ??_GC_ItemKGalleryNoirKey@@UAEPAXI@Z ??_GC_ItemKGalleryNoirKey@@UAEPAXI@Z

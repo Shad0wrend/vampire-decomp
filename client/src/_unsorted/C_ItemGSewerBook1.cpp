@@ -10,3 +10,11 @@ C_ItemGSewerBook1 *pcd_emit_10020a90() { return new C_ItemGSewerBook1; }
 
 // TARGET: ??_GC_ItemGSewerBook1@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10020ac0 size=0x3
+#include "C_ItemGSewerBook1.h"
+int C_ItemGSewerBook1::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
