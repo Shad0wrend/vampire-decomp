@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 50083549c7dc; do not edit by hand
+# written by pcdecomp standalone from vtmb 6e1df5a35822; do not edit by hand
 089d52a6 ?ResetDbgInfo@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ
 100019d3 ?s_default@?5??Find@CUnknown101ec4f0Set@@QAEPAVCUnknown101ec4f0@@H@Z@$AV2@A
 1000229d ?ops@?1??Ops_109f0a78@@YAPAVISaveRestoreOps@@XZ@$AV?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@A
@@ -11164,7 +11164,7 @@
 101afdc0 ?sub_101afdc0@CUnknown101afba0@@QAE_NPAVCKeyValuesX@@@Z
 101aff20 ?sub_101aff20@CThunkOwner@@QAEXXZ
 101aff40 ?sub_101aff40@CThunkOwner@@QAEXXZ
-101aff60 ?vfunc3@CSoundEmitterSystem@@QAAXPBDZZ
+101aff60 ?LogMessage@CSoundEmitterSystem@@UAAXPBDZZ
 101afff0 ?sub_101afff0@CSoundSysIface@@QAEXXZ
 101b0110 ??_ECSoundEmitterSystem@@UAEPAXI@Z
 101b0110 ??_GCSoundEmitterSystem@@UAEPAXI@Z
@@ -11501,8 +11501,8 @@
 101bc620 ?vfunc2@CSoundControllerImp@@UAEXPAVCUnknown101bc140@@MM@Z
 101bc750 ?sub_101bc750@CUnknown101bc750@@QAEXH@Z
 101bc7f0 ?vfunc3@CSoundControllerImp@@UAEXPAXMHMM@Z
-101bc870 ?vfunc0@CSoundControllerImp@@UAEXXZ
-101bc8e0 ?vfunc1@CSoundControllerImp@@UAEXXZ
+101bc870 ?SystemReset@CSoundControllerImp@@UAEXXZ
+101bc8e0 ?SystemUpdate@CSoundControllerImp@@UAEXXZ
 101bcae0 ?vfunc4@CSoundControllerImp@@UAEXPAX@Z
 101bcc40 ?sub_101bcc40@CUnknown101bcc40@@QAEXHPAX@Z
 101bcd20 ?sub_101bcd20@CSoundControllerImp@@QAEXPAPAVCUnknown101bc140@@PAVISoundRestoreView@@@Z
@@ -11528,7 +11528,7 @@
 101bd630 ?vfunc14@CSoundControllerImp@@UAEHH@Z
 101bd650 ?sub_101bd650@@YGXPAUS@@H@Z
 101bd680 ?vfunc16@CSoundControllerImp@@UAEMPAXHPAUenvelopePoint_t@@H@Z
-101bd7e0 ?vfunc15@CSoundControllerImp@@UAEXPAXHPAH@Z
+101bd7e0 ?vfunc15@CSoundControllerImp@@UAEMPAXHPAH@Z
 101bd810 ?vfunc17@CSoundControllerImp@@UAEXH@Z
 101bd850 ?sub_101bd850@CSoundControllerImpView@@QAEXXZ
 101bd940 ?sub_101bd940@@YIXPAD@Z

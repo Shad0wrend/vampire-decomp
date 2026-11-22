@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 50083549c7dc; do not edit by hand
+# written by pcdecomp standalone from vtmb 6e1df5a35822; do not edit by hand
 ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z
 ??0CAI_InterestTarget@@QAE@XZ ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ
 ??0CAI_LocalIdSpace@@QAE@_N@Z ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z
@@ -201,7 +201,6 @@
 ?LessFunc@?$CDefOps@PAVCBaseEntity@@@@SA_NABQAVCBaseEntity@@0@Z ?sub_10046b10@@YA_NPBI0@Z
 ?LessFunc@?$CDefOps@PAVIPhysicsObject@@@@SA_NABQAVIPhysicsObject@@0@Z ?sub_10046b40@@YA_NPBI0@Z
 ?LessFunc@?$CDefOps@PBVCPhysCollide@@@@SA_NABQBVCPhysCollide@@0@Z ?sub_10046b70@@YA_NPBI0@Z
-?LogMessage@CSoundEmitterSystem@@UAAXPBDZZ ?vfunc3@CSoundEmitterSystem@@QAAXPBDZZ
 ?NoteBBox@IPhysSaveRestoreManager@@UAEXABVVector@@0PAVCPhysCollide@@@Z __purecall
 ?OnEntityCreated@CNavPropertyDatabase@@UAEXPAVCBaseEntity@@@Z ?sub_102ea5e0@@YGXH@Z
 ?OnEntityCreated@CNotifyList@@UAEXPAVCBaseEntity@@@Z ?sub_100f8a20@@YGXH@Z
@@ -214,9 +213,7 @@
 ?SetName@CBaseEntity@@QAEXUstring_t@@@Z ?sub_100a0420@CBaseEntity@@QAEXPBD@Z
 ?ShiftElementsRight@?$CUtlVector@UCFireBulletsHit@@V?$CUtlMemory@UCFireBulletsHit@@@@@@QAEXHH@Z ?sub_1027fba0@UtlVec8@@QAEXHH@Z
 ?StartLagCompensation@ILagCompensationManager@@UAEXPAVCBasePlayer@@PAVCUserCmd@@@Z ?sub_10188390@CLagStartV@@QAEXPAULagPlayerV@@PAULagUserCmdV@@@Z
-?SystemReset@CSoundControllerImp@@UAEXXZ ?vfunc0@CSoundControllerImp@@UAEXXZ
 ?SystemReset@CSoundEnvelopeController@@UAEXXZ __purecall
-?SystemUpdate@CSoundControllerImp@@UAEXXZ ?vfunc1@CSoundControllerImp@@UAEXXZ
 ?SystemUpdate@CSoundEnvelopeController@@UAEXXZ __purecall
 ?TreeLessFunc@?$CUtlMap@PAVCBaseEntity@@PAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@G@@SA_NABUNode_t@1@0@Z ?sub_10045f60@@YAXXZ
 ?TreeLessFunc@?$CUtlMap@PAVIPhysicsObject@@HG@@SA_NABUNode_t@1@0@Z ?sub_10045f80@@YAXXZ
@@ -12978,7 +12975,7 @@
 ?vfunc15@CBaseEntity@@UAEXXZ ?sub_1009af40@CBaseEntity@@QAEXPBM@Z
 ?vfunc15@CMoveHelperServer@@UAEXPAVCBaseEntity@@@Z ?sub_1013eec0@CMoveHelperServer@@QAEXPAVCBaseEntity@@@Z
 ?vfunc15@CServerGameDLL@@UAEHH@Z ?sub_1011b040@@YGXH@Z
-?vfunc15@CSoundEnvelopeController@@UAEXPAXHPAH@Z __purecall
+?vfunc15@CSoundEnvelopeController@@UAEMPAXHPAH@Z __purecall
 ?vfunc160@CBaseAnimatingOverlay@@UAE_NPBD@Z ?vfunc160@CBaseEntity@@UAE_NPBD@Z
 ?vfunc160@CBaseButton@@UAE_NPBD@Z ?vfunc160@CBaseEntity@@UAE_NPBD@Z
 ?vfunc160@CBaseCombatWeapon@@UAE_NPBD@Z ?vfunc160@CBaseEntity@@UAE_NPBD@Z
@@ -13125,8 +13122,7 @@
 ?vfunc16@CBaseEntity@@UAEXXZ ?sub_1009b030@CBaseEntity@@QAEPAMPAM@Z
 ?vfunc16@CGameRules@@UAEXXZ __purecall
 ?vfunc16@CServerGameDLL@@UAEHH@Z ?sub_1011b060@@YGXH@Z
-?vfunc16@CSoundControllerImp@@UAEXPAXH0H@Z ?vfunc16@CSoundControllerImp@@UAEMPAXHPAUenvelopePoint_t@@H@Z
-?vfunc16@CSoundEnvelopeController@@UAEXPAXH0H@Z __purecall
+?vfunc16@CSoundEnvelopeController@@UAEMPAXHPAUenvelopePoint_t@@H@Z __purecall
 ?vfunc170@CBaseButton@@UAEXPBVVector@@@Z ?sub_10027060@@YGXH@Z
 ?vfunc170@CBaseCombatWeapon@@UAEXPBVVector@@@Z ?sub_10027060@@YGXH@Z
 ?vfunc170@CBaseEntity@@UAEXPBVVector@@@Z ?sub_10027060@@YGXH@Z
