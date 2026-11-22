@@ -34,6 +34,17 @@ C_ItemPhysicsHand *pcd_emit_10003230() { return new C_ItemPhysicsHand; }
 // TARGET: ??_GC_ItemPhysicsHand@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10003250 size=0x6
+#include "C_ItemPhysicsHand.h"
+namespace lifted {
+extern char g_102713e4;
+}
+int C_ItemPhysicsHand::vfunc16()
+{
+    return (int)&lifted::g_102713e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003260 size=0x3
 #include "C_ItemPhysicsHand.h"
 int C_ItemPhysicsHand::vfunc15()
