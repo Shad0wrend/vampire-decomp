@@ -7086,7 +7086,6 @@
 0x10009bbf func   ?sub_1011e310@CGameMovement@@QAEPAMXZ CGameMovement::sub_1011e310
 0x10009bc9 func   ?vfunc80@CItemGMercurioJournal@@QAEHXZ CItemGMercurioJournal::vfunc80
 0x10009bce func   ??_GCDisciplineProjectileTraceFilter@@UAEPAXI@Z ??_GCDisciplineProjectileTraceFilter@@UAEPAXI@Z
-0x10009bce func   ?vfunc2@CDisciplineProjectileTraceFilter@@QAEPAXD@Z CDisciplineProjectileTraceFilter::vfunc2
 0x10009bd3 func   ?sub_10101910@@YIIPAUCFlagHolder19C@@@Z sub_10101910
 0x10009bd8 func   ?sub_10094eb0@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10094eb0
 0x10009bdd func   ?sub_10036e50@CPhysicsPushedEntities@@QAEPAVCBaseEntity@@XZ CPhysicsPushedEntities::sub_10036e50
