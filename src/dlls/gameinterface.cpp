@@ -1854,11 +1854,10 @@ void SInit::sub_1011cc10()
 // FUNCTION: 0x1011cc90 size=0x20
 #include "CUserCmd.h"
 
-struct DummyCmd : CUserCmd
-{
-};
+// VC6 writes CUserCmd's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CUserCmd *pcd_emit_1011cc90() { return new CUserCmd; }
 
-DummyCmd g_dummy;
 // TARGET: ??_GCUserCmd@@UAEPAXI@Z
 // END FUNCTION
 
