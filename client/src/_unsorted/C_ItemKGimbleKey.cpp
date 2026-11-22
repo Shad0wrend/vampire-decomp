@@ -10,3 +10,11 @@ C_ItemKGimbleKey *pcd_emit_10022610() { return new C_ItemKGimbleKey; }
 
 // TARGET: ??_GC_ItemKGimbleKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10022640 size=0x3
+#include "C_ItemKGimbleKey.h"
+int C_ItemKGimbleKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
