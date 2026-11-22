@@ -11177,6 +11177,22 @@ template <> int ClientClassInit<DT_TEParticleSystem::ignored>(DT_TEParticleSyste
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003df50 size=0x24
+namespace lifted {
+extern char g_102270e0;
+int __stdcall sub_10117f10(int);
+}
+struct CUnknown1003df50 { void * sub_1003df50(int); };
+void * CUnknown1003df50::sub_1003df50(int a0)
+{
+    int t0 = lifted::sub_10117f10(a0);
+    *(int *)this = (int)&lifted::g_102270e0;
+    *(int *)((char *)this + 0x74) = 0x3fc00000;
+    *(char *)((char *)this + 0x78) = 0xff;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dfa0 size=0xb
 namespace lifted {
 extern char g_102270e0;
