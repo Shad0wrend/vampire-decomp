@@ -5619,6 +5619,7 @@
 0x10007eeb func   ?vfunc144@CNPC_VBach@@UAEXPAX@Z CNPC_VBach::vfunc144
 0x10007ef0 func   ?sub_10357150@CUnknown10357150@@QAEHH@Z CUnknown10357150::sub_10357150
 0x10007ef5 func   ?vfunc310@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::vfunc310
+0x10007efa func   ?WriteSaveHeaders@CSaveRestoreBlockSet@@UAEXPAVISave@@@Z CSaveRestoreBlockSet::WriteSaveHeaders
 0x10007efa func   ?vfunc3@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc3
 0x10007eff func   _func_monitor func_monitor
 0x10007f04 func   ?sub_1006c5a0@@YAXPAUCUnit1006c5a0@@HH@Z sub_1006c5a0
