@@ -10903,6 +10903,24 @@ int CUnknown1003a840::sub_1003a840(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ce90 size=0x48
+namespace lifted {
+struct C100a1fc0 { int sub_100a1fc0(); };
+}
+struct CUnknown1003ce90 { void sub_1003ce90(int, int); };
+void CUnknown1003ce90::sub_1003ce90(int a0, int a1)
+{
+    if (a1 != 0) {
+        *(int *)((char *)a1 + 0x7a8) = *(int *)((char *)a0 + 0x7a8);
+    } else {
+        *(int *)((char *)this + 0xfbf4c) = *(int *)((char *)a0 + 0x7a8);
+    }
+    ((lifted::C100a1fc0 *)a0)->sub_100a1fc0();
+    *(int *)((char *)a0 + 0x7a8) = *(int *)((char *)this + 0xfbf48);
+    *(int *)((char *)this + 0xfbf48) = a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dab0 size=0x12
 namespace lifted {
 extern char g_10226fec;
