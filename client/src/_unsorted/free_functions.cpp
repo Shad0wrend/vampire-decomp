@@ -57447,6 +57447,16 @@ void * CUnknown10157d10::sub_10157d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157d20 size=0xc
+struct CUnknown10157d20 { void sub_10157d20(); };
+void CUnknown10157d20::sub_10157d20()
+{
+    if ((*(int *)this) != 0) {
+        *(int *)this = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158060 size=0x55
 #include "CUnknown101f9b70.h"
 #include "CUnknown101f0e50.h"
