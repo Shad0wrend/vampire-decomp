@@ -21106,6 +21106,34 @@ template <> int ClientClassInit<DT_BaseParticleEntity::ignored>(DT_BaseParticleE
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f4a0 size=0x4d
+namespace lifted {
+extern char g_101e5584;
+extern char g_1022c2d8;
+extern char g_1022c2fc;
+extern char g_1022c310;
+extern char g_1022c34c;
+extern char g_1022c384;
+extern char g_1022c3dc;
+int sub_1009db90();
+struct C10115d40 { int sub_10115d40(); };
+}
+struct CUnknown1007f4a0 { void * sub_1007f4a0(); };
+void * CUnknown1007f4a0::sub_1007f4a0()
+{
+    int t0 = lifted::sub_1009db90();
+    *(int *)((char *)this + 0x410) = (int)&lifted::g_101e5584;
+    int t1 = ((lifted::C10115d40 *)((char *)this + 0x414))->sub_10115d40();
+    *(int *)this = (int)&lifted::g_1022c3dc;
+    *(int *)((char *)this + 4) = (int)&lifted::g_1022c384;
+    *(int *)((char *)this + 8) = (int)&lifted::g_1022c34c;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_1022c310;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_1022c2fc;
+    *(int *)((char *)this + 0x410) = (int)&lifted::g_1022c2d8;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f6e0 size=0x3
 char sub_1007f6e0()
 {
