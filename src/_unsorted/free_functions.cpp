@@ -90348,32 +90348,29 @@ void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
 // END FUNCTION
 
 // FUNCTION: 0x101f3070 size=0x8
-void __fastcall sub_10001807(char *p);
-void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
+#include "VKeyValues.h"
+
+VKeyValues::VKeyValues(const char *pszName) : m_n04(1)
+{
+	sub_101f2090(pszName);
+}
+
+// the constructor's unit (a same-unit copy of 0x101f1f50): VC6 writes VKeyValues' vtables, its deleting
+// destructor and the vtordisp thunks here; this one is the thunk of IKeyCacheable's table, slot 2 (this -= [this-4])
+// TARGET: ??_EVKeyValues@@$4PPPPPPPM@A@AEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101f3080 size=0x44
-extern int vt_10483b4c;
-extern int vt_10483b34;
-extern int vt_10483bb8;
-extern int g_1073d280;
-void __fastcall sub_101f20d0(void *pThis);
-struct CUnk1013dce0 { void sub_1013dce0(void *p); };
-// TARGET: sub_101f3080
-int *__fastcall sub_101f3080(int *pThis, int edx, unsigned char flags)
+#include "VKeyValues.h"
+
+VKeyValues::VKeyValues(const char *pszName) : m_n04(1)
 {
-	int *esi = (int *)((char *)pThis - 0x28);
-	int *edi = (int *)((char *)esi + 0x28);
-	sub_101f20d0(edi);
-	esi[0xc] = (int)&vt_10483b4c;
-	int *pVb = (int *)esi[0xd];
-	*(int *)((char *)esi + pVb[1] + 0x34) = (int)&vt_10483b34;
-	edi[0] = (int)&vt_10483bb8;
-	if (flags & 1) {
-		((CUnk1013dce0 *)&g_1073d280)->sub_1013dce0(esi);
-	}
-	return esi;
+	sub_101f2090(pszName);
 }
+
+// the constructor's unit (a same-unit copy of 0x101f1f50): VC6 writes VKeyValues' vtables, its deleting
+// destructor and the vtordisp thunks here; this one is the scalar deleting destructor (??_E is its second name)
+// TARGET: ??_GVKeyValues@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101f35c0 size=0xc

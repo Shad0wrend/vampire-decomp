@@ -52,6 +52,7 @@ public:
 	virtual void kv14(); virtual void kv15(); virtual void kv16(); virtual void kv17(); virtual void kv18();
 	virtual void kv19(); virtual void kv20();
 	void sub_101f2c60();	// clears the sub keys, the string and the name
+	static void operator delete(void *p);	// frees through the key/value pool (below): the deleting destructor 0x101f3080 calls it
 
 	int m_n04;	// 0x04
 	int m_nValue08;	// 0x08: the int value (a float for type 3)
@@ -78,4 +79,8 @@ public:
 struct VKeyValuesPool	// the allocator object at 0x1073d280
 {
 	void *sub_1013dc60(int size);	// stub 0x1000bbd6
+	void sub_1013dce0(void *p);	// stub 0x1000330f: returns a block to the pool
 };
+
+extern VKeyValuesPool g_1073d280;	// the pool
+inline void VKeyValues::operator delete(void *p) { g_1073d280.sub_1013dce0(p); }
