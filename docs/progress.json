@@ -120,10 +120,10 @@
  "vampire": [
   {
    "name": "_unsorted",
-   "cpp": 1411642,
+   "cpp": 1411653,
    "asm": 34494,
    "open": 0,
-   "n_cpp": 9612,
+   "n_cpp": 9613,
    "n_asm": 66,
    "n_open": 0
   },
@@ -203,8 +203,8 @@
  "standalone": [
   {
    "name": "Function blocks",
-   "done": 16579,
-   "total": 16589
+   "done": 16590,
+   "total": 16590
   },
   {
    "name": "Static initializers",
@@ -218,15 +218,14 @@
   },
   {
    "name": "Vtable slots",
-   "done": 21399,
+   "done": 21447,
    "total": 21448,
-   "note": "48 patched after the link"
+   "note": "1 patched after the link"
   },
   {
    "name": "Exports",
-   "done": 559,
-   "total": 591,
-   "note": "SafeDisc data exports missing"
+   "done": 591,
+   "total": 591
   },
   {
    "name": "Imports",
@@ -235,12 +234,7 @@
   }
  ],
  "known": {
-  "slot": 49,
-  "vtable": 10,
-  "function": 10,
-  "xcu-extra": 15,
-  "export-missing": 32,
-  "export-ordinal": 1
+  "slot": 1
  },
  "client": [
   {
