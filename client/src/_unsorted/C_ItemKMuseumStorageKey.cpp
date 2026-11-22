@@ -10,3 +10,11 @@ C_ItemKMuseumStorageKey *pcd_emit_10023290() { return new C_ItemKMuseumStorageKe
 
 // TARGET: ??_GC_ItemKMuseumStorageKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100232c0 size=0x3
+#include "C_ItemKMuseumStorageKey.h"
+int C_ItemKMuseumStorageKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

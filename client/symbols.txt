@@ -861,6 +861,7 @@
 0x10023050 func   ?sub_10023050@@YAHXZ sub_10023050
 0x10023170 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumStoreroomKey@@@Z ClientClassInit
 0x10023290 func   ??_GC_ItemKMuseumStorageKey@@UAEPAXI@Z ??_GC_ItemKMuseumStorageKey@@UAEPAXI@Z
+0x100232c0 func   ?vfunc15@C_ItemKMuseumStorageKey@@UAEHXZ C_ItemKMuseumStorageKey::vfunc15
 0x100232d0 func   ?sub_100232d0@@YAHXZ sub_100232d0
 0x100233f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumStorageKey@@@Z ClientClassInit
 0x10023510 func   ??_GC_ItemKNetcafeOfficeKey@@UAEPAXI@Z ??_GC_ItemKNetcafeOfficeKey@@UAEPAXI@Z
