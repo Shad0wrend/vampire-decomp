@@ -47994,6 +47994,20 @@ int CUnknown101454c0::sub_101454c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101454d0 size=0x22
+namespace lifted {
+struct C10145660 { int sub_10145660(int, int, int, int, int, int); };
+struct C10161370 { int sub_10161370(); };
+}
+struct CUnknown101454d0 { void * sub_101454d0(); };
+void * CUnknown101454d0::sub_101454d0()
+{
+    ((lifted::C10161370 *)((char *)this + 0x1c))->sub_10161370();
+    ((lifted::C10145660 *)this)->sub_10145660(0, 0, 0, 0, 0, 0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145500 size=0x3f
 #include "CVDmg_t.h"
 
