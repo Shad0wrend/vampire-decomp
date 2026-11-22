@@ -18652,6 +18652,21 @@ void CUnknown10078e50::sub_10078e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078f00 size=0x18
+namespace lifted {
+struct C10078e10 { int sub_10078e10(); };
+int sub_101d12a1(int);
+}
+int sub_10078f00()
+{
+    int t0 = lifted::sub_101d12a1(8);
+    if (t0 != 0) {
+        return ((lifted::C10078e10 *)t0)->sub_10078e10();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078f20 size=0x19
 struct CUnk10427480
 {
