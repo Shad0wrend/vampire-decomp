@@ -261,3 +261,10 @@ void C_BaseEntity::vfunc96(int a0, int a1, int a2, int a3)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011ac20 size=0x3
+#include "C_BaseEntity.h"
+void C_BaseEntity::vfunc99(int a0)
+{
+}
+// END FUNCTION
