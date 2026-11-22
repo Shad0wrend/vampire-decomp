@@ -11,6 +11,14 @@ vgui2::Button *pcd_emit_101b36f0() { return new vgui2::Button; }
 // TARGET: ??_GButton@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b3850 size=0x7
+#include "vgui2__Button.h"
+bool vgui2::Button::vfunc146()
+{
+    return *(bool *)((char *)this + 0xbd);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b41b0 size=0x23
 #include "vgui2__Button.h"
 namespace lifted {
