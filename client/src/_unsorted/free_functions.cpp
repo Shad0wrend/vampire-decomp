@@ -37230,6 +37230,19 @@ int __stdcall sub_101194b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119600 size=0x10
+namespace lifted {
+struct C10119610 { int sub_10119610(); };
+struct C10119e00 { int sub_10119e00(); };
+}
+struct CUnknown10119600 { int sub_10119600(); };
+int CUnknown10119600::sub_10119600()
+{
+    ((lifted::C10119610 *)this)->sub_10119610();
+    return ((lifted::C10119e00 *)this)->sub_10119e00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119d90 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>
