@@ -185,3 +185,14 @@ void vgui2::Panel::vfunc81()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ab860 size=0x6
+#include "vgui2__Panel.h"
+namespace lifted {
+extern int g_102d7be0;
+}
+int vgui2::Panel::vfunc77()
+{
+    return lifted::g_102d7be0;
+}
+// END FUNCTION
