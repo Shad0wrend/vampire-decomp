@@ -4277,6 +4277,7 @@
 0x10006474 func   ?vfunc5@COccultHealRate@@QAEPAV1@I@Z COccultHealRate::vfunc5
 0x10006479 func   ?sub_1012c150@@YA?AVVector@@PAVCBaseEntity@@ABV1@V1@MM@Z sub_1012c150
 0x1000647e func   ?vfunc376@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc376
+0x10006483 func   ?PostSave@CDefSaveRestoreBlockHandler@@UAEXXZ CDefSaveRestoreBlockHandler::PostSave
 0x10006483 func   ?sub_10043b80@@YIXPAX@Z sub_10043b80
 0x10006488 func   ??0ConVar@@QAE@PBD0H@Z ConVar::ConVar
 0x1000648d func   ??1SendProp@@QAE@XZ SendProp::~SendProp
