@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10007200 size=0x6
+#include "C_TEConcussiveExplosion.h"
+namespace lifted {
+extern char g_102725fc;
+}
+int C_TEConcussiveExplosion::vfunc9()
+{
+    return (int)&lifted::g_102725fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007330 size=0x1e
 #include "C_TEConcussiveExplosion.h"
 

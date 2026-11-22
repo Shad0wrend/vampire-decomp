@@ -91,6 +91,7 @@
 0x10007020 func   ??_GC_WeaponRanged_Dementation@@UAEPAXI@Z ??_GC_WeaponRanged_Dementation@@UAEPAXI@Z
 0x100070b0 func   ??_GC_WeaponRanged_Domination@@UAEPAXI@Z ??_GC_WeaponRanged_Domination@@UAEPAXI@Z
 0x10007140 func   ??_GC_WeaponRanged_Thaumaturgy@@UAEPAXI@Z ??_GC_WeaponRanged_Thaumaturgy@@UAEPAXI@Z
+0x10007200 func   ?vfunc9@C_TEConcussiveExplosion@@UAEHXZ C_TEConcussiveExplosion::vfunc9
 0x10007220 func   ?sub_10007220@@YAHXZ sub_10007220
 0x10007260 func   ?vfunc0@C_BaseTempEntity@@UAEHH@Z C_BaseTempEntity::vfunc0
 0x10007270 func   ?vfunc1@C_BaseTempEntity@@UAEPAIXZ C_BaseTempEntity::vfunc1
