@@ -24,3 +24,10 @@ void vgui2::ComboBox::vfunc173(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c81e0 size=0x3
+#include "vgui2__ComboBox.h"
+void vgui2::ComboBox::vfunc174(int a0)
+{
+}
+// END FUNCTION

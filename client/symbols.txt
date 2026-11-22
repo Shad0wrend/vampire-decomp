@@ -5245,6 +5245,7 @@
 0x101c7910 func   ??1ComboBox@vgui2@@UAE@XZ vgui2::ComboBox::~ComboBox
 0x101c7b20 func   ?vfunc178@ComboBox@vgui2@@UAEXXZ vgui2::ComboBox::vfunc178
 0x101c81d0 func   ?vfunc173@ComboBox@vgui2@@UAEXH@Z vgui2::ComboBox::vfunc173
+0x101c81e0 func   ?vfunc174@ComboBox@vgui2@@UAEXH@Z vgui2::ComboBox::vfunc174
 0x101c84a0 func   ??_GPropertySheet@vgui2@@UAEPAXI@Z ??_GPropertySheet@vgui2@@UAEPAXI@Z
 0x101c84c0 func   ??1PropertySheet@vgui2@@UAE@XZ vgui2::PropertySheet::~PropertySheet
 0x101c95b0 func   ??_GMenuButton@vgui2@@UAEPAXI@Z ??_GMenuButton@vgui2@@UAEPAXI@Z
