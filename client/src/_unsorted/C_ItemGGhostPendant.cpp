@@ -22,6 +22,17 @@ C_ItemGGhostPendant *pcd_emit_10017e90() { return new C_ItemGGhostPendant; }
 // TARGET: ??_GC_ItemGGhostPendant@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10017eb0 size=0x6
+#include "C_ItemGGhostPendant.h"
+namespace lifted {
+extern char g_102746f0;
+}
+int C_ItemGGhostPendant::vfunc16()
+{
+    return (int)&lifted::g_102746f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017ec0 size=0x3
 #include "C_ItemGGhostPendant.h"
 int C_ItemGGhostPendant::vfunc15()
