@@ -64968,6 +64968,25 @@ void sub_1018c710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c810 size=0x24
+namespace lifted {
+struct C1007b160 { int sub_1007b160(); };
+int sub_1009b210();
+}
+char sub_1018c810()
+{
+    int t0 = lifted::sub_1009b210();
+    if (t0 != 0) {
+        int t1 = lifted::sub_1009b210();
+        int t2 = ((lifted::C1007b160 *)t1)->sub_1007b160();
+        if (((*(char *)((char *)t2 + 0x242c)) & 2) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c840 size=0x3
 char sub_1018c840()
 {
