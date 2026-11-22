@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10023c00 size=0x6
+#include "C_ItemKEmpireJezebelKey.h"
+namespace lifted {
+extern char g_10273c18;
+}
+int C_ItemKEmpireJezebelKey::vfunc17()
+{
+    return (int)&lifted::g_10273c18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023c90 size=0x1e
 #include "C_ItemKEmpireJezebelKey.h"
 
