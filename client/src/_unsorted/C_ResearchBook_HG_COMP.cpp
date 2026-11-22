@@ -10,3 +10,11 @@ C_ResearchBook_HG_COMP *pcd_emit_10010b90() { return new C_ResearchBook_HG_COMP;
 
 // TARGET: ??_GC_ResearchBook_HG_COMP@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10010bc0 size=0x3
+#include "C_ResearchBook_HG_COMP.h"
+int C_ResearchBook_HG_COMP::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
