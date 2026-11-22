@@ -10,3 +10,11 @@ C_ItemKOceanHouseBasementKey *pcd_emit_10021710() { return new C_ItemKOceanHouse
 
 // TARGET: ??_GC_ItemKOceanHouseBasementKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10021740 size=0x3
+#include "C_ItemKOceanHouseBasementKey.h"
+int C_ItemKOceanHouseBasementKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
