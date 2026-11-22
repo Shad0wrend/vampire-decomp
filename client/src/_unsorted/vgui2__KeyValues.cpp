@@ -36,3 +36,18 @@ int vgui2::KeyValues::vfunc8()
     return *(int *)((char *)this + 0x14);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b6820 size=0x17
+#include "vgui2__KeyValues.h"
+namespace lifted {
+int sub_101b57a0();
+int sub_101b6860(int);
+}
+void vgui2::KeyValues::vfunc21()
+{
+    if (((int)this) != 0) {
+        lifted::sub_101b57a0();
+        lifted::sub_101b6860((int)this);
+    }
+}
+// END FUNCTION
