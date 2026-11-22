@@ -853,6 +853,7 @@
 0x100334b0 func   ??_GC_TEBeamPoints@@UAEPAXI@Z ??_GC_TEBeamPoints@@UAEPAXI@Z
 0x100334d0 func   ??1C_TEBeamPoints@@UAE@XZ C_TEBeamPoints::~C_TEBeamPoints
 0x100334d0 func   ?sub_100334d0@CUnknown100334d0@@QAEHXZ CUnknown100334d0::sub_100334d0
+0x10033600 func   ?vfunc9@C_TEBeamPoints@@UAEHXZ C_TEBeamPoints::vfunc9
 0x10033620 func   ?sub_10033620@@YAHXZ sub_10033620
 0x100336c0 func   ?sub_100336c0@@YAHXZ sub_100336c0
 0x10033730 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamPoints@@@Z ClientClassInit

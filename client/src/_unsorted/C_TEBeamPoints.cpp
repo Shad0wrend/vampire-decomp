@@ -10,3 +10,14 @@ C_TEBeamPoints *pcd_emit_100334b0() { return new C_TEBeamPoints; }
 
 // TARGET: ??_GC_TEBeamPoints@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10033600 size=0x6
+#include "C_TEBeamPoints.h"
+namespace lifted {
+extern char g_1027d9d4;
+}
+int C_TEBeamPoints::vfunc9()
+{
+    return (int)&lifted::g_1027d9d4;
+}
+// END FUNCTION
