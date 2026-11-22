@@ -8,6 +8,14 @@ void C_BaseGrenade::vfunc149(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f160 size=0x4
+#include "C_BaseGrenade.h"
+int C_BaseGrenade::vfunc152()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f1e0 size=0x1e
 #include "C_BaseGrenade.h"
 
