@@ -38940,6 +38940,17 @@ void sub_101205d0(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120610 size=0x16
+namespace lifted {
+extern int g_104e0c98;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int, int); };
+}
+int sub_10120610(int a0, int a1)
+{
+    return ((lifted::V *)lifted::g_104e0c98)->f3(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120630 size=0x24
 class IPlaceholder10158bc0
 {
