@@ -22,6 +22,17 @@ C_WeaponUnarmed *pcd_emit_1000fc90() { return new C_WeaponUnarmed; }
 // TARGET: ??_GC_WeaponUnarmed@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000fcb0 size=0x6
+#include "C_WeaponUnarmed.h"
+namespace lifted {
+extern char g_10274b78;
+}
+int C_WeaponUnarmed::vfunc16()
+{
+    return (int)&lifted::g_10274b78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000fcc0 size=0x3
 #include "C_WeaponUnarmed.h"
 int C_WeaponUnarmed::vfunc15()
