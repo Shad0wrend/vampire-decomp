@@ -43065,6 +43065,27 @@ void CUnknown101234c0::sub_101234c0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123500 size=0x50
+namespace lifted {
+extern char g_102c25f4;
+extern char g_102c2600;
+int sub_10123300(int, int, int, int, int);
+int sub_101233b0(int, int, int, int);
+}
+struct CUnknown10123500 { void sub_10123500(int, int, int, int); };
+void CUnknown10123500::sub_10123500(int a0, int a1, int a2, int a3)
+{
+    char t0 = *(char *)((char *)this + 0x14);
+    if (t0 != 0) {
+        if (a0 == 0) {
+            int t1 = *(signed short *)((char *)a1);
+            lifted::sub_10123300((int)this, (int)&lifted::g_102c2600, *(signed short *)((char *)a2), t1, t1 - (*(signed short *)((char *)a2)));
+        }
+        lifted::sub_101233b0((int)this, a0, (int)&lifted::g_102c25f4, *(signed short *)((char *)a1));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123710 size=0x42
 namespace lifted {
 extern char g_102c26ec;
