@@ -10,3 +10,11 @@ C_ItemKLeopoldIntKey *pcd_emit_10022b10() { return new C_ItemKLeopoldIntKey; }
 
 // TARGET: ??_GC_ItemKLeopoldIntKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10022b40 size=0x3
+#include "C_ItemKLeopoldIntKey.h"
+int C_ItemKLeopoldIntKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

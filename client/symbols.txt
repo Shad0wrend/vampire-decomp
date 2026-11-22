@@ -849,6 +849,7 @@
 0x100228d0 func   ?sub_100228d0@@YAHXZ sub_100228d0
 0x100229f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLuckyStarMurderKey@@@Z ClientClassInit
 0x10022b10 func   ??_GC_ItemKLeopoldIntKey@@UAEPAXI@Z ??_GC_ItemKLeopoldIntKey@@UAEPAXI@Z
+0x10022b40 func   ?vfunc15@C_ItemKLeopoldIntKey@@UAEHXZ C_ItemKLeopoldIntKey::vfunc15
 0x10022b50 func   ?sub_10022b50@@YAHXZ sub_10022b50
 0x10022c70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLeopoldIntKey@@@Z ClientClassInit
 0x10022d90 func   ??_GC_ItemKMuseumBasementKey@@UAEPAXI@Z ??_GC_ItemKMuseumBasementKey@@UAEPAXI@Z
