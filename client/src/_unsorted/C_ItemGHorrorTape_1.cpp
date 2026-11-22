@@ -22,6 +22,17 @@ C_ItemGHorrorTape_1 *pcd_emit_1001a190() { return new C_ItemGHorrorTape_1; }
 // TARGET: ??_GC_ItemGHorrorTape_1@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001a1b0 size=0x6
+#include "C_ItemGHorrorTape_1.h"
+namespace lifted {
+extern char g_102745cc;
+}
+int C_ItemGHorrorTape_1::vfunc16()
+{
+    return (int)&lifted::g_102745cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a1c0 size=0x3
 #include "C_ItemGHorrorTape_1.h"
 int C_ItemGHorrorTape_1::vfunc15()
