@@ -10,3 +10,11 @@ C_WeaponMelee_Knife *pcd_emit_10008e90() { return new C_WeaponMelee_Knife; }
 
 // TARGET: ??_GC_WeaponMelee_Knife@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10008ec0 size=0x3
+#include "C_WeaponMelee_Knife.h"
+int C_WeaponMelee_Knife::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
