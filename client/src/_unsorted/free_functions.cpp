@@ -7628,6 +7628,29 @@ void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028020 size=0x7d
+namespace lifted {
+extern int g_104a581c;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(int); };
+}
+struct CUnknown10028020 { void sub_10028020(); };
+void CUnknown10028020::sub_10028020()
+{
+    if ((*(int *)((char *)this + 0x1668)) != 0) {
+        int t0 = ((lifted::V *)lifted::g_104a581c)->f14(*(int *)((char *)(*(int *)((char *)this + 0x1668)) + 0x46c));
+        *(int *)((char *)(*(int *)((char *)this + 0x1668)) + 0x46c) = 0;
+        *(int *)((char *)(*(int *)((char *)this + 0x1668)) + 0x418) = 0;
+        *(int *)((char *)this + 0x1668) = 0;
+    }
+    if ((*(int *)((char *)this + 0x166c)) != 0) {
+        int t1 = ((lifted::V *)lifted::g_104a581c)->f14(*(int *)((char *)(*(int *)((char *)this + 0x166c)) + 0x46c));
+        *(int *)((char *)(*(int *)((char *)this + 0x166c)) + 0x46c) = 0;
+        *(int *)((char *)(*(int *)((char *)this + 0x166c)) + 0x418) = 0;
+        *(int *)((char *)this + 0x166c) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100283d0 size=0x6
 namespace lifted {
 extern char g_102ea238;
