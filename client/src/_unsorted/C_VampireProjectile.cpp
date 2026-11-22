@@ -35,6 +35,13 @@ C_VampireProjectile *pcd_emit_10152010() { return new C_VampireProjectile; }
 // TARGET: ??_GC_VampireProjectile@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101520d0 size=0x3
+#include "C_VampireProjectile.h"
+void C_VampireProjectile::vfunc96(int a0, int a1, int a2, int a3)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101520e0 size=0x1
 #include "C_VampireProjectile.h"
 void C_VampireProjectile::vfunc143()
