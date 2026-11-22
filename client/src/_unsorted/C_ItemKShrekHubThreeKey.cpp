@@ -10,3 +10,11 @@ C_ItemKShrekHubThreeKey *pcd_emit_10024e10() { return new C_ItemKShrekHubThreeKe
 
 // TARGET: ??_GC_ItemKShrekHubThreeKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10024e40 size=0x3
+#include "C_ItemKShrekHubThreeKey.h"
+int C_ItemKShrekHubThreeKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
