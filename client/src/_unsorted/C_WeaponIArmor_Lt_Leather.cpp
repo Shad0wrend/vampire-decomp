@@ -10,3 +10,11 @@ C_WeaponIArmor_Lt_Leather *pcd_emit_10015910() { return new C_WeaponIArmor_Lt_Le
 
 // TARGET: ??_GC_WeaponIArmor_Lt_Leather@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10015940 size=0x3
+#include "C_WeaponIArmor_Lt_Leather.h"
+int C_WeaponIArmor_Lt_Leather::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
