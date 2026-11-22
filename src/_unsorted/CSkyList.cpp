@@ -12,12 +12,9 @@ void sub_1018a450(void)
 // FUNCTION: 0x1018a4b0 size=0x1e
 #include "CSkyList.h"
 
-// TARGET: CSkyList::vfunc8
-CAutoGameSystem *CSkyList::vfunc8(unsigned int flags)
-{
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes CSkyList's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSkyList *pcd_emit_1018a4b0() { return new CSkyList; }
+
+// TARGET: ??_GCSkyList@@UAEPAXI@Z
 // END FUNCTION
