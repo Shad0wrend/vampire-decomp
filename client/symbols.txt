@@ -235,6 +235,7 @@
 0x10008ff0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Knife@@@Z ClientClassInit
 0x10009080 func   ?vfunc17@C_WeaponMelee_OccultBlade@@UAEHXZ C_WeaponMelee_OccultBlade::vfunc17
 0x10009110 func   ??_GC_WeaponMelee_OccultBlade@@UAEPAXI@Z ??_GC_WeaponMelee_OccultBlade@@UAEPAXI@Z
+0x10009130 func   ?vfunc16@C_WeaponMelee_OccultBlade@@UAEHXZ C_WeaponMelee_OccultBlade::vfunc16
 0x10009140 func   ?vfunc15@C_WeaponMelee_OccultBlade@@UAEHXZ C_WeaponMelee_OccultBlade::vfunc15
 0x10009150 func   ?sub_10009150@@YAHXZ sub_10009150
 0x10009270 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_OccultBlade@@@Z ClientClassInit
