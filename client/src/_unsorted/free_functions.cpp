@@ -566,6 +566,21 @@ template <> int ClientClassInit<DT_ParticleStorm::ignored>(DT_ParticleStorm::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x10004480 size=0x43
+struct CUnknown10004480 { void sub_10004480(int, char); };
+void CUnknown10004480::sub_10004480(int a0, char a1)
+{
+    *(int *)((char *)this + 0x544) = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x548) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x54c) = *(int *)((char *)a0 + 8);
+    if (a1 != 0) {
+        *(int *)((char *)this + 0x550) = *(int *)((char *)a0);
+        *(int *)((char *)this + 0x554) = *(int *)((char *)a0 + 4);
+        *(int *)((char *)this + 0x558) = *(int *)((char *)a0 + 8);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100044d0 size=0xd
 struct CUnknown100044d0 { char sub_100044d0(char); };
 char CUnknown100044d0::sub_100044d0(char a0)
