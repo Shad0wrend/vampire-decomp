@@ -22,6 +22,17 @@ C_WeaponMelee_Stake *pcd_emit_10009390() { return new C_WeaponMelee_Stake; }
 // TARGET: ??_GC_WeaponMelee_Stake@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100093b0 size=0x6
+#include "C_WeaponMelee_Stake.h"
+namespace lifted {
+extern char g_1027502c;
+}
+int C_WeaponMelee_Stake::vfunc16()
+{
+    return (int)&lifted::g_1027502c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100093c0 size=0x3
 #include "C_WeaponMelee_Stake.h"
 int C_WeaponMelee_Stake::vfunc15()
