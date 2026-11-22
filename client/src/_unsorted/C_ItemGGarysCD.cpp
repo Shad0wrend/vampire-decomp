@@ -10,3 +10,11 @@ C_ItemGGarysCD *pcd_emit_1001f410() { return new C_ItemGGarysCD; }
 
 // TARGET: ??_GC_ItemGGarysCD@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001f440 size=0x3
+#include "C_ItemGGarysCD.h"
+int C_ItemGGarysCD::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
