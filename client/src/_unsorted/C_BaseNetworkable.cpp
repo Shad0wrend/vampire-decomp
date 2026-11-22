@@ -11,6 +11,14 @@ C_BaseNetworkable *pcd_emit_100a38c0() { return new C_BaseNetworkable; }
 // TARGET: ??_GC_BaseNetworkable@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100a3ad0 size=0x4
+#include "C_BaseNetworkable.h"
+unsigned int * C_BaseNetworkable::vfunc1()
+{
+    return (unsigned int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3af0 size=0x3
 #include "C_BaseNetworkable.h"
 ICollideable * C_BaseNetworkable::GetClientCollideable()
