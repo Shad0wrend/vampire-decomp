@@ -25252,6 +25252,20 @@ void sub_1009c7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c950 size=0x12
+namespace lifted {
+extern int g_104a0d50;
+struct C10099bd0 { int sub_10099bd0(); };
+}
+int sub_1009c950()
+{
+    if (lifted::g_104a0d50 == 0) {
+        return 0;
+    }
+    return ((lifted::C10099bd0 *)lifted::g_104a0d50)->sub_10099bd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ce00 size=0x7
 int __stdcall sub_1009ce00(int a0)
 {
