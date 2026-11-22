@@ -10,3 +10,11 @@ C_ItemGMercurioJournal *pcd_emit_1001e290() { return new C_ItemGMercurioJournal;
 
 // TARGET: ??_GC_ItemGMercurioJournal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001e2c0 size=0x3
+#include "C_ItemGMercurioJournal.h"
+int C_ItemGMercurioJournal::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
