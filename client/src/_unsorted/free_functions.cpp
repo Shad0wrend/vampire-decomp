@@ -61259,6 +61259,17 @@ void sub_1016a6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a6b0 size=0xe
+namespace lifted {
+extern int g_104a57fc;
+struct V { virtual void u0(); virtual int f1(int); };
+}
+int sub_1016a6b0()
+{
+    return ((lifted::V *)lifted::g_104a57fc)->f1(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a790 size=0xb
 namespace lifted {
 extern char g_10249e5c;
