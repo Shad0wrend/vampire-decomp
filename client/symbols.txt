@@ -1723,6 +1723,7 @@
 0x100a39d0 func   ?NotifyShouldTransmit@C_BaseNetworkable@@UAEXH@Z C_BaseNetworkable::NotifyShouldTransmit
 0x100a3a40 func   ?OnPreDataChanged@C_BaseNetworkable@@UAEXH@Z C_BaseNetworkable::OnPreDataChanged
 0x100a3a40 func   ?sub_100a3a40@@YGXH@Z sub_100a3a40
+0x100a3a50 func   ?OnDataChanged@C_BaseNetworkable@@UAEXH@Z C_BaseNetworkable::OnDataChanged
 0x100a3a50 func   ?sub_100a3a50@@YGXH@Z sub_100a3a50
 0x100a3a60 func   ?sub_100a3a60@CUnknown100a3a60@@QAEDD@Z CUnknown100a3a60::sub_100a3a60
 0x100a3a70 func   ?sub_100a3a70@CUnknown100a3a70@@QAEDXZ CUnknown100a3a70::sub_100a3a70
