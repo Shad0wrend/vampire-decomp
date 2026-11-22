@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001da80 size=0x6
+#include "C_ItemGWarrClipboard.h"
+namespace lifted {
+extern char g_102737d4;
+}
+int C_ItemGWarrClipboard::vfunc17()
+{
+    return (int)&lifted::g_102737d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001db10 size=0x1e
 #include "C_ItemGWarrClipboard.h"
 
