@@ -1653,6 +1653,7 @@
 0x100030ee func   ?vfunc422@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc422
 0x100030f3 func   _game_ui game_ui
 0x100030f8 func   ?sub_10182c40@CAI_BaseNPC@@QAEXPBD0@Z CAI_BaseNPC::sub_10182c40
+0x100030fd func   ?Save@CEntitySaveRestoreBlockHandler@@UAEXPAVISave@@@Z CEntitySaveRestoreBlockHandler::Save
 0x100030fd func   ?vfunc2@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc2
 0x10003102 func   ?vfunc3@CTEBubbles@@UAEXABVVector@@ABVQAngle@@@Z CTEBubbles::vfunc3
 0x10003107 func   ?sub_10323370@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10323370
