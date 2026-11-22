@@ -45,6 +45,17 @@ int C_BaseViewModel::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fbb0 size=0x6
+#include "C_BaseViewModel.h"
+namespace lifted {
+extern char g_102acd28;
+}
+int C_BaseViewModel::vfunc17()
+{
+    return (int)&lifted::g_102acd28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab500 size=0x3
 #include "C_BaseViewModel.h"
 bool C_BaseViewModel::vfunc142()
