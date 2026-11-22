@@ -2134,7 +2134,6 @@ struct CPartyView
 inline CPartyView *Pv_c7(CBaseEntity *p) { return (CPartyView *)p->m_pA8; }
 struct CSaveDataView { char pad[0x1330]; int m_n1330; };
 struct CGlobalsView { char pad[0x20]; void *pSaveData; };
-typedef CUtlVector<int> CSaveIntVec;
 
 // TARGET: sub_101c7ff0
 int sub_101c7ff0(levellist_t *pLevelList, int maxList, const char *pMapName, const char *pLandmarkName)
@@ -2236,7 +2235,6 @@ int sub_101c7ff0(levellist_t *pLevelList, int maxList, const char *pMapName, con
 					DevMsg(1, "Screened out %s\n", GetClassname(pEntList[j]));
 			}
 		}
-		((CSaveIntVec *)&saveHelper.m_pSections)->~CSaveIntVec();
 	}
 	return count;
 }

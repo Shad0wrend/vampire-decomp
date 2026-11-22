@@ -628,20 +628,12 @@ int CServerGameDLL::vfunc12(int a0)
 // FUNCTION: 0x1011aec0 size=0x85
 #include "CServerGameDLL.h"
 #include "CSave.h"
-#include "CRestore.h"
-
-struct CSaveLocal
-{
-	CSave save;
-	CSaveLocal(void *pData) : save(pData) {}
-	~CSaveLocal() { ((CRestoreVec *)&save.m_pSections)->~CRestoreVec(); }
-};
 
 // TARGET: CServerGameDLL::vfunc13
 void CServerGameDLL::vfunc13(void *pData, int a, int b, int c, int d, int e)
 {
-	CSaveLocal local(pData);
-	local.save.CSave::vfunc3(a, b, c, d, e);
+	CSave save(pData);
+	save.CSave::vfunc3(a, b, c, d, e);
 }
 // END FUNCTION
 
@@ -746,19 +738,12 @@ struct CVProfScopeX
 	}
 };
 
-struct CSaveVecX
-{
-	CUtlVector<int> m_Sections;
-	void Destroy() { m_Sections.~CUtlVector<int>(); }
-};
-
 // TARGET: CServerGameDLL::vfunc18
 int CServerGameDLL::vfunc18(void *pSaveData)
 {
 	CVProfScopeX scope("CServerGameDLL::Save", 0, "Unaccounted");
 	CSave save(pSaveData);
 	g_10592db0->Save(&save);
-	((CSaveVecX *)&save.m_pSections)->Destroy();
 	return 1;
 }
 // END FUNCTION

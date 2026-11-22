@@ -39,10 +39,9 @@ void *sub_1019f7d0(datamap_t *pMap, const char *pName)
 
 // TARGET: ??0CSave@@QAE@PAX@Z
 CSave::CSave(void *pData)
-	: m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0), m_pData(pData),
-	  m_pEntityBlock(pData ? (char *)pData + 0x18 : 0)
+	: m_pData(pData), m_pEntityBlock(pData ? (char *)pData + 0x18 : 0)
 {
-	((CUtlVector<int> *)&m_pSections)->EnsureCapacity(0x20);
+	m_BlockStartStack.EnsureCapacity(0x20);
 }
 // END FUNCTION
 
@@ -66,35 +65,17 @@ int CSave::vfunc38()
 // END FUNCTION
 
 // FUNCTION: 0x1019f980 size=0x68
-extern "C" __declspec(dllimport) void Plat_Free(void *);
-extern int g_104625f4[];
-struct SSave {
-    void *vt;
-    void *m4;
-    int m8;
-    int mc;
-    int m10;
-    void *m14;
-    SSave *sub_1019f980(unsigned char flag);
-};
-// TARGET: SSave::sub_1019f980
-SSave *SSave::sub_1019f980(unsigned char flag)
+#include "CSave.h"
+
+CSave::CSave(void *pData)
+	: m_pData(pData), m_pEntityBlock(pData ? (char *)pData + 0x18 : 0)
 {
-    m10 = 0;
-    if (mc != -1) {
-        if (m4) { Plat_Free(m4); m4 = 0; }
-        m8 = 0;
-    }
-    m14 = m4;
-    if (mc != -1) {
-        if (m4) { Plat_Free(m4); m4 = 0; }
-        m8 = 0;
-    }
-    vt = g_104625f4;
-    if (flag & 1)
-        delete this;
-    return this;
+	m_BlockStartStack.EnsureCapacity(0x20);
 }
+
+// the constructor's unit (a same-unit copy of 0x1019f870): VC6 writes CSave's vtable and its scalar deleting
+// destructor here
+// TARGET: ??_GCSave@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1019fa10 size=0x7
@@ -567,42 +548,11 @@ int CSave::sub_101a0320(int a, int b, CSaveDesc *p)
 
 // FUNCTION: 0x101a0390 size=0xb9
 #include "CSave.h"
-#include "CUtlVector4.h"
-
-extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
-extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
 
 void CSave::vfunc5(const void *p)
 {
 	sub_101a05f0(p, 0);
-	int pos = vfunc0();
-	CUtlVector4 *v = (CUtlVector4 *)((char *)this + 4);
-	int elem = v->m_size;
-	if (1 + v->m_size > v->m_allocationCount && v->m_growSize != -1) {
-		int newSize = v->m_allocationCount + (1 + v->m_size - v->m_allocationCount);
-		while (v->m_allocationCount < newSize) {
-			if (v->m_allocationCount != 0) {
-				if (v->m_growSize != 0)
-					v->m_allocationCount += v->m_growSize;
-				else
-					v->m_allocationCount += v->m_allocationCount;
-			} else {
-				v->m_allocationCount = 8;
-			}
-		}
-		if (v->m_pMemory)
-			v->m_pMemory = (int *)Plat_Realloc(v->m_pMemory, v->m_allocationCount * 4);
-		else
-			v->m_pMemory = (int *)Plat_Alloc(v->m_allocationCount * 4);
-	}
-	v->m_size += 1;
-	v->m_pElements = v->m_pMemory;
-	int numToMove = v->m_size - elem - 1;
-	if (numToMove > 0)
-		memmove(v->m_pMemory + elem + 1, v->m_pMemory + elem, numToMove * 4);
-	int *dst = v->m_pMemory + elem;
-	if (dst)
-		*dst = pos;
+	m_BlockStartStack.AddToTail(vfunc0());
 }
 // END FUNCTION
 
@@ -622,14 +572,13 @@ void CSave::vfunc4()
 
 void CSave::vfunc6()
 {
-    CUtlVector<int> &stack = *(CUtlVector<int> *)((char *)this + 4);
-    int pos = vfunc0();
-    int start = (*(int **)&m_pSections)[stack.Count() - 1];
-    int size = pos - start;
-    stack.Remove(stack.Count() - 1);
-    vfunc1(start - 4);
-    sub_1000643d(&size, 2);
-    vfunc1(pos);
+	int pos = vfunc0();
+	int start = m_BlockStartStack[m_BlockStartStack.Count() - 1];
+	int size = pos - start;
+	m_BlockStartStack.Remove(m_BlockStartStack.Count() - 1);
+	vfunc1(start - 4);
+	sub_1000643d(&size, 2);
+	vfunc1(pos);
 }
 // END FUNCTION
 
