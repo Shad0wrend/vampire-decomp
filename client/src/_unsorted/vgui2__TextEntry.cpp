@@ -85,6 +85,15 @@ void vgui2::TextEntry::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afac0 size=0xd
+#include "vgui2__TextEntry.h"
+int vgui2::TextEntry::vfunc143(int a0)
+{
+    *(int *)((char *)this + 0xac) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1c60 size=0x6
 #include "vgui2__TextEntry.h"
 namespace lifted {
