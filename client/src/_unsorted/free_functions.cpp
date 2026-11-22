@@ -31336,6 +31336,18 @@ void CBaseEntityList::sub_100e21f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2340 size=0x20
+namespace lifted {
+struct C100e24a0 { int sub_100e24a0(int, int, int, int); };
+}
+struct CUnknown100e2340 { int sub_100e2340(int, int, int, int); };
+int CUnknown100e2340::sub_100e2340(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C100e24a0 *)this)->sub_100e24a0(a0, a1, a2, a3);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2590 size=0x1ec
 #include "utlrbtree.h"
 #include "utlvector.h"
