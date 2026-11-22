@@ -14031,6 +14031,7 @@
 0x10012512 func   ?sub_100c5d10@@YA_NPAXHMMPBMAAVVector@@2@Z sub_100c5d10
 0x10012517 func   ?sub_10046930@CUtlRBTree36@@QBEGPBX@Z CUtlRBTree36::sub_10046930
 0x1001251c func   ?sub_103b3c10@@YADXZ sub_103b3c10
+0x10012521 func   ??_GCRecipientFilter@@UAEPAXI@Z ??_GCRecipientFilter@@UAEPAXI@Z
 0x10012521 func   ?sub_1019ce40@TFilterX@@QAEPAU1@E@Z TFilterX::sub_1019ce40
 0x10012526 func   ?sub_1013a030@@YAXPAUV3@@0@Z sub_1013a030
 0x1001252b func   _info_node_chang_ledge info_node_chang_ledge
