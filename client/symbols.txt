@@ -4463,6 +4463,7 @@
 0x10146120 func   ?sub_10146120@CUnknown10146120@@QAEHH@Z CUnknown10146120::sub_10146120
 0x10146140 func   ?sub_10146140@CUnknown10146140@@QAEHH@Z CUnknown10146140::sub_10146140
 0x10146220 func   ?sub_10146220@CUnknown10739194@@QAEHH@Z CUnknown10739194::sub_10146220
+0x10146250 func   ?sub_10146250@CUnknown10146250@@QAEDH@Z CUnknown10146250::sub_10146250
 0x10146270 func   ?sub_10146270@CUnknown101d9840@@QAEPADH@Z CUnknown101d9840::sub_10146270
 0x101462e0 func   ?vfunc16@C_DisciplineProjectile@@UAEHXZ C_DisciplineProjectile::vfunc16
 0x101462f0 func   ?vfunc15@C_DisciplineProjectile@@UAEHXZ C_DisciplineProjectile::vfunc15
