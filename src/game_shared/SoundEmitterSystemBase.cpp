@@ -3,59 +3,14 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101b0200 size=0xa9
-#include "Vector.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
 #include "CSoundEmitterSystemBase.h"
-#include "CUnknown1024b370.h"
-#include "UtlMem.h"
-#include "utlmemory.h"
 
-extern char vt_1047b3c0[];
+// VC6 writes CSoundEmitterSystemBase's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_101b0200(CSoundEmitterSystemBase *p) { p->CSoundEmitterSystemBase::~CSoundEmitterSystemBase(); }
 
-struct CSESTable1b0200 : CUnknown1024b2d0
-{
-	~CSESTable1b0200() { ((CUnknown1024b370 *)this)->sub_1024b370(); }
-};
-
-struct CSESTree1b0200
-{
-	void *m_LessFunc;
-	CUtlMemory<int> m_Elements;
-	int m_Root;
-	int m_NumElements;
-	int m_FirstFree;
-	int m_TotalElements;
-};
-
-struct CSESDict1b0200
-{
-	CSESTree1b0200 m_tree;
-	CSESTable1b0200 m_table;
-};
-
-struct CSESVec1b0200
-{
-	CUtlMemory<int> m_Memory;
-	int m_Size;
-	int *m_pElements;
-	~CSESVec1b0200()
-	{
-		m_Size = 0;
-		((UtlMem *)&m_Memory)->sub_101b2070();
-		m_pElements = m_Memory.Base();
-	}
-};
-
-CSoundEmitterSystemBase *CSoundEmitterSystemBase::sub_101b0200(unsigned char flags)
-{
-	m_vtbl = vt_1047b3c0;
-	((CSESTable1b0200 *)&m_listb0)->~CSESTable1b0200();
-	((CSESVec1b0200 *)&m_i9c)->~CSESVec1b0200();
-	((CSESDict1b0200 *)&m_pfn50)->~CSESDict1b0200();
-	((CSESDict1b0200 *)&m_pfn04)->~CSESDict1b0200();
-	if (flags & 1)
-		delete this;
-	return this;
-}
+// TARGET: ??_GCSoundEmitterSystemBase@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101b2b30 size=0xe8
