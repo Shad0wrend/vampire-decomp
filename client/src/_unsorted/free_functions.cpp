@@ -45709,6 +45709,21 @@ void CUnknown1013a1d0::sub_1013a1d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a3d0 size=0x18
+namespace lifted {
+struct C1013a190 { int sub_1013a190(); };
+int sub_101d12a1(int);
+}
+int sub_1013a3d0()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        return ((lifted::C1013a190 *)t0)->sub_1013a190();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a7d0 size=0x1
 void sub_1013a7d0()
 {
