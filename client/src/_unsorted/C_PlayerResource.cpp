@@ -10,3 +10,22 @@ C_PlayerResource *pcd_emit_100bd330() { return new C_PlayerResource; }
 
 // TARGET: ??_GC_PlayerResource@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100bd4c0 size=0x28
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+class PRView {
+public:
+	V8(a) V8(b) V8(c) V8(d) V8(e) V8(f) V8(g) V8(h) V8(i) V8(j) V8(k) V8(l) V8(m) V8(n) V8(o) V8(p)
+	virtual void z0(); virtual void z1(); virtual void z2(); virtual void z3(); virtual void z4();
+	virtual bool IsConnected(int i);
+	char pad[0x6a4 - 4];
+	int m6a4[1];
+	int sub_100bd4c0(int i);
+};
+int PRView::sub_100bd4c0(int i)
+{
+	if (!IsConnected(i))
+		return 0;
+	return m6a4[i];
+}
+// END FUNCTION
