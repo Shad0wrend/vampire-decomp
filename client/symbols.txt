@@ -1303,6 +1303,7 @@
 0x10024cf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKShrekHubOneKey@@@Z ClientClassInit
 0x10024d80 func   ?vfunc17@C_ItemKShrekHubThreeKey@@UAEHXZ C_ItemKShrekHubThreeKey::vfunc17
 0x10024e10 func   ??_GC_ItemKShrekHubThreeKey@@UAEPAXI@Z ??_GC_ItemKShrekHubThreeKey@@UAEPAXI@Z
+0x10024e30 func   ?vfunc16@C_ItemKShrekHubThreeKey@@UAEHXZ C_ItemKShrekHubThreeKey::vfunc16
 0x10024e40 func   ?vfunc15@C_ItemKShrekHubThreeKey@@UAEHXZ C_ItemKShrekHubThreeKey::vfunc15
 0x10024e50 func   ?sub_10024e50@@YAHXZ sub_10024e50
 0x10024f70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKShrekHubThreeKey@@@Z ClientClassInit

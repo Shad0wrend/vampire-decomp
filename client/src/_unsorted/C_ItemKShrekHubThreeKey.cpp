@@ -22,6 +22,17 @@ C_ItemKShrekHubThreeKey *pcd_emit_10024e10() { return new C_ItemKShrekHubThreeKe
 // TARGET: ??_GC_ItemKShrekHubThreeKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10024e30 size=0x6
+#include "C_ItemKShrekHubThreeKey.h"
+namespace lifted {
+extern char g_10273f80;
+}
+int C_ItemKShrekHubThreeKey::vfunc16()
+{
+    return (int)&lifted::g_10273f80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024e40 size=0x3
 #include "C_ItemKShrekHubThreeKey.h"
 int C_ItemKShrekHubThreeKey::vfunc15()
