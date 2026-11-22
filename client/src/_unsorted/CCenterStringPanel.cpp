@@ -18,3 +18,13 @@ CCenterStringPanel *pcd_emit_10164c30() { return new CCenterStringPanel; }
 
 // TARGET: ??_GCCenterStringPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10164ef0 size=0xc
+#include "CCenterStringPanel.h"
+int CCenterStringPanel::vfunc111()
+{
+    *(char *)((char *)this + 0x5c) = 0;
+    *(int *)((char *)this + 0x460) = 0;
+    return 0;
+}
+// END FUNCTION
