@@ -19704,6 +19704,48 @@ template <> int ClientClassInit<DT_Beam::ignored>(DT_Beam::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100806f0 size=0xe7
+#include "C_Beam.h"
+struct EntInfo { void *m_pEntity; unsigned int m_Serial; int m_unk8; };
+struct EntList { int m_unk0; EntInfo m_Ents[1]; };
+extern EntList *g_102b8e98;
+struct Vector3 { float x, y, z; Vector3() {} ~Vector3() {} };
+bool sub_10192d00(void *pEnt, int nAttach, Vector3 *pOut);
+void sub_10107f80(Vector3 *a, Vector3 *b, Vector3 *c);
+struct BeamView { void sub_1009f8a0(); };
+
+inline void *LookupHandle(unsigned int h)
+{
+	if (h != 0xffffffff)
+	{
+		EntInfo *e = &g_102b8e98->m_Ents[h & 0x1fff];
+		if (e->m_Serial == (h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+
+// TARGET: C_Beam::sub_100806f0
+Vector3 *C_Beam::sub_100806f0()
+{
+	static Vector3 vecStatic;
+	char *self = (char *)this;
+	int type = *(int *)(self + 0x424) & 0xf;
+	if (type != 0 && type != 3)
+	{
+		int n = *(int *)(self + 0x41c);
+		void *pEnt = LookupHandle(*(unsigned int *)(self + 0x424 + n * 4));
+		if (sub_10192d00(pEnt, *(int *)(self + 0x44c + n * 4), &vecStatic))
+			return &vecStatic;
+	}
+	if (!LookupHandle(*(unsigned int *)(self + 0x208)))
+		return (Vector3 *)(self + 0x498);
+	((BeamView *)this)->sub_1009f8a0();
+	sub_10107f80((Vector3 *)(self + 0x498), (Vector3 *)(self + 0x26c), &vecStatic);
+	return &vecStatic;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e00 size=0x5
 int __stdcall sub_10080e00(int a0)
 {
