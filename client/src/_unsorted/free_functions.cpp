@@ -35516,6 +35516,16 @@ int CUnknown101063f0::sub_101063f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106860 size=0x15
+namespace lifted {
+int sub_10166ee0(int, int);
+}
+int __stdcall sub_10106860(int a0, int a1)
+{
+    return lifted::sub_10166ee0(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106b40 size=0x27
 namespace lifted {
 extern int g_104d404c;
