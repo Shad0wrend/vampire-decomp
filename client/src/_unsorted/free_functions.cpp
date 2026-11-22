@@ -33019,6 +33019,17 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0180 size=0x17
+struct CUnknown100f0180 { int sub_100f0180(int); };
+int CUnknown100f0180::sub_100f0180(int a0)
+{
+    if (a0 > (*(int *)((char *)this + 0x130))) {
+        *(int *)((char *)this + 0x130) = a0;
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0510 size=0x29
 namespace lifted {
 extern char g_10234d64;

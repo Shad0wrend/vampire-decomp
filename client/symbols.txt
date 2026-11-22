@@ -3539,6 +3539,7 @@
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
 0x100eff70 func   ?sub_100eff70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100eff70
 0x100f0110 func   ??_GCHudHistoryResource@@UAEPAXI@Z ??_GCHudHistoryResource@@UAEPAXI@Z
+0x100f0180 func   ?sub_100f0180@CUnknown100f0180@@QAEHH@Z CUnknown100f0180::sub_100f0180
 0x100f0430 func   ?sub_100f0430@CHudHistoryResource@@QAE_NXZ CHudHistoryResource::sub_100f0430
 0x100f0460 func   ?vfunc5@CHudHistoryResource@@UAEXH@Z CHudHistoryResource::vfunc5
 0x100f0510 func   ?sub_100f0510@CUnknown100f0510@@QAEPAXH@Z CUnknown100f0510::sub_100f0510
