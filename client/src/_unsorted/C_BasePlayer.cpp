@@ -33,6 +33,13 @@ void C_BasePlayer::vfunc189(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9bd0 size=0x3
+#include "C_BasePlayer.h"
+void C_BasePlayer::vfunc151(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9df0 size=0x1
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc184()
