@@ -21,3 +21,11 @@ int C_TEBubbleTrail::vfunc9()
     return (int)&lifted::g_1027eaac;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10035a40 size=0x3
+#include "C_TEBubbleTrail.h"
+int C_TEBubbleTrail::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
