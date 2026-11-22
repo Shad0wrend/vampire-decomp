@@ -19,6 +19,22 @@ int vgui2::ImagePanel::vfunc108()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c59e0 size=0x40
+#include "vgui2__ImagePanel.h"
+namespace lifted {
+int sub_101ac8d0();
+struct V { virtual int f0(); virtual int f1(int, int); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual int f11(int, int, int, int); };
+}
+void vgui2::ImagePanel::vfunc97()
+{
+    if ((*(int *)((char *)this + 0x58)) != 0) {
+        ((lifted::V *)(lifted::sub_101ac8d0()))->f11(0xff, 0xff, 0xff, 0xff);
+        ((lifted::V *)(*(int *)((char *)this + 0x58)))->f1(0, 0);
+        ((lifted::V *)(*(int *)((char *)this + 0x58)))->f0(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5a20 size=0x27
 #include "vgui2__ImagePanel.h"
 namespace lifted {
