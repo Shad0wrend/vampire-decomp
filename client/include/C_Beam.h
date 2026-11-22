@@ -1,5 +1,5 @@
 // C_Beam: skeleton from the game's RTTI (pcdecomp gdtors)
-// declared: its bases; nothing else yet
+// declared: its bases, the game's vtable slots it adds or fills on the entity chain (vtable-slot layer, 2026-11-22)
 #pragma once
 #include "C_BaseEntity.h"
 
@@ -8,65 +8,16 @@ class C_Beam : public C_BaseEntity
 {
 public:
 	Vector3 *sub_100806f0();
-public:
-	virtual void vfunc62();
-	virtual void vfunc63();
-	virtual void vfunc64();
-	virtual void vfunc65();
-	virtual void vfunc66();
-	virtual void vfunc67();
-	virtual void vfunc68();
-	virtual void vfunc69();
-	virtual void vfunc70();
-	virtual void vfunc71();
-	virtual void vfunc72();
-	virtual void vfunc73();
-	virtual void vfunc74();
-	virtual void vfunc75();
-	virtual void vfunc76();
-	virtual void vfunc77();
-	virtual void vfunc78();
-	virtual void vfunc79();
-	virtual void vfunc80();
-	virtual void vfunc81();
-	virtual void vfunc82();
-	virtual void vfunc83();
-	virtual void vfunc84();
-	virtual void vfunc85();
-	virtual void vfunc86();
-	virtual void vfunc87();
-	virtual void vfunc88();
-	virtual void vfunc89();
-	virtual void vfunc90();
-	virtual void vfunc91();
-	virtual void vfunc92();
-	virtual void vfunc93();
-	virtual void vfunc94();
-	virtual void vfunc95();
-	virtual void vfunc96();
-	virtual void vfunc97();
-	virtual void vfunc98();
-	virtual void vfunc99();
-	virtual void vfunc100();
-	virtual void vfunc101();
-	virtual void vfunc102();
-	virtual void vfunc103();
-	virtual void vfunc104();
-	virtual void vfunc105();
-	virtual void vfunc106();
-	virtual void vfunc107();
-	virtual void vfunc108();
-	virtual void vfunc109();
-	virtual void vfunc110();
-	virtual void vfunc111();
-	virtual void vfunc112();
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	// the base slots the game's vtable fills with C_Beam's own function
+	virtual void vfunc15();
+	virtual void vfunc16();
+	virtual void vfunc19();
+	virtual void vfunc21();
+	virtual void vfunc37();
+	virtual void vfunc56();
 	virtual void vfunc113();
-	virtual void vfunc114();
-	virtual void vfunc115();
-	virtual void vfunc116();
-	virtual void vfunc117();
-	virtual void vfunc118();
-	virtual void vfunc119();
+	// the slots C_Beam adds to its base's vtable: 120-121, vfuncK at slot K
 	virtual void vfunc120();
 	virtual int vfunc121();
 };

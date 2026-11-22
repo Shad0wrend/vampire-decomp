@@ -1,5 +1,5 @@
 // C_BaseNetworkable: skeleton from the game's RTTI (pcdecomp gdtors)
-// declared: its bases, its overrides of IHandleEntity::vfunc0 and IHandleEntity::vfunc1, its destructor, the client entity interfaces' slots it fills (client entity layer, 2026-11-22); nothing else yet
+// declared: its bases, its overrides of IHandleEntity::vfunc0 and IHandleEntity::vfunc1, its destructor, the client entity interfaces' slots it fills (client entity layer, 2026-11-22), the game's vtable slots it adds or fills on the entity chain (vtable-slot layer, 2026-11-22)
 // the destructor is slot 10 of its vtable; its overrides are declared, the other virtual functions before it are not yet
 #pragma once
 #include "IClientUnknown.h"
@@ -32,7 +32,9 @@ public:
 	virtual void SetThinkHandle(void *hThink);	// IClientThinkable slot 2
 	virtual int vfunc0(int a0);	// overrides IHandleEntity::vfunc0, pure there; C_BaseNetworkable has a vtable of its own in the game
 	virtual unsigned int *vfunc1();	// overrides IHandleEntity::vfunc1, pure there; C_BaseNetworkable has a vtable of its own in the game
-	virtual ~C_BaseNetworkable();
-public:
+public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	// the slots C_BaseNetworkable adds to its base's vtable: 8-10, vfuncK at slot K
+	virtual void vfunc8();
 	virtual int vfunc9();
+	virtual ~C_BaseNetworkable();
 };
