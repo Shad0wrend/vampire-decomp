@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10019700 size=0x6
+#include "C_ItemGDriversLicenseGimble.h"
+namespace lifted {
+extern char g_102734e0;
+}
+int C_ItemGDriversLicenseGimble::vfunc17()
+{
+    return (int)&lifted::g_102734e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019790 size=0x1e
 #include "C_ItemGDriversLicenseGimble.h"
 
