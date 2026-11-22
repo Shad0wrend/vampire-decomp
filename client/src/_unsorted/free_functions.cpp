@@ -8034,6 +8034,25 @@ CCameraShot_t *CCameraShotTable::sub_10029450(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029490 size=0x33
+namespace lifted {
+extern char g_100294d0;
+extern char g_102ea3b8;
+extern char g_102ea3c0;
+struct C100295b0 { int sub_100295b0(); };
+int sub_101d0df5(int);
+}
+int sub_10029490()
+{
+    if ((1 & lifted::g_102ea3b8) == 0) {
+        lifted::g_102ea3b8 = (char)(lifted::g_102ea3b8 | 1);
+        ((lifted::C100295b0 *)((int)&lifted::g_102ea3c0))->sub_100295b0();
+        lifted::sub_101d0df5((int)&lifted::g_100294d0);
+    }
+    return (int)&lifted::g_102ea3c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029e70 size=0x36
 // TARGET: sub_10029e70
 struct CLinkElem
