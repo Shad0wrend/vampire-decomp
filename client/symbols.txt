@@ -2209,6 +2209,7 @@
 0x10065540 func   ?vfunc0@CVMainMenuInterface@@UAEXXZ CVMainMenuInterface::vfunc0
 0x10065550 func   ?vfunc1@CVMainMenuInterface@@UAEXXZ CVMainMenuInterface::vfunc1
 0x10065560 func   ?vfunc2@CVMainMenuInterface@@UAEXXZ CVMainMenuInterface::vfunc2
+0x100655f0 func   ?vfunc6@CVMainMenuInterface@@UAE_NXZ CVMainMenuInterface::vfunc6
 0x10065660 func   ?sub_10065660@@YAHXZ sub_10065660
 0x100656a0 func   ?sub_100656a0@@YAXXZ sub_100656a0
 0x10065840 func   ??_GCVMainMenu@@UAEPAXI@Z ??_GCVMainMenu@@UAEPAXI@Z
