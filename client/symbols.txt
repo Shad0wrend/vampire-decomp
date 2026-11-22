@@ -5323,6 +5323,7 @@
 0x101b1f50 func   ?sub_101b1f50@CUnknown101b1f50@@QAEHXZ CUnknown101b1f50::sub_101b1f50
 0x101b1f60 func   ?sub_101b1f60@CUnknown101b1f60@@QAEHXZ CUnknown101b1f60::sub_101b1f60
 0x101b1f70 func   ?sub_101b1f70@CUnknown101b1f70@@QAEHXZ CUnknown101b1f70::sub_101b1f70
+0x101b1f80 func   ?sub_101b1f80@CUnknown101b1f80@@QAEHXZ CUnknown101b1f80::sub_101b1f80
 0x101b2080 func   ??_GLabel@vgui2@@UAEPAXI@Z ??_GLabel@vgui2@@UAEPAXI@Z
 0x101b20a0 func   ??1Label@vgui2@@UAE@XZ vgui2::Label::~Label
 0x101b2390 func   ?vfunc120@Label@vgui2@@UAEFF@Z vgui2::Label::vfunc120
