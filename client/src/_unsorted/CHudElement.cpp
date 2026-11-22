@@ -76,6 +76,15 @@ CHudElement *pcd_emit_100f0550() { return new CHudElement; }
 // TARGET: ??_GCHudElement@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100f0590 size=0xa
+#include "CHudElement.h"
+bool CHudElement::vfunc11(char a0)
+{
+    *(char *)((char *)this + 4) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f05a0 size=0xa
 #include "CHudElement.h"
 int CHudElement::vfunc12(int a0)
