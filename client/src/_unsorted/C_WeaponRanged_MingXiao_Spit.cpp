@@ -22,6 +22,17 @@ C_WeaponRanged_MingXiao_Spit *pcd_emit_1000ca90() { return new C_WeaponRanged_Mi
 // TARGET: ??_GC_WeaponRanged_MingXiao_Spit@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000cab0 size=0x6
+#include "C_WeaponRanged_MingXiao_Spit.h"
+namespace lifted {
+extern char g_10274db0;
+}
+int C_WeaponRanged_MingXiao_Spit::vfunc16()
+{
+    return (int)&lifted::g_10274db0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000cac0 size=0x3
 #include "C_WeaponRanged_MingXiao_Spit.h"
 int C_WeaponRanged_MingXiao_Spit::vfunc15()
