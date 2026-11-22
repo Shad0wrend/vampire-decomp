@@ -22,6 +22,17 @@ C_WeaponRanged *pcd_emit_1000d490() { return new C_WeaponRanged; }
 // TARGET: ??_GC_WeaponRanged@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000d4b0 size=0x6
+#include "C_WeaponRanged.h"
+namespace lifted {
+extern char g_10274d44;
+}
+int C_WeaponRanged::vfunc16()
+{
+    return (int)&lifted::g_10274d44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d4c0 size=0x3
 #include "C_WeaponRanged.h"
 int C_WeaponRanged::vfunc15()
