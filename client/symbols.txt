@@ -5083,6 +5083,7 @@
 0x1018dd90 func   ?sub_1018dd90@@YAHXZ sub_1018dd90
 0x1018e290 func   ?sub_1018e290@CUnknown1018e290@@QAEHXZ CUnknown1018e290::sub_1018e290
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
+0x1018e870 func   ?vfunc20@CViewRender@@UAEHXZ CViewRender::vfunc20
 0x1018f340 func   ?sub_1018f340@@YAHXZ sub_1018f340
 0x1018f350 func   ?sub_1018f350@@YAHXZ sub_1018f350
 0x1018f360 func   ?sub_1018f360@@YAHXZ sub_1018f360
