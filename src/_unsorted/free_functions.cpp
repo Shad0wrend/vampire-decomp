@@ -66476,6 +66476,19 @@ void UtlMem::sub_101b20b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b20f0 size=0xb
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CSoundEmitterSystem.h"
+
+// VC6 writes CSoundEmitterSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSoundEmitterSystem *pcd_emit_101b20f0() { return new CSoundEmitterSystem; }
+
+// CSoundEmitterSystem's CAutoGameSystem vtable (slot 8) holds the this-adjusting thunk (this -= 0xdc) of
+// the deleting destructor; VC6 writes it with the class's vtables
+// TARGET: ??_ECSoundEmitterSystem@@WNM@AEPAXI@Z
+// END FUNCTION
+
 // FUNCTION: 0x101b2100 size=0x4b
 struct SRange101b2100 { int m0; float m4; float m8; };
 const char *sub_101b2170(float v);
