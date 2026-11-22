@@ -10,3 +10,14 @@ C_TESmoke *pcd_emit_1003ee40() { return new C_TESmoke; }
 
 // TARGET: ??_GC_TESmoke@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1003eee0 size=0x6
+#include "C_TESmoke.h"
+namespace lifted {
+extern char g_10281674;
+}
+int C_TESmoke::vfunc9()
+{
+    return (int)&lifted::g_10281674;
+}
+// END FUNCTION
