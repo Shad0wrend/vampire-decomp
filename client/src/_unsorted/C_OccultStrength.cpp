@@ -10,3 +10,11 @@ C_OccultStrength *pcd_emit_10013610() { return new C_OccultStrength; }
 
 // TARGET: ??_GC_OccultStrength@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10013640 size=0x3
+#include "C_OccultStrength.h"
+int C_OccultStrength::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
