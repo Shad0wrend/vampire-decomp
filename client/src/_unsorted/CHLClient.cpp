@@ -244,6 +244,19 @@ int CHLClient::vfunc26()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbeb0 size=0x10
+#include "CHLClient.h"
+namespace lifted {
+struct C10136d90 { int sub_10136d90(); };
+}
+void CHLClient::vfunc28(int a0)
+{
+    if (a0 != 0) {
+        ((lifted::C10136d90 *)a0)->sub_10136d90();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbec0 size=0x6
 #include "CHLClient.h"
 int CHLClient::vfunc29()
