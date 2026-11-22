@@ -10,3 +10,14 @@ C_TEBloodSprite *pcd_emit_100341e0() { return new C_TEBloodSprite; }
 
 // TARGET: ??_GC_TEBloodSprite@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100343b0 size=0x6
+#include "C_TEBloodSprite.h"
+namespace lifted {
+extern char g_1027e0f4;
+}
+int C_TEBloodSprite::vfunc9()
+{
+    return (int)&lifted::g_1027e0f4;
+}
+// END FUNCTION
