@@ -34308,6 +34308,21 @@ void CUnknown10107270::sub_10107270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101073c0 size=0x18
+namespace lifted {
+struct C10107230 { int sub_10107230(); };
+int sub_101d12a1(int);
+}
+int sub_101073c0()
+{
+    int t0 = lifted::sub_101d12a1(8);
+    if (t0 != 0) {
+        return ((lifted::C10107230 *)t0)->sub_10107230();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
