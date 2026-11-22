@@ -48483,6 +48483,19 @@ void CUnknown101d7ec0::sub_10144dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144f20 size=0x17
+struct CUnknown10144f20 { char sub_10144f20(int); };
+char CUnknown10144f20::sub_10144f20(int a0)
+{
+    if (a0 > -1) {
+        if (a0 < (*(int *)this)) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144f40 size=0xb2
 #include "CUnknown101d82d0.h"
 
