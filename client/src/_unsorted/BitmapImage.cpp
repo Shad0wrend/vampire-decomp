@@ -11,6 +11,17 @@ BitmapImage *pcd_emit_101644a0() { return new BitmapImage; }
 // TARGET: ??_GBitmapImage@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10164960 size=0x11
+#include "BitmapImage.h"
+namespace lifted {
+int __stdcall sub_10164900(int, int, int);
+}
+int BitmapImage::vfunc0()
+{
+    return lifted::sub_10164900(*(int *)((char *)this + 0x34), 0, 0x3f800000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164990 size=0xc
 #include "BitmapImage.h"
 int BitmapImage::vfunc8(int a0)
