@@ -10,3 +10,11 @@ C_ItemGIdolCrane *pcd_emit_1001ec90() { return new C_ItemGIdolCrane; }
 
 // TARGET: ??_GC_ItemGIdolCrane@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001ecc0 size=0x3
+#include "C_ItemGIdolCrane.h"
+int C_ItemGIdolCrane::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
