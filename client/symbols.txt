@@ -5326,6 +5326,7 @@
 0x10163d90 func   ?vfunc110@CBasePanel@@UAEXXZ CBasePanel::vfunc110
 0x10163ea0 func   ?vfunc111@CBasePanel@@UAEXH@Z CBasePanel::vfunc111
 0x10164150 func   ?vfunc2@CBasePanel@@UAEXXZ CBasePanel::vfunc2
+0x10164160 func   ?sub_10164160@CUnknown10164160@@QAEPAXHHH@Z CUnknown10164160::sub_10164160
 0x10164190 func   ??_GCHudLabel@@UAEPAXI@Z ??_GCHudLabel@@UAEPAXI@Z
 0x10164270 func   ?vfunc97@CBitmapButton@@UAEXXZ CBitmapButton::vfunc97
 0x10164280 func   ??_GCBitmapButton@@UAEPAXI@Z ??_GCBitmapButton@@UAEPAXI@Z
