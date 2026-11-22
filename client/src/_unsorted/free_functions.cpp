@@ -60572,6 +60572,47 @@ int CUnknown1017d660::sub_1017d660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f1d0 size=0xbf
+#include "CUnknown10203240.h"
+struct CUnknown1017b270 { int sub_1017b270(int); };
+struct PanelV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(int); };
+struct ScoreV {
+	char pad[0x2e0];
+	PanelV *m_pLabel;
+	char pad2[0x434 - 0x2e4];
+	char m_bFlag;
+	int sub_1017dc00();
+	void sub_1017f1d0();
+};
+extern CUnknown10203240 g_105f93c0;
+bool sub_101713e0();
+void sub_1018c8f0(ScoreV *, PanelV **, const char *, const char *, int, int, int, int);
+// TARGET: ScoreV::sub_1017f1d0
+void ScoreV::sub_1017f1d0()
+{
+	if (m_pLabel)
+		m_pLabel->v20(1);
+	m_pLabel = 0;
+	int y = 0;
+	if (sub_101713e0())
+	{
+		y = -32;
+		if (sub_1017dc00() > 0)
+			return;
+	}
+	if (!m_bFlag)
+	{
+		sub_1018c8f0(this, &m_pLabel, "AutoLevelOn", g_105f93c0.sub_1015f2f0("UIMiscStrs")->sub_1015ecd0(20), 800, y + 595, 208, 27);
+		((CUnknown1017b270 *)m_pLabel)->sub_1017b270(24);
+	}
+	else
+	{
+		sub_1018c8f0(this, &m_pLabel, "AutoLevelOff", g_105f93c0.sub_1015f2f0("UIMiscStrs")->sub_1015ecd0(21), 800, y + 595, 208, 27);
+		((CUnknown1017b270 *)m_pLabel)->sub_1017b270(23);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f850 size=0xb
 struct CUnknown1017f850 { void * sub_1017f850(); };
 void * CUnknown1017f850::sub_1017f850()
