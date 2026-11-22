@@ -110,6 +110,14 @@ bool C_BaseEntity::vfunc87()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d3f0 size=0x3
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009dda0 size=0x1e
 #include "C_BaseEntity.h"
 
