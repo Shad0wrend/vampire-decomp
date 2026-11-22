@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10017e00 size=0x6
+#include "C_ItemGGhostPendant.h"
+namespace lifted {
+extern char g_102733c8;
+}
+int C_ItemGGhostPendant::vfunc17()
+{
+    return (int)&lifted::g_102733c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017e90 size=0x1e
 #include "C_ItemGGhostPendant.h"
 
