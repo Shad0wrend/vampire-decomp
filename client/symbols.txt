@@ -193,6 +193,7 @@
 0x10007e70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee@@@Z ClientClassInit
 0x10007f00 func   ?vfunc17@C_WeaponMelee_BaseballBat@@UAEHXZ C_WeaponMelee_BaseballBat::vfunc17
 0x10007f90 func   ??_GC_WeaponMelee_BaseballBat@@UAEPAXI@Z ??_GC_WeaponMelee_BaseballBat@@UAEPAXI@Z
+0x10007fb0 func   ?vfunc16@C_WeaponMelee_BaseballBat@@UAEHXZ C_WeaponMelee_BaseballBat::vfunc16
 0x10007fc0 func   ?vfunc15@C_WeaponMelee_BaseballBat@@UAEHXZ C_WeaponMelee_BaseballBat::vfunc15
 0x10007fd0 func   ?sub_10007fd0@@YAHXZ sub_10007fd0
 0x100080f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_BaseballBat@@@Z ClientClassInit

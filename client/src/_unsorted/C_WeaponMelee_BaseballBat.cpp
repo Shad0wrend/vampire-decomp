@@ -22,6 +22,17 @@ C_WeaponMelee_BaseballBat *pcd_emit_10007f90() { return new C_WeaponMelee_Baseba
 // TARGET: ??_GC_WeaponMelee_BaseballBat@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10007fb0 size=0x6
+#include "C_WeaponMelee_BaseballBat.h"
+namespace lifted {
+extern char g_102750e0;
+}
+int C_WeaponMelee_BaseballBat::vfunc16()
+{
+    return (int)&lifted::g_102750e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007fc0 size=0x3
 #include "C_WeaponMelee_BaseballBat.h"
 int C_WeaponMelee_BaseballBat::vfunc15()
