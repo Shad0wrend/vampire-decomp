@@ -10,3 +10,11 @@ C_ItemKMuriettaKey *pcd_emit_10021210() { return new C_ItemKMuriettaKey; }
 
 // TARGET: ??_GC_ItemKMuriettaKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10021240 size=0x3
+#include "C_ItemKMuriettaKey.h"
+int C_ItemKMuriettaKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
