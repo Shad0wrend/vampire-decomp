@@ -19,3 +19,10 @@ bool CHudHistoryResource::sub_100f0430()
 	return CHudElement::sub_100f05b0() && *(int *)((char *)this + 0x134) != 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f0460 size=0x3
+#include "CHudHistoryResource.h"
+void CHudHistoryResource::vfunc5(int a0)
+{
+}
+// END FUNCTION
