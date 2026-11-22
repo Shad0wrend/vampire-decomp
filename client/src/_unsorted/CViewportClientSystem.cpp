@@ -7,3 +7,10 @@ void CViewportClientSystem::vfunc1()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10166600 size=0x1
+#include "CViewportClientSystem.h"
+void CViewportClientSystem::vfunc2()
+{
+}
+// END FUNCTION
