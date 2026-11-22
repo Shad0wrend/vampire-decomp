@@ -10,3 +10,11 @@ C_ItemKTawniApartmentKey *pcd_emit_10024910() { return new C_ItemKTawniApartment
 
 // TARGET: ??_GC_ItemKTawniApartmentKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10024940 size=0x3
+#include "C_ItemKTawniApartmentKey.h"
+int C_ItemKTawniApartmentKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
