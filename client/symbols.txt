@@ -5414,6 +5414,7 @@
 0x101ab2a0 func   ?vfunc51@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc51
 0x101ab2b0 func   ?vfunc52@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc52
 0x101ab2c0 func   ?vfunc53@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc53
+0x101ab2d0 func   ?sub_101ab2d0@CUnknown101ab2d0@@QAEHXZ CUnknown101ab2d0::sub_101ab2d0
 0x101ab2f0 func   ?vfunc101@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc101
 0x101ab3d0 func   ?vfunc78@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc78
 0x101ab3e0 func   ?vfunc80@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc80
