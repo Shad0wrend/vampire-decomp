@@ -15582,6 +15582,7 @@
 0x10014380 func   ?sub_100737f0@CUnknown100737f0@@QAEDXZ CUnknown100737f0::sub_100737f0
 0x10014385 func   ?vfunc5@CWeaponIThrown@@UAEPAVCBaseEntity@@I@Z CWeaponIThrown::vfunc5
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
+0x1001438f func   ?GetBlockName@CSaveRestoreBlockSet@@UAEPBDXZ CSaveRestoreBlockSet::GetBlockName
 0x1001438f func   ?vfunc0@CSaveRestoreBlockSet@@QAEPADXZ CSaveRestoreBlockSet::vfunc0
 0x10014394 func   ?sub_1035b060@@YAHXZ sub_1035b060
 0x10014399 func   ?sub_101fbd30@CVStatSubCost_t@@QAEPBDXZ CVStatSubCost_t::sub_101fbd30
