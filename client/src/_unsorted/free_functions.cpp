@@ -70852,6 +70852,30 @@ int CUnknown101c9dc0::sub_101c9dc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9df0 size=0x52
+namespace lifted {
+extern char g_10255764;
+struct C101a9530 { int sub_101a9530(int, int); };
+struct C101c9f30 { int sub_101c9f30(); };
+}
+struct CUnknown101c9df0 { void * sub_101c9df0(int, int, char); };
+void * CUnknown101c9df0::sub_101c9df0(int a0, int a1, char a2)
+{
+    ((lifted::C101a9530 *)this)->sub_101a9530(a0, a1);
+    *(int *)this = (int)&lifted::g_10255764;
+    *(char *)((char *)this + 0x58) = a2;
+    *(char *)((char *)this + 0x59) = 0;
+    *(int *)((char *)this + 0x7c) = 0;
+    *(int *)((char *)this + 0x74) = 0;
+    *(int *)((char *)this + 0x78) = 0x12b;
+    *(int *)((char *)this + 0x80) = 0;
+    *(int *)((char *)this + 0x84) = 0;
+    *(int *)((char *)this + 0x88) = 0;
+    ((lifted::C101c9f30 *)this)->sub_101c9f30();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cac70 size=0x8
 struct CUnknown101cac70 { void sub_101cac70(); };
 void CUnknown101cac70::sub_101cac70()
