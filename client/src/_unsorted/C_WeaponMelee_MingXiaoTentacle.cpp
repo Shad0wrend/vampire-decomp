@@ -22,6 +22,17 @@ C_WeaponMelee_MingXiaoTentacle *pcd_emit_1000c590() { return new C_WeaponMelee_M
 // TARGET: ??_GC_WeaponMelee_MingXiaoTentacle@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000c5b0 size=0x6
+#include "C_WeaponMelee_MingXiaoTentacle.h"
+namespace lifted {
+extern char g_10274dec;
+}
+int C_WeaponMelee_MingXiaoTentacle::vfunc16()
+{
+    return (int)&lifted::g_10274dec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000c5c0 size=0x3
 #include "C_WeaponMelee_MingXiaoTentacle.h"
 int C_WeaponMelee_MingXiaoTentacle::vfunc15()
