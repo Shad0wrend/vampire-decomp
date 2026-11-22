@@ -1271,22 +1271,14 @@ void *IServerGameEnts::vfunc0(unsigned char bFree)
 // END FUNCTION
 
 // FUNCTION: 0x1011bd60 size=0x20
-#include "vampire.h"
-extern char g_10462780;
-void sub_10430964(void *p);
-struct CUnk1011bd60
-{
-    void *sub_1011bd60(unsigned char bFree);
-};
-// TARGET: CUnk1011bd60::sub_1011bd60
-void *CUnk1011bd60::sub_1011bd60(unsigned char bFree)
-{
-    *(void **)this = &g_10462780;
-    if (bFree & 1) {
-        sub_10430964(this);
-    }
-    return this;
-}
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameEnts.h"
+
+// VC6 writes CServerGameEnts's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CServerGameEnts *pcd_emit_1011bd60() { return new CServerGameEnts; }
+
+// TARGET: ??_GCServerGameEnts@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bd90 size=0x5
