@@ -10,3 +10,11 @@ C_ItemGRingSilver *pcd_emit_10018610() { return new C_ItemGRingSilver; }
 
 // TARGET: ??_GC_ItemGRingSilver@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10018640 size=0x3
+#include "C_ItemGRingSilver.h"
+int C_ItemGRingSilver::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
