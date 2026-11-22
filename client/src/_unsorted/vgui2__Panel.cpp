@@ -54,6 +54,13 @@ void vgui2::Panel::vfunc83()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa630 size=0x3
+#include "vgui2__Panel.h"
+void vgui2::Panel::vfunc84(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa640 size=0x1
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc85()
