@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000ef80 size=0x6
+#include "C_WeaponRanged_Smg_Uzi.h"
+namespace lifted {
+extern char g_10272d8c;
+}
+int C_WeaponRanged_Smg_Uzi::vfunc17()
+{
+    return (int)&lifted::g_10272d8c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f010 size=0x1e
 #include "C_WeaponRanged_Smg_Uzi.h"
 
