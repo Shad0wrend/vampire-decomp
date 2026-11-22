@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 9506a237f94c; do not edit by hand
+# written by pcdecomp standalone from vtmb e9807663b61f; do not edit by hand
 ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z
 ??0CAI_InterestTarget@@QAE@XZ ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ
 ??0CAI_LocalIdSpace@@QAE@_N@Z ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z
@@ -14569,7 +14569,6 @@ __imp_?Q_stristr@@YAPADPBD0@Z __imp__Q_stristr
 __imp_?Q_strncpy@@YAPADPADPBDH@Z __imp__Q_strncpy
 __imp_?Q_strncpy@@YAXPADPBDH@Z __imp__Q_strncpy
 __imp_?Q_strnicmp@@YAHPBD0H@Z __imp__Q_strnicmp
-__imp_?Q_strstr@@YAPADPBD0@Z __imp_?Q_stristr@@YAPBDPBD0@Z
 __imp_?Q_trimspace@@YAXPBDPADH@Z __imp__Q_trimspace
 __imp_?Warning@@YAXPBDZZ __imp__Warning
 __imp_?vtune@@YAX_N@Z __imp__vtune

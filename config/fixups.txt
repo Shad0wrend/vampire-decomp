@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 9506a237f94c; do not edit by hand
+# written by pcdecomp standalone from vtmb e9807663b61f; do not edit by hand
 b10077f10 localize ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z
 b10140770 localize ?sub_101402b0@CBaseMoveBehavior@@QAEHH@Z
 b10140770 localize ?sub_101402f0@CBaseMoveBehavior@@QAEHH@Z

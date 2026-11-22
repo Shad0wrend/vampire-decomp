@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 9506a237f94c; do not edit by hand
+# written by pcdecomp standalone from vtmb e9807663b61f; do not edit by hand
 089d52a6 ?ResetDbgInfo@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ
 100019d3 ?s_default@?5??Find@CUnknown101ec4f0Set@@QAEPAVCUnknown101ec4f0@@H@Z@$AV2@A
 1000229d ?ops@?1??Ops_109f0a78@@YAPAVISaveRestoreOps@@XZ@$AV?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@A
@@ -60841,7 +60841,6 @@
 109f3848 __imp__Q_strncasecmp
 109f384c ?g_109f384c@@3P6APADPBD0@ZA
 109f384c __imp_?Q_stristr@@YAPBDPBD0@Z
-109f384c __imp_?Q_strstr@@YAPADPBD0@Z
 109f3850 ?g_109f3850@@3P6APADPADPBDH@ZA
 109f3854 ?g_109f3854@@3P6AHPBD0H@ZA
 109f3854 __imp__Q_strncmp
