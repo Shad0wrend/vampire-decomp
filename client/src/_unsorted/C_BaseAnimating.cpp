@@ -32,3 +32,10 @@ void C_BaseAnimating::vfunc124(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10091640 size=0x3
+#include "C_BaseAnimating.h"
+void C_BaseAnimating::vfunc131(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+}
+// END FUNCTION
