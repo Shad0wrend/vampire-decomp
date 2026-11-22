@@ -2922,6 +2922,7 @@
 0x100c9320 func   ?sub_100c9320@@YGDH@Z sub_100c9320
 0x100c9d40 func   ?sub_100c9d40@CUnknown100c9d40@@QAEHXZ CUnknown100c9d40::sub_100c9d40
 0x100ca0b0 func   ?sub_100ca0b0@UtlMem@@QAEXH@Z UtlMem::sub_100ca0b0
+0x100ca210 func   ?vfunc16@C_World@@UAEHXZ C_World::vfunc16
 0x100ca220 func   ?vfunc15@C_World@@UAEHXZ C_World::vfunc15
 0x100ca230 func   ?sub_100ca230@@YAHXZ sub_100ca230
 0x100ca330 func   ?ClientClassInit@@YAHPAUignored@DT_World@@@Z ClientClassInit
