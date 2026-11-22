@@ -3880,6 +3880,7 @@
 0x1010ca00 func   ??_GCSubtractProxy@@UAEPAXI@Z ??_GCSubtractProxy@@UAEPAXI@Z
 0x1010ca20 func   ?vfunc0@CMultiplyProxy@@UAE_NPAX0@Z CMultiplyProxy::vfunc0
 0x1010cbb0 func   ??_GCMultiplyProxy@@UAEPAXI@Z ??_GCMultiplyProxy@@UAEPAXI@Z
+0x1010cbd0 func   ?vfunc0@CDivideProxy@@UAE_NPAX0@Z CDivideProxy::vfunc0
 0x1010cd90 func   ??_GCDivideProxy@@UAEPAXI@Z ??_GCDivideProxy@@UAEPAXI@Z
 0x1010cdb0 func   ?vfunc0@CClampProxy@@UAE_NPAX0@Z CClampProxy::vfunc0
 0x1010cff0 func   ??_GCClampProxy@@UAEPAXI@Z ??_GCClampProxy@@UAEPAXI@Z
