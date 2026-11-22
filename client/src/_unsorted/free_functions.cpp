@@ -10302,6 +10302,29 @@ template <> int ClientClassInit<DT_TEFogRipple::ignored>(DT_TEFogRipple::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x100377e0 size=0x47
+namespace lifted {
+extern char g_102edbfc;
+extern int g_102edc08;
+extern int g_102edc0c;
+extern int g_102edc10;
+extern int g_102edc14;
+extern int g_102edc18;
+extern int g_102edc1c;
+struct C10037350 { int sub_10037350(int); };
+}
+int sub_100377e0(int a0, int a1, int a2, int a3)
+{
+    lifted::g_102edc08 = *(int *)((char *)a2);
+    lifted::g_102edc0c = *(int *)((char *)a2 + 4);
+    lifted::g_102edc10 = *(int *)((char *)a2 + 8);
+    lifted::g_102edc14 = *(int *)((char *)a3);
+    lifted::g_102edc18 = *(int *)((char *)a3 + 4);
+    lifted::g_102edc1c = *(int *)((char *)a3 + 8);
+    return ((lifted::C10037350 *)((int)&lifted::g_102edbfc))->sub_10037350(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037850 size=0x6
 namespace lifted {
 extern char g_102ede9c;
