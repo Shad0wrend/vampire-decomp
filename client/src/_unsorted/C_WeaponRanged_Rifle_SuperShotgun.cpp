@@ -10,3 +10,11 @@ C_WeaponRanged_Rifle_SuperShotgun *pcd_emit_1000ed90() { return new C_WeaponRang
 
 // TARGET: ??_GC_WeaponRanged_Rifle_SuperShotgun@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000edc0 size=0x3
+#include "C_WeaponRanged_Rifle_SuperShotgun.h"
+int C_WeaponRanged_Rifle_SuperShotgun::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
