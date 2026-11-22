@@ -10,3 +10,14 @@ C_TEDecal *pcd_emit_10035cd0() { return new C_TEDecal; }
 
 // TARGET: ??_GC_TEDecal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10035e70 size=0x6
+#include "C_TEDecal.h"
+namespace lifted {
+extern char g_1027ec44;
+}
+int C_TEDecal::vfunc9()
+{
+    return (int)&lifted::g_1027ec44;
+}
+// END FUNCTION
