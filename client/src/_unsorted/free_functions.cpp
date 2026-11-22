@@ -33215,6 +33215,22 @@ void Ray_t::sub_100e91e0(const Vector &start, const float *pEnd, const float *pM
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9e40 size=0x26
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+struct CUnknown100e9e40 { void * sub_100e9e40(int); };
+void * CUnknown100e9e40::sub_100e9e40(int a0)
+{
+    if (a0 != 0) {
+        *(int *)this = *(int *)((char *)(((lifted::V *)a0)->f1()));
+        return this;
+    }
+    *(int *)this = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea250 size=0x1
 void sub_100ea250()
 {
