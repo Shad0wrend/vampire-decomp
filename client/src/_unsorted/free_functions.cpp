@@ -42905,6 +42905,19 @@ void CSoundEmitterSystemBase::sub_1012e0e0(const char *pszScript, UtlMem2 *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e510 size=0x17
+struct CUnknown1012e510 { char sub_1012e510(int); };
+char CUnknown1012e510::sub_1012e510(int a0)
+{
+    if (a0 >= 0) {
+        if (a0 < (*(int *)((char *)this + 0x64))) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e530 size=0x38
 #include "CSoundEmitterSystemBase.h"
 
