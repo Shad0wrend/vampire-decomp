@@ -22,6 +22,17 @@ C_ItemGDrugsDrugBox *pcd_emit_10017490() { return new C_ItemGDrugsDrugBox; }
 // TARGET: ??_GC_ItemGDrugsDrugBox@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100174b0 size=0x6
+#include "C_ItemGDrugsDrugBox.h"
+namespace lifted {
+extern char g_1027473c;
+}
+int C_ItemGDrugsDrugBox::vfunc16()
+{
+    return (int)&lifted::g_1027473c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100174c0 size=0x3
 #include "C_ItemGDrugsDrugBox.h"
 int C_ItemGDrugsDrugBox::vfunc15()
