@@ -10,3 +10,11 @@ vgui2::EditablePanel *pcd_emit_101b46c0() { return new vgui2::EditablePanel; }
 
 // TARGET: ??_GEditablePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101b4e70 size=0x4
+#include "vgui2__EditablePanel.h"
+int vgui2::EditablePanel::vfunc109()
+{
+    return *(int *)((char *)this + 0x58);
+}
+// END FUNCTION
