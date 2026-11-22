@@ -4825,6 +4825,7 @@
 0x10165240 func   ??_GCConnectMessagePanel@@UAEPAXI@Z ??_GCConnectMessagePanel@@UAEPAXI@Z
 0x10165260 func   ??1CConnectMessagePanel@@UAE@XZ CConnectMessagePanel::~CConnectMessagePanel
 0x10165260 func   ?sub_10165260@CUnknown10165260@@QAEHXZ CUnknown10165260::sub_10165260
+0x10165690 func   ?vfunc1@CConsole@@UAEXXZ CConsole::vfunc1
 0x10165730 func   ??_GCDebugOverlay@@UAEPAXI@Z ??_GCDebugOverlay@@UAEPAXI@Z
 0x10165750 func   ??1CDebugOverlay@@UAE@XZ CDebugOverlay::~CDebugOverlay
 0x10165750 func   ?sub_10165750@CUnknown10165750@@QAEHXZ CUnknown10165750::sub_10165750
