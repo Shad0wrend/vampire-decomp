@@ -1551,6 +1551,7 @@
 0x10032ba0 func   ?sub_10032ba0@@YAHXZ sub_10032ba0
 0x10032c40 func   ?sub_10032c40@@YAHXZ sub_10032c40
 0x10032cb0 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamEntPoint@@@Z ClientClassInit
+0x10032da0 func   ?sub_10032da0@CUnknown10032da0@@QAEPAXXZ CUnknown10032da0::sub_10032da0
 0x10032dd0 func   ??_GC_TEBeamEnts@@UAEPAXI@Z ??_GC_TEBeamEnts@@UAEPAXI@Z
 0x10032df0 func   ??1C_TEBeamEnts@@UAE@XZ C_TEBeamEnts::~C_TEBeamEnts
 0x10032df0 func   ?sub_10032df0@CUnknown10032df0@@QAEHXZ CUnknown10032df0::sub_10032df0
