@@ -3319,6 +3319,7 @@
 0x100dfb60 func   ?sub_100dfb60@@YAXXZ sub_100dfb60
 0x100dfb70 func   ?sub_100dfb70@@YAXXZ sub_100dfb70
 0x100dfc40 func   ?sub_100dfc40@@YAHH@Z sub_100dfc40
+0x100dfc60 func   ?sub_100dfc60@@YAHHHHHHHH@Z sub_100dfc60
 0x100dfdf0 func   ?sub_100dfdf0@@YAHXZ sub_100dfdf0
 0x100dfe50 func   ??1CBaseStaticModel@@UAE@XZ CBaseStaticModel::~CBaseStaticModel
 0x100dff10 func   ?GetRenderOrigin@CBaseStaticModel@@UAEABVVector@@XZ CBaseStaticModel::GetRenderOrigin
