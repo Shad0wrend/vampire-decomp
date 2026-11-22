@@ -17,3 +17,10 @@ void C_TEImpact::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039f30 size=0x3
+#include "C_TEImpact.h"
+void C_TEImpact::vfunc16(int a0)
+{
+}
+// END FUNCTION
