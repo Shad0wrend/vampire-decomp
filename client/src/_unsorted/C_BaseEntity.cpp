@@ -55,6 +55,17 @@ C_BaseEntity * C_BaseEntity::GetBaseEntity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001600 size=0xb
+#include "C_BaseEntity.h"
+IClientThinkable * C_BaseEntity::GetClientThinkable()
+{
+    if (((int)this) != 0) {
+        return (IClientThinkable *)((char *)this + 0x10);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001610 size=0x5
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc25(int a0)
