@@ -10,3 +10,10 @@ C_TEImpact *pcd_emit_10039ed0() { return new C_TEImpact; }
 
 // TARGET: ??_GC_TEImpact@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10039f10 size=0x1
+#include "C_TEImpact.h"
+void C_TEImpact::vfunc13()
+{
+}
+// END FUNCTION
