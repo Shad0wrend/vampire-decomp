@@ -29634,6 +29634,16 @@ void CUtlLinkedList8::sub_100d1190(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1220 size=0x11
+int sub_100d1220(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)a1);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1240 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
