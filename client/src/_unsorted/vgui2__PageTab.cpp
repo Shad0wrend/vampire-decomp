@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c82b0 size=0x24
+#include "vgui2__PageTab.h"
+int vgui2::PageTab::vfunc156(int a0)
+{
+    if ((*(char *)((char *)this + 0xf0)) != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)this + 0xf1);
+        return a0;
+    }
+    *(int *)((char *)a0) = *(int *)((char *)this + 0xf5);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c82e0 size=0x24
 #include "vgui2__PageTab.h"
 namespace lifted {
