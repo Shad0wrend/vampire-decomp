@@ -10,3 +10,12 @@ BitmapImage *pcd_emit_101644a0() { return new BitmapImage; }
 
 // TARGET: ??_GBitmapImage@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10164990 size=0xc
+#include "BitmapImage.h"
+int BitmapImage::vfunc8(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x20);
+    return a0;
+}
+// END FUNCTION
