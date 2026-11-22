@@ -12873,6 +12873,22 @@ int sub_100561f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056f00 size=0x28
+namespace lifted {
+extern char g_102864ec;
+extern char g_10286500;
+int sub_1004ba40(int, int);
+int __stdcall sub_10056550(int);
+}
+int __stdcall sub_10056f00(int a0)
+{
+    if (a0 != 0x4d) {
+        return lifted::sub_1004ba40((int)&lifted::g_10286500, lifted::sub_10056550(a0));
+    }
+    return (int)&lifted::g_102864ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057470 size=0x72
 struct Elem { char data[0x88]; };
 struct Mem {
