@@ -5789,6 +5789,7 @@
 0x101c55d0 func   ?vfunc101@AnimatingImagePanel@vgui2@@UAEXXZ vgui2::AnimatingImagePanel::vfunc101
 0x101c5890 func   ?vfunc77@AnimatingImagePanel@vgui2@@UAEHXZ vgui2::AnimatingImagePanel::vfunc77
 0x101c5910 func   ?vfunc102@AnimatingImagePanel@vgui2@@UAEHXZ vgui2::AnimatingImagePanel::vfunc102
+0x101c5920 func   ?sub_101c5920@CUnknown101c5920@@QAEPAXHH@Z CUnknown101c5920::sub_101c5920
 0x101c5950 func   ??_GImagePanel@vgui2@@UAEPAXI@Z ??_GImagePanel@vgui2@@UAEPAXI@Z
 0x101c5970 func   ??1ImagePanel@vgui2@@UAE@XZ vgui2::ImagePanel::~ImagePanel
 0x101c59d0 func   ?vfunc108@ImagePanel@vgui2@@UAEHXZ vgui2::ImagePanel::vfunc108
