@@ -10,3 +10,11 @@ C_WeaponMelee_FireAxe *pcd_emit_10008990() { return new C_WeaponMelee_FireAxe; }
 
 // TARGET: ??_GC_WeaponMelee_FireAxe@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100089c0 size=0x3
+#include "C_WeaponMelee_FireAxe.h"
+int C_WeaponMelee_FireAxe::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
