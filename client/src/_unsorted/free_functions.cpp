@@ -29243,6 +29243,30 @@ char * CUnknown100bf150::sub_100bf150(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf6b0 size=0x4b
+namespace lifted {
+struct C100bf1a0 { int sub_100bf1a0(); };
+struct C100bfa80 { int sub_100bfa80(); };
+struct C100c04d0 { bool sub_100c04d0(); };
+}
+struct CUnknown100bf6b0 { int sub_100bf6b0(int, int); };
+int CUnknown100bf6b0::sub_100bf6b0(int a0, int a1)
+{
+    bool t0 = ((lifted::C100c04d0 *)((char *)this + -4))->sub_100c04d0();
+    if (t0 == 0) {
+        return 0;
+    }
+    if ((*(char *)((char *)this + 0xdc)) == 0) {
+        return 0;
+    }
+    if (((*(char *)((char *)this + 0x448)) & 1) != 0) {
+        ((lifted::C100bf1a0 *)((char *)this + -4))->sub_100bf1a0();
+    }
+    ((lifted::C100bfa80 *)((char *)this + -4))->sub_100bfa80();
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf700 size=0xd
 struct CUnknown100bf700 { int sub_100bf700(); };
 int CUnknown100bf700::sub_100bf700()
