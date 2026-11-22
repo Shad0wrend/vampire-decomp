@@ -22,6 +22,17 @@ C_ItemGHattersScreenplay *pcd_emit_1001d610() { return new C_ItemGHattersScreenp
 // TARGET: ??_GC_ItemGHattersScreenplay@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001d630 size=0x6
+#include "C_ItemGHattersScreenplay.h"
+namespace lifted {
+extern char g_102743e4;
+}
+int C_ItemGHattersScreenplay::vfunc16()
+{
+    return (int)&lifted::g_102743e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d640 size=0x3
 #include "C_ItemGHattersScreenplay.h"
 int C_ItemGHattersScreenplay::vfunc15()
