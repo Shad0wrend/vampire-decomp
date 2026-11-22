@@ -5221,6 +5221,7 @@
 0x10178720 func   ?sub_10178720@CUnknown10178720@@QAEHH@Z CUnknown10178720::sub_10178720
 0x10178830 func   ??1CharEditEquipPanel@@UAE@XZ CharEditEquipPanel::~CharEditEquipPanel
 0x10178850 func   ??_GCharEditEquipPanel@@UAEPAXI@Z ??_GCharEditEquipPanel@@UAEPAXI@Z
+0x10179840 func   ?sub_10179840@@YAXXZ sub_10179840
 0x1017a690 func   ?vfunc124@CharEditEquipPanel@@UAEXH@Z CharEditEquipPanel::vfunc124
 0x1017a7b0 func   ?vfunc102@CharEditEquipPanel@@UAEHXZ CharEditEquipPanel::vfunc102
 0x1017a7c0 func   ?sub_1017a7c0@@YGXH@Z sub_1017a7c0
