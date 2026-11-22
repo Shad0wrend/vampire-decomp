@@ -11801,21 +11801,13 @@ CAI_Pathfinder *CAI_BaseNPC::vfunc430()
 // END FUNCTION
 
 // FUNCTION: 0x1027d000 size=0x20
-extern int g_1049a0f8;
+#include "CAI_Pathfinder.h"
 
-struct Helper
-{
-	void* sub_1027d000(unsigned char flags);
-};
+// VC6 writes CAI_Pathfinder's scalar deleting destructor where it emits the class's vtable; `new` (its inline
+// constructor) in a function nothing calls makes it emit both here
+CAI_Pathfinder *pcd_emit_1027d000() { return new CAI_Pathfinder(0); }
 
-// TARGET: Helper::sub_1027d000
-void* Helper::sub_1027d000(unsigned char flags)
-{
-	*(void**)this = &g_1049a0f8;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCAI_Pathfinder@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1027d030 size=0x43
