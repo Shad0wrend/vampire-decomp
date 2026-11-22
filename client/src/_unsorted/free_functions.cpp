@@ -56305,6 +56305,35 @@ TList *TList::sub_1015ab20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015abf0 size=0xbb
+#include "ScopeTrace.h"
+struct VElem { void sub_1015a1b0(); };
+struct VList {
+	int m_a;
+	int m_nCount;
+	VElem **m_pData;
+	void sub_1015abf0();
+};
+void VList::sub_1015abf0()
+{
+	ScopeTrace trace("CVStatActionList_t::Clean", g_102de300);
+	if (m_pData) {
+		for (int i = 0; i < m_nCount; i++) {
+			VElem *p = m_pData[i];
+			if (p) {
+				p->sub_1015a1b0();
+				delete p;
+			}
+			m_pData[i] = 0;
+		}
+		delete[] m_pData;
+		m_pData = 0;
+	}
+	m_nCount = 0;
+	m_a = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015b050 size=0xf5
 #include "CVStatInfo_t.h"
 #include "CVStatCost_t.h"
