@@ -25441,6 +25441,17 @@ int sub_100a2900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2910 size=0x14
+namespace lifted {
+extern int g_104a5818;
+struct V { virtual int f0(int, int); };
+}
+int __stdcall sub_100a2910(int a0)
+{
+    return ((lifted::V *)lifted::g_104a5818)->f0(a0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a29a0 size=0x7
 struct CUnknown100a29a0 { char sub_100a29a0(); };
 char CUnknown100a29a0::sub_100a29a0()
