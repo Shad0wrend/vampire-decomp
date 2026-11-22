@@ -22,6 +22,17 @@ C_ItemGMilligansBuisnesscard *pcd_emit_1001bf90() { return new C_ItemGMilligansB
 // TARGET: ??_GC_ItemGMilligansBuisnesscard@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001bfb0 size=0x6
+#include "C_ItemGMilligansBuisnesscard.h"
+namespace lifted {
+extern char g_102744b0;
+}
+int C_ItemGMilligansBuisnesscard::vfunc16()
+{
+    return (int)&lifted::g_102744b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001bfc0 size=0x3
 #include "C_ItemGMilligansBuisnesscard.h"
 int C_ItemGMilligansBuisnesscard::vfunc15()
