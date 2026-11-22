@@ -359,6 +359,23 @@ int vgui2::TextEntry::vfunc77()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1840 size=0x29
+#include "vgui2__TextEntry.h"
+namespace lifted {
+int sub_101ab3e0();
+}
+void vgui2::TextEntry::vfunc80()
+{
+    if ((*(char *)((char *)this + 0x118)) != 0) {
+        *(int *)((char *)this + 0x9c) = 0;
+        *(int *)((char *)this + 0xa0) = *(int *)((char *)this + 0x58);
+        *(int *)((char *)this + 0x70) = *(int *)((char *)this + 0x58);
+        *(char *)((char *)this + 0x118) = 0;
+    }
+    lifted::sub_101ab3e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1a20 size=0x1e
 #include "vgui2__TextEntry.h"
 int vgui2::TextEntry::vfunc151(int a0, int a1)
