@@ -1483,6 +1483,7 @@
 0x1002ebc0 func   ?sub_1002ebc0@@YAXXZ sub_1002ebc0
 0x1002f460 func   ??_GCDustParticle@@UAEPAXI@Z ??_GCDustParticle@@UAEPAXI@Z
 0x1002f6c0 func   ?ClientClassInit@@YAHPAUignored@DT_SmokeStackLightInfo@@@Z ClientClassInit
+0x1002f780 func   ?vfunc16@C_SmokeStack@@UAEHXZ C_SmokeStack::vfunc16
 0x1002f790 func   ?vfunc15@C_SmokeStack@@UAEHXZ C_SmokeStack::vfunc15
 0x1002f7a0 func   ?sub_1002f7a0@@YAHXZ sub_1002f7a0
 0x1002f8a0 func   ?ClientClassInit@@YAHPAUignored@DT_SmokeStack@@@Z ClientClassInit
