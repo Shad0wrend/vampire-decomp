@@ -317,6 +317,7 @@
 0x1000b1c0 func   ?vfunc15@C_WeaponMelee_AVampBlade@@UAEHXZ C_WeaponMelee_AVampBlade::vfunc15
 0x1000b1d0 func   ?sub_1000b1d0@@YAHXZ sub_1000b1d0
 0x1000b2f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_AVampBlade@@@Z ClientClassInit
+0x1000b380 func   ?vfunc17@C_WeaponMelee_Tzimisce2Claw@@UAEHXZ C_WeaponMelee_Tzimisce2Claw::vfunc17
 0x1000b410 func   ??_GC_WeaponMelee_Tzimisce2Claw@@UAEPAXI@Z ??_GC_WeaponMelee_Tzimisce2Claw@@UAEPAXI@Z
 0x1000b440 func   ?vfunc15@C_WeaponMelee_Tzimisce2Claw@@UAEHXZ C_WeaponMelee_Tzimisce2Claw::vfunc15
 0x1000b450 func   ?sub_1000b450@@YAHXZ sub_1000b450
