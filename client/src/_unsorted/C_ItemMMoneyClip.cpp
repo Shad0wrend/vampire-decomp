@@ -10,3 +10,11 @@ C_ItemMMoneyClip *pcd_emit_10010410() { return new C_ItemMMoneyClip; }
 
 // TARGET: ??_GC_ItemMMoneyClip@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10010440 size=0x3
+#include "C_ItemMMoneyClip.h"
+int C_ItemMMoneyClip::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
