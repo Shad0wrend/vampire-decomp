@@ -1823,6 +1823,7 @@
 0x1003f140 func   ??1C_TESparks@@UAE@XZ C_TESparks::~C_TESparks
 0x1003f140 func   ?sub_1003f140@CUnknown1003f140@@QAEHXZ CUnknown1003f140::sub_1003f140
 0x1003f160 func   ?vfunc13@C_TESparks@@UAEXXZ C_TESparks::vfunc13
+0x1003f1a0 func   ?sub_1003f1a0@@YAHHHHHHH@Z sub_1003f1a0
 0x1003f1c0 func   ?vfunc9@C_TESparks@@UAEHXZ C_TESparks::vfunc9
 0x1003f1d0 func   ?vfunc8@C_TESparks@@UAEHXZ C_TESparks::vfunc8
 0x1003f1e0 func   ?sub_1003f1e0@@YAHXZ sub_1003f1e0
