@@ -28734,6 +28734,18 @@ int CUnknown100c9330::sub_100c9330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9360 size=0x37
+struct CUnknown100c9360 { int sub_100c9360(int); };
+int CUnknown100c9360::sub_100c9360(int a0)
+{
+    *(int *)((char *)this + 0x438) = *(int *)((char *)this + 0x424);
+    *(int *)((char *)this + 0x424) = a0;
+    *(int *)((char *)this + 0x428) = ((*(int *)((char *)this + 0x438)) ^ a0) & a0;
+    *(int *)((char *)this + 0x42c) = (~a0) & ((*(int *)((char *)this + 0x438)) ^ a0);
+    return (~a0) & ((*(int *)((char *)this + 0x438)) ^ a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c93a0 size=0x1b
 namespace lifted {
 extern int g_102b848c;
