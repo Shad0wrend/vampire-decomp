@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100cb590 size=0x10
+#include "CHLClient.h"
+namespace lifted {
+int sub_10192880(int);
+}
+int CHLClient::vfunc41(int a0)
+{
+    return lifted::sub_10192880(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbad0 size=0xf
 #include "CHLClient.h"
 namespace lifted {
