@@ -6214,6 +6214,7 @@
 0x101c0030 func   ?vfunc127@Menu@vgui2@@UAEHH@Z vgui2::Menu::vfunc127
 0x101c0750 func   ?vfunc129@Menu@vgui2@@UAEHXZ vgui2::Menu::vfunc129
 0x101c0760 func   ?sub_101c0760@CUnknown101c0760@@QAEHXZ CUnknown101c0760::sub_101c0760
+0x101c0820 func   ?vfunc133@Menu@vgui2@@UAEHXZ vgui2::Menu::vfunc133
 0x101c0860 func   ?vfunc135@Menu@vgui2@@UAEHXZ vgui2::Menu::vfunc135
 0x101c0880 func   ?vfunc84@Menu@vgui2@@UAEXHH@Z vgui2::Menu::vfunc84
 0x101c0990 func   ?sub_101c0990@MV@@QAEXH@Z MV::sub_101c0990
