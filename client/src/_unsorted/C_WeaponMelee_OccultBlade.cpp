@@ -10,3 +10,11 @@ C_WeaponMelee_OccultBlade *pcd_emit_10009110() { return new C_WeaponMelee_Occult
 
 // TARGET: ??_GC_WeaponMelee_OccultBlade@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10009140 size=0x3
+#include "C_WeaponMelee_OccultBlade.h"
+int C_WeaponMelee_OccultBlade::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
