@@ -3109,6 +3109,7 @@
 0x100cd0d0 func   ?sub_100cd0d0@@YAHXZ sub_100cd0d0
 0x100cd0f0 func   ?sub_100cd0f0@@YAHXZ sub_100cd0f0
 0x100cd100 func   ?sub_100cd100@@YAHXZ sub_100cd100
+0x100cd110 func   ?sub_100cd110@@YAHXZ sub_100cd110
 0x100cd130 func   ?sub_100cd130@@YAHXZ sub_100cd130
 0x100cd290 func   ?sub_100cd290@CUnknown100cd290@@QAEPAXXZ CUnknown100cd290::sub_100cd290
 0x100cd330 func   ?sub_100cd330@@YAMABVVector@@MM@Z sub_100cd330
