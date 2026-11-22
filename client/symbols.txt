@@ -3066,6 +3066,7 @@
 0x100c9310 func   ?sub_100c9310@CUnknown100c9310@@QAEHXZ CUnknown100c9310::sub_100c9310
 0x100c9320 func   ?sub_100c9320@@YGDH@Z sub_100c9320
 0x100c9330 func   ?sub_100c9330@CUnknown100c9330@@QAEHXZ CUnknown100c9330::sub_100c9330
+0x100c93a0 func   ?sub_100c93a0@CUnknown100c93a0@@QAEHXZ CUnknown100c93a0::sub_100c93a0
 0x100c9d40 func   ?sub_100c9d40@CUnknown100c9d40@@QAEHXZ CUnknown100c9d40::sub_100c9d40
 0x100ca0b0 func   ?sub_100ca0b0@UtlMem@@QAEXH@Z UtlMem::sub_100ca0b0
 0x100ca210 func   ?vfunc16@C_World@@UAEHXZ C_World::vfunc16
