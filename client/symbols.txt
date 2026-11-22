@@ -5238,6 +5238,7 @@
 0x10193280 func   ?sub_10193280@@YADXZ sub_10193280
 0x10193290 func   ?sub_10193290@CUnknown10193290@@QAEHXZ CUnknown10193290::sub_10193290
 0x101932a0 func   ?sub_101932a0@@YAHXZ sub_101932a0
+0x101932b0 func   ?sub_101932b0@CUnknown101932b0@@QAEHHH@Z CUnknown101932b0::sub_101932b0
 0x10193320 func   ??_GCViewRenderBeams@@UAEPAXI@Z ??_GCViewRenderBeams@@UAEPAXI@Z
 0x10193340 func   ??1CViewRenderBeams@@UAE@XZ CViewRenderBeams::~CViewRenderBeams
 0x10193340 func   ?sub_10193340@CUnknown10193340@@QAEXXZ CUnknown10193340::sub_10193340
