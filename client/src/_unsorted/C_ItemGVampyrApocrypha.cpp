@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001ab00 size=0x6
+#include "C_ItemGVampyrApocrypha.h"
+namespace lifted {
+extern char g_102735c0;
+}
+int C_ItemGVampyrApocrypha::vfunc17()
+{
+    return (int)&lifted::g_102735c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ab90 size=0x1e
 #include "C_ItemGVampyrApocrypha.h"
 
