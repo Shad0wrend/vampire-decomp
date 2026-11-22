@@ -9,6 +9,14 @@ float CInput::vfunc50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a1f0 size=0x7
+#include "CInput.h"
+float CInput::vfunc51()
+{
+    return *(float *)((char *)this + 0xfc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff9d0 size=0x1
 #include "CInput.h"
 void CInput::vfunc41()
