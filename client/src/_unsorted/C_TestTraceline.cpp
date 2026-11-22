@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10041450 size=0x3
+#include "C_TestTraceline.h"
+int C_TestTraceline::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041740 size=0x1e
 #include "C_TestTraceline.h"
 
