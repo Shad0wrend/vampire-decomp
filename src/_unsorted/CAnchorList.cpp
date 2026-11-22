@@ -20,17 +20,10 @@ void CAnchorList::vfunc5()
 
 // FUNCTION: 0x10029e10 size=0x68
 #include "CAnchorList.h"
-#include "utlvector.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CAnchorList's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CAnchorList *pcd_emit_10029e10() { return new CAnchorList; }
 
-// TARGET: CAnchorList::sub_10029e10
-void *CAnchorList::sub_10029e10(unsigned int flags)
-{
-	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
-	this->CBaseGameSystem::~CBaseGameSystem();
-	if (flags & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GCAnchorList@@UAEPAXI@Z
 // END FUNCTION
