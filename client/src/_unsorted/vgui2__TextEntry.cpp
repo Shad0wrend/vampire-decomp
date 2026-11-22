@@ -94,6 +94,21 @@ int vgui2::TextEntry::vfunc143(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b16b0 size=0x23
+#include "vgui2__TextEntry.h"
+namespace lifted {
+extern char g_102d8820;
+extern char g_10678e00;
+int sub_101ab860();
+int sub_101d3192(int, int, int, int);
+}
+int vgui2::TextEntry::vfunc77()
+{
+    lifted::sub_101d3192((int)&lifted::g_10678e00, 0x400, (int)&lifted::g_102d8820, lifted::sub_101ab860());
+    return (int)&lifted::g_10678e00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1a20 size=0x1e
 #include "vgui2__TextEntry.h"
 int vgui2::TextEntry::vfunc151(int a0, int a1)
