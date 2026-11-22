@@ -875,6 +875,7 @@
 0x10036290 func   ?sub_10036290@@YAHXZ sub_10036290
 0x10036330 func   ?sub_10036330@@YAHXZ sub_10036330
 0x100363a0 func   ?ClientClassInit@@YAHPAUignored@DT_TEDynamicLight@@@Z ClientClassInit
+0x10036500 func   ??0C_TEEnergySplash@@QAE@XZ C_TEEnergySplash::C_TEEnergySplash
 0x10036540 func   ??_GC_TEEnergySplash@@UAEPAXI@Z ??_GC_TEEnergySplash@@UAEPAXI@Z
 0x10036560 func   ??1C_TEEnergySplash@@UAE@XZ C_TEEnergySplash::~C_TEEnergySplash
 0x10036560 func   ?sub_10036560@CUnknown10036560@@QAEHXZ CUnknown10036560::sub_10036560
