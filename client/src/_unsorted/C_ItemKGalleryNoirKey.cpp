@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10020c80 size=0x6
+#include "C_ItemKGalleryNoirKey.h"
+namespace lifted {
+extern char g_10273a04;
+}
+int C_ItemKGalleryNoirKey::vfunc17()
+{
+    return (int)&lifted::g_10273a04;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020d10 size=0x1e
 #include "C_ItemKGalleryNoirKey.h"
 
