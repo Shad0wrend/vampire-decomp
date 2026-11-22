@@ -10,3 +10,11 @@ C_ItemKClinicStairsKey *pcd_emit_10021e90() { return new C_ItemKClinicStairsKey;
 
 // TARGET: ??_GC_ItemKClinicStairsKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10021ec0 size=0x3
+#include "C_ItemKClinicStairsKey.h"
+int C_ItemKClinicStairsKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
