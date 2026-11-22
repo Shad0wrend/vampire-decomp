@@ -22,6 +22,17 @@ C_BaseBludgeonWeapon *pcd_emit_10007a90() { return new C_BaseBludgeonWeapon; }
 // TARGET: ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10007ab0 size=0x6
+#include "C_BaseBludgeonWeapon.h"
+namespace lifted {
+extern char g_1027510c;
+}
+int C_BaseBludgeonWeapon::vfunc16()
+{
+    return (int)&lifted::g_1027510c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007ac0 size=0x3
 #include "C_BaseBludgeonWeapon.h"
 int C_BaseBludgeonWeapon::vfunc15()
