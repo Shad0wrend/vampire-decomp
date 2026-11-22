@@ -41000,6 +41000,21 @@ void CUnknown10248a50::sub_101279a0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127a00 size=0x17
+namespace lifted {
+int sub_10127c60();
+int sub_101d1296(int);
+}
+struct CUnknown10127a00 { void sub_10127a00(); };
+void CUnknown10127a00::sub_10127a00()
+{
+    if (((int)this) != 0) {
+        lifted::sub_10127c60();
+        lifted::sub_101d1296((int)this);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127a80 size=0x5
 struct CUnknown10127a80 { void * sub_10127a80(int); };
 void * CUnknown10127a80::sub_10127a80(int a0)
