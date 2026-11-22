@@ -10,3 +10,11 @@ C_WeaponThrown_Chang_Energy_Ball *pcd_emit_10016810() { return new C_WeaponThrow
 
 // TARGET: ??_GC_WeaponThrown_Chang_Energy_Ball@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10016840 size=0x3
+#include "C_WeaponThrown_Chang_Energy_Ball.h"
+int C_WeaponThrown_Chang_Energy_Ball::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
