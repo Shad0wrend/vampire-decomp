@@ -28991,6 +28991,18 @@ void sub_100ca010(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca020 size=0x13
+namespace lifted {
+struct C100c9360 { int sub_100c9360(int); };
+}
+void sub_100ca020(int a0, int a1)
+{
+    if (a0 != 0) {
+        ((lifted::C100c9360 *)a0)->sub_100c9360(a1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca040 size=0xe
 namespace lifted {
 struct C100c9340 { int sub_100c9340(); };
