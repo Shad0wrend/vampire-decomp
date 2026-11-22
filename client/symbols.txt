@@ -4762,6 +4762,7 @@
 0x10163b10 func   ??_GCBasePanel@@UAEPAXI@Z ??_GCBasePanel@@UAEPAXI@Z
 0x10163b90 func   ??1CBasePanel@@UAE@XZ CBasePanel::~CBasePanel
 0x10163b90 func   ?sub_10163b90@CUnknown10163b90@@QAEHXZ CUnknown10163b90::sub_10163b90
+0x10164150 func   ?vfunc2@CBasePanel@@UAEXXZ CBasePanel::vfunc2
 0x10164190 func   ??_GCHudLabel@@UAEPAXI@Z ??_GCHudLabel@@UAEPAXI@Z
 0x10164280 func   ??_GCBitmapButton@@UAEPAXI@Z ??_GCBitmapButton@@UAEPAXI@Z
 0x101642a0 func   ??1CBitmapButton@@UAE@XZ CBitmapButton::~CBitmapButton

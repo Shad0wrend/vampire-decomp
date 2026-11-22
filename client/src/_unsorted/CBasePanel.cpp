@@ -10,3 +10,10 @@ CBasePanel *pcd_emit_10163b10() { return new CBasePanel; }
 
 // TARGET: ??_GCBasePanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10164150 size=0x1
+#include "CBasePanel.h"
+void CBasePanel::vfunc2()
+{
+}
+// END FUNCTION
