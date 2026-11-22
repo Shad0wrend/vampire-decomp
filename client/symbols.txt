@@ -1818,6 +1818,7 @@
 0x1003b590 func   ??1CTempEnts@@UAE@XZ CTempEnts::~CTempEnts
 0x1003cc90 func   ?vfunc6@CTempEnts@@UAEHHHHHDHHHH@Z CTempEnts::vfunc6
 0x1003ce90 func   ?sub_1003ce90@CUnknown1003ce90@@QAEXHH@Z CUnknown1003ce90::sub_1003ce90
+0x1003d610 func   ?vfunc22@CTempEnts@@UAEHHHH@Z CTempEnts::vfunc22
 0x1003da90 func   ??_GC_TEMuzzleFlash@@UAEPAXI@Z ??_GC_TEMuzzleFlash@@UAEPAXI@Z
 0x1003dab0 func   ??1C_TEMuzzleFlash@@UAE@XZ C_TEMuzzleFlash::~C_TEMuzzleFlash
 0x1003dab0 func   ?sub_1003dab0@CUnknown1003dab0@@QAEHXZ CUnknown1003dab0::sub_1003dab0

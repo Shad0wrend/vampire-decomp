@@ -24,3 +24,14 @@ int CTempEnts::vfunc6(int a0, int a1, int a2, int a3, char a4, int a5, int a6, i
     return ((lifted::V *)this)->f26(a0, a1, a3, a5, a6, a7, a8);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003d610 size=0x21
+#include "CTempEnts.h"
+namespace lifted {
+int sub_10044870(int, int, int, int, int);
+}
+int CTempEnts::vfunc22(int a0, int a1, int a2)
+{
+    return lifted::sub_10044870(a0, a1, 0x3f400000, a2, 0);
+}
+// END FUNCTION
