@@ -9,7 +9,6 @@ EXTERN ??_R0?AV?$CAI_ComponentWithOuter@VCAI_BaseHumanoid@@VCAI_Motor@@@@@8:BYTE
 EXTERN ??_R0?AV?$CAI_ComponentWithOuter@VCAI_BaseHumanoid@@VCAI_Navigator@@@@@8:BYTE
 EXTERN ??_R0?AV?$CAI_ComponentWithOuter@VCAI_BaseNPC@@VCAI_BehaviorBase@@@@@8:BYTE
 EXTERN ??_R0?AV?$CRopePhysics@$0CAA@@@@8:BYTE
-EXTERN ??_R0?AV?$VSupportList_t@VCVFeat@@@@@8:BYTE
 EXTERN ??_R0?AVCAISound@@@8:BYTE
 EXTERN ??_R0?AVCAI_BaseActor@@@8:BYTE
 EXTERN ??_R0?AVCAI_BaseHumanoid@@@8:BYTE
@@ -386,7 +385,6 @@ EXTERN ??_R1A@?0A@A@IMotionEvent@@8:BYTE
 EXTERN ??_R1A@?0A@A@INodeListFilter@@8:BYTE
 EXTERN ??_R1A@?0A@A@IPartitionEnumerator@@8:BYTE
 EXTERN ??_R1A@?0A@A@IRecipientFilter@@8:BYTE
-EXTERN ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8:BYTE
 EXTERN ??_R1A@?0A@A@IServerEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@IServerNetworkable@@8:BYTE
 EXTERN ??_R1A@?0A@A@IServerUnknown@@8:BYTE
@@ -1207,12 +1205,6 @@ PUBLIC ??_R4CDisciplineProjectile@@6B@
   DD OFFSET ??_R3CDisciplineProjectile@@8
   DB 000h,000h,000h,000h
   DB 12 DUP (0)
-; 0x10521774 +28: ??_R13?0A@A@?$VSupportList_t@VCVFeat@@@@8
-PUBLIC ??_R13?0A@A@?$VSupportList_t@VCVFeat@@@@8
-??_R13?0A@A@?$VSupportList_t@VCVFeat@@@@8 LABEL BYTE
-  DD OFFSET ??_R0?AV?$VSupportList_t@VCVFeat@@@@@8
-ORIGBYTES 0x10521778, 24
-  DB 4 DUP (0)
 ; 0x105219b4 +28: ??_R1A@?0A@A@CVTraitEffectGroup_t@@8
 PUBLIC ??_R1A@?0A@A@CVTraitEffectGroup_t@@8
 ??_R1A@?0A@A@CVTraitEffectGroup_t@@8 LABEL BYTE
@@ -3544,14 +3536,6 @@ PUBLIC ??_R4CAI_NetworkManager@@6B@
   DD OFFSET ??_R0?AVCAI_NetworkManager@@@8
   DD OFFSET ??_R3CAI_NetworkManager@@8
   DB 000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x10524c2d +11: $rtti_tail_10524c2d
-PUBLIC $rtti_tail_10524c2d
-$rtti_tail_10524c2d LABEL BYTE
-ORIGBYTES 0x10524c2d, 3
-  DD OFFSET ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
-  DB 000h,000h,000h,000h
-  DB 4 DUP (0)
 ; 0x10524dbc +44: ??_R2CBaseCombatCharacter@@8
 PUBLIC ??_R2CBaseCombatCharacter@@8
 ??_R2CBaseCombatCharacter@@8 LABEL BYTE

@@ -239,13 +239,7 @@ PUBLIC ?g_10540528@@3PAXA
 ?g_10540528@@3PAXA LABEL BYTE
   DD OFFSET ?g_106be9e4@@3VCTempEntsSystem@@A
   DB 68 DUP (0)
-  DB 8 DUP (0)
-; 0x10540598 +36: ??_R0?AVITempEntsSystem@@@8
-PUBLIC ??_R0?AVITempEntsSystem@@@8
-??_R0?AVITempEntsSystem@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-ORIGBYTES 0x1054059c, 32
-  DB 14 DUP (0)
+  DB 10 DUP (0)
 ; 0x105405da +334: $rtti_tail_105405da
 PUBLIC $rtti_tail_105405da
 $rtti_tail_105405da LABEL BYTE
@@ -5024,12 +5018,6 @@ PUBLIC ?g_105490b0@@3PADA
 PUBLIC ?g_105490b0@@3QBDB
 ?g_105490b0@@3QBDB LABEL BYTE
 ORIGBYTES 0x105490b0, 4
-; 0x105490b4 +44: ??_R0?AVISceneTokenProcessor@@@8
-PUBLIC ??_R0?AVISceneTokenProcessor@@@8
-??_R0?AVISceneTokenProcessor@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-ORIGBYTES 0x105490b8, 40
-  DB 4 DUP (0)
 ; 0x10549124 +168: $rtti_tail_10549124
 PUBLIC $rtti_tail_10549124
 $rtti_tail_10549124 LABEL BYTE
