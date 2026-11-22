@@ -57,3 +57,18 @@ bool CVMainMenuInterface::vfunc6()
     return ((lifted::V *)lifted::g_103ef0b4)->f22();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065610 size=0x12
+#include "CVMainMenuInterface.h"
+namespace lifted {
+extern int g_103ef0b4;
+struct C10065d30 { bool sub_10065d30(); };
+}
+bool CVMainMenuInterface::vfunc7()
+{
+    if (lifted::g_103ef0b4 == 0) {
+        return 0;
+    }
+    return ((lifted::C10065d30 *)lifted::g_103ef0b4)->sub_10065d30();
+}
+// END FUNCTION
