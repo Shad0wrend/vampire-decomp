@@ -1,4 +1,4 @@
-// CUnknown101e5ca0: a record (real name not yet known; a sibling of CVFeat_t) with a list of 16 byte effect blocks
+// CUnknown101e5ca0: a record (real name not yet known; a sibling of CVFeat) with a list of 16 byte effect blocks
 // (count at +0x2c, array at +0x30).
 #pragma once
 

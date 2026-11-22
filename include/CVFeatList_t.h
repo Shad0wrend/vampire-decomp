@@ -2,17 +2,11 @@
 #pragma once
 
 #ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x10739d08 (the feat list)
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 #include "utlvector.h"
-// The game's name of the feat class is CVFeat (the base's RTTI: .?AV?$VSupportList_t@VCVFeat@@@@); this project calls it
-// CVFeat_t. The list's template argument keeps the game's name, its elements are CVFeat_t until the class is renamed.
-class CVFeat;
-template <class T> struct VSupportElement { typedef T Type; };
-template <> struct VSupportElement<CVFeat> { typedef CVFeat_t Type; };
 // The base at +4: a list of owned pointers (0x1c bytes) whose destructor deletes every element, then the array.
 template <class T> class VSupportList_t
 {
-	typedef typename VSupportElement<T>::Type Element;
 public:
 	VSupportList_t() : m_n0000(1), m_n0004(0), m_nAlloc(0), m_nCount(0), m_ppData(0) {}
 	~VSupportList_t()
@@ -36,7 +30,7 @@ public:
 	int m_n000c;	// 0x0c
 	int m_nAlloc;	// 0x10
 	int m_nCount;	// 0x14
-	Element **m_ppData;	// 0x18
+	T **m_ppData;	// 0x18
 };
 
 // 0x2bc bytes: the vtable, the list base, the records, a CUtlVector at +0x2a8; the implicit destructor.

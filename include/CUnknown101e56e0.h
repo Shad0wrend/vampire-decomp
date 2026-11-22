@@ -4,7 +4,7 @@
 #include "CBaseCombatWeapon.h"
 
 #include "CBaseCombatCharacter.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
 extern char g_106b8540[];	// the empty string
 
@@ -45,8 +45,8 @@ public:
 	void sub_101e5e60(CBaseCombatCharacter *pCharacter);	// debug print of the cost formula for the character ("name<id> ( stat + stat <stat> ...):\tcost"), handed to the debug output function pointer (sub_10203dd0)
 };
 
-// The global table of these records is the feat table of CVFeat_t.h (count g_10739d20, array g_10739d24, declared
-// there as CVFeat_t **): a record is a feat seen as CUnknown101e56e0, so read the table through Records(). Find is the
+// The global table of these records is the feat table of CVFeat.h (count g_10739d20, array g_10739d24, declared
+// there as CVFeat **): a record is a feat seen as CUnknown101e56e0, so read the table through Records(). Find is the
 // game's one lookup of the record of an id, CVFeatSet::Find: its default record is one function-local static (guard
 // 0x109f0a8c, object 0x109f0ac0), never a static of its own (link audit E).
 inline CUnknown101e56e0 **Records() { return (CUnknown101e56e0 **)g_10739d24; }
