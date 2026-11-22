@@ -22,6 +22,17 @@ C_ItemKHitmanJiKey *pcd_emit_10026210() { return new C_ItemKHitmanJiKey; }
 // TARGET: ??_GC_ItemKHitmanJiKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10026230 size=0x6
+#include "C_ItemKHitmanJiKey.h"
+namespace lifted {
+extern char g_10273ed4;
+}
+int C_ItemKHitmanJiKey::vfunc16()
+{
+    return (int)&lifted::g_10273ed4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026240 size=0x3
 #include "C_ItemKHitmanJiKey.h"
 int C_ItemKHitmanJiKey::vfunc15()
