@@ -25948,6 +25948,17 @@ char CUnknown100a29a0::sub_100a29a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2a60 size=0x17
+struct CUnknown100a2a60 { int sub_100a2a60(int); };
+int CUnknown100a2a60::sub_100a2a60(int a0)
+{
+    if ((*(int *)((char *)this + 0x2d0)) != a0) {
+        *(int *)((char *)this + 0x2d0) = a0;
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2a80 size=0x7
 struct CUnknown100a2a80 { int sub_100a2a80(); };
 int CUnknown100a2a80::sub_100a2a80()
