@@ -11,6 +11,14 @@ CBasePanel *pcd_emit_10163b10() { return new CBasePanel; }
 // TARGET: ??_GCBasePanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10163ea0 size=0xa
+#include "CBasePanel.h"
+void CBasePanel::vfunc111(int a0)
+{
+    *(char *)((char *)this + 0x16c) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164150 size=0x1
 #include "CBasePanel.h"
 void CBasePanel::vfunc2()
