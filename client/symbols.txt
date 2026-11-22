@@ -5273,6 +5273,7 @@
 0x101ab050 func   ?vfunc62@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc62
 0x101ab060 func   ?vfunc63@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc63
 0x101ab070 func   ?vfunc64@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc64
+0x101ab080 func   ?vfunc104@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc104
 0x101ab210 func   ?vfunc47@Panel@vgui2@@UAE_NXZ vgui2::Panel::vfunc47
 0x101ab290 func   ?vfunc50@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc50
 0x101ab2a0 func   ?vfunc51@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc51
