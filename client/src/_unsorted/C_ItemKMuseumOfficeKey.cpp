@@ -10,3 +10,11 @@ C_ItemKMuseumOfficeKey *pcd_emit_10026990() { return new C_ItemKMuseumOfficeKey;
 
 // TARGET: ??_GC_ItemKMuseumOfficeKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100269c0 size=0x3
+#include "C_ItemKMuseumOfficeKey.h"
+int C_ItemKMuseumOfficeKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

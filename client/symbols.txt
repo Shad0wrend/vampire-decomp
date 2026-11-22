@@ -949,6 +949,7 @@
 0x10026750 func   ?sub_10026750@@YAHXZ sub_10026750
 0x10026870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKSkylineHavenKey@@@Z ClientClassInit
 0x10026990 func   ??_GC_ItemKMuseumOfficeKey@@UAEPAXI@Z ??_GC_ItemKMuseumOfficeKey@@UAEPAXI@Z
+0x100269c0 func   ?vfunc15@C_ItemKMuseumOfficeKey@@UAEHXZ C_ItemKMuseumOfficeKey::vfunc15
 0x100269d0 func   ?sub_100269d0@@YAHXZ sub_100269d0
 0x10026af0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumOfficeKey@@@Z ClientClassInit
 0x10026c10 func   ??_GC_ItemKAshCellKey@@UAEPAXI@Z ??_GC_ItemKAshCellKey@@UAEPAXI@Z
