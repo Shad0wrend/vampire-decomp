@@ -17,6 +17,14 @@ ICollideable * C_BaseTempEntity::GetClientCollideable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100072b0 size=0x3
+#include "C_BaseTempEntity.h"
+IClientRenderable * C_BaseTempEntity::GetClientRenderable()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c370 size=0x1e
 #include "C_BaseTempEntity.h"
 
