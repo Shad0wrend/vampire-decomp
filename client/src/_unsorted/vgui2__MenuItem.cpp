@@ -10,3 +10,11 @@ vgui2::MenuItem *pcd_emit_101c6c50() { return new vgui2::MenuItem; }
 
 // TARGET: ??_GMenuItem@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101c7480 size=0x5
+#include "vgui2__MenuItem.h"
+int vgui2::MenuItem::vfunc164(int a0, int a1, int a2, int a3)
+{
+    return 0;
+}
+// END FUNCTION
