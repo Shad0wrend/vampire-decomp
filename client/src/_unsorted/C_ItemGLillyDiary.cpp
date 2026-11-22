@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10018f80 size=0x6
+#include "C_ItemGLillyDiary.h"
+namespace lifted {
+extern char g_1027348c;
+}
+int C_ItemGLillyDiary::vfunc17()
+{
+    return (int)&lifted::g_1027348c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019010 size=0x1e
 #include "C_ItemGLillyDiary.h"
 
