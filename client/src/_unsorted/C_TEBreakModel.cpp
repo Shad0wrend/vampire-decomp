@@ -21,3 +21,11 @@ int C_TEBreakModel::vfunc9()
     return (int)&lifted::g_1027e53c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10034fb0 size=0x3
+#include "C_TEBreakModel.h"
+int C_TEBreakModel::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
