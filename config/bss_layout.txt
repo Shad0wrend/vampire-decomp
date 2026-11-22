@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb d81c57d6a880; do not edit by hand
+# written by pcdecomp standalone from vtmb 0ec573169def; do not edit by hand
 rename bss_bss 3 .bss$1093a08c0 .bss$z093a08c0
 rename bss_bss 4 .bss$109245e40 .bss$z09245e40
 rename bss_bss 7 .bss$1093a4380 .bss$z093a4380
@@ -3596,7 +3596,6 @@ gap 106c7138 0x68
 gap 106c71b8 0x4
 gap 106c720c 0x2d8
 gap 106c7500 0x4
-gap 106c751c 0x4
 gap 106c753c 0x1a8
 gap 106c7700 0x3e8
 gap 106c7af0 0x4

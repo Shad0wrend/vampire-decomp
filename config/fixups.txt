@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb d81c57d6a880; do not edit by hand
+# written by pcdecomp standalone from vtmb 0ec573169def; do not edit by hand
 b10077f10 localize ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z
 b10140770 localize ?sub_101402b0@CBaseMoveBehavior@@QAEHH@Z
 b10140770 localize ?sub_101402f0@CBaseMoveBehavior@@QAEHH@Z
@@ -230,8 +230,8 @@ i1040bbb0 inner ?g_1094aa7c@@3PAVConVar@@A 4 .bss 0x4
 bss_bss localize ?g_1094aa7c@@3PAVConVar@@A
 i101e4d70 inner ?g_10739d18@@3PADA 4 .bss 0x10
 bss_bss localize ?g_10739d18@@3PADA
-i101e4d70 inner ?g_10739d24@@3PAPAVCVFeat_t@@A 4 .bss 0x1c
-bss_bss localize ?g_10739d24@@3PAPAVCVFeat_t@@A
+i101e4d70 inner ?g_10739d24@@3PAPAVCVFeat@@A 4 .bss 0x1c
+bss_bss localize ?g_10739d24@@3PAPAVCVFeat@@A
 i1037e930 inner ?g_1093b340@@3PADA 4 .bss 0x18
 bss_bss localize ?g_1093b340@@3PADA
 i103b65b0 inner ?g_1093cad4@@3PAVCNPC_VTzimisceConVar@@A 4 .bss 0x4

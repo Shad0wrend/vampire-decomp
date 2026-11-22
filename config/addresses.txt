@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb d81c57d6a880; do not edit by hand
+# written by pcdecomp standalone from vtmb 0ec573169def; do not edit by hand
 089d52a6 ?ResetDbgInfo@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ
 100019d3 ?s_default@?5??Find@CUnknown101ec4f0Set@@QAEPAVCUnknown101ec4f0@@H@Z@$AV2@A
 1000229d ?ops@?1??Ops_109f0a78@@YAPAVISaveRestoreOps@@XZ@$AV?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@A
@@ -26,7 +26,7 @@
 10013f2a ?s_default@?1??StatDefault2_Default@@YAPAUStatDefault2@@XZ@$AU1@A
 10014533 ?s_ops@?1??GetThinkVecOps@@YAPAV?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@XZ@$AV1@A
 10014574 ?s_default@?5??CUnknown10206400_FindById@@YAPAVCUnknown10206400@@H@Z@$AV1@A
-1001509b ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@$AV2@A
+1001509b ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@$AV2@A
 10025e50 ??_H@YGXPAXIHP6EX0@Z@Z
 10025e50 ?sub_1000d350@@YGXPAXHH0@Z
 10025e50 ?sub_10025e50@@YGXPADIHP8CUnkElem@@AEXXZ@Z
@@ -6275,7 +6275,7 @@
 100f8e20 ?sub_100f8e20@@YAXPAUSEntV116@@@Z
 100f8e20 ?sub_100f8e20@@YAXPAVCBaseEntity@@@Z
 100f8ec0 ?sub_10015b1d@C10015b1d@lifted@@QAEHXZ
-100f8ec0 ?sub_100f8ec0@CEntityListSystem@@QAEXXZ
+100f8ec0 ?sub_100f8ec0@CEntityTouchManager@@QAEXXZ
 100f8fb0 ?vfunc2@CEntityListSystem@@QAEXXZ
 100f9080 ?vfunc4@CEntityListSystem@@QAEHXZ
 100f90a0 ?vfunc5@CEntityListSystem@@QAEXXZ
@@ -13173,26 +13173,26 @@
 101e4a00 ?sub_101e4a00@UtlMem4@@QAEXH@Z
 101e4a90 ?sub_101e4a90@CTouchHolderX@@QAEXPAVCBaseEntity@@@Z
 101e4a90 ?sub_101e4a90@CUnknown101e4a90@@QAEXXZ
-101e4f30 ??0CVFeat_t@@QAE@H@Z
-101e4f70 ??1CVFeat_t@@QAE@XZ
-101e4fe0 ?sub_101e4fe0@CVFeat_t@@QAEXPAUCVFeatKV@@@Z
-101e50b0 ?sub_101e50b0@CVFeat_t@@QAEXPAUCVFeatKV@@H@Z
+101e4f30 ??0CVFeat@@QAE@H@Z
+101e4f70 ??1CVFeat@@QAE@XZ
+101e4fe0 ?sub_101e4fe0@CVFeat@@QAEXPAUCVFeatKV@@@Z
+101e50b0 ?sub_101e50b0@CVFeat@@QAEXPAUCVFeatKV@@H@Z
 101e54c0 ?sub_101e54c0@CUnknown101e56e0@@QAEHPAVCBaseCombatCharacter@@@Z
 101e56e0 ?sub_1000f03d@CInner@@QAEIH@Z
 101e56e0 ?sub_1000f03d@CUnk101e8210Inner@@QAEHH@Z
 101e56e0 ?sub_101e56e0@CUnknown101e56e0@@QAEHPAVCBaseCombatCharacter@@@Z
-101e56e0 ?sub_101e56e0@CVFeat_t@@QAEHPAX@Z
+101e56e0 ?sub_101e56e0@CVFeat@@QAEHPAX@Z
 101e56e0 ?sub_101e56e0@CWorker101e80c0@@QAEHH@Z
 101e56e0 ?sub_101e56e0@CWorker101e8270@@QAEHH@Z
 101e56e0 ?sub_101e56e0@CWorker101e82b0@@QAEHH@Z
 101e56e0 ?sub_101e56e0@CWorker101e82f0@@QAEHH@Z
 101e5b30 ?sub_101e5b30@CUnknown101e56e0@@QAEHPAX@Z
-101e5b30 ?sub_101e5b30@CVFeat_t@@QAEHPAX@Z
+101e5b30 ?sub_101e5b30@CVFeat@@QAEHPAX@Z
 101e5ca0 ?sub_101e5ca0@CUnknown101e5ca0@@QAEHPAX@Z
 101e5e10 ?sub_101e5e10@CLookupOwner_101e5e10@@QAEHPAUCLookupArg_101e5e10@@@Z
-101e5e10 ?sub_101e5e10@CVFeat_t@@QAEHPAX@Z
+101e5e10 ?sub_101e5e10@CVFeat@@QAEHPAX@Z
 101e5e60 ?sub_101e5e60@CUnknown101e56e0@@QAEXPAVCBaseCombatCharacter@@@Z
-101e5e60 ?sub_101e5e60@CVFeat_t@@QAEXPAX@Z
+101e5e60 ?sub_101e5e60@CVFeat@@QAEXPAX@Z
 101e6040 ?sub_101e6040@@YIXPAX@Z
 101e6040 ?sub_101e6040@CVFeatMgr@@QAEXXZ
 101e6310 ?sub_101e6310@@YIXPAX@Z
@@ -29352,7 +29352,6 @@
 1051904c ??_R3?$CEntityDataInstantiator@UModelWidthScale@@@@8
 10519060 ??_R4?$CEntityDataInstantiator@UModelWidthScale@@@@6B@
 10519078 ??_R2CDefSaveRestoreBlockHandler@@8
-1051907d $rtti_tail_1051907d
 10519084 ??_R3CDefSaveRestoreBlockHandler@@8
 10519098 ??_R4CDefSaveRestoreBlockHandler@@6B@
 105190b0 ??_R1A@?0A@A@IPhysSaveRestoreManager@@8
@@ -29371,7 +29370,6 @@
 105191d4 ??_R1A@?0A@A@CDefSaveRestoreBlockHandler@@8
 105191f0 ??_R1A@?0A@A@CPhysSaveRestoreBlockHandler@@8
 1051920c ??_R2CPhysSaveRestoreBlockHandler@@8
-1051921d $rtti_tail_1051921d
 10519228 ??_R3CPhysSaveRestoreBlockHandler@@8
 1051923c ??_R4CPhysSaveRestoreBlockHandler@@6BIEntityListener@@@
 10519254 ??_R1A@?0A@A@ISaveRestoreOps@@8
@@ -29456,7 +29454,6 @@
 10519a2c ??_R1A@?0A@A@ITempEntsSystem@@8
 10519a48 ??_R1A@?0A@A@CTempEntsSystem@@8
 10519a64 ??_R2CTempEntsSystem@@8
-10519a6d $rtti_tail_10519a6d
 10519a74 ??_R3CTempEntsSystem@@8
 10519a88 ??_R4CTempEntsSystem@@6B@
 10519aa0 ??_R2IPredictionSystem@@8
@@ -29671,7 +29668,6 @@
 1051ac48 ??_R1A@?0A@A@ISceneTokenProcessor@@8
 1051ac64 ??_R1A@?0A@A@CSceneTokenProcessor@@8
 1051ac80 ??_R2CSceneTokenProcessor@@8
-1051ac85 $rtti_tail_1051ac85
 1051ac8c ??_R3CSceneTokenProcessor@@8
 1051aca0 ??_R4CSceneTokenProcessor@@6B@
 1051acb8 ??_R1A@?0A@A@CInstancedSceneEntity@@8
@@ -29775,7 +29771,6 @@
 1051b5f0 ??_R4CEventsSaveDataOps@@6B@
 1051b608 ??_R1A@?0A@A@CEQ_SaveRestoreBlockHandler@@8
 1051b624 ??_R2CEQ_SaveRestoreBlockHandler@@8
-1051b629 $rtti_tail_1051b629
 1051b634 ??_R3CEQ_SaveRestoreBlockHandler@@8
 1051b648 ??_R4CEQ_SaveRestoreBlockHandler@@6B@
 1051b660 ??_R1A@?0A@A@CPyObjStrSaveRestoreDataOps@@8
@@ -29857,7 +29852,6 @@
 1051bd54 ??_R4CPVSFilter@@6B@
 1051bd6c ??_R1A@?0A@A@CAimTargetManager@@8
 1051bd88 ??_R2CAimTargetManager@@8
-1051bd8d $rtti_tail_1051bd8d
 1051bd94 ??_R3CAimTargetManager@@8
 1051bda8 ??_R4CAimTargetManager@@6B@
 1051bdc0 ??_R1A@?0A@A@CBaseEntityList@@8
@@ -29874,7 +29868,6 @@
 1051bec0 ??_R4CNotifyList@@6BIEntityListener@@@
 1051bed8 ??_R1A@?0A@A@CEntityTouchManager@@8
 1051bef4 ??_R2CEntityTouchManager@@8
-1051bef9 $rtti_tail_1051bef9
 1051bf00 ??_R3CEntityTouchManager@@8
 1051bf14 ??_R4CEntityTouchManager@@6B@
 1051bf2c ??_R1A@?0A@A@CEntityListSystem@@8
@@ -30509,7 +30502,6 @@
 1051fc60 ??_R4PyServerSystem@@6B@
 1051fc78 ??_R1A@?0A@A@CPython_SaveRestoreBlockHandler@@8
 1051fc94 ??_R2CPython_SaveRestoreBlockHandler@@8
-1051fc99 $rtti_tail_1051fc99
 1051fca4 ??_R3CPython_SaveRestoreBlockHandler@@8
 1051fcb8 ??_R4CPython_SaveRestoreBlockHandler@@6B@
 1051fcd0 ??_R2CRecipientFilter@@8
@@ -30529,13 +30521,11 @@
 1051fdfc ??_R4CRestore@@6B@
 1051fe14 ??_R1A@?0A@A@CEntitySaveRestoreBlockHandler@@8
 1051fe30 ??_R2CEntitySaveRestoreBlockHandler@@8
-1051fe35 $rtti_tail_1051fe35
 1051fe3c ??_R3CEntitySaveRestoreBlockHandler@@8
 1051fe50 ??_R4CEntitySaveRestoreBlockHandler@@6B@
 1051fe68 ??_R1A@?0A@A@ISaveRestoreBlockSet@@8
 1051fe84 ??_R1A@?0A@A@CSaveRestoreBlockSet@@8
 1051fea0 ??_R2CSaveRestoreBlockSet@@8
-1051fea5 $rtti_tail_1051fea5
 1051feb0 ??_R3CSaveRestoreBlockSet@@8
 1051fec4 ??_R4CSaveRestoreBlockSet@@6B@
 1051fedc ??_R1A@?0A@A@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@8
@@ -31314,7 +31304,6 @@
 10524bf4 ??_R4CAI_PlaneSolver@@6B@
 10524c0c ??_R1A@?0A@A@CAI_SaveRestoreBlockHandler@@8
 10524c28 ??_R2CAI_SaveRestoreBlockHandler@@8
-10524c2d $rtti_tail_10524c2d
 10524c38 ??_R3CAI_SaveRestoreBlockHandler@@8
 10524c4c ??_R4CAI_SaveRestoreBlockHandler@@6B@
 10524c64 ??_R1A@?0A@A@CAI_Expresser@@8
@@ -56744,7 +56733,7 @@
 10739d18 ?g_10739d18@@3PADA
 10739d18 ?g_10739d18@@3PBDB
 10739d20 ?g_10739d20@@3HA
-10739d24 ?g_10739d24@@3PAPAVCVFeat_t@@A
+10739d24 ?g_10739d24@@3PAPAVCVFeat@@A
 10739f98 ?g_10739f98@@3MA
 10739f9c ?g_10739f9c@@3MA
 10739fa0 ?g_10739fa0@@3MA
@@ -60580,10 +60569,10 @@
 109f0a80 ?ops@?1??Ops_109f0a80@@YAPAVISaveRestoreOps@@XZ@4V?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@A
 109f0a84 ??_B?1??Ops_109f0a88@@YAPAVISaveRestoreOps@@XZ@51
 109f0a88 ?ops@?1??Ops_109f0a88@@YAPAVISaveRestoreOps@@XZ@4V?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@A
-109f0a8c ??_B?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@55
+109f0a8c ??_B?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@55
 109f0a8c ?g_109f0a8c@@3EA
-109f0ac0 ?g_109f0ac0@@3VCVFeat_t@@A
-109f0ac0 ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@4V3@A
+109f0ac0 ?g_109f0ac0@@3VCVFeat@@A
+109f0ac0 ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@4V3@A
 109f0afc ??_B?1??NullHandle@variant_t@@QAEAAKXZ@51
 109f0b08 ?hNull@?1??NullHandle@variant_t@@QAEAAKXZ@4V?$CHandle@VCBaseEntity@@@@A
 109f0b0c ??_B?1??GetThinkVecOps@@YAPAV?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@XZ@51

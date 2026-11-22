@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb d81c57d6a880; do not edit by hand
+# written by pcdecomp standalone from vtmb 0ec573169def; do not edit by hand
 10025e50 0x2a b ?sub_10025e50@@YGXPADIHP8CUnkElem@@AEXXZ@Z 4f6c62a3a157
 10025ed0 0x1a b ?sub_10025ed0@@YAHXZ 38b0de5140fe
 10025f00 0x51 b ?sub_10025f00@CConstantForceController@@QAEXPBVVector@@0@Z 894f4e0356b0
@@ -175,10 +175,10 @@
 10029c90 0x1 b ?vfunc4@CAutoGameSystem@@UAEXXZ cc96c1275154
 10029cb0 0x1 b ?vfunc6@CAutoGameSystem@@UAEXXZ 709863ae4e9e
 10029cd0 0x1 b ?vfunc7@CAutoGameSystem@@UAEXXZ 7427644b9f54
-10029cf0 0x41 b ?vfunc5@CAnchorList@@UAEXXZ dcfbbaf876d3
+10029cf0 0x41 b ?vfunc5@CAnchorList@@UAEXXZ f29133a81859
 10029e10 0x68 b ?sub_10029e10@CAnchorList@@QAEPAXI@Z 75483585f3f3
 10029ea0 0x4b b _info_constraint_anchor a6fe340d62e1
-10029f10 0x125 b ?vfunc103@CConstraintAnchor@@UAEXXZ 04511b8928c8
+10029f10 0x125 b ?vfunc103@CConstraintAnchor@@UAEXXZ a4bef2226179
 1002a090 0x6 b ?vfunc82@CPhysConstraintSystem@@UAEPAUdatamap_t@@XZ 84dd32d04f9c
 1002a0f0 0x54 b ?sub_1002a0f0@@YAPAHXZ 011ff037df8e
 1002a170 0x16 b ?vfunc103@CPhysConstraintSystem@@QAEXXZ 86aade2a4a2c
@@ -200,7 +200,7 @@
 1002b130 0x2e b ?sub_1002b130@CPhysConstraint@@QAEXXZ 671791b37f3e
 1002b170 0x21 b ?vfunc104@CPhysConstraint@@UAEXXZ 266aed97a8e4
 1002b1b0 0x13 b ?vfunc103@CPhysConstraint@@UAEXXZ c3d6956b947f
-1002b1e0 0x12d b ?sub_1002b1e0@@YAXPBDPAUNamedPosOut@@H@Z 75b8dc246f67
+1002b1e0 0x12d b ?sub_1002b1e0@@YAXPBDPAUNamedPosOut@@H@Z 61b7579914ce
 1002b360 0x84 b ?sub_1002b360@@YIXPAUS1002b360@@HPAUSInfo1002b360@@@Z 384d36612d3f
 1002b420 0x1e b ?vfunc113@CPhysConstraint@@UAEXXZ b31d51e5bad8
 1002b450 0x47 b ?sub_1002b450@@YAPAVCPhysConstraintSystem@@PBD@Z 22d366795a31
@@ -3483,7 +3483,7 @@
 100f8cd0 0x3 b ?sub_100f8cd0@@YGXH@Z 00f802255410
 100f8cf0 0x61 b ?vfunc1@CEntityTouchManager@@UAEXPAUCEntityListSystem_Ent@@@Z 4d83c3c53607
 100f8e20 0x80 b ?sub_100f8e20@@YAXPAUSEntV116@@@Z 3aa7f85b2807
-100f8ec0 0x72 b ?sub_100f8ec0@CEntityListSystem@@QAEXXZ 534d8d0d8b99
+100f8ec0 0x72 b ?sub_100f8ec0@CEntityTouchManager@@QAEXXZ 65494bc21113
 100f8fb0 0x97 b ?vfunc2@CEntityListSystem@@QAEXXZ 3dbd2f6ac4ef
 100f9080 0xa b ?vfunc4@CEntityListSystem@@QAEHXZ d1537dcef822
 100f90a0 0x8d b ?vfunc5@CEntityListSystem@@QAEXXZ 9d5c83e49eb4
@@ -7746,17 +7746,17 @@
 101e49b0 0x34 b ?sub_101e49b0@UtlVec8@@QAEXHH@Z 62aecf6ca21d
 101e4a00 0x67 b ?sub_101e4a00@UtlMem4@@QAEXH@Z ad4aa63bc348
 101e4a90 0x8 b ?sub_101e4a90@CUnknown101e4a90@@QAEXXZ 49d6ccd2f308
-101e4f30 0x2c b ??0CVFeat_t@@QAE@H@Z ea196cc5a3c3
-101e4f70 0x4a b ??1CVFeat_t@@QAE@XZ 96f1e7158285
-101e4fe0 0x9b b ?sub_101e4fe0@CVFeat_t@@QAEXPAUCVFeatKV@@@Z 5e41cae623a8
-101e50b0 0x340 b ?sub_101e50b0@CVFeat_t@@QAEXPAUCVFeatKV@@H@Z 68a15fe159e3
+101e4f30 0x2c b ??0CVFeat@@QAE@H@Z 8ccadf1cb130
+101e4f70 0x4a b ??1CVFeat@@QAE@XZ 014236b22574
+101e4fe0 0x9b b ?sub_101e4fe0@CVFeat@@QAEXPAUCVFeatKV@@@Z 169c8b74e1b3
+101e50b0 0x340 b ?sub_101e50b0@CVFeat@@QAEXPAUCVFeatKV@@H@Z 20425c266ab9
 101e54c0 0x1a5 b ?sub_101e54c0@CUnknown101e56e0@@QAEHPAVCBaseCombatCharacter@@@Z c91929997463
 101e56e0 0x370 b ?sub_101e56e0@CUnknown101e56e0@@QAEHPAVCBaseCombatCharacter@@@Z 05acb7cceee8
-101e5b30 0x11a b ?sub_101e5b30@CVFeat_t@@QAEHPAX@Z b8761508c8fc
+101e5b30 0x11a b ?sub_101e5b30@CVFeat@@QAEHPAX@Z 18895a89deec
 101e5ca0 0x11a b ?sub_101e5ca0@CUnknown101e5ca0@@QAEHPAX@Z 38865805ea1a
 101e5e10 0x31 b ?sub_101e5e10@CLookupOwner_101e5e10@@QAEHPAUCLookupArg_101e5e10@@@Z 699bfe413eaa
 101e5e60 0x174 b ?sub_101e5e60@CUnknown101e56e0@@QAEXPAVCBaseCombatCharacter@@@Z e321ad647a47
-101e6040 0x238 b ?sub_101e6040@CVFeatMgr@@QAEXXZ 2fd039a45eef
+101e6040 0x238 b ?sub_101e6040@CVFeatMgr@@QAEXXZ b98bd362e3f9
 101e6310 0x1429 b ?sub_101e6310@CVFeatRules@@QAEXXZ cf792f8684c2
 101e7c50 0x8e b ?sub_101e7c50@CUnknown101e7c50@@QAEPAUCVDmgBlock16_t@@PBD@Z aedb9136fe1b
 101e7d30 0x7 b ?sub_101e7d30@CUnknown101e7d30@@QAEMXZ 1306325b878b
@@ -7768,12 +7768,12 @@
 101e7e40 0x7 b ?sub_101e7e40@CUnknown101e7e40@@QAEMXZ 64c1ea4a4bc5
 101e7e60 0x7 b ?sub_101e7e60@CUnknown101e7e60@@QAEMXZ 8a22cf815bb2
 101e7e80 0x7 b ?sub_101e7e80@CUnknown101e7e80@@QAEMXZ fa9cc85f54f9
-101e7ea0 0xca b ?sub_101e7ea0@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0D@Z a11365779a05
+101e7ea0 0xca b ?sub_101e7ea0@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0D@Z 87e0e30ae7a7
 101e7fb0 0x93 b ?sub_101e7fb0@CUnknown101e7fb0@@QAEHPAVCBaseCombatCharacter@@0@Z 28bb7bab2d59
 101e8080 0xd b ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z a2c317881994
 101e80a0 0x8 b ?sub_101e80a0@@YGHH@Z 4a88c551a57c
 101e80c0 0x2e b ?sub_101e80c0@COwner101e80c0@@QAEPAHPAHHHH@Z f391a987cc54
-101e8100 0xcb b ?sub_101e8100@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0D@Z 96ddff3cfd55
+101e8100 0xcb b ?sub_101e8100@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0D@Z 8d123ed862ca
 101e8210 0x2b b ?sub_101e8210@CUnit101e8210@@QAE?AUR101e8210@@HH@Z 89926c9d221c
 101e8250 0xb b ?sub_101e8250@COwner@@QAEIH@Z 0944408372fe
 101e8270 0x2e b ?sub_101e8270@COwner101e8270@@QAEPAHPAHHHH@Z 64d145148408
@@ -9010,7 +9010,7 @@
 10225100 0x5 b ?vfunc43@CPropDoorknob@@UAEXH@Z abc4add805b2
 10225120 0x5 b ?vfunc40@CPropDoorknob@@UAEXH@Z be55996d74f3
 10225140 0x146 b ?vfunc42@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z 2e0aca0a7fab
-102252f0 0x324 b ?vfunc41@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z cec320a6ba83
+102252f0 0x324 b ?vfunc41@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z 1575d5ed311c
 102256f0 0xf3 b ?sub_102256f0@CBaseLockableEnt@@QAEXPBD@Z 4ac2cffbec42
 10225830 0x43 b _prop_doorknob 3d1d463e2530
 102258a0 0x48 b ?sub_102258a0@CPropDoorknob@@QAEPAV1@XZ 3044d954f3d3
@@ -9203,7 +9203,7 @@
 102308f0 0x8 b ?sub_102308f0@CUnknown102308f0@@QAEHXZ 881c207c37e9
 10230910 0x2fb b ?sub_10230910@@YAXPAUCVStatRef_10230910@@PAVCBaseCombatCharacter@@H_N@Z 05c96c3bff0c
 10230cd0 0x19 b ?sub_10230cd0@CUnknown10230cd0@@QAEPAXH@Z f9038fdbf3a4
-10230d00 0x166 b ?sub_10230d00@CVDmgBlock16_t@@QAEHPAX@Z d0b5a0d569dc
+10230d00 0x166 b ?sub_10230d00@CVDmgBlock16_t@@QAEHPAX@Z 7ecd6cf3ecde
 10230ed0 0x13 b ?sub_10230ed0@CVDmgBlock16_t@@QAEPAU1@XZ b0cdfa788db1
 10230f00 0x1f b ?sub_10230f00@CUnk10230f00@@QAEPAU1@HH@Z af011007d95a
 10230f30 0x1a b ?sub_10230f30@CUnk10230f30@@QAEPAU1@H@Z 0c99f26527c7
@@ -12727,7 +12727,7 @@
 10351530 0x5 b ?vfunc451@CHL2_Player@@UAEXH@Z e84d57b06bcf
 10351550 0x1c b ?vfunc86@CHL2_Player@@UAEDHHHHH@Z 66a2ea37769e
 103517e0 0x4ea b ?vfunc471@CHL2_Player@@UAEXXZ ea47b0a14ed5
-10351e10 0x263 b ?vfunc470@CHL2_Player@@UAEXXZ 47d29d6c31c5
+10351e10 0x263 b ?vfunc470@CHL2_Player@@UAEXXZ 53585a175997
 10352120 0x61c b ?vfunc430@CHL2_Player@@QAEXHH@Z 43b6076cc09a
 103528d0 0x70 b ?vfunc472@CHL2_Player@@UAEXXZ 5f8517d5ec0a
 10352960 0x19 b ?vfunc476@CHL2_Player@@UAEHXZ c32764dc41fd
@@ -17015,7 +17015,7 @@
 100cdca0 0xa i - 0a308fbeefff
 100cf6a0 0xa i - 1dbd54054b82
 100cfae0 0x5 i - 811d0b417203
-100cfe80 0x5 i - 8553531cc1f0
+100cfe80 0x5 i - 4d5803b102b2
 100cffc0 0x5 i - c90fd9a59ba7
 100d01b0 0x5 i - 71cda1fab969
 100d0c50 0x5 i - 0538ddd279a8
@@ -17438,7 +17438,7 @@
 10199eb0 0xa i - eb54de737afe
 1019aab0 0xa i - bccafd9de656
 1019acd0 0xa i - 996294d17cec
-1019ad60 0x5 i - 8734d3f956e1
+1019ad60 0x5 i - 3814a8335765
 1019b4e0 0xa i - 1c0d2ff0aa52
 1019c020 0xa i - 8cde7741d232
 1019cd60 0xa i - 79dc7685daf6
@@ -17448,7 +17448,7 @@
 1019dc10 0x5 i - bbdb627c80fe
 1019f6c0 0x5 i - ddb5cf1d12ae
 101a2bc0 0x5 i - f10a0fac4e88
-101a3740 0x5 i - 66a6eea4cf4c
+101a3740 0x5 i - c54fa0de2e02
 101a4720 0x5 i - 1fc268126c89
 101a4790 0xa i - eb2a1d7c8f27
 101a5d20 0xa i - aea46271247b
@@ -17934,7 +17934,7 @@
 10307cb0 0x5 i - 6caf34a6a3c1
 1030b380 0x5 i - 26e0d0d4bb10
 1030b3f0 0xa i - 335dc56108ad
-1030bf70 0x5 i - f1ce1aa98a1d
+1030bf70 0x5 i - 5f2e898a39cf
 1030c3b0 0x5 i - 9110df1e4e07
 1030f3f0 0xa i - 6cf5c110999f
 1030f550 0xa i - 3fbaa0d37d85
