@@ -19,6 +19,14 @@ int CClientSideEffect::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9180 size=0x4
+#include "CClientSideEffect.h"
+bool CClientSideEffect::vfunc3()
+{
+    return *(bool *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9190 size=0x5
 #include "CClientSideEffect.h"
 void CClientSideEffect::vfunc4()
