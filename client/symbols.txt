@@ -3254,6 +3254,7 @@
 0x100c8af0 func   ??_GC_VampMP_GameRules@@UAEPAXI@Z ??_GC_VampMP_GameRules@@UAEPAXI@Z
 0x100c8b10 func   ??1C_MultiplayRules@@UAE@XZ C_MultiplayRules::~C_MultiplayRules
 0x100c8b10 func   ?sub_100c8b10@CUnknown100c8b10@@QAEHXZ CUnknown100c8b10::sub_100c8b10
+0x100c8c50 func   ?sub_100c8c50@CUnknown100c8c50@@QAEPAXHH@Z CUnknown100c8c50::sub_100c8c50
 0x100c8c80 func   ??_GCVGuiScreenPanel@@UAEPAXI@Z ??_GCVGuiScreenPanel@@UAEPAXI@Z
 0x100c8e30 func   ?sub_100c8e30@@YAHXZ sub_100c8e30
 0x100c8f30 func   ?ClientClassInit@@YAHPAUignored@DT_VGuiScreen@@@Z ClientClassInit
