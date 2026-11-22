@@ -41381,6 +41381,18 @@ int sub_1012c6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c720 size=0x11
+namespace lifted {
+int __stdcall sub_1012c740(int);
+}
+struct CUnknown1012c720 { void * sub_1012c720(); };
+void * CUnknown1012c720::sub_1012c720()
+{
+    lifted::sub_1012c740(0x3d088889);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c740 size=0x25
 struct CUnknown102496d0 {
     int m_0;
