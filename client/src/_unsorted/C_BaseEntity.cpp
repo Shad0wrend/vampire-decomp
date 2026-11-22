@@ -181,6 +181,14 @@ bool C_BaseEntity::vfunc87()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e030 size=0x7
+#include "C_BaseEntity.h"
+bool C_BaseEntity::vfunc115()
+{
+    return *(bool *)((char *)this + 0x40d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009d3e0 size=0x6
 #include "C_BaseEntity.h"
 namespace lifted {
