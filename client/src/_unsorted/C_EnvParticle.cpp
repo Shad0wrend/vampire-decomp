@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100ae5c0 size=0x3
+#include "C_EnvParticle.h"
+int C_EnvParticle::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeac0 size=0x1e
 #include "C_EnvParticle.h"
 
