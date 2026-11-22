@@ -84,3 +84,11 @@ void ClientModeShared::vfunc35()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d4400 size=0x3
+#include "ClientModeShared.h"
+int ClientModeShared::vfunc20()
+{
+    return 0;
+}
+// END FUNCTION
