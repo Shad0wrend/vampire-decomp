@@ -56234,6 +56234,20 @@ void __stdcall sub_10156040(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156050 size=0xd
+namespace lifted {
+extern char g_102de300;
+}
+struct CUnknown10156050 { int sub_10156050(); };
+int CUnknown10156050::sub_10156050()
+{
+    if ((*(int *)((char *)this + 0x24)) == 0) {
+        return (int)&lifted::g_102de300;
+    }
+    return *(int *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101560e0 size=0xc
 namespace lifted {
 int sub_10156160();
