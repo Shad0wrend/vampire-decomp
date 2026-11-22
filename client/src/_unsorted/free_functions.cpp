@@ -48890,6 +48890,23 @@ int CNamedList9fd0::sub_10149260(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149310 size=0x57
+#include "CUnknown101dbc60.h"
+#include "CUnknown101db210.h"
+
+extern int (*g_101e3190)(char *pDest, int maxLen, const char *pFormat, ...);
+extern void (*g_101e3108)(const char *pMsg, ...);
+
+void CUnknown101dbc60Tail::sub_10149310()
+{
+	char buf[512];
+	g_101e3190(buf, 512, "[[Hit_Group_List]]:\n");
+	g_101e3108("%s", buf);
+	for (int i = 0; i < m_nCount; i++)
+		m_ppTables[i]->sub_10148ed0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149370 size=0x8b
 #include "CUnknown101e0f00.h"
 #include "CUnknown101e0040.h"
