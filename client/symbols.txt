@@ -5181,6 +5181,7 @@
 0x1018cc70 func   ??1VStatusLabel@@UAE@XZ VStatusLabel::~VStatusLabel
 0x1018cc70 func   ?sub_1018cc70@CUnknown1018cc70@@QAEHXZ CUnknown1018cc70::sub_1018cc70
 0x1018ccb0 func   ?sub_1018ccb0@@YAHH@Z sub_1018ccb0
+0x1018ccd0 func   ?sub_1018ccd0@@YAHH@Z sub_1018ccd0
 0x1018d160 func   ?sub_1018d160@@YAHXZ sub_1018d160
 0x1018d180 func   ?sub_1018d180@@YAHXZ sub_1018d180
 0x1018d1f0 func   ?sub_1018d1f0@@YAXXZ sub_1018d1f0

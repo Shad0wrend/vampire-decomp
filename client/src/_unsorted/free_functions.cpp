@@ -62433,6 +62433,17 @@ int sub_1018ccb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ccd0 size=0x12
+namespace lifted {
+int sub_101ac8c0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual int f4(int); };
+}
+int sub_1018ccd0(int a0)
+{
+    return ((lifted::V *)(lifted::sub_101ac8c0()))->f4(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d160 size=0x16
 namespace lifted {
 extern char g_1027b3c4;
