@@ -10,3 +10,11 @@ C_ItemGRing03 *pcd_emit_10018110() { return new C_ItemGRing03; }
 
 // TARGET: ??_GC_ItemGRing03@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10018140 size=0x3
+#include "C_ItemGRing03.h"
+int C_ItemGRing03::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
