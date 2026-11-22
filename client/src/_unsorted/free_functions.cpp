@@ -62936,6 +62936,20 @@ int CUnknown10189c20::sub_10189c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b350 size=0x24
+namespace lifted {
+extern int g_104a57f8;
+struct C1018b2a0 { int sub_1018b2a0(); };
+struct V { virtual void u0(); virtual void u1(); virtual int f2(int); };
+}
+struct CUnknown1018b350 { int sub_1018b350(int); };
+int CUnknown1018b350::sub_1018b350(int a0)
+{
+    *(int *)((char *)(*(int *)((char *)this + 0x58)) + 0x2c) = ((lifted::V *)lifted::g_104a57f8)->f2(a0);
+    return ((lifted::C1018b2a0 *)this)->sub_1018b2a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018bcc0 size=0x5
 struct CUnknown1018bcc0 { void sub_1018bcc0(); };
 void CUnknown1018bcc0::sub_1018bcc0()
