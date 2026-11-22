@@ -166,6 +166,14 @@ int __stdcall sub_1007b650(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bbe0 size=0x3
+#include "C_BaseCombatWeapon.h"
+bool C_BaseCombatWeapon::vfunc175()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bee0 size=0x1
 #include "C_BaseCombatWeapon.h"
 void C_BaseCombatWeapon::vfunc173()
