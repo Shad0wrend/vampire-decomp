@@ -28,3 +28,11 @@ int C_TEInspectionFX::vfunc9()
     return (int)&lifted::g_102803cc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003a200 size=0x3
+#include "C_TEInspectionFX.h"
+int C_TEInspectionFX::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
