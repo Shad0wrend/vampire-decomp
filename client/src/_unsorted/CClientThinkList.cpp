@@ -7,3 +7,10 @@ void CClientThinkList::vfunc2()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cfd90 size=0x1
+#include "CClientThinkList.h"
+void CClientThinkList::vfunc3()
+{
+}
+// END FUNCTION
