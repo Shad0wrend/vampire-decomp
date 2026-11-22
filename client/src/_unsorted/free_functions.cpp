@@ -9932,6 +9932,25 @@ template <> int ClientClassInit<DT_TEExplosion::ignored>(DT_TEExplosion::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037010 size=0x24
+namespace lifted {
+extern char g_1022662c;
+extern char g_10226664;
+int sub_1002c340();
+}
+struct CUnknown10037010 { void * sub_10037010(); };
+void * CUnknown10037010::sub_10037010()
+{
+    lifted::sub_1002c340();
+    *(int *)this = (int)&lifted::g_10226664;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_1022662c;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037060 size=0x12
 namespace lifted {
 extern char g_1022662c;
