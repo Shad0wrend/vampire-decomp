@@ -13583,6 +13583,19 @@ int sub_10065660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100656a0 size=0x10
+namespace lifted {
+extern int g_10288318;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual int f5(); };
+}
+void sub_100656a0()
+{
+    if (lifted::g_10288318 != 0) {
+        ((lifted::V *)lifted::g_10288318)->f5(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100666a0 size=0x2c
 namespace lifted {
 extern int g_104a5818;
