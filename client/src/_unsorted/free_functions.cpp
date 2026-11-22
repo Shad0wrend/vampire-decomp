@@ -64832,6 +64832,23 @@ void sub_10186810(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186970 size=0x29
+namespace lifted {
+struct C10186ab0 { int sub_10186ab0(); };
+struct C10186ad0 { int sub_10186ad0(); };
+int __stdcall sub_101a99f0(int);
+}
+struct CUnknown10186970 { int sub_10186970(int); };
+int CUnknown10186970::sub_10186970(int a0)
+{
+    int t0 = lifted::sub_101a99f0(a0);
+    if (((char)a0) != 0) {
+        return ((lifted::C10186ad0 *)((char *)this + -16))->sub_10186ad0();
+    }
+    return ((lifted::C10186ab0 *)((char *)this + -16))->sub_10186ab0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101869b0 size=0x1
 void sub_101869b0()
 {
