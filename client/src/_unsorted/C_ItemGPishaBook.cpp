@@ -10,3 +10,11 @@ C_ItemGPishaBook *pcd_emit_1001c210() { return new C_ItemGPishaBook; }
 
 // TARGET: ??_GC_ItemGPishaBook@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001c240 size=0x3
+#include "C_ItemGPishaBook.h"
+int C_ItemGPishaBook::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
