@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100ae5b0 size=0x6
+#include "C_EnvParticle.h"
+namespace lifted {
+extern char g_102b2c20;
+}
+int C_EnvParticle::vfunc16()
+{
+    return (int)&lifted::g_102b2c20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae5c0 size=0x3
 #include "C_EnvParticle.h"
 int C_EnvParticle::vfunc15()
