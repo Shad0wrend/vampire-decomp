@@ -68,6 +68,7 @@
 0x10003180 func   ?vfunc244@C_BaseCombatWeapon@@UAEXH@Z C_BaseCombatWeapon::vfunc244
 0x10003190 func   ?vfunc245@C_BaseCombatWeapon@@UAEXHH@Z C_BaseCombatWeapon::vfunc245
 0x100031a0 func   ?vfunc247@C_BaseCombatWeapon@@UAE_NXZ C_BaseCombatWeapon::vfunc247
+0x100031b0 func   ?vfunc248@C_BaseCombatWeapon@@UAEXHHH@Z C_BaseCombatWeapon::vfunc248
 0x10003220 func   ?vfunc188@C_ItemPhysicsHand@@UAE_NXZ C_ItemPhysicsHand::vfunc188
 0x10003230 func   ??_GC_ItemPhysicsHand@@UAEPAXI@Z ??_GC_ItemPhysicsHand@@UAEPAXI@Z
 0x10003270 func   ?sub_10003270@@YAHXZ sub_10003270
