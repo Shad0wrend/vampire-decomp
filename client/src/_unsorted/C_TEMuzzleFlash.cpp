@@ -10,3 +10,14 @@ C_TEMuzzleFlash *pcd_emit_1003da90() { return new C_TEMuzzleFlash; }
 
 // TARGET: ??_GC_TEMuzzleFlash@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1003db10 size=0x6
+#include "C_TEMuzzleFlash.h"
+namespace lifted {
+extern char g_10280e2c;
+}
+int C_TEMuzzleFlash::vfunc9()
+{
+    return (int)&lifted::g_10280e2c;
+}
+// END FUNCTION
