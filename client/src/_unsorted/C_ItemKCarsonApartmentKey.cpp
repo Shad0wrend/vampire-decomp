@@ -10,3 +10,11 @@ C_ItemKCarsonApartmentKey *pcd_emit_10023f10() { return new C_ItemKCarsonApartme
 
 // TARGET: ??_GC_ItemKCarsonApartmentKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10023f40 size=0x3
+#include "C_ItemKCarsonApartmentKey.h"
+int C_ItemKCarsonApartmentKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
