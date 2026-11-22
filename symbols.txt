@@ -10363,6 +10363,7 @@
 0x1000dc7e func   ?sub_10050a40@@YAXXZ sub_10050a40
 0x1000dc83 func   ?vfunc580@CNPC_VToreador@@UAEPAXXZ CNPC_VToreador::vfunc580
 0x1000dc88 func   ?vfunc461@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::vfunc461
+0x1000dc8d func   ?Restore@CPython_SaveRestoreBlockHandler@@UAEXPAVIRestore@@_NH@Z CPython_SaveRestoreBlockHandler::Restore
 0x1000dc8d func   ?vfunc7@CPython_SaveRestoreBlockHandler@@UAEXPAVIRestorePy@@HH@Z CPython_SaveRestoreBlockHandler::vfunc7
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
 0x1000dc97 func   ?vfunc438@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc438
