@@ -10,3 +10,14 @@ C_TEShowLine *pcd_emit_1003ea90() { return new C_TEShowLine; }
 
 // TARGET: ??_GC_TEShowLine@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1003ebf0 size=0x6
+#include "C_TEShowLine.h"
+namespace lifted {
+extern char g_102814d4;
+}
+int C_TEShowLine::vfunc9()
+{
+    return (int)&lifted::g_102814d4;
+}
+// END FUNCTION
