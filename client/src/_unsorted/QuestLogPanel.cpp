@@ -11,6 +11,19 @@ QuestLogPanel *pcd_emit_10188050() { return new QuestLogPanel; }
 // TARGET: ??_GQuestLogPanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10188580 size=0x10
+#include "QuestLogPanel.h"
+namespace lifted {
+struct C10189130 { int sub_10189130(); };
+struct C101ab2f0 { int sub_101ab2f0(); };
+}
+void QuestLogPanel::vfunc101()
+{
+    ((lifted::C101ab2f0 *)this)->sub_101ab2f0();
+    ((lifted::C10189130 *)this)->sub_10189130();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189420 size=0x3
 #include "QuestLogPanel.h"
 void QuestLogPanel::vfunc124(int a0)
