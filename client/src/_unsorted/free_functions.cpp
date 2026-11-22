@@ -40627,6 +40627,17 @@ int sub_101190d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101191a0 size=0x2c
+namespace lifted {
+int sub_1011a2c0(int, int, int, int, int, int, int, int);
+}
+struct CUnknown101191a0 { int sub_101191a0(int, int, int, int, int); };
+int CUnknown101191a0::sub_101191a0(int a0, int a1, int a2, int a3, int a4)
+{
+    return lifted::sub_1011a2c0((int)this + 8, a0, 0, 6, a1, a2, a3, a4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119410 size=0xa
 namespace lifted {
 extern char g_104e0a74;
