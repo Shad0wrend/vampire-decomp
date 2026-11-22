@@ -117,6 +117,21 @@ void ClientModeShared::vfunc18()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4460 size=0x1a
+#include "ClientModeShared.h"
+namespace lifted {
+extern int g_104cef90;
+int sub_100f1fb0(int, int);
+}
+void ClientModeShared::vfunc23(int a0)
+{
+    int t0 = lifted::g_104cef90;
+    if (t0 != 0) {
+        lifted::sub_100f1fb0(t0, a0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4490 size=0x31
 #include "ClientModeShared.h"
 namespace lifted {

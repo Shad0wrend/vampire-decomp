@@ -3401,6 +3401,7 @@
 0x100d42e0 func   ?vfunc35@ClientModeShared@@UAEXXZ ClientModeShared::vfunc35
 0x100d4400 func   ?vfunc20@ClientModeShared@@UAEHXZ ClientModeShared::vfunc20
 0x100d4440 func   ?vfunc18@ClientModeShared@@UAEXXZ ClientModeShared::vfunc18
+0x100d4460 func   ?vfunc23@ClientModeShared@@UAEXH@Z ClientModeShared::vfunc23
 0x100d4490 func   ?vfunc24@ClientModeShared@@UAEXH@Z ClientModeShared::vfunc24
 0x100d44d0 func   ?vfunc25@ClientModeShared@@UAEXXZ ClientModeShared::vfunc25
 0x100d4550 func   ?vfunc34@ClientModeShared@@UAEHXZ ClientModeShared::vfunc34
