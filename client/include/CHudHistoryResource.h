@@ -5,4 +5,6 @@
 
 class CHudHistoryResource : public CHudElement
 {
+public:
+	bool sub_100f0430();
 };
