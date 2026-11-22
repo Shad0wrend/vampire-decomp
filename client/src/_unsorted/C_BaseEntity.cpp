@@ -34,3 +34,11 @@ C_BaseEntity *pcd_emit_1009dda0() { return new C_BaseEntity; }
 
 // TARGET: ??_GC_BaseEntity@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1009f060 size=0x7
+#include "C_BaseEntity.h"
+unsigned int * C_BaseEntity::vfunc1()
+{
+    return (unsigned int *)((char *)this + 0xe4);
+}
+// END FUNCTION
