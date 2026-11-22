@@ -10,3 +10,11 @@ C_TEGunshotDecal *pcd_emit_10038a00() { return new C_TEGunshotDecal; }
 
 // TARGET: ??_GC_TEGunshotDecal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100396f0 size=0x3
+#include "C_TEGunshotDecal.h"
+int C_TEGunshotDecal::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
