@@ -31,6 +31,19 @@ int vgui2::TextImage::vfunc31()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9ed0 size=0x1b
+#include "vgui2__TextImage.h"
+namespace lifted {
+int __stdcall sub_101b6990(int, int);
+}
+int vgui2::TextImage::vfunc9(int a0, int a1)
+{
+    int t0 = lifted::sub_101b6990(a0, a1);
+    *(int *)((char *)this + 0x28) = a0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba7f0 size=0x19
 #include "vgui2__TextImage.h"
 namespace lifted {
