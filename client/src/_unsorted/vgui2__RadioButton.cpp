@@ -44,6 +44,20 @@ int vgui2::RadioButton::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6180 size=0x26
+#include "vgui2__RadioButton.h"
+namespace lifted {
+extern char g_102da864;
+struct C101b4100 { int sub_101b4100(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(int, int); };
+}
+int vgui2::RadioButton::vfunc76(int a0)
+{
+    ((lifted::C101b4100 *)this)->sub_101b4100(a0);
+    return ((lifted::V *)a0)->f15((int)&lifted::g_102da864, *(int *)((char *)this + 0x100));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c61b0 size=0x23
 #include "vgui2__RadioButton.h"
 namespace lifted {
