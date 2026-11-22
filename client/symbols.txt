@@ -611,6 +611,7 @@
 0x10012c40 func   ?vfunc15@C_OccultLockpicking@@UAEHXZ C_OccultLockpicking::vfunc15
 0x10012c50 func   ?sub_10012c50@@YAHXZ sub_10012c50
 0x10012d70 func   ?ClientClassInit@@YAHPAUignored@DT_OccultLockpicking@@@Z ClientClassInit
+0x10012e00 func   ?vfunc17@C_OccultPresence@@UAEHXZ C_OccultPresence::vfunc17
 0x10012e90 func   ??_GC_OccultPresence@@UAEPAXI@Z ??_GC_OccultPresence@@UAEPAXI@Z
 0x10012ec0 func   ?vfunc15@C_OccultPresence@@UAEHXZ C_OccultPresence::vfunc15
 0x10012ed0 func   ?sub_10012ed0@@YAHXZ sub_10012ed0
