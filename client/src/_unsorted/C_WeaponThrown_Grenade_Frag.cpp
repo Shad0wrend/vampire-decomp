@@ -22,6 +22,17 @@ C_WeaponThrown_Grenade_Frag *pcd_emit_10016590() { return new C_WeaponThrown_Gre
 // TARGET: ??_GC_WeaponThrown_Grenade_Frag@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100165b0 size=0x6
+#include "C_WeaponThrown_Grenade_Frag.h"
+namespace lifted {
+extern char g_102747e4;
+}
+int C_WeaponThrown_Grenade_Frag::vfunc16()
+{
+    return (int)&lifted::g_102747e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100165c0 size=0x3
 #include "C_WeaponThrown_Grenade_Frag.h"
 int C_WeaponThrown_Grenade_Frag::vfunc15()
