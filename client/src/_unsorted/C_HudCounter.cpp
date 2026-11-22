@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bbe30 size=0x3
+#include "C_HudCounter.h"
+int C_HudCounter::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0b0 size=0x1e
 #include "C_HudCounter.h"
 
