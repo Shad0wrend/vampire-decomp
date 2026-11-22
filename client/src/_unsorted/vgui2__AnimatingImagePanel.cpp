@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c55d0 size=0x10
+#include "vgui2__AnimatingImagePanel.h"
+namespace lifted {
+int sub_101ab2f0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+void vgui2::AnimatingImagePanel::vfunc101()
+{
+    lifted::sub_101ab2f0();
+    ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5890 size=0x23
 #include "vgui2__AnimatingImagePanel.h"
 namespace lifted {
