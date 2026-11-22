@@ -31531,6 +31531,19 @@ void CUnknown100e1420::sub_100e1420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1430 size=0x12
+struct CUnknown100e1430 { char sub_100e1430(); };
+char CUnknown100e1430::sub_100e1430()
+{
+    if ((*(int *)((char *)this + 0x10)) != 0) {
+        if ((*(char *)((char *)(*(int *)((char *)this + 0x10)))) != 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1450 size=0x8
 struct CUnknown100e1450 { void sub_100e1450(); };
 void CUnknown100e1450::sub_100e1450()
