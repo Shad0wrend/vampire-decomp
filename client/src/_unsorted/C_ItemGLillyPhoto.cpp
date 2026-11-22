@@ -10,3 +10,11 @@ C_ItemGLillyPhoto *pcd_emit_10018d90() { return new C_ItemGLillyPhoto; }
 
 // TARGET: ??_GC_ItemGLillyPhoto@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10018dc0 size=0x3
+#include "C_ItemGLillyPhoto.h"
+int C_ItemGLillyPhoto::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
