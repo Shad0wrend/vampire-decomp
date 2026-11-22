@@ -26777,6 +26777,22 @@ void SInit::sub_100a5420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5480 size=0x20
+namespace lifted {
+extern char g_1022e8d4;
+int sub_101d1296(int);
+}
+struct CUnknown100a5480 { void * sub_100a5480(char); };
+void * CUnknown100a5480::sub_100a5480(char a0)
+{
+    *(int *)this = (int)&lifted::g_1022e8d4;
+    if ((a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5a20 size=0x5
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual int f9(); };
