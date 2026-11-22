@@ -10,3 +10,11 @@ C_ItemKKikiKey *pcd_emit_10025310() { return new C_ItemKKikiKey; }
 
 // TARGET: ??_GC_ItemKKikiKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10025340 size=0x3
+#include "C_ItemKKikiKey.h"
+int C_ItemKKikiKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
