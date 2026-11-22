@@ -10732,6 +10732,7 @@
 0x1000e3ea func   ?RemoveAll@?$CUtlVector@UCNPC_VWerewolfVec3@@V?$CUtlMemory@UCNPC_VWerewolfVec3@@@@@@QAEXXZ CUtlVector<CNPC_VWerewolfVec3,CUtlMemory<CNPC_VWerewolfVec3> >::RemoveAll
 0x1000e3ea func   ?RemoveAll@?$CUtlVector@VVector@@V?$CUtlMemory@VVector@@@@@@QAEXXZ CUtlVector<Vector,CUtlMemory<Vector> >::RemoveAll
 0x1000e3ea func   ?sub_103dc260@@YIXPAH@Z sub_103dc260
+0x1000e3ef func   ?Save@CDefSaveRestoreBlockHandler@@UAEXPAVISave@@@Z CDefSaveRestoreBlockHandler::Save
 0x1000e3ef func   ?sub_10043b40@@YGXPAX@Z sub_10043b40
 0x1000e3f4 func   ?vfunc5@CItemGBailbondReceipt@@QAEPAV1@I@Z CItemGBailbondReceipt::vfunc5
 0x1000e3f9 func   ?vfunc373@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc373
