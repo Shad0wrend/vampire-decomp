@@ -10,3 +10,11 @@ C_ItemKHitmanJiKey *pcd_emit_10026210() { return new C_ItemKHitmanJiKey; }
 
 // TARGET: ??_GC_ItemKHitmanJiKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10026240 size=0x3
+#include "C_ItemKHitmanJiKey.h"
+int C_ItemKHitmanJiKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
