@@ -10,3 +10,11 @@ C_ItemKClinicCSKey *pcd_emit_10022110() { return new C_ItemKClinicCSKey; }
 
 // TARGET: ??_GC_ItemKClinicCSKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10022140 size=0x3
+#include "C_ItemKClinicCSKey.h"
+int C_ItemKClinicCSKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
