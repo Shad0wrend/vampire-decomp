@@ -10,3 +10,11 @@ C_WeaponUnarmed *pcd_emit_1000fc90() { return new C_WeaponUnarmed; }
 
 // TARGET: ??_GC_WeaponUnarmed@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000fcc0 size=0x3
+#include "C_WeaponUnarmed.h"
+int C_WeaponUnarmed::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
