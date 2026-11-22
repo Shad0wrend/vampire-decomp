@@ -4927,6 +4927,7 @@
 0x1017f850 func   ?sub_1017f850@CUnknown1017f850@@QAEPAXXZ CUnknown1017f850::sub_1017f850
 0x10181b70 func   ?sub_10181b70@@YAXXZ sub_10181b70
 0x101820f0 func   ?sub_101820f0@CUnknown101820f0@@QAEHH@Z CUnknown101820f0::sub_101820f0
+0x10182440 func   ?vfunc3@CharEditStatsPanel@@UAEXXZ CharEditStatsPanel::vfunc3
 0x10182450 func   ?sub_10182450@@YAXXZ sub_10182450
 0x101826f0 func   ??_GVHotkeysUI@@UAEPAXI@Z ??_GVHotkeysUI@@UAEPAXI@Z
 0x10182710 func   ??1VHotkeysUI@@UAE@XZ VHotkeysUI::~VHotkeysUI

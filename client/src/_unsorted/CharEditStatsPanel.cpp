@@ -10,3 +10,10 @@ CharEditStatsPanel *pcd_emit_1017d730() { return new CharEditStatsPanel; }
 
 // TARGET: ??_GCharEditStatsPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10182440 size=0x1
+#include "CharEditStatsPanel.h"
+void CharEditStatsPanel::vfunc3()
+{
+}
+// END FUNCTION
