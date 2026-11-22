@@ -31,3 +31,14 @@ void vgui2::MenuButton::vfunc163(int a0, int a1, int a2, int a3)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c9af0 size=0x6
+#include "vgui2__MenuButton.h"
+namespace lifted {
+extern char g_102dadc8;
+}
+int vgui2::MenuButton::vfunc102()
+{
+    return (int)&lifted::g_102dadc8;
+}
+// END FUNCTION
