@@ -93,7 +93,7 @@ public:
 	virtual void PostSave();
 	virtual void PreRestore();
 	virtual void ReadRestoreHeaders(IRestore *pRestore);
-	virtual void Restore(IRestore *pRestore, bool fCreatePlayers);
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused);
 	virtual void PostRestore();
 	virtual void NoteBBox(const Vector &mins, const Vector &maxs, CPhysCollide *pCollide);
 	virtual void AssociateModel(IPhysicsObject *pObject, int modelIndex);

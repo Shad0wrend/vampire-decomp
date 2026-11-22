@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_106129e0;
 }
-int CAI_SaveRestoreBlockHandler::vfunc0()
+const char *CAI_SaveRestoreBlockHandler::GetBlockName()
 {
-    return (int)&lifted::g_106129e0;
+    return &lifted::g_106129e0;
 }
 // END FUNCTION
 
@@ -53,8 +53,7 @@ extern char g_10614c70[];
 extern char g_1060dde8[];
 extern CUnknown102652d0 g_1090fe10;
 
-// TARGET: CAI_SaveRestoreBlockHandler::vfunc2
-void CAI_SaveRestoreBlockHandler::vfunc2(CSave *pSave)
+void CAI_SaveRestoreBlockHandler::Save(ISave *pSave)
 {
     SaveW *s = (SaveW *)pSave;
     int count = 0;
@@ -91,21 +90,14 @@ void CAI_SaveRestoreBlockHandler::vfunc2(CSave *pSave)
 // END FUNCTION
 
 // FUNCTION: 0x1030c1a0 size=0x13
-#include "vampire.h"
-
-struct CUnknown1030c1a0
-{
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
-	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
-	virtual void v8(const void *pData, int a);
-};
+#include "CAI_SaveRestoreBlockHandler.h"
+#include "ISave.h"
 
 extern char g_10612968[];
 
-// TARGET: sub_1030c1a0
-void __stdcall sub_1030c1a0(CUnknown1030c1a0 *pObj)
+void CAI_SaveRestoreBlockHandler::WriteSaveHeaders(ISave *pSave)
 {
-	pObj->v8(g_10612968, 1);
+	pSave->vfunc8(g_10612968, 1);
 }
 // END FUNCTION
 
@@ -115,12 +107,11 @@ void __stdcall sub_1030c1a0(CUnknown1030c1a0 *pObj)
 
 extern short g_10612968;
 
-// TARGET: CAI_SaveRestoreBlockHandler::vfunc6
-void CAI_SaveRestoreBlockHandler::vfunc6(IRestorePy *pRestore)
+void CAI_SaveRestoreBlockHandler::ReadRestoreHeaders(IRestore *pRestore)
 {
 	short version;
-	pRestore->ReadShort(&version, 1, 0);
-	*(bool *)((char *)this + 4) = (version == g_10612968);
+	((IRestorePy *)pRestore)->ReadShort(&version, 1, 0);
+	m_bField4 = (version == g_10612968);
 }
 // END FUNCTION
 
@@ -151,7 +142,7 @@ struct CVecLocal
 	~CVecLocal() { m.sub_102e0730(); }
 };
 
-void CAI_SaveRestoreBlockHandler::vfunc7(CRestore *pRestore, int a, int b)
+void CAI_SaveRestoreBlockHandler::Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused)
 {
 	CAI_BaseNPC **ppEnts = (CAI_BaseNPC **)g_1090fe10.sub_102652d0();
 	for (int i = 0; i < g_1090fe10.sub_102652f0(); i++)

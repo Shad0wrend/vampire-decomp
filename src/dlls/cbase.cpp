@@ -1743,9 +1743,9 @@ CEQ_SaveRestoreBlockHandler g_106e70a8;
 namespace lifted {
 extern char g_1055e5bc;
 }
-int CEQ_SaveRestoreBlockHandler::vfunc0()
+const char *CEQ_SaveRestoreBlockHandler::GetBlockName()
 {
-    return (int)&lifted::g_1055e5bc;
+    return &lifted::g_1055e5bc;
 }
 // END FUNCTION
 
@@ -1753,30 +1753,23 @@ int CEQ_SaveRestoreBlockHandler::vfunc0()
 #include "CEQ_SaveRestoreBlockHandler.h"
 namespace lifted {
 extern char g_106e7050;
-struct C100024a5 { int sub_100024a5(); };
+struct C100024a5 { int sub_100024a5(ISave *pSave); };
 }
-void CEQ_SaveRestoreBlockHandler::vfunc2()
+void CEQ_SaveRestoreBlockHandler::Save(ISave *pSave)
 {
-    ((lifted::C100024a5 *)((int)&lifted::g_106e7050))->sub_100024a5();
+    ((lifted::C100024a5 *)((int)&lifted::g_106e7050))->sub_100024a5(pSave);
 }
 // END FUNCTION
 
 // FUNCTION: 0x100cff00 size=0x13
-#include "vampire.h"
-
-struct CUnknown100cff00
-{
-	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
-	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
-	virtual void v8(const void *pData, int a);
-};
+#include "CEQ_SaveRestoreBlockHandler.h"
+#include "ISave.h"
 
 extern char g_1055deb0[];
 
-// TARGET: sub_100cff00
-void __stdcall sub_100cff00(CUnknown100cff00 *pObj)
+void CEQ_SaveRestoreBlockHandler::WriteSaveHeaders(ISave *pSave)
 {
-	pObj->v8(g_1055deb0, 1);
+	pSave->vfunc8(g_1055deb0, 1);
 }
 // END FUNCTION
 
@@ -1785,10 +1778,10 @@ void __stdcall sub_100cff00(CUnknown100cff00 *pObj)
 
 extern short g_1055deb0;
 
-void CEQ_SaveRestoreBlockHandler::vfunc6(IRestoreRead *pRestore)
+void CEQ_SaveRestoreBlockHandler::ReadRestoreHeaders(IRestore *pRestore)
 {
 	short version;
-	pRestore->ReadShort(&version, 1, 0);
+	((IRestoreRead *)pRestore)->ReadShort(&version, 1, 0);
 	m_bVersionMatches = (version == g_1055deb0);
 }
 // END FUNCTION
@@ -1799,11 +1792,10 @@ void CEQ_SaveRestoreBlockHandler::vfunc6(IRestoreRead *pRestore)
 
 extern CEventQueue g_106e7050;
 
-// TARGET: CEQ_SaveRestoreBlockHandler::vfunc7
-void CEQ_SaveRestoreBlockHandler::vfunc7(int a, int b, int c)
+void CEQ_SaveRestoreBlockHandler::Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused)
 {
 	if (m_bVersionMatches)
-		g_106e7050.sub_100cfda0((IEQRestore *)a);
+		g_106e7050.sub_100cfda0((IEQRestore *)pRestore);
 }
 // END FUNCTION
 

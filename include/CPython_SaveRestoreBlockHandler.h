@@ -1,10 +1,8 @@
 // CPython_SaveRestoreBlockHandler (RTTI .?AVCPython_SaveRestoreBlockHandler@@): save/restore block handler that
-// hands the saved game data to the Python side; base CDefSaveRestoreBlockHandler in the initializer unit (the global
-// 0x1072b354), a flat view elsewhere.
+// hands the saved game data to the Python side (the global 0x1072b354); base CDefSaveRestoreBlockHandler, its own
+// slots of vtable 0x10476ac8.
 #pragma once
-#ifdef PCD_INITIALIZERS
 #include "ISaveRestoreBlockHandler.h"
-#endif
 
 // The restore stream as the Python block handler reads it: only the slots used so far are named.
 class IRestorePy
@@ -33,30 +31,14 @@ public:
 	virtual void WriteBool(char *pValue, int count);	// slot 12
 };
 
-class CPython_SaveRestoreBlockHandler
-#ifdef PCD_INITIALIZERS
-	: public CDefSaveRestoreBlockHandler
-#endif
+class CPython_SaveRestoreBlockHandler : public CDefSaveRestoreBlockHandler
 {
 public:
-#ifdef PCD_INITIALIZERS	// its own slots of vtable 0x10476ac8 (matched as the flat view's vfuncN)
 	virtual const char *GetBlockName();
-	virtual void Save(ISave *pSave);
-	virtual void WriteSaveHeaders(ISave *pSave);
-	virtual void ReadRestoreHeaders(IRestore *pRestore);
-	virtual void Restore(IRestore *pRestore, bool fCreatePlayers);
-#else
-	virtual int vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2(IWritePy *pSave);	// Save: pickles the two Python objects into the save stream (cPickle.dump)
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6(IRestorePy *pRestore);	// Restore of the version: the Python side reads the version short and compares it with the game's version (m_bEnabled)
-	virtual void vfunc7(IRestorePy *pRestore, int a, int b);	// Restore: with the Python side enabled, calls the restore callbacks of the Python module for the two saved blocks
-	virtual void vfunc8();
-	virtual void vfunc9();
-#endif
+	virtual void Save(ISave *pSave);	// pickles the two Python objects into the save stream (cPickle.dump)
+	virtual void WriteSaveHeaders(ISave *pSave);	// the block version short
+	virtual void ReadRestoreHeaders(IRestore *pRestore);	// the Python side reads the version short and compares it with the game's version (m_bEnabled)
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused);	// with the Python side enabled, calls the restore callbacks of the Python module for the two saved blocks
 
 	char m_bEnabled;	// 0x04: the Python side is running
 };

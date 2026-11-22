@@ -34,7 +34,7 @@ public:
 	virtual void PostSave();
 	virtual void PreRestore();
 	virtual void ReadRestoreHeaders(IRestore *pRestore);
-	virtual void Restore(IRestore *pRestore, bool fCreatePlayers);
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused);
 	virtual void PostRestore();
 	virtual void AddBlockHandler(ISaveRestoreBlockHandler *pHandler);
 	virtual void RemoveBlockHandler(ISaveRestoreBlockHandler *pHandler);
