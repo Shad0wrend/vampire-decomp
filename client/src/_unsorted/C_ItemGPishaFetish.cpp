@@ -22,6 +22,17 @@ C_ItemGPishaFetish *pcd_emit_1001ae10() { return new C_ItemGPishaFetish; }
 // TARGET: ??_GC_ItemGPishaFetish@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001ae30 size=0x6
+#include "C_ItemGPishaFetish.h"
+namespace lifted {
+extern char g_10274568;
+}
+int C_ItemGPishaFetish::vfunc16()
+{
+    return (int)&lifted::g_10274568;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ae40 size=0x3
 #include "C_ItemGPishaFetish.h"
 int C_ItemGPishaFetish::vfunc15()
