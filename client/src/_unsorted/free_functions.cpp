@@ -63989,6 +63989,27 @@ int CUnknown101668d0::sub_101668d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101668e0 size=0x3b
+namespace lifted {
+struct C10166dd0 { int sub_10166dd0(int); };
+struct C10166e20 { int sub_10166e20(int); };
+}
+struct CUnknown101668e0 { void sub_101668e0(int, int); };
+void CUnknown101668e0::sub_101668e0(int a0, int a1)
+{
+    if (a0 != (*(int *)((char *)this + 0x64))) {
+        *(int *)((char *)this + 0x64) = a0;
+        int t0 = ((lifted::C10166dd0 *)this)->sub_10166dd0(0);
+        *(char *)((char *)this + 0x58) = 1;
+    }
+    if (a1 != (*(int *)((char *)this + 0x68))) {
+        *(int *)((char *)this + 0x68) = a1;
+        int t1 = ((lifted::C10166e20 *)this)->sub_10166e20(0);
+        *(char *)((char *)this + 0x58) = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166d70 size=0x18
 struct CUnknown10166d70 { int sub_10166d70(); };
 int CUnknown10166d70::sub_10166d70()
