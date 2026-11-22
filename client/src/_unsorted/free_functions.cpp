@@ -29508,6 +29508,20 @@ int CUnknown100cd2e0::sub_100cd2e0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd310 size=0x18
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual int f10(int); };
+}
+struct CUnknown100cd310 { void sub_100cd310(); };
+void CUnknown100cd310::sub_100cd310()
+{
+    if ((*(int *)this) != 0) {
+        int t0 = ((lifted::V *)(*(int *)this))->f10(0);
+        *(int *)this = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd330 size=0xdb
 #include "Vector.h"
 #include "CUnknown1070b254.h"
