@@ -851,6 +851,7 @@
 0x10019040 func   ?vfunc15@C_ItemGLillyDiary@@UAEHXZ C_ItemGLillyDiary::vfunc15
 0x10019050 func   ?sub_10019050@@YAHXZ sub_10019050
 0x10019170 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyDiary@@@Z ClientClassInit
+0x10019200 func   ?vfunc17@C_ItemGLillyPurse@@UAEHXZ C_ItemGLillyPurse::vfunc17
 0x10019290 func   ??_GC_ItemGLillyPurse@@UAEPAXI@Z ??_GC_ItemGLillyPurse@@UAEPAXI@Z
 0x100192c0 func   ?vfunc15@C_ItemGLillyPurse@@UAEHXZ C_ItemGLillyPurse::vfunc15
 0x100192d0 func   ?sub_100192d0@@YAHXZ sub_100192d0

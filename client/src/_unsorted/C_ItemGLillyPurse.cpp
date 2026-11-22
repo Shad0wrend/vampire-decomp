@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10019200 size=0x6
+#include "C_ItemGLillyPurse.h"
+namespace lifted {
+extern char g_102734a8;
+}
+int C_ItemGLillyPurse::vfunc17()
+{
+    return (int)&lifted::g_102734a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019290 size=0x1e
 #include "C_ItemGLillyPurse.h"
 
