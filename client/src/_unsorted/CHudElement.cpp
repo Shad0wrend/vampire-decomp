@@ -51,6 +51,14 @@ int CHudElement::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbdf0 size=0x4
+#include "CHudElement.h"
+bool CHudElement::vfunc10()
+{
+    return *(bool *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0540 size=0x3
 #include "CHudElement.h"
 void CHudElement::vfunc5(int a0)
