@@ -10,3 +10,11 @@ C_ItemGBachJournal *pcd_emit_1001a910() { return new C_ItemGBachJournal; }
 
 // TARGET: ??_GC_ItemGBachJournal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001a940 size=0x3
+#include "C_ItemGBachJournal.h"
+int C_ItemGBachJournal::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
