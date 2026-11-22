@@ -22,6 +22,17 @@ C_ItemGLarryBriefcase *pcd_emit_10019f10() { return new C_ItemGLarryBriefcase; }
 // TARGET: ??_GC_ItemGLarryBriefcase@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10019f30 size=0x6
+#include "C_ItemGLarryBriefcase.h"
+namespace lifted {
+extern char g_102745e0;
+}
+int C_ItemGLarryBriefcase::vfunc16()
+{
+    return (int)&lifted::g_102745e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019f40 size=0x3
 #include "C_ItemGLarryBriefcase.h"
 int C_ItemGLarryBriefcase::vfunc15()
