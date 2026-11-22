@@ -18,3 +18,14 @@ int vgui2::RadioButton::vfunc164(int a0, int a1, int a2, int a3)
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c64f0 size=0x6
+#include "vgui2__RadioButton.h"
+namespace lifted {
+extern char g_102da808;
+}
+int vgui2::RadioButton::vfunc102()
+{
+    return (int)&lifted::g_102da808;
+}
+// END FUNCTION
