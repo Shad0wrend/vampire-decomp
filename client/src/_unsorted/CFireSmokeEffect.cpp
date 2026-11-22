@@ -10,3 +10,10 @@ CFireSmokeEffect *pcd_emit_101189d0() { return new CFireSmokeEffect; }
 
 // TARGET: ??_GCFireSmokeEffect@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10118a80 size=0x3
+#include "CFireSmokeEffect.h"
+void CFireSmokeEffect::vfunc11(int a0, int a1)
+{
+}
+// END FUNCTION
