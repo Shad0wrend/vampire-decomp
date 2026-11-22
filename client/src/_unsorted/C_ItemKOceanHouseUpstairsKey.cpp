@@ -22,6 +22,17 @@ C_ItemKOceanHouseUpstairsKey *pcd_emit_10021990() { return new C_ItemKOceanHouse
 // TARGET: ??_GC_ItemKOceanHouseUpstairsKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100219b0 size=0x6
+#include "C_ItemKOceanHouseUpstairsKey.h"
+namespace lifted {
+extern char g_10274194;
+}
+int C_ItemKOceanHouseUpstairsKey::vfunc16()
+{
+    return (int)&lifted::g_10274194;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100219c0 size=0x3
 #include "C_ItemKOceanHouseUpstairsKey.h"
 int C_ItemKOceanHouseUpstairsKey::vfunc15()
