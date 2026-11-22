@@ -2,6 +2,7 @@
 0x10001030 func   ?sub_10001030@@YGXPADIHP8CUnknown1004ddc0@@AEXXZ@Z sub_10001030
 0x100011e0 func   ?sub_100011e0@@YAHXZ sub_100011e0
 0x100012e0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseCineCam@@@Z ClientClassInit
+0x10001590 func   ?GetIClientUnknown@C_BaseEntity@@UAEPAVIClientUnknown@@XZ C_BaseEntity::GetIClientUnknown
 0x10001590 func   ?sub_10001590@CUnknown10001590@@QAEPADXZ CUnknown10001590::sub_10001590
 0x100015b0 func   ?GetClientCollideable@C_BaseEntity@@UAEPAVICollideable@@XZ C_BaseEntity::GetClientCollideable
 0x100015c0 func   ?GetClientNetworkable@C_BaseEntity@@UAEPAVIClientNetworkable@@XZ C_BaseEntity::GetClientNetworkable
