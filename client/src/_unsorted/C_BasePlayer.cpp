@@ -17,6 +17,17 @@ int C_BasePlayer::vfunc175(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002b80 size=0x7
+#include "C_BasePlayer.h"
+namespace lifted {
+extern float g_101e34ec;
+}
+float C_BasePlayer::vfunc176()
+{
+    return lifted::g_101e34ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a49f0 size=0x6
 #include "C_BasePlayer.h"
 namespace lifted {
