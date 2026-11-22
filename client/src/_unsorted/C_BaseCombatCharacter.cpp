@@ -29,3 +29,14 @@ int C_BaseCombatCharacter::vfunc15()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10098710 size=0x6
+#include "C_BaseCombatCharacter.h"
+namespace lifted {
+extern char g_102ae794;
+}
+int C_BaseCombatCharacter::vfunc17()
+{
+    return (int)&lifted::g_102ae794;
+}
+// END FUNCTION
