@@ -1803,6 +1803,7 @@
 0x1007de10 func   ?vfunc92@C_BaseEntity@@UAEXHH@Z C_BaseEntity::vfunc92
 0x1007de20 func   ?vfunc93@C_BaseEntity@@UAEXHHH@Z C_BaseEntity::vfunc93
 0x1007df70 func   ?vfunc87@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc87
+0x1007e220 func   ?vfunc15@C_BaseGrenade@@UAEHXZ C_BaseGrenade::vfunc15
 0x1007e230 func   ?sub_1007e230@@YAHXZ sub_1007e230
 0x1007e330 func   ?ClientClassInit@@YAHPAUignored@DT_BaseGrenade@@@Z ClientClassInit
 0x1007e4e0 func   ?vfunc149@C_BaseGrenade@@UAEXHH@Z C_BaseGrenade::vfunc149
