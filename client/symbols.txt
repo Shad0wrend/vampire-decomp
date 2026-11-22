@@ -2020,6 +2020,7 @@
 0x100d3f70 func   ?sub_100d3f70@CUnknown100d3f70@@QAEXXZ CUnknown100d3f70::sub_100d3f70
 0x100d4030 func   ?vfunc2@ClientModeShared@@UAEXXZ ClientModeShared::vfunc2
 0x100d42c0 func   ?vfunc30@ClientModeShared@@UAEXXZ ClientModeShared::vfunc30
+0x100d42d0 func   ?vfunc31@ClientModeShared@@UAEXXZ ClientModeShared::vfunc31
 0x100d5140 func   ?sub_100d5140@CUnknown100d5140@@QAEHXZ CUnknown100d5140::sub_100d5140
 0x100d5150 func   ?sub_100d5150@@YGHHH@Z sub_100d5150
 0x100d58f0 func   ?sub_100d58f0@@YAHXZ sub_100d58f0
