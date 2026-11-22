@@ -22,6 +22,17 @@ C_ElderVitaePack *pcd_emit_10014f10() { return new C_ElderVitaePack; }
 // TARGET: ??_GC_ElderVitaePack@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10014f30 size=0x6
+#include "C_ElderVitaePack.h"
+namespace lifted {
+extern char g_102748c0;
+}
+int C_ElderVitaePack::vfunc16()
+{
+    return (int)&lifted::g_102748c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014f40 size=0x3
 #include "C_ElderVitaePack.h"
 int C_ElderVitaePack::vfunc15()
