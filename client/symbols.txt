@@ -1318,6 +1318,7 @@
 0x10058f50 func   ?vfunc27@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc27
 0x10058f60 func   ?vfunc20@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc20
 0x10058f70 func   ?vfunc21@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc21
+0x10058f80 func   ?vfunc22@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc22
 0x10059330 func   ??_GCHUDSprite@@UAEPAXI@Z ??_GCHUDSprite@@UAEPAXI@Z
 0x10059350 func   ??1CHUDSprite@@UAE@XZ CHUDSprite::~CHUDSprite
 0x1005d6e0 func   ?sub_1005d6e0@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_1005d6e0
