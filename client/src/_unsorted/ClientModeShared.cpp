@@ -117,6 +117,26 @@ void ClientModeShared::vfunc18()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4490 size=0x31
+#include "ClientModeShared.h"
+namespace lifted {
+extern int g_102b9318;
+extern int g_104cef90;
+struct C100f2650 { int sub_100f2650(int); };
+int sub_101ac8f0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(); };
+}
+void ClientModeShared::vfunc24(int a0)
+{
+    if (lifted::g_104cef90 != 0) {
+        ((lifted::C100f2650 *)lifted::g_104cef90)->sub_100f2650(a0);
+    }
+    if (lifted::g_102b9318 == -1) {
+        lifted::g_102b9318 = ((lifted::V *)(lifted::sub_101ac8f0()))->f21();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4550 size=0xf
 #include "ClientModeShared.h"
 namespace lifted {
