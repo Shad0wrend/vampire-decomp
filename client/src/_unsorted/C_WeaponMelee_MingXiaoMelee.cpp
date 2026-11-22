@@ -10,3 +10,11 @@ C_WeaponMelee_MingXiaoMelee *pcd_emit_1000c310() { return new C_WeaponMelee_Ming
 
 // TARGET: ??_GC_WeaponMelee_MingXiaoMelee@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000c340 size=0x3
+#include "C_WeaponMelee_MingXiaoMelee.h"
+int C_WeaponMelee_MingXiaoMelee::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
