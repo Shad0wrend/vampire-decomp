@@ -28,3 +28,10 @@ void CViewportClientSystem::vfunc4()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10166630 size=0x1
+#include "CViewportClientSystem.h"
+void CViewportClientSystem::vfunc5()
+{
+}
+// END FUNCTION
