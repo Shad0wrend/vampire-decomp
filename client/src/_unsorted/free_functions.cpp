@@ -12021,6 +12021,21 @@ void CUnknown100dcd00::sub_100437f0(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044070 size=0x2c
+namespace lifted {
+struct C10043da0 { int sub_10043da0(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int, int); };
+}
+struct CUnknown10044070 { int sub_10044070(char, int, int); };
+int CUnknown10044070::sub_10044070(char a0, int a1, int a2)
+{
+    if (a0 != 0) {
+        return ((lifted::C10043da0 *)this)->sub_10043da0(a1, a2);
+    }
+    return ((lifted::V *)this)->f3(a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044400 size=0x20
 namespace lifted {
 extern int g_104a5808;
