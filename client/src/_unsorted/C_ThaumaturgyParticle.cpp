@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b2a20 size=0x6
+#include "C_ThaumaturgyParticle.h"
+namespace lifted {
+extern char g_102b2e3c;
+}
+int C_ThaumaturgyParticle::vfunc16()
+{
+    return (int)&lifted::g_102b2e3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a30 size=0x3
 #include "C_ThaumaturgyParticle.h"
 int C_ThaumaturgyParticle::vfunc15()
