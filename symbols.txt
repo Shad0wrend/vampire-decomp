@@ -5323,7 +5323,6 @@
 0x10007919 func   ?sub_10192870@CPropMover@@QAEPAV1@XZ CPropMover::sub_10192870
 0x1000791e func   ?sub_1012e150@@YAHXZ sub_1012e150
 0x10007923 func   ??_GCEntityListSystem@@UAEPAXI@Z ??_GCEntityListSystem@@UAEPAXI@Z
-0x10007923 func   ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z CEntityListSystem::vfunc8
 0x10007928 func   ?vfunc373@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc373
 0x1000792d func   ?sub_100f41e0@@YAXHMMMH@Z sub_100f41e0
 0x10007932 func   ?sub_103dad80@@YAPAXXZ sub_103dad80
