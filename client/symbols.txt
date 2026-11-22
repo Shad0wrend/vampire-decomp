@@ -769,6 +769,7 @@
 0x1002c4b0 func   ?sub_1002c4b0@@YGXH@Z sub_1002c4b0
 0x1002c4c0 func   ?PreDataUpdate@C_BaseTempEntity@@UAEXH@Z C_BaseTempEntity::PreDataUpdate
 0x1002c4c0 func   ?sub_1002c4c0@@YGXH@Z sub_1002c4c0
+0x1002c4d0 func   ?entindex@C_BaseTempEntity@@UAEHXZ C_BaseTempEntity::entindex
 0x1002c4d0 func   ?sub_1002c4d0@@YAHXZ sub_1002c4d0
 0x1002c4e0 func   ?PostDataUpdate@C_BaseTempEntity@@UAEXH@Z C_BaseTempEntity::PostDataUpdate
 0x1002c4e0 func   ?sub_1002c4e0@@YGXH@Z sub_1002c4e0
