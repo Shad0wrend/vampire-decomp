@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c1dd0 size=0x3
+#include "vgui2__BuildGroup.h"
+void vgui2::BuildGroup::vfunc20(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1de0 size=0x2eb
 struct KV {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
