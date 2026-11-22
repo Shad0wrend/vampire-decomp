@@ -10,3 +10,11 @@ C_ItemKOHFrontKey *pcd_emit_10025810() { return new C_ItemKOHFrontKey; }
 
 // TARGET: ??_GC_ItemKOHFrontKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10025840 size=0x3
+#include "C_ItemKOHFrontKey.h"
+int C_ItemKOHFrontKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
