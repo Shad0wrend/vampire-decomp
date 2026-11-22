@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001c180 size=0x6
+#include "C_ItemGPishaBook.h"
+namespace lifted {
+extern char g_102736bc;
+}
+int C_ItemGPishaBook::vfunc17()
+{
+    return (int)&lifted::g_102736bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c210 size=0x1e
 #include "C_ItemGPishaBook.h"
 
