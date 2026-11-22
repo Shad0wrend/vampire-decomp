@@ -11,6 +11,16 @@ vgui2::Image *pcd_emit_101b68e0() { return new vgui2::Image; }
 // TARGET: ??_GImage@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b6910 size=0x11
+#include "vgui2__Image.h"
+int vgui2::Image::vfunc1(int a0, int a1)
+{
+    *(int *)((char *)this + 4) = a0;
+    *(int *)((char *)this + 8) = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6c90 size=0xc
 #include "vgui2__Image.h"
 int vgui2::Image::vfunc8(int a0)
