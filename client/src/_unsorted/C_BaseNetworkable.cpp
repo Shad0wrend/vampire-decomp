@@ -89,3 +89,14 @@ C_BaseEntity * C_BaseNetworkable::GetBaseEntity()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a3b40 size=0xb
+#include "C_BaseNetworkable.h"
+IClientThinkable * C_BaseNetworkable::GetClientThinkable()
+{
+    if (((int)this) != 0) {
+        return (IClientThinkable *)((char *)this + 8);
+    }
+    return 0;
+}
+// END FUNCTION
