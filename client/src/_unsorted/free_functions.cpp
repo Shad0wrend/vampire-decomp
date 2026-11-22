@@ -63075,6 +63075,140 @@ void sub_101a8c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8d60 size=0x44d
+#include <stdio.h>
+#include <stdlib.h>
+#include "Tier1.h"
+extern int g_104cfe58;
+extern char g_102bc804[];
+extern char g_102af2e8[];
+extern char g_102d7b60[];
+struct XTex;
+struct XHist { void sub_100f0180(int); };
+struct XHud {
+	void *sub_100f11d0(const char *);
+	void *sub_100f0ae0(void *, void *);
+	XHist *sub_100f0ed0(const char *);
+};
+extern XHud g_104cfe38;
+XTex *sub_101a7c00(void *, const char *, int, int);
+void *sub_101a7c80(char *, int *);
+int sub_100ccde0(void *);
+struct XInfo {
+	int pad0[2];
+	char m_name[1];
+	char pad[0x5ebc8 - 9];
+	void *iconActive;
+	void *iconInactive;
+	void *iconAmmo;
+	void *iconAmmo2;
+	void *iconCrosshair;
+	void *iconCrosshair2;
+	void *iconCrosshair3;
+	void *iconAutoaim;
+	void *iconZoom;
+	void *iconZoomAutoaim;
+	char pad2[0x5f2f0 - 0x5ebec - 4];
+	void *iconWeaponA;
+	void *statusS[4];
+	void *status[4];
+};
+struct XRes {
+	void *m_pList;
+	void sub_101a8d60(XInfo *info);
+};
+#define FIND(n) sub_101a7c00(m_pList, n, count, key)
+#define ADD(p) g_104cfe38.sub_100f0ae0((char *)(p) + 0x40, (char *)(p) + 0x88)
+#define GAP(h, icon) (h)->sub_100f0180(sub_100ccde0(icon))
+void XRes::sub_101a8d60(XInfo *info)
+{
+	if (!info)
+		return;
+	int count = g_104cfe58;
+	info->iconActive = 0;
+	info->iconInactive = 0;
+	info->iconAmmo = 0;
+	info->iconAmmo2 = 0;
+	info->iconCrosshair = 0;
+	info->iconAutoaim = 0;
+	info->iconWeaponA = 0;
+	info->iconCrosshair2 = 0;
+	info->iconCrosshair3 = 0;
+	for (int i = 0; i < 4; i++) {
+		info->statusS[i] = 0;
+		info->status[i] = 0;
+	}
+	char sz[128];
+	g_101e3190(sz, 0x80, "vdata/items/%s.txt", info->m_name);
+	free(m_pList);
+	int key;
+	m_pList = sub_101a7c80(sz, &key);
+	if (!m_pList) {
+		info->iconActive = g_104cfe38.sub_100f11d0("selection");
+		info->iconInactive = g_104cfe38.sub_100f11d0("selection");
+		info->iconAmmo = g_104cfe38.sub_100f11d0("bucket1");
+		info->iconWeaponA = g_104cfe38.sub_100f11d0("selection");
+		return;
+	}
+	XTex *p;
+	p = FIND(g_102bc804);
+	if (p)
+		info->iconCrosshair = ADD(p);
+	p = FIND("autoaim");
+	if (p)
+		info->iconAutoaim = ADD(p);
+	p = FIND("zoom");
+	if (p)
+		info->iconZoom = ADD(p);
+	else
+		info->iconZoom = info->iconCrosshair;
+	p = FIND("zoom_autoaim");
+	if (p)
+		info->iconZoomAutoaim = ADD(p);
+	else
+		info->iconZoomAutoaim = info->iconZoom;
+	XHist *hr = g_104cfe38.sub_100f0ed0(g_102af2e8);
+	p = FIND("weapon");
+	if (p) {
+		info->iconInactive = ADD(p);
+		GAP(hr, info->iconInactive);
+	}
+	p = FIND("weapon_s");
+	if (p)
+		info->iconActive = ADD(p);
+	p = FIND("ammo");
+	if (p) {
+		info->iconAmmo = ADD(p);
+		GAP(hr, info->iconAmmo);
+	}
+	p = FIND("ammo2");
+	if (p) {
+		info->iconAmmo2 = ADD(p);
+		GAP(hr, info->iconAmmo2);
+	}
+	p = FIND("weapon_a");
+	if (p)
+		info->iconWeaponA = ADD(p);
+	p = FIND("crosshair2");
+	if (p)
+		info->iconCrosshair2 = ADD(p);
+	p = FIND("crosshair3");
+	if (p)
+		info->iconCrosshair3 = ADD(p);
+	for (int j = 0; j < 4; j++) {
+		char buf[64];
+		sprintf(buf, "status%d", j);
+		p = FIND(buf);
+		if (p)
+			info->status[j] = ADD(p);
+		sprintf(buf, g_102d7b60, j);
+		p = FIND(buf);
+		if (p)
+			info->statusS[j] = ADD(p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa220 size=0x4
 struct CUnknown101aa220 { int sub_101aa220(); };
 int CUnknown101aa220::sub_101aa220()
