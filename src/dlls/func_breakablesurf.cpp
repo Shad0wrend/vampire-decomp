@@ -398,45 +398,13 @@ void CBreakableSurface::sub_1010ff40()
 // END FUNCTION
 
 // FUNCTION: 0x10110430 size=0x68
-extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
-extern int vt_10447108[];
+#include "CEntityMessageFilter.h"
 
-struct TFilterX {
-	int *vptr;
-	int pad;
-	void *p;
-	int count;
-	int grow;
-	int size;
-	void *elems;
-	TFilterX *sub_10110430(unsigned char flags);
-};
+// VC6 writes CEntityMessageFilter's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CEntityMessageFilter *pcd_emit_10110430() { return new CEntityMessageFilter; }
 
-TFilterX *TFilterX::sub_10110430(unsigned char flags)
-{
-	size = 0;
-	if (grow != -1) {
-		if (p) {
-			Plat_Free(p);
-			p = 0;
-		}
-		count = 0;
-	}
-	void *e = p;
-	int g = grow;
-	elems = e;
-	if (g != -1) {
-		if (e) {
-			Plat_Free(e);
-			p = 0;
-		}
-		count = 0;
-	}
-	vptr = vt_10447108;
-	if (flags & 1)
-		delete this;
-	return this;
-}
+// TARGET: ??_GCEntityMessageFilter@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x101104c0 size=0x50b
