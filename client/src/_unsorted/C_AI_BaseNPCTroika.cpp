@@ -11,6 +11,17 @@ C_AI_BaseNPCTroika *pcd_emit_1008e770() { return new C_AI_BaseNPCTroika; }
 // TARGET: ??_GC_AI_BaseNPCTroika@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1008e7c0 size=0x6
+#include "C_AI_BaseNPCTroika.h"
+namespace lifted {
+extern char g_102ad584;
+}
+int C_AI_BaseNPCTroika::vfunc16()
+{
+    return (int)&lifted::g_102ad584;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e7d0 size=0x3
 #include "C_AI_BaseNPCTroika.h"
 int C_AI_BaseNPCTroika::vfunc15()
