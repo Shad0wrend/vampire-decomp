@@ -3241,6 +3241,7 @@
 0x100d8230 func   ?vfunc2@CShadowProxy@@UAEXXZ CShadowProxy::vfunc2
 0x100d8260 func   ?sub_100d8260@CUnknown100d8260@@QAEXXZ CUnknown100d8260::sub_100d8260
 0x100d8330 func   ?sub_100d8330@CUnknown100d8330@@QAEPAXXZ CUnknown100d8330::sub_100d8330
+0x100d8350 func   ?vfunc2@CShadowModelProxy@@UAEXXZ CShadowModelProxy::vfunc2
 0x100d8380 func   ?sub_100d8380@CUnknown100d8380@@QAEXXZ CUnknown100d8380::sub_100d8380
 0x100d8690 func   ?sub_100d8690@UtlMem@@QAEXXZ UtlMem::sub_100d8690
 0x100d8770 func   ?sub_100d8770@CUnknown100d8770@@QAEHXZ CUnknown100d8770::sub_100d8770
