@@ -4926,6 +4926,7 @@
 0x10165fb0 func   ??_GCFPSPanel@@UAEPAXI@Z ??_GCFPSPanel@@UAEPAXI@Z
 0x10165fd0 func   ??1CFPSPanel@@UAE@XZ CFPSPanel::~CFPSPanel
 0x10165fd0 func   ?sub_10165fd0@CUnknown10165fd0@@QAEHXZ CUnknown10165fd0::sub_10165fd0
+0x101665e0 func   ?vfunc0@CViewportClientSystem@@UAE_NXZ CViewportClientSystem::vfunc0
 0x101665f0 func   ?vfunc1@CViewportClientSystem@@UAEXXZ CViewportClientSystem::vfunc1
 0x10166600 func   ?vfunc2@CViewportClientSystem@@UAEXXZ CViewportClientSystem::vfunc2
 0x10166610 func   ?vfunc3@CViewportClientSystem@@UAEXXZ CViewportClientSystem::vfunc3
