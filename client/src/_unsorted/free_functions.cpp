@@ -11351,6 +11351,22 @@ template <> int ClientClassInit<DT_TESmoke::ignored>(DT_TESmoke::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f100 size=0x19
+namespace lifted {
+extern char g_10227288;
+extern char g_102272bc;
+int sub_1003df00();
+}
+struct CUnknown1003f100 { void * sub_1003f100(); };
+void * CUnknown1003f100::sub_1003f100()
+{
+    int t0 = lifted::sub_1003df00();
+    *(int *)this = (int)&lifted::g_102272bc;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10227288;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f140 size=0x12
 namespace lifted {
 extern char g_10227288;
