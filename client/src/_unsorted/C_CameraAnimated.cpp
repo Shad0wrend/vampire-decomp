@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100025a0 size=0x6
+#include "C_CameraAnimated.h"
+namespace lifted {
+extern char g_10270c98;
+}
+int C_CameraAnimated::vfunc16()
+{
+    return (int)&lifted::g_10270c98;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100025b0 size=0x3
 #include "C_CameraAnimated.h"
 int C_CameraAnimated::vfunc15()
