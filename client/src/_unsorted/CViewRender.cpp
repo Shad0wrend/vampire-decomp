@@ -168,3 +168,11 @@ char * CViewRender::vfunc11()
     return (char *)this + 0x22c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101995a0 size=0x7
+#include "CViewRender.h"
+char * CViewRender::vfunc12()
+{
+    return (char *)this + 0x310;
+}
+// END FUNCTION
