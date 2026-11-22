@@ -29294,6 +29294,30 @@ template <> int ClientClassInit<DT_HudCounter::ignored>(DT_HudCounter::ignored *
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc060 size=0x42
+namespace lifted {
+extern char g_10230ca4;
+extern char g_10230cb8;
+extern char g_10230cf4;
+extern char g_10230d2c;
+extern char g_10230d84;
+int sub_1009db90();
+}
+struct CUnknown100bc060 { void * sub_100bc060(); };
+void * CUnknown100bc060::sub_100bc060()
+{
+    int t0 = lifted::sub_1009db90();
+    *(int *)this = (int)&lifted::g_10230d84;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10230d2c;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10230cf4;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_10230cb8;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10230ca4;
+    *(int *)((char *)this + 0x424) = 0;
+    *(int *)((char *)this + 0x414) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc150 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
