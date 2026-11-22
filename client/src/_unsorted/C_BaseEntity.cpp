@@ -415,6 +415,27 @@ bool C_BaseEntity::vfunc74()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0bd0 size=0x37
+#include "C_BaseEntity.h"
+namespace lifted {
+extern int g_104a57f8;
+struct V { virtual void u0(); virtual int f1(int); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(int); };
+}
+bool C_BaseEntity::vfunc75()
+{
+    if ((*(int *)((char *)this + 0x40)) != 0) {
+        int t0 = ((lifted::V *)lifted::g_104a57f8)->f6(*(int *)((char *)this + 0x40));
+        if (t0 == 1) {
+            int t1 = ((lifted::V *)lifted::g_104a57f8)->f1(*(int *)((char *)this + 0x40));
+            if ((*(char *)((char *)t1)) == 0x2a) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0de0 size=0x10
 #include "C_BaseEntity.h"
 namespace lifted {
