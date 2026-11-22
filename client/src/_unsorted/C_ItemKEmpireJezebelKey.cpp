@@ -22,6 +22,17 @@ C_ItemKEmpireJezebelKey *pcd_emit_10023c90() { return new C_ItemKEmpireJezebelKe
 // TARGET: ??_GC_ItemKEmpireJezebelKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10023cb0 size=0x6
+#include "C_ItemKEmpireJezebelKey.h"
+namespace lifted {
+extern char g_10274044;
+}
+int C_ItemKEmpireJezebelKey::vfunc16()
+{
+    return (int)&lifted::g_10274044;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023cc0 size=0x3
 #include "C_ItemKEmpireJezebelKey.h"
 int C_ItemKEmpireJezebelKey::vfunc15()
