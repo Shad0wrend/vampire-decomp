@@ -47128,6 +47128,23 @@ int List::sub_10140e00(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141210 size=0x27
+namespace lifted {
+struct C10142340 { int sub_10142340(int); };
+}
+struct CUnknown10141210 { void * sub_10141210(int); };
+void * CUnknown10141210::sub_10141210(int a0)
+{
+    ((lifted::C10142340 *)((char *)this + 0x14))->sub_10142340(-1);
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141240 size=0x8
 namespace lifted {
 struct C101423a0 { int sub_101423a0(); };
