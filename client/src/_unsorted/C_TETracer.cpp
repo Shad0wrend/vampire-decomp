@@ -10,3 +10,14 @@ C_TETracer *pcd_emit_10040950() { return new C_TETracer; }
 
 // TARGET: ??_GC_TETracer@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10040af0 size=0x6
+#include "C_TETracer.h"
+namespace lifted {
+extern char g_10282270;
+}
+int C_TETracer::vfunc9()
+{
+    return (int)&lifted::g_10282270;
+}
+// END FUNCTION
