@@ -35,6 +35,15 @@ C_BaseEntity *pcd_emit_1009dda0() { return new C_BaseEntity; }
 // TARGET: ??_GC_BaseEntity@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1009f050 size=0xf
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc0(int a0)
+{
+    *(int *)((char *)this + 0xe4) = *(int *)((char *)a0);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f060 size=0x7
 #include "C_BaseEntity.h"
 unsigned int * C_BaseEntity::vfunc1()
