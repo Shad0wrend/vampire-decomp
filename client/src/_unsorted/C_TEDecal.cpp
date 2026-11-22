@@ -21,3 +21,11 @@ int C_TEDecal::vfunc9()
     return (int)&lifted::g_1027ec44;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10035e80 size=0x3
+#include "C_TEDecal.h"
+int C_TEDecal::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
