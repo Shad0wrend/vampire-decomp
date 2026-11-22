@@ -10,3 +10,10 @@ vgui2::PropertyPage *pcd_emit_101bb3b0() { return new vgui2::PropertyPage; }
 
 // TARGET: ??_GPropertyPage@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101bb400 size=0x1
+#include "vgui2__PropertyPage.h"
+void vgui2::PropertyPage::vfunc118()
+{
+}
+// END FUNCTION
