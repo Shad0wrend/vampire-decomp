@@ -31,6 +31,18 @@ int vgui2::Label::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2950 size=0xf
+#include "vgui2__Label.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::Label::vfunc111(int a0)
+{
+    *(int *)((char *)this + 0x58) = a0;
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b29e0 size=0x8
 #include "vgui2__Label.h"
 namespace lifted {
