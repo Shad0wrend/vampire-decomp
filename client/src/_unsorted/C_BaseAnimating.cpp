@@ -39,3 +39,11 @@ void C_BaseAnimating::vfunc131(int a0, int a1, int a2, int a3, int a4, int a5)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10091960 size=0x3
+#include "C_BaseAnimating.h"
+bool C_BaseAnimating::vfunc142()
+{
+    return 0;
+}
+// END FUNCTION
