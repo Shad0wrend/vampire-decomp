@@ -5690,6 +5690,7 @@
 0x101bf7e0 func   ?vfunc117@Menu@vgui2@@UAEHHHH@Z vgui2::Menu::vfunc117
 0x101bf860 func   ?vfunc115@Menu@vgui2@@UAEHHHH@Z vgui2::Menu::vfunc115
 0x101bf880 func   ?vfunc113@Menu@vgui2@@UAEHHH@Z vgui2::Menu::vfunc113
+0x101bf910 func   ?vfunc122@Menu@vgui2@@UAEHHHHH@Z vgui2::Menu::vfunc122
 0x101bf9c0 func   ?vfunc118@Menu@vgui2@@UAEHHHH@Z vgui2::Menu::vfunc118
 0x101bfa40 func   ?vfunc126@Menu@vgui2@@UAEHH@Z vgui2::Menu::vfunc126
 0x101c0030 func   ?vfunc127@Menu@vgui2@@UAEHH@Z vgui2::Menu::vfunc127
