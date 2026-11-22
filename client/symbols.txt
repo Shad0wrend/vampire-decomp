@@ -453,6 +453,7 @@
 0x10013150 func   ?sub_10013150@@YAHXZ sub_10013150
 0x10013270 func   ?ClientClassInit@@YAHPAUignored@DT_OccultObfuscate@@@Z ClientClassInit
 0x10013390 func   ??_GC_OccultDexterity@@UAEPAXI@Z ??_GC_OccultDexterity@@UAEPAXI@Z
+0x100133c0 func   ?vfunc15@C_OccultDexterity@@UAEHXZ C_OccultDexterity::vfunc15
 0x100133d0 func   ?sub_100133d0@@YAHXZ sub_100133d0
 0x100134f0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultDexterity@@@Z ClientClassInit
 0x10013610 func   ??_GC_OccultStrength@@UAEPAXI@Z ??_GC_OccultStrength@@UAEPAXI@Z

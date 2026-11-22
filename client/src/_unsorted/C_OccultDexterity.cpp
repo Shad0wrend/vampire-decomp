@@ -10,3 +10,11 @@ C_OccultDexterity *pcd_emit_10013390() { return new C_OccultDexterity; }
 
 // TARGET: ??_GC_OccultDexterity@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100133c0 size=0x3
+#include "C_OccultDexterity.h"
+int C_OccultDexterity::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
