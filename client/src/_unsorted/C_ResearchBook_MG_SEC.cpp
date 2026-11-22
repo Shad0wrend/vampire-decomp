@@ -22,6 +22,17 @@ C_ResearchBook_MG_SEC *pcd_emit_10010e10() { return new C_ResearchBook_MG_SEC; }
 // TARGET: ??_GC_ResearchBook_MG_SEC@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10010e30 size=0x6
+#include "C_ResearchBook_MG_SEC.h"
+namespace lifted {
+extern char g_10274ae4;
+}
+int C_ResearchBook_MG_SEC::vfunc16()
+{
+    return (int)&lifted::g_10274ae4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010e40 size=0x3
 #include "C_ResearchBook_MG_SEC.h"
 int C_ResearchBook_MG_SEC::vfunc15()
