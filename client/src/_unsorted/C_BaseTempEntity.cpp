@@ -65,6 +65,17 @@ bool C_BaseTempEntity::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c1a0 size=0x6
+#include "C_BaseTempEntity.h"
+namespace lifted {
+extern char g_1027c4ec;
+}
+int C_BaseTempEntity::vfunc9()
+{
+    return (int)&lifted::g_1027c4ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c1b0 size=0x3
 #include "C_BaseTempEntity.h"
 int C_BaseTempEntity::vfunc8()
