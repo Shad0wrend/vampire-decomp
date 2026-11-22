@@ -10,3 +10,11 @@ C_ItemKTutorialChopshopStairsKey *pcd_emit_10024690() { return new C_ItemKTutori
 
 // TARGET: ??_GC_ItemKTutorialChopshopStairsKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100246c0 size=0x3
+#include "C_ItemKTutorialChopshopStairsKey.h"
+int C_ItemKTutorialChopshopStairsKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
