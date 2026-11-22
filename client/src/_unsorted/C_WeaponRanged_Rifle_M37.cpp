@@ -22,6 +22,17 @@ C_WeaponRanged_Rifle_M37 *pcd_emit_1000e390() { return new C_WeaponRanged_Rifle_
 // TARGET: ??_GC_WeaponRanged_Rifle_M37@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000e3b0 size=0x6
+#include "C_WeaponRanged_Rifle_M37.h"
+namespace lifted {
+extern char g_10274c80;
+}
+int C_WeaponRanged_Rifle_M37::vfunc16()
+{
+    return (int)&lifted::g_10274c80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000e3c0 size=0x3
 #include "C_WeaponRanged_Rifle_M37.h"
 int C_WeaponRanged_Rifle_M37::vfunc15()
