@@ -30018,6 +30018,22 @@ void * CUnknown100cd1c0::sub_100cd1c0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd260 size=0x29
+namespace lifted {
+extern int g_104a57ec;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual int f13(int); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual int f40(int); };
+}
+struct CUnknown100cd260 { void sub_100cd260(); };
+void CUnknown100cd260::sub_100cd260()
+{
+    if ((*(int *)this) != 0) {
+        ((lifted::V *)(*(int *)this))->f13(0);
+        int t0 = ((lifted::V *)lifted::g_104a57ec)->f40(*(int *)this);
+        *(int *)this = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd290 size=0x9
 struct CUnknown100cd290 { void * sub_100cd290(); };
 void * CUnknown100cd290::sub_100cd290()
