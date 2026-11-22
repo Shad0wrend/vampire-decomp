@@ -29356,6 +29356,21 @@ void CUtlMemory12::sub_100caa80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb300 size=0x1b
+namespace lifted {
+struct C100cab10 { int sub_100cab10(); };
+int sub_101d12a1(int);
+}
+int sub_100cb300()
+{
+    int t0 = lifted::sub_101d12a1(0x34c);
+    if (t0 != 0) {
+        return ((lifted::C100cab10 *)t0)->sub_100cab10();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb560 size=0x6
 namespace lifted {
 extern char g_104a573c;
