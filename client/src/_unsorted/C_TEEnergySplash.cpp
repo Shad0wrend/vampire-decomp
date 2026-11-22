@@ -28,3 +28,11 @@ int C_TEEnergySplash::vfunc9()
     return (int)&lifted::g_1027efc4;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100365e0 size=0x3
+#include "C_TEEnergySplash.h"
+int C_TEEnergySplash::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
