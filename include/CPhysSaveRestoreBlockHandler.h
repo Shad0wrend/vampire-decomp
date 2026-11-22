@@ -13,6 +13,7 @@ class CRestore;
 #include "utlpriorityqueue.h"
 #include "CPhysObjSaveRestoreOps.h"
 #include "CGlobalEntityList.h"	// IEntityListener
+#include "ISaveRestoreBlockHandler.h"
 class CBaseEntity;
 class IPhysicsObject;
 class CPhysCollide;
@@ -51,21 +52,6 @@ public:
 	LessFunc_t m_pfnLess;
 };
 
-class CDefSaveRestoreBlockHandler	// ISaveRestoreBlockHandler with empty defaults
-{
-public:
-	virtual const char *GetBlockName();
-	virtual void PreSave(void *pData);
-	virtual void Save(void *pSave);
-	virtual void WriteSaveHeaders(void *pSave);
-	virtual void PostSave();
-	virtual void PreRestore();
-	virtual void ReadRestoreHeaders(void *pRestore);
-	virtual void Restore(void *pRestore, bool fCreatePlayers);
-	virtual void PostRestore();
-	virtual void vfunc9(void *p, void *q);	// slot 9, Troika's: an empty default of two arguments (0x10043be0)
-};
-
 class IPhysSaveRestoreManager
 {
 public:
@@ -101,13 +87,13 @@ public:
 	static bool SaveQueueFunc(const QueuedItem_t &left, const QueuedItem_t &right);
 	virtual const char *GetBlockName();	// declared here (not inline): the vtables stay the game's, not this unit's
 	// the overrides the game's vtables hold (its functions are matched under the flat view's names below)
-	virtual void PreSave(void *pData);
-	virtual void Save(void *pSave);
-	virtual void WriteSaveHeaders(void *pSave);
+	virtual void PreSave(CSaveRestoreData *pData);
+	virtual void Save(ISave *pSave);
+	virtual void WriteSaveHeaders(ISave *pSave);
 	virtual void PostSave();
 	virtual void PreRestore();
-	virtual void ReadRestoreHeaders(void *pRestore);
-	virtual void Restore(void *pRestore, bool fCreatePlayers);
+	virtual void ReadRestoreHeaders(IRestore *pRestore);
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers);
 	virtual void PostRestore();
 	virtual void NoteBBox(const Vector &mins, const Vector &maxs, CPhysCollide *pCollide);
 	virtual void AssociateModel(IPhysicsObject *pObject, int modelIndex);
@@ -123,7 +109,7 @@ public:
 	CUtlMap<IPhysicsObject *, int> m_PhysObjectModels;	// 0x44
 	CUtlMap<IPhysicsObject *, const CPhysCollide *> m_PhysObjectCustomModels;	// 0x60
 	CUtlMap<const CPhysCollide *, BBox_t> m_PhysCollideBBoxModels;	// 0x7c
-	char m_blockHeader[0x10];	// 0x98
+	char m_blockHeader[0x8];	// 0x98: PhysBlockHeader_t {nSaved, nTick}; the object ends at 0xa0 (0x106bdb00 is the next global)
 };
 #else
 class CPhysSaveRestoreBlockHandler
@@ -144,7 +130,7 @@ public:
 	char m_pad003c[0x40 - 0x3c];
 	bool m_bMatch40;	// 0x40: the saved short of the source equals the global at 0x1053c340
 	char m_pad0041[0x98 - 0x41];
-	char m_data98[0x10];	// 0x98: the sub-object the source is handed to (slot 2 of the source's vtable)
+	char m_data98[0x8];	// 0x98: the sub-object the source is handed to (slot 2 of the source's vtable): PhysBlockHeader_t {nSaved, nTick}, the object's last 8 bytes (0xa0)
 
 	void vfunc2(CSave *pSave);	// slot 2 (0x10043c70, stub 0x1000b474, ret 4): m_data98 dword 0 = the queue size at +0x18, dword 1 = the global 0x10723938; then pops the queue (heap, smallest first) until empty: for a record whose entity handle (+4) resolves, pSave slot 2(record, 0x1053c410), slot 4, per item (+0xc count, items at +0x34) slot 4, the item handed with the save to the object at 0x10723940 slot 48 (a 0x10 byte block {pSave, item, record key}), slot 6; finally slot 6. PopMin = memmove of the last record to the front, --size, sift-down via less(+0x20) with S47190::sub_10047190 / SPhysRecordX::sub_10046a90 / Vector::sub_1003e4b0 swaps.
 	void vfunc3(CSave *pSave);	// slot 3 "save": calls slot 8 of the save (the global at 0x1053c340 with 1), then slot 2 of it with this + 0x98 and the empty name at 0x1053c344

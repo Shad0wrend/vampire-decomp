@@ -22,9 +22,11 @@ public:
 #ifndef PCD_INITIALIZERS
 	char m_pad0000[4];
 	CEntityListSystem_Ent **m_pEntities;	// 0x04: pending entity list
-#endif
 	char m_pad0008[8];
 	int m_nEntities;	// 0x10
+#else
+	char m_pad0008[4];	// 0x08: the game's object is 0xc bytes (CEntityTouchManager 0x107036b0 follows)
+#endif
 
 	CEntityListSystem *vfunc8(unsigned int flags);
 	void sub_1000cfbd();

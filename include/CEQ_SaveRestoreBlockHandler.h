@@ -1,5 +1,9 @@
-// CEQ_SaveRestoreBlockHandler (RTTI .?AVCEQ_SaveRestoreBlockHandler@@): save/restore block handler (base CDefSaveRestoreBlockHandler not modelled).
+// CEQ_SaveRestoreBlockHandler (RTTI .?AVCEQ_SaveRestoreBlockHandler@@): the event queue's save/restore block handler;
+// base CDefSaveRestoreBlockHandler in the initializer unit (the global 0x106e70a8), a flat view elsewhere.
 #pragma once
+#ifdef PCD_INITIALIZERS
+#include "ISaveRestoreBlockHandler.h"
+#endif
 
 // Restore interface as seen by the block handlers: only the read slot used so far is named.
 class IRestoreRead
@@ -12,8 +16,18 @@ public:
 };
 
 class CEQ_SaveRestoreBlockHandler
+#ifdef PCD_INITIALIZERS
+	: public CDefSaveRestoreBlockHandler
+#endif
 {
 public:
+#ifdef PCD_INITIALIZERS	// its own slots of vtable 0x10454060 (matched as the flat view's vfuncN)
+	virtual const char *GetBlockName();
+	virtual void Save(ISave *pSave);
+	virtual void WriteSaveHeaders(ISave *pSave);
+	virtual void ReadRestoreHeaders(IRestore *pRestore);
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers);
+#else
 	virtual int vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
@@ -24,6 +38,7 @@ public:
 	virtual void vfunc7(int a, int b, int c);	// reads the event queue (g_106e7050) through the restore interface a when the version matches
 	virtual void vfunc8();
 	virtual void vfunc9();
+#endif
 
 	bool m_bVersionMatches;	// 0x04
 };

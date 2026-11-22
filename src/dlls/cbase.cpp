@@ -1733,6 +1733,7 @@ int CEventQueue::sub_100cfda0(IEQRestore *pRestore)
 // END FUNCTION
 
 // FUNCTION: 0x100cfe80 size=0x5
+#define PCD_INITIALIZERS
 #include "CEQ_SaveRestoreBlockHandler.h"
 CEQ_SaveRestoreBlockHandler g_106e70a8;
 // END FUNCTION

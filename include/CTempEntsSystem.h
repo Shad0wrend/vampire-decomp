@@ -5,11 +5,16 @@
 
 #ifdef PCD_INITIALIZERS
 #include "IPredictionSystem.h"
+// Source's ITempEntsSystem (game_shared/itempents.h): its pure slots are the 43 CTempEntsSystem declares below (the
+// game has no vtable of its own for it)
+class ITempEntsSystem : public IPredictionSystem
+{
+};
 #endif
 
 class CTempEntsSystem
 #ifdef PCD_INITIALIZERS
-	: public IPredictionSystem	// the base the matched code does not model
+	: public ITempEntsSystem	// the bases the matched code does not model
 #endif
 {
 public:

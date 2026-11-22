@@ -25,6 +25,5 @@ public:
 
 	char m_pad0004[0x0c - 0x04];	// 0x04 .. 0x0b (bases not recovered)
 	Vector m_vecPos;	// 0x0c: the decal position (vfunc3 adds 24.0f to z)
-	int m_n18;	// 0x18: cleared by vfunc3
-	int m_n1c;	// 0x1c: cleared by vfunc3
+	int m_n18;	// 0x18: cleared by vfunc3 (the SDK's m_nIndex); the object is 0x1c bytes (0x106c7538 is the next global)
 };

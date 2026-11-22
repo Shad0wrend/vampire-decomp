@@ -2767,6 +2767,7 @@ int CEntitySaveRestoreBlockHandler::sub_101a3470(CBaseEntity *pEntity, CSaveRest
 // END FUNCTION
 
 // FUNCTION: 0x101a3740 size=0x5
+#define PCD_INITIALIZERS
 #include "CEntitySaveRestoreBlockHandler.h"
 CEntitySaveRestoreBlockHandler g_1072bb44;
 // END FUNCTION
