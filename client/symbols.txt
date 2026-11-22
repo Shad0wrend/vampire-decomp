@@ -5255,6 +5255,7 @@
 0x1017d730 func   ??_GCharEditStatsPanel@@UAEPAXI@Z ??_GCharEditStatsPanel@@UAEPAXI@Z
 0x1017f1d0 func   ?sub_1017f1d0@ScoreV@@QAEXXZ ScoreV::sub_1017f1d0
 0x1017f850 func   ?sub_1017f850@CUnknown1017f850@@QAEPAXXZ CUnknown1017f850::sub_1017f850
+0x10180cd0 func   ?sub_10180cd0@@YAHH@Z sub_10180cd0
 0x10181b70 func   ?sub_10181b70@@YAXXZ sub_10181b70
 0x10181b80 func   ?sub_10181b80@CUnknown10181b80@@QAEHD@Z CUnknown10181b80::sub_10181b80
 0x101820f0 func   ?sub_101820f0@CUnknown101820f0@@QAEHH@Z CUnknown101820f0::sub_101820f0

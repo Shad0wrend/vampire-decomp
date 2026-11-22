@@ -63124,6 +63124,16 @@ void * CUnknown1017f850::sub_1017f850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180cd0 size=0xd
+int sub_10180cd0(int a0)
+{
+    if (a0 == 0xf) {
+        return -1;
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181b70 size=0x1
 void sub_10181b70()
 {
