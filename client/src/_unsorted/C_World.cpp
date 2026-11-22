@@ -38,6 +38,24 @@ C_World *pcd_emit_100ca630() { return new C_World; }
 // TARGET: ??_GC_World@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100ca990 size=0x1f
+#include "C_World.h"
+namespace lifted {
+extern int g_104a56fc;
+int sub_100c87d0();
+int sub_101206b0();
+struct V { virtual int f0(int); };
+}
+void C_World::vfunc21()
+{
+    if (lifted::g_104a56fc != 0) {
+        ((lifted::V *)lifted::g_104a56fc)->f0(1);
+    }
+    lifted::g_104a56fc = lifted::sub_100c87d0();
+    lifted::sub_101206b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca9b0 size=0x5
 #include "C_World.h"
 namespace lifted {
