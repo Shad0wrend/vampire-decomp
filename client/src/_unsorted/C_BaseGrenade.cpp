@@ -16,6 +16,17 @@ int C_BaseGrenade::vfunc152()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f170 size=0x7
+#include "C_BaseGrenade.h"
+namespace lifted {
+extern float g_1022671c;
+}
+float C_BaseGrenade::vfunc154()
+{
+    return lifted::g_1022671c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f190 size=0x5
 #include "C_BaseGrenade.h"
 bool C_BaseGrenade::vfunc156(int a0)
