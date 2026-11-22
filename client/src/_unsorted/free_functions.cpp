@@ -20452,6 +20452,21 @@ char sub_1007f6e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f830 size=0x2a
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+struct CUnknown1007f830 { void sub_1007f830(int); };
+void CUnknown1007f830::sub_1007f830(int a0)
+{
+    if (a0 != 0) {
+        *(int *)((char *)this + 0x7d8) = *(int *)((char *)(((lifted::V *)a0)->f1()));
+        return;
+    }
+    *(int *)((char *)this + 0x7d8) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f860 size=0xd
 struct CUnknown1007f860 { int sub_1007f860(int); };
 int CUnknown1007f860::sub_1007f860(int a0)
