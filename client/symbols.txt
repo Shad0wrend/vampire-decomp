@@ -23,6 +23,7 @@
 0x100016a0 func   ?vfunc58@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc58
 0x100016c0 func   ?vfunc63@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc63
 0x100016d0 func   ?vfunc84@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc84
+0x100016f0 func   ?vfunc94@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc94
 0x10001890 func   ?vfunc112@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc112
 0x100018b0 func   ?Collideable_vfunc7@C_BaseEntity@@UAEHXZ C_BaseEntity::Collideable_vfunc7
 0x100018c0 func   ?Collideable_vfunc6@C_BaseEntity@@UAEHXZ C_BaseEntity::Collideable_vfunc6
