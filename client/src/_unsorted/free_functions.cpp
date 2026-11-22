@@ -8509,6 +8509,24 @@ void sub_1002ebc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f630 size=0x25
+namespace lifted {
+struct C10117fd0 { int sub_10117fd0(); };
+struct C10117fe0 { int sub_10117fe0(); };
+}
+struct CUnknown1002f630 { void sub_1002f630(int); };
+void CUnknown1002f630::sub_1002f630(int a0)
+{
+    if (a0 != 0) {
+        ((lifted::C10117fd0 *)a0)->sub_10117fd0();
+    }
+    if ((*(int *)this) != 0) {
+        ((lifted::C10117fe0 *)(*(int *)this))->sub_10117fe0();
+    }
+    *(int *)this = a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f6c0 size=0xa1
 #include "RecvTable.h"
 extern RecvTable g_102eaeb0;
