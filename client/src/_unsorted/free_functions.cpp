@@ -12100,6 +12100,24 @@ void sub_10048ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10049000 size=0x25
+namespace lifted {
+struct C10117fd0 { int sub_10117fd0(); };
+struct C10117fe0 { int sub_10117fe0(); };
+}
+struct CUnknown10049000 { void sub_10049000(int); };
+void CUnknown10049000::sub_10049000(int a0)
+{
+    if (a0 != 0) {
+        ((lifted::C10117fd0 *)a0)->sub_10117fd0();
+    }
+    if ((*(int *)this) != 0) {
+        ((lifted::C10117fe0 *)(*(int *)this))->sub_10117fe0();
+    }
+    *(int *)this = a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049f20 size=0x19
 struct CUnknown100f2f90 { void * sub_10049f20(int, int, int); };
 void * CUnknown100f2f90::sub_10049f20(int a0, int a1, int a2)
