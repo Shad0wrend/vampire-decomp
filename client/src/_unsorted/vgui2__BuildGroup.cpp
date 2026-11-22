@@ -25,6 +25,19 @@ bool vgui2::BuildGroup::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1db0 size=0x15
+#include "vgui2__BuildGroup.h"
+namespace lifted {
+int sub_101ac8b0();
+struct V { virtual void u0(); virtual int f1(int); };
+}
+int vgui2::BuildGroup::vfunc13(int a0, int a1)
+{
+    *(char *)((char *)this + 0x24) = 0;
+    return ((lifted::V *)(lifted::sub_101ac8b0()))->f1(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1dd0 size=0x3
 #include "vgui2__BuildGroup.h"
 void vgui2::BuildGroup::vfunc20(int a0, int a1)
