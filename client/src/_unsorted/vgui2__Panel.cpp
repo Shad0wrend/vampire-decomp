@@ -506,6 +506,21 @@ int vgui2::Panel::vfunc102()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac440 size=0x27
+#include "vgui2__Panel.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual bool f14(int); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual int f38(int, int); };
+}
+bool vgui2::Panel::vfunc44(int a0, int a1)
+{
+    int t0 = ((lifted::V *)this)->f38(a0, 0);
+    if (t0 != 0) {
+        return ((lifted::V *)t0)->f14(a1);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac640 size=0xc
 #include "vgui2__Panel.h"
 namespace lifted {
