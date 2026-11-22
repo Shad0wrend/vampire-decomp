@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003dd50 size=0x3
+#include "C_TEParticleSystem.h"
+int C_TEParticleSystem::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003df30 size=0x1e
 #include "C_TEParticleSystem.h"
 
