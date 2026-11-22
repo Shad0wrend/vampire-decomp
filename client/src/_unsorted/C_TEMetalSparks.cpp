@@ -17,3 +17,11 @@ void C_TEMetalSparks::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100322a0 size=0x3
+#include "C_TEMetalSparks.h"
+int C_TEMetalSparks::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
