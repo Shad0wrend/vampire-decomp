@@ -32371,6 +32371,41 @@ int CUnknown100d5d30::sub_100d5d30(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6320 size=0x6f
+namespace lifted {
+struct C100d9100 { int sub_100d9100(int); };
+int sub_101a1970(int, int);
+}
+struct CUnknown100d6320 { int sub_100d6320(int, int, int, int, int); };
+int CUnknown100d6320::sub_100d6320(int a0, int a1, int a2, int a3, int a4)
+{
+    int t0 = *(int *)((char *)a3);
+    *(int *)((char *)a0) = t0;
+    int t1 = *(int *)((char *)a3 + 4);
+    *(int *)((char *)a0 + 0x10) = t1;
+    int t2 = *(int *)((char *)a3 + 8);
+    *(int *)((char *)a0 + 0x20) = t2;
+    int t3 = *(int *)((char *)a4);
+    *(int *)((char *)a0 + 4) = t3;
+    int t4 = *(int *)((char *)a4 + 4);
+    *(int *)((char *)a0 + 0x14) = t4;
+    int t5 = *(int *)((char *)a4 + 8);
+    *(int *)((char *)a0 + 0x24) = t5;
+    ((lifted::C100d9100 *)a0)->sub_100d9100(a2);
+    int t6 = *(int *)((char *)a1);
+    *(int *)((char *)a0 + 0xc) = t6;
+    int t7 = *(int *)((char *)a1 + 4);
+    *(int *)((char *)a0 + 0x1c) = t7;
+    int t8 = *(int *)((char *)a1 + 8);
+    *(int *)((char *)a0 + 0x2c) = t8;
+    *(int *)((char *)a0 + 0x38) = 0;
+    *(int *)((char *)a0 + 0x34) = 0;
+    *(int *)((char *)a0 + 0x30) = 0;
+    *(int *)((char *)a0 + 0x3c) = 0x3f800000;
+    return lifted::sub_101a1970(a0, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7130 size=0x46
 #include "CClientShadowMgr.h"
 // TARGET: CClientShadowMgr::sub_100d7130
