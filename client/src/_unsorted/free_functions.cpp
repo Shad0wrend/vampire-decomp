@@ -28859,6 +28859,18 @@ void * CUnknown100d10d0::sub_100d10d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1120 size=0xc
+namespace lifted {
+int sub_100d1130();
+}
+struct CUnknown100d1120 { void * sub_100d1120(); };
+void * CUnknown100d1120::sub_100d1120()
+{
+    lifted::sub_100d1130();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1190 size=0x8d
 #include "CUtlLinkedList8.h"
 
