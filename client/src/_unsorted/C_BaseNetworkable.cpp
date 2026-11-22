@@ -12,6 +12,14 @@ int C_BaseNetworkable::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3700 size=0x3
+#include "C_BaseNetworkable.h"
+int C_BaseNetworkable::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a38c0 size=0x1e
 #include "C_BaseNetworkable.h"
 
