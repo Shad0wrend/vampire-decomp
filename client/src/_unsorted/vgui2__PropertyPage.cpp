@@ -17,3 +17,10 @@ void vgui2::PropertyPage::vfunc118()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101bb410 size=0x1
+#include "vgui2__PropertyPage.h"
+void vgui2::PropertyPage::vfunc119()
+{
+}
+// END FUNCTION
