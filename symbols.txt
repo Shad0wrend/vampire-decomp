@@ -12665,6 +12665,7 @@
 0x10010a32 func   ?sub_103e2000@CFlameCluster@@QAEXPAVCBaseEntity@@H@Z CFlameCluster::sub_103e2000
 0x10010a37 func   ?sub_10203480@@YAHH@Z sub_10203480
 0x10010a3c func   ?sub_100417c0@@YIPAUHashHolder@@PAU1@HE@Z sub_100417c0
+0x10010a41 func   ??_GCSoundControllerImp@@UAEPAXI@Z ??_GCSoundControllerImp@@UAEPAXI@Z
 0x10010a41 func   ?sub_101bd980@CAutoGameSystem@@QAEPAXI@Z CAutoGameSystem::sub_101bd980
 0x10010a46 func   ?vfunc453@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc453
 0x10010a4b func   ?vfunc366@CHL2_Player@@UAE_NHHH@Z CHL2_Player::vfunc366
