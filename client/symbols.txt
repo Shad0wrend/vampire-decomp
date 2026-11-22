@@ -1231,6 +1231,7 @@
 0x10022ef0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumBasementKey@@@Z ClientClassInit
 0x10022f80 func   ?vfunc17@C_ItemKMuseumStoreroomKey@@UAEHXZ C_ItemKMuseumStoreroomKey::vfunc17
 0x10023010 func   ??_GC_ItemKMuseumStoreroomKey@@UAEPAXI@Z ??_GC_ItemKMuseumStoreroomKey@@UAEPAXI@Z
+0x10023030 func   ?vfunc16@C_ItemKMuseumStoreroomKey@@UAEHXZ C_ItemKMuseumStoreroomKey::vfunc16
 0x10023040 func   ?vfunc15@C_ItemKMuseumStoreroomKey@@UAEHXZ C_ItemKMuseumStoreroomKey::vfunc15
 0x10023050 func   ?sub_10023050@@YAHXZ sub_10023050
 0x10023170 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumStoreroomKey@@@Z ClientClassInit

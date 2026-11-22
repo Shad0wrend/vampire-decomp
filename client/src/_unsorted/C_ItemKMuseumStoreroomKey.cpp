@@ -22,6 +22,17 @@ C_ItemKMuseumStoreroomKey *pcd_emit_10023010() { return new C_ItemKMuseumStorero
 // TARGET: ??_GC_ItemKMuseumStoreroomKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10023030 size=0x6
+#include "C_ItemKMuseumStoreroomKey.h"
+namespace lifted {
+extern char g_102740b4;
+}
+int C_ItemKMuseumStoreroomKey::vfunc16()
+{
+    return (int)&lifted::g_102740b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023040 size=0x3
 #include "C_ItemKMuseumStoreroomKey.h"
 int C_ItemKMuseumStoreroomKey::vfunc15()
