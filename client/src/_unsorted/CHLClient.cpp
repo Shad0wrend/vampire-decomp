@@ -150,3 +150,15 @@ int CHLClient::vfunc33(int a0)
     return lifted::sub_1012b830(a0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cc830 size=0xb
+#include "CHLClient.h"
+namespace lifted {
+extern int g_102c37a0;
+struct V { virtual void u0(); virtual int f1(); };
+}
+int CHLClient::vfunc36()
+{
+    return ((lifted::V *)lifted::g_102c37a0)->f1();
+}
+// END FUNCTION
