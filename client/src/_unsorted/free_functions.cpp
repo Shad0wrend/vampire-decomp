@@ -25301,6 +25301,16 @@ void UtlVec8::sub_1009cea0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009cee0 size=0x11
+int sub_1009cee0(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)a1);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009cf00 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
