@@ -2403,6 +2403,7 @@
 0x1007fe00 func   ?ClientClassInit@@YAHPAUignored@DT_BeamPredictableId@@@Z ClientClassInit
 0x1007ff00 func   ?ClientClassInit@@YAHPAUignored@DT_Beam@@@Z ClientClassInit
 0x10080300 func   ??_GC_Beam@@UAEPAXI@Z ??_GC_Beam@@UAEPAXI@Z
+0x10080380 func   ?vfunc19@C_Beam@@UAEXXZ C_Beam::vfunc19
 0x100806f0 func   ?sub_100806f0@C_Beam@@QAEPAUVector3@@XZ C_Beam::sub_100806f0
 0x10080e00 func   ?sub_10080e00@@YGHH@Z sub_10080e00
 0x10080e10 func   ?sub_10080e10@@YGXHH@Z sub_10080e10
