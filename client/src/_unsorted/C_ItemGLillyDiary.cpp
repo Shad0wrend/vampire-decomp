@@ -10,3 +10,11 @@ C_ItemGLillyDiary *pcd_emit_10019010() { return new C_ItemGLillyDiary; }
 
 // TARGET: ??_GC_ItemGLillyDiary@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10019040 size=0x3
+#include "C_ItemGLillyDiary.h"
+int C_ItemGLillyDiary::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
