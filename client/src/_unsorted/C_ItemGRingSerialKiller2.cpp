@@ -22,6 +22,17 @@ C_ItemGRingSerialKiller2 *pcd_emit_10020310() { return new C_ItemGRingSerialKill
 // TARGET: ??_GC_ItemGRingSerialKiller2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10020330 size=0x6
+#include "C_ItemGRingSerialKiller2.h"
+namespace lifted {
+extern char g_10274264;
+}
+int C_ItemGRingSerialKiller2::vfunc16()
+{
+    return (int)&lifted::g_10274264;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020340 size=0x3
 #include "C_ItemGRingSerialKiller2.h"
 int C_ItemGRingSerialKiller2::vfunc15()
