@@ -8,6 +8,17 @@ void C_BaseAnimating::vfunc141()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008edc0 size=0x6
+#include "C_BaseAnimating.h"
+namespace lifted {
+extern char g_102ad9f0;
+}
+int C_BaseAnimating::vfunc16()
+{
+    return (int)&lifted::g_102ad9f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008edd0 size=0x3
 #include "C_BaseAnimating.h"
 int C_BaseAnimating::vfunc15()

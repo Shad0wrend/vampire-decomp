@@ -2430,6 +2430,7 @@
 0x1008eb70 func   ?sub_1008eb70@@YADXZ sub_1008eb70
 0x1008eb90 func   ?sub_1008eb90@@YAHXZ sub_1008eb90
 0x1008ed30 func   ?ClientClassInit@@YAHPAUignored@DT_ServerAnimationData@@@Z ClientClassInit
+0x1008edc0 func   ?vfunc16@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc16
 0x1008edd0 func   ?vfunc15@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc15
 0x1008ede0 func   ?sub_1008ede0@@YAHXZ sub_1008ede0
 0x1008eee0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseAnimating@@@Z ClientClassInit
