@@ -8583,6 +8583,17 @@ int CUnknown100321e0::sub_100321e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032230 size=0x16
+namespace lifted {
+extern int g_102ba388;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(int, int); };
+}
+int sub_10032230(int a0, int a1, int a2, int a3)
+{
+    return ((lifted::V *)lifted::g_102ba388)->f6(a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100322b0 size=0x6
 namespace lifted {
 extern char g_102eb5e0;
