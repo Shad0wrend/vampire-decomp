@@ -2032,6 +2032,7 @@
 0x100d3f70 func   ?sub_100d3f70@CUnknown100d3f70@@QAEXXZ CUnknown100d3f70::sub_100d3f70
 0x100d4030 func   ?vfunc2@ClientModeShared@@UAEXXZ ClientModeShared::vfunc2
 0x100d41f0 func   ?vfunc13@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc13
+0x100d4220 func   ?vfunc26@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc26
 0x100d42c0 func   ?vfunc30@ClientModeShared@@UAEXXZ ClientModeShared::vfunc30
 0x100d42d0 func   ?vfunc31@ClientModeShared@@UAEXXZ ClientModeShared::vfunc31
 0x100d42e0 func   ?vfunc35@ClientModeShared@@UAEXXZ ClientModeShared::vfunc35

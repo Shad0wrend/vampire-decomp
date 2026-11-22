@@ -26,6 +26,14 @@ bool ClientModeShared::vfunc13()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4220 size=0x3
+#include "ClientModeShared.h"
+bool ClientModeShared::vfunc26()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d42c0 size=0x1
 #include "ClientModeShared.h"
 void ClientModeShared::vfunc30()
