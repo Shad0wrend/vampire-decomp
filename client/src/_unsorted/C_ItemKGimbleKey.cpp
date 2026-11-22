@@ -22,6 +22,17 @@ C_ItemKGimbleKey *pcd_emit_10022610() { return new C_ItemKGimbleKey; }
 // TARGET: ??_GC_ItemKGimbleKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10022630 size=0x6
+#include "C_ItemKGimbleKey.h"
+namespace lifted {
+extern char g_10274120;
+}
+int C_ItemKGimbleKey::vfunc16()
+{
+    return (int)&lifted::g_10274120;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022640 size=0x3
 #include "C_ItemKGimbleKey.h"
 int C_ItemKGimbleKey::vfunc15()
