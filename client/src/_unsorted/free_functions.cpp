@@ -64307,6 +64307,16 @@ void UtlVec8::sub_101a0f20(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0f60 size=0x11
+int sub_101a0f60(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)a1);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0f80 size=0x3b
 void sub_101a0f80(float *m)
 {

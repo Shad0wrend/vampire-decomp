@@ -5441,6 +5441,7 @@
 0x1019c230 func   ?sub_1019c230@CUnk102a9640@@QAEMXZ CUnk102a9640::sub_1019c230
 0x101a0e90 func   ?sub_101a0e90@CUtlVector4@@QAEXH@Z CUtlVector4::sub_101a0e90
 0x101a0f20 func   ?sub_101a0f20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101a0f20
+0x101a0f60 func   ?sub_101a0f60@@YAHHH@Z sub_101a0f60
 0x101a0f80 func   ?sub_101a0f80@@YAXPAM@Z sub_101a0f80
 0x101a0fc0 func   ?sub_101a0fc0@@YAXAAVVMatrix@@ABVVector@@@Z sub_101a0fc0
 0x101a1010 func   ?sub_101a1010@@YAXAAVVMatrix@@ABVVector@@@Z sub_101a1010
