@@ -10,3 +10,11 @@ C_ItemKMuseumBasementKey *pcd_emit_10022d90() { return new C_ItemKMuseumBasement
 
 // TARGET: ??_GC_ItemKMuseumBasementKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10022dc0 size=0x3
+#include "C_ItemKMuseumBasementKey.h"
+int C_ItemKMuseumBasementKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
