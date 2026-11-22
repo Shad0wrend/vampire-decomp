@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10021180 size=0x6
+#include "C_ItemKMuriettaKey.h"
+namespace lifted {
+extern char g_10273a3c;
+}
+int C_ItemKMuriettaKey::vfunc17()
+{
+    return (int)&lifted::g_10273a3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021210 size=0x1e
 #include "C_ItemKMuriettaKey.h"
 
