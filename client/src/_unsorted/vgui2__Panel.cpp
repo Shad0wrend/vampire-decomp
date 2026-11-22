@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10029520 size=0x4
+#include "vgui2__Panel.h"
+int vgui2::Panel::vfunc0()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029530 size=0x3
 #include "vgui2__Panel.h"
 void * vgui2::Panel::vfunc1()
