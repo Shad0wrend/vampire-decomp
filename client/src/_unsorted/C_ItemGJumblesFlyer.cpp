@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10019c00 size=0x6
+#include "C_ItemGJumblesFlyer.h"
+namespace lifted {
+extern char g_10273518;
+}
+int C_ItemGJumblesFlyer::vfunc17()
+{
+    return (int)&lifted::g_10273518;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019c90 size=0x1e
 #include "C_ItemGJumblesFlyer.h"
 

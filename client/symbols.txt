@@ -875,6 +875,7 @@
 0x10019a40 func   ?vfunc15@C_ItemGWerewolfBlood@@UAEHXZ C_ItemGWerewolfBlood::vfunc15
 0x10019a50 func   ?sub_10019a50@@YAHXZ sub_10019a50
 0x10019b70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWerewolfBlood@@@Z ClientClassInit
+0x10019c00 func   ?vfunc17@C_ItemGJumblesFlyer@@UAEHXZ C_ItemGJumblesFlyer::vfunc17
 0x10019c90 func   ??_GC_ItemGJumblesFlyer@@UAEPAXI@Z ??_GC_ItemGJumblesFlyer@@UAEPAXI@Z
 0x10019cc0 func   ?vfunc15@C_ItemGJumblesFlyer@@UAEHXZ C_ItemGJumblesFlyer::vfunc15
 0x10019cd0 func   ?sub_10019cd0@@YAHXZ sub_10019cd0
