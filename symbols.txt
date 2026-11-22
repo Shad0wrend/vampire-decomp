@@ -6316,6 +6316,7 @@
 0x10008c83 func   ?sub_102522e0@CUnknown102522e0@@QAEHXZ CUnknown102522e0::sub_102522e0
 0x10008c88 func   ?sub_100bde40@CUnknown100bde40@@QAE_NPBXH@Z CUnknown100bde40::sub_100bde40
 0x10008c8d func   ?sub_10345890@@YAXPBM0MPAM@Z sub_10345890
+0x10008c92 func   ?PreRestore@CSaveRestoreBlockSet@@UAEXXZ CSaveRestoreBlockSet::PreRestore
 0x10008c92 func   ?vfunc5@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc5
 0x10008c97 func   ?vfunc103@CWeaponIGeneric@@UAEXXZ CWeaponIGeneric::vfunc103
 0x10008c9c func   ?vfunc563@CNPC_VMingXiao@@QAEXPAVCBaseEntity@@PAVVector@@PAH2@Z CNPC_VMingXiao::vfunc563
