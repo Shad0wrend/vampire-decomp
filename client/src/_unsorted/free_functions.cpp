@@ -28780,6 +28780,18 @@ template <> int ClientClassInit<DT_BaseTerminal::ignored>(DT_BaseTerminal::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6b10 size=0x13
+namespace lifted {
+struct C100c6d50 { int sub_100c6d50(int); };
+}
+void sub_100c6b10(int a0, int a1)
+{
+    if (a0 != 0) {
+        ((lifted::C100c6d50 *)a0)->sub_100c6d50(a1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c7f30 size=0x8
 struct CUnknown100c7f30 { void sub_100c7f30(); };
 void CUnknown100c7f30::sub_100c7f30()
