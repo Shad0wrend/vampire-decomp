@@ -10,3 +10,11 @@ C_OccultDodge *pcd_emit_10013d90() { return new C_OccultDodge; }
 
 // TARGET: ??_GC_OccultDodge@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10013dc0 size=0x3
+#include "C_OccultDodge.h"
+int C_OccultDodge::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
