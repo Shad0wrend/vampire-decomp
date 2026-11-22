@@ -45,6 +45,7 @@
 0x10002a00 func   ?ClientClassInit@@YAHPAUignored@DT_HL2_Player@@@Z ClientClassInit
 0x10002b90 func   ??_GC_BaseHLPlayer@@UAEPAXI@Z ??_GC_BaseHLPlayer@@UAEPAXI@Z
 0x10002bb0 func   ?sub_10002bb0@@YAHXZ sub_10002bb0
+0x10002bd0 func   ?vfunc15@C_Corpse@@UAEHXZ C_Corpse::vfunc15
 0x10002be0 func   ?sub_10002be0@@YAHXZ sub_10002be0
 0x10002ce0 func   ?ClientClassInit@@YAHPAUignored@DT_Corpse@@@Z ClientClassInit
 0x10002dc0 func   ??_GC_Corpse@@UAEPAXI@Z ??_GC_Corpse@@UAEPAXI@Z
