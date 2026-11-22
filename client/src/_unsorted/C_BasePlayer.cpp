@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002b00 size=0x7
+#include "C_BasePlayer.h"
+int C_BasePlayer::vfunc84()
+{
+    return *(int *)((char *)this + 0x1990);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002b70 size=0x5
 #include "C_BasePlayer.h"
 int C_BasePlayer::vfunc175(int a0, int a1)
