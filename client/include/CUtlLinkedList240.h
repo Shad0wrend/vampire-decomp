@@ -22,5 +22,8 @@ public:
 	unsigned short m_pad16;
 	CUtlLinkedList240Node *m_pElements;	// 0x18 (debug pointer)
 
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+	CUtlLinkedList240Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
+
 	unsigned short sub_100d8c90(bool multilist);	// "CUtlLinkedList::AllocInternal"
 };
