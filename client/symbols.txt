@@ -251,6 +251,7 @@
 0x10009640 func   ?vfunc15@C_WeaponMelee_Sledgehammer@@UAEHXZ C_WeaponMelee_Sledgehammer::vfunc15
 0x10009650 func   ?sub_10009650@@YAHXZ sub_10009650
 0x10009770 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Sledgehammer@@@Z ClientClassInit
+0x10009800 func   ?vfunc17@C_WeaponMelee_TireIron@@UAEHXZ C_WeaponMelee_TireIron::vfunc17
 0x10009890 func   ??_GC_WeaponMelee_TireIron@@UAEPAXI@Z ??_GC_WeaponMelee_TireIron@@UAEPAXI@Z
 0x100098c0 func   ?vfunc15@C_WeaponMelee_TireIron@@UAEHXZ C_WeaponMelee_TireIron::vfunc15
 0x100098d0 func   ?sub_100098d0@@YAHXZ sub_100098d0
