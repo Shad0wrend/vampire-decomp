@@ -6644,6 +6644,7 @@
 0x100092fa func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEXPAUSaveRestoreFieldInfo_t@@@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
 0x100092ff func   ?sub_1016b750@@YAXPAUUnstickView@@@Z sub_1016b750
 0x10009304 func   ?vfunc372@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc372
+0x10009309 func   ??_GCSoundEmitterSystem@@UAEPAXI@Z ??_GCSoundEmitterSystem@@UAEPAXI@Z
 0x10009309 func   ?sub_101b0110@CSoundEmitterSystem@@QAEPAV1@E@Z CSoundEmitterSystem::sub_101b0110
 0x1000930e func   ?sub_10293df0@CUnknown10293df0@@QAEXM@Z CUnknown10293df0::sub_10293df0
 0x10009313 func   ?vfunc461@CNPC_VWerewolf@@QAEHXZ CNPC_VWerewolf::vfunc461
