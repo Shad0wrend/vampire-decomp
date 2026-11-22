@@ -26046,6 +26046,16 @@ void UtlVec8::sub_100a34d0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3510 size=0x11
+int sub_100a3510(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)a1);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3590 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
