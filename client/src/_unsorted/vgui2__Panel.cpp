@@ -112,6 +112,15 @@ void vgui2::Panel::vfunc89(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aaad0 size=0xa
+#include "vgui2__Panel.h"
+int vgui2::Panel::vfunc54(int a0)
+{
+    *(int *)((char *)this + 0xc) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaae0 size=0x4
 #include "vgui2__Panel.h"
 int vgui2::Panel::vfunc55()
