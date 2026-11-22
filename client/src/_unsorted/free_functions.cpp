@@ -28508,6 +28508,17 @@ int sub_100cc620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc650 size=0xb
+namespace lifted {
+extern int g_1027bbf4;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual int f5(); };
+}
+int sub_100cc650()
+{
+    return ((lifted::V *)lifted::g_1027bbf4)->f5();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccb30 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
