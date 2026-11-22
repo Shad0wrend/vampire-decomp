@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101462e0 size=0x6
+#include "C_DisciplineProjectile.h"
+namespace lifted {
+extern char g_102c7cdc;
+}
+int C_DisciplineProjectile::vfunc16()
+{
+    return (int)&lifted::g_102c7cdc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101462f0 size=0x3
 #include "C_DisciplineProjectile.h"
 int C_DisciplineProjectile::vfunc15()
