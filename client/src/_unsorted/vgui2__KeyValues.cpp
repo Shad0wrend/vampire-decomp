@@ -123,6 +123,24 @@ bool vgui2::KeyValues::vfunc13(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b67d0 size=0x28
+#include "vgui2__KeyValues.h"
+namespace lifted {
+struct C101b57a0 { int sub_101b57a0(); };
+int sub_101b6860(int);
+}
+void vgui2::KeyValues::vfunc19()
+{
+    int t0 = *(int *)((char *)this + 0x18);
+    if (t0 != 0) {
+        ((lifted::C101b57a0 *)t0)->sub_101b57a0();
+        lifted::sub_101b6860(t0);
+    }
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6800 size=0x1b
 #include "vgui2__KeyValues.h"
 namespace lifted {
