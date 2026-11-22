@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10021680 size=0x6
+#include "C_ItemKOceanHouseBasementKey.h"
+namespace lifted {
+extern char g_10273a74;
+}
+int C_ItemKOceanHouseBasementKey::vfunc17()
+{
+    return (int)&lifted::g_10273a74;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021710 size=0x1e
 #include "C_ItemKOceanHouseBasementKey.h"
 
