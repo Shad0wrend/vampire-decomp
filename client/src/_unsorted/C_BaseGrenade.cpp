@@ -71,6 +71,15 @@ int C_BaseGrenade::vfunc159(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f1d0 size=0xd
+#include "C_BaseGrenade.h"
+int C_BaseGrenade::vfunc160(int a0)
+{
+    *(int *)((char *)this + 0x10e8) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f1e0 size=0x1e
 #include "C_BaseGrenade.h"
 
