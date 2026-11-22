@@ -1342,19 +1342,14 @@ CServerGameClients g_1070b074;
 // END FUNCTION
 
 // FUNCTION: 0x1011bf50 size=0x20
-#include "IServerGameClients.h"
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CServerGameClients.h"
 
-extern char g_104627e0;
-void sub_10430964(void *p);
+// VC6 writes IServerGameClients's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_1011bf50(IServerGameClients *p) { p->IServerGameClients::~IServerGameClients(); }
 
-// TARGET: IServerGameClients::vfunc0
-void *IServerGameClients::vfunc0(unsigned char bFree)
-{
-	*(void **)this = &g_104627e0;
-	if (bFree & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GIServerGameClients@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1011bf80 size=0x20

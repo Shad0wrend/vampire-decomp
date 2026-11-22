@@ -8283,7 +8283,6 @@
 0x1000b375 func   ?sub_1026af70@CAI_BaseNPC@@QAEXPBMM@Z CAI_BaseNPC::sub_1026af70
 0x1000b37a func   ??_GCSkyList@@UAEPAXI@Z ??_GCSkyList@@UAEPAXI@Z
 0x1000b37f func   ??_GIServerGameClients@@UAEPAXI@Z ??_GIServerGameClients@@UAEPAXI@Z
-0x1000b37f func   ?vfunc0@IServerGameClients@@UAEPAXE@Z IServerGameClients::vfunc0
 0x1000b384 func   ?sub_10312540@@YGHH@Z sub_10312540
 0x1000b389 func   ?vfunc5@CTriggerBrush@@UAEPAVCBaseEntity@@I@Z CTriggerBrush::vfunc5
 0x1000b38e func   ?vfunc0@CTEFogRipple@@UAEHXZ CTEFogRipple::vfunc0
