@@ -10,3 +10,10 @@ C_TEEnergySplash *pcd_emit_10036540() { return new C_TEEnergySplash; }
 
 // TARGET: ??_GC_TEEnergySplash@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10036580 size=0x1
+#include "C_TEEnergySplash.h"
+void C_TEEnergySplash::vfunc13()
+{
+}
+// END FUNCTION
