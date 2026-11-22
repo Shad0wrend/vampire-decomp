@@ -60509,6 +60509,18 @@ int CUnknown10176440::sub_10176440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10176f60 size=0x1c
+struct CUnk102036e0Target { void sub_1015ecd0(int a); };
+struct CUnk102036e0Table { CUnk102036e0Target *sub_1015f2f0(const char *name); };
+extern CUnk102036e0Table g_105f93c0;
+
+// TARGET: sub_10176f60
+void sub_10176f60(int a)
+{
+	g_105f93c0.sub_1015f2f0("KineKindred")->sub_1015ecd0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101779a0 size=0x3
 void __stdcall sub_101779a0(int a0)
 {
