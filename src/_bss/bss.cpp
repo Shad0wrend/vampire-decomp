@@ -32,7 +32,7 @@ class CUnknown10924cdc;
 class CUnknown10936de4;
 class CUnknown1093bb5c;
 class CUnknown10940524;
-class CVFeat_t;
+class CVFeat;
 class CWorld;
 class CWorldEvents;
 class ConVar;
@@ -2537,7 +2537,7 @@ int g_10739d20;
 #pragma bss_seg()
 // 0x10739d24 +628
 #pragma bss_seg(".bss$10739d240")
-CVFeat_t *g_10739d24[1];
+CVFeat *g_10739d24[1];
 #pragma bss_seg(".bss$10739d241")
 char pcd_fill_10739d24[624];
 #pragma bss_seg()
