@@ -10,3 +10,11 @@ C_WeaponMelee_ManBatClaw *pcd_emit_1000c090() { return new C_WeaponMelee_ManBatC
 
 // TARGET: ??_GC_WeaponMelee_ManBatClaw@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000c0c0 size=0x3
+#include "C_WeaponMelee_ManBatClaw.h"
+int C_WeaponMelee_ManBatClaw::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
