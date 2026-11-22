@@ -10,3 +10,11 @@ C_ItemKTatooParlorKey *pcd_emit_10024190() { return new C_ItemKTatooParlorKey; }
 
 // TARGET: ??_GC_ItemKTatooParlorKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100241c0 size=0x3
+#include "C_ItemKTatooParlorKey.h"
+int C_ItemKTatooParlorKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
