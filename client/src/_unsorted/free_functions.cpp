@@ -66168,6 +66168,35 @@ int CUnknown1016a790::sub_1016a790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a870 size=0x49
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+struct CUnknown1016a870 { int sub_1016a870(); };
+int CUnknown1016a870::sub_1016a870()
+{
+    int t0 = *(int *)((char *)this + 0x14064);
+    if (t0 == 0) {
+        return 0;
+    }
+    int t1 = *(int *)((char *)t0 + 4);
+    *(int *)((char *)this + 0x14064) = t1;
+    int t2 = *(int *)((char *)this + 0x14060);
+    *(int *)((char *)t0 + 4) = t2;
+    *(int *)((char *)this + 0x14060) = t0;
+    *(int *)((char *)t0) = 0;
+    *(int *)((char *)t0 + 8) = 0;
+    *(int *)((char *)t0 + 0xc) = 0;
+    *(char *)((char *)t0 + 0x20) = 0;
+    *(int *)((char *)t0 + 0x10) = 0;
+    *(int *)((char *)t0 + 0x14) = 0;
+    *(int *)((char *)t0 + 0x18) = 0;
+    *(int *)((char *)t0 + 0x1c) = 0;
+    ((lifted::V *)this)->f21(1);
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016acb0 size=0x16
 namespace lifted {
 extern char g_1027b3d0;
