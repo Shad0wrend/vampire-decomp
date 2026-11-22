@@ -48,3 +48,10 @@ void C_VampireProjectile::vfunc143()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10152210 size=0x3
+#include "C_VampireProjectile.h"
+void C_VampireProjectile::vfunc147(int a0)
+{
+}
+// END FUNCTION
