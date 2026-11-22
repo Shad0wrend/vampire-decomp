@@ -49776,6 +49776,31 @@ int CUnknown101416a0::sub_101416a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141710 size=0x74
+namespace lifted {
+extern char g_102bb2e4;
+extern char g_102bb2e8;
+extern char g_102c6f70;
+extern char g_102c6f78;
+struct V { virtual void u0(); virtual void u1(); virtual int f2(int); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual int f10(int, int); };
+}
+struct CUnknown10141710 { char sub_10141710(int, int); };
+char CUnknown10141710::sub_10141710(int a0, int a1)
+{
+    if (a0 != 0) {
+        int t0 = ((lifted::V *)a0)->f2(a1);
+        if (t0 != 0) {
+            *(int *)this = ((lifted::V *)t0)->f10((int)&lifted::g_102bb2e4, *(int *)this);
+            *(int *)((char *)this + 4) = ((lifted::V *)t0)->f10((int)&lifted::g_102bb2e8, *(int *)((char *)this + 4));
+            *(int *)((char *)this + 8) = ((lifted::V *)t0)->f10((int)&lifted::g_102c6f78, *(int *)((char *)this + 8));
+            *(int *)((char *)this + 0xc) = ((lifted::V *)t0)->f10((int)&lifted::g_102c6f70, *(int *)((char *)this + 0xc));
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141810 size=0x8
 namespace lifted {
 struct C10142000 { int sub_10142000(); };
