@@ -47797,6 +47797,18 @@ int CUnknown10141810::sub_10141810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141aa0 size=0x14
+int sub_10141aa0(int a0, int a1)
+{
+    if (a1 != 0) {
+        if ((*(char *)((char *)a1)) != 0) {
+            *(int *)((char *)a0) = a1;
+        }
+    }
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141b00 size=0x4
 struct CUnknown10141b00 { int sub_10141b00(); };
 int CUnknown10141b00::sub_10141b00()
