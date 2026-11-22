@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100c6840 size=0x3
+#include "C_VampireProjectile.h"
+bool C_VampireProjectile::vfunc144()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152010 size=0x1e
 #include "C_VampireProjectile.h"
 
