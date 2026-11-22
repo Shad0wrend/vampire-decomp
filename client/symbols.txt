@@ -1210,6 +1210,7 @@
 0x10058700 func   ?sub_10058700@CUnknown10058700@@QAEXXZ CUnknown10058700::sub_10058700
 0x10059330 func   ??_GCHUDSprite@@UAEPAXI@Z ??_GCHUDSprite@@UAEPAXI@Z
 0x10059350 func   ??1CHUDSprite@@UAE@XZ CHUDSprite::~CHUDSprite
+0x1005d6e0 func   ?sub_1005d6e0@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_1005d6e0
 0x1005d870 func   ?sub_1005d870@@YAHXZ sub_1005d870
 0x1005d930 func   ??_GC_HudTimer@@UAEPAXI@Z ??_GC_HudTimer@@UAEPAXI@Z
 0x1005d9b0 func   ?ClientClassInit@@YAHPAUignored@DT_HudTimer@@@Z ClientClassInit

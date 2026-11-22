@@ -12867,6 +12867,28 @@ void CUnknown10058700::sub_10058700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d6e0 size=0x6a
+struct TraceEnt { const char *a; void *b; void *c; };
+extern int *g_101e3128;
+extern TraceEnt *g_101e3124;
+extern char g_10286d90[];
+extern char g_102de300[];
+struct CVStatInfo_t { char pad[0x4]; int m_hidden; bool sub_1005d6e0(); };
+bool CVStatInfo_t::sub_1005d6e0()
+{
+    g_101e3124[*g_101e3128].a = g_10286d90;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    if (m_hidden == 0) {
+        --*g_101e3128;
+        return false;
+    }
+    --*g_101e3128;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d870 size=0x6
 namespace lifted {
 extern char g_103eeca0;
