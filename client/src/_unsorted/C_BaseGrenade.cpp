@@ -16,6 +16,14 @@ int C_BaseGrenade::vfunc152()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f190 size=0x5
+#include "C_BaseGrenade.h"
+bool C_BaseGrenade::vfunc156(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f1e0 size=0x1e
 #include "C_BaseGrenade.h"
 
