@@ -45781,6 +45781,20 @@ int CUnknown10136ff0::sub_10136ff0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101377b0 size=0x24
+int sub_101377b0(int a0)
+{
+    if (a0 != 0) {
+        if ((*(int *)((char *)a0)) < (*(int *)((char *)a0 + 4))) {
+            if ((*(int *)((char *)a0 + 8)) < (*(int *)((char *)a0 + 0xc))) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ce0 size=0x51
 #include <string.h>
 #pragma intrinsic(strcmp)
