@@ -1342,6 +1342,7 @@
 0x1007b150 func   ?sub_1007b150@@YAMXZ sub_1007b150
 0x1007b250 func   ?sub_1007b250@CWeaponCopy@@QAEPAU1@PBU1@@Z CWeaponCopy::sub_1007b250
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
+0x1007bab0 func   ?sub_1007bab0@HV@@QAEHXZ HV::sub_1007bab0
 0x1007bf10 func   ?sub_1007bf10@@YGXH@Z sub_1007bf10
 0x1007bf40 func   ?sub_1007bf40@@YAXXZ sub_1007bf40
 0x1007c1c0 func   ?sub_1007c1c0@@YGDHHHH@Z sub_1007c1c0
