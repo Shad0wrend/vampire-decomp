@@ -10,3 +10,11 @@ C_WeaponMelee_SeveredArm *pcd_emit_10009d90() { return new C_WeaponMelee_Severed
 
 // TARGET: ??_GC_WeaponMelee_SeveredArm@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10009dc0 size=0x3
+#include "C_WeaponMelee_SeveredArm.h"
+int C_WeaponMelee_SeveredArm::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
