@@ -41,6 +41,15 @@ int vgui2::MenuButton::vfunc172(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9740 size=0xd
+#include "vgui2__MenuButton.h"
+int vgui2::MenuButton::vfunc171(int a0)
+{
+    *(int *)((char *)this + 0xf8) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9af0 size=0x6
 #include "vgui2__MenuButton.h"
 namespace lifted {
