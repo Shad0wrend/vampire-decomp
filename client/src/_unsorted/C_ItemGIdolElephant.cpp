@@ -22,6 +22,17 @@ C_ItemGIdolElephant *pcd_emit_1001f190() { return new C_ItemGIdolElephant; }
 // TARGET: ??_GC_ItemGIdolElephant@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001f1b0 size=0x6
+#include "C_ItemGIdolElephant.h"
+namespace lifted {
+extern char g_102742fc;
+}
+int C_ItemGIdolElephant::vfunc16()
+{
+    return (int)&lifted::g_102742fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f1c0 size=0x3
 #include "C_ItemGIdolElephant.h"
 int C_ItemGIdolElephant::vfunc15()
