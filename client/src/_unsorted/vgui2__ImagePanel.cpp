@@ -10,3 +10,11 @@ vgui2::ImagePanel *pcd_emit_101c5950() { return new vgui2::ImagePanel; }
 
 // TARGET: ??_GImagePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101c59d0 size=0x4
+#include "vgui2__ImagePanel.h"
+int vgui2::ImagePanel::vfunc108()
+{
+    return *(int *)((char *)this + 0x58);
+}
+// END FUNCTION

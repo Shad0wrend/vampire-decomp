@@ -5241,6 +5241,7 @@
 0x101c3a60 func   ??1BuildModeDialog@vgui2@@UAE@XZ vgui2::BuildModeDialog::~BuildModeDialog
 0x101c5950 func   ??_GImagePanel@vgui2@@UAEPAXI@Z ??_GImagePanel@vgui2@@UAEPAXI@Z
 0x101c5970 func   ??1ImagePanel@vgui2@@UAE@XZ vgui2::ImagePanel::~ImagePanel
+0x101c59d0 func   ?vfunc108@ImagePanel@vgui2@@UAEHXZ vgui2::ImagePanel::vfunc108
 0x101c5d10 func   ??_GRadioImage@@UAEPAXI@Z ??_GRadioImage@@UAEPAXI@Z
 0x101c5d30 func   ??_GRadioButton@vgui2@@UAEPAXI@Z ??_GRadioButton@vgui2@@UAEPAXI@Z
 0x101c5d50 func   ??1RadioButton@vgui2@@UAE@XZ vgui2::RadioButton::~RadioButton
