@@ -10,3 +10,11 @@ C_BloodPack *pcd_emit_10014a10() { return new C_BloodPack; }
 
 // TARGET: ??_GC_BloodPack@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10014a40 size=0x3
+#include "C_BloodPack.h"
+int C_BloodPack::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
