@@ -22,6 +22,17 @@ C_ItemKTutorialChopshopStairsKey *pcd_emit_10024690() { return new C_ItemKTutori
 // TARGET: ??_GC_ItemKTutorialChopshopStairsKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100246b0 size=0x6
+#include "C_ItemKTutorialChopshopStairsKey.h"
+namespace lifted {
+extern char g_10273fcc;
+}
+int C_ItemKTutorialChopshopStairsKey::vfunc16()
+{
+    return (int)&lifted::g_10273fcc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100246c0 size=0x3
 #include "C_ItemKTutorialChopshopStairsKey.h"
 int C_ItemKTutorialChopshopStairsKey::vfunc15()
