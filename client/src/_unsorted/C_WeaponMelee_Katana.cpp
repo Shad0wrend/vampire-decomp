@@ -22,6 +22,17 @@ C_WeaponMelee_Katana *pcd_emit_10008c10() { return new C_WeaponMelee_Katana; }
 // TARGET: ??_GC_WeaponMelee_Katana@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10008c30 size=0x6
+#include "C_WeaponMelee_Katana.h"
+namespace lifted {
+extern char g_10275070;
+}
+int C_WeaponMelee_Katana::vfunc16()
+{
+    return (int)&lifted::g_10275070;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008c40 size=0x3
 #include "C_WeaponMelee_Katana.h"
 int C_WeaponMelee_Katana::vfunc15()
