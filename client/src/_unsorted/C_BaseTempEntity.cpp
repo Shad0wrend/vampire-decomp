@@ -89,3 +89,10 @@ void C_BaseTempEntity::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1002c510 size=0x3
+#include "C_BaseTempEntity.h"
+void C_BaseTempEntity::vfunc11(int a0)
+{
+}
+// END FUNCTION

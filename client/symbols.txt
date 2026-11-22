@@ -1036,6 +1036,7 @@
 0x1002c4f0 func   ?sub_1002c4f0@@YGXH@Z sub_1002c4f0
 0x1002c500 func   ?OnDataChanged@C_BaseTempEntity@@UAEXH@Z C_BaseTempEntity::OnDataChanged
 0x1002c500 func   ?sub_1002c500@@YGXH@Z sub_1002c500
+0x1002c510 func   ?vfunc11@C_BaseTempEntity@@UAEXH@Z C_BaseTempEntity::vfunc11
 0x1002c520 func   ?IsDormant@C_BaseTempEntity@@UAE_NXZ C_BaseTempEntity::IsDormant
 0x1002c520 func   ?sub_1002c520@@YADXZ sub_1002c520
 0x1002c530 func   ?ReceiveMessage@C_BaseTempEntity@@UAEXHAAVbf_read@@@Z C_BaseTempEntity::ReceiveMessage
