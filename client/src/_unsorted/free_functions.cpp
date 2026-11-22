@@ -39173,6 +39173,29 @@ int CUnknown101175a0::sub_101175a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117850 size=0x3a
+namespace lifted {
+extern int g_104e0760;
+extern int g_104e09b8;
+extern int g_104e09bc;
+int sub_100b45d0();
+struct C10117980 { int sub_10117980(int); };
+struct C10117a80 { int sub_10117a80(); };
+}
+struct CUnknown10117850 { void sub_10117850(int); };
+void CUnknown10117850::sub_10117850(int a0)
+{
+    lifted::g_104e0760 = 0;
+    lifted::g_104e09b8 = 0;
+    lifted::g_104e09bc = 0;
+    if ((*(int *)((char *)this + 0x168)) != 0) {
+        ((lifted::C10117a80 *)this)->sub_10117a80();
+        ((lifted::C10117980 *)this)->sub_10117980(a0);
+        lifted::sub_100b45d0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ae0 size=0x11
 namespace lifted {
 extern int g_104a57d4;
