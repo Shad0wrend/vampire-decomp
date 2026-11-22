@@ -3891,6 +3891,7 @@
 0x1012a060 func   ?sub_1012a060@CSave@@QAE_NHPAX0PAUtypedescription_t@@@Z CSave::sub_1012a060
 0x1012a170 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1012a220 func   ?vfunc2@CRestore@@UAEHPAVCBaseEntity@@H@Z CRestore::vfunc2
+0x1012a260 func   ?vfunc32@CRestore@@UAE_NXZ CRestore::vfunc32
 0x1012a270 func   ?vfunc33@CRestore@@UAEHXZ CRestore::vfunc33
 0x1012a300 func   ?vfunc1@CRestore@@UAEXH@Z CRestore::vfunc1
 0x1012a320 func   ?vfunc11@CRestore@@UAEPBDH@Z CRestore::vfunc11
