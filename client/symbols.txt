@@ -1603,6 +1603,7 @@
 0x1009f280 func   ?GetCollisionModel@C_BaseEntity@@UAEPBUmodel_t@@XZ C_BaseEntity::GetCollisionModel
 0x1009f290 func   ?GetCollisionOrigin@C_BaseEntity@@UAEABVVector@@XZ C_BaseEntity::GetCollisionOrigin
 0x1009f2a0 func   ?GetCollisionAngles@C_BaseEntity@@UAEABVQAngle@@XZ C_BaseEntity::GetCollisionAngles
+0x1009f2b0 func   ?Collideable_vfunc10@C_BaseEntity@@UAE_NXZ C_BaseEntity::Collideable_vfunc10
 0x1009f2e0 func   ?ReceiveMessage@C_BaseEntity@@UAEXHAAVbf_read@@@Z C_BaseEntity::ReceiveMessage
 0x1009f2e0 func   ?sub_1009f2e0@@YGXHH@Z sub_1009f2e0
 0x1009f2f0 func   ?GetDataTableBasePtr@C_BaseEntity@@UAEPAXXZ C_BaseEntity::GetDataTableBasePtr
