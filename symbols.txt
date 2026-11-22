@@ -3971,6 +3971,7 @@
 0x10005e8e func   ?sub_101067e0@CBaseCombatCharacter@@QAEXPBDMMMMM@Z CBaseCombatCharacter::sub_101067e0
 0x10005e93 func   ?sub_10124630@CGameMovement@@QAEXPAX@Z CGameMovement::sub_10124630
 0x10005e98 func   ?sub_102d3040@CAI_Hint@@QAEXXZ CAI_Hint::sub_102d3040
+0x10005e9d func   ??_GCSingleUserRecipientFilter@@UAEPAXI@Z ??_GCSingleUserRecipientFilter@@UAEPAXI@Z
 0x10005e9d func   ?sub_100d1cc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100d1cc0
 0x10005ea2 func   ?sub_1012cf90@@YGXH@Z sub_1012cf90
 0x10005ea7 func   ?sub_1003f810@CBaseEntity@@QAEXM@Z CBaseEntity::sub_1003f810
