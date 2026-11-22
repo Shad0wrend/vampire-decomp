@@ -4607,6 +4607,7 @@
 0x1014a240 func   ?sub_1014a240@@YAHXZ sub_1014a240
 0x1014a250 func   ?sub_1014a250@@YGHH@Z sub_1014a250
 0x1014a260 func   ?sub_1014a260@@YGHH@Z sub_1014a260
+0x1014a9c0 func   ?sub_1014a9c0@@YGHH@Z sub_1014a9c0
 0x1014a9e0 func   ?sub_1014a9e0@CUnknown101e0f00@@QAEPAXHHH@Z CUnknown101e0f00::sub_1014a9e0
 0x1014aa40 func   ?sub_1014aa40@CUnknown101e0f00@@QAEXHPADPAHPAIPAM1@Z CUnknown101e0f00::sub_1014aa40
 0x1014aba0 func   ?sub_1014aba0@CUnknown101e44c0@@QAE_NPADPBDI@Z CUnknown101e44c0::sub_1014aba0

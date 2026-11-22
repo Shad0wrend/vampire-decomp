@@ -51892,6 +51892,20 @@ int __stdcall sub_1014a260(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a9c0 size=0x1c
+namespace lifted {
+int __stdcall sub_1014a7d0(int);
+}
+int __stdcall sub_1014a9c0(int a0)
+{
+    int t0 = lifted::sub_1014a7d0(a0);
+    if (t0 != 0) {
+        return *(int *)((char *)t0 + 0x3f4);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a9e0 size=0x5c
 #include "CUnknown101e0f00.h"
 
