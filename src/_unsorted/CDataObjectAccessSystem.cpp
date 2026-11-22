@@ -88,14 +88,22 @@ void __fastcall sub_1003c950(Sys *self)
 // END FUNCTION
 
 // FUNCTION: 0x1003ca90 size=0x1e
+#define PCD_INITIALIZERS	// the class as its initializer unit sees it
 #include "CDataObjectAccessSystem.h"
+#include "ScopeTrace.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
 
-// TARGET: CDataObjectAccessSystem::vfunc8
-CAutoGameSystem *CDataObjectAccessSystem::vfunc8(unsigned int flags)
+// the constructor as the initializer unit of the global 0x106bd930 (0x1003c580) defines it: inline
+inline CDataObjectAccessSystem::CDataObjectAccessSystem()
 {
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
+	ScopeTrace trace("CDataObjectAccessSystem::CDataObjectAccessSystem", g_106b8540, g_106b8540);
+	memset(m_data, 0, sizeof(m_data));
 }
+
+// VC6 writes the scalar deleting destructor where it emits the class's vtable; `new` (the inline constructor)
+// in a function nothing calls makes it emit both here
+CDataObjectAccessSystem *pcd_emit_1003ca90() { return new CDataObjectAccessSystem; }
+
+// TARGET: ??_GCDataObjectAccessSystem@@UAEPAXI@Z
 // END FUNCTION

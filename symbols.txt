@@ -9869,7 +9869,6 @@
 0x1000d2ec func   ?sub_101c31c0@@YAXXZ sub_101c31c0
 0x1000d2f1 func   ?sub_10108500@@YAHXZ sub_10108500
 0x1000d2f6 func   ??_GCDataObjectAccessSystem@@UAEPAXI@Z ??_GCDataObjectAccessSystem@@UAEPAXI@Z
-0x1000d2f6 func   ?vfunc8@CDataObjectAccessSystem@@QAEPAVCAutoGameSystem@@I@Z CDataObjectAccessSystem::vfunc8
 0x1000d2fb func   ??0CHumanoidRec@@QAE@XZ CHumanoidRec::CHumanoidRec
 0x1000d2fb func   ?sub_10260980@CUnknown10260980@@QAEPAU1@XZ CUnknown10260980::sub_10260980
 0x1000d300 func   ?sub_101bb070@CSoundEnt@@QAEHH@Z CSoundEnt::sub_101bb070
