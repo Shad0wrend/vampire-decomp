@@ -22,6 +22,17 @@ C_WeaponIArmor_Hvy_Leather *pcd_emit_10015b90() { return new C_WeaponIArmor_Hvy_
 // TARGET: ??_GC_WeaponIArmor_Hvy_Leather@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10015bb0 size=0x6
+#include "C_WeaponIArmor_Hvy_Leather.h"
+namespace lifted {
+extern char g_10274844;
+}
+int C_WeaponIArmor_Hvy_Leather::vfunc16()
+{
+    return (int)&lifted::g_10274844;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015bc0 size=0x3
 #include "C_WeaponIArmor_Hvy_Leather.h"
 int C_WeaponIArmor_Hvy_Leather::vfunc15()
