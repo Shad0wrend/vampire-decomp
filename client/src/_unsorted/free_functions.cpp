@@ -59962,6 +59962,18 @@ int CUnknown10204c60::sub_10160de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101613a0 size=0x13
+namespace lifted {
+int __stdcall sub_101608a0(int);
+}
+struct CUnknown101613a0 { void * sub_101613a0(int); };
+void * CUnknown101613a0::sub_101613a0(int a0)
+{
+    lifted::sub_101608a0(a0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101613c0 size=0x13
 struct CUnknown101613c0 { void * sub_101613c0(int); };
 void * CUnknown101613c0::sub_101613c0(int a0)
