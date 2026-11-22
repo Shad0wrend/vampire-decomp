@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100c4c80 size=0x6
+#include "C_Sun.h"
+namespace lifted {
+extern char g_102b67cc;
+}
+int C_Sun::vfunc16()
+{
+    return (int)&lifted::g_102b67cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4c90 size=0x3
 #include "C_Sun.h"
 int C_Sun::vfunc15()

@@ -2882,6 +2882,7 @@
 0x100c4b10 func   ?sub_100c4b10@CUnknown100b6f80@@QAEHPAUCUnknown100b6f80Hdr@@HPAH@Z CUnknown100b6f80::sub_100c4b10
 0x100c4ba0 func   ?sub_100c4ba0@@YAXHPAUTSet@@@Z sub_100c4ba0
 0x100c4c10 func   ?sub_100c4c10@UtlMem@@QAEXH@Z UtlMem::sub_100c4c10
+0x100c4c80 func   ?vfunc16@C_Sun@@UAEHXZ C_Sun::vfunc16
 0x100c4c90 func   ?vfunc15@C_Sun@@UAEHXZ C_Sun::vfunc15
 0x100c4ca0 func   ?sub_100c4ca0@@YAHXZ sub_100c4ca0
 0x100c4da0 func   ?ClientClassInit@@YAHPAUignored@DT_Sun@@@Z ClientClassInit
