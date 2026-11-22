@@ -40,6 +40,22 @@ void CGameMovement::vfunc13(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6e20 size=0x1e
+#include "CGameMovement.h"
+namespace lifted {
+int sub_100e6e40();
+int sub_101d1296(int);
+}
+CGameMovement * CGameMovement::vfunc0(unsigned int a0)
+{
+    int t0 = lifted::sub_100e6e40();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6e70 size=0x2f
 #include "CGameMovement.h"
 
