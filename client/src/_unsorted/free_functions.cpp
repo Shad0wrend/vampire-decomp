@@ -29468,6 +29468,28 @@ template <> int ClientClassInit<DT_DynamicProp::ignored>(DT_DynamicProp::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd8b0 size=0x2e
+namespace lifted {
+extern char g_10231af4;
+extern char g_10231b08;
+extern char g_10231b44;
+extern char g_10231b7c;
+extern char g_10231bd4;
+int sub_1008f3c0();
+}
+struct CUnknown100bd8b0 { void * sub_100bd8b0(); };
+void * CUnknown100bd8b0::sub_100bd8b0()
+{
+    int t0 = lifted::sub_1008f3c0();
+    *(int *)this = (int)&lifted::g_10231bd4;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10231b7c;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10231b44;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_10231b08;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10231af4;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd950 size=0x6
 namespace lifted {
 extern char g_104a3904;
