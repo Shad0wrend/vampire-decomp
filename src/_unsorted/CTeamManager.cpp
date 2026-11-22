@@ -30,9 +30,9 @@ CTeamManager *CTeamManager::vfunc8(unsigned int flags)
 namespace lifted {
 struct C10010785 { int sub_10010785(); };
 }
-int CTeamManager::vfunc2()
+void CTeamManager::vfunc2()
 {
-    return ((lifted::C10010785 *)(this + 8))->sub_10010785();
+    ((lifted::C10010785 *)&m_symbols)->sub_10010785();
 }
 // END FUNCTION
 
@@ -41,9 +41,9 @@ int CTeamManager::vfunc2()
 struct CUnknown102308f0 { int sub_102308f0(); };
 // TARGET: CTeamManager::vfunc3
 // the game's 0x10230840: a tail call (jmp) of CUnknown102308f0::sub_102308f0
-int CTeamManager::vfunc3()
+void CTeamManager::vfunc3()
 {
-	return ((CUnknown102308f0 *)this)->CUnknown102308f0::sub_102308f0();
+	((CUnknown102308f0 *)this)->CUnknown102308f0::sub_102308f0();
 }
 // END FUNCTION
 
@@ -52,8 +52,8 @@ int CTeamManager::vfunc3()
 namespace lifted {
 struct C10010785 { int sub_10010785(); };
 }
-int CTeamManager::vfunc5()
+void CTeamManager::vfunc5()
 {
-    return ((lifted::C10010785 *)(this + 8))->sub_10010785();
+    ((lifted::C10010785 *)&m_symbols)->sub_10010785();
 }
 // END FUNCTION

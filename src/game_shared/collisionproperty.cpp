@@ -113,7 +113,7 @@ void CUnknown100dbc60::sub_100dbc60(CBaseEntity *pEnt)
 // TARGET: CDirtySpatialPartitionEntityList::vfunc5
 void CDirtySpatialPartitionEntityList::vfunc5()
 {
-	m_18 = 0;
+	m_DirtyEntities.m_Size = 0;
 }
 // END FUNCTION
 

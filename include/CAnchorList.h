@@ -6,27 +6,20 @@
 
 #include "GameSystemRoot.h"
 
-extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
-#ifdef PCD_INITIALIZERS	// the initializer units call tier0's import itself (the destroy keeps its address in a register)
-extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
-#define PCD_PLAT_FREE Plat_Free
-#else
-#define PCD_PLAT_FREE g_109f3624
-#endif
+extern void (__cdecl *g_109f3624)(void *);	// Plat_Free's import slot, as matched code calls it
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);	// ~CAnchorListVec calls the import itself (the destroy keeps its address in a register)
 
 
 class CAnchorListVec
 {
 public:
-#ifdef PCD_INITIALIZERS	// the initializer units: CUtlVector's constructor (grow size 0, no memory)
-	CAnchorListVec() : m_pMemory(0), m_allocationCount(0), m_growSize(0), m_Size(0), m_pElements(0) {}
-#endif
+	CAnchorListVec() : m_pMemory(0), m_allocationCount(0), m_growSize(0), m_Size(0), m_pElements(0) {}	// CUtlVector's constructor (grow size 0, no memory)
 	~CAnchorListVec()
 	{
 		m_Size = 0;
 		if (m_growSize != -1) {
 			if (m_pMemory) {
-				PCD_PLAT_FREE(m_pMemory);
+				Plat_Free(m_pMemory);
 				m_pMemory = 0;
 			}
 			m_allocationCount = 0;
@@ -34,7 +27,7 @@ public:
 		m_pElements = m_pMemory;
 		if (m_growSize != -1) {
 			if (m_pMemory) {
-				PCD_PLAT_FREE(m_pMemory);
+				Plat_Free(m_pMemory);
 				m_pMemory = 0;
 			}
 			m_allocationCount = 0;

@@ -23,15 +23,15 @@ CAutoGameSystem *CPlayerEventsManager::vfunc8(unsigned int flags)
 
 void CPlayerEventsManager::vfunc2()
 {
-	m_Size = 0;
-	if (m_growSize != -1) {
-		if (m_pMemory) {
-			g_109f3624(m_pMemory);
-			m_pMemory = 0;
+	m_vec.m_Size = 0;
+	if (m_vec.m_Memory.m_nGrowSize != -1) {
+		if (m_vec.m_Memory.m_pMemory) {
+			g_109f3624(m_vec.m_Memory.m_pMemory);
+			m_vec.m_Memory.m_pMemory = 0;
 		}
-		m_allocationCount = 0;
+		m_vec.m_Memory.m_nAllocationCount = 0;
 	}
-	m_pElements = m_pMemory;
+	m_vec.m_pElements = m_vec.m_Memory.m_pMemory;
 }
 // END FUNCTION
 
@@ -56,14 +56,14 @@ void CPlayerEventsManager::vfunc4()
 
 void CPlayerEventsManager::vfunc5()
 {
-	m_Size = 0;
-	if (m_growSize != -1) {
-		if (m_pMemory) {
-			g_109f3624(m_pMemory);
-			m_pMemory = 0;
+	m_vec.m_Size = 0;
+	if (m_vec.m_Memory.m_nGrowSize != -1) {
+		if (m_vec.m_Memory.m_pMemory) {
+			g_109f3624(m_vec.m_Memory.m_pMemory);
+			m_vec.m_Memory.m_pMemory = 0;
 		}
-		m_allocationCount = 0;
+		m_vec.m_Memory.m_nAllocationCount = 0;
 	}
-	m_pElements = m_pMemory;
+	m_vec.m_pElements = m_vec.m_Memory.m_pMemory;
 }
 // END FUNCTION
