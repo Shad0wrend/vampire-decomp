@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b6e70 size=0x6
+#include "C_BreakableSurface.h"
+namespace lifted {
+extern char g_102b41b4;
+}
+int C_BreakableSurface::vfunc16()
+{
+    return (int)&lifted::g_102b41b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6e80 size=0x3
 #include "C_BreakableSurface.h"
 int C_BreakableSurface::vfunc15()
