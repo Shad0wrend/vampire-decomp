@@ -22,6 +22,17 @@ C_ItemGIdolDragon *pcd_emit_1001ef10() { return new C_ItemGIdolDragon; }
 // TARGET: ??_GC_ItemGIdolDragon@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001ef30 size=0x6
+#include "C_ItemGIdolDragon.h"
+namespace lifted {
+extern char g_10274310;
+}
+int C_ItemGIdolDragon::vfunc16()
+{
+    return (int)&lifted::g_10274310;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ef40 size=0x3
 #include "C_ItemGIdolDragon.h"
 int C_ItemGIdolDragon::vfunc15()
