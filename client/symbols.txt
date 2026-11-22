@@ -1105,6 +1105,7 @@
 0x100401f0 func   ?sub_100401f0@@YAHXZ sub_100401f0
 0x10040260 func   ?ClientClassInit@@YAHPAUignored@DT_TETParticle@@@Z ClientClassInit
 0x10040370 func   ??_GC_TETParticleAttached@@UAEPAXI@Z ??_GC_TETParticleAttached@@UAEPAXI@Z
+0x10040410 func   ?vfunc9@C_TETParticleAttached@@UAEHXZ C_TETParticleAttached::vfunc9
 0x10040430 func   ?sub_10040430@@YAHXZ sub_10040430
 0x100404d0 func   ?sub_100404d0@@YAHXZ sub_100404d0
 0x10040540 func   ?ClientClassInit@@YAHPAUignored@DT_TETParticleAttached@@@Z ClientClassInit

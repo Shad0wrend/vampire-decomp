@@ -10,3 +10,14 @@ C_TETParticleAttached *pcd_emit_10040370() { return new C_TETParticleAttached; }
 
 // TARGET: ??_GC_TETParticleAttached@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10040410 size=0x6
+#include "C_TETParticleAttached.h"
+namespace lifted {
+extern char g_1028201c;
+}
+int C_TETParticleAttached::vfunc9()
+{
+    return (int)&lifted::g_1028201c;
+}
+// END FUNCTION
