@@ -5386,6 +5386,7 @@
 0x1017d240 func   ??1VHOLabel@@UAE@XZ VHOLabel::~VHOLabel
 0x1017d240 func   ?sub_1017d240@CUnknown1017d240@@QAEHXZ CUnknown1017d240::sub_1017d240
 0x1017d310 func   ?sub_1017d310@CUnknown1017d310@@QAEXD@Z CUnknown1017d310::sub_1017d310
+0x1017d340 func   ?sub_1017d340@CUnknown1017d340@@QAEXD@Z CUnknown1017d340::sub_1017d340
 0x1017d3d0 func   ?vfunc85@VHOLabel@@UAEXXZ VHOLabel::vfunc85
 0x1017d3f0 func   ?vfunc86@VHOLabel@@UAEXXZ VHOLabel::vfunc86
 0x1017d430 func   ??_GVHOHeadingLabel@@UAEPAXI@Z ??_GVHOHeadingLabel@@UAEPAXI@Z
