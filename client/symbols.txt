@@ -617,6 +617,7 @@
 0x10012ec0 func   ?vfunc15@C_OccultPresence@@UAEHXZ C_OccultPresence::vfunc15
 0x10012ed0 func   ?sub_10012ed0@@YAHXZ sub_10012ed0
 0x10012ff0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultPresence@@@Z ClientClassInit
+0x10013080 func   ?vfunc17@C_OccultObfuscate@@UAEHXZ C_OccultObfuscate::vfunc17
 0x10013110 func   ??_GC_OccultObfuscate@@UAEPAXI@Z ??_GC_OccultObfuscate@@UAEPAXI@Z
 0x10013140 func   ?vfunc15@C_OccultObfuscate@@UAEHXZ C_OccultObfuscate::vfunc15
 0x10013150 func   ?sub_10013150@@YAHXZ sub_10013150

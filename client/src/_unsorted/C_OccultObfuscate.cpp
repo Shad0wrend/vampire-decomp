@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10013080 size=0x6
+#include "C_OccultObfuscate.h"
+namespace lifted {
+extern char g_10273064;
+}
+int C_OccultObfuscate::vfunc17()
+{
+    return (int)&lifted::g_10273064;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013110 size=0x1e
 #include "C_OccultObfuscate.h"
 
