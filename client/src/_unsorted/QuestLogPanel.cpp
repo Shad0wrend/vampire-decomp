@@ -10,3 +10,10 @@ QuestLogPanel *pcd_emit_10188050() { return new QuestLogPanel; }
 
 // TARGET: ??_GQuestLogPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101895e0 size=0x1
+#include "QuestLogPanel.h"
+void QuestLogPanel::vfunc119()
+{
+}
+// END FUNCTION
