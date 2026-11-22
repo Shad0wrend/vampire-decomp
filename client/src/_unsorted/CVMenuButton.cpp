@@ -17,3 +17,10 @@ void CVMenuButton::vfunc91(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100654c0 size=0x3
+#include "CVMenuButton.h"
+void CVMenuButton::vfunc94(int a0)
+{
+}
+// END FUNCTION
