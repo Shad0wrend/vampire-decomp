@@ -10,3 +10,11 @@ C_ItemKShrekHubOneKey *pcd_emit_10024b90() { return new C_ItemKShrekHubOneKey; }
 
 // TARGET: ??_GC_ItemKShrekHubOneKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10024bc0 size=0x3
+#include "C_ItemKShrekHubOneKey.h"
+int C_ItemKShrekHubOneKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
