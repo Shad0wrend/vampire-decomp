@@ -10,3 +10,11 @@ C_ItemGVVPhoto *pcd_emit_10020810() { return new C_ItemGVVPhoto; }
 
 // TARGET: ??_GC_ItemGVVPhoto@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10020840 size=0x3
+#include "C_ItemGVVPhoto.h"
+int C_ItemGVVPhoto::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
