@@ -25,6 +25,13 @@ void CVampModeManager::vfunc7(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162410 size=0x3
+#include "CVampModeManager.h"
+void CVampModeManager::vfunc2(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162420 size=0x1
 #include "CVampModeManager.h"
 void CVampModeManager::vfunc3()
