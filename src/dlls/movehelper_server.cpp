@@ -30,11 +30,13 @@ CMoveHelperServer *CMoveHelperServer::vfunc14(unsigned int flags)
 // FUNCTION: 0x1013ede0 size=0x20
 #include "IMoveHelperServer.h"
 
-// VC6 writes IMoveHelperServer's scalar deleting destructor where it emits the class's vtable; its inline
-// destructor called in a function nothing calls makes it emit both here
+// The game's 0x1013ede0 is IMoveHelperServer's slot 14 (its deleting destructor: only IMoveHelper's vptr store
+// is left). IMoveHelperServer's implicit destructor called in a function nothing calls emits IMoveHelper's
+// vtable and deleting destructor here (the same bytes); IMoveHelperServer's own is not emitted, so the
+// name stays IMoveHelper's
 void pcd_emit_1013ede0(IMoveHelperServer *p) { p->IMoveHelperServer::~IMoveHelperServer(); }
 
-// TARGET: ??_GIMoveHelperServer@@UAEPAXI@Z
+// TARGET: ??_GIMoveHelper@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1013ee10 size=0x20
