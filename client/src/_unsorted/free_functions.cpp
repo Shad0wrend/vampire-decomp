@@ -64314,6 +64314,20 @@ void sub_10186e00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187230 size=0x1f
+namespace lifted {
+struct V { virtual int f0(int); };
+}
+struct CUnknown10187230 { void sub_10187230(); };
+void CUnknown10187230::sub_10187230()
+{
+    if ((*(int *)((char *)this + 0xb8)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0xb8)))->f0(1);
+    }
+    *(int *)((char *)this + 0xb8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187c10 size=0x7
 struct CUnknown10187c10 { char sub_10187c10(); };
 char CUnknown10187c10::sub_10187c10()

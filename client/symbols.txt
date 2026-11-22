@@ -5405,6 +5405,7 @@
 0x101871a0 func   ?vfunc89@VMapIconButton@@UAEXH@Z VMapIconButton::vfunc89
 0x101871f0 func   ??_GVMapFrameLabel@@UAEPAXI@Z ??_GVMapFrameLabel@@UAEPAXI@Z
 0x10187210 func   ??1VMapFrameLabel@@UAE@XZ VMapFrameLabel::~VMapFrameLabel
+0x10187230 func   ?sub_10187230@CUnknown10187230@@QAEXXZ CUnknown10187230::sub_10187230
 0x101873a0 func   ??_GVMapScreenUI@@UAEPAXI@Z ??_GVMapScreenUI@@UAEPAXI@Z
 0x101873c0 func   ??1VMapScreenUI@@UAE@XZ VMapScreenUI::~VMapScreenUI
 0x10187c10 func   ?sub_10187c10@CUnknown10187c10@@QAEDXZ CUnknown10187c10::sub_10187c10
