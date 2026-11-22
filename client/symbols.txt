@@ -2907,6 +2907,7 @@
 0x100ab510 func   ?vfunc139@C_BaseViewModel@@UAEHH@Z C_BaseViewModel::vfunc139
 0x100abf90 func   ?sub_100abf90@@YADXZ sub_100abf90
 0x100abfa0 func   ?vfunc37@C_BaseViewModel@@UAEXXZ C_BaseViewModel::vfunc37
+0x100abfc0 func   ?vfunc120@C_BaseViewModel@@UAEXHH@Z C_BaseViewModel::vfunc120
 0x100ac060 func   ?sub_100ac060@@YAHXZ sub_100ac060
 0x100ac070 func   ?sub_100ac070@@YAHXZ sub_100ac070
 0x100ac080 func   ?sub_100ac080@UtlMem@@QAEXH@Z UtlMem::sub_100ac080
