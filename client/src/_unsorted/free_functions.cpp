@@ -11852,6 +11852,27 @@ void * CUnknown10042370::sub_10042370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100429f0 size=0x3d
+namespace lifted {
+extern char g_10042a30;
+extern char g_10227a14;
+extern char g_103ec9c8;
+extern char g_103eca2c;
+struct C100295b0 { int sub_100295b0(); };
+int sub_101d0df5(int);
+}
+int sub_100429f0()
+{
+    if ((1 & lifted::g_103eca2c) == 0) {
+        lifted::g_103eca2c = (char)(lifted::g_103eca2c | 1);
+        int t0 = ((lifted::C100295b0 *)((int)&lifted::g_103ec9c8))->sub_100295b0();
+        *(int *)&lifted::g_103ec9c8 = (int)&lifted::g_10227a14;
+        lifted::sub_101d0df5((int)&lifted::g_10042a30);
+    }
+    return (int)&lifted::g_103ec9c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042e80 size=0x131
 #include "RecvTable.h"
 extern RecvTable g_103ecc30;
