@@ -6,8 +6,8 @@ game's original compiler and keep every matched function matching. Do not edit `
 edits in `src/` are re-checked and broken functions go back to the queue.
 
 Start with `guide("workflow")`, then `project_info()` and `claim_function()`.
-Never copy anything from this folder outside it, and push this repository only to the owner's private remote
-(`origin`, set up 2026-11-10 at the owner's request), never to a public one: the game's code belongs to its owner.
+Never commit the game's own files (its DLLs or anything else from the game folder): they belong to its owner,
+and `orig/` is git-ignored for that reason.
 
 ## Source engine DATADESC getters (82 bytes, one instruction sequence, many addresses)
 

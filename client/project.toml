@@ -1,11 +1,12 @@
 [game]
+# Set binary, cl and vcvars to your own copies of these files (see README.md).
 name = "Vampire: The Masquerade - Bloodlines (client)"
-binary = "G:\\decomp\\VtMB\\Vampire\\cl_dlls\\client.dll"
+binary = "C:\\path\\to\\Vampire\\cl_dlls\\client.dll"
 sha1 = "39a2d2556f08090542f2d186320b9012a83ffb6b"
 
 [compiler]
-cl = "G:\\decomp\\tools\\vc6\\VC98\\BIN\\CL.EXE"
-vcvars = "G:\\decomp\\tools\\vc6\\vcvars32.bat"
+cl = "C:\\path\\to\\vc6\\VC98\\BIN\\CL.EXE"
+vcvars = "C:\\path\\to\\vc6\\vcvars32.bat"
 prelude = "client.h"
 flags = ["/O2", "/GR"]
 timeout_s = 30

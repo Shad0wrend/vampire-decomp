@@ -6,17 +6,16 @@ game's original compiler and keep every matched function matching. Do not edit `
 edits in `src/` are re-checked and broken functions go back to the queue.
 
 Start with `guide("workflow")`, then `project_info()` and `claim_function()`.
-Never copy anything from this folder outside it, and never push this repository: the game's code belongs to its
-owner.
+Never commit the game's own files (client.dll or anything else from the game folder): they belong to its owner.
 
 ## Where this project comes from
 
 client.dll of the same game, built by the same compiler (Visual C++ 6.0, `/O2 /GR`) from the same Source engine
-tree as vampire.dll. Project `vtmb` (G:\decomp\projects\vtmb) has matched all of vampire.dll; its CLAUDE.md is the
+tree as vampire.dll. Project `vtmb` (the repository root, one folder up) has matched all of vampire.dll; its CLAUDE.md is the
 long record of how. Read it there when a wall below is not enough; never copy text or code from that folder into
 this one.
 
-`pcdecomp carry G:\decomp\projects\vtmb G:\decomp\projects\vtmb-client` copies vtmb's matched functions onto
+`pcdecomp carry <vtmb project> <client project>` copies vtmb's matched functions onto
 client.dll functions whose bytes are the same (relocations and call targets masked), renames them for this binary
 and judges each one here. It reads vtmb only. It can be run again: matched functions are no longer open, a score
 already noted is not noted twice. Run it before agents edit headers here: a header carry made that someone changed
