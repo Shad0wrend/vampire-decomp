@@ -9,7 +9,7 @@
 #pragma once
 #include "utlvector.h"
 
-class IPartitionQueryCallback
+class __declspec(novtable) IPartitionQueryCallback	// Source's abstract_class: the game has no table of its own
 {
 public:
 	virtual void qfunc0();

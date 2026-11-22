@@ -40,7 +40,7 @@ struct CLagCompensationRecord	// 0x784 bytes: the element of the manager's vecto
 class CBasePlayer;
 class CUserCmd;
 
-class ILagCompensationManager	// vtable 0x10471748 in the manager (+8)
+class __declspec(novtable) ILagCompensationManager	// vtable 0x10471748 in the manager (+8); Source's abstract_class: the game has no table of its own
 {
 public:
 	virtual void StartLagCompensation(CBasePlayer *player, CUserCmd *cmd);
