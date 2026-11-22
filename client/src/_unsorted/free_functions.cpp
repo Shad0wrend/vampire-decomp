@@ -29014,6 +29014,20 @@ int CUnknown100c18e0::sub_100c18e0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1ad0 size=0x30
+namespace lifted {
+extern int g_104a5818;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual int f7(int, int, int); virtual void u8(); virtual void u9(); virtual int f10(int, int, int, int, int); };
+}
+int __stdcall sub_100c1ad0(int a0)
+{
+    if ((*(char *)((char *)a0 + 0x24)) != 0) {
+        return ((lifted::V *)lifted::g_104a5818)->f10(*(int *)((char *)a0 + 0xc), 0, 0, 4, 0);
+    }
+    return ((lifted::V *)lifted::g_104a5818)->f7(0, 6, *(int *)((char *)a0 + 0xc));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
