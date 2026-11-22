@@ -48234,6 +48234,20 @@ CUnknown101d86d0 *CUnknown101d86d0::sub_10145500(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145580 size=0x30
+namespace lifted {
+struct C10145660 { int sub_10145660(int, int, int, int, int, int); };
+struct C10161370 { int sub_10161370(); };
+}
+struct CUnknown10145580 { void * sub_10145580(int, int, int, int); };
+void * CUnknown10145580::sub_10145580(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C10161370 *)((char *)this + 0x1c))->sub_10161370();
+    ((lifted::C10145660 *)this)->sub_10145660(a0, 0, a1, a2, a3, 0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145650 size=0xa
 namespace lifted {
 extern int g_105e7b24;
