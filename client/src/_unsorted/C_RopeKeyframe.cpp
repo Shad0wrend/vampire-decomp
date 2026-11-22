@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100be2b0 size=0x6
+#include "C_RopeKeyframe.h"
+namespace lifted {
+extern char g_102b5c94;
+}
+int C_RopeKeyframe::vfunc16()
+{
+    return (int)&lifted::g_102b5c94;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be2c0 size=0x3
 #include "C_RopeKeyframe.h"
 int C_RopeKeyframe::vfunc15()
