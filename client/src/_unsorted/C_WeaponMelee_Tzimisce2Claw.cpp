@@ -22,6 +22,17 @@ C_WeaponMelee_Tzimisce2Claw *pcd_emit_1000b410() { return new C_WeaponMelee_Tzim
 // TARGET: ??_GC_WeaponMelee_Tzimisce2Claw@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000b430 size=0x6
+#include "C_WeaponMelee_Tzimisce2Claw.h"
+namespace lifted {
+extern char g_10274ebc;
+}
+int C_WeaponMelee_Tzimisce2Claw::vfunc16()
+{
+    return (int)&lifted::g_10274ebc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b440 size=0x3
 #include "C_WeaponMelee_Tzimisce2Claw.h"
 int C_WeaponMelee_Tzimisce2Claw::vfunc15()
