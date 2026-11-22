@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bb150 size=0x6
+#include "C_TEDust.h"
+namespace lifted {
+extern char g_102b45fc;
+}
+int C_TEDust::vfunc9()
+{
+    return (int)&lifted::g_102b45fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb380 size=0x3
 #include "C_TEDust.h"
 bool C_TEDust::vfunc16()
