@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100c3660 size=0x6
+#include "C_BaseFlex.h"
+namespace lifted {
+extern char g_102b653c;
+}
+int C_BaseFlex::vfunc16()
+{
+    return (int)&lifted::g_102b653c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c3670 size=0x3
 #include "C_BaseFlex.h"
 int C_BaseFlex::vfunc15()
