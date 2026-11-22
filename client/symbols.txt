@@ -545,6 +545,7 @@
 0x100110c0 func   ?vfunc15@C_ResearchBook_MG_FIN@@UAEHXZ C_ResearchBook_MG_FIN::vfunc15
 0x100110d0 func   ?sub_100110d0@@YAHXZ sub_100110d0
 0x100111f0 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_MG_FIN@@@Z ClientClassInit
+0x10011280 func   ?vfunc17@C_ResearchBook_HG_FIRE@@UAEHXZ C_ResearchBook_HG_FIRE::vfunc17
 0x10011310 func   ??_GC_ResearchBook_HG_FIRE@@UAEPAXI@Z ??_GC_ResearchBook_HG_FIRE@@UAEPAXI@Z
 0x10011340 func   ?vfunc15@C_ResearchBook_HG_FIRE@@UAEHXZ C_ResearchBook_HG_FIRE::vfunc15
 0x10011350 func   ?sub_10011350@@YAHXZ sub_10011350
