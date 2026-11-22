@@ -865,6 +865,7 @@
 0x100232d0 func   ?sub_100232d0@@YAHXZ sub_100232d0
 0x100233f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumStorageKey@@@Z ClientClassInit
 0x10023510 func   ??_GC_ItemKNetcafeOfficeKey@@UAEPAXI@Z ??_GC_ItemKNetcafeOfficeKey@@UAEPAXI@Z
+0x10023540 func   ?vfunc15@C_ItemKNetcafeOfficeKey@@UAEHXZ C_ItemKNetcafeOfficeKey::vfunc15
 0x10023550 func   ?sub_10023550@@YAHXZ sub_10023550
 0x10023670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKNetcafeOfficeKey@@@Z ClientClassInit
 0x10023790 func   ??_GC_ItemKEDaneKey@@UAEPAXI@Z ??_GC_ItemKEDaneKey@@UAEPAXI@Z

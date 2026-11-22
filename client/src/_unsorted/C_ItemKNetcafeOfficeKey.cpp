@@ -10,3 +10,11 @@ C_ItemKNetcafeOfficeKey *pcd_emit_10023510() { return new C_ItemKNetcafeOfficeKe
 
 // TARGET: ??_GC_ItemKNetcafeOfficeKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10023540 size=0x3
+#include "C_ItemKNetcafeOfficeKey.h"
+int C_ItemKNetcafeOfficeKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
