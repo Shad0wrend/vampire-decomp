@@ -12322,6 +12322,26 @@ void sub_10045630(Vector *a, Vector *b, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100456d0 size=0x63
+namespace lifted {
+extern char g_10227b58;
+struct C100e6580 { int sub_100e6580(int, int, int, int, int, int, int); };
+}
+struct CUnknown100456d0 { void * sub_100456d0(int, int, int, int, int, int, int, int, int); };
+void * CUnknown100456d0::sub_100456d0(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    ((lifted::C100e6580 *)this)->sub_100e6580(a0, a1, a2, a5, a6, a7, a8);
+    *(int *)this = (int)&lifted::g_10227b58;
+    *(int *)((char *)this + 0x34) = *(int *)((char *)a3);
+    *(int *)((char *)this + 0x38) = *(int *)((char *)a3 + 4);
+    *(int *)((char *)this + 0x3c) = *(int *)((char *)a3 + 8);
+    *(int *)((char *)this + 0x40) = *(int *)((char *)a4);
+    *(int *)((char *)this + 0x44) = *(int *)((char *)a4 + 4);
+    *(int *)((char *)this + 0x48) = *(int *)((char *)a4 + 8);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045eb0 size=0x2f
 namespace lifted {
 extern char g_10227b7c;
