@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101bcba0 size=0x10
+#include "vgui2__TreeNodeText.h"
+namespace lifted {
+struct C101b1760 { int sub_101b1760(); };
+struct C101b1840 { int sub_101b1840(); };
+}
+void vgui2::TreeNodeText::vfunc80()
+{
+    ((lifted::C101b1840 *)this)->sub_101b1840();
+    ((lifted::C101b1760 *)this)->sub_101b1760();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bcc80 size=0x1e
 #include "vgui2__TreeNodeText.h"
 
