@@ -44,6 +44,20 @@ int CRestore::vfunc33()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a300 size=0x1d
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc1
+void CRestore::vfunc1(int pos)
+{
+	int *piVar1 = (int *)m_pData;
+	if (pos >= 0 && pos < piVar1[3]) {
+		piVar1[2] = pos;
+		piVar1[1] = piVar1[0] + pos;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a320 size=0x2a
 #include "CRestore.h"
 
