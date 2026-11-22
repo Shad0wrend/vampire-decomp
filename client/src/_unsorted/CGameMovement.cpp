@@ -58,6 +58,17 @@ int CGameMovement::vfunc14(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6eb0 size=0x11
+#include "CGameMovement.h"
+float * CGameMovement::vfunc2(char a0, int a1)
+{
+    if (a0 != 0) {
+        return (float *)((char *)this + 0x2c);
+    }
+    return (float *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7860 size=0x7
 #include "CGameMovement.h"
 namespace lifted {
