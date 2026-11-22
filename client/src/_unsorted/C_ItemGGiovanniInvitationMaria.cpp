@@ -10,3 +10,11 @@ C_ItemGGiovanniInvitationMaria *pcd_emit_1001b810() { return new C_ItemGGiovanni
 
 // TARGET: ??_GC_ItemGGiovanniInvitationMaria@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001b840 size=0x3
+#include "C_ItemGGiovanniInvitationMaria.h"
+int C_ItemGGiovanniInvitationMaria::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
