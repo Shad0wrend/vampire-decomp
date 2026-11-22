@@ -60,6 +60,15 @@ void TEV::sub_101ace00(IScheme *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101acf00 size=0xd
+#include "vgui2__TextEntry.h"
+int vgui2::TextEntry::vfunc137(int a0)
+{
+    *(int *)((char *)this + 0xc0) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af140 size=0x8
 #include "vgui2__TextEntry.h"
 void vgui2::TextEntry::vfunc85()
