@@ -2122,6 +2122,7 @@
 0x100e0030 func   ?SetupBones@CBaseStaticModel@@UAE_NPAUmatrix3x4_t@@HHMH@Z CBaseStaticModel::SetupBones
 0x100e00f0 func   ?SetupWeights@CBaseStaticModel@@UAEXXZ CBaseStaticModel::SetupWeights
 0x100e00f0 func   ?sub_100e00f0@@YAXXZ sub_100e00f0
+0x100e0100 func   ?DoAnimationEvents@CBaseStaticModel@@UAEXXZ CBaseStaticModel::DoAnimationEvents
 0x100e0100 func   ?sub_100e0100@@YAXXZ sub_100e0100
 0x100e0110 func   ?GetModel@CBaseStaticModel@@UAEPBUmodel_t@@XZ CBaseStaticModel::GetModel
 0x100e0110 func   ?sub_100e0110@CUnknown100e0110@@QAEHXZ CUnknown100e0110::sub_100e0110
