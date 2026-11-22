@@ -22,6 +22,17 @@ C_ItemGRingGold *pcd_emit_10018390() { return new C_ItemGRingGold; }
 // TARGET: ??_GC_ItemGRingGold@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100183b0 size=0x6
+#include "C_ItemGRingGold.h"
+namespace lifted {
+extern char g_102746d0;
+}
+int C_ItemGRingGold::vfunc16()
+{
+    return (int)&lifted::g_102746d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100183c0 size=0x3
 #include "C_ItemGRingGold.h"
 int C_ItemGRingGold::vfunc15()
