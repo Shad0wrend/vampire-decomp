@@ -30004,6 +30004,22 @@ int sub_100cbee0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc070 size=0x33
+namespace lifted {
+extern int g_102b8490;
+extern int g_104a5804;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int); virtual int f4(int, int); };
+}
+int sub_100cc070(int a0)
+{
+    int t0 = ((lifted::V *)lifted::g_104a5804)->f3(lifted::g_102b8490);
+    if (a0 != (t0 - 1)) {
+        return ((lifted::V *)lifted::g_104a5804)->f4(lifted::g_102b8490, a0);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc560 size=0x1
 void sub_100cc560()
 {
