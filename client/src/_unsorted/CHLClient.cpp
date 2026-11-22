@@ -125,6 +125,18 @@ int CHLClient::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbc40 size=0x13
+#include "CHLClient.h"
+namespace lifted {
+extern int g_1027ba58;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual int f4(int, int, int, float); };
+}
+int CHLClient::vfunc21(int a0, int a1, int a2, float a3)
+{
+    return ((lifted::V *)lifted::g_1027ba58)->f4(a0, a1, a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbe80 size=0xb
 #include "CHLClient.h"
 namespace lifted {
