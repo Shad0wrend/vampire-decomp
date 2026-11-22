@@ -25916,6 +25916,18 @@ int CUnknown1009f100::sub_1009f100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f160 size=0x28
+struct CUnknown1009f160 { void sub_1009f160(int, char); };
+void CUnknown1009f160::sub_1009f160(int a0, char a1)
+{
+    if (a1 != 0) {
+        *(int *)((char *)this + 0x74) = (*(int *)((char *)this + 0x74)) | a0;
+        return;
+    }
+    *(int *)((char *)this + 0x74) = (*(int *)((char *)this + 0x74)) & (~a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f260 size=0x5
 char __stdcall sub_1009f260(int a0, int a1, int a2)
 {
