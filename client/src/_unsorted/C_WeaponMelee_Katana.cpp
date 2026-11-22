@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10008b80 size=0x6
+#include "C_WeaponMelee_Katana.h"
+namespace lifted {
+extern char g_1027292c;
+}
+int C_WeaponMelee_Katana::vfunc17()
+{
+    return (int)&lifted::g_1027292c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008c10 size=0x1e
 #include "C_WeaponMelee_Katana.h"
 
