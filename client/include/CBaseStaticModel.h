@@ -24,8 +24,8 @@ public:
 	virtual const model_t *GetModel();	// IClientRenderable slot 8
 	virtual int DrawModel(int flags, int a1);	// IClientRenderable slot 9
 	virtual int Renderable_vfunc10(int a0, int a1);	// IClientRenderable slot 10
-	virtual void ComputeFxBlend();	// IClientRenderable slot 11
-	virtual void Renderable_vfunc12();	// IClientRenderable slot 12
+	virtual int ComputeFxBlend();	// IClientRenderable slot 11
+	virtual int GetFxBlend();	// IClientRenderable slot 12
 	virtual void GetColorModulation(float *color);	// IClientRenderable slot 13
 	virtual bool LODTest();	// IClientRenderable slot 14
 	virtual bool SetupBones(matrix3x4_t *pBoneToWorldOut, int nMaxBones, int boneMask, float currentTime, int a4);	// IClientRenderable slot 15

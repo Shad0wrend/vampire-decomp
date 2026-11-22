@@ -25,8 +25,8 @@ public:
 	virtual const model_t *GetModel() = 0;	// slot 8: C_BaseEntity: mov eax,[ecx+0x3c] (the model at +0x40)
 	virtual int DrawModel(int flags, int a1) = 0;	// slot 9: C_BaseEntity: 184 B, ret 8 (two arguments here; one in Source)
 	virtual int Renderable_vfunc10(int a0, int a1) = 0;	// slot 10: C_BaseEntity: 0, ret 8
-	virtual void ComputeFxBlend() = 0;	// slot 11: C_BaseEntity: 1642 B, a switch on the render fx
-	virtual void Renderable_vfunc12() = 0;	// slot 12: C_BaseEntity: a tail call of slot 11
+	virtual int ComputeFxBlend() = 0;	// slot 11: C_BaseEntity: 1642 B, a switch on the render fx; returns the blend (CBaseStaticModel: its byte at +0x3a, CDefaultClientRenderable: 255)
+	virtual int GetFxBlend() = 0;	// slot 12: C_BaseEntity: a tail call of slot 11 (Beam_t: 255, its slot 11 calls it)
 	virtual void GetColorModulation(float *color) = 0;	// slot 13: C_BaseEntity 0x100a1a20: the colour bytes at +0x50 as floats, ret 4 (no row of its own: the 1642 B row 0x100a1400 runs over it)
 	virtual bool LODTest() = 0;	// slot 14: C_BaseEntity: true
 	virtual bool SetupBones(matrix3x4_t *pBoneToWorldOut, int nMaxBones, int boneMask, float currentTime, int a4) = 0;	// slot 15: C_BaseEntity: ret 0x14 (five arguments here; four in Source)
