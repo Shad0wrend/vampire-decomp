@@ -31108,6 +31108,17 @@ int sub_100dfbc0(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfc00 size=0x3e
+namespace lifted {
+extern int g_104a57e8;
+struct V { virtual void u0(); virtual void u1(); virtual int f2(int, int, int, int, int, int, int, int, int, int); };
+}
+int sub_100dfc00(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+    return ((lifted::V *)lifted::g_104a57e8)->f2(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfc40 size=0x11
 namespace lifted {
 extern int g_104a57e8;
