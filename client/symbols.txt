@@ -5090,6 +5090,7 @@
 0x10174970 func   ??1VCharWizardUI@@UAE@XZ VCharWizardUI::~VCharWizardUI
 0x10174c40 func   ?sub_10174c40@@YAXXZ sub_10174c40
 0x10174d40 func   ?sub_10174d40@@YADXZ sub_10174d40
+0x10174d70 func   ?sub_10174d70@CUnknown10174d70@@QAEHXZ CUnknown10174d70::sub_10174d70
 0x10174ed0 func   ?sub_10174ed0@@YAHXZ sub_10174ed0
 0x10174fb0 func   ?sub_10174fb0@@YAHXZ sub_10174fb0
 0x10176380 func   ??_GVCTextEntry@@UAEPAXI@Z ??_GVCTextEntry@@UAEPAXI@Z
