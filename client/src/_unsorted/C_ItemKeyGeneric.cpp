@@ -10,3 +10,11 @@ C_ItemKeyGeneric *pcd_emit_10003ba0() { return new C_ItemKeyGeneric; }
 
 // TARGET: ??_GC_ItemKeyGeneric@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10003bc0 size=0x7
+#include "C_ItemKeyGeneric.h"
+char * C_ItemKeyGeneric::vfunc114()
+{
+    return (char *)this + 0x978;
+}
+// END FUNCTION

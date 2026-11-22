@@ -46,6 +46,7 @@
 0x100039a0 func   ?sub_100039a0@@YAHXZ sub_100039a0
 0x10003aa0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKeyGeneric@@@Z ClientClassInit
 0x10003ba0 func   ??_GC_ItemKeyGeneric@@UAEPAXI@Z ??_GC_ItemKeyGeneric@@UAEPAXI@Z
+0x10003bc0 func   ?vfunc114@C_ItemKeyGeneric@@UAEPADXZ C_ItemKeyGeneric::vfunc114
 0x10003c10 func   ?sub_10003c10@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_10003c10
 0x10003d80 func   ?sub_10003d80@@YAHXZ sub_10003d80
 0x10003ea0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultRegen@@@Z ClientClassInit
