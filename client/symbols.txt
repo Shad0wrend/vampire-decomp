@@ -5177,6 +5177,7 @@
 0x101ba9f0 func   ??_GCheckImage@@UAEPAXI@Z ??_GCheckImage@@UAEPAXI@Z
 0x101baa10 func   ??_GCheckButton@vgui2@@UAEPAXI@Z ??_GCheckButton@vgui2@@UAEPAXI@Z
 0x101baa30 func   ??1CheckButton@vgui2@@UAE@XZ vgui2::CheckButton::~CheckButton
+0x101bad50 func   ?vfunc166@CheckButton@vgui2@@UAEXH@Z vgui2::CheckButton::vfunc166
 0x101bae50 func   ??_GLabelComboBoxButton@vgui2@@UAEPAXI@Z ??_GLabelComboBoxButton@vgui2@@UAEPAXI@Z
 0x101bb0f0 func   ??_GLabelComboBox@vgui2@@UAEPAXI@Z ??_GLabelComboBox@vgui2@@UAEPAXI@Z
 0x101bb110 func   ??1LabelComboBox@vgui2@@UAE@XZ vgui2::LabelComboBox::~LabelComboBox
