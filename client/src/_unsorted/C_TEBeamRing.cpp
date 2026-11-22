@@ -10,3 +10,14 @@ C_TEBeamRing *pcd_emit_10033820() { return new C_TEBeamRing; }
 
 // TARGET: ??_GC_TEBeamRing@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10033970 size=0x6
+#include "C_TEBeamRing.h"
+namespace lifted {
+extern char g_1027db70;
+}
+int C_TEBeamRing::vfunc9()
+{
+    return (int)&lifted::g_1027db70;
+}
+// END FUNCTION
