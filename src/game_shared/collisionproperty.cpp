@@ -4,18 +4,12 @@
 
 // FUNCTION: 0x100dbb50 size=0x68
 #include "CDirtySpatialPartitionEntityList.h"
-#include "utlvector.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CDirtySpatialPartitionEntityList's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CDirtySpatialPartitionEntityList *pcd_emit_100dbb50() { return new CDirtySpatialPartitionEntityList; }
 
-CAutoGameSystem *CDirtySpatialPartitionEntityList::vfunc8(unsigned int flags)
-{
-	((CUtlVector<int> *)((char *)this + 0xc))->~CUtlVector<int>();
-	sub_1000cfbd();
-	if (flags & 1)
-		sub_10430964(this);
-	return this;
-}
+// TARGET: ??_GCDirtySpatialPartitionEntityList@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x100dbbe0 size=0x27
