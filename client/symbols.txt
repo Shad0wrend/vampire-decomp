@@ -1437,6 +1437,7 @@
 0x10029450 func   ?sub_10029450@CCameraShotTable@@QAEPAUCCameraShot_t@@H@Z CCameraShotTable::sub_10029450
 0x10029520 func   ?vfunc0@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc0
 0x10029530 func   ?vfunc1@Panel@vgui2@@UAEPAXXZ vgui2::Panel::vfunc1
+0x100295e0 func   ?vfunc7@ClientModeHLNormal@@UAEPADXZ ClientModeHLNormal::vfunc7
 0x10029770 func   ?vfunc22@ClientModeHLNormal@@UAEXHH@Z ClientModeHLNormal::vfunc22
 0x100297b0 func   ?vfunc27@ClientModeHLNormal@@UAE_NXZ ClientModeHLNormal::vfunc27
 0x10029e70 func   ?sub_10029e70@@YAXPAUCLinkElem@@0@Z sub_10029e70
