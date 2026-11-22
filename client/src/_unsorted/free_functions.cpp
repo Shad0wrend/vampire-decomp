@@ -32496,6 +32496,24 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0510 size=0x29
+namespace lifted {
+extern char g_10234d64;
+extern char g_104cfe38;
+struct C100f0f30 { int sub_100f0f30(int); };
+}
+struct CUnknown100f0510 { void * sub_100f0510(int); };
+void * CUnknown100f0510::sub_100f0510(int a0)
+{
+    *(char *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)this = (int)&lifted::g_10234d64;
+    *(int *)((char *)this + 8) = a0;
+    ((lifted::C100f0f30 *)((int)&lifted::g_104cfe38))->sub_100f0f30((int)this);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0570 size=0x12
 namespace lifted {
 extern char g_10234d64;
