@@ -22,6 +22,17 @@ C_ItemGRing03 *pcd_emit_10018110() { return new C_ItemGRing03; }
 // TARGET: ??_GC_ItemGRing03@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10018130 size=0x6
+#include "C_ItemGRing03.h"
+namespace lifted {
+extern char g_102746e0;
+}
+int C_ItemGRing03::vfunc16()
+{
+    return (int)&lifted::g_102746e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018140 size=0x3
 #include "C_ItemGRing03.h"
 int C_ItemGRing03::vfunc15()
