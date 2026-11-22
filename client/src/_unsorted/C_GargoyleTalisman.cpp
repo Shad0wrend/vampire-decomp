@@ -10,3 +10,11 @@ C_GargoyleTalisman *pcd_emit_10014790() { return new C_GargoyleTalisman; }
 
 // TARGET: ??_GC_GargoyleTalisman@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100147c0 size=0x3
+#include "C_GargoyleTalisman.h"
+int C_GargoyleTalisman::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
