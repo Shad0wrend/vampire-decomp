@@ -5600,6 +5600,7 @@
 0x101b9140 func   ?vfunc140@Frame@vgui2@@UAE_ND@Z vgui2::Frame::vfunc140
 0x101b9260 func   ?vfunc130@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc130
 0x101b9470 func   ?vfunc129@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc129
+0x101b9480 func   ?vfunc131@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc131
 0x101b9540 func   ?vfunc123@Frame@vgui2@@UAEHM@Z vgui2::Frame::vfunc123
 0x101b9580 func   ?vfunc126@Frame@vgui2@@UAEHM@Z vgui2::Frame::vfunc126
 0x101b95a0 func   ?vfunc127@Frame@vgui2@@UAEHM@Z vgui2::Frame::vfunc127
