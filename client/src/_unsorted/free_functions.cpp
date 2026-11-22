@@ -251,6 +251,30 @@ template <> int ClientClassInit<DT_Corpse::ignored>(DT_Corpse::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002d80 size=0x40
+namespace lifted {
+extern char g_101e3c1c;
+extern char g_101e3c30;
+extern char g_101e3c6c;
+extern char g_101e3ca4;
+extern char g_101e3cfc;
+int sub_1008f3c0();
+}
+struct CUnknown10002d80 { void * sub_10002d80(); };
+void * CUnknown10002d80::sub_10002d80()
+{
+    lifted::sub_1008f3c0();
+    *(int *)this = (int)&lifted::g_101e3cfc;
+    *(int *)((char *)this + 4) = (int)&lifted::g_101e3ca4;
+    *(int *)((char *)this + 0x74) = (*(int *)((char *)this + 0x74)) | 0x20;
+    *(int *)((char *)this + 8) = (int)&lifted::g_101e3c6c;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_101e3c30;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_101e3c1c;
+    *(int *)((char *)this + 0x790) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002ee0 size=0x6e
 #include "RecvTable.h"
 extern RecvTable g_102de840;

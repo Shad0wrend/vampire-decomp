@@ -60,6 +60,7 @@
 0x10002bd0 func   ?vfunc15@C_Corpse@@UAEHXZ C_Corpse::vfunc15
 0x10002be0 func   ?sub_10002be0@@YAHXZ sub_10002be0
 0x10002ce0 func   ?ClientClassInit@@YAHPAUignored@DT_Corpse@@@Z ClientClassInit
+0x10002d80 func   ?sub_10002d80@CUnknown10002d80@@QAEPAXXZ CUnknown10002d80::sub_10002d80
 0x10002dc0 func   ??_GC_Corpse@@UAEPAXI@Z ??_GC_Corpse@@UAEPAXI@Z
 0x10002ee0 func   ?ClientClassInit@@YAHPAUignored@DT_HL2Local@@@Z ClientClassInit
 0x10002f60 func   ?sub_10002f60@CUnknown10002f60@@QAEPAXXZ CUnknown10002f60::sub_10002f60
