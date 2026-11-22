@@ -1223,6 +1223,7 @@
 0x10022b40 func   ?vfunc15@C_ItemKLeopoldIntKey@@UAEHXZ C_ItemKLeopoldIntKey::vfunc15
 0x10022b50 func   ?sub_10022b50@@YAHXZ sub_10022b50
 0x10022c70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLeopoldIntKey@@@Z ClientClassInit
+0x10022d00 func   ?vfunc17@C_ItemKMuseumBasementKey@@UAEHXZ C_ItemKMuseumBasementKey::vfunc17
 0x10022d90 func   ??_GC_ItemKMuseumBasementKey@@UAEPAXI@Z ??_GC_ItemKMuseumBasementKey@@UAEPAXI@Z
 0x10022dc0 func   ?vfunc15@C_ItemKMuseumBasementKey@@UAEHXZ C_ItemKMuseumBasementKey::vfunc15
 0x10022dd0 func   ?sub_10022dd0@@YAHXZ sub_10022dd0
