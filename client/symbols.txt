@@ -1995,6 +1995,7 @@
 0x10050a70 func   ?sub_10050a70@@YAHXZ sub_10050a70
 0x10050a80 func   ??_GCFrenzyBar@@UAEPAXI@Z ??_GCFrenzyBar@@UAEPAXI@Z
 0x10050aa0 func   ??1CFrenzyBar@@UAE@XZ CFrenzyBar::~CFrenzyBar
+0x10050cd0 func   ?vfunc113@CFrenzyBar@@UAEXXZ CFrenzyBar::vfunc113
 0x10050f10 func   ?vfunc97@CFrenzyBar@@UAEXXZ CFrenzyBar::vfunc97
 0x10051050 func   ??_GCHealthAnkh@@UAEPAXI@Z ??_GCHealthAnkh@@UAEPAXI@Z
 0x10051070 func   ??1CHealthAnkh@@UAE@XZ CHealthAnkh::~CHealthAnkh
