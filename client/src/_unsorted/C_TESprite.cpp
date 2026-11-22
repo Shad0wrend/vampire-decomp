@@ -21,3 +21,11 @@ int C_TESprite::vfunc9()
     return (int)&lifted::g_102819a0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003f590 size=0x3
+#include "C_TESprite.h"
+int C_TESprite::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
