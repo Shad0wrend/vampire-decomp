@@ -10,3 +10,14 @@ C_TEDynamicLight *pcd_emit_10036100() { return new C_TEDynamicLight; }
 
 // TARGET: ??_GC_TEDynamicLight@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10036270 size=0x6
+#include "C_TEDynamicLight.h"
+namespace lifted {
+extern char g_1027edfc;
+}
+int C_TEDynamicLight::vfunc9()
+{
+    return (int)&lifted::g_1027edfc;
+}
+// END FUNCTION
