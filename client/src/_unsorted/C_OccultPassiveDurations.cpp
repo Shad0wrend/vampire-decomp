@@ -22,6 +22,17 @@ C_OccultPassiveDurations *pcd_emit_10014290() { return new C_OccultPassiveDurati
 // TARGET: ??_GC_OccultPassiveDurations@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100142b0 size=0x6
+#include "C_OccultPassiveDurations.h"
+namespace lifted {
+extern char g_10274918;
+}
+int C_OccultPassiveDurations::vfunc16()
+{
+    return (int)&lifted::g_10274918;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100142c0 size=0x3
 #include "C_OccultPassiveDurations.h"
 int C_OccultPassiveDurations::vfunc15()

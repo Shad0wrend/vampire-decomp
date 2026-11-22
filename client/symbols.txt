@@ -661,6 +661,7 @@
 0x10014170 func   ?ClientClassInit@@YAHPAUignored@DT_OccultThaumDamage@@@Z ClientClassInit
 0x10014200 func   ?vfunc17@C_OccultPassiveDurations@@UAEHXZ C_OccultPassiveDurations::vfunc17
 0x10014290 func   ??_GC_OccultPassiveDurations@@UAEPAXI@Z ??_GC_OccultPassiveDurations@@UAEPAXI@Z
+0x100142b0 func   ?vfunc16@C_OccultPassiveDurations@@UAEHXZ C_OccultPassiveDurations::vfunc16
 0x100142c0 func   ?vfunc15@C_OccultPassiveDurations@@UAEHXZ C_OccultPassiveDurations::vfunc15
 0x100142d0 func   ?sub_100142d0@@YAHXZ sub_100142d0
 0x100143f0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultPassiveDurations@@@Z ClientClassInit
