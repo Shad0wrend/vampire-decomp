@@ -34598,6 +34598,23 @@ float CGameMovement::sub_100e7870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7e90 size=0x2e
+struct CUnknown100e7e90 { void sub_100e7e90(); };
+void CUnknown100e7e90::sub_100e7e90()
+{
+    int t0 = *(int *)((char *)this + 4);
+    int t1 = *(int *)((char *)(*(int *)((char *)this + 4)) + 0x24);
+    *(int *)((char *)t0 + 0x28) = t1;
+    int t2 = *(int *)((char *)(*(int *)((char *)this + 8)) + 0x90);
+    int t3 = *(int *)((char *)this + 4);
+    *(int *)((char *)t3 + 0xc8) = t2;
+    int t4 = *(int *)((char *)(*(int *)((char *)this + 8)) + 0x94);
+    int t5 = *(int *)((char *)this + 4);
+    int t6 = *(int *)((char *)this + 8);
+    *(int *)((char *)t5 + 0xcc) = t4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e91e0 size=0x1a4
 #include "Ray_t.h"
 #include <math.h>
