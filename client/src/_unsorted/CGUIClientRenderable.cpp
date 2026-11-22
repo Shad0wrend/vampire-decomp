@@ -8,3 +8,11 @@ char * CGUIClientRenderable::vfunc12()
     return (char *)this + 0x14;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10189c40 size=0x4
+#include "CGUIClientRenderable.h"
+char * CGUIClientRenderable::vfunc13()
+{
+    return (char *)this + 0x20;
+}
+// END FUNCTION
