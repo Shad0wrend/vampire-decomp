@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bb980 size=0x6
+#include "C_FuncMonitor.h"
+namespace lifted {
+extern char g_102b4954;
+}
+int C_FuncMonitor::vfunc16()
+{
+    return (int)&lifted::g_102b4954;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb990 size=0x3
 #include "C_FuncMonitor.h"
 int C_FuncMonitor::vfunc15()
