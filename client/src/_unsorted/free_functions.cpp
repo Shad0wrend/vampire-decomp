@@ -26088,6 +26088,20 @@ int sub_1009b210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b2a0 size=0x1d
+namespace lifted {
+int __stdcall sub_10094860(int);
+}
+struct CUnknown1009b2a0 { int sub_1009b2a0(int); };
+int CUnknown1009b2a0::sub_1009b2a0(int a0)
+{
+    int t0 = lifted::sub_10094860(a0);
+    int t1 = *(int *)((char *)this + 0x92c);
+    *(int *)((char *)this + 0x95c) = t1;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c180 size=0x20
 namespace lifted {
 struct C1007bab0 { int sub_1007bab0(); };
