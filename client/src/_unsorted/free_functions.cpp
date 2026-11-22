@@ -30274,6 +30274,21 @@ void CUnknown100d8380::sub_100d8380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8530 size=0x18
+namespace lifted {
+struct C100d8330 { int sub_100d8330(); };
+int sub_101d12a1(int);
+}
+int sub_100d8530()
+{
+    int t0 = lifted::sub_101d12a1(0x20);
+    if (t0 != 0) {
+        return ((lifted::C100d8330 *)t0)->sub_100d8330();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8690 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
