@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10014980 size=0x6
+#include "C_BloodPack.h"
+namespace lifted {
+extern char g_1027317c;
+}
+int C_BloodPack::vfunc17()
+{
+    return (int)&lifted::g_1027317c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014a10 size=0x1e
 #include "C_BloodPack.h"
 
