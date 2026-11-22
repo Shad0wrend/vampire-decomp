@@ -10,3 +10,14 @@ C_TETParticleHUD *pcd_emit_10040660() { return new C_TETParticleHUD; }
 
 // TARGET: ??_GC_TETParticleHUD@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10040700 size=0x6
+#include "C_TETParticleHUD.h"
+namespace lifted {
+extern char g_102820bc;
+}
+int C_TETParticleHUD::vfunc9()
+{
+    return (int)&lifted::g_102820bc;
+}
+// END FUNCTION
