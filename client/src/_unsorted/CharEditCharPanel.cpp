@@ -11,6 +11,17 @@ CharEditCharPanel *pcd_emit_101766a0() { return new CharEditCharPanel; }
 // TARGET: ??_GCharEditCharPanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10177990 size=0x6
+#include "CharEditCharPanel.h"
+namespace lifted {
+extern char g_102d0928;
+}
+int CharEditCharPanel::vfunc102()
+{
+    return (int)&lifted::g_102d0928;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177a00 size=0x1
 #include "CharEditCharPanel.h"
 void CharEditCharPanel::vfunc119()
