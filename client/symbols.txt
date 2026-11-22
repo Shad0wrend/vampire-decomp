@@ -5000,6 +5000,7 @@
 0x10170ed0 func   ??1VAnarchyLabel@@UAE@XZ VAnarchyLabel::~VAnarchyLabel
 0x10170f60 func   ?sub_10170f60@@YAHXZ sub_10170f60
 0x10170f90 func   ??1CharEditPanel@@UAE@XZ CharEditPanel::~CharEditPanel
+0x10171320 func   ?vfunc118@CLabelHeader@@UAEXXZ CLabelHeader::vfunc118
 0x10171370 func   ??_GCharEditPanel@@UAEPAXI@Z ??_GCharEditPanel@@UAEPAXI@Z
 0x101722c0 func   ?vfunc3@CTextImage2@@UAEXXZ CTextImage2::vfunc3
 0x10172ac0 func   ?sub_10172ac0@@YADXZ sub_10172ac0
