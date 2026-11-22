@@ -9358,6 +9358,7 @@
 0x1000c8d8 func   ?vfunc3@CTEBeamEnts@@UAEXABVVector@@ABVQAngle@@@Z CTEBeamEnts::vfunc3
 0x1000c8dd func   _item_p_occult_regen item_p_occult_regen
 0x1000c8e2 func   ?vfunc590@CNPC_VRat@@QAE_NXZ CNPC_VRat::vfunc590
+0x1000c8e7 func   ?PreRestore@CPhysSaveRestoreBlockHandler@@UAEXXZ CPhysSaveRestoreBlockHandler::PreRestore
 0x1000c8e7 func   ?vfunc5@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc5
 0x1000c8ec func   ?sub_103079c0@@YAHPBD@Z sub_103079c0
 0x1000c8f1 func   ?sub_1022c9e0@CPropRadio@@QAE_NXZ CPropRadio::sub_1022c9e0
