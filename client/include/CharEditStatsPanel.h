@@ -14,9 +14,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CharEditStatsPanel's own function
 	virtual void vfunc3();
 	virtual void vfunc21();
-	virtual void vfunc78();
+	virtual void vfunc78(int);
 	virtual void vfunc98();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots CharEditStatsPanel adds to its base's vtable: 123-123, vfuncK at slot K
 	virtual void vfunc123();
 };

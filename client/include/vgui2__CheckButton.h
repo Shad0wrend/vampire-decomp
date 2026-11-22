@@ -15,12 +15,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc74();
 	virtual void vfunc75();
 	virtual void vfunc76();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc108();
 	virtual void vfunc143();
 	virtual void vfunc156();
-	virtual void vfunc164();
+	virtual int vfunc164(int, int, int, int);
 	// the slots CheckButton adds to its base's vtable: 166-166, vfuncK at slot K
-	virtual void vfunc166();
+	virtual void vfunc166(int);
 };
 }

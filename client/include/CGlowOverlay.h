@@ -8,7 +8,7 @@ class CGlowOverlay
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CGlowOverlay adds to its base's vtable: 0-4, vfuncK at slot K
 	virtual ~CGlowOverlay();
-	virtual void vfunc1();
+	virtual bool vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();

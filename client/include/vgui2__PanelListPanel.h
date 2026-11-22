@@ -15,11 +15,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc74();
 	virtual void vfunc97();
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots PanelListPanel adds to its base's vtable: 107-116, vfuncK at slot K
 	virtual void vfunc107();
 	virtual void vfunc108();
-	virtual void vfunc109();
+	virtual int vfunc109();
 	virtual void vfunc110();
 	virtual void vfunc111();
 	virtual void vfunc112();

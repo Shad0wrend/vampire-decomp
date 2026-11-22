@@ -12,20 +12,20 @@ public:
 	virtual ~ComboBox();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with ComboBox's own function
-	virtual void vfunc11();
+	virtual void vfunc11(int, int);
 	virtual void vfunc74();
-	virtual void vfunc78();
+	virtual void vfunc78(int);
 	virtual void vfunc81();
 	virtual void vfunc85();
 	virtual void vfunc86();
-	virtual void vfunc87();
-	virtual void vfunc88();
+	virtual void vfunc87(int);
+	virtual void vfunc88(int);
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc167();
 	// the slots ComboBox adds to its base's vtable: 173-184, vfuncK at slot K
-	virtual void vfunc173();
-	virtual void vfunc174();
+	virtual void vfunc173(int);
+	virtual void vfunc174(int);
 	virtual void vfunc175();
 	virtual void vfunc176();
 	virtual void vfunc177();

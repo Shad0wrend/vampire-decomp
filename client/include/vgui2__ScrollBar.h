@@ -9,14 +9,14 @@ class ScrollBar : public vgui2::Panel
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with ScrollBar's own function
-    virtual void vfunc11();
-    virtual void vfunc62();
-    virtual void vfunc63();
-    virtual void vfunc64();
+    virtual void vfunc11(int, int);
+    virtual bool vfunc62(char);
+    virtual bool vfunc63(char);
+    virtual bool vfunc64(char);
     virtual void vfunc74();
     virtual void vfunc96();
     virtual void vfunc101();
-    virtual void vfunc102();
+    virtual int vfunc102();
     // the slots ScrollBar adds to its base's vtable: 107-122, vfuncK at slot K
     virtual void vfunc107();
     virtual void vfunc108();
@@ -28,8 +28,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc114();
     virtual void vfunc115();
     virtual void vfunc116();
-    virtual void vfunc117();
-    virtual void vfunc118();
+    virtual int vfunc117();
+    virtual int vfunc118(int);
     virtual void vfunc119();
     virtual void vfunc120();
     virtual void vfunc121();

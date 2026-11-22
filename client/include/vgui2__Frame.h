@@ -12,27 +12,27 @@ public:
 	virtual ~Frame();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Frame's own function
-	virtual void vfunc10();
+	virtual void vfunc10(int);
 	virtual void vfunc21();
 	virtual void vfunc74();
 	virtual void vfunc75();
-	virtual void vfunc78();
-	virtual void vfunc87();
-	virtual void vfunc91();
+	virtual void vfunc78(int);
+	virtual void vfunc87(int);
+	virtual void vfunc91(int);
 	virtual void vfunc92();
-	virtual void vfunc93();
-	virtual void vfunc94();
+	virtual void vfunc93(int);
+	virtual void vfunc94(int);
 	virtual void vfunc95();
 	virtual void vfunc97();
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc107();
 	// the slots Frame adds to its base's vtable: 118-144, vfuncK at slot K
 	virtual void vfunc118();
-	virtual void vfunc119();
-	virtual void vfunc120();
+	virtual bool vfunc119(char);
+	virtual bool vfunc120();
 	virtual void vfunc121();
-	virtual void vfunc122();
+	virtual bool vfunc122();
 	virtual void vfunc123();
 	virtual void vfunc124();
 	virtual void vfunc125();
@@ -47,11 +47,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc134();
 	virtual void vfunc135();
 	virtual void vfunc136();
-	virtual void vfunc137();
-	virtual void vfunc138();
-	virtual void vfunc139();
-	virtual void vfunc140();
-	virtual void vfunc141();
+	virtual int vfunc137(int, int, int, int);
+	virtual int vfunc138();
+	virtual bool vfunc139();
+	virtual bool vfunc140(char);
+	virtual int vfunc141(int, int, int, int);
 	virtual void vfunc142();
 	virtual void vfunc143();
 	virtual void vfunc144();

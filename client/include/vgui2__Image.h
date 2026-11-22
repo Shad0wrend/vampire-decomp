@@ -10,16 +10,16 @@ class Image : public vgui2::IImage
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Image adds to its base's vtable: 0-25, vfuncK at slot K
-	virtual void vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual int vfunc0();
+	virtual int vfunc1(int, int);
+	virtual int vfunc2(int, int);
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual bool vfunc4(char);
 	virtual ~Image();
-	virtual void vfunc6();
+	virtual int vfunc6(int, int);
 	virtual void vfunc7();
-	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual int vfunc8(int);
+	virtual int vfunc9(int, int);
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void vfunc12();

@@ -12,20 +12,20 @@ public:
 	virtual ~Label();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Label's own function
-	virtual void vfunc11();
+	virtual void vfunc11(int, int);
 	virtual void vfunc14();
-	virtual void vfunc46();
-	virtual void vfunc51();
-	virtual void vfunc53();
-	virtual void vfunc72();
+	virtual int vfunc46(int);
+	virtual int vfunc51(int);
+	virtual int vfunc53(int);
+	virtual int vfunc72(int);
 	virtual void vfunc74();
 	virtual void vfunc75();
 	virtual void vfunc76();
-	virtual void vfunc77();
-	virtual void vfunc87();
+	virtual int vfunc77();
+	virtual void vfunc87(int);
 	virtual void vfunc98();
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc105();
 	// the slots Label adds to its base's vtable: 107-137, vfuncK at slot K
 	virtual void vfunc107();
@@ -34,21 +34,21 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc110();
 	virtual void vfunc111();
 	virtual void vfunc112();
-	virtual void vfunc113();
-	virtual void vfunc114();
-	virtual void vfunc115();
-	virtual void vfunc116();
+	virtual int vfunc113(int);
+	virtual int vfunc114(int);
+	virtual int vfunc115(int);
+	virtual int vfunc116(int);
 	virtual void vfunc117();
 	virtual void vfunc118();
 	virtual void vfunc119();
-	virtual void vfunc120();
+	virtual short vfunc120(short);
 	virtual void vfunc121();
 	virtual void vfunc122();
 	virtual void vfunc123();
 	virtual void vfunc124();
 	virtual void vfunc125();
-	virtual void vfunc126();
-	virtual void vfunc127();
+	virtual int vfunc126();
+	virtual int vfunc127();
 	virtual void vfunc128();
 	virtual void vfunc129();
 	virtual void vfunc130();
@@ -57,7 +57,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc133();
 	virtual void vfunc134();
 	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual int vfunc136(int);
+	virtual int vfunc137();
 };
 }

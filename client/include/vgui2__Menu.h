@@ -15,16 +15,16 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc21();
 	virtual void vfunc60();
 	virtual void vfunc74();
-	virtual void vfunc78();
+	virtual void vfunc78(int);
 	virtual void vfunc81();
-	virtual void vfunc84();
+	virtual void vfunc84(int, int);
 	virtual void vfunc90();
-	virtual void vfunc91();
+	virtual void vfunc91(int);
 	virtual void vfunc92();
-	virtual void vfunc93();
+	virtual void vfunc93(int);
 	virtual void vfunc98();
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots Menu adds to its base's vtable: 107-137, vfuncK at slot K
 	virtual void vfunc107();
 	virtual void vfunc108();
@@ -48,9 +48,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc126();
 	virtual void vfunc127();
 	virtual void vfunc128();
-	virtual void vfunc129();
-	virtual void vfunc130();
-	virtual void vfunc131();
+	virtual int vfunc129();
+	virtual int vfunc130(int);
+	virtual int vfunc131();
 	virtual void vfunc132();
 	virtual void vfunc133();
 	virtual void vfunc134();

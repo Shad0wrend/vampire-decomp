@@ -14,11 +14,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with ImagePanel's own function
 	virtual void vfunc75();
 	virtual void vfunc76();
-	virtual void vfunc77();
+	virtual int vfunc77();
 	virtual void vfunc97();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots ImagePanel adds to its base's vtable: 107-108, vfuncK at slot K
 	virtual void vfunc107();
-	virtual void vfunc108();
+	virtual int vfunc108();
 };
 }

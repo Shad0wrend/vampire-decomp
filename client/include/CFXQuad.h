@@ -11,7 +11,7 @@ public:
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CFXQuad's own function
 	virtual void vfunc1();
-	virtual void vfunc3();
+	virtual bool vfunc3();
 	virtual void vfunc4();
 	// the slots CFXQuad adds to its base's vtable: 5-5, vfuncK at slot K
 	virtual void vfunc5();

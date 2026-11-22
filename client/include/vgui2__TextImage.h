@@ -12,15 +12,15 @@ public:
 	virtual ~TextImage();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextImage's own function
-	virtual void vfunc0();
-	virtual void vfunc9();
+	virtual int vfunc0();
+	virtual int vfunc9(int, int);
 	// the slots TextImage adds to its base's vtable: 26-34, vfuncK at slot K
 	virtual void vfunc26();
 	virtual void vfunc27();
 	virtual void vfunc28();
 	virtual void vfunc29();
 	virtual void vfunc30();
-	virtual void vfunc31();
+	virtual int vfunc31();
 	virtual void vfunc32();
 	virtual void vfunc33();
 	virtual void vfunc34();

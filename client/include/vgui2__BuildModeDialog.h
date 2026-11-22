@@ -12,9 +12,9 @@ public:
 	virtual ~BuildModeDialog();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with BuildModeDialog's own function
-	virtual void vfunc78();
+	virtual void vfunc78(int);
 	virtual void vfunc92();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots BuildModeDialog adds to its base's vtable: 145-148, vfuncK at slot K
 	virtual void vfunc145();
 	virtual void vfunc146();

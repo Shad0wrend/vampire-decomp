@@ -14,14 +14,14 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with MenuItem's own function
 	virtual void vfunc74();
 	virtual void vfunc81();
-	virtual void vfunc84();
+	virtual void vfunc84(int, int);
 	virtual void vfunc85();
 	virtual void vfunc86();
-	virtual void vfunc94();
+	virtual void vfunc94(int);
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc150();
-	virtual void vfunc164();
+	virtual int vfunc164(int, int, int, int);
 	// the slots MenuItem adds to its base's vtable: 166-166, vfuncK at slot K
 	virtual void vfunc166();
 };

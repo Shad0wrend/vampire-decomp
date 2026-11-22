@@ -7,5 +7,5 @@ class RadioImage : public vgui2::Image
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with RadioImage's own function
-    virtual void vfunc0();
+    virtual int vfunc0();
 };

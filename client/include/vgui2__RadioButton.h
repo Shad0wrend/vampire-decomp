@@ -15,20 +15,20 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc74();
 	virtual void vfunc75();
 	virtual void vfunc76();
-	virtual void vfunc77();
-	virtual void vfunc87();
-	virtual void vfunc91();
+	virtual int vfunc77();
+	virtual void vfunc87(int);
+	virtual void vfunc91(int);
 	virtual void vfunc92();
-	virtual void vfunc94();
+	virtual void vfunc94(int);
 	virtual void vfunc98();
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc143();
-	virtual void vfunc164();
+	virtual int vfunc164(int, int, int, int);
 	// the slots RadioButton adds to its base's vtable: 166-169, vfuncK at slot K
-	virtual void vfunc166();
-	virtual void vfunc167();
-	virtual void vfunc168();
+	virtual int vfunc166();
+	virtual int vfunc167(int);
+	virtual int vfunc168();
 	virtual void vfunc169();
 };
 }

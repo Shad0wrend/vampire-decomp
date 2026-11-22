@@ -13,28 +13,28 @@ public:
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with PropertySheet's own function
 	virtual void vfunc15();
-	virtual void vfunc72();
+	virtual int vfunc72(int);
 	virtual void vfunc92();
 	virtual void vfunc101();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots PropertySheet adds to its base's vtable: 107-129, vfuncK at slot K
 	virtual void vfunc107();
 	virtual void vfunc108();
 	virtual void vfunc109();
 	virtual void vfunc110();
 	virtual void vfunc111();
-	virtual void vfunc112();
+	virtual int vfunc112();
 	virtual void vfunc113();
 	virtual void vfunc114();
 	virtual void vfunc115();
 	virtual void vfunc116();
 	virtual void vfunc117();
 	virtual void vfunc118();
-	virtual void vfunc119();
+	virtual int vfunc119();
 	virtual void vfunc120();
 	virtual void vfunc121();
 	virtual void vfunc122();
-	virtual void vfunc123();
+	virtual int vfunc123();
 	virtual void vfunc124();
 	virtual void vfunc125();
 	virtual void vfunc126();

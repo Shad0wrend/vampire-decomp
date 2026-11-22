@@ -9,8 +9,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CVMenuButton's own function
     virtual void vfunc85();
     virtual void vfunc86();
-    virtual void vfunc87();
-    virtual void vfunc91();
-    virtual void vfunc94();
+    virtual void vfunc87(int);
+    virtual void vfunc91(int);
+    virtual void vfunc94(int);
     virtual void vfunc98();
 };

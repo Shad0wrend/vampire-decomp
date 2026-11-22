@@ -10,25 +10,25 @@ class ScrollBarSlider : public vgui2::Panel
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with ScrollBarSlider's own function
     virtual void vfunc74();
-    virtual void vfunc84();
-    virtual void vfunc87();
-    virtual void vfunc88();
-    virtual void vfunc89();
+    virtual void vfunc84(int, int);
+    virtual void vfunc87(int);
+    virtual void vfunc88(int);
+    virtual void vfunc89(int);
     virtual void vfunc97();
     virtual void vfunc98();
     virtual void vfunc101();
     // the slots ScrollBarSlider adds to its base's vtable: 107-120, vfuncK at slot K
     virtual void vfunc107();
-    virtual void vfunc108();
-    virtual void vfunc109();
+    virtual int vfunc108();
+    virtual bool vfunc109();
     virtual void vfunc110();
-    virtual void vfunc111();
-    virtual void vfunc112();
-    virtual void vfunc113();
+    virtual int vfunc111(int, int);
+    virtual int vfunc112(int);
+    virtual int vfunc113();
     virtual void vfunc114();
-    virtual void vfunc115();
+    virtual int vfunc115(int, int);
     virtual void vfunc116();
-    virtual void vfunc117();
+    virtual int vfunc117(int);
     virtual void vfunc118();
     virtual void vfunc119();
     virtual void vfunc120();

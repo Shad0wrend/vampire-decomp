@@ -7,7 +7,7 @@ class CExplosionOverlay : public CWarpOverlay
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CExplosionOverlay adds to its base's vtable: 1-4, vfuncK at slot K
-    virtual void vfunc1();
+    virtual bool vfunc1();
     virtual void vfunc2();
     virtual void vfunc3();
     virtual void vfunc4();

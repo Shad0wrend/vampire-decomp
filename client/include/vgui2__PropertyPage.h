@@ -14,12 +14,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with PropertyPage's own function
 	virtual void vfunc74();
 	virtual void vfunc99();
-	virtual void vfunc102();
+	virtual int vfunc102();
 	// the slots PropertyPage adds to its base's vtable: 118-122, vfuncK at slot K
 	virtual void vfunc118();
 	virtual void vfunc119();
 	virtual void vfunc120();
 	virtual void vfunc121();
-	virtual void vfunc122();
+	virtual int vfunc122();
 };
 }

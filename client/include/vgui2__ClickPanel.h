@@ -9,6 +9,6 @@ class ClickPanel : public vgui2::Panel
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with ClickPanel's own function
-    virtual void vfunc87();
+    virtual void vfunc87(int);
 };
 }
