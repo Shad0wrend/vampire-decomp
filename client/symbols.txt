@@ -5312,6 +5312,7 @@
 0x10174d40 func   ?sub_10174d40@@YADXZ sub_10174d40
 0x10174d70 func   ?sub_10174d70@CUnknown10174d70@@QAEHXZ CUnknown10174d70::sub_10174d70
 0x10174dc0 func   ?sub_10174dc0@@YAXXZ sub_10174dc0
+0x10174e30 func   ?sub_10174e30@@YAXXZ sub_10174e30
 0x10174ed0 func   ?sub_10174ed0@@YAHXZ sub_10174ed0
 0x10174f90 func   ?sub_10174f90@@YAXXZ sub_10174f90
 0x10174fb0 func   ?sub_10174fb0@@YAHXZ sub_10174fb0
