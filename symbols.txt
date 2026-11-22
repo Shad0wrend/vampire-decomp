@@ -9812,6 +9812,7 @@
 0x1000d1d9 func   ?vfunc82@CLogicCaseToggle@@QAEPAUdatamap_t@@XZ CLogicCaseToggle::vfunc82
 0x1000d1de func   ?vfunc438@CGenericSabbat_NPC@@UAEHXZ CGenericSabbat_NPC::vfunc438
 0x1000d1e3 func   ?sub_10293a80@@YIMPAVCAI_BaseNPCTroika@@@Z sub_10293a80
+0x1000d1e8 func   ??_GCAI_Component@@UAEPAXI@Z ??_GCAI_Component@@UAEPAXI@Z
 0x1000d1e8 func   ?sub_1027c7c0@Helper@@QAEPAXE@Z Helper::sub_1027c7c0
 0x1000d1ed func   ?sub_1008ed50@CBaseAnimating@@QAEHHPAH@Z CBaseAnimating::sub_1008ed50
 0x1000d1f2 func   ?sub_1039ef90@CUnknown1039ef90@@QAEXPBH@Z CUnknown1039ef90::sub_1039ef90
