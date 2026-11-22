@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001f100 size=0x6
+#include "C_ItemGIdolElephant.h"
+namespace lifted {
+extern char g_102738d0;
+}
+int C_ItemGIdolElephant::vfunc17()
+{
+    return (int)&lifted::g_102738d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f190 size=0x1e
 #include "C_ItemGIdolElephant.h"
 
