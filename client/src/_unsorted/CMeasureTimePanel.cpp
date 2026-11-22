@@ -11,6 +11,21 @@ CMeasureTimePanel *pcd_emit_10167e70() { return new CMeasureTimePanel; }
 // TARGET: ??_GCMeasureTimePanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10167ea0 size=0x22
+#include "CMeasureTimePanel.h"
+namespace lifted {
+extern char g_102c2220;
+struct C101ab490 { int sub_101ab490(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual int f4(int); };
+}
+int CMeasureTimePanel::vfunc74(int a0)
+{
+    ((lifted::C101ab490 *)this)->sub_101ab490(a0);
+    *(int *)((char *)this + 0x58) = ((lifted::V *)a0)->f4((int)&lifted::g_102c2220);
+    return *(int *)((char *)this + 0x58);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167ed0 size=0x15
 #include "CMeasureTimePanel.h"
 namespace lifted {

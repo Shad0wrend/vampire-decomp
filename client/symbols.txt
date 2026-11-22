@@ -5027,6 +5027,7 @@
 0x10167e70 func   ??_GCMeasureTimePanel@@UAEPAXI@Z ??_GCMeasureTimePanel@@UAEPAXI@Z
 0x10167e90 func   ??1CMeasureTimePanel@@UAE@XZ CMeasureTimePanel::~CMeasureTimePanel
 0x10167e90 func   ?sub_10167e90@CUnknown10167e90@@QAEHXZ CUnknown10167e90::sub_10167e90
+0x10167ea0 func   ?vfunc74@CMeasureTimePanel@@UAEHH@Z CMeasureTimePanel::vfunc74
 0x10167ed0 func   ?vfunc2@CMeasureTimePanel@@UAEXXZ CMeasureTimePanel::vfunc2
 0x101681f0 func   ?vfunc25@CMessageCharsPanel@@UAE_NHH@Z CMessageCharsPanel::vfunc25
 0x10168200 func   ??_GCMessageCharsPanel@@UAEPAXI@Z ??_GCMessageCharsPanel@@UAEPAXI@Z
