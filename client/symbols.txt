@@ -1396,6 +1396,7 @@
 0x10028280 func   ?vfunc17@C_WeaponGravityGun@@UAEHXZ C_WeaponGravityGun::vfunc17
 0x10028360 func   ?vfunc188@C_WeaponGravityGun@@UAE_NXZ C_WeaponGravityGun::vfunc188
 0x10028390 func   ??_GC_WeaponGravityGun@@UAEPAXI@Z ??_GC_WeaponGravityGun@@UAEPAXI@Z
+0x100283b0 func   ?vfunc16@C_WeaponGravityGun@@UAEHXZ C_WeaponGravityGun::vfunc16
 0x100283c0 func   ?vfunc15@C_WeaponGravityGun@@UAEHXZ C_WeaponGravityGun::vfunc15
 0x100283d0 func   ?sub_100283d0@@YAHXZ sub_100283d0
 0x10028500 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponPhysCannon@@@Z ClientClassInit
