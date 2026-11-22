@@ -779,6 +779,7 @@
 0x1002c500 func   ?sub_1002c500@@YGXH@Z sub_1002c500
 0x1002c520 func   ?IsDormant@C_BaseTempEntity@@UAE_NXZ C_BaseTempEntity::IsDormant
 0x1002c520 func   ?sub_1002c520@@YADXZ sub_1002c520
+0x1002c530 func   ?ReceiveMessage@C_BaseTempEntity@@UAEXHAAVbf_read@@@Z C_BaseTempEntity::ReceiveMessage
 0x1002c530 func   ?sub_1002c530@@YGXHH@Z sub_1002c530
 0x1002c540 func   ?sub_1002c540@CUnknown1002c540@@QAEPADXZ CUnknown1002c540::sub_1002c540
 0x1002d430 func   ?sub_1002d430@CUtlMemory12@@QAEPAU1@HH@Z CUtlMemory12::sub_1002d430
