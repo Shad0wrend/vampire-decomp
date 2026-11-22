@@ -22,6 +22,17 @@ C_ItemKGalleryNoirKey *pcd_emit_10020d10() { return new C_ItemKGalleryNoirKey; }
 // TARGET: ??_GC_ItemKGalleryNoirKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10020d30 size=0x6
+#include "C_ItemKGalleryNoirKey.h"
+namespace lifted {
+extern char g_10274214;
+}
+int C_ItemKGalleryNoirKey::vfunc16()
+{
+    return (int)&lifted::g_10274214;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020d40 size=0x3
 #include "C_ItemKGalleryNoirKey.h"
 int C_ItemKGalleryNoirKey::vfunc15()
