@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10018580 size=0x6
+#include "C_ItemGRingSilver.h"
+namespace lifted {
+extern char g_1027341c;
+}
+int C_ItemGRingSilver::vfunc17()
+{
+    return (int)&lifted::g_1027341c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018610 size=0x1e
 #include "C_ItemGRingSilver.h"
 
