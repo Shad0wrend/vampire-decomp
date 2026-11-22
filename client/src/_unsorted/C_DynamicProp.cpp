@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bd700 size=0x6
+#include "C_DynamicProp.h"
+namespace lifted {
+extern char g_102b58e0;
+}
+int C_DynamicProp::vfunc16()
+{
+    return (int)&lifted::g_102b58e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd710 size=0x3
 #include "C_DynamicProp.h"
 int C_DynamicProp::vfunc15()
