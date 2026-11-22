@@ -25568,6 +25568,17 @@ int CUnknown100a3360::sub_100a3360(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a33a0 size=0x16
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual int f2(int, int); };
+}
+struct CUnknown100a33a0 { int sub_100a33a0(int, int); };
+int CUnknown100a33a0::sub_100a33a0(int a0, int a1)
+{
+    return ((lifted::V *)a0)->f2((int)this, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3440 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
