@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001bc80 size=0x6
+#include "C_ItemGBrotherhoodFlyer.h"
+namespace lifted {
+extern char g_10273684;
+}
+int C_ItemGBrotherhoodFlyer::vfunc17()
+{
+    return (int)&lifted::g_10273684;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001bd10 size=0x1e
 #include "C_ItemGBrotherhoodFlyer.h"
 
