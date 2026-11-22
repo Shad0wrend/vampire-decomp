@@ -17,6 +17,17 @@ ICollideable * C_BaseTempEntity::GetClientCollideable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100072a0 size=0xb
+#include "C_BaseTempEntity.h"
+IClientNetworkable * C_BaseTempEntity::GetClientNetworkable()
+{
+    if (((int)this) != 0) {
+        return (IClientNetworkable *)((char *)this + 4);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100072b0 size=0x3
 #include "C_BaseTempEntity.h"
 IClientRenderable * C_BaseTempEntity::GetClientRenderable()
