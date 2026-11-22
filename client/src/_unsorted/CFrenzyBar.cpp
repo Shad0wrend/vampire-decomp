@@ -10,3 +10,10 @@ CFrenzyBar *pcd_emit_10050a80() { return new CFrenzyBar; }
 
 // TARGET: ??_GCFrenzyBar@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10050f10 size=0x1
+#include "CFrenzyBar.h"
+void CFrenzyBar::vfunc97()
+{
+}
+// END FUNCTION
