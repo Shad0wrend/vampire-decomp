@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b2a30 size=0x3
+#include "C_ThaumaturgyParticle.h"
+int C_ThaumaturgyParticle::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2b00 size=0x1e
 #include "C_ThaumaturgyParticle.h"
 
