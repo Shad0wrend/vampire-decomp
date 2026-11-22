@@ -30,6 +30,17 @@ int vgui2::TreeView::vfunc110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd810 size=0x12
+#include "vgui2__TreeView.h"
+int vgui2::TreeView::vfunc117()
+{
+    if ((*(int *)((char *)this + 0x9c)) != 0) {
+        return *(int *)((char *)(*(int *)((char *)this + 0x9c)) + 0x5c);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd870 size=0x7
 #include "vgui2__TreeView.h"
 int vgui2::TreeView::vfunc119()
