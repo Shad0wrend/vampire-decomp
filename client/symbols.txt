@@ -5374,6 +5374,7 @@
 0x101c3a40 func   ??_GBuildModeDialog@vgui2@@UAEPAXI@Z ??_GBuildModeDialog@vgui2@@UAEPAXI@Z
 0x101c3a60 func   ??1BuildModeDialog@vgui2@@UAE@XZ vgui2::BuildModeDialog::~BuildModeDialog
 0x101c54d0 func   ?vfunc102@BuildModeDialog@vgui2@@UAEHXZ vgui2::BuildModeDialog::vfunc102
+0x101c5910 func   ?vfunc102@AnimatingImagePanel@vgui2@@UAEHXZ vgui2::AnimatingImagePanel::vfunc102
 0x101c5950 func   ??_GImagePanel@vgui2@@UAEPAXI@Z ??_GImagePanel@vgui2@@UAEPAXI@Z
 0x101c5970 func   ??1ImagePanel@vgui2@@UAE@XZ vgui2::ImagePanel::~ImagePanel
 0x101c59d0 func   ?vfunc108@ImagePanel@vgui2@@UAEHXZ vgui2::ImagePanel::vfunc108
