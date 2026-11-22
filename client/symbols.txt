@@ -1294,6 +1294,7 @@
 0x10039f30 func   ?vfunc16@C_TEImpact@@UAEXH@Z C_TEImpact::vfunc16
 0x10039f40 func   ?vfunc17@C_TEImpact@@UAEXHH@Z C_TEImpact::vfunc17
 0x10039f50 func   ?vfunc9@C_TEImpact@@UAEHXZ C_TEImpact::vfunc9
+0x10039f60 func   ?vfunc8@C_TEImpact@@UAEHXZ C_TEImpact::vfunc8
 0x10039f70 func   ?sub_10039f70@@YAHXZ sub_10039f70
 0x1003a010 func   ?sub_1003a010@@YAHXZ sub_1003a010
 0x1003a080 func   ?ClientClassInit@@YAHPAUignored@DT_TEImpact@@@Z ClientClassInit
