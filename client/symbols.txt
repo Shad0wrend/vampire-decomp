@@ -1933,6 +1933,7 @@
 0x1004a950 func   ?sub_1004a950@CUnknown1004a950@@QAEHHH@Z CUnknown1004a950::sub_1004a950
 0x1004b050 func   ?sub_1004b050@CUnknown1004b050@@QAEPAXXZ CUnknown1004b050::sub_1004b050
 0x1004b0a0 func   ?sub_1004b0a0@CUnknown1004b0a0@@QAEXXZ CUnknown1004b0a0::sub_1004b0a0
+0x1004b170 func   ?vfunc1@CThermalMaterialProxy@@UAEXH@Z CThermalMaterialProxy::vfunc1
 0x1004b220 func   ?sub_1004b220@@YAMPBVVector@@@Z sub_1004b220
 0x1004b270 func   ?sub_1004b270@@YAMABVVector@@@Z sub_1004b270
 0x1004b2f0 func   ?sub_1004b2f0@@YAMPBUmatrix3x4_t@@PBVVector@@@Z sub_1004b2f0
