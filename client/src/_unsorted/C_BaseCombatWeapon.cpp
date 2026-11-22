@@ -217,6 +217,17 @@ C_BaseCombatWeapon *pcd_emit_1007ab20() { return new C_BaseCombatWeapon; }
 // TARGET: ??_GC_BaseCombatWeapon@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1007b600 size=0xb
+#include "C_BaseCombatWeapon.h"
+namespace lifted {
+int sub_1007b160();
+}
+int C_BaseCombatWeapon::vfunc216()
+{
+    return (lifted::sub_1007b160()) + 0x2208;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b650 size=0x27
 #include "CWeaponOwner.h"
 struct CWeaponOwner;
