@@ -17,3 +17,14 @@ void C_TEInspectionFX::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003a1f0 size=0x6
+#include "C_TEInspectionFX.h"
+namespace lifted {
+extern char g_102803cc;
+}
+int C_TEInspectionFX::vfunc9()
+{
+    return (int)&lifted::g_102803cc;
+}
+// END FUNCTION
