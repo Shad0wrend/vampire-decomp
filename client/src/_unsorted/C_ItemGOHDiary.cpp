@@ -10,3 +10,11 @@ C_ItemGOHDiary *pcd_emit_1001a690() { return new C_ItemGOHDiary; }
 
 // TARGET: ??_GC_ItemGOHDiary@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001a6c0 size=0x3
+#include "C_ItemGOHDiary.h"
+int C_ItemGOHDiary::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
