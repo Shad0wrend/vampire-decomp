@@ -22,6 +22,17 @@ C_ItemGWarrClipboard *pcd_emit_1001db10() { return new C_ItemGWarrClipboard; }
 // TARGET: ??_GC_ItemGWarrClipboard@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001db30 size=0x6
+#include "C_ItemGWarrClipboard.h"
+namespace lifted {
+extern char g_102743bc;
+}
+int C_ItemGWarrClipboard::vfunc16()
+{
+    return (int)&lifted::g_102743bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001db40 size=0x3
 #include "C_ItemGWarrClipboard.h"
 int C_ItemGWarrClipboard::vfunc15()
