@@ -7652,6 +7652,7 @@
 0x1000a6fa func   ?sub_10175180@@YI_NPAUHolder@@@Z sub_10175180
 0x1000a6ff func   ?sub_10388c40@@YAHXZ sub_10388c40
 0x1000a704 func   ?sub_1030bc20@CUnknown1030bc20@@QAEHXZ CUnknown1030bc20::sub_1030bc20
+0x1000a709 func   ??_GCBreakModelsPrecached@@UAEPAXI@Z ??_GCBreakModelsPrecached@@UAEPAXI@Z
 0x1000a709 func   ?vfunc8@CBreakModelsPrecached@@QAEPAXI@Z CBreakModelsPrecached::vfunc8
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
 0x1000a713 func   ?sub_10344f80@CBaseCombatCharacter@@QAEXPBVVector@@HH@Z CBaseCombatCharacter::sub_10344f80
