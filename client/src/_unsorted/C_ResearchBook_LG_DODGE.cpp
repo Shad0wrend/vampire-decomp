@@ -10,3 +10,11 @@ C_ResearchBook_LG_DODGE *pcd_emit_10011810() { return new C_ResearchBook_LG_DODG
 
 // TARGET: ??_GC_ResearchBook_LG_DODGE@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10011840 size=0x3
+#include "C_ResearchBook_LG_DODGE.h"
+int C_ResearchBook_LG_DODGE::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
