@@ -28861,6 +28861,18 @@ void sub_100ca010(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca040 size=0xe
+namespace lifted {
+struct C100c9340 { int sub_100c9340(); };
+}
+void sub_100ca040(int a0)
+{
+    if (a0 != 0) {
+        ((lifted::C100c9340 *)a0)->sub_100c9340(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca0b0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
