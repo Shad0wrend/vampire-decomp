@@ -752,6 +752,7 @@
 0x1002c020 func   ?sub_1002c020@@YAXXZ sub_1002c020
 0x1002c080 func   ?sub_1002c080@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_1002c080
 0x1002c130 func   ?sub_1002c130@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1002c130
+0x1002c1c0 func   ?GetClientClass@C_BaseTempEntity@@UAEPAVClientClass@@XZ C_BaseTempEntity::GetClientClass
 0x1002c1c0 func   ?sub_1002c1c0@@YAHXZ sub_1002c1c0
 0x1002c2c0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseTempEntity@@@Z ClientClassInit
 0x1002c320 func   ?sub_1002c320@@YAHXZ sub_1002c320
