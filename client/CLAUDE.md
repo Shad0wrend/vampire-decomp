@@ -143,6 +143,33 @@ functions reached only through fields of a `g_` placeholder). Name conflicts 62 
 7,779 matched rows; the panel counts 7,750 of 16,011 functions / 383,669 of 1,690,576 bytes (22.69%). Backups:
 cache/`project.db.pre-names3-20261121`, cache/`project.db.pre-carry11-20261121`.
 
+Scalar deleting destructors (2026-11-22, `pcdecomp gdtors`, applied from pcdecomp branch gdtor-skeletons d790455,
+in main since 4ad9d8e). The command reads the class tree from the game's RTTI (each base's contained count) and judges, from every
+30-byte `??_G`, which destructor and which operator delete it calls: R1 the destructor stores the class's own vtable,
+R2 a base's (no class between has a destructor of its own), R3 the delete belongs to the lowest class whose `??_G`
+calls it, R4 names already known must agree. It then writes one skeleton header per class, names the destructors
+and deletes with `rename_symbol` (the names are read from the compiled object, never made up), and saves each `??_G`
+as an emitter block: `X *pcd_emit_<addr>() { return new X; }` plus `// TARGET: ??_GX@@UAEPAXI@Z` (VC6 writes the
+`??_G` where `new` makes it emit the vtable). A skeleton (`include/<Class>.h`, `vgui2__<Class>.h` for vgui2; first
+line ends "skeleton from the game's RTTI (pcdecomp gdtors)") declares the bases, the destructor and the operator
+delete, nothing else yet, and is written once, never rewritten. IHandleEntity (include/CBaseHandle.h) leaves
+`vfunc0` / `vfunc1` pure, so the overrides are declared in the class whose game vtable has a real function at that
+slot: C_BaseEntity, C_BaseTempEntity, C_BaseNetworkable and CDetailModel. IClientEntity and CBaseStaticModel have
+`__purecall` there and declare none. Result: 531 headers (one commit, e14ec164), 204 names (R1 195, R2 7, R3 2:
+`??3C_BaseEntity@@SAXPAX@Z` 0x100a1ec0 for 260 `??_G`, `??3Panel@vgui2@@SAXPAX@Z` 0x101ac660 for 102), and 504
+`??_G` matched, 15,120 bytes. Open: CBaseStaticModel's own `??_G` 0x100dfe30, which is abstract in the game, so
+`new` cannot make it (it needs a hand emitter); 8 proxies whose `??_G` calls another of the 9 copies of
+IMaterialProxy's inline destructor (only 0x100e3300 has the name `IMaterialProxy::~IMaterialProxy`, and one name
+names one address); and 34 out of scope (10 under a vtmb header name, 10 declared in include/ already, 3 in an
+anonymous namespace, 1 nested). 89 of the named destructors were matched before under a placeholder: the real name
+sits beside it as a second symbol, but the block still defines `CUnknown<addr>::sub_<addr>`, so a standalone link
+needs those blocks to define the real names. Emitter blocks are temporary. A later header edit that ends an emitter
+(the class's real pure virtuals declared, a constructor of its own) releases that `??_G` instead of refusing the
+edit (note "emitter-made ??_G released by a header edit"), and `pcdecomp gdtors --retry-released` tries it again.
+A score above 0 still refuses the edit. Run the command again after new classes are declared: rows already matched
+are evidence, and headers already written are left alone. Totals now: 8,283 matched rows; the panel counts 8,254 of
+16,011 functions / 398,789 of 1,690,576 bytes (23.59%). Backup: cache/`project.db.pre-gdtors-20261121`.
+
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
 functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the
