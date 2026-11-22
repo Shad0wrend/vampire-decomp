@@ -3037,6 +3037,7 @@
 0x100cb560 func   ?sub_100cb560@@YAHXZ sub_100cb560
 0x100cb570 func   ?sub_100cb570@CUnknown100cb570@@QAEPAXXZ CUnknown100cb570::sub_100cb570
 0x100cbb00 func   ?vfunc12@CHLClient@@UAEXH@Z CHLClient::vfunc12
+0x100cbed0 func   ?vfunc30@CHLClient@@UAEXHH@Z CHLClient::vfunc30
 0x100cbee0 func   ?sub_100cbee0@@YAHHHHH@Z sub_100cbee0
 0x100cc560 func   ?sub_100cc560@@YAXXZ sub_100cc560
 0x100cc620 func   ?sub_100cc620@@YAHXZ sub_100cc620
