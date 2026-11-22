@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100e0290 size=0x3
+#include "CDetailModel.h"
+unsigned int * CDetailModel::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e02a0 size=0x1e
 #include "CDetailModel.h"
 
