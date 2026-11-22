@@ -2864,6 +2864,7 @@
 0x100bbb90 func   ?sub_100bbb90@CUnknown100bbb90@@QAEPAXXZ CUnknown100bbb90::sub_100bbb90
 0x100bbba0 func   ??_GC_GameRules@@UAEPAXI@Z ??_GC_GameRules@@UAEPAXI@Z
 0x100bbbc0 func   ??1C_GameRules@@UAE@XZ C_GameRules::~C_GameRules
+0x100bbc60 func   ?vfunc1@C_GameRules@@UAEXXZ C_GameRules::vfunc1
 0x100bbe00 func   ??_GCHudCounterElement@@UAEPAXI@Z ??_GCHudCounterElement@@UAEPAXI@Z
 0x100bbe20 func   ?vfunc16@C_HudCounter@@UAEHXZ C_HudCounter::vfunc16
 0x100bbe30 func   ?vfunc15@C_HudCounter@@UAEHXZ C_HudCounter::vfunc15

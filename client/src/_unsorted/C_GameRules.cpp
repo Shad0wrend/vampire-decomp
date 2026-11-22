@@ -10,3 +10,10 @@ C_GameRules *pcd_emit_100bbba0() { return new C_GameRules; }
 
 // TARGET: ??_GC_GameRules@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100bbc60 size=0x1
+#include "C_GameRules.h"
+void C_GameRules::vfunc1()
+{
+}
+// END FUNCTION
