@@ -18,3 +18,11 @@ int CClientSideEffect::vfunc2()
     return *(int *)((char *)this + 4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d9190 size=0x5
+#include "CClientSideEffect.h"
+void CClientSideEffect::vfunc4()
+{
+    *(char *)((char *)this + 8) = 0;
+}
+// END FUNCTION
