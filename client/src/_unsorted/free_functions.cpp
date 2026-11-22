@@ -66308,6 +66308,27 @@ void sub_10186e00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186fa0 size=0x55
+namespace lifted {
+extern char g_1024e0ac;
+struct C101b1fc0 { int sub_101b1fc0(int, int, int); };
+}
+struct CUnknown10186fa0 { void * sub_10186fa0(int, int, int); };
+void * CUnknown10186fa0::sub_10186fa0(int a0, int a1, int a2)
+{
+    ((lifted::C101b1fc0 *)this)->sub_101b1fc0(a0, a1, a2);
+    *(int *)this = (int)&lifted::g_1024e0ac;
+    *(char *)((char *)this + 0xc1) = 0;
+    *(char *)((char *)this + 0xc2) = 0;
+    *(int *)((char *)this + 0xc4) = 0;
+    *(int *)((char *)this + 0xc8) = 0;
+    *(int *)((char *)this + 0xcc) = 0;
+    *(char *)((char *)this + 0xc0) = 0;
+    *(int *)((char *)this + 0xd0) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187230 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
