@@ -68,15 +68,10 @@ void CUnknown1011e200::sub_1011e200()
 // FUNCTION: 0x1011e220 size=0x20
 #include "IGameMovement.h"
 
-struct DummyMovement : IGameMovement
-{
-	void vfunc1(void *, void *) {}
-	float *vfunc2(char, int) { return 0; }
-	float *slot3(char, char) { return 0; }
-	float *slot4(int, char) { return 0; }
-};
+// VC6 writes IGameMovement's scalar deleting destructor where it emits the class's vtable; its inline destructor (it stores the vptr) called in a function
+// nothing calls makes it emit both here
+void pcd_emit_1011e220(IGameMovement *p) { p->IGameMovement::~IGameMovement(); }
 
-DummyMovement g_dummyMovement;
 // TARGET: ??_GIGameMovement@@UAEPAXI@Z
 // END FUNCTION
 
