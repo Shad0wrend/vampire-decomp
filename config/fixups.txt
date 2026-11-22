@@ -1,13 +1,17 @@
-# written by pcdecomp standalone from vtmb 11d044767e7a; do not edit by hand
+# written by pcdecomp standalone from vtmb 50083549c7dc; do not edit by hand
 b10077f10 localize ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z
 b10140770 localize ?sub_101402b0@CBaseMoveBehavior@@QAEHH@Z
 b10140770 localize ?sub_101402f0@CBaseMoveBehavior@@QAEHH@Z
 b10149b70 localize ??0CGravControllerPoint@@QAE@XZ
 b1017c300 localize ?LookForGrappleVictim@CBasePlayer@@QAEPAVCBaseEntity@@XZ
+b1019ce40 localize ??0CRecipientFilter@@QAE@XZ
 b101d82d0 localize ??0CUnknown101d82d0_Elem@@QAE@XZ
 b101e3be0 localize ?sub_101e1870@@YGII@Z
+b101f3070 localize ??0VKeyValues@@QAE@PBD@Z
+b101f3080 localize ??0VKeyValues@@QAE@PBD@Z
 b10205380 localize ?sub_10204270@CUnknown10204270@@QAEXXZ
 b10226360 localize ?vfunc275@CItemContainerLock@@QAEXXZ
+b102466d0 localize ??0SendProp@@QAE@XZ
 b10307c50 localize ?sub_10307aa0@CUnknown10307aa0@@QAEHXZ
 b1002dc50 promote _g_106b89bc
 i103571b0 inner ?g_1093a08c@@3PAUCCrowTimeView@@A 4 .bss 0x4

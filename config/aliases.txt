@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 11d044767e7a; do not edit by hand
+# written by pcdecomp standalone from vtmb 50083549c7dc; do not edit by hand
 ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z
 ??0CAI_InterestTarget@@QAE@XZ ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ
 ??0CAI_LocalIdSpace@@QAE@_N@Z ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z
@@ -104,8 +104,10 @@
 ??1CBaseEntityList@@QAE@XZ ?sub_100f9c40@CBaseEntityList@@QAEXXZ
 ??1CBaseNetworkable@@UAE@XZ ?sub_100b7ad0@CNetSub@@QAEXXZ
 ??1CEffectsServer@@QAE@XZ ?sub_100f5c60@CUnknown100f5c60@@QAEXXZ
+??1CEntryZ@@QAE@XZ ?sub_101eb030@@YAXXZ
 ??1CExperienceTable@@QAE@XZ ?sub_10222210@CExperienceTable@@QAEXXZ
 ??1CGameMovement@@UAE@XZ ?sub_1011e200@CUnknown1011e200@@QAEXXZ
+??1CKeyHolder@@QAE@XZ ?sub_101ebd10@@YAXXZ
 ??1CMoveHelperServer@@UAE@XZ ?sub_1000185c@CMoveHelperServer@@QAEXXZ
 ??1CNewedOwner@@QAE@XZ ?sub_102e9f40@@YIXPAH@Z
 ??1COutputEvent@@QAE@XZ ?sub_100cd2d0@@YIXPAD@Z
@@ -153,8 +155,9 @@
 ??1CTETracer@@QAE@XZ ?sub_1006a470@CUnknown1006a470@@QAEHXZ
 ??1CTEUserTracer@@QAE@XZ ?sub_1006aa90@CUnknown1006aa90@@QAEHXZ
 ??1CTEWorldDecal@@QAE@XZ ?sub_1006afb0@CUnknown1006afb0@@QAEHXZ
+??1CUnk101e9570List@@QAE@XZ ?sub_101d8250@@YIXPAH@Z
 ??1CUnk101f5ed0@@QAE@XZ ?sub_101f5e40@@YIXPAPAX@Z
-??1CUnknown101c4790@@QAE@XZ ?sub_101c4760@CUnk101c4760@@QAEXXZ
+??1CUnknown101c4790@@QAE@XZ ?sub_101c46f0@CWrap101c46f0@@QAEXXZ
 ??1CUnknown101d7520Entry@@QAE@XZ ?sub_101d66a0@CPartListUnit@@QAEXXZ
 ??1CUnknown101dff00@@QAE@XZ ?sub_101df2f0@CUnknown101df2f0@@QAEXXZ
 ??1CUnknown101e0f00Entry@@QAE@XZ ?sub_101e05e0@CUnknown101e05e0@@QAEXXZ
@@ -175,6 +178,7 @@
 ??1CVDmgBlock16_t@@QAE@XZ ?sub_10310b70@@YAXXZ
 ??1CVDmg_t@@QAE@XZ ?sub_101fa680@@YAXXZ
 ??1CVStatInfoList_t@@QAE@XZ ?sub_101ff3e0@CVStatInfoList_t@@QAEXXZ
+??1CVTraitEffectGroup_t@@QAE@XZ ?sub_101f7380@CVTraitFields101f7380@@QAEXXZ
 ??1ConCommand@@QAE@XZ ?sub_10245920@CUnknown10245920@@QAEHXZ
 ??1Pool@@QAE@XZ ?sub_1013dae0@CUnk1013dae0@@QAEXXZ
 ??1SendTable@@QAE@XZ ?sub_10247220@@YAXXZ
@@ -278,7 +282,6 @@
 ?g_104475c4@@3PADA ??_7CLogicalEntity@@6B@
 ?g_1044b584@@3HA ??_7CPointEntity@@6B@
 ?g_1044b584@@3PADA ??_7CPointEntity@@6B@
-?g_1044db7c@@3PADA ??_7IPredictionSystem@@6B@
 ?g_1044db7c@lifted@@3DA ??_7IPredictionSystem@@6B@
 ?g_1044db88@lifted@@3DA ??_7CTEMetalSparks@@6B@
 ?g_1044dbd4@lifted@@3DA ??_7CTEBaseBeam@@6B@
@@ -300,30 +303,22 @@
 ?g_10454154@lifted@@3DA ??_7CCollisionProperty@@6B@
 ?g_10460df8@lifted@@3DA ??_7CTEDust@@6B@
 ?g_104612ac@lifted@@3DA ??_7CFunc_LOD@@6B@
-?g_1046257c@@3DA ??_7IServerGameDLL@@6B@
-?g_104625f4@@3DA ??_7ISave@@6B@
 ?g_104625f4@@3PAHA ??_7ISave@@6B@
 ?g_104626bc@@3DA ??_7IRestore@@6B@
 ?g_104626bc@@3PADA ??_7IRestore@@6B@
 ?g_104626bc@@3PAHA ??_7IRestore@@6B@
 ?g_104626bc@@3PAXA ??_7IRestore@@6B@
-?g_10462780@@3DA ??_7IServerGameEnts@@6B@
-?g_104627e0@@3DA ??_7IServerGameClients@@6B@
 ?g_104628f8@lifted@@3DA ??_7IGameMovement@@6B@
 ?g_104629f4@@3DA ??_7CGameRules@@6B@
-?g_1046afbc@@3PADA ??_7IMoveHelper@@6B@
 ?g_1046c920@lifted@@3DA ??_7CGravControllerPoint@@6B@
 ?g_10470484@@3PAPAXA ??_7?$CSecureTypeBase@UCPfnTraits1@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits1@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits1@MvsnSec@@H@2@@MvsnSec@@6B@
 ?g_10471730@@3DA ??_7CPlayerMove@@6B@
-?g_10471730@@3HA ??_7CPlayerMove@@6B@
-?g_10483528@@3PADA ??_7CDisciplineProjectileTraceFilter@@6B@
 ?g_10488d7c@@3PADA ??_7CGameSign@@6B@
 ?g_10497474@lifted@@3DA ??_7ConCommand@@6B@
 ?g_1049a0f8@@3HA ??_7CAI_Component@@6B@
 ?g_1049a0f8@lifted@@3DA ??_7CAI_Component@@6B@
 ?g_1049b4b0@lifted@@3DA ??_7CAI_CsActList@@6B@
 ?g_104a271c@lifted@@3DA ??_7CHL2_Player@@6B@
-?g_104a3078@@3HA ??_7IVoiceGameMgrHelper@@6B@
 ?g_10514edc@lifted@@3DA ??_7CGrabController@@6B@
 ?g_105386f8@@3PADA ??_R0?AVIHandleEntity@@@8
 ?g_10538764@@3DA ??_R0?AVCBaseEntity@@@8
@@ -1357,7 +1352,6 @@
 ?g_1073a9a0@@3UStatTable@@A ?g_1073a9a0@@3VCUnknown101f0e50@@A
 ?g_1073aa40@@3PADA ?g_1073aa40@@3DA
 ?g_1073ca80@@3PAY0EA@DA ?g_1073ca80@@3PADA
-?g_1073d280@@3HA ?s_object@?$PcdGuarded@$0BAHDNCIA@UPool@@@@2UPool@@A
 ?g_1073d280@@3UCVPool@@A ?s_object@?$PcdGuarded@$0BAHDNCIA@UPool@@@@2UPool@@A
 ?g_1073d280@@3UVKeyValuesPool@@A ?s_object@?$PcdGuarded@$0BAHDNCIA@UPool@@@@2UPool@@A
 ?g_1073dbd4@@3VCUnknown101f5050@@A ?g_1073dbd4@@3VCUnknown1073dc28@@A
@@ -2817,7 +2811,6 @@
 ?sub_100017d0@@YAXXZ ?sub_1020abc0@@YAXPAD@Z
 ?sub_100017d5@CBasePlayer@@QAEXXZ ?sub_1015df00@CBasePlayer@@QAEXXZ
 ?sub_100017d5@lifted@@YAHXZ ?sub_1015df00@CBasePlayer@@QAEXXZ
-?sub_10001807@@YIXPAD@Z ?sub_101f3080@@YIPAHPAHHE@Z
 ?sub_1000186b@@YAXXZ ?sub_10312f50@@YAXXZ
 ?sub_10001889@@YAXXZ ?sub_1036f520@@YAXXZ
 ?sub_100018c0@@YAXXZ ?sub_102337d0@@YAXXZ
@@ -3299,7 +3292,6 @@
 ?sub_100051c8@CTEBeamLaser@@QAEXXZ ?sub_1005b9b0@CUnknown1005b9b0@@QAEHXZ
 ?sub_100051d2@CUnk100cc0e0Ent@@QAEXPAXH@Z ?sub_1017d460@CBasePlayer@@QAEXPAVCBaseEntity@@M@Z
 ?sub_10005222@SymTree@@QAEXGG_N@Z ?sub_1024a480@CUtlRBTree16Unit@@QAEXGG_N@Z
-?sub_10005263@CGargoyleMemberUnit@@QAEXXZ ?sub_1024b370@CUnknown1024b370@@QAEXXZ
 ?sub_1000527c@CNPC_VMingXiaoTentacle@@QAEHH@Z ?vfunc127@CAI_BaseNPCTroika@@UAEHPAVCRestore@@@Z
 ?sub_1000527c@CNPC_VTzimisceHeadClaw@@QAEHH@Z ?vfunc127@CAI_BaseNPCTroika@@UAEHPAVCRestore@@@Z
 ?sub_1000527c@CNPC_VVampireBoss@@QAEHH@Z ?vfunc127@CAI_BaseNPCTroika@@UAEHPAVCRestore@@@Z
@@ -3430,7 +3422,6 @@
 ?sub_1000643d@CUnk101a0530@@QAEXHH@Z ?sub_1000643d@CSave@@QAE_NPBXH@Z
 ?sub_10006456@@YIXPAVCBaseEntity@@@Z ?sub_100342c0@CBaseEntity@@QAEXXZ
 ?sub_10006460@@YAXXZ ?sub_10081e00@@YIXPADPAXH@Z
-?sub_1000648d@SendProp@@QAEXXZ ??1SendProp@@UAE@XZ
 ?sub_100064a1@@YAXXZ ?sub_1042fdb0@@YAXXZ
 ?sub_100064b0@@YAXXZ ?sub_101c63d0@CTriggerHurt@@QAEXXZ
 ?sub_100064ba@@YAXXZ ?sub_102c32d0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z
@@ -4356,19 +4347,8 @@
 ?sub_1000cfa9@lifted@@YAHXZ ?vfunc226@CBaseEntity@@UAEXH@Z
 ?sub_1000cfb3@@YAXABVVector@@000MAAV1@@Z ?sub_1013b610@@YAXPBVVector@@000MPAV1@@Z
 ?sub_1000cfb3@@YAXHHHHHH@Z ?sub_1013b610@@YAXPBVVector@@000MPAV1@@Z
-?sub_1000cfbd@CAI_SystemHook@@QAEXXZ ??1IGameSystem@@UAE@XZ
 ?sub_1000cfbd@CAutoGameSystem@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CCheckClient@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CDataObjectAccessSystem@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CEntityListSystem@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CGameStringPool@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CGargoyleBaseUnit@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CNavPropertyDatabase@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CPhysicsHook@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CSkyList@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@CSoundEmitterGameSystemPart@@QAEXXZ ??1IGameSystem@@UAE@XZ
 ?sub_1000cfbd@IGameSystem@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1000cfbd@PyServerSystem@@QAEXXZ ??1IGameSystem@@UAE@XZ
 ?sub_1000d044@@YAXPAVCUnknown1019d130@@HHHHHHHH@Z ?sub_1005e5c0@@YAXHHPBH0HHHHH@Z
 ?sub_1000d058@@YAXXZ ?sub_1012cf50@CUnknown1012cf50@@QAEXH@Z
 ?sub_1000d08f@CTEBaseBeam@@QAEXXZ ?sub_1005a7b0@CUnknown1005a7b0@@QAEHXZ
@@ -4658,7 +4638,6 @@
 ?sub_1001005f@CUnk102c3540@@QAEXI@Z ?sub_1026dc30@CUnk1026dc30@@QAEII@Z
 ?sub_100100b9@@YAXXZ ?sub_1033be10@CBaseCombatCharacter@@QAEXAAUinputdata_t@@@Z
 ?sub_100100cd@CTreeView_102ce150@@QAEXG@Z ?sub_102cfd20@CUtlRBTree12Unit@@QAEXG@Z
-?sub_100100ff@CSoundscapeSystemMember8@@QAEXXZ ?sub_1024a1e0@@YIXPAPAUCUnknownObj1024a1e0@@@Z
 ?sub_10010131@@YAXXZ ?sub_103a1670@@YAXXZ
 ?sub_10010136@@YAXXZ ?sub_1029f210@CUnknown1029f210View@@QAEXH@Z
 ?sub_1001018b@@YAXXZ ?sub_103324a0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z
@@ -7838,8 +7817,8 @@
 ?sub_1013dce0@CTouchLinkPool@@QAEXPAUCTouchLink@@@Z ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z
 ?sub_1013dce0@CTouchLinkPoolX@@QAEXPAUCTouchLinkX@@@Z ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z
 ?sub_1013dce0@CUnk1013dce0@@QAEXPAUSoundCommand_t@@@Z ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z
-?sub_1013dce0@CUnk1013dce0@@QAEXPAX@Z ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z
 ?sub_1013dce0@CUnknown10936c84@@QAEXPAUCChainNodeStub@@@Z ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z
+?sub_1013dce0@VKeyValuesPool@@QAEXPAX@Z ?sub_1013dce0@CUnk1013dce0@@QAEXPAH@Z
 ?sub_1013e420@CFuncBrush@@QAEXXZ ?sub_1013e420@CFuncBrushVt@@QAEXXZ
 ?sub_1013eb90@@YG_NPAVCBaseEntity@@H@Z ?sub_1013eb90@@YG_NPAVCBaseEntity@@I@Z
 ?sub_1013ecd0@@YAPAUCUnk1013ecd0@@XZ ?sub_1013ecd0@@YAPAVCMoveHelperServer@@XZ
@@ -9266,7 +9245,6 @@
 ?sub_101f1f50@CVNodeCtor@@QAEPAVCUnknown101f2360@@PBDH@Z ??0VKeyValues@@QAE@PBD@Z
 ?sub_101f1f50@VKeyValues@@QAEPAV1@PBDH@Z ??0VKeyValues@@QAE@PBD@Z
 ?sub_101f2090@CVNode@@QAEXPBD@Z ?sub_101f2090@VKeyValues@@QAEXPBD@Z
-?sub_101f20d0@@YIXPAX@Z ??1VKeyValues@@UAE@XZ
 ?sub_101f2180@VKeyValues@@QAEDPBDH@Z ?sub_101f2180@CVNode@@QAE_NPBDPAUCVFile@@@Z
 ?sub_101f2360@CVNode@@QAEXPAPBDPAUCVFile@@@Z ?sub_101f2360@CUnknown101f2360@@QAEXPAPBDPAX@Z
 ?sub_101f2c60@CVNode@@QAEXXZ ?sub_101f2c60@CKV@@QAEXXZ
@@ -12510,9 +12488,6 @@
 ?sub_1042bff0@@YAXPAHPBD@Z ?sub_1042bff0@@YA?AUstring_t@@PBD@Z
 ?sub_1042bff0@@YAXPAIPBD@Z ?sub_1042bff0@@YA?AUstring_t@@PBD@Z
 ?sub_1042bff0@@YAXPAX0@Z ?sub_1042bff0@@YA?AUstring_t@@PBD@Z
-?sub_1042c2c0@CBaseGameSystemView@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1042c2c0@CLagCompensationManager@@QAEXXZ ??1IGameSystem@@UAE@XZ
-?sub_1042c2c0@CSoundSchemeManager@@QAEXXZ ??1IGameSystem@@UAE@XZ
 ?sub_1042c310@@YAXPAUAutoSys@@@Z ?sub_1042c310@@YAXH@Z
 ?sub_1042c4e0@@YADXZ ?sub_1042c4e0@@YA_NXZ
 ?sub_1042c700@@YAXPAX@Z ?sub_1042c700@@YAXP6IXPAX@Z@Z
@@ -14432,7 +14407,6 @@
 ?vt_10445024@@3PAPAXA ??_7CPhysForce@@6B@
 ?vt_104470b0@@3PADA ??_7CPASAttenuationFilter@@6B@
 ?vt_104470dc@@3PADA ??_7CPASFilter@@6B@
-?vt_10447108@@3PAHA ??_7IRecipientFilter@@6B@
 ?vt_10447108@@3PAPAXA ??_7IRecipientFilter@@6B@
 ?vt_104475c4@@3HA ??_7CLogicalEntity@@6B@
 ?vt_104475c4@@3PADA ??_7CLogicalEntity@@6B@
@@ -14465,9 +14439,6 @@
 ?vt_1047d08c@@3HA ??_7CBaseTrigger@@6B@
 ?vt_1047d08c@@3PAPAXA ??_7CBaseTrigger@@6B@
 ?vt_1048357c@@3PADA ??_7CVampireProjectile@@6B@
-?vt_10483b34@@3HA ??_7IKeyValues@@6BIKeyCacheable@@@
-?vt_10483b4c@@3HA ??_7IKeyValues@@6B0@@
-?vt_10483bb8@@3HA ??_7IKeyCacheable@@6B@
 ?vt_10496acc@@3PADA ??_7CWorldEvents@@6B@
 ?vt_104974a0@@3PAPAXA ??_7ConVar@@6B@
 ?vt_1049757c@@3PAHA ??_7CBaseCombatWeapon@@6B@
