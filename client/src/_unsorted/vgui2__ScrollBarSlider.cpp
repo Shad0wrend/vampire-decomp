@@ -11,6 +11,14 @@ vgui2::ScrollBarSlider *pcd_emit_101c9e50() { return new vgui2::ScrollBarSlider;
 // TARGET: ??_GScrollBarSlider@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c9ea0 size=0x4
+#include "vgui2__ScrollBarSlider.h"
+bool vgui2::ScrollBarSlider::vfunc109()
+{
+    return *(bool *)((char *)this + 0x58);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9f00 size=0x4
 #include "vgui2__ScrollBarSlider.h"
 int vgui2::ScrollBarSlider::vfunc108()
