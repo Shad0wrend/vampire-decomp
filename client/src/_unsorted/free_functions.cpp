@@ -62817,6 +62817,20 @@ int sub_10170f60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170f70 size=0x13
+namespace lifted {
+int sub_10170f60();
+}
+int sub_10170f70()
+{
+    int t0 = lifted::sub_10170f60();
+    if (t0 != 0) {
+        return *(int *)((char *)t0 + 0x280);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172ac0 size=0x3
 char sub_10172ac0()
 {
