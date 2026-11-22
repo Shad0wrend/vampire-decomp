@@ -69,6 +69,14 @@ int vgui2::TextEntry::vfunc137(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af110 size=0x7
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc135()
+{
+    return *(bool *)((char *)this + 0x8a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af140 size=0x8
 #include "vgui2__TextEntry.h"
 void vgui2::TextEntry::vfunc85()
