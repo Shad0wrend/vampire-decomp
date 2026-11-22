@@ -28,6 +28,14 @@ float C_BasePlayer::vfunc176()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a3b0 size=0x7
+#include "C_BasePlayer.h"
+char * C_BasePlayer::vfunc109()
+{
+    return (char *)this + 0x1888;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a49f0 size=0x6
 #include "C_BasePlayer.h"
 namespace lifted {
