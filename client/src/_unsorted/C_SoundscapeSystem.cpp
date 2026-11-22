@@ -35,3 +35,10 @@ void C_SoundscapeSystem::vfunc5()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c0a80 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc6()
+{
+}
+// END FUNCTION
