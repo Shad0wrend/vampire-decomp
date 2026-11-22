@@ -5590,6 +5590,7 @@
 0x101b5690 func   ?sub_101b5690@CUnknown101b5690@@QAEPAXHHH@Z CUnknown101b5690::sub_101b5690
 0x101b56c0 func   ?sub_101b56c0@CUnknown101b56c0@@QAEPAXHHH@Z CUnknown101b56c0::sub_101b56c0
 0x101b56f0 func   ?sub_101b56f0@CUnknown101b56f0@@QAEPAXHHHHH@Z CUnknown101b56f0::sub_101b56f0
+0x101b5730 func   ?sub_101b5730@CUnknown101b5730@@QAEPAXHHHHH@Z CUnknown101b5730::sub_101b5730
 0x101b5770 func   ?sub_101b5770@CUnknown101b5770@@QAEHH@Z CUnknown101b5770::sub_101b5770
 0x101b57e0 func   ?vfunc0@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc0
 0x101b5800 func   ?vfunc1@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc1
