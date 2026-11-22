@@ -55089,6 +55089,18 @@ void __stdcall sub_10156040(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101560e0 size=0xc
+namespace lifted {
+int sub_10156160();
+}
+struct CUnknown101560e0 { void * sub_101560e0(); };
+void * CUnknown101560e0::sub_101560e0()
+{
+    lifted::sub_10156160();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101560f0 size=0x27
 void __fastcall sub_101560f0(void **pThis)
 {
