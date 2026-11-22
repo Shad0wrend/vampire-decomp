@@ -10120,6 +10120,7 @@
 0x1000d7b5 func   ?vfunc505@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc505
 0x1000d7ba func   ?vfunc306@CBaseCombatCharacter@@UAEXPAV1@D@Z CBaseCombatCharacter::vfunc306
 0x1000d7bf func   ?sub_1027cef0@@YIPAVCAI_MoveProbe@@PAX@Z sub_1027cef0
+0x1000d7c4 func   ?PostRestore@CPhysSaveRestoreBlockHandler@@UAEXXZ CPhysSaveRestoreBlockHandler::PostRestore
 0x1000d7c4 func   ?vfunc8@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc8
 0x1000d7c9 func   ?sub_102f1860@CUnknown102f1860@@QAEMHABVVector@@0@Z CUnknown102f1860::sub_102f1860
 0x1000d7ce func   ?sub_1019dea0@CUnit1019dea0@@QAEX_N@Z CUnit1019dea0::sub_1019dea0
