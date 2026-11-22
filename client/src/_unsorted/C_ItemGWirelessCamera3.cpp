@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001ce00 size=0x6
+#include "C_ItemGWirelessCamera3.h"
+namespace lifted {
+extern char g_10273748;
+}
+int C_ItemGWirelessCamera3::vfunc17()
+{
+    return (int)&lifted::g_10273748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ce90 size=0x1e
 #include "C_ItemGWirelessCamera3.h"
 
