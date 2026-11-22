@@ -10,3 +10,14 @@ C_TEBubbles *pcd_emit_10035650() { return new C_TEBubbles; }
 
 // TARGET: ??_GC_TEBubbles@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100356f0 size=0x6
+#include "C_TEBubbles.h"
+namespace lifted {
+extern char g_1027e8e8;
+}
+int C_TEBubbles::vfunc9()
+{
+    return (int)&lifted::g_1027e8e8;
+}
+// END FUNCTION
