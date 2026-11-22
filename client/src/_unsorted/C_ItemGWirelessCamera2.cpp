@@ -10,3 +10,11 @@ C_ItemGWirelessCamera2 *pcd_emit_1001cc10() { return new C_ItemGWirelessCamera2;
 
 // TARGET: ??_GC_ItemGWirelessCamera2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001cc40 size=0x3
+#include "C_ItemGWirelessCamera2.h"
+int C_ItemGWirelessCamera2::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
