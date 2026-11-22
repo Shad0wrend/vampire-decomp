@@ -8,3 +8,11 @@ int vgui2::KeyValues::vfunc1()
     return *(int *)((char *)this + 4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b6430 size=0x4
+#include "vgui2__KeyValues.h"
+int vgui2::KeyValues::vfunc7()
+{
+    return *(int *)((char *)this + 0x18);
+}
+// END FUNCTION
