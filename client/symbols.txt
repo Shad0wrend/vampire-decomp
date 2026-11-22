@@ -1629,6 +1629,7 @@
 0x1009fb50 func   ?Collideable_vfunc1@C_BaseEntity@@UAEXHH@Z C_BaseEntity::Collideable_vfunc1
 0x1009fc40 func   ?GetSolid@C_BaseEntity@@UAEHXZ C_BaseEntity::GetSolid
 0x1009fc40 func   ?sub_1009fc40@CUnknown1009fc40@@QAEHXZ CUnknown1009fc40::sub_1009fc40
+0x1009fc50 func   ?GetSolidFlags@C_BaseEntity@@UAEHXZ C_BaseEntity::GetSolidFlags
 0x1009fc50 func   ?sub_1009fc50@CUnknown1009fc50@@QAEHXZ CUnknown1009fc50::sub_1009fc50
 0x1009fc90 func   ?sub_1009fc90@CUnknown1009fc90@@QAEHH@Z CUnknown1009fc90::sub_1009fc90
 0x1009fca0 func   ?IsTransparent@C_BaseEntity@@UAE_NXZ C_BaseEntity::IsTransparent
