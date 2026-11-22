@@ -5229,6 +5229,7 @@
 0x101bb430 func   ?vfunc121@PropertyPage@vgui2@@UAEXXZ vgui2::PropertyPage::vfunc121
 0x101bb690 func   ?vfunc102@PropertyPage@vgui2@@UAEHXZ vgui2::PropertyPage::vfunc102
 0x101bb780 func   ??_GSlider@vgui2@@UAEPAXI@Z ??_GSlider@vgui2@@UAEPAXI@Z
+0x101bb820 func   ?vfunc108@Slider@vgui2@@UAEHXZ vgui2::Slider::vfunc108
 0x101bc350 func   ??_GToggleButton@vgui2@@UAEPAXI@Z ??_GToggleButton@vgui2@@UAEPAXI@Z
 0x101bc3c0 func   ?vfunc89@ToggleButton@vgui2@@UAEXH@Z vgui2::ToggleButton::vfunc89
 0x101bc6e0 func   ??_GTreeViewSubPanel@vgui2@@UAEPAXI@Z ??_GTreeViewSubPanel@vgui2@@UAEPAXI@Z

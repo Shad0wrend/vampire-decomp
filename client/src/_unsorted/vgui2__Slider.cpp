@@ -10,3 +10,11 @@ vgui2::Slider *pcd_emit_101bb780() { return new vgui2::Slider; }
 
 // TARGET: ??_GSlider@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101bb820 size=0x7
+#include "vgui2__Slider.h"
+int vgui2::Slider::vfunc108()
+{
+    return *(int *)((char *)this + 0x80);
+}
+// END FUNCTION
