@@ -246,3 +246,11 @@ void C_BaseEntity::vfunc33()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a33c0 size=0x3
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc34()
+{
+    return 0;
+}
+// END FUNCTION
