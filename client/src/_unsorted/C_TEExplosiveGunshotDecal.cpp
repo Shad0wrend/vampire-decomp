@@ -10,3 +10,10 @@ C_TEExplosiveGunshotDecal *pcd_emit_10039a70() { return new C_TEExplosiveGunshot
 
 // TARGET: ??_GC_TEExplosiveGunshotDecal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10039ab0 size=0x1
+#include "C_TEExplosiveGunshotDecal.h"
+void C_TEExplosiveGunshotDecal::vfunc13()
+{
+}
+// END FUNCTION
