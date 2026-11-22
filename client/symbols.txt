@@ -1203,6 +1203,7 @@
 0x10036120 func   ??1C_TEDynamicLight@@UAE@XZ C_TEDynamicLight::~C_TEDynamicLight
 0x10036120 func   ?sub_10036120@CUnknown10036120@@QAEHXZ CUnknown10036120::sub_10036120
 0x10036270 func   ?vfunc9@C_TEDynamicLight@@UAEHXZ C_TEDynamicLight::vfunc9
+0x10036280 func   ?vfunc8@C_TEDynamicLight@@UAEHXZ C_TEDynamicLight::vfunc8
 0x10036290 func   ?sub_10036290@@YAHXZ sub_10036290
 0x10036330 func   ?sub_10036330@@YAHXZ sub_10036330
 0x100363a0 func   ?ClientClassInit@@YAHPAUignored@DT_TEDynamicLight@@@Z ClientClassInit
