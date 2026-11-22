@@ -6041,6 +6041,7 @@
 0x101b6900 func   ??1Image@vgui2@@UAE@XZ vgui2::Image::~Image
 0x101b6900 func   ?sub_101b6900@CUnknown101b6900@@QAEXXZ CUnknown101b6900::sub_101b6900
 0x101b6910 func   ?vfunc1@Image@vgui2@@UAEHHH@Z vgui2::Image::vfunc1
+0x101b6930 func   ?vfunc6@Image@vgui2@@UAEHHH@Z vgui2::Image::vfunc6
 0x101b6970 func   ?sub_101b6970@CUnknown101b6970@@QAEHHH@Z CUnknown101b6970::sub_101b6970
 0x101b6990 func   ?vfunc9@Image@vgui2@@UAEHHH@Z vgui2::Image::vfunc9
 0x101b69f0 func   ?vfunc10@Image@vgui2@@UAEHXZ vgui2::Image::vfunc10
