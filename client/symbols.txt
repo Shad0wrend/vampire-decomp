@@ -3581,6 +3581,7 @@
 0x100ff9f0 func   ?vfunc43@CInput@@UAEXXZ CInput::vfunc43
 0x100ffa00 func   ?vfunc44@CInput@@UAEHXZ CInput::vfunc44
 0x100ffaf0 func   ?vfunc53@CInput@@UAEMXZ CInput::vfunc53
+0x100ffb60 func   ?vfunc32@CInput@@UAEHH@Z CInput::vfunc32
 0x100ffd10 func   ?vfunc45@CInput@@UAEHXZ CInput::vfunc45
 0x10101b70 func   ?sub_10101b70@@YAHXZ sub_10101b70
 0x10101b80 func   ?sub_10101b80@@YADXZ sub_10101b80

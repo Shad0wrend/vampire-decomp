@@ -158,6 +158,17 @@ float CInput::vfunc53()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffb60 size=0x21
+#include "CInput.h"
+int CInput::vfunc32(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x164);
+    *(int *)((char *)a0 + 4) = *(int *)((char *)this + 0x168);
+    *(int *)((char *)a0 + 8) = *(int *)((char *)this + 0x16c);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffd10 size=0x7
 #include "CInput.h"
 int CInput::vfunc45()
