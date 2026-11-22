@@ -5459,6 +5459,7 @@
 0x101be750 func   ?sub_101be750@@YAHXZ sub_101be750
 0x101beb60 func   ?sub_101beb60@CUnknown101beb60@@QAEDD@Z CUnknown101beb60::sub_101beb60
 0x101beee0 func   ??_GScrollBar@vgui2@@UAEPAXI@Z ??_GScrollBar@vgui2@@UAEPAXI@Z
+0x101bf100 func   ?vfunc121@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc121
 0x101bf200 func   ?vfunc117@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc117
 0x101bf300 func   ?vfunc118@ScrollBar@vgui2@@UAEHH@Z vgui2::ScrollBar::vfunc118
 0x101bf410 func   ?vfunc102@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc102
