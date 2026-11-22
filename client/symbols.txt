@@ -5165,6 +5165,7 @@
 0x101b8590 func   ??_GFrameSystemButton@vgui2@@UAEPAXI@Z ??_GFrameSystemButton@vgui2@@UAEPAXI@Z
 0x101b85b0 func   ??_GFrame@vgui2@@UAEPAXI@Z ??_GFrame@vgui2@@UAEPAXI@Z
 0x101b85d0 func   ??1Frame@vgui2@@UAE@XZ vgui2::Frame::~Frame
+0x101b87f0 func   ?vfunc166@MenuButton@vgui2@@UAEXH@Z vgui2::MenuButton::vfunc166
 0x101b9600 func   ?vfunc95@Frame@vgui2@@UAEXXZ vgui2::Frame::vfunc95
 0x101b9c30 func   ??_GTextImage@vgui2@@UAEPAXI@Z ??_GTextImage@vgui2@@UAEPAXI@Z
 0x101b9c50 func   ??1TextImage@vgui2@@UAE@XZ vgui2::TextImage::~TextImage
