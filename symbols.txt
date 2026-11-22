@@ -16700,7 +16700,6 @@
 0x1001598d func   ?vfunc138@CNPC_VGuard1@@UAEHXZ CNPC_VGuard1::vfunc138
 0x10015992 func   ?sub_10247c50@CUnk10247c50@@QAEPAU1@HHHHH@Z CUnk10247c50::sub_10247c50
 0x10015997 func   ??_GCSoundSchemeManager@@UAEPAXI@Z ??_GCSoundSchemeManager@@UAEPAXI@Z
-0x10015997 func   ?vfunc8@CSoundSchemeManager@@QAEPAV1@I@Z CSoundSchemeManager::vfunc8
 0x1001599c func   ?vfunc104@CGibShooter@@QAEXXZ CGibShooter::vfunc104
 0x100159a1 func   ?vfunc362@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc362
 0x100159a6 func   ?sub_102d1760@@YAPAVCAI_Hint@@PAVCEntityVSlots@@HIMPBVVector@@@Z sub_102d1760
