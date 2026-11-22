@@ -10,3 +10,14 @@ CHudManagerPanel *pcd_emit_100586e0() { return new CHudManagerPanel; }
 
 // TARGET: ??_GCHudManagerPanel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10058e60 size=0x8
+#include "CHudManagerPanel.h"
+namespace lifted {
+struct C10057960 { int sub_10057960(); };
+}
+int CHudManagerPanel::vfunc10()
+{
+    return ((lifted::C10057960 *)(*(int *)((char *)this + 4)))->sub_10057960();
+}
+// END FUNCTION
