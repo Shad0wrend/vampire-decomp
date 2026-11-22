@@ -10,3 +10,11 @@ C_WeaponIArmor_Hvy_Leather *pcd_emit_10015b90() { return new C_WeaponIArmor_Hvy_
 
 // TARGET: ??_GC_WeaponIArmor_Hvy_Leather@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10015bc0 size=0x3
+#include "C_WeaponIArmor_Hvy_Leather.h"
+int C_WeaponIArmor_Hvy_Leather::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
