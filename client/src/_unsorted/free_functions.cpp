@@ -13358,6 +13358,17 @@ int sub_10065660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066700 size=0x1e
+namespace lifted {
+extern int g_104a5818;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual int f10(int, int, int, int, int); };
+}
+int __stdcall sub_10066700(int a0)
+{
+    return ((lifted::V *)lifted::g_104a5818)->f10(a0, 0x3f800000, 0x64, 4, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
