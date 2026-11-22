@@ -10,3 +10,11 @@ C_WeaponRanged_Pistol_Anaconda *pcd_emit_1000d710() { return new C_WeaponRanged_
 
 // TARGET: ??_GC_WeaponRanged_Pistol_Anaconda@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000d740 size=0x3
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+int C_WeaponRanged_Pistol_Anaconda::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
