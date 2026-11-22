@@ -3885,6 +3885,7 @@
 0x101beee0 func   ??_GScrollBar@vgui2@@UAEPAXI@Z ??_GScrollBar@vgui2@@UAEPAXI@Z
 0x101bf4d0 func   ??_GMenu@vgui2@@UAEPAXI@Z ??_GMenu@vgui2@@UAEPAXI@Z
 0x101bf4f0 func   ??1Menu@vgui2@@UAE@XZ vgui2::Menu::~Menu
+0x101c0990 func   ?sub_101c0990@MV@@QAEXH@Z MV::sub_101c0990
 0x101c0a80 func   ?sub_101c0a80@CUnknown101c0a80@@QAEHXZ CUnknown101c0a80::sub_101c0a80
 0x101c0c10 func   ?sub_101c0c10@CUnknown101c0c10@@QAEHXZ CUnknown101c0c10::sub_101c0c10
 0x101c0c20 func   ?sub_101c0c20@CUnknown101c0c20@@QAEXXZ CUnknown101c0c20::sub_101c0c20

@@ -63579,6 +63579,34 @@ char CUnknown101beb60::sub_101beb60(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0990 size=0x51
+struct Item { void sub_101c70b0(); };
+struct Vec {
+	int m_nSize;
+	int m_unk4;
+	Item **m_pItems;
+	bool IsValidIndex(int i) const { return i >= 0 && i < m_nSize; }
+	Item *Get(int i) const { return IsValidIndex(i) ? m_pItems[i] : 0; }
+};
+struct MV {
+	char pad[0x64];
+	Vec m_v;
+	char pad2[0x80 - 0x70];
+	int m_cur;
+	void sub_101c0990(int idx);
+};
+// TARGET: MV::sub_101c0990
+void MV::sub_101c0990(int idx)
+{
+	if (idx != m_cur)
+	{
+		if (m_v.IsValidIndex(m_cur))
+			m_v.Get(m_cur)->sub_101c70b0();
+		m_cur = idx;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0a80 size=0x7
 struct CUnknown101c0a80 { int sub_101c0a80(); };
 int CUnknown101c0a80::sub_101c0a80()
