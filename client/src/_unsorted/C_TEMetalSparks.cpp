@@ -10,3 +10,10 @@ C_TEMetalSparks *pcd_emit_100321c0() { return new C_TEMetalSparks; }
 
 // TARGET: ??_GC_TEMetalSparks@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10032200 size=0x1
+#include "C_TEMetalSparks.h"
+void C_TEMetalSparks::vfunc13()
+{
+}
+// END FUNCTION
