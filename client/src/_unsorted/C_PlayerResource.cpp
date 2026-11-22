@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bce30 size=0x6
+#include "C_PlayerResource.h"
+namespace lifted {
+extern char g_102b55bc;
+}
+int C_PlayerResource::vfunc16()
+{
+    return (int)&lifted::g_102b55bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bce40 size=0x3
 #include "C_PlayerResource.h"
 int C_PlayerResource::vfunc15()
