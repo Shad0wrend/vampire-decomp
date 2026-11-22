@@ -208,6 +208,10 @@ def main(argv: list[str] | None = None) -> int:
              *sorted({q.relative_to(root) for q in (root / "src").rglob("*") if q.is_dir()} | {Path("src")}),
              *sorted(p.relative_to(root) for p in (root / "src").rglob("*.cpp"))]
     lines.append(f"build {NINJA}: configure | {' '.join(_esc(r) for r in regen)}")
+    # every input also stands alone as a phony target (as CMake writes its own): a file or folder that goes away
+    # (relayout removes emptied files) is then out of date, and ninja runs configure instead of stopping at
+    # "missing and no known rule to make it"
+    lines.append(f"build {' '.join(_esc(r) for r in regen)}: phony")
     text = "\n".join(lines) + "\n"
     # written even when unchanged: ninja runs configure while build.ninja is older than an input, so a run that kept
     # the old file would leave it older and ninja would run configure again and again
