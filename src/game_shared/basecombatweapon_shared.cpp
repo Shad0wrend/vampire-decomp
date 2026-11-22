@@ -1521,6 +1521,7 @@ int __fastcall sub_102517b0(void *pThis)
 // END FUNCTION
 
 // FUNCTION: 0x102517e0 size=0xb4
+#define PCD_INITIALIZERS	// ~CVDmg_t (0x101fa680): the destroy 0x102518d0 of the static default jumps to it
 #include "CBaseCombatWeapon.h"
 #include "CVDmg_t.h"
 
