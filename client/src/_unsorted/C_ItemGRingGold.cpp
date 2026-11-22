@@ -10,3 +10,11 @@ C_ItemGRingGold *pcd_emit_10018390() { return new C_ItemGRingGold; }
 
 // TARGET: ??_GC_ItemGRingGold@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100183c0 size=0x3
+#include "C_ItemGRingGold.h"
+int C_ItemGRingGold::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
