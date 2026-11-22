@@ -10,3 +10,14 @@ C_TEBSPDecal *pcd_emit_10035260() { return new C_TEBSPDecal; }
 
 // TARGET: ??_GC_TEBSPDecal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10035400 size=0x6
+#include "C_TEBSPDecal.h"
+namespace lifted {
+extern char g_1027e738;
+}
+int C_TEBSPDecal::vfunc9()
+{
+    return (int)&lifted::g_1027e738;
+}
+// END FUNCTION
