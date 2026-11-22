@@ -641,6 +641,7 @@
 0x100138c0 func   ?vfunc15@C_OccultExperience@@UAEHXZ C_OccultExperience::vfunc15
 0x100138d0 func   ?sub_100138d0@@YAHXZ sub_100138d0
 0x100139f0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultExperience@@@Z ClientClassInit
+0x10013a80 func   ?vfunc17@C_OccultBloodBuff@@UAEHXZ C_OccultBloodBuff::vfunc17
 0x10013b10 func   ??_GC_OccultBloodBuff@@UAEPAXI@Z ??_GC_OccultBloodBuff@@UAEPAXI@Z
 0x10013b40 func   ?vfunc15@C_OccultBloodBuff@@UAEHXZ C_OccultBloodBuff::vfunc15
 0x10013b50 func   ?sub_10013b50@@YAHXZ sub_10013b50
