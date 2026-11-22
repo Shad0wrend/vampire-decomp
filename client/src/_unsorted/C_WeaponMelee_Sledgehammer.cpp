@@ -22,6 +22,17 @@ C_WeaponMelee_Sledgehammer *pcd_emit_10009610() { return new C_WeaponMelee_Sledg
 // TARGET: ??_GC_WeaponMelee_Sledgehammer@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10009630 size=0x6
+#include "C_WeaponMelee_Sledgehammer.h"
+namespace lifted {
+extern char g_10275010;
+}
+int C_WeaponMelee_Sledgehammer::vfunc16()
+{
+    return (int)&lifted::g_10275010;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009640 size=0x3
 #include "C_WeaponMelee_Sledgehammer.h"
 int C_WeaponMelee_Sledgehammer::vfunc15()
