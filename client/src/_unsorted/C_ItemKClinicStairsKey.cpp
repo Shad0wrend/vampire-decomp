@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10021e00 size=0x6
+#include "C_ItemKClinicStairsKey.h"
+namespace lifted {
+extern char g_10273ac8;
+}
+int C_ItemKClinicStairsKey::vfunc17()
+{
+    return (int)&lifted::g_10273ac8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021e90 size=0x1e
 #include "C_ItemKClinicStairsKey.h"
 
