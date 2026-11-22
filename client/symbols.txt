@@ -5188,6 +5188,7 @@
 0x101b1e60 func   ?sub_101b1e60@UtlMem@@QAEXXZ UtlMem::sub_101b1e60
 0x101b2080 func   ??_GLabel@vgui2@@UAEPAXI@Z ??_GLabel@vgui2@@UAEPAXI@Z
 0x101b20a0 func   ??1Label@vgui2@@UAE@XZ vgui2::Label::~Label
+0x101b2a70 func   ?vfunc113@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc113
 0x101b2ab0 func   ?vfunc127@Label@vgui2@@UAEHXZ vgui2::Label::vfunc127
 0x101b2c80 func   ?vfunc126@Label@vgui2@@UAEHXZ vgui2::Label::vfunc126
 0x101b33b0 func   ?vfunc137@Label@vgui2@@UAEHXZ vgui2::Label::vfunc137
