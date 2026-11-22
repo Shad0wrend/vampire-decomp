@@ -8863,6 +8863,36 @@ template <> int ClientClassInit<DT_TEArmorRicochet::ignored>(DT_TEArmorRicochet:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032650 size=0x45
+namespace lifted {
+extern char g_10225d20;
+extern char g_10225d54;
+int sub_1002c340();
+}
+struct CUnknown10032650 { void * sub_10032650(); };
+void * CUnknown10032650::sub_10032650()
+{
+    lifted::sub_1002c340();
+    *(int *)this = (int)&lifted::g_10225d54;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x2c) = 0;
+    *(int *)((char *)this + 0x30) = 0;
+    *(int *)((char *)this + 0x40) = 0;
+    *(int *)((char *)this + 0x3c) = 0;
+    *(int *)((char *)this + 0x38) = 0;
+    *(int *)((char *)this + 0x34) = 0;
+    *(int *)((char *)this + 0x44) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10225d20;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100326c0 size=0x12
 namespace lifted {
 extern char g_10225d20;
