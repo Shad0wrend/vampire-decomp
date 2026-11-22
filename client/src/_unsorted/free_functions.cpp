@@ -26502,6 +26502,18 @@ char __stdcall sub_100a9910(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9a80 size=0x37
+struct CUnknown100a9a80 { int sub_100a9a80(int); };
+int CUnknown100a9a80::sub_100a9a80(int a0)
+{
+    *(int *)((char *)this + 0x18b8) = *(int *)((char *)this + 0x18c4);
+    *(int *)((char *)this + 0x18c4) = a0;
+    *(int *)((char *)this + 0x18bc) = ((*(int *)((char *)this + 0x18b8)) ^ a0) & a0;
+    *(int *)((char *)this + 0x18c0) = (~a0) & ((*(int *)((char *)this + 0x18b8)) ^ a0);
+    return (~a0) & ((*(int *)((char *)this + 0x18b8)) ^ a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9af0 size=0x10
 namespace lifted {
 int sub_100ab1e0(int);
