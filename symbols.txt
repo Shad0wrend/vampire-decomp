@@ -14118,6 +14118,7 @@
 0x100126cf func   ?sub_101b14d0@@YAXPBVCRecipientFilter@@HHPBDMHHHPBMHPAM@Z sub_101b14d0
 0x100126d9 func   ?sub_10115980@@YAXPAUSHandleOwner@@@Z sub_10115980
 0x100126de func   ?sub_10097110@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10097110
+0x100126e3 func   ??_GCPASFilter@@UAEPAXI@Z ??_GCPASFilter@@UAEPAXI@Z
 0x100126e3 func   ?sub_1002ab80@TFilterX@@QAEPAU1@E@Z TFilterX::sub_1002ab80
 0x100126e8 func   ?sub_10151c00@@YAMHPAUgamevcollisionevent_t@@ABUimpactdamagetable_t@@M_NAAH@Z sub_10151c00
 0x100126ed func   ?sub_10259de0@@YAPAXG@Z sub_10259de0
