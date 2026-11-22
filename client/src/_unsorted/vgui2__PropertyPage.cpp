@@ -38,3 +38,14 @@ void vgui2::PropertyPage::vfunc121()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101bb690 size=0x6
+#include "vgui2__PropertyPage.h"
+namespace lifted {
+extern char g_102d9500;
+}
+int vgui2::PropertyPage::vfunc102()
+{
+    return (int)&lifted::g_102d9500;
+}
+// END FUNCTION
