@@ -2544,7 +2544,6 @@
 0x1000427d func   ?sub_100b4280@@YIXPAVCBaseEntity@@HH@Z sub_100b4280
 0x10004282 func   ?vfunc103@CTriggerTeleport@@UAEXXZ CTriggerTeleport::vfunc103
 0x10004287 func   ??_GISave@@UAEPAXI@Z ??_GISave@@UAEPAXI@Z
-0x10004287 func   ?vfunc39@ISave@@QAEPAXE@Z ISave::vfunc39
 0x1000428c func   ?sub_100dc480@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc480
 0x10004291 func   ?sub_10363c70@CNPC_VBach@@QAEHPAX@Z CNPC_VBach::sub_10363c70
 0x10004296 func   ?vfunc130@CNPCMaker_Fleshpile@@UAEXH@Z CNPCMaker_Fleshpile::vfunc130
