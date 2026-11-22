@@ -11,6 +11,20 @@ CFrenzyBar *pcd_emit_10050a80() { return new CFrenzyBar; }
 // TARGET: ??_GCFrenzyBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10050cb0 size=0x1a
+#include "CFrenzyBar.h"
+namespace lifted {
+extern int g_103ede98;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual int f5(int); };
+}
+void CFrenzyBar::vfunc112()
+{
+    *(int *)((char *)this + 0x19c) = 0;
+    lifted::g_103ede98 = 0;
+    ((lifted::V *)((int)this + 0x170))->f5(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050cd0 size=0x8
 #include "CFrenzyBar.h"
 namespace lifted {
