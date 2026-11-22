@@ -22,6 +22,17 @@ C_ItemGWerewolfBlood *pcd_emit_10019a10() { return new C_ItemGWerewolfBlood; }
 // TARGET: ??_GC_ItemGWerewolfBlood@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10019a30 size=0x6
+#include "C_ItemGWerewolfBlood.h"
+namespace lifted {
+extern char g_1027460c;
+}
+int C_ItemGWerewolfBlood::vfunc16()
+{
+    return (int)&lifted::g_1027460c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019a40 size=0x3
 #include "C_ItemGWerewolfBlood.h"
 int C_ItemGWerewolfBlood::vfunc15()
