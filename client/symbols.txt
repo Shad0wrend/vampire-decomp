@@ -689,6 +689,7 @@
 0x1001c4d0 func   ?sub_1001c4d0@@YAHXZ sub_1001c4d0
 0x1001c5f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBadluckTalisman@@@Z ClientClassInit
 0x1001c710 func   ??_GC_ItemGWarrens4Passkey@@UAEPAXI@Z ??_GC_ItemGWarrens4Passkey@@UAEPAXI@Z
+0x1001c740 func   ?vfunc15@C_ItemGWarrens4Passkey@@UAEHXZ C_ItemGWarrens4Passkey::vfunc15
 0x1001c750 func   ?sub_1001c750@@YAHXZ sub_1001c750
 0x1001c870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWarrens4Passkey@@@Z ClientClassInit
 0x1001c990 func   ??_GC_ItemGWirelessCamera1@@UAEPAXI@Z ??_GC_ItemGWirelessCamera1@@UAEPAXI@Z
