@@ -22,6 +22,17 @@ C_WeaponMelee_AVampBlade *pcd_emit_1000b190() { return new C_WeaponMelee_AVampBl
 // TARGET: ??_GC_WeaponMelee_AVampBlade@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000b1b0 size=0x6
+#include "C_WeaponMelee_AVampBlade.h"
+namespace lifted {
+extern char g_10274ed8;
+}
+int C_WeaponMelee_AVampBlade::vfunc16()
+{
+    return (int)&lifted::g_10274ed8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b1c0 size=0x3
 #include "C_WeaponMelee_AVampBlade.h"
 int C_WeaponMelee_AVampBlade::vfunc15()
