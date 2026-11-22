@@ -7656,6 +7656,19 @@ char sub_10028780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028790 size=0x25
+int __stdcall sub_10028790(int a0, int a1)
+{
+    *(int *)((char *)a0) = -1040187392;
+    *(int *)((char *)a0 + 4) = -1040187392;
+    *(int *)((char *)a0 + 8) = -1040187392;
+    *(int *)((char *)a1) = 0x42000000;
+    *(int *)((char *)a1 + 4) = 0x42000000;
+    *(int *)((char *)a1 + 8) = 0x42000000;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028850 size=0x8
 int __stdcall sub_10028850(int a0, int a1)
 {
