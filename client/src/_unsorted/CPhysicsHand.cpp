@@ -10,3 +10,10 @@ CPhysicsHand *pcd_emit_1005f6e0() { return new CPhysicsHand; }
 
 // TARGET: ??_GCPhysicsHand@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1005fa30 size=0x1
+#include "CPhysicsHand.h"
+void CPhysicsHand::vfunc97()
+{
+}
+// END FUNCTION

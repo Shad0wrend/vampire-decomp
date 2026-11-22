@@ -2116,6 +2116,7 @@
 0x1005f6e0 func   ??_GCPhysicsHand@@UAEPAXI@Z ??_GCPhysicsHand@@UAEPAXI@Z
 0x1005f700 func   ??1CPhysicsHand@@UAE@XZ CPhysicsHand::~CPhysicsHand
 0x1005f800 func   ?sub_1005f800@CUnknown1005f800@@QAEHXZ CUnknown1005f800::sub_1005f800
+0x1005fa30 func   ?vfunc97@CPhysicsHand@@UAEXXZ CPhysicsHand::vfunc97
 0x1005fa40 func   ?sub_1005fa40@@YADD@Z sub_1005fa40
 0x1005fa50 func   ?sub_1005fa50@@YADD@Z sub_1005fa50
 0x1005fa60 func   ?sub_1005fa60@@YAHHHH@Z sub_1005fa60
