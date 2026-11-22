@@ -53815,6 +53815,21 @@ int CUnknown10151780::sub_10151780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101517a0 size=0x13
+namespace lifted {
+extern char g_102c9f50;
+extern char g_102c9f78;
+}
+struct CUnknown101517a0 { int sub_101517a0(); };
+int CUnknown101517a0::sub_101517a0()
+{
+    if ((*(int *)((char *)this + 8)) == 1) {
+        return (int)&lifted::g_102c9f78;
+    }
+    return (int)&lifted::g_102c9f50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151820 size=0x1e
 struct CUnknown10151820 { void * sub_10151820(); };
 void * CUnknown10151820::sub_10151820()
