@@ -72,6 +72,16 @@ void CInput::vfunc41()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff9e0 size=0xf
+#include "CInput.h"
+int CInput::vfunc42()
+{
+    *(int *)((char *)this + 0xf4) = 0;
+    *(int *)((char *)this + 0xec) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff9f0 size=0x1
 #include "CInput.h"
 void CInput::vfunc43()
