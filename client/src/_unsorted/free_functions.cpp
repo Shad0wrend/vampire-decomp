@@ -27934,6 +27934,16 @@ int CUnknown100bde20::sub_100bde20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde40 size=0xe
+struct CUnknown100bde40 { void sub_100bde40(); };
+void CUnknown100bde40::sub_100bde40()
+{
+    if ((*(int *)((char *)this + 0x24)) == -1) {
+        *(int *)((char *)this + 0x24) = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde50 size=0x5
 struct CUnknown100bde50 { void sub_100bde50(); };
 void CUnknown100bde50::sub_100bde50()
