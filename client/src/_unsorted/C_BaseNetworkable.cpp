@@ -18,3 +18,11 @@ ICollideable * C_BaseNetworkable::GetClientCollideable()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a3b10 size=0x3
+#include "C_BaseNetworkable.h"
+IClientRenderable * C_BaseNetworkable::GetClientRenderable()
+{
+    return 0;
+}
+// END FUNCTION
