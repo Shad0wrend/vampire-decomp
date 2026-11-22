@@ -12,6 +12,17 @@ int C_WeaponRanged_FlameThrower::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027590 size=0x6
+#include "C_WeaponRanged_FlameThrower.h"
+namespace lifted {
+extern char g_1027a9ac;
+}
+int C_WeaponRanged_FlameThrower::vfunc16()
+{
+    return (int)&lifted::g_1027a9ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100275a0 size=0x3
 #include "C_WeaponRanged_FlameThrower.h"
 int C_WeaponRanged_FlameThrower::vfunc15()
