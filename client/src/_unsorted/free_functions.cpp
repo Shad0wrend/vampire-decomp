@@ -30518,6 +30518,22 @@ template <> int ClientClassInit<DT_VGuiScreen::ignored>(DT_VGuiScreen::ignored *
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9160 size=0x29
+namespace lifted {
+int __stdcall sub_100a0240(int);
+}
+struct CUnknown100c9160 { int sub_100c9160(int); };
+int CUnknown100c9160::sub_100c9160(int a0)
+{
+    int t0 = lifted::sub_100a0240(a0);
+    int t1 = *(int *)((char *)this + 0x418);
+    int t2 = *(int *)((char *)this + 0x438);
+    *(int *)((char *)this + 0x440) = t1;
+    *(int *)((char *)this + 0x444) = t2;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c92f0 size=0xb
 namespace lifted {
 struct C10110480 { int sub_10110480(); };
