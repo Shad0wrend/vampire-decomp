@@ -27,6 +27,37 @@ int CVampModeManager::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162370 size=0x72
+#include "CVampModeManager.h"
+namespace lifted {
+extern int g_1027ba58;
+extern int g_105f99d8;
+int sub_10029490();
+int sub_100429f0();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(); virtual int f4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual int f16(); virtual int f17(); };
+}
+void CVampModeManager::vfunc1(char a0, int a1)
+{
+    if (a0 != 0) {
+        int t0 = lifted::sub_100429f0();
+        if (lifted::g_105f99d8 != t0) {
+            ((lifted::V *)lifted::g_105f99d8)->f4();
+            ((lifted::V *)lifted::g_1027ba58)->f17();
+            lifted::g_105f99d8 = lifted::sub_100429f0();
+            ((lifted::V *)lifted::g_105f99d8)->f3(); return;
+        }
+        return;
+    }
+    int t1 = lifted::sub_10029490();
+    if (lifted::g_105f99d8 != t1) {
+        ((lifted::V *)lifted::g_105f99d8)->f4();
+        lifted::g_105f99d8 = lifted::sub_10029490();
+        ((lifted::V *)lifted::g_1027ba58)->f16();
+        ((lifted::V *)lifted::g_105f99d8)->f3();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101623f0 size=0x3
 #include "CVampModeManager.h"
 void CVampModeManager::vfunc6(int a0)
