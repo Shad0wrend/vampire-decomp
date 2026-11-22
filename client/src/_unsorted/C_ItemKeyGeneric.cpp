@@ -12,6 +12,17 @@ int C_ItemKeyGeneric::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003980 size=0x6
+#include "C_ItemKeyGeneric.h"
+namespace lifted {
+extern char g_10271628;
+}
+int C_ItemKeyGeneric::vfunc16()
+{
+    return (int)&lifted::g_10271628;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003990 size=0x3
 #include "C_ItemKeyGeneric.h"
 int C_ItemKeyGeneric::vfunc15()
