@@ -1896,6 +1896,7 @@
 0x100be200 func   ?sub_100be200@UtlMem@@QAEXH@Z UtlMem::sub_100be200
 0x100be2d0 func   ?sub_100be2d0@@YAHXZ sub_100be2d0
 0x100be3d0 func   ?ClientClassInit@@YAHPAUignored@DT_RopeKeyframe@@@Z ClientClassInit
+0x100be930 func   ?sub_100be930@@YAHXZ sub_100be930
 0x100bf130 func   ??_GC_RopeKeyframe@@UAEPAXI@Z ??_GC_RopeKeyframe@@UAEPAXI@Z
 0x100bf700 func   ?sub_100bf700@CUnknown100bf700@@QAEHXZ CUnknown100bf700::sub_100bf700
 0x100c08b0 func   ?sub_100c08b0@CUnknown100c08b0@@QAEXXZ CUnknown100c08b0::sub_100c08b0

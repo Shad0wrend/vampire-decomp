@@ -27534,6 +27534,29 @@ template <> int ClientClassInit<DT_RopeKeyframe::ignored>(DT_RopeKeyframe::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be930 size=0x26
+namespace lifted {
+extern int g_104a3aa0;
+extern int g_104a3aa4;
+extern int g_104a3b38;
+extern int g_104a3b3c;
+extern int g_104a3c90;
+extern int g_104a3c94;
+extern int g_104a3d54;
+}
+int sub_100be930()
+{
+    lifted::g_104a3aa0 = 0;
+    lifted::g_104a3aa4 = 0;
+    lifted::g_104a3c90 = 0;
+    lifted::g_104a3c94 = 0;
+    lifted::g_104a3b38 = 0;
+    lifted::g_104a3b3c = 0;
+    lifted::g_104a3d54 = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf700 size=0xd
 struct CUnknown100bf700 { int sub_100bf700(); };
 int CUnknown100bf700::sub_100bf700()
