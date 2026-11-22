@@ -10,3 +10,11 @@ VBarterLabel *pcd_emit_1016b180() { return new VBarterLabel; }
 
 // TARGET: ??_GVBarterLabel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1016b550 size=0xa
+#include "VBarterLabel.h"
+void VBarterLabel::vfunc88(int a0)
+{
+    *(char *)((char *)this + 0xbb) = 1;
+}
+// END FUNCTION
