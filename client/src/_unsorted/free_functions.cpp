@@ -63215,6 +63215,33 @@ int sub_101ac930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae190 size=0x43
+struct Item { char pad[0x58]; int m_pos; };
+struct Vec {
+	int m_nSize;
+	int m_unk4;
+	Item **m_pItems;
+	int Count() const { return m_nSize; }
+	bool IsValidIndex(int i) const { return i >= 0 && i < m_nSize; }
+	Item *Get(int i) const { return IsValidIndex(i) ? m_pItems[i] : 0; }
+};
+struct TV {
+	char pad[0xe0];
+	Vec m_v;
+	int sub_101ae190(int pos);
+};
+// TARGET: TV::sub_101ae190
+int TV::sub_101ae190(int pos)
+{
+	for (int i = 0; i < m_v.Count(); i++)
+	{
+		if (m_v.Get(i)->m_pos > pos)
+			return i - 1;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afed0 size=0xd
 struct CUnknown101afed0 { char sub_101afed0(char); };
 char CUnknown101afed0::sub_101afed0(char a0)
