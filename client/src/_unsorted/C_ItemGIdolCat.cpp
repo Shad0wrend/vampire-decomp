@@ -22,6 +22,17 @@ C_ItemGIdolCat *pcd_emit_1001ea10() { return new C_ItemGIdolCat; }
 // TARGET: ??_GC_ItemGIdolCat@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001ea30 size=0x6
+#include "C_ItemGIdolCat.h"
+namespace lifted {
+extern char g_10274338;
+}
+int C_ItemGIdolCat::vfunc16()
+{
+    return (int)&lifted::g_10274338;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ea40 size=0x3
 #include "C_ItemGIdolCat.h"
 int C_ItemGIdolCat::vfunc15()
