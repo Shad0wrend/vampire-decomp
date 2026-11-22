@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10010600 size=0x6
+#include "C_ItemMMoneyEnvelope.h"
+namespace lifted {
+extern char g_10272e88;
+}
+int C_ItemMMoneyEnvelope::vfunc17()
+{
+    return (int)&lifted::g_10272e88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010690 size=0x1e
 #include "C_ItemMMoneyEnvelope.h"
 
