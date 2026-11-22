@@ -1597,6 +1597,7 @@
 0x1009f210 func   ?ShouldDraw@C_BaseEntity@@UAE_NXZ C_BaseEntity::ShouldDraw
 0x1009f260 func   ?Collideable_vfunc0@C_BaseEntity@@UAE_NHHH@Z C_BaseEntity::Collideable_vfunc0
 0x1009f260 func   ?sub_1009f260@@YGDHHH@Z sub_1009f260
+0x1009f270 func   ?GetCollisionModelIndex@C_BaseEntity@@UAEHXZ C_BaseEntity::GetCollisionModelIndex
 0x1009f2e0 func   ?ReceiveMessage@C_BaseEntity@@UAEXHAAVbf_read@@@Z C_BaseEntity::ReceiveMessage
 0x1009f2e0 func   ?sub_1009f2e0@@YGXHH@Z sub_1009f2e0
 0x1009f2f0 func   ?GetDataTableBasePtr@C_BaseEntity@@UAEPAXXZ C_BaseEntity::GetDataTableBasePtr
