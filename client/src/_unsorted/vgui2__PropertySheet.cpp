@@ -18,3 +18,11 @@ int vgui2::PropertySheet::vfunc112()
     return *(int *)((char *)this + 0x70);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c8a00 size=0x4
+#include "vgui2__PropertySheet.h"
+int vgui2::PropertySheet::vfunc119()
+{
+    return *(int *)((char *)this + 0x74);
+}
+// END FUNCTION
