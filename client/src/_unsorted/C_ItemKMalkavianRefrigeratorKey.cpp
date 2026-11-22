@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10024380 size=0x6
+#include "C_ItemKMalkavianRefrigeratorKey.h"
+namespace lifted {
+extern char g_10273c6c;
+}
+int C_ItemKMalkavianRefrigeratorKey::vfunc17()
+{
+    return (int)&lifted::g_10273c6c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024410 size=0x1e
 #include "C_ItemKMalkavianRefrigeratorKey.h"
 
