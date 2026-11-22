@@ -21,3 +21,11 @@ int C_TEShatterSurface::vfunc9()
     return (int)&lifted::g_1027f998;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10038220 size=0x3
+#include "C_TEShatterSurface.h"
+int C_TEShatterSurface::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
