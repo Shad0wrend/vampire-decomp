@@ -26642,6 +26642,20 @@ int CUnknown1009f700::sub_1009f700(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f730 size=0x21
+struct CUnknown1009f730 { int sub_1009f730(int); };
+int CUnknown1009f730::sub_1009f730(int a0)
+{
+    int t0 = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x2c0) = t0;
+    int t1 = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x2c4) = t1;
+    int t2 = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x2c8) = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f760 size=0x7
 struct CUnknown1009f760 { char * sub_1009f760(); };
 char * CUnknown1009f760::sub_1009f760()
