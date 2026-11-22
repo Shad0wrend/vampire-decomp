@@ -3353,7 +3353,7 @@
 <rect x="537.5" y="501.0" width="8" height="8" fill="#2ea043"/>
 <rect x="546.5" y="501.0" width="8" height="8" fill="#2ea043"/>
 <rect x="555.5" y="501.0" width="8" height="8" fill="#2ea043"/>
-<text x="574.0" y="508.0" font-size="11" fill="#8b949e">21,447 / 21,448 (100.0%); 1 patched after the link</text>
+<text x="574.0" y="508.0" font-size="11" fill="#8b949e">21,448 / 21,448 (100.0%)</text>
 <text x="14" y="530.0" font-size="12" fill="#e6edf3">Exports</text>
 <rect x="184.0" y="518.0" width="382.0" height="18.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="186.5" y="523.0" width="8" height="8" fill="#2ea043"/>
@@ -5338,7 +5338,7 @@
 
 <text x="14" y="820.0" font-size="14" font-weight="600" fill="#e6edf3">Still needed</text>
 <text x="18" y="841.0" font-size="12" fill="#e6edf3">vampire.dll standalone</text>
-<text x="214" y="841.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">known differences: 1 vtable slot (patched after the link); an in-game test</text>
+<text x="214" y="841.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">an in-game test</text>
 <text x="18" y="864.0" font-size="12" fill="#e6edf3">client.dll</text>
 <text x="214" y="864.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">7,501 functions (1,276,611 bytes) not matched yet</text>
 <text x="18" y="887.0" font-size="12" fill="#e6edf3">Not started</text>

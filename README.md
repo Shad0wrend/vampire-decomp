@@ -41,13 +41,11 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 - *Standalone build* (2026-11-22): `ninja` builds a new `build/vampire.dll` from the sources (see
   [Building](#building)), and `ninja verify` compares it with the original:
   - identical: all 16,590 function blocks in `src/`, all 2,388 static initializers and all 34 data objects;
-  - checked: 282 vtables (21,448 slots), 591 exports (the 32 SafeDisc data tables among them) and 179 imports;
-  - one difference is left, listed with its reason in `config/known_differences.txt`: slot 39 of CSave's vtable,
-    the deleting destructor, which the build writes in after the link.
+  - checked: 282 vtables (21,448 slots, every one filled by the compiler), 591 exports (the 32 SafeDisc data
+    tables among them) and 179 imports;
+  - no difference is left: `config/known_differences.txt` and `config/vtable_patches.txt` are empty (2026-11-23).
 
-  Still open before it can replace the original:
-  - CSave's destructor, so that the compiler fills that slot itself;
-  - an in-game test of the standalone DLL.
+  Still open before it can replace the original: an in-game test of the standalone DLL.
 
 ### The rest of the game
 

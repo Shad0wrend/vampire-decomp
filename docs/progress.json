@@ -218,9 +218,8 @@
   },
   {
    "name": "Vtable slots",
-   "done": 21447,
-   "total": 21448,
-   "note": "1 patched after the link"
+   "done": 21448,
+   "total": 21448
   },
   {
    "name": "Exports",
@@ -233,9 +232,7 @@
    "total": 179
   }
  ],
- "known": {
-  "slot": 1
- },
+ "known": {},
  "client": [
   {
    "name": "no file yet",

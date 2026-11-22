@@ -46,8 +46,9 @@ do and what each file holds.
 7. **Vtable patch**: `tools/patch_vtables.py` writes the words listed in `config/vtable_patches.txt` into the
    DLL, giving `build/vampire.dll`.
    - Each word must still hold the address of the expected symbol, or the step stops.
-   - This step is temporary. It covers slots that the sources do not produce yet; today that is one, slot 39 of
-     CSave's vtable (its deleting destructor).
+   - The list is empty today: the compiler fills every slot itself, so the step only copies the DLL. It stays for
+     a source change that leaves a slot the sources do not produce yet (`pcdecomp standalone
+     --allow-new-differences` lists one there).
 8. **Verify**: `tools/verify.py` (see below).
 
 A full build compiles about 19,000 objects; on 12 threads it takes about 20 minutes. After that, ninja rebuilds
@@ -120,10 +121,8 @@ compiled objects, and checks:
   check; verify reports it (`unlisted`) until `pcdecomp standalone` lists it.
 
 It prints a summary, writes `build/report.json` and exits 0 when every difference it finds is listed in
-`config/known_differences.txt`. A listed difference it no longer finds is reported as stale. Today's list has one
-entry: slot 39 of CSave's vtable. The game's deleting destructor there (0x1019f980) is matched as a block of its
-own, because the headers do not give CSave a destructor yet; the slot the compiler fills holds its own
-`??_GCSave`, and the vtable patch step writes the game's word in its place.
+`config/known_differences.txt`. A listed difference it no longer finds is reported as stale. Today's list is
+empty: verify finds no difference.
 
 A new entry needs a reason.
 
