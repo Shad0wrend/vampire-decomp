@@ -5108,6 +5108,7 @@
 0x100074d2 func   ?sub_1033ce10@CBaseCombatCharacter@@QAE_NII@Z CBaseCombatCharacter::sub_1033ce10
 0x100074d7 func   ?vfunc0@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc0
 0x100074dc func   ?sub_100df030@@YA_NPAUCUnknown100df030@@@Z sub_100df030
+0x100074e1 func   ?PostRestore@CSaveRestoreBlockSet@@UAEXXZ CSaveRestoreBlockSet::PostRestore
 0x100074e1 func   ?vfunc8@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc8
 0x100074e6 func   ?sub_101bd850@CSoundControllerImpView@@QAEXXZ CSoundControllerImpView::sub_101bd850
 0x100074eb func   ?sub_102a0d20@CTroikaUnit102a0d20@@QAEXXZ CTroikaUnit102a0d20::sub_102a0d20
