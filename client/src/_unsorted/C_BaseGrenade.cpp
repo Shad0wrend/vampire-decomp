@@ -46,6 +46,14 @@ bool C_BaseGrenade::vfunc156(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f1a0 size=0x7
+#include "C_BaseGrenade.h"
+float C_BaseGrenade::vfunc157()
+{
+    return *(float *)((char *)this + 0x10f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f1e0 size=0x1e
 #include "C_BaseGrenade.h"
 
