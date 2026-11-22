@@ -34510,6 +34510,20 @@ int CUnknown100f4320::sub_100f4320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6a40 size=0x39
+namespace lifted {
+bool sub_100f6860(int, int, int, int);
+}
+char sub_100f6a40(int a0, int a1, int a2, int a3)
+{
+    bool t0 = lifted::sub_100f6860(a0, a1, a2, a3);
+    if (t0 != 0) {
+        return (char)(lifted::sub_100f6860(a1, a1, a2, a3));
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71d0 size=0x5
 namespace lifted {
 int sub_100f6ce0();
