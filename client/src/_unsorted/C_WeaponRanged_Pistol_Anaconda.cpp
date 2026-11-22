@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000d680 size=0x6
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+namespace lifted {
+extern char g_10272c74;
+}
+int C_WeaponRanged_Pistol_Anaconda::vfunc17()
+{
+    return (int)&lifted::g_10272c74;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d710 size=0x1e
 #include "C_WeaponRanged_Pistol_Anaconda.h"
 

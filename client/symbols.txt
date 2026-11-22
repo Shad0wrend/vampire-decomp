@@ -401,6 +401,7 @@
 0x1000d4c0 func   ?vfunc15@C_WeaponRanged@@UAEHXZ C_WeaponRanged::vfunc15
 0x1000d4d0 func   ?sub_1000d4d0@@YAHXZ sub_1000d4d0
 0x1000d5f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged@@@Z ClientClassInit
+0x1000d680 func   ?vfunc17@C_WeaponRanged_Pistol_Anaconda@@UAEHXZ C_WeaponRanged_Pistol_Anaconda::vfunc17
 0x1000d710 func   ??_GC_WeaponRanged_Pistol_Anaconda@@UAEPAXI@Z ??_GC_WeaponRanged_Pistol_Anaconda@@UAEPAXI@Z
 0x1000d740 func   ?vfunc15@C_WeaponRanged_Pistol_Anaconda@@UAEHXZ C_WeaponRanged_Pistol_Anaconda::vfunc15
 0x1000d750 func   ?sub_1000d750@@YAHXZ sub_1000d750
