@@ -642,12 +642,7 @@ ORIGBYTES 0x10593064, 224
 PUBLIC ?g_1059317c@lifted@@3DA
 ?g_1059317c@lifted@@3DA LABEL BYTE
 ORIGBYTES 0x1059317c, 192
-; 0x1059323c +44: ??_R0?AVISaveRestoreBlockSet@@@8
-PUBLIC ??_R0?AVISaveRestoreBlockSet@@@8
-??_R0?AVISaveRestoreBlockSet@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-ORIGBYTES 0x10593240, 40
-  DB 3 DUP (0)
+  DB 15 DUP (0)
 ; 0x1059328b +21: $rtti_tail_1059328b
 PUBLIC $rtti_tail_1059328b
 $rtti_tail_1059328b LABEL BYTE

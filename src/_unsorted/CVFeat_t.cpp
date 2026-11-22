@@ -2,9 +2,9 @@
 #include "vampire.h"
 
 // FUNCTION: 0x101e4f30 size=0x2c
-#include "CVFeat_t.h"
-// TARGET: CVFeat_t::CVFeat_t
-CVFeat_t::CVFeat_t(int a)
+#include "CVFeat.h"
+// TARGET: CVFeat::CVFeat
+CVFeat::CVFeat(int a)
 {
 	m_pad0000 = a;
 	m_pad0010 = a;
@@ -20,9 +20,9 @@ CVFeat_t::CVFeat_t(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101e4f70 size=0x4a
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
-CVFeat_t::~CVFeat_t()
+CVFeat::~CVFeat()
 {
 	if (m_p20) {
 		delete m_p20;

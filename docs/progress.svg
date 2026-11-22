@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1031" viewBox="0 0 900 1031" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"><rect width="900" height="1031" fill="#0d1117"/><text x="14" y="24.0" font-size="14" font-weight="600" fill="#e6edf3">The game&#x27;s 23 modules by code size: vampire.dll done, client.dll 24.5%, the other 21 not started</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1016" viewBox="0 0 900 1016" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif"><rect width="900" height="1016" fill="#0d1117"/><text x="14" y="24.0" font-size="14" font-weight="600" fill="#e6edf3">The game&#x27;s 23 modules by code size: vampire.dll done, client.dll 24.5%, the other 21 not started</text>
 <rect x="14.0" y="32.0" width="330.6" height="150.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="17.8" y="35.5" width="8" height="8" fill="#2ea043"/>
 <rect x="26.8" y="35.5" width="8" height="8" fill="#2ea043"/>
@@ -3263,7 +3263,7 @@
 <rect x="537.5" y="457.0" width="8" height="8" fill="#2ea043"/>
 <rect x="546.5" y="457.0" width="8" height="8" fill="#2ea043"/>
 <rect x="555.5" y="457.0" width="8" height="8" fill="#2ea043"/>
-<text x="574.0" y="464.0" font-size="11" fill="#8b949e">2,376 / 2,388 (99.5%)</text>
+<text x="574.0" y="464.0" font-size="11" fill="#8b949e">2,388 / 2,388 (100.0%)</text>
 <text x="14" y="486.0" font-size="12" fill="#e6edf3">Data objects</text>
 <rect x="184.0" y="474.0" width="382.0" height="18.0" fill="#0d1117" stroke="#30363d"/>
 <rect x="186.5" y="479.0" width="8" height="8" fill="#2ea043"/>
@@ -5338,17 +5338,16 @@
 
 <text x="14" y="820.0" font-size="14" font-weight="600" fill="#e6edf3">Still needed</text>
 <text x="18" y="841.0" font-size="12" fill="#e6edf3">vampire.dll standalone</text>
-<text x="214" y="841.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">49 vtable slots, 32 SafeDisc exports, 10 functions, 12 static initializers differ; an</text>
-<text x="214" y="856.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">in-game test</text>
-<text x="18" y="879.0" font-size="12" fill="#e6edf3">client.dll</text>
-<text x="214" y="879.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">7,501 functions (1,276,611 bytes) not matched yet</text>
-<text x="18" y="902.0" font-size="12" fill="#e6edf3">Not started</text>
-<text x="214" y="902.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">engine.dll, vphysics.dll, vampire_python21.dll, StudioRender.dll, shaderapidx9.dll,</text>
-<text x="214" y="917.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">GameUI.dll, MaterialSystem.dll, vguimatsurface.dll, vgui2.dll, stdshader_dx8.dll, tier0.dll,</text>
-<text x="214" y="932.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">Vampire.exe, FileSystem_Stdio.dll, stdshader_dx6.dll, vstdlib.dll, stdshader_dbg.dll,</text>
-<text x="214" y="947.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">vaudio_miles.dll, stdshader_dx7.dll, launcher.dll, stdshader_dx9.dll, voice_miles.dll</text>
-<rect x="14" y="967.0" width="11" height="11" fill="#2ea043"/><text x="30" y="977.0" font-size="12" fill="#e6edf3">matched (C++)</text>
-<rect x="145" y="967.0" width="11" height="11" fill="#d29922"/><text x="161" y="977.0" font-size="12" fill="#e6edf3">matched with inline assembly</text>
-<rect x="381" y="967.0" width="11" height="11" fill="#6e7681"/><text x="397" y="977.0" font-size="12" fill="#e6edf3">not yet</text>
-<text x="14" y="995.0" font-size="11" fill="#8b949e">Areas are code bytes; one cell stands for many bytes. Module sizes are their code sections; a module&#x27;s share is the share of its own game code matched. As of 2026-11-22.</text>
-<text x="14" y="1010.0" font-size="11" fill="#8b949e">Regenerate: python tools/make_progress_svg.py (draws this from docs/progress.json; --collect refreshes the JSON from pcdecomp&#x27;s databases and a game folder).</text></svg>
+<text x="214" y="841.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">49 vtable slots, 32 SafeDisc exports, 10 functions differ; an in-game test</text>
+<text x="18" y="864.0" font-size="12" fill="#e6edf3">client.dll</text>
+<text x="214" y="864.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">7,501 functions (1,276,611 bytes) not matched yet</text>
+<text x="18" y="887.0" font-size="12" fill="#e6edf3">Not started</text>
+<text x="214" y="887.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">engine.dll, vphysics.dll, vampire_python21.dll, StudioRender.dll, shaderapidx9.dll,</text>
+<text x="214" y="902.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">GameUI.dll, MaterialSystem.dll, vguimatsurface.dll, vgui2.dll, stdshader_dx8.dll, tier0.dll,</text>
+<text x="214" y="917.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">Vampire.exe, FileSystem_Stdio.dll, stdshader_dx6.dll, vstdlib.dll, stdshader_dbg.dll,</text>
+<text x="214" y="932.0" font-size="11" font-family="ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace" fill="#8b949e">vaudio_miles.dll, stdshader_dx7.dll, launcher.dll, stdshader_dx9.dll, voice_miles.dll</text>
+<rect x="14" y="952.0" width="11" height="11" fill="#2ea043"/><text x="30" y="962.0" font-size="12" fill="#e6edf3">matched (C++)</text>
+<rect x="145" y="952.0" width="11" height="11" fill="#d29922"/><text x="161" y="962.0" font-size="12" fill="#e6edf3">matched with inline assembly</text>
+<rect x="381" y="952.0" width="11" height="11" fill="#6e7681"/><text x="397" y="962.0" font-size="12" fill="#e6edf3">not yet</text>
+<text x="14" y="980.0" font-size="11" fill="#8b949e">Areas are code bytes; one cell stands for many bytes. Module sizes are their code sections; a module&#x27;s share is the share of its own game code matched. As of 2026-11-22.</text>
+<text x="14" y="995.0" font-size="11" fill="#8b949e">Regenerate: python tools/make_progress_svg.py (draws this from docs/progress.json; --collect refreshes the JSON from pcdecomp&#x27;s databases and a game folder).</text></svg>

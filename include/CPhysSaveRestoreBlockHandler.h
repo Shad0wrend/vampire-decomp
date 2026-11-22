@@ -12,7 +12,7 @@ class CRestore;
 #include "utlvector.h"
 #include "utlpriorityqueue.h"
 #include "CPhysObjSaveRestoreOps.h"
-#include "CGlobalEntityList.h"	// IEntityListener
+#include "IEntityListener.h"
 #include "ISaveRestoreBlockHandler.h"
 class CBaseEntity;
 class IPhysicsObject;

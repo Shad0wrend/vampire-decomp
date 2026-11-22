@@ -212,7 +212,7 @@ void CItemContainerLock::vfunc42(CBasePlayer *pPlayer)
 #include "utlrbtree.h"
 #include "utlsortvector.h"
 #include "CBaseEntitySlots.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 #include "CUnknown1020aea0.h"
 #include "CEHandleGet.h"
 #include "engineserver.h"
@@ -224,7 +224,7 @@ void CItemContainerLock::vfunc42(CBasePlayer *pPlayer)
 
 extern int g_1072607c;
 extern unsigned char g_109f0a8c;
-extern CVFeat_t g_109f0ac0;
+extern CVFeat g_109f0ac0;
 void sub_1001509b();
 extern "C" int __cdecl atexit(void (__cdecl *)(void));
 
@@ -249,7 +249,7 @@ void CItemContainerLock::vfunc41(CBasePlayer *pPlayer)
 		pWeapon->vfunc292((CBaseEntity *)this);
 
 	if (pPlayer) {
-		CVFeat_t *pFeat;
+		CVFeat *pFeat;
 		for (int i = 0; i < g_10739d20; i++) {
 			if (*(int *)g_10739d24[i] == 0) {
 				pFeat = g_10739d24[i];
@@ -258,7 +258,7 @@ void CItemContainerLock::vfunc41(CBasePlayer *pPlayer)
 		}
 		if (!(g_109f0a8c & 1)) {
 			g_109f0a8c |= 1;
-			new (&g_109f0ac0, (CUtlPlacement *)0) CVFeat_t(-1);
+			new (&g_109f0ac0, (CUtlPlacement *)0) CVFeat(-1);
 			atexit(sub_1001509b);
 		}
 		pFeat = &g_109f0ac0;

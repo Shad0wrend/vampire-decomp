@@ -119,16 +119,14 @@ compiled objects, and checks:
   check; verify reports it (`unlisted`) until `pcdecomp standalone` lists it.
 
 It prints a summary, writes `build/report.json` and exits 0 when every difference it finds is listed in
-`config/known_differences.txt`. A listed difference it no longer finds is reported as stale. Today's list has 129
+`config/known_differences.txt`. A listed difference it no longer finds is reported as stale. Today's list has 117
 entries:
 - 49 vtable slots, of which 48 words are patched after the link;
 - 10 vtables of helper classes the game has no name for;
 - 15 extra static-initializer entries;
 - 32 SafeDisc data exports that no object exports yet, and the ordinal shift they cause;
 - 10 functions whose built code differs: an inline copy that link.exe keeps from another object, and nine
-  local-static destroys;
-- 12 static initializers whose RTTI records (`??_R1`, `??_R2`, `??_R3`) name other base classes than the game's:
-  those classes' hierarchies in `include/` are not the game's yet.
+  local-static destroys.
 
 The list shrinks as those are fixed; a new entry needs a reason.
 

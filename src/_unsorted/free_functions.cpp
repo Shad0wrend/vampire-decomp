@@ -42865,17 +42865,18 @@ void sub_100f8e20(SEntV116 *ent)
 // END FUNCTION
 
 // FUNCTION: 0x100f8ec0 size=0x72
+#include "CEntityTouchManager.h"
 #include "CEntityListSystem.h"
 #include <malloc.h>
 #include <string.h>
 
-void CEntityListSystem::sub_100f8ec0()
+void CEntityTouchManager::sub_100f8ec0()
 {
-    int n = m_nEntities;
+    int n = m_List.Count();
     if (n) {
         CEntityListSystem_Ent **copy = (CEntityListSystem_Ent **)alloca(n * 4);
-        memcpy(copy, m_pEntities, n * 4);
-        m_nEntities = 0;
+        memcpy(copy, m_List.Base(), n * 4);
+        m_List.RemoveAll();
         for (int i = 0; i < n; i++) {
             if (copy[i]->m_bFlags & 1)
                 copy[i]->sub_100085a8();
@@ -66214,7 +66215,7 @@ struct EngineView49 {
 	virtual void vfunc49(int edict, const float *pos, const char *pszSample, float volume, int soundlevel, int flags, int pitch);
 };
 
-__declspec(dllimport) char *Q_strstr(const char *s, const char *search);
+__declspec(dllimport) const char *Q_stristr(const char *pStr, const char *pSearch);
 int sub_101af070(const char *pszName);
 
 struct CSoundEmitterAmbientView
@@ -66252,7 +66253,7 @@ void sub_101b1a00(CBaseEntity *pEnt, const float *pos, const char *samp, float v
 		}
 		return;
 	}
-	if (samp && (Q_strstr(samp, ".wav") || Q_strstr(samp, ".mp3"))) {
+	if (samp && (Q_stristr(samp, ".wav") || Q_stristr(samp, ".mp3"))) {
 		((EngineView49 *)engine)->vfunc49(pEnt->m_pEdict2e0, pos, samp, vol, soundlevel, flags, pitch);
 		if (duration)
 			*duration = enginesound->vfunc1(samp);
@@ -67780,7 +67781,7 @@ struct CSoundRec101bb990
 
 int *sub_1042bff0(int *pOut, const char *pszName);
 char sub_101b1dd0(const char *pszName, CSoundRec101bb990 *pRec);
-__declspec(dllimport) char *Q_strstr(const char *pszStr, const char *pszSub);
+__declspec(dllimport) const char *Q_stristr(const char *pStr, const char *pSearch);
 
 // TARGET: CUnknown101bc140::sub_101bb990
 void CUnknown101bc140::sub_101bb990(void *pFilter, CBaseEntity *pEntity, int nChannel, const char *pszSample, int nSoundLevel)
@@ -67812,7 +67813,7 @@ void CUnknown101bc140::sub_101bb990(void *pFilter, CBaseEntity *pEntity, int nCh
 			m_Recipients.AddToTail(v);
 	}
 	CSoundRec101bb990 rec;
-	if (!Q_strstr(pszSample, ".wav") && !Q_strstr(pszSample, ".mp3") && sub_101b1dd0(pszSample, &rec))
+	if (!Q_stristr(pszSample, ".wav") && !Q_stristr(pszSample, ".mp3") && sub_101b1dd0(pszSample, &rec))
 		m_flScale = rec.m_flScale;
 	else
 		m_flScale = 1.0f;
@@ -83195,13 +83196,13 @@ void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 // END FUNCTION
 
 // FUNCTION: 0x101e4fe0 size=0x9b
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
 extern void (__cdecl *g_109f3628)(const char *pszFormat, ...);	// Msg
 int *__cdecl sub_10203ed0(int *pOut, const char *pszString);
 int *__cdecl sub_102038e0(int *pOut, CVFeatKV *pKV, const char *pszKey);
 
-void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
+void CVFeat::sub_101e4fe0(CVFeatKV *pKV)
 {
 	if (pKV) {
 		int nTemp;
@@ -83217,7 +83218,7 @@ void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
 // END FUNCTION
 
 // FUNCTION: 0x101e50b0 size=0x340
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 #include "CStatDefaultList.h"
 #include "SNamedList.h"
 #include <stdio.h>
@@ -83246,7 +83247,7 @@ extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 		(dst) = r_; \
 	}
 
-void CVFeat_t::sub_101e50b0(CVFeatKV *pKV, int unused)
+void CVFeat::sub_101e50b0(CVFeatKV *pKV, int unused)
 {
 	char szKey[0x80];
 	if (pKV) {
@@ -83433,9 +83434,9 @@ int CUnknown101e56e0::sub_101e56e0(CBaseCombatCharacter *pCharacter)
 #include "utlrbtree.h"
 #include "utlsortvector.h"
 #include "utlvector.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 #include "CVStatList_t.h"
-int CVFeat_t::sub_101e5b30(void *pCharacter)
+int CVFeat::sub_101e5b30(void *pCharacter)
 {
 	int nTotal = 0;
 	if (pCharacter) {
@@ -83605,7 +83606,7 @@ void CVFeatMgr::sub_101e6040()
 {
 	if (m_ppFeats) {
 		for (int i = 0; i < m_nCount; i++) {
-			CVFeat_t *pFeat = m_ppFeats[i];
+			CVFeat *pFeat = m_ppFeats[i];
 			if (pFeat)
 				delete pFeat;
 			m_ppFeats[i] = 0;
@@ -83627,7 +83628,7 @@ void CVFeatMgr::sub_101e6040()
 			if (m_nAlloc == m_nCount) {
 				m_nAlloc += m_nGrow;
 				if (m_ppFeats) {
-					CVFeat_t **ppNew = new CVFeat_t *[m_nAlloc];
+					CVFeat **ppNew = new CVFeat *[m_nAlloc];
 					int i;
 					for (i = 0; i < m_nCount; i++)
 						ppNew[i] = m_ppFeats[i];
@@ -83637,7 +83638,7 @@ void CVFeatMgr::sub_101e6040()
 					m_ppFeats = ppNew;
 					m_nCount++;
 				} else {
-					m_ppFeats = new CVFeat_t *[m_nAlloc];
+					m_ppFeats = new CVFeat *[m_nAlloc];
 					for (int i = 0; i < m_nAlloc; i++)
 						m_ppFeats[i] = 0;
 					m_nCount++;
@@ -83645,7 +83646,7 @@ void CVFeatMgr::sub_101e6040()
 			} else
 				m_nCount++;
 			if (!m_ppFeats[m_nCount - 1])
-				m_ppFeats[m_nCount - 1] = new CVFeat_t(m_nNextId++);
+				m_ppFeats[m_nCount - 1] = new CVFeat(m_nNextId++);
 			m_ppFeats[m_nCount - 1]->sub_101e4fe0(pKV);
 		}
 		pFile->Release();
@@ -84270,7 +84271,7 @@ float CUnknown101e7e80::sub_101e7e80()
 #include "CBaseEntity.h"
 #include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
 struct IVSkillView268 {
 #define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -84292,7 +84293,7 @@ CSkillOutcome CUnknown10739d08::sub_101e7ea0(void *pPlayer, void *pSkill, char b
 {
 	CSkillOutcome r;
 	IVSkillView268 *pEnt = (IVSkillView268 *)__RTDynamicCast(pSkill, 0, g_10538764, g_105a43c0, 0);
-	int nHave = (*(CVFeat_t ***)((char *)this + 0x1c))[0]->sub_101e56e0(pPlayer);
+	int nHave = (*(CVFeat ***)((char *)this + 0x1c))[0]->sub_101e56e0(pPlayer);
 	int nNeed = pEnt->v268(pPlayer);
 	CVDmgBlock16_t block(4, 0);
 	CUnknown101d8a70 rec;
@@ -84378,7 +84379,7 @@ int *COwner101e80c0::sub_101e80c0(int *pResult, int a, int unused, int limit)
 #include "CBaseEntity.h"
 #include "CBaseCombatCharacter.h"
 #include "CVDmg_t.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
 struct IVSkillView268 {
 #define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -84400,7 +84401,7 @@ CSkillOutcome CUnknown10739d08::sub_101e8100(void *pPlayer, void *pSkill, char b
 {
 	CSkillOutcome r;
 	IVSkillView268 *pEnt = (IVSkillView268 *)__RTDynamicCast(pSkill, 0, g_10538764, g_105a43c0, 0);
-	int nHave = (*(CVFeat_t ***)((char *)this + 0x1c))[2]->sub_101e56e0(pPlayer);
+	int nHave = (*(CVFeat ***)((char *)this + 0x1c))[2]->sub_101e56e0(pPlayer);
 	int nNeed = pEnt->v268(pPlayer);
 	CVDmgBlock16_t block(4, 2);
 	CUnknown101d8a70 rec;
@@ -113145,12 +113146,12 @@ void * CUnknown10230cd0::sub_10230cd0(int a0)
 #include "utlvector.h"
 #include "CVDmg_t.h"
 #include "CVStatList_t.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
 int sub_10202780(int a);
 extern CVStatList_t g_109f0b40;
 extern unsigned char g_109f0a8c;
-extern CVFeat_t g_109f0ac0;
+extern CVFeat g_109f0ac0;
 void sub_10012a8a();
 void sub_1001509b();
 int atexit(void (*)());
@@ -113191,7 +113192,7 @@ found:
 		}
 	case 4:
 		{
-			CVFeat_t *pFeat;
+			CVFeat *pFeat;
 			for (int i = 0; i < g_10739d20; i++) {
 				if (*(int *)g_10739d24[i] == id) {
 					pFeat = g_10739d24[i];
@@ -113200,7 +113201,7 @@ found:
 			}
 			if (!(g_109f0a8c & 1)) {
 				g_109f0a8c |= 1;
-				g_109f0ac0.CVFeat_t::CVFeat_t(-1);
+				g_109f0ac0.CVFeat::CVFeat(-1);
 				atexit(sub_1001509b);
 			}
 			pFeat = &g_109f0ac0;

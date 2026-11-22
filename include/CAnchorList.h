@@ -69,14 +69,9 @@ public:
 };
 
 class CAnchorList : public PCD_GAMESYSTEM8
-#ifndef PCD_INITIALIZERS
-	, public CAnchorListVec	// matched code's view of the member m_list (no base in the game's RTTI)
-#endif
 {
 public:
 	virtual void vfunc5();
 	void *sub_10029e10(unsigned int flags);	// slot 8 scalar deleting destructor (0x10029e10): the vector at +0x08, ~CBaseGameSystem, then the delete
-#ifdef PCD_INITIALIZERS
 	CAnchorListVec m_list;	// 0x08: the SDK's CUtlVector<constraint_anchor_t> m_list
-#endif
 };

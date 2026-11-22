@@ -15,9 +15,9 @@ void sub_1000a99d(CUnknown1019d130 *filter, int a, int b, int c, int d);
 
 void CTempEntsSystem::vfunc2(CUnknown1019d130 *filter, int a, int b, int c, int d)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -32,9 +32,9 @@ void sub_10069e80(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc3(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -49,9 +49,9 @@ void sub_1006a370(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc4(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -66,9 +66,9 @@ void sub_100095d9(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::sub_100584a0(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -83,9 +83,9 @@ void sub_1000ac72(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc6(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p, int q, int r, int s)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -100,9 +100,9 @@ void sub_10013f89(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc7(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p, int q)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -117,9 +117,9 @@ void sub_100072d4(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc8(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, float j, int k, float l, int m, int n, int o, int p, int q)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -134,9 +134,9 @@ void sub_1000b5ff(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc9(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, float j, int k, float l, int m, int n, int o, int p, int q)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -151,9 +151,9 @@ void sub_1000e700(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc10(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, int j, float k, int l, int m, int n, int o, int p)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -169,9 +169,9 @@ extern void sub_1005d110(CUnknown1019d130 *, int, int, int, int, int, int, int, 
 
 void CTempEntsSystem::vfunc11(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, float j, int k, float l, int m, int n, int o, int p, int q)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -186,9 +186,9 @@ void sub_10009d9a(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::vfunc12(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -203,9 +203,9 @@ void sub_1000d044(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc13(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -220,9 +220,9 @@ void sub_100038fa(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc14(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -237,9 +237,9 @@ void sub_100019dd(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc15(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -254,9 +254,9 @@ void sub_100118ba(CUnknown1019d130 *filter, int a, int b, int c, int d);
 
 void CTempEntsSystem::vfunc16(CUnknown1019d130 *filter, int a, int b, int c, int d)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -271,9 +271,9 @@ void sub_1000bf5f(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::sub_10058d70(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -288,9 +288,9 @@ void sub_10011450(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc18(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -305,9 +305,9 @@ void sub_1000ab28(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc19(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -322,9 +322,9 @@ void sub_10005fb0(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc20(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -339,9 +339,9 @@ void sub_10061e80(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 // TARGET: CTempEntsSystem::vfunc21
 void CTempEntsSystem::vfunc21(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j)
 {
-    if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+    if (m_nStatusPushed <= 0 && m_pSuppressHost) {
         if (!filter->sub_1000aa60())
-            filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+            filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
         if (!filter->vfunc2())
             return;
     }
@@ -356,9 +356,9 @@ void sub_10005376(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::vfunc22(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -373,9 +373,9 @@ void sub_1000c919(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc23(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -390,9 +390,9 @@ void sub_10008878(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc24(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -406,9 +406,9 @@ void sub_10064870(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 // TARGET: CTempEntsSystem::vfunc25
 void CTempEntsSystem::vfunc25(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l)
 {
-    if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+    if (m_nStatusPushed <= 0 && m_pSuppressHost) {
         if (!filter->sub_1000aa60())
-            filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+            filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
         if (!filter->vfunc2())
             return;
     }
@@ -421,9 +421,9 @@ void CTempEntsSystem::vfunc25(CUnknown1019d130 *filter, int a, int b, int c, int
 void sub_10064df0(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k);
 void CTempEntsSystem::vfunc26(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -438,9 +438,9 @@ void sub_10009f89(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc27(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -455,9 +455,9 @@ void sub_10013a16(CUnknown1019d130 *filter, int a, int b, int c, int d);
 
 void CTempEntsSystem::vfunc28(CUnknown1019d130 *filter, int a, int b, int c, int d)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -472,9 +472,9 @@ void sub_100029a5(CUnknown1019d130 *filter, int a, int b);
 
 void CTempEntsSystem::vfunc29(CUnknown1019d130 *filter, int a, int b)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -489,9 +489,9 @@ void sub_10007c34(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::vfunc30(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -506,9 +506,9 @@ void sub_1000a533(CUnknown1019d130 *filter, int a, int b, int c, int d);
 
 void CTempEntsSystem::vfunc31(CUnknown1019d130 *filter, int a, int b, int c, int d)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -523,9 +523,9 @@ void sub_10066a00(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc32(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -540,9 +540,9 @@ void sub_1000b325(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::vfunc33(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -557,9 +557,9 @@ void sub_100675b0(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc34(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -574,9 +574,9 @@ void sub_10067b70(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc35(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -591,9 +591,9 @@ void sub_1001220b(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc36(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -608,9 +608,9 @@ void sub_10014e3e(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc37(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -625,9 +625,9 @@ void sub_100140f6(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::vfunc38(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -642,9 +642,9 @@ void sub_10008891(CUnknown1019d130 *filter, int a, int b, int c, int d);
 
 void CTempEntsSystem::vfunc39(CUnknown1019d130 *filter, int a, int b, int c, int d)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -659,9 +659,9 @@ void sub_1000db6b(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, i
 
 void CTempEntsSystem::vfunc40(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+			filter->sub_1019d130((m_nStatusPushed > 0) ? 0 : m_pSuppressHost);
 		if (!filter->vfunc2())
 			return;
 	}
@@ -676,9 +676,9 @@ void sub_1000365c(CUnknown1019d130 *filter, int a, int b, int c);
 
 void CTempEntsSystem::vfunc41(CUnknown1019d130 *filter, int a, int b, int c)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -693,9 +693,9 @@ void sub_10066290(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc42(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}
@@ -710,9 +710,9 @@ void sub_10114440(CUnknown1019d130 *filter, int a, int b, int c, int d, int e);
 
 void CTempEntsSystem::vfunc43(CUnknown1019d130 *filter, int a, int b, int c, int d, int e)
 {
-	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+	if (m_nStatusPushed <= 0 && m_pSuppressHost) {
 		if (!filter->sub_1000aa60())
-			filter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+			filter->sub_1019d130(m_nStatusPushed > 0 ? 0 : m_pSuppressHost);
 		if (filter->vfunc2() == 0)
 			return;
 	}

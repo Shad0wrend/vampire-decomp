@@ -922,8 +922,9 @@ CEntityTouchManager g_107036b0;
 // END FUNCTION
 
 // FUNCTION: 0x100f8cd0 size=0x3
-// TARGET: sub_100f8cd0
-void __stdcall sub_100f8cd0(int) {}
+#include "CEntityTouchManager.h"
+
+void CEntityTouchManager::OnEntityCreated(CBaseEntity *pEntity) {}
 // END FUNCTION
 
 // FUNCTION: 0x100f8cf0 size=0x61
@@ -942,11 +943,10 @@ inline void FastRemoveMove(CUtlVector<T> &v, int elem)
 	}
 }
 
-// TARGET: CEntityTouchManager::vfunc1
-void CEntityTouchManager::vfunc1(CEntityListSystem_Ent *pEnt)
+void CEntityTouchManager::OnEntityDeleted(CBaseEntity *pEntity)
 {
-	if (pEnt->m_bFlags & 1) {
-		int i = m_List.Find(pEnt);
+	if (((CEntityListSystem_Ent *)pEntity)->m_bFlags & 1) {
+		int i = m_List.Find(pEntity);
 		if (m_List.IsValidIndex(i))
 			FastRemoveMove(m_List, i);
 	}

@@ -20,17 +20,13 @@ class CEntityListSystem
 {
 public:
 #ifndef PCD_INITIALIZERS
-	char m_pad0000[4];
-	CEntityListSystem_Ent **m_pEntities;	// 0x04: pending entity list
-	char m_pad0008[8];
-	int m_nEntities;	// 0x10
+	char m_pad0000[0xc];	// the game's object is 0xc bytes (CEntityTouchManager 0x107036b0 follows); no vptr in this view
 #else
 	char m_pad0008[4];	// 0x08: the game's object is 0xc bytes (CEntityTouchManager 0x107036b0 follows)
 #endif
 
 	CEntityListSystem *vfunc8(unsigned int flags);
 	void sub_1000cfbd();
-	void sub_100f8ec0();	// takes a copy of the pending list, empties it and calls sub_100085a8 on each entity whose flag bit 0 is set
 	void vfunc5();	// slot 5: hands the two global pending lists (0x107036b0, 0x10703650) to the global entity list, then empties and frees both vectors
 	void vfunc2();	// slot 2: sub_100f8960 on the global object at 0x10703634, then like slot 5 but through the (deduplicating) sub_100f6d80
 #ifndef PCD_INITIALIZERS	// the root's slots 4 and 7 return void there: these int forms would not override them

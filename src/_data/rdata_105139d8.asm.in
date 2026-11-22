@@ -179,11 +179,7 @@ EXTERN ??_R0?AVIChoreoEventCallback@@@8:BYTE
 EXTERN ??_R0?AVIEffects@@@8:BYTE
 EXTERN ??_R0?AVIMotionEvent@@@8:BYTE
 EXTERN ??_R0?AVIPartitionEnumerator@@@8:BYTE
-EXTERN ??_R0?AVISaveRestoreBlockHandler@@@8:BYTE
-EXTERN ??_R0?AVISaveRestoreBlockSet@@@8:BYTE
-EXTERN ??_R0?AVISceneTokenProcessor@@@8:BYTE
 EXTERN ??_R0?AVIServerEntity@@@8:BYTE
-EXTERN ??_R0?AVITempEntsSystem@@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseAnimating@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseAnimatingOverlay@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseButton@@8:BYTE
@@ -3532,22 +3528,6 @@ PUBLIC ??_R4?$CEntityDataInstantiator@UModelWidthScale@@@@6B@
   DD OFFSET ??_R0?AV?$CEntityDataInstantiator@UModelWidthScale@@@@@8
   DD OFFSET ??_R3?$CEntityDataInstantiator@UModelWidthScale@@@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051907d +7: $rtti_tail_1051907d
-PUBLIC $rtti_tail_1051907d
-$rtti_tail_1051907d LABEL BYTE
-ORIGBYTES 0x1051907d, 7
-  DB 4 DUP (0)
-; 0x105191b8 +28: ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
-PUBLIC ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
-??_R1A@?0A@A@ISaveRestoreBlockHandler@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVISaveRestoreBlockHandler@@@8
-ORIGBYTES 0x105191bc, 24
-  DB 9 DUP (0)
-; 0x1051921d +11: $rtti_tail_1051921d
-PUBLIC $rtti_tail_1051921d
-$rtti_tail_1051921d LABEL BYTE
-ORIGBYTES 0x1051921d, 11
   DB 12 DUP (0)
 ; 0x105192e4 +28: ??_R1A@?0A@A@CPhysicsSpring@@8
 PUBLIC ??_R1A@?0A@A@CPhysicsSpring@@8
@@ -3915,17 +3895,7 @@ PUBLIC ??_R4CSteamJet@@6B@
   DD OFFSET ??_R0?AVCSteamJet@@@8
   DD OFFSET ??_R3CSteamJet@@8
   DB 000h,000h,000h,000h
-  DB 12 DUP (0)
-; 0x10519a2c +28: ??_R1A@?0A@A@ITempEntsSystem@@8
-PUBLIC ??_R1A@?0A@A@ITempEntsSystem@@8
-??_R1A@?0A@A@ITempEntsSystem@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVITempEntsSystem@@@8
-ORIGBYTES 0x10519a30, 24
-  DB 5 DUP (0)
-; 0x10519a6d +7: $rtti_tail_10519a6d
-PUBLIC $rtti_tail_10519a6d
-$rtti_tail_10519a6d LABEL BYTE
-ORIGBYTES 0x10519a6d, 7
+  DB 4 DUP (0)
 ; 0x10519bd4 +28: ??_R1A@?0A@A@CTEBeamEntPoint@@8
 PUBLIC ??_R1A@?0A@A@CTEBeamEntPoint@@8
 ??_R1A@?0A@A@CTEBeamEntPoint@@8 LABEL BYTE
@@ -4752,17 +4722,6 @@ PUBLIC ??_R4CSceneEntity@@6B@
   DD OFFSET ??_R0?AVCSceneEntity@@@8
   DD OFFSET ??_R3CSceneEntity@@8
   DB 000h,000h,000h,000h
-; 0x1051ac48 +28: ??_R1A@?0A@A@ISceneTokenProcessor@@8
-PUBLIC ??_R1A@?0A@A@ISceneTokenProcessor@@8
-??_R1A@?0A@A@ISceneTokenProcessor@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVISceneTokenProcessor@@@8
-ORIGBYTES 0x1051ac4c, 24
-  DB 1 DUP (0)
-; 0x1051ac85 +7: $rtti_tail_1051ac85
-PUBLIC $rtti_tail_1051ac85
-$rtti_tail_1051ac85 LABEL BYTE
-ORIGBYTES 0x1051ac85, 7
-  DB 12 DUP (0)
 ; 0x1051acb8 +28: ??_R1A@?0A@A@CInstancedSceneEntity@@8
 PUBLIC ??_R1A@?0A@A@CInstancedSceneEntity@@8
 ??_R1A@?0A@A@CInstancedSceneEntity@@8 LABEL BYTE
@@ -5080,13 +5039,6 @@ PUBLIC ??_R4CCameraTrack@@6B@
   DD OFFSET ??_R0?AVCCameraTrack@@@8
   DD OFFSET ??_R3CCameraTrack@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051b629 +11: $rtti_tail_1051b629
-PUBLIC $rtti_tail_1051b629
-$rtti_tail_1051b629 LABEL BYTE
-ORIGBYTES 0x1051b629, 3
-  DD OFFSET ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
-  DB 000h,000h,000h,000h
   DB 12 DUP (0)
 ; 0x1051b8c0 +28: ??_R1A@?0A@A@CTerrainMorph@@8
 PUBLIC ??_R1A@?0A@A@CTerrainMorph@@8
@@ -5310,11 +5262,6 @@ PUBLIC ??_R4CEffectsServer@@6B@
   DD OFFSET ??_R0?AVCEffectsServer@@@8
   DD OFFSET ??_R3CEffectsServer@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051bd8d +7: $rtti_tail_1051bd8d
-PUBLIC $rtti_tail_1051bd8d
-$rtti_tail_1051bd8d LABEL BYTE
-ORIGBYTES 0x1051bd8d, 7
   DB 8 DUP (0)
 ; 0x1051bddc +28: ??_R1A@?0A@A@CGlobalEntityList@@8
 PUBLIC ??_R1A@?0A@A@CGlobalEntityList@@8
@@ -5340,11 +5287,6 @@ PUBLIC ??_R4CGlobalEntityList@@6B@
   DD OFFSET ??_R0?AVCGlobalEntityList@@@8
   DD OFFSET ??_R3CGlobalEntityList@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051bef9 +7: $rtti_tail_1051bef9
-PUBLIC $rtti_tail_1051bef9
-$rtti_tail_1051bef9 LABEL BYTE
-ORIGBYTES 0x1051bef9, 7
   DB 12 DUP (0)
 ; 0x1051bfbc +32: ??_R2CEnvParticle@@8
 PUBLIC ??_R2CEnvParticle@@8
@@ -7668,32 +7610,7 @@ PUBLIC ??_R4CPropLargeHullIgnore@@6B@
   DD OFFSET ??_R0?AVCPropLargeHullIgnore@@@8
   DD OFFSET ??_R3CPropLargeHullIgnore@@8
   DB 000h,000h,000h,000h
-  DB 13 DUP (0)
-; 0x1051fc99 +11: $rtti_tail_1051fc99
-PUBLIC $rtti_tail_1051fc99
-$rtti_tail_1051fc99 LABEL BYTE
-ORIGBYTES 0x1051fc99, 3
-  DD OFFSET ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
-  DB 000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x1051fe35 +7: $rtti_tail_1051fe35
-PUBLIC $rtti_tail_1051fe35
-$rtti_tail_1051fe35 LABEL BYTE
-ORIGBYTES 0x1051fe35, 7
-  DB 12 DUP (0)
-; 0x1051fe68 +28: ??_R1A@?0A@A@ISaveRestoreBlockSet@@8
-PUBLIC ??_R1A@?0A@A@ISaveRestoreBlockSet@@8
-??_R1A@?0A@A@ISaveRestoreBlockSet@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVISaveRestoreBlockSet@@@8
-ORIGBYTES 0x1051fe6c, 24
-  DB 1 DUP (0)
-; 0x1051fea5 +11: $rtti_tail_1051fea5
-PUBLIC $rtti_tail_1051fea5
-$rtti_tail_1051fea5 LABEL BYTE
-ORIGBYTES 0x1051fea5, 3
-  DD OFFSET ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
-  DB 000h,000h,000h,000h
-  DB 4 DUP (0)
+  DB 8 DUP (0)
 ; 0x1051ff34 +24: ??_R4CCineNPC@@6BCAI_BaseNPC@@@
 PUBLIC ??_R4CCineNPC@@6BCAI_BaseNPC@@@
 ??_R4CCineNPC@@6BCAI_BaseNPC@@@ LABEL BYTE

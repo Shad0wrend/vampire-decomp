@@ -208,7 +208,7 @@
   },
   {
    "name": "Static initializers",
-   "done": 2376,
+   "done": 2388,
    "total": 2388
   },
   {
@@ -238,7 +238,6 @@
   "slot": 49,
   "vtable": 10,
   "function": 10,
-  "initializer": 12,
   "xcu-extra": 15,
   "export-missing": 32,
   "export-ordinal": 1

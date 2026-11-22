@@ -1033,13 +1033,7 @@ PUBLIC ?g_1053c5e0@@3PAUSPhysObjects@@A
 ?g_1053c5e0@@3PAUSPhysObjects@@A LABEL BYTE
   DD OFFSET ?g_106bda60@@3VCPhysSaveRestoreBlockHandler@@A + 4
 ORIGBYTES 0x1053c5e4, 640
-  DB 4 DUP (0)
-; 0x1053c8b8 +48: ??_R0?AVISaveRestoreBlockHandler@@@8
-PUBLIC ??_R0?AVISaveRestoreBlockHandler@@@8
-??_R0?AVISaveRestoreBlockHandler@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-ORIGBYTES 0x1053c8bc, 44
-  DB 15 DUP (0)
+  DB 3 DUP (0)
 ; 0x1053c947 +317: $rtti_tail_1053c947
 PUBLIC $rtti_tail_1053c947
 $rtti_tail_1053c947 LABEL BYTE

@@ -823,12 +823,7 @@ ORIGBYTES 0x105a31f8, 16
 PUBLIC ?g_105a3208@@3PAHA
 ?g_105a3208@@3PAHA LABEL BYTE
 ORIGBYTES 0x105a3208, 564
-; 0x105a343c +52: ??_R0?AV?$VSupportList_t@VCVFeat@@@@@8
-PUBLIC ??_R0?AV?$VSupportList_t@VCVFeat@@@@@8
-??_R0?AV?$VSupportList_t@VCVFeat@@@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-ORIGBYTES 0x105a3440, 48
-  DB 11 DUP (0)
+  DB 15 DUP (0)
 ; 0x105a348b +205: $rtti_tail_105a348b
 PUBLIC $rtti_tail_105a348b
 $rtti_tail_105a348b LABEL BYTE

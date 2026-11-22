@@ -1289,7 +1289,7 @@ void CHL2_Player::vfunc471()
 #include "CBaseCombatCharacter.h"
 #include "CBasePlayer.h"
 #include "CHL2_Player.h"
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 #include "engineserver.h"
 #include "ConVar.h"
 
@@ -1342,7 +1342,7 @@ void CHL2_Player::vfunc470()
 	sub_10119750("World light on Player: %f", engine->vfunc118(pPlayer->vfunc192()));
 	sub_10119750("World Min: %.2f   Max: %.2f   Scale: %.2f", g_10938310.GetFloat(), g_10938358.GetFloat(), g_10938358.GetFloat() - g_10938310.GetFloat());
 	sub_10119750("Player Light Level: %f", pPlayer->m_f1C8C);
-	CVFeat_t *pFeat = CVFeatSet::Find(1);
+	CVFeat *pFeat = CVFeatSet::Find(1);
 	sub_10119750("Stealth modifier: %d Stealth total:%d", ((CBaseCombatCharacter *)pPlayer)->sub_1032fab0(), pFeat->sub_101e56e0(pPlayer));
 	sub_10119750("Hostile / Frightened NPCs that can see the player:");
 	for (EntView351e10 *pEnt = sub_101d1d10(pPlayer, 0); pEnt; pEnt = sub_101d1d10(pPlayer, pEnt)) {

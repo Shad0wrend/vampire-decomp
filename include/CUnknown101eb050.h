@@ -3,7 +3,7 @@
 // inventory section at +0x10.
 #pragma once
 
-#include "CVFeat_t.h"
+#include "CVFeat.h"
 
 class CUnknown101eb050
 {

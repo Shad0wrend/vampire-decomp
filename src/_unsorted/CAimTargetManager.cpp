@@ -3,7 +3,7 @@
 
 // FUNCTION: 0x100f6990 size=0x3
 #include "CAimTargetManager.h"
-void CAimTargetManager::vfunc0(int a0)
+void CAimTargetManager::OnEntityCreated(CBaseEntity *pEntity)
 {
 }
 // END FUNCTION
@@ -27,18 +27,13 @@ struct AimTargetList : CUtlVector<CBaseEntity *>
 	}
 };
 
-struct AimMgrView {
-	void *m_vtbl;
-	AimTargetList m_Targets;
-};
-
-void CAimTargetManager::vfunc1(CBaseEntity *pEntity)
+void CAimTargetManager::OnEntityDeleted(CBaseEntity *pEntity)
 {
 	if (pEntity->sub_100b3700() & 0x10000)
 	{
-		int i = ((AimMgrView *)this)->m_Targets.Find(pEntity);
-		if (i >= 0 && i < m_nTargets)
-			((AimMgrView *)this)->m_Targets.FastRemoveMove(i);
+		int i = m_targetList.Find(pEntity);
+		if (i >= 0 && i < m_targetList.m_Size)
+			((AimTargetList *)&m_targetList)->FastRemoveMove(i);
 	}
 }
 // END FUNCTION

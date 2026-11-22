@@ -40,17 +40,15 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 - *Hybrid build*: the original DLL with the compiled functions linked in. It loads and plays in the game.
 - *Standalone build* (2026-11-22): `ninja` builds a new `build/vampire.dll` from the sources (see
   [Building](#building)), and `ninja verify` compares it with the original:
-  - identical: 16,579 of the 16,589 function blocks in `src/`, 2,376 of the 2,388 static initializers and all 34
-    data objects;
+  - identical: 16,579 of the 16,589 function blocks in `src/`, all 2,388 static initializers and all 34 data
+    objects;
   - checked: 282 vtables, 591 exports and 179 imports;
-  - every remaining difference is listed with its reason in `config/known_differences.txt` (129 entries).
+  - every remaining difference is listed with its reason in `config/known_differences.txt` (117 entries).
 
   Still open before it can replace the original:
   - 49 vtable slots, 48 of them patched after the link;
   - 32 SafeDisc data exports not built yet;
   - 10 functions (local-static destroys and one inline copy);
-  - 12 static initializers whose RTTI records name other base classes than the game's (those classes'
-    hierarchies in `include/`);
   - an in-game test of the standalone DLL.
 
 ### The rest of the game

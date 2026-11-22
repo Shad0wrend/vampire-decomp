@@ -13,7 +13,7 @@
 
 extern CGlobalEntityList *g_10566458;
 extern CAnchorList g_106b8584;	// g_AnchorList (physconstraint.cpp): m_list, a CUtlVector of 20-byte anchors, at +8
-#define ANCHOR_LIST (*(CUtlVector20 *)static_cast<CAnchorListVec *>(&g_106b8584))
+#define ANCHOR_LIST (*(CUtlVector20 *)&g_106b8584.m_list)
 void sub_101cd940(CConstraintAnchor *pEntity);
 
 struct CAnchorSlots
