@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10020f00 size=0x6
+#include "C_ItemKLillyKey.h"
+namespace lifted {
+extern char g_10273a20;
+}
+int C_ItemKLillyKey::vfunc17()
+{
+    return (int)&lifted::g_10273a20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020f90 size=0x1e
 #include "C_ItemKLillyKey.h"
 
