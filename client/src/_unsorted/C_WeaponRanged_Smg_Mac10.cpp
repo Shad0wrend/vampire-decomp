@@ -22,6 +22,17 @@ C_WeaponRanged_Smg_Mac10 *pcd_emit_1000e610() { return new C_WeaponRanged_Smg_Ma
 // TARGET: ??_GC_WeaponRanged_Smg_Mac10@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000e630 size=0x6
+#include "C_WeaponRanged_Smg_Mac10.h"
+namespace lifted {
+extern char g_10274c64;
+}
+int C_WeaponRanged_Smg_Mac10::vfunc16()
+{
+    return (int)&lifted::g_10274c64;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000e640 size=0x3
 #include "C_WeaponRanged_Smg_Mac10.h"
 int C_WeaponRanged_Smg_Mac10::vfunc15()
