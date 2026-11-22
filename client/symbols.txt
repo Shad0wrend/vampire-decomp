@@ -2076,6 +2076,7 @@
 0x100586e0 func   ??_GCHudManagerPanel@@UAEPAXI@Z ??_GCHudManagerPanel@@UAEPAXI@Z
 0x10058700 func   ??1CHudManagerPanel@@UAE@XZ CHudManagerPanel::~CHudManagerPanel
 0x10058700 func   ?sub_10058700@CUnknown10058700@@QAEXXZ CUnknown10058700::sub_10058700
+0x10058df0 func   ?vfunc3@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc3
 0x10058e60 func   ?vfunc10@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc10
 0x10058e70 func   ?vfunc9@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc9
 0x10058e80 func   ?vfunc24@CHudManagerPanel@@UAEHXZ CHudManagerPanel::vfunc24
