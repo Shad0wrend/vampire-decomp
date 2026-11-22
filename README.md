@@ -11,6 +11,12 @@ automatic passes (machine drafts, copies of already matched twin functions).
 
 ## Status (2026-11-21)
 
+![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
+
+The picture is drawn by `tools/make_progress_svg.py` from `docs/progress.json` (numbers of 2026-11-22). To redraw
+it: `python tools/make_progress_svg.py`; with `--collect --client <client project> --game <game folder>` it first
+reads the numbers again from pcdecomp's databases and the game's files.
+
 ### `vampire.dll`: every function matches
 
 | | Functions | Code bytes |
@@ -51,7 +57,7 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in a separate project: 3,101 of 11,963 functions (25.9%), 147,561 of 1,644,370 code bytes (9.0%) as of 2026-11-21 |
+| `client.dll` (client game code) | In progress in a separate project: 8,511 of 16,012 functions (53.2%), 413,966 of 1,690,577 code bytes (24.5%) as of 2026-11-22 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |

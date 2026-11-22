@@ -1,0 +1,356 @@
+{
+ "date": "2026-11-22",
+ "modules": [
+  {
+   "name": "vampire.dll",
+   "code": 4472487,
+   "done": 1.0
+  },
+  {
+   "name": "client.dll",
+   "code": 1973229,
+   "done": 0.2448666934425347
+  },
+  {
+   "name": "GameUI.dll",
+   "code": 316990,
+   "done": 0.0
+  },
+  {
+   "name": "Vampire.exe",
+   "code": 113348,
+   "done": 0.0
+  },
+  {
+   "name": "engine.dll",
+   "code": 1515435,
+   "done": 0.0
+  },
+  {
+   "name": "vphysics.dll",
+   "code": 817458,
+   "done": 0.0
+  },
+  {
+   "name": "vampire_python21.dll",
+   "code": 455330,
+   "done": 0.0
+  },
+  {
+   "name": "StudioRender.dll",
+   "code": 435468,
+   "done": 0.0
+  },
+  {
+   "name": "shaderapidx9.dll",
+   "code": 329500,
+   "done": 0.0
+  },
+  {
+   "name": "MaterialSystem.dll",
+   "code": 292828,
+   "done": 0.0
+  },
+  {
+   "name": "vguimatsurface.dll",
+   "code": 212811,
+   "done": 0.0
+  },
+  {
+   "name": "vgui2.dll",
+   "code": 135387,
+   "done": 0.0
+  },
+  {
+   "name": "stdshader_dx8.dll",
+   "code": 116956,
+   "done": 0.0
+  },
+  {
+   "name": "tier0.dll",
+   "code": 116832,
+   "done": 0.0
+  },
+  {
+   "name": "FileSystem_Stdio.dll",
+   "code": 111486,
+   "done": 0.0
+  },
+  {
+   "name": "stdshader_dx6.dll",
+   "code": 86124,
+   "done": 0.0
+  },
+  {
+   "name": "vstdlib.dll",
+   "code": 57512,
+   "done": 0.0
+  },
+  {
+   "name": "stdshader_dbg.dll",
+   "code": 52076,
+   "done": 0.0
+  },
+  {
+   "name": "vaudio_miles.dll",
+   "code": 46885,
+   "done": 0.0
+  },
+  {
+   "name": "stdshader_dx7.dll",
+   "code": 44572,
+   "done": 0.0
+  },
+  {
+   "name": "launcher.dll",
+   "code": 35442,
+   "done": 0.0
+  },
+  {
+   "name": "stdshader_dx9.dll",
+   "code": 31612,
+   "done": 0.0
+  },
+  {
+   "name": "voice_miles.dll",
+   "code": 25301,
+   "done": 0.0
+  }
+ ],
+ "vampire": [
+  {
+   "name": "_unsorted",
+   "cpp": 1411642,
+   "asm": 34494,
+   "open": 0,
+   "n_cpp": 9612,
+   "n_asm": 66,
+   "n_open": 0
+  },
+  {
+   "name": "dlls",
+   "cpp": 1091150,
+   "asm": 48208,
+   "open": 0,
+   "n_cpp": 6750,
+   "n_asm": 58,
+   "n_open": 0
+  },
+  {
+   "name": "dlls/hl2_dll",
+   "cpp": 199777,
+   "asm": 2642,
+   "open": 0,
+   "n_cpp": 788,
+   "n_asm": 5,
+   "n_open": 0
+  },
+  {
+   "name": "game_shared",
+   "cpp": 161018,
+   "asm": 5824,
+   "open": 0,
+   "n_cpp": 1158,
+   "n_asm": 4,
+   "n_open": 0
+  },
+  {
+   "name": "_init",
+   "cpp": 88290,
+   "asm": 0,
+   "open": 0,
+   "n_cpp": 5420,
+   "n_asm": 0,
+   "n_open": 0
+  },
+  {
+   "name": "public",
+   "cpp": 4070,
+   "asm": 250,
+   "open": 0,
+   "n_cpp": 42,
+   "n_asm": 2,
+   "n_open": 0
+  },
+  {
+   "name": "game_shared/hl2",
+   "cpp": 1837,
+   "asm": 0,
+   "open": 0,
+   "n_cpp": 26,
+   "n_asm": 0,
+   "n_open": 0
+  },
+  {
+   "name": "tier1",
+   "cpp": 179,
+   "asm": 0,
+   "open": 0,
+   "n_cpp": 2,
+   "n_asm": 0,
+   "n_open": 0
+  },
+  {
+   "name": "public/keyframe",
+   "cpp": 33,
+   "asm": 0,
+   "open": 0,
+   "n_cpp": 1,
+   "n_asm": 0,
+   "n_open": 0
+  }
+ ],
+ "standalone": [
+  {
+   "name": "Function blocks",
+   "done": 16579,
+   "total": 16589
+  },
+  {
+   "name": "Static initializers",
+   "done": 2376,
+   "total": 2388
+  },
+  {
+   "name": "Data objects",
+   "done": 34,
+   "total": 34
+  },
+  {
+   "name": "Vtable slots",
+   "done": 21399,
+   "total": 21448,
+   "note": "48 patched after the link"
+  },
+  {
+   "name": "Exports",
+   "done": 559,
+   "total": 591,
+   "note": "SafeDisc data exports missing"
+  },
+  {
+   "name": "Imports",
+   "done": 179,
+   "total": 179
+  }
+ ],
+ "known": {
+  "slot": 49,
+  "vtable": 10,
+  "function": 10,
+  "initializer": 12,
+  "xcu-extra": 15,
+  "export-missing": 32,
+  "export-ordinal": 1
+ },
+ "client": [
+  {
+   "name": "no file yet",
+   "cpp": 304719,
+   "asm": 4812,
+   "open": 755242,
+   "n_cpp": 3193,
+   "n_asm": 28,
+   "n_open": 4706
+  },
+  {
+   "name": "cl_dll",
+   "cpp": 28436,
+   "asm": 0,
+   "open": 443140,
+   "n_cpp": 782,
+   "n_asm": 0,
+   "n_open": 2420
+  },
+  {
+   "name": "game_shared",
+   "cpp": 19694,
+   "asm": 0,
+   "open": 60420,
+   "n_cpp": 214,
+   "n_asm": 0,
+   "n_open": 278
+  },
+  {
+   "name": "_init",
+   "cpp": 54335,
+   "asm": 0,
+   "open": 0,
+   "n_cpp": 4254,
+   "n_asm": 0,
+   "n_open": 0
+  },
+  {
+   "name": "vgui2/controls",
+   "cpp": 30,
+   "asm": 0,
+   "open": 10782,
+   "n_cpp": 1,
+   "n_asm": 0,
+   "n_open": 37
+  },
+  {
+   "name": "cl_dll/hl2_hud",
+   "cpp": 905,
+   "asm": 0,
+   "open": 3557,
+   "n_cpp": 18,
+   "n_asm": 0,
+   "n_open": 40
+  },
+  {
+   "name": "dlls",
+   "cpp": 50,
+   "asm": 0,
+   "open": 2482,
+   "n_cpp": 4,
+   "n_asm": 0,
+   "n_open": 12
+  },
+  {
+   "name": "public",
+   "cpp": 698,
+   "asm": 108,
+   "open": 119,
+   "n_cpp": 14,
+   "n_asm": 1,
+   "n_open": 5
+  },
+  {
+   "name": "vphysics",
+   "cpp": 0,
+   "asm": 0,
+   "open": 469,
+   "n_cpp": 0,
+   "n_asm": 0,
+   "n_open": 1
+  },
+  {
+   "name": "Tracker/ServerBrowser",
+   "cpp": 0,
+   "asm": 0,
+   "open": 292,
+   "n_cpp": 0,
+   "n_asm": 0,
+   "n_open": 1
+  },
+  {
+   "name": "tier1",
+   "cpp": 179,
+   "asm": 0,
+   "open": 0,
+   "n_cpp": 2,
+   "n_asm": 0,
+   "n_open": 0
+  },
+  {
+   "name": "dlls/hl1_dll",
+   "cpp": 0,
+   "asm": 0,
+   "open": 108,
+   "n_cpp": 0,
+   "n_asm": 0,
+   "n_open": 1
+  }
+ ]
+}
