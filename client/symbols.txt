@@ -1091,6 +1091,7 @@
 0x10032a40 func   ??1C_TEBeamEntPoint@@UAE@XZ C_TEBeamEntPoint::~C_TEBeamEntPoint
 0x10032a40 func   ?sub_10032a40@CUnknown10032a40@@QAEHXZ CUnknown10032a40::sub_10032a40
 0x10032b80 func   ?vfunc9@C_TEBeamEntPoint@@UAEHXZ C_TEBeamEntPoint::vfunc9
+0x10032b90 func   ?vfunc8@C_TEBeamEntPoint@@UAEHXZ C_TEBeamEntPoint::vfunc8
 0x10032ba0 func   ?sub_10032ba0@@YAHXZ sub_10032ba0
 0x10032c40 func   ?sub_10032c40@@YAHXZ sub_10032c40
 0x10032cb0 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamEntPoint@@@Z ClientClassInit

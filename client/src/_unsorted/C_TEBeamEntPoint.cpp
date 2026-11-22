@@ -21,3 +21,11 @@ int C_TEBeamEntPoint::vfunc9()
     return (int)&lifted::g_1027d4bc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10032b90 size=0x3
+#include "C_TEBeamEntPoint.h"
+int C_TEBeamEntPoint::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
