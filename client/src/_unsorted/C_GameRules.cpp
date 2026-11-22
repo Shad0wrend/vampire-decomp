@@ -24,3 +24,10 @@ void C_GameRules::vfunc2()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100bbc80 size=0x1
+#include "C_GameRules.h"
+void C_GameRules::vfunc3()
+{
+}
+// END FUNCTION
