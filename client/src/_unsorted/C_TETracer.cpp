@@ -21,3 +21,11 @@ int C_TETracer::vfunc9()
     return (int)&lifted::g_10282270;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10040b00 size=0x3
+#include "C_TETracer.h"
+int C_TETracer::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
