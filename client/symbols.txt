@@ -5052,6 +5052,7 @@
 0x101824d0 func   ?vfunc102@CharEditStatsPanel@@UAEHXZ CharEditStatsPanel::vfunc102
 0x101826f0 func   ??_GVHotkeysUI@@UAEPAXI@Z ??_GVHotkeysUI@@UAEPAXI@Z
 0x10182710 func   ??1VHotkeysUI@@UAE@XZ VHotkeysUI::~VHotkeysUI
+0x101839e0 func   ?sub_101839e0@CUnknown101839e0@@QAEHXZ CUnknown101839e0::sub_101839e0
 0x10183ac0 func   ?sub_10183ac0@CUnknown10183ac0@@QAEDXZ CUnknown10183ac0::sub_10183ac0
 0x10184500 func   ?sub_10184500@@YAHXZ sub_10184500
 0x101847f0 func   ??_GVItemInfoUI@@UAEPAXI@Z ??_GVItemInfoUI@@UAEPAXI@Z
