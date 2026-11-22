@@ -37436,6 +37436,22 @@ void sub_1010c620(const Vector &v1, const Vector &v2, const Vector &v3, Vector &
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010db50 size=0x18
+namespace lifted {
+extern char g_10235640;
+int sub_101d12a1(int);
+}
+int sub_1010db50()
+{
+    int t0 = lifted::sub_101d12a1(4);
+    if (t0 != 0) {
+        *(int *)((char *)t0) = (int)&lifted::g_10235640;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010df00 size=0x1f
 struct CUnk10247770
 {
