@@ -27991,6 +27991,20 @@ template <> int ClientClassInit<DT_HudEntity::ignored>(DT_HudEntity::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc660 size=0x1f
+namespace lifted {
+struct V { virtual int f0(int); };
+}
+struct CUnknown100bc660 { void sub_100bc660(); };
+void CUnknown100bc660::sub_100bc660()
+{
+    if ((*(int *)((char *)this + 0x42c)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x42c)))->f0(1);
+    }
+    *(int *)((char *)this + 0x42c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc680 size=0x5
 int __stdcall sub_100bc680(int a0, int a1)
 {
