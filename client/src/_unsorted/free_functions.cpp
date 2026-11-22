@@ -39577,6 +39577,31 @@ char sub_10115fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115fb0 size=0x60
+struct CUnknown10115fb0 { void sub_10115fb0(char, int, int); };
+void CUnknown10115fb0::sub_10115fb0(char a0, int a1, int a2)
+{
+    if (a0 != 0) {
+        if (((*(char *)((char *)this + 0x34)) & 8) != 0) {
+            *(int *)((char *)a1) = 0x7f7fffff;
+            *(int *)((char *)a1 + 4) = 0x7f7fffff;
+            *(int *)((char *)a1 + 8) = 0x7f7fffff;
+            *(int *)((char *)a2) = -8388609;
+            *(int *)((char *)a2 + 4) = -8388609;
+            *(int *)((char *)a2 + 8) = -8388609;
+            return;
+        }
+        return;
+    }
+    *(int *)((char *)a1) = *(int *)((char *)this + 0xc);
+    *(int *)((char *)a1 + 4) = *(int *)((char *)this + 0x10);
+    *(int *)((char *)a1 + 8) = *(int *)((char *)this + 0x14);
+    *(int *)((char *)a2) = *(int *)((char *)this + 0x18);
+    *(int *)((char *)a2 + 4) = *(int *)((char *)this + 0x1c);
+    *(int *)((char *)a2 + 8) = *(int *)((char *)this + 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116010 size=0x58
 struct CUnknown10116010 { void sub_10116010(char, char, int, int); };
 void CUnknown10116010::sub_10116010(char a0, char a1, int a2, int a3)
