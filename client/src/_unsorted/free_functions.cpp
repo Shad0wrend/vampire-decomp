@@ -29166,6 +29166,24 @@ int __stdcall sub_100bc170(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc2c0 size=0x30
+namespace lifted {
+extern char g_10230f68;
+struct C100f0510 { int sub_100f0510(int); };
+struct C100f0590 { int sub_100f0590(int); };
+}
+struct CUnknown100bc2c0 { void * sub_100bc2c0(int, int); };
+void * CUnknown100bc2c0::sub_100bc2c0(int a0, int a1)
+{
+    int t0 = ((lifted::C100f0510 *)this)->sub_100f0510(a1);
+    *(int *)((char *)this + 0x14) = a0;
+    *(int *)this = (int)&lifted::g_10230f68;
+    *(int *)((char *)this + 0x10) = 0;
+    ((lifted::C100f0590 *)this)->sub_100f0590(1);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc330 size=0x6
 namespace lifted {
 extern char g_104a302c;
