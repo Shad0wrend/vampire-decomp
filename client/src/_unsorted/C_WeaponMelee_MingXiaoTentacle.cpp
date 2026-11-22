@@ -10,3 +10,11 @@ C_WeaponMelee_MingXiaoTentacle *pcd_emit_1000c590() { return new C_WeaponMelee_M
 
 // TARGET: ??_GC_WeaponMelee_MingXiaoTentacle@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000c5c0 size=0x3
+#include "C_WeaponMelee_MingXiaoTentacle.h"
+int C_WeaponMelee_MingXiaoTentacle::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
