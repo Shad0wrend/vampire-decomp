@@ -501,6 +501,7 @@
 0x10014f50 func   ?sub_10014f50@@YAHXZ sub_10014f50
 0x10015070 func   ?ClientClassInit@@YAHPAUignored@DT_ElderVitaePack@@@Z ClientClassInit
 0x10015190 func   ??_GC_WeaponIArmor@@UAEPAXI@Z ??_GC_WeaponIArmor@@UAEPAXI@Z
+0x100151c0 func   ?vfunc15@C_WeaponIArmor@@UAEHXZ C_WeaponIArmor::vfunc15
 0x100151d0 func   ?sub_100151d0@@YAHXZ sub_100151d0
 0x100152f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIArmor@@@Z ClientClassInit
 0x10015410 func   ??_GC_WeaponIArmor_Lt_Cloth@@UAEPAXI@Z ??_GC_WeaponIArmor_Lt_Cloth@@UAEPAXI@Z
