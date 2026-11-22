@@ -8,7 +8,7 @@ class IMaterialProxy
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots IMaterialProxy adds to its base's vtable: 0-3, vfuncK at slot K
 	virtual bool vfunc0(void*, void*);
-	virtual void vfunc1();
+	virtual void vfunc1(int);
 	virtual void vfunc2();
 	virtual ~IMaterialProxy();
 };

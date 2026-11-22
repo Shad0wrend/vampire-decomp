@@ -7,4 +7,9 @@
 class CClientLeafSystem : public IClientLeafSystem, public ISpatialLeafEnumerator
 {
 public:
+public:
+    bool vfunc15(char);
+    bool vfunc16(char);
+    void vfunc22();
+    void vfunc23();
 };

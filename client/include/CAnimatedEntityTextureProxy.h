@@ -7,6 +7,6 @@ class CAnimatedEntityTextureProxy : public CBaseAnimatedTextureProxy
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CAnimatedEntityTextureProxy's own function
-    virtual void vfunc4();
+    virtual float vfunc4(int);
     virtual void vfunc5(int);
 };

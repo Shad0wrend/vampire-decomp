@@ -7,6 +7,6 @@ class CCamoTextureRegen : public ITextureRegenerator
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CCamoTextureRegen adds to its base's vtable: 0-1, vfuncK at slot K
-    virtual void vfunc0();
+    virtual int vfunc0(int, int, int);
     virtual void vfunc1();
 };

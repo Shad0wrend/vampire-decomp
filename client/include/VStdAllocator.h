@@ -8,5 +8,5 @@ class VStdAllocator : public VAllocator
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots VStdAllocator adds to its base's vtable: 0-1, vfuncK at slot K
     virtual void vfunc0();
-    virtual void vfunc1();
+    virtual int vfunc1(int);
 };
