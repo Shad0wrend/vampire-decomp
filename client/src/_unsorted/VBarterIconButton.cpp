@@ -11,6 +11,18 @@ VBarterIconButton *pcd_emit_1016ae60() { return new VBarterIconButton; }
 // TARGET: ??_GVBarterIconButton@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1016afb0 size=0x11
+#include "VBarterIconButton.h"
+namespace lifted {
+int sub_101aa640();
+}
+void VBarterIconButton::vfunc85()
+{
+    int t0 = lifted::sub_101aa640();
+    *(char *)((char *)this + 0xb8) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016aff0 size=0xa
 #include "VBarterIconButton.h"
 void VBarterIconButton::vfunc87(int a0)
