@@ -13736,6 +13736,20 @@ int __stdcall sub_10066700(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067520 size=0x1f
+namespace lifted {
+struct V { virtual int f0(int); };
+}
+struct CUnknown10067520 { void sub_10067520(); };
+void CUnknown10067520::sub_10067520()
+{
+    if ((*(int *)((char *)this + 0x300)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x300)))->f0(1);
+    }
+    *(int *)((char *)this + 0x300) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
