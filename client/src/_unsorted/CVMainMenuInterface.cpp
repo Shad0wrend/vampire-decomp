@@ -28,3 +28,17 @@ void CVMainMenuInterface::vfunc1()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10065560 size=0x10
+#include "CVMainMenuInterface.h"
+namespace lifted {
+extern int g_103ef0b4;
+struct C100662d0 { int sub_100662d0(); };
+}
+void CVMainMenuInterface::vfunc2()
+{
+    if (lifted::g_103ef0b4 != 0) {
+        ((lifted::C100662d0 *)lifted::g_103ef0b4)->sub_100662d0(); return;
+    }
+}
+// END FUNCTION
