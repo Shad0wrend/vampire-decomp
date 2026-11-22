@@ -948,6 +948,7 @@
 0x10036a60 func   ?sub_10036a60@CUnknown10036a60@@QAEHXZ CUnknown10036a60::sub_10036a60
 0x10036cf0 func   ??_GCExplosionOverlay@@UAEPAXI@Z ??_GCExplosionOverlay@@UAEPAXI@Z
 0x10036d10 func   ?vfunc16@C_TEExplosion@@UAE_NHHH@Z C_TEExplosion::vfunc16
+0x10036d20 func   ?vfunc9@C_TEExplosion@@UAEHXZ C_TEExplosion::vfunc9
 0x10036d40 func   ?sub_10036d40@@YAHXZ sub_10036d40
 0x10036de0 func   ?sub_10036de0@@YAHXZ sub_10036de0
 0x10036e50 func   ?ClientClassInit@@YAHPAUignored@DT_TEExplosion@@@Z ClientClassInit

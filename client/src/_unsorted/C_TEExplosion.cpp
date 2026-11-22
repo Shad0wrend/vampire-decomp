@@ -18,3 +18,14 @@ bool C_TEExplosion::vfunc16(int a0, int a1, int a2)
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10036d20 size=0x6
+#include "C_TEExplosion.h"
+namespace lifted {
+extern char g_1027f224;
+}
+int C_TEExplosion::vfunc9()
+{
+    return (int)&lifted::g_1027f224;
+}
+// END FUNCTION
