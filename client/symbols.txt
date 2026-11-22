@@ -2948,6 +2948,7 @@
 0x100bf700 func   ?sub_100bf700@CUnknown100bf700@@QAEHXZ CUnknown100bf700::sub_100bf700
 0x100c08b0 func   ?sub_100c08b0@CUnknown100c08b0@@QAEXXZ CUnknown100c08b0::sub_100c08b0
 0x100c0960 func   ?sub_100c0960@CUnknown100c0960@@QAEPAXXZ CUnknown100c0960::sub_100c0960
+0x100c0a30 func   ?vfunc9@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc9
 0x100c0c80 func   ?sub_100c0c80@@YAHXZ sub_100c0c80
 0x100c0c90 func   ?sub_100c0c90@@YAHH@Z sub_100c0c90
 0x100c18e0 func   ?sub_100c18e0@CUnknown100c18e0@@QAEHHHH@Z CUnknown100c18e0::sub_100c18e0
