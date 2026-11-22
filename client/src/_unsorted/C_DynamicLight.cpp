@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100add30 size=0x6
+#include "C_DynamicLight.h"
+namespace lifted {
+extern char g_102b2a04;
+}
+int C_DynamicLight::vfunc16()
+{
+    return (int)&lifted::g_102b2a04;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100add40 size=0x3
 #include "C_DynamicLight.h"
 int C_DynamicLight::vfunc15()
