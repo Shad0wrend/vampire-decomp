@@ -55,6 +55,17 @@ ICollideable * C_BaseNetworkable::GetClientCollideable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3b00 size=0xb
+#include "C_BaseNetworkable.h"
+IClientNetworkable * C_BaseNetworkable::GetClientNetworkable()
+{
+    if (((int)this) != 0) {
+        return (IClientNetworkable *)((char *)this + 4);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3b10 size=0x3
 #include "C_BaseNetworkable.h"
 IClientRenderable * C_BaseNetworkable::GetClientRenderable()
