@@ -10,3 +10,10 @@ CPrediction *pcd_emit_10120e40() { return new CPrediction; }
 
 // TARGET: ??_GCPrediction@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10120ed0 size=0x1
+#include "CPrediction.h"
+void CPrediction::vfunc2()
+{
+}
+// END FUNCTION
