@@ -22,6 +22,17 @@ C_ItemGVampyrApocrypha *pcd_emit_1001ab90() { return new C_ItemGVampyrApocrypha;
 // TARGET: ??_GC_ItemGVampyrApocrypha@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001abb0 size=0x6
+#include "C_ItemGVampyrApocrypha.h"
+namespace lifted {
+extern char g_1027457c;
+}
+int C_ItemGVampyrApocrypha::vfunc16()
+{
+    return (int)&lifted::g_1027457c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001abc0 size=0x3
 #include "C_ItemGVampyrApocrypha.h"
 int C_ItemGVampyrApocrypha::vfunc15()
