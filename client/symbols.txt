@@ -129,6 +129,7 @@
 0x10004de0 func   ?vfunc2@IParticleEffect@@QAEXXZ IParticleEffect::vfunc2
 0x10004df0 func   ?vfunc4@IParticleEffect@@QAEXXZ IParticleEffect::vfunc4
 0x10004e00 func   ?vfunc5@IParticleEffect@@QAEXH@Z IParticleEffect::vfunc5
+0x10004e10 func   ?vfunc7@IParticleEffect@@QAEHHH@Z IParticleEffect::vfunc7
 0x10004e30 func   ?vfunc0@IParticleEffect@@QAEPAXD@Z IParticleEffect::vfunc0
 0x10004e50 func   ?vfunc2@IPrototypeAppEffect@@UAE_NHH@Z IPrototypeAppEffect::vfunc2
 0x10004e60 func   ?vfunc0@IPrototypeAppEffect@@UAEPAXD@Z IPrototypeAppEffect::vfunc0
