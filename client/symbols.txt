@@ -89,6 +89,7 @@
 0x10007260 func   ?vfunc0@C_BaseTempEntity@@UAEHH@Z C_BaseTempEntity::vfunc0
 0x10007270 func   ?vfunc1@C_BaseTempEntity@@UAEPAIXZ C_BaseTempEntity::vfunc1
 0x10007280 func   ?sub_10007280@CUnknown10007280@@QAEPADXZ CUnknown10007280::sub_10007280
+0x10007290 func   ?GetClientCollideable@C_BaseTempEntity@@UAEPAVICollideable@@XZ C_BaseTempEntity::GetClientCollideable
 0x10007330 func   ??_GC_TEConcussiveExplosion@@UAEPAXI@Z ??_GC_TEConcussiveExplosion@@UAEPAXI@Z
 0x100073a0 func   ?sub_100073a0@@YAHXZ sub_100073a0
 0x10007410 func   ?ClientClassInit@@YAHPAUignored@DT_TEConcussiveExplosion@@@Z ClientClassInit
