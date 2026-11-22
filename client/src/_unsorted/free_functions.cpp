@@ -65908,6 +65908,27 @@ int sub_10168260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101682b0 size=0x37
+struct CUnknown101682b0 { int sub_101682b0(); };
+int CUnknown101682b0::sub_101682b0()
+{
+    int t0 = *(int *)((char *)this + 0x107060);
+    if (t0 == 0) {
+        return 0;
+    }
+    int t1 = *(int *)((char *)t0);
+    *(int *)((char *)this + 0x107060) = t1;
+    int t2 = *(int *)((char *)this + 0x10705c);
+    *(int *)((char *)t0) = t2;
+    *(int *)((char *)this + 0x10705c) = t0;
+    *(int *)((char *)t0 + 4) = 0;
+    *(int *)((char *)t0 + 8) = 0;
+    *(char *)((char *)t0 + 0x10) = 0;
+    *(int *)((char *)t0 + 0x410) = 0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168ca0 size=0xb
 namespace lifted {
 extern char g_10249c74;
