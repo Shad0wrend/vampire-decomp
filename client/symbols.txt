@@ -2881,6 +2881,7 @@
 0x100a5a20 func   ?sub_100a5a20@CUnknown100a5a20@@QAEHXZ CUnknown100a5a20::sub_100a5a20
 0x100a5a30 func   ?sub_100a5a30@@YAHXZ sub_100a5a30
 0x100a5a40 func   ?sub_100a5a40@@YAHXZ sub_100a5a40
+0x100a5a50 func   ?sub_100a5a50@CUnknown100a5a50@@QAEHXZ CUnknown100a5a50::sub_100a5a50
 0x100a6740 func   ?sub_100a6740@CUnknown100a6740@@QAEHH@Z CUnknown100a6740::sub_100a6740
 0x100a6760 func   ?sub_100a6760@CUnknown100a6760@@QAEHH@Z CUnknown100a6760::sub_100a6760
 0x100a6b00 func   ?sub_100a6b00@@YAHXZ sub_100a6b00
