@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001c400 size=0x6
+#include "C_ItemGBadluckTalisman.h"
+namespace lifted {
+extern char g_102736d8;
+}
+int C_ItemGBadluckTalisman::vfunc17()
+{
+    return (int)&lifted::g_102736d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c490 size=0x1e
 #include "C_ItemGBadluckTalisman.h"
 
