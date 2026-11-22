@@ -28237,6 +28237,21 @@ void CUnknown100bde50::sub_100bde50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdeb0 size=0x1c
+namespace lifted {
+extern int g_104a0d50;
+int __stdcall sub_100bded0(int);
+}
+struct CUnknown100bdeb0 { void sub_100bdeb0(); };
+void CUnknown100bdeb0::sub_100bdeb0()
+{
+    if (lifted::g_104a0d50 != 0) {
+        *(int *)((char *)this + 0x14) = 0;
+        lifted::sub_100bded0(lifted::g_104a0d50);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be030 size=0x8
 namespace lifted {
 int sub_100bdeb0();

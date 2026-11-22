@@ -3054,6 +3054,7 @@
 0x100bde20 func   ?sub_100bde20@CUnknown100bde20@@QAEHXZ CUnknown100bde20::sub_100bde20
 0x100bde40 func   ?sub_100bde40@CUnknown100bde40@@QAEXXZ CUnknown100bde40::sub_100bde40
 0x100bde50 func   ?sub_100bde50@CUnknown100bde50@@QAEXXZ CUnknown100bde50::sub_100bde50
+0x100bdeb0 func   ?sub_100bdeb0@CUnknown100bdeb0@@QAEXXZ CUnknown100bdeb0::sub_100bdeb0
 0x100be030 func   ?sub_100be030@@YGHH@Z sub_100be030
 0x100be040 func   ?sub_100be040@@YGHH@Z sub_100be040
 0x100be050 func   ?sub_100be050@CUnknown100be050@@QAEHH@Z CUnknown100be050::sub_100be050
