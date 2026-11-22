@@ -1205,6 +1205,7 @@
 0x100223c0 func   ?vfunc15@C_ItemKMalcomOfficeKey@@UAEHXZ C_ItemKMalcomOfficeKey::vfunc15
 0x100223d0 func   ?sub_100223d0@@YAHXZ sub_100223d0
 0x100224f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMalcomOfficeKey@@@Z ClientClassInit
+0x10022580 func   ?vfunc17@C_ItemKGimbleKey@@UAEHXZ C_ItemKGimbleKey::vfunc17
 0x10022610 func   ??_GC_ItemKGimbleKey@@UAEPAXI@Z ??_GC_ItemKGimbleKey@@UAEPAXI@Z
 0x10022640 func   ?vfunc15@C_ItemKGimbleKey@@UAEHXZ C_ItemKGimbleKey::vfunc15
 0x10022650 func   ?sub_10022650@@YAHXZ sub_10022650

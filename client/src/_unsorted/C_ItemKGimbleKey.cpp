@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10022580 size=0x6
+#include "C_ItemKGimbleKey.h"
+namespace lifted {
+extern char g_10273b1c;
+}
+int C_ItemKGimbleKey::vfunc17()
+{
+    return (int)&lifted::g_10273b1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022610 size=0x1e
 #include "C_ItemKGimbleKey.h"
 
