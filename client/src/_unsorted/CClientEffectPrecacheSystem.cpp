@@ -14,3 +14,10 @@ void CClientEffectPrecacheSystem::vfunc3()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d08c0 size=0x1
+#include "CClientEffectPrecacheSystem.h"
+void CClientEffectPrecacheSystem::vfunc6()
+{
+}
+// END FUNCTION
