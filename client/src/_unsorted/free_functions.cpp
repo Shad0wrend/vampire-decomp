@@ -27888,6 +27888,19 @@ void UtlMem::sub_100ac080(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac740 size=0x18
+namespace lifted {
+int sub_101d1296(int);
+}
+struct CUnknown100ac740 { int sub_100ac740(); };
+int CUnknown100ac740::sub_100ac740()
+{
+    int t0 = lifted::sub_101d1296(*(int *)((char *)this + 0x28));
+    *(int *)((char *)this + 0x28) = 0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac760 size=0x13
 struct CUnknown100ac760 { void sub_100ac760(); };
 void CUnknown100ac760::sub_100ac760()
