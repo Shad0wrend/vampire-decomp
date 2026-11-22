@@ -38623,6 +38623,17 @@ void sub_10120140(CObj *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120190 size=0x11
+namespace lifted {
+extern int g_104e0c90;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual int f20(int); };
+}
+int sub_10120190(int a0)
+{
+    return ((lifted::V *)lifted::g_104e0c90)->f20(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101201b0 size=0x1
 void sub_101201b0()
 {

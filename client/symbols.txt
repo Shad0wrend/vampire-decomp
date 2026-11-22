@@ -3806,6 +3806,7 @@
 0x1011ff40 func   ?vfunc0@CSolidSetDefaults@@UAEXPAXPBD1@Z CSolidSetDefaults::vfunc0
 0x1011ff70 func   ?vfunc1@CSolidSetDefaults@@UAEXPAX@Z CSolidSetDefaults::vfunc1
 0x10120140 func   ?sub_10120140@@YAXPAUCObj@@@Z sub_10120140
+0x10120190 func   ?sub_10120190@@YAHH@Z sub_10120190
 0x101201b0 func   ?sub_101201b0@@YAXXZ sub_101201b0
 0x101201c0 func   ?sub_101201c0@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_101201c0
 0x10120230 func   ?sub_10120230@@YAPAVCPhysObjectIface@@PAXPAUWorldCollide@@ABUWorldObjParams@@@Z sub_10120230
