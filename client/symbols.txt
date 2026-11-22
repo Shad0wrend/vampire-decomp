@@ -1929,6 +1929,7 @@
 0x100410e0 func   ??_GC_TEWorldDecal@@UAEPAXI@Z ??_GC_TEWorldDecal@@UAEPAXI@Z
 0x10041100 func   ??1C_TEWorldDecal@@UAE@XZ C_TEWorldDecal::~C_TEWorldDecal
 0x10041100 func   ?sub_10041100@CUnknown10041100@@QAEHXZ CUnknown10041100::sub_10041100
+0x10041120 func   ?vfunc13@C_TEWorldDecal@@UAEXXZ C_TEWorldDecal::vfunc13
 0x10041250 func   ?vfunc9@C_TEWorldDecal@@UAEHXZ C_TEWorldDecal::vfunc9
 0x10041260 func   ?vfunc8@C_TEWorldDecal@@UAEHXZ C_TEWorldDecal::vfunc8
 0x10041270 func   ?sub_10041270@@YAHXZ sub_10041270
