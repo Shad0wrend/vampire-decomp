@@ -35,6 +35,14 @@ bool vgui2::Button::vfunc144()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b38f0 size=0x7
+#include "vgui2__Button.h"
+bool vgui2::Button::vfunc140()
+{
+    return *(bool *)((char *)this + 0xb9);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b41b0 size=0x23
 #include "vgui2__Button.h"
 namespace lifted {
