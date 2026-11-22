@@ -17,6 +17,14 @@ char * vgui2::BuildGroup::vfunc14()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1220 size=0x7
+#include "vgui2__BuildGroup.h"
+bool vgui2::BuildGroup::vfunc17()
+{
+    return *(bool *)((char *)this + 0xb0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1dd0 size=0x3
 #include "vgui2__BuildGroup.h"
 void vgui2::BuildGroup::vfunc20(int a0, int a1)
