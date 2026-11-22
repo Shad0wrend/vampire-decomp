@@ -4480,6 +4480,7 @@
 0x100068a7 func   ?sub_101ebf30@CKeyHolder@@QAEPBDH@Z CKeyHolder::sub_101ebf30
 0x100068ac func   ?sub_10279420@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10279420
 0x100068b1 func   ?vfunc80@CBaseEntity@@UAEHXZ CBaseEntity::vfunc80
+0x100068b6 func   ?GetBlockName@CPhysSaveRestoreBlockHandler@@UAEPBDXZ CPhysSaveRestoreBlockHandler::GetBlockName
 0x100068b6 func   ?vfunc0@CPhysSaveRestoreBlockHandler@@QAEHXZ CPhysSaveRestoreBlockHandler::vfunc0
 0x100068bb func   ?sub_102eca20@@YAHXZ sub_102eca20
 0x100068c0 func   ?sub_10218b90@CUnknown10217f50@@QAEXXZ CUnknown10217f50::sub_10218b90
