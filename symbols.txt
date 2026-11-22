@@ -5076,6 +5076,7 @@
 0x10007437 func   ?sub_102f51d0@CAI_NetworkManager@@QAEXXZ CAI_NetworkManager::sub_102f51d0
 0x1000743c func   ?sub_1018ee60@@YAXPAVCBaseEntity@@H@Z sub_1018ee60
 0x10007441 func   ?vfunc2@?$CEntityDataInstantiator@Ugroundlink_t@@@@UAEPAXI@Z CEntityDataInstantiator<groundlink_t>::vfunc2
+0x10007446 func   ??_GCDirtySpatialPartitionEntityList@@UAEPAXI@Z ??_GCDirtySpatialPartitionEntityList@@UAEPAXI@Z
 0x10007446 func   ?vfunc8@CDirtySpatialPartitionEntityList@@QAEPAVCAutoGameSystem@@I@Z CDirtySpatialPartitionEntityList::vfunc8
 0x1000744b func   ?vfunc473@CNPC_VSheriffSwarm@@UAEHXZ CNPC_VSheriffSwarm::vfunc473
 0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
