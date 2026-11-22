@@ -26,3 +26,14 @@ int vgui2::Label::vfunc126()
     return *(int *)((char *)this + 0x6c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b3470 size=0x6
+#include "vgui2__Label.h"
+namespace lifted {
+extern char g_102d88f0;
+}
+int vgui2::Label::vfunc102()
+{
+    return (int)&lifted::g_102d88f0;
+}
+// END FUNCTION
