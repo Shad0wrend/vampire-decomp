@@ -148,6 +148,7 @@
 0x10005ea0 func   ?vfunc15@C_PointCamera@@UAEHXZ C_PointCamera::vfunc15
 0x10005eb0 func   ?sub_10005eb0@@YAHXZ sub_10005eb0
 0x10005fb0 func   ?ClientClassInit@@YAHPAUignored@DT_PointCamera@@@Z ClientClassInit
+0x10006090 func   ?sub_10006090@CUnknown10006090@@QAEPAXXZ CUnknown10006090::sub_10006090
 0x100060d0 func   ??_GC_PointCamera@@UAEPAXI@Z ??_GC_PointCamera@@UAEPAXI@Z
 0x100060f0 func   ?sub_100060f0@@YADXZ sub_100060f0
 0x10006100 func   ?sub_10006100@CUnknown10006100@@QAEMXZ CUnknown10006100::sub_10006100

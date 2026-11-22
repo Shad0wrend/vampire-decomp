@@ -780,6 +780,29 @@ template <> int ClientClassInit<DT_PointCamera::ignored>(DT_PointCamera::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006090 size=0x35
+namespace lifted {
+extern char g_101e58f0;
+extern char g_101e5904;
+extern char g_101e5940;
+extern char g_101e5974;
+extern char g_101e59cc;
+int sub_1009db90();
+}
+struct CUnknown10006090 { void * sub_10006090(); };
+void * CUnknown10006090::sub_10006090()
+{
+    int t0 = lifted::sub_1009db90();
+    *(int *)this = (int)&lifted::g_101e59cc;
+    *(int *)((char *)this + 4) = (int)&lifted::g_101e5974;
+    *(int *)((char *)this + 8) = (int)&lifted::g_101e5940;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_101e5904;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_101e58f0;
+    *(char *)((char *)this + 0x418) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100060f0 size=0x3
 char sub_100060f0()
 {
