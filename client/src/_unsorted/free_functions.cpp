@@ -27928,6 +27928,20 @@ template <> int ClientClassInit<DT_HudCounter::ignored>(DT_HudCounter::ignored *
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc150 size=0x1f
+namespace lifted {
+struct V { virtual int f0(int); };
+}
+struct CUnknown100bc150 { void sub_100bc150(); };
+void CUnknown100bc150::sub_100bc150()
+{
+    if ((*(int *)((char *)this + 0x424)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x424)))->f0(1);
+    }
+    *(int *)((char *)this + 0x424) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc170 size=0x5
 int __stdcall sub_100bc170(int a0, int a1)
 {
