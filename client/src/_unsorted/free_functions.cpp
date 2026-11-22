@@ -33779,6 +33779,22 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f00b0 size=0x2a
+namespace lifted {
+extern char g_102af2e8;
+extern char g_104cfe38;
+struct C100f03e0 { int sub_100f03e0(int, int, int); };
+struct C100f0ed0 { int sub_100f0ed0(int); };
+}
+void sub_100f00b0(int a0, int a1, int a2)
+{
+    int t0 = ((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102af2e8);
+    if (t0 != 0) {
+        ((lifted::C100f03e0 *)t0)->sub_100f03e0(a0, a1, a2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0180 size=0x17
 struct CUnknown100f0180 { int sub_100f0180(int); };
 int CUnknown100f0180::sub_100f0180(int a0)
