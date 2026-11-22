@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b6e80 size=0x3
+#include "C_BreakableSurface.h"
+int C_BreakableSurface::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7760 size=0x1e
 #include "C_BreakableSurface.h"
 
