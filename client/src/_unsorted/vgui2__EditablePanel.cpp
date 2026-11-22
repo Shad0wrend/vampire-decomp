@@ -26,3 +26,14 @@ char * vgui2::EditablePanel::vfunc116()
     return (char *)this + 0x5c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b5650 size=0x6
+#include "vgui2__EditablePanel.h"
+namespace lifted {
+extern char g_102d8c88;
+}
+int vgui2::EditablePanel::vfunc102()
+{
+    return (int)&lifted::g_102d8c88;
+}
+// END FUNCTION
