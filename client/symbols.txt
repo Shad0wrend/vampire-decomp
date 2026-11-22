@@ -1470,6 +1470,7 @@
 0x1007f180 func   ?vfunc155@C_BaseGrenade@@UAEMXZ C_BaseGrenade::vfunc155
 0x1007f190 func   ?vfunc156@C_BaseGrenade@@UAE_NH@Z C_BaseGrenade::vfunc156
 0x1007f1a0 func   ?vfunc157@C_BaseGrenade@@UAEMXZ C_BaseGrenade::vfunc157
+0x1007f1b0 func   ?vfunc158@C_BaseGrenade@@UAEMXZ C_BaseGrenade::vfunc158
 0x1007f1e0 func   ??_GC_BaseGrenade@@UAEPAXI@Z ??_GC_BaseGrenade@@UAEPAXI@Z
 0x1007f300 func   ?sub_1007f300@@YAHXZ sub_1007f300
 0x1007f400 func   ?ClientClassInit@@YAHPAUignored@DT_BaseParticleEntity@@@Z ClientClassInit
