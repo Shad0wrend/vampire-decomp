@@ -29612,6 +29612,21 @@ int sub_100cd130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd1c0 size=0x1d
+namespace lifted {
+int __stdcall sub_100cd1f0(int);
+}
+struct CUnknown100cd1c0 { void * sub_100cd1c0(int); };
+void * CUnknown100cd1c0::sub_100cd1c0(int a0)
+{
+    *(int *)this = 0;
+    if (a0 != 0) {
+        lifted::sub_100cd1f0(a0);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd290 size=0x9
 struct CUnknown100cd290 { void * sub_100cd290(); };
 void * CUnknown100cd290::sub_100cd290()
