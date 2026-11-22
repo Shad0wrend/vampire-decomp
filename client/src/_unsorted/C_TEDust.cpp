@@ -12,6 +12,14 @@ int C_TEDust::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb160 size=0x3
+#include "C_TEDust.h"
+int C_TEDust::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb380 size=0x3
 #include "C_TEDust.h"
 bool C_TEDust::vfunc16()
