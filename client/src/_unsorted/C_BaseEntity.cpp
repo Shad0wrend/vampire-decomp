@@ -25,6 +25,13 @@ C_BaseEntity * C_BaseEntity::GetBaseEntity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001890 size=0x1
+#include "C_BaseEntity.h"
+void C_BaseEntity::vfunc112()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009dda0 size=0x1e
 #include "C_BaseEntity.h"
 
