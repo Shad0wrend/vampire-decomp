@@ -14,3 +14,12 @@ void CClientLeafSystem::vfunc23()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d1770 size=0xd
+#include "CClientLeafSystem.h"
+bool CClientLeafSystem::vfunc15(char a0)
+{
+    *(char *)((char *)this + 0xd8) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
