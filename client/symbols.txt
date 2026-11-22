@@ -2021,6 +2021,7 @@
 0x1009b990 func   ?vfunc86@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc86
 0x1009bd80 func   ?vfunc238@C_BaseCombatWeapon@@UAEXH@Z C_BaseCombatWeapon::vfunc238
 0x1009bd90 func   ?vfunc236@C_BaseCombatWeapon@@UAEXH@Z C_BaseCombatWeapon::vfunc236
+0x1009c060 func   ?vfunc242@C_BaseCombatWeapon@@UAE_NXZ C_BaseCombatWeapon::vfunc242
 0x1009c1a0 func   ?sub_1009c1a0@@YAXXZ sub_1009c1a0
 0x1009c7e0 func   ?sub_1009c7e0@@YAXXZ sub_1009c7e0
 0x1009ce00 func   ?sub_1009ce00@@YGHH@Z sub_1009ce00
