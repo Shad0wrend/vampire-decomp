@@ -22,6 +22,17 @@ C_ItemKShrekHubOneKey *pcd_emit_10024b90() { return new C_ItemKShrekHubOneKey; }
 // TARGET: ??_GC_ItemKShrekHubOneKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10024bb0 size=0x6
+#include "C_ItemKShrekHubOneKey.h"
+namespace lifted {
+extern char g_10273f98;
+}
+int C_ItemKShrekHubOneKey::vfunc16()
+{
+    return (int)&lifted::g_10273f98;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024bc0 size=0x3
 #include "C_ItemKShrekHubOneKey.h"
 int C_ItemKShrekHubOneKey::vfunc15()
