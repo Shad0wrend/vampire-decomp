@@ -18,3 +18,11 @@ int vgui2::ScrollBarSlider::vfunc108()
     return *(int *)((char *)this + 0x7c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ca680 size=0x7
+#include "vgui2__ScrollBarSlider.h"
+int vgui2::ScrollBarSlider::vfunc113()
+{
+    return *(int *)((char *)this + 0x80);
+}
+// END FUNCTION
