@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 43053f50f421; do not edit by hand
+# written by pcdecomp standalone from vtmb 11d044767e7a; do not edit by hand
 ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z
 ??0CAI_InterestTarget@@QAE@XZ ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ
 ??0CAI_LocalIdSpace@@QAE@_N@Z ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z
@@ -12584,9 +12584,7 @@
 ?vfunc0@CDirtySpatialPartitionEntityList@@UAE_NXZ ?sub_100dbbe0@@YI_NPAD@Z
 ?vfunc0@CHLSharedGameRules@@UAE_NHH@Z ?sub_1042c0c0@THL@@QAE_NHH@Z
 ?vfunc0@CMoveHelperServer@@UBEPBDI@Z ?sub_1013eee0@@YGPBDI@Z
-?vfunc0@CNavPropertyDatabase@@UAE_NXZ ?vfunc0@CNavPropertyDatabase@@QAE_NXZ
 ?vfunc0@CObjectEvent@@UAEXPAVIPhysicsObject@@@Z ?sub_1002d560@@YGXH@Z
-?vfunc0@CPhysicsHook@@UAE_NXZ ?vfunc0@CPhysicsHook@@QAE_NXZ
 ?vfunc0@CPlayerMove@@UAEXXZ ?sub_10185ae0@CUnk10185ae0@@QAEPAXE@Z
 ?vfunc0@CPyObjStrSaveRestoreDataOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVISave@@@Z ?sub_100d0000@CPySave@@QAEXPAUField@@PAUSaveIf@@@Z
 ?vfunc0@CRestore@@UAEXXZ ?sub_101a1490@@YIHPAD@Z
@@ -14238,14 +14236,11 @@
 ?vfunc2@CBaseGameSystem@@UAEXXZ ?vfunc2@CAutoGameSystem@@UAEXXZ
 ?vfunc2@CDataObjectAccessSystem@@UAEXXZ ?vfunc2@CAutoGameSystem@@UAEXXZ
 ?vfunc2@CDefSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z ?vfunc2@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z
-?vfunc2@CEntityListSystem@@UAEXXZ ?vfunc2@CEntityListSystem@@QAEXXZ
 ?vfunc2@CHLPlayerMove@@UAEXPAVCBasePlayer@@PAVCUserCmd@@PAX@Z ?vfunc2@CHLPlayerMove@@QAEXHHH@Z
-?vfunc2@CPhysicsHook@@UAEXXZ ?vfunc2@CPhysicsHook@@QAEXXZ
 ?vfunc2@CRecipientFilter@@UAEHXZ ?sub_1019cf90@@YIHPAX@Z
 ?vfunc2@CRelationshipSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z ?sub_10349400@TOps@@QAE_NPAPAH@Z
 ?vfunc2@CSoundEmitterSystem@@UAEXXZ ?sub_101afff0@CSoundSysIface@@QAEXXZ
 ?vfunc2@CSoundEnvelopeController@@UAEXPAVCUnknown101bc140@@MM@Z __purecall
-?vfunc2@CTeamManager@@UAEXXZ ?vfunc2@CTeamManager@@QAEHXZ
 ?vfunc2@CThinkContextsSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z ?sub_100a2110@S100a2110@@QAE_NPAPAUSVec@@@Z
 ?vfunc2@CVTSDependencySaveRestoreDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z ?sub_100d0320@@YGHPAPAX@Z
 ?vfunc2@CVariantSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z ?sub_100d1100@@YG_NPAUCVSDOps@@@Z
@@ -14319,11 +14314,9 @@
 ?vfunc3@CDataObjectAccessSystem@@UAEXXZ ?vfunc3@CAutoGameSystem@@UAEXXZ
 ?vfunc3@CDefSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@@Z ?vfunc3@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@@Z
 ?vfunc3@CPhysObjSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@@Z ?sub_10045d10@@YGXPAUSPhysObjBuf_t@@@Z
-?vfunc3@CPhysicsHook@@UAEXXZ ?vfunc3@CPhysicsHook@@QAEXXZ
 ?vfunc3@CPlayerEventsManager@@UAEXXZ ?sub_102276f0@@YAXXZ
 ?vfunc3@CServerGameEnts@@UAEHH@Z ?sub_1011beb0@@YGXH@Z
 ?vfunc3@CSoundEnvelopeController@@UAEXPAXMHMM@Z __purecall
-?vfunc3@CTeamManager@@UAEXXZ ?vfunc3@CTeamManager@@QAEHXZ
 ?vfunc3@ConCommand@@UAEXXZ ?vfunc3@ConCommandBase@@QAEXXZ
 ?vfunc3@IPositionInterpolator@@UAEXMPAVVector@@@Z ?vfunc3@CPositionInterpolator_CatmullRom@@QAEXHH@Z
 ?vfunc3@IRestore@@UAEHHHHHH@Z __purecall
@@ -14352,9 +14345,6 @@
 ?vfunc4@CBaseGameSystem@@UAEXXZ ?vfunc4@CAutoGameSystem@@UAEXXZ
 ?vfunc4@CDataObjectAccessSystem@@UAEXXZ ?vfunc4@CAutoGameSystem@@UAEXXZ
 ?vfunc4@CDefSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@PBD@Z ?sub_10045770@@YG_NHH@Z
-?vfunc4@CEntityListSystem@@UAEXXZ ?vfunc4@CEntityListSystem@@QAEHXZ
-?vfunc4@CNavPropertyDatabase@@UAEXXZ ?vfunc4@CNavPropertyDatabase@@QAEXXZ
-?vfunc4@CPhysicsHook@@UAEXXZ ?vfunc4@CPhysicsHook@@QAEXXZ
 ?vfunc4@CSoundControllerImp@@UAEXXZ ?sub_101bd960@@YIXPAPAX@Z
 ?vfunc4@CSoundEnvelopeController@@UAEXPAX@Z __purecall
 ?vfunc4@CTEBreakModel@@UAEXAAVCRecipientFilter@@M@Z ?vfunc4@CTEBreakModel@@QAEXPAXH@Z
@@ -14376,15 +14366,11 @@
 ?vfunc59@CGameRules@@UAEMXZ __purecall
 ?vfunc5@CBaseEntity@@UAEPAV1@I@Z ?sub_1009def0@@YIPAXPAXHI@Z
 ?vfunc5@CDataObjectAccessSystem@@UAEXXZ ?vfunc5@CAutoGameSystem@@UAEXXZ
-?vfunc5@CEntityListSystem@@UAEXXZ ?vfunc5@CEntityListSystem@@QAEXXZ
 ?vfunc5@CFunc_LOD@@UAEPAVCBaseEntity@@I@Z ?sub_10114a70@@YIPAXPAXHI@Z
-?vfunc5@CGameStringPool@@UAEXXZ ?vfunc5@CGameStringPool@@QAEXXZ
-?vfunc5@CPhysicsHook@@UAEXXZ ?vfunc5@CPhysicsHook@@QAEXXZ
 ?vfunc5@CRecipientFilter@@UAEXXZ ?sub_1019d340@@YIHPAVCRecipientFilter@@@Z
 ?vfunc5@CServerGameClients@@UAEXXZ ?sub_1011c4d0@@YGXPAUCServerClientsView@@@Z
 ?vfunc5@CSkyList@@UAEXXZ ?sub_1018a450@@YAXXZ
 ?vfunc5@CSoundEnvelopeController@@UAEXPAX@Z __purecall
-?vfunc5@CTeamManager@@UAEXXZ ?vfunc5@CTeamManager@@QAEHXZ
 ?vfunc5@ConCommand@@UAE_NXZ ?sub_10245a20@@YIDPAX@Z
 ?vfunc5@PyServerSystem@@UAEXXZ ?vfunc5@CAutoGameSystem@@UAEXXZ
 ?vfunc61@CGameRules@@UAEHH@Z __purecall
@@ -14411,8 +14397,6 @@
 ?vfunc7@CBaseEntity@@UAEXXZ ?sub_100b12e0@CBaseEntity@@QAEXD@Z
 ?vfunc7@CBaseGameSystem@@UAEXXZ ?vfunc7@CAutoGameSystem@@UAEXXZ
 ?vfunc7@CDataObjectAccessSystem@@UAEXXZ ?vfunc7@CAutoGameSystem@@UAEXXZ
-?vfunc7@CEntityListSystem@@UAEXXZ ?vfunc7@CEntityListSystem@@QAEHXZ
-?vfunc7@CPhysicsHook@@UAEXXZ ?vfunc7@CPhysicsHook@@QAEXXZ
 ?vfunc7@CRecipientFilter@@UAEXXZ ?sub_1019d390@@YIDPAVCRecipientFilter@@@Z
 ?vfunc7@CRestore@@UAEXPAG@Z ?sub_101a1990@CRestore@@QAEXPAG@Z
 ?vfunc7@CSoundControllerImp@@UAEXXZ ?sub_101bd940@@YIXPAD@Z

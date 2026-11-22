@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 43053f50f421; do not edit by hand
+# written by pcdecomp standalone from vtmb 11d044767e7a; do not edit by hand
 slot ??_7CPASFilter@@6B@:0 patched after the link: the build's ??_GCPASFilter@@UAEPAXI@Z is not the game's ?sub_1002ab80@TFilterX@@QAEPAU1@E@Z
 slot ??_7IPhysicsCollisionEvent@@6B@:1 patched after the link: the build's ?vfunc1@IPhysicsCollisionEvent@@UAEXPAX@Z is not the game's __purecall
 slot ??_7IPhysicsCollisionEvent@@6B@:2 patched after the link: the build's ?vfunc2@IPhysicsCollisionEvent@@UAEXPAXMHH0@Z is not the game's __purecall
@@ -19,9 +19,9 @@ slot ??_7CAI_MoveProbe@@6B@:0 patched after the link: the build's ??_GCAI_MovePr
 slot ??_7CAI_Pathfinder@@6B@:0 patched after the link: the build's ??_GCAI_Pathfinder@@UAEPAXI@Z is not the game's ?sub_1027d000@Helper@@QAEPAXE@Z
 slot ??_7CAnchorList@@6B@:8 patched after the link: the build's ??_GCAnchorList@@UAEPAXI@Z is not the game's ?sub_10029e10@CAnchorList@@QAEPAXI@Z
 slot ??_7CPhysicsHook@@6B@:8 patched after the link: the build's ??_GCPhysicsHook@@UAEPAXI@Z is not the game's ?vfunc8@CPhysicsHook@@QAEPAV1@I@Z
-slot ??_7CDataObjectAccessSystem@@6B@:8 patched after the link: the build's ??_GCDataObjectAccessSystem@@UAEPAXI@Z is not the game's ?vfunc8@CDataObjectAccessSystem@@UAEPAVCAutoGameSystem@@I@Z
+slot ??_7CDataObjectAccessSystem@@6B@:8 patched after the link: the build's ??_GCDataObjectAccessSystem@@UAEPAXI@Z is not the game's ?vfunc8@CDataObjectAccessSystem@@QAEPAVCAutoGameSystem@@I@Z
 slot ??_7CTempEntsSystem@@6B@:0 patched after the link: the build's ??_GCTempEntsSystem@@UAEPAXI@Z is not the game's ?vfunc0@CTempEntsSystem@@QAEPAXI@Z
-slot ??_7CDirtySpatialPartitionEntityList@@6BCAutoGameSystem@@@:8 patched after the link: the build's ??_GCDirtySpatialPartitionEntityList@@UAEPAXI@Z is not the game's ?vfunc8@CDirtySpatialPartitionEntityList@@UAEPAVCAutoGameSystem@@I@Z
+slot ??_7CDirtySpatialPartitionEntityList@@6BCAutoGameSystem@@@:8 patched after the link: the build's ??_GCDirtySpatialPartitionEntityList@@UAEPAXI@Z is not the game's ?vfunc8@CDirtySpatialPartitionEntityList@@QAEPAVCAutoGameSystem@@I@Z
 slot ??_7CEntityListSystem@@6B@:8 patched after the link: the build's ??_GCEntityListSystem@@UAEPAXI@Z is not the game's ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z
 slot ??_7CServerGameDLL@@6B@:0 patched after the link: the build's ??_GCServerGameDLL@@UAEPAXI@Z is not the game's ?sub_1011a020@CUnk1011a020@@QAEPAXE@Z
 slot ??_7IServerGameDLL@@6B@:0 patched after the link: the build's ??_GIServerGameDLL@@UAEPAXI@Z is not the game's ?vfunc0@IServerGameDLL@@UAEPAXE@Z
@@ -29,19 +29,19 @@ slot ??_7CServerGameEnts@@6B@:0 patched after the link: the build's ??_GCServerG
 slot ??_7IServerGameEnts@@6B@:0 patched after the link: the build's ??_GIServerGameEnts@@UAEPAXI@Z is not the game's ?vfunc0@IServerGameEnts@@UAEPAXE@Z
 slot ??_7CServerGameClients@@6B@:0 patched after the link: the build's ??_GCServerGameClients@@UAEPAXI@Z is not the game's ?sub_1011bf80@CUnk1011bf80@@QAEPAXE@Z
 slot ??_7IServerGameClients@@6B@:0 patched after the link: the build's ??_GIServerGameClients@@UAEPAXI@Z is not the game's ?vfunc0@IServerGameClients@@UAEPAXE@Z
-slot ??_7CLagCompensationManager@@6BCAutoGameSystem@@@:8 patched after the link: the build's ??_GCLagCompensationManager@@UAEPAXI@Z is not the game's ?vfunc8@CLagCompensationManager@@UAEPAV1@I@Z
-slot ??_7CSkyList@@6B@:8 patched after the link: the build's ??_GCSkyList@@UAEPAXI@Z is not the game's ?vfunc8@CSkyList@@UAEPAVCAutoGameSystem@@I@Z
-slot ??_7CBreakModelsPrecached@@6B@:8 patched after the link: the build's ??_GCBreakModelsPrecached@@UAEPAXI@Z is not the game's ?vfunc8@CBreakModelsPrecached@@UAEPAXI@Z
-slot ??_7PyServerSystem@@6B@:8 patched after the link: the build's ??_GPyServerSystem@@UAEPAXI@Z is not the game's ?vfunc8@PyServerSystem@@UAEPAV1@I@Z
+slot ??_7CLagCompensationManager@@6BCAutoGameSystem@@@:8 patched after the link: the build's ??_GCLagCompensationManager@@UAEPAXI@Z is not the game's ?vfunc8@CLagCompensationManager@@QAEPAV1@I@Z
+slot ??_7CSkyList@@6B@:8 patched after the link: the build's ??_GCSkyList@@UAEPAXI@Z is not the game's ?vfunc8@CSkyList@@QAEPAVCAutoGameSystem@@I@Z
+slot ??_7CBreakModelsPrecached@@6B@:8 patched after the link: the build's ??_GCBreakModelsPrecached@@UAEPAXI@Z is not the game's ?vfunc8@CBreakModelsPrecached@@QAEPAXI@Z
+slot ??_7PyServerSystem@@6B@:8 patched after the link: the build's ??_GPyServerSystem@@UAEPAXI@Z is not the game's ?vfunc8@PyServerSystem@@QAEPAV1@I@Z
 slot ??_7CSoundscapeSystem@@6B@:8 patched after the link: the build's ??_GCSoundscapeSystem@@UAEPAXI@Z is not the game's ?vfunc8@CSoundscapeSystem@@QAEPAV1@I@Z
 slot ??_7CSoundEmitterSystem@@6BCSoundEmitterSystemBase@@@:0 patched after the link: the build's ??_GCSoundEmitterSystem@@UAEPAXI@Z is not the game's ?sub_101b0110@CSoundEmitterSystem@@QAEPAV1@E@Z
 slot ??_7CSoundEmitterSystemBase@@6B@:0 patched after the link: the build's ??_GCSoundEmitterSystemBase@@UAEPAXI@Z is not the game's ?sub_101b0200@CSoundEmitterSystemBase@@QAEPAV1@E@Z
 slot ??_7CSoundControllerImp@@6BCAutoGameSystem@@@:8 patched after the link: the build's ??_GCSoundControllerImp@@UAEPAXI@Z is not the game's ?sub_101bd980@CAutoGameSystem@@QAEPAXI@Z
-slot ??_7CCheckClient@@6B@:8 patched after the link: the build's ??_GCCheckClient@@UAEPAXI@Z is not the game's ?vfunc8@CCheckClient@@UAEPAVCAutoGameSystem@@I@Z
-slot ??_7CPlayerEventsManager@@6B@:8 patched after the link: the build's ??_GCPlayerEventsManager@@UAEPAXI@Z is not the game's ?vfunc8@CPlayerEventsManager@@UAEPAVCAutoGameSystem@@I@Z
-slot ??_7CSoundSchemeManager@@6B@:8 patched after the link: the build's ??_GCSoundSchemeManager@@UAEPAXI@Z is not the game's ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z
+slot ??_7CCheckClient@@6B@:8 patched after the link: the build's ??_GCCheckClient@@UAEPAXI@Z is not the game's ?vfunc8@CCheckClient@@QAEPAVCAutoGameSystem@@I@Z
+slot ??_7CPlayerEventsManager@@6B@:8 patched after the link: the build's ??_GCPlayerEventsManager@@UAEPAXI@Z is not the game's ?vfunc8@CPlayerEventsManager@@QAEPAVCAutoGameSystem@@I@Z
+slot ??_7CSoundSchemeManager@@6B@:8 patched after the link: the build's ??_GCSoundSchemeManager@@UAEPAXI@Z is not the game's ?vfunc8@CSoundSchemeManager@@QAEPAV1@I@Z
 slot ??_7CTeamManager@@6B@:8 patched after the link: the build's ??_GCTeamManager@@UAEPAXI@Z is not the game's ?vfunc8@CTeamManager@@QAEPAV1@I@Z
-slot ??_7CAI_SystemHook@@6B@:8 patched after the link: the build's ??_GCAI_SystemHook@@UAEPAXI@Z is not the game's ?vfunc8@CAI_SystemHook@@UAEPAVCAutoGameSystem@@I@Z
+slot ??_7CAI_SystemHook@@6B@:8 patched after the link: the build's ??_GCAI_SystemHook@@UAEPAXI@Z is not the game's ?vfunc8@CAI_SystemHook@@QAEPAVCAutoGameSystem@@I@Z
 slot ??_7CNavPropertyDatabase@@6BCAutoGameSystem@@@:8 patched after the link: the build's ??_GCNavPropertyDatabase@@UAEPAXI@Z is not the game's ?vfunc8@CNavPropertyDatabase@@QAEPAV1@I@Z
 slot ??_7CVoiceGameMgrHelper@@6B@:0 patched after the link: the build's ??_GCVoiceGameMgrHelper@@UAEPAXI@Z is not the game's ?sub_103531f0@Helper@@QAEPAXE@Z
 slot ??_7IVoiceGameMgrHelper@@6B@:0 patched after the link: the build's ??_GIVoiceGameMgrHelper@@UAEPAXI@Z is not the game's ?sub_103531c0@Helper@@QAEPAXE@Z

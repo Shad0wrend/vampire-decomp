@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 43053f50f421; do not edit by hand
+# written by pcdecomp standalone from vtmb 11d044767e7a; do not edit by hand
 089d52a6 ?ResetDbgInfo@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ
 100019d3 ?s_default@?5??Find@CUnknown101ec4f0Set@@QAEPAVCUnknown101ec4f0@@H@Z@$AV2@A
 1000229d ?ops@?1??Ops_109f0a78@@YAPAVISaveRestoreOps@@XZ@$AV?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@A
@@ -360,12 +360,12 @@
 1002d6c0 ?vfunc8@CPhysicsHook@@QAEPAV1@I@Z
 1002d750 ?sub_1002d750@@YAHXZ
 1002d750 ?sub_1002d750@@YAPADXZ
-1002d7d0 ?vfunc0@CPhysicsHook@@QAE_NXZ
-1002d930 ?vfunc2@CPhysicsHook@@QAEXXZ
-1002db40 ?vfunc3@CPhysicsHook@@QAEXXZ
-1002dbc0 ?vfunc4@CPhysicsHook@@QAEXXZ
-1002dc50 ?vfunc5@CPhysicsHook@@QAEXXZ
-1002dd70 ?vfunc7@CPhysicsHook@@QAEXXZ
+1002d7d0 ?vfunc0@CPhysicsHook@@UAE_NXZ
+1002d930 ?vfunc2@CPhysicsHook@@UAEXXZ
+1002db40 ?vfunc3@CPhysicsHook@@UAEXXZ
+1002dbc0 ?vfunc4@CPhysicsHook@@UAEXXZ
+1002dc50 ?vfunc5@CPhysicsHook@@UAEXXZ
+1002dd70 ?vfunc7@CPhysicsHook@@UAEXXZ
 1002dfe0 ?sub_1002dfe0@@YAHHH@Z
 1002dfe0 ?sub_1002dfe0@@YAPAXPBVVector@@0@Z
 1002e0a0 ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z
@@ -604,7 +604,7 @@
 1003c950 ?sub_1003c950@@YIXPAUSys@@@Z
 1003c9f0 ?AddDataAccessor@CDataObjectAccessSystem@@QAEXHPAX@Z
 1003c9f0 ?sub_1003c9f0@CDataObjectAccessSystem@@QAEXHPAX@Z
-1003ca90 ?vfunc8@CDataObjectAccessSystem@@UAEPAVCAutoGameSystem@@I@Z
+1003ca90 ?vfunc8@CDataObjectAccessSystem@@QAEPAVCAutoGameSystem@@I@Z
 1003cb00 ?sub_1003cb00@CBaseEntity@@QAE_NH@Z
 1003cbc0 ?sub_1003cbc0@CBaseEntity@@QAEXH@Z
 1003cc80 ?sub_1003cc80@CBaseEntity@@QAEXH@Z
@@ -5573,7 +5573,7 @@
 100db920 ?sub_100db920@@YAPAVCBaseEntity@@HPBD@Z
 100db920 ?sub_100db920@@YAPAXZZ
 100dba10 ?sub_1001509b@@YAXXZ
-100dbb50 ?vfunc8@CDirtySpatialPartitionEntityList@@UAEPAVCAutoGameSystem@@I@Z
+100dbb50 ?vfunc8@CDirtySpatialPartitionEntityList@@QAEPAVCAutoGameSystem@@I@Z
 100dbbe0 ?sub_100dbbe0@@YI_NPAD@Z
 100dbc20 ?vfunc1@CDirtySpatialPartitionEntityList@@UAEXXZ
 100dbc60 ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z
@@ -6274,10 +6274,10 @@
 100f8e20 ?sub_100f8e20@@YAXPAVCBaseEntity@@@Z
 100f8ec0 ?sub_10015b1d@C10015b1d@lifted@@QAEHXZ
 100f8ec0 ?sub_100f8ec0@CEntityTouchManager@@QAEXXZ
-100f8fb0 ?vfunc2@CEntityListSystem@@QAEXXZ
-100f9080 ?vfunc4@CEntityListSystem@@QAEHXZ
-100f90a0 ?vfunc5@CEntityListSystem@@QAEXXZ
-100f9160 ?vfunc7@CEntityListSystem@@QAEHXZ
+100f8fb0 ?vfunc2@CEntityListSystem@@UAEXXZ
+100f9080 ?vfunc4@CEntityListSystem@@UAEXXZ
+100f90a0 ?vfunc5@CEntityListSystem@@UAEXXZ
+100f9160 ?vfunc7@CEntityListSystem@@UAEXXZ
 100f91c0 ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z
 100f9280 ?sub_100f9280@@YAXXZ
 100f9460 ?sub_100f9460@@YADPAPAVCBaseEntity@@0@Z
@@ -9983,7 +9983,7 @@
 101878d0 ?sub_101878d0@@YAPAXPAX@Z
 10187c90 ?sub_10187c90@CLagCompensationManager@@QAEXXZ
 10187d00 ?vfunc5@CLagCompensationManager@@UAEXXZ
-10187dd0 ?vfunc8@CLagCompensationManager@@UAEPAV1@I@Z
+10187dd0 ?vfunc8@CLagCompensationManager@@QAEPAV1@I@Z
 10187e60 ?sub_10187e60@CLagCompensationManager@@QAEXPAUCPlayerView10187e60@@@Z
 10187e60 ?sub_10187e60@LagMgrV@@QAEMPAULagPlayerV@@@Z
 10187ef0 ?sub_10187ef0@CLagCompensationManager@@QAEXXZ
@@ -10025,7 +10025,7 @@
 1018a250 ?vfunc242@CPlayerResource@@QAEXXZ
 1018a3d0 ?vfunc5@CPlayerResource@@QAEPAV1@I@Z
 1018a450 ?sub_1018a450@@YAXXZ
-1018a4b0 ?vfunc8@CSkyList@@UAEPAVCAutoGameSystem@@I@Z
+1018a4b0 ?vfunc8@CSkyList@@QAEPAVCAutoGameSystem@@I@Z
 1018a4e0 _sky_camera
 1018a550 ?vfunc82@CSkyCamera@@UAEPAUdatamap_t@@XZ
 1018a5b0 ?sub_1018a5b0@@YAHXZ
@@ -10257,7 +10257,7 @@
 10191830 ?sub_10191830@@YGXH@Z
 101918e0 ?sub_101918e0@@YA_NPAPAD0@Z
 10191920 ?vfunc5@CBreakModelsPrecached@@UAEXXZ
-101919e0 ?vfunc8@CBreakModelsPrecached@@UAEPAXI@Z
+101919e0 ?vfunc8@CBreakModelsPrecached@@QAEPAXI@Z
 10191ac0 ?sub_10001c35@@YAXPBD@Z
 10191ac0 ?sub_10191ac0@@YAXH@Z
 10191ac0 ?sub_10191ac0@@YAXPBD@Z
@@ -10428,7 +10428,7 @@
 10199a70 ?sub_10199a70@@YAPAUPyObject@@PAU1@0@Z
 10199ce0 ?sub_10199ce0@@YAPAUPyObject@@PAU1@0@Z
 10199e20 ?sub_10199e20@@YAXXZ
-10199f40 ?vfunc8@PyServerSystem@@UAEPAV1@I@Z
+10199f40 ?vfunc8@PyServerSystem@@QAEPAV1@I@Z
 10199f70 ?vfunc0@PyServerSystem@@UAE_NXZ
 1019a3d0 ?vfunc1@PyServerSystem@@UAEXXZ
 1019a490 ?sub_1019a490@@YAXXZ
@@ -12463,7 +12463,7 @@
 101d16c0 ?sub_1000dd3c@@YAPBDPADPBDD@Z
 101d16c0 ?sub_101d16c0@@YAPADPAD0D@Z
 101d1760 ?vfunc2@CCheckClient@@UAEXXZ
-101d17d0 ?vfunc8@CCheckClient@@UAEPAVCAutoGameSystem@@I@Z
+101d17d0 ?vfunc8@CCheckClient@@QAEPAVCAutoGameSystem@@I@Z
 101d1800 ?sub_101d1800@@YAHH@Z
 101d1800 ?sub_101d1800@@YAPAUCUnknown1070b22c_Edict@@PAUViewerEntity@@@Z
 101d1800 ?sub_101d1800@@YAPAUSsEdict_t@@PAX@Z
@@ -15384,7 +15384,7 @@
 10227480 ?sub_10227480@@YGXH@Z
 102274b0 ?sub_10012cec@@YAXXZ
 102274b0 ?sub_102274b0@@YGXH@Z
-102275f0 ?vfunc8@CPlayerEventsManager@@UAEPAVCAutoGameSystem@@I@Z
+102275f0 ?vfunc8@CPlayerEventsManager@@QAEPAVCAutoGameSystem@@I@Z
 10227680 ?vfunc2@CPlayerEventsManager@@UAEXXZ
 102276f0 ?sub_102276f0@@YAXXZ
 10227710 ?vfunc4@CPlayerEventsManager@@UAEXXZ
@@ -15413,7 +15413,7 @@
 10228350 ?sub_10228350@@YAHH@Z
 10228350 ?sub_10228350@@YAHM@Z
 102283a0 ?sub_102283a0@@YAMMMMM@Z
-10228610 ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z
+10228610 ?vfunc8@CSoundSchemeManager@@QAEPAV1@I@Z
 10228700 ?vfunc2@CSoundSchemeManager@@UAEXXZ
 102287a0 ?vfunc5@CSoundSchemeManager@@UAEXXZ
 102288b0 ?sub_102288b0@CSoundSchemeManager@@QAEXXZ
@@ -15568,9 +15568,9 @@
 102306d0 ?sub_102306d0@SA@@QAEHHH@Z
 10230700 ?sub_10230700@@YGXHH@Z
 102307e0 ?vfunc8@CTeamManager@@QAEPAV1@I@Z
-10230820 ?vfunc2@CTeamManager@@QAEHXZ
-10230840 ?vfunc3@CTeamManager@@QAEHXZ
-10230860 ?vfunc5@CTeamManager@@QAEHXZ
+10230820 ?vfunc2@CTeamManager@@UAEXXZ
+10230840 ?vfunc3@CTeamManager@@UAEXXZ
+10230860 ?vfunc5@CTeamManager@@UAEXXZ
 10230880 ?sub_1000a72c@NameTable@@QAEFPBD@Z
 10230880 ?sub_10230880@CNameSymbolTable@@QAEGPBD@Z
 102308f0 ?sub_102308f0@CUnknown102308f0@@QAEHXZ
@@ -19501,7 +19501,7 @@
 102cc350 ?vfunc449@CAI_BaseNPC@@UAEHH@Z
 102cc3f0 ?vfunc2@CAI_SystemHook@@UAEXXZ
 102cc410 ?vfunc5@CAI_SystemHook@@UAEXXZ
-102cc480 ?vfunc8@CAI_SystemHook@@UAEPAVCAutoGameSystem@@I@Z
+102cc480 ?vfunc8@CAI_SystemHook@@QAEPAVCAutoGameSystem@@I@Z
 102cc4f0 ?sub_102cc4f0@@YAHXZ
 102cc520 ?sub_102cc520@CUnit102cc520@block_102cc670@@QAEPAVCUnknown102cc520@@XZ
 102cc520 ?sub_102cc520@CUnknown102cc520@@QAEPAV1@XZ
@@ -20325,10 +20325,10 @@
 102ea2d0 ?sub_102ea2d0@CAI_CondTable@@QAEHH@Z
 102ea2d0 ?sub_102ea2d0@CAI_NPCScheduleRef@@QAEHH@Z
 102ea2d0 ?sub_102ea2d0@CUnknown10359c50@@QAEHH@Z
-102ea450 ?vfunc0@CNavPropertyDatabase@@QAE_NXZ
+102ea450 ?vfunc0@CNavPropertyDatabase@@UAE_NXZ
 102ea4a0 ?sub_102ea4a0@@YAXXZ
 102ea4a0 ?sub_102ea4a0@@YA_NPAH0@Z
-102ea4d0 ?vfunc4@CNavPropertyDatabase@@QAEXXZ
+102ea4d0 ?vfunc4@CNavPropertyDatabase@@UAEXXZ
 102ea5a0 ?sub_102ea5a0@@YIXH@Z
 102ea5e0 ?sub_102ea5e0@@YGXH@Z
 102ea600 ?sub_102ea600@@YGXUCRBTree12Entry_102ec4a0@@@Z
@@ -26929,7 +26929,7 @@
 1042bbe0 ?vfunc81@CBaseViewModel@@UAEHXZ
 1042bcc0 ?sub_1042bcc0@@YAHXZ
 1042beb0 ?vfunc79@CBaseViewModel@@UAEHXZ
-1042bf20 ?vfunc5@CGameStringPool@@QAEXXZ
+1042bf20 ?vfunc5@CGameStringPool@@UAEXXZ
 1042bf90 ?vfunc8@CGameStringPool@@QAEPAV1@I@Z
 1042bfd0 ?sub_1042bfd0@@YAHXZ
 1042bff0 ?sub_10002095@@YA?AUstring_t@@PBD@Z
@@ -26966,7 +26966,7 @@
 1042c0c0 ?sub_1042c0c0@THL@@QAE_NHH@Z
 1042c260 ??0CAutoGameSystem@@QAE@XZ
 1042c260 ?sub_1042c260@CUnknown1042c260@@QAEPAXXZ
-1042c290 ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z
+1042c290 ?vfunc8@CAutoGameSystem@@QAEPAV1@I@Z
 1042c2c0 ??1IGameSystem@@UAE@XZ
 1042c2c0 ?sub_1000cfbd@CAI_SystemHook@@QAEXXZ
 1042c2c0 ?sub_1000cfbd@CAutoGameSystem@@QAEXXZ
