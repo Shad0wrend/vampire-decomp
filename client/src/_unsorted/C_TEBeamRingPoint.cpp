@@ -10,3 +10,14 @@ C_TEBeamRingPoint *pcd_emit_10033b90() { return new C_TEBeamRingPoint; }
 
 // TARGET: ??_GC_TEBeamRingPoint@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10033ce0 size=0x6
+#include "C_TEBeamRingPoint.h"
+namespace lifted {
+extern char g_1027dd0c;
+}
+int C_TEBeamRingPoint::vfunc9()
+{
+    return (int)&lifted::g_1027dd0c;
+}
+// END FUNCTION
