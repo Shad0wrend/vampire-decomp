@@ -21,3 +21,10 @@ void IParticleEffect::vfunc4()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10004e00 size=0x3
+#include "IParticleEffect.h"
+void IParticleEffect::vfunc5(int a0)
+{
+}
+// END FUNCTION
