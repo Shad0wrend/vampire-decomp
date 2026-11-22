@@ -11,6 +11,13 @@ CharEditInfoPanel *pcd_emit_1017b530() { return new CharEditInfoPanel; }
 // TARGET: ??_GCharEditInfoPanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1017c3a0 size=0x3
+#include "CharEditInfoPanel.h"
+void CharEditInfoPanel::vfunc124(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c560 size=0x1
 #include "CharEditInfoPanel.h"
 void CharEditInfoPanel::vfunc119()
