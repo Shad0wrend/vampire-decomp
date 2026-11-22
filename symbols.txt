@@ -2288,6 +2288,7 @@
 0x10003d78 func   ?sub_10402230@@YAHXZ sub_10402230
 0x10003d7d func   ?sub_1036f420@@YIPAXPAX@Z sub_1036f420
 0x10003d82 func   ?sub_1006d620@CBaseCineCam@@QAEPAV1@XZ CBaseCineCam::sub_1006d620
+0x10003d87 func   ?NoteBBox@CPhysSaveRestoreBlockHandler@@UAEXABVVector@@0PAVCPhysCollide@@@Z CPhysSaveRestoreBlockHandler::NoteBBox
 0x10003d87 func   ?sub_10044c20@CUnknown10044c20@@QAEXPBVVector@@0I@Z CUnknown10044c20::sub_10044c20
 0x10003d8c func   ?vfunc5@CWeaponMelee_MingXiaoTentacle@@UAEPAVCBaseEntity@@I@Z CWeaponMelee_MingXiaoTentacle::vfunc5
 0x10003d91 func   ?sub_102517e0@CBaseCombatWeapon@@QAEPAHXZ CBaseCombatWeapon::sub_102517e0
