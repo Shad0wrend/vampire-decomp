@@ -2241,6 +2241,7 @@
 0x100ad710 func   ?sub_100ad710@CUnknown100ad710@@QAEPAXXZ CUnknown100ad710::sub_100ad710
 0x100ad790 func   ?sub_100ad790@@YAHXZ sub_100ad790
 0x100ad7a0 func   ?sub_100ad7a0@@YAHXZ sub_100ad7a0
+0x100add40 func   ?vfunc15@C_DynamicLight@@UAEHXZ C_DynamicLight::vfunc15
 0x100add50 func   ?sub_100add50@@YAHXZ sub_100add50
 0x100ade50 func   ?ClientClassInit@@YAHPAUignored@DT_DynamicLight@@@Z ClientClassInit
 0x100ae000 func   ??_GC_DynamicLight@@UAEPAXI@Z ??_GC_DynamicLight@@UAEPAXI@Z
