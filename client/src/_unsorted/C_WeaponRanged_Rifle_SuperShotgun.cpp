@@ -22,6 +22,17 @@ C_WeaponRanged_Rifle_SuperShotgun *pcd_emit_1000ed90() { return new C_WeaponRang
 // TARGET: ??_GC_WeaponRanged_Rifle_SuperShotgun@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000edb0 size=0x6
+#include "C_WeaponRanged_Rifle_SuperShotgun.h"
+namespace lifted {
+extern char g_10274c00;
+}
+int C_WeaponRanged_Rifle_SuperShotgun::vfunc16()
+{
+    return (int)&lifted::g_10274c00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000edc0 size=0x3
 #include "C_WeaponRanged_Rifle_SuperShotgun.h"
 int C_WeaponRanged_Rifle_SuperShotgun::vfunc15()
