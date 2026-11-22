@@ -24,3 +24,10 @@ vgui2::MenuButton *pcd_emit_101c95b0() { return new vgui2::MenuButton; }
 
 // TARGET: ??_GMenuButton@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101c9620 size=0x3
+#include "vgui2__MenuButton.h"
+void vgui2::MenuButton::vfunc163(int a0, int a1, int a2, int a3)
+{
+}
+// END FUNCTION
