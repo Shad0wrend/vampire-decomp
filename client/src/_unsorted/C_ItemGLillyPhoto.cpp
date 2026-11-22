@@ -22,6 +22,17 @@ C_ItemGLillyPhoto *pcd_emit_10018d90() { return new C_ItemGLillyPhoto; }
 // TARGET: ??_GC_ItemGLillyPhoto@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10018db0 size=0x6
+#include "C_ItemGLillyPhoto.h"
+namespace lifted {
+extern char g_10274680;
+}
+int C_ItemGLillyPhoto::vfunc16()
+{
+    return (int)&lifted::g_10274680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018dc0 size=0x3
 #include "C_ItemGLillyPhoto.h"
 int C_ItemGLillyPhoto::vfunc15()
