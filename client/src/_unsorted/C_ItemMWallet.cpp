@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10010100 size=0x6
+#include "C_ItemMWallet.h"
+namespace lifted {
+extern char g_10272e50;
+}
+int C_ItemMWallet::vfunc17()
+{
+    return (int)&lifted::g_10272e50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010190 size=0x1e
 #include "C_ItemMWallet.h"
 
