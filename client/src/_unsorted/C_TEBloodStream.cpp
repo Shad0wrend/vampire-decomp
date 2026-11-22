@@ -21,3 +21,11 @@ int C_TEBloodStream::vfunc9()
     return (int)&lifted::g_1027e354;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10034c20 size=0x3
+#include "C_TEBloodStream.h"
+int C_TEBloodStream::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
