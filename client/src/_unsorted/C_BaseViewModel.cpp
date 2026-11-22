@@ -26,3 +26,14 @@ bool C_BaseViewModel::vfunc142()
     return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ab510 size=0x12
+#include "C_BaseViewModel.h"
+namespace lifted {
+int sub_100ab2b0(int, int);
+}
+int C_BaseViewModel::vfunc139(int a0)
+{
+    return lifted::sub_100ab2b0(a0, 1);
+}
+// END FUNCTION

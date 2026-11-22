@@ -1873,6 +1873,7 @@
 0x100aad80 func   ?sub_100aad80@UtlMem@@QAEXH@Z UtlMem::sub_100aad80
 0x100aaf30 func   ?sub_100aaf30@@YAHXZ sub_100aaf30
 0x100ab500 func   ?vfunc142@C_BaseViewModel@@UAE_NXZ C_BaseViewModel::vfunc142
+0x100ab510 func   ?vfunc139@C_BaseViewModel@@UAEHH@Z C_BaseViewModel::vfunc139
 0x100abf90 func   ?sub_100abf90@@YADXZ sub_100abf90
 0x100ac060 func   ?sub_100ac060@@YAHXZ sub_100ac060
 0x100ac070 func   ?sub_100ac070@@YAHXZ sub_100ac070
