@@ -27378,6 +27378,23 @@ char CUnknown100af0b0::sub_100af0b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af100 size=0x23
+namespace lifted {
+struct C100af130 { int sub_100af130(); };
+struct C100af140 { int sub_100af140(int); };
+}
+struct CUnknown100af100 { char sub_100af100(int); };
+char CUnknown100af100::sub_100af100(int a0)
+{
+    int t0 = ((lifted::C100af130 *)this)->sub_100af130();
+    if (t0 != a0) {
+        return 0;
+    }
+    ((lifted::C100af140 *)this)->sub_100af140(0);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100af130 size=0x7
 struct CUnknown100af130 { int sub_100af130(); };
 int CUnknown100af130::sub_100af130()
