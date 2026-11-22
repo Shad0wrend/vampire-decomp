@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100028e0 size=0x6
+#include "C_BaseHLPlayer.h"
+namespace lifted {
+extern char g_10270e7c;
+}
+int C_BaseHLPlayer::vfunc16()
+{
+    return (int)&lifted::g_10270e7c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100028f0 size=0x3
 #include "C_BaseHLPlayer.h"
 int C_BaseHLPlayer::vfunc15()
