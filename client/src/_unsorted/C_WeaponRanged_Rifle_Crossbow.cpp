@@ -10,3 +10,11 @@ C_WeaponRanged_Rifle_Crossbow *pcd_emit_1000d990() { return new C_WeaponRanged_R
 
 // TARGET: ??_GC_WeaponRanged_Rifle_Crossbow@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000d9c0 size=0x3
+#include "C_WeaponRanged_Rifle_Crossbow.h"
+int C_WeaponRanged_Rifle_Crossbow::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
