@@ -10,3 +10,10 @@ CVMenuButton *pcd_emit_10065390() { return new CVMenuButton; }
 
 // TARGET: ??_GCVMenuButton@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100654b0 size=0x3
+#include "CVMenuButton.h"
+void CVMenuButton::vfunc91(int a0)
+{
+}
+// END FUNCTION
