@@ -152,3 +152,11 @@ int CViewRender::vfunc38()
     return *(int *)((char *)this + 0x444);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10192870 size=0x7
+#include "CViewRender.h"
+float CViewRender::vfunc45()
+{
+    return *(float *)((char *)this + 0x450);
+}
+// END FUNCTION
