@@ -5441,6 +5441,7 @@
 0x101b85d0 func   ??1Frame@vgui2@@UAE@XZ vgui2::Frame::~Frame
 0x101b87f0 func   ?vfunc166@MenuButton@vgui2@@UAEXH@Z vgui2::MenuButton::vfunc166
 0x101b8800 func   ?vfunc167@MenuButton@vgui2@@UAEXH@Z vgui2::MenuButton::vfunc167
+0x101b8e50 func   ?vfunc119@Frame@vgui2@@UAE_ND@Z vgui2::Frame::vfunc119
 0x101b8e80 func   ?vfunc120@Frame@vgui2@@UAE_NXZ vgui2::Frame::vfunc120
 0x101b8e90 func   ?vfunc122@Frame@vgui2@@UAE_NXZ vgui2::Frame::vfunc122
 0x101b9120 func   ?vfunc138@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc138

@@ -11,6 +11,15 @@ vgui2::Frame *pcd_emit_101b85b0() { return new vgui2::Frame; }
 // TARGET: ??_GFrame@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b8e50 size=0xd
+#include "vgui2__Frame.h"
+bool vgui2::Frame::vfunc119(char a0)
+{
+    *(char *)((char *)this + 0x8d) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b8e80 size=0x7
 #include "vgui2__Frame.h"
 bool vgui2::Frame::vfunc120()
