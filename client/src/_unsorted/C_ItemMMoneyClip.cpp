@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10010380 size=0x6
+#include "C_ItemMMoneyClip.h"
+namespace lifted {
+extern char g_10272e6c;
+}
+int C_ItemMMoneyClip::vfunc17()
+{
+    return (int)&lifted::g_10272e6c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010410 size=0x1e
 #include "C_ItemMMoneyClip.h"
 
