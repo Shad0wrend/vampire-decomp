@@ -266,8 +266,9 @@ def draw(data: dict) -> str:
     y += 8
     k = data["known"]
     rows = [("vampire.dll standalone", f"{k.get('slot', 0)} vtable slots, {k.get('export-missing', 0)} SafeDisc "
-                                       f"exports, {k.get('function', 0)} functions, {k.get('initializer', 0)} static "
-                                       "initializers differ; an in-game test"),
+                                       f"exports, {k.get('function', 0)} functions"
+                                       + (f", {k['initializer']} static initializers" if k.get("initializer") else "")
+                                       + " differ; an in-game test"),
             ("client.dll", f"{t['n_open']:,} functions ({t['open']:,} bytes) not matched yet"),
             ("Not started", ", ".join(m["name"] for m in mods if not m["done"]))]
     for name, text in rows:
