@@ -409,6 +409,15 @@ int C_BaseEntity::vfunc49(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2e20 size=0xf
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc50(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x18c);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e30 size=0x1
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc90()
