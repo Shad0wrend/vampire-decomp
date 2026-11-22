@@ -18,6 +18,17 @@ void C_TEMetalSparks::vfunc13()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032290 size=0x6
+#include "C_TEMetalSparks.h"
+namespace lifted {
+extern char g_1027d078;
+}
+int C_TEMetalSparks::vfunc9()
+{
+    return (int)&lifted::g_1027d078;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100322a0 size=0x3
 #include "C_TEMetalSparks.h"
 int C_TEMetalSparks::vfunc8()
