@@ -437,6 +437,7 @@
 0x10012750 func   ?sub_10012750@@YAHXZ sub_10012750
 0x10012870 func   ?ClientClassInit@@YAHPAUignored@DT_OccultHacking@@@Z ClientClassInit
 0x10012990 func   ??_GC_OccultFrenzy@@UAEPAXI@Z ??_GC_OccultFrenzy@@UAEPAXI@Z
+0x100129c0 func   ?vfunc15@C_OccultFrenzy@@UAEHXZ C_OccultFrenzy::vfunc15
 0x100129d0 func   ?sub_100129d0@@YAHXZ sub_100129d0
 0x10012af0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultFrenzy@@@Z ClientClassInit
 0x10012c10 func   ??_GC_OccultLockpicking@@UAEPAXI@Z ??_GC_OccultLockpicking@@UAEPAXI@Z
