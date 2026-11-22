@@ -10,3 +10,10 @@ CHudManager *pcd_emit_100575b0() { return new CHudManager; }
 
 // TARGET: ??_GCHudManager@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10057640 size=0x1
+#include "CHudManager.h"
+void CHudManager::vfunc112()
+{
+}
+// END FUNCTION

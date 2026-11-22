@@ -2018,6 +2018,7 @@
 0x10057520 func   ?sub_10057520@@YADXZ sub_10057520
 0x100575b0 func   ??_GCHudManager@@UAEPAXI@Z ??_GCHudManager@@UAEPAXI@Z
 0x100575d0 func   ??1CHudManager@@UAE@XZ CHudManager::~CHudManager
+0x10057640 func   ?vfunc112@CHudManager@@UAEXXZ CHudManager::vfunc112
 0x10057ca0 func   ?sub_10057ca0@PanelView@@QAEXHHH@Z PanelView::sub_10057ca0
 0x10057d40 func   ?sub_10057d40@@YGXHHH@Z sub_10057d40
 0x10057e10 func   ?sub_10057e10@@YGXHHH@Z sub_10057e10
