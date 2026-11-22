@@ -17,3 +17,14 @@ void C_TEExplosiveGunshotDecal::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039c20 size=0x6
+#include "C_TEExplosiveGunshotDecal.h"
+namespace lifted {
+extern char g_10280068;
+}
+int C_TEExplosiveGunshotDecal::vfunc9()
+{
+    return (int)&lifted::g_10280068;
+}
+// END FUNCTION
