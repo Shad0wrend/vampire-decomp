@@ -90,6 +90,20 @@ char * C_BaseEntity::vfunc54()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001670 size=0x21
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc55(int a0)
+{
+    int t0 = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x1f4) = t0;
+    int t1 = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x1f8) = t1;
+    int t2 = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x1fc) = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100016a0 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc58()
