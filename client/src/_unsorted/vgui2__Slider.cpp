@@ -36,3 +36,12 @@ int vgui2::Slider::vfunc113(int a0)
     return a0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101bc300 size=0xd
+#include "vgui2__Slider.h"
+int vgui2::Slider::vfunc115(int a0)
+{
+    *(int *)((char *)this + 0x9c) = a0;
+    return a0;
+}
+// END FUNCTION
