@@ -2458,22 +2458,12 @@ void CBreakModelsPrecached::vfunc5()
 
 // FUNCTION: 0x101919e0 size=0x45
 #include "CBreakModelsPrecached.h"
-#include "utlmemory.h"
-struct CBaseGameSystemView { void sub_1042c2c0(); };
-void *CBreakModelsPrecached::vfunc8(unsigned int flags)
-{
-	if (m_modelList.m_Elements.m_nGrowSize != -1) {
-		if (m_modelList.m_Elements.m_pMemory) {
-			Plat_Free(m_modelList.m_Elements.m_pMemory);
-			m_modelList.m_Elements.m_pMemory = 0;
-		}
-		m_modelList.m_Elements.m_nAllocationCount = 0;
-	}
-	((CBaseGameSystemView *)this)->sub_1042c2c0();
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+
+// VC6 writes CBreakModelsPrecached's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CBreakModelsPrecached *pcd_emit_101919e0() { return new CBreakModelsPrecached; }
+
+// TARGET: ??_GCBreakModelsPrecached@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x10191ac0 size=0x18b
