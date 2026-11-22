@@ -722,6 +722,7 @@
 0x10027840 func   ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z
 0x10027980 func   ?vfunc143@C_WeaponRanged_FlameThrower@@UAEXXZ C_WeaponRanged_FlameThrower::vfunc143
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
+0x10028360 func   ?vfunc188@C_WeaponGravityGun@@UAE_NXZ C_WeaponGravityGun::vfunc188
 0x10028390 func   ??_GC_WeaponGravityGun@@UAEPAXI@Z ??_GC_WeaponGravityGun@@UAEPAXI@Z
 0x100283d0 func   ?sub_100283d0@@YAHXZ sub_100283d0
 0x10028500 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponPhysCannon@@@Z ClientClassInit
