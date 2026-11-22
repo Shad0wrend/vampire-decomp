@@ -22,6 +22,17 @@ C_WeaponMelee_Claws_Protean5 *pcd_emit_1000a290() { return new C_WeaponMelee_Cla
 // TARGET: ??_GC_WeaponMelee_Claws_Protean5@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000a2b0 size=0x6
+#include "C_WeaponMelee_Claws_Protean5.h"
+namespace lifted {
+extern char g_10274f88;
+}
+int C_WeaponMelee_Claws_Protean5::vfunc16()
+{
+    return (int)&lifted::g_10274f88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a2c0 size=0x3
 #include "C_WeaponMelee_Claws_Protean5.h"
 int C_WeaponMelee_Claws_Protean5::vfunc15()
