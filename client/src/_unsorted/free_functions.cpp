@@ -8518,6 +8518,19 @@ template <> int ClientClassInit<DT_SmokeStack::ignored>(DT_SmokeStack::ignored *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002feb0 size=0x1b
+namespace lifted {
+extern char g_102eae94;
+}
+struct CUnknown1002feb0 { char sub_1002feb0(int, int); };
+char CUnknown1002feb0::sub_1002feb0(int a0, int a1)
+{
+    *(int *)((char *)a0) = (int)&lifted::g_102eae94;
+    *(int *)((char *)a1) = (int)this + -1128;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030c50 size=0x6
 namespace lifted {
 extern char g_102eb568;

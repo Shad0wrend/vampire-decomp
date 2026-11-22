@@ -1507,6 +1507,7 @@
 0x1002f8a0 func   ?ClientClassInit@@YAHPAUignored@DT_SmokeStack@@@Z ClientClassInit
 0x1002fcf0 func   ??_GC_SmokeStack@@UAEPAXI@Z ??_GC_SmokeStack@@UAEPAXI@Z
 0x1002fd10 func   ??1C_SmokeStack@@UAE@XZ C_SmokeStack::~C_SmokeStack
+0x1002feb0 func   ?sub_1002feb0@CUnknown1002feb0@@QAEDHH@Z CUnknown1002feb0::sub_1002feb0
 0x10030790 func   ?sub_10030790@CLitSmokeEmitter@@QAEXHHHH@Z CLitSmokeEmitter::sub_10030790
 0x10030c30 func   ?vfunc16@C_SteamJet@@UAEHXZ C_SteamJet::vfunc16
 0x10030c40 func   ?vfunc15@C_SteamJet@@UAEHXZ C_SteamJet::vfunc15
