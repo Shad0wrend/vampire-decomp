@@ -14,12 +14,9 @@ void CCheckClient::vfunc2()
 // FUNCTION: 0x101d17d0 size=0x1e
 #include "CCheckClient.h"
 
-// TARGET: CCheckClient::vfunc8
-CAutoGameSystem *CCheckClient::vfunc8(unsigned int flags)
-{
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes CCheckClient's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CCheckClient *pcd_emit_101d17d0() { return new CCheckClient; }
+
+// TARGET: ??_GCCheckClient@@UAEPAXI@Z
 // END FUNCTION

@@ -699,7 +699,6 @@
 0x10001de8 func   ?sub_10207c40@@YGPAUStatDefault3@@PAVCBaseCombatCharacter@@@Z sub_10207c40
 0x10001ded func   ?vfunc362@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc362
 0x10001df2 func   ??_GCCheckClient@@UAEPAXI@Z ??_GCCheckClient@@UAEPAXI@Z
-0x10001df2 func   ?vfunc8@CCheckClient@@QAEPAVCAutoGameSystem@@I@Z CCheckClient::vfunc8
 0x10001df7 func   ?sub_1021bd80@CUnknown1021bec0@@QAEXXZ CUnknown1021bec0::sub_1021bd80
 0x10001dfc func   ?sub_102d2f30@@YAPAVCEntityVSlots@@HHHH@Z sub_102d2f30
 0x10001e01 func   ?sub_101ac690@CAmbientGenericInput@@QAEXPAUinputdata_t@@@Z CAmbientGenericInput::sub_101ac690
