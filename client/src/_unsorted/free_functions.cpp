@@ -55787,6 +55787,24 @@ int CVDmg_t::sub_10159080(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159110 size=0x5f
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern int g_105f9390;
+
+void sub_10159110(int callback)
+{
+	g_101e3124[*g_101e3128].a = "SetDmgEvadeCallback";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	g_105f9390 = callback;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159170 size=0x7e
 #include "CVDmg_t.h"
 
