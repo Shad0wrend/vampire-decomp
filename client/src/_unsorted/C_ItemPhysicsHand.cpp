@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002f70 size=0x6
+#include "C_ItemPhysicsHand.h"
+namespace lifted {
+extern char g_102713c8;
+}
+int C_ItemPhysicsHand::vfunc17()
+{
+    return (int)&lifted::g_102713c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003220 size=0xd
 #include "C_ItemPhysicsHand.h"
 namespace lifted {

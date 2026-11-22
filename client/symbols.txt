@@ -60,6 +60,7 @@
 0x10002dc0 func   ??_GC_Corpse@@UAEPAXI@Z ??_GC_Corpse@@UAEPAXI@Z
 0x10002ee0 func   ?ClientClassInit@@YAHPAUignored@DT_HL2Local@@@Z ClientClassInit
 0x10002f60 func   ?sub_10002f60@CUnknown10002f60@@QAEPAXXZ CUnknown10002f60::sub_10002f60
+0x10002f70 func   ?vfunc17@C_ItemPhysicsHand@@UAEHXZ C_ItemPhysicsHand::vfunc17
 0x10003000 func   ?vfunc143@C_BaseCombatWeapon@@UAEXXZ C_BaseCombatWeapon::vfunc143
 0x10003010 func   ?vfunc144@C_BaseCombatWeapon@@UAEXXZ C_BaseCombatWeapon::vfunc144
 0x10003030 func   ?vfunc154@C_BaseCombatWeapon@@UAE_NXZ C_BaseCombatWeapon::vfunc154
