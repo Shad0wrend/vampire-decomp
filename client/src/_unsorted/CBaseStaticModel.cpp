@@ -24,3 +24,11 @@ IClientEntity * CBaseStaticModel::GetIClientEntity()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e13f0 size=0x3
+#include "CBaseStaticModel.h"
+C_BaseEntity * CBaseStaticModel::GetBaseEntity()
+{
+    return 0;
+}
+// END FUNCTION
