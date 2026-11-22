@@ -26866,6 +26866,30 @@ template <> int ClientClassInit<DT_DynamicLight::ignored>(DT_DynamicLight::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adfc0 size=0x3c
+namespace lifted {
+extern char g_1022e974;
+extern char g_1022e988;
+extern char g_1022e9c4;
+extern char g_1022e9fc;
+extern char g_1022ea54;
+int sub_1009db90();
+}
+struct CUnknown100adfc0 { void * sub_100adfc0(); };
+void * CUnknown100adfc0::sub_100adfc0()
+{
+    lifted::sub_1009db90();
+    *(int *)this = (int)&lifted::g_1022ea54;
+    *(int *)((char *)this + 0x42c) = 0;
+    *(int *)((char *)this + 0x430) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_1022e9fc;
+    *(int *)((char *)this + 8) = (int)&lifted::g_1022e9c4;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_1022e988;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_1022e974;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae060 size=0x3
 char sub_100ae060()
 {
