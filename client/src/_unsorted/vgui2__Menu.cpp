@@ -18,3 +18,14 @@ int vgui2::Menu::vfunc129()
     return *(int *)((char *)this + 0x64);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c0e60 size=0x6
+#include "vgui2__Menu.h"
+namespace lifted {
+extern char g_102d99b0;
+}
+int vgui2::Menu::vfunc102()
+{
+    return (int)&lifted::g_102d99b0;
+}
+// END FUNCTION
