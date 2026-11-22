@@ -29,3 +29,11 @@ int vgui2::Menu::vfunc102()
     return (int)&lifted::g_102d99b0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c0e80 size=0x7
+#include "vgui2__Menu.h"
+int vgui2::Menu::vfunc131()
+{
+    return *(int *)((char *)this + 0x8c);
+}
+// END FUNCTION
