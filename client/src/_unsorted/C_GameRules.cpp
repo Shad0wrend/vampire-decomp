@@ -11,6 +11,20 @@ C_GameRules *pcd_emit_100bbba0() { return new C_GameRules; }
 // TARGET: ??_GC_GameRules@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100bbbe0 size=0x14
+#include "C_GameRules.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual int f7(); };
+}
+int C_GameRules::vfunc6()
+{
+    if ((*(int *)((char *)this + 4)) == 0) {
+        ((lifted::V *)this)->f7();
+    }
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbc30 size=0xb
 #include "C_GameRules.h"
 namespace lifted {
