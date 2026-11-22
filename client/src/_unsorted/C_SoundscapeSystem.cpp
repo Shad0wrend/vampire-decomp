@@ -7,3 +7,10 @@ void C_SoundscapeSystem::vfunc9()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c0a40 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc2()
+{
+}
+// END FUNCTION
