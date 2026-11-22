@@ -21,3 +21,10 @@ void C_SoundscapeSystem::vfunc3()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c0a60 size=0x1
+#include "C_SoundscapeSystem.h"
+void C_SoundscapeSystem::vfunc4()
+{
+}
+// END FUNCTION
