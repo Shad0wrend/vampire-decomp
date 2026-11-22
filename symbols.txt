@@ -12518,6 +12518,7 @@
 0x1001074e func   ?vfunc104@CPhysicsCannister@@QAEXXZ CPhysicsCannister::vfunc104
 0x10010753 func   ?sub_10170d40@@YIXPAH@Z sub_10170d40
 0x10010758 func   ?sub_101dddb0@CUnknown101dddb0@@QAEXXZ CUnknown101dddb0::sub_101dddb0
+0x1001075d func   ?ReadRestoreHeaders@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestore@@@Z CEQ_SaveRestoreBlockHandler::ReadRestoreHeaders
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
 0x10010762 func   ?vfunc82@CNPC_VCameraSecurity@@UAEPAUdatamap_t@@XZ CNPC_VCameraSecurity::vfunc82
 0x10010767 func   ?sub_10246410@@YAHHHH@Z sub_10246410
