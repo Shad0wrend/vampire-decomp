@@ -1,10 +1,10 @@
 // class CAnchorList (RTTI .?AVCAnchorList@@), primary vtable 0x10446760 with 9 slots.
-// Bases per RTTI: CAutoGameSystem / CBaseGameSystem / IGameSystem at +0x0. The game-system side is
-// modelled by CBaseGameSystem on IGameSystem (nine slots, slot 8 IGameSystem's virtual destructor, 8 bytes); the
-// utl-vector-like member (memory pointer, allocation count, grow size, size, element pointer) follows at +0x8.
+// Bases per RTTI: CAutoGameSystem / CBaseGameSystem / IGameSystem at +0x0 (GameSystemRoot.h: nine slots, slot 8
+// IGameSystem's virtual destructor, 8 bytes); the utl-vector-like member (memory pointer, allocation count, grow
+// size, size, element pointer) follows at +0x8.
 #pragma once
 
-#include "IGameSystem.h"
+#include "GameSystemRoot.h"
 
 extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 #ifdef PCD_INITIALIZERS	// the initializer units call tier0's import itself (the destroy keeps its address in a register)
@@ -14,26 +14,6 @@ extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
 #define PCD_PLAT_FREE g_109f3624
 #endif
 
-#ifdef PCD_INITIALIZERS
-#include "GameSystemRoot.h"	// the initializer units: Source's root (CAutoGameSystem has the same 8 bytes)
-#define PCD_GAMESYSTEM8 CAutoGameSystem
-#else
-class CBaseGameSystem : public IGameSystem
-{
-public:
-	virtual bool vfunc0();	// slot 0 "Init" (returns al)
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-
-	char m_04[4];	// CAutoGameSystem's m_pNext
-};
-#define PCD_GAMESYSTEM8 CBaseGameSystem
-#endif
 
 class CAnchorListVec
 {
@@ -68,7 +48,7 @@ public:
 	int *m_pElements;		// 0x18
 };
 
-class CAnchorList : public PCD_GAMESYSTEM8
+class CAnchorList : public CAutoGameSystem
 {
 public:
 	virtual void vfunc5();

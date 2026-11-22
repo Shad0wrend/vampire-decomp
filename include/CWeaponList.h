@@ -25,7 +25,7 @@ public:
 	CUtlLinkedList<int, unsigned short> m_list;	// +8
 };
 #else
-class CWeaponList : public PCD_GAMESYSTEM8	// the 8-byte game-system root (CAnchorList.h)
+class CWeaponList : public CAutoGameSystem	// the game-system root (GameSystemRoot.h)
 {
 public:
 	virtual void vfunc5();	// resets the weapon-name list
