@@ -147,6 +147,15 @@ bool vgui2::TextEntry::vfunc144(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afae0 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc142(char a0)
+{
+    *(char *)((char *)this + 0xf6) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1410 size=0xc
 #include "vgui2__TextEntry.h"
 namespace lifted {
