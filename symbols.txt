@@ -6972,6 +6972,7 @@
 0x10009985 func   ?sub_1018f000@@YAPAHXZ sub_1018f000
 0x1000998a func   ?sub_1018a030@@YAHXZ sub_1018a030
 0x1000998f func   ?sub_102037f0@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_102037f0
+0x10009994 func   ?Save@CSaveRestoreBlockSet@@UAEXPAVISave@@@Z CSaveRestoreBlockSet::Save
 0x10009994 func   ?vfunc2@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc2
 0x10009999 func   ?IsLeftChild@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QBE_NG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::IsLeftChild
 0x10009999 func   ?sub_1004c4c0@CUtlRBTree36@@QBE_NG@Z CUtlRBTree36::sub_1004c4c0
