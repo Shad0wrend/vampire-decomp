@@ -3575,6 +3575,7 @@
 0x100ff920 func   ?vfunc39@CInput@@UAEXXZ CInput::vfunc39
 0x100ff930 func   ?vfunc40@CInput@@UAEXXZ CInput::vfunc40
 0x100ff940 func   ?vfunc48@CInput@@UAE_NXZ CInput::vfunc48
+0x100ff9b0 func   ?vfunc47@CInput@@UAEHXZ CInput::vfunc47
 0x100ff9d0 func   ?vfunc41@CInput@@UAEXXZ CInput::vfunc41
 0x100ff9e0 func   ?vfunc42@CInput@@UAEHXZ CInput::vfunc42
 0x100ff9f0 func   ?vfunc43@CInput@@UAEXXZ CInput::vfunc43

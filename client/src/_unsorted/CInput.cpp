@@ -101,6 +101,20 @@ bool CInput::vfunc48()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff9b0 size=0x1b
+#include "CInput.h"
+namespace lifted {
+extern char g_104d2700;
+struct C100dfa90 { int sub_100dfa90(int); };
+}
+int CInput::vfunc47()
+{
+    *(char *)((char *)this + 0xf0) = 0;
+    *(char *)((char *)this + 0x1b8) = 1;
+    return ((lifted::C100dfa90 *)((int)&lifted::g_104d2700))->sub_100dfa90(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff9d0 size=0x1
 #include "CInput.h"
 void CInput::vfunc41()
