@@ -5383,6 +5383,7 @@
 0x101acdb0 func   ??1TextEntry@vgui2@@UAE@XZ vgui2::TextEntry::~TextEntry
 0x101ace00 func   ?sub_101ace00@TEV@@QAEXPAUIScheme@@@Z TEV::sub_101ace00
 0x101acf00 func   ?vfunc137@TextEntry@vgui2@@UAEHH@Z vgui2::TextEntry::vfunc137
+0x101ad530 func   ?vfunc133@TextEntry@vgui2@@UAEHD@Z vgui2::TextEntry::vfunc133
 0x101ae190 func   ?sub_101ae190@TV@@QAEHH@Z TV::sub_101ae190
 0x101aed00 func   ??_GClickPanel@vgui2@@UAEPAXI@Z ??_GClickPanel@vgui2@@UAEPAXI@Z
 0x101aef10 func   ?vfunc138@TextEntry@vgui2@@UAE_ND@Z vgui2::TextEntry::vfunc138
