@@ -47,3 +47,11 @@ int ConCommand::vfunc4(int a, int b)
 	return ((int (__cdecl *)(int, int))m_pfnCompletion)(a, b);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100df530 size=0x4
+#include "ConCommand.h"
+bool ConCommand::vfunc5()
+{
+    return *(bool *)((char *)this + 0x24);
+}
+// END FUNCTION
