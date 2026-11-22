@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10030c40 size=0x3
+#include "C_SteamJet.h"
+int C_SteamJet::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030fd0 size=0x1e
 #include "C_SteamJet.h"
 
