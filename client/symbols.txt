@@ -3567,6 +3567,7 @@
 0x100fbdc0 func   ?sub_100fbdc0@@YAHXZ sub_100fbdc0
 0x100fbdd0 func   ?sub_100fbdd0@@YAHXZ sub_100fbdd0
 0x100fbde0 func   ?sub_100fbde0@@YAHXZ sub_100fbde0
+0x100ff900 func   ?vfunc37@CInput@@UAEXXZ CInput::vfunc37
 0x100ff940 func   ?vfunc48@CInput@@UAE_NXZ CInput::vfunc48
 0x100ff9d0 func   ?vfunc41@CInput@@UAEXXZ CInput::vfunc41
 0x100ff9f0 func   ?vfunc43@CInput@@UAEXXZ CInput::vfunc43
