@@ -3630,6 +3630,7 @@
 0x100057ef func   ?vfunc138@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc138
 0x100057f4 func   ?sub_1010d4b0@@YAPAHXZ sub_1010d4b0
 0x100057fe func   ?sub_101ad9a0@CUnknown101ad9a0@@QAEPAVCGlobalEntityList_Ent@@XZ CUnknown101ad9a0::sub_101ad9a0
+0x10005803 func   ?ReadRestoreHeaders@CPhysSaveRestoreBlockHandler@@UAEXPAVIRestore@@@Z CPhysSaveRestoreBlockHandler::ReadRestoreHeaders
 0x10005803 func   ?vfunc6@CPhysSaveRestoreBlockHandler@@QAEXPAX@Z CPhysSaveRestoreBlockHandler::vfunc6
 0x10005808 func   ?vfunc5@CNPC_VGangrel@@UAEPAVCBaseEntity@@I@Z CNPC_VGangrel::vfunc5
 0x1000580d func   ?sub_102567b0@@YAPAHXZ sub_102567b0
