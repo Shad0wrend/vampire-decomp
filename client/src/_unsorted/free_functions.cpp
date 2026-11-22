@@ -12560,6 +12560,20 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10049fc0 size=0x32
+namespace lifted {
+extern char g_10227c00;
+int __stdcall sub_10049030(int, int, int, int, int, int, int);
+}
+struct CUnknown10049fc0 { void * sub_10049fc0(); };
+void * CUnknown10049fc0::sub_10049fc0()
+{
+    int t0 = lifted::sub_10049030(0x3c, -1046478848, 0x41a00000, 0x3dcccccd, 0x3e4ccccd, 0x3f666666, 0x3f800000);
+    *(int *)this = (int)&lifted::g_10227c00;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004a950 size=0xa
 struct CUnknown1004a950 { int sub_1004a950(int, int); };
 int CUnknown1004a950::sub_1004a950(int a0, int a1)
