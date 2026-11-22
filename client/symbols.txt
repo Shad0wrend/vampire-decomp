@@ -511,6 +511,7 @@
 0x100102f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMWallet@@@Z ClientClassInit
 0x10010380 func   ?vfunc17@C_ItemMMoneyClip@@UAEHXZ C_ItemMMoneyClip::vfunc17
 0x10010410 func   ??_GC_ItemMMoneyClip@@UAEPAXI@Z ??_GC_ItemMMoneyClip@@UAEPAXI@Z
+0x10010430 func   ?vfunc16@C_ItemMMoneyClip@@UAEHXZ C_ItemMMoneyClip::vfunc16
 0x10010440 func   ?vfunc15@C_ItemMMoneyClip@@UAEHXZ C_ItemMMoneyClip::vfunc15
 0x10010450 func   ?sub_10010450@@YAHXZ sub_10010450
 0x10010570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMMoneyClip@@@Z ClientClassInit

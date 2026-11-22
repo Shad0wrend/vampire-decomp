@@ -22,6 +22,17 @@ C_ItemMMoneyClip *pcd_emit_10010410() { return new C_ItemMMoneyClip; }
 // TARGET: ??_GC_ItemMMoneyClip@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10010430 size=0x6
+#include "C_ItemMMoneyClip.h"
+namespace lifted {
+extern char g_10274b44;
+}
+int C_ItemMMoneyClip::vfunc16()
+{
+    return (int)&lifted::g_10274b44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010440 size=0x3
 #include "C_ItemMMoneyClip.h"
 int C_ItemMMoneyClip::vfunc15()
