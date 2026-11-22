@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000d900 size=0x6
+#include "C_WeaponRanged_Rifle_Crossbow.h"
+namespace lifted {
+extern char g_10272c90;
+}
+int C_WeaponRanged_Rifle_Crossbow::vfunc17()
+{
+    return (int)&lifted::g_10272c90;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d990 size=0x1e
 #include "C_WeaponRanged_Rifle_Crossbow.h"
 
