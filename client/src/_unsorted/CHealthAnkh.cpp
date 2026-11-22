@@ -10,3 +10,10 @@ CHealthAnkh *pcd_emit_10051050() { return new CHealthAnkh; }
 
 // TARGET: ??_GCHealthAnkh@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10051ad0 size=0x1
+#include "CHealthAnkh.h"
+void CHealthAnkh::vfunc97()
+{
+}
+// END FUNCTION
