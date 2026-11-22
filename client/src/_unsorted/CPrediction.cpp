@@ -42,6 +42,20 @@ bool CPrediction::vfunc14()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101230f0 size=0x11
+#include "CPrediction.h"
+namespace lifted {
+extern int g_104a0d50;
+}
+int CPrediction::vfunc7()
+{
+    if (lifted::g_104a0d50 == 0) {
+        return lifted::g_104a0d50;
+    }
+    return *(int *)((char *)lifted::g_104a0d50 + 0x90);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123200 size=0x4
 #include "CPrediction.h"
 int CPrediction::vfunc15()
