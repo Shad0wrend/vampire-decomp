@@ -29,3 +29,14 @@ C_BaseFlex *pcd_emit_100c38f0() { return new C_BaseFlex; }
 
 // TARGET: ??_GC_BaseFlex@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100c4200 size=0x6
+#include "C_BaseFlex.h"
+namespace lifted {
+extern char g_102aea5c;
+}
+int C_BaseFlex::vfunc143()
+{
+    return (int)&lifted::g_102aea5c;
+}
+// END FUNCTION
