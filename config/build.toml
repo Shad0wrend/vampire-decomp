@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 0ec573169def; do not edit by hand
+# written by pcdecomp standalone from vtmb 9506a237f94c; do not edit by hand
 [target]
 name = "vampire.dll"
 sha1 = "3fe64bc0d9d7eca64976adc668617ca2814e5e4a"
