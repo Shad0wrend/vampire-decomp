@@ -65766,6 +65766,42 @@ void * CUnknown10178030::sub_10178030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101786a0 size=0x73
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual int f20(int); };
+}
+struct CUnknown101786a0 { void sub_101786a0(); };
+void CUnknown101786a0::sub_101786a0()
+{
+    *(int *)this = 0;
+    if ((*(int *)((char *)this + 4)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 4)))->f20(1);
+    }
+    *(int *)((char *)this + 4) = 0;
+    if ((*(int *)((char *)this + 8)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 8)))->f20(1);
+    }
+    *(int *)((char *)this + 8) = 0;
+    if ((*(int *)((char *)this + 0xc)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0xc)))->f20(1);
+    }
+    *(int *)((char *)this + 0xc) = 0;
+    if ((*(int *)((char *)this + 0x10)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x10)))->f20(1);
+    }
+    *(int *)((char *)this + 0x10) = 0;
+    if ((*(int *)((char *)this + 0x14)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x14)))->f20(1);
+    }
+    *(int *)((char *)this + 0x14) = 0;
+    if ((*(int *)((char *)this + 0x18)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x18)))->f20(1);
+    }
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)this = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178720 size=0x2f
 namespace lifted {
 struct C101ac830 { int sub_101ac830(); };
