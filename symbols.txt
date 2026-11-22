@@ -7439,6 +7439,7 @@
 0x1000a2a9 func   ?vfunc81@CItemGDrugsMorphineBottle@@QAEHXZ CItemGDrugsMorphineBottle::vfunc81
 0x1000a2ae func   ??0CPropDoorknobElectronic@@QAE@XZ CPropDoorknobElectronic::CPropDoorknobElectronic
 0x1000a2bd func   ?vfunc79@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc79
+0x1000a2c2 func   ??_EVKeyValues@@$4PPPPPPPM@A@AEPAXI@Z ??_EVKeyValues@@$4PPPPPPPM@A@AEPAXI@Z
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a2c7 func   ?sub_1012c7f0@@YAXPAVCBaseEntity@@@Z sub_1012c7f0
 0x1000a2cc func   ?vfunc82@CSprite@@UAEPAUdatamap_t@@XZ CSprite::vfunc82
