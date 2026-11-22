@@ -8991,6 +8991,7 @@
 0x1000c1a3 func   ?sub_100732f0@UtlMem5@@QAEXH@Z UtlMem5::sub_100732f0
 0x1000c1a8 func   ??1CTEImpact@@QAE@XZ CTEImpact::~CTEImpact
 0x1000c1a8 func   ?sub_10065030@CUnknown10065030@@QAEHXZ CUnknown10065030::sub_10065030
+0x1000c1ad func   ?PreSave@CSaveRestoreBlockSet@@UAEXPAUCSaveRestoreData@@@Z CSaveRestoreBlockSet::PreSave
 0x1000c1ad func   ?vfunc1@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc1
 0x1000c1b2 func   ?sub_101316e0@CTimerEntity@@QAEXXZ CTimerEntity::sub_101316e0
 0x1000c1b7 func   ?sub_101cdba0@@YAXPBVVector@@MMMMH_N@Z sub_101cdba0
