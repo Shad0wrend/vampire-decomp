@@ -15,6 +15,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_EnvParticle adds to its base's vtable: 120-123, vfuncK at slot K
 	virtual void vfunc120();
 	virtual void vfunc121();
-	virtual void vfunc122();
-	virtual void vfunc123();
+	virtual int vfunc122(int);
+	virtual int vfunc123(int);
 };

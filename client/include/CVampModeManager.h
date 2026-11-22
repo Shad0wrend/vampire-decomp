@@ -10,7 +10,7 @@ public:
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CVampModeManager adds to its base's vtable: 0-7, vfuncK at slot K
 	virtual int vfunc0();
-	virtual void vfunc1();
+	virtual void vfunc1(char, int);
 	virtual void vfunc2(int);
 	virtual void vfunc3();
 	virtual int vfunc4(float);

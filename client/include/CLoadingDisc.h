@@ -7,7 +7,7 @@ class CLoadingDisc : public ILoadingDisc
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CLoadingDisc adds to its base's vtable: 0-3, vfuncK at slot K
-    virtual void vfunc0();
+    virtual int vfunc0(int);
     virtual void vfunc1();
     virtual void vfunc2();
     virtual int vfunc3();

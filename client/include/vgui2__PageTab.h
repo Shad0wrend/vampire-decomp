@@ -12,7 +12,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual int vfunc74(int);
     virtual void vfunc87(int);
     virtual void vfunc89(int);
-    virtual void vfunc156();
+    virtual int vfunc156(int);
     virtual int vfunc164(int, int, int, int);
     // the slots PageTab adds to its base's vtable: 166-166, vfuncK at slot K
     virtual int vfunc166(char);

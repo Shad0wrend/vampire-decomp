@@ -12,9 +12,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CBloodBar's own function
 	virtual void vfunc97();
 	virtual void vfunc98();
-	virtual void vfunc107();
+	virtual bool vfunc107();
 	virtual void vfunc112();
 	// the slots CBloodBar adds to its base's vtable: 114-115, vfuncK at slot K
-	virtual void vfunc114();
-	virtual void vfunc115();
+	virtual int vfunc114(int);
+	virtual int vfunc115(int);
 };

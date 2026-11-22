@@ -12,6 +12,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CMoneyBar's own function
 	virtual void vfunc97();
 	virtual void vfunc98();
-	virtual void vfunc107();
+	virtual bool vfunc107();
 	virtual void vfunc112();
 };

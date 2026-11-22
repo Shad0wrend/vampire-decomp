@@ -4,4 +4,6 @@
 
 class IPanelMetaClassMgr
 {
+public:
+    void * vfunc4(char);
 };

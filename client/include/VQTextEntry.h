@@ -14,6 +14,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc132(int);
 	virtual void vfunc171();
 	// the slots VQTextEntry adds to its base's vtable: 173-174, vfuncK at slot K
-	virtual void vfunc173();
+	virtual int vfunc173(int);
 	virtual int vfunc174(int);
 };

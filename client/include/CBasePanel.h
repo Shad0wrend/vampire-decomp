@@ -15,10 +15,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc87(int);
 	virtual void vfunc88(int);
 	virtual void vfunc89(int);
-	virtual void vfunc90();
+	virtual void vfunc90(int);
 	virtual void vfunc97();
 	// the slots CBasePanel adds to its base's vtable: 107-111, vfuncK at slot K
-	virtual void vfunc107();
+	virtual bool vfunc107();
 	virtual void vfunc108();
 	virtual void vfunc109();
 	virtual void vfunc110();

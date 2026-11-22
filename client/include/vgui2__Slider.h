@@ -10,7 +10,7 @@ class Slider : public vgui2::Panel
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with Slider's own function
     virtual int vfunc74(int);
-    virtual void vfunc75();
+    virtual void vfunc75(int);
     virtual void vfunc84(int, int);
     virtual void vfunc87(int);
     virtual void vfunc88(int);
@@ -19,9 +19,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc98();
     virtual void vfunc101();
     // the slots Slider adds to its base's vtable: 107-121, vfuncK at slot K
-    virtual void vfunc107();
+    virtual int vfunc107(int);
     virtual int vfunc108();
-    virtual void vfunc109();
+    virtual int vfunc109(int, int);
     virtual int vfunc110(int, int);
     virtual int vfunc111(int, int);
     virtual int vfunc112(int, int);
@@ -32,7 +32,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc117();
     virtual void vfunc118();
     virtual void vfunc119();
-    virtual void vfunc120();
+    virtual int vfunc120();
     virtual void vfunc121();
 };
 }

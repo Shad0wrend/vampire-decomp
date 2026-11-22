@@ -8,11 +8,11 @@ class BuildGroup
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots BuildGroup adds to its base's vtable: 0-22, vfuncK at slot K
-    virtual void vfunc0();
+    virtual void vfunc0(char);
     virtual bool vfunc1();
     virtual int vfunc2();
     virtual void vfunc3();
-    virtual void vfunc4();
+    virtual int vfunc4();
     virtual void vfunc5();
     virtual void vfunc6();
     virtual void vfunc7();

@@ -14,21 +14,21 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TreeView's own function
 	virtual void vfunc11(int, int);
 	virtual int vfunc74(int);
-	virtual void vfunc90();
+	virtual void vfunc90(int);
 	virtual void vfunc101();
 	virtual int vfunc102();
 	// the slots TreeView adds to its base's vtable: 107-122, vfuncK at slot K
 	virtual void vfunc107();
 	virtual int vfunc108();
 	virtual void vfunc109();
-	virtual void vfunc110();
+	virtual int vfunc110();
 	virtual void vfunc111();
 	virtual void vfunc112();
 	virtual void vfunc113();
 	virtual void vfunc114();
-	virtual void vfunc115();
+	virtual void vfunc115(int, char);
 	virtual void vfunc116();
-	virtual void vfunc117();
+	virtual int vfunc117();
 	virtual void vfunc118();
 	virtual int vfunc119();
 	virtual void vfunc120();

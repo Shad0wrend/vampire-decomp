@@ -27,7 +27,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc86();
 	virtual void vfunc112();
 	// the slots C_BaseAnimating adds to its base's vtable: 120-142, vfuncK at slot K
-	virtual void vfunc120();
+	virtual void vfunc120(int, int);
 	virtual void vfunc121();
 	virtual void vfunc122();
 	virtual void vfunc123();

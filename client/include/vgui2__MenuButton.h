@@ -22,9 +22,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots MenuButton adds to its base's vtable: 166-172, vfuncK at slot K
 	virtual void vfunc166(int);
 	virtual void vfunc167(int);
-	virtual void vfunc168();
+	virtual void vfunc168(int);
 	virtual void vfunc169();
-	virtual void vfunc170();
+	virtual int vfunc170();
 	virtual int vfunc171(int);
 	virtual int vfunc172(int);
 };

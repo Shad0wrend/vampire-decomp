@@ -14,5 +14,5 @@ public:
 	CPlayerLocalPredictedData *sub_100bce00();	// initialiser: vtable 0x10470490, the dwords at 0x04..0x10 and the eight at 0x14 cleared; returns this
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CPlayerLocalPredictedData adds to its base's vtable: 0-0, vfuncK at slot K
-	virtual void vfunc0();
+	virtual void * vfunc0(char);
 };

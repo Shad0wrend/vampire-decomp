@@ -10,7 +10,7 @@ public:
 	virtual ~CBitmapButton();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CBitmapButton's own function
-	virtual void vfunc75();
+	virtual void vfunc75(int);
 	virtual void vfunc97();
 	virtual void vfunc98();
 };

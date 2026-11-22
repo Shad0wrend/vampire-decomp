@@ -15,7 +15,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc10(int);
 	virtual int vfunc21(int);
 	virtual int vfunc74(int);
-	virtual void vfunc75();
+	virtual void vfunc75(int);
 	virtual void vfunc78(int);
 	virtual void vfunc87(int);
 	virtual void vfunc91(int);
@@ -34,7 +34,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc121(char);
 	virtual bool vfunc122();
 	virtual int vfunc123(float);
-	virtual void vfunc124();
+	virtual int vfunc124();
 	virtual void vfunc125();
 	virtual int vfunc126(float);
 	virtual int vfunc127(float);
@@ -45,8 +45,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc132();
 	virtual int vfunc133();
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
+	virtual void vfunc135(int);
+	virtual int vfunc136(int);
 	virtual int vfunc137(int, int, int, int);
 	virtual int vfunc138();
 	virtual bool vfunc139();
