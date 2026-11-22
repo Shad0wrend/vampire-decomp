@@ -29525,6 +29525,16 @@ int sub_100ccdc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccde0 size=0x1d
+int sub_100ccde0(int a0)
+{
+    if (a0 == 0) {
+        return 0xa;
+    }
+    return (*(int *)((char *)a0 + 0x94)) - (*(int *)((char *)a0 + 0x90));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd000 size=0x2e
 // TARGET: sub_100cd000
 void sub_100cd000(float t, const float *a, const float *b, float *out) {
