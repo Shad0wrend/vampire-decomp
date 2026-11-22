@@ -95,6 +95,25 @@ void C_BasePlayer::vfunc154(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7ab0 size=0x1a
+#include "C_BasePlayer.h"
+namespace lifted {
+struct C100019a0 { bool sub_100019a0(); };
+int sub_100a7890();
+}
+bool C_BasePlayer::vfunc174()
+{
+    int t0 = lifted::sub_100a7890();
+    if (t0 != 0) {
+        bool t1 = ((lifted::C100019a0 *)t0)->sub_100019a0();
+        if (t1 == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8030 size=0x8
 #include "C_BasePlayer.h"
 namespace lifted {
