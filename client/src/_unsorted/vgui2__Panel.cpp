@@ -196,3 +196,14 @@ int vgui2::Panel::vfunc77()
     return lifted::g_102d7be0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101abf60 size=0x6
+#include "vgui2__Panel.h"
+namespace lifted {
+extern char g_102d8128;
+}
+int vgui2::Panel::vfunc102()
+{
+    return (int)&lifted::g_102d8128;
+}
+// END FUNCTION
