@@ -10,3 +10,10 @@ CTargeted *pcd_emit_10063980() { return new CTargeted; }
 
 // TARGET: ??_GCTargeted@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10064ab0 size=0x1
+#include "CTargeted.h"
+void CTargeted::vfunc97()
+{
+}
+// END FUNCTION
