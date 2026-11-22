@@ -2871,6 +2871,7 @@
 0x100bbc60 func   ?vfunc1@C_GameRules@@UAEXXZ C_GameRules::vfunc1
 0x100bbc70 func   ?vfunc2@C_GameRules@@UAEXXZ C_GameRules::vfunc2
 0x100bbc80 func   ?vfunc3@C_GameRules@@UAEXXZ C_GameRules::vfunc3
+0x100bbc90 func   ?vfunc4@C_GameRules@@UAE_NHH@Z C_GameRules::vfunc4
 0x100bbd80 func   ?vfunc1@CHudElement@@UAEXXZ CHudElement::vfunc1
 0x100bbd90 func   ?vfunc2@CHudElement@@UAEXXZ CHudElement::vfunc2
 0x100bbda0 func   ?vfunc3@CHudElement@@UAEXXZ CHudElement::vfunc3

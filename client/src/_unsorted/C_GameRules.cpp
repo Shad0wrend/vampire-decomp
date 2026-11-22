@@ -31,3 +31,11 @@ void C_GameRules::vfunc3()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100bbc90 size=0x5
+#include "C_GameRules.h"
+bool C_GameRules::vfunc4(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
