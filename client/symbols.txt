@@ -5636,6 +5636,7 @@
 0x101c7650 func   ?vfunc102@MenuItem@vgui2@@UAEHXZ vgui2::MenuItem::vfunc102
 0x101c7690 func   ??_GComboBoxButton@vgui2@@UAEPAXI@Z ??_GComboBoxButton@vgui2@@UAEPAXI@Z
 0x101c77b0 func   ?vfunc164@ComboBoxButton@vgui2@@UAEHHHHH@Z vgui2::ComboBoxButton::vfunc164
+0x101c77c0 func   ?vfunc86@ComboBoxButton@vgui2@@UAEXXZ vgui2::ComboBoxButton::vfunc86
 0x101c78f0 func   ??_GComboBox@vgui2@@UAEPAXI@Z ??_GComboBox@vgui2@@UAEPAXI@Z
 0x101c7910 func   ??1ComboBox@vgui2@@UAE@XZ vgui2::ComboBox::~ComboBox
 0x101c7950 func   ?vfunc175@ComboBox@vgui2@@UAEHXZ vgui2::ComboBox::vfunc175
