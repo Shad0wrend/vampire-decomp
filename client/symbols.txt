@@ -3488,6 +3488,7 @@
 0x100f7f20 func   ?sub_100f7f20@@YAHXZ sub_100f7f20
 0x100f7f30 func   ?sub_100f7f30@@YAHXZ sub_100f7f30
 0x100fbd70 func   ?sub_100fbd70@@YAHXZ sub_100fbd70
+0x100fbd80 func   ?sub_100fbd80@@YAHXZ sub_100fbd80
 0x10101b70 func   ?sub_10101b70@@YAHXZ sub_10101b70
 0x10101b80 func   ?sub_10101b80@@YADXZ sub_10101b80
 0x10101b90 func   ?sub_10101b90@@YADD@Z sub_10101b90
