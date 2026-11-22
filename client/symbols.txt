@@ -829,6 +829,7 @@
 0x10018770 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSilver@@@Z ClientClassInit
 0x10018800 func   ?vfunc17@C_ItemGWatchNormal@@UAEHXZ C_ItemGWatchNormal::vfunc17
 0x10018890 func   ??_GC_ItemGWatchNormal@@UAEPAXI@Z ??_GC_ItemGWatchNormal@@UAEPAXI@Z
+0x100188b0 func   ?vfunc16@C_ItemGWatchNormal@@UAEHXZ C_ItemGWatchNormal::vfunc16
 0x100188c0 func   ?vfunc15@C_ItemGWatchNormal@@UAEHXZ C_ItemGWatchNormal::vfunc15
 0x100188d0 func   ?sub_100188d0@@YAHXZ sub_100188d0
 0x100189f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWatchNormal@@@Z ClientClassInit

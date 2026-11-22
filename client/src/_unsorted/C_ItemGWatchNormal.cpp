@@ -22,6 +22,17 @@ C_ItemGWatchNormal *pcd_emit_10018890() { return new C_ItemGWatchNormal; }
 // TARGET: ??_GC_ItemGWatchNormal@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100188b0 size=0x6
+#include "C_ItemGWatchNormal.h"
+namespace lifted {
+extern char g_102746a8;
+}
+int C_ItemGWatchNormal::vfunc16()
+{
+    return (int)&lifted::g_102746a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100188c0 size=0x3
 #include "C_ItemGWatchNormal.h"
 int C_ItemGWatchNormal::vfunc15()
