@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10026400 size=0x6
+#include "C_ItemKHannahsSafeKey.h"
+namespace lifted {
+extern char g_10273dd8;
+}
+int C_ItemKHannahsSafeKey::vfunc17()
+{
+    return (int)&lifted::g_10273dd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026490 size=0x1e
 #include "C_ItemKHannahsSafeKey.h"
 
