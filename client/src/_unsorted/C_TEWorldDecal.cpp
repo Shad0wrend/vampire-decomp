@@ -10,3 +10,14 @@ C_TEWorldDecal *pcd_emit_100410e0() { return new C_TEWorldDecal; }
 
 // TARGET: ??_GC_TEWorldDecal@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10041250 size=0x6
+#include "C_TEWorldDecal.h"
+namespace lifted {
+extern char g_102825c4;
+}
+int C_TEWorldDecal::vfunc9()
+{
+    return (int)&lifted::g_102825c4;
+}
+// END FUNCTION
