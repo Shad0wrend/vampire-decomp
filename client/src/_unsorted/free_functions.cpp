@@ -62508,6 +62508,29 @@ int sub_10174fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174fe0 size=0x33
+namespace lifted {
+extern char g_105e7754;
+extern char g_105e7780;
+extern char g_105e7794;
+extern char g_105e77d0;
+struct C101415e0 { int sub_101415e0(); };
+struct C10142850 { int sub_10142850(); };
+struct C10143ae0 { int sub_10143ae0(); };
+struct C101447c0 { int sub_101447c0(); };
+struct C10175b30 { int sub_10175b30(); };
+}
+struct CUnknown10174fe0 { int sub_10174fe0(); };
+int CUnknown10174fe0::sub_10174fe0()
+{
+    ((lifted::C10142850 *)((int)&lifted::g_105e77d0))->sub_10142850();
+    ((lifted::C101447c0 *)((int)&lifted::g_105e7794))->sub_101447c0();
+    ((lifted::C10143ae0 *)((int)&lifted::g_105e7754))->sub_10143ae0();
+    ((lifted::C101415e0 *)((int)&lifted::g_105e7780))->sub_101415e0();
+    return ((lifted::C10175b30 *)this)->sub_10175b30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101763a0 size=0xb
 namespace lifted {
 extern char g_1024baec;
