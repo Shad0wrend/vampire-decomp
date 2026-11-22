@@ -22,6 +22,17 @@ C_OccultStrength *pcd_emit_10013610() { return new C_OccultStrength; }
 // TARGET: ??_GC_OccultStrength@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10013630 size=0x6
+#include "C_OccultStrength.h"
+namespace lifted {
+extern char g_10274980;
+}
+int C_OccultStrength::vfunc16()
+{
+    return (int)&lifted::g_10274980;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013640 size=0x3
 #include "C_OccultStrength.h"
 int C_OccultStrength::vfunc15()
