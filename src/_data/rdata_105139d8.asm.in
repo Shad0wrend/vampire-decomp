@@ -867,7 +867,7 @@ EXTERN ?vfunc86@CBaseViewModel@@UAEDHHHHH@Z:BYTE
 EXTERN ?vfunc87@CBaseEntity@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc88@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc89@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z:BYTE
+EXTERN ?vfunc8@CAutoGameSystem@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc91@CBaseEntity@@UAEDPAXH@Z:BYTE
 EXTERN ?vfunc93@CBaseEntity@@UAEXHH@Z:BYTE
 EXTERN ?vfunc96@CBaseEntity@@UAEHXZ:BYTE
@@ -2721,7 +2721,7 @@ PUBLIC ?g_10516c64@lifted@@3DA
   DD OFFSET ?vfunc5@CAutoGameSystem@@UAEXXZ
   DD OFFSET ?vfunc6@CAutoGameSystem@@UAEXXZ
   DD OFFSET ?vfunc7@CAutoGameSystem@@UAEXXZ
-  DD OFFSET ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z
+  DD OFFSET ?vfunc8@CAutoGameSystem@@QAEPAV1@I@Z
   DB 000h,000h,000h,000h,000h,000h,000h,000h
 ; 0x10516cc4 +16 prefix 4: ?g_10516cc4@@3PADA
   DD OFFSET ??_R4CHangRope@@6B@
