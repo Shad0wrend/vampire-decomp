@@ -103,3 +103,11 @@ void C_BasePlayer::vfunc184()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100aa240 size=0x7
+#include "C_BasePlayer.h"
+char * C_BasePlayer::vfunc195()
+{
+    return (char *)this + 0x1888;
+}
+// END FUNCTION
