@@ -10,3 +10,11 @@ C_ItemGDrugsDrugBox *pcd_emit_10017490() { return new C_ItemGDrugsDrugBox; }
 
 // TARGET: ??_GC_ItemGDrugsDrugBox@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100174c0 size=0x3
+#include "C_ItemGDrugsDrugBox.h"
+int C_ItemGDrugsDrugBox::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
