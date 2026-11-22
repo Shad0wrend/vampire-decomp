@@ -41,15 +41,11 @@ void pcd_emit_1013ede0(IMoveHelperServer *p) { p->IMoveHelperServer::IMoveHelper
 // FUNCTION: 0x1013ee10 size=0x20
 #include "IMoveHelper.h"
 
-extern char g_1046afbc[];
+// VC6 writes IMoveHelper's scalar deleting destructor where it emits the class's vtable; its inline
+// destructor called in a function nothing calls makes it emit both here
+void pcd_emit_1013ee10(IMoveHelper *p) { p->IMoveHelper::~IMoveHelper(); }
 
-void *IMoveHelper::vfunc14(char flags)
-{
-	*(void **)this = g_1046afbc;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GIMoveHelper@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1013ee40 size=0x5f
