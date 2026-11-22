@@ -2341,6 +2341,7 @@
 0x100bcc70 func   ??1C_PhysBox@@UAE@XZ C_PhysBox::~C_PhysBox
 0x100bcd00 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerLocalPredictedData@@@Z ClientClassInit
 0x100bce00 func   ?sub_100bce00@CPlayerLocalPredictedData@@QAEPAV1@XZ CPlayerLocalPredictedData::sub_100bce00
+0x100bce40 func   ?vfunc15@C_PlayerResource@@UAEHXZ C_PlayerResource::vfunc15
 0x100bce50 func   ?sub_100bce50@@YAHXZ sub_100bce50
 0x100bcf50 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerResource@@@Z ClientClassInit
 0x100bd2f0 func   ?vfunc135@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc135
