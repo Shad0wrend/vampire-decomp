@@ -27320,6 +27320,23 @@ int CUnknown100aeff0::sub_100aeff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af0b0 size=0x20
+struct CUnknown100af0b0 { char sub_100af0b0(); };
+char CUnknown100af0b0::sub_100af0b0()
+{
+    if ((*(int *)((char *)this + 0x420)) != 5) {
+        if ((*(int *)((char *)this + 0x420)) != 7) {
+            if ((*(int *)((char *)this + 0x420)) != 0xe) {
+                if ((*(int *)((char *)this + 0x420)) != 0x10) {
+                    return 0;
+                }
+            }
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100af130 size=0x7
 struct CUnknown100af130 { int sub_100af130(); };
 int CUnknown100af130::sub_100af130()
