@@ -13070,6 +13070,7 @@
 0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090
 0x10011248 func   ?sub_1007cbe0@@YIXPAUCChoreoSaverView@@HPAXHPAUCChoreoChannelView@@@Z sub_1007cbe0
 0x1001124d func   ?sub_102d09b0@CUnknown102d09b0@@QAEXPAVCBaseEntity@@H@Z CUnknown102d09b0::sub_102d09b0
+0x10011252 func   ?GetBlockName@CEQ_SaveRestoreBlockHandler@@UAEPBDXZ CEQ_SaveRestoreBlockHandler::GetBlockName
 0x10011252 func   ?vfunc0@CEQ_SaveRestoreBlockHandler@@UAEHXZ CEQ_SaveRestoreBlockHandler::vfunc0
 0x10011257 func   ?vfunc80@CWeaponRanged_Smg_Uzi@@UAEHXZ CWeaponRanged_Smg_Uzi::vfunc80
 0x1001125c func   ?vfunc580@CNPC_VYukie@@UAEPAXXZ CNPC_VYukie::vfunc580
