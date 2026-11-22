@@ -10,3 +10,14 @@ C_TEBeamSpline *pcd_emit_10033f30() { return new C_TEBeamSpline; }
 
 // TARGET: ??_GC_TEBeamSpline@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10033fb0 size=0x6
+#include "C_TEBeamSpline.h"
+namespace lifted {
+extern char g_1027df30;
+}
+int C_TEBeamSpline::vfunc9()
+{
+    return (int)&lifted::g_1027df30;
+}
+// END FUNCTION
