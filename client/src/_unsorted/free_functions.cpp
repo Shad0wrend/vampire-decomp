@@ -31824,6 +31824,17 @@ float CUnknown100f10c0::sub_100f10c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f14a0 size=0x21
+struct CUnknown100f14a0 { int sub_100f14a0(int, int, int); };
+int CUnknown100f14a0::sub_100f14a0(int a0, int a1, int a2)
+{
+    *(int *)((char *)this + 0xcc) = a0;
+    *(int *)((char *)this + 0xd0) = a1;
+    *(int *)((char *)this + 0xd4) = a2;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f17e0 size=0x7
 struct CUnknown100f17e0 { int sub_100f17e0(); };
 int CUnknown100f17e0::sub_100f17e0()
