@@ -24195,6 +24195,38 @@ int CUnknown10095fb0::sub_10095fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096650 size=0x8f
+struct AnimHdr { char pad[0x18c]; int count; int off; };
+struct AnimEnt { int e0, e1, e2, e3, e4, e5, e6; };
+struct AnimNode {
+	AnimNode *next;
+	char pad[0x4c];
+	AnimNode *sub_100ac0f0(AnimHdr *h, int i, int a, int b, int c, int d, int e, int f, int g);
+};
+struct AnimView {
+	char pad[0x724];
+	AnimNode *m724;
+	void sub_100966e0();
+	AnimHdr *sub_1008f900(int a);
+	void sub_10096650();
+};
+void *operator new(unsigned int);
+void AnimView::sub_10096650()
+{
+	sub_100966e0();
+	AnimHdr *h = sub_1008f900(-1);
+	if (h) {
+		for (int i = 0; i < h->count; i++) {
+			AnimEnt *e = (AnimEnt *)((char *)h + h->off + i * 0x1c);
+			AnimNode *raw = (AnimNode *)operator new(0x50);
+			AnimNode *n = raw ? raw->sub_100ac0f0(h, i, e->e0, e->e1, e->e6, e->e5, e->e4, e->e3, 0) : 0;
+			n->next = m724;
+			m724 = n;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d10 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
