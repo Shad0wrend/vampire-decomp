@@ -1637,6 +1637,7 @@
 0x1009ffe0 func   ?sub_1009ffe0@@YGHHH@Z sub_1009ffe0
 0x1009fff0 func   ?NotifyShouldTransmit@C_BaseEntity@@UAEXH@Z C_BaseEntity::NotifyShouldTransmit
 0x100a1200 func   ?sub_100a1200@@YAXXZ sub_100a1200
+0x100a1340 func   ?OnDataChanged@C_BaseEntity@@UAEXH@Z C_BaseEntity::OnDataChanged
 0x100a13d0 func   ?OnPreDataChanged@C_BaseEntity@@UAEXH@Z C_BaseEntity::OnPreDataChanged
 0x100a13d0 func   ?sub_100a13d0@@YGXH@Z sub_100a13d0
 0x100a13e0 func   ?sub_100a13e0@CUnknown100a13e0@@QAEHXZ CUnknown100a13e0::sub_100a13e0
