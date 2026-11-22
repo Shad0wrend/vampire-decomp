@@ -18987,6 +18987,16 @@ void sub_10079520(HdrView *pstudiohdr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100797a0 size=0x13
+int sub_100797a0(int a0)
+{
+    if (a0 != 0) {
+        *(int *)((char *)a0 + 0x118) = 0;
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100797c0 size=0x1c
 void sub_10079520(void *p);
 
