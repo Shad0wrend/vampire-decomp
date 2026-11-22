@@ -11,6 +11,19 @@ VQQuestButton *pcd_emit_101880d0() { return new VQQuestButton; }
 // TARGET: ??_GVQQuestButton@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101881d0 size=0x24
+#include "VQQuestButton.h"
+int VQQuestButton::vfunc156(int a0)
+{
+    if ((*(char *)((char *)this + 0xf0)) != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)this + 0xf1);
+        return a0;
+    }
+    *(int *)((char *)a0) = *(int *)((char *)this + 0xf5);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10188200 size=0x24
 #include "VQQuestButton.h"
 namespace lifted {
