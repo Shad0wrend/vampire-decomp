@@ -32418,6 +32418,17 @@ void __cdecl sub_100f42a0(void (__fastcall *pfn)(void *))
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f42d0 size=0x5
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+struct CUnknown100f42d0 { int sub_100f42d0(); };
+int CUnknown100f42d0::sub_100f42d0()
+{
+    return ((lifted::V *)this)->f1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71d0 size=0x5
 namespace lifted {
 int sub_100f6ce0();
