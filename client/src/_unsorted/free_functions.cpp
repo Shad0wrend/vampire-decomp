@@ -66968,6 +66968,17 @@ char CUnknown101beb60::sub_101beb60(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0760 size=0xd
+struct CUnknown101c0760 { int sub_101c0760(); };
+int CUnknown101c0760::sub_101c0760()
+{
+    if ((*(int *)((char *)this + 0x64)) >= (*(int *)((char *)this + 0x60))) {
+        return *(int *)((char *)this + 0x60);
+    }
+    return *(int *)((char *)this + 0x64);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0990 size=0x51
 struct Item { void sub_101c70b0(); };
 struct Vec {
