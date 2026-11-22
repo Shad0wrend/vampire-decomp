@@ -22,6 +22,17 @@ C_ItemGBadluckTalisman *pcd_emit_1001c490() { return new C_ItemGBadluckTalisman;
 // TARGET: ??_GC_ItemGBadluckTalisman@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001c4b0 size=0x6
+#include "C_ItemGBadluckTalisman.h"
+namespace lifted {
+extern char g_10274484;
+}
+int C_ItemGBadluckTalisman::vfunc16()
+{
+    return (int)&lifted::g_10274484;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c4c0 size=0x3
 #include "C_ItemGBadluckTalisman.h"
 int C_ItemGBadluckTalisman::vfunc15()
