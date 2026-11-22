@@ -8307,6 +8307,7 @@
 0x1000b406 func   ?sub_10346220@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::sub_10346220
 0x1000b40b func   _logic_visibility_test logic_visibility_test
 0x1000b410 func   ?vfunc82@CNPC_VTzimisceRunner@@UAEPAUdatamap_t@@XZ CNPC_VTzimisceRunner::vfunc82
+0x1000b41a func   ?WriteSaveHeaders@CPhysSaveRestoreBlockHandler@@UAEXPAVISave@@@Z CPhysSaveRestoreBlockHandler::WriteSaveHeaders
 0x1000b41a func   ?vfunc3@CPhysSaveRestoreBlockHandler@@QAEXPAVCSave@@@Z CPhysSaveRestoreBlockHandler::vfunc3
 0x1000b41f func   ?sub_10136ce0@@YAPBDPBDPAD0@Z sub_10136ce0
 0x1000b424 func   ?vfunc117@CPropRadio@@UAEHXZ CPropRadio::vfunc117
