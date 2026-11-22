@@ -273,6 +273,14 @@ void C_BaseCombatWeapon::vfunc200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ce00 size=0x3
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d8e0 size=0x1
 #include "C_BaseCombatWeapon.h"
 void C_BaseCombatWeapon::vfunc167()
