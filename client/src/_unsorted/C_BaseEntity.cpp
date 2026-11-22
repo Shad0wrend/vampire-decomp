@@ -182,6 +182,14 @@ unsigned int * C_BaseEntity::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f2c0 size=0x5
+#include "C_BaseEntity.h"
+bool C_BaseEntity::vfunc27(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f2d0 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc38(int a0, int a1)
