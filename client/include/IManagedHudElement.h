@@ -4,4 +4,6 @@
 
 class IManagedHudElement
 {
+public:
+	virtual void vfunc0() = 0;
 };
