@@ -11784,6 +11784,19 @@ void CUnknown100dcd00::sub_100437f0(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044400 size=0x20
+namespace lifted {
+extern int g_104a5808;
+struct V { virtual int f0(); virtual void u1(); virtual int f2(int); };
+}
+struct CUnknown10044400 { short sub_10044400(); };
+short CUnknown10044400::sub_10044400()
+{
+    *(short *)((char *)this + 0x46) = (short)(((lifted::V *)lifted::g_104a5808)->f2(((lifted::V *)this)->f0()));
+    return *(short *)((char *)this + 0x46);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044420 size=0x21
 struct CUnkVT100ddc00
 {
