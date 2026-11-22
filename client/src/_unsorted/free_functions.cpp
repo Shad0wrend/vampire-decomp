@@ -7444,6 +7444,30 @@ template <> int ClientClassInit<DT_WeaponMelee_Torch::ignored>(DT_WeaponMelee_To
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027020 size=0x3c
+namespace lifted {
+extern char g_10223b84;
+extern char g_10223b98;
+extern char g_10223bd4;
+extern char g_10223c0c;
+extern char g_10223c64;
+int sub_1007a9f0();
+}
+struct CUnknown10027020 { void * sub_10027020(); };
+void * CUnknown10027020::sub_10027020()
+{
+    lifted::sub_1007a9f0();
+    *(int *)this = (int)&lifted::g_10223c64;
+    *(int *)((char *)this + 0x980) = 0;
+    *(int *)((char *)this + 0x97c) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10223c0c;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10223bd4;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_10223b98;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10223b84;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100275b0 size=0x6
 namespace lifted {
 extern char g_102ea150;
