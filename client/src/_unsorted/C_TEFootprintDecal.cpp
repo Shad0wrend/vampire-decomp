@@ -12,6 +12,14 @@ int C_TEFootprintDecal::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037840 size=0x3
+#include "C_TEFootprintDecal.h"
+int C_TEFootprintDecal::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037ab0 size=0x1e
 #include "C_TEFootprintDecal.h"
 
