@@ -17,3 +17,14 @@ void C_TESparks::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003f1c0 size=0x6
+#include "C_TESparks.h"
+namespace lifted {
+extern char g_10281800;
+}
+int C_TESparks::vfunc9()
+{
+    return (int)&lifted::g_10281800;
+}
+// END FUNCTION
