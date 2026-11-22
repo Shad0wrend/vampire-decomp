@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10026b80 size=0x6
+#include "C_ItemKAshCellKey.h"
+namespace lifted {
+extern char g_10273e2c;
+}
+int C_ItemKAshCellKey::vfunc17()
+{
+    return (int)&lifted::g_10273e2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026c10 size=0x1e
 #include "C_ItemKAshCellKey.h"
 
