@@ -28803,6 +28803,16 @@ int CUnknown100bb3b0::sub_100bb3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb3f0 size=0x1d
+namespace lifted {
+int sub_100bae90(int, int, int, int);
+}
+int sub_100bb3f0(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+    return lifted::sub_100bae90(a2, a3, a4, a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb4f0 size=0x6
 namespace lifted {
 extern char g_104a2b5c;
