@@ -32,3 +32,11 @@ C_BaseEntity * CBaseStaticModel::GetBaseEntity()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e1400 size=0x3
+#include "CBaseStaticModel.h"
+IClientThinkable * CBaseStaticModel::GetClientThinkable()
+{
+    return 0;
+}
+// END FUNCTION
