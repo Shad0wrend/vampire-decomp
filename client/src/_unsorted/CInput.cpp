@@ -7,3 +7,10 @@ void CInput::vfunc41()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ff9f0 size=0x1
+#include "CInput.h"
+void CInput::vfunc43()
+{
+}
+// END FUNCTION
