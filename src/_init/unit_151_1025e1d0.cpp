@@ -25,8 +25,3 @@ ConVar g_1090fce0("flex_minawaytime", "0.5", 0);
 #include "ConVar.h"
 ConVar g_1090fc50("flex_maxawaytime", "1.0", 0);
 // END FUNCTION
-
-// FUNCTION: 0x1025e470 size=0x5
-int sub_1025e4b0(void);
-int g_1090fcdc = ((int (*)(int))sub_1025e4b0)(0);
-// END FUNCTION

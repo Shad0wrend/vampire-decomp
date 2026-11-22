@@ -1,6 +1,46 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df540 size=0x36
+#include "ConVar.h"
+
+// TARGET: ConVar::ConVar
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags)
+{
+	vfunc12(pName, pDefaultValue, flags, 0, 0, 0.0f, 0, 0.0f, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100df5a0 size=0x39
+#include "ConVar.h"
+
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString)
+{
+	vfunc12(pName, pDefaultValue, flags, pHelpString, 0, 0.0f, 0, 0.0f, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100df5e0 size=0x45
+#include "ConVar.h"
+
+// TARGET: ConVar::ConVar
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax)
+	: ConCommandBase()
+{
+	vfunc12(pName, pDefaultValue, flags, pHelpString, bMin, fMin, bMax, fMax, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100df630 size=0x3c
+#include "ConVar.h"
+
+// TARGET: ConVar::ConVar
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, void (*pCallback)(ConVar *, const char *))
+{
+	vfunc12(pName, pDefaultValue, flags, pHelpString, false, 0.0f, false, 0.0f, pCallback);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df6c0 size=0x28
 #include "ConVar.h"
 ConVar::~ConVar()

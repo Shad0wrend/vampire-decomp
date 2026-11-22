@@ -1,0 +1,20 @@
+# written by pcdecomp standalone from vtmb d81c57d6a880; do not edit by hand
+[target]
+name = "vampire.dll"
+sha1 = "3fe64bc0d9d7eca64976adc668617ca2814e5e4a"
+base = 268435456
+
+[compiler]
+prelude = "vampire.h"
+flags = ["/O2", "/GR"]
+
+[link]
+options = ["/DLL", "/INCREMENTAL:NO", "/OPT:NOREF", "/OPT:NOICF", "/NODEFAULTLIB", "/BASE:0x10000000"]
+libs = ["LIBC.LIB", "KERNEL32.LIB", "USER32.LIB"]
+
+[imports]
+dlls = ["tier0.dll", "vstdlib.dll", "vampire_python21.dll"]
+
+[verify]
+xc_a = 273887232
+xc_z = 273899648

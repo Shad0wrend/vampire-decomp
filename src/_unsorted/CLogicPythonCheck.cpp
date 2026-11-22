@@ -1,18 +1,6 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
-// FUNCTION: 0x10135150 size=0x6
-#include "datamap.h"
-#include "CLogicPythonCheck.h"
-namespace lifted {
-extern char g_10577394;
-}
-datamap_t *CLogicPythonCheck::vfunc82()
-{
-    return (datamap_t *)&lifted::g_10577394;
-}
-// END FUNCTION
-
 // FUNCTION: 0x10136170 size=0x36
 #include "CLogicPythonCheck.h"
 

@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x101c7690 size=0x1e
+#include "vgui2__ComboBoxButton.h"
+
+// VC6 writes vgui2::ComboBoxButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+vgui2::ComboBoxButton *pcd_emit_101c7690() { return new vgui2::ComboBoxButton; }
+
+// TARGET: ??_GComboBoxButton@vgui2@@UAEPAXI@Z
+// END FUNCTION

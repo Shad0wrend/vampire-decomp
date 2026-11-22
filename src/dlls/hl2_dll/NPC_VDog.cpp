@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x103743c0 size=0x327
@@ -92,6 +93,193 @@ int CNPC_VDog::vfunc461()
 		return VDOG_INT(0x5cc4);
 	}
 	return CNPC_VAnimal::vfunc461();
+}
+// END FUNCTION
+
+// FUNCTION: 0x103747c0 size=0x5
+char __stdcall sub_103747c0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103747e0 size=0xa4
+#include "CNPC_VDog.h"
+
+extern "C" __declspec(dllimport) int RandomInt(int minVal, int maxVal);
+
+#define SL_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL_V100(p) SL_V10(p##0) SL_V10(p##1) SL_V10(p##2) SL_V10(p##3) SL_V10(p##4) SL_V10(p##5) SL_V10(p##6) SL_V10(p##7) SL_V10(p##8) SL_V10(p##9)
+
+// the vtable of the NPC up to slot 309, then slot 310
+struct CNpcSlots
+{
+	SL_V100(a0) SL_V100(a1) SL_V100(a2)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+	virtual void SetNpcState(int state);	// slot 310
+};
+
+void CNPC_VDog::vfunc432(int a)
+{
+	int &activity = *(int *)((char *)this + 0xfec);
+	int &state = *(int *)((char *)this + 0x5cc0);
+	if (activity == 1 && state == activity) {
+		if (RandomInt(0, 0xff) == 0x80)
+			((CNpcSlots *)this)->SetNpcState(3);
+	} else if (activity == 3) {
+		if (*(char *)((char *)this + 0x65c))
+			((CNpcSlots *)this)->SetNpcState(1);
+	} else if (activity == 0x6e) {
+		if (*(char *)((char *)this + 0x65c))
+			((CNpcSlots *)this)->SetNpcState(1);
+	} else if (activity == 0x40) {
+		if (*(char *)((char *)this + 0x65c))
+			((CNpcSlots *)this)->SetNpcState(1);
+	}
+	CNPC_VAnimal::vfunc432(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x103748c0 size=0x5
+#include "CNPC_VDog.h"
+void __cdecl sub_10360180();
+// TARGET: CNPC_VDog::vfunc434
+// the game's 0x103748c0: a tail call (jmp) of sub_10360180
+void CNPC_VDog::vfunc434()
+{
+	sub_10360180();
+}
+// END FUNCTION
+
+// FUNCTION: 0x103748e0 size=0x5
+#include "CNPC_VDog.h"
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VDog::vfunc390
+// the game's 0x103748e0: a tail call (jmp) of CNPC_VAnimal::vfunc390
+void CNPC_VDog::vfunc390(CVAnimalArg *a0)
+{
+	CNPC_VAnimal::vfunc390(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10374900 size=0x5
+#include "CNPC_VDog.h"
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VDog::vfunc366
+// the game's 0x10374900: a tail call (jmp) of CNPC_VAnimal::vfunc366
+bool CNPC_VDog::vfunc366(int a0, int a1, int a2)
+{
+	return CNPC_VAnimal::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10374920 size=0x5
+#include "CNPC_VDog.h"
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VDog::vfunc144
+// the game's 0x10374920: a tail call (jmp) of CNPC_VAnimal::vfunc144
+void CNPC_VDog::vfunc144(void *a0)
+{
+	CNPC_VAnimal::vfunc144(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10374940 size=0xa3
+#include "CBaseEntity.h"
+#include "CNPC_VDog.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+#include "Vector.h"
+
+void __fastcall sub_102e0b40(float *pMotor);
+
+#define DOG_V(n) virtual void a##n();
+#define DOG_V10(p) DOG_V(p##0) DOG_V(p##1) DOG_V(p##2) DOG_V(p##3) DOG_V(p##4) DOG_V(p##5) DOG_V(p##6) DOG_V(p##7) DOG_V(p##8) DOG_V(p##9)
+
+struct CDogTaskSlots
+{
+	DOG_V10(0) DOG_V10(1) DOG_V10(2) DOG_V10(3) DOG_V10(4) DOG_V10(5) DOG_V10(6) DOG_V10(7)
+	DOG_V10(8) DOG_V10(9) DOG_V10(10) DOG_V10(11) DOG_V10(12) DOG_V10(13) DOG_V10(14) DOG_V10(15)
+	DOG_V(160) DOG_V(161) DOG_V(162) DOG_V(163) DOG_V(164) DOG_V(165) DOG_V(166)
+	virtual CBaseEntity *vfunc167();
+	DOG_V(168) DOG_V(169)
+	DOG_V10(17) DOG_V10(18) DOG_V10(19) DOG_V10(20) DOG_V10(21) DOG_V10(22) DOG_V10(23) DOG_V10(24)
+	DOG_V(250)
+	virtual char vfunc251();
+	DOG_V(252) DOG_V(253) DOG_V(254) DOG_V(255) DOG_V(256) DOG_V(257) DOG_V(258) DOG_V(259)
+	DOG_V10(26) DOG_V10(27) DOG_V10(28) DOG_V10(29) DOG_V10(30)
+	virtual void vfunc310(int a);
+	DOG_V(311) DOG_V(312) DOG_V(313) DOG_V(314) DOG_V(315) DOG_V(316) DOG_V(317) DOG_V(318) DOG_V(319)
+	DOG_V10(32) DOG_V10(33) DOG_V10(34) DOG_V10(35) DOG_V10(36) DOG_V10(37) DOG_V10(38) DOG_V10(39)
+	DOG_V10(40) DOG_V10(41) DOG_V10(42) DOG_V10(43) DOG_V10(44) DOG_V10(45) DOG_V10(46) DOG_V10(47)
+	DOG_V10(48) DOG_V10(49) DOG_V10(50) DOG_V10(51) DOG_V10(52) DOG_V10(53)
+	DOG_V(540)
+	virtual CUnknown102e0150 *vfunc541();
+};
+
+void CNPC_VDog::vfunc442(int *pTask)
+{
+    if (*pTask != 0x36) {
+        if (*pTask == 0xbc)
+            ((CDogTaskSlots *)this)->vfunc310(3);
+        sub_1035f650(pTask);
+        return;
+    }
+    sub_10280a50();
+    sub_102e0b40(*(float **)((char *)this + 0x5d44));
+    Vector vecPos;
+    ((CDogTaskSlots *)this)->vfunc541()->sub_102dfed0(&vecPos, ((CDogTaskSlots *)this)->vfunc167());
+    (*(CAI_Motor **)((char *)this + 0x5d44))->sub_102e20b0(&vecPos.x, -2.0f);
+    sub_10289ee0(0x4b);
+    if (((CDogTaskSlots *)this)->vfunc251())
+        sub_10273e80(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10374a20 size=0x52
+#include "CNPC_VDog.h"
+#include "CAI_Motor.h"
+struct CDogLocalPlayer { char pad[4]; };
+CBaseEntity *sub_101cda50();
+void CNPC_VDog::vfunc444(int *pTask)
+{
+	switch (*pTask) {
+	case 2:
+	case 0x67:
+		if (*(int *)((char *)this + 0x5cc0) == 3) {
+			CBaseEntity *pPlayer = sub_101cda50();
+			if (pPlayer) {
+				CAI_Motor *pMotor = *(CAI_Motor **)((char *)this + 0x5d44);
+				pMotor->sub_102e20b0((const float *)((int (__fastcall *)(CBaseEntity *))(*(void ***)pPlayer)[217])(pPlayer), -2.0f);
+			}
+		}
+	}
+	sub_1035f940(pTask);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10374aa0 size=0x14
+#include "CNPC_VDog.h"
+
+char CNPC_VDog::sub_10374aa0(CBaseEntity *pHint)
+{
+	return *(int *)((char *)pHint + 0x5dc) == 0x2ee0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10374ad0 size=0x15
+#include "CNPC_VDog.h"
+
+int CNPC_VDog::sub_10374ad0(int act)
+{
+	if (act == 3)
+		return act;
+	return sub_10360120(act);
 }
 // END FUNCTION
 

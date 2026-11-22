@@ -5,8 +5,3 @@
 #include "ConVar.h"
 ConVar g_1093a018("sk_bullseye_health", "0", 0);
 // END FUNCTION
-
-// FUNCTION: 0x10356510 size=0x5
-int * sub_10356550(void);
-int * g_1093a010 = ((int * (*)(int))sub_10356550)(0);
-// END FUNCTION

@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x10368f80 size=0xa7
@@ -47,6 +48,127 @@ int CNPC_VCamera::vfunc461()
 	m_p1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCamera.cpp";
 	m_n1b40 = 0x1a7;
 	return m_n5cc4 = 3;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103690a0 size=0x7
+#include "CNPC_VCamera.h"
+int CNPC_VCamera::vfunc375(int a0)
+{
+    return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103690c0 size=0x7
+#include "CNPC_VCamera.h"
+int CNPC_VCamera::vfunc376(int a0)
+{
+    return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103690e0 size=0xd
+struct CAI_BaseNPCTroikaFwd;
+struct CNPC_VCameraFwd {
+    void sub_103690e0(int a);
+};
+struct CAI_BaseNPCTroikaFwd {
+    void sub_1028fcc0(int a);
+};
+
+// TARGET: sub_103690e0
+void CNPC_VCameraFwd::sub_103690e0(int a)
+{
+    a = *(volatile int *)&a;
+    ((CAI_BaseNPCTroikaFwd *)this)->sub_1028fcc0(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10369100 size=0x1
+#include "CNPC_VCamera.h"
+void CNPC_VCamera::vfunc434()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x10369120 size=0xd2
+#include "CNPC_VCamera.h"
+#include "CEntityVSlots.h"
+
+extern char g_1093408c;
+
+struct CameraSlots432
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
+	EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35) EVS10(36) EVS10(37) EVS10(38) EVS10(39)
+	EVS10(40) EVS10(41) EVS10(42)
+	EVS(430) EVS(431)
+	virtual void slot432(int a);
+};
+
+// TARGET: CNPC_VCamera::vfunc431
+void CNPC_VCamera::vfunc431()
+{
+	if (m_b5b55) {
+		m_b5b55 = 0;
+		sub_1027efb0();
+	}
+	if (!sub_1029f2e0()) {
+		sub_1026a0f0();
+		if (!sub_1026c3d0()) {
+			if (!g_1093408c)
+				m_flNextThink = gpGlobals->curtime + 0.1f;
+		} else {
+			((CameraSlots432 *)this)->slot432(0);
+			m_flPrev6254[0] = m_flCur6244[0];
+			m_flPrev6254[1] = m_flCur6244[1];
+			m_flPrev6254[2] = m_flCur6244[2];
+			m_flPrev6254[3] = m_flCur6244[3];
+			m_flCur6244[0] = m_flNextThink = gpGlobals->curtime + 0.2;
+			m_flCur6244[1] = m_flNextThink;
+			m_flCur6244[2] = m_flNextThink;
+			m_flCur6244[3] = m_flNextThink;
+		}
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10369240 size=0x5
+#include "CNPC_VCamera.h"
+int CNPC_VCamera::vfunc390(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10369260 size=0x5
+#include "CNPC_VCamera.h"
+bool CNPC_VCamera::vfunc366(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10369280 size=0x5
+#include "CNPC_VCamera.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VCamera::vfunc144
+// the game's 0x10369280: a tail call (jmp) of CAI_BaseNPCTroika::vfunc144
+void CNPC_VCamera::vfunc144(int a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc144(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x103692a0 size=0x3
+#include "CNPC_VCamera.h"
+int CNPC_VCamera::vfunc473()
+{
+    return 0;
 }
 // END FUNCTION
 

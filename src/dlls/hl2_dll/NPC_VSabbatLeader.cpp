@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x103a78c0 size=0xd6c
@@ -322,6 +323,224 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a8990 size=0x7b4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CFlagsUnit.h"
+#include "CAI_Motor.h"
+#include "CNPC_VSabbatLeader.h"
+
+struct CUnk1093c34c
+{
+	virtual void v0();
+	virtual char v1();
+	char pad[0x28];
+	int m2c;
+};
+struct CTaskArg { int m0, m4, m8, mc, m10, m14, m18, m1c; };
+extern CUnk1093c34c *g_1093c34c;
+extern float g_104c3cd0;
+extern float g_104c3cd8;
+extern float g_104c3cec;
+extern float g_1093c33c;
+float sub_101d2c70(Vector *p);
+
+inline int ENTINDEX444(int pEdict) { return engine->vfunc35(pEdict); }
+static inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline void MotorSetIdealYawAndUpdate(Vector *v, CAI_Motor *m)
+{
+	m->sub_102e1c10(sub_101d2c70(v), -1.0f);
+}
+
+struct CFlagsUnitI
+{
+	char pad[0x44];
+	unsigned short m_usFlags;
+	void sub_100dc580(int flags);
+};
+inline void RemoveSolidFlagsInline(CFlagsUnitI *p, int f)
+{
+	p->sub_100dc580(p->m_usFlags & ~f);
+}
+
+// TARGET: CNPC_VSabbatLeader::vfunc444
+void CNPC_VSabbatLeader::vfunc444(const int *pTask)
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::RunTask", g_106b8540);
+	CEntityVSlots *me = (CEntityVSlots *)this;
+	if (!g_1093c34c->v1() && g_1093c34c->m2c != 0 && m_b66b8 == 0 && m_nState5cc0 != 5
+		&& sub_10266c80(me->slot217(), g_104c3cd0))
+	{
+		CTaskArg arg;
+		arg.m8 = 0;
+		arg.m14 = -1;
+		arg.m18 = 0;
+		sub_103aa3b0((int)&arg);
+	}
+	switch (*pTask)
+	{
+	case 0xbc:
+	case 0xbd:
+		if (!sub_102c1170())
+			sub_103c5f40(pTask);
+		return;
+	default:
+	base:
+		sub_103c5f40(pTask);
+		return;
+	case 0x139:
+		if (me->slot251())
+		{
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+			enginesound->vfunc3(&filter, ENTINDEX444(m_nEdict2e0), 2, "Character/Monster/Andrei_Transformed/jump_retreat.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		}
+		goto base;
+	case 0x13c:
+		if (m_bTrackPlayer)
+		{
+			sub_10280a50();
+			CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+			if (pPlayer)
+			{
+				CAI_Motor *pMotor = m_pMotor5d44;
+				pMotor->sub_102e20b0((const float *)pPlayer->slot217(), g_104c3cec);
+				Vector dir = *pPlayer->slot217() - *me->slot217();
+				if (VectorNormalize(dir) > 0.0001f)
+				{
+					sub_1000489a(&(dir * 100.0f));
+				}
+			}
+		}
+		goto base;
+	case 0x13a:
+		if (sub_1027d990() == 1 && (sub_100b3700() & 1))
+		{
+			m_flTime5d9c = gpGlobals->curtime;
+			sub_103c6a00();
+			sub_103aaa80();
+		}
+		if (m_bTrackPlayer && !sub_103aaf50())
+			sub_103aad40();
+		goto base;
+	case 0x15c:
+		MotorSetIdealYawAndUpdate(me->slot198(), m_pMotor5d44);
+		m_pMotor5d44->m_30 = 0;
+		sub_100b3640(1);
+		if (m_fl6f8 >= g_1093c33c && !m_bLargeSplashSpawned)
+		{
+			m_bLargeSplashSpawned = 1;
+			sub_103ab110("bloodsplash_emitter", (CEntityVSlots *)m_pHint5ddc);
+			sub_103ab110("andrei_splash_huge-emitter", (CEntityVSlots *)m_pHint5ddc);
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+			enginesound->vfunc3(&filter, ENTINDEX444(m_nEdict2e0), 2, "Character/Monster/Andrei_Transformed/dive_in_splash.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		}
+		if (me->slot251())
+		{
+			m_fl3ec = 1.0f;
+			sub_1027d9b0(0);
+			m_bJumping = 0;
+			me->slot66();
+			sub_10273e80(0);
+		}
+		return;
+	case 0x36:
+	case 0x37:
+	case 0x9a:
+	case 0x160:
+		sub_10280a50();
+		if (me->slot167())
+		{
+			Vector pos = *((CEntityVSlots *)me->slot167())->slot217();
+			m_pMotor5d44->sub_102e20b0((const float *)&pos, g_104c3cd8);
+		}
+		if (me->slot251())
+			sub_10273e80(0);
+		return;
+	case 0x15d:
+		sub_10280a50();
+		m_pMotor5d44->sub_102e1e20(-1);
+		if (me->slot251())
+		{
+			m_flTime5d9c = gpGlobals->curtime;
+			sub_103c6a00();
+			sub_103aaa80();
+			me->slot67();
+			m_nEffectFlags &= 0xffffffdf;
+			{
+				const char *file = m_pszName26c ? m_pszName26c : g_106b8540;
+				g_109f3620[*g_109f3680].name = "CBaseEntity::RemoveSolidFlags";
+				g_109f3620[*g_109f3680].file = file;
+				g_109f3620[*g_109f3680].line = g_106b8540;
+				(*g_109f3680)++;
+				CFlagsUnitI *pf = (CFlagsUnitI *)((char *)this + 0x270);
+				int f = 4;
+				pf->sub_100dc580(pf->m_usFlags & ~f);
+				(*g_109f3680)--;
+			}
+			sub_10273e80(0);
+		}
+		return;
+	case 0x15e:
+		if (gpGlobals->curtime > m_fWarningFinishTime)
+			sub_10273e80(0);
+		return;
+	case 0x161:
+	case 0x163:
+		if (me->slot251())
+			sub_10273e80(0);
+		return;
+	case 0x162:
+		if (gpGlobals->curtime - m_fl669c > 1.0f)
+			sub_10273e80(0);
+		return;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9340 size=0x84
+#include "CNPC_VSabbatLeader.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+char CNPC_VSabbatLeader::sub_103a9340(CNPC_VSabbatLeaderHint *pHint)
+{
+    CScopeGuard guard("CNPC_VSabbatLeader::FValidateHintType");
+    if (pHint->m_hintType >= 16000 && pHint->m_hintType <= 16005)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9400 size=0xf1
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
@@ -354,6 +573,252 @@ void CNPC_VSabbatLeader::vfunc448(int a)
         }
     }
     sub_1029adb0(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9540 size=0x1a9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+extern CNPC_VSabbatLeaderHint *g_10925450;
+void sub_10139970(const float *pDir, float *pAngles);
+float sub_1013d580(float a, float b);
+
+CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9540()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SelectTeleportArchway", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+	if (!pPlayer)
+		return 0;
+	CNPC_VSabbatLeaderHint *pBest = 0;
+	float flBest = 3.402823466e+38f;
+	for (CNPC_VSabbatLeaderHint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		if (pHint->m_hintType == 0x3e82)
+		{
+			const Vector *pHintOrigin = ((CEntityVSlots *)pHint)->slot217();
+			Vector vecDelta = *pPlayer->slot217() - *pHintOrigin;
+			Vector vecDir = vecDelta;
+			vecDir.z = 0;
+			if (vecDir.Length2D() >= 24.0f)
+			{
+				float ang[3];
+				sub_10139970(&vecDir.x, ang);
+				float flYaw = pPlayer->slot219()->y;
+				float flDiff = (float)fabs(sub_1013d580(flYaw, ang[1]));
+				if (flDiff < flBest)
+				{
+					flBest = flDiff;
+					pBest = pHint;
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9760 size=0x2b6
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "VectorHelpers.h"
+#include <math.h>
+
+extern CNPC_VSabbatLeaderHint *g_10925450;
+
+void __cdecl sub_10139970(const Vector *pDir, Vector *pAngles);
+
+extern float g_104c3cfc;
+extern float g_104c3d00;
+CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9760()
+{
+	ScopeTrace st("CNPC_VSabbatLeader::SelectDiveInPoint", g_106b8540);
+
+	CBaseEntity *pPlayer = g_10566458->sub_100290c0(&m_hPlayer);
+	if (!pPlayer)
+		return 0;
+
+	Vector vecDir = *((CEntityVSlots *)pPlayer)->slot217() - *((CEntityVSlots *)this)->slot217();
+	vecDir.z = 0.0f;
+	float flDist = VectorNormalize(vecDir);
+	if (flDist < 45.0f)
+		return 0;
+
+	CNPC_VSabbatLeaderHint *pBest = 0;
+	float flBest;
+	if ((int)pPlayer == -1) flBest = 3.4028235e38f; else flBest = 3.4028235e38f;
+	for (CNPC_VSabbatLeaderHint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		if (pHint->m_hintType == 0x3e85)
+		{
+			Vector vecToHint = *((CEntityVSlots *)pPlayer)->slot217() - *((CEntityVSlots *)pHint)->slot217();
+			vecToHint.z = 0.0f;
+			float flHintDist = vecToHint.Length2D();
+
+			if (flHintDist >= g_104c3cfc)
+			{
+				Vector vecHintDir = *((CEntityVSlots *)pHint)->slot217() - *((CEntityVSlots *)this)->slot217();
+				float flHintDirLen = VectorNormalize(vecHintDir);
+
+				if (flHintDirLen > 0.0001f)
+				{
+					if (DotProduct(vecHintDir, vecDir) < 0.0f)
+					{
+						Vector vecAngles;
+						sub_10139970(&vecToHint, &vecAngles);
+
+						float flPlayerYaw = ((CEntityVSlots *)pPlayer)->slot219()->y;
+						float flYawDiff = fabs(sub_1013d580(flPlayerYaw, vecAngles.y));
+						if (flYawDiff + flHintDist < flBest)
+						{
+							flBest = flYawDiff + flHintDist;
+							pBest = pHint;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9ad0 size=0x1b1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+#include "Vector.h"
+
+extern CNPC_VSabbatLeaderHint *g_10925450;
+void __cdecl sub_10139970(const Vector &, QAngle &);
+float __cdecl sub_1013d580(float, float);
+extern float g_104c3cfc;
+
+inline float Dist2D_103a9ad0(const Vector &vecDir)
+{
+	float flDist = vecDir.Length2D();
+	return flDist;
+}
+CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9ad0()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SelectDiveOutPoint", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+	if (!pPlayer)
+		return 0;
+	CNPC_VSabbatLeaderHint *pBest = 0;
+	float flBest = 3.402823466e+38f;
+	for (CNPC_VSabbatLeaderHint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		if (pHint->m_hintType == 0x3e85)
+		{
+			const Vector *pHintOrigin = ((CEntityVSlots *)pHint)->slot217();
+			Vector vecDir = *pPlayer->slot217() - *pHintOrigin;
+			vecDir.z = 0;
+			float dist = Dist2D_103a9ad0(vecDir);
+			if (dist >= g_104c3cfc)
+			{
+				QAngle angles;
+				sub_10139970(vecDir, angles);
+				Vector *pStartAng = pPlayer->slot219();
+				float yaw = pStartAng->y;
+				float score = (float)fabs(sub_1013d580(yaw, angles.y)) + dist;
+				if (score < flBest)
+				{
+					flBest = score;
+					pBest = pHint;
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9d00 size=0x6c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+int CNPC_VSabbatLeader::sub_103a9d00()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::FlipFailureType", g_106b8540);
+	return m_nFailureType = 1 - m_nFailureType;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9d90 size=0xa5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+extern float g_104c3cc8;
+extern float g_104c3cc4;
+
+// TARGET: CNPC_VSabbatLeader::sub_103a9d90
+bool CNPC_VSabbatLeader::sub_103a9d90()
+{
+    ScopeTrace trace("CNPC_VSabbatLeader::CheckForJumpCondition", g_106b8540);
+    if (sub_103c67f0(g_104c3cc8))
+        return true;
+    if (sub_103c6a20() >= g_104c3cc4)
+        return true;
+    return sub_103aabc0();
 }
 // END FUNCTION
 
@@ -413,6 +878,26 @@ bool CNPC_VSabbatLeader::sub_103a9e70()
 		}
 	}
 	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103a9fd0 size=0x64
+#include "CNPC_VSabbatLeader.h"
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_1064efb4[];
+extern char g_106b8540[];
+
+// TARGET: CNPC_VSabbatLeader::vfunc619
+void CNPC_VSabbatLeader::vfunc619(int arg)
+{
+	g_109f3620[*g_109f3680].a = g_1064efb4;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1000c27a(arg);
+	(*g_109f3680)--;
 }
 // END FUNCTION
 

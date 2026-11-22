@@ -13,18 +13,3 @@ extern SendTable g_106d05cc;
 extern char g_10559350[];
 ServerClassReg g_106d05b0("CBaseFlex", &g_106d05cc, g_10559350);
 // END FUNCTION
-
-// FUNCTION: 0x100b5560 size=0xa
-#include "SendTable.h"
-SendTable g_106d05cc;
-// END FUNCTION
-
-// FUNCTION: 0x100b55e0 size=0x5
-int sub_100b5620(void);
-int g_106d05c8 = ((int (*)(int))sub_100b5620)(0);
-// END FUNCTION
-
-// FUNCTION: 0x100b57d0 size=0x5
-int sub_100b5810(void);
-int g_106d05e8 = ((int (*)(int))sub_100b5810)(0);
-// END FUNCTION

@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x1038b1a0 size=0x16e
@@ -60,6 +61,310 @@ void CNPC_VManBat::sub_1038b1a0(float flScale)
 
 		if (m_f6678 <= gpGlobals->curtime)
 			sub_1038e720(vecDir);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038b370 size=0x8e2
+#include "CHL2_Player.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VManBat.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "ConVar.h"
+#include "MvsnSec0.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Vector.h"
+
+int sub_10390920(unsigned int x);
+int sub_102d1af0(void *pThis, int a, int b, float c, int d, int e);
+void sub_101cf5c0(void *pThis, const Vector *pVec, int a);
+
+extern ConVar g_1093b7c8;
+
+struct ManBatPad1 { int x; };
+struct ManBatPad2 { int x; };
+
+struct CCollView
+{
+	virtual void v0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+static inline CCollView *CollOf(void *p) { return (CCollView *)((char *)p + 0x270); }
+static inline const Vector &MaxsOf(void *p) { return CollOf(p)->OBBMaxs(); }
+static inline const Vector &MinsOf(void *p) { return CollOf(p)->OBBMins(); }
+
+static inline int SecDecode0(unsigned int v)
+{
+	return sub_10390920((((v & 0x710935) ^ 0x148739) + 0x4094ab & 0x18ef6ca) ^ v ^ 0x412a96ec);
+}
+
+static inline bool SecEq0(unsigned int v, unsigned int k)
+{
+	int b = sub_10390920(k);
+	return SecDecode0(v) == b;
+}
+
+static inline const Vector &ManBatAbsVelocity(CBaseEntity *p)
+{
+	if ((unsigned char)(p->m_flags268 >> 12) & 1)
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+struct ManBatNav : CAI_Pathfinder
+{
+	void SetupFit()
+	{
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
+	}
+};
+
+Vector CNPC_VManBat::sub_1038b370(float flScale)
+{
+	static Vector s_vecLast(0.0f, 0.0f, 0.0f);
+	static float s_flTime;
+	Vector vecVelocity;
+	float flSpeed;
+	Vector vecOut;
+
+	if (m_pFlyNode == 0 && !SecEq0(m_n6670, 0xfa0b069a) && !SecEq0(m_n6670, 0xfa0b069b))
+	{
+		vecVelocity = ManBatAbsVelocity((CBaseEntity *)this);
+		vecVelocity.z = 10.0f;
+		flSpeed = sub_10146150(&vecVelocity);
+		Vector vecDir = vecVelocity;
+		VectorNormalize(vecDir);
+		if (sub_1038bec0(vecDir, flSpeed, vecOut))
+			vecVelocity = vecOut * flSpeed;
+		return vecVelocity;
+	}
+
+	if (m_nState == 0x30 || 0xb0 == m_nState || m_nState == 0x4b || m_nState == 0x1171)
+	{
+		vecVelocity.Init(0.0f, 0.0f, 0.0);
+		return vecVelocity;
+	}
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot220();
+	if (vecOrigin == s_vecLast)
+	{
+		if (gpGlobals->curtime - s_flTime > 0.5)
+		{
+			int nOldMode = SecDecode0(m_n6670);
+			int nOldN = m_n6674;
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(2);
+			m_n6674 = enginerandom->vfunc2(1, 3);
+			CBaseEntity *pNode = (CBaseEntity *)sub_102d1af0(this, 20000, 0, 15000.0f, 0, 0);
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(nOldMode);
+			m_n6674 = nOldN;
+			if (pNode)
+			{
+				Vector vecPos = *((CEntityVSlots *)this)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				vecPos = *((CEntityVSlots *)pNode)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				sub_101cf5c0(this, &vecPos, 0);
+			}
+			else
+			{
+				vecVelocity.Init(0.0f, 0.0f, 0.0f);
+				return vecVelocity;
+			}
+		}
+	}
+	else
+	{
+		s_vecLast = vecOrigin;
+		s_flTime = gpGlobals->curtime;
+	}
+
+	Vector vecTarget;
+	if (SecEq0(m_n6670, 0xfa0b069a))
+	{
+		CBaseEntity *pTarget = (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&m_h628c);
+		const Vector &v = *((CEntityVSlots *)pTarget)->slot220();
+		vecTarget.x = v.x;
+		vecTarget.y = v.y;
+		vecTarget.z = v.z + 150.0;
+	}
+	else if (SecEq0(m_n6670, 0xfa0b069b))
+	{
+		if (!g_10566458->sub_100290c0((const unsigned int *)&m_hFlyByTarget) || !((CEntityVSlots *)g_10566458->sub_100290c0((const unsigned int *)&m_hFlyByTarget))->slot158())
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		vecTarget = *((CEntityVSlots *)g_10566458->sub_100290c0((const unsigned int *)&m_hFlyByTarget))->slot220();
+		vecTarget.z = MaxsOf(g_10566458->sub_100290c0((const unsigned int *)&m_hFlyByTarget)).z - MinsOf(g_10566458->sub_100290c0((const unsigned int *)&m_hFlyByTarget)).z + vecTarget.z + 1.0;
+		((ManBatNav *)((CAI_PathfinderOuter *)this)->m_pPathfinder)->SetupFit();
+		if (!((CAI_PathfinderOuter *)this)->m_pPathfinder->sub_102f1a20(&vecTarget.x, 0x2400b))
+		{
+			((CEntityVSlots *)this)->slot448(0x1a);
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		}
+	}
+	else
+	{
+		vecTarget = *((CEntityVSlots *)m_pFlyNode)->slot220();
+	}
+
+	vecVelocity = vecTarget - vecOrigin;
+	float flLen = vecVelocity.Length();
+	flSpeed = 700.0f;
+	if (!(vecVelocity.z < -30.0f))
+		flSpeed = 500.0f;
+	VectorNormalize(vecVelocity);
+	if (sub_1038bec0(vecVelocity, flSpeed, vecOut))
+	{
+		vecVelocity = vecOut * flSpeed;
+	}
+	else
+	{
+		vecVelocity *= flSpeed;
+		Vector vecCur = *((CEntityVSlots *)this)->slot198();
+		Vector vecDiff = vecVelocity - vecCur;
+		flSpeed = g_1093b7c8.GetFloat() * flScale;
+		vecDiff.x = vecDiff.x > flSpeed ? flSpeed : vecDiff.x;
+		float flNeg = -flSpeed;
+		vecDiff.x = vecDiff.x < flNeg ? flNeg : vecDiff.x;
+		if (vecDiff.y > flSpeed) vecDiff.y = flSpeed;
+		if (vecDiff.y < flNeg) vecDiff.y = flNeg;
+		if (vecDiff.z > flSpeed) vecDiff.z = flSpeed;
+		if (vecDiff.z < -(flSpeed * 3.0)) vecDiff.z = -(flSpeed * 3.0);
+		vecVelocity = vecCur + vecDiff;
+	}
+
+	if (flScale > 0.0)
+	{
+		double t = vecVelocity.Length() * 0.2;
+		if (flLen < t)
+			m_bReachedMoveGoal = true;
+	}
+	return vecVelocity;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038bec0 size=0x218
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CNPC_VManBat::sub_1038bec0
+#include "CNPC_VManBat.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+
+CBaseEntity *__fastcall sub_1008bf00(void *pEntity);
+
+inline void UTIL_TraceHullScoped(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, unsigned int mask, void *pFilter, CGameTrace *pTrace)
+{
+	ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+	UTIL_TraceHull_DebugCall(start, end, mins, maxs, mask, pFilter, pTrace, 1, 0);
+}
+
+bool CNPC_VManBat::sub_1038bec0(const Vector &vecDir, float flDist, Vector &vecNormal)
+{
+	int collisionGroup = *(int *)((char *)this + 0x368);
+	CTraceFilterSimpleTwoEnt filter(this, sub_1008bf00(this), collisionGroup);
+
+	CCollisionProperty *pProp = (CCollisionProperty *)((char *)this + 0x270);
+	const Vector &vecMins = *(const Vector *)pProp->vfunc1();
+	Vector vecEnd = vecDir * flDist * 0.1f + *((CEntityVSlots *)this)->slot217();
+	const Vector &vecMaxs = *(const Vector *)pProp->vfunc2();
+
+	CGameTrace trace;
+	UTIL_TraceHullScoped(*((CEntityVSlots *)this)->slot217(), vecEnd, vecMins, vecMaxs, 0x202400b, &filter, &trace);
+
+	if (trace.m_fraction < 1.0f)
+	{
+		vecNormal.Init(0.0f, 0.0f, 1.0f);
+		if (m_nState != 0x22)
+			m_f6678 = gpGlobals->curtime;
+		return true;
+	}
+	vecNormal = g_1070d1b0;
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038c170 size=0xa5
+#include "CNPC_VManBat.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+struct CManBatX {
+    void sub_1027d9b0(int nState);
+    void sub_1026dc30(int a);
+    void sub_1026dc00(int a);
+};
+
+void CNPC_VManBat::sub_1038c170(int nMode)
+{
+    CBaseEntity *pEnt = (CBaseEntity *)this;
+    CManBatX *pBat = (CManBatX *)this;
+    if (nMode == 1) {
+        ((CAI_BaseNPC *)this)->vfunc208(0);
+        pEnt->sub_100b3580(0x400);
+        pBat->sub_1027d9b0(2);
+        pBat->sub_1026dc30(1);
+        pBat->sub_1026dc00(4);
+        pEnt->vfunc93(4, 0);
+    } else if (nMode == 0) {
+        pEnt->sub_100b3640(0x400);
+        pBat->sub_1027d9b0(0);
+        pBat->sub_1026dc30(4);
+        pBat->sub_1026dc00(1);
+        pEnt->vfunc93(4, 0);
+    } else {
+        pEnt->sub_100b3640(0x400);
+        pBat->sub_1027d9b0(0);
+        pBat->sub_1026dc30(4);
+        pBat->sub_1026dc00(1);
+        pEnt->vfunc93(4, 0);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038c250 size=0xfb
+#include "CBaseEntity.h"
+#include "CNPC_VManBat.h"
+#include "CEntityVSlots.h"
+
+void CNPC_VManBat::sub_1038c250(CBaseEntity *pTarget)
+{
+	if (pTarget)
+	{
+		CEntityVSlots *pSelf = (CEntityVSlots *)this;
+		sub_1038c170(1);
+		Vector vecAngles = *pSelf->slot221();
+		vecAngles.x = 0;
+		pSelf->slot64(&vecAngles.x);
+		Vector *pTargetPos = ((CEntityVSlots *)pTarget)->slot220();
+		Vector *pMyPos = pSelf->slot220();
+		Vector vecDir = *pTargetPos - *pMyPos;
+		VectorNormalize(vecDir);
+		Vector vecVel = vecDir * 200.0f;
+		((CBaseEntity *)this)->sub_100b2770(vecVel);
 	}
 }
 // END FUNCTION
@@ -727,6 +1032,1080 @@ void CNPC_VManBat::vfunc444(int *pTask)
 	default:
 		((CBaseNPCV *)this)->sub_10288780(pTask);
 		break;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e000 size=0x281
+#include "CNPC_VManBat.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+#define MB_V(n) virtual void v##n();
+#define MB_V10(p) MB_V(p##0) MB_V(p##1) MB_V(p##2) MB_V(p##3) MB_V(p##4) MB_V(p##5) MB_V(p##6) MB_V(p##7) MB_V(p##8) MB_V(p##9)
+
+struct CManBatView
+{
+	MB_V10(0) MB_V10(1) MB_V10(2) MB_V10(3) MB_V10(4) MB_V10(5) MB_V10(6) MB_V10(7) MB_V10(8) MB_V10(9)
+	MB_V10(10) MB_V10(11) MB_V10(12) MB_V10(13) MB_V10(14) MB_V10(15) MB_V10(16) MB_V10(17) MB_V10(18) MB_V10(19)
+	MB_V10(20)
+	MB_V(210) MB_V(211) MB_V(212) MB_V(213) MB_V(214) MB_V(215) MB_V(216) MB_V(217) MB_V(218) MB_V(219) MB_V(220) MB_V(221)
+	virtual Vector GetSoundEmissionOrigin();	// slot 222
+	char m_pad04[0x2e0 - 0x4];
+	int m_pEdict2e0;
+	int edict() { return m_pEdict2e0; }
+};
+
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_10640d10[];
+extern const char *g_10640d1c[];
+
+void CNPC_VManBat::vfunc259(int *pEvent)
+{
+	CManBatView *p = (CManBatView *)this;
+	switch (*pEvent)
+	{
+	case 1:
+	{
+		CPASAttenuationFilter filter(p);
+		filter.MakeReliable();
+		int index = engine->vfunc35(p->edict());
+		g_1070b248->vfunc3(&filter, index, 4, g_10640d10[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		break;
+	}
+	case 2:
+	{
+		CPASAttenuationFilter filter(p);
+		filter.MakeReliable();
+		g_1070b248->vfunc3(&filter, engine->vfunc35(p->edict()), 4, "character/male/sheriff_manbat/screech.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		break;
+	}
+	case 3:
+	{
+		CPASAttenuationFilter filter(p);
+		filter.MakeReliable();
+		int index = engine->vfunc35(p->edict());
+		g_1070b248->vfunc3(&filter, index, 4, g_10640d1c[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		return;
+	}
+	default:
+		sub_100076bc(pEvent);
+		return;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e340 size=0xf8
+#include "CVTraitEffect_t.h"
+#include "CNPC_VManBat.h"
+
+struct DebugCvarMB
+{
+	virtual void v0();
+	virtual char vfunc1();
+	int m_n04; int m_n08; int m_n0c; int m_n10; int m_n14; int m_n18; int m_n1c; int m_n20; int m_n24; int m_n28;
+	int m_nValue;	// 0x2c
+};
+extern DebugCvarMB *g_1093b814;
+int sub_1042fbf0(int v);
+
+#define HASH(n) (((((n) & 0x710935) ^ 0x148739) + 0x4094ab) & 0x18ef6ca) ^ (n) ^ 0x412a96ec
+
+int CNPC_VManBat::vfunc438()
+{
+	int iDecoded;
+	if (sub_1027d990() == 2)
+	{
+		int v = HASH(m_n6670);
+		iDecoded = sub_1042fbf0(v);
+		int k = sub_1042fbf0(0xfa0b0694);
+		if (iDecoded != k && (iDecoded != k || iDecoded == -1))
+		{
+			m_n6674 = 1;
+			return 0x159;
+		}
+		if (sub_10269d30(0x4d))
+			return 0x15f;
+		if (!g_1093b814->vfunc1() && g_1093b814->m_nValue)
+			return 0x15d;
+		switch (enginerandom->vfunc2(1, 10))
+		{
+		case 1:
+			return 0x15c;
+		case 2:
+			return 0x15d;
+		case 3:
+			return 0x161;
+		case 4:
+		case 5:
+		case 6:
+			return 0x163;
+		default:
+			return 0x159;
+		}
+	}
+	m_n6674 = 1;
+	return 0x158;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e480 size=0x160
+#include "CBaseEntity.h"
+#include "CNPC_VManBat.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" char *__cdecl strcpy(char *, const char *);
+#pragma intrinsic(strlen, strcpy)
+extern char g_106b8540[];
+int sub_1042fbf0(int);
+
+struct NamedEnt {
+    char m_pad0000[0x26c];
+    const char *m_iName;
+    char m_pad0270[0x5dc - 0x270];
+    int m_nType;
+};
+
+#define HASH(x) ((((((x) & 0x710935) ^ 0x148739) + 0x4094ab) & 0x18ef6ca) ^ (x) ^ 0x412a96ec)
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline bool NamesMatch(const char *pszName, const char *const &nameToMatch)
+{
+    int len = strlen(pszName);
+    int r;
+    if (len == 0)
+        r = (int)nameToMatch;
+    else if (pszName[len - 1] != '*')
+        r = _strcmpi(STRINGR(nameToMatch), pszName);
+    else
+        r = _strnicmp(STRINGR(nameToMatch), pszName, len - 1);
+    return r == 0;
+}
+
+inline bool NameMatches(NamedEnt *pEnt, const char *pszName)
+{
+    if (pEnt->m_iName && pEnt->m_iName == pszName)
+        return true;
+    return NamesMatch(pszName, pEnt->m_iName);
+}
+
+// TARGET: CNPC_VManBat::vfunc566
+bool CNPC_VManBat::vfunc566(CBaseEntity *pEntity)
+{
+    char name[80];
+    NamedEnt *pEnt = (NamedEnt *)pEntity;
+    if (pEnt->m_nType != 20000)
+        return false;
+    int v = HASH(m_n6670);
+    switch (sub_1042fbf0(v)) {
+    case 2:
+    case 4:
+        sprintf(name, "ManBat Divepoint %d", m_n6674);
+        break;
+    case 3:
+        sprintf(name, "ManBat Divepoint %d Bottom", m_n6674);
+        break;
+    case 1:
+        strcpy(name, "ManBat Landpoint");
+        break;
+    case 8:
+        sprintf(name, "ManBat Script Node %d", m_n6674);
+        break;
+    default:
+        sprintf(name, "ManBat %d", m_n6674);
+        break;
+    }
+    if (NameMatches(pEnt, name))
+        return true;
+    return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e640 size=0x20
+#include "CNPC_VManBat.h"
+
+void __stdcall sub_10272650(int a);
+
+void CNPC_VManBat::sub_1038e640()
+{
+	sub_10272650(0x22);
+	m_f6678 = gpGlobals->curtime + 2.3;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e670 size=0x20
+#include "CNPC_VManBat.h"
+
+void __stdcall sub_10272650(int a);
+
+void CNPC_VManBat::sub_1038e670()
+{
+	sub_10272650(0x24);
+	m_f6678 = gpGlobals->curtime + 4.0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e6a0 size=0x23
+#include "CNPC_VManBat.h"
+
+void __stdcall sub_10272650(int a);
+
+void CNPC_VManBat::sub_1038e6a0()
+{
+	sub_10272650(0x116d);
+	m_f6678 = gpGlobals->curtime + 0.2;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e6e0 size=0x23
+#include "CNPC_VManBat.h"
+
+void __stdcall sub_10272650(int a);
+
+void CNPC_VManBat::sub_1038e6e0()
+{
+	sub_10272650(0x116e);
+	m_f6678 = gpGlobals->curtime + 0.2;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e720 size=0x108
+#include "CNPC_VManBat.h"
+
+#define MBV(n) virtual void v##n();
+#define MBV10(p) MBV(p##0) MBV(p##1) MBV(p##2) MBV(p##3) MBV(p##4) MBV(p##5) MBV(p##6) MBV(p##7) MBV(p##8) MBV(p##9)
+struct CManBatVView
+{
+	MBV(0) MBV(1) MBV(2) MBV(3) MBV(4) MBV(5) MBV(6) MBV(7) MBV(8) MBV(9)
+	MBV10(1) MBV10(2) MBV10(3) MBV10(4) MBV10(5) MBV10(6) MBV10(7) MBV10(8) MBV10(9)
+	MBV10(10) MBV10(11) MBV10(12) MBV10(13) MBV10(14) MBV10(15) MBV10(16) MBV10(17) MBV10(18) MBV10(19)
+	MBV10(20) MBV10(21) MBV(220)
+	virtual Vector *vfunc221();
+};
+
+float sub_101d2c70(const Vector &vec);
+
+// TARGET: CNPC_VManBat::sub_1038e720
+void CNPC_VManBat::sub_1038e720(Vector vecDir)
+{
+	int nState = m_nState;
+	if (nState == 0x28 || nState == 0x30 || nState == 0xb0 || nState == 0x4b || nState == 0x1171)
+		return;
+	if (vecDir.z >= 30.0f)
+	{
+		sub_1038e640();
+		return;
+	}
+	Vector vecAngles = *((CManBatVView *)this)->vfunc221();
+	double flDiff = sub_101d2c70(vecDir) - vecAngles.y;
+	if (flDiff < 0.0)
+		flDiff += 360.0;
+	if (!(flDiff < 30.0) && !(flDiff > 330.0))
+	{
+		if (flDiff < 180.0)
+			sub_1038e6a0();
+		else
+			sub_1038e6e0();
+		return;
+	}
+	if (nState == 0x24)
+		sub_1038e640();
+	else
+		sub_1038e670();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e880 size=0x2f
+#include "CNPC_VManBat.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VManBat::vfunc390
+int CNPC_VManBat::vfunc390(void *info)
+{
+	if (*(int *)((char *)this + 0x210) < 0x19) {
+		if (*(int *)(*(int *)((char *)info + 0x2c) + 0xa8) == 0) {
+			return 1;
+		}
+	}
+	return ((CNPC_VHuman *)this)->sub_10001b45(info);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e8c0 size=0x9f
+#include "CNPC_VManBat.h"
+#include "CEHandleGet.h"
+
+void sub_101cd940(CGlobalEntityList_Ent *pEnt);
+
+// TARGET: CNPC_VManBat::vfunc144
+void CNPC_VManBat::vfunc144(int arg)
+{
+	sub_1038f020(1);
+	sub_1038c170(2);
+	sub_1038f660();
+	sub_1038fd40();
+	if (EHandle_Get(m_h66a4)) {
+		sub_101cd940(EHandle_Get(m_h66a4));
+		m_h66a4 = 0xffffffff;
+	}
+	sub_103c4f40(arg);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e990 size=0x1a
+#include "CNPC_VManBat.h"
+
+// TARGET: CNPC_VManBat::vfunc432
+void CNPC_VManBat::vfunc432(int a)
+{
+	sub_1038f020(0);
+	sub_10385a10(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038e9c0 size=0x503
+#include "CHL2_Player.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+#include "ConVar.h"
+#include "MvsnSec0.h"
+#include "Vector.h"
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+// TARGET: CNPC_VManBat::sub_1038e9c0
+#include "CNPC_VManBat.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CEnvParticle.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+extern char g_106b8540[];
+CBaseEntity *sub_100fbc90(const char *pszName, const Vector *pOrigin, const Vector *pAngles, float flDuration);
+void sub_101cd940(CBaseEntity *pEnt);
+void sub_101cdba0(const Vector *pOrigin, float a, float b, float c, float d, int e, bool f);
+
+#define EVS(n) virtual void s##n();
+#define EVS10(p) EVS(p##0) EVS(p##1) EVS(p##2) EVS(p##3) EVS(p##4) EVS(p##5) EVS(p##6) EVS(p##7) EVS(p##8) EVS(p##9)
+class CManbatEnt
+{
+public:
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216)
+	virtual Vector *GetAbsOrigin217();
+	EVS(218) EVS(219)
+	virtual Vector *slot220();
+	EVS(221) EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
+	EVS10(23) EVS(240)
+	virtual void slot241();
+	EVS(242)
+	virtual void slot243(CBaseEntity *pEnt, int nType, const char *pszName);
+};
+#define ME(p) ((CManbatEnt *)(p))
+
+int sub_10390920(unsigned int x);
+int sub_102d1af0(void *pThis, int a, int b, float c, int d, int e);
+void sub_101cf5c0(void *pThis, const Vector *pVec, int a);
+
+extern ConVar g_1093b7c8;
+
+namespace block_1038e9c0 {
+struct ManBatPad1 { int x; };
+struct ManBatPad2 { int x; };
+
+struct CCollView
+{
+	virtual void v0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+static inline CCollView *CollOf(void *p) { return (CCollView *)((char *)p + 0x270); }
+static inline const Vector &MaxsOf(void *p) { return CollOf(p)->OBBMaxs(); }
+static inline const Vector &MinsOf(void *p) { return CollOf(p)->OBBMins(); }
+
+static inline int SecDecode0(unsigned int v)
+{
+	return sub_10390920((((v & 0x710935) ^ 0x148739) + 0x4094ab & 0x18ef6ca) ^ v ^ 0x412a96ec);
+}
+
+static inline bool SecEq0(unsigned int v, unsigned int k)
+{
+	int b = sub_10390920(k);
+	return SecDecode0(v) == b;
+}
+
+static inline const Vector &ManBatAbsVelocity(CBaseEntity *p)
+{
+	if ((unsigned char)(p->m_flags268 >> 12) & 1)
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+struct ManBatPathOuter : CAI_PathfinderOuter
+{
+	CAI_Pathfinder *GetPathfinder() { return m_pPathfinder; }
+};
+
+struct ManBatNav : CAI_Pathfinder
+{
+	void SetupFit()
+	{
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
+	}
+};
+
+// 0x1038b370, the unit's first function that declines the header inline LookupEntity (all six lookups),
+// so the COMDAT is compiled before the target
+struct ManBatDive : CNPC_VManBat
+{
+	CBaseEntity *GetFlyNode() { return m_pFlyNode; }
+	Vector sub_1038b370(float flScale);
+};
+
+Vector ManBatDive::sub_1038b370(float flScale)
+{
+	static Vector s_vecLast(0.0f, 0.0f, 0.0f);
+	static float s_flTime;
+	Vector vecVelocity;
+	float flSpeed;
+	Vector vecOut;
+
+	if (GetFlyNode() == 0 && !SecEq0(m_n6670, 0xfa0b069a) && !SecEq0(m_n6670, 0xfa0b069b))
+	{
+		vecVelocity = ManBatAbsVelocity((CBaseEntity *)this);
+		vecVelocity.z = 10.0f;
+		flSpeed = sub_10146150(&vecVelocity);
+		Vector vecDir = vecVelocity;
+		VectorNormalize(vecDir);
+		if (sub_1038bec0(vecDir, flSpeed, vecOut))
+			vecVelocity = vecOut * flSpeed;
+		return vecVelocity;
+	}
+
+	if (m_nState == 0x30 || 0xb0 == m_nState || m_nState == 0x4b || m_nState == 0x1171)
+	{
+		vecVelocity.Init(0.0f, 0.0f, 0.0);
+		return vecVelocity;
+	}
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot220();
+	if (vecOrigin == s_vecLast)
+	{
+		if (gpGlobals->curtime - s_flTime > 0.5)
+		{
+			int nOldMode = SecDecode0(m_n6670);
+			int nOldN = m_n6674;
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(2);
+			m_n6674 = enginerandom->vfunc2(1, 3);
+			CBaseEntity *pNode = (CBaseEntity *)sub_102d1af0(this, 20000, 0, 15000.0f, 0, 0);
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(nOldMode);
+			m_n6674 = nOldN;
+			if (pNode)
+			{
+				Vector vecPos = *((CEntityVSlots *)this)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				vecPos = *((CEntityVSlots *)pNode)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				sub_101cf5c0(this, &vecPos, 0);
+			}
+			else
+			{
+				vecVelocity.Init(0.0f, 0.0f, 0.0f);
+				return vecVelocity;
+			}
+		}
+	}
+	else
+	{
+		s_vecLast = vecOrigin;
+		s_flTime = gpGlobals->curtime;
+	}
+
+	Vector vecTarget;
+	if (SecEq0(m_n6670, 0xfa0b069a))
+	{
+		CBaseEntity *pTarget = (CBaseEntity *)((const CBaseHandle *)&m_h628c)->Get();
+		const Vector &v = *((CEntityVSlots *)pTarget)->slot220();
+		vecTarget.x = v.x;
+		vecTarget.y = v.y;
+		vecTarget.z = v.z + 150.0;
+	}
+	else if (SecEq0(m_n6670, 0xfa0b069b))
+	{
+		if (!m_hFlyByTarget.Get() || !((CEntityVSlots *)m_hFlyByTarget.Get())->slot158())
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		vecTarget = *((CEntityVSlots *)m_hFlyByTarget.Get())->slot220();
+		vecTarget.z = MaxsOf(m_hFlyByTarget.Get()).z - MinsOf(m_hFlyByTarget.Get()).z + vecTarget.z + 1.0;
+		((ManBatNav *)((ManBatPathOuter *)this)->GetPathfinder())->SetupFit();
+		if (!((ManBatPathOuter *)this)->GetPathfinder()->sub_102f1a20(&vecTarget.x, 0x2400b))
+		{
+			((CEntityVSlots *)this)->slot448(0x1a);
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		}
+	}
+	else
+	{
+		vecTarget = *((CEntityVSlots *)GetFlyNode())->slot220();
+	}
+
+	vecVelocity = vecTarget - vecOrigin;
+	float flLen = vecVelocity.Length();
+	flSpeed = 700.0f;
+	if (!(vecVelocity.z < -30.0f))
+		flSpeed = 500.0f;
+	VectorNormalize(vecVelocity);
+	if (sub_1038bec0(vecVelocity, flSpeed, vecOut))
+	{
+		vecVelocity = vecOut * flSpeed;
+	}
+	else
+	{
+		vecVelocity *= flSpeed;
+		Vector vecCur = *((CEntityVSlots *)this)->slot198();
+		Vector vecDiff = vecVelocity - vecCur;
+		flSpeed = g_1093b7c8.GetFloat() * flScale;
+		vecDiff.x = vecDiff.x > flSpeed ? flSpeed : vecDiff.x;
+		float flNeg = -flSpeed;
+		vecDiff.x = vecDiff.x < flNeg ? flNeg : vecDiff.x;
+		if (vecDiff.y > flSpeed) vecDiff.y = flSpeed;
+		if (vecDiff.y < flNeg) vecDiff.y = flNeg;
+		if (vecDiff.z > flSpeed) vecDiff.z = flSpeed;
+		if (vecDiff.z < -(flSpeed * 3.0)) vecDiff.z = -(flSpeed * 3.0);
+		vecVelocity = vecCur + vecDiff;
+	}
+
+	if (flScale > 0.0)
+	{
+		double t = vecVelocity.Length() * 0.2;
+		if (flLen < t)
+			m_bReachedMoveGoal = true;
+	}
+	return vecVelocity;
+}
+}
+
+void CNPC_VManBat::sub_1038e9c0(CBaseEntity *pTarget)
+{
+	CBaseHandle &hCone = *(CBaseHandle *)&m_h66a4;
+	if (((EHANDLE &)m_h66a4).Get())
+	{
+		sub_101cd940(((EHANDLE &)m_h66a4).Get());
+		hCone = (IHandleEntity *)0;
+	}
+	hCone = (IHandleEntity *)sub_100fbc90("Manbat_screechcone_emitter", ME(this)->GetAbsOrigin217(), &g_1070d9d0, -1.0f);
+	if (((EHANDLE &)m_h66a4).Get())
+	{
+		ME(((EHANDLE &)m_h66a4).Get())->slot243((CBaseEntity *)this, 1, "Bip01 Jaw");
+		ME(((EHANDLE &)m_h66a4).Get())->slot241();
+	}
+
+	if (pTarget && pTarget->m_pA8)
+	{
+		sub_101cdba0(ME(this)->slot220(), 2.5f, 0.2f, 3.0f, 0.0f, 0, false);
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pTarget->m_p9c;
+		if (pChar)
+		{
+			Vector vecDelta;
+			vecDelta = *ME(pTarget)->GetAbsOrigin217() - *ME(this)->GetAbsOrigin217();
+			pChar->sub_10344f80(&vecDelta, 2, 0);
+			if (m_f6684 == 0.0)
+				pChar->sub_103326b0(500.0f);
+			m_f6684 = enginerandom->vfunc1(15.0f, 25.0f) + gpGlobals->curtime;
+			m_h6680 = (CBaseEntity *)pChar;
+
+			if (!m_h669c.Get())
+			{
+				m_h669c = sub_100fbc90("Manbat_player_emitter", ME(pTarget)->GetAbsOrigin217(), &g_1070d9d0, -1.0f);
+				if (m_h669c.Get())
+				{
+					ME(m_h669c.Get())->slot243(pTarget, 1, "Bip01 Spine");
+					ME(m_h669c.Get())->slot241();
+				}
+			}
+			if (!m_h66a8)
+			{
+				m_h66a8 = sub_100fbc90("Manbat_blast_player", ME(pTarget)->GetAbsOrigin217(), &g_1070d9d0, -1.0f);
+				if (m_h66a8)
+				{
+					ME(m_h66a8.Get())->slot243(pTarget, 1, "Bip01 Spine");
+					ME(m_h66a8.Get())->slot241();
+				}
+			}
+			CBasePlayer *pPlayer = (CBasePlayer *)pTarget->m_pA8;
+			if (pPlayer)
+			{
+				CBaseEntity *pView = pPlayer->sub_1015d680(0);
+				if (pView && !m_h66a0)
+				{
+					m_h66a0 = sub_100fbc90("HUD_Manbat_emitter", &g_1070d1b0, &g_1070d9d0, -1.0f);
+					if (m_h66a0)
+					{
+						ME(m_h66a0.Get())->slot243(pView, 0xe, g_106b8540);
+						ME(m_h66a0.Get())->slot241();
+						((CEnvParticle *)m_h66a0.Get())->m_b4a1 = 1;
+					}
+				}
+				*(int *)((char *)pPlayer + 0x2454) |= 1;
+			}
+		}
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f020 size=0x1ed
+#include "CHL2_Player.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+#include "ConVar.h"
+#include "MvsnSec0.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VManBat.h"
+#include "CBaseCombatCharacter.h"
+
+int sub_10390920(unsigned int x);
+int sub_102d1af0(void *pThis, int a, int b, float c, int d, int e);
+void sub_101cf5c0(void *pThis, const Vector *pVec, int a);
+
+extern ConVar g_1093b7c8;
+
+namespace block_1038f020 {
+struct ManBatPad1 { int x; };
+struct ManBatPad2 { int x; };
+
+struct CCollView
+{
+	virtual void v0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+static inline CCollView *CollOf(void *p) { return (CCollView *)((char *)p + 0x270); }
+static inline const Vector &MaxsOf(void *p) { return CollOf(p)->OBBMaxs(); }
+static inline const Vector &MinsOf(void *p) { return CollOf(p)->OBBMins(); }
+
+static inline int SecDecode0(unsigned int v)
+{
+	return sub_10390920((((v & 0x710935) ^ 0x148739) + 0x4094ab & 0x18ef6ca) ^ v ^ 0x412a96ec);
+}
+
+static inline bool SecEq0(unsigned int v, unsigned int k)
+{
+	int b = sub_10390920(k);
+	return SecDecode0(v) == b;
+}
+
+static inline const Vector &ManBatAbsVelocity(CBaseEntity *p)
+{
+	if ((unsigned char)(p->m_flags268 >> 12) & 1)
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+struct ManBatPathOuter : CAI_PathfinderOuter
+{
+	CAI_Pathfinder *GetPathfinder() { return m_pPathfinder; }
+};
+
+struct ManBatNav : CAI_Pathfinder
+{
+	void SetupFit()
+	{
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
+	}
+};
+
+// 0x1038b370, the unit's first function that declines the header inline LookupEntity (all six lookups),
+// so the COMDAT is compiled before the target
+struct ManBatDive : CNPC_VManBat
+{
+	CBaseEntity *GetFlyNode() { return m_pFlyNode; }
+	Vector sub_1038b370(float flScale);
+};
+
+Vector ManBatDive::sub_1038b370(float flScale)
+{
+	static Vector s_vecLast(0.0f, 0.0f, 0.0f);
+	static float s_flTime;
+	Vector vecVelocity;
+	float flSpeed;
+	Vector vecOut;
+
+	if (GetFlyNode() == 0 && !SecEq0(m_n6670, 0xfa0b069a) && !SecEq0(m_n6670, 0xfa0b069b))
+	{
+		vecVelocity = ManBatAbsVelocity((CBaseEntity *)this);
+		vecVelocity.z = 10.0f;
+		flSpeed = sub_10146150(&vecVelocity);
+		Vector vecDir = vecVelocity;
+		VectorNormalize(vecDir);
+		if (sub_1038bec0(vecDir, flSpeed, vecOut))
+			vecVelocity = vecOut * flSpeed;
+		return vecVelocity;
+	}
+
+	if (m_nState == 0x30 || 0xb0 == m_nState || m_nState == 0x4b || m_nState == 0x1171)
+	{
+		vecVelocity.Init(0.0f, 0.0f, 0.0);
+		return vecVelocity;
+	}
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot220();
+	if (vecOrigin == s_vecLast)
+	{
+		if (gpGlobals->curtime - s_flTime > 0.5)
+		{
+			int nOldMode = SecDecode0(m_n6670);
+			int nOldN = m_n6674;
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(2);
+			m_n6674 = enginerandom->vfunc2(1, 3);
+			CBaseEntity *pNode = (CBaseEntity *)sub_102d1af0(this, 20000, 0, 15000.0f, 0, 0);
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(nOldMode);
+			m_n6674 = nOldN;
+			if (pNode)
+			{
+				Vector vecPos = *((CEntityVSlots *)this)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				vecPos = *((CEntityVSlots *)pNode)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				sub_101cf5c0(this, &vecPos, 0);
+			}
+			else
+			{
+				vecVelocity.Init(0.0f, 0.0f, 0.0f);
+				return vecVelocity;
+			}
+		}
+	}
+	else
+	{
+		s_vecLast = vecOrigin;
+		s_flTime = gpGlobals->curtime;
+	}
+
+	Vector vecTarget;
+	if (SecEq0(m_n6670, 0xfa0b069a))
+	{
+		CBaseEntity *pTarget = (CBaseEntity *)((const CBaseHandle *)&m_h628c)->Get();
+		const Vector &v = *((CEntityVSlots *)pTarget)->slot220();
+		vecTarget.x = v.x;
+		vecTarget.y = v.y;
+		vecTarget.z = v.z + 150.0;
+	}
+	else if (SecEq0(m_n6670, 0xfa0b069b))
+	{
+		if (!m_hFlyByTarget.Get() || !((CEntityVSlots *)m_hFlyByTarget.Get())->slot158())
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		vecTarget = *((CEntityVSlots *)m_hFlyByTarget.Get())->slot220();
+		vecTarget.z = MaxsOf(m_hFlyByTarget.Get()).z - MinsOf(m_hFlyByTarget.Get()).z + vecTarget.z + 1.0;
+		((ManBatNav *)((ManBatPathOuter *)this)->GetPathfinder())->SetupFit();
+		if (!((ManBatPathOuter *)this)->GetPathfinder()->sub_102f1a20(&vecTarget.x, 0x2400b))
+		{
+			((CEntityVSlots *)this)->slot448(0x1a);
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		}
+	}
+	else
+	{
+		vecTarget = *((CEntityVSlots *)GetFlyNode())->slot220();
+	}
+
+	vecVelocity = vecTarget - vecOrigin;
+	float flLen = vecVelocity.Length();
+	flSpeed = 700.0f;
+	if (!(vecVelocity.z < -30.0f))
+		flSpeed = 500.0f;
+	VectorNormalize(vecVelocity);
+	if (sub_1038bec0(vecVelocity, flSpeed, vecOut))
+	{
+		vecVelocity = vecOut * flSpeed;
+	}
+	else
+	{
+		vecVelocity *= flSpeed;
+		Vector vecCur = *((CEntityVSlots *)this)->slot198();
+		Vector vecDiff = vecVelocity - vecCur;
+		flSpeed = g_1093b7c8.GetFloat() * flScale;
+		vecDiff.x = vecDiff.x > flSpeed ? flSpeed : vecDiff.x;
+		float flNeg = -flSpeed;
+		vecDiff.x = vecDiff.x < flNeg ? flNeg : vecDiff.x;
+		if (vecDiff.y > flSpeed) vecDiff.y = flSpeed;
+		if (vecDiff.y < flNeg) vecDiff.y = flNeg;
+		if (vecDiff.z > flSpeed) vecDiff.z = flSpeed;
+		if (vecDiff.z < -(flSpeed * 3.0)) vecDiff.z = -(flSpeed * 3.0);
+		vecVelocity = vecCur + vecDiff;
+	}
+
+	if (flScale > 0.0)
+	{
+		double t = vecVelocity.Length() * 0.2;
+		if (flLen < t)
+			m_bReachedMoveGoal = true;
+	}
+	return vecVelocity;
+}
+}
+
+struct CManBatHeldOwner
+{
+	char m_pad[0x2454];
+	unsigned int m_nFlags2454;
+};
+
+struct CManBatEnt
+{
+	char m_pad0000[0x9c];
+	CBaseCombatCharacter *m_p9c;	// 0x9c
+	char m_pad00a0[0xa8 - 0xa0];
+	CManBatHeldOwner *m_pA8;	// 0xa8
+	CManBatHeldOwner *MyPlayer() { return m_pA8; }
+};
+
+void sub_101cd940(CBaseEntity *pEnt);
+
+void CNPC_VManBat::sub_1038f020(char bForce)
+{
+	if (sub_1038f290())
+	{
+		if (bForce || gpGlobals->curtime >= m_f6684)
+		{
+			m_f6684 = 0;
+
+			CManBatEnt *pEnt = (CManBatEnt *)m_h6680.Get();
+			if (pEnt && pEnt->m_p9c)
+				pEnt->m_p9c->sub_103327f0(500.0f);
+
+			if (m_h669c)
+			{
+				sub_101cd940(m_h669c);
+				m_h669c = (CBaseEntity *)0;
+			}
+
+			if (m_h66a8)
+			{
+				sub_101cd940(m_h66a8);
+				m_h66a8 = (CBaseEntity *)0;
+			}
+
+			if (m_h66a0)
+			{
+				sub_101cd940(m_h66a0);
+				m_h66a0 = (CBaseEntity *)0;
+			}
+
+			pEnt = (CManBatEnt *)(CBaseEntity *)m_h6680;
+			if (pEnt)
+			{
+				CManBatHeldOwner *pPlayer = pEnt->MyPlayer();
+				if (pPlayer)
+					pPlayer->m_nFlags2454 &= ~1;
+			}
+			m_h6680 = (CBaseEntity *)0;
+		}
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f290 size=0x1e
+#include "CNPC_VManBat.h"
+bool CNPC_VManBat::sub_1038f290()
+{
+	return m_f6684 > 0.0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f2c0 size=0x11d
+#include "CNPC_VManBat.h"
+#include "CBaseAnimating.h"
+#include "CUnknown101c26d0.h"
+#include "CUnknown101578b0.h"
+#include "CUnknown101578d0.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+extern int g_1070d9d0;
+CBaseAnimating *sub_100a9ab0(const char *pszClass, Vector *pOrigin, void *pAngles, void *pOwner);
+CBaseAnimating *sub_10157da0(CBaseAnimating *pProp, int nBone, CUnknown101c26d0 *pInfo, int nFlags);
+void sub_101cd940(CBaseAnimating *pEnt);
+void sub_102695d0();
+
+struct ManBat_string_t
+{
+	const char *pszValue;
+};
+struct ManBat_castable_string_t : public ManBat_string_t
+{
+	ManBat_castable_string_t(const char *pszFrom) { pszValue = (pszFrom && *pszFrom) ? pszFrom : 0; }
+};
+struct CManBatNameView
+{
+	void SetName(ManBat_string_t s) { ((CUnknown101578b0 *)this)->sub_10157910((int)s.pszValue); }
+};
+
+// TARGET: CNPC_VManBat::sub_1038f2c0
+bool CNPC_VManBat::sub_1038f2c0(const char *pszModel, int nBone, int nArg, const char *pszName)
+{
+	CBaseAnimating *pProp = sub_100a9ab0("prop_physics", ((CEntityVSlots *)this)->slot217(), &g_1070d9d0, 0);
+	if (pProp) {
+		g_109f3630("ManBat is throwing model %s\n", pszModel);
+		pProp->vfunc105(pszModel);
+		pProp->vfunc103();
+		int bone = pProp->sub_10092550(nBone);
+		CUnknown101c26d0 info;
+		info.sub_101c26d0(pProp, pProp, 0, 0, 0, 0, -1);
+		CBaseAnimating *pNew = sub_10157da0(pProp, bone, &info, 2);
+		sub_101cd940(pProp);
+		if (pNew) {
+			((CEntityVSlots *)pNew)->slot191(nArg);
+			pNew->sub_100ac4e0((int)sub_102695d0, 0, 0);
+			pNew->m_flNextThink = gpGlobals->curtime + 20.0f;
+			if (pszName) {
+				((CUnknown101578d0 *)pNew)->sub_101578d0(1);
+				((CManBatNameView *)pNew)->SetName(ManBat_castable_string_t(pszName));
+			}
+			sub_1038f430(pNew, nBone);
+			m_h668c = *((CEntityVSlots *)pNew)->slot1();
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f430 size=0x169
+#include "CNPC_VManBat.h"
+#include "CPhysicsAnimlink.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "CUnknown101578b0.h"
+#include "CUnknown101578d0.h"
+#include "StudioHdr.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+CBaseEntity *sub_100a9ab0(const char *pszClass, void *pOrigin, void *pAngles, void *pOwner);
+extern int g_1070d1b0, g_1070d9d0;
+
+inline const char *ManBat_BoneName(StudioBone *pBone) { return (char *)pBone + *(int *)pBone; }
+
+bool CNPC_VManBat::sub_1038f430(CBaseAnimating *pProp, int nArg)
+{
+	if (!pProp)
+		return false;
+	CPhysicsAnimlink *pLink = (CPhysicsAnimlink *)sub_100a9ab0("phys_animlink", &g_1070d1b0, &g_1070d9d0, 0);
+	if (!pLink)
+		return false;
+	StudioHdr *pHdr = (StudioHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	int iBone;
+	for (int i = 0; i < pHdr->m_nBones; i++)
+	{
+		const char *pszName = ManBat_BoneName(pHdr->Bone(i));
+		if (!_strcmpi("Bip01 R Foot", pszName))
+		{
+			iBone = i;
+			break;
+		}
+	}
+	if (iBone < 0)
+		return false;
+	if (!((CBaseEntity *)pProp)->m_obj36c)
+		return false;
+	void *pPhys = ((CEntityVSlots *)pProp)->slot265(nArg);
+	if (!pPhys)
+		return false;
+	Vector vecOffset(0, 0, 0);
+	QAngle angles(0, 0, 0);
+	pLink->sub_1014f210((CBaseAnimating *)this, iBone, pPhys, (int)&vecOffset, (int)&angles);
+	m_h6690 = *(unsigned int *)pLink->vfunc1();
+	sub_1038f600(1);
+	m_b6694 = ((CUnknown101578b0 *)pProp)->sub_101578b0();
+	((CUnknown101578d0 *)pProp)->sub_101578d0(0);
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f600 size=0x24
+class CUnknown1038f600
+{
+public:
+	char pad0[0x14b8];
+	unsigned int m_flags14b8;
+
+	void sub_1038f600(char on);
+};
+
+// TARGET: CUnknown1038f600::sub_1038f600
+void CUnknown1038f600::sub_1038f600(char on)
+{
+	if (on)
+		m_flags14b8 |= 32;
+	else
+		m_flags14b8 &= ~32;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f640 size=0xc
+unsigned char __fastcall sub_1038f640(char *self)
+{
+	unsigned char v = (unsigned char)(*(unsigned int *)(self + 0x14b8) >> 5);
+	v &= 1;
+	return v;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1038f660 size=0xe9
+#include "CNPC_VManBat.h"
+#include "CRagdollPropSpecial.h"
+#include "CEHandleGet.h"
+
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pDestType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1057fff0[];	// type descriptor of CRagdollPropSpecial
+char __fastcall sub_1038f640(char *pNPC);
+void sub_101cd970(CBaseEntity *pEnt);
+
+void CNPC_VManBat::sub_1038f660()
+{
+	if (sub_1038f640((char *)this)) {
+		CRagdollPropSpecial *pRagdoll = (CRagdollPropSpecial *)__RTDynamicCast(EHandle_Get(m_h668c), 0, g_10538764, g_1057fff0, 0);
+		if (pRagdoll)
+			pRagdoll->sub_101578d0(m_b6694);
+		m_h668c = 0xffffffff;
+		if (EHandle_Get(m_h6690))
+			sub_101cd970((CBaseEntity *)EHandle_Get(m_h6690));
+		m_h6690 = 0xffffffff;
+		sub_1038f600(0);
 	}
 }
 // END FUNCTION

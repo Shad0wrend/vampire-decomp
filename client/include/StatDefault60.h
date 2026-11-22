@@ -12,6 +12,7 @@ struct CUnknown101da880	// 16 bytes at +4
 struct S6	// 24 bytes at +0x14
 {
 	int m_a[6];
+	S6 *sub_101467d0(int);
 };
 
 struct StatDefault60

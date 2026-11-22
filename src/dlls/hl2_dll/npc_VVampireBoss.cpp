@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x103c59d0 size=0xbe
@@ -144,6 +145,56 @@ void CNPC_VVampireBoss::vfunc442(int *pTask)
 		((CNPC_VHuman *)this)->vfunc442(pTask);
 		break;
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x103c5f40 size=0x7b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VVampireBoss.h"
+#include "ScopeTrace.h"
+void CNPC_VVampireBoss::vfunc444(int *pTask)
+{
+	ScopeTrace trace("CNPC_VVampireBoss::RunTask", g_106b8540);
+	if (*pTask != 0x14d)
+		sub_10011928(pTask);
+	else
+		sub_10011851();
+}
+// END FUNCTION
+
+// FUNCTION: 0x103c5fe0 size=0xe
+#include "CNPC_VVampireBoss.h"
+bool CNPC_VVampireBoss::vfunc525(int unused)
+{
+	return m_bFlag6498 ? true : false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x103c6000 size=0x72
+#include "CNPC_VVampireBoss.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern float g_104ce8b8;
+
+void CNPC_VVampireBoss::vfunc431()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VVampireBoss::NPCThink";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_10002a7c();
+	m_flNextThink = g_104ce8b8 + gpGlobals->curtime;
+	(*g_109f3680)--;
 }
 // END FUNCTION
 

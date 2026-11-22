@@ -25,7 +25,7 @@ struct CUnknown101e0f00SrcA	// an element of the first list of a source descript
 	int m_nBitFlags;	// 0x24
 	int m_nMiscFlags;	// 0x28
 
-		// Debug_Display (stub 0x10003143)
+	void sub_10147790();	// Debug_Display (stub 0x10003143)
 };
 
 struct CUnknown101e0f00SrcB	// an element of the second list of a source description
@@ -73,7 +73,7 @@ struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
 struct CUnknown101e0f00Tail	// the object at +0xdc of an entry
 {
 		// the constructor body (stub 0x1000e124)
-		// Debug_Display (stub 0x10006a23)
+	void sub_10149310();	// Debug_Display (stub 0x10006a23)
 	CUnknown101e0f00Fx *sub_101492b0(int a, int b, int c, int d);	// callback worker taking four values (stub 0x10015da2)
 };
 
@@ -110,7 +110,7 @@ struct CUnknown101e0f00Entry	// one targeted discipline
 	char m_tail[4];	// 0xdc: a CUnknown101e0f00Tail
 
 		// loads the entry from its "DisciplineTgt" key (the loader hands itself as the second argument)
-		// Debug_Display of the entry (stub 0x100100fa)
+	void sub_101496e0();	// Debug_Display of the entry (stub 0x100100fa)
 	CUnknown101e0f00Entry *sub_10149370(int id);	// the constructor body (stub of 0x101e0520): constructs the sub objects, stores the id and its bit mask (a DevMsg "Overflowed targeted discipline" and mask 0 from id 30 up)
 		// stub 0x1000da7b: the cost of the entry for the character (the character's stat 8 / 2 for the dword at +0x10, plus the dword at +0x20)
 };

@@ -17,9 +17,10 @@ struct SaveRestoreBlockHeader_t	// one block's header record (0x28 bytes), as fi
 
 #ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x1072bae8 (the SDK's g_SaveRestoreBlockSet("Game"))
 extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+#include "ISaveRestoreBlockHandler.h"
 // The SDK form (2004 saverestore.cpp): ISaveRestoreBlockSet's 11 slots, the name, the handlers, two sizes and the
 // headers; built inline by the constructor below, destroyed by the implicit destructor (the two vectors, last first).
-class CSaveRestoreBlockSet
+class CSaveRestoreBlockSet : public ISaveRestoreBlockSet
 {
 public:
 	CSaveRestoreBlockSet(const char *pszName)
@@ -27,16 +28,16 @@ public:
 		Q_strncpy(m_Name, pszName, sizeof(m_Name));
 	}
 	virtual const char *GetBlockName();
-	virtual void PreSave(void *pData);
-	virtual void Save(void *pSave);
-	virtual void WriteSaveHeaders(void *pSave);
+	virtual void PreSave(CSaveRestoreData *pData);
+	virtual void Save(ISave *pSave);
+	virtual void WriteSaveHeaders(ISave *pSave);
 	virtual void PostSave();
 	virtual void PreRestore();
-	virtual void ReadRestoreHeaders(void *pRestore);
-	virtual void Restore(void *pRestore, bool fCreatePlayers);
+	virtual void ReadRestoreHeaders(IRestore *pRestore);
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers);
 	virtual void PostRestore();
-	virtual void AddBlockHandler(void *pHandler);
-	virtual void RemoveBlockHandler(void *pHandler);
+	virtual void AddBlockHandler(ISaveRestoreBlockHandler *pHandler);
+	virtual void RemoveBlockHandler(ISaveRestoreBlockHandler *pHandler);
 
 	char m_Name[0x20];	// 0x04
 	CUtlVector<void *> m_Handlers;	// 0x24

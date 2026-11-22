@@ -19,17 +19,6 @@ void CPositionInterpolator_CatmullRom::vfunc0()
 }
 // END FUNCTION
 
-// FUNCTION: 0x1012fb30 size=0x21
-#include "CPositionInterpolator_CatmullRom.h"
-
-void CPositionInterpolator_CatmullRom::vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq)
-{
-	*outName = "Catmull-Rom Spline";
-	*outMinKeyReq = -1;
-	*outMaxKeyReq = 2;
-}
-// END FUNCTION
-
 // FUNCTION: 0x1012fb70 size=0x2d
 #include "CPositionInterpolator_CatmullRom.h"
 

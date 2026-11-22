@@ -1,6 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012a170 size=0x8b
+#include "CRestore.h"
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+
+inline void CRestoreVec::EnsureCapacity(int num)
+{
+	if (m_allocationCount < num && m_growSize != -1) {
+		m_allocationCount = num;
+		if (m_pMemory)
+			m_pMemory = (int *)g_101e3104(m_pMemory, num * 4);
+		else
+			m_pMemory = (int *)g_101e3100(num * 4);
+	}
+	m_pElements = m_pMemory;
+}
+
+// TARGET: CRestore::CRestore
+CRestore::CRestore(void *pData) : m_pData(pData), m_pData2(pData ? (char *)pData + 0x18 : 0), m_field20(0), m_bField24(true)
+{
+	m_vec.EnsureCapacity(32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a220 size=0x13
 #include "CRestore.h"
 namespace lifted {
@@ -17,6 +41,20 @@ int CRestore::vfunc2(CBaseEntity * a0, int a1)
 int CRestore::vfunc33()
 {
     return *(int *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1012a300 size=0x1d
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc1
+void CRestore::vfunc1(int pos)
+{
+	int *piVar1 = (int *)m_pData;
+	if (pos >= 0 && pos < piVar1[3]) {
+		piVar1[2] = pos;
+		piVar1[1] = piVar1[0] + pos;
+	}
 }
 // END FUNCTION
 
@@ -169,6 +207,20 @@ void CRestore::sub_1012a6d0(unsigned short *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a790 size=0x3b
+#include "CRestore.h"
+
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int nMaxLen);
+
+// TARGET: CRestore::vfunc6
+void CRestore::vfunc6(void *pData)
+{
+	unsigned short value[2];
+	vfunc7(value);
+	Q_strncpy((char *)pData, vfunc11(value[1]), 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a7f0 size=0x42
 #include "utlrbtree.h"
 #include "CRestore.h"
@@ -260,6 +312,21 @@ unsigned int CRestore::vfunc12(int a, int b, int c)
 
 // TARGET: CRestore::vfunc17
 int CRestore::vfunc17(void *p, int count, int nBytesAvailable)
+{
+	int desired = count * sizeof(char);
+	int actual = (nBytesAvailable == 0) ? desired : ((desired < nBytesAvailable) ? desired : nBytesAvailable);
+	sub_1012ab60(p, actual);
+	if (actual < nBytesAvailable)
+		sub_1012abd0(nBytesAvailable - actual);
+	return actual / sizeof(char);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1012ad00 size=0x3a
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc19
+int CRestore::vfunc19(void *p, int count, int nBytesAvailable)
 {
 	int desired = count * sizeof(char);
 	int actual = (nBytesAvailable == 0) ? desired : ((desired < nBytesAvailable) ? desired : nBytesAvailable);

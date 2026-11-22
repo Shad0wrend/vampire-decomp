@@ -27,8 +27,9 @@ public:
 	CCameraShot_t m_default;	// 0x14: returned (after the message) for a bad index
 	char m_bLoaded;	// 0x118: the shot files have been read
 
+	int sub_100293c0(const char *pszName, CCameraShot_t *pOut);
 	CCameraShot_t *sub_10029450(int index);	// stub 0x10006a28: the shot at index (checked as 0 <= index <= m_size), else Msg("Invalid camera shot index\n") and the default record
-		// stub 0x1000396d: unless already loaded, reads every file matching the wildcard (the directory is the wildcard without its last 6 characters, "/*.txt") as a CameraShotTable key tree and hands each of its shots to sub_100721e0; Msg when a file cannot be read; sets the loaded flag
-		// stub 0x10007379: parses one shot description
-		// stub 0x10003120: parses one attach position
+	void sub_10029200(const char *pszWildcard);	// stub 0x1000396d: unless already loaded, reads every file matching the wildcard (the directory is the wildcard without its last 6 characters, "/*.txt") as a CameraShotTable key tree and hands each of its shots to sub_100721e0; Msg when a file cannot be read; sets the loaded flag
+	void sub_10028d20(CUnknown10248a50 *pShot);	// stub 0x10007379: parses one shot description
+	void sub_10028a10(CKeyValuesX *pKey, void *pOut);	// stub 0x10003120: parses one attach position
 };

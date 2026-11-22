@@ -30,23 +30,3 @@ extern SendTable g_10751464;
 extern char g_105b5c30[];
 ServerClassReg g_10751480("CVGuiScreen", &g_10751464, g_105b5c30);
 // END FUNCTION
-
-// FUNCTION: 0x102318b0 size=0xa
-#include "SendTable.h"
-SendTable g_10751464;
-// END FUNCTION
-
-// FUNCTION: 0x10231930 size=0x5
-int sub_10231970(void);
-int g_10751460 = ((int (*)(int))sub_10231970)(0);
-// END FUNCTION
-
-// FUNCTION: 0x10231bc0 size=0x5
-#include "CPrecacheRegister.h"
-CPrecacheRegister g_107511a8(&CPrecacheRegister::PrecacheFn_Other, "vgui_screen");
-// END FUNCTION
-
-// FUNCTION: 0x10231c30 size=0x5
-int sub_10231c70(void);
-int g_107511b8 = ((int (*)(int))sub_10231c70)(0);
-// END FUNCTION

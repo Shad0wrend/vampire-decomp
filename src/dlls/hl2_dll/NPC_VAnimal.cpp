@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x1035f650 size=0x249
@@ -112,6 +113,60 @@ void CNPC_VAnimal::sub_1035f650(int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f940 size=0x19d
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+
+struct CAnimalView : CAI_BaseNPC
+{
+	char m_pad04[0x5d44 - 4];
+	CAI_Motor *m_pMotor;
+	char m_pad5d48[0x5d9c - 0x5d48];
+	float m_flTime5d9c;
+};
+
+void CNPC_VAnimal::vfunc444(int *pTask)
+{
+	CAnimalView *p = (CAnimalView *)this;
+	switch (pTask[0])
+	{
+	case 0x36:
+	case 0x37:
+	{
+		p->sub_10280a50();
+		Vector vecPos;
+		p->vfunc541()->sub_102dfed0(&vecPos, (CBaseEntity *)p->vfunc167());
+		p->m_pMotor->sub_102e20b0(&vecPos.x, -2.0f);
+		if (p->vfunc251())
+			p->sub_10273e80(0);
+		break;
+	}
+	case 0x89:
+	case 0x8a:
+	{
+		p->sub_10280a50();
+		Vector vecPos;
+		p->vfunc541()->sub_102dfed0(&vecPos, (CBaseEntity *)p->vfunc167());
+		p->m_pMotor->sub_102e20b0(&vecPos.x, -2.0f);
+		if (p->vfunc251() || *(float *)&pTask[1] < gpGlobals->curtime - p->m_flTime5d9c)
+			p->sub_10273e80(0);
+		break;
+	}
+	case 0x8b:
+	case 0x8e:
+		p->sub_10280a50();
+		if (p->vfunc251())
+			p->sub_10273e80(0);
+		break;
+	default:
+		sub_102aacf0(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035fb50 size=0xd5
 #include "CNPC_VAnimal.h"
 #include "CAI_BaseNPCTroika.h"
@@ -179,6 +234,172 @@ int CNPC_VAnimal::vfunc438()
 	}
 	}
 	return pNPC->sub_102af660();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fc70 size=0x5
+int __stdcall sub_1035fc70(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fc90 size=0x1e
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+struct CUnk102ea280 {
+	void sub_102ea280(int a);
+};
+
+struct CUnk1035fc90Inner {
+	char m_pad0000[0x1c];
+	int m_1c;
+};
+
+// Local view of the vtable: slot 580 is the virtual call; the other slots are placeholders.
+struct CUnk1035fc90 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16) P10(p17) P10(p18) P10(p19)
+	P10(p20) P10(p21) P10(p22) P10(p23) P10(p24) P10(p25) P10(p26) P10(p27) P10(p28) P10(p29)
+	P10(p30) P10(p31) P10(p32) P10(p33) P10(p34) P10(p35) P10(p36) P10(p37) P10(p38) P10(p39)
+	P10(p40) P10(p41) P10(p42) P10(p43) P10(p44) P10(p45) P10(p46) P10(p47) P10(p48) P10(p49)
+	P10(p50) P10(p51) P10(p52) P10(p53) P10(p54) P10(p55) P10(p56) P10(p57)
+	virtual CUnk102ea280 *vfunc580();
+	char m_pad0004[0x5c38 - 4];
+	CUnk1035fc90Inner *m_5c38;
+	void sub_1035fc90(int a);
+};
+
+// TARGET: CUnk1035fc90::sub_1035fc90
+void CUnk1035fc90::sub_1035fc90(int a)
+{
+	CUnk102ea280 *r;
+	int v = m_5c38->m_1c;
+	r = vfunc580();
+	r->sub_102ea280(v);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fcc0 size=0x1e
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+struct CUnk102ea280 {
+	void sub_102ea280(int a);
+};
+
+struct CUnk1035fcc0Inner {
+	char m_pad0000[0x1c];
+	int m_1c;
+};
+
+// Local view of the vtable: slot 580 is the virtual call; the other slots are placeholders.
+struct CUnk1035fcc0 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16) P10(p17) P10(p18) P10(p19)
+	P10(p20) P10(p21) P10(p22) P10(p23) P10(p24) P10(p25) P10(p26) P10(p27) P10(p28) P10(p29)
+	P10(p30) P10(p31) P10(p32) P10(p33) P10(p34) P10(p35) P10(p36) P10(p37) P10(p38) P10(p39)
+	P10(p40) P10(p41) P10(p42) P10(p43) P10(p44) P10(p45) P10(p46) P10(p47) P10(p48) P10(p49)
+	P10(p50) P10(p51) P10(p52) P10(p53) P10(p54) P10(p55) P10(p56) P10(p57)
+	virtual CUnk102ea280 *vfunc580();
+	char m_pad0004[0x5c38 - 4];
+	CUnk1035fcc0Inner *m_5c38;
+	void sub_1035fcc0(int a);
+};
+
+// TARGET: CUnk1035fcc0::sub_1035fcc0
+void CUnk1035fcc0::sub_1035fcc0(int a)
+{
+	CUnk102ea280 *r;
+	int v = m_5c38->m_1c;
+	r = vfunc580();
+	r->sub_102ea280(v);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fcf0 size=0x1e
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+
+struct CUnk102ea280 {
+	void sub_102ea280(int a);
+};
+
+struct CUnk1035fcf0Inner {
+	char m_pad0000[0x1c];
+	int m_1c;
+};
+
+// Local view of the vtable: slot 580 is the virtual call; the other slots are placeholders.
+struct CUnk1035fcf0 {
+	P10(p0) P10(p1) P10(p2) P10(p3) P10(p4) P10(p5) P10(p6) P10(p7) P10(p8) P10(p9)
+	P10(p10) P10(p11) P10(p12) P10(p13) P10(p14) P10(p15) P10(p16) P10(p17) P10(p18) P10(p19)
+	P10(p20) P10(p21) P10(p22) P10(p23) P10(p24) P10(p25) P10(p26) P10(p27) P10(p28) P10(p29)
+	P10(p30) P10(p31) P10(p32) P10(p33) P10(p34) P10(p35) P10(p36) P10(p37) P10(p38) P10(p39)
+	P10(p40) P10(p41) P10(p42) P10(p43) P10(p44) P10(p45) P10(p46) P10(p47) P10(p48) P10(p49)
+	P10(p50) P10(p51) P10(p52) P10(p53) P10(p54) P10(p55) P10(p56) P10(p57)
+	virtual CUnk102ea280 *vfunc580();
+	char m_pad0004[0x5c38 - 4];
+	CUnk1035fcf0Inner *m_5c38;
+	void sub_1035fcf0(int a);
+};
+
+// TARGET: CUnk1035fcf0::sub_1035fcf0
+void CUnk1035fcf0::sub_1035fcf0(int a)
+{
+	CUnk102ea280 *r;
+	int v = m_5c38->m_1c;
+	r = vfunc580();
+	r->sub_102ea280(v);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fd20 size=0x3
+int sub_1035fd20()
+{
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fd40 size=0xd2
+#include "CNPC_VAnimal.h"
+#include "CCineNPC.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+struct CNPCStateView {
+	char m_pad0000[0x5cc0];
+	int m_nState;	// 0x5cc0
+	int m_nIdealState;	// 0x5cc4
+	char m_pad5cc8[0x5d74 - 0x5cc8];
+	unsigned int m_h5d74;	// 0x5d74
+};
+
+int CNPC_VAnimal::vfunc482(char bDisregardState, int interruptLevel)
+{
+	CNPCStateView *pView = (CNPCStateView *)this;
+	int result = 1;
+	if (EHandle_Get(pView->m_h5d74)) {
+		CCineNPC *pCine = (CCineNPC *)EHandle_Get(pView->m_h5d74);
+		if (!pCine->sub_101a8ac0())
+			return 0;
+		result = 2;
+	}
+	if (!((CEntityVSlots *)this)->slot158())
+		return 0;
+	if (!bDisregardState && pView->m_nState != 0 && pView->m_nState != 1 && pView->m_nIdealState != 1 && (pView->m_nState != 3 || interruptLevel < 1))
+		return (pView->m_nState == 4) ? result : 0;
+	return result;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1035fe60 size=0x5
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAnimal::vfunc440
+// the game's 0x1035fe60: a tail call (jmp) of CAI_BaseNPCTroika::vfunc440
+int CNPC_VAnimal::vfunc440(int a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc440(a0);
 }
 // END FUNCTION
 

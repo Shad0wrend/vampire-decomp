@@ -1,0 +1,25 @@
+LIBRARY vstdlib.dll
+EXPORTS
+	Q_FixSlashes
+	keycache_Add
+	keycache_Lookup
+	RandomSeed
+	Q_strncasecmp
+	?Q_stristr@@YAPBDPBD0@Z
+	Q_DefaultExtension
+	Q_strncmp
+	??0CUniformRandomStream@@QAE@XZ
+	RandomFloat
+	Q_strnlwr
+	Q_strcat
+	RandomInt
+	Q_stristr
+	Q_strnicmp
+	CommandLine
+	Q_SetExtension
+	Q_vsnprintf
+	Q_strcasecmp
+	Q_strncat
+	Q_trimspace
+	Q_snprintf
+	Q_strncpy

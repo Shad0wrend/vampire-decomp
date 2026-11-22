@@ -27,6 +27,7 @@ public:
 	int *sub_101574f0();	// reserves one more id slot (stub 0x10006032)
 	int *sub_10152f80();
 	void *sub_10152e30();	// the next item (stub 0x10012d64), 0 when none could be made
+	void *sub_10157390();
 		// loads one Reactions data file (stub 0x1000700e): opens it, parses every ReactionCategory; false (with a Msg) when it cannot be opened or a category fails
-		// loads every vdata\system\Reactions*.txt file, then looks up the "ReactionLevel", "Reaction_Ranges" and "Appearance_Reaction" tables (a Msg for each that is missing)
+	void sub_10153500();	// loads every vdata\system\Reactions*.txt file, then looks up the "ReactionLevel", "Reaction_Ranges" and "Appearance_Reaction" tables (a Msg for each that is missing)
 };

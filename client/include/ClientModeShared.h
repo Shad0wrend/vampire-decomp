@@ -1,0 +1,44 @@
+// ClientModeShared: skeleton from the game's RTTI (pcdecomp gdtors)
+// declared: its bases; nothing else yet
+#pragma once
+#include "IClientMode.h"
+
+class ClientModeShared : public IClientMode
+{
+public:
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual int vfunc8(int);
+    virtual void vfunc9();
+    virtual bool vfunc10();
+    virtual bool vfunc11(int);
+    virtual void vfunc12();
+    virtual bool vfunc13();
+    virtual bool vfunc14();
+    virtual void vfunc15();
+    virtual void vfunc16();
+    virtual void vfunc17();
+    virtual void vfunc18();
+    virtual void vfunc19();
+    virtual int vfunc20();
+    virtual void vfunc21();
+    virtual void vfunc22();
+    virtual void vfunc23();
+    virtual void vfunc24();
+    virtual void vfunc25();
+    virtual bool vfunc26();
+    virtual void vfunc27();
+    virtual void vfunc28(int, int, int, int);
+    virtual void vfunc29(int);
+    virtual void vfunc30();
+    virtual void vfunc31();
+    virtual void vfunc32();
+    virtual void vfunc33();
+    virtual void vfunc34();
+    virtual void vfunc35();
+};

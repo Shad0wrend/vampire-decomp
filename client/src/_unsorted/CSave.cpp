@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10128e50 size=0x84
+#include "CSave.h"
+
+// TARGET: CSave::CSave
+CSave::CSave(void *pData)
+	: m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0), m_pData(pData),
+	  m_pEntityBlock(pData ? (char *)pData + 0x18 : 0)
+{
+	((CUtlVector<int> *)&m_pSections)->EnsureCapacity(0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128f00 size=0x13
 #include "CSave.h"
 namespace lifted {
@@ -87,6 +99,15 @@ struct C10129830 { int sub_10129830(int, int, int); };
 int CSave::vfunc11(int a0, int a1, int a2)
 {
     return ((lifted::C10129830 *)this)->sub_10129830(a0, a2, a1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10129150 size=0x1e
+#include "CSave.h"
+
+void CSave::vfunc13(const char *pszName, void *pData, int count)
+{
+    sub_10129830((int)pszName, count * 4, (int)pData);
 }
 // END FUNCTION
 
@@ -308,6 +329,22 @@ void CSave::vfunc27(const Vector *pValues, int count)
 		vecResult = pValues[i] - GetLandmarkOffsetX((CSaveBlockX *)m_pEntityBlock);
 		vfunc16(&vecResult, 12);
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10129d70 size=0x4c
+#include "CSave.h"
+#include <string.h>
+const char *sub_10128d80(void *pMap, int pFunc);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+void CSave::vfunc31(void *pBase, const char *pszName, void *pData, int count)
+{
+    const char *pName = sub_10128d80(pBase, *(int *)pData);
+    if (pName) {
+        sub_10129830((int)pszName, strlen(pName) + 1, (int)pName);
+        return;
+    }
+    Warning("Invalid function pointer in entity!");
 }
 // END FUNCTION
 

@@ -1,0 +1,722 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// placement guessed: the reference trees' server project lists this file; 28 blocks
+#include "vampire.h"
+
+// FUNCTION: 0x1013ff10 size=0x6
+#include "datamap.h"
+#include "CPathKeyFrame.h"
+namespace lifted {
+extern char g_1057a308;
+}
+datamap_t *CPathKeyFrame::vfunc82()
+{
+    return (datamap_t *)&lifted::g_1057a308;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1013ff30 size=0x5
+int sub_1013ff70(void);
+int g_1071a288 = ((int (*)(int))sub_1013ff70)(0);
+// END FUNCTION
+
+// FUNCTION: 0x1013ff70 size=0x1a
+namespace lifted {
+extern int g_1057a308;
+extern int g_1057a30c;
+extern char g_1057a34c;
+}
+int sub_1013ff70()
+{
+    lifted::g_1057a30c = 4;
+    lifted::g_1057a308 = (int)&lifted::g_1057a34c;
+    return (int)&lifted::g_1057a308;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1013ffa0 size=0x71
+#include "CPathKeyFrame.h"
+#include "CEntityVSlots.h"
+static inline Vector &Assign(Vector &d, const Vector &s)
+{
+    d.x = s.x;
+    d.y = s.y;
+    d.z = s.z;
+    return d;
+}
+void CPathKeyFrame::vfunc103()
+{
+    Assign(m_vOrigin, *((CEntityVSlots *)this)->slot220());
+    Assign(m_vAngles, *((CEntityVSlots *)this)->slot221());
+    sub_10140270(m_vAngles);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140040 size=0x17
+#include "CPathKeyFrame.h"
+#include "CBaseEntity.h"
+
+void CPathKeyFrame::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+	sub_10140200();
+	sub_10140070();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140070 size=0x137
+#include "CPathKeyFrame.h"
+#include <stdlib.h>
+
+extern float g_104454c4;
+
+// TARGET: CPathKeyFrame::sub_10140070
+void CPathKeyFrame::sub_10140070()
+{
+    if (m_pNext && m_flSpeed > g_104454c4)
+    {
+        Vector vecDelta;
+        VectorSubtract(m_vOrigin, m_pNext->m_vOrigin, vecDelta);
+        m_flNextTime = vecDelta.Length() / m_flSpeed;
+        if (m_flNextTime == g_104454c4)
+        {
+            Vector vecAngDelta = m_vAngles - m_pNext->m_vAngles;
+            sub_1013fdf0(&vecAngDelta.x);
+            float flMax = g_104454c4;
+            for (int i = 0; i < 3; i++)
+            {
+                float flAbs = (float)abs((int)vecAngDelta[i]);
+                if (flAbs > flMax)
+                    flMax = flAbs;
+            }
+            m_flNextTime = flMax / m_flSpeed;
+        }
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140200 size=0x4c
+#include "CPathKeyFrame.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern char g_10538764[];	// the type descriptor of CBaseEntity
+extern char g_1057a890[];	// the type descriptor of CPathKeyFrame
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+
+void CPathKeyFrame::sub_10140200()
+{
+	m_pNext = (CPathKeyFrame *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, m_pszNextKey ? m_pszNextKey : g_106b8540, 0, 0), 0, g_10538764, g_1057a890, 0);
+	if (m_pNext)
+		m_pNext->m_pPrev = this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140270 size=0x2d
+#include "CPathKeyFrame.h"
+
+void sub_1013b1f0(float *pVec, float *pOther);
+
+// TARGET: CPathKeyFrame::sub_10140270
+void CPathKeyFrame::sub_10140270(Vector angles)
+{
+	m_vAngles = angles;
+	sub_1013b1f0((float *)&m_vAngles, (float *)m_pad0468);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101402b0 size=0x22
+// TARGET: CBaseMoveBehavior::sub_101402b0
+#include "CBaseMoveBehavior.h"
+
+int CBaseMoveBehavior::sub_101402b0(int nIndex)
+{
+	if (nIndex == 1)
+		return (int)m_pNext;
+	if (nIndex == -1)
+		return (int)m_pPrev;
+	return (int)this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101402f0 size=0x22
+#include "CBaseMoveBehavior.h"
+
+// TARGET: CBaseMoveBehavior::sub_101402f0
+int CBaseMoveBehavior::sub_101402f0(int nIndex)
+{
+	if (nIndex == 1)
+		return (int)m_pPrev;
+	if (nIndex == -1)
+		return (int)m_pNext;
+	return (int)this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140330 size=0xec
+#include "CPathKeyFrame.h"
+#include "Vector.h"
+extern char g_10538764[];
+extern char g_1057a890[];
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+extern "C" __declspec(dllimport) void Warning(const char *pMsg, ...);
+void *sub_10136580(const char *pszClassname);
+
+struct CKeyFrameName { const char *pszValue; };
+
+#define KV1(n) virtual void s##n();
+#define KV10(p) KV1(p##0) KV1(p##1) KV1(p##2) KV1(p##3) KV1(p##4) KV1(p##5) KV1(p##6) KV1(p##7) KV1(p##8) KV1(p##9)
+struct CKeyFrameView {
+	KV1(0) KV1(1) KV1(2) KV1(3) KV1(4) KV1(5) KV1(6) KV1(7) KV1(8) KV1(9)
+	KV10(1) KV10(2) KV10(3) KV10(4) KV10(5) KV10(6) KV10(7)
+	KV1(80) KV1(81) KV1(82)
+	virtual int GetName();
+	virtual void SetName(int name);
+
+	char m_pad0004[0x124 - 4];
+	CKeyFrameName m_iszParent;
+	void sub_100a04e0(CKeyFrameName pszParentName, void *pActivator);
+};
+
+// TARGET: CPathKeyFrame::sub_10140330
+CPathKeyFrame *CPathKeyFrame::sub_10140330(Vector vecOrigin, Vector vecAngles)
+{
+	CPathKeyFrame *pNew = (CPathKeyFrame *)__RTDynamicCast(sub_10136580("keyframe_track"), 0, g_10538764, g_1057a890, 0);
+	if (!pNew)
+		Warning("classname %s used to create wrong class type\n");
+	pNew->sub_10140270(vecAngles);
+	pNew->m_vOrigin = vecOrigin;
+	pNew->m_flSpeed = m_flSpeed;
+	((CKeyFrameView *)pNew)->SetName(((CKeyFrameView *)this)->GetName());
+	if (((CKeyFrameView *)this)->m_iszParent.pszValue != 0)
+		((CKeyFrameView *)pNew)->sub_100a04e0(((CKeyFrameView *)this)->m_iszParent, 0);
+	pNew->m_pNext = m_pNext;
+	m_pNext->m_pPrev = pNew;
+	m_pNext = pNew;
+	pNew->m_pPrev = this;
+	sub_10140070();
+	pNew->sub_10140070();
+	return pNew;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140460 size=0x4b
+#include "platform.h"
+#include "CBaseMoveBehavior.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_1057a8f0[];
+
+// TARGET: move_keyframed
+DLL_EXPORT CBaseMoveBehavior *move_keyframed()
+{
+	void *mem = sub_100aa720(0x4b8);
+	CBaseMoveBehavior *p = mem ? ::new(mem) CBaseMoveBehavior : 0;
+	p->vfunc106(g_1057a8f0);
+	return p;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101404d0 size=0x9
+#include "CBaseMoveBehavior.h"
+#include "CLogicalEntity.h"
+
+int CBaseMoveBehavior::vfunc117()
+{
+	return ((CLogicalEntity *)this)->CLogicalEntity::vfunc117() & ~0x200;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101404f0 size=0x6
+#include "CBaseMoveBehavior.h"
+#include "datamap.h"
+namespace lifted {
+extern char g_1057a3fc;
+}
+datamap_t * CBaseMoveBehavior::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1057a3fc);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140510 size=0x5
+int sub_10140550(void);
+int g_1071a284 = ((int (*)(int))sub_10140550)(0);
+// END FUNCTION
+
+// FUNCTION: 0x10140550 size=0x1a
+namespace lifted {
+extern int g_1057a3fc;
+extern int g_1057a400;
+extern char g_1057a444;
+}
+int sub_10140550()
+{
+    lifted::g_1057a400 = 0xb;
+    lifted::g_1057a3fc = (int)&lifted::g_1057a444;
+    return (int)&lifted::g_1057a3fc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140580 size=0x76
+#include "CBaseMoveBehavior.h"
+#include "CPathKeyFrame.h"
+#include "Vector.h"
+
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct SlotMover {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21)
+	virtual Vector *v220();
+	virtual Vector *v221();
+};
+
+// TARGET: CBaseMoveBehavior::vfunc103
+void CBaseMoveBehavior::vfunc103()
+{
+	*(CBaseMoveBehavior **)((char *)this + 0x4a0) = this;
+	*(int *)((char *)this + 0x4b0) = 0;
+	vfunc93(1, 0);
+	Vector *pOrigin = ((SlotMover *)this)->v220();
+	*(Vector *)((char *)this + 0x450) = *pOrigin;
+	Vector *pAngles = ((SlotMover *)this)->v221();
+	*(Vector *)((char *)this + 0x45c) = *pAngles;
+	sub_100b3b00();
+	CPathKeyFrame::vfunc103();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140620 size=0x49
+#include "CBaseMoveBehavior.h"
+#include <string.h>
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CMoveBehaviorView
+{
+	S100(a) S100(b)
+	S10(c0) S10(c1) S10(c2) S10(c3)
+	virtual void d0();
+	virtual void vfunc241(int a);
+	char m_pad0004[0x3f4 - 4];
+	float m_f3f4;
+	char m_pad3f8[4];
+	float m_f3fc;
+	void sub_10140040();	// CPathKeyFrame::vfunc113 (stub 0x10006924)
+};
+
+// TARGET: CBaseMoveBehavior::vfunc113
+void CBaseMoveBehavior::vfunc113()
+{
+	CMoveBehaviorView *p = (CMoveBehaviorView *)this;
+	p->sub_10140040();
+	*(volatile float *)&p->m_f3fc = p->m_f3f4 + 0.5;
+	const char *pszClass = *(const char * volatile *)&m_classname11c;
+	if (!pszClass)
+		pszClass = "";
+	if (!_strcmpi(pszClass, "move_keyframed"))
+		p->vfunc241(1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140690 size=0x52
+#include "CBaseMoveBehavior.h"
+struct CMoveClockView : CBaseEntity {
+	char m_pad[0x3f4 - sizeof(CBaseEntity)];
+	float m_f3f4;
+};
+namespace block_10140690 {
+	struct CMoveUnit : CBaseMoveBehavior {
+		int sub_101402f0(int nIndex);
+	};
+	int CMoveUnit::sub_101402f0(int nIndex)
+	{
+		if (nIndex == 1)
+			return (int)m_pPrev;
+		if (nIndex == -1)
+			return (int)m_pNext;
+		return (int)this;
+	}
+}
+using namespace block_10140690;
+// TARGET: CBaseMoveBehavior::sub_10140690
+bool CBaseMoveBehavior::sub_10140690()
+{
+	if (!m_p4a0)
+		return true;
+	if (m_fl494 != 0.0f && m_fl494 >= ((CMoveClockView *)this)->m_f3f4 && !((CMoveUnit *)m_p4a0)->sub_101402f0(1) && !m_p4a4)
+		return true;
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140710 size=0x27
+// TARGET: CBaseMoveBehavior::sub_10140710
+#include "CBaseMoveBehavior.h"
+
+namespace block_10140710 {
+	struct CBaseMoveBehaviorUnit : CBaseMoveBehavior {
+		int sub_101402b0(int nIndex);
+	};
+
+	int CBaseMoveBehaviorUnit::sub_101402b0(int nIndex)
+	{
+		if (nIndex == 1)
+			return (int)m_pNext;
+		if (nIndex == -1)
+			return (int)m_pPrev;
+		return (int)this;
+	}
+}
+
+bool CBaseMoveBehavior::sub_10140710()
+{
+	if (m_p4a0 != 0)
+	{
+		if (((block_10140710::CBaseMoveBehaviorUnit *)m_p4a0)->sub_101402b0(1) == 0 && m_p4a4 == 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140750 size=0xe
+#include "CBaseMoveBehavior.h"
+int CBaseMoveBehavior::vfunc153()
+{
+	return m_unk4b4 != 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140770 size=0x244
+#include "CBaseEntity.h"
+#include "CBaseMoveBehavior.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+// TARGET: CBaseMoveBehavior::vfunc241
+
+struct CMoveBehaviorFields
+{
+	char m_pad0000[0x450];
+	Vector m_vOrigin;	// 0x450
+	Vector m_vAngles;	// 0x45c
+	char m_pad0468[0x478 - 0x468];
+	const char *m_pszNextKey;	// 0x478
+	float m_flNextTime;	// 0x47c
+	CMoveBehaviorFields *m_pNext;	// 0x480
+	CMoveBehaviorFields *m_pPrev;	// 0x484
+};
+
+int CBaseMoveBehavior::sub_101402b0(int nIndex)
+{
+	CMoveBehaviorFields *p = (CMoveBehaviorFields *)this;
+	if (nIndex == 1)
+		p = p->m_pNext;
+	else if (nIndex == -1)
+		p = p->m_pPrev;
+	return (int)p;
+}
+
+int CBaseMoveBehavior::sub_101402f0(int nIndex)
+{
+	CMoveBehaviorFields *p = (CMoveBehaviorFields *)this;
+	if (nIndex == 1)
+		p = p->m_pPrev;
+	else if (nIndex == -1)
+		p = p->m_pNext;
+	return (int)p;
+}
+
+bool CBaseMoveBehavior::vfunc241(int nDir)
+{
+	if (nDir == 0)
+	{
+		((CEntityVSlots *)this)->slot242();
+		return false;
+	}
+
+	if (m_unk4b4 == nDir)
+	{
+		if (*(float *)((char *)this + 0x3f4) >= m_flAnimEndTime)
+		{
+			m_p4a0 = (CBaseMoveBehavior *)m_p4a4;
+			m_flTimeIntoFrame = 0.0f;
+			if (((CBaseMoveBehavior *)m_p4a4)->sub_101402b0(nDir) == 0)
+			{
+				m_flAnimEndTime = 0.0f;
+				m_fl494 = 0.0f;
+				((CEntityVSlots *)this)->slot242();
+				return false;
+			}
+			m_p4a4 = ((CBaseMoveBehavior *)m_p4a4)->sub_101402b0(nDir);
+		}
+	}
+	else
+	{
+		if (m_unk4b4 != 0)
+			((CEntityVSlots *)this)->slot242();
+
+		m_unk4b4 = nDir;
+
+		if (nDir == 1)
+		{
+			m_p4a4 = ((CBaseMoveBehavior *)m_p4a0)->sub_101402b0(nDir);
+		}
+		else if (nDir == -1)
+		{
+			CBaseMoveBehavior *pCur = (CBaseMoveBehavior *)m_p4a0;
+			if (m_flTimeIntoFrame > 0.0f)
+			{
+				m_p4a4 = (int)pCur;
+				m_p4a0 = (CBaseMoveBehavior *)pCur->sub_101402b0(1);
+			}
+			else
+			{
+				m_p4a4 = pCur->sub_101402f0(1);
+			}
+		}
+
+		if (m_p4a4 == 0)
+		{
+			((CEntityVSlots *)this)->slot242();
+			return false;
+		}
+
+		m_pPostKeyFrame = (CBaseEntity *)((CBaseMoveBehavior *)m_p4a4)->sub_101402b0(nDir);
+		if (m_pPostKeyFrame == 0)
+			m_pPostKeyFrame = (CBaseEntity *)(CBaseMoveBehavior *)m_p4a4;
+		m_pPreKeyFrame = (CBaseEntity *)((CBaseMoveBehavior *)m_p4a0)->sub_101402f0(nDir);
+		if (m_pPreKeyFrame == 0)
+			m_pPreKeyFrame = (CBaseEntity *)m_p4a0;
+	}
+
+	if (m_p4a4 == 0)
+		return false;
+
+	float flStart;
+	float flNextTime;
+	if (m_unk4b4 == 1)
+	{
+		flStart = *(float *)((char *)this + 0x3f4) - m_flTimeIntoFrame;
+		m_fl494 = flStart;
+		flNextTime = ((CMoveBehaviorFields *)(void *)m_p4a0)->m_flNextTime;
+	}
+	else
+	{
+		if (m_flTimeIntoFrame != 0.0f)
+			m_flTimeIntoFrame = ((CMoveBehaviorFields *)(void *)m_p4a4)->m_flNextTime - m_flTimeIntoFrame;
+		flStart = *(float *)((char *)this + 0x3f4) - m_flTimeIntoFrame;
+		m_fl494 = flStart;
+		flNextTime = ((CMoveBehaviorFields *)(void *)m_p4a4)->m_flNextTime;
+	}
+
+	float flEndTime = flNextTime + *(float *)((char *)this + 0x3f4) - m_flTimeIntoFrame;
+	m_flAnimEndTime = flEndTime;
+	float flSpan = *(volatile float *)((char *)this + 0x498) - flStart;
+	Vector vecDelta = ((CMoveBehaviorFields *)(void *)m_p4a0)->m_vOrigin -
+					  ((CMoveBehaviorFields *)(void *)m_p4a4)->m_vOrigin;
+	float flDist = FastSqrt(vecDelta.LengthSqr());
+	m_flAverageSpeedAcrossFrame = flSpan / flDist;
+	*(float *)((char *)this + 0x3fc) = m_flAnimEndTime;
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140a60 size=0xb7
+#include "CBaseMoveBehavior.h"
+struct MoveView10140a60 {
+	char pad0[0x3f4];
+	float m_f3f4;
+	char pad1[4];
+	int m_n3fc;
+	char pad2[0x494 - 0x400];
+	float m_f494;
+	float m_f498;
+	char pad3[4];
+	int m_n4a0;
+	int m_n4a4;
+	char pad4[8];
+	float m_f4b0;
+	int m_n4b4;
+};
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+
+void CBaseMoveBehavior::vfunc242()
+{
+	MoveView10140a60 *p = (MoveView10140a60 *)this;
+	p->m_f4b0 = 0;
+	if (p->m_n4b4 == 1) {
+		if (p->m_f3f4 < p->m_f498) {
+			p->m_f4b0 = p->m_f3f4 - p->m_f494;
+		} else if (p->m_n4a4 != 0) {
+			p->m_n4a0 = p->m_n4a4;
+		}
+	} else if (p->m_n4b4 == -1) {
+		p->m_n4a0 = p->m_n4a4;
+		if (p->m_f3f4 < p->m_f498)
+			p->m_f4b0 = p->m_f498 - p->m_f3f4;
+	}
+	p->m_n3fc = 0;
+	p->m_n4b4 = 0;
+	p->m_f494 = 0;
+	p->m_f498 = 0;
+	p->m_n4a4 = 0;
+	sub_100b2e30(g_1070d1b0);
+	sub_100b2f50(g_1070d9d0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140b50 size=0x59
+#include "CBaseMoveBehavior.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct CMoveView : public CBaseEntity {
+	virtual bool vfunc241(int a);
+};
+// TARGET: CBaseMoveBehavior::vfunc133
+void CBaseMoveBehavior::vfunc133()
+{
+	CMoveView *p = (CMoveView *)this;
+	const char *psz = m_classname11c;
+	if (!psz)
+		psz = "";
+	if (!_strcmpi(psz, "move_keyframed")) {
+		int n = m_unk4b4;
+		if (!p->vfunc241(n))
+			p->vfunc241(-n);
+	}
+	if (m_pfn0114)
+		(this->*m_pfn0114)();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140bd0 size=0x11
+struct CScaleFields10140bd0 {
+    char pad0[0x49c];
+    float field49c;
+    float sub_10140bd0(float a, float b);
+};
+float CScaleFields10140bd0::sub_10140bd0(float a, float b)
+{
+    return a * field49c * b;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140c00 size=0x259
+// TARGET: CBaseMoveBehavior::vfunc135
+
+#include "CBaseMoveBehavior.h"
+#include "CBaseEntitySlots.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "Quaternion.h"
+
+class CInterpolatorView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void slot2(int index, const Vector *pVec);
+	virtual void slot3(float flFrac, Vector *pOut);
+};
+
+class CPhysicsView
+{
+public:
+	void sub_100b2e30(const float *pVec);
+	void sub_100b2f50(const float *pVec);
+};
+
+void *sub_1013fdb0(int interpolator);
+void sub_1012f790(int index, const Vector *pVec);
+void sub_101301f0(float flFrac, int interpolator, Quaternion *pOut);
+void sub_1013b240(const Quaternion *pIn, Vector *pOut);
+
+float CBaseMoveBehavior::vfunc135(float flFrameTime)
+{
+	if (!m_p4a0 || !m_p4a4)
+		return flFrameTime;
+	if (!((CBaseEntitySlots *)this)->slot153())
+		return flFrameTime;
+
+	float flTime = flFrameTime + *(float *)((char *)this + 0x3f4) - m_fl494;
+	m_flTimeIntoFrame = flTime;
+	float flFrac = flTime / (m_flAnimEndTime - m_fl494);
+
+	Vector vecInterp;
+	CInterpolatorView *pInterp = (CInterpolatorView *)sub_1013fdb0(m_iPositionInterpolator);
+	if (pInterp)
+	{
+		pInterp->slot2(-1, (const Vector *)((char *)m_pPreKeyFrame + 0x450));
+		sub_1012f790(-1, (const Vector *)((char *)m_pPreKeyFrame + 0x468));
+		pInterp->slot2(0, (const Vector *)((char *)m_p4a0 + 0x450));
+		sub_1012f790(0, (const Vector *)((char *)m_p4a0 + 0x468));
+		pInterp->slot2(1, (const Vector *)((char *)m_p4a4 + 0x450));
+		sub_1012f790(1, (const Vector *)((char *)m_p4a4 + 0x468));
+		pInterp->slot2(2, (const Vector *)((char *)m_pPostKeyFrame + 0x450));
+		sub_1012f790(2, (const Vector *)((char *)m_pPostKeyFrame + 0x468));
+		pInterp->slot3(flFrac, &vecInterp);
+	}
+	else
+	{
+		vecInterp.x = 0.0f;
+		vecInterp.y = 0.0f;
+		vecInterp.z = 0.0f;
+	}
+
+	Quaternion qRot;
+	sub_101301f0(flFrac, m_iRotationInterpolator, &qRot);
+	Vector vecAng;
+	sub_1013b240(&qRot, &vecAng);
+
+	float inv = 1.0f / flFrameTime;
+
+	{
+		Vector vecVel = (vecInterp - *((CEntityVSlots *)this)->slot220()) * inv;
+		((CPhysicsView *)this)->sub_100b2e30((const float *)&vecVel);
+	}
+	{
+		Vector vecVel = (vecAng - *((CEntityVSlots *)this)->slot221()) * inv;
+		((CPhysicsView *)this)->sub_100b2f50((const float *)&vecVel);
+	}
+
+	return flFrameTime;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140f00 size=0x1e
+#include "CPathKeyFrame.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CPathKeyFrame::vfunc5
+CBaseEntity *CPathKeyFrame::vfunc5(unsigned int flags)
+{
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10140f30 size=0x1e
+#include "CBaseMoveBehavior.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CBaseMoveBehavior::vfunc5
+CBaseEntity *CBaseMoveBehavior::vfunc5(unsigned int flags)
+{
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION

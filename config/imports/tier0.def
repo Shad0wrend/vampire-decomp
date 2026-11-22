@@ -1,0 +1,27 @@
+LIBRARY tier0.dll
+EXPORTS
+	g_ScopeTraceStack
+	Plat_Free
+	Msg
+	Warning
+	?DevMsg@@YAXPBDZZ
+	Plat_Alloc
+	Plat_Realloc
+	?PopGroup@CVProfile@@QAEXXZ
+	vtune
+	?GetSubNode@CVProfNode@@QAEPAV1@PBDH0@Z
+	g_VProfCurrentProfile
+	?DevWarning@@YAXPBDZZ
+	DevMsg
+	?ExitScope@CVProfNode@@QAE_NXZ
+	DevWarning
+	?ExitScope@CVProfile@@QAEXXZ
+	?EnterScope@CVProfile@@QAEXPBDH0_N@Z
+	?EnterScope@CVProfNode@@QAEXXZ
+	?PushGroup@CVProfile@@QAEXH@Z
+	Error
+	?g_DLLChainRoot@@3PAVCBaseDLLChain@@A
+	GetCPUInformation
+	Log
+	g_ClockSpeedMillisecondsMultiplier
+	g_ScopeTraceStackDepth

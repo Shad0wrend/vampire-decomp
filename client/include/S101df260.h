@@ -67,5 +67,5 @@ struct S101df260
 	char m_pad372[2];
 
 	S101df260 *sub_10148790(int a);	// constructor body: the five items, the object, +0x36c = -1, +0 = a, both flags cleared; returns this
-		// loads the record from its node (stub 0x1000b541); false when the base record it inherits from is not known yet
+	bool sub_10148da0(CUnknown101e01e0 *pOwner, IKVNodeView *pNode, const char *pszName);	// loads the record from its node (stub 0x1000b541); false when the base record it inherits from is not known yet
 };

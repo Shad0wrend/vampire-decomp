@@ -1,4 +1,5 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
+// named by the DLL's own strings
 #include "vampire.h"
 
 // FUNCTION: 0x10364080 size=0x18b
@@ -54,6 +55,22 @@ int CNPC_VBach::vfunc604(int arg)
 		m_pszSchedFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VBach.cpp";
 	}
 	return iSchedule;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10364280 size=0x42
+#include "CNPC_VBach.h"
+
+int CNPC_VBach::vfunc606(int arg)
+{
+	if (sub_10269aa0(0x48)) {
+		if (m_b66a3)
+			return sub_102b8320(arg);
+		m_b66a3 = 1;
+		return 0;
+	}
+	m_b66a3 = 0;
+	return 0;
 }
 // END FUNCTION
 
@@ -113,6 +130,29 @@ int CNPC_VBach::vfunc605(int arg)
 		return 0x15f;
 	}
 	return iSched;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10364500 size=0x31
+// TARGET: sub_10364500
+int __stdcall sub_10364500(float flA, float flB)
+{
+    if (flA < 0.5 && flB > 120.0f) {
+        return 0x61;
+    }
+    return 0x4f;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10364550 size=0x31
+int __stdcall sub_10364550(float a, float b)
+{
+    if (a < 0.5) {
+        if (b > 120.0f) {
+            return 0x61;
+        }
+    }
+    return 0x50;
 }
 // END FUNCTION
 
@@ -852,6 +892,55 @@ void CNPC_VBach::vfunc444(void *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103656a0 size=0xa5
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VBach.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Item {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6)
+    virtual void k0(); virtual void k1(); virtual void k2();
+    virtual void s173(void *a, void *b, int c, int d);
+    void sub_1024f7b0();
+};
+struct S_NPC {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5) V10(c6) V10(c7) V10(c8) V10(c9)
+    V10(d0) V10(d1) V10(d2) V10(d3) V10(d4) V10(d5) V10(d6) V10(d7)
+    virtual void L0(); virtual void L1(); virtual void L2();
+    virtual void s383(void *pItem, int a);
+    virtual void L4(); virtual void L5(); virtual void L6(); virtual void L7();
+    virtual void s388(void *pItem, int a);
+    void sub_10272650(int n);
+};
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *pFormat, ...);
+
+void CNPC_VBach::sub_103656a0()
+{
+    S_Item *pItem = (S_Item *)((CBaseCombatCharacter *)this)->sub_1032d890("item_d_holy_light", 0);
+    if (!pItem) {
+        pItem = (S_Item *)sub_1032e120("item_d_holy_light");
+        if (!pItem)
+            goto done;
+        if (!sub_10334c20(pItem)) {
+            DevWarning(1, "Error: Couldn't find space in inventory for Discipline weapon!");
+            pItem->sub_1024f7b0();
+            sub_10272650(5);
+            return;
+        }
+        ((S_NPC *)this)->s383(pItem, 0);
+        ((S_NPC *)this)->s388(pItem, 0);
+    } else if (sub_10007e19() == (CBaseEntity *)pItem) {
+        pItem->s173(this, this, 2, 0);
+    }
+    ((S_NPC *)this)->s388(pItem, 0);
+done:
+    ((S_NPC *)this)->sub_10272650(5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10365780 size=0x5c
 #include "CNPC_VBatSwarm.h"
 
@@ -869,6 +958,136 @@ bool CNPC_VBatSwarm::sub_10365780(int a, int b)
 	m_nFailLine = 0x48a;
 	vfunc448(4);
 	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10365800 size=0x26
+#include "CNPC_VBach.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VBach::vfunc566
+bool CNPC_VBach::vfunc566(CBaseEntity *pHint)
+{
+	int nType = *(int *)((char *)pHint + 0x5dc);
+	if (nType >= 0x4268 && nType <= 0x426d)
+		return true;
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc566(pHint);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10365840 size=0x1
+void sub_10365840()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x10365860 size=0x19d
+#include "CNPC_VBach.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown103eec60.h"
+#include "IPhysicsObject.h"
+#include "Vector.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d1b0;
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+CBaseEntity *sub_100a99d0(const char *pszName, const float *pOrigin, const float *pAngles, int pOwner);
+void sub_10139550(const float *pAngles, Vector *pForward);
+
+#define GV_V(n) virtual void v##n();
+#define GV_V10(p) GV_V(p##0) GV_V(p##1) GV_V(p##2) GV_V(p##3) GV_V(p##4) GV_V(p##5) GV_V(p##6) GV_V(p##7) GV_V(p##8) GV_V(p##9)
+
+struct CBachTarget
+{
+	GV_V10(0) GV_V10(1) GV_V10(2) GV_V10(3) GV_V10(4) GV_V10(5) GV_V10(6) GV_V10(7) GV_V10(8) GV_V10(9)
+	GV_V10(10) GV_V10(11) GV_V10(12) GV_V10(13) GV_V10(14) GV_V10(15) GV_V10(16) GV_V10(17) GV_V10(18) GV_V10(19)
+	GV_V10(20)
+	GV_V(210) GV_V(211) GV_V(212) GV_V(213) GV_V(214) GV_V(215) GV_V(216)
+	virtual float *vfunc217();
+	GV_V(218)
+	virtual float *vfunc219();
+};
+
+struct CBachGrenade
+{
+	GV_V10(0) GV_V10(1) GV_V10(2) GV_V10(3) GV_V10(4) GV_V10(5) GV_V10(6) GV_V10(7) GV_V10(8) GV_V10(9)
+	GV_V10(10) GV_V10(11) GV_V10(12) GV_V10(13) GV_V10(14) GV_V10(15) GV_V10(16) GV_V10(17) GV_V10(18) GV_V10(19)
+	GV_V10(20) GV_V10(21) GV_V10(22) GV_V10(23) GV_V10(24) GV_V10(25) GV_V10(26) GV_V10(27) GV_V10(28) GV_V10(29)
+	GV_V10(30) GV_V10(31) GV_V10(32) GV_V10(33) GV_V10(34)
+	GV_V(350) GV_V(351) GV_V(352) GV_V(353) GV_V(354) GV_V(355) GV_V(356) GV_V(357) GV_V(358)
+	virtual void vfunc359();
+	char m_pad04[0x17c - 4];
+	float m_flNextThink;
+	char m_pad180[0x1ec - 0x180];
+	void (CBaseEntity::*m_pfnTouch)(CBaseEntity *pOther);
+	char m_pad1f0[0x1fc - 0x1f0];
+	int m_nTakeDamage;
+	char m_pad200[0x210 - 0x200];
+	int m_iHealth;
+	char m_pad214[0x36c - 0x214];
+	IPhysicsObject *m_pPhys;
+	char m_pad370[0x91c - 0x370];
+	float m_flTime91c;
+	IPhysicsObject *sub_100a5ea0(int a, int b, int c, int d);
+	void sub_103eeee0();
+};
+
+void CNPC_VBach::sub_10365860(const char *pszTarget, float flSpeed)
+{
+	if (!(gpGlobals->curtime - *(float *)&m_n6680 < 5.0f))
+	{
+		CBachTarget *pTarget = (CBachTarget *)g_106eb5d8.sub_100f7770(0, pszTarget, 0, 0);
+		if (pTarget)
+		{
+			*(float *)&m_n6680 = gpGlobals->curtime;
+			CBachGrenade *pGrenade = (CBachGrenade *)sub_100a99d0("item_w_grenade_frag", pTarget->vfunc217(), pTarget->vfunc219(), 0);
+			if (pGrenade)
+			{
+				((CUnknown103eec60 *)pGrenade)->sub_103eec60(1);
+				IPhysicsObject *pPhys = pGrenade->m_pPhys;
+				pGrenade->m_nTakeDamage = 2;
+				pGrenade->m_iHealth = 1;
+				pGrenade->m_pfnTouch = 0;
+				if (!pPhys)
+				{
+					pPhys = pGrenade->sub_100a5ea0(2, 0, 0, 0);
+					if (!pPhys)
+					{
+						Msg("No physics data for grenade\n");
+						pGrenade->vfunc359();
+						return;
+					}
+				}
+				Vector vecVelocity;
+				Vector vecAngVelocity;
+				Vector vecForward;
+				sub_10139550(pTarget->vfunc219(), &vecForward);
+				vecVelocity = vecForward * flSpeed;
+				vecAngVelocity = g_1070d1b0;
+				pPhys->vfunc41(&vecVelocity, &vecAngVelocity);
+				pGrenade->sub_103eeee0();
+				float flTime = gpGlobals->curtime + 3.0f;
+				pGrenade->m_flTime91c = flTime;
+				pGrenade->m_flNextThink = flTime + 0.01f;
+				m_b66a0 = 0;
+			}
+		}
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10365a70 size=0x10
+#include "CNPC_VBach.h"
+
+void __fastcall sub_10013f2f(void *pThis);
+void __fastcall sub_10365a90(void *pThis);
+
+// TARGET: CNPC_VBach::vfunc433
+void CNPC_VBach::vfunc433()
+{
+	sub_10013f2f(this);
+	sub_10365a90(this);
 }
 // END FUNCTION
 

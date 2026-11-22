@@ -26,5 +26,5 @@ public:
 	void sub_1012db70(const char *volume);	// parses \"VOL_NORM\" (1.0, 0) or a number pair into m_volume, and keeps the text
 	void sub_1012dc70(const char *pitch);	// parses "PITCH_NORM" / "PITCH_LOW" / "PITCH_HIGH" or a number pair, and keeps the text
 	void sub_1012dd00(const char *soundlevel);	// parses "SNDLVL_..." (through sub_101b49f0) or a number pair into m_soundlevel, and keeps the text
-		// the pitch as text: the name of the constant for a pitch without a spread (PITCH_NORM ... through sub_101b23b0(float)), else "%i, %i" of (int)a and (int)(a + b) in a global buffer
+	const char *sub_1012dab0();	// the pitch as text: the name of the constant for a pitch without a spread (PITCH_NORM ... through sub_101b23b0(float)), else "%i, %i" of (int)a and (int)(a + b) in a global buffer
 };

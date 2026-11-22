@@ -10,8 +10,3 @@ int g_10934078 = pcd_initial_10934078();
 #include "ConVar.h"
 ConVar g_10934090("ai_norebuildgraph", "0", 0);
 // END FUNCTION
-
-// FUNCTION: 0x102f4f70 size=0x5
-int sub_102f4fb0(void);
-int g_10934080 = ((int (*)(int))sub_102f4fb0)(0);
-// END FUNCTION

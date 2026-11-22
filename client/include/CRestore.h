@@ -52,7 +52,7 @@ class CRestore : public IRestore
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual void vfunc1(int pos);
 		// slot 1 with the position (the same function as the slot's, called by ReadBasic-like seeks): seek within the save section
 	virtual int vfunc2(CBaseEntity *pEnt, int map);	// reads the entity's data description block
 	virtual int vfunc3(int a, int b, int c, int d, int e);	// stub 0x10004b65 for 0x101a1b70, "CRestore::ReadFields"-like; real types (changing them breaks matched callers that pass ints, so a worker should cast): (const char *pszName, void *pBaseData, int nBaseOffset, typedescription_t *pFields, int fieldCount), returns int (1 / 0). pszName is hashed (inlined CSaveRestoreBuffer::TokenHash on the record at +0x18: ror 4 / xor over the chars, % count at +0x10, linear probe through the table at +0x14 with an inlined strcmp; Warning "...COMPLETELY FULL!"), the token read with slot 13 must match, else Msg "Expected %s found %s!" and rewind min(4, remaining) bytes, return 0; then slot 4(pBaseData, pFields, fieldCount) and, slot 14 times: slot 9 reads a field header, sub_101a17c0(name of the token, pFields, fieldCount, &start), sub_101a1780(field) -> sub_101a1750(&header, nBaseOffset + field+8, field) (stub 0x1000b39d), else sub_101a2020(header size); returns 1

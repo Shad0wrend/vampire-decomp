@@ -9,6 +9,28 @@ char * CSaveRestoreBlockSet::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b9e0 size=0x61
+#include "CSaveRestoreBlockSet.h"
+#include "CUnknown101a5800.h"
+struct IHandlerView {
+	virtual const char *GetBlockName() = 0;
+	virtual void Slot1(void *) = 0;
+};
+__declspec(dllimport) char *__cdecl Q_strncpy(char *, const char *, int);
+// TARGET: CSaveRestoreBlockSet::vfunc1
+void CSaveRestoreBlockSet::vfunc1(void *pSave)
+{
+	CUnknown101a5800 *p = (CUnknown101a5800 *)&m_pEntries;
+	int n = m_nHandlers;
+	p->sub_1012c4c0(p->m_size = 0, n, 0);
+	for (int i = 0; i < m_nHandlers; i++) {
+		char *base = m_pEntries;
+		Q_strncpy(base + i * 0x28, ((IHandlerView *)m_pHandlers[i])->GetBlockName(), 0x20);
+		((IHandlerView *)m_pHandlers[i])->Slot1(pSave);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ba50 size=0x67
 #include "CSaveRestoreBlockSet.h"
 struct SaveStream { virtual int vfunc0(); };

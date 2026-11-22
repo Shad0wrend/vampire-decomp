@@ -98,6 +98,78 @@ or 3: a `carried: from 0x..., score N` note marks them, a good hand pass), 47 fa
 still matched. Totals now: 7,577 matched rows; the panel counts 7,550 of 16,003 functions / 339,582 of 1,690,523
 bytes (20.09%). Backup: cache/`project.db.pre-carry8-20261121`.
 
+Naming pass and carry run 9 (2026-11-21). Run 8's misses were mostly missing names, not different code: carry keeps
+a name only where this project knows it at the same address, and this project had no symbol at any import slot, so
+a carried `Msg(...)` became `g_101e3108` and the link failed ("not in the game's import table"); names used from
+headers (`pfSqrt`, constructors) gave "unknown symbol". A naming pass with `rename_symbol` (agent `carry-names`, 49
+commits) added 27 import-slot names copied from vtmb by import name (only names whose own identifier is the
+import's: vtmb's slot aliases `Q_strstr` at the Q_stristr slot and `ExitScopeCall` at the ExitScope slot were left
+out) and 22 names proven by run 8's byte-equal pairs (`pfSqrt` 0x102be4dc, `pfVectorNormalize` 0x102be4e8,
+ConCommandBase's constructor 0x100df1c0, 18 constructors and destructors). Run 9 then planned 275 and matched 132
+(+4 initializer rows), 27,206 bytes; all 125 of run 8's misses that a judge-only preview said would match did. 60
+missed by score (the `carried:` notes), 47 failed to compile, and 44 wait on one spelling conflict: `_strcmpi`
+(0x101e28e0, a skipped CRT row whose linker name is `__strcmpi`) would be spelled both `sub_101e28e0` and
+`_strcmpi`. A `verify` of 20 still matched. Totals now: 7,713 matched rows; the panel counts 7,686 of 16,007
+functions / 366,788 of 1,690,545 bytes (21.70%). Backups: cache/`project.db.pre-names2-20261121`,
+cache/`project.db.pre-carry9-20261121`.
+
+Carry run 10 (2026-11-21, pcdecomp main d212c95). The `_strcmpi` conflict came from vtmb's two linker names for
+one CRT function: the C name `__strcmpi` (which this project knows at 0x101e28e0) and a C++ declaration
+`?_strcmpi@@YAHPBD0@Z` this project does not know at all. Carry now lets a name this project knows at the paired
+address win over an alias it does not know; an alias this project places at another address is still a conflict.
+Run 10 planned 187 and matched 39 (+2 initializer rows), 10,235 bytes; all 39 are `_strcmpi` callers. Of the other
+5: 0x1008cfa0 (score 3) and 0x10128360 (score 1) missed, and 0x1014f200, 0x1014f700, 0x101a3eb0 now wait on an
+unpaired placeholder (a header still spelled `sub_X`). Name conflicts 108 -> 62: 19 are `??_GIRecipientFilter`
+deleting destructors and 33 constructors, destructors and vfuncs whose own name this project's row cannot take (no
+linker name), and 10 are the `s_default` / `s_Sentinel` statics spelled at two addresses. A `verify` of 20 still matched. Totals now:
+7,754 matched rows; the panel counts 7,727 of 16,009 functions / 377,023 of 1,690,556 bytes (22.30%). Backup:
+cache/`project.db.pre-carry10-20261121`.
+
+Naming pass 3 and carry run 11 (2026-11-21, pcdecomp main bbf0381). Own names: `rename_symbol` (agent
+`carry-names`) gave 17 constructors, destructors and operators the name of vtmb's matched twin, each proven by a
+one-to-one carry group (equal bodies, no other function in either DLL has the body), eight of them also by the same
+class's vtable store on both sides (CSave, CRestore, CBaseEntityList, CMeasureSection, CMeasureSectionInstance,
+VKeyValues). Five more were refused because their class is not declared in include/ (CVFeat_t x2, CEntryX,
+StatDefault2, CVStatAction_t); a 1:2 group (??0CUnknown10248a50), a 2:1 group (??4CBaseHandle: vtmb has the body
+twice under two names) and six names with a vampire.dll address in a class this project does not use were left
+out. Statics: carry used to attach a data operand to the nearest vtmb data symbol below it however far away (vtmb's
+symbol map has no `g_` placeholders), so a field of `g_1089d7c8` read as `s_Sentinel + 0x1d522a` and statics got two
+spellings; carry now also counts the block's `g_` placeholders as object starts and trusts an exact pair, or inner
+pairs that agree. Run 11 planned 174 and matched 23 (+2 initializer rows), 6,896 bytes: 14 of the 17 named
+(`CValRecord::operator=` 2,703 B, CBaseEntityList's constructor 383 B; VKeyValues' constructor score 6, destructor
+score 2, StatDefault's constructor an unpaired placeholder) and 5 of the 7 the statics fix freed (two `bf_write`
+functions reached only through fields of a `g_` placeholder). Name conflicts 62 -> 35 (19 of them the one-body
+`??_G` interface destructors). A `verify` of 19 still matched (the 20th sample was an initializer row). Totals now:
+7,779 matched rows; the panel counts 7,750 of 16,011 functions / 383,669 of 1,690,576 bytes (22.69%). Backups:
+cache/`project.db.pre-names3-20261121`, cache/`project.db.pre-carry11-20261121`.
+
+Scalar deleting destructors (2026-11-22, `pcdecomp gdtors`, applied from pcdecomp branch gdtor-skeletons d790455,
+in main since 4ad9d8e). The command reads the class tree from the game's RTTI (each base's contained count) and judges, from every
+30-byte `??_G`, which destructor and which operator delete it calls: R1 the destructor stores the class's own vtable,
+R2 a base's (no class between has a destructor of its own), R3 the delete belongs to the lowest class whose `??_G`
+calls it, R4 names already known must agree. It then writes one skeleton header per class, names the destructors
+and deletes with `rename_symbol` (the names are read from the compiled object, never made up), and saves each `??_G`
+as an emitter block: `X *pcd_emit_<addr>() { return new X; }` plus `// TARGET: ??_GX@@UAEPAXI@Z` (VC6 writes the
+`??_G` where `new` makes it emit the vtable). A skeleton (`include/<Class>.h`, `vgui2__<Class>.h` for vgui2; first
+line ends "skeleton from the game's RTTI (pcdecomp gdtors)") declares the bases, the destructor and the operator
+delete, nothing else yet, and is written once, never rewritten. IHandleEntity (include/CBaseHandle.h) leaves
+`vfunc0` / `vfunc1` pure, so the overrides are declared in the class whose game vtable has a real function at that
+slot: C_BaseEntity, C_BaseTempEntity, C_BaseNetworkable and CDetailModel. IClientEntity and CBaseStaticModel have
+`__purecall` there and declare none. Result: 531 headers (one commit, e14ec164), 204 names (R1 195, R2 7, R3 2:
+`??3C_BaseEntity@@SAXPAX@Z` 0x100a1ec0 for 260 `??_G`, `??3Panel@vgui2@@SAXPAX@Z` 0x101ac660 for 102), and 504
+`??_G` matched, 15,120 bytes. Open: CBaseStaticModel's own `??_G` 0x100dfe30, which is abstract in the game, so
+`new` cannot make it (it needs a hand emitter); 8 proxies whose `??_G` calls another of the 9 copies of
+IMaterialProxy's inline destructor (only 0x100e3300 has the name `IMaterialProxy::~IMaterialProxy`, and one name
+names one address); and 34 out of scope (10 under a vtmb header name, 10 declared in include/ already, 3 in an
+anonymous namespace, 1 nested). 89 of the named destructors were matched before under a placeholder: the real name
+sits beside it as a second symbol, but the block still defines `CUnknown<addr>::sub_<addr>`, so a standalone link
+needs those blocks to define the real names. Emitter blocks are temporary. A later header edit that ends an emitter
+(the class's real pure virtuals declared, a constructor of its own) releases that `??_G` instead of refusing the
+edit (note "emitter-made ??_G released by a header edit"), and `pcdecomp gdtors --retry-released` tries it again.
+A score above 0 still refuses the edit. Run the command again after new classes are declared: rows already matched
+are evidence, and headers already written are left alone. Totals now: 8,283 matched rows; the panel counts 8,254 of
+16,011 functions / 398,789 of 1,690,576 bytes (23.59%). Backup: cache/`project.db.pre-gdtors-20261121`.
+
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
 functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the

@@ -16,8 +16,3 @@ int g_106bda58 = ((int (*)(int))sub_100439b0)(0);
 #include "CPhysSaveRestoreBlockHandler.h"
 CPhysSaveRestoreBlockHandler g_106bda60;
 // END FUNCTION
-
-// FUNCTION: 0x10045720 size=0x5
-#include "CPhysObjSaveRestoreOps.h"
-CPhysObjSaveRestoreOps g_106bda00[11];
-// END FUNCTION

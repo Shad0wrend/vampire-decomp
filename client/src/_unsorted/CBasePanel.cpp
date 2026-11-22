@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10163b10 size=0x1e
+#include "CBasePanel.h"
+
+// VC6 writes CBasePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CBasePanel *pcd_emit_10163b10() { return new CBasePanel; }
+
+// TARGET: ??_GCBasePanel@@UAEPAXI@Z
+// END FUNCTION

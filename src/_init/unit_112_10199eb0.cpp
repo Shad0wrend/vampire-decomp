@@ -20,6 +20,7 @@ ConCommand g_1072b2f4("gcleardialog", sub_1019ab40, "Resets all dialog state fla
 // END FUNCTION
 
 // FUNCTION: 0x1019ad60 size=0x5
+#define PCD_INITIALIZERS
 #include "CPython_SaveRestoreBlockHandler.h"
 CPython_SaveRestoreBlockHandler g_1072b354;
 // END FUNCTION
