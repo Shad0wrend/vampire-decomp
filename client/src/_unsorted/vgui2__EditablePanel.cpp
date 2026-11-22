@@ -11,6 +11,17 @@ vgui2::EditablePanel *pcd_emit_101b46c0() { return new vgui2::EditablePanel; }
 // TARGET: ??_GEditablePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b4d60 size=0xa
+#include "vgui2__EditablePanel.h"
+namespace lifted {
+struct V { virtual int f0(int); };
+}
+int vgui2::EditablePanel::vfunc108()
+{
+    return ((lifted::V *)(*(int *)((char *)this + 0x58)))->f0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4d70 size=0x8
 #include "vgui2__EditablePanel.h"
 namespace lifted {
