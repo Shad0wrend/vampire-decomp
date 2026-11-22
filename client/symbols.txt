@@ -859,6 +859,7 @@
 0x100193f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyPurse@@@Z ClientClassInit
 0x10019480 func   ?vfunc17@C_ItemGBailbondReceipt@@UAEHXZ C_ItemGBailbondReceipt::vfunc17
 0x10019510 func   ??_GC_ItemGBailbondReceipt@@UAEPAXI@Z ??_GC_ItemGBailbondReceipt@@UAEPAXI@Z
+0x10019530 func   ?vfunc16@C_ItemGBailbondReceipt@@UAEHXZ C_ItemGBailbondReceipt::vfunc16
 0x10019540 func   ?vfunc15@C_ItemGBailbondReceipt@@UAEHXZ C_ItemGBailbondReceipt::vfunc15
 0x10019550 func   ?sub_10019550@@YAHXZ sub_10019550
 0x10019670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBailbondReceipt@@@Z ClientClassInit
