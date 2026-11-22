@@ -44,6 +44,22 @@ void C_BaseAnimating::vfunc124(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100910f0 size=0x1b
+#include "C_BaseAnimating.h"
+namespace lifted {
+struct C10094020 { bool sub_10094020(); };
+struct C100a1aa0 { int sub_100a1aa0(); };
+}
+int C_BaseAnimating::vfunc66()
+{
+    bool t0 = ((lifted::C10094020 *)this)->sub_10094020();
+    if (t0 != 0) {
+        return 2;
+    }
+    return ((lifted::C100a1aa0 *)this)->sub_100a1aa0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091640 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc131(int a0, int a1, int a2, int a3, int a4, int a5)
