@@ -1577,6 +1577,7 @@
 0x10033620 func   ?sub_10033620@@YAHXZ sub_10033620
 0x100336c0 func   ?sub_100336c0@@YAHXZ sub_100336c0
 0x10033730 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamPoints@@@Z ClientClassInit
+0x100337f0 func   ?sub_100337f0@CUnknown100337f0@@QAEPAXXZ CUnknown100337f0::sub_100337f0
 0x10033820 func   ??_GC_TEBeamRing@@UAEPAXI@Z ??_GC_TEBeamRing@@UAEPAXI@Z
 0x10033840 func   ??1C_TEBeamRing@@UAE@XZ C_TEBeamRing::~C_TEBeamRing
 0x10033840 func   ?sub_10033840@CUnknown10033840@@QAEHXZ CUnknown10033840::sub_10033840

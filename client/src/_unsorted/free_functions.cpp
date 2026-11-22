@@ -9064,6 +9064,24 @@ template <> int ClientClassInit<DT_TEBeamPoints::ignored>(DT_TEBeamPoints::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100337f0 size=0x21
+namespace lifted {
+extern char g_10225f78;
+extern char g_10225fac;
+int sub_10032650();
+}
+struct CUnknown100337f0 { void * sub_100337f0(); };
+void * CUnknown100337f0::sub_100337f0()
+{
+    lifted::sub_10032650();
+    *(int *)this = (int)&lifted::g_10225fac;
+    *(int *)((char *)this + 0x48) = 0;
+    *(int *)((char *)this + 0x4c) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10225f78;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033840 size=0x12
 namespace lifted {
 extern char g_10225f78;
