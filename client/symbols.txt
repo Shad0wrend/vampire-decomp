@@ -2888,6 +2888,7 @@
 0x100c4da0 func   ?ClientClassInit@@YAHPAUignored@DT_Sun@@@Z ClientClassInit
 0x100c4f00 func   ??_GC_Sun@@UAEPAXI@Z ??_GC_Sun@@UAEPAXI@Z
 0x100c4f20 func   ??1C_Sun@@UAE@XZ C_Sun::~C_Sun
+0x100c65a0 func   ?vfunc16@C_VampireProjectile_MingXiaoSpit@@UAEHXZ C_VampireProjectile_MingXiaoSpit::vfunc16
 0x100c65b0 func   ?vfunc15@C_VampireProjectile_MingXiaoSpit@@UAEHXZ C_VampireProjectile_MingXiaoSpit::vfunc15
 0x100c65c0 func   ?sub_100c65c0@@YAHXZ sub_100c65c0
 0x100c6680 func   ??_GC_VampireProjectile_MingXiaoSpit@@UAEPAXI@Z ??_GC_VampireProjectile_MingXiaoSpit@@UAEPAXI@Z
