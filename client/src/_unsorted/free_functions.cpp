@@ -54315,6 +54315,18 @@ int CUnknown101547d0::sub_101547d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154ae0 size=0xc
+namespace lifted {
+int sub_10154b40();
+}
+struct CUnknown10154ae0 { void * sub_10154ae0(); };
+void * CUnknown10154ae0::sub_10154ae0()
+{
+    lifted::sub_10154b40();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154b40 size=0x21
 // TARGET: sub_10154b40
 void __fastcall sub_10154b40(int *p)
