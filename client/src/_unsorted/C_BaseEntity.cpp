@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100015b0 size=0x7
+#include "C_BaseEntity.h"
+ICollideable * C_BaseEntity::GetClientCollideable()
+{
+    return (ICollideable *)((char *)this + 0x190);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100015e0 size=0x3
 #include "C_BaseEntity.h"
 IClientEntity * C_BaseEntity::GetIClientEntity()
