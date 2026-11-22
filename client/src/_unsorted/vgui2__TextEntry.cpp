@@ -312,6 +312,26 @@ int vgui2::TextEntry::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b09d0 size=0x33
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc158(int a0, int a1)
+{
+    int t0 = *(int *)((char *)this + 0x9c);
+    if (t0 == -1) {
+        return 0;
+    }
+    *(int *)((char *)a0) = t0;
+    int t1 = *(int *)((char *)this + 0xa0);
+    *(int *)((char *)a1) = t1;
+    int t2 = *(int *)((char *)a0);
+    if (t1 < t2) {
+        *(int *)((char *)a0) = t1;
+        *(int *)((char *)a1) = t2;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0bb0 size=0x2a
 #include "vgui2__TextEntry.h"
 namespace lifted {

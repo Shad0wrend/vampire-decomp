@@ -6020,6 +6020,7 @@
 0x101b01e0 func   ?vfunc116@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc116
 0x101b02b0 func   ?vfunc117@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc117
 0x101b09c0 func   ?vfunc124@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc124
+0x101b09d0 func   ?vfunc158@TextEntry@vgui2@@UAE_NHH@Z vgui2::TextEntry::vfunc158
 0x101b0bb0 func   ?vfunc126@TextEntry@vgui2@@UAEXXZ vgui2::TextEntry::vfunc126
 0x101b13e0 func   ?vfunc132@TextEntry@vgui2@@UAEHH@Z vgui2::TextEntry::vfunc132
 0x101b1410 func   ?vfunc168@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc168
