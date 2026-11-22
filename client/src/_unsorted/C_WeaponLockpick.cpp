@@ -10,3 +10,11 @@ C_WeaponLockpick *pcd_emit_1000fa10() { return new C_WeaponLockpick; }
 
 // TARGET: ??_GC_WeaponLockpick@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000fa40 size=0x3
+#include "C_WeaponLockpick.h"
+int C_WeaponLockpick::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
