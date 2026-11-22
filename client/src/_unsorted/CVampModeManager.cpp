@@ -10,3 +10,10 @@ CVampModeManager *pcd_emit_10162320() { return new CVampModeManager; }
 
 // TARGET: ??_GCVampModeManager@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10162420 size=0x1
+#include "CVampModeManager.h"
+void CVampModeManager::vfunc3()
+{
+}
+// END FUNCTION
