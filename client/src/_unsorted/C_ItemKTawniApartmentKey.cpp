@@ -22,6 +22,17 @@ C_ItemKTawniApartmentKey *pcd_emit_10024910() { return new C_ItemKTawniApartment
 // TARGET: ??_GC_ItemKTawniApartmentKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10024930 size=0x6
+#include "C_ItemKTawniApartmentKey.h"
+namespace lifted {
+extern char g_10273fb0;
+}
+int C_ItemKTawniApartmentKey::vfunc16()
+{
+    return (int)&lifted::g_10273fb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024940 size=0x3
 #include "C_ItemKTawniApartmentKey.h"
 int C_ItemKTawniApartmentKey::vfunc15()
