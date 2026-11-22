@@ -22,6 +22,17 @@ C_ItemGJunkyardBusinesscard *pcd_emit_1001e790() { return new C_ItemGJunkyardBus
 // TARGET: ??_GC_ItemGJunkyardBusinesscard@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001e7b0 size=0x6
+#include "C_ItemGJunkyardBusinesscard.h"
+namespace lifted {
+extern char g_10274348;
+}
+int C_ItemGJunkyardBusinesscard::vfunc16()
+{
+    return (int)&lifted::g_10274348;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001e7c0 size=0x3
 #include "C_ItemGJunkyardBusinesscard.h"
 int C_ItemGJunkyardBusinesscard::vfunc15()
