@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10015d80 size=0x6
+#include "C_WeaponIArmor_Body_Armor.h"
+namespace lifted {
+extern char g_1027325c;
+}
+int C_WeaponIArmor_Body_Armor::vfunc17()
+{
+    return (int)&lifted::g_1027325c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015e10 size=0x1e
 #include "C_WeaponIArmor_Body_Armor.h"
 
