@@ -22,6 +22,17 @@ C_OccultExperience *pcd_emit_10013890() { return new C_OccultExperience; }
 // TARGET: ??_GC_OccultExperience@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100138b0 size=0x6
+#include "C_OccultExperience.h"
+namespace lifted {
+extern char g_1027496c;
+}
+int C_OccultExperience::vfunc16()
+{
+    return (int)&lifted::g_1027496c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100138c0 size=0x3
 #include "C_OccultExperience.h"
 int C_OccultExperience::vfunc15()

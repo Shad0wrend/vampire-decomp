@@ -637,6 +637,7 @@
 0x10013770 func   ?ClientClassInit@@YAHPAUignored@DT_OccultStrength@@@Z ClientClassInit
 0x10013800 func   ?vfunc17@C_OccultExperience@@UAEHXZ C_OccultExperience::vfunc17
 0x10013890 func   ??_GC_OccultExperience@@UAEPAXI@Z ??_GC_OccultExperience@@UAEPAXI@Z
+0x100138b0 func   ?vfunc16@C_OccultExperience@@UAEHXZ C_OccultExperience::vfunc16
 0x100138c0 func   ?vfunc15@C_OccultExperience@@UAEHXZ C_OccultExperience::vfunc15
 0x100138d0 func   ?sub_100138d0@@YAHXZ sub_100138d0
 0x100139f0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultExperience@@@Z ClientClassInit
