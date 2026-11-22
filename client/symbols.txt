@@ -385,6 +385,7 @@
 0x100106d0 func   ?sub_100106d0@@YAHXZ sub_100106d0
 0x100107f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMMoneyEnvelope@@@Z ClientClassInit
 0x10010910 func   ??_GC_ResearchBook_LG_COMP@@UAEPAXI@Z ??_GC_ResearchBook_LG_COMP@@UAEPAXI@Z
+0x10010940 func   ?vfunc15@C_ResearchBook_LG_COMP@@UAEHXZ C_ResearchBook_LG_COMP::vfunc15
 0x10010950 func   ?sub_10010950@@YAHXZ sub_10010950
 0x10010a70 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_LG_COMP@@@Z ClientClassInit
 0x10010b90 func   ??_GC_ResearchBook_HG_COMP@@UAEPAXI@Z ??_GC_ResearchBook_HG_COMP@@UAEPAXI@Z
