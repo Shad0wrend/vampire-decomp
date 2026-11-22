@@ -265,6 +265,14 @@ void C_BaseEntity::vfunc119(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fba0 size=0x7
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc51()
+{
+    return *(int *)((char *)this + 0x80);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fce0 size=0x7
 #include "C_BaseEntity.h"
 CMouthInfo * C_BaseEntity::GetMouth()
