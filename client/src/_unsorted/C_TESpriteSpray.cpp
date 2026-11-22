@@ -21,3 +21,11 @@ int C_TESpriteSpray::vfunc9()
     return (int)&lifted::g_10281b54;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003f920 size=0x3
+#include "C_TESpriteSpray.h"
+int C_TESpriteSpray::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
