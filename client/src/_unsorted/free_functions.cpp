@@ -27689,6 +27689,25 @@ template <> int ClientClassInit<DT_OrnamentProp::ignored>(DT_OrnamentProp::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdd80 size=0x23
+namespace lifted {
+extern char g_1023213c;
+int sub_100bde20();
+}
+struct CUnknown100bdd80 { void * sub_100bdd80(); };
+void * CUnknown100bdd80::sub_100bdd80()
+{
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)this = (int)&lifted::g_1023213c;
+    lifted::sub_100bde20();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde20 size=0x1e
 struct CUnknown100bde20 { int sub_100bde20(); };
 int CUnknown100bde20::sub_100bde20()

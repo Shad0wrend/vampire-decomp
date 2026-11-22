@@ -2988,6 +2988,7 @@
 0x100bda50 func   ?ClientClassInit@@YAHPAUignored@DT_OrnamentProp@@@Z ClientClassInit
 0x100bdb10 func   ??_GC_OrnamentProp@@UAEPAXI@Z ??_GC_OrnamentProp@@UAEPAXI@Z
 0x100bdb30 func   ??1C_OrnamentProp@@UAE@XZ C_OrnamentProp::~C_OrnamentProp
+0x100bdd80 func   ?sub_100bdd80@CUnknown100bdd80@@QAEPAXXZ CUnknown100bdd80::sub_100bdd80
 0x100bde20 func   ?sub_100bde20@CUnknown100bde20@@QAEHXZ CUnknown100bde20::sub_100bde20
 0x100bde50 func   ?sub_100bde50@CUnknown100bde50@@QAEXXZ CUnknown100bde50::sub_100bde50
 0x100be030 func   ?sub_100be030@@YGHH@Z sub_100be030
