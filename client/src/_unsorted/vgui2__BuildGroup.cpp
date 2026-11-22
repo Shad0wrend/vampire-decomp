@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c1210 size=0x4
+#include "vgui2__BuildGroup.h"
+char * vgui2::BuildGroup::vfunc14()
+{
+    return (char *)this + 0x64;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1dd0 size=0x3
 #include "vgui2__BuildGroup.h"
 void vgui2::BuildGroup::vfunc20(int a0, int a1)
