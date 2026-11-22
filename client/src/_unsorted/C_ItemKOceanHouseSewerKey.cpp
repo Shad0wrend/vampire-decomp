@@ -22,6 +22,17 @@ C_ItemKOceanHouseSewerKey *pcd_emit_10021490() { return new C_ItemKOceanHouseSew
 // TARGET: ??_GC_ItemKOceanHouseSewerKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100214b0 size=0x6
+#include "C_ItemKOceanHouseSewerKey.h"
+namespace lifted {
+extern char g_102741d4;
+}
+int C_ItemKOceanHouseSewerKey::vfunc16()
+{
+    return (int)&lifted::g_102741d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100214c0 size=0x3
 #include "C_ItemKOceanHouseSewerKey.h"
 int C_ItemKOceanHouseSewerKey::vfunc15()
