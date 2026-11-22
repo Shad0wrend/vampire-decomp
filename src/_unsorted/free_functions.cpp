@@ -89494,17 +89494,11 @@ void CUnknown101f1e20::sub_101f1e20()
 // FUNCTION: 0x101f2040 size=0x36
 #include "IKeyValues.h"
 
-struct CKeyValuesEmit : public IKeyValues
-{
-	void vfunc0() {}
-	void vfunc1() {}
-};
+// VC6 writes IKeyValues's scalar deleting destructor where it emits the class's vtable; its inline destructor (it stores the vptr) called in a function
+// nothing calls makes it emit both here
+void pcd_emit_101f2040(IKeyValues *p) { p->IKeyValues::~IKeyValues(); }
 
 // TARGET: ??_GIKeyValues@@UAEPAXI@Z
-IKeyValues *IKeyValues_Emit()
-{
-	return new CKeyValuesEmit;
-}
 // END FUNCTION
 
 // FUNCTION: 0x101f2090 size=0x2d
