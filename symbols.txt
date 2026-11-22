@@ -3463,6 +3463,7 @@
 0x100054a2 func   ?vfunc5@CFunc_Dust@@QAEPAV1@I@Z CFunc_Dust::vfunc5
 0x100054a7 func   ?sub_1036fad0@@YIPAXPAD@Z sub_1036fad0
 0x100054ac func   ?sub_1033d330@CUnk1033d330@@QAEDI@Z CUnk1033d330::sub_1033d330
+0x100054b1 func   ??_GIVoiceGameMgrHelper@@UAEPAXI@Z ??_GIVoiceGameMgrHelper@@UAEPAXI@Z
 0x100054b1 func   ?sub_103531c0@Helper@@QAEPAXE@Z Helper::sub_103531c0
 0x100054b6 func   ?vfunc298@CBasePlayer@@UAEHH@Z CBasePlayer::vfunc298
 0x100054bb func   ?vfunc448@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc448
