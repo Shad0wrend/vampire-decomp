@@ -32829,6 +32829,17 @@ void sub_100dfae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfb10 size=0x12
+struct CUnknown100dfb10 { char sub_100dfb10(int); };
+char CUnknown100dfb10::sub_100dfb10(int a0)
+{
+    int t0 = *(int *)((char *)(*(int *)((char *)this + 4)) + 0x34);
+    int t1 = *(int *)((char *)this + 4);
+    *(int *)((char *)a0) = t0;
+    return *(char *)((char *)t1 + 0x30);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfb50 size=0x7
 struct CUnknown100dfb50 { int sub_100dfb50(); };
 int CUnknown100dfb50::sub_100dfb50()

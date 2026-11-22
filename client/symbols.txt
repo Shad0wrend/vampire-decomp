@@ -3499,6 +3499,7 @@
 0x100dfa90 func   ?sub_100dfa90@ConVar@@QAEXH@Z ConVar::sub_100dfa90
 0x100dfad0 func   ?sub_100dfad0@CUnknown100dfad0@@QAEHXZ CUnknown100dfad0::sub_100dfad0
 0x100dfae0 func   ?sub_100dfae0@@YAXXZ sub_100dfae0
+0x100dfb10 func   ?sub_100dfb10@CUnknown100dfb10@@QAEDH@Z CUnknown100dfb10::sub_100dfb10
 0x100dfb50 func   ?sub_100dfb50@CUnknown100dfb50@@QAEHXZ CUnknown100dfb50::sub_100dfb50
 0x100dfb60 func   ?sub_100dfb60@@YAXXZ sub_100dfb60
 0x100dfb70 func   ?sub_100dfb70@@YAXXZ sub_100dfb70
