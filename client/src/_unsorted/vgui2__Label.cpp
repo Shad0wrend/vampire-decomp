@@ -72,6 +72,21 @@ int vgui2::Label::vfunc126()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3290 size=0x23
+#include "vgui2__Label.h"
+namespace lifted {
+extern char g_102d89c8;
+extern char g_10679200;
+int sub_101ab860();
+int sub_101d3192(int, int, int, int);
+}
+int vgui2::Label::vfunc77()
+{
+    lifted::sub_101d3192((int)&lifted::g_10679200, 0x400, (int)&lifted::g_102d89c8, lifted::sub_101ab860());
+    return (int)&lifted::g_10679200;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b33a0 size=0xd
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc136(int a0)

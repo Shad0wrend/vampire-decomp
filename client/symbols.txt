@@ -5206,6 +5206,7 @@
 0x101b2aa0 func   ?vfunc116@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc116
 0x101b2ab0 func   ?vfunc127@Label@vgui2@@UAEHXZ vgui2::Label::vfunc127
 0x101b2c80 func   ?vfunc126@Label@vgui2@@UAEHXZ vgui2::Label::vfunc126
+0x101b3290 func   ?vfunc77@Label@vgui2@@UAEHXZ vgui2::Label::vfunc77
 0x101b33a0 func   ?vfunc136@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc136
 0x101b33b0 func   ?vfunc137@Label@vgui2@@UAEHXZ vgui2::Label::vfunc137
 0x101b3470 func   ?vfunc102@Label@vgui2@@UAEHXZ vgui2::Label::vfunc102
