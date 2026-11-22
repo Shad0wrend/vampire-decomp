@@ -27394,6 +27394,21 @@ template <> int ClientClassInit<DT_EnvParticle::ignored>(DT_EnvParticle::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aeed0 size=0x25
+namespace lifted {
+extern int g_104a581c;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(int); };
+}
+struct CUnknown100aeed0 { void sub_100aeed0(); };
+void CUnknown100aeed0::sub_100aeed0()
+{
+    if ((*(int *)((char *)this + 0x46c)) != 0) {
+        int t0 = ((lifted::V *)lifted::g_104a581c)->f14(*(int *)((char *)this + 0x46c));
+        *(int *)((char *)this + 0x46c) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aef00 size=0xa
 struct CUnknown100aef00 { int sub_100aef00(); };
 int CUnknown100aef00::sub_100aef00()
