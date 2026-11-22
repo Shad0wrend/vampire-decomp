@@ -10472,6 +10472,17 @@ template <> int ClientClassInit<DT_TEKillPlayerAttachments::ignored>(DT_TEKillPl
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a840 size=0x21
+struct CUnknown1003a840 { int sub_1003a840(int, int, int); };
+int CUnknown1003a840::sub_1003a840(int a0, int a1, int a2)
+{
+    *(int *)((char *)this + 0x800) = a0;
+    *(int *)((char *)this + 0x804) = a1;
+    *(int *)((char *)this + 0x808) = a2;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dab0 size=0x12
 namespace lifted {
 extern char g_10226fec;
