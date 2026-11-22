@@ -10839,6 +10839,22 @@ template <> int ClientClassInit<DT_TEImpact::ignored>(DT_TEImpact::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a170 size=0x19
+namespace lifted {
+extern char g_10226a60;
+extern char g_10226a94;
+int sub_1003df00();
+}
+struct CUnknown1003a170 { void * sub_1003a170(); };
+void * CUnknown1003a170::sub_1003a170()
+{
+    int t0 = lifted::sub_1003df00();
+    *(int *)this = (int)&lifted::g_10226a94;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10226a60;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003a1b0 size=0x12
 namespace lifted {
 extern char g_10226a60;
