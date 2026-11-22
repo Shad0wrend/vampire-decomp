@@ -56354,6 +56354,24 @@ void CVStatCost_t::sub_1015a080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a230 size=0x5f
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern int g_105f9394;
+
+void sub_1015a230(int callback)
+{
+	g_101e3124[*g_101e3128].a = "SetExtraActionParseFunc";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	g_105f9394 = callback;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a290 size=0x68
 struct TScope {
 	const char *name;
