@@ -1379,6 +1379,7 @@
 0x10026c40 func   ?vfunc15@C_ItemKAshCellKey@@UAEHXZ C_ItemKAshCellKey::vfunc15
 0x10026c50 func   ?sub_10026c50@@YAHXZ sub_10026c50
 0x10026d70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKAshCellKey@@@Z ClientClassInit
+0x10026e00 func   ?vfunc17@C_WeaponMelee_Torch@@UAEHXZ C_WeaponMelee_Torch::vfunc17
 0x10026e70 func   ?vfunc15@C_WeaponMelee_Torch@@UAEHXZ C_WeaponMelee_Torch::vfunc15
 0x10026e80 func   ?sub_10026e80@@YAHXZ sub_10026e80
 0x10026f80 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Torch@@@Z ClientClassInit
