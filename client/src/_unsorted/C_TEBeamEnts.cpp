@@ -10,3 +10,14 @@ C_TEBeamEnts *pcd_emit_10032dd0() { return new C_TEBeamEnts; }
 
 // TARGET: ??_GC_TEBeamEnts@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10032f20 size=0x6
+#include "C_TEBeamEnts.h"
+namespace lifted {
+extern char g_1027d6a0;
+}
+int C_TEBeamEnts::vfunc9()
+{
+    return (int)&lifted::g_1027d6a0;
+}
+// END FUNCTION

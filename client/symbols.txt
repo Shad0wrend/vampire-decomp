@@ -839,6 +839,7 @@
 0x10032dd0 func   ??_GC_TEBeamEnts@@UAEPAXI@Z ??_GC_TEBeamEnts@@UAEPAXI@Z
 0x10032df0 func   ??1C_TEBeamEnts@@UAE@XZ C_TEBeamEnts::~C_TEBeamEnts
 0x10032df0 func   ?sub_10032df0@CUnknown10032df0@@QAEHXZ CUnknown10032df0::sub_10032df0
+0x10032f20 func   ?vfunc9@C_TEBeamEnts@@UAEHXZ C_TEBeamEnts::vfunc9
 0x10032f40 func   ?sub_10032f40@@YAHXZ sub_10032f40
 0x10032fe0 func   ?sub_10032fe0@@YAHXZ sub_10032fe0
 0x10033050 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamEnts@@@Z ClientClassInit
