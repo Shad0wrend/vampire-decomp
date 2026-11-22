@@ -62217,6 +62217,18 @@ int sub_101a2f30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a30c0 size=0x13
+struct V {
+	int sub_101a3190(int);
+	bool sub_101a30c0(int);
+};
+// TARGET: V::sub_101a30c0
+bool V::sub_101a30c0(int a)
+{
+	return sub_101a3190(a) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
