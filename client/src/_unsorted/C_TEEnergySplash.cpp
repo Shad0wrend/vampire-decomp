@@ -17,3 +17,14 @@ void C_TEEnergySplash::vfunc13()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100365d0 size=0x6
+#include "C_TEEnergySplash.h"
+namespace lifted {
+extern char g_1027efc4;
+}
+int C_TEEnergySplash::vfunc9()
+{
+    return (int)&lifted::g_1027efc4;
+}
+// END FUNCTION
