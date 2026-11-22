@@ -10,3 +10,11 @@ C_WeaponMelee_Claws *pcd_emit_10008490() { return new C_WeaponMelee_Claws; }
 
 // TARGET: ??_GC_WeaponMelee_Claws@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100084c0 size=0x3
+#include "C_WeaponMelee_Claws.h"
+int C_WeaponMelee_Claws::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
