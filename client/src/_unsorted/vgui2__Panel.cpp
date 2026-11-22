@@ -396,6 +396,19 @@ int vgui2::Panel::vfunc77()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab880 size=0xd
+#include "vgui2__Panel.h"
+namespace lifted {
+struct C101be7d0 { int sub_101be7d0(); };
+}
+void vgui2::Panel::vfunc2()
+{
+    if ((*(int *)((char *)this + 0x50)) != 0) {
+        ((lifted::C101be7d0 *)(*(int *)((char *)this + 0x50)))->sub_101be7d0(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abf60 size=0x6
 #include "vgui2__Panel.h"
 namespace lifted {
