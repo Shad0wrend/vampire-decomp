@@ -11,6 +11,15 @@ vgui2::Label *pcd_emit_101b2080() { return new vgui2::Label; }
 // TARGET: ??_GLabel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b2390 size=0xf
+#include "vgui2__Label.h"
+short vgui2::Label::vfunc120(short a0)
+{
+    *(short *)((char *)this + 0xac) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2a70 size=0xd
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc113(int a0)
