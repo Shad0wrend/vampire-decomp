@@ -7256,6 +7256,7 @@
 0x10009f1b func   ?sub_101780e0@CUnknown101780e0@@QAEXXZ CUnknown101780e0::sub_101780e0
 0x10009f25 func   ?sub_102da7c0@CUnk102da7c0@@QAEXPAXDD@Z CUnk102da7c0::sub_102da7c0
 0x10009f2a func   ?sub_10288510@@YI_NPAHH0@Z sub_10288510
+0x10009f2f func   ?WriteSaveHeaders@CEQ_SaveRestoreBlockHandler@@UAEXPAVISave@@@Z CEQ_SaveRestoreBlockHandler::WriteSaveHeaders
 0x10009f2f func   ?sub_100cff00@@YGXPAUCUnknown100cff00@@@Z sub_100cff00
 0x10009f34 func   ?sub_103bc4e0@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::sub_103bc4e0
 0x10009f39 func   _prop_haunted prop_haunted
