@@ -25,6 +25,20 @@ void CVMenuButton::vfunc85()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065490 size=0x17
+#include "CVMenuButton.h"
+namespace lifted {
+extern int g_103ef0b4;
+struct C10067950 { int sub_10067950(int); };
+struct C101b4230 { int sub_101b4230(); };
+}
+void CVMenuButton::vfunc86()
+{
+    ((lifted::C10067950 *)lifted::g_103ef0b4)->sub_10067950((int)this);
+    ((lifted::C101b4230 *)this)->sub_101b4230();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100654b0 size=0x3
 #include "CVMenuButton.h"
 void CVMenuButton::vfunc91(int a0)

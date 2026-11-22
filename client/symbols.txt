@@ -2173,6 +2173,7 @@
 0x100652e0 func   ?sub_100652e0@@YAXXZ sub_100652e0
 0x10065390 func   ??_GCVMenuButton@@UAEPAXI@Z ??_GCVMenuButton@@UAEPAXI@Z
 0x10065470 func   ?vfunc85@CVMenuButton@@UAEXXZ CVMenuButton::vfunc85
+0x10065490 func   ?vfunc86@CVMenuButton@@UAEXXZ CVMenuButton::vfunc86
 0x100654b0 func   ?vfunc91@CVMenuButton@@UAEXH@Z CVMenuButton::vfunc91
 0x100654c0 func   ?vfunc94@CVMenuButton@@UAEXH@Z CVMenuButton::vfunc94
 0x10065660 func   ?sub_10065660@@YAHXZ sub_10065660
