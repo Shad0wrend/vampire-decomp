@@ -23,6 +23,22 @@ CMeasureSectionInstance::CMeasureSectionInstance(int section)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e120 size=0x1e
+#include "CMeasureSectionInstance.h"
+namespace lifted {
+int sub_1010e140();
+int sub_101d1296(int);
+}
+CMeasureSectionInstance * CMeasureSectionInstance::vfunc0(unsigned int a0)
+{
+    int t0 = lifted::sub_1010e140();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e140 size=0x8e
 #include "CMeasureSectionInstance.h"
 
