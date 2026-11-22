@@ -10,3 +10,11 @@ C_ItemGGarysPhoto *pcd_emit_1001f910() { return new C_ItemGGarysPhoto; }
 
 // TARGET: ??_GC_ItemGGarysPhoto@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001f940 size=0x3
+#include "C_ItemGGarysPhoto.h"
+int C_ItemGGarysPhoto::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
