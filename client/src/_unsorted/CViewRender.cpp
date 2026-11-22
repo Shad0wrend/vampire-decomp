@@ -153,6 +153,14 @@ int CViewRender::vfunc38()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e9a0 size=0x7
+#include "CViewRender.h"
+bool CViewRender::vfunc43()
+{
+    return *(bool *)((char *)this + 0x49c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191700 size=0x8
 #include "CViewRender.h"
 void CViewRender::vfunc16()
