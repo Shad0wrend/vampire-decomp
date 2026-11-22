@@ -41883,6 +41883,17 @@ int CSave::sub_1012ab00(int a, int b, CSaveDesc *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ab50 size=0xc
+struct CUnknown1012ab50 { int sub_1012ab50(); };
+int CUnknown1012ab50::sub_1012ab50()
+{
+    if ((*(int *)((char *)this + 0x18)) == 0) {
+        return *(int *)((char *)this + 0x18);
+    }
+    return *(int *)((char *)(*(int *)((char *)this + 0x18)) + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012abd0 size=0xf
 namespace lifted {
 int __stdcall sub_1012ab60(int, int);
