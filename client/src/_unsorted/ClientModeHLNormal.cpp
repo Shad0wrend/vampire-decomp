@@ -7,3 +7,11 @@ void ClientModeHLNormal::vfunc22(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100297b0 size=0x3
+#include "ClientModeHLNormal.h"
+bool ClientModeHLNormal::vfunc27()
+{
+    return 1;
+}
+// END FUNCTION
