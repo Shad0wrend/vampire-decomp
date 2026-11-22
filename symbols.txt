@@ -8281,6 +8281,7 @@
 0x1000b36b func   ?sub_1038b370@CNPC_VManBat@@QAE?AVVector@@M@Z CNPC_VManBat::sub_1038b370
 0x1000b370 func   ?sub_103352b0@CBaseCombatCharacter@@QAEXAAUinputdata_t@@@Z CBaseCombatCharacter::sub_103352b0
 0x1000b375 func   ?sub_1026af70@CAI_BaseNPC@@QAEXPBMM@Z CAI_BaseNPC::sub_1026af70
+0x1000b37a func   ??_GCSkyList@@UAEPAXI@Z ??_GCSkyList@@UAEPAXI@Z
 0x1000b37a func   ?vfunc8@CSkyList@@QAEPAVCAutoGameSystem@@I@Z CSkyList::vfunc8
 0x1000b37f func   ?vfunc0@IServerGameClients@@UAEPAXE@Z IServerGameClients::vfunc0
 0x1000b384 func   ?sub_10312540@@YGHH@Z sub_10312540
