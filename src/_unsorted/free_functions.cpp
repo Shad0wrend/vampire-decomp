@@ -65800,7 +65800,7 @@ void CSoundSysIface::sub_101afff0()
 // END FUNCTION
 
 // FUNCTION: 0x101b04a0 size=0xf7
-#include "CSoundEmitterSystemBase.h"
+#include "CSoundEmitterSystem.h"
 #include "CUnknown1070b248.h"
 
 struct S_Vt { virtual void v0(); virtual void v1(); virtual void v2(); };
@@ -65972,7 +65972,7 @@ void sub_101b0dc0(const CRecipientFilter *filter, int iEntIndex, const char *sou
 		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, 0, params.pitch, pOrigin, 0, 1, soundtime);
 		if (duration)
 			*duration = enginesound->vfunc1(params.soundname);
-		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
 	}
 }
 // END FUNCTION
@@ -66066,7 +66066,7 @@ void sub_101b1120(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 			enginesound->vfunc3(filter, iEntIndex, iChannel, soundname, flVolume, flAtten, iFlags, iPitch, (int)pOrigin, 0, 1, soundtime);
 			if (duration)
 				*duration = enginesound->vfunc1(soundname);
-			((void (__cdecl *)(void *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
+			((void (__cdecl *)(void *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
 			return;
 		}
 	}
@@ -66098,7 +66098,7 @@ void sub_101b1120(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, iFlags, params.pitch, pOrigin, 0, 1, soundtime);
 		if (duration)
 			*duration = enginesound->vfunc1(params.soundname);
-		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
 	}
 }
 // END FUNCTION
@@ -66141,7 +66141,7 @@ void sub_101b14d0(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 			enginesound->vfunc2(filter, iEntIndex, iChannel, soundname, flVolume, iSoundlevel, iFlags, iPitch, pOrigin, 0, 1, soundtime);
 			if (duration)
 				*duration = enginesound->vfunc1(soundname);
-			((void (__cdecl *)(void *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
+			((void (__cdecl *)(void *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  Raw wave emitted '%s' (ent %i)\n", soundname, iEntIndex);
 			return;
 		}
 	}
@@ -66173,7 +66173,7 @@ void sub_101b14d0(const CRecipientFilter *filter, int iEntIndex, int iChannel, c
 		enginesound->vfunc2(filter, iEntIndex, params.channel, params.soundname, params.volume, params.soundlevel, iFlags, params.pitch, pOrigin, 0, 1, soundtime);
 		if (duration)
 			*duration = enginesound->vfunc1(params.soundname);
-		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)g_1072be18.m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
+		((void (__cdecl *)(void *, const char *, const char *, const char *, int))((void **)((CSoundEmitterSystemBaseFlat *)&g_1072be18)->m_vtbl)[3])(&g_1072be18, "EmitSound:  '%s' emitted as '%s' (ent %i)\n", soundname, params.soundname, iEntIndex);
 	}
 }
 // END FUNCTION
@@ -66277,7 +66277,7 @@ void sub_101b1a00(CBaseEntity *pEnt, const float *pos, const char *samp, float v
 			((EngineView49 *)engine)->vfunc49(pEnt->m_pEdict2e0, pos, name, vol, soundlevel, flags, pitch);
 			if (duration)
 				*duration = enginesound->vfunc1(name);
-			((CSoundEmitterSystem *)&g_1072be18)->vfunc3("UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, ENTINDEX(pEnt->m_pEdict2e0));
+			((CSoundEmitterSystem *)&g_1072be18)->CSoundEmitterSystem::LogMessage("UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, ENTINDEX(pEnt->m_pEdict2e0));
 		}
 		return;
 	}
@@ -66327,7 +66327,7 @@ int sub_101b1dd0(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x101b1e00 size=0x14d
-#include "CSoundEmitterSystemBase.h"
+#include "CSoundEmitterSystem.h"
 #include "UtlMem.h"
 #include "UtlMem2.h"
 

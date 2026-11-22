@@ -13,7 +13,7 @@
 #include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
-#include "CSoundEmitterSystemBase.h"
+#include "CSoundEmitterSystem.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CEntityVSlots.h"

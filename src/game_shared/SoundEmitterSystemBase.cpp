@@ -59,7 +59,7 @@ void CSoundEmitterSystemBase::sub_101b2b30(const char *pszScript, UtlMem2 *pOut)
 		int i = 0;
 		int off = 0;
 		do {
-			if (*(int *)(off + (int)m_i54 + 0x18) == iScript)
+			if (*(int *)(off + (int)((CSoundEmitterSystemBaseFlat *)this)->m_i54 + 0x18) == iScript)
 				((CUtlVecOpsX *)pOut)->AddToTail(i);
 			i++;
 			off += 0xe8;
@@ -81,8 +81,8 @@ extern IFileSys *g_1070b238;
 
 bool CSoundEmitterSystemBase::sub_101b2c60()
 {
-	if (m_ia8 > 0)
-		(*(void (__fastcall **)(CSoundEmitterSystemBase *))((char *)m_vtbl + 8))(this);
+	if (((CSoundEmitterSystemBaseFlat *)this)->m_ia8 > 0)
+		(*(void (__fastcall **)(CSoundEmitterSystemBase *))((char *)((CSoundEmitterSystemBaseFlat *)this)->m_vtbl + 8))(this);
 	sub_101b3b70();
 	CUnknown10248a50 *pManifest = new CUnknown10248a50("scripts/game_sounds_manifest.txt");
 	IFileSys *pFileSys = g_1070b238;
@@ -108,9 +108,9 @@ bool CSoundEmitterSystemBase::sub_101b2c60()
 	}
 	int nMissing = sub_101b4740(false);
 	if (nMissing > 0)
-		DevMsg(1, "CSoundEmitterSystem:  Registered %i sounds ( %i missing .wav files referenced )\n", m_i64, nMissing);
+		DevMsg(1, "CSoundEmitterSystem:  Registered %i sounds ( %i missing .wav files referenced )\n", ((CSoundEmitterSystemBaseFlat *)this)->m_i64, nMissing);
 	else
-		DevMsg(1, "CSoundEmitterSystem:  Registered %i sounds\n", m_i64);
+		DevMsg(1, "CSoundEmitterSystem:  Registered %i sounds\n", ((CSoundEmitterSystemBaseFlat *)this)->m_i64);
 	return true;
 }
 // END FUNCTION
@@ -191,10 +191,10 @@ struct CSoundEmitterSystemBaseV : public CSoundEmitterSystemBase
 // TARGET: CSoundEmitterSystemBaseV::sub_101b2e30
 void CSoundEmitterSystemBaseV::sub_101b2e30()
 {
-	((CUtlVector<CSoundScriptFile> *)&m_i9c)->RemoveAll();
-	((CSoundsTree *)&m_pfn50)->RemoveAll();
-	m_listb0.sub_1024b880();
-	((CFilesTree *)&m_pfn04)->RemoveAll();
+	((CUtlVector<CSoundScriptFile> *)&((CSoundEmitterSystemBaseFlat *)this)->m_i9c)->RemoveAll();
+	((CSoundsTree *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn50)->RemoveAll();
+	((CSoundEmitterSystemBaseFlat *)this)->m_listb0.sub_1024b880();
+	((CFilesTree *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn04)->RemoveAll();
 }
 // END FUNCTION
 
@@ -235,7 +235,7 @@ struct S_SoundKey
 
 int CSoundEmitterSystemBase::sub_101b2f60(const char *pszName)
 {
-	CUtlRBTree232Of<CSoundEmitterRecord> *tree = (CUtlRBTree232Of<CSoundEmitterRecord> *)&m_pfn50;
+	CUtlRBTree232Of<CSoundEmitterRecord> *tree = (CUtlRBTree232Of<CSoundEmitterRecord> *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn50;
 	int current;
 	{
 		S_SoundKey key;
@@ -297,7 +297,7 @@ CUnknown101b30d0 *CUnknown101b30d0::sub_101b30d0()
 // TARGET: CSoundEmitterSystemBase::sub_101b31a0
 char CSoundEmitterSystemBase::sub_101b31a0(int index)
 {
-	if (index >= 0 && index < m_i64)
+	if (index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64)
 	{
 		return 1;
 	}
@@ -325,7 +325,7 @@ namespace block_101b31d0 {
 
 	char CSoundEmitterUnit::sub_101b31a0(int index)
 	{
-		return index >= 0 && index < m_i64;
+		return index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64;
 	}
 }
 using namespace block_101b31d0;
@@ -438,7 +438,7 @@ char CSoundEmitterSystemBase::sub_101b33f0(const char *pszName, CSoundParameters
 	if (w >= 0) {
 		CUnknown1024b2d0Id id;
 		id.m_id = pSound->m_pWaves[w].m_symbol;
-		Q_strncpy(params.soundname, m_listb0.sub_1024b830(id), 128);
+		Q_strncpy(params.soundname, ((CSoundEmitterSystemBaseFlat *)this)->m_listb0.sub_1024b830(id), 128);
 	}
 	params.soundlevel = (int)sub_1012f700(&pSound->m_soundlevel);
 	params.play_to_owner_only = pSound->m_bPlayToOwnerOnly;
@@ -537,7 +537,7 @@ struct SymbolTable_t
 // TARGET: CSoundEmitterSystemBase::sub_101b3770
 void CSoundEmitterSystemBase::sub_101b3770(void *pTable, const char *pszName, int value)
 {
-	CUnknown1024b370Symbol sym = ((CUnknown1024b370 *)&m_listb0)->sub_1024b5e0(pszName);
+	CUnknown1024b370Symbol sym = ((CUnknown1024b370 *)&((CSoundEmitterSystemBaseFlat *)this)->m_listb0)->sub_1024b5e0(pszName);
 	SymbolRecord_t e;
 	e.symbol = sym;
 	e.gender = value;
@@ -788,7 +788,7 @@ struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase
 
 char CSoundEmitterSystemBaseUnit::sub_101b31a0(int index)
 {
-	if (index >= 0 && index < m_i64)
+	if (index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64)
 	{
 		return 1;
 	}
@@ -948,7 +948,7 @@ void CSoundEmitterSystemBase::sub_101b4240(const char *filename, bool precacheal
 	sf.dirty = false;
 	sf.precachealways = precachealways;
 
-	int scriptindex = ((CScriptFileVec *)&m_i9c)->AddToTail(sf);
+	int scriptindex = ((CScriptFileVec *)&((CSoundEmitterSystemBaseFlat *)this)->m_i9c)->AddToTail(sf);
 
 	CKVView *kv = (CKVView *)new CUnknown10248a50(filename);
 
@@ -965,21 +965,21 @@ void CSoundEmitterSystemBase::sub_101b4240(const char *filename, bool precacheal
 			entry.m_bField01 = precachealways;
 			entry.m_nField04 = scriptindex;
 
-			if (((CSoundDictX *)&m_pfn50)->Find(pKeys->sub_102480b0()) != -1)
+			if (((CSoundDictX *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn50)->Find(pKeys->sub_102480b0()) != -1)
 			{
 				DevMsg("CSoundEmitterSystem::AddSoundsFromFile(%s):  Entry %s duplicated, skipping\n", filename, pKeys->sub_102480b0());
 			}
 			else
 			{
 				sub_101b3bb0(pKeys->sub_102480b0(), pKeys, (CUnknown101b2570 *)&entry.m_params);
-				((CSoundDictX *)&m_pfn50)->Insert(pKeys->sub_102480b0(), entry);
+				((CSoundDictX *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn50)->Insert(pKeys->sub_102480b0(), entry);
 			}
 		}
 	}
 	else
 	{
 		DevMsg("CSoundEmitterSystem::AddSoundsFromFile:  No such file %s\n", filename);
-		((CScriptFileVec *)&m_i9c)->Remove(scriptindex);
+		((CScriptFileVec *)&((CSoundEmitterSystemBaseFlat *)this)->m_i9c)->Remove(scriptindex);
 		kv->deleteThis();
 		return;
 	}
@@ -1045,7 +1045,7 @@ struct CSoundEmitterUnit : CSoundEmitterSystemBase
 };
 int CSoundEmitterUnit::sub_101b3220()
 {
-	return m_i64;
+	return ((CSoundEmitterSystemBaseFlat *)this)->m_i64;
 }
 }
 using namespace block_101b4740;
@@ -1066,7 +1066,7 @@ int CSoundEmitterSystemBase::sub_101b4740(bool bVerbose)
 		for (int j = 0; j < nWaves; j++) {
 			CUnknown1024b2d0Id id;
 			id.m_id = pSound->m_pWaves[j].m_symbol;
-			const char *pszWave = m_listb0.sub_1024b830(id);
+			const char *pszWave = ((CSoundEmitterSystemBaseFlat *)this)->m_listb0.sub_1024b830(id);
 			if (pszWave && pszWave[0] && pszWave[0] != '!') {
 				const char *psz = pszWave;
 				for (int k = 0; k < 2; k++) {
@@ -1339,10 +1339,10 @@ bool CSoundEmitterSystemBase::sub_101b4d30(const char *pszName, const char *pszW
 	const CUnknown101b6320Params *pSrc = (const CUnknown101b6320Params *)pParams;
 	unsigned int i;
 	if (sub_101b31a0(idx)) {
-		CUnknown101b6320 *pRec = (CUnknown101b6320 *)((char *)m_i54 + 0x14 + idx * 0xe8);
+		CUnknown101b6320 *pRec = (CUnknown101b6320 *)((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i54 + 0x14 + idx * 0xe8);
 		pRec->m_bField00 = 0;
 		pRec->m_nField04 = script;
-		pRec->m_bField01 = ((char *)m_i9c)[script * 0x82 + 1];
+		pRec->m_bField01 = ((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[script * 0x82 + 1];
 		CUnknown101b6320Params *pDst = &pRec->m_params;
 		pDst->m_nField00 = pSrc->m_nField00;
 		pDst->m_nField04 = pSrc->m_nField04;
@@ -1364,14 +1364,14 @@ bool CSoundEmitterSystemBase::sub_101b4d30(const char *pszName, const char *pszW
 			pDst->m_szSoundLevel[i] = pSrc->m_szSoundLevel[i];
 		for (i = 0; i < 32; i++)
 			pDst->m_szPitch[i] = pSrc->m_szPitch[i];
-		((char *)m_i9c)[script * 0x82] = 1;
+		((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[script * 0x82] = 1;
 		return true;
 	}
 	CUnknown101b6320 tmp;
 	((CUnknown101b30d0 *)&tmp.m_params)->sub_101b30d0();
 	tmp.m_bField00 = 0;
 	tmp.m_nField04 = script;
-	tmp.m_bField01 = ((char *)m_i9c)[script * 0x82 + 1];
+	tmp.m_bField01 = ((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[script * 0x82 + 1];
 	CUnknown101b6320Params *pT = &tmp.m_params;
 	pT->m_nField00 = pSrc->m_nField00;
 	pT->m_nField04 = pSrc->m_nField04;
@@ -1396,7 +1396,7 @@ bool CSoundEmitterSystemBase::sub_101b4d30(const char *pszName, const char *pszW
 	int node = pTree->sub_101b66e0(&key);
 	((CUnknown101b6320 *)(pTree->m_pElements + 0x14 + node * 0xe8))->sub_101b6320(tmp);
 	((CSndKeyTail *)&key.m_nField0c)->sub_101b4680();
-	((char *)m_i9c)[script * 0x82] = 1;
+	((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[script * 0x82] = 1;
 	((CSndDestroyA *)&tmp.m_params.m_vecB)->sub_101b65e0();
 	((CSndDestroyA *)&tmp.m_params.m_vecB)->sub_101b6b90();
 	((CSndDestroyB *)&tmp.m_params.m_vecA)->sub_101b6120();
@@ -1415,7 +1415,7 @@ struct CSoundEmitterUnit : CSoundEmitterSystemBase {
 };
 char CSoundEmitterUnit::sub_101b31a0(int index)
 {
-	if (index >= 0 && index < m_i64)
+	if (index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64)
 		return 1;
 	return 0;
 }
@@ -1430,10 +1430,10 @@ void CSoundEmitterSystemBase::sub_101b50f0(const char *pszName)
 		g_109f364c("Can't remove %s, no such sound!\n", pszName);
 		return;
 	}
-	*((char *)m_i54 + index * 0xe8 + 0x14) = 1;
-	int script = *(int *)((char *)m_i54 + index * 0xe8 + 0x18);
-	if (script >= 0 && script < m_ia8)
-		*((char *)m_i9c + script * 0x82) = 1;
+	*((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i54 + index * 0xe8 + 0x14) = 1;
+	int script = *(int *)((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i54 + index * 0xe8 + 0x18);
+	if (script >= 0 && script < ((CSoundEmitterSystemBaseFlat *)this)->m_ia8)
+		*((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c + script * 0x82) = 1;
 }
 // END FUNCTION
 
@@ -1463,7 +1463,7 @@ struct CSoundEmitterUnit : CSoundEmitterSystemBase
 
 char CSoundEmitterUnit::sub_101b31a0(int index)
 {
-	if (index >= 0 && index < m_i64)
+	if (index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64)
 		return 1;
 	return 0;
 }
@@ -1478,17 +1478,17 @@ void CSoundEmitterSystemBase::sub_101b5180(const char *pszSound, const char *psz
 		g_109f364c("Can't move '%s', no such sound!\n", pszSound);
 		return;
 	}
-	int iOld = ((CSoundRecordX *)m_i54)[iSound].m_nScript;
-	if (iOld >= 0 && iOld < m_ia8) {
+	int iOld = ((CSoundRecordX *)((CSoundEmitterSystemBaseFlat *)this)->m_i54)[iSound].m_nScript;
+	if (iOld >= 0 && iOld < ((CSoundEmitterSystemBaseFlat *)this)->m_ia8) {
 		int iNew = sub_101b4cc0(pszScript);
 		if (iNew == -1) {
 			g_109f364c("CSoundEmitterSystemBase::MoveSound( '%s', '%s' ), script file not list in manifest '%s'\n", pszSound, pszScript, "scripts/game_sounds_manifest.txt");
 			return;
 		}
 		if (iOld != iNew) {
-			((CSoundRecordX *)m_i54)[iSound].m_nScript = iNew;
-			((CScriptFlagX *)m_i9c)[iOld].m_bChanged = 1;
-			((CScriptFlagX *)m_i9c)[iNew].m_bChanged = 1;
+			((CSoundRecordX *)((CSoundEmitterSystemBaseFlat *)this)->m_i54)[iSound].m_nScript = iNew;
+			((CScriptFlagX *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[iOld].m_bChanged = 1;
+			((CScriptFlagX *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[iNew].m_bChanged = 1;
 		}
 	}
 }
@@ -1610,7 +1610,7 @@ void CSoundEmitterSystemBase::sub_101b5310(int scriptindex)
 	{
 		if (_strcmpi(outfile, ((CIdxTable *)this)->sub_101b4c20(i)))
 			continue;
-		if (*(char *)(m_i54 + 0x14 + i * 0xe8))
+		if (*(char *)(((CSoundEmitterSystemBaseFlat *)this)->m_i54 + 0x14 + i * 0xe8))
 			continue;
 		CSoundScriptView *p = (CSoundScriptView *)sub_101b3730(i);
 		if (!p)
@@ -1664,7 +1664,7 @@ void CSoundEmitterSystemBase::sub_101b5310(int scriptindex)
 	{
 		g_1070b238->Write(buf.m_pBuffer, buf.m_nPut, fh);
 		g_1070b238->Close(fh);
-		*(char *)(m_i9c + scriptindex * 0x82) = 0;
+		*(char *)(((CSoundEmitterSystemBaseFlat *)this)->m_i9c + scriptindex * 0x82) = 0;
 	}
 	else
 		g_109f364c("SceneManager_SaveSoundsToScriptFile:  Unable to write file %s!!!\n", outfile);
@@ -1705,7 +1705,7 @@ namespace block_101b5870a {
 struct SesV : CSoundEmitterSystemBase { char sub_101b31a0(int index); };
 char SesV::sub_101b31a0(int index)
 {
-	if (index >= 0 && index < m_i64)
+	if (index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64)
 	{
 		return 1;
 	}
@@ -1791,8 +1791,8 @@ void CSoundEmitterSystemBase::sub_101b5870(const char *pszOld, const char *pszNe
 		return;
 	}
 
-	SndEntry entry(*(SndEntry *)((char *)m_i54 + 0x14 + idx * 0xe8));
-	SndDict *pDict = (SndDict *)&m_pfn50;
+	SndEntry entry(*(SndEntry *)((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i54 + 0x14 + idx * 0xe8));
+	SndDict *pDict = (SndDict *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn50;
 	CSoundEmitterRecord node;
 	node.m_w0 = pDict->Symbol(pszOld);
 	int i = ((CUtlRBTreeFind232 *)pDict)->sub_101b68f0(&node);
@@ -1807,7 +1807,7 @@ void CSoundEmitterSystemBase::sub_101b5870(const char *pszOld, const char *pszNe
 
 	node.m_w0 = 0xffff;
 	{ { if (*(short *)&pszNew == -1) ((CUnknown101b45b0 *)&node.m_b4)->sub_101b45b0(); else ((CUnknown101b45b0 *)&node.m_b4)->sub_101b45b0(); } }
-	SndDict *pDict2 = (SndDict *)&m_pfn50;
+	SndDict *pDict2 = (SndDict *)&((CSoundEmitterSystemBaseFlat *)this)->m_pfn50;
 	node.m_w0 = pDict2->Symbol(pszNew);
 	int n;
 	{
@@ -1821,7 +1821,7 @@ void CSoundEmitterSystemBase::sub_101b5870(const char *pszOld, const char *pszNe
 	((SndVec8 *)((char *)&node + 0x40))->sub_101b6120();
 	((SndVec8 *)((char *)&node + 0x2c))->sub_101b6120();
 
-	((char *)m_i9c)[entry.m_nScript * 0x82] = 1;
+	((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c)[entry.m_nScript * 0x82] = 1;
 }
 // END FUNCTION
 
@@ -1955,7 +1955,7 @@ struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase
 
 char CSoundEmitterSystemBaseUnit::sub_101b31a0(int index)
 {
-	if (index >= 0 && index < m_i64)
+	if (index >= 0 && index < ((CSoundEmitterSystemBaseFlat *)this)->m_i64)
 		return 1;
 	return 0;
 }
@@ -1969,7 +1969,7 @@ void CSoundEmitterSystemBase::sub_101b5dd0(const char *pszName, const CSoundPara
 		g_109f3630("Can't UpdateSoundParameters %s, no such sound\n", pszName);
 		return;
 	}
-	CSoundRecordFull *rec = (CSoundRecordFull *)((char *)m_i54 + 0x14 + idx * 0xe8);
+	CSoundRecordFull *rec = (CSoundRecordFull *)((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i54 + 0x14 + idx * 0xe8);
 	if (rec->m_params == params)
 		return;
 	CSoundParamsFull *e = &rec->m_params;
@@ -1990,6 +1990,6 @@ void CSoundEmitterSystemBase::sub_101b5dd0(const char *pszName, const CSoundPara
 	for (i = 0; i < 0x20; i++) e->m_s69[i] = params.m_s69[i];
 	for (i = 0; i < 0x20; i++) e->m_s89[i] = params.m_s89[i];
 	for (i = 0; i < 0x20; i++) e->m_sa9[i] = params.m_sa9[i];
-	*((char *)m_i9c + rec->m_nScript * 0x82) = 1;
+	*((char *)((CSoundEmitterSystemBaseFlat *)this)->m_i9c + rec->m_nScript * 0x82) = 1;
 }
 // END FUNCTION
