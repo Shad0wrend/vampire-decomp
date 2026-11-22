@@ -4,7 +4,7 @@
 
 #include "utlvector.h"
 #ifdef PCD_INITIALIZERS
-#include "CGlobalEntityList.h"	// IEntityListener
+#include "IEntityListener.h"
 #endif
 
 struct CEntityListSystem_Ent;
@@ -24,4 +24,6 @@ public:
 #endif
 
 	CUtlVector<CEntityListSystem_Ent *> m_List;	// 0x04
+
+	void sub_100f8ec0();	// the SDK's FrameUpdatePostEntityThink (0x100f8ec0): copies the list, empties it, then sub_100085a8 (PhysicsCheckForEntityUntouch) on each entity whose flag bit 0 (+0x26b) is set
 };

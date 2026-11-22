@@ -6,15 +6,15 @@
 
 void CAnchorList::vfunc5()
 {
-	m_Size = 0;
-	if (m_growSize != -1) {
-		if (m_pMemory) {
-			g_109f3624(m_pMemory);
-			m_pMemory = 0;
+	m_list.m_Size = 0;
+	if (m_list.m_growSize != -1) {
+		if (m_list.m_pMemory) {
+			g_109f3624(m_list.m_pMemory);
+			m_list.m_pMemory = 0;
 		}
-		m_allocationCount = 0;
+		m_list.m_allocationCount = 0;
 	}
-	m_pElements = m_pMemory;
+	m_list.m_pElements = m_list.m_pMemory;
 }
 // END FUNCTION
 

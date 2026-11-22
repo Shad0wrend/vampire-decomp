@@ -20,12 +20,7 @@ public:
 	virtual void vfunc4(CBaseEntity *pEntity);
 };
 
-class IEntityListener
-{
-public:
-	virtual void OnEntityCreated(CBaseEntity *pEntity);	// vtable 0x10455ea0 in CNotifyList
-	virtual void OnEntityDeleted(CBaseEntity *pEntity);	// slot 1, as in CGlobalEntityList.h
-};
+#include "IEntityListener.h"	// the base at +4 (vtable 0x10455ea0 in CNotifyList)
 #endif
 
 class CNotifyList

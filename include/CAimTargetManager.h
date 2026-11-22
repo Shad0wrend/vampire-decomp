@@ -3,7 +3,7 @@
 #pragma once
 #ifdef PCD_INITIALIZERS
 #include "utlvector.h"	// the initializer units: the vector member is Source's CUtlVector
-#include "CGlobalEntityList.h"	// IEntityListener
+#include "IEntityListener.h"
 #endif
 
 class CBaseEntity;

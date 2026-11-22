@@ -35,12 +35,7 @@ struct CGlobalEntityList_Node
 	unsigned short m_Next;
 };
 
-class IEntityListener
-{
-public:
-	virtual void OnEntityCreated(CBaseEntity *pEntity);
-	virtual void OnEntityDeleted(CBaseEntity *pEntity);
-};
+#include "IEntityListener.h"
 
 #ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x106eb5d8 (the SDK's CGlobalEntityList gEntList)
 #include "CBaseEntityList.h"

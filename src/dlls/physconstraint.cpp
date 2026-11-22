@@ -617,15 +617,15 @@ static inline NamedPosEnt *GetNamedEnt(unsigned int h)
 
 void sub_1002b1e0(const char *name, NamedPosOut *pOut, int idx)
 {
-    for (int i = g_106b8584.m_Size - 1; i >= 0; i--) {
+    for (int i = g_106b8584.m_list.m_Size - 1; i >= 0; i--) {
         const char *key = name;
         if (key == 0)
             key = g_106b8540;
-        const char *rec = ((NamedPos *)g_106b8584.m_pMemory)[i].m_name;
+        const char *rec = ((NamedPos *)g_106b8584.m_list.m_pMemory)[i].m_name;
         if (rec == 0)
             rec = g_106b8540;
         if (_strcmpi(rec, key) == 0) {
-            NamedPos *r = &((NamedPos *)g_106b8584.m_pMemory)[i];
+            NamedPos *r = &((NamedPos *)g_106b8584.m_list.m_pMemory)[i];
             unsigned int h;
             CGlobalEntityList_Slot *s;
             if (r != 0 && (h = r->m_handle) != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13) && s->m_pEntity != 0) {

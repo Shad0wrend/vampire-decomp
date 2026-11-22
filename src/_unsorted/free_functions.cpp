@@ -42865,17 +42865,18 @@ void sub_100f8e20(SEntV116 *ent)
 // END FUNCTION
 
 // FUNCTION: 0x100f8ec0 size=0x72
+#include "CEntityTouchManager.h"
 #include "CEntityListSystem.h"
 #include <malloc.h>
 #include <string.h>
 
-void CEntityListSystem::sub_100f8ec0()
+void CEntityTouchManager::sub_100f8ec0()
 {
-    int n = m_nEntities;
+    int n = m_List.Count();
     if (n) {
         CEntityListSystem_Ent **copy = (CEntityListSystem_Ent **)alloca(n * 4);
-        memcpy(copy, m_pEntities, n * 4);
-        m_nEntities = 0;
+        memcpy(copy, m_List.Base(), n * 4);
+        m_List.RemoveAll();
         for (int i = 0; i < n; i++) {
             if (copy[i]->m_bFlags & 1)
                 copy[i]->sub_100085a8();
