@@ -3498,6 +3498,7 @@
 0x1000553d func   ?vfunc5@CBaseTerminal@@QAEPAV1@I@Z CBaseTerminal::vfunc5
 0x10005542 func   ?sub_1015a140@CFuncPlatRot@@QAEXXZ CFuncPlatRot::sub_1015a140
 0x10005547 func   ?sub_10073a90@CUnknown10076da0Entry@@QAEPAU1@PBU1@@Z CUnknown10076da0Entry::sub_10073a90
+0x1000554c func   ?Save@CAI_SaveRestoreBlockHandler@@UAEXPAVISave@@@Z CAI_SaveRestoreBlockHandler::Save
 0x1000554c func   ?vfunc2@CAI_SaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CAI_SaveRestoreBlockHandler::vfunc2
 0x10005551 func   ?vfunc5@CMathColorBlend@@UAEPAVCBaseEntity@@I@Z CMathColorBlend::vfunc5
 0x10005556 func   ?vfunc110@CWorld@@UAE_NPBD0@Z CWorld::vfunc110
