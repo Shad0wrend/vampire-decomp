@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100be2c0 size=0x3
+#include "C_RopeKeyframe.h"
+int C_RopeKeyframe::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf130 size=0x1e
 #include "C_RopeKeyframe.h"
 
