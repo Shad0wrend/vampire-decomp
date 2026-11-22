@@ -10,3 +10,11 @@ C_WeaponMelee_HengeyokaiFist *pcd_emit_1000be10() { return new C_WeaponMelee_Hen
 
 // TARGET: ??_GC_WeaponMelee_HengeyokaiFist@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000be40 size=0x3
+#include "C_WeaponMelee_HengeyokaiFist.h"
+int C_WeaponMelee_HengeyokaiFist::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
