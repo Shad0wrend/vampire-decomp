@@ -33,6 +33,14 @@ void CInput::vfunc37()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff910 size=0x8
+#include "CInput.h"
+void CInput::vfunc38()
+{
+    *(char *)((char *)this + 0xf8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff940 size=0x7
 #include "CInput.h"
 bool CInput::vfunc48()
