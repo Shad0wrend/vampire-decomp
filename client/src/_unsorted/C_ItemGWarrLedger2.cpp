@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001df80 size=0x6
+#include "C_ItemGWarrLedger2.h"
+namespace lifted {
+extern char g_1027380c;
+}
+int C_ItemGWarrLedger2::vfunc17()
+{
+    return (int)&lifted::g_1027380c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001e010 size=0x1e
 #include "C_ItemGWarrLedger2.h"
 
