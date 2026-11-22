@@ -1323,6 +1323,7 @@
 0x1003dab0 func   ??1C_TEMuzzleFlash@@UAE@XZ C_TEMuzzleFlash::~C_TEMuzzleFlash
 0x1003dab0 func   ?sub_1003dab0@CUnknown1003dab0@@QAEHXZ CUnknown1003dab0::sub_1003dab0
 0x1003db10 func   ?vfunc9@C_TEMuzzleFlash@@UAEHXZ C_TEMuzzleFlash::vfunc9
+0x1003db20 func   ?vfunc8@C_TEMuzzleFlash@@UAEHXZ C_TEMuzzleFlash::vfunc8
 0x1003db30 func   ?sub_1003db30@@YAHXZ sub_1003db30
 0x1003dbd0 func   ?sub_1003dbd0@@YAHXZ sub_1003dbd0
 0x1003dc40 func   ?ClientClassInit@@YAHPAUignored@DT_TEMuzzleFlash@@@Z ClientClassInit

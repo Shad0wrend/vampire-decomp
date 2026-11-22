@@ -21,3 +21,11 @@ int C_TEMuzzleFlash::vfunc9()
     return (int)&lifted::g_10280e2c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003db20 size=0x3
+#include "C_TEMuzzleFlash.h"
+int C_TEMuzzleFlash::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
