@@ -51638,6 +51638,76 @@ void CUnknown101ed170::sub_10150bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101510f0 size=0x17f
+struct KVNode {
+	virtual void v0();
+	virtual void v1();
+	virtual KVNode *FindKey(const char *name);
+	virtual KVNode *GetNextKey();
+};
+struct CItemElem {
+	char pad[0x2c];
+	CItemElem *sub_10150b90(int id);
+	void sub_10150c40(KVNode *kv);
+};
+struct Res { int v; };
+Res *sub_1015f810(Res *out, KVNode *kv);
+Res *sub_1015f7e0(Res *out, KVNode *kv, const char *name);
+struct ItemView {
+	int m_nGrow;
+	int m_nNextId;
+	int m_nInternalName;
+	int m_nValue;
+	int m_nAlloc;
+	int m_nSize;
+	CItemElem **m_pMem;
+	bool sub_101510f0(KVNode *kv);
+};
+// TARGET: ItemView::sub_101510f0
+bool ItemView::sub_101510f0(KVNode *kv)
+{
+	if (kv) {
+		KVNode *tables = kv->FindKey("MPEquipTables");
+		if (tables) {
+			Res r;
+			m_nValue = sub_1015f810(&r, tables)->v;
+			m_nInternalName = sub_1015f7e0(&r, tables, "InternalName")->v;
+			KVNode *equip = tables->FindKey("MPEquip");
+			while (equip) {
+				if (m_nAlloc == m_nSize) {
+					m_nAlloc += m_nGrow;
+					if (m_pMem) {
+						CItemElem **n = (CItemElem **)operator new(m_nAlloc * 4);
+						int i = 0;
+						for (; i < m_nSize; i++)
+							n[i] = m_pMem[i];
+						for (; i < m_nAlloc; i++)
+							n[i] = 0;
+						operator delete(m_pMem);
+						m_pMem = n;
+					} else {
+						m_pMem = (CItemElem **)operator new(m_nAlloc * 4);
+						for (int i = 0; i < m_nAlloc; i++)
+							m_pMem[i] = 0;
+					}
+					m_nSize++;
+				} else {
+					m_nSize = m_nSize + 1;
+				}
+				if (!m_pMem[m_nSize - 1]) {
+					CItemElem *e = (CItemElem *)operator new(0x2c);
+					m_pMem[m_nSize - 1] = e ? e->sub_10150b90(m_nNextId++) : 0;
+				}
+				m_pMem[m_nSize - 1]->sub_10150c40(equip);
+				equip = equip->GetNextKey();
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151270 size=0xb
 struct CUnknown10151270 { void * sub_10151270(int); };
 void * CUnknown10151270::sub_10151270(int a0)
