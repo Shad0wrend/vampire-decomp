@@ -58,6 +58,22 @@ void CVMainMenuInterface::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100655d0 size=0x1d
+#include "CVMainMenuInterface.h"
+namespace lifted {
+extern int g_103ef0b4;
+struct C100665d0 { int sub_100665d0(int); };
+struct C10067030 { int sub_10067030(); };
+}
+void CVMainMenuInterface::vfunc5()
+{
+    if (lifted::g_103ef0b4 != 0) {
+        ((lifted::C100665d0 *)lifted::g_103ef0b4)->sub_100665d0(1);
+        ((lifted::C10067030 *)lifted::g_103ef0b4)->sub_10067030(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100655f0 size=0x12
 #include "CVMainMenuInterface.h"
 namespace lifted {
