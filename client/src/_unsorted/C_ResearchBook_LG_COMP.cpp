@@ -22,6 +22,17 @@ C_ResearchBook_LG_COMP *pcd_emit_10010910() { return new C_ResearchBook_LG_COMP;
 // TARGET: ??_GC_ResearchBook_LG_COMP@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10010930 size=0x6
+#include "C_ResearchBook_LG_COMP.h"
+namespace lifted {
+extern char g_10274b14;
+}
+int C_ResearchBook_LG_COMP::vfunc16()
+{
+    return (int)&lifted::g_10274b14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010940 size=0x3
 #include "C_ResearchBook_LG_COMP.h"
 int C_ResearchBook_LG_COMP::vfunc15()
