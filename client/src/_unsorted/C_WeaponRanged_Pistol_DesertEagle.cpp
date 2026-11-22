@@ -10,3 +10,11 @@ C_WeaponRanged_Pistol_DesertEagle *pcd_emit_1000de90() { return new C_WeaponRang
 
 // TARGET: ??_GC_WeaponRanged_Pistol_DesertEagle@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000dec0 size=0x3
+#include "C_WeaponRanged_Pistol_DesertEagle.h"
+int C_WeaponRanged_Pistol_DesertEagle::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
