@@ -10,3 +10,11 @@ C_ItemGGuyMagazine *pcd_emit_1001ba90() { return new C_ItemGGuyMagazine; }
 
 // TARGET: ??_GC_ItemGGuyMagazine@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001bac0 size=0x3
+#include "C_ItemGGuyMagazine.h"
+int C_ItemGGuyMagazine::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
