@@ -4538,6 +4538,7 @@
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
 0x100069d3 func   ?sub_10258880@@YAXPBD@Z sub_10258880
 0x100069d8 func   ?sub_102296e0@@YIDPADPAXHH@Z sub_102296e0
+0x100069dd func   ?OnEntityCreated@CEntityTouchManager@@UAEXPAVCBaseEntity@@@Z CEntityTouchManager::OnEntityCreated
 0x100069dd func   ?sub_100f8cd0@@YGXH@Z sub_100f8cd0
 0x100069e2 func   ?vfunc103@CNPC_VSheriffSwarm@@UAEXXZ CNPC_VSheriffSwarm::vfunc103
 0x100069e7 func   ?sub_1029f730@CLazyTroikaView@@QAEHH@Z CLazyTroikaView::sub_1029f730
