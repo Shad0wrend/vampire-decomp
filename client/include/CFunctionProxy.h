@@ -8,4 +8,9 @@ class CFunctionProxy : public CResultProxy
 {
 public:
 	virtual ~CFunctionProxy();
+	bool sub_100e34b0(void *pMaterial, void *pKeyValues);
+	int m_unk04;
+	int m_unk08;
+	int m_unk0c;
+	int m_unk10;
 };
