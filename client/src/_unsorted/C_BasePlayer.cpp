@@ -36,6 +36,18 @@ char * C_BasePlayer::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a3c0 size=0x11
+#include "C_BasePlayer.h"
+namespace lifted {
+int __stdcall sub_1007dbb0(int);
+}
+int C_BasePlayer::vfunc107(int a0)
+{
+    lifted::sub_1007dbb0(a0);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a49f0 size=0x6
 #include "C_BasePlayer.h"
 namespace lifted {
