@@ -32174,6 +32174,32 @@ void __stdcall sub_100f27a0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3640 size=0x35
+namespace lifted {
+extern char g_102351cc;
+}
+struct CUnknown100f3640 { void * sub_100f3640(); };
+void * CUnknown100f3640::sub_100f3640()
+{
+    *(int *)this = (int)&lifted::g_102351cc;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x2c) = 0;
+    *(int *)((char *)this + 0x30) = 0;
+    *(int *)((char *)this + 0x34) = 0;
+    *(int *)((char *)this + 0x38) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3680 size=0x7
 namespace lifted {
 extern char g_102351cc;
