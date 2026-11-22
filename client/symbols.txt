@@ -1897,6 +1897,7 @@
 0x100bce50 func   ?sub_100bce50@@YAHXZ sub_100bce50
 0x100bcf50 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerResource@@@Z ClientClassInit
 0x100bd2f0 func   ?vfunc135@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc135
+0x100bd300 func   ?vfunc136@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc136
 0x100bd320 func   ?vfunc138@C_PlayerResource@@UAEXH@Z C_PlayerResource::vfunc138
 0x100bd330 func   ??_GC_PlayerResource@@UAEPAXI@Z ??_GC_PlayerResource@@UAEPAXI@Z
 0x100bd350 func   ??1C_PlayerResource@@UAE@XZ C_PlayerResource::~C_PlayerResource

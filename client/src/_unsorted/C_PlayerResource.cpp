@@ -9,6 +9,14 @@ int C_PlayerResource::vfunc135(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd300 size=0x5
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc136(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd320 size=0x3
 #include "C_PlayerResource.h"
 void C_PlayerResource::vfunc138(int a0)
