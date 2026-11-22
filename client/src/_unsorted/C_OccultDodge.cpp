@@ -22,6 +22,17 @@ C_OccultDodge *pcd_emit_10013d90() { return new C_OccultDodge; }
 // TARGET: ??_GC_OccultDodge@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10013db0 size=0x6
+#include "C_OccultDodge.h"
+namespace lifted {
+extern char g_10274948;
+}
+int C_OccultDodge::vfunc16()
+{
+    return (int)&lifted::g_10274948;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013dc0 size=0x3
 #include "C_OccultDodge.h"
 int C_OccultDodge::vfunc15()
