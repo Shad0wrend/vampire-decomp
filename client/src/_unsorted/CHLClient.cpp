@@ -89,6 +89,18 @@ int CHLClient::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbba0 size=0xb
+#include "CHLClient.h"
+namespace lifted {
+extern int g_1027ba58;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual int f11(); };
+}
+int CHLClient::vfunc18()
+{
+    return ((lifted::V *)lifted::g_1027ba58)->f11();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbec0 size=0x6
 #include "CHLClient.h"
 int CHLClient::vfunc29()
