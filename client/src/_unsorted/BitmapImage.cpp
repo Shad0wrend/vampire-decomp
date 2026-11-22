@@ -30,3 +30,13 @@ int BitmapImage::vfunc8(int a0)
     return a0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10164a00 size=0x11
+#include "BitmapImage.h"
+int BitmapImage::vfunc1(int a0, int a1)
+{
+    *(int *)((char *)this + 0x24) = a0;
+    *(int *)((char *)this + 0x28) = a1;
+    return a0;
+}
+// END FUNCTION
