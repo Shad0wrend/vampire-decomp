@@ -5,12 +5,9 @@
 #include "vampire_all.h"
 #include "IKeyCacheable.h"
 
-struct DummyKeyCacheable : IKeyCacheable
-{
-	void vfunc0() {}
-	void vfunc1() {}
-};
+// VC6 writes IKeyCacheable's scalar deleting destructor where it emits the class's vtable; its inline destructor (it stores the vptr) called in a function
+// nothing calls makes it emit both here
+void pcd_emit_101f2010(IKeyCacheable *p) { p->IKeyCacheable::~IKeyCacheable(); }
 
-DummyKeyCacheable g_dummyKC;
 // TARGET: ??_GIKeyCacheable@@UAEPAXI@Z
 // END FUNCTION
