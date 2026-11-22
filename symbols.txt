@@ -16162,6 +16162,7 @@
 0x10014f1f func   ?sub_101895b0@@YAXXZ sub_101895b0
 0x10014f24 func   ?vfunc3@CTEGlowSprite@@UAEXABVVector@@ABVQAngle@@@Z CTEGlowSprite::vfunc3
 0x10014f29 func   ?vfunc26@CNPC_VZombie@@UAEXH@Z CNPC_VZombie::vfunc26
+0x10014f2e func   ??_GCSoundEmitterSystemBase@@UAEPAXI@Z ??_GCSoundEmitterSystemBase@@UAEPAXI@Z
 0x10014f2e func   ?sub_101b0200@CSoundEmitterSystemBase@@QAEPAV1@E@Z CSoundEmitterSystemBase::sub_101b0200
 0x10014f33 func   ?sub_1018c9a0@@YAHXZ sub_1018c9a0
 0x10014f3d func   ?sub_101bc000@@YIXPAH@Z sub_101bc000
