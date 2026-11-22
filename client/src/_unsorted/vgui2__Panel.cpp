@@ -10,3 +10,10 @@ vgui2::Panel *pcd_emit_101a9460() { return new vgui2::Panel; }
 
 // TARGET: ??_GPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101a9f00 size=0x1
+#include "vgui2__Panel.h"
+void vgui2::Panel::vfunc98()
+{
+}
+// END FUNCTION
