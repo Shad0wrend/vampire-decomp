@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002690 size=0x1
+#include "C_BaseAnimating.h"
+void C_BaseAnimating::vfunc141()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f5a0 size=0x1e
 #include "C_BaseAnimating.h"
 
