@@ -5630,6 +5630,7 @@
 0x101bf4d0 func   ??_GMenu@vgui2@@UAEPAXI@Z ??_GMenu@vgui2@@UAEPAXI@Z
 0x101bf4f0 func   ??1Menu@vgui2@@UAE@XZ vgui2::Menu::~Menu
 0x101bf760 func   ?vfunc108@Menu@vgui2@@UAEHHH@Z vgui2::Menu::vfunc108
+0x101bf880 func   ?vfunc113@Menu@vgui2@@UAEHHH@Z vgui2::Menu::vfunc113
 0x101c0750 func   ?vfunc129@Menu@vgui2@@UAEHXZ vgui2::Menu::vfunc129
 0x101c0990 func   ?sub_101c0990@MV@@QAEXH@Z MV::sub_101c0990
 0x101c0a80 func   ?sub_101c0a80@CUnknown101c0a80@@QAEHXZ CUnknown101c0a80::sub_101c0a80
