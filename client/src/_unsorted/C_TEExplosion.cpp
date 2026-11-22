@@ -29,3 +29,11 @@ int C_TEExplosion::vfunc9()
     return (int)&lifted::g_1027f224;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10036d30 size=0x3
+#include "C_TEExplosion.h"
+int C_TEExplosion::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
