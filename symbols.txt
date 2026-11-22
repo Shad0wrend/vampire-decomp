@@ -4567,6 +4567,7 @@
 0x10006a5a func   ?sub_10069f70@CUnknown10069f70@@QAEHXZ CUnknown10069f70::sub_10069f70
 0x10006a5f func   ?sub_100b2f50@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2f50
 0x10006a64 func   ?vfunc300@CNPC_VPlayerController@@QAEXPAUCPlayerCtrlEnt@@HH@Z CNPC_VPlayerController::vfunc300
+0x10006a69 func   ?ReadRestoreHeaders@CEntitySaveRestoreBlockHandler@@UAEXPAVIRestore@@@Z CEntitySaveRestoreBlockHandler::ReadRestoreHeaders
 0x10006a69 func   ?vfunc6@CEntitySaveRestoreBlockHandler@@UAEXPAX@Z CEntitySaveRestoreBlockHandler::vfunc6
 0x10006a6e func   ?vfunc492@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc492
 0x10006a73 func   ?vfunc451@CNPC_VTzimisceHeadClaw@@UAEHXZ CNPC_VTzimisceHeadClaw::vfunc451
