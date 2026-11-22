@@ -65631,6 +65631,18 @@ int CUnknown10189c20::sub_10189c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a6f0 size=0x34
+struct CUnknown1018a6f0 { void sub_1018a6f0(int, char); };
+void CUnknown1018a6f0::sub_1018a6f0(int a0, char a1)
+{
+    if (a1 != 0) {
+        *(int *)((char *)this + 0x18c) = (*(int *)((char *)this + 0x18c)) | a0;
+        return;
+    }
+    *(int *)((char *)this + 0x18c) = (*(int *)((char *)this + 0x18c)) & (~a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b320 size=0x27
 namespace lifted {
 extern int g_104a57d4;
