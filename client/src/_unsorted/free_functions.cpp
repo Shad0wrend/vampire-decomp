@@ -38006,6 +38006,19 @@ int CUnknown101181b0::sub_101181b0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118dd0 size=0x10
+namespace lifted {
+extern int g_104e0c90;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual int f31(); };
+}
+void sub_10118dd0()
+{
+    if (lifted::g_104e0c90 != 0) {
+        ((lifted::V *)lifted::g_104e0c90)->f31(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118f90 size=0x8
 int __stdcall sub_10118f90(int a0, int a1, int a2, int a3, int a4)
 {
