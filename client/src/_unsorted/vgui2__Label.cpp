@@ -27,6 +27,14 @@ int vgui2::Label::vfunc126()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b33b0 size=0x7
+#include "vgui2__Label.h"
+int vgui2::Label::vfunc137()
+{
+    return *(int *)((char *)this + 0xb4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3470 size=0x6
 #include "vgui2__Label.h"
 namespace lifted {
