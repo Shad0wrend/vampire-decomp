@@ -22,6 +22,17 @@ C_WeaponIArmor_Lt_Leather *pcd_emit_10015910() { return new C_WeaponIArmor_Lt_Le
 // TARGET: ??_GC_WeaponIArmor_Lt_Leather@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10015930 size=0x6
+#include "C_WeaponIArmor_Lt_Leather.h"
+namespace lifted {
+extern char g_10274860;
+}
+int C_WeaponIArmor_Lt_Leather::vfunc16()
+{
+    return (int)&lifted::g_10274860;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015940 size=0x3
 #include "C_WeaponIArmor_Lt_Leather.h"
 int C_WeaponIArmor_Lt_Leather::vfunc15()
