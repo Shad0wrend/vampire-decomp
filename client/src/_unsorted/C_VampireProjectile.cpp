@@ -9,6 +9,17 @@ bool C_VampireProjectile::vfunc144()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6850 size=0x7
+#include "C_VampireProjectile.h"
+namespace lifted {
+extern float g_1022d918;
+}
+float C_VampireProjectile::vfunc145()
+{
+    return lifted::g_1022d918;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6880 size=0x3
 #include "C_VampireProjectile.h"
 int C_VampireProjectile::vfunc86()
