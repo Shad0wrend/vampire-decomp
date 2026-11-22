@@ -25,6 +25,14 @@ float CInput::vfunc52()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff940 size=0x7
+#include "CInput.h"
+bool CInput::vfunc48()
+{
+    return *(bool *)((char *)this + 0x1b8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff9d0 size=0x1
 #include "CInput.h"
 void CInput::vfunc41()
