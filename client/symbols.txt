@@ -2157,6 +2157,7 @@
 0x100e13e0 func   ?GetIClientEntity@CBaseStaticModel@@UAEPAVIClientEntity@@XZ CBaseStaticModel::GetIClientEntity
 0x100e13f0 func   ?GetBaseEntity@CBaseStaticModel@@UAEPAVC_BaseEntity@@XZ CBaseStaticModel::GetBaseEntity
 0x100e1400 func   ?GetClientThinkable@CBaseStaticModel@@UAEPAVIClientThinkable@@XZ CBaseStaticModel::GetClientThinkable
+0x100e1410 func   ?GetFxBlend@CBaseStaticModel@@UAEHXZ CBaseStaticModel::GetFxBlend
 0x100e1410 func   ?Renderable_vfunc12@CBaseStaticModel@@UAEXXZ CBaseStaticModel::Renderable_vfunc12
 0x100e1420 func   ?sub_100e1420@CUnknown100e1420@@QAEXXZ CUnknown100e1420::sub_100e1420
 0x100e1450 func   ?sub_100e1450@CUnknown100e1450@@QAEXXZ CUnknown100e1450::sub_100e1450
