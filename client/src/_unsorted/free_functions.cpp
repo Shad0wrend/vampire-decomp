@@ -20039,6 +20039,21 @@ int HV::sub_1007bb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bbb0 size=0x2a
+namespace lifted {
+struct V { virtual void u0(); virtual int f1(); };
+}
+struct CUnknown1007bbb0 { void sub_1007bbb0(int); };
+void CUnknown1007bbb0::sub_1007bbb0(int a0)
+{
+    if (a0 != 0) {
+        *(int *)((char *)this + 0x910) = *(int *)((char *)(((lifted::V *)a0)->f1()));
+        return;
+    }
+    *(int *)((char *)this + 0x910) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bf10 size=0x3
 void __stdcall sub_1007bf10(int a0)
 {
