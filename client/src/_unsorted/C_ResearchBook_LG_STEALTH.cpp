@@ -10,3 +10,11 @@ C_ResearchBook_LG_STEALTH *pcd_emit_10012210() { return new C_ResearchBook_LG_ST
 
 // TARGET: ??_GC_ResearchBook_LG_STEALTH@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10012240 size=0x3
+#include "C_ResearchBook_LG_STEALTH.h"
+int C_ResearchBook_LG_STEALTH::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
