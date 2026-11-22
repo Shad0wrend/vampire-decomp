@@ -68222,6 +68222,19 @@ int CUnknown101c9da0::sub_101c9da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9dc0 size=0x1a
+struct CUnknown101c9dc0 { int sub_101c9dc0(int); };
+int CUnknown101c9dc0::sub_101c9dc0(int a0)
+{
+    if (a0 >= 0) {
+        if (a0 < (*(int *)((char *)this + 0xc))) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cac70 size=0x8
 struct CUnknown101cac70 { void sub_101cac70(); };
 void CUnknown101cac70::sub_101cac70()
