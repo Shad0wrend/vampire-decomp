@@ -31962,6 +31962,21 @@ int sub_100e18f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1a10 size=0x18
+namespace lifted {
+struct C100e1900 { int sub_100e1900(); };
+int sub_101d12a1(int);
+}
+int sub_100e1a10()
+{
+    int t0 = lifted::sub_101d12a1(4);
+    if (t0 != 0) {
+        return ((lifted::C100e1900 *)t0)->sub_100e1900();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1aa0 size=0x6
 namespace lifted {
 extern char g_104cf524;
