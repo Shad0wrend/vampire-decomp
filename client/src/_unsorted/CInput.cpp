@@ -109,3 +109,11 @@ void CInput::vfunc8(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10105f20 size=0x8
+#include "CInput.h"
+void CInput::vfunc54()
+{
+    *(char *)((char *)this + 0xe4) = 1;
+}
+// END FUNCTION
