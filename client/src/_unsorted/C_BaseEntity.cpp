@@ -28,6 +28,17 @@ IClientNetworkable * C_BaseEntity::GetClientNetworkable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100015d0 size=0xb
+#include "C_BaseEntity.h"
+IClientRenderable * C_BaseEntity::GetClientRenderable()
+{
+    if (((int)this) != 0) {
+        return (IClientRenderable *)((char *)this + 4);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100015e0 size=0x3
 #include "C_BaseEntity.h"
 IClientEntity * C_BaseEntity::GetIClientEntity()
