@@ -869,6 +869,7 @@
 0x100197c0 func   ?vfunc15@C_ItemGDriversLicenseGimble@@UAEHXZ C_ItemGDriversLicenseGimble::vfunc15
 0x100197d0 func   ?sub_100197d0@@YAHXZ sub_100197d0
 0x100198f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGDriversLicenseGimble@@@Z ClientClassInit
+0x10019980 func   ?vfunc17@C_ItemGWerewolfBlood@@UAEHXZ C_ItemGWerewolfBlood::vfunc17
 0x10019a10 func   ??_GC_ItemGWerewolfBlood@@UAEPAXI@Z ??_GC_ItemGWerewolfBlood@@UAEPAXI@Z
 0x10019a40 func   ?vfunc15@C_ItemGWerewolfBlood@@UAEHXZ C_ItemGWerewolfBlood::vfunc15
 0x10019a50 func   ?sub_10019a50@@YAHXZ sub_10019a50
