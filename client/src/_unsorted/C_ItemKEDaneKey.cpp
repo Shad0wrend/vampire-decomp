@@ -10,3 +10,11 @@ C_ItemKEDaneKey *pcd_emit_10023790() { return new C_ItemKEDaneKey; }
 
 // TARGET: ??_GC_ItemKEDaneKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100237c0 size=0x3
+#include "C_ItemKEDaneKey.h"
+int C_ItemKEDaneKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
