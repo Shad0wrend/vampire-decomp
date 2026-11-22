@@ -10,3 +10,10 @@ CItemInfo *pcd_emit_1005edc0() { return new CItemInfo; }
 
 // TARGET: ??_GCItemInfo@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1005f030 size=0x1
+#include "CItemInfo.h"
+void CItemInfo::vfunc97()
+{
+}
+// END FUNCTION
