@@ -35,3 +35,10 @@ void CClientThinkList::vfunc5()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d0120 size=0x1
+#include "CClientThinkList.h"
+void CClientThinkList::vfunc6()
+{
+}
+// END FUNCTION
