@@ -421,6 +421,7 @@
 0x1000dd70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_Crossbow_Flaming@@@Z ClientClassInit
 0x1000de00 func   ?vfunc17@C_WeaponRanged_Pistol_DesertEagle@@UAEHXZ C_WeaponRanged_Pistol_DesertEagle::vfunc17
 0x1000de90 func   ??_GC_WeaponRanged_Pistol_DesertEagle@@UAEPAXI@Z ??_GC_WeaponRanged_Pistol_DesertEagle@@UAEPAXI@Z
+0x1000deb0 func   ?vfunc16@C_WeaponRanged_Pistol_DesertEagle@@UAEHXZ C_WeaponRanged_Pistol_DesertEagle::vfunc16
 0x1000dec0 func   ?vfunc15@C_WeaponRanged_Pistol_DesertEagle@@UAEHXZ C_WeaponRanged_Pistol_DesertEagle::vfunc15
 0x1000ded0 func   ?sub_1000ded0@@YAHXZ sub_1000ded0
 0x1000dff0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Pistol_DesertEagle@@@Z ClientClassInit

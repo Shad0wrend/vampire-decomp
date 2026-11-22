@@ -22,6 +22,17 @@ C_WeaponRanged_Pistol_DesertEagle *pcd_emit_1000de90() { return new C_WeaponRang
 // TARGET: ??_GC_WeaponRanged_Pistol_DesertEagle@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000deb0 size=0x6
+#include "C_WeaponRanged_Pistol_DesertEagle.h"
+namespace lifted {
+extern char g_10274cb8;
+}
+int C_WeaponRanged_Pistol_DesertEagle::vfunc16()
+{
+    return (int)&lifted::g_10274cb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000dec0 size=0x3
 #include "C_WeaponRanged_Pistol_DesertEagle.h"
 int C_WeaponRanged_Pistol_DesertEagle::vfunc15()
