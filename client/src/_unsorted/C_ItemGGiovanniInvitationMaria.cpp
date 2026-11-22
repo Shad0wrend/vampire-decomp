@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001b780 size=0x6
+#include "C_ItemGGiovanniInvitationMaria.h"
+namespace lifted {
+extern char g_1027364c;
+}
+int C_ItemGGiovanniInvitationMaria::vfunc17()
+{
+    return (int)&lifted::g_1027364c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b810 size=0x1e
 #include "C_ItemGGiovanniInvitationMaria.h"
 
