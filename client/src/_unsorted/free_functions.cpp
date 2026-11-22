@@ -64026,6 +64026,27 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163ac0 size=0x47
+namespace lifted {
+extern char g_102484ac;
+struct C101a9530 { int sub_101a9530(int, int); };
+}
+struct CUnknown10163ac0 { void * sub_10163ac0(int, int); };
+void * CUnknown10163ac0::sub_10163ac0(int a0, int a1)
+{
+    ((lifted::C101a9530 *)this)->sub_101a9530(a0, a1);
+    *(int *)this = (int)&lifted::g_102484ac;
+    *(char *)((char *)this + 0x58) = 0;
+    *(char *)((char *)this + 0x60) = 0;
+    *(char *)((char *)this + 0x160) = 0;
+    *(int *)((char *)this + 0x164) = 0;
+    *(int *)((char *)this + 0x168) = 0;
+    *(char *)((char *)this + 0x16c) = 0;
+    *(int *)((char *)this + 0x5c) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163b90 size=0xb
 namespace lifted {
 extern char g_102484ac;
