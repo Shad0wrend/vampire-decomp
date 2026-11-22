@@ -14,3 +14,10 @@ void CInput::vfunc43()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10103310 size=0x3
+#include "CInput.h"
+void CInput::vfunc8(int a0)
+{
+}
+// END FUNCTION
