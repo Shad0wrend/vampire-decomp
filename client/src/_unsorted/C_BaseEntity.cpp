@@ -88,6 +88,13 @@ void C_BaseEntity::vfunc112()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007de10 size=0x3
+#include "C_BaseEntity.h"
+void C_BaseEntity::vfunc92(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009dda0 size=0x1e
 #include "C_BaseEntity.h"
 
