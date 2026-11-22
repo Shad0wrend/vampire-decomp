@@ -25669,6 +25669,21 @@ char CUnknown100a1ff0::sub_100a1ff0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2220 size=0x31
+namespace lifted {
+int __stdcall sub_1007e180(int, int);
+}
+struct CUnknown100a2220 { int sub_100a2220(int, int, int); };
+int CUnknown100a2220::sub_100a2220(int a0, int a1, int a2)
+{
+    lifted::sub_1007e180(0x1000, 0);
+    *(int *)((char *)this + 0xa8) = a0;
+    *(int *)((char *)this + 0xac) = a1;
+    *(int *)((char *)this + 0xb0) = a2;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a23f0 size=0x15
 struct CUnknown100a23f0 { int sub_100a23f0(int); };
 int CUnknown100a23f0::sub_100a23f0(int a0)
