@@ -21,3 +21,11 @@ int C_TEFizz::vfunc9()
     return (int)&lifted::g_1027f3dc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100370f0 size=0x3
+#include "C_TEFizz.h"
+int C_TEFizz::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
