@@ -1,18 +1,13 @@
-// CEntitySaveRestoreBlockHandler (RTTI .?AVCEntitySaveRestoreBlockHandler@@): base ISaveRestoreBlockHandler in the
-// initializer unit (the global 0x1072bb44); elsewhere a flat view whose placeholder slots keep the slot numbers right.
+// CEntitySaveRestoreBlockHandler (RTTI .?AVCEntitySaveRestoreBlockHandler@@): the entities' save/restore block
+// handler (the global 0x1072bb44); base ISaveRestoreBlockHandler, the nine slots of vtable 0x10477130 all its own.
 #pragma once
-#ifdef PCD_INITIALIZERS
 #include "ISaveRestoreBlockHandler.h"
-#endif
 
 class CSave;
 class CUnknown101a2c30;
 class CBaseEntity;
 
-class CEntitySaveRestoreBlockHandler
-#ifdef PCD_INITIALIZERS
-	: public ISaveRestoreBlockHandler
-#endif
+class CEntitySaveRestoreBlockHandler : public ISaveRestoreBlockHandler
 {
 public:
 
@@ -20,25 +15,13 @@ public:
 	CBaseEntity *sub_101a2d50(const char *pszClassname, const char *pszGlobalname);	// "FindGlobalEntity" (called by the restore code with its own this; this is not used): the first entity of the global entity list whose global name (+0x120) equals pszGlobalname (case-insensitive, null counts as empty); when its classname (+0x11c) differs from pszClassname warns "Global entity found %s, wrong class %s [expects class %s]" and returns null
 	int sub_101a3470(CBaseEntity *pEntity, struct CSaveRestoreDataView *pSaveData, struct CEntityTableView *pEntInfo);	// "RestoreGlobalEntity"-like (called by 0x101a3c40; this is not used, 3 stack args, ret 12, always returns 0): slot 1 of pEntity when set; two CRestore (ctor 0x101a12a0, pSaveData) on the stack and a temporary 0x450 byte entity (sub_100aa720(0x450), the CBaseEntity constructor stub 0x100090fc with 0) that is told slot 127 (+0x1fc, 1 arg = the second CRestore's vtable view); seeks pSaveData (pos pEntInfo+0x14 into [0..pSaveData+0xc]); the entity's global name (+0x120) is looked up in the global name table (object 0x106be530, stub 0x100094bc -> +0x40 string) and strcmpi'd with the string at pSaveData+0x1304; on a match sub_101a2d50(classname +0x11c, globalname) finds the live global entity, which is told sub_100579b0(globalname, gpGlobals->mapname), the temporary's handle assigned (CBaseHandle::operator=, 0x100045d4), slot 127 again, slot 117 flag bit 2 picks slot 103 / 104, the LookupEntity-slot check, landmark vector (pSaveData+0x12f4..0x12fc) swapped in and out, sub_101cf600 when the edict (+0x2e0) is set and slot 132; both CRestore vectors purged (CUtlVector<int>::Purge 0x10003576 + CUtlMemory<int>::Purge 0x10007275) or the second via stub 0x1000a06f -> 0x101a5290
 public:
-#ifdef PCD_INITIALIZERS	// the nine slots of vtable 0x10477130, all its own (matched as the flat view's vfuncN)
 	virtual const char *GetBlockName();
-	virtual void PreSave(CSaveRestoreData *pData);
-	virtual void Save(ISave *pSave);
-	virtual void WriteSaveHeaders(ISave *pSave);
+	virtual void PreSave(CSaveRestoreData *pData);	// "SaveInitEntities" (sub_101a2c30, a tail call)
+	virtual void Save(ISave *pSave);	// for every entity record of the save's entity block stamps the tick, lets the entity save itself (slot 126) and notes class name / edict state
+	virtual void WriteSaveHeaders(ISave *pSave);	// the entity count and the entity table ("ETABLE" records)
 	virtual void PostSave();
 	virtual void PreRestore();
-	virtual void ReadRestoreHeaders(IRestore *pRestore);
-	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused);
+	virtual void ReadRestoreHeaders(IRestore *pRestore);	// reads the entity table ("ETABLE" records) into the save info
+	virtual void Restore(IRestore *pRestore, bool fCreatePlayers, int nUnused);	// creates and restores the entities of the table
 	virtual void PostRestore();
-#else
-	virtual int vfunc0();
-	virtual bool vfunc1(CUnknown101a2c30 *);
-	virtual void vfunc2(CSave *pSave);	// "PreSave": for every entity record of the save's entity block stamps the tick, lets the entity save itself (slot 126) and notes class name / edict state
-	virtual void vfunc3(CSave *pSave);
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6(void *pRestore);	// "ReadRestoreHeaders": reads the entity table ("ETABLE" records) into the save info
-	virtual void vfunc7();
-	virtual void vfunc8();
-#endif
 };

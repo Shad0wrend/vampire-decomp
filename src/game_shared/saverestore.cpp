@@ -2420,9 +2420,7 @@ CBaseEntity *CEntitySaveRestoreBlockHandler::sub_101a2d50(const char *pszClassna
 // END FUNCTION
 
 // FUNCTION: 0x101a2e40 size=0x430
-#define vfunc7() vfunc7(void *pRestore, char createPlayers, int unused)
 #include "CEntitySaveRestoreBlockHandler.h"
-#undef vfunc7
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
 #include "CUnknown101d7520.h"
@@ -2534,8 +2532,7 @@ struct CESRBHUnit : CEntitySaveRestoreBlockHandler {
 }
 using namespace block_101a2e40;
 
-// TARGET: CEntitySaveRestoreBlockHandler::vfunc7
-void CEntitySaveRestoreBlockHandler::vfunc7(void *pRestoreArg, char createPlayers, int unused)
+void CEntitySaveRestoreBlockHandler::Restore(IRestore *pRestoreArg, bool createPlayers, int unused)
 {
 	SRestoreV *pRestore = (SRestoreV *)pRestoreArg;
 	SEntInfoV *pEntInfo;
@@ -2777,20 +2774,19 @@ CEntitySaveRestoreBlockHandler g_1072bb44;
 namespace lifted {
 extern char g_1059317c;
 }
-int CEntitySaveRestoreBlockHandler::vfunc0()
+const char *CEntitySaveRestoreBlockHandler::GetBlockName()
 {
-    return (int)&lifted::g_1059317c;
+    return &lifted::g_1059317c;
 }
 // END FUNCTION
 
 // FUNCTION: 0x101a37a0 size=0x5
 #include "CUnknown101a2c30.h"
 #include "CEntitySaveRestoreBlockHandler.h"
-// TARGET: CEntitySaveRestoreBlockHandler::vfunc1
 // the game's 0x101a37a0: a tail call (jmp) of CEntitySaveRestoreBlockHandler::sub_101a2c30
-bool CEntitySaveRestoreBlockHandler::vfunc1(class CUnknown101a2c30 *a0)
+void CEntitySaveRestoreBlockHandler::PreSave(CSaveRestoreData *pData)
 {
-	return ((CEntitySaveRestoreBlockHandler *)this)->CEntitySaveRestoreBlockHandler::sub_101a2c30(a0);
+	((CEntitySaveRestoreBlockHandler *)this)->CEntitySaveRestoreBlockHandler::sub_101a2c30((CUnknown101a2c30 *)pData);
 }
 // END FUNCTION
 
@@ -2826,7 +2822,7 @@ static inline CGlobalEntityList_Ent *ResolveHandle(unsigned int h)
     CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
     return s->m_Serial == (int)(h >> 13) ? s->m_pEntity : 0;
 }
-void CEntitySaveRestoreBlockHandler::vfunc2(CSave *pSaveArg)
+void CEntitySaveRestoreBlockHandler::Save(ISave *pSaveArg)
 {
     SaveX *pSave = (SaveX *)pSaveArg;
     SaveBlock *blk = (SaveBlock *)pSave->GetBlock();
@@ -2883,7 +2879,7 @@ struct ISaveOps {
 extern int g_10592b18;
 extern int g_10592b1c;
 
-void CEntitySaveRestoreBlockHandler::vfunc3(CSave *pSave)
+void CEntitySaveRestoreBlockHandler::WriteSaveHeaders(ISave *pSave)
 {
     ISaveOps *save = (ISaveOps *)pSave;
     SEntityBlock *block = save->GetEntityBlock();
@@ -2896,14 +2892,14 @@ void CEntitySaveRestoreBlockHandler::vfunc3(CSave *pSave)
 
 // FUNCTION: 0x101a39e0 size=0x1
 #include "CEntitySaveRestoreBlockHandler.h"
-void CEntitySaveRestoreBlockHandler::vfunc4()
+void CEntitySaveRestoreBlockHandler::PostSave()
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x101a3a00 size=0x1
 #include "CEntitySaveRestoreBlockHandler.h"
-void CEntitySaveRestoreBlockHandler::vfunc5()
+void CEntitySaveRestoreBlockHandler::PreRestore()
 {
 }
 // END FUNCTION
@@ -2943,7 +2939,7 @@ struct SRestoreSlots
 	virtual SSaveInfoLike *GetSaveInfo();
 };
 
-void CEntitySaveRestoreBlockHandler::vfunc6(void *pRestoreV)
+void CEntitySaveRestoreBlockHandler::ReadRestoreHeaders(IRestore *pRestoreV)
 {
 	SRestoreSlots *pRestore = (SRestoreSlots *)pRestoreV;
 	SSaveInfoLike *pSaveData = pRestore->GetSaveInfo();
@@ -2958,7 +2954,7 @@ void CEntitySaveRestoreBlockHandler::vfunc6(void *pRestoreV)
 
 // FUNCTION: 0x101a3ae0 size=0x1
 #include "CEntitySaveRestoreBlockHandler.h"
-void CEntitySaveRestoreBlockHandler::vfunc8()
+void CEntitySaveRestoreBlockHandler::PostRestore()
 {
 }
 // END FUNCTION
