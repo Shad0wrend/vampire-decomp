@@ -959,6 +959,7 @@
 0x1001bd40 func   ?vfunc15@C_ItemGBrotherhoodFlyer@@UAEHXZ C_ItemGBrotherhoodFlyer::vfunc15
 0x1001bd50 func   ?sub_1001bd50@@YAHXZ sub_1001bd50
 0x1001be70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBrotherhoodFlyer@@@Z ClientClassInit
+0x1001bf00 func   ?vfunc17@C_ItemGMilligansBuisnesscard@@UAEHXZ C_ItemGMilligansBuisnesscard::vfunc17
 0x1001bf90 func   ??_GC_ItemGMilligansBuisnesscard@@UAEPAXI@Z ??_GC_ItemGMilligansBuisnesscard@@UAEPAXI@Z
 0x1001bfc0 func   ?vfunc15@C_ItemGMilligansBuisnesscard@@UAEHXZ C_ItemGMilligansBuisnesscard::vfunc15
 0x1001bfd0 func   ?sub_1001bfd0@@YAHXZ sub_1001bfd0
