@@ -62943,6 +62943,19 @@ void CUnknown10174640::sub_10174640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101746d0 size=0x12
+namespace lifted {
+extern int g_105fb14c;
+struct C101733d0 { int sub_101733d0(int); };
+}
+void sub_101746d0()
+{
+    if (lifted::g_105fb14c != 0) {
+        ((lifted::C101733d0 *)lifted::g_105fb14c)->sub_101733d0(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174c40 size=0x1
 void sub_10174c40()
 {
