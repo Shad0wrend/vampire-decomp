@@ -86589,6 +86589,8 @@ void CKeyHolder::sub_101ebff0()
 #include "CUnknown101ec180.h"
 #include "CUnknown101ebd30.h"
 
+inline CKeyHolder::~CKeyHolder() {}	// the destructor's own unit: deleting a record calls nothing here
+
 extern "C" int sprintf(char *, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
 
