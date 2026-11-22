@@ -45908,6 +45908,18 @@ void __fastcall sub_101400d0(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140140 size=0xc
+namespace lifted {
+int sub_10161370();
+}
+struct CUnknown10140140 { void * sub_10140140(); };
+void * CUnknown10140140::sub_10140140()
+{
+    lifted::sub_10161370();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140150 size=0x1
 void sub_10140150()
 {
