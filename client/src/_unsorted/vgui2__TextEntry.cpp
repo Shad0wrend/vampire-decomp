@@ -87,6 +87,15 @@ bool vgui2::TextEntry::vfunc141(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aefc0 size=0xd
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc139(char a0)
+{
+    *(char *)((char *)this + 0x8b) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af110 size=0x7
 #include "vgui2__TextEntry.h"
 bool vgui2::TextEntry::vfunc135()
