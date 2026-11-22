@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10010d80 size=0x6
+#include "C_ResearchBook_MG_SEC.h"
+namespace lifted {
+extern char g_10272edc;
+}
+int C_ResearchBook_MG_SEC::vfunc17()
+{
+    return (int)&lifted::g_10272edc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010e10 size=0x1e
 #include "C_ResearchBook_MG_SEC.h"
 
