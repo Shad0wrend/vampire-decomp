@@ -9189,6 +9189,7 @@
 0x1000c59f func   ?vfunc319@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc319
 0x1000c5a4 func   ?vfunc77@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc77
 0x1000c5a9 func   ?sub_103a5e80@@YAXXZ sub_103a5e80
+0x1000c5ae func   ?GetToken@CSceneTokenProcessor@@UAE_N_N@Z CSceneTokenProcessor::GetToken
 0x1000c5ae func   ?vfunc1@CSceneTokenProcessor@@QAE_NH@Z CSceneTokenProcessor::vfunc1
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?Grow@?$CUtlMemory@UCExpressionRecord@@@@QAEXH@Z CUtlMemory<CExpressionRecord>::Grow
