@@ -21,3 +21,11 @@ int C_TEBubbles::vfunc9()
     return (int)&lifted::g_1027e8e8;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10035700 size=0x3
+#include "C_TEBubbles.h"
+int C_TEBubbles::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
