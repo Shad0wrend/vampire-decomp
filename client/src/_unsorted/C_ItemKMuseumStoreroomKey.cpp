@@ -10,3 +10,11 @@ C_ItemKMuseumStoreroomKey *pcd_emit_10023010() { return new C_ItemKMuseumStorero
 
 // TARGET: ??_GC_ItemKMuseumStoreroomKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10023040 size=0x3
+#include "C_ItemKMuseumStoreroomKey.h"
+int C_ItemKMuseumStoreroomKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
