@@ -10,3 +10,11 @@ vgui2::ComboBoxButton *pcd_emit_101c7690() { return new vgui2::ComboBoxButton; }
 
 // TARGET: ??_GComboBoxButton@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101c77b0 size=0x5
+#include "vgui2__ComboBoxButton.h"
+int vgui2::ComboBoxButton::vfunc164(int a0, int a1, int a2, int a3)
+{
+    return 0;
+}
+// END FUNCTION
