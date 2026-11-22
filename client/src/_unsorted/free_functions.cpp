@@ -29120,6 +29120,19 @@ void CClientShadowMgr::sub_100d7130(int a0, unsigned short h, int *a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7180 size=0x46
+#include "CClientShadowMgr.h"
+// TARGET: CClientShadowMgr::sub_100d7180
+void CClientShadowMgr::sub_100d7180(int a0, unsigned short h, int *a2)
+{
+	ClientShadow_t &shadow = *(ClientShadow_t *)&m_Shadows.InternalElement(h);
+	if (!(shadow.m_Flags & 1))
+		sub_100d66d0(a0, h);
+	else
+		sub_100d6ca0(a0, h, a2, a2 + 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8260 size=0x7
 namespace lifted {
 extern char g_10227c5c;
