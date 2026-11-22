@@ -22,6 +22,17 @@ C_ResearchBook_HG_FIRE *pcd_emit_10011310() { return new C_ResearchBook_HG_FIRE;
 // TARGET: ??_GC_ResearchBook_HG_FIRE@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10011330 size=0x6
+#include "C_ResearchBook_HG_FIRE.h"
+namespace lifted {
+extern char g_10274ab4;
+}
+int C_ResearchBook_HG_FIRE::vfunc16()
+{
+    return (int)&lifted::g_10274ab4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10011340 size=0x3
 #include "C_ResearchBook_HG_FIRE.h"
 int C_ResearchBook_HG_FIRE::vfunc15()

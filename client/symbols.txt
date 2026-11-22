@@ -547,6 +547,7 @@
 0x100111f0 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_MG_FIN@@@Z ClientClassInit
 0x10011280 func   ?vfunc17@C_ResearchBook_HG_FIRE@@UAEHXZ C_ResearchBook_HG_FIRE::vfunc17
 0x10011310 func   ??_GC_ResearchBook_HG_FIRE@@UAEPAXI@Z ??_GC_ResearchBook_HG_FIRE@@UAEPAXI@Z
+0x10011330 func   ?vfunc16@C_ResearchBook_HG_FIRE@@UAEHXZ C_ResearchBook_HG_FIRE::vfunc16
 0x10011340 func   ?vfunc15@C_ResearchBook_HG_FIRE@@UAEHXZ C_ResearchBook_HG_FIRE::vfunc15
 0x10011350 func   ?sub_10011350@@YAHXZ sub_10011350
 0x10011470 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_HG_FIRE@@@Z ClientClassInit
