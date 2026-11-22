@@ -14845,6 +14845,7 @@
 0x10013507 func   ?vfunc5@CSprite@@UAEPAVCBaseEntity@@I@Z CSprite::vfunc5
 0x1001350c func   ?vfunc81@CWeaponMelee_Claws_Protean4@@UAEHXZ CWeaponMelee_Claws_Protean4::vfunc81
 0x10013511 func   ?vfunc80@CWorld@@UAEHXZ CWorld::vfunc80
+0x1001351b func   ?Restore@CSaveRestoreBlockSet@@UAEXPAVIRestore@@_NH@Z CSaveRestoreBlockSet::Restore
 0x1001351b func   ?vfunc7@CSaveRestoreBlockSet@@QAEXPAXHH@Z CSaveRestoreBlockSet::vfunc7
 0x10013520 func   ?vfunc113@COrnamentProp@@UAEXXZ COrnamentProp::vfunc113
 0x10013525 func   ?sub_10135a20@@YAPAHXZ sub_10135a20
