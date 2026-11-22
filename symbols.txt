@@ -8895,6 +8895,7 @@
 0x1000bfb9 func   ?vfunc619@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc619
 0x1000bfbe func   ?sub_101ab2f0@@YAHXZ sub_101ab2f0
 0x1000bfc3 func   _info_node_cover_med info_node_cover_med
+0x1000bfc8 func   ??_GSendProp@@UAEPAXI@Z ??_GSendProp@@UAEPAXI@Z
 0x1000bfc8 func   ?vfunc0@SendProp@@QAEPAV1@I@Z SendProp::vfunc0
 0x1000bfcd func   ?vfunc130@CBaseCombatCharacter@@UAEXH@Z CBaseCombatCharacter::vfunc130
 0x1000bfd7 func   ?vfunc9@CBaseEntity@@UAEPAPBDPAH@Z CBaseEntity::vfunc9
