@@ -10,3 +10,14 @@ C_TEBreakModel *pcd_emit_10034ee0() { return new C_TEBreakModel; }
 
 // TARGET: ??_GC_TEBreakModel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10034fa0 size=0x6
+#include "C_TEBreakModel.h"
+namespace lifted {
+extern char g_1027e53c;
+}
+int C_TEBreakModel::vfunc9()
+{
+    return (int)&lifted::g_1027e53c;
+}
+// END FUNCTION
