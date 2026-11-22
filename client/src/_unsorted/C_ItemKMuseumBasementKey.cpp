@@ -22,6 +22,17 @@ C_ItemKMuseumBasementKey *pcd_emit_10022d90() { return new C_ItemKMuseumBasement
 // TARGET: ??_GC_ItemKMuseumBasementKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10022db0 size=0x6
+#include "C_ItemKMuseumBasementKey.h"
+namespace lifted {
+extern char g_102740d0;
+}
+int C_ItemKMuseumBasementKey::vfunc16()
+{
+    return (int)&lifted::g_102740d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022dc0 size=0x3
 #include "C_ItemKMuseumBasementKey.h"
 int C_ItemKMuseumBasementKey::vfunc15()
