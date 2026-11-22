@@ -10,3 +10,11 @@ C_ItemKHitmanLuKey *pcd_emit_10025f90() { return new C_ItemKHitmanLuKey; }
 
 // TARGET: ??_GC_ItemKHitmanLuKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10025fc0 size=0x3
+#include "C_ItemKHitmanLuKey.h"
+int C_ItemKHitmanLuKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
