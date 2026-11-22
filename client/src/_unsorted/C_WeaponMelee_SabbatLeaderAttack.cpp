@@ -10,3 +10,11 @@ C_WeaponMelee_SabbatLeaderAttack *pcd_emit_1000aa10() { return new C_WeaponMelee
 
 // TARGET: ??_GC_WeaponMelee_SabbatLeaderAttack@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000aa40 size=0x3
+#include "C_WeaponMelee_SabbatLeaderAttack.h"
+int C_WeaponMelee_SabbatLeaderAttack::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
