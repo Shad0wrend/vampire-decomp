@@ -22,6 +22,17 @@ C_ItemKOHFrontKey *pcd_emit_10025810() { return new C_ItemKOHFrontKey; }
 // TARGET: ??_GC_ItemKOHFrontKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10025830 size=0x6
+#include "C_ItemKOHFrontKey.h"
+namespace lifted {
+extern char g_10273f2c;
+}
+int C_ItemKOHFrontKey::vfunc16()
+{
+    return (int)&lifted::g_10273f2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025840 size=0x3
 #include "C_ItemKOHFrontKey.h"
 int C_ItemKOHFrontKey::vfunc15()

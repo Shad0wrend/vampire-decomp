@@ -1327,6 +1327,7 @@
 0x100256f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKSarcophagusKey@@@Z ClientClassInit
 0x10025780 func   ?vfunc17@C_ItemKOHFrontKey@@UAEHXZ C_ItemKOHFrontKey::vfunc17
 0x10025810 func   ??_GC_ItemKOHFrontKey@@UAEPAXI@Z ??_GC_ItemKOHFrontKey@@UAEPAXI@Z
+0x10025830 func   ?vfunc16@C_ItemKOHFrontKey@@UAEHXZ C_ItemKOHFrontKey::vfunc16
 0x10025840 func   ?vfunc15@C_ItemKOHFrontKey@@UAEHXZ C_ItemKOHFrontKey::vfunc15
 0x10025850 func   ?sub_10025850@@YAHXZ sub_10025850
 0x10025970 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOHFrontKey@@@Z ClientClassInit
