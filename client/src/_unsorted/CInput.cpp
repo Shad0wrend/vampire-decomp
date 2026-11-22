@@ -204,6 +204,23 @@ int CInput::vfunc55(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105ef0 size=0x2b
+#include "CInput.h"
+namespace lifted {
+struct C10101df0 { int sub_10101df0(); };
+struct V { virtual int f0(int); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual int f17(); };
+}
+void CInput::vfunc1()
+{
+    ((lifted::V *)this)->f17();
+    int t0 = ((lifted::C10101df0 *)this)->sub_10101df0();
+    if ((*(int *)((char *)this + 0x1c0)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x1c0)))->f0(3);
+    }
+    *(int *)((char *)this + 0x1c0) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105f20 size=0x8
 #include "CInput.h"
 void CInput::vfunc54()
