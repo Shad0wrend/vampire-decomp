@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10164c20 size=0x5
+#include "CCenterStringPanel.h"
+bool CCenterStringPanel::vfunc25(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164c30 size=0x1e
 #include "CCenterStringPanel.h"
 
