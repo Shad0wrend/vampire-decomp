@@ -305,6 +305,17 @@ bool C_BaseEntity::vfunc74()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a11e0 size=0x7
+#include "C_BaseEntity.h"
+namespace lifted {
+extern float g_101e34f0;
+}
+float C_BaseEntity::vfunc81()
+{
+    return lifted::g_101e34f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a11f0 size=0x1
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc82()
