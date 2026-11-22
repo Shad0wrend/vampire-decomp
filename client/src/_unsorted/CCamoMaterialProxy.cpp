@@ -10,3 +10,11 @@ CCamoMaterialProxy *pcd_emit_100cab70() { return new CCamoMaterialProxy; }
 
 // TARGET: ??_GCCamoMaterialProxy@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100cabd0 size=0x5
+#include "CCamoMaterialProxy.h"
+bool CCamoMaterialProxy::vfunc0(void* a0, void* a1)
+{
+    return 0;
+}
+// END FUNCTION
