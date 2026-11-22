@@ -12643,6 +12643,19 @@ char CUnknown10051d10::sub_10051d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100527a0 size=0x1f
+struct CUnknown100527a0 { void sub_100527a0(char); };
+void CUnknown100527a0::sub_100527a0(char a0)
+{
+    *(char *)((char *)this + 0x20) = a0;
+    if (a0 != 0) {
+        *(int *)((char *)this + 0x28) = 0x43520000;
+        return;
+    }
+    *(int *)((char *)this + 0x28) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10052e90 size=0x6
 int sub_10052e90()
 {
