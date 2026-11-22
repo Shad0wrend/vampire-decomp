@@ -22,6 +22,17 @@ C_OccultBloodBuff *pcd_emit_10013b10() { return new C_OccultBloodBuff; }
 // TARGET: ??_GC_OccultBloodBuff@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10013b30 size=0x6
+#include "C_OccultBloodBuff.h"
+namespace lifted {
+extern char g_10274958;
+}
+int C_OccultBloodBuff::vfunc16()
+{
+    return (int)&lifted::g_10274958;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013b40 size=0x3
 #include "C_OccultBloodBuff.h"
 int C_OccultBloodBuff::vfunc15()
