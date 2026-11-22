@@ -1255,6 +1255,7 @@
 0x100238f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKEDaneKey@@@Z ClientClassInit
 0x10023980 func   ?vfunc17@C_ItemKEmpireMafiaKey@@UAEHXZ C_ItemKEmpireMafiaKey::vfunc17
 0x10023a10 func   ??_GC_ItemKEmpireMafiaKey@@UAEPAXI@Z ??_GC_ItemKEmpireMafiaKey@@UAEPAXI@Z
+0x10023a30 func   ?vfunc16@C_ItemKEmpireMafiaKey@@UAEHXZ C_ItemKEmpireMafiaKey::vfunc16
 0x10023a40 func   ?vfunc15@C_ItemKEmpireMafiaKey@@UAEHXZ C_ItemKEmpireMafiaKey::vfunc15
 0x10023a50 func   ?sub_10023a50@@YAHXZ sub_10023a50
 0x10023b70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKEmpireMafiaKey@@@Z ClientClassInit

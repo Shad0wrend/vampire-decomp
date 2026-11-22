@@ -22,6 +22,17 @@ C_ItemKEmpireMafiaKey *pcd_emit_10023a10() { return new C_ItemKEmpireMafiaKey; }
 // TARGET: ??_GC_ItemKEmpireMafiaKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10023a30 size=0x6
+#include "C_ItemKEmpireMafiaKey.h"
+namespace lifted {
+extern char g_1027405c;
+}
+int C_ItemKEmpireMafiaKey::vfunc16()
+{
+    return (int)&lifted::g_1027405c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023a40 size=0x3
 #include "C_ItemKEmpireMafiaKey.h"
 int C_ItemKEmpireMafiaKey::vfunc15()
