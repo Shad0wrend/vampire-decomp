@@ -1,6 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c11b0 size=0x45
+#include "vgui2__BuildGroup.h"
+namespace lifted {
+int sub_101c2180();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(int); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+void vgui2::BuildGroup::vfunc0(char a0)
+{
+    if ((*(char *)((char *)this + 4)) != a0) {
+        *(int *)((char *)this + 0x3c) = 0;
+        if (a0 != 0) {
+            int t0 = lifted::sub_101c2180();
+            *(char *)((char *)this + 4) = a0;
+            return;
+        }
+        if ((*(int *)((char *)this + 0x58)) != 0) {
+            ((lifted::V *)(*(int *)((char *)this + 0x58)))->f21(0);
+        }
+        ((lifted::V *)(*(int *)((char *)this + 0x60)))->f15(0);
+    }
+    *(char *)((char *)this + 4) = a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1200 size=0x4
 #include "vgui2__BuildGroup.h"
 bool vgui2::BuildGroup::vfunc1()
