@@ -2466,6 +2466,7 @@
 0x10097370 func   ?vfunc15@C_BaseAnimatingOverlay@@UAEHXZ C_BaseAnimatingOverlay::vfunc15
 0x10097380 func   ?sub_10097380@@YAHXZ sub_10097380
 0x10097480 func   ?ClientClassInit@@YAHPAUignored@DT_BaseAnimatingOverlay@@@Z ClientClassInit
+0x10097950 func   ?vfunc17@C_BaseAnimatingOverlay@@UAEHXZ C_BaseAnimatingOverlay::vfunc17
 0x10097ec0 func   ??_GC_BaseCombatCharacter@@UAEPAXI@Z ??_GC_BaseCombatCharacter@@UAEPAXI@Z
 0x10097ee0 func   ??1C_BaseCombatCharacter@@UAE@XZ C_BaseCombatCharacter::~C_BaseCombatCharacter
 0x100981e0 func   ?vfunc15@C_BaseCombatCharacter@@UAEHXZ C_BaseCombatCharacter::vfunc15

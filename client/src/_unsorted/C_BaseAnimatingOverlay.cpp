@@ -29,3 +29,14 @@ int C_BaseAnimatingOverlay::vfunc15()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10097950 size=0x6
+#include "C_BaseAnimatingOverlay.h"
+namespace lifted {
+extern char g_102ae31c;
+}
+int C_BaseAnimatingOverlay::vfunc17()
+{
+    return (int)&lifted::g_102ae31c;
+}
+// END FUNCTION
