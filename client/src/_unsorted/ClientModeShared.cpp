@@ -10,3 +10,10 @@ ClientModeShared *pcd_emit_100d3f50() { return new ClientModeShared; }
 
 // TARGET: ??_GClientModeShared@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100d4030 size=0x1
+#include "ClientModeShared.h"
+void ClientModeShared::vfunc2()
+{
+}
+// END FUNCTION
