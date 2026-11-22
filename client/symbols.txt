@@ -2662,6 +2662,7 @@
 0x100a3d00 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerState@@@Z ClientClassInit
 0x100a3e00 func   ?ClientClassInit@@YAHPAUignored@DT_Local@@@Z ClientClassInit
 0x100a4870 func   ?ClientClassInit@@YAHPAUignored@DT_LocalPlayerExclusive@@@Z ClientClassInit
+0x100a49f0 func   ?vfunc16@C_BasePlayer@@UAEHXZ C_BasePlayer::vfunc16
 0x100a4a00 func   ?vfunc15@C_BasePlayer@@UAEHXZ C_BasePlayer::vfunc15
 0x100a4a10 func   ?sub_100a4a10@@YAHXZ sub_100a4a10
 0x100a4b10 func   ?ClientClassInit@@YAHPAUignored@DT_BasePlayer@@@Z ClientClassInit

@@ -9,6 +9,17 @@ int C_BasePlayer::vfunc175(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a49f0 size=0x6
+#include "C_BasePlayer.h"
+namespace lifted {
+extern char g_102b0be8;
+}
+int C_BasePlayer::vfunc16()
+{
+    return (int)&lifted::g_102b0be8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4a00 size=0x3
 #include "C_BasePlayer.h"
 int C_BasePlayer::vfunc15()
