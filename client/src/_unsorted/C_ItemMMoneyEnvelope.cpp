@@ -22,6 +22,17 @@ C_ItemMMoneyEnvelope *pcd_emit_10010690() { return new C_ItemMMoneyEnvelope; }
 // TARGET: ??_GC_ItemMMoneyEnvelope@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100106b0 size=0x6
+#include "C_ItemMMoneyEnvelope.h"
+namespace lifted {
+extern char g_10274b2c;
+}
+int C_ItemMMoneyEnvelope::vfunc16()
+{
+    return (int)&lifted::g_10274b2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100106c0 size=0x3
 #include "C_ItemMMoneyEnvelope.h"
 int C_ItemMMoneyEnvelope::vfunc15()
