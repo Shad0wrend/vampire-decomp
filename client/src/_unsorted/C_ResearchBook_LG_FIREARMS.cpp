@@ -10,3 +10,11 @@ C_ResearchBook_LG_FIREARMS *pcd_emit_10012490() { return new C_ResearchBook_LG_F
 
 // TARGET: ??_GC_ResearchBook_LG_FIREARMS@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100124c0 size=0x3
+#include "C_ResearchBook_LG_FIREARMS.h"
+int C_ResearchBook_LG_FIREARMS::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
