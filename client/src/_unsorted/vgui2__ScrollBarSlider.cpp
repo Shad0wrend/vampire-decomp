@@ -19,6 +19,15 @@ int vgui2::ScrollBarSlider::vfunc108()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca670 size=0xd
+#include "vgui2__ScrollBarSlider.h"
+int vgui2::ScrollBarSlider::vfunc112(int a0)
+{
+    *(int *)((char *)this + 0x80) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca680 size=0x7
 #include "vgui2__ScrollBarSlider.h"
 int vgui2::ScrollBarSlider::vfunc113()
