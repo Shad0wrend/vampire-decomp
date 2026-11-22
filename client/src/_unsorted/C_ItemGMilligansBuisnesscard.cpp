@@ -10,3 +10,11 @@ C_ItemGMilligansBuisnesscard *pcd_emit_1001bf90() { return new C_ItemGMilligansB
 
 // TARGET: ??_GC_ItemGMilligansBuisnesscard@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001bfc0 size=0x3
+#include "C_ItemGMilligansBuisnesscard.h"
+int C_ItemGMilligansBuisnesscard::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
