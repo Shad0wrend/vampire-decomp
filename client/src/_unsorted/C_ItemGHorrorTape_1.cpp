@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001a100 size=0x6
+#include "C_ItemGHorrorTape_1.h"
+namespace lifted {
+extern char g_10273550;
+}
+int C_ItemGHorrorTape_1::vfunc17()
+{
+    return (int)&lifted::g_10273550;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a190 size=0x1e
 #include "C_ItemGHorrorTape_1.h"
 
