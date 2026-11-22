@@ -5519,6 +5519,7 @@
 0x101c64f0 func   ?vfunc102@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc102
 0x101c6530 func   ??_GProgressBar@vgui2@@UAEPAXI@Z ??_GProgressBar@vgui2@@UAEPAXI@Z
 0x101c6760 func   ?vfunc102@ProgressBar@vgui2@@UAEHXZ vgui2::ProgressBar::vfunc102
+0x101c6770 func   ?sub_101c6770@CUnknown101c6770@@QAEHXZ CUnknown101c6770::sub_101c6770
 0x101c68c0 func   ??_GMessageBox@vgui2@@UAEPAXI@Z ??_GMessageBox@vgui2@@UAEPAXI@Z
 0x101c68e0 func   ??1MessageBox@vgui2@@UAE@XZ vgui2::MessageBox::~MessageBox
 0x101c6bf0 func   ?vfunc102@MessageBox@vgui2@@UAEHXZ vgui2::MessageBox::vfunc102
