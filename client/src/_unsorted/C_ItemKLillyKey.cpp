@@ -22,6 +22,17 @@ C_ItemKLillyKey *pcd_emit_10020f90() { return new C_ItemKLillyKey; }
 // TARGET: ??_GC_ItemKLillyKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10020fb0 size=0x6
+#include "C_ItemKLillyKey.h"
+namespace lifted {
+extern char g_10274204;
+}
+int C_ItemKLillyKey::vfunc16()
+{
+    return (int)&lifted::g_10274204;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020fc0 size=0x3
 #include "C_ItemKLillyKey.h"
 int C_ItemKLillyKey::vfunc15()

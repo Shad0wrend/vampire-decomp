@@ -1153,6 +1153,7 @@
 0x10020e70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKGalleryNoirKey@@@Z ClientClassInit
 0x10020f00 func   ?vfunc17@C_ItemKLillyKey@@UAEHXZ C_ItemKLillyKey::vfunc17
 0x10020f90 func   ??_GC_ItemKLillyKey@@UAEPAXI@Z ??_GC_ItemKLillyKey@@UAEPAXI@Z
+0x10020fb0 func   ?vfunc16@C_ItemKLillyKey@@UAEHXZ C_ItemKLillyKey::vfunc16
 0x10020fc0 func   ?vfunc15@C_ItemKLillyKey@@UAEHXZ C_ItemKLillyKey::vfunc15
 0x10020fd0 func   ?sub_10020fd0@@YAHXZ sub_10020fd0
 0x100210f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLillyKey@@@Z ClientClassInit
