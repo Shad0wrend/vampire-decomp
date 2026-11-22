@@ -22,6 +22,17 @@ C_ItemKMalcomOfficeKey *pcd_emit_10022390() { return new C_ItemKMalcomOfficeKey;
 // TARGET: ??_GC_ItemKMalcomOfficeKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100223b0 size=0x6
+#include "C_ItemKMalcomOfficeKey.h"
+namespace lifted {
+extern char g_10274134;
+}
+int C_ItemKMalcomOfficeKey::vfunc16()
+{
+    return (int)&lifted::g_10274134;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100223c0 size=0x3
 #include "C_ItemKMalcomOfficeKey.h"
 int C_ItemKMalcomOfficeKey::vfunc15()
