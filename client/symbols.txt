@@ -3101,6 +3101,7 @@
 0x100d9140 func   ??_GCClientSideEffect@@UAEPAXI@Z ??_GCClientSideEffect@@UAEPAXI@Z
 0x100d9160 func   ??1CClientSideEffect@@UAE@XZ CClientSideEffect::~CClientSideEffect
 0x100d9160 func   ?sub_100d9160@CUnknown100d9160@@QAEXXZ CUnknown100d9160::sub_100d9160
+0x100d9170 func   ?vfunc2@CClientSideEffect@@UAEHXZ CClientSideEffect::vfunc2
 0x100d91e0 func   ?sub_100d91e0@CUnknown100d91e0@@QAEPAXXZ CUnknown100d91e0::sub_100d91e0
 0x100d91f0 func   ??_GCEffectsList@@UAEPAXI@Z ??_GCEffectsList@@UAEPAXI@Z
 0x100d9210 func   ??1IEffectsList@@UAE@XZ IEffectsList::~IEffectsList
