@@ -8138,6 +8138,23 @@ int sub_10029490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100295b0 size=0x21
+namespace lifted {
+extern char g_10224cac;
+struct C100294f0 { int sub_100294f0(); };
+int sub_100d3f40();
+}
+struct CUnknown100295b0 { void * sub_100295b0(); };
+void * CUnknown100295b0::sub_100295b0()
+{
+    int t0 = lifted::sub_100d3f40();
+    *(int *)((char *)this + 4) = 1;
+    int t1 = ((lifted::C100294f0 *)((char *)this + 8))->sub_100294f0();
+    *(int *)this = (int)&lifted::g_10224cac;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029e70 size=0x36
 // TARGET: sub_10029e70
 struct CLinkElem
