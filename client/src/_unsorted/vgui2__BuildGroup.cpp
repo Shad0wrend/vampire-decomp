@@ -140,3 +140,11 @@ void BG::sub_101c1de0(int code, PanelV *panel)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c2300 size=0x4
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc10()
+{
+    return *(int *)((char *)this + 0x54);
+}
+// END FUNCTION
