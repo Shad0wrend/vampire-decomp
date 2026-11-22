@@ -4947,6 +4947,7 @@
 0x1017d550 func   ??_GVUnderscoreLabel@@UAEPAXI@Z ??_GVUnderscoreLabel@@UAEPAXI@Z
 0x1017d570 func   ??1VUnderscoreLabel@@UAE@XZ VUnderscoreLabel::~VUnderscoreLabel
 0x1017d570 func   ?sub_1017d570@CUnknown1017d570@@QAEHXZ CUnknown1017d570::sub_1017d570
+0x1017d600 func   ?vfunc86@VUnderscoreLabel@@UAEXXZ VUnderscoreLabel::vfunc86
 0x1017d640 func   ??_GVRAcceptButton@@UAEPAXI@Z ??_GVRAcceptButton@@UAEPAXI@Z
 0x1017d660 func   ??1VRAcceptButton@@UAE@XZ VRAcceptButton::~VRAcceptButton
 0x1017d660 func   ?sub_1017d660@CUnknown1017d660@@QAEHXZ CUnknown1017d660::sub_1017d660
