@@ -26624,6 +26624,19 @@ int sub_100a6b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8dc0 size=0x11
+struct CUnknown100a8dc0 { char sub_100a8dc0(); };
+char CUnknown100a8dc0::sub_100a8dc0()
+{
+    if ((*(int *)this) > 0) {
+        if ((*(int *)this) < 7) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9910 size=0x5
 char __stdcall sub_100a9910(int a0)
 {
