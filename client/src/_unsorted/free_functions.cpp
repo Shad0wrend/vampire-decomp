@@ -13416,6 +13416,24 @@ void sub_100576b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057a20 size=0x2a
+namespace lifted {
+extern int g_104a0d50;
+struct C100a5520 { int sub_100a5520(int); };
+int sub_10114660(int, int);
+int sub_10114690();
+}
+void __stdcall sub_10057a20(int a0, int a1, int a2)
+{
+    lifted::sub_10114660(a2, a1);
+    int t0 = lifted::sub_10114690();
+    int t1 = lifted::g_104a0d50;
+    if (t1 != 0) {
+        ((lifted::C100a5520 *)t1)->sub_100a5520(t0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057ca0 size=0x5d
 #include "CFrenzyBar.h"
 #include "CHudManagerPanel.h"
