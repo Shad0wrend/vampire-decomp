@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10018a80 size=0x6
+#include "C_ItemGWatchFancy.h"
+namespace lifted {
+extern char g_10273454;
+}
+int C_ItemGWatchFancy::vfunc17()
+{
+    return (int)&lifted::g_10273454;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018b10 size=0x1e
 #include "C_ItemGWatchFancy.h"
 
