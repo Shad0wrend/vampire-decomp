@@ -22,6 +22,17 @@ C_ItemGCarStereo *pcd_emit_10017c10() { return new C_ItemGCarStereo; }
 // TARGET: ??_GC_ItemGCarStereo@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10017c30 size=0x6
+#include "C_ItemGCarStereo.h"
+namespace lifted {
+extern char g_10274704;
+}
+int C_ItemGCarStereo::vfunc16()
+{
+    return (int)&lifted::g_10274704;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017c40 size=0x3
 #include "C_ItemGCarStereo.h"
 int C_ItemGCarStereo::vfunc15()
