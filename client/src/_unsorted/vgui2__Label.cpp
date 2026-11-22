@@ -18,3 +18,11 @@ int vgui2::Label::vfunc127()
     return *(int *)((char *)this + 0x5c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b2c80 size=0x4
+#include "vgui2__Label.h"
+int vgui2::Label::vfunc126()
+{
+    return *(int *)((char *)this + 0x6c);
+}
+// END FUNCTION
