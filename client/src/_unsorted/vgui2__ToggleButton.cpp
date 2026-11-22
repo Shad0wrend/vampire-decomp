@@ -10,3 +10,10 @@ vgui2::ToggleButton *pcd_emit_101bc350() { return new vgui2::ToggleButton; }
 
 // TARGET: ??_GToggleButton@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101bc3c0 size=0x3
+#include "vgui2__ToggleButton.h"
+void vgui2::ToggleButton::vfunc89(int a0)
+{
+}
+// END FUNCTION
