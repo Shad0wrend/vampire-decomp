@@ -58,6 +58,7 @@
 0x10004ce0 func   ?sub_10004ce0@Vector@@QAEXMM@Z Vector::sub_10004ce0
 0x10004d50 func   ?sub_10004d50@@YAMPBVVector@@@Z sub_10004d50
 0x10004d80 func   ?sub_10004d80@Vector@@QBE?AV1@M@Z Vector::sub_10004d80
+0x10004dd0 func   ?vfunc1@IParticleEffect@@QAEXH@Z IParticleEffect::vfunc1
 0x10004de0 func   ?vfunc2@IParticleEffect@@QAEXXZ IParticleEffect::vfunc2
 0x10004df0 func   ?vfunc4@IParticleEffect@@QAEXXZ IParticleEffect::vfunc4
 0x100054f0 func   ??_GCPlasmaSpray@@UAEPAXI@Z ??_GCPlasmaSpray@@UAEPAXI@Z
