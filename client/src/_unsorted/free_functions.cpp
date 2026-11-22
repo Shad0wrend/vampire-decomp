@@ -19503,6 +19503,20 @@ int sub_10079fe0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a000 size=0x23
+namespace lifted {
+int sub_10079cf0(int, int);
+int sub_1008d9d0(int, int);
+}
+void sub_1007a000(int a0, int a1)
+{
+    int t0 = lifted::sub_10079cf0(a0, a1);
+    if (t0 >= 0) {
+        lifted::sub_1008d9d0(a0, t0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a030 size=0x1d
 // TARGET: sub_1007a030
 struct CUnk10428970
