@@ -24849,6 +24849,20 @@ int CUnknown10094020::sub_10094020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100958f0 size=0x19
+namespace lifted {
+int __stdcall sub_10096830(int);
+}
+int __stdcall sub_100958f0(int a0)
+{
+    int t0 = lifted::sub_10096830(a0);
+    if (t0 != 0) {
+        return *(int *)((char *)t0 + 8);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095b00 size=0xd
 struct CUnknown10095b00 { int sub_10095b00(int); };
 int CUnknown10095b00::sub_10095b00(int a0)
