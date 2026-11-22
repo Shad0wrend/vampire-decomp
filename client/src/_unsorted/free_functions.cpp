@@ -67908,6 +67908,16 @@ char CUnknown101c7500::sub_101c7500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7510 size=0x17
+struct CUnknown101c7510 { void sub_101c7510(char); };
+void CUnknown101c7510::sub_101c7510(char a0)
+{
+    if ((*(char *)((char *)this + 0xf4)) != 0) {
+        *(char *)((char *)this + 0xf5) = a0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8060 size=0xc
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
