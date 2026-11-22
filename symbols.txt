@@ -14065,7 +14065,6 @@
 0x100125c1 func   ?sub_1008dc40@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dc40
 0x100125c6 func   ?vfunc600@CNPC_VTzimisceHeadClaw@@QAE_NPAX@Z CNPC_VTzimisceHeadClaw::vfunc600
 0x100125cb func   ??_GCNavPropertyDatabase@@UAEPAXI@Z ??_GCNavPropertyDatabase@@UAEPAXI@Z
-0x100125cb func   ?vfunc8@CNavPropertyDatabase@@QAEPAV1@I@Z CNavPropertyDatabase::vfunc8
 0x100125d0 func   ?vfunc82@CMathColorBlend@@UAEPAUdatamap_t@@XZ CMathColorBlend::vfunc82
 0x100125d5 func   ?vfunc241@CPhysHinge@@QAEPAXPAXPAUCPhysConstraintObjects@@@Z CPhysHinge::vfunc241
 0x100125da func   ?sub_101d7c50@@YIXPAH@Z sub_101d7c50

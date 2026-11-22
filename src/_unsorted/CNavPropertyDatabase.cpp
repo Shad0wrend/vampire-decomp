@@ -82,12 +82,9 @@ void __fastcall sub_102ea5a0(int p)
 // FUNCTION: 0x102eaac0 size=0x1e
 #include "CNavPropertyDatabase.h"
 
-// TARGET: CNavPropertyDatabase::vfunc8
-CNavPropertyDatabase *CNavPropertyDatabase::vfunc8(unsigned int flags)
-{
-	sub_1000cfbd();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes CNavPropertyDatabase's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CNavPropertyDatabase *pcd_emit_102eaac0() { return new CNavPropertyDatabase; }
+
+// TARGET: ??_GCNavPropertyDatabase@@UAEPAXI@Z
 // END FUNCTION
