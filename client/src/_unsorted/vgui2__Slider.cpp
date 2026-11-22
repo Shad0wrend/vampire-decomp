@@ -93,6 +93,18 @@ void vgui2::Slider::vfunc89(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc2d0 size=0x15
+#include "vgui2__Slider.h"
+int vgui2::Slider::vfunc112(int a0, int a1)
+{
+    int t0 = *(int *)((char *)this + 0x60);
+    *(int *)((char *)a0) = t0;
+    int t1 = *(int *)((char *)this + 0x64);
+    *(int *)((char *)a1) = t1;
+    return t1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc2f0 size=0xd
 #include "vgui2__Slider.h"
 int vgui2::Slider::vfunc113(int a0)
