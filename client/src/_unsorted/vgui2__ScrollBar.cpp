@@ -19,6 +19,15 @@ int vgui2::ScrollBar::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf300 size=0xa
+#include "vgui2__ScrollBar.h"
+int vgui2::ScrollBar::vfunc118(int a0)
+{
+    *(int *)((char *)this + 0x64) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf410 size=0x6
 #include "vgui2__ScrollBar.h"
 namespace lifted {
