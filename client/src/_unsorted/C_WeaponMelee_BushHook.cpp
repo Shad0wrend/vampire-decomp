@@ -22,6 +22,17 @@ C_WeaponMelee_BushHook *pcd_emit_10008210() { return new C_WeaponMelee_BushHook;
 // TARGET: ??_GC_WeaponMelee_BushHook@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10008230 size=0x6
+#include "C_WeaponMelee_BushHook.h"
+namespace lifted {
+extern char g_102750c8;
+}
+int C_WeaponMelee_BushHook::vfunc16()
+{
+    return (int)&lifted::g_102750c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008240 size=0x3
 #include "C_WeaponMelee_BushHook.h"
 int C_WeaponMelee_BushHook::vfunc15()
