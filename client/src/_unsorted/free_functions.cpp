@@ -19557,6 +19557,16 @@ char *sub_1007a4d0(char *pObj, int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a500 size=0x10
+int sub_1007a500(int a0)
+{
+    if (a0 == 0) {
+        return a0;
+    }
+    return *(int *)((char *)a0 + 0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a690 size=0x2e
 #include <string.h>
 // TARGET: sub_1007a690
