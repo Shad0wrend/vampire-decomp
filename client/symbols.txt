@@ -983,6 +983,7 @@
 0x10038650 func   ??_GC_TEGlowSprite@@UAEPAXI@Z ??_GC_TEGlowSprite@@UAEPAXI@Z
 0x10038670 func   ??1C_TEGlowSprite@@UAE@XZ C_TEGlowSprite::~C_TEGlowSprite
 0x10038670 func   ?sub_10038670@CUnknown10038670@@QAEHXZ CUnknown10038670::sub_10038670
+0x10038760 func   ?vfunc9@C_TEGlowSprite@@UAEHXZ C_TEGlowSprite::vfunc9
 0x10038780 func   ?sub_10038780@@YAHXZ sub_10038780
 0x10038820 func   ?sub_10038820@@YAHXZ sub_10038820
 0x10038890 func   ?ClientClassInit@@YAHPAUignored@DT_TEGlowSprite@@@Z ClientClassInit

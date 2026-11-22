@@ -10,3 +10,14 @@ C_TEGlowSprite *pcd_emit_10038650() { return new C_TEGlowSprite; }
 
 // TARGET: ??_GC_TEGlowSprite@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10038760 size=0x6
+#include "C_TEGlowSprite.h"
+namespace lifted {
+extern char g_1027fc1c;
+}
+int C_TEGlowSprite::vfunc9()
+{
+    return (int)&lifted::g_1027fc1c;
+}
+// END FUNCTION
