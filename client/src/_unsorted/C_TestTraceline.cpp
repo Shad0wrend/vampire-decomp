@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10041440 size=0x6
+#include "C_TestTraceline.h"
+namespace lifted {
+extern char g_10282744;
+}
+int C_TestTraceline::vfunc16()
+{
+    return (int)&lifted::g_10282744;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041450 size=0x3
 #include "C_TestTraceline.h"
 int C_TestTraceline::vfunc15()
