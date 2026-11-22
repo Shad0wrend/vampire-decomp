@@ -41385,6 +41385,25 @@ int __stdcall sub_10122430(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101234c0 size=0x3d
+namespace lifted {
+extern char g_102c25c0;
+extern char g_102c25d4;
+int sub_10123300(int, int, int);
+int sub_101233b0(int, int, int, int);
+}
+struct CUnknown101234c0 { void sub_101234c0(int, int, int, int); };
+void CUnknown101234c0::sub_101234c0(int a0, int a1, int a2, int a3)
+{
+    if ((*(char *)((char *)this + 0x14)) != 0) {
+        if (a0 == 0) {
+            lifted::sub_10123300((int)this, (int)&lifted::g_102c25d4, a1);
+        }
+        lifted::sub_101233b0((int)this, a0, (int)&lifted::g_102c25c0, a1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123d30 size=0x19
 namespace lifted {
 struct C10123e30 { int sub_10123e30(int, int, int, int); };
