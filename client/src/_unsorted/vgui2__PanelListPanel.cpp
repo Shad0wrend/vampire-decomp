@@ -18,3 +18,14 @@ int vgui2::PanelListPanel::vfunc109()
     return *(int *)((char *)this + 0x58);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101cb090 size=0x6
+#include "vgui2__PanelListPanel.h"
+namespace lifted {
+extern char g_102daed0;
+}
+int vgui2::PanelListPanel::vfunc102()
+{
+    return (int)&lifted::g_102daed0;
+}
+// END FUNCTION
