@@ -263,45 +263,13 @@ void CPhysConstraint::sub_1002a960(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1002ab80 size=0x68
-extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
-extern int vt_10447108[];
+#include "CPASFilter.h"
 
-struct TFilterX {
-	int *vptr;
-	int pad;
-	void *p;
-	int count;
-	int grow;
-	int size;
-	void *elems;
-	TFilterX *sub_1002ab80(unsigned char flags);
-};
+// VC6 writes CPASFilter's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CPASFilter *pcd_emit_1002ab80() { return new CPASFilter; }
 
-TFilterX *TFilterX::sub_1002ab80(unsigned char flags)
-{
-	size = 0;
-	if (grow != -1) {
-		if (p) {
-			Plat_Free(p);
-			p = 0;
-		}
-		count = 0;
-	}
-	void *e = p;
-	int g = grow;
-	elems = e;
-	if (g != -1) {
-		if (e) {
-			Plat_Free(e);
-			p = 0;
-		}
-		count = 0;
-	}
-	vptr = vt_10447108;
-	if (flags & 1)
-		delete this;
-	return this;
-}
+// TARGET: ??_GCPASFilter@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x1002ac10 size=0x20
