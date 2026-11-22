@@ -25453,6 +25453,21 @@ template <> int ClientClassInit<DT_BaseAnimating::ignored>(DT_BaseAnimating::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x100922c0 size=0x1a
+namespace lifted {
+extern int g_1049c4d4;
+}
+struct CUnknown100922c0 { int sub_100922c0(); };
+int CUnknown100922c0::sub_100922c0()
+{
+    int t0 = lifted::g_1049c4d4 - 1;
+    *(int *)((char *)this + 0x6dc) = t0;
+    int t1 = lifted::g_1049c4d4 - 1;
+    *(int *)((char *)this + 0x6e0) = t1;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100923a0 size=0x17
 namespace lifted {
 extern char g_1049c48c;
