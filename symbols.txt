@@ -22558,6 +22558,7 @@
 0x109f37b8 data   __imp__PyRun_ConsoleString _imp__PyRun_ConsoleString
 0x109f37c8 data   __imp__PyString_FromString _imp__PyString_FromString
 0x109f37d0 data   __imp_?PyString_Type@@3PADA _imp_?PyString_Type
+0x109f384c data   __imp_?Q_stristr@@YAPBDPBD0@Z _imp_?Q_stristr
 0x109f384c data   __imp_?Q_strstr@@YAPADPBD0@Z _imp_?Q_strstr
 0x109f3864 data   __imp_?Q_strcat@@YAXPADPBD@Z _imp_?Q_strcat
 0x109f386c data   __imp_?Q_stristr@@YAPADPADPBD@Z _imp_?Q_stristr
