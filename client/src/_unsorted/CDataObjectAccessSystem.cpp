@@ -25,3 +25,19 @@ void __fastcall sub_1011b150(Sys *self)
     (*g_101e3128)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011b250 size=0x1e
+#include "CDataObjectAccessSystem.h"
+namespace lifted {
+int sub_100f3f80();
+int sub_101d1296(int);
+}
+CAutoGameSystem * CDataObjectAccessSystem::vfunc8(unsigned int a0)
+{
+    int t0 = lifted::sub_100f3f80();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
