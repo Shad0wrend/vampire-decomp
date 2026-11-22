@@ -893,6 +893,7 @@
 0x1001a1c0 func   ?vfunc15@C_ItemGHorrorTape_1@@UAEHXZ C_ItemGHorrorTape_1::vfunc15
 0x1001a1d0 func   ?sub_1001a1d0@@YAHXZ sub_1001a1d0
 0x1001a2f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHorrorTape_1@@@Z ClientClassInit
+0x1001a380 func   ?vfunc17@C_ItemGHorrorTape_2@@UAEHXZ C_ItemGHorrorTape_2::vfunc17
 0x1001a410 func   ??_GC_ItemGHorrorTape_2@@UAEPAXI@Z ??_GC_ItemGHorrorTape_2@@UAEPAXI@Z
 0x1001a440 func   ?vfunc15@C_ItemGHorrorTape_2@@UAEHXZ C_ItemGHorrorTape_2::vfunc15
 0x1001a450 func   ?sub_1001a450@@YAHXZ sub_1001a450
