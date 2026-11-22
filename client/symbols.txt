@@ -1676,6 +1676,7 @@
 0x100a2a80 func   ?sub_100a2a80@CUnknown100a2a80@@QAEHXZ CUnknown100a2a80::sub_100a2a80
 0x100a2a90 func   ?sub_100a2a90@@YAHH@Z sub_100a2a90
 0x100a2da0 func   ?sub_100a2da0@@YAHXZ sub_100a2da0
+0x100a2db0 func   ?Collideable_vfunc13@C_BaseEntity@@UAEHXZ C_BaseEntity::Collideable_vfunc13
 0x100a2e40 func   ?sub_100a2e40@CUnknown100a2e40@@QAEDD@Z CUnknown100a2e40::sub_100a2e40
 0x100a2e80 func   ?sub_100a2e80@CUnknown100a2e80@@QAEDXZ CUnknown100a2e80::sub_100a2e80
 0x100a2fc0 func   ?sub_100a2fc0@CUnknown100a2fc0@@QAEHXZ CUnknown100a2fc0::sub_100a2fc0
