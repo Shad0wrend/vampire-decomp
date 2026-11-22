@@ -422,6 +422,31 @@ template <> int ClientClassInit<DT_ItemKeyGeneric::ignored>(DT_ItemKeyGeneric::i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003b50 size=0x43
+namespace lifted {
+extern char g_101e48dc;
+extern char g_101e48f0;
+extern char g_101e492c;
+extern char g_101e4964;
+extern char g_101e49bc;
+int sub_1007a9f0();
+}
+struct CUnknown10003b50 { void * sub_10003b50(); };
+void * CUnknown10003b50::sub_10003b50()
+{
+    lifted::sub_1007a9f0();
+    *(int *)this = (int)&lifted::g_101e49bc;
+    *(char *)((char *)this + 0x979) = 0;
+    *(char *)((char *)this + 0x9b8) = 0;
+    *(int *)((char *)this + 4) = (int)&lifted::g_101e4964;
+    *(int *)((char *)this + 8) = (int)&lifted::g_101e492c;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_101e48f0;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_101e48dc;
+    *(char *)((char *)this + 0x978) = 0x21;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
