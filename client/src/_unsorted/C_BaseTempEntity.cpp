@@ -57,6 +57,14 @@ bool C_BaseTempEntity::vfunc14()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007300 size=0x3
+#include "C_BaseTempEntity.h"
+bool C_BaseTempEntity::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c370 size=0x1e
 #include "C_BaseTempEntity.h"
 

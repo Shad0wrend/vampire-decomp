@@ -144,6 +144,7 @@
 0x100072d0 func   ?GetBaseEntity@C_BaseTempEntity@@UAEPAVC_BaseEntity@@XZ C_BaseTempEntity::GetBaseEntity
 0x100072e0 func   ?GetClientThinkable@C_BaseTempEntity@@UAEPAVIClientThinkable@@XZ C_BaseTempEntity::GetClientThinkable
 0x100072f0 func   ?vfunc14@C_BaseTempEntity@@UAE_NXZ C_BaseTempEntity::vfunc14
+0x10007300 func   ?vfunc15@C_BaseTempEntity@@UAE_NXZ C_BaseTempEntity::vfunc15
 0x10007330 func   ??_GC_TEConcussiveExplosion@@UAEPAXI@Z ??_GC_TEConcussiveExplosion@@UAEPAXI@Z
 0x100073a0 func   ?sub_100073a0@@YAHXZ sub_100073a0
 0x10007410 func   ?ClientClassInit@@YAHPAUignored@DT_TEConcussiveExplosion@@@Z ClientClassInit
