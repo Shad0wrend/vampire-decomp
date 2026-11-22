@@ -57,6 +57,18 @@ C_VampireProjectile *pcd_emit_10152010() { return new C_VampireProjectile; }
 // TARGET: ??_GC_VampireProjectile@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10152060 size=0xb
+#include "C_VampireProjectile.h"
+namespace lifted {
+extern char g_102ca2c4;
+int __stdcall sub_100a0710(int);
+}
+void C_VampireProjectile::vfunc21()
+{
+    lifted::sub_100a0710((int)&lifted::g_102ca2c4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101520d0 size=0x3
 #include "C_VampireProjectile.h"
 void C_VampireProjectile::vfunc96(int a0, int a1, int a2, int a3)
