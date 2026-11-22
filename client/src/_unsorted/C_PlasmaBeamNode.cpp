@@ -11,6 +11,17 @@ C_PlasmaBeamNode *pcd_emit_100057a0() { return new C_PlasmaBeamNode; }
 // TARGET: ??_GC_PlasmaBeamNode@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10005c00 size=0x6
+#include "C_PlasmaBeamNode.h"
+namespace lifted {
+extern char g_10271d90;
+}
+int C_PlasmaBeamNode::vfunc16()
+{
+    return (int)&lifted::g_10271d90;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005c10 size=0x3
 #include "C_PlasmaBeamNode.h"
 int C_PlasmaBeamNode::vfunc15()
