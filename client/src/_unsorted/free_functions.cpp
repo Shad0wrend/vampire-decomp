@@ -14220,6 +14220,33 @@ int sub_1005fa60(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fa90 size=0x68
+namespace lifted {
+extern char g_1022a780;
+extern char g_1022a7ac;
+extern char g_10287668;
+struct C1005f0a0 { int sub_1005f0a0(int, int); };
+struct C1005fb40 { int sub_1005fb40(); };
+struct C1005fe10 { int sub_1005fe10(); };
+struct C101a9890 { int sub_101a9890(int, int); };
+struct C101ab060 { int sub_101ab060(int); };
+}
+struct CUnknown1005fa90 { void * sub_1005fa90(int); };
+void * CUnknown1005fa90::sub_1005fa90(int a0)
+{
+    int t0 = ((lifted::C1005f0a0 *)this)->sub_1005f0a0(a0, (int)&lifted::g_10287668);
+    *(int *)this = (int)&lifted::g_1022a7ac;
+    *(int *)((char *)this + 0x170) = (int)&lifted::g_1022a780;
+    ((lifted::C1005fb40 *)this)->sub_1005fb40();
+    ((lifted::C101ab060 *)this)->sub_101ab060(0);
+    ((lifted::C101a9890 *)this)->sub_101a9890(*(int *)((char *)this + 0x180), *(int *)((char *)this + 0x184));
+    int t1 = ((lifted::C1005fe10 *)this)->sub_1005fe10();
+    *(int *)((char *)this + 0x1b8) = 0;
+    *(int *)((char *)this + 0x1bc) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fb00 size=0x6
 int sub_1005fb00()
 {
