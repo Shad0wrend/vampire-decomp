@@ -10918,6 +10918,23 @@ template <> int ClientClassInit<DT_TEInspectionFX::ignored>(DT_TEInspectionFX::i
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a3b0 size=0x20
+namespace lifted {
+extern char g_10226ad8;
+extern char g_10226b0c;
+int sub_1002c340();
+}
+struct CUnknown1003a3b0 { void * sub_1003a3b0(); };
+void * CUnknown1003a3b0::sub_1003a3b0()
+{
+    int t0 = lifted::sub_1002c340();
+    *(int *)this = (int)&lifted::g_10226b0c;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10226ad8;
+    *(int *)((char *)this + 0x10) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003a3f0 size=0x12
 namespace lifted {
 extern char g_10226ad8;
