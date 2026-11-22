@@ -53813,6 +53813,18 @@ void * CUnknown10151630::sub_10151630(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151720 size=0x14
+int sub_10151720(int a0, int a1)
+{
+    if (a1 != 0) {
+        if ((*(char *)((char *)a1)) != 0) {
+            *(int *)((char *)a0) = a1;
+        }
+    }
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151780 size=0xd
 namespace lifted {
 extern char g_102de300;
