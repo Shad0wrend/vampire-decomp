@@ -64333,6 +64333,18 @@ void CUtlRBTreeBig::sub_101a7290(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a79f0 size=0xc
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual int f11(int); };
+}
+struct CUnknown101a79f0 { int sub_101a79f0(); };
+int CUnknown101a79f0::sub_101a79f0()
+{
+    *(char *)((char *)this + 0x1c) = 1;
+    return ((lifted::V *)this)->f11(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8c60 size=0x9
 struct CUnknown101a8c60 { void * sub_101a8c60(); };
 void * CUnknown101a8c60::sub_101a8c60()
