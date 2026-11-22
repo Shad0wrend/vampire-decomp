@@ -38,3 +38,14 @@ void vgui2::Frame::vfunc93(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b9ac0 size=0x6
+#include "vgui2__Frame.h"
+namespace lifted {
+extern char g_102d8ee8;
+}
+int vgui2::Frame::vfunc102()
+{
+    return (int)&lifted::g_102d8ee8;
+}
+// END FUNCTION
