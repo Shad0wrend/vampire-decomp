@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1007e4e0 size=0x3
+#include "C_BaseGrenade.h"
+void C_BaseGrenade::vfunc149(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f1e0 size=0x1e
 #include "C_BaseGrenade.h"
 
