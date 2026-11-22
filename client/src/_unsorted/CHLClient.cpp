@@ -12,6 +12,22 @@ int CHLClient::vfunc41(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cba20 size=0x1a
+#include "CHLClient.h"
+namespace lifted {
+extern int g_102bc800;
+extern char g_104cfe38;
+struct C100f0cf0 { int sub_100f0cf0(); };
+struct V { virtual int f0(); };
+}
+int CHLClient::vfunc6()
+{
+    ((lifted::V *)lifted::g_102bc800)->f0();
+    ((lifted::C100f0cf0 *)((int)&lifted::g_104cfe38))->sub_100f0cf0();
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbad0 size=0xf
 #include "CHLClient.h"
 namespace lifted {
