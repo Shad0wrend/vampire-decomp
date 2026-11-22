@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10008180 size=0x6
+#include "C_WeaponMelee_BushHook.h"
+namespace lifted {
+extern char g_102728bc;
+}
+int C_WeaponMelee_BushHook::vfunc17()
+{
+    return (int)&lifted::g_102728bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008210 size=0x1e
 #include "C_WeaponMelee_BushHook.h"
 
