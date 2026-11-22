@@ -12978,6 +12978,7 @@
 0x1001106d func   ?sub_102fcd00@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PAHH@Z CAI_Pathfinder::sub_102fcd00
 0x10011072 func   ?vfunc80@CWeaponRanged_Pistol_Glock@@UAEHXZ CWeaponRanged_Pistol_Glock::vfunc80
 0x10011077 func   ?sub_100d2290@@YAXPBD@Z sub_100d2290
+0x1001107c func   ??_GCServerGameEnts@@UAEPAXI@Z ??_GCServerGameEnts@@UAEPAXI@Z
 0x1001107c func   ?sub_1011bd60@CUnk1011bd60@@QAEPAXE@Z CUnk1011bd60::sub_1011bd60
 0x10011081 func   ?sub_1010d990@CBreakable@@QAEXPAVCBaseEntity@@@Z CBreakable::sub_1010d990
 0x10011086 func   ?sub_10088620@@YAXXZ sub_10088620
