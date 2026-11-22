@@ -46938,6 +46938,17 @@ int CUnknown101365a0::sub_101365a0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101365c0 size=0x10
+struct CUnknown101365c0 { int sub_101365c0(); };
+int CUnknown101365c0::sub_101365c0()
+{
+    int t0 = *(int *)((char *)this + 0x74);
+    *(int *)((char *)this + 0x78) = 0;
+    *(int *)((char *)this + 0x74) = t0 | 0x40;
+    return t0 | 0x40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136d70 size=0x1c
 namespace lifted {
 extern int g_105e5d70;
