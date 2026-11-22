@@ -10,3 +10,11 @@ C_OccultHealRate *pcd_emit_10014510() { return new C_OccultHealRate; }
 
 // TARGET: ??_GC_OccultHealRate@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10014540 size=0x3
+#include "C_OccultHealRate.h"
+int C_OccultHealRate::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
