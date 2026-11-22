@@ -22530,6 +22530,7 @@
 0x109f0a01 data   ??_B?1??Links@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QBEABULinks_t@1@H@Z@51 ??_B?1??Links@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QBEABULinks_t@1@H@Z@51
 0x109f0a8c data   ??_B?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@55 ??_B?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@55
 0x109f0a8c data   ??_B?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@55 ??_B?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@55
+0x109f0ac0 data   ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@4V3@A ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat@@H@Z@4V3@A
 0x109f0ac0 data   ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@4V3@A ?s_default@?5??Lookup@CVFeatSet@@QAEPAVCVFeat_t@@H@Z@4V3@A
 0x109f0b14 data   ??_B?1??Links@?$CUtlRBTree@UCRBEntry24@@H@@QBEABULinks_t@1@H@Z@51 ??_B?1??Links@?$CUtlRBTree@UCRBEntry24@@H@@QBEABULinks_t@1@H@Z@51
 0x109f0b1d data   ??_B?1??Links@?$CUtlRBTree@UCRBEntry8@@H@@QBEABULinks_t@1@H@Z@51 ??_B?1??Links@?$CUtlRBTree@UCRBEntry8@@H@@QBEABULinks_t@1@H@Z@51
