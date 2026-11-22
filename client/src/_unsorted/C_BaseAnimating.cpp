@@ -58,3 +58,14 @@ bool C_BaseAnimating::vfunc142()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10095870 size=0x6
+#include "C_BaseAnimating.h"
+namespace lifted {
+extern char g_102ad9d8;
+}
+int C_BaseAnimating::vfunc17()
+{
+    return (int)&lifted::g_102ad9d8;
+}
+// END FUNCTION
