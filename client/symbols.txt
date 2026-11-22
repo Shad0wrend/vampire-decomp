@@ -5455,6 +5455,7 @@
 0x101c9af0 func   ?vfunc102@MenuButton@vgui2@@UAEHXZ vgui2::MenuButton::vfunc102
 0x101c9b50 func   ?vfunc0@BlankImage@@UAEXXZ BlankImage::vfunc0
 0x101c9b60 func   ?vfunc1@BlankImage@@UAEXHH@Z BlankImage::vfunc1
+0x101c9b70 func   ?vfunc5@BlankImage@@UAEHHH@Z BlankImage::vfunc5
 0x101c9bb0 func   ?vfunc6@BlankImage@@UAEXHH@Z BlankImage::vfunc6
 0x101c9bc0 func   ?vfunc3@BlankImage@@UAEXH@Z BlankImage::vfunc3
 0x101c9da0 func   ?sub_101c9da0@CUnknown101c9da0@@QAEHXZ CUnknown101c9da0::sub_101c9da0
