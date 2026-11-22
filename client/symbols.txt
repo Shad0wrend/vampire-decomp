@@ -217,6 +217,7 @@
 0x10008870 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Fists@@@Z ClientClassInit
 0x10008900 func   ?vfunc17@C_WeaponMelee_FireAxe@@UAEHXZ C_WeaponMelee_FireAxe::vfunc17
 0x10008990 func   ??_GC_WeaponMelee_FireAxe@@UAEPAXI@Z ??_GC_WeaponMelee_FireAxe@@UAEPAXI@Z
+0x100089b0 func   ?vfunc16@C_WeaponMelee_FireAxe@@UAEHXZ C_WeaponMelee_FireAxe::vfunc16
 0x100089c0 func   ?vfunc15@C_WeaponMelee_FireAxe@@UAEHXZ C_WeaponMelee_FireAxe::vfunc15
 0x100089d0 func   ?sub_100089d0@@YAHXZ sub_100089d0
 0x10008af0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_FireAxe@@@Z ClientClassInit

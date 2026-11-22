@@ -22,6 +22,17 @@ C_WeaponMelee_FireAxe *pcd_emit_10008990() { return new C_WeaponMelee_FireAxe; }
 // TARGET: ??_GC_WeaponMelee_FireAxe@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100089b0 size=0x6
+#include "C_WeaponMelee_FireAxe.h"
+namespace lifted {
+extern char g_10275088;
+}
+int C_WeaponMelee_FireAxe::vfunc16()
+{
+    return (int)&lifted::g_10275088;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100089c0 size=0x3
 #include "C_WeaponMelee_FireAxe.h"
 int C_WeaponMelee_FireAxe::vfunc15()
