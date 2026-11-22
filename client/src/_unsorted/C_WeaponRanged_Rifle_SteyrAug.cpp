@@ -10,3 +10,11 @@ C_WeaponRanged_Rifle_SteyrAug *pcd_emit_1000eb10() { return new C_WeaponRanged_R
 
 // TARGET: ??_GC_WeaponRanged_Rifle_SteyrAug@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000eb40 size=0x3
+#include "C_WeaponRanged_Rifle_SteyrAug.h"
+int C_WeaponRanged_Rifle_SteyrAug::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
