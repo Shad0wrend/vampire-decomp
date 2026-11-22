@@ -2841,6 +2841,7 @@
 0x100a2350 func   ?vfunc43@C_BaseEntity@@UAEPADXZ C_BaseEntity::vfunc43
 0x100a2360 func   ?vfunc44@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc44
 0x100a2390 func   ?vfunc45@C_BaseEntity@@UAEPADXZ C_BaseEntity::vfunc45
+0x100a23a0 func   ?vfunc46@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc46
 0x100a23d0 func   ?vfunc47@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc47
 0x100a23e0 func   ?vfunc48@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc48
 0x100a23f0 func   ?sub_100a23f0@CUnknown100a23f0@@QAEHH@Z CUnknown100a23f0::sub_100a23f0

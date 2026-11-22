@@ -543,6 +543,20 @@ char * C_BaseEntity::vfunc45()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a23a0 size=0x21
+#include "C_BaseEntity.h"
+int C_BaseEntity::vfunc46(int a0)
+{
+    int t0 = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x260) = t0;
+    int t1 = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x264) = t1;
+    int t2 = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x268) = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a23d0 size=0xd
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc47(int a0)
