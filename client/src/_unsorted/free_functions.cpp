@@ -25395,6 +25395,28 @@ void UtlMem::sub_1008e670(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e6e0 size=0x2e
+namespace lifted {
+extern char g_1022cc4c;
+extern char g_1022cc60;
+extern char g_1022cc9c;
+extern char g_1022ccd4;
+extern char g_1022cd2c;
+int sub_1008e9a0();
+}
+struct CUnknown1008e6e0 { void * sub_1008e6e0(); };
+void * CUnknown1008e6e0::sub_1008e6e0()
+{
+    int t0 = lifted::sub_1008e9a0();
+    *(int *)this = (int)&lifted::g_1022cd2c;
+    *(int *)((char *)this + 4) = (int)&lifted::g_1022ccd4;
+    *(int *)((char *)this + 8) = (int)&lifted::g_1022cc9c;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_1022cc60;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_1022cc4c;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e7e0 size=0x6
 namespace lifted {
 extern char g_10498e9c;
