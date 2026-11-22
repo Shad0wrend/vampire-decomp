@@ -173,6 +173,13 @@ void C_BaseEntity::vfunc38(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f650 size=0x3
+#include "C_BaseEntity.h"
+void C_BaseEntity::vfunc118(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fce0 size=0x7
 #include "C_BaseEntity.h"
 CMouthInfo * C_BaseEntity::GetMouth()
