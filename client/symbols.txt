@@ -1363,6 +1363,7 @@
 0x100265f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKHannahsSafeKey@@@Z ClientClassInit
 0x10026680 func   ?vfunc17@C_ItemKSkylineHavenKey@@UAEHXZ C_ItemKSkylineHavenKey::vfunc17
 0x10026710 func   ??_GC_ItemKSkylineHavenKey@@UAEPAXI@Z ??_GC_ItemKSkylineHavenKey@@UAEPAXI@Z
+0x10026730 func   ?vfunc16@C_ItemKSkylineHavenKey@@UAEHXZ C_ItemKSkylineHavenKey::vfunc16
 0x10026740 func   ?vfunc15@C_ItemKSkylineHavenKey@@UAEHXZ C_ItemKSkylineHavenKey::vfunc15
 0x10026750 func   ?sub_10026750@@YAHXZ sub_10026750
 0x10026870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKSkylineHavenKey@@@Z ClientClassInit

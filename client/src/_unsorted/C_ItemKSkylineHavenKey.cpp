@@ -22,6 +22,17 @@ C_ItemKSkylineHavenKey *pcd_emit_10026710() { return new C_ItemKSkylineHavenKey;
 // TARGET: ??_GC_ItemKSkylineHavenKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10026730 size=0x6
+#include "C_ItemKSkylineHavenKey.h"
+namespace lifted {
+extern char g_10273ea4;
+}
+int C_ItemKSkylineHavenKey::vfunc16()
+{
+    return (int)&lifted::g_10273ea4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026740 size=0x3
 #include "C_ItemKSkylineHavenKey.h"
 int C_ItemKSkylineHavenKey::vfunc15()
