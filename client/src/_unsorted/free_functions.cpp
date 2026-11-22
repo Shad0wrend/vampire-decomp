@@ -35308,6 +35308,20 @@ char CUnknown100f86a0::sub_100f86a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8aa0 size=0x17
+struct CUnknown100f8aa0 { char sub_100f8aa0(int); };
+char CUnknown100f8aa0::sub_100f8aa0(int a0)
+{
+    char t0 = *(char *)((char *)a0 + 2);
+    *(char *)((char *)this + 2) = t0;
+    char t1 = *(char *)((char *)a0 + 1);
+    *(char *)((char *)this + 1) = t1;
+    char t2 = *(char *)((char *)a0);
+    *(char *)this = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbd70 size=0xe
 namespace lifted {
 extern int g_1027ba58;
