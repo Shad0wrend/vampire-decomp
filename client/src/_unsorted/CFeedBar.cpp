@@ -10,3 +10,10 @@ CFeedBar *pcd_emit_10050200() { return new CFeedBar; }
 
 // TARGET: ??_GCFeedBar@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10050920 size=0x1
+#include "CFeedBar.h"
+void CFeedBar::vfunc97()
+{
+}
+// END FUNCTION
