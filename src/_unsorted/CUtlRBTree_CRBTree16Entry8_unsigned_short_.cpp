@@ -14,7 +14,9 @@ static void (CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_RemoveNode)(unsigne
 #include "utlrbtree.h"
 #include "CRBTree16Entry8.h"
 // one member, not `template class`: the template's own Links, whose sentinel is the instance's one guarded static
-static const CUtlRBTree<CRBTree16Entry8, unsigned short>::Links_t &(CUtlRBTree<CRBTree16Entry8, unsigned short>::*s_Links)(unsigned short) const = &CUtlRBTree<CRBTree16Entry8, unsigned short>::Links;
+typedef const CUtlRBTree<CRBTree16Entry8, unsigned short>::Links_t &(CUtlRBTree<CRBTree16Entry8, unsigned short>::*LinksPtr_t)(unsigned short) const;
+// taken in a function nothing calls (a global taking it would be a dynamic initializer the game does not have): VC6 emits the inline member here
+LinksPtr_t pcd_emit_10047930() { return &CUtlRBTree<CRBTree16Entry8, unsigned short>::Links; }
 // END FUNCTION
 
 // FUNCTION: 0x100479b0 size=0x824
