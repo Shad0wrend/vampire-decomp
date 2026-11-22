@@ -8325,6 +8325,7 @@
 0x1000b465 func   ?sub_10407580@@YAHXZ sub_10407580
 0x1000b46a func   ?vfunc180@CPlayerEvents@@UAEXXZ CPlayerEvents::vfunc180
 0x1000b46f func   _func_plat func_plat
+0x1000b474 func   ?Save@CPhysSaveRestoreBlockHandler@@UAEXPAVISave@@@Z CPhysSaveRestoreBlockHandler::Save
 0x1000b474 func   ?vfunc2@CPhysSaveRestoreBlockHandler@@QAEXPAVCSave@@@Z CPhysSaveRestoreBlockHandler::vfunc2
 0x1000b479 func   ?vfunc363@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc363
 0x1000b47e func   ?vfunc110@CVGuiScreen@@UAE_NPBD0@Z CVGuiScreen::vfunc110
