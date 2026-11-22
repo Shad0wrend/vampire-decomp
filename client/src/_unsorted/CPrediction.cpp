@@ -34,6 +34,14 @@ int CPrediction::vfunc13()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101230e0 size=0x4
+#include "CPrediction.h"
+bool CPrediction::vfunc14()
+{
+    return *(bool *)((char *)this + 0x2c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123200 size=0x4
 #include "CPrediction.h"
 int CPrediction::vfunc15()
