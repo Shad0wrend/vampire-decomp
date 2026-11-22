@@ -29072,6 +29072,16 @@ int sub_100ca8c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca9e0 size=0x11
+int sub_100ca9e0(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)a1);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100caa00 size=0x7b
 #include "CUtlLinkedList12.h"
 
