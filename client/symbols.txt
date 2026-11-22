@@ -2715,6 +2715,7 @@
 0x100a32c0 func   ?sub_100a32c0@@YADXZ sub_100a32c0
 0x100a32d0 func   ?vfunc14@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc14
 0x100a3300 func   ?sub_100a3300@@YAHXZ sub_100a3300
+0x100a3320 func   ?vfunc32@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc32
 0x100a3330 func   ?vfunc33@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc33
 0x100a33c0 func   ?vfunc34@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc34
 0x100a3440 func   ?sub_100a3440@CUtlVector4@@QAEXH@Z CUtlVector4::sub_100a3440

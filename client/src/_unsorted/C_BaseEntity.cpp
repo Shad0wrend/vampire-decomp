@@ -500,6 +500,19 @@ int C_BaseEntity::vfunc14()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3320 size=0x10
+#include "C_BaseEntity.h"
+namespace lifted {
+struct C1009f8a0 { int sub_1009f8a0(); };
+struct C1009fa70 { int sub_1009fa70(); };
+}
+int C_BaseEntity::vfunc32()
+{
+    ((lifted::C1009f8a0 *)this)->sub_1009f8a0();
+    return ((lifted::C1009fa70 *)this)->sub_1009fa70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3330 size=0x1
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc33()
