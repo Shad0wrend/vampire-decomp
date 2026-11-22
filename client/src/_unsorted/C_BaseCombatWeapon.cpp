@@ -226,6 +226,17 @@ C_BaseCombatWeapon *pcd_emit_1007ab20() { return new C_BaseCombatWeapon; }
 // TARGET: ??_GC_BaseCombatWeapon@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1007b5f0 size=0xd
+#include "C_BaseCombatWeapon.h"
+namespace lifted {
+int sub_1007b160();
+}
+int C_BaseCombatWeapon::vfunc215(int a0)
+{
+    return (lifted::sub_1007b160()) + 0x2188;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b600 size=0xb
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
