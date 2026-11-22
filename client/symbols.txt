@@ -5460,6 +5460,7 @@
 0x101b5800 func   ?vfunc1@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc1
 0x101b6430 func   ?vfunc7@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc7
 0x101b6440 func   ?vfunc8@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc8
+0x101b6840 func   ?sub_101b6840@@YAHH@Z sub_101b6840
 0x101b68e0 func   ??_GImage@vgui2@@UAEPAXI@Z ??_GImage@vgui2@@UAEPAXI@Z
 0x101b6900 func   ??1Image@vgui2@@UAE@XZ vgui2::Image::~Image
 0x101b6900 func   ?sub_101b6900@CUnknown101b6900@@QAEXXZ CUnknown101b6900::sub_101b6900
