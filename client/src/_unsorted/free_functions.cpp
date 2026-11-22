@@ -39533,6 +39533,20 @@ void sub_1010e4f0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e520 size=0x19
+namespace lifted {
+extern char g_10235678;
+int __stdcall sub_100f0510(int);
+}
+struct CUnknown1010e520 { void * sub_1010e520(int); };
+void * CUnknown1010e520::sub_1010e520(int a0)
+{
+    int t0 = lifted::sub_100f0510(a0);
+    *(int *)this = (int)&lifted::g_10235678;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f160 size=0x1f
 namespace lifted {
 extern char g_102356b4;
