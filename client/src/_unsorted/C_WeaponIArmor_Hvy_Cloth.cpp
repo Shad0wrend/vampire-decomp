@@ -22,6 +22,17 @@ C_WeaponIArmor_Hvy_Cloth *pcd_emit_10015690() { return new C_WeaponIArmor_Hvy_Cl
 // TARGET: ??_GC_WeaponIArmor_Hvy_Cloth@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100156b0 size=0x6
+#include "C_WeaponIArmor_Hvy_Cloth.h"
+namespace lifted {
+extern char g_1027487c;
+}
+int C_WeaponIArmor_Hvy_Cloth::vfunc16()
+{
+    return (int)&lifted::g_1027487c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100156c0 size=0x3
 #include "C_WeaponIArmor_Hvy_Cloth.h"
 int C_WeaponIArmor_Hvy_Cloth::vfunc15()
