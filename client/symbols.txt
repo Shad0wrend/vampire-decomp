@@ -1762,6 +1762,7 @@
 0x1003db30 func   ?sub_1003db30@@YAHXZ sub_1003db30
 0x1003dbd0 func   ?sub_1003dbd0@@YAHXZ sub_1003dbd0
 0x1003dc40 func   ?ClientClassInit@@YAHPAUignored@DT_TEMuzzleFlash@@@Z ClientClassInit
+0x1003dd40 func   ?vfunc9@C_TEParticleSystem@@UAEHXZ C_TEParticleSystem::vfunc9
 0x1003dd50 func   ?vfunc8@C_TEParticleSystem@@UAEHXZ C_TEParticleSystem::vfunc8
 0x1003dd60 func   ?sub_1003dd60@@YAHXZ sub_1003dd60
 0x1003de60 func   ?ClientClassInit@@YAHPAUignored@DT_TEParticleSystem@@@Z ClientClassInit
