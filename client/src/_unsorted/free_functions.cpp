@@ -49437,6 +49437,27 @@ void CPartListUnit3::sub_101413a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141650 size=0x48
+namespace lifted {
+extern char g_102c6f64;
+extern char g_105e777c;
+extern int g_105e77f4;
+extern char g_105f93c0;
+struct C1015ecd0 { int sub_1015ecd0(); };
+struct C1015f160 { int sub_1015f160(int); };
+struct C1015f270 { int sub_1015f270(int, int); };
+}
+int __stdcall sub_10141650(int a0)
+{
+    if ((1 & lifted::g_105e777c) == 0) {
+        lifted::g_105e777c = (char)(lifted::g_105e777c | 1);
+        lifted::g_105e77f4 = ((lifted::C1015f160 *)((int)&lifted::g_105f93c0))->sub_1015f160((int)&lifted::g_102c6f64);
+    }
+    int t0 = ((lifted::C1015f270 *)((int)&lifted::g_105f93c0))->sub_1015f270(lifted::g_105e77f4, a0);
+    return ((lifted::C1015ecd0 *)t0)->sub_1015ecd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101416a0 size=0xa
 struct CUnknown101416a0 { int sub_101416a0(int); };
 int CUnknown101416a0::sub_101416a0(int a0)
