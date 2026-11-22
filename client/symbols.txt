@@ -1659,6 +1659,7 @@
 0x100a1340 func   ?OnDataChanged@C_BaseEntity@@UAEXH@Z C_BaseEntity::OnDataChanged
 0x100a13d0 func   ?OnPreDataChanged@C_BaseEntity@@UAEXH@Z C_BaseEntity::OnPreDataChanged
 0x100a13d0 func   ?sub_100a13d0@@YGXH@Z sub_100a13d0
+0x100a13e0 func   ?GetThinkHandle@C_BaseEntity@@UAEPAXXZ C_BaseEntity::GetThinkHandle
 0x100a13e0 func   ?sub_100a13e0@CUnknown100a13e0@@QAEHXZ CUnknown100a13e0::sub_100a13e0
 0x100a13f0 func   ?sub_100a13f0@CUnknown100a13f0@@QAEHH@Z CUnknown100a13f0::sub_100a13f0
 0x100a1400 func   ?ComputeFxBlend@C_BaseEntity@@UAEXXZ C_BaseEntity::ComputeFxBlend
