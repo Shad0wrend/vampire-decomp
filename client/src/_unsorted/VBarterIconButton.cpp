@@ -18,3 +18,12 @@ void VBarterIconButton::vfunc87(int a0)
     *(char *)((char *)this + 0xb9) = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1016b000 size=0x14
+#include "VBarterIconButton.h"
+void VBarterIconButton::vfunc89(int a0)
+{
+    *(int *)((char *)this + 0xbc) = 6;
+    *(char *)((char *)this + 0xb9) = 0;
+}
+// END FUNCTION
