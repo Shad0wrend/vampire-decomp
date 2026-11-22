@@ -25972,6 +25972,24 @@ int sub_1009c950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009cd90 size=0x64
+struct CUnknown1009cd90 { int sub_1009cd90(int, int, int, int, char); };
+int CUnknown1009cd90::sub_1009cd90(int a0, int a1, int a2, int a3, char a4)
+{
+    *(char *)((char *)this + 0x8d3) = 1;
+    *(int *)((char *)this + 0x8d4) = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x8d8) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x8dc) = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x8e0) = *(int *)((char *)a1);
+    *(int *)((char *)this + 0x8e4) = *(int *)((char *)a1 + 4);
+    *(int *)((char *)this + 0x8e8) = *(int *)((char *)a1 + 8);
+    *(int *)((char *)this + 0x8ec) = a2;
+    *(int *)((char *)this + 0x8f4) = a3;
+    *(char *)((char *)this + 0x8f0) = a4;
+    return a3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ce00 size=0x7
 int __stdcall sub_1009ce00(int a0)
 {
