@@ -10,3 +10,11 @@ C_WeaponIGeneric *pcd_emit_1000f790() { return new C_WeaponIGeneric; }
 
 // TARGET: ??_GC_WeaponIGeneric@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000f7c0 size=0x3
+#include "C_WeaponIGeneric.h"
+int C_WeaponIGeneric::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
