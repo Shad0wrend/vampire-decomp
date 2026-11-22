@@ -5630,6 +5630,7 @@
 0x101c7910 func   ??1ComboBox@vgui2@@UAE@XZ vgui2::ComboBox::~ComboBox
 0x101c7950 func   ?vfunc175@ComboBox@vgui2@@UAEHXZ vgui2::ComboBox::vfunc175
 0x101c79e0 func   ?vfunc177@ComboBox@vgui2@@UAEHXZ vgui2::ComboBox::vfunc177
+0x101c79f0 func   ?vfunc181@ComboBox@vgui2@@UAEHXZ vgui2::ComboBox::vfunc181
 0x101c7b20 func   ?vfunc178@ComboBox@vgui2@@UAEXXZ vgui2::ComboBox::vfunc178
 0x101c7b30 func   ?vfunc180@ComboBox@vgui2@@UAEHXZ vgui2::ComboBox::vfunc180
 0x101c8060 func   ?sub_101c8060@CUnknown101c8060@@QAEHXZ CUnknown101c8060::sub_101c8060
