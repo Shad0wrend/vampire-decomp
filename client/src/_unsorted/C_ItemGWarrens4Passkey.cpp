@@ -22,6 +22,17 @@ C_ItemGWarrens4Passkey *pcd_emit_1001c710() { return new C_ItemGWarrens4Passkey;
 // TARGET: ??_GC_ItemGWarrens4Passkey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001c730 size=0x6
+#include "C_ItemGWarrens4Passkey.h"
+namespace lifted {
+extern char g_1027446c;
+}
+int C_ItemGWarrens4Passkey::vfunc16()
+{
+    return (int)&lifted::g_1027446c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c740 size=0x3
 #include "C_ItemGWarrens4Passkey.h"
 int C_ItemGWarrens4Passkey::vfunc15()
