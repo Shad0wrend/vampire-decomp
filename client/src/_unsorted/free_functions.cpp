@@ -32473,6 +32473,17 @@ int CUnknown100f4310::sub_100f4310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4320 size=0x5
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+struct CUnknown100f4320 { int sub_100f4320(); };
+int CUnknown100f4320::sub_100f4320()
+{
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71d0 size=0x5
 namespace lifted {
 int sub_100f6ce0();
