@@ -10,3 +10,11 @@ C_WeaponMelee_AVampBlade *pcd_emit_1000b190() { return new C_WeaponMelee_AVampBl
 
 // TARGET: ??_GC_WeaponMelee_AVampBlade@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000b1c0 size=0x3
+#include "C_WeaponMelee_AVampBlade.h"
+int C_WeaponMelee_AVampBlade::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
