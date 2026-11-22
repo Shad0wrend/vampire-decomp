@@ -10,3 +10,11 @@ C_WeaponWallet *pcd_emit_1000ff10() { return new C_WeaponWallet; }
 
 // TARGET: ??_GC_WeaponWallet@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000ff40 size=0x3
+#include "C_WeaponWallet.h"
+int C_WeaponWallet::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
