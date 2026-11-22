@@ -22,6 +22,17 @@ C_WeaponRanged_Smg_Uzi *pcd_emit_1000f010() { return new C_WeaponRanged_Smg_Uzi;
 // TARGET: ??_GC_WeaponRanged_Smg_Uzi@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000f030 size=0x6
+#include "C_WeaponRanged_Smg_Uzi.h"
+namespace lifted {
+extern char g_10274be8;
+}
+int C_WeaponRanged_Smg_Uzi::vfunc16()
+{
+    return (int)&lifted::g_10274be8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f040 size=0x3
 #include "C_WeaponRanged_Smg_Uzi.h"
 int C_WeaponRanged_Smg_Uzi::vfunc15()
