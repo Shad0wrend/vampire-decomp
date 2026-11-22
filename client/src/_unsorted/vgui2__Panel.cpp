@@ -96,6 +96,14 @@ void vgui2::Panel::vfunc89(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aad00 size=0x3
+#include "vgui2__Panel.h"
+int vgui2::Panel::vfunc17()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aad70 size=0x1
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc79()
