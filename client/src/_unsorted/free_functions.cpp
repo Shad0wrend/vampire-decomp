@@ -19955,6 +19955,22 @@ char sub_10080ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084560 size=0x35
+struct CUnknown10084560 { void * sub_10084560(); };
+void * CUnknown10084560::sub_10084560()
+{
+    *(int *)((char *)this + 0x80) = 0;
+    *(int *)((char *)this + 0x88) = 0;
+    *(int *)((char *)this + 0x8c) = 0;
+    *(int *)((char *)this + 0x90) = 0;
+    *(int *)((char *)this + 0x94) = 0;
+    *(int *)((char *)this + 0x98) = 0;
+    *(int *)((char *)this + 0x9c) = 0;
+    *(char *)((char *)this + 0xa4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086500 size=0x3
 struct CUnknown10086500 { void * sub_10086500(); };
 void * CUnknown10086500::sub_10086500()
