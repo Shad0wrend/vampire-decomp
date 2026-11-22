@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1000e300 size=0x6
+#include "C_WeaponRanged_Rifle_M37.h"
+namespace lifted {
+extern char g_10272d00;
+}
+int C_WeaponRanged_Rifle_M37::vfunc17()
+{
+    return (int)&lifted::g_10272d00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000e390 size=0x1e
 #include "C_WeaponRanged_Rifle_M37.h"
 
