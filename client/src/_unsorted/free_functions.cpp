@@ -64362,6 +64362,27 @@ void CUnknown10172ad0::sub_10172ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172b10 size=0x39
+namespace lifted {
+struct C101730e0 { int sub_101730e0(); };
+struct C101730f0 { int sub_101730f0(); };
+int __stdcall sub_101b9510(int);
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
+}
+struct CUnknown10172b10 { int sub_10172b10(int); };
+int CUnknown10172b10::sub_10172b10(int a0)
+{
+    int t0 = lifted::sub_101b9510(a0);
+    if ((*(int *)((char *)this + 0x268)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x268)))->f21(a0);
+    }
+    if (((char)a0) != 0) {
+        return ((lifted::C101730f0 *)((char *)this + -16))->sub_101730f0();
+    }
+    return ((lifted::C101730e0 *)((char *)this + -16))->sub_101730e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101730e0 size=0xb
 namespace lifted {
 extern int g_1027ba58;
