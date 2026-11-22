@@ -10,3 +10,11 @@ C_ItemKOceanHouseSewerKey *pcd_emit_10021490() { return new C_ItemKOceanHouseSew
 
 // TARGET: ??_GC_ItemKOceanHouseSewerKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100214c0 size=0x3
+#include "C_ItemKOceanHouseSewerKey.h"
+int C_ItemKOceanHouseSewerKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
