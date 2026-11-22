@@ -12901,6 +12901,7 @@
 0x10010ef1 func   ?sub_1020e3a0@CGameTextUnitFwd@@QAEXH@Z CGameTextUnitFwd::sub_1020e3a0
 0x10010ef6 func   ?sub_101d7bc0@CUnknown101d7bc0@@QAEPAXXZ CUnknown101d7bc0::sub_101d7bc0
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
+0x10010f00 func   ?PostSave@CPhysSaveRestoreBlockHandler@@UAEXXZ CPhysSaveRestoreBlockHandler::PostSave
 0x10010f00 func   ?vfunc4@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc4
 0x10010f05 func   ?sub_10111ba0@CBreakableSurface@@QAEXHPBVVector@@@Z CBreakableSurface::sub_10111ba0
 0x10010f0a func   ??1CTEExplosiveGunshotDecal@@QAE@XZ CTEExplosiveGunshotDecal::~CTEExplosiveGunshotDecal
