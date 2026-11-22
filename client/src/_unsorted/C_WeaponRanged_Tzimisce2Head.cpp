@@ -10,3 +10,11 @@ C_WeaponRanged_Tzimisce2Head *pcd_emit_1000b690() { return new C_WeaponRanged_Tz
 
 // TARGET: ??_GC_WeaponRanged_Tzimisce2Head@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000b6c0 size=0x3
+#include "C_WeaponRanged_Tzimisce2Head.h"
+int C_WeaponRanged_Tzimisce2Head::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
