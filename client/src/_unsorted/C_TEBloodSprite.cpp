@@ -21,3 +21,11 @@ int C_TEBloodSprite::vfunc9()
     return (int)&lifted::g_1027e0f4;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100343c0 size=0x3
+#include "C_TEBloodSprite.h"
+int C_TEBloodSprite::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
