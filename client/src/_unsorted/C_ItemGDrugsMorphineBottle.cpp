@@ -10,3 +10,11 @@ C_ItemGDrugsMorphineBottle *pcd_emit_10016d10() { return new C_ItemGDrugsMorphin
 
 // TARGET: ??_GC_ItemGDrugsMorphineBottle@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10016d40 size=0x3
+#include "C_ItemGDrugsMorphineBottle.h"
+int C_ItemGDrugsMorphineBottle::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
