@@ -10,3 +10,11 @@ C_OccultObfuscate *pcd_emit_10013110() { return new C_OccultObfuscate; }
 
 // TARGET: ??_GC_OccultObfuscate@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10013140 size=0x3
+#include "C_OccultObfuscate.h"
+int C_OccultObfuscate::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
