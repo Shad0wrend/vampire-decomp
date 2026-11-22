@@ -2080,6 +2080,7 @@
 0x1009f5c0 func   ?GetAbsOrigin@C_BaseEntity@@UBEABVVector@@XZ C_BaseEntity::GetAbsOrigin
 0x1009f5d0 func   ?vfunc11@C_BaseEntity@@UAEABVVector@@XZ C_BaseEntity::vfunc11
 0x1009f650 func   ?vfunc118@C_BaseEntity@@UAEXH@Z C_BaseEntity::vfunc118
+0x1009f660 func   ?vfunc119@C_BaseEntity@@UAEXH@Z C_BaseEntity::vfunc119
 0x1009f6a0 func   ?GetAbsAngles@C_BaseEntity@@UBEABVQAngle@@XZ C_BaseEntity::GetAbsAngles
 0x1009f6e0 func   ?sub_1009f6e0@CUnknown1009f6e0@@QAEPADXZ CUnknown1009f6e0::sub_1009f6e0
 0x1009f6f0 func   ?sub_1009f6f0@CUnknown1009f6f0@@QAEPADXZ CUnknown1009f6f0::sub_1009f6f0
