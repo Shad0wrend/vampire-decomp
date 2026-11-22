@@ -5,4 +5,6 @@
 
 class CLitSmokeEmitter : public CSimpleEmitter
 {
+public:
+	void sub_10030790(int a, int b, int c, int d);
 };
