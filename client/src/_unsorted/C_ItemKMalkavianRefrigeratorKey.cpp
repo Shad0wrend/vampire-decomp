@@ -10,3 +10,11 @@ C_ItemKMalkavianRefrigeratorKey *pcd_emit_10024410() { return new C_ItemKMalkavi
 
 // TARGET: ??_GC_ItemKMalkavianRefrigeratorKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10024440 size=0x3
+#include "C_ItemKMalkavianRefrigeratorKey.h"
+int C_ItemKMalkavianRefrigeratorKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
