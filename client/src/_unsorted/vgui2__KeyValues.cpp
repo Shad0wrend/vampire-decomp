@@ -37,6 +37,22 @@ int vgui2::KeyValues::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6640 size=0x21
+#include "vgui2__KeyValues.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual int f4(int, int); };
+}
+int vgui2::KeyValues::vfunc15(int a0, int a1)
+{
+    int t0 = ((lifted::V *)this)->f4(a0, 1);
+    if (t0 != 0) {
+        *(int *)((char *)t0 + 0x10) = 2;
+        *(int *)((char *)t0 + 0xc) = a1;
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6800 size=0x1b
 #include "vgui2__KeyValues.h"
 namespace lifted {
