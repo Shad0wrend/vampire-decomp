@@ -10,3 +10,11 @@ C_WeaponRanged *pcd_emit_1000d490() { return new C_WeaponRanged; }
 
 // TARGET: ??_GC_WeaponRanged@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000d4c0 size=0x3
+#include "C_WeaponRanged.h"
+int C_WeaponRanged::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
