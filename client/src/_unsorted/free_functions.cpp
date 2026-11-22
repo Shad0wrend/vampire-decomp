@@ -46093,6 +46093,23 @@ int CUnknown10136f80::sub_10136f80(float a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136f90 size=0x2c
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual int f4(int); virtual int f5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual int f16(); };
+}
+struct CUnknown10136f90 { void sub_10136f90(int); };
+void CUnknown10136f90::sub_10136f90(int a0)
+{
+    if ((*(int *)((char *)this + 0x14)) != 0) {
+        int t0 = ((lifted::V *)(*(int *)((char *)this + 0x14)))->f5();
+        if (t0 != a0) {
+            ((lifted::V *)(*(int *)((char *)this + 0x14)))->f4(a0);
+            ((lifted::V *)(*(int *)((char *)this + 0xc)))->f16();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136fc0 size=0x4
 struct CUnknown10136fc0 { int sub_10136fc0(); };
 int CUnknown10136fc0::sub_10136fc0()
