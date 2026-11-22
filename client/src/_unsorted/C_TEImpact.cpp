@@ -24,3 +24,10 @@ void C_TEImpact::vfunc16(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039f40 size=0x3
+#include "C_TEImpact.h"
+void C_TEImpact::vfunc17(int a0, int a1)
+{
+}
+// END FUNCTION
