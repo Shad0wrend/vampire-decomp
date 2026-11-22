@@ -22,6 +22,17 @@ C_ItemGWirelessCamera4 *pcd_emit_1001d110() { return new C_ItemGWirelessCamera4;
 // TARGET: ??_GC_ItemGWirelessCamera4@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1001d130 size=0x6
+#include "C_ItemGWirelessCamera4.h"
+namespace lifted {
+extern char g_1027440c;
+}
+int C_ItemGWirelessCamera4::vfunc16()
+{
+    return (int)&lifted::g_1027440c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d140 size=0x3
 #include "C_ItemGWirelessCamera4.h"
 int C_ItemGWirelessCamera4::vfunc15()
