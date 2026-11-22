@@ -16048,6 +16048,7 @@
 0x10014cdb func   ?vfunc444@CAI_BaseHumanoid@@QAEXPAX@Z CAI_BaseHumanoid::vfunc444
 0x10014ce0 func   ?sub_100ca610@@YAXXZ sub_100ca610
 0x10014ce5 func   ?sub_10265820@@YAXXZ sub_10265820
+0x10014cea func   ?LogMessage@CSoundEmitterSystem@@UAAXPBDZZ CSoundEmitterSystem::LogMessage
 0x10014cea func   ?vfunc3@CSoundEmitterSystem@@QAAXPBDZZ CSoundEmitterSystem::vfunc3
 0x10014cef func   ?sub_100564c0@@YAHXZ sub_100564c0
 0x10014cf4 func   ?sub_102382f0@@YAXXZ sub_102382f0
