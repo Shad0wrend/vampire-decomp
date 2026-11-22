@@ -66696,6 +66696,20 @@ void CUnknown1017d110::sub_1017d110(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d140 size=0x25
+namespace lifted {
+extern char g_1024cdec;
+struct C101ba810 { int sub_101ba810(int, int, int); };
+}
+struct CUnknown1017d140 { void * sub_1017d140(int, int, int); };
+void * CUnknown1017d140::sub_1017d140(int a0, int a1, int a2)
+{
+    int t0 = ((lifted::C101ba810 *)this)->sub_101ba810(a0, a1, a2);
+    *(int *)this = (int)&lifted::g_1024cdec;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017d190 size=0xb
 namespace lifted {
 extern char g_1024cdec;
