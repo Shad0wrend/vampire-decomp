@@ -27845,6 +27845,26 @@ template <> int ClientClassInit<DT_FuncParticle::ignored>(DT_FuncParticle::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4a60 size=0x35
+namespace lifted {
+extern int g_102b2c1c;
+extern int g_104a1f10;
+struct C100af040 { int sub_100af040(); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual int f8(int); };
+}
+void sub_100b4a60()
+{
+    if (lifted::g_104a1f10 != 0) {
+        int t0 = ((lifted::C100af040 *)lifted::g_104a1f10)->sub_100af040();
+        if (lifted::g_104a1f10 != 0) {
+            ((lifted::V *)lifted::g_104a1f10)->f8(1);
+        }
+        lifted::g_104a1f10 = 0;
+    }
+    lifted::g_102b2c1c = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4d30 size=0x8f
 #include "CUtlVector40.h"
 
