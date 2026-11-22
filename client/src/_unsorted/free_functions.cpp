@@ -49909,6 +49909,24 @@ bool CUnknown101e44c0::sub_1014aba0(char *buf, const char *fmt, unsigned int mas
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ada0 size=0x2c
+struct CUnknown1014ada0 { void * sub_1014ada0(int); };
+void * CUnknown1014ada0::sub_1014ada0(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 0x10) = a0;
+    *(int *)((char *)this + 0x18) = 0xa;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x2c) = 0;
+    *(int *)((char *)this + 0x30) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b580 size=0x5
 int __stdcall sub_1014b580(int a0)
 {
