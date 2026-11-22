@@ -29,6 +29,17 @@ IClientNetworkable * CBaseStaticModel::GetClientNetworkable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e13d0 size=0xb
+#include "CBaseStaticModel.h"
+IClientRenderable * CBaseStaticModel::GetClientRenderable()
+{
+    if (((int)this) != 0) {
+        return (IClientRenderable *)((char *)this + 4);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e13e0 size=0x3
 #include "CBaseStaticModel.h"
 IClientEntity * CBaseStaticModel::GetIClientEntity()
