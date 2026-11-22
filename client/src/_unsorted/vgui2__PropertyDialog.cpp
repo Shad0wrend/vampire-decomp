@@ -18,3 +18,12 @@ int vgui2::PropertyDialog::vfunc145()
     return *(int *)((char *)this + 0xe4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b71d0 size=0xd
+#include "vgui2__PropertyDialog.h"
+int vgui2::PropertyDialog::vfunc154(int a0)
+{
+    *(int *)((char *)this + 0xf0) = a0;
+    return a0;
+}
+// END FUNCTION
