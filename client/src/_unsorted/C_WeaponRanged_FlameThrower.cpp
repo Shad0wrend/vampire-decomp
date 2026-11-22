@@ -10,3 +10,11 @@ C_WeaponRanged_FlameThrower *pcd_emit_10027840() { return new C_WeaponRanged_Fla
 
 // TARGET: ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10027980 size=0xb
+#include "C_WeaponRanged_FlameThrower.h"
+void C_WeaponRanged_FlameThrower::vfunc143()
+{
+    *(int *)((char *)this + 0x156c) = -1;
+}
+// END FUNCTION
