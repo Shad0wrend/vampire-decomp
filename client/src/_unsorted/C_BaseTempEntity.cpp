@@ -101,6 +101,19 @@ void C_BaseTempEntity::vfunc13()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c480 size=0x13
+#include "C_BaseTempEntity.h"
+namespace lifted {
+extern int g_102ead70;
+}
+bool C_BaseTempEntity::vfunc12(int a0, int a1)
+{
+    *(int *)((char *)this + 0xc) = lifted::g_102ead70;
+    lifted::g_102ead70 = (int)this;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c510 size=0x3
 #include "C_BaseTempEntity.h"
 void C_BaseTempEntity::vfunc11(int a0)
