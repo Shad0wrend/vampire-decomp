@@ -10,3 +10,11 @@ C_ItemKLillyKey *pcd_emit_10020f90() { return new C_ItemKLillyKey; }
 
 // TARGET: ??_GC_ItemKLillyKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10020fc0 size=0x3
+#include "C_ItemKLillyKey.h"
+int C_ItemKLillyKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
