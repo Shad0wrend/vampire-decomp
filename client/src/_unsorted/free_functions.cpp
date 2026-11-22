@@ -37179,6 +37179,17 @@ int sub_10117ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117b00 size=0x16
+namespace lifted {
+extern int g_104a5738;
+struct V { virtual void u0(); virtual int f1(int, int); };
+}
+int sub_10117b00(int a0, int a1)
+{
+    return ((lifted::V *)lifted::g_104a5738)->f1(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117b40 size=0x11
 namespace lifted {
 extern int g_104a57d4;
