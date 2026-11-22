@@ -76,3 +76,14 @@ int CHudManagerPanel::vfunc12()
     return ((lifted::C100579c0 *)(*(int *)((char *)this + 4)))->sub_100579c0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10058ec0 size=0x8
+#include "CHudManagerPanel.h"
+namespace lifted {
+struct C10057a20 { int sub_10057a20(); };
+}
+int CHudManagerPanel::vfunc11()
+{
+    return ((lifted::C10057a20 *)(*(int *)((char *)this + 4)))->sub_10057a20();
+}
+// END FUNCTION
