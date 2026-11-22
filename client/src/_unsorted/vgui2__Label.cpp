@@ -20,6 +20,19 @@ short vgui2::Label::vfunc120(short a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b23a0 size=0x12
+#include "vgui2__Label.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(int); };
+}
+void vgui2::Label::vfunc134()
+{
+    if ((*(int *)((char *)this + 0xa4)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0xa4)))->f15(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b23e0 size=0x8
 #include "vgui2__Label.h"
 namespace lifted {
