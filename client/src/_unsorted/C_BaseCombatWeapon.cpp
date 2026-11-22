@@ -47,6 +47,14 @@ bool C_BaseCombatWeapon::vfunc159()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100030b0 size=0x4
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::vfunc161()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100030d0 size=0x3
 #include "C_BaseCombatWeapon.h"
 void C_BaseCombatWeapon::vfunc164(int a0)
