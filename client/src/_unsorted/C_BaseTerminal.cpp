@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100c6890 size=0x6
+#include "C_BaseTerminal.h"
+namespace lifted {
+extern char g_102b7144;
+}
+int C_BaseTerminal::vfunc16()
+{
+    return (int)&lifted::g_102b7144;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c68a0 size=0x3
 #include "C_BaseTerminal.h"
 int C_BaseTerminal::vfunc15()

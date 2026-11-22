@@ -2895,6 +2895,7 @@
 0x100c6700 func   ?ClientClassInit@@YAHPAUignored@DT_VampireProjectile_MingXiaoSpit@@@Z ClientClassInit
 0x100c6840 func   ?vfunc144@C_VampireProjectile@@UAE_NXZ C_VampireProjectile::vfunc144
 0x100c6880 func   ?vfunc86@C_VampireProjectile@@UAEHXZ C_VampireProjectile::vfunc86
+0x100c6890 func   ?vfunc16@C_BaseTerminal@@UAEHXZ C_BaseTerminal::vfunc16
 0x100c68a0 func   ?vfunc15@C_BaseTerminal@@UAEHXZ C_BaseTerminal::vfunc15
 0x100c68b0 func   ?sub_100c68b0@@YAHXZ sub_100c68b0
 0x100c69b0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseTerminal@@@Z ClientClassInit
