@@ -8248,6 +8248,7 @@
 0x1000b2b7 func   ?sub_1006aa90@CUnknown1006aa90@@QAEHXZ CUnknown1006aa90::sub_1006aa90
 0x1000b2bc func   ?vfunc113@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc113
 0x1000b2c1 func   ?sub_1033db30@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033db30
+0x1000b2c6 func   ?GetBlockName@CPython_SaveRestoreBlockHandler@@UAEPBDXZ CPython_SaveRestoreBlockHandler::GetBlockName
 0x1000b2c6 func   ?vfunc0@CPython_SaveRestoreBlockHandler@@UAEHXZ CPython_SaveRestoreBlockHandler::vfunc0
 0x1000b2cb func   ?sub_10407c40@CKeyringUnit@@QAEXPBD0@Z CKeyringUnit::sub_10407c40
 0x1000b2d0 func   ?sub_10341850@@YI_NPADHH@Z sub_10341850
