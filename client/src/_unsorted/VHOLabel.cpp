@@ -10,3 +10,15 @@ VHOLabel *pcd_emit_1017d220() { return new VHOLabel; }
 
 // TARGET: ??_GVHOLabel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1017d3f0 size=0xe
+#include "VHOLabel.h"
+namespace lifted {
+extern int g_105fb6e4;
+struct C10182100 { int sub_10182100(int); };
+}
+void VHOLabel::vfunc86()
+{
+    ((lifted::C10182100 *)lifted::g_105fb6e4)->sub_10182100(0);
+}
+// END FUNCTION
