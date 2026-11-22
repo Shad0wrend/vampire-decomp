@@ -10,3 +10,11 @@ C_ItemKFUOfficeKey *pcd_emit_10025a90() { return new C_ItemKFUOfficeKey; }
 
 // TARGET: ??_GC_ItemKFUOfficeKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10025ac0 size=0x3
+#include "C_ItemKFUOfficeKey.h"
+int C_ItemKFUOfficeKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION

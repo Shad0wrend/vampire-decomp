@@ -925,6 +925,7 @@
 0x10025850 func   ?sub_10025850@@YAHXZ sub_10025850
 0x10025970 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOHFrontKey@@@Z ClientClassInit
 0x10025a90 func   ??_GC_ItemKFUOfficeKey@@UAEPAXI@Z ??_GC_ItemKFUOfficeKey@@UAEPAXI@Z
+0x10025ac0 func   ?vfunc15@C_ItemKFUOfficeKey@@UAEHXZ C_ItemKFUOfficeKey::vfunc15
 0x10025ad0 func   ?sub_10025ad0@@YAHXZ sub_10025ad0
 0x10025bf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKFUOfficeKey@@@Z ClientClassInit
 0x10025d10 func   ??_GC_ItemKChineseTheatreKey@@UAEPAXI@Z ??_GC_ItemKChineseTheatreKey@@UAEPAXI@Z
