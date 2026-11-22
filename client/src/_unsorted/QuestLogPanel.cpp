@@ -18,6 +18,13 @@ void QuestLogPanel::vfunc124(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101895c0 size=0x3
+#include "QuestLogPanel.h"
+void QuestLogPanel::vfunc125(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101895e0 size=0x1
 #include "QuestLogPanel.h"
 void QuestLogPanel::vfunc119()
