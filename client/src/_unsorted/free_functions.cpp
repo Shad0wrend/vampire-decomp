@@ -43997,6 +43997,17 @@ int CUnknown10136f40::sub_10136f40(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136f80 size=0x10
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual int f2(float); };
+}
+struct CUnknown10136f80 { int sub_10136f80(float); };
+int CUnknown10136f80::sub_10136f80(float a0)
+{
+    return ((lifted::V *)(*(int *)((char *)this + 0x10)))->f2(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136fc0 size=0x4
 struct CUnknown10136fc0 { int sub_10136fc0(); };
 int CUnknown10136fc0::sub_10136fc0()
