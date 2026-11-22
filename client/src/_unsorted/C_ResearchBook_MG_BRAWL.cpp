@@ -10,3 +10,11 @@ C_ResearchBook_MG_BRAWL *pcd_emit_10011590() { return new C_ResearchBook_MG_BRAW
 
 // TARGET: ??_GC_ResearchBook_MG_BRAWL@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100115c0 size=0x3
+#include "C_ResearchBook_MG_BRAWL.h"
+int C_ResearchBook_MG_BRAWL::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
