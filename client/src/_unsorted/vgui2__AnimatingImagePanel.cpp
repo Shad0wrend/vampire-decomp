@@ -14,6 +14,23 @@ void vgui2::AnimatingImagePanel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c57e0 size=0x27
+#include "vgui2__AnimatingImagePanel.h"
+namespace lifted {
+extern char g_102da744;
+struct C101ab750 { int sub_101ab750(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(int, int); };
+}
+int vgui2::AnimatingImagePanel::vfunc76(int a0)
+{
+    int t0 = ((lifted::C101ab750 *)this)->sub_101ab750(a0);
+    if ((*(int *)((char *)this + 0x78)) != 0) {
+        return ((lifted::V *)a0)->f14((int)&lifted::g_102da744, *(int *)((char *)this + 0x78));
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5890 size=0x23
 #include "vgui2__AnimatingImagePanel.h"
 namespace lifted {
