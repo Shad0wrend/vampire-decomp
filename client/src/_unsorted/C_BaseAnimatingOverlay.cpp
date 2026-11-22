@@ -11,6 +11,17 @@ C_BaseAnimatingOverlay *pcd_emit_10097210() { return new C_BaseAnimatingOverlay;
 // TARGET: ??_GC_BaseAnimatingOverlay@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10097360 size=0x6
+#include "C_BaseAnimatingOverlay.h"
+namespace lifted {
+extern char g_102ae334;
+}
+int C_BaseAnimatingOverlay::vfunc16()
+{
+    return (int)&lifted::g_102ae334;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097370 size=0x3
 #include "C_BaseAnimatingOverlay.h"
 int C_BaseAnimatingOverlay::vfunc15()

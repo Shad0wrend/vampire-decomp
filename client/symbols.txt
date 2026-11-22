@@ -2462,6 +2462,7 @@
 0x10097160 func   ?sub_10097160@S101859a0@@QAEXH@Z S101859a0::sub_10097160
 0x10097210 func   ??_GC_BaseAnimatingOverlay@@UAEPAXI@Z ??_GC_BaseAnimatingOverlay@@UAEPAXI@Z
 0x10097290 func   ?ClientClassInit@@YAHPAUignored@DT_Animationlayer@@@Z ClientClassInit
+0x10097360 func   ?vfunc16@C_BaseAnimatingOverlay@@UAEHXZ C_BaseAnimatingOverlay::vfunc16
 0x10097370 func   ?vfunc15@C_BaseAnimatingOverlay@@UAEHXZ C_BaseAnimatingOverlay::vfunc15
 0x10097380 func   ?sub_10097380@@YAHXZ sub_10097380
 0x10097480 func   ?ClientClassInit@@YAHPAUignored@DT_BaseAnimatingOverlay@@@Z ClientClassInit
