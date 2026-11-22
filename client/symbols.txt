@@ -3291,6 +3291,7 @@
 0x100ccc60 func   ?sub_100ccc60@@YAXHHHHHHHH@Z sub_100ccc60
 0x100cccc0 func   ?sub_100cccc0@@YAXHHHHHH@Z sub_100cccc0
 0x100ccd10 func   ?sub_100ccd10@@YAXHHHHHH@Z sub_100ccd10
+0x100ccd60 func   ?sub_100ccd60@@YAXHHHHHHHH@Z sub_100ccd60
 0x100ccdc0 func   ?sub_100ccdc0@@YAHH@Z sub_100ccdc0
 0x100ccde0 func   ?sub_100ccde0@@YAHH@Z sub_100ccde0
 0x100cced0 func   ?sub_100cced0@@YADH@Z sub_100cced0
