@@ -12,19 +12,12 @@ bool CVoiceGameMgrHelper::vfunc1(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x103531f0 size=0x20
-extern int g_104a3078;
+#define PCD_INITIALIZERS	// the class as the initializer units see it: its real bases and inline destructor
+#include "CVoiceGameMgr.h"
 
-struct Helper
-{
-	void* sub_103531f0(unsigned char flags);
-};
+// VC6 writes CVoiceGameMgrHelper's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CVoiceGameMgrHelper *pcd_emit_103531f0() { return new CVoiceGameMgrHelper; }
 
-// TARGET: Helper::sub_103531f0
-void* Helper::sub_103531f0(unsigned char flags)
-{
-	*(void**)this = &g_104a3078;
-	if (flags & 1)
-		::operator delete(this);
-	return this;
-}
+// TARGET: ??_GCVoiceGameMgrHelper@@UAEPAXI@Z
 // END FUNCTION
