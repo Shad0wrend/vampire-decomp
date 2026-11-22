@@ -7274,6 +7274,7 @@
 0x10009f8e func   ?sub_100335e0@@YIXPAUCUnknownCycle100335e0@@@Z sub_100335e0
 0x10009f93 func   ?sub_103d3c20@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d3c20
 0x10009f98 func   ?sub_10297940@CAI_BaseNPCTroika@@QAEXPBM@Z CAI_BaseNPCTroika::sub_10297940
+0x10009f9d func   ??1CKeyHolder@@QAE@XZ CKeyHolder::~CKeyHolder
 0x10009f9d func   ??1CVDataRecord_1073a2e4@@QAE@XZ CVDataRecord_1073a2e4::~CVDataRecord_1073a2e4
 0x10009f9d func   ?sub_101ebd10@@YAXXZ sub_101ebd10
 0x10009fa2 func   ?sub_100caa40@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100caa40
