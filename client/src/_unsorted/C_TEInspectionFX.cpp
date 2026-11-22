@@ -10,3 +10,10 @@ C_TEInspectionFX *pcd_emit_1003a190() { return new C_TEInspectionFX; }
 
 // TARGET: ??_GC_TEInspectionFX@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1003a1d0 size=0x1
+#include "C_TEInspectionFX.h"
+void C_TEInspectionFX::vfunc13()
+{
+}
+// END FUNCTION
