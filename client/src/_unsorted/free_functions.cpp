@@ -71046,6 +71046,22 @@ void UtlMem::sub_101b1e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1e90 size=0x2d
+namespace lifted {
+int sub_101d0f30(int, int, int);
+}
+struct CUnknown101b1e90 { void sub_101b1e90(int, int); };
+void CUnknown101b1e90::sub_101b1e90(int a0, int a1)
+{
+    int t0 = ((*(int *)((char *)this + 0xc)) - a0) - a1;
+    if (t0 > 0) {
+        if (a1 > 0) {
+            lifted::sub_101d0f30(((*(int *)this) + a0) + a1, (*(int *)this) + a0, t0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1ec0 size=0x11
 int sub_101b1ec0(int a0, int a1)
 {
