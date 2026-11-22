@@ -3,19 +3,12 @@
 
 // FUNCTION: 0x102275f0 size=0x68
 #include "CPlayerEventsManager.h"
-#include "CDirtySpatialPartitionEntityList.h"
-#include "utlvector.h"
 
-void __cdecl sub_10430964(void *p);
+// VC6 writes CPlayerEventsManager's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CPlayerEventsManager *pcd_emit_102275f0() { return new CPlayerEventsManager; }
 
-CAutoGameSystem *CPlayerEventsManager::vfunc8(unsigned int flags)
-{
-	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
-	((CAutoGameSystem *)this)->sub_1000cfbd();
-	if (flags & 1)
-		sub_10430964(this);
-	return (CAutoGameSystem *)(this);
-}
+// TARGET: ??_GCPlayerEventsManager@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x10227680 size=0x41
