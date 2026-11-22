@@ -8106,6 +8106,7 @@
 0x1000aff6 func   ?vfunc171@CTriggerImpact@@QAEXXZ CTriggerImpact::vfunc171
 0x1000affb func   ?sub_10310d70@CUnknown10310c10@@QAEDPAX0PAM@Z CUnknown10310c10::sub_10310d70
 0x1000b005 func   ?sub_102c1170@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c1170
+0x1000b00a func   ?PostSave@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::PostSave
 0x1000b00a func   ?vfunc4@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc4
 0x1000b00f func   ?sub_1042c4e0@@YA_NXZ sub_1042c4e0
 0x1000b014 func   ?sub_10201fa0@CVStatListManager_t@@QAEDH@Z CVStatListManager_t::sub_10201fa0
