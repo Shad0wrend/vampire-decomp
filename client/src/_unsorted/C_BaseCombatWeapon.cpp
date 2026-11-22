@@ -239,6 +239,17 @@ int C_BaseCombatWeapon::vfunc145()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b620 size=0xb
+#include "C_BaseCombatWeapon.h"
+namespace lifted {
+int sub_1007b160();
+}
+int C_BaseCombatWeapon::vfunc146()
+{
+    return (lifted::sub_1007b160()) + 0x2308;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b650 size=0x27
 #include "CWeaponOwner.h"
 struct CWeaponOwner;
