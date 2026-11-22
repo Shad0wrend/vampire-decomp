@@ -10,6 +10,22 @@ ConCommand::ConCommand(const char *pszName, void (*pCallback)(), const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df470 size=0x1e
+#include "ConCommand.h"
+namespace lifted {
+int sub_100df490();
+int sub_101d1296(int);
+}
+ConCommandBase * ConCommand::vfunc0(unsigned int a0)
+{
+    int t0 = lifted::sub_100df490();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df4a0 size=0x3
 #include "ConCommand.h"
 bool ConCommand::vfunc1()
