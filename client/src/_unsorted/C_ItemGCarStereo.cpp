@@ -10,3 +10,11 @@ C_ItemGCarStereo *pcd_emit_10017c10() { return new C_ItemGCarStereo; }
 
 // TARGET: ??_GC_ItemGCarStereo@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10017c40 size=0x3
+#include "C_ItemGCarStereo.h"
+int C_ItemGCarStereo::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
