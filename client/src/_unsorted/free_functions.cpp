@@ -33968,6 +33968,22 @@ int CUnknown100f1860::sub_100f1860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1870 size=0x2a
+namespace lifted {
+extern char g_102b931c;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C100f24b0 { int sub_100f24b0(int, int, int); };
+}
+void sub_100f1870(int a0, int a1, int a2)
+{
+    int t0 = ((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102b931c);
+    if (t0 != 0) {
+        ((lifted::C100f24b0 *)t0)->sub_100f24b0(a0, a1, a2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2490 size=0x3
 void __stdcall sub_100f2490(int a0)
 {
