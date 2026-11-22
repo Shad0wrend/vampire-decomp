@@ -22,6 +22,17 @@ C_ItemGGargoyleBook *pcd_emit_10020590() { return new C_ItemGGargoyleBook; }
 // TARGET: ??_GC_ItemGGargoyleBook@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100205b0 size=0x6
+#include "C_ItemGGargoyleBook.h"
+namespace lifted {
+extern char g_10274250;
+}
+int C_ItemGGargoyleBook::vfunc16()
+{
+    return (int)&lifted::g_10274250;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100205c0 size=0x3
 #include "C_ItemGGargoyleBook.h"
 int C_ItemGGargoyleBook::vfunc15()

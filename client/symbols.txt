@@ -1129,6 +1129,7 @@
 0x10020470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSerialKiller2@@@Z ClientClassInit
 0x10020500 func   ?vfunc17@C_ItemGGargoyleBook@@UAEHXZ C_ItemGGargoyleBook::vfunc17
 0x10020590 func   ??_GC_ItemGGargoyleBook@@UAEPAXI@Z ??_GC_ItemGGargoyleBook@@UAEPAXI@Z
+0x100205b0 func   ?vfunc16@C_ItemGGargoyleBook@@UAEHXZ C_ItemGGargoyleBook::vfunc16
 0x100205c0 func   ?vfunc15@C_ItemGGargoyleBook@@UAEHXZ C_ItemGGargoyleBook::vfunc15
 0x100205d0 func   ?sub_100205d0@@YAHXZ sub_100205d0
 0x100206f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGargoyleBook@@@Z ClientClassInit
