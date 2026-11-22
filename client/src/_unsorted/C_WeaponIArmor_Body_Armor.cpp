@@ -22,6 +22,17 @@ C_WeaponIArmor_Body_Armor *pcd_emit_10015e10() { return new C_WeaponIArmor_Body_
 // TARGET: ??_GC_WeaponIArmor_Body_Armor@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10015e30 size=0x6
+#include "C_WeaponIArmor_Body_Armor.h"
+namespace lifted {
+extern char g_10274828;
+}
+int C_WeaponIArmor_Body_Armor::vfunc16()
+{
+    return (int)&lifted::g_10274828;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015e40 size=0x3
 #include "C_WeaponIArmor_Body_Armor.h"
 int C_WeaponIArmor_Body_Armor::vfunc15()
