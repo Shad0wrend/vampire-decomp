@@ -1171,6 +1171,7 @@
 0x100215f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOceanHouseSewerKey@@@Z ClientClassInit
 0x10021680 func   ?vfunc17@C_ItemKOceanHouseBasementKey@@UAEHXZ C_ItemKOceanHouseBasementKey::vfunc17
 0x10021710 func   ??_GC_ItemKOceanHouseBasementKey@@UAEPAXI@Z ??_GC_ItemKOceanHouseBasementKey@@UAEPAXI@Z
+0x10021730 func   ?vfunc16@C_ItemKOceanHouseBasementKey@@UAEHXZ C_ItemKOceanHouseBasementKey::vfunc16
 0x10021740 func   ?vfunc15@C_ItemKOceanHouseBasementKey@@UAEHXZ C_ItemKOceanHouseBasementKey::vfunc15
 0x10021750 func   ?sub_10021750@@YAHXZ sub_10021750
 0x10021870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOceanHouseBasementKey@@@Z ClientClassInit
