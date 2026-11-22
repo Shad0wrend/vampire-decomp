@@ -155,36 +155,13 @@ void sub_100d1650(void *pEdict, int teamonly)
 // END FUNCTION
 
 // FUNCTION: 0x100d1cc0 size=0x68
-extern "C" __declspec(dllimport) void Plat_Free(void *);
-extern int g_10447108[];
-struct SFilter {
-    void *vt;
-    int m4;
-    void *m8;
-    int mc;
-    int m10;
-    int m14;
-    void *m18;
-    SFilter *sub_100d1cc0(unsigned char flag);
-};
-// TARGET: SFilter::sub_100d1cc0
-SFilter *SFilter::sub_100d1cc0(unsigned char flag)
-{
-    m14 = 0;
-    if (m10 != -1) {
-        if (m8) { Plat_Free(m8); m8 = 0; }
-        mc = 0;
-    }
-    m18 = m8;
-    if (m10 != -1) {
-        if (m8) { Plat_Free(m8); m8 = 0; }
-        mc = 0;
-    }
-    vt = g_10447108;
-    if (flag & 1)
-        delete this;
-    return this;
-}
+#include "CSingleUserRecipientFilter.h"
+
+// VC6 writes CSingleUserRecipientFilter's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CSingleUserRecipientFilter *pcd_emit_100d1cc0() { return new CSingleUserRecipientFilter; }
+
+// TARGET: ??_GCSingleUserRecipientFilter@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x100d1d50 size=0x1af
