@@ -1247,6 +1247,7 @@
 0x10023540 func   ?vfunc15@C_ItemKNetcafeOfficeKey@@UAEHXZ C_ItemKNetcafeOfficeKey::vfunc15
 0x10023550 func   ?sub_10023550@@YAHXZ sub_10023550
 0x10023670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKNetcafeOfficeKey@@@Z ClientClassInit
+0x10023700 func   ?vfunc17@C_ItemKEDaneKey@@UAEHXZ C_ItemKEDaneKey::vfunc17
 0x10023790 func   ??_GC_ItemKEDaneKey@@UAEPAXI@Z ??_GC_ItemKEDaneKey@@UAEPAXI@Z
 0x100237c0 func   ?vfunc15@C_ItemKEDaneKey@@UAEHXZ C_ItemKEDaneKey::vfunc15
 0x100237d0 func   ?sub_100237d0@@YAHXZ sub_100237d0
