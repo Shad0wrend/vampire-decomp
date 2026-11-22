@@ -48773,6 +48773,28 @@ char __stdcall sub_101407f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140800 size=0x3c
+namespace lifted {
+struct C1008ebb0 { int sub_1008ebb0(); };
+struct C10161bb0 { bool sub_10161bb0(int); };
+}
+struct CUnknown10140800 { char sub_10140800(int); };
+char CUnknown10140800::sub_10140800(int a0)
+{
+    bool t0 = ((lifted::C10161bb0 *)((char *)this + 0x18))->sub_10161bb0(a0);
+    if (t0 != 0) {
+        if ((*(int *)((char *)this + 0x34)) == -1) {
+            return 1;
+        }
+        int t1 = ((lifted::C1008ebb0 *)a0)->sub_1008ebb0();
+        if ((*(int *)((char *)this + 0x34)) == t1) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140840 size=0xa9
 #include "CUnknown101d7520.h"
 #include "CStatDefault3List.h"
