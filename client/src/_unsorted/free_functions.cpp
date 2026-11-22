@@ -63468,6 +63468,18 @@ void __cdecl sub_101a2ee0(void *m, const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2f20 size=0xc
+namespace lifted {
+int sub_101a3170();
+}
+struct CUnknown101a2f20 { void * sub_101a2f20(); };
+void * CUnknown101a2f20::sub_101a2f20()
+{
+    lifted::sub_101a3170();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2f30 size=0x5
 namespace lifted {
 int sub_101a3000();
