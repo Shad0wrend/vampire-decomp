@@ -94,3 +94,10 @@ void C_BaseEntity::vfunc82()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a1210 size=0x1
+#include "C_BaseEntity.h"
+void C_BaseEntity::vfunc61()
+{
+}
+// END FUNCTION
