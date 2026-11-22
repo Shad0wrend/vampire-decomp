@@ -10,3 +10,11 @@ C_WeaponMelee_ChangBlade *pcd_emit_1000af10() { return new C_WeaponMelee_ChangBl
 
 // TARGET: ??_GC_WeaponMelee_ChangBlade@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000af40 size=0x3
+#include "C_WeaponMelee_ChangBlade.h"
+int C_WeaponMelee_ChangBlade::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
