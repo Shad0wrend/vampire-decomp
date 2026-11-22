@@ -5719,6 +5719,7 @@
 0x101c9e50 func   ??_GScrollBarSlider@vgui2@@UAEPAXI@Z ??_GScrollBarSlider@vgui2@@UAEPAXI@Z
 0x101c9ea0 func   ?vfunc109@ScrollBarSlider@vgui2@@UAE_NXZ vgui2::ScrollBarSlider::vfunc109
 0x101c9f00 func   ?vfunc108@ScrollBarSlider@vgui2@@UAEHXZ vgui2::ScrollBarSlider::vfunc108
+0x101c9f10 func   ?vfunc101@ScrollBarSlider@vgui2@@UAEXXZ vgui2::ScrollBarSlider::vfunc101
 0x101ca670 func   ?vfunc112@ScrollBarSlider@vgui2@@UAEHH@Z vgui2::ScrollBarSlider::vfunc112
 0x101ca680 func   ?vfunc113@ScrollBarSlider@vgui2@@UAEHXZ vgui2::ScrollBarSlider::vfunc113
 0x101ca690 func   ?vfunc117@ScrollBarSlider@vgui2@@UAEHH@Z vgui2::ScrollBarSlider::vfunc117
