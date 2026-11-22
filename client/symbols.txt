@@ -2952,6 +2952,7 @@
 0x100c0a40 func   ?vfunc2@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc2
 0x100c0a50 func   ?vfunc3@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc3
 0x100c0a60 func   ?vfunc4@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc4
+0x100c0a70 func   ?vfunc5@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc5
 0x100c0c80 func   ?sub_100c0c80@@YAHXZ sub_100c0c80
 0x100c0c90 func   ?sub_100c0c90@@YAHH@Z sub_100c0c90
 0x100c18e0 func   ?sub_100c18e0@CUnknown100c18e0@@QAEHHHH@Z CUnknown100c18e0::sub_100c18e0
