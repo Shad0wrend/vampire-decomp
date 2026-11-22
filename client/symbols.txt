@@ -13,6 +13,7 @@
 0x100015e0 func   ?GetIClientEntity@C_BaseEntity@@UAEPAVIClientEntity@@XZ C_BaseEntity::GetIClientEntity
 0x100015f0 func   ?GetBaseEntity@C_BaseEntity@@UAEPAV1@XZ C_BaseEntity::GetBaseEntity
 0x10001600 func   ?GetClientThinkable@C_BaseEntity@@UAEPAVIClientThinkable@@XZ C_BaseEntity::GetClientThinkable
+0x10001620 func   ?vfunc26@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc26
 0x10001630 func   ?GetFxBlend@C_BaseEntity@@UAEHXZ C_BaseEntity::GetFxBlend
 0x10001630 func   ?Renderable_vfunc12@C_BaseEntity@@UAEXXZ C_BaseEntity::Renderable_vfunc12
 0x10001640 func   ?Collideable_vfunc11@C_BaseEntity@@UAE_NXZ C_BaseEntity::Collideable_vfunc11
