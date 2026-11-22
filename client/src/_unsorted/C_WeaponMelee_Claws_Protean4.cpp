@@ -10,3 +10,11 @@ C_WeaponMelee_Claws_Protean4 *pcd_emit_1000a010() { return new C_WeaponMelee_Cla
 
 // TARGET: ??_GC_WeaponMelee_Claws_Protean4@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000a040 size=0x3
+#include "C_WeaponMelee_Claws_Protean4.h"
+int C_WeaponMelee_Claws_Protean4::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
