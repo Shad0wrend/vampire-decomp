@@ -10,3 +10,11 @@ C_OccultExperience *pcd_emit_10013890() { return new C_OccultExperience; }
 
 // TARGET: ??_GC_OccultExperience@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100138c0 size=0x3
+#include "C_OccultExperience.h"
+int C_OccultExperience::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
