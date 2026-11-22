@@ -29678,6 +29678,20 @@ char * CUnknown100bf150::sub_100bf150(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf170 size=0x21
+struct CUnknown100bf170 { int sub_100bf170(int); };
+int CUnknown100bf170::sub_100bf170(int a0)
+{
+    int t0 = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x714) = t0;
+    int t1 = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x718) = t1;
+    int t2 = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x71c) = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf6b0 size=0x4b
 namespace lifted {
 struct C100bf1a0 { int sub_100bf1a0(); };
