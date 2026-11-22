@@ -35219,6 +35219,21 @@ char CUnk1011d310::sub_10104360(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104380 size=0x4e
+struct CUnknown10104380 { void * sub_10104380(int); };
+void * CUnknown10104380::sub_10104380(int a0)
+{
+    if (a0 != 0) {
+        *(char *)((char *)((*(int *)this) + ((*(int *)((char *)this + 0xc)) >> 3))) = (char)((*(char *)((char *)((*(int *)this) + ((*(int *)((char *)this + 0xc)) >> 3)))) | (1 << ((*(int *)((char *)this + 0xc)) & 7)));
+        *(int *)((char *)this + 0xc) = (*(int *)((char *)this + 0xc)) + 1;
+        return this;
+    }
+    *(char *)((char *)((*(int *)this) + ((*(int *)((char *)this + 0xc)) >> 3))) = (char)((*(char *)((char *)((*(int *)this) + ((*(int *)((char *)this + 0xc)) >> 3)))) & (~(1 << ((*(int *)((char *)this + 0xc)) & 7))));
+    *(int *)((char *)this + 0xc) = (*(int *)((char *)this + 0xc)) + 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101062e0 size=0x2f
 namespace lifted {
 extern char g_102bdfd8;
