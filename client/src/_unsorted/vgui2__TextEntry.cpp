@@ -170,6 +170,16 @@ void vgui2::TextEntry::vfunc85()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af150 size=0x12
+#include "vgui2__TextEntry.h"
+void vgui2::TextEntry::vfunc86()
+{
+    if ((*(char *)((char *)this + 0x8c)) != 0) {
+        *(char *)((char *)this + 0x8d) = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af3c0 size=0x8
 #include "vgui2__TextEntry.h"
 void vgui2::TextEntry::vfunc79()
