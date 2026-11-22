@@ -10,3 +10,11 @@ C_OccultLockpicking *pcd_emit_10012c10() { return new C_OccultLockpicking; }
 
 // TARGET: ??_GC_OccultLockpicking@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10012c40 size=0x3
+#include "C_OccultLockpicking.h"
+int C_OccultLockpicking::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
