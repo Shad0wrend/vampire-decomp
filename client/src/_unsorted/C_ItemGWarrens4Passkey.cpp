@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001c680 size=0x6
+#include "C_ItemGWarrens4Passkey.h"
+namespace lifted {
+extern char g_102736f4;
+}
+int C_ItemGWarrens4Passkey::vfunc17()
+{
+    return (int)&lifted::g_102736f4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c710 size=0x1e
 #include "C_ItemGWarrens4Passkey.h"
 
