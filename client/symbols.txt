@@ -823,6 +823,7 @@
 0x100184f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingGold@@@Z ClientClassInit
 0x10018580 func   ?vfunc17@C_ItemGRingSilver@@UAEHXZ C_ItemGRingSilver::vfunc17
 0x10018610 func   ??_GC_ItemGRingSilver@@UAEPAXI@Z ??_GC_ItemGRingSilver@@UAEPAXI@Z
+0x10018630 func   ?vfunc16@C_ItemGRingSilver@@UAEHXZ C_ItemGRingSilver::vfunc16
 0x10018640 func   ?vfunc15@C_ItemGRingSilver@@UAEHXZ C_ItemGRingSilver::vfunc15
 0x10018650 func   ?sub_10018650@@YAHXZ sub_10018650
 0x10018770 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSilver@@@Z ClientClassInit
