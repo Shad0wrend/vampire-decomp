@@ -1131,6 +1131,7 @@
 0x10033bb0 func   ??1C_TEBeamRingPoint@@UAE@XZ C_TEBeamRingPoint::~C_TEBeamRingPoint
 0x10033bb0 func   ?sub_10033bb0@CUnknown10033bb0@@QAEHXZ CUnknown10033bb0::sub_10033bb0
 0x10033ce0 func   ?vfunc9@C_TEBeamRingPoint@@UAEHXZ C_TEBeamRingPoint::vfunc9
+0x10033cf0 func   ?vfunc8@C_TEBeamRingPoint@@UAEHXZ C_TEBeamRingPoint::vfunc8
 0x10033d00 func   ?sub_10033d00@@YAHXZ sub_10033d00
 0x10033da0 func   ?sub_10033da0@@YAHXZ sub_10033da0
 0x10033e10 func   ?ClientClassInit@@YAHPAUignored@DT_TEBeamRingPoint@@@Z ClientClassInit

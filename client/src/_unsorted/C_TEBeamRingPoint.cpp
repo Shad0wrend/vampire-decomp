@@ -21,3 +21,11 @@ int C_TEBeamRingPoint::vfunc9()
     return (int)&lifted::g_1027dd0c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10033cf0 size=0x3
+#include "C_TEBeamRingPoint.h"
+int C_TEBeamRingPoint::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
