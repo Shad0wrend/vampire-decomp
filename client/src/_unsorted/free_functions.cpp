@@ -37048,6 +37048,17 @@ int CUnknown101175a0::sub_101175a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117ae0 size=0x11
+namespace lifted {
+extern int g_104a57d4;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual int f39(int); };
+}
+int sub_10117ae0()
+{
+    return ((lifted::V *)lifted::g_104a57d4)->f39(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ba0 size=0x8d
 #include "CUtlLinkedList8.h"
 
