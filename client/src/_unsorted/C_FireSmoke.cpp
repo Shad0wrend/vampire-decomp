@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b5080 size=0x6
+#include "C_FireSmoke.h"
+namespace lifted {
+extern char g_102b3894;
+}
+int C_FireSmoke::vfunc16()
+{
+    return (int)&lifted::g_102b3894;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5090 size=0x3
 #include "C_FireSmoke.h"
 int C_FireSmoke::vfunc15()

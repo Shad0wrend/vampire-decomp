@@ -2735,6 +2735,7 @@
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30
 0x100b4dc0 func   ?sub_100b4dc0@UtlVec40@@QAEXHH@Z UtlVec40::sub_100b4dc0
 0x100b4e00 func   ?sub_100b4e00@UtlMem@@QAEXXZ UtlMem::sub_100b4e00
+0x100b5080 func   ?vfunc16@C_FireSmoke@@UAEHXZ C_FireSmoke::vfunc16
 0x100b5090 func   ?vfunc15@C_FireSmoke@@UAEHXZ C_FireSmoke::vfunc15
 0x100b50a0 func   ?sub_100b50a0@@YAHXZ sub_100b50a0
 0x100b51a0 func   ?ClientClassInit@@YAHPAUignored@DT_FireSmoke@@@Z ClientClassInit
