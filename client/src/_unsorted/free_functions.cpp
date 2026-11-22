@@ -12838,6 +12838,20 @@ void sub_10057650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100576b0 size=0x11
+namespace lifted {
+struct C100576d0 { int sub_100576d0(); };
+int sub_10058080();
+}
+void sub_100576b0()
+{
+    int t0 = lifted::sub_10058080();
+    if (t0 != 0) {
+        ((lifted::C100576d0 *)t0)->sub_100576d0(); return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057ca0 size=0x5d
 #include "CFrenzyBar.h"
 #include "CHudManagerPanel.h"
