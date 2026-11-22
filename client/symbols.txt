@@ -2720,6 +2720,7 @@
 0x1009fc40 func   ?sub_1009fc40@CUnknown1009fc40@@QAEHXZ CUnknown1009fc40::sub_1009fc40
 0x1009fc50 func   ?GetSolidFlags@C_BaseEntity@@UAEHXZ C_BaseEntity::GetSolidFlags
 0x1009fc50 func   ?sub_1009fc50@CUnknown1009fc50@@QAEHXZ CUnknown1009fc50::sub_1009fc50
+0x1009fc60 func   ?sub_1009fc60@CUnknown1009fc60@@QAEXHH@Z CUnknown1009fc60::sub_1009fc60
 0x1009fc90 func   ?sub_1009fc90@CUnknown1009fc90@@QAEHH@Z CUnknown1009fc90::sub_1009fc90
 0x1009fca0 func   ?IsTransparent@C_BaseEntity@@UAE_NXZ C_BaseEntity::IsTransparent
 0x1009fcd0 func   ?UsesFrameBufferTexture@C_BaseEntity@@UAE_NXZ C_BaseEntity::UsesFrameBufferTexture

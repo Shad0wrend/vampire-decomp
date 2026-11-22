@@ -25911,6 +25911,20 @@ int CUnknown1009fc50::sub_1009fc50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fc60 size=0x21
+namespace lifted {
+int __stdcall sub_1009fc90(int);
+}
+struct CUnknown1009fc60 { void sub_1009fc60(int, int); };
+void CUnknown1009fc60::sub_1009fc60(int a0, int a1)
+{
+    if ((*(int *)((char *)this + 0x200)) != a0) {
+        *(int *)((char *)this + 0x200) = a0;
+        lifted::sub_1009fc90(a1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fc90 size=0xd
 struct CUnknown1009fc90 { int sub_1009fc90(int); };
 int CUnknown1009fc90::sub_1009fc90(int a0)
