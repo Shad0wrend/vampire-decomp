@@ -5355,6 +5355,7 @@
 0x1018b320 func   ?sub_1018b320@CUnknown1018b320@@QAEHH@Z CUnknown1018b320::sub_1018b320
 0x1018b350 func   ?sub_1018b350@CUnknown1018b350@@QAEHH@Z CUnknown1018b350::sub_1018b350
 0x1018bc50 func   ?sub_1018bc50@CUnknown1018bc50@@QAEXH@Z CUnknown1018bc50::sub_1018bc50
+0x1018bc70 func   ?sub_1018bc70@CUnknown1018bc70@@QAEXH@Z CUnknown1018bc70::sub_1018bc70
 0x1018bcc0 func   ?sub_1018bcc0@CUnknown1018bcc0@@QAEXXZ CUnknown1018bcc0::sub_1018bcc0
 0x1018be50 func   ?vfunc89@CStudiomodelPanel@@UAEXH@Z CStudiomodelPanel::vfunc89
 0x1018c270 func   ??_GVLabel@@UAEPAXI@Z ??_GVLabel@@UAEPAXI@Z
