@@ -18,6 +18,17 @@ void vgui2::ComboBox::vfunc178()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c81b0 size=0x6
+#include "vgui2__ComboBox.h"
+namespace lifted {
+extern char g_102dabf0;
+}
+int vgui2::ComboBox::vfunc102()
+{
+    return (int)&lifted::g_102dabf0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c81d0 size=0x3
 #include "vgui2__ComboBox.h"
 void vgui2::ComboBox::vfunc173(int a0)
