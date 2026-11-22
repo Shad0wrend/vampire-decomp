@@ -337,6 +337,7 @@
 0x1000ba70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Tzimisce3Claw@@@Z ClientClassInit
 0x1000bb00 func   ?vfunc17@C_WeaponMelee_GargoyleFist@@UAEHXZ C_WeaponMelee_GargoyleFist::vfunc17
 0x1000bb90 func   ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z
+0x1000bbb0 func   ?vfunc16@C_WeaponMelee_GargoyleFist@@UAEHXZ C_WeaponMelee_GargoyleFist::vfunc16
 0x1000bbc0 func   ?vfunc15@C_WeaponMelee_GargoyleFist@@UAEHXZ C_WeaponMelee_GargoyleFist::vfunc15
 0x1000bbd0 func   ?sub_1000bbd0@@YAHXZ sub_1000bbd0
 0x1000bcf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_GargoyleFist@@@Z ClientClassInit

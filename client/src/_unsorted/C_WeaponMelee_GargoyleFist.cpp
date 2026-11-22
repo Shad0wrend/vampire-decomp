@@ -22,6 +22,17 @@ C_WeaponMelee_GargoyleFist *pcd_emit_1000bb90() { return new C_WeaponMelee_Gargo
 // TARGET: ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000bbb0 size=0x6
+#include "C_WeaponMelee_GargoyleFist.h"
+namespace lifted {
+extern char g_10274e64;
+}
+int C_WeaponMelee_GargoyleFist::vfunc16()
+{
+    return (int)&lifted::g_10274e64;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000bbc0 size=0x3
 #include "C_WeaponMelee_GargoyleFist.h"
 int C_WeaponMelee_GargoyleFist::vfunc15()
