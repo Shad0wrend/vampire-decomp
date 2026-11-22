@@ -1019,6 +1019,7 @@
 0x1001d640 func   ?vfunc15@C_ItemGHattersScreenplay@@UAEHXZ C_ItemGHattersScreenplay::vfunc15
 0x1001d650 func   ?sub_1001d650@@YAHXZ sub_1001d650
 0x1001d770 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHattersScreenplay@@@Z ClientClassInit
+0x1001d800 func   ?vfunc17@C_ItemGStake@@UAEHXZ C_ItemGStake::vfunc17
 0x1001d890 func   ??_GC_ItemGStake@@UAEPAXI@Z ??_GC_ItemGStake@@UAEPAXI@Z
 0x1001d8c0 func   ?vfunc15@C_ItemGStake@@UAEHXZ C_ItemGStake::vfunc15
 0x1001d8d0 func   ?sub_1001d8d0@@YAHXZ sub_1001d8d0

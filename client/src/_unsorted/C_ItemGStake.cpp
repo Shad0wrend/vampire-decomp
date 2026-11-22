@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001d800 size=0x6
+#include "C_ItemGStake.h"
+namespace lifted {
+extern char g_102737b8;
+}
+int C_ItemGStake::vfunc17()
+{
+    return (int)&lifted::g_102737b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d890 size=0x1e
 #include "C_ItemGStake.h"
 
