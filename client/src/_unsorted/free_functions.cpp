@@ -53314,6 +53314,28 @@ void * CUnknown1014ada0::sub_1014ada0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014add0 size=0x4a
+namespace lifted {
+int sub_101d1296(int);
+}
+struct CUnknown1014add0 { void sub_1014add0(); };
+void CUnknown1014add0::sub_1014add0()
+{
+    if ((*(int *)((char *)this + 0x20)) != 0) {
+        int t0 = lifted::sub_101d1296(*(int *)((char *)this + 0x20));
+        *(int *)((char *)this + 0x20) = 0;
+    }
+    if ((*(int *)((char *)this + 0x28)) != 0) {
+        int t1 = lifted::sub_101d1296(*(int *)((char *)this + 0x28));
+        *(int *)((char *)this + 0x28) = 0;
+    }
+    if ((*(int *)((char *)this + 0x30)) != 0) {
+        int t2 = lifted::sub_101d1296(*(int *)((char *)this + 0x30));
+        *(int *)((char *)this + 0x30) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b580 size=0x5
 int __stdcall sub_1014b580(int a0)
 {
