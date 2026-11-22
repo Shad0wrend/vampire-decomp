@@ -11,7 +11,7 @@ public:
 	int m_unk0c;
 	int m_nSection;	// 0x10
 	CEntryZ(int key);	// 0x101eb000 (stub 0x10003544)
-	~CEntryZ() {}	// the destroy function behind the atexit stub 0x1000e318 is a bare `ret`
+	~CEntryZ();	// 0x101eb030 (stub 0x10006451), an empty body: the destroy 0x10258850 of FindEntryZ's default (atexit stub 0x1000e318) jumps to it; its own unit (the loader 0x101eb380) sees the body
 	int sub_101eb190();	// the position of the record of the section m_nSection in the table at 0x1073a2dc, minus one (stub 0x1001006e)
 };
 

@@ -86185,6 +86185,8 @@ void CUnknown101eb1d0::sub_101eb1d0()
 #include "CUnknown101eb380.h"
 #include "CUnknown101eb050.h"
 
+inline CEntryZ::~CEntryZ() {}	// the destructor's own unit: deleting a record calls nothing here
+
 extern "C" int sprintf(char *, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
 
