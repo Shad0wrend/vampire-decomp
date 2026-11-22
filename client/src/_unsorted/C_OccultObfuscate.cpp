@@ -22,6 +22,17 @@ C_OccultObfuscate *pcd_emit_10013110() { return new C_OccultObfuscate; }
 // TARGET: ??_GC_OccultObfuscate@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10013130 size=0x6
+#include "C_OccultObfuscate.h"
+namespace lifted {
+extern char g_102749a8;
+}
+int C_OccultObfuscate::vfunc16()
+{
+    return (int)&lifted::g_102749a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013140 size=0x3
 #include "C_OccultObfuscate.h"
 int C_OccultObfuscate::vfunc15()
