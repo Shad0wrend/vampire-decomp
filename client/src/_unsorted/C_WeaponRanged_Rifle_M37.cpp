@@ -10,3 +10,11 @@ C_WeaponRanged_Rifle_M37 *pcd_emit_1000e390() { return new C_WeaponRanged_Rifle_
 
 // TARGET: ??_GC_WeaponRanged_Rifle_M37@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000e3c0 size=0x3
+#include "C_WeaponRanged_Rifle_M37.h"
+int C_WeaponRanged_Rifle_M37::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
