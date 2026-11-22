@@ -10,3 +10,10 @@ CCredits *pcd_emit_1004dd20() { return new CCredits; }
 
 // TARGET: ??_GCCredits@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1004e1f0 size=0x1
+#include "CCredits.h"
+void CCredits::vfunc97()
+{
+}
+// END FUNCTION
