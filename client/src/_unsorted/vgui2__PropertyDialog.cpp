@@ -10,3 +10,11 @@ vgui2::PropertyDialog *pcd_emit_101b6e10() { return new vgui2::PropertyDialog; }
 
 // TARGET: ??_GPropertyDialog@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101b6e40 size=0x7
+#include "vgui2__PropertyDialog.h"
+int vgui2::PropertyDialog::vfunc145()
+{
+    return *(int *)((char *)this + 0xe4);
+}
+// END FUNCTION
