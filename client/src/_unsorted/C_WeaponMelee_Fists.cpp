@@ -10,3 +10,11 @@ C_WeaponMelee_Fists *pcd_emit_10008710() { return new C_WeaponMelee_Fists; }
 
 // TARGET: ??_GC_WeaponMelee_Fists@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10008740 size=0x3
+#include "C_WeaponMelee_Fists.h"
+int C_WeaponMelee_Fists::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
