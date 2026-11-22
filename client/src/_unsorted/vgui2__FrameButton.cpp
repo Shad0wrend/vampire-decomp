@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101b8210 size=0x2d
+#include "vgui2__FrameButton.h"
+int vgui2::FrameButton::vfunc164(int a0, int a1, int a2, int a3)
+{
+    if ((*(char *)((char *)this + 0x10c)) != 0) {
+        return *(int *)((char *)this + 0xf8);
+    }
+    if (*(char *)&a0 != 0) {
+        return *(int *)((char *)this + 0xf4);
+    }
+    return *(int *)((char *)this + 0xf0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b8360 size=0x1e
 #include "vgui2__FrameButton.h"
 
