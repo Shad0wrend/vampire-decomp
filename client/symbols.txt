@@ -1363,6 +1363,7 @@
 0x1007de00 func   ?sub_1007de00@@YAHH@Z sub_1007de00
 0x1007e230 func   ?sub_1007e230@@YAHXZ sub_1007e230
 0x1007e330 func   ?ClientClassInit@@YAHPAUignored@DT_BaseGrenade@@@Z ClientClassInit
+0x1007f0f0 func   ?sub_1007f0f0@HV@@QAEHXZ HV::sub_1007f0f0
 0x1007f130 func   ??1C_BaseGrenade@@UAE@XZ C_BaseGrenade::~C_BaseGrenade
 0x1007f1e0 func   ??_GC_BaseGrenade@@UAEPAXI@Z ??_GC_BaseGrenade@@UAEPAXI@Z
 0x1007f300 func   ?sub_1007f300@@YAHXZ sub_1007f300

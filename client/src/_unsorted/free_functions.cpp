@@ -19496,6 +19496,35 @@ template <> int ClientClassInit<DT_BaseGrenade::ignored>(DT_BaseGrenade::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f0f0 size=0x38
+struct EntView { char pad[0x3f0]; int m3f0; };
+struct EntInfo { EntView *ent; int serial; int pad; };
+struct EntList { int hdr; EntInfo e[8192]; };
+extern EntList *g_102b8e98;
+struct Handle {
+	unsigned long m_Index;
+	EntView *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		EntInfo *i = &g_102b8e98->e[m_Index & 0x1fff];
+		if (i->serial != (int)(m_Index >> 13))
+			return 0;
+		return i->ent;
+	}
+};
+struct HV {
+	char pad[0x10e0];
+	Handle h;
+	int sub_1007f0f0();
+};
+int HV::sub_1007f0f0()
+{
+	EntView *p = h.Get();
+	return p == 0 ? 0 : p->m3f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f300 size=0x6
 namespace lifted {
 extern char g_104867c8;
