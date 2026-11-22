@@ -51973,6 +51973,28 @@ template <> int ClientClassInit<DT_DisciplineProjectile::ignored>(DT_DisciplineP
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146520 size=0x2e
+namespace lifted {
+extern char g_10247c20;
+extern char g_10247c34;
+extern char g_10247c70;
+extern char g_10247ca4;
+extern char g_10247cfc;
+int sub_10151fc0();
+}
+struct CUnknown10146520 { void * sub_10146520(); };
+void * CUnknown10146520::sub_10146520()
+{
+    int t0 = lifted::sub_10151fc0();
+    *(int *)this = (int)&lifted::g_10247cfc;
+    *(int *)((char *)this + 4) = (int)&lifted::g_10247ca4;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10247c70;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_10247c34;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10247c20;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101465b0 size=0x19
 struct CUnknown101da880 { void * sub_101465b0(); };
 void * CUnknown101da880::sub_101465b0()
