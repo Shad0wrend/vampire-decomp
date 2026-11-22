@@ -10,3 +10,10 @@ CHudDialog *pcd_emit_10052eb0() { return new CHudDialog; }
 
 // TARGET: ??_GCHudDialog@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10054440 size=0x1
+#include "CHudDialog.h"
+void CHudDialog::vfunc97()
+{
+}
+// END FUNCTION
