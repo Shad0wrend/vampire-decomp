@@ -11,6 +11,18 @@ vgui2::TextImage *pcd_emit_101b9c30() { return new vgui2::TextImage; }
 // TARGET: ??_GTextImage@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b9df0 size=0x21
+#include "vgui2__TextImage.h"
+namespace lifted {
+int sub_101ac920();
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual int f8(int, int, int); };
+}
+int vgui2::TextImage::vfunc28(int a0, int a1)
+{
+    return ((lifted::V *)(lifted::sub_101ac920()))->f8(*(int *)((char *)this + 0x1c), a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9ec0 size=0x4
 #include "vgui2__TextImage.h"
 int vgui2::TextImage::vfunc31()
