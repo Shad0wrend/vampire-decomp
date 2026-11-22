@@ -81,6 +81,19 @@ int vgui2::TextEntry::vfunc133(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aeef0 size=0x18
+#include "vgui2__TextEntry.h"
+namespace lifted {
+int __stdcall sub_101ab220(int);
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual int f6(); };
+}
+int vgui2::TextEntry::vfunc46(int a0)
+{
+    lifted::sub_101ab220(a0);
+    return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aef10 size=0xd
 #include "vgui2__TextEntry.h"
 bool vgui2::TextEntry::vfunc138(char a0)

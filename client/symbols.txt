@@ -5420,6 +5420,7 @@
 0x101ad530 func   ?vfunc133@TextEntry@vgui2@@UAEHD@Z vgui2::TextEntry::vfunc133
 0x101ae190 func   ?sub_101ae190@TV@@QAEHH@Z TV::sub_101ae190
 0x101aed00 func   ??_GClickPanel@vgui2@@UAEPAXI@Z ??_GClickPanel@vgui2@@UAEPAXI@Z
+0x101aeef0 func   ?vfunc46@TextEntry@vgui2@@UAEHH@Z vgui2::TextEntry::vfunc46
 0x101aef10 func   ?vfunc138@TextEntry@vgui2@@UAE_ND@Z vgui2::TextEntry::vfunc138
 0x101aef20 func   ?vfunc141@TextEntry@vgui2@@UAE_ND@Z vgui2::TextEntry::vfunc141
 0x101aefc0 func   ?vfunc139@TextEntry@vgui2@@UAE_ND@Z vgui2::TextEntry::vfunc139
