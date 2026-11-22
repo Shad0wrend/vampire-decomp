@@ -31,3 +31,14 @@ void C_TEImpact::vfunc17(int a0, int a1)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039f50 size=0x6
+#include "C_TEImpact.h"
+namespace lifted {
+extern char g_10280228;
+}
+int C_TEImpact::vfunc9()
+{
+    return (int)&lifted::g_10280228;
+}
+// END FUNCTION
