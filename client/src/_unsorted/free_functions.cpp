@@ -63637,6 +63637,22 @@ void *CUnkDelete101d7c90::sub_101667f0(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166820 size=0x2a
+namespace lifted {
+struct C10166d70 { int sub_10166d70(); };
+int sub_101d1296(int);
+}
+struct CUnknown10166820 { int sub_10166820(); };
+int CUnknown10166820::sub_10166820()
+{
+    if ((*(int *)((char *)this + 0x7c)) != 0) {
+        lifted::sub_101d1296((*(int *)((char *)this + 0x7c)) + -4);
+    }
+    lifted::sub_101d1296(*(int *)((char *)this + 0x6c));
+    return ((lifted::C10166d70 *)this)->sub_10166d70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166850 size=0x14
 namespace lifted {
 struct C10166d90 { int sub_10166d90(int, int); };
