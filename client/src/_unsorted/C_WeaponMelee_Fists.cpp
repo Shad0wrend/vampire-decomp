@@ -22,6 +22,17 @@ C_WeaponMelee_Fists *pcd_emit_10008710() { return new C_WeaponMelee_Fists; }
 // TARGET: ??_GC_WeaponMelee_Fists@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10008730 size=0x6
+#include "C_WeaponMelee_Fists.h"
+namespace lifted {
+extern char g_102750a0;
+}
+int C_WeaponMelee_Fists::vfunc16()
+{
+    return (int)&lifted::g_102750a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008740 size=0x3
 #include "C_WeaponMelee_Fists.h"
 int C_WeaponMelee_Fists::vfunc15()
