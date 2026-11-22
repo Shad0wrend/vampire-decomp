@@ -43518,6 +43518,17 @@ int CUnknown10136fc0::sub_10136fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136ff0 size=0x23
+namespace lifted {
+struct C10137020 { int sub_10137020(int, int, int, int, int, int); };
+}
+struct CUnknown10136ff0 { int sub_10136ff0(int, int, int, int); };
+int CUnknown10136ff0::sub_10136ff0(int a0, int a1, int a2, int a3)
+{
+    return ((lifted::C10137020 *)this)->sub_10137020(a0, a1, a2, *(int *)this, *(int *)((char *)this + 4), a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ce0 size=0x51
 #include <string.h>
 #pragma intrinsic(strcmp)
