@@ -27747,6 +27747,23 @@ template <> int ClientClassInit<DT_FireSmoke::ignored>(DT_FireSmoke::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5610 size=0x28
+namespace lifted {
+int __stdcall sub_100a1340(int);
+struct C100b5640 { int sub_100b5640(); };
+struct C100b56c0 { int sub_100b56c0(); };
+}
+struct CUnknown100b5610 { void sub_100b5610(int); };
+void CUnknown100b5610::sub_100b5610(int a0)
+{
+    lifted::sub_100a1340(a0);
+    int t0 = ((lifted::C100b5640 *)((int)this + -8))->sub_100b5640();
+    if (a0 == 0) {
+        ((lifted::C100b56c0 *)((int)this + -8))->sub_100b56c0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b56b0 size=0x3
 char sub_100b56b0()
 {
