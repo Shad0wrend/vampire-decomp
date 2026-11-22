@@ -2240,6 +2240,7 @@
 0x1007d050 func   ?ClientClassInit@@YAHPAUignored@DT_LocalWeaponData@@@Z ClientClassInit
 0x1007d1c0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseCombatWeapon@@@Z ClientClassInit
 0x1007d7f0 func   ?sub_1007d7f0@@YAXXZ sub_1007d7f0
+0x1007d860 func   ?vfunc35@C_BaseCombatWeapon@@UAEHH@Z C_BaseCombatWeapon::vfunc35
 0x1007d880 func   ?vfunc165@C_BaseCombatWeapon@@UAEXH@Z C_BaseCombatWeapon::vfunc165
 0x1007d890 func   ?sub_1007d890@@YAHPBD@Z sub_1007d890
 0x1007d8d0 func   ?vfunc166@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc166
