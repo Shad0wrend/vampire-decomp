@@ -22,6 +22,17 @@ C_ItemGAstrolite *pcd_emit_10017710() { return new C_ItemGAstrolite; }
 // TARGET: ??_GC_ItemGAstrolite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10017730 size=0x6
+#include "C_ItemGAstrolite.h"
+namespace lifted {
+extern char g_10274728;
+}
+int C_ItemGAstrolite::vfunc16()
+{
+    return (int)&lifted::g_10274728;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017740 size=0x3
 #include "C_ItemGAstrolite.h"
 int C_ItemGAstrolite::vfunc15()
