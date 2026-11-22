@@ -30,6 +30,15 @@ int vgui2::Menu::vfunc102()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0e70 size=0xd
+#include "vgui2__Menu.h"
+int vgui2::Menu::vfunc130(int a0)
+{
+    *(int *)((char *)this + 0x8c) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0e80 size=0x7
 #include "vgui2__Menu.h"
 int vgui2::Menu::vfunc131()
