@@ -14424,6 +14424,7 @@
 0x10012cc4 func   ?sub_1027fae0@UtlVec8@@QAEXH@Z UtlVec8::sub_1027fae0
 0x10012cc9 func   ?sub_103f4fe0@CItemContainerLock@@QAEXH@Z CItemContainerLock::sub_103f4fe0
 0x10012cce func   ?vfunc247@CBaseDoor@@UAEMXZ CBaseDoor::vfunc247
+0x10012cd3 func   ??_GCVoiceGameMgrHelper@@UAEPAXI@Z ??_GCVoiceGameMgrHelper@@UAEPAXI@Z
 0x10012cd3 func   ?sub_103531f0@Helper@@QAEPAXE@Z Helper::sub_103531f0
 0x10012cdd func   ?sub_101d7000@Loader@@QAE_NPBD@Z Loader::sub_101d7000
 0x10012ce2 func   ?vfunc5@CRestore@@UAEXXZ CRestore::vfunc5
