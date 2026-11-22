@@ -22,6 +22,17 @@ C_ResearchBook_MG_BRAWL *pcd_emit_10011590() { return new C_ResearchBook_MG_BRAW
 // TARGET: ??_GC_ResearchBook_MG_BRAWL@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100115b0 size=0x6
+#include "C_ResearchBook_MG_BRAWL.h"
+namespace lifted {
+extern char g_10274a9c;
+}
+int C_ResearchBook_MG_BRAWL::vfunc16()
+{
+    return (int)&lifted::g_10274a9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100115c0 size=0x3
 #include "C_ResearchBook_MG_BRAWL.h"
 int C_ResearchBook_MG_BRAWL::vfunc15()
