@@ -18,3 +18,11 @@ int vgui2::EditablePanel::vfunc109()
     return *(int *)((char *)this + 0x58);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b4e80 size=0x4
+#include "vgui2__EditablePanel.h"
+char * vgui2::EditablePanel::vfunc116()
+{
+    return (char *)this + 0x5c;
+}
+// END FUNCTION
