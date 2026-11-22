@@ -1991,6 +1991,7 @@
 0x1000379c func   ?vfunc138@CPayphone@@UAEHXZ CPayphone::vfunc138
 0x100037a1 func   ?vfunc348@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc348
 0x100037a6 func   ?sub_10105870@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105870
+0x100037ab func   ??_GCTempEntsSystem@@UAEPAXI@Z ??_GCTempEntsSystem@@UAEPAXI@Z
 0x100037ab func   ?vfunc0@CTempEntsSystem@@QAEPAXI@Z CTempEntsSystem::vfunc0
 0x100037b0 func   ?sub_10039ac0@CBaseEntity@@QAEXXZ CBaseEntity::sub_10039ac0
 0x100037b5 func   ?sub_1042a540@CBaseGrenade@@QAEXXZ CBaseGrenade::sub_1042a540
