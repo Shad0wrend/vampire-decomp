@@ -65242,6 +65242,24 @@ void sub_1017c650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c900 size=0x43
+namespace lifted {
+extern char g_1024cb4c;
+struct C101b3630 { int sub_101b3630(int, int, int); };
+}
+struct CUnknown1017c900 { void * sub_1017c900(int, int, int); };
+void * CUnknown1017c900::sub_1017c900(int a0, int a1, int a2)
+{
+    ((lifted::C101b3630 *)this)->sub_101b3630(a0, a1, a2);
+    *(int *)this = (int)&lifted::g_1024cb4c;
+    *(char *)((char *)this + 0xfc) = 0;
+    *(int *)((char *)this + 0xf4) = 0;
+    *(int *)((char *)this + 0xf8) = 0;
+    *(int *)((char *)this + 0xf0) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c970 size=0xb
 namespace lifted {
 extern char g_1024cb4c;
