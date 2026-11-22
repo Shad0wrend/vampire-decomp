@@ -43,6 +43,14 @@ void CHudElement::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbde0 size=0x4
+#include "CHudElement.h"
+int CHudElement::vfunc8()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0540 size=0x3
 #include "CHudElement.h"
 void CHudElement::vfunc5(int a0)
