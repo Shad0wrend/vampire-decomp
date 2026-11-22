@@ -10,3 +10,11 @@ C_BaseBludgeonWeapon *pcd_emit_10007a90() { return new C_BaseBludgeonWeapon; }
 
 // TARGET: ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10007ac0 size=0x3
+#include "C_BaseBludgeonWeapon.h"
+int C_BaseBludgeonWeapon::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
