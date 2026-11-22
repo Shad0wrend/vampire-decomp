@@ -2114,6 +2114,7 @@
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
 0x100eff70 func   ?sub_100eff70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100eff70
 0x100f0110 func   ??_GCHudHistoryResource@@UAEPAXI@Z ??_GCHudHistoryResource@@UAEPAXI@Z
+0x100f0430 func   ?sub_100f0430@CHudHistoryResource@@QAE_NXZ CHudHistoryResource::sub_100f0430
 0x100f0550 func   ??_GCHudElement@@UAEPAXI@Z ??_GCHudElement@@UAEPAXI@Z
 0x100f0570 func   ??1CHudElement@@UAE@XZ CHudElement::~CHudElement
 0x100f0570 func   ?sub_100f0570@CUnknown100f0570@@QAEHXZ CUnknown100f0570::sub_100f0570
