@@ -5478,6 +5478,7 @@
 0x101b38a0 func   ?vfunc139@Button@vgui2@@UAE_NXZ vgui2::Button::vfunc139
 0x101b38e0 func   ?vfunc144@Button@vgui2@@UAE_NXZ vgui2::Button::vfunc144
 0x101b38f0 func   ?vfunc140@Button@vgui2@@UAE_NXZ vgui2::Button::vfunc140
+0x101b3b00 func   ?vfunc80@Button@vgui2@@UAEXXZ vgui2::Button::vfunc80
 0x101b41b0 func   ?vfunc77@Button@vgui2@@UAEHXZ vgui2::Button::vfunc77
 0x101b4620 func   ?vfunc102@Button@vgui2@@UAEHXZ vgui2::Button::vfunc102
 0x101b4630 func   ?sub_101b4630@CUnknown101b4630@@QAEHXZ CUnknown101b4630::sub_101b4630
