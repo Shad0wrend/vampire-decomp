@@ -9694,6 +9694,7 @@
 0x1000cf68 func   ?vfunc3@CTESmoke@@UAEXPBVVector@@0@Z CTESmoke::vfunc3
 0x1000cf6d func   ?sub_10280a50@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10280a50
 0x1000cf72 func   ?sub_100a8240@CUnknown100a8340@@QAEPAVCBaseEntity@@XZ CUnknown100a8340::sub_100a8240
+0x1000cf77 func   ?RemoveBlockHandler@CSaveRestoreBlockSet@@UAEXPAVISaveRestoreBlockHandler@@@Z CSaveRestoreBlockSet::RemoveBlockHandler
 0x1000cf77 func   ?sub_101a5100@SBlockSetView@@QAEXH@Z SBlockSetView::sub_101a5100
 0x1000cf7c func   ?vfunc82@CBaseCineCam@@UAEPAUdatamap_t@@XZ CBaseCineCam::vfunc82
 0x1000cf86 func   ?sub_100ed2e0@CUnknown100ed370@@QAEPADH@Z CUnknown100ed370::sub_100ed2e0
