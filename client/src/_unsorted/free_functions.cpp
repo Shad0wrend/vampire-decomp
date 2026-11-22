@@ -62807,6 +62807,19 @@ void CUnknown10173100::sub_10173100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101733b0 size=0x12
+namespace lifted {
+int __stdcall sub_101733d0(int);
+}
+struct CUnknown101733b0 { void sub_101733b0(); };
+void CUnknown101733b0::sub_101733b0()
+{
+    if ((*(int *)((char *)this + 0x274)) == 0) {
+        lifted::sub_101733d0(1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101734b0 size=0x16
 namespace lifted {
 extern char g_1027b3ec;
