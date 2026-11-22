@@ -1936,6 +1936,7 @@
 0x1004b7e0 func   ?sub_1004b7e0@CTraceEntList@@QAEXH@Z CTraceEntList::sub_1004b7e0
 0x1004ba40 func   ?sub_1004ba40@@YAPADPBDZZ sub_1004ba40
 0x1004ba90 func   ?sub_1004ba90@@YA_NPAD@Z sub_1004ba90
+0x1004bb70 func   ?vfunc113@CManagedHudElement@@UAEXXZ CManagedHudElement::vfunc113
 0x1004bb80 func   ?sub_1004bb80@CUnknown1004bb80@@QAEHXZ CUnknown1004bb80::sub_1004bb80
 0x1004bb90 func   ?sub_1004bb90@CUnknown1004bb90@@QAEHXZ CUnknown1004bb90::sub_1004bb90
 0x1004bba0 func   ?sub_1004bba0@CUnknown1004bba0@@QAEHXZ CUnknown1004bba0::sub_1004bba0
