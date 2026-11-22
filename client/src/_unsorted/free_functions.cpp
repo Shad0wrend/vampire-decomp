@@ -69434,6 +69434,21 @@ void CUnknown101c7410::sub_101c7410(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7440 size=0x2a
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual int f2(int, int); };
+}
+struct CUnknown101c7440 { void sub_101c7440(int, int); };
+void CUnknown101c7440::sub_101c7440(int a0, int a1)
+{
+    *(int *)((char *)a0) = 0;
+    *(int *)((char *)a1) = 0;
+    if ((*(int *)((char *)this + 0xfc)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0xfc)))->f2(a0, a1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7470 size=0x7
 struct CUnknown101c7470 { int sub_101c7470(); };
 int CUnknown101c7470::sub_101c7470()
