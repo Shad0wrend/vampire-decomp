@@ -25,6 +25,14 @@ IClientRenderable * C_BaseTempEntity::GetClientRenderable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100072c0 size=0x3
+#include "C_BaseTempEntity.h"
+IClientEntity * C_BaseTempEntity::GetIClientEntity()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c370 size=0x1e
 #include "C_BaseTempEntity.h"
 
