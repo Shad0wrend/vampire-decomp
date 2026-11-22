@@ -10,3 +10,11 @@ C_ItemKShrekHubFourKey *pcd_emit_10025090() { return new C_ItemKShrekHubFourKey;
 
 // TARGET: ??_GC_ItemKShrekHubFourKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100250c0 size=0x3
+#include "C_ItemKShrekHubFourKey.h"
+int C_ItemKShrekHubFourKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
