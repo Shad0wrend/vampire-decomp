@@ -2268,6 +2268,7 @@
 0x1007f2f0 func   ?vfunc15@C_BaseParticleEntity@@UAEHXZ C_BaseParticleEntity::vfunc15
 0x1007f300 func   ?sub_1007f300@@YAHXZ sub_1007f300
 0x1007f400 func   ?ClientClassInit@@YAHPAUignored@DT_BaseParticleEntity@@@Z ClientClassInit
+0x1007f490 func   ?vfunc17@C_BaseParticleEntity@@UAEHXZ C_BaseParticleEntity::vfunc17
 0x1007f530 func   ?vfunc120@C_BaseParticleEntity@@UAEXXZ C_BaseParticleEntity::vfunc120
 0x1007f6d0 func   ?vfunc86@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc86
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0

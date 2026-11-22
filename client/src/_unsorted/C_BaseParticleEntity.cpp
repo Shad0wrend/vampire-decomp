@@ -20,6 +20,17 @@ int C_BaseParticleEntity::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f490 size=0x6
+#include "C_BaseParticleEntity.h"
+namespace lifted {
+extern char g_102ac96c;
+}
+int C_BaseParticleEntity::vfunc17()
+{
+    return (int)&lifted::g_102ac96c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f530 size=0x1
 #include "C_BaseParticleEntity.h"
 void C_BaseParticleEntity::vfunc120()
