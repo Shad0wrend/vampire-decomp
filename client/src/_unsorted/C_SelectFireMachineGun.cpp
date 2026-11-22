@@ -22,6 +22,17 @@ C_SelectFireMachineGun *pcd_emit_10007810() { return new C_SelectFireMachineGun;
 // TARGET: ??_GC_SelectFireMachineGun@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10007830 size=0x6
+#include "C_SelectFireMachineGun.h"
+namespace lifted {
+extern char g_10275124;
+}
+int C_SelectFireMachineGun::vfunc16()
+{
+    return (int)&lifted::g_10275124;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007840 size=0x3
 #include "C_SelectFireMachineGun.h"
 int C_SelectFireMachineGun::vfunc15()
