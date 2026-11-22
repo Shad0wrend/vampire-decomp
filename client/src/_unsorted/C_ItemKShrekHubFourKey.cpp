@@ -22,6 +22,17 @@ C_ItemKShrekHubFourKey *pcd_emit_10025090() { return new C_ItemKShrekHubFourKey;
 // TARGET: ??_GC_ItemKShrekHubFourKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100250b0 size=0x6
+#include "C_ItemKShrekHubFourKey.h"
+namespace lifted {
+extern char g_10273f68;
+}
+int C_ItemKShrekHubFourKey::vfunc16()
+{
+    return (int)&lifted::g_10273f68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100250c0 size=0x3
 #include "C_ItemKShrekHubFourKey.h"
 int C_ItemKShrekHubFourKey::vfunc15()
