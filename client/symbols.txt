@@ -2274,6 +2274,7 @@
 0x100b54f0 func   ??1C_FireSmoke@@UAE@XZ C_FireSmoke::~C_FireSmoke
 0x100b56b0 func   ?sub_100b56b0@@YADXZ sub_100b56b0
 0x100b5b20 func   ??_GCFireOverlay@@UAEPAXI@Z ??_GCFireOverlay@@UAEPAXI@Z
+0x100b63e0 func   ?vfunc15@C_EntityFlame@@UAEHXZ C_EntityFlame::vfunc15
 0x100b63f0 func   ?sub_100b63f0@@YAHXZ sub_100b63f0
 0x100b64f0 func   ?ClientClassInit@@YAHPAUignored@DT_EntityFlame@@@Z ClientClassInit
 0x100b6610 func   ??_GC_EntityFlame@@UAEPAXI@Z ??_GC_EntityFlame@@UAEPAXI@Z
