@@ -297,6 +297,7 @@
 0x1000cfd0 func   ?sub_1000cfd0@@YAHXZ sub_1000cfd0
 0x1000d0f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_RemingtonBach@@@Z ClientClassInit
 0x1000d210 func   ??_GC_WeaponMelee_Sheriff_Sword@@UAEPAXI@Z ??_GC_WeaponMelee_Sheriff_Sword@@UAEPAXI@Z
+0x1000d240 func   ?vfunc15@C_WeaponMelee_Sheriff_Sword@@UAEHXZ C_WeaponMelee_Sheriff_Sword::vfunc15
 0x1000d250 func   ?sub_1000d250@@YAHXZ sub_1000d250
 0x1000d370 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Sheriff_Sword@@@Z ClientClassInit
 0x1000d490 func   ??_GC_WeaponRanged@@UAEPAXI@Z ??_GC_WeaponRanged@@UAEPAXI@Z

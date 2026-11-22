@@ -10,3 +10,11 @@ C_WeaponMelee_Sheriff_Sword *pcd_emit_1000d210() { return new C_WeaponMelee_Sher
 
 // TARGET: ??_GC_WeaponMelee_Sheriff_Sword@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000d240 size=0x3
+#include "C_WeaponMelee_Sheriff_Sword.h"
+int C_WeaponMelee_Sheriff_Sword::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
