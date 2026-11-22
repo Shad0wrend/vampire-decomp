@@ -17,6 +17,17 @@ int C_PlayerResource::vfunc136(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd310 size=0x9
+#include "C_PlayerResource.h"
+namespace lifted {
+extern float g_101e34f0;
+}
+float C_PlayerResource::vfunc137(int a0)
+{
+    return lifted::g_101e34f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd320 size=0x3
 #include "C_PlayerResource.h"
 void C_PlayerResource::vfunc138(int a0)
