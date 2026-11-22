@@ -12922,6 +12922,18 @@ void __stdcall sub_10057d00(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057d20 size=0x19
+namespace lifted {
+extern int g_104a0d50;
+}
+void __stdcall sub_10057d20(int a0, int a1, int a2)
+{
+    if (lifted::g_104a0d50 != 0) {
+        *(int *)((char *)lifted::g_104a0d50 + 0x15e8) = *(signed char *)((char *)a2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057d40 size=0x3
 void __stdcall sub_10057d40(int a0, int a1, int a2)
 {
