@@ -37521,6 +37521,21 @@ Pool *Pool::sub_1010e290(unsigned int cbItem, unsigned int nItemsPerBlock, unsig
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e2d0 size=0x17
+namespace lifted {
+struct C1010e310 { int sub_1010e310(); };
+struct C1010e340 { int sub_1010e340(); };
+}
+struct CUnknown1010e2d0 { int sub_1010e2d0(); };
+int CUnknown1010e2d0::sub_1010e2d0()
+{
+    if ((*(int *)((char *)this + 0x20)) > 0) {
+        ((lifted::C1010e340 *)this)->sub_1010e340();
+    }
+    return ((lifted::C1010e310 *)this)->sub_1010e310();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e2f0 size=0x15
 struct CUnknown1010e2f0 { char * sub_1010e2f0(); };
 char * CUnknown1010e2f0::sub_1010e2f0()
