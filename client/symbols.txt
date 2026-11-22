@@ -5446,6 +5446,7 @@
 0x101b8e90 func   ?vfunc122@Frame@vgui2@@UAE_NXZ vgui2::Frame::vfunc122
 0x101b9120 func   ?vfunc138@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc138
 0x101b9130 func   ?vfunc139@Frame@vgui2@@UAE_NXZ vgui2::Frame::vfunc139
+0x101b9140 func   ?vfunc140@Frame@vgui2@@UAE_ND@Z vgui2::Frame::vfunc140
 0x101b9260 func   ?vfunc130@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc130
 0x101b9470 func   ?vfunc129@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc129
 0x101b95e0 func   ?vfunc91@Frame@vgui2@@UAEXH@Z vgui2::Frame::vfunc91

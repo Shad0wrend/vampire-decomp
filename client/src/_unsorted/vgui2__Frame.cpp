@@ -52,6 +52,15 @@ bool vgui2::Frame::vfunc139()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9140 size=0xd
+#include "vgui2__Frame.h"
+bool vgui2::Frame::vfunc140(char a0)
+{
+    *(char *)((char *)this + 0xd1) = a0;
+    return *(bool *)&a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9260 size=0x8
 #include "vgui2__Frame.h"
 namespace lifted {
