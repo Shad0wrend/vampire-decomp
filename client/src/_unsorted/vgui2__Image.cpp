@@ -21,6 +21,16 @@ int vgui2::Image::vfunc1(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6990 size=0x11
+#include "vgui2__Image.h"
+int vgui2::Image::vfunc9(int a0, int a1)
+{
+    *(int *)((char *)this + 0xc) = a0;
+    *(int *)((char *)this + 0x10) = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6c90 size=0xc
 #include "vgui2__Image.h"
 int vgui2::Image::vfunc8(int a0)
