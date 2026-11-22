@@ -11560,6 +11560,7 @@
 0x1000f47f func   ?sub_100dc300@Rec64@@QAEXH@Z Rec64::sub_100dc300
 0x1000f484 func   ?vfunc4@CTEMuzzleFlash@@QAEXHH@Z CTEMuzzleFlash::vfunc4
 0x1000f489 func   ?vfunc326@CAI_BaseNPCTroika@@QAE_NPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::vfunc326
+0x1000f48e func   ?OnEntityCreated@CAimTargetManager@@UAEXPAVCBaseEntity@@@Z CAimTargetManager::OnEntityCreated
 0x1000f48e func   ?vfunc0@CAimTargetManager@@UAEXH@Z CAimTargetManager::vfunc0
 0x1000f493 func   ?sub_10139550@@YAXABVQAngle@@PAVVector@@@Z sub_10139550
 0x1000f498 func   ?vfunc309@CNPC_VBatSwarm@@UAEPAXXZ CNPC_VBatSwarm::vfunc309
