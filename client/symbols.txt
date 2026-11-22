@@ -1086,6 +1086,7 @@
 0x1003f830 func   ??_GC_TESpriteSpray@@UAEPAXI@Z ??_GC_TESpriteSpray@@UAEPAXI@Z
 0x1003f850 func   ??1C_TESpriteSpray@@UAE@XZ C_TESpriteSpray::~C_TESpriteSpray
 0x1003f850 func   ?sub_1003f850@CUnknown1003f850@@QAEHXZ CUnknown1003f850::sub_1003f850
+0x1003f910 func   ?vfunc9@C_TESpriteSpray@@UAEHXZ C_TESpriteSpray::vfunc9
 0x1003f930 func   ?sub_1003f930@@YAHXZ sub_1003f930
 0x1003f9d0 func   ?sub_1003f9d0@@YAHXZ sub_1003f9d0
 0x1003fa40 func   ?ClientClassInit@@YAHPAUignored@DT_TESpriteSpray@@@Z ClientClassInit
