@@ -5812,6 +5812,7 @@
 0x101b6430 func   ?vfunc7@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc7
 0x101b6440 func   ?vfunc8@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc8
 0x101b6640 func   ?vfunc15@KeyValues@vgui2@@UAEHHH@Z vgui2::KeyValues::vfunc15
+0x101b6670 func   ?vfunc16@KeyValues@vgui2@@UAEHHH@Z vgui2::KeyValues::vfunc16
 0x101b6800 func   ?vfunc20@KeyValues@vgui2@@UAEHH@Z vgui2::KeyValues::vfunc20
 0x101b6820 func   ?vfunc21@KeyValues@vgui2@@UAEXXZ vgui2::KeyValues::vfunc21
 0x101b6840 func   ?sub_101b6840@@YAHH@Z sub_101b6840
