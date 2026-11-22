@@ -22,6 +22,17 @@ C_WeaponMelee_ChangClaw *pcd_emit_1000ac90() { return new C_WeaponMelee_ChangCla
 // TARGET: ??_GC_WeaponMelee_ChangClaw@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1000acb0 size=0x6
+#include "C_WeaponMelee_ChangClaw.h"
+namespace lifted {
+extern char g_10274f10;
+}
+int C_WeaponMelee_ChangClaw::vfunc16()
+{
+    return (int)&lifted::g_10274f10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000acc0 size=0x3
 #include "C_WeaponMelee_ChangClaw.h"
 int C_WeaponMelee_ChangClaw::vfunc15()
