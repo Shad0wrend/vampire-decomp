@@ -47,6 +47,14 @@ void CInput::vfunc43()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffaf0 size=0x7
+#include "CInput.h"
+float CInput::vfunc53()
+{
+    return *(float *)((char *)this + 0x104);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103310 size=0x3
 #include "CInput.h"
 void CInput::vfunc8(int a0)

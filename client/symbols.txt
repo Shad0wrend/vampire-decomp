@@ -3570,6 +3570,7 @@
 0x100ff940 func   ?vfunc48@CInput@@UAE_NXZ CInput::vfunc48
 0x100ff9d0 func   ?vfunc41@CInput@@UAEXXZ CInput::vfunc41
 0x100ff9f0 func   ?vfunc43@CInput@@UAEXXZ CInput::vfunc43
+0x100ffaf0 func   ?vfunc53@CInput@@UAEMXZ CInput::vfunc53
 0x10101b70 func   ?sub_10101b70@@YAHXZ sub_10101b70
 0x10101b80 func   ?sub_10101b80@@YADXZ sub_10101b80
 0x10101b90 func   ?sub_10101b90@@YADD@Z sub_10101b90
