@@ -28937,6 +28937,21 @@ void * CUnknown100c8500::sub_100c8500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c87b0 size=0x18
+namespace lifted {
+struct C100c8500 { int sub_100c8500(); };
+int sub_101d12a1(int);
+}
+int sub_100c87b0()
+{
+    int t0 = lifted::sub_101d12a1(0xc);
+    if (t0 != 0) {
+        return ((lifted::C100c8500 *)t0)->sub_100c8500();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8a80 size=0xb
 namespace lifted {
 extern char g_10233730;
