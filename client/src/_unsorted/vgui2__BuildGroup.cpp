@@ -157,6 +157,15 @@ int vgui2::BuildGroup::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2b00 size=0xa
+#include "vgui2__BuildGroup.h"
+int vgui2::BuildGroup::vfunc8(int a0)
+{
+    *(int *)((char *)this + 0x5c) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b10 size=0x4
 #include "vgui2__BuildGroup.h"
 int vgui2::BuildGroup::vfunc9()
