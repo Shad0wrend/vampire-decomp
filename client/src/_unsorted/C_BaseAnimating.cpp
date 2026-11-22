@@ -8,6 +8,14 @@ void C_BaseAnimating::vfunc141()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008edd0 size=0x3
+#include "C_BaseAnimating.h"
+int C_BaseAnimating::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f5a0 size=0x1e
 #include "C_BaseAnimating.h"
 
