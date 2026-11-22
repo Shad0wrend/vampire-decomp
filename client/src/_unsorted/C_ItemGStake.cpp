@@ -10,3 +10,11 @@ C_ItemGStake *pcd_emit_1001d890() { return new C_ItemGStake; }
 
 // TARGET: ??_GC_ItemGStake@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001d8c0 size=0x3
+#include "C_ItemGStake.h"
+int C_ItemGStake::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
