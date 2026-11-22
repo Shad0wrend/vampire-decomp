@@ -2728,6 +2728,7 @@
 0x100a2e40 func   ?sub_100a2e40@CUnknown100a2e40@@QAEDD@Z CUnknown100a2e40::sub_100a2e40
 0x100a2e70 func   ?vfunc28@C_BaseEntity@@UAEMXZ C_BaseEntity::vfunc28
 0x100a2e80 func   ?sub_100a2e80@CUnknown100a2e80@@QAEDXZ CUnknown100a2e80::sub_100a2e80
+0x100a2e90 func   ?sub_100a2e90@CUnknown100a2e90@@QAEHH@Z CUnknown100a2e90::sub_100a2e90
 0x100a2fc0 func   ?sub_100a2fc0@CUnknown100a2fc0@@QAEHXZ CUnknown100a2fc0::sub_100a2fc0
 0x100a3010 func   ?GetSoundSpatialization@C_BaseEntity@@UAE_NAAUSpatializationInfo_t@@@Z C_BaseEntity::GetSoundSpatialization
 0x100a32c0 func   ?sub_100a32c0@@YADXZ sub_100a32c0
