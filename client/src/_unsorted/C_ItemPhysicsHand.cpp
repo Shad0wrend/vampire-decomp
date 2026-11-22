@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10003220 size=0xd
+#include "C_ItemPhysicsHand.h"
+namespace lifted {
+int sub_1005fa40(int);
+}
+bool C_ItemPhysicsHand::vfunc188()
+{
+    lifted::sub_1005fa40(1);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003230 size=0x1e
 #include "C_ItemPhysicsHand.h"
 
