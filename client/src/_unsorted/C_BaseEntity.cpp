@@ -145,6 +145,17 @@ bool C_BaseEntity::vfunc87()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d3e0 size=0x6
+#include "C_BaseEntity.h"
+namespace lifted {
+extern char g_102afc00;
+}
+int C_BaseEntity::vfunc16()
+{
+    return (int)&lifted::g_102afc00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009d3f0 size=0x3
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc15()
