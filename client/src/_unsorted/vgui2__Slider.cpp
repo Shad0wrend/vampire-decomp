@@ -30,6 +30,21 @@ void vgui2::Slider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbaf0 size=0x17
+#include "vgui2__Slider.h"
+namespace lifted {
+struct C101bbb20 { int sub_101bbb20(); };
+struct C101bbc40 { int sub_101bbc40(); };
+struct C101bbde0 { int sub_101bbde0(); };
+}
+void vgui2::Slider::vfunc98()
+{
+    ((lifted::C101bbb20 *)this)->sub_101bbb20();
+    ((lifted::C101bbc40 *)this)->sub_101bbc40();
+    ((lifted::C101bbde0 *)this)->sub_101bbde0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbb10 size=0xa
 #include "vgui2__Slider.h"
 int vgui2::Slider::vfunc116(int a0)
