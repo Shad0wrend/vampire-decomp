@@ -10,3 +10,10 @@ CBossHealthBar *pcd_emit_1004d5a0() { return new CBossHealthBar; }
 
 // TARGET: ??_GCBossHealthBar@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1004dbd0 size=0x1
+#include "CBossHealthBar.h"
+void CBossHealthBar::vfunc97()
+{
+}
+// END FUNCTION
