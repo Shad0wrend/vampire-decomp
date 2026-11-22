@@ -1720,6 +1720,7 @@
 0x100a3990 func   ?sub_100a3990@@YAXXZ sub_100a3990
 0x100a39a0 func   ?GetThinkHandle@C_BaseNetworkable@@UAEPAXXZ C_BaseNetworkable::GetThinkHandle
 0x100a39a0 func   ?sub_100a39a0@CUnknown100a39a0@@QAEHXZ CUnknown100a39a0::sub_100a39a0
+0x100a39b0 func   ?SetThinkHandle@C_BaseNetworkable@@UAEXPAX@Z C_BaseNetworkable::SetThinkHandle
 0x100a39b0 func   ?sub_100a39b0@CUnknown100a39b0@@QAEHH@Z CUnknown100a39b0::sub_100a39b0
 0x100a39c0 func   ?Release@C_BaseNetworkable@@UAEXXZ C_BaseNetworkable::Release
 0x100a39d0 func   ?NotifyShouldTransmit@C_BaseNetworkable@@UAEXH@Z C_BaseNetworkable::NotifyShouldTransmit
