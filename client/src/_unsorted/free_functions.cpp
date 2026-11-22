@@ -53591,6 +53591,20 @@ void * CUnknown10150220::sub_10150220(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150240 size=0x1c
+namespace lifted {
+int sub_101d1296(int);
+}
+struct CUnknown10150240 { void sub_10150240(); };
+void CUnknown10150240::sub_10150240()
+{
+    if ((*(int *)((char *)this + 0x14)) != 0) {
+        int t0 = lifted::sub_101d1296(*(int *)((char *)this + 0x14));
+        *(int *)((char *)this + 0x14) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150260 size=0xf6
 #include "CUnknown101ec6f0.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
