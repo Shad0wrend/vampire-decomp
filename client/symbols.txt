@@ -5180,6 +5180,7 @@
 0x101b6e30 func   ??1PropertyDialog@vgui2@@UAE@XZ vgui2::PropertyDialog::~PropertyDialog
 0x101b6e30 func   ?sub_101b6e30@CUnknown101b6e30@@QAEHXZ CUnknown101b6e30::sub_101b6e30
 0x101b8360 func   ??_GFrameButton@vgui2@@UAEPAXI@Z ??_GFrameButton@vgui2@@UAEPAXI@Z
+0x101b8420 func   ?vfunc164@FrameSystemButton@vgui2@@UAEHHHHH@Z vgui2::FrameSystemButton::vfunc164
 0x101b8590 func   ??_GFrameSystemButton@vgui2@@UAEPAXI@Z ??_GFrameSystemButton@vgui2@@UAEPAXI@Z
 0x101b85b0 func   ??_GFrame@vgui2@@UAEPAXI@Z ??_GFrame@vgui2@@UAEPAXI@Z
 0x101b85d0 func   ??1Frame@vgui2@@UAE@XZ vgui2::Frame::~Frame
