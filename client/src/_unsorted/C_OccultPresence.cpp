@@ -10,3 +10,11 @@ C_OccultPresence *pcd_emit_10012e90() { return new C_OccultPresence; }
 
 // TARGET: ??_GC_OccultPresence@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10012ec0 size=0x3
+#include "C_OccultPresence.h"
+int C_OccultPresence::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
