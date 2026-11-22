@@ -34,3 +34,14 @@ int vgui2::PropertySheet::vfunc123()
     return *(int *)((char *)this + 0x58);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c9520 size=0x6
+#include "vgui2__PropertySheet.h"
+namespace lifted {
+extern char g_102dacf0;
+}
+int vgui2::PropertySheet::vfunc102()
+{
+    return (int)&lifted::g_102dacf0;
+}
+// END FUNCTION
