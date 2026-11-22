@@ -10,3 +10,10 @@ CAmmoCounter *pcd_emit_1004bbd0() { return new CAmmoCounter; }
 
 // TARGET: ??_GCAmmoCounter@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1004c2a0 size=0x1
+#include "CAmmoCounter.h"
+void CAmmoCounter::vfunc97()
+{
+}
+// END FUNCTION
