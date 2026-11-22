@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10022800 size=0x6
+#include "C_ItemKLuckyStarMurderKey.h"
+namespace lifted {
+extern char g_10273b38;
+}
+int C_ItemKLuckyStarMurderKey::vfunc17()
+{
+    return (int)&lifted::g_10273b38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022890 size=0x1e
 #include "C_ItemKLuckyStarMurderKey.h"
 
