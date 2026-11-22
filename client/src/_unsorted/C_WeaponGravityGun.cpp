@@ -22,3 +22,11 @@ C_WeaponGravityGun *pcd_emit_10028390() { return new C_WeaponGravityGun; }
 
 // TARGET: ??_GC_WeaponGravityGun@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100283c0 size=0x3
+#include "C_WeaponGravityGun.h"
+int C_WeaponGravityGun::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
