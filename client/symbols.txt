@@ -1055,6 +1055,7 @@
 0x1001e540 func   ?vfunc15@C_ItemGHannahsApptBook@@UAEHXZ C_ItemGHannahsApptBook::vfunc15
 0x1001e550 func   ?sub_1001e550@@YAHXZ sub_1001e550
 0x1001e670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHannahsApptBook@@@Z ClientClassInit
+0x1001e700 func   ?vfunc17@C_ItemGJunkyardBusinesscard@@UAEHXZ C_ItemGJunkyardBusinesscard::vfunc17
 0x1001e790 func   ??_GC_ItemGJunkyardBusinesscard@@UAEPAXI@Z ??_GC_ItemGJunkyardBusinesscard@@UAEPAXI@Z
 0x1001e7c0 func   ?vfunc15@C_ItemGJunkyardBusinesscard@@UAEHXZ C_ItemGJunkyardBusinesscard::vfunc15
 0x1001e7d0 func   ?sub_1001e7d0@@YAHXZ sub_1001e7d0
