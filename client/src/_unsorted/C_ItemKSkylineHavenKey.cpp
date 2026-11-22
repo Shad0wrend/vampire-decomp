@@ -10,3 +10,11 @@ C_ItemKSkylineHavenKey *pcd_emit_10026710() { return new C_ItemKSkylineHavenKey;
 
 // TARGET: ??_GC_ItemKSkylineHavenKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10026740 size=0x3
+#include "C_ItemKSkylineHavenKey.h"
+int C_ItemKSkylineHavenKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
