@@ -16344,6 +16344,7 @@
 0x100152c6 func   ?vfunc264@CSceneEntity@@UAEXPAVCUnknown1007ed10@@HPAUCSceneEvent@@@Z CSceneEntity::vfunc264
 0x100152cb func   ?vfunc81@CItemGDriversLicenseGimble@@QAEHXZ CItemGDriversLicenseGimble::vfunc81
 0x100152d0 func   ?sub_103b03b0@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b03b0
+0x100152d5 func   ?OnEntityDeleted@CEntityTouchManager@@UAEXPAVCBaseEntity@@@Z CEntityTouchManager::OnEntityDeleted
 0x100152d5 func   ?vfunc1@CEntityTouchManager@@UAEXPAUCEntityListSystem_Ent@@@Z CEntityTouchManager::vfunc1
 0x100152da func   ?vfunc379@CBaseCombatCharacter@@UAEDPAVCBaseEntity@@HHHHHD@Z CBaseCombatCharacter::vfunc379
 0x100152df func   ?vfunc334@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc334
