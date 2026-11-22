@@ -8,13 +8,14 @@ struct ClientShadow_t
 	int m_unk04;
 	unsigned short m_Flags;	// 0x08, bit 0 tested
 	unsigned short m_unk0a;
-	char m_unk0c[0xe0];
+	int m_unk0c;
 };
 
 class CClientShadowMgr
 {
 public:
-	int m_unk04;
+	int m_unk00;	// vtable stand-in
+	int m_unk04;	// IClientLeafShadowEnum vtable
 	int m_unk08;
 	int m_unk0c;
 	int m_unk10;
