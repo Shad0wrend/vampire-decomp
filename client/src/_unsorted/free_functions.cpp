@@ -60853,6 +60853,18 @@ void sub_10186d00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186e00 size=0x1c
+struct CUnk102036e0Target { void sub_10186620(int a); };
+struct CUnk102036e0Table { CUnk102036e0Target *sub_100f0ed0(const char *name); };
+extern CUnk102036e0Table g_104cfe38;
+
+// TARGET: sub_10186e00
+void sub_10186e00(int a)
+{
+	g_104cfe38.sub_100f0ed0("VItemInfoUI")->sub_10186620(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187c10 size=0x7
 struct CUnknown10187c10 { char sub_10187c10(); };
 char CUnknown10187c10::sub_10187c10()
