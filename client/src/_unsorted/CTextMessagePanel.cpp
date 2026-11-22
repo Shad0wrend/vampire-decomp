@@ -36,6 +36,23 @@ int CTextMessagePanel::vfunc107(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a960 size=0x23
+#include "CTextMessagePanel.h"
+namespace lifted {
+int sub_1016a870();
+}
+int CTextMessagePanel::vfunc110(int a0)
+{
+    *(int *)((char *)this + 0x58) = a0;
+    int t0 = lifted::sub_1016a870();
+    if (t0 != 0) {
+        *(int *)((char *)t0) = 3;
+        *(int *)((char *)t0 + 0x24) = *(int *)((char *)this + 0x58);
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a990 size=0xd
 #include "CTextMessagePanel.h"
 namespace lifted {
