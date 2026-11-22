@@ -25202,6 +25202,26 @@ char CUnknown10094860::sub_10094860(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094890 size=0x3e
+namespace lifted {
+struct C10096c30 { int sub_10096c30(); };
+struct C1009f140 { bool sub_1009f140(int); };
+int __stdcall sub_100a0470(int);
+}
+struct CUnknown10094890 { void sub_10094890(int); };
+void CUnknown10094890::sub_10094890(int a0)
+{
+    lifted::sub_100a0470(a0);
+    if ((*(char *)((char *)this + 0x6a0)) != 0) {
+        *(int *)((char *)this + 0x640) = *(int *)((char *)this + 0x77c);
+    }
+    bool t0 = ((lifted::C1009f140 *)((int)this + -8))->sub_1009f140(0x10);
+    if (t0 != 0) {
+        ((lifted::C10096c30 *)((int)this + -8))->sub_10096c30();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100958f0 size=0x19
 namespace lifted {
 int __stdcall sub_10096830(int);
