@@ -535,6 +535,7 @@
 0x10001a82 func   ?sub_10142aa0@@YAXHHHHHHHH@Z sub_10142aa0
 0x10001a87 func   ?sub_10073540@CUnknown10073540@@QAEHXZ CUnknown10073540::sub_10073540
 0x10001a8c func   ?sub_101d2560@@YAXVVector@@HPBD1H@Z sub_101d2560
+0x10001a91 func   ?AddBlockHandler@CSaveRestoreBlockSet@@UAEXPAVISaveRestoreBlockHandler@@@Z CSaveRestoreBlockSet::AddBlockHandler
 0x10001a91 func   ?vfunc9@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc9
 0x10001a9b func   ?sub_10027a70@CUnknown10027a70@@QAEXXZ CUnknown10027a70::sub_10027a70
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291
