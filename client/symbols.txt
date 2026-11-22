@@ -1966,6 +1966,7 @@
 0x1004e210 func   ?sub_1004e210@CUnknown1004e210@@QAEDXZ CUnknown1004e210::sub_1004e210
 0x1004e330 func   ?sub_1004e330@@YAHXZ sub_1004e330
 0x1004e830 func   ?sub_1004e830@UtlMem@@QAEXH@Z UtlMem::sub_1004e830
+0x1004ea40 func   ?vfunc112@CManagedHudElement@@UAEXXZ CManagedHudElement::vfunc112
 0x1004ea50 func   ?sub_1004ea50@@YAHXZ sub_1004ea50
 0x1004f810 func   ?sub_1004f810@@YAHXZ sub_1004f810
 0x1004f830 func   ?sub_1004f830@@YADXZ sub_1004f830
