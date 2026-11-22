@@ -10,3 +10,11 @@ C_WeaponIWritten *pcd_emit_1000f510() { return new C_WeaponIWritten; }
 
 // TARGET: ??_GC_WeaponIWritten@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1000f540 size=0x3
+#include "C_WeaponIWritten.h"
+int C_WeaponIWritten::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
