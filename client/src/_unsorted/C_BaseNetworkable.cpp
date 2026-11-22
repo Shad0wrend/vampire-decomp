@@ -26,3 +26,11 @@ IClientRenderable * C_BaseNetworkable::GetClientRenderable()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a3b20 size=0x3
+#include "C_BaseNetworkable.h"
+IClientEntity * C_BaseNetworkable::GetIClientEntity()
+{
+    return 0;
+}
+// END FUNCTION
