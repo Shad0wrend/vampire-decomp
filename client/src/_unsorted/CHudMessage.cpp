@@ -28,3 +28,20 @@ void CHudMessage::vfunc1()
     ((lifted::V *)this)->f7();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010e5a0 size=0x2f
+#include "CHudMessage.h"
+namespace lifted {
+extern char g_102bec68;
+extern char g_102bec74;
+extern char g_104cfe38;
+struct C100f11d0 { int sub_100f11d0(int); };
+}
+void CHudMessage::vfunc2()
+{
+    int t0 = ((lifted::C100f11d0 *)((int)&lifted::g_104cfe38))->sub_100f11d0((int)&lifted::g_102bec74);
+    *(int *)((char *)this + 0xe4) = t0;
+    int t1 = ((lifted::C100f11d0 *)((int)&lifted::g_104cfe38))->sub_100f11d0((int)&lifted::g_102bec68);
+    *(int *)((char *)this + 0xe0) = t1;
+}
+// END FUNCTION
