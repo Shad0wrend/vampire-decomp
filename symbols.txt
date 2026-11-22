@@ -9209,7 +9209,6 @@
 0x1000c5ea func   ?sub_1023c430@@YAMXZ sub_1023c430
 0x1000c5ef func   ?sub_103eeaa0@SSlot372View@@QAE_NXZ SSlot372View::sub_103eeaa0
 0x1000c5f4 func   ??_GCLagCompensationManager@@UAEPAXI@Z ??_GCLagCompensationManager@@UAEPAXI@Z
-0x1000c5f4 func   ?vfunc8@CLagCompensationManager@@QAEPAV1@I@Z CLagCompensationManager::vfunc8
 0x1000c5f9 func   ?vfunc23@CGameMovement@@UAEMXZ CGameMovement::vfunc23
 0x1000c5fe func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc2
 0x1000c603 func   ?sub_101681a0@@YI_NPAUHolder@@@Z sub_101681a0

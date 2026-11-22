@@ -31,16 +31,12 @@ void CLagCompensationManager::vfunc5()
 
 // FUNCTION: 0x10187dd0 size=0x68
 #include "CLagCompensationManager.h"
-#include "utlvector.h"
 
-CLagCompensationManager *CLagCompensationManager::vfunc8(unsigned int flags)
-{
-	((CUtlVector<int> *)((char *)this + 0xc))->~CUtlVector<int>();
-	sub_1042c2c0();
-	if (flags & 1)
-		operator delete(this);
-	return this;
-}
+// VC6 writes CLagCompensationManager's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CLagCompensationManager *pcd_emit_10187dd0() { return new CLagCompensationManager; }
+
+// TARGET: ??_GCLagCompensationManager@@UAEPAXI@Z
 // END FUNCTION
 
 // FUNCTION: 0x10187e60 size=0x6c
