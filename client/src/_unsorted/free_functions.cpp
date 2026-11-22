@@ -29659,6 +29659,32 @@ template <> int ClientClassInit<DT_Sun::ignored>(DT_Sun::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4eb0 size=0x47
+namespace lifted {
+extern char g_10232834;
+extern char g_10232848;
+extern char g_10232884;
+extern char g_102328bc;
+extern char g_10232914;
+int sub_1009db90();
+struct C100eed10 { int sub_100eed10(); };
+}
+struct CUnknown100c4eb0 { void * sub_100c4eb0(); };
+void * CUnknown100c4eb0::sub_100c4eb0()
+{
+    lifted::sub_1009db90();
+    ((lifted::C100eed10 *)((char *)this + 0x410))->sub_100eed10();
+    *(int *)this = (int)&lifted::g_10232914;
+    *(char *)((char *)this + 0x420) = 1;
+    *(char *)((char *)this + 0x430) = 1;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102328bc;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10232884;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_10232848;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10232834;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6580 size=0x16
 namespace lifted {
 extern char g_100c6440;
