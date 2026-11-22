@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10007270 size=0x3
+#include "C_BaseTempEntity.h"
+unsigned int * C_BaseTempEntity::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c370 size=0x1e
 #include "C_BaseTempEntity.h"
 
