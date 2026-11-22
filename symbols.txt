@@ -13279,6 +13279,7 @@
 0x10011662 func   ?sub_1012f890@@YA_NHPAPBD@Z sub_1012f890
 0x10011667 func   ?sub_102695d0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102695d0
 0x1001166c func   ?sub_102349e0@@YAHXZ sub_102349e0
+0x10011671 func   ?AssociateModel@CPhysSaveRestoreBlockHandler@@UAEXPAVIPhysicsObject@@PBVCPhysCollide@@@Z CPhysSaveRestoreBlockHandler::AssociateModel
 0x10011671 func   ?sub_10044f60@CUtlMap16@@QAEXII@Z CUtlMap16::sub_10044f60
 0x10011676 func   ?sub_10031bd0@@YA_NPAX@Z sub_10031bd0
 0x10011680 func   ?vfunc15@CRestore@@UAEHPAHHH@Z CRestore::vfunc15
