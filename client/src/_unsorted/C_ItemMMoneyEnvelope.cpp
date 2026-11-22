@@ -10,3 +10,11 @@ C_ItemMMoneyEnvelope *pcd_emit_10010690() { return new C_ItemMMoneyEnvelope; }
 
 // TARGET: ??_GC_ItemMMoneyEnvelope@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100106c0 size=0x3
+#include "C_ItemMMoneyEnvelope.h"
+int C_ItemMMoneyEnvelope::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
