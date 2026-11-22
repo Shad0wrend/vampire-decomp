@@ -30540,6 +30540,17 @@ void sub_100dfb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfc40 size=0x11
+namespace lifted {
+extern int g_104a57e8;
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual int f3(int); };
+}
+int sub_100dfc40(int a0)
+{
+    return ((lifted::V *)lifted::g_104a57e8)->f3(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfdf0 size=0x6
 namespace lifted {
 extern char g_104cf470;
