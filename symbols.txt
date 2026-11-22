@@ -1279,6 +1279,7 @@
 0x10002987 func   ?vfunc80@COrnamentProp@@UAEHXZ COrnamentProp::vfunc80
 0x1000298c func   ?sub_10216360@CPropModelState@@QAEPAV1@XZ CPropModelState::sub_10216360
 0x10002991 func   ?sub_101d79e0@@YAXXZ sub_101d79e0
+0x10002996 func   ?PostRestore@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::PostRestore
 0x10002996 func   ?vfunc8@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc8
 0x1000299b func   ?sub_1021e750@CUnknown1021e750@@QAEXHPAVCBaseEntity@@@Z CUnknown1021e750::sub_1021e750
 0x100029a0 func   _hud_counter hud_counter
