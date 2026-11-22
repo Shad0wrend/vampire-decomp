@@ -7,5 +7,5 @@ class CHudLabel : public vgui2::Label
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CHudLabel's own function
-    virtual void vfunc74();
+    virtual int vfunc74(int);
 };

@@ -12,9 +12,9 @@ public:
 	virtual ~RadioButton();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with RadioButton's own function
-	virtual void vfunc74();
+	virtual int vfunc74(int);
 	virtual void vfunc75();
-	virtual void vfunc76();
+	virtual int vfunc76(int);
 	virtual int vfunc77();
 	virtual void vfunc87(int);
 	virtual void vfunc91(int);

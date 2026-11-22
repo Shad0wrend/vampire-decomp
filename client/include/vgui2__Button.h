@@ -13,9 +13,9 @@ public:
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Button's own function
 	virtual void vfunc14();
-	virtual void vfunc74();
+	virtual int vfunc74(int);
 	virtual void vfunc75();
-	virtual void vfunc76();
+	virtual int vfunc76(int);
 	virtual int vfunc77();
 	virtual void vfunc80();
 	virtual void vfunc81();
@@ -40,7 +40,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc144();
 	virtual bool vfunc145(char);
 	virtual bool vfunc146();
-	virtual void vfunc147();
+	virtual int vfunc147();
 	virtual void vfunc148();
 	virtual void vfunc149();
 	virtual void vfunc150();
@@ -51,9 +51,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc155();
 	virtual void vfunc156();
 	virtual void vfunc157();
-	virtual void vfunc158();
-	virtual void vfunc159();
-	virtual void vfunc160();
+	virtual int vfunc158(int);
+	virtual int vfunc159(int);
+	virtual int vfunc160(int);
 	virtual void vfunc161();
 	virtual void vfunc162();
 	virtual void vfunc163(int, int, int, int);

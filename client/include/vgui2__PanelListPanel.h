@@ -12,7 +12,7 @@ public:
 	virtual ~PanelListPanel();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with PanelListPanel's own function
-	virtual void vfunc74();
+	virtual int vfunc74(int);
 	virtual void vfunc97();
 	virtual void vfunc101();
 	virtual int vfunc102();
@@ -24,8 +24,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc111();
 	virtual void vfunc112();
 	virtual void vfunc113();
-	virtual void vfunc114();
-	virtual void vfunc115();
-	virtual void vfunc116();
+	virtual int vfunc114(int, int);
+	virtual int vfunc115(int);
+	virtual int vfunc116();
 };
 }

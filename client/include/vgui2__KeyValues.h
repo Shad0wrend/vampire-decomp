@@ -8,7 +8,7 @@ class KeyValues
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots KeyValues adds to its base's vtable: 0-21, vfuncK at slot K
-    virtual void vfunc0();
+    virtual int vfunc0();
     virtual int vfunc1();
     virtual void vfunc2();
     virtual void vfunc3();

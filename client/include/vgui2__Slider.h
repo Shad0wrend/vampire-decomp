@@ -9,7 +9,7 @@ class Slider : public vgui2::Panel
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with Slider's own function
-    virtual void vfunc74();
+    virtual int vfunc74(int);
     virtual void vfunc75();
     virtual void vfunc84(int, int);
     virtual void vfunc87(int);
@@ -23,7 +23,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual int vfunc108();
     virtual void vfunc109();
     virtual int vfunc110(int, int);
-    virtual void vfunc111();
+    virtual int vfunc111(int, int);
     virtual int vfunc112(int, int);
     virtual int vfunc113(int);
     virtual void vfunc114();

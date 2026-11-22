@@ -9,7 +9,7 @@ class LabelComboBoxButton : public vgui2::MenuButton
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with LabelComboBoxButton's own function
-    virtual void vfunc74();
+    virtual int vfunc74(int);
     virtual void vfunc156();
     virtual void vfunc157();
     virtual int vfunc164(int, int, int, int);

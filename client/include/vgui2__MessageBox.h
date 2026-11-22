@@ -14,12 +14,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with MessageBox's own function
 	virtual void vfunc101();
 	virtual int vfunc102();
-	virtual void vfunc130();
+	virtual int vfunc130();
 	// the slots MessageBox adds to its base's vtable: 145-149, vfuncK at slot K
 	virtual void vfunc145();
-	virtual void vfunc146();
-	virtual void vfunc147();
-	virtual void vfunc148();
+	virtual int vfunc146(int);
+	virtual int vfunc147(float);
+	virtual int vfunc148(int);
 	virtual void vfunc149();
 };
 }

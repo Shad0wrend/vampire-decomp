@@ -17,11 +17,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots TextImage adds to its base's vtable: 26-34, vfuncK at slot K
 	virtual void vfunc26();
 	virtual void vfunc27();
-	virtual void vfunc28();
+	virtual int vfunc28(int, int);
 	virtual void vfunc29();
 	virtual void vfunc30();
 	virtual int vfunc31();
-	virtual void vfunc32();
+	virtual int vfunc32(int, int);
 	virtual void vfunc33();
 	virtual void vfunc34();
 };

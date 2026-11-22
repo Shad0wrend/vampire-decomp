@@ -9,8 +9,8 @@ class TreeNode : public vgui2::Panel
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with TreeNode's own function
-    virtual void vfunc21();
-    virtual void vfunc74();
+    virtual int vfunc21(int);
+    virtual int vfunc74(int);
     virtual void vfunc80();
     virtual void vfunc87(int);
     virtual void vfunc90();

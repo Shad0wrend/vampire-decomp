@@ -15,7 +15,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc10(int);
 	virtual void vfunc11(int, int);
 	virtual void vfunc14();
-	virtual void vfunc15();
+	virtual int vfunc15(int);
 	virtual int vfunc17();
 	virtual void vfunc58();
 	virtual void vfunc59();
@@ -27,14 +27,14 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc105();
 	// the slots EditablePanel adds to its base's vtable: 107-117, vfuncK at slot K
 	virtual void vfunc107();
-	virtual void vfunc108();
+	virtual int vfunc108();
 	virtual int vfunc109();
 	virtual void vfunc110();
 	virtual void vfunc111();
 	virtual void vfunc112();
 	virtual void vfunc113();
 	virtual void vfunc114();
-	virtual void vfunc115();
+	virtual int vfunc115(int, int);
 	virtual char * vfunc116();
 	virtual void vfunc117();
 };

@@ -7,5 +7,5 @@ class CDLL_ConVarAccessor : public IConCommandBaseAccessor
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CDLL_ConVarAccessor adds to its base's vtable: 0-0, vfuncK at slot K
-    virtual void vfunc0();
+    virtual bool vfunc0(int);
 };

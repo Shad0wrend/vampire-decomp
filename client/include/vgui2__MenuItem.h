@@ -12,7 +12,7 @@ public:
 	virtual ~MenuItem();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with MenuItem's own function
-	virtual void vfunc74();
+	virtual int vfunc74(int);
 	virtual void vfunc81();
 	virtual void vfunc84(int, int);
 	virtual void vfunc85();

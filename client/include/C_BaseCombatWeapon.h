@@ -18,7 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc29();
 	virtual int vfunc35(int);
 	virtual int vfunc36(int);
-	virtual void vfunc64();
+	virtual int vfunc64(int, int, int);
 	virtual int vfunc86();
 	// the slots C_BaseCombatWeapon adds to its base's vtable: 143-250, vfuncK at slot K
 	virtual void vfunc143();
@@ -38,10 +38,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc157();
 	virtual bool vfunc158();
 	virtual bool vfunc159();
-	virtual void vfunc160();
+	virtual int vfunc160();
 	virtual int vfunc161();
 	virtual int vfunc162();
-	virtual void vfunc163();
+	virtual int vfunc163();
 	virtual void vfunc164(int);
 	virtual void vfunc165(int);
 	virtual int vfunc166();
@@ -75,7 +75,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc194();
 	virtual void vfunc195();
 	virtual void vfunc196();
-	virtual void vfunc197();
+	virtual int vfunc197();
 	virtual int vfunc198();
 	virtual void vfunc199();
 	virtual void vfunc200();

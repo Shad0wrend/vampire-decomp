@@ -9,11 +9,11 @@ class ToggleButton : public vgui2::Button
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with ToggleButton's own function
-    virtual void vfunc74();
+    virtual int vfunc74(int);
     virtual void vfunc87(int);
     virtual void vfunc88(int);
     virtual void vfunc89(int);
-    virtual void vfunc147();
+    virtual int vfunc147();
     virtual void vfunc156();
 };
 }

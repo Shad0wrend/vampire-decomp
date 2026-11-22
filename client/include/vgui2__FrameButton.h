@@ -9,7 +9,7 @@ class FrameButton : public vgui2::Button
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with FrameButton's own function
-    virtual void vfunc74();
+    virtual int vfunc74(int);
     virtual void vfunc87(int);
     virtual void vfunc98();
     virtual int vfunc164(int, int, int, int);

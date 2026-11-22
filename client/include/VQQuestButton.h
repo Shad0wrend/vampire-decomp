@@ -10,9 +10,9 @@ public:
 	virtual ~VQQuestButton();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with VQQuestButton's own function
-	virtual void vfunc74();
+	virtual int vfunc74(int);
 	virtual void vfunc156();
 	virtual int vfunc164(int, int, int, int);
 	// the slots VQQuestButton adds to its base's vtable: 166-166, vfuncK at slot K
-	virtual void vfunc166();
+	virtual int vfunc166(char);
 };

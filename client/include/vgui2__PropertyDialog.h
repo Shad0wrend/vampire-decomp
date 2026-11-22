@@ -15,17 +15,17 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc78(int);
 	virtual void vfunc92();
 	virtual void vfunc101();
-	virtual void vfunc108();
+	virtual int vfunc108();
 	// the slots PropertyDialog adds to its base's vtable: 145-155, vfuncK at slot K
 	virtual int vfunc145();
-	virtual void vfunc146();
-	virtual void vfunc147();
-	virtual void vfunc148();
-	virtual void vfunc149();
-	virtual void vfunc150();
-	virtual void vfunc151();
-	virtual void vfunc152();
-	virtual void vfunc153();
+	virtual int vfunc146(int, int);
+	virtual int vfunc147();
+	virtual int vfunc148();
+	virtual int vfunc149(float);
+	virtual int vfunc150(float);
+	virtual int vfunc151();
+	virtual int vfunc152();
+	virtual int vfunc153(int, int, float);
 	virtual int vfunc154(int);
 	virtual void vfunc155();
 };

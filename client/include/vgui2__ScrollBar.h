@@ -13,18 +13,18 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual bool vfunc62(char);
     virtual bool vfunc63(char);
     virtual bool vfunc64(char);
-    virtual void vfunc74();
+    virtual int vfunc74(int);
     virtual void vfunc96();
     virtual void vfunc101();
     virtual int vfunc102();
     // the slots ScrollBar adds to its base's vtable: 107-122, vfuncK at slot K
-    virtual void vfunc107();
-    virtual void vfunc108();
-    virtual void vfunc109();
-    virtual void vfunc110();
-    virtual void vfunc111();
-    virtual void vfunc112();
-    virtual void vfunc113();
+    virtual int vfunc107();
+    virtual int vfunc108();
+    virtual int vfunc109();
+    virtual int vfunc110();
+    virtual int vfunc111();
+    virtual int vfunc112();
+    virtual int vfunc113();
     virtual void vfunc114();
     virtual void vfunc115();
     virtual void vfunc116();
@@ -32,7 +32,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual int vfunc118(int);
     virtual void vfunc119();
     virtual void vfunc120();
-    virtual void vfunc121();
+    virtual int vfunc121();
     virtual void vfunc122();
 };
 }
