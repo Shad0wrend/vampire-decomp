@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10020280 size=0x6
+#include "C_ItemGRingSerialKiller2.h"
+namespace lifted {
+extern char g_10273994;
+}
+int C_ItemGRingSerialKiller2::vfunc17()
+{
+    return (int)&lifted::g_10273994;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020310 size=0x1e
 #include "C_ItemGRingSerialKiller2.h"
 
