@@ -1435,6 +1435,7 @@
 0x10029370 func   ?sub_10029370@@YIXPAUSVecHolder@@@Z sub_10029370
 0x100293c0 func   ?sub_100293c0@CCameraShotTable@@QAEHPBDPAUCCameraShot_t@@@Z CCameraShotTable::sub_100293c0
 0x10029450 func   ?sub_10029450@CCameraShotTable@@QAEPAUCCameraShot_t@@H@Z CCameraShotTable::sub_10029450
+0x10029530 func   ?vfunc1@Panel@vgui2@@UAEPAXXZ vgui2::Panel::vfunc1
 0x10029e70 func   ?sub_10029e70@@YAXPAUCLinkElem@@0@Z sub_10029e70
 0x1002a040 func   ?sub_1002a040@@YAHPAHH@Z sub_1002a040
 0x1002a0e0 func   ?sub_1002a0e0@@YAXPAUNode60@@0H@Z sub_1002a0e0
