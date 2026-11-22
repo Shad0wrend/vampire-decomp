@@ -3333,6 +3333,7 @@
 0x100f0110 func   ??_GCHudHistoryResource@@UAEPAXI@Z ??_GCHudHistoryResource@@UAEPAXI@Z
 0x100f0430 func   ?sub_100f0430@CHudHistoryResource@@QAE_NXZ CHudHistoryResource::sub_100f0430
 0x100f0460 func   ?vfunc5@CHudHistoryResource@@UAEXH@Z CHudHistoryResource::vfunc5
+0x100f0540 func   ?vfunc5@CHudElement@@UAEXH@Z CHudElement::vfunc5
 0x100f0550 func   ??_GCHudElement@@UAEPAXI@Z ??_GCHudElement@@UAEPAXI@Z
 0x100f0570 func   ??1CHudElement@@UAE@XZ CHudElement::~CHudElement
 0x100f0570 func   ?sub_100f0570@CUnknown100f0570@@QAEHXZ CUnknown100f0570::sub_100f0570
