@@ -25502,6 +25502,30 @@ void * CUnknown1008e6e0::sub_1008e6e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e730 size=0x3a
+namespace lifted {
+extern char g_1022cf84;
+extern char g_1022cf98;
+extern char g_1022cfd4;
+extern char g_1022d00c;
+extern char g_1022d064;
+int sub_1008e6e0();
+}
+struct CUnknown1008e730 { void * sub_1008e730(); };
+void * CUnknown1008e730::sub_1008e730()
+{
+    int t0 = lifted::sub_1008e6e0();
+    *(int *)this = (int)&lifted::g_1022d064;
+    *(int *)((char *)this + 4) = (int)&lifted::g_1022d00c;
+    *(int *)((char *)this + 8) = (int)&lifted::g_1022cfd4;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_1022cf98;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_1022cf84;
+    *(int *)((char *)this + 0x3fc) = (int)this;
+    *(int *)((char *)this + 0x3f4) = (int)this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e7e0 size=0x6
 namespace lifted {
 extern char g_10498e9c;

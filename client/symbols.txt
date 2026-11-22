@@ -2638,6 +2638,7 @@
 0x1008e670 func   ?sub_1008e670@UtlMem@@QAEXH@Z UtlMem::sub_1008e670
 0x1008e6e0 func   ?sub_1008e6e0@CUnknown1008e6e0@@QAEPAXXZ CUnknown1008e6e0::sub_1008e6e0
 0x1008e710 func   ??_GC_AI_BaseNPC@@UAEPAXI@Z ??_GC_AI_BaseNPC@@UAEPAXI@Z
+0x1008e730 func   ?sub_1008e730@CUnknown1008e730@@QAEPAXXZ CUnknown1008e730::sub_1008e730
 0x1008e770 func   ??_GC_AI_BaseNPCTroika@@UAEPAXI@Z ??_GC_AI_BaseNPCTroika@@UAEPAXI@Z
 0x1008e7c0 func   ?vfunc16@C_AI_BaseNPCTroika@@UAEHXZ C_AI_BaseNPCTroika::vfunc16
 0x1008e7d0 func   ?vfunc15@C_AI_BaseNPCTroika@@UAEHXZ C_AI_BaseNPCTroika::vfunc15
