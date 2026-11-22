@@ -13991,6 +13991,7 @@
 0x1001245e func   ?sub_10236130@CKickWeapon@@QAEXXZ CKickWeapon::sub_10236130
 0x10012463 func   ?vfunc81@CWeaponRanged_Smg_Mac10@@UAEHXZ CWeaponRanged_Smg_Mac10::vfunc81
 0x10012468 func   ?vfunc103@CVGuiScreen@@UAEXXZ CVGuiScreen::vfunc103
+0x1001246d func   ??0CVFeat@@QAE@H@Z CVFeat::CVFeat
 0x1001246d func   ??0CVFeat_t@@QAE@H@Z CVFeat_t::CVFeat_t
 0x10012472 func   ?sub_10246320@@YAXHPBMPAM@Z sub_10246320
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
