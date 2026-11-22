@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bca40 size=0x3
+#include "C_PhysBox.h"
+int C_PhysBox::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bcc30 size=0x1e
 #include "C_PhysBox.h"
 
