@@ -209,6 +209,7 @@
 0x100098d0 func   ?sub_100098d0@@YAHXZ sub_100098d0
 0x100099f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_TireIron@@@Z ClientClassInit
 0x10009b10 func   ??_GC_WeaponMelee_Baton@@UAEPAXI@Z ??_GC_WeaponMelee_Baton@@UAEPAXI@Z
+0x10009b40 func   ?vfunc15@C_WeaponMelee_Baton@@UAEHXZ C_WeaponMelee_Baton::vfunc15
 0x10009b50 func   ?sub_10009b50@@YAHXZ sub_10009b50
 0x10009c70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Baton@@@Z ClientClassInit
 0x10009d90 func   ??_GC_WeaponMelee_SeveredArm@@UAEPAXI@Z ??_GC_WeaponMelee_SeveredArm@@UAEPAXI@Z
