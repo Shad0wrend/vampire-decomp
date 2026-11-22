@@ -52121,6 +52121,19 @@ void sub_10151620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151630 size=0x27
+struct CUnknown10151630 { void * sub_10151630(int); };
+void * CUnknown10151630::sub_10151630(int a0)
+{
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 8) = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0xc) = *(int *)((char *)a0 + 0xc);
+    *(int *)((char *)this + 0x10) = *(int *)((char *)a0 + 0x10);
+    *(int *)((char *)this + 0x14) = *(int *)((char *)a0 + 0x14);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151820 size=0x1e
 struct CUnknown10151820 { void * sub_10151820(); };
 void * CUnknown10151820::sub_10151820()
