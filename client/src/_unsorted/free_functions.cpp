@@ -13712,6 +13712,24 @@ char CUnknown1005fb10::sub_1005fb10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fcb0 size=0x35
+namespace lifted {
+struct V { virtual int f0(int); };
+}
+struct CUnknown1005fcb0 { void sub_1005fcb0(); };
+void CUnknown1005fcb0::sub_1005fcb0()
+{
+    if ((*(int *)((char *)this + 0x1b8)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x1b8)))->f0(1);
+    }
+    if ((*(int *)((char *)this + 0x1bc)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 0x1bc)))->f0(1);
+    }
+    *(int *)((char *)this + 0x1b8) = 0;
+    *(int *)((char *)this + 0x1bc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061370 size=0x26
 namespace lifted {
 extern char g_102879dc;
