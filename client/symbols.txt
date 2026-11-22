@@ -8,6 +8,7 @@
 0x100015d0 func   ?GetClientRenderable@C_BaseEntity@@UAEPAVIClientRenderable@@XZ C_BaseEntity::GetClientRenderable
 0x100015e0 func   ?GetIClientEntity@C_BaseEntity@@UAEPAVIClientEntity@@XZ C_BaseEntity::GetIClientEntity
 0x100015f0 func   ?GetBaseEntity@C_BaseEntity@@UAEPAV1@XZ C_BaseEntity::GetBaseEntity
+0x10001600 func   ?GetClientThinkable@C_BaseEntity@@UAEPAVIClientThinkable@@XZ C_BaseEntity::GetClientThinkable
 0x10001640 func   ?sub_10001640@@YADXZ sub_10001640
 0x10001650 func   ?sub_10001650@CUnknown10001650@@QAEHXZ CUnknown10001650::sub_10001650
 0x100018f0 func   ?sub_100018f0@@YADXZ sub_100018f0
