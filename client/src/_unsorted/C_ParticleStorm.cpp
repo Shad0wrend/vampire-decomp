@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10003fa0 size=0x6
+#include "C_ParticleStorm.h"
+namespace lifted {
+extern char g_10271a44;
+}
+int C_ParticleStorm::vfunc16()
+{
+    return (int)&lifted::g_10271a44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003fb0 size=0x3
 #include "C_ParticleStorm.h"
 int C_ParticleStorm::vfunc15()
