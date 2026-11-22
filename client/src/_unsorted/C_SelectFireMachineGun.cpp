@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10007780 size=0x6
+#include "C_SelectFireMachineGun.h"
+namespace lifted {
+extern char g_1027284c;
+}
+int C_SelectFireMachineGun::vfunc17()
+{
+    return (int)&lifted::g_1027284c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007810 size=0x1e
 #include "C_SelectFireMachineGun.h"
 
