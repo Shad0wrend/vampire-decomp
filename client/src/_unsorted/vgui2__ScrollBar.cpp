@@ -10,3 +10,11 @@ vgui2::ScrollBar *pcd_emit_101beee0() { return new vgui2::ScrollBar; }
 
 // TARGET: ??_GScrollBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101bf200 size=0x4
+#include "vgui2__ScrollBar.h"
+int vgui2::ScrollBar::vfunc117()
+{
+    return *(int *)((char *)this + 0x60);
+}
+// END FUNCTION
