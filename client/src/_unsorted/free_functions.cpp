@@ -38156,6 +38156,18 @@ int CUnknown101104a0::sub_101104a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10111ac0 size=0x1f
+int sub_10111ac0(int a0, int a1)
+{
+    if (a0 != 0) {
+        *(short *)((char *)a0) = *(short *)((char *)a1);
+        *(int *)((char *)a0 + 4) = *(int *)((char *)a1 + 4);
+        *(int *)((char *)a0 + 8) = *(int *)((char *)a1 + 8);
+    }
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112250 size=0x19
 struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
 
