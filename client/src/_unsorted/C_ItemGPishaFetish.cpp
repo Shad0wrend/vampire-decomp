@@ -10,3 +10,11 @@ C_ItemGPishaFetish *pcd_emit_1001ae10() { return new C_ItemGPishaFetish; }
 
 // TARGET: ??_GC_ItemGPishaFetish@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001ae40 size=0x3
+#include "C_ItemGPishaFetish.h"
+int C_ItemGPishaFetish::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
