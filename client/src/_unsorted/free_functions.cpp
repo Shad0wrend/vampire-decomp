@@ -29307,6 +29307,28 @@ template <> int ClientClassInit<DT_PhysBox::ignored>(DT_PhysBox::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bcc00 size=0x2e
+namespace lifted {
+extern char g_10231524;
+extern char g_10231538;
+extern char g_10231574;
+extern char g_102315ac;
+extern char g_10231604;
+int sub_1009db90();
+}
+struct CUnknown100bcc00 { void * sub_100bcc00(); };
+void * CUnknown100bcc00::sub_100bcc00()
+{
+    int t0 = lifted::sub_1009db90();
+    *(int *)this = (int)&lifted::g_10231604;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102315ac;
+    *(int *)((char *)this + 8) = (int)&lifted::g_10231574;
+    *(int *)((char *)this + 0xc) = (int)&lifted::g_10231538;
+    *(int *)((char *)this + 0x10) = (int)&lifted::g_10231524;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bcd00 size=0xe6
 #include "RecvTable.h"
 extern RecvTable g_104a3398;
