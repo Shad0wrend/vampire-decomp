@@ -1338,6 +1338,7 @@
 0x1003e7c0 func   ??1C_TEPlayerDecal@@UAE@XZ C_TEPlayerDecal::~C_TEPlayerDecal
 0x1003e7c0 func   ?sub_1003e7c0@CUnknown1003e7c0@@QAEHXZ CUnknown1003e7c0::sub_1003e7c0
 0x1003e840 func   ?vfunc9@C_TEPlayerDecal@@UAEHXZ C_TEPlayerDecal::vfunc9
+0x1003e850 func   ?vfunc8@C_TEPlayerDecal@@UAEHXZ C_TEPlayerDecal::vfunc8
 0x1003e860 func   ?sub_1003e860@@YAHXZ sub_1003e860
 0x1003e900 func   ?sub_1003e900@@YAHXZ sub_1003e900
 0x1003e970 func   ?ClientClassInit@@YAHPAUignored@DT_TEPlayerDecal@@@Z ClientClassInit

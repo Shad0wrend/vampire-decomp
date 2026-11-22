@@ -21,3 +21,11 @@ int C_TEPlayerDecal::vfunc9()
     return (int)&lifted::g_1028132c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003e850 size=0x3
+#include "C_TEPlayerDecal.h"
+int C_TEPlayerDecal::vfunc8()
+{
+    return 0;
+}
+// END FUNCTION
