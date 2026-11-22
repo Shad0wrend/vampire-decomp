@@ -5775,8 +5775,8 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 // VC6 orders `or ebx, -1` / `mov ebp, 1` of this function by the unit's count of names. WORKAROUND dial: the
-// typedefs after the includes (of 0..80, 8..32 and 72..80 match under the headers with CBaseEntity's slots 134..240 of
-// 2026-11-20; the others swap the two).
+// typedefs after the includes (of 0..80 step 4, 0..8 and 24..72 match under the headers of 2026-11-22 with one
+// game-system root; the others swap the two).
 #include "vampire_all.h"
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
@@ -5811,6 +5811,34 @@ typedef int pcd_dial16;
 typedef int pcd_dial17;
 typedef int pcd_dial18;
 typedef int pcd_dial19;
+typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
+typedef int pcd_dial25;
+typedef int pcd_dial26;
+typedef int pcd_dial27;
+typedef int pcd_dial28;
+typedef int pcd_dial29;
+typedef int pcd_dial30;
+typedef int pcd_dial31;
+typedef int pcd_dial32;
+typedef int pcd_dial33;
+typedef int pcd_dial34;
+typedef int pcd_dial35;
+typedef int pcd_dial36;
+typedef int pcd_dial37;
+typedef int pcd_dial38;
+typedef int pcd_dial39;
+typedef int pcd_dial40;
+typedef int pcd_dial41;
+typedef int pcd_dial42;
+typedef int pcd_dial43;
+typedef int pcd_dial44;
+typedef int pcd_dial45;
+typedef int pcd_dial46;
+typedef int pcd_dial47;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -110071,13 +110099,13 @@ void CSoundSchemeManager::sub_102288b0()
 		CSoundSchemeTrack *pTracks = (CSoundSchemeTrack *)m_buf14;
 		for (int i = 0; i < 4; i++)
 			enginesound->vfunc6(0, pTracks[i].m_hSound);
-		CUtlVector<CSoundSchemeTrack> &loops = *(CUtlVector<CSoundSchemeTrack> *)&m_pLoopTracks;
-		while (m_nLoopCount) {
+		CUtlVector<CSoundSchemeTrack> &loops = *(CUtlVector<CSoundSchemeTrack> *)&m_LoopTracks;
+		while (m_LoopTracks.m_Size) {
 			enginesound->vfunc6(0, loops[0].m_hSound);
 			loops.Remove(0);
 		}
-		CUtlVector<CSoundSchemeRandom> &rands = *(CUtlVector<CSoundSchemeRandom> *)&m_pMemory;
-		while (m_nRandomCount) {
+		CUtlVector<CSoundSchemeRandom> &rands = *(CUtlVector<CSoundSchemeRandom> *)&m_RandomSounds;
+		while (m_RandomSounds.m_Size) {
 			enginesound->vfunc6(rands[0].m_x, rands[0].m_y);
 			rands.Remove(0);
 		}
@@ -110687,7 +110715,7 @@ static inline float LenGrouped(Vector v)
 	return FastSqrt(v.z * v.z + v.y * v.y + v.x * v.x);
 }
 
-#define RANDOMS (*(CUtlVector<SoundRandomTrackView> *)&m_pMemory)
+#define RANDOMS (*(CUtlVector<SoundRandomTrackView> *)&m_RandomSounds)
 
 // TARGET: CSoundSchemeManager::sub_10229c50
 void CSoundSchemeManager::sub_10229c50()
@@ -110711,24 +110739,24 @@ void CSoundSchemeManager::sub_10229c50()
 		sub_101434b0(0, iLine++, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
 	}
 
-	for (i = 0; i < m_nLoopCount; i++)
+	for (i = 0; i < m_LoopTracks.m_Size; i++)
 	{
 		g_109f388c(szBuf, 0x80, "Loop Track %d: %s  vol:%.2f  chan:%d (%.2f/%.2f)",
-			i, ((SoundLoopTrackView *)m_pLoopTracks)[i].m_szName,
-			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl44,
-			((SoundLoopTrackView *)m_pLoopTracks)[i].m_n50,
-			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl40,
-			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl4c);
+			i, ((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_szName,
+			(double)((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_fl44,
+			((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_n50,
+			(double)((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_fl40,
+			(double)((SoundLoopTrackView *)m_LoopTracks.m_Memory.m_pMemory)[i].m_fl4c);
 		sub_101434b0(0, iLine++, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
 	}
 
-	g_109f388c(szBuf, 0x80, "Random Tracks: %d\t------------", m_nRandomCount);
+	g_109f388c(szBuf, 0x80, "Random Tracks: %d\t------------", m_RandomSounds.m_Size);
 	sub_101434b0(0, iLine, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
 
 	Vector vecOrigin;
 	((CEntityVSlots *)pPlayer)->slot196(&vecOrigin);
 
-	for (i = 0; i < m_nRandomCount; i++)
+	for (i = 0; i < m_RandomSounds.m_Size; i++)
 	{
 		sub_10142e90(&vecOrigin, &RANDOMS[i].m_vecPos, 0xff, 100, 100, 1, 0.0f);
 		Vector vecMaxs(8.0f, 8.0f, 8.0f);

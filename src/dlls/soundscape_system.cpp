@@ -46,7 +46,7 @@ bool CSoundscapeSystem::vfunc0()
 #include "CSoundscapeSystem.h"
 CSoundscapeSystem *CSoundscapeSystem::vfunc8(unsigned int flags)
 {
-	m_member.sub_100100ff();
+	((CSoundscapeSystemMember8 *)&m_soundscapes)->sub_100100ff();
 	CBaseGameSystem::~CBaseGameSystem();
 	if (flags & 1)
 		::operator delete(this);

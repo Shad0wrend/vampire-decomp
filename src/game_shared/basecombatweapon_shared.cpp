@@ -820,32 +820,47 @@ CWeaponList g_1088ae58;
 // FUNCTION: 0x102501b0 size=0x7e
 #include "CWeaponList.h"
 extern void (*g_109f3624)(void *);
+struct CWeaponListView	// the words of m_list (CUtlLinkedList<int, unsigned short> at +8) as vfunc5 reads them
+{
+	void *m_vtbl;
+	void *m_pNext;
+	char *m_pNodes;		// +8: 8-byte nodes (m_Memory)
+	int m_nAlloc;		// +0xc
+	int m_nGrow;		// +0x10
+	unsigned short m_w14;	// m_Head
+	unsigned short m_w16;	// m_Tail
+	unsigned short m_w18;	// m_FirstFree
+	unsigned short m_w1a;	// m_ElementCount
+	unsigned short m_nCount;	// +0x1c: m_TotalElements
+	unsigned short m_pad1e;
+	char *m_pFirst;		// +0x20: m_pElements
+};
 void CWeaponList::vfunc5()
 {
-    if (m_nCount != 0) {
+    if (((CWeaponListView *)this)->m_nCount != 0) {
         unsigned int prev = 0xffff;
-        int i = m_nCount;
+        int i = ((CWeaponListView *)this)->m_nCount;
         while (--i >= 0) {
             int off = (i & 0xffff) * 8;
-            *(unsigned short *)(off + 6 + m_pNodes) = (unsigned short)prev;
-            *(unsigned short *)(m_pNodes + 4 + off) = (unsigned short)i;
+            *(unsigned short *)(off + 6 + ((CWeaponListView *)this)->m_pNodes) = (unsigned short)prev;
+            *(unsigned short *)(((CWeaponListView *)this)->m_pNodes + 4 + off) = (unsigned short)i;
             prev = i;
         }
-        m_w18 = 0;
-        m_w14 = 0xffff;
-        m_w16 = 0xffff;
-        m_w1a = 0;
+        ((CWeaponListView *)this)->m_w18 = 0;
+        ((CWeaponListView *)this)->m_w14 = 0xffff;
+        ((CWeaponListView *)this)->m_w16 = 0xffff;
+        ((CWeaponListView *)this)->m_w1a = 0;
     }
-    if (m_nGrow != -1) {
-        if (m_pNodes != 0) {
-            g_109f3624(m_pNodes);
-            m_pNodes = 0;
+    if (((CWeaponListView *)this)->m_nGrow != -1) {
+        if (((CWeaponListView *)this)->m_pNodes != 0) {
+            g_109f3624(((CWeaponListView *)this)->m_pNodes);
+            ((CWeaponListView *)this)->m_pNodes = 0;
         }
-        m_nAlloc = 0;
+        ((CWeaponListView *)this)->m_nAlloc = 0;
     }
-    m_w18 = 0xffff;
-    m_nCount = 0;
-    m_pFirst = m_pNodes;
+    ((CWeaponListView *)this)->m_w18 = 0xffff;
+    ((CWeaponListView *)this)->m_nCount = 0;
+    ((CWeaponListView *)this)->m_pFirst = ((CWeaponListView *)this)->m_pNodes;
 }
 // END FUNCTION
 

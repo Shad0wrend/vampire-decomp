@@ -8,15 +8,15 @@
 
 void CLagCompensationManager::sub_10187c90()
 {
-	m_18 = 0;
-	if (m_growSize != -1) {
-		if (m_pRecords) {
-			g_109f3624(m_pRecords);
-			m_pRecords = 0;
+	m_Data.m_Size = 0;
+	if (m_Data.m_Memory.m_nGrowSize != -1) {
+		if (m_Data.m_Memory.m_pMemory) {
+			g_109f3624(m_Data.m_Memory.m_pMemory);
+			m_Data.m_Memory.m_pMemory = 0;
 		}
-		m_allocationCount = 0;
+		m_Data.m_Memory.m_nAllocationCount = 0;
 	}
-	m_pElements = m_pRecords;
+	m_Data.m_pElements = m_Data.m_Memory.m_pMemory;
 }
 // END FUNCTION
 
@@ -25,7 +25,7 @@ void CLagCompensationManager::sub_10187c90()
 
 void CLagCompensationManager::vfunc5()
 {
-	m_18 = 0;
+	m_Data.m_Size = 0;
 }
 // END FUNCTION
 
@@ -78,10 +78,10 @@ void CLagCompensationManager::sub_10187e60(CPlayerView10187e60 *pPlayer)
 
 void CLagCompensationManager::sub_10187ef0()
 {
-	CUtlVector<CLagCompensationRecord> *v = (CUtlVector<CLagCompensationRecord> *)&m_pRecords;
+	CUtlVector<CLagCompensationRecord> *v = &m_Data;
 	float t0 = engine->vfunc119(1) - 1.0; float cutoff = (float)(t0);
 	for (int i = v->Count() - 1; i >= 0; --i) {
-		if (!(m_pRecords[i].m_flSimulationTime >= cutoff))
+		if (!(m_Data.m_Memory.m_pMemory[i].m_flSimulationTime >= cutoff))
 			v->Remove(i);
 	}
 }
@@ -200,6 +200,6 @@ void CLagCompensationManager::vfunc7()
 		record->m_vecMins = ((CLagPlayer *)pPlayer)->m_Collision.WorldAlignMins();
 	}
 
-	((CLagVec *)&m_pRecords)->AddToHead(context);
+	((CLagVec *)&m_Data)->AddToHead(context);
 }
 // END FUNCTION

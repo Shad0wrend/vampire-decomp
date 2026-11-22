@@ -1,7 +1,5 @@
-// CLagCompensationManager: CAutoGameSystem + ILagCompensationManager (at +0x8).
-// Modelled as a single class: the slots below are the primary vtable
-// (0x10471758); the ILagCompensationManager vptr at +0x8 lives inside the
-// padding, so code that needs the secondary vtable has to spell the bases out.
+// CLagCompensationManager (RTTI .?AVCLagCompensationManager@@): CAutoGameSystem (GameSystemRoot.h; primary vtable
+// 0x10471758) + ILagCompensationManager (at +0x8).
 #pragma once
 
 #include "Vector.h"
@@ -36,7 +34,6 @@ struct CLagCompensationRecord	// 0x784 bytes: the element of the manager's vecto
 	CLagCompensationPlayerRecord m_aPlayers[32];	// 0x0004
 };
 
-#ifdef PCD_INITIALIZERS	// the initializer units: Source's class (dlls/player_lagcompensation.cpp, 2003 form)
 #include "GameSystemRoot.h"
 #include "utlvector.h"
 
@@ -50,43 +47,22 @@ public:
 	virtual void FinishLagCompensation(CBasePlayer *player);
 };
 
+// Source's class (dlls/player_lagcompensation.cpp, 2003 form)
 class CLagCompensationManager : public CAutoGameSystem, public ILagCompensationManager
 {
 public:
-	virtual void vfunc1();	// 0x10187c90
+	virtual void vfunc1();	// 0x10187c90 (matched as sub_10187c90)
 	virtual void vfunc5();	// 0x10187d00
-	virtual void vfunc7();	// 0x10187fb0
+	virtual void vfunc7();	// 0x10187fb0, "FrameUpdatePostEntityThink"-like: base sub_10187ef0() first; a CLagCompensationRecord and 32 CLagCompensationPlayerRecord locals (ctor stub 0x100159b0 each, then the whole array zeroed with rep stosd), simtime = engine slot 119(1) (g_1070b22c, float result), players 1..gpGlobals->maxClients through sub_101cd9e0(index), then an AddToHead on the record vector (grow = Mem784::sub_10189510(size + 1 - alloc), memmove of the tail up by 0x784) and the copy of the locals into the new head element
+	CLagCompensationManager *vfunc8(unsigned int flags);	// slot 8 (0x10187dd0) written out: the scalar deleting destructor
+
+	void sub_1042c2c0();	// CBaseGameSystem::~CBaseGameSystem, called directly
+	void sub_10187c90();	// Purge of the record vector (0x10187c90)
+	void sub_10187ef0();
+	void sub_10187e60(struct CPlayerView10187e60 *pPlayer);	// drops the records older than one second (walking backwards, memmove'ing the tail down)
 
 	CUtlVector<CLagCompensationRecord> m_Data;	// 0x0c
 	unsigned int restorebits;	// 0x20
 	bool m_bNeedToRestore;	// 0x24
 	CLagCompensationPlayerRecord restoreData[2][32];	// 0x28 (RESTORE_RECORD, CHANGE_RECORD)
 };
-#else
-class CLagCompensationManager
-{
-public:
-	virtual void vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-	virtual CLagCompensationManager *vfunc8(unsigned int flags);
-
-	char m_pad0004[8];	// 0x0004 .. 0x000b (holds the +0x8 vptr)
-	CLagCompensationRecord *m_pRecords;	// 0x000c: the record vector's memory
-	int m_allocationCount;	// 0x0010
-	int m_growSize;	// 0x0014
-	int m_18;	// 0x0018: record count
-	CLagCompensationRecord *m_pElements;	// 0x001c
-
-	// Note on slot 7 (0x10187fb0, "FrameUpdatePostEntityThink"-like) is declared virtual vfunc7() above: base sub_10187ef0() first; a CLagCompensationRecord and 32 CLagCompensationPlayerRecord locals (ctor stub 0x100159b0 each, then the whole array zeroed with rep stosd), simtime = engine slot 119(1) (g_1070b22c, float result), players 1..gpGlobals->maxClients through sub_101cd9e0(index), then an AddToHead on the record vector at +0xc (alloc +0x10, grow? +0x14, size +0x18, element pointer +0x1c; grow = Mem784::sub_10189510(size + 1 - alloc), memmove of the tail up by 0x784) and the copy of the locals into the new head element
-	void sub_1042c2c0();	// CBaseGameSystem::~CBaseGameSystem, called directly
-	void sub_10187c90();	// Purge of the record vector (0x10187c90)
-	void sub_10187ef0();
-	void sub_10187e60(struct CPlayerView10187e60 *pPlayer);	// drops the records older than one second (walking backwards, memmove'ing the tail down)
-};
-#endif

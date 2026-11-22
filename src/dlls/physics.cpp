@@ -402,7 +402,7 @@ void CPhysicsHook::vfunc7()
     TraceScope_ trace("CPhysicsHook::FrameUpdatePostEntityThink");
     VPScope_ vp("CPhysicsHook::FrameUpdatePostEntityThink", 0, "Physics");
     sub_1002ea40(gpGlobals->frametime);
-    sub_1000a8cb(m_04);
+    sub_1000a8cb(&m_list);
 }
 // END FUNCTION
 
@@ -2676,7 +2676,7 @@ void sub_10031990(CBaseEntity *ent, int a2, int a3, unsigned int a4, unsigned sh
 {
     ScopeTrace scope("PhysicsImpactSound", g_106b8540);
     int edict = ent->m_pEdict2e0;
-    sub_1002d070((S10032fb0 *)g_106b88ec.m_04, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
+    sub_1002d070((S10032fb0 *)&g_106b88ec.m_list, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
 }
 // END FUNCTION
 

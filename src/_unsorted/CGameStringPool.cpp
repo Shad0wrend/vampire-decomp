@@ -7,7 +7,7 @@
 // TARGET: CGameStringPool::vfunc5
 void CGameStringPool::vfunc5()
 {
-	m_StringPool.sub_101bfb00();
+	sub_101bfb00();
 }
 // END FUNCTION
 
@@ -16,10 +16,10 @@ void CGameStringPool::vfunc5()
 CGameStringPool *CGameStringPool::vfunc8(unsigned int flags)
 {
 	sub_1000cfbd();
-	CStringPool *pPool = this ? &m_StringPool : 0;
+	CStringPool *pPool = this;
 	pPool->sub_101bf640();
 	if (flags & 1)
-		delete this;
+		::operator delete(this);
 	return this;
 }
 // END FUNCTION

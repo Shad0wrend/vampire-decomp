@@ -51,7 +51,7 @@ CSoundSchemeManager *CSoundSchemeManager::vfunc8(unsigned int flags)
 	}
 	sub_1042c2c0();
 	if (flags & 1)
-		delete this;
+		::operator delete(this);
 	return this;
 }
 // END FUNCTION
@@ -67,14 +67,14 @@ extern Globals *g_1070b228;
 void CSoundSchemeManager::vfunc2()
 {
     memset(m_buf14, 0, sizeof(m_buf14));
-    if (m_nAllocationCount < 2 && m_nGrowSize != -1) {
-        m_nAllocationCount = 2;
-        if (m_pMemory)
-            m_pMemory = g_109f3638(m_pMemory, 2 * 0x20);
+    if (m_RandomSounds.m_Memory.m_nAllocationCount < 2 && m_RandomSounds.m_Memory.m_nGrowSize != -1) {
+        m_RandomSounds.m_Memory.m_nAllocationCount = 2;
+        if (m_RandomSounds.m_Memory.m_pMemory)
+            m_RandomSounds.m_Memory.m_pMemory = (CSoundSchemeManager_RandomSound *)g_109f3638(m_RandomSounds.m_Memory.m_pMemory, 2 * 0x20);
         else
-            m_pMemory = g_109f3634(2 * 0x20);
+            m_RandomSounds.m_Memory.m_pMemory = (CSoundSchemeManager_RandomSound *)g_109f3634(2 * 0x20);
     }
-    m_pElements = m_pMemory;
+    m_RandomSounds.m_pElements = m_RandomSounds.m_Memory.m_pMemory;
     *(int *)&m_f0c = g_1070b228->curtime;
     m_b08 = 0;
 }
