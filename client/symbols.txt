@@ -541,6 +541,7 @@
 0x10016850 func   ?sub_10016850@@YAHXZ sub_10016850
 0x10016970 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponThrown_Chang_Energy_Ball@@@Z ClientClassInit
 0x10016a90 func   ??_GC_WeaponThrown_Chang_Ghost@@UAEPAXI@Z ??_GC_WeaponThrown_Chang_Ghost@@UAEPAXI@Z
+0x10016ac0 func   ?vfunc15@C_WeaponThrown_Chang_Ghost@@UAEHXZ C_WeaponThrown_Chang_Ghost::vfunc15
 0x10016ad0 func   ?sub_10016ad0@@YAHXZ sub_10016ad0
 0x10016bf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponThrown_Chang_Ghost@@@Z ClientClassInit
 0x10016d10 func   ??_GC_ItemGDrugsMorphineBottle@@UAEPAXI@Z ??_GC_ItemGDrugsMorphineBottle@@UAEPAXI@Z

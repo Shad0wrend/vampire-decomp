@@ -10,3 +10,11 @@ C_WeaponThrown_Chang_Ghost *pcd_emit_10016a90() { return new C_WeaponThrown_Chan
 
 // TARGET: ??_GC_WeaponThrown_Chang_Ghost@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10016ac0 size=0x3
+#include "C_WeaponThrown_Chang_Ghost.h"
+int C_WeaponThrown_Chang_Ghost::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
