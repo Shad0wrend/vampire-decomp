@@ -11518,6 +11518,19 @@ int sub_10042fe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043040 size=0x22
+namespace lifted {
+struct C100442b0 { int sub_100442b0(); };
+}
+int sub_10043040(int a0, int a1, int a2)
+{
+    *(int *)((char *)a2) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)a2 + 4) = *(int *)((char *)a0 + 8);
+    *(int *)((char *)a2 + 8) = *(int *)((char *)a0 + 0xc);
+    return ((lifted::C100442b0 *)a1)->sub_100442b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043070 size=0x16
 namespace lifted {
 struct C100442b0 { int sub_100442b0(); };
