@@ -4969,6 +4969,7 @@
 0x10164960 func   ?vfunc0@BitmapImage@@UAEHXZ BitmapImage::vfunc0
 0x10164980 func   ?sub_10164980@CUnknown10164980@@QAEHH@Z CUnknown10164980::sub_10164980
 0x10164990 func   ?vfunc8@BitmapImage@@UAEHH@Z BitmapImage::vfunc8
+0x101649d0 func   ?vfunc2@BitmapImage@@UAEHHH@Z BitmapImage::vfunc2
 0x10164a00 func   ?vfunc1@BitmapImage@@UAEHHH@Z BitmapImage::vfunc1
 0x10164a80 func   ?sub_10164a80@CUnknown10164a80@@QAEHDHHHH@Z CUnknown10164a80::sub_10164a80
 0x10164c20 func   ?vfunc25@CCenterStringPanel@@UAE_NHH@Z CCenterStringPanel::vfunc25
