@@ -10,3 +10,11 @@ C_ItemGJunkyardBusinesscard *pcd_emit_1001e790() { return new C_ItemGJunkyardBus
 
 // TARGET: ??_GC_ItemGJunkyardBusinesscard@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1001e7c0 size=0x3
+#include "C_ItemGJunkyardBusinesscard.h"
+int C_ItemGJunkyardBusinesscard::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
