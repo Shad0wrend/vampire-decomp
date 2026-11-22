@@ -22,6 +22,17 @@ C_ItemGLillyDiary *pcd_emit_10019010() { return new C_ItemGLillyDiary; }
 // TARGET: ??_GC_ItemGLillyDiary@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10019030 size=0x6
+#include "C_ItemGLillyDiary.h"
+namespace lifted {
+extern char g_1027466c;
+}
+int C_ItemGLillyDiary::vfunc16()
+{
+    return (int)&lifted::g_1027466c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019040 size=0x3
 #include "C_ItemGLillyDiary.h"
 int C_ItemGLillyDiary::vfunc15()

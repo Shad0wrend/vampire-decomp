@@ -847,6 +847,7 @@
 0x10018ef0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyPhoto@@@Z ClientClassInit
 0x10018f80 func   ?vfunc17@C_ItemGLillyDiary@@UAEHXZ C_ItemGLillyDiary::vfunc17
 0x10019010 func   ??_GC_ItemGLillyDiary@@UAEPAXI@Z ??_GC_ItemGLillyDiary@@UAEPAXI@Z
+0x10019030 func   ?vfunc16@C_ItemGLillyDiary@@UAEHXZ C_ItemGLillyDiary::vfunc16
 0x10019040 func   ?vfunc15@C_ItemGLillyDiary@@UAEHXZ C_ItemGLillyDiary::vfunc15
 0x10019050 func   ?sub_10019050@@YAHXZ sub_10019050
 0x10019170 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyDiary@@@Z ClientClassInit
