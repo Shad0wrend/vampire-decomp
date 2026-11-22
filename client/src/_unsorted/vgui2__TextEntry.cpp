@@ -59,3 +59,14 @@ void TEV::sub_101ace00(IScheme *s)
 	SetBorder(s->GetBorder("ButtonDepressedBorder"));
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b1c60 size=0x6
+#include "vgui2__TextEntry.h"
+namespace lifted {
+extern char g_102d8650;
+}
+int vgui2::TextEntry::vfunc102()
+{
+    return (int)&lifted::g_102d8650;
+}
+// END FUNCTION
