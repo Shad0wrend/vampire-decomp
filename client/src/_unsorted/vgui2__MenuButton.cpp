@@ -25,6 +25,22 @@ vgui2::MenuButton *pcd_emit_101c95b0() { return new vgui2::MenuButton; }
 // TARGET: ??_GMenuButton@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c95e0 size=0x3a
+#include "vgui2__MenuButton.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual int f33(int); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual int f41(int); };
+}
+void vgui2::MenuButton::vfunc168(int a0)
+{
+    *(int *)((char *)this + 0xf0) = a0;
+    if (a0 != 0) {
+        ((lifted::V *)a0)->f21(0);
+        ((lifted::V *)(*(int *)((char *)this + 0xf0)))->f41((int)this);
+        ((lifted::V *)(*(int *)((char *)this + 0xf0)))->f33((int)this);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9620 size=0x3
 #include "vgui2__MenuButton.h"
 void vgui2::MenuButton::vfunc163(int a0, int a1, int a2, int a3)
