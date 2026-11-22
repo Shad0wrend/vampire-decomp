@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1001d300 size=0x6
+#include "C_ItemGEyes.h"
+namespace lifted {
+extern char g_10273780;
+}
+int C_ItemGEyes::vfunc17()
+{
+    return (int)&lifted::g_10273780;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d390 size=0x1e
 #include "C_ItemGEyes.h"
 
