@@ -27228,6 +27228,28 @@ float CUnknown100a9de0::sub_100a9de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa410 size=0x32
+namespace lifted {
+int sub_1004c500();
+int sub_1004c520();
+int sub_100652c0();
+int sub_100652e0();
+}
+struct CUnknown100aa410 { void sub_100aa410(int); };
+void CUnknown100aa410::sub_100aa410(int a0)
+{
+    if ((*(int *)((char *)this + 0x1628)) != a0) {
+        *(int *)((char *)this + 0x1628) = a0;
+        if (a0 != 0) {
+            lifted::sub_100652e0();
+            lifted::sub_1004c500(); return;
+        }
+        lifted::sub_1004c520();
+        lifted::sub_100652c0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa450 size=0x7
 struct CUnknown100aa450 { int sub_100aa450(); };
 int CUnknown100aa450::sub_100aa450()
