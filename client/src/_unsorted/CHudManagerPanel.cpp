@@ -11,6 +11,19 @@ CHudManagerPanel *pcd_emit_100586e0() { return new CHudManagerPanel; }
 // TARGET: ??_GCHudManagerPanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10058dc0 size=0xf
+#include "CHudManagerPanel.h"
+namespace lifted {
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual int f20(int); };
+}
+void CHudManagerPanel::vfunc1()
+{
+    if ((*(int *)((char *)this + 4)) != 0) {
+        ((lifted::V *)(*(int *)((char *)this + 4)))->f20(1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058df0 size=0xb
 #include "CHudManagerPanel.h"
 namespace lifted {
