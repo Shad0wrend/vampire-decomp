@@ -18,6 +18,17 @@ void CharEditInfoPanel::vfunc124(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c530 size=0x6
+#include "CharEditInfoPanel.h"
+namespace lifted {
+extern char g_102d1340;
+}
+int CharEditInfoPanel::vfunc102()
+{
+    return (int)&lifted::g_102d1340;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c560 size=0x1
 #include "CharEditInfoPanel.h"
 void CharEditInfoPanel::vfunc119()
