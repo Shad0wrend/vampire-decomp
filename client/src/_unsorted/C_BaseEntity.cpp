@@ -56,6 +56,13 @@ void C_BaseEntity::vfunc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e060 size=0x1
+#include "C_BaseEntity.h"
+void C_BaseEntity::vfunc21()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f050 size=0xf
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc0(int a0)
