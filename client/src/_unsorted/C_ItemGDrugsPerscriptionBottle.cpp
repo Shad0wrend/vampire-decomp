@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10016f00 size=0x6
+#include "C_ItemGDrugsPerscriptionBottle.h"
+namespace lifted {
+extern char g_10273320;
+}
+int C_ItemGDrugsPerscriptionBottle::vfunc17()
+{
+    return (int)&lifted::g_10273320;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016f90 size=0x1e
 #include "C_ItemGDrugsPerscriptionBottle.h"
 
