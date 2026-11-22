@@ -21109,6 +21109,22 @@ void __stdcall sub_10080e10(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080e20 size=0x1a
+namespace lifted {
+extern int g_102b8494;
+int sub_10080c70();
+}
+struct CUnknown10080e20 { int sub_10080e20(int); };
+int CUnknown10080e20::sub_10080e20(int a0)
+{
+    lifted::sub_10080c70();
+    int t0 = lifted::g_102b8494;
+    int t1 = *(int *)((char *)lifted::g_102b8494 + 0xc);
+    *(int *)((char *)this + 0x414) = t1;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080ff0 size=0x3
 char sub_10080ff0()
 {
