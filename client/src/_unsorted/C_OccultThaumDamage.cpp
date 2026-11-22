@@ -22,6 +22,17 @@ C_OccultThaumDamage *pcd_emit_10014010() { return new C_OccultThaumDamage; }
 // TARGET: ??_GC_OccultThaumDamage@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10014030 size=0x6
+#include "C_OccultThaumDamage.h"
+namespace lifted {
+extern char g_10274934;
+}
+int C_OccultThaumDamage::vfunc16()
+{
+    return (int)&lifted::g_10274934;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014040 size=0x3
 #include "C_OccultThaumDamage.h"
 int C_OccultThaumDamage::vfunc15()
