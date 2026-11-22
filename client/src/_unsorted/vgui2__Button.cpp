@@ -124,6 +124,23 @@ bool vgui2::Button::vfunc140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3a60 size=0x41
+#include "vgui2__Button.h"
+int vgui2::Button::vfunc156(int a0)
+{
+    if ((*(char *)((char *)this + 0xb9)) != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)this + 0xe4);
+        return a0;
+    }
+    if ((*(char *)((char *)this + 0xb8)) != 0) {
+        *(int *)((char *)a0) = *(int *)((char *)this + 0xdc);
+        return a0;
+    }
+    *(int *)((char *)a0) = *(int *)((char *)this + 0xd4);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3b00 size=0x17
 #include "vgui2__Button.h"
 namespace lifted {
