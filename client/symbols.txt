@@ -2798,6 +2798,7 @@
 0x100bbba0 func   ??_GC_GameRules@@UAEPAXI@Z ??_GC_GameRules@@UAEPAXI@Z
 0x100bbbc0 func   ??1C_GameRules@@UAE@XZ C_GameRules::~C_GameRules
 0x100bbe00 func   ??_GCHudCounterElement@@UAEPAXI@Z ??_GCHudCounterElement@@UAEPAXI@Z
+0x100bbe20 func   ?vfunc16@C_HudCounter@@UAEHXZ C_HudCounter::vfunc16
 0x100bbe30 func   ?vfunc15@C_HudCounter@@UAEHXZ C_HudCounter::vfunc15
 0x100bbe40 func   ?sub_100bbe40@@YAHXZ sub_100bbe40
 0x100bbf40 func   ?ClientClassInit@@YAHPAUignored@DT_HudCounter@@@Z ClientClassInit

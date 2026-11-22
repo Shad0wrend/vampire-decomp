@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bbe20 size=0x6
+#include "C_HudCounter.h"
+namespace lifted {
+extern char g_102b4ca4;
+}
+int C_HudCounter::vfunc16()
+{
+    return (int)&lifted::g_102b4ca4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbe30 size=0x3
 #include "C_HudCounter.h"
 int C_HudCounter::vfunc15()
