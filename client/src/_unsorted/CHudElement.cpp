@@ -15,6 +15,13 @@ void CHudElement::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbda0 size=0x1
+#include "CHudElement.h"
+void CHudElement::vfunc3()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0550 size=0x1e
 #include "CHudElement.h"
 
