@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101260b0 size=0x6
+#include "C_ServerRagdollAttached.h"
+namespace lifted {
+extern char g_102c2f34;
+}
+int C_ServerRagdollAttached::vfunc16()
+{
+    return (int)&lifted::g_102c2f34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101260c0 size=0x3
 #include "C_ServerRagdollAttached.h"
 int C_ServerRagdollAttached::vfunc15()
