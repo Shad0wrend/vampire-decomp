@@ -1968,6 +1968,7 @@
 0x1004d590 func   ?sub_1004d590@@YAHXZ sub_1004d590
 0x1004d5a0 func   ??_GCBossHealthBar@@UAEPAXI@Z ??_GCBossHealthBar@@UAEPAXI@Z
 0x1004d5c0 func   ??1CBossHealthBar@@UAE@XZ CBossHealthBar::~CBossHealthBar
+0x1004d880 func   ?vfunc113@CBossHealthBar@@UAEXXZ CBossHealthBar::vfunc113
 0x1004dbd0 func   ?vfunc97@CBossHealthBar@@UAEXXZ CBossHealthBar::vfunc97
 0x1004dc30 func   ?sub_1004dc30@@YAHXZ sub_1004dc30
 0x1004dd20 func   ??_GCCredits@@UAEPAXI@Z ??_GCCredits@@UAEPAXI@Z
