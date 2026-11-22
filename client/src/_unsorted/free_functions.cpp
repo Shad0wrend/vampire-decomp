@@ -29515,6 +29515,16 @@ void CMem16_t::sub_100ccb30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccdc0 size=0x1d
+int sub_100ccdc0(int a0)
+{
+    if (a0 == 0) {
+        return 0xa;
+    }
+    return (*(int *)((char *)a0 + 0x8c)) - (*(int *)((char *)a0 + 0x88));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd000 size=0x2e
 // TARGET: sub_100cd000
 void sub_100cd000(float t, const float *a, const float *b, float *out) {
