@@ -10,3 +10,11 @@ C_ItemKGalleryNoirKey *pcd_emit_10020d10() { return new C_ItemKGalleryNoirKey; }
 
 // TARGET: ??_GC_ItemKGalleryNoirKey@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10020d40 size=0x3
+#include "C_ItemKGalleryNoirKey.h"
+int C_ItemKGalleryNoirKey::vfunc15()
+{
+    return 0;
+}
+// END FUNCTION
