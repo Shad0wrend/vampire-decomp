@@ -277,6 +277,27 @@ int CHudManagerPanel::vfunc28()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058fa0 size=0x2a
+#include "CHudManagerPanel.h"
+namespace lifted {
+extern char g_10272378;
+extern char g_104cfe38;
+bool sub_10052ed0();
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C101a7a60 { int sub_101a7a60(int, int, int); };
+}
+void CHudManagerPanel::vfunc29()
+{
+    bool t0 = lifted::sub_10052ed0();
+    if (t0 == 0) {
+        int t1 = ((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_10272378);
+        if (t1 != 0) {
+            ((lifted::C101a7a60 *)t1)->sub_101a7a60(0, 0, 1);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10059090 size=0x1a
 #include "CHudManagerPanel.h"
 namespace lifted {
