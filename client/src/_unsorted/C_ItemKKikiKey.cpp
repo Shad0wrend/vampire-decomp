@@ -22,6 +22,17 @@ C_ItemKKikiKey *pcd_emit_10025310() { return new C_ItemKKikiKey; }
 // TARGET: ??_GC_ItemKKikiKey@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10025330 size=0x6
+#include "C_ItemKKikiKey.h"
+namespace lifted {
+extern char g_10273f58;
+}
+int C_ItemKKikiKey::vfunc16()
+{
+    return (int)&lifted::g_10273f58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025340 size=0x3
 #include "C_ItemKKikiKey.h"
 int C_ItemKKikiKey::vfunc15()
