@@ -4633,6 +4633,7 @@
 0x10125e50 func   ?vfunc16@C_ServerRagdoll@@UAEHXZ C_ServerRagdoll::vfunc16
 0x10125e60 func   ?vfunc15@C_ServerRagdoll@@UAEHXZ C_ServerRagdoll::vfunc15
 0x10125e70 func   ?sub_10125e70@@YAHXZ sub_10125e70
+0x10125ed0 func   ?_C_ServerRagdoll_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ServerRagdoll_CreateObject
 0x10125f70 func   ?ClientClassInit@@YAHPAUignored@DT_Ragdoll@@@Z ClientClassInit
 0x101260b0 func   ?vfunc16@C_ServerRagdollAttached@@UAEHXZ C_ServerRagdollAttached::vfunc16
 0x101260c0 func   ?vfunc15@C_ServerRagdollAttached@@UAEHXZ C_ServerRagdollAttached::vfunc15
