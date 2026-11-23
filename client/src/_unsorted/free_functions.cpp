@@ -40649,6 +40649,39 @@ int CUnknown100f4320::sub_100f4320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5ad0 size=0xba
+#include <string.h>
+
+extern float g_102bccd4;
+extern float g_102bccd8;
+extern unsigned char g_104d1518[256];
+
+extern int sub_100f4440(int a0, int a1, int a2, int a3);
+extern void sub_100f59b0(unsigned char *pTable, float srcGamma, float dstGamma);
+extern void sub_100f5a20(const void *src, void *dst, int a2, int a3, unsigned char *pTable);
+
+void sub_100f5ad0(const void *src, void *dst, int a2, int a3, float srcGamma, float dstGamma)
+{
+	if (srcGamma == dstGamma)
+	{
+		if (src != dst)
+		{
+			memcpy(dst, src, sub_100f4440(a2, a3, 0, 0));
+		}
+		return;
+	}
+
+	if (g_102bccd4 != srcGamma || g_102bccd8 != dstGamma)
+	{
+		sub_100f59b0(g_104d1518, srcGamma, dstGamma);
+		g_102bccd4 = srcGamma;
+		g_102bccd8 = dstGamma;
+	}
+
+	sub_100f5a20(src, dst, a2, a3, g_104d1518);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6a40 size=0x39
 namespace lifted {
 bool sub_100f6860(int, int, int, int);
