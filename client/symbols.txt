@@ -1269,6 +1269,7 @@
 0x1001ecb0 func   ?vfunc16@C_ItemGIdolCrane@@UAEHXZ C_ItemGIdolCrane::vfunc16
 0x1001ecc0 func   ?vfunc15@C_ItemGIdolCrane@@UAEHXZ C_ItemGIdolCrane::vfunc15
 0x1001ecd0 func   ?sub_1001ecd0@@YAHXZ sub_1001ecd0
+0x1001ed30 func   ?_C_ItemGIdolCrane_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGIdolCrane_CreateObject
 0x1001edf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGIdolCrane@@@Z ClientClassInit
 0x1001ee80 func   ?vfunc17@C_ItemGIdolDragon@@UAEHXZ C_ItemGIdolDragon::vfunc17
 0x1001ef10 func   ??_GC_ItemGIdolDragon@@UAEPAXI@Z ??_GC_ItemGIdolDragon@@UAEPAXI@Z
