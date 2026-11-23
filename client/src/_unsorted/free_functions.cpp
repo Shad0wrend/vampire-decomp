@@ -40295,6 +40295,24 @@ int sub_1010d660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d840 size=0x26
+namespace lifted {
+extern char g_10235604;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1010d840()
+{
+    int t0 = lifted::sub_101d12a1(0x3c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235604;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010db50 size=0x18
 namespace lifted {
 extern char g_10235640;
