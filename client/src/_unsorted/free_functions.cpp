@@ -10245,6 +10245,20 @@ int sub_10025fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026030 size=0x5a
+#include "C_ItemKHitmanLuKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKHitmanLuKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKHitmanLuKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKHitmanLuKey *pRet = new C_ItemKHitmanLuKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100260f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e36e0;
