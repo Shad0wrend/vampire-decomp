@@ -60701,6 +60701,62 @@ void CUnknown101e0f00::sub_1014aa40(int a, char *pFlag, int *pRef, unsigned int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014aaa0 size=0xfb
+#include "CUnknown101e0f00.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+extern "C" int _strcmpi(const char *s1, const char *s2);
+extern char g_102de300[];
+
+struct CNamedListX
+{
+	int sub_10149dc0(const char *name);
+};
+
+class CUnknown101e0f00_1014aaa0 : public CUnknown101e0f00
+{
+public:
+	void sub_1014aaa0(const char *pszName);
+};
+
+// TARGET: CUnknown101e0f00_1014aaa0::sub_1014aaa0
+void CUnknown101e0f00_1014aaa0::sub_1014aaa0(const char *pszName)
+{
+	char buf[512];
+	Q_snprintf(buf, 512, "[[Targeted Discipline Manager]]:\n");
+	Msg("%s", buf);
+
+	if (!pszName)
+	{
+		for (int i = 0; i < m_nEntries; i++)
+		{
+			CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[i];
+			int cost = pEntry->m_nBaseCost;
+			const char *name = pEntry->m_pszName ? pEntry->m_pszName : g_102de300;
+			Q_snprintf(buf, 512, "   (%d)  %s (Base Cost: %d)\n", i, name, cost);
+			Msg("%s", buf);
+		}
+		return;
+	}
+
+	int idx = ((CNamedListX *)this)->sub_10149dc0(pszName);
+	if (idx != -1)
+	{
+		((CUnknown101e0f00Entry *)m_ppEntries[idx])->sub_101496e0();
+		return;
+	}
+
+	if (_strcmpi(pszName, "ALL") == 0)
+	{
+		for (int i = 0; i < m_nEntries; i++)
+		{
+			((CUnknown101e0f00Entry *)m_ppEntries[i])->sub_101496e0();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014aba0 size=0xbd
 #include "CUnknown101e44c0.h"
 extern char g_102de300[];
