@@ -226,6 +226,7 @@
 0x10007830 func   ?vfunc16@C_SelectFireMachineGun@@UAEHXZ C_SelectFireMachineGun::vfunc16
 0x10007840 func   ?vfunc15@C_SelectFireMachineGun@@UAEHXZ C_SelectFireMachineGun::vfunc15
 0x10007850 func   ?sub_10007850@@YAHXZ sub_10007850
+0x100078b0 func   ?_C_SelectFireMachineGun_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_SelectFireMachineGun_CreateObject
 0x10007970 func   ?ClientClassInit@@YAHPAUignored@DT_SelectFireMachineGun@@@Z ClientClassInit
 0x10007a00 func   ?vfunc17@C_BaseBludgeonWeapon@@UAEHXZ C_BaseBludgeonWeapon::vfunc17
 0x10007a90 func   ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z
