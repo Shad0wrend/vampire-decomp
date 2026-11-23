@@ -1050,6 +1050,20 @@ int sub_10006480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100064e0 size=0x39
+#include "C_WeaponRanged_Dementation.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Dementation; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Dementation_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Dementation *pRet = new C_WeaponRanged_Dementation;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10006580 size=0x134
 #include "RecvTable.h"
 extern RecvTable g_102df898;
