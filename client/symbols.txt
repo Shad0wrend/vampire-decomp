@@ -3799,6 +3799,7 @@
 0x100cdb50 func   ?sub_100cdb50@@YAHH@Z sub_100cdb50
 0x100cdb60 func   ?sub_100cdb60@@YAXPAII@Z sub_100cdb60
 0x100cdb90 func   ?sub_100cdb90@@YAXPAIPBXH@Z sub_100cdb90
+0x100ce340 func   ?vfunc3@CClassMap@@UAEHPBD@Z CClassMap::vfunc3
 0x100cfd80 func   ?vfunc2@CClientThinkList@@UAEXXZ CClientThinkList::vfunc2
 0x100cfd90 func   ?vfunc3@CClientThinkList@@UAEXXZ CClientThinkList::vfunc3
 0x100d00e0 func   ?vfunc0@CClientThinkList@@UAE_NXZ CClientThinkList::vfunc0
