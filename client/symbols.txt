@@ -3321,6 +3321,7 @@
 0x100ae5b0 func   ?vfunc16@C_EnvParticle@@UAEHXZ C_EnvParticle::vfunc16
 0x100ae5c0 func   ?vfunc15@C_EnvParticle@@UAEHXZ C_EnvParticle::vfunc15
 0x100ae5d0 func   ?sub_100ae5d0@@YAHXZ sub_100ae5d0
+0x100ae630 func   ?_C_EnvParticle_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_EnvParticle_CreateObject
 0x100ae6d0 func   ?ClientClassInit@@YAHPAUignored@DT_EnvParticle@@@Z ClientClassInit
 0x100aeac0 func   ??_GC_EnvParticle@@UAEPAXI@Z ??_GC_EnvParticle@@UAEPAXI@Z
 0x100aeae0 func   ??1C_EnvParticle@@UAE@XZ C_EnvParticle::~C_EnvParticle
