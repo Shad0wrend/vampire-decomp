@@ -422,6 +422,7 @@
 0x1000be30 func   ?vfunc16@C_WeaponMelee_HengeyokaiFist@@UAEHXZ C_WeaponMelee_HengeyokaiFist::vfunc16
 0x1000be40 func   ?vfunc15@C_WeaponMelee_HengeyokaiFist@@UAEHXZ C_WeaponMelee_HengeyokaiFist::vfunc15
 0x1000be50 func   ?sub_1000be50@@YAHXZ sub_1000be50
+0x1000beb0 func   ?_C_WeaponMelee_HengeyokaiFist_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponMelee_HengeyokaiFist_CreateObject
 0x1000bf70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_HengeyokaiFist@@@Z ClientClassInit
 0x1000c000 func   ?vfunc17@C_WeaponMelee_ManBatClaw@@UAEHXZ C_WeaponMelee_ManBatClaw::vfunc17
 0x1000c090 func   ??_GC_WeaponMelee_ManBatClaw@@UAEPAXI@Z ??_GC_WeaponMelee_ManBatClaw@@UAEPAXI@Z
