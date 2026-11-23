@@ -36655,6 +36655,23 @@ void __stdcall sub_10102fd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102fe0 size=0x31
+namespace lifted {
+struct C10100f80 { int sub_10100f80(int, int); };
+struct C101068a0 { int sub_101068a0(int); };
+}
+struct CUnknown10102fe0 { int sub_10102fe0(int, int); };
+int CUnknown10102fe0::sub_10102fe0(int a0, int a1)
+{
+    if ((*(int *)((char *)this + 0xec)) == 0) {
+        if ((*(int *)((char *)this + 0x28)) != 0) {
+            ((lifted::C101068a0 *)this)->sub_101068a0(a1);
+        }
+    }
+    return ((lifted::C10100f80 *)this)->sub_10100f80(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
