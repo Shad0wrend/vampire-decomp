@@ -7531,6 +7531,20 @@ int sub_1001cc50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001ccb0 size=0x5a
+#include "C_ItemGWirelessCamera2.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWirelessCamera2; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWirelessCamera2_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWirelessCamera2 *pRet = new C_ItemGWirelessCamera2;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001cd70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3c10;
