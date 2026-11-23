@@ -5645,6 +5645,20 @@ int sub_100165d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10016630 size=0x5a
+#include "C_WeaponThrown_Grenade_Frag.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponThrown_Grenade_Frag; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponThrown_Grenade_Frag_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponThrown_Grenade_Frag *pRet = new C_WeaponThrown_Grenade_Frag;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100166f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0528;
