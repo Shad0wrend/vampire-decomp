@@ -513,6 +513,20 @@ int sub_100039a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003a00 size=0x39
+#include "C_ItemKeyGeneric.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKeyGeneric; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKeyGeneric_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKeyGeneric *pRet = new C_ItemKeyGeneric;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003aa0 size=0x92
 #include "RecvTable.h"
 extern RecvTable g_102dea38;
