@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100410b0 size=0x2a
+#include "C_TEWorldDecal.h"
+C_TEWorldDecal::C_TEWorldDecal()
+{
+	m_vecOrigin.Init();
+	m_unk1c = 0;
+	m_unk20 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100410e0 size=0x1e
 #include "C_TEWorldDecal.h"
 
