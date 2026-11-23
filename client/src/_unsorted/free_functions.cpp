@@ -7715,6 +7715,20 @@ int sub_1001d650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001d6b0 size=0x5a
+#include "C_ItemGHattersScreenplay.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGHattersScreenplay; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGHattersScreenplay_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGHattersScreenplay *pRet = new C_ItemGHattersScreenplay;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4c94;
