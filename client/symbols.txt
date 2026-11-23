@@ -1556,6 +1556,7 @@
 0x10025330 func   ?vfunc16@C_ItemKKikiKey@@UAEHXZ C_ItemKKikiKey::vfunc16
 0x10025340 func   ?vfunc15@C_ItemKKikiKey@@UAEHXZ C_ItemKKikiKey::vfunc15
 0x10025350 func   ?sub_10025350@@YAHXZ sub_10025350
+0x100253b0 func   ?_C_ItemKKikiKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKKikiKey_CreateObject
 0x10025470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKKikiKey@@@Z ClientClassInit
 0x10025500 func   ?vfunc17@C_ItemKSarcophagusKey@@UAEHXZ C_ItemKSarcophagusKey::vfunc17
 0x10025590 func   ??_GC_ItemKSarcophagusKey@@UAEPAXI@Z ??_GC_ItemKSarcophagusKey@@UAEPAXI@Z
