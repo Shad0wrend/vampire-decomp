@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100dfe50 size=0x24
+#include "CBaseStaticModel.h"
+struct CLeafView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void RemoveRenderable(unsigned short h);
+};
+extern CLeafView *g_104a57d8;
+CBaseStaticModel::~CBaseStaticModel()
+{
+	if (m_unk3c != 0xFFFF)
+		g_104a57d8->RemoveRenderable(m_unk3c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dff60 size=0xb
 #include "CBaseStaticModel.h"
 namespace lifted {
