@@ -800,6 +800,7 @@
 0x10014530 func   ?vfunc16@C_OccultHealRate@@UAEHXZ C_OccultHealRate::vfunc16
 0x10014540 func   ?vfunc15@C_OccultHealRate@@UAEHXZ C_OccultHealRate::vfunc15
 0x10014550 func   ?sub_10014550@@YAHXZ sub_10014550
+0x100145b0 func   ?_C_OccultHealRate_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_OccultHealRate_CreateObject
 0x10014670 func   ?ClientClassInit@@YAHPAUignored@DT_OccultHealRate@@@Z ClientClassInit
 0x10014700 func   ?vfunc17@C_GargoyleTalisman@@UAEHXZ C_GargoyleTalisman::vfunc17
 0x10014790 func   ??_GC_GargoyleTalisman@@UAEPAXI@Z ??_GC_GargoyleTalisman@@UAEPAXI@Z
