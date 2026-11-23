@@ -2991,6 +2991,7 @@
 0x100981d0 func   ?vfunc16@C_BaseCombatCharacter@@UAEHXZ C_BaseCombatCharacter::vfunc16
 0x100981e0 func   ?vfunc15@C_BaseCombatCharacter@@UAEHXZ C_BaseCombatCharacter::vfunc15
 0x100981f0 func   ?sub_100981f0@@YAHXZ sub_100981f0
+0x10098250 func   ?_C_BaseCombatCharacter_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseCombatCharacter_CreateObject
 0x100982f0 func   ?ClientClassInit@@YAHPAUignored@DT_BCCLocalPlayerExclusive@@@Z ClientClassInit
 0x10098410 func   ?ClientClassInit@@YAHPAUignored@DT_BaseCombatCharacter@@@Z ClientClassInit
 0x10098710 func   ?vfunc17@C_BaseCombatCharacter@@UAEHXZ C_BaseCombatCharacter::vfunc17
