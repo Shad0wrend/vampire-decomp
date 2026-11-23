@@ -3,10 +3,15 @@
 // the destructor is slot 10 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "C_BaseTempEntity.h"
+#include "Vector.h"
 
 class C_TETParticle : public C_BaseTempEntity
 {
 public:
+	C_TETParticle();
+	Vector m_vecOrigin;
+	Vector m_vecDir;
+	bool m_unk28;
 	virtual ~C_TETParticle();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TETParticle's own function
