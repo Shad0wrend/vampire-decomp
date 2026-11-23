@@ -25,6 +25,7 @@ EXTERN ?g_106cff58@@3PADA:BYTE
 EXTERN ?g_1094aea8@@3VSendTable@@A:BYTE
 EXTERN ?g_109ee748@@3VSendTable@@A:BYTE
 EXTERN ?g_109ee80c@@3VSendTable@@A:BYTE
+EXTERN ?g_109ee828@@3UServerClassReg@@A:BYTE
 EXTERN ?g_109ee974@@3VSendTable@@A:BYTE
 EXTERN ?sub_10258af0@CUnknown10258af0@@QAEXXZ:BYTE
 EXTERN ?sub_10429d00@CBaseGrenade@@QAEXXZ:BYTE
@@ -1084,7 +1085,7 @@ PUBLIC ?g_106ad4e0@@3HA
 ; 0x106ad4e8 +480: ?g_106ad4e8@lifted@@3DA
 PUBLIC ?g_106ad4e8@lifted@@3DA
 ?g_106ad4e8@lifted@@3DA LABEL BYTE
-  DD 0109EE8F0h ; unnamed pointer
+  DD OFFSET ?g_109ee828@@3UServerClassReg@@A + 200
 ORIGBYTES 0x106ad4ec, 4
   DD OFFSET ?g_106ad4e8@lifted@@3DA + 100
   DD OFFSET ?g_10552d34@lifted@@3DA
