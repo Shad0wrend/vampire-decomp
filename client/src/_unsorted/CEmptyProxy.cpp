@@ -28,3 +28,19 @@ void CEmptyProxy::vfunc2()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010dba0 size=0x20
+#include "CEmptyProxy.h"
+namespace lifted {
+extern char g_10227c5c;
+int sub_101d1296(int);
+}
+void * CEmptyProxy::vfunc3(char a0)
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+    if ((a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
