@@ -9,6 +9,7 @@ class CClientEntityList : public CBaseEntityList, public IClientEntityList
 public:
 	CClientEntityList();
 	void sub_100d0b40();
+	~CClientEntityList();
 	class C_BaseEntity *sub_100d0cf0(int entnum);
 	int m_i18040; int m_i18044; int m_i18048;
 	char m_pad1804c[0x2804c - 0x1804c];
