@@ -56,6 +56,7 @@
 0x100028e0 func   ?vfunc16@C_BaseHLPlayer@@UAEHXZ C_BaseHLPlayer::vfunc16
 0x100028f0 func   ?vfunc15@C_BaseHLPlayer@@UAEHXZ C_BaseHLPlayer::vfunc15
 0x10002900 func   ?sub_10002900@@YAHXZ sub_10002900
+0x10002960 func   ?_C_BaseHLPlayer_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseHLPlayer_CreateObject
 0x10002a00 func   ?ClientClassInit@@YAHPAUignored@DT_HL2_Player@@@Z ClientClassInit
 0x10002ab0 func   ?sub_10002ab0@CUnknown10002ab0@@QAEPAXXZ CUnknown10002ab0::sub_10002ab0
 0x10002b00 func   ?vfunc84@C_BasePlayer@@UAEHXZ C_BasePlayer::vfunc84
