@@ -224,6 +224,46 @@ int vgui2::BuildGroup::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2480 size=0x79
+#include "vgui2__BuildGroup.h"
+#include <string.h>
+
+extern void *sub_101b6840(unsigned int size);
+extern void *sub_101ac910();
+
+struct KV_101c2480 {
+	virtual void v0();
+	virtual void v1();
+	virtual bool LoadFromFile(void *filesystem, const char *resourceName, const char *pathID);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void deleteThis();
+	KV_101c2480 *sub_101b5670(const char *name);
+};
+
+// TARGET: vgui2::BuildGroup::vfunc3
+void vgui2::BuildGroup::vfunc3(const char *resourceName)
+{
+	KV_101c2480 *kv = (KV_101c2480 *)sub_101b6840(0x1c);
+	if (kv)
+		kv = kv->sub_101b5670(resourceName);
+	else
+		kv = 0;
+
+	kv->LoadFromFile(sub_101ac910(), resourceName, 0);
+
+	char *&pResourceName = *(char **)((char *)this + 0x54);
+	if (!pResourceName)
+	{
+		pResourceName = new char[strlen(resourceName) + 1];
+		strcpy(pResourceName, resourceName);
+	}
+
+	vfunc5(kv);
+	kv->deleteThis();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b00 size=0xa
 #include "vgui2__BuildGroup.h"
 int vgui2::BuildGroup::vfunc8(int a0)
