@@ -1671,6 +1671,20 @@ int sub_10008c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10008cb0 size=0x5a
+#include "C_WeaponMelee_Katana.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Katana; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Katana_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Katana *pRet = new C_WeaponMelee_Katana;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7010;
