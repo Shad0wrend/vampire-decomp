@@ -9279,6 +9279,20 @@ int sub_10022b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10022bb0 size=0x5a
+#include "C_ItemKLeopoldIntKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKLeopoldIntKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKLeopoldIntKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKLeopoldIntKey *pRet = new C_ItemKLeopoldIntKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5d14;
