@@ -13575,6 +13575,22 @@ void sub_100576b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057710 size=0x26
+namespace lifted {
+int sub_101d12a1(int);
+}
+struct CUnknown10057710 { int sub_10057710(int); };
+int CUnknown10057710::sub_10057710(int a0)
+{
+    int t0 = lifted::sub_101d12a1(8);
+    *(int *)((char *)t0) = a0;
+    int t1 = *(int *)((char *)this + 0x170);
+    *(int *)((char *)t0 + 4) = t1;
+    *(int *)((char *)this + 0x170) = t0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a20 size=0x2a
 namespace lifted {
 extern int g_104a0d50;
