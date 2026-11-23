@@ -1311,6 +1311,7 @@
 0x1001fbb0 func   ?vfunc16@C_ItemGGarysTape@@UAEHXZ C_ItemGGarysTape::vfunc16
 0x1001fbc0 func   ?vfunc15@C_ItemGGarysTape@@UAEHXZ C_ItemGGarysTape::vfunc15
 0x1001fbd0 func   ?sub_1001fbd0@@YAHXZ sub_1001fbd0
+0x1001fc30 func   ?_C_ItemGGarysTape_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGGarysTape_CreateObject
 0x1001fcf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysTape@@@Z ClientClassInit
 0x1001fd80 func   ?vfunc17@C_ItemGBertramsCD@@UAEHXZ C_ItemGBertramsCD::vfunc17
 0x1001fe10 func   ??_GC_ItemGBertramsCD@@UAEPAXI@Z ??_GC_ItemGBertramsCD@@UAEPAXI@Z
