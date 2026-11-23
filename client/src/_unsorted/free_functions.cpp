@@ -32130,6 +32130,20 @@ int sub_100b2a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2aa0 size=0x5a
+#include "C_ThaumaturgyParticle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ThaumaturgyParticle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ThaumaturgyParticle_CreateObject(int entnum, int serialNum)
+{
+	C_ThaumaturgyParticle *pRet = new C_ThaumaturgyParticle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2b80 size=0xb0
 #include "RecvTable.h"
 extern RecvTable g_104a153c;
