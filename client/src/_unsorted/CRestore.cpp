@@ -505,3 +505,23 @@ int CRestore::vfunc25(Vector *pValues, int count, int nBytesAvailable)
 	return nRead;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012b360 size=0x41
+#include "CRestore.h"
+namespace lifted {
+int sub_10128dd0(int, int);
+int sub_1012ab50();
+int __stdcall sub_1012abd0(int);
+}
+int CRestore::vfunc27(void * a0, int * a1, int a2, int a3)
+{
+    int t0 = lifted::sub_1012ab50();
+    int t1 = lifted::sub_1012abd0(a3);
+    if ((*(char *)((char *)t0)) == 0) {
+        *(int *)((char *)*(int *)&a1) = 0;
+        return 0;
+    }
+    *(int *)((char *)*(int *)&a1) = lifted::sub_10128dd0(*(int *)&a0, t0);
+    return 0;
+}
+// END FUNCTION
