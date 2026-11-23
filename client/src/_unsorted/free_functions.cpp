@@ -32392,6 +32392,20 @@ int sub_100b63f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6450 size=0x39
+#include "C_EntityFlame.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_EntityFlame; its ClientClass's initializer stores its address
+IClientNetworkable *_C_EntityFlame_CreateObject(int entnum, int serialNum)
+{
+	C_EntityFlame *pRet = new C_EntityFlame;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b64f0 size=0x92
 #include "RecvTable.h"
 extern RecvTable g_104a1f34;
