@@ -11890,6 +11890,20 @@ int sub_10030c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030cb0 size=0x39
+#include "C_SteamJet.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_SteamJet; its ClientClass's initializer stores its address
+IClientNetworkable *_C_SteamJet_CreateObject(int entnum, int serialNum)
+{
+	C_SteamJet *pRet = new C_SteamJet;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030d50 size=0x17b
 #include "RecvTable.h"
 extern RecvTable g_102eb550;
