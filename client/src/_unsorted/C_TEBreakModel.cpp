@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10034e90 size=0x45
+#include "C_TEBreakModel.h"
+// TARGET: ??0C_TEBreakModel@@QAE@XZ
+C_TEBreakModel::C_TEBreakModel()
+{
+	m_vecOrigin.Init(); m_vecDirection.Init();
+	m_unk28 = 0; m_unk2c = 0; m_unk30 = 0;
+	m_unk38 = 0; m_unk34 = 0; m_unk3c = 0; m_unk40 = 0; m_unk44 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034ee0 size=0x1e
 #include "C_TEBreakModel.h"
 
