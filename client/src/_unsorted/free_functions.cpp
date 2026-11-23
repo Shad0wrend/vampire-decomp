@@ -24414,6 +24414,79 @@ void CUnknown1007bbb0::sub_1007bbb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bc70 size=0xb1
+#include "CGameRulesSlotTable.h"
+
+struct IGameRulesAmmo
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual CGameRulesSlotTable *v6();
+};
+
+extern IGameRulesAmmo *g_104a56fc;
+
+struct WpnDataInfo
+{
+	char pad[0x2668];
+	int m_nBonusAmmo;
+};
+
+struct CAmmoOwner
+{
+	int sub_10097f80(int ammoType);
+};
+
+struct CWeaponAmmoCheck
+{
+	char pad0[0x7a4];
+	int m_iPrimaryAmmoType;
+	char pad1[4];
+	int m_iClip1;
+
+	WpnDataInfo *sub_1007b160();
+	CAmmoOwner *sub_1007bab0();
+	bool sub_1007bc70(CAmmoOwner *pOwner);
+};
+
+// TARGET: CWeaponAmmoCheck::sub_1007bc70
+bool CWeaponAmmoCheck::sub_1007bc70(CAmmoOwner *pOwner)
+{
+	int iAmmoType = m_iPrimaryAmmoType;
+	if (iAmmoType < 0)
+		return false;
+
+	if (!sub_1007b160())
+		return false;
+
+	if (!&sub_1007b160()->m_nBonusAmmo)
+		return false;
+
+	if (!g_104a56fc->v6())
+		return false;
+
+	int nMax = g_104a56fc->v6()->sub_10079050(iAmmoType) + sub_1007b160()->m_nBonusAmmo;
+
+	if (!pOwner)
+	{
+		pOwner = sub_1007bab0();
+		if (!pOwner)
+			return false;
+	}
+
+	int nAmmo = pOwner->sub_10097f80(iAmmoType);
+	int nTotal = m_iClip1;
+	nTotal += nAmmo;
+	if (nMax == nTotal)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bf10 size=0x3
 void __stdcall sub_1007bf10(int a0)
 {
