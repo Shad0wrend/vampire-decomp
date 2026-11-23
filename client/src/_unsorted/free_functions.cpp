@@ -3649,6 +3649,20 @@ int sub_1000f7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000f830 size=0x5a
+#include "C_WeaponIGeneric.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIGeneric; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIGeneric_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIGeneric *pRet = new C_WeaponIGeneric;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f8f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e218c;
