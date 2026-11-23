@@ -5259,6 +5259,20 @@ int sub_10014f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10014fb0 size=0x5a
+#include "C_ElderVitaePack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ElderVitaePack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ElderVitaePack_CreateObject(int entnum, int serialNum)
+{
+	C_ElderVitaePack *pRet = new C_ElderVitaePack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5a20;
