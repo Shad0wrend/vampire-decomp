@@ -49239,6 +49239,24 @@ void sub_1013a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013bab0 size=0x26
+namespace lifted {
+extern char g_10247c0c;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1013bab0()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10247c0c;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c790 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_1013c790(const Vector &v)
