@@ -6519,6 +6519,20 @@ int sub_10019550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100195b0 size=0x5a
+#include "C_ItemGBailbondReceipt.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBailbondReceipt; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBailbondReceipt_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBailbondReceipt *pRet = new C_ItemGBailbondReceipt;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4244;
