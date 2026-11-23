@@ -8129,6 +8129,20 @@ int sub_1001ecd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001ed30 size=0x5a
+#include "C_ItemGIdolCrane.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGIdolCrane; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGIdolCrane_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGIdolCrane *pRet = new C_ItemGIdolCrane;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001edf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6d7c;
