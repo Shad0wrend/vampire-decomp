@@ -35880,6 +35880,34 @@ int CUnknown100c93a0::sub_100c93a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9790 size=0x83
+#include "C_BaseEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+class CVGuiScreen_100c9790 : public C_BaseEntity
+{
+public:
+	int sub_100c9790(const Vector &origin);
+};
+
+// TARGET: CVGuiScreen_100c9790::sub_100c9790
+int CVGuiScreen_100c9790::sub_100c9790(const Vector &origin)
+{
+	Vector delta;
+	VectorSubtract(GetAbsOrigin(), origin, delta);
+
+	Vector normal;
+	sub_101090a0(GetAbsAngles(), 0, 0, &normal);
+
+	if (DotProduct(normal, delta) > 0.0f)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9d40 size=0x4
 struct CUnknown100c9d40 { int sub_100c9d40(); };
 int CUnknown100c9d40::sub_100c9d40()
