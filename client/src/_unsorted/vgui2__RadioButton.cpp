@@ -44,6 +44,102 @@ int vgui2::RadioButton::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5ef0 size=0x188
+#include "vgui2__RadioButton.h"
+
+extern void *sub_101b6840(unsigned int size);
+
+struct IVGui_101c5ef0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c5ef0 *sub_101ac8f0();
+
+struct KV_101c5ef0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void SetInt(const char *keyName, int value);
+	virtual void v16();
+	virtual void SetPtr(const char *keyName, void *value);
+	virtual KV_101c5ef0 *MakeCopy();
+	KV_101c5ef0 *sub_101b5670(const char *name);
+};
+
+struct PanelView_101c5ef0 {
+	virtual int v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30();
+	virtual PanelView_101c5ef0 *GetParent();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual int GetChildCount();
+	virtual vgui2::Panel *GetChild(int index);
+	virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42();
+	virtual void PostActionSignal(KV_101c5ef0 *message);
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53();
+	virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void InvalidateLayout(bool layoutNow, bool reloadScheme);
+};
+
+// TARGET: vgui2::RadioButton::vfunc143
+void vgui2::RadioButton::vfunc143(char state)
+{
+	if (state == 1)
+	{
+		if (!vfunc47())
+			return;
+
+		int &oldTabPosition = *(int *)((char *)this + 0xf8);
+		vfunc29(oldTabPosition);
+
+		KV_101c5ef0 *msg = (KV_101c5ef0 *)sub_101b6840(0x1c);
+		if (msg)
+			msg = msg->sub_101b5670("RadioButtonChecked");
+		else
+			msg = 0;
+
+		msg->SetPtr("panel", this);
+		msg->SetInt("tabposition", oldTabPosition);
+
+		PanelView_101c5ef0 *parent = ((PanelView_101c5ef0 *)this)->GetParent();
+		if (parent)
+		{
+			for (int i = 0; i < parent->GetChildCount(); i++)
+			{
+				vgui2::RadioButton *child = dynamic_cast<vgui2::RadioButton *>(parent->GetChild(i));
+				if (child && child->vfunc168() == oldTabPosition)
+				{
+					sub_101ac8f0()->PostMessage(child->vfunc0(), msg->MakeCopy(), vfunc0(), 0.0f);
+				}
+			}
+		}
+
+		vfunc15(0);
+		((PanelView_101c5ef0 *)this)->PostActionSignal(msg);
+	}
+	else
+	{
+		if (vfunc30())
+		{
+			*(int *)((char *)this + 0xf8) = vfunc30();
+		}
+		vfunc29(0);
+	}
+
+	((PanelView_101c5ef0 *)this)->InvalidateLayout(false, false);
+	vfunc6();
+	Button::vfunc143(state);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6180 size=0x26
 #include "vgui2__RadioButton.h"
 namespace lifted {
