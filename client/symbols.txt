@@ -2561,6 +2561,7 @@
 0x10060530 func   ??1CSignTextBlock@@UAE@XZ CSignTextBlock::~CSignTextBlock
 0x10060730 func   ??_GCSignLabel@@UAEPAXI@Z ??_GCSignLabel@@UAEPAXI@Z
 0x10060750 func   ??1CSignLabel@@UAE@XZ CSignLabel::~CSignLabel
+0x100608d0 func   ??0CSignUI@@QAE@H@Z CSignUI::CSignUI
 0x100609a0 func   ??_GCSignUI@@UAEPAXI@Z ??_GCSignUI@@UAEPAXI@Z
 0x100609c0 func   ??1CSignUI@@UAE@XZ CSignUI::~CSignUI
 0x10061370 func   ?sub_10061370@CUnknown10061370@@QAEXXZ CUnknown10061370::sub_10061370
