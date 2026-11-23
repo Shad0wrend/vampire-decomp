@@ -3235,6 +3235,20 @@ int sub_1000e150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000e1b0 size=0x5a
+#include "C_WeaponRanged_Pistol_Glock.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Pistol_Glock; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Pistol_Glock_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Pistol_Glock *pRet = new C_WeaponRanged_Pistol_Glock;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000e270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3640;
