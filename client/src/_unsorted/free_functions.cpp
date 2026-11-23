@@ -7439,6 +7439,20 @@ int sub_1001c750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001c7b0 size=0x5a
+#include "C_ItemGWarrens4Passkey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrens4Passkey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrens4Passkey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrens4Passkey *pRet = new C_ItemGWarrens4Passkey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5f58;
