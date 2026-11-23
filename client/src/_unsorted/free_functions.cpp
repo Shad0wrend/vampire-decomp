@@ -6335,6 +6335,20 @@ int sub_10018b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10018bb0 size=0x5a
+#include "C_ItemGWatchFancy.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWatchFancy; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWatchFancy_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWatchFancy *pRet = new C_ItemGWatchFancy;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e12f4;
