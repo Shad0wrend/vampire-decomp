@@ -9601,6 +9601,20 @@ int sub_10023cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10023d30 size=0x5a
+#include "C_ItemKEmpireJezebelKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKEmpireJezebelKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKEmpireJezebelKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKEmpireJezebelKey *pRet = new C_ItemKEmpireJezebelKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023df0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6100;
