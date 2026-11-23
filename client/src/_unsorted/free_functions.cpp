@@ -17708,6 +17708,119 @@ int sub_10064dd0(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064df0 size=0x25e
+#include "ConVar.h"
+#include "CHUDSprite.h"
+#include "C_BaseCombatWeapon.h"
+
+struct WeaponInfo_10064df0
+{
+	int m_00;
+	int m_id;
+	char m_pad0008[0x5f0f0 - 8];
+	char m_sz5f0f0[0x80];
+	char m_sz5f170[0x80];
+	char m_sz5f1f0[0x80];
+	char m_sz5f270[0x80];
+};
+
+struct Player_10064df0
+{
+	char m_pad0000[0x15e4];
+	int m_15e4;
+	char m_pad15e8[0x1690 - 0x15e8];
+	int m_1690;
+	char m_pad1694[0x16ac - 0x1694];
+	int m_16ac;
+	char m_pad16b0[0x16c4 - 0x16b0];
+	int m_16c4;
+};
+
+extern Player_10064df0 *g_104a0d50;
+extern int g_102880a0;
+extern int g_10288098;
+extern CHUDSprite *g_103eee5c;
+extern CHUDSprite *g_103eee50;
+extern CHUDSprite *g_103eef94;
+extern CHUDSprite *g_103eee60;
+extern CHUDSprite *g_103eef38;
+extern CHUDSprite *g_103eef4c[4];
+extern ConVar g_105f9990;
+
+extern void sub_10064d50(int a0, int a1, int a2);
+extern void sub_10065050(int mode);
+
+void sub_10064df0(C_BaseCombatWeapon *pWeapon)
+{
+	Player_10064df0 *pPlayer = g_104a0d50;
+	if (!pPlayer)
+		return;
+
+	sub_10064d50(0, 0, 0);
+
+	if (g_102880a0 != ((WeaponInfo_10064df0 *)pWeapon->sub_1007b160())->m_id)
+	{
+		g_102880a0 = ((WeaponInfo_10064df0 *)pWeapon->sub_1007b160())->m_id;
+		if (pWeapon)
+		{
+			delete g_103eee5c;
+			g_103eee5c = new CHUDSprite(((WeaponInfo_10064df0 *)pWeapon->sub_1007b160())->m_sz5f0f0, 0, 0, 64, 64, 64, 64);
+
+			delete g_103eee50;
+			CHUDSprite *pTick = new CHUDSprite(((WeaponInfo_10064df0 *)pWeapon->sub_1007b160())->m_sz5f170, 0, 0, 8, 8, 8, 8);
+			g_103eee50 = pTick;
+
+			delete g_103eef94;
+			g_103eef94 = new CHUDSprite(((WeaponInfo_10064df0 *)pWeapon->sub_1007b160())->m_sz5f1f0, 0, 0, 8, 8, 8, 8);
+
+			delete g_103eee60;
+			g_103eee60 = new CHUDSprite(((WeaponInfo_10064df0 *)pWeapon->sub_1007b160())->m_sz5f270, 0, 0, 64, 64, 64, 64);
+		}
+	}
+
+	if (pPlayer->m_1690 >= g_105f9990.GetInt())
+	{
+		if (pPlayer->m_15e4 <= 5)
+		{
+			g_103eef38 = g_103eee60;
+			for (int i = 0; i < 4; i++)
+				g_103eef4c[i] = 0;
+		}
+		else
+		{
+			g_103eef38 = g_103eef94;
+			for (int i = 0; i < 4; i++)
+				g_103eef4c[i] = g_103eee50;
+		}
+	}
+	else
+	{
+		g_103eef38 = g_103eee60;
+		for (int i = 0; i < 4; i++)
+			g_103eef4c[i] = 0;
+	}
+
+	Player_10064df0 *pPlayer2 = g_104a0d50;
+	if (pPlayer2->m_16ac < 0)
+		pPlayer2->m_16c4 = 0;
+
+	switch (pPlayer2->m_16c4)
+	{
+	case 1:
+		sub_10065050(1);
+		break;
+	case 2:
+		sub_10065050(0);
+		break;
+	default:
+		sub_10065050(2);
+		break;
+	}
+
+	g_10288098 = pPlayer2->m_15e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100650b0 size=0xa
 namespace lifted {
 extern int g_103eef5c;
