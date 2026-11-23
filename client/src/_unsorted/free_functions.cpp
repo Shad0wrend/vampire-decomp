@@ -56774,6 +56774,20 @@ int sub_10146300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146360 size=0x39
+#include "C_DisciplineProjectile.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_DisciplineProjectile; its ClientClass's initializer stores its address
+IClientNetworkable *_C_DisciplineProjectile_CreateObject(int entnum, int serialNum)
+{
+	C_DisciplineProjectile *pRet = new C_DisciplineProjectile;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146400 size=0x8f
 #include "RecvTable.h"
 extern RecvTable g_105e80b8;
