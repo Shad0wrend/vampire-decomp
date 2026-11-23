@@ -17410,6 +17410,84 @@ char CUnknown1005e3c0::sub_1005e3c0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e720 size=0x1c1
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "Vector.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CUnknown1070b254.h"
+#include "C_BaseEntity.h"
+
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+struct ViewSetup_1005e720
+{
+	char pad[0x38];
+	Vector origin;
+	char pad2[0x50 - 0x44];
+	QAngle angles;
+};
+
+struct ViewRender_1005e720
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual const ViewSetup_1005e720 *v14();
+};
+
+extern ViewRender_1005e720 *g_102d43d8;
+
+class UseIcon_1005e720
+{
+public:
+	bool sub_1005e720(C_BaseEntity *pEnt);
+};
+
+// TARGET: UseIcon_1005e720::sub_1005e720
+bool UseIcon_1005e720::sub_1005e720(C_BaseEntity *pEnt)
+{
+	const ViewSetup_1005e720 *pView = g_102d43d8->v14();
+	if (!pView)
+		return true;
+	if (!pEnt)
+		return true;
+
+	Vector vecForward;
+	sub_101090a0(pView->angles, &vecForward, 0, 0);
+
+	Vector start = pView->origin;
+	Vector end = start + (pcd_stage(vecForward) * 80.0f) * 2.0f;
+
+	Ray_t ray;
+	ray.Init(start, end);
+
+	CGameTrace tr;
+	g_104a582c->vfunc2(&ray, -1, (CBaseEntity *)pEnt, &tr);
+
+	C_BaseEntity *pHit = (C_BaseEntity *)tr.m_pEnt;
+	if (!pHit)
+		return false;
+
+	if (pHit->entindex() == pEnt->entindex())
+		return true;
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005ed00 size=0x6
 int sub_1005ed00()
 {
