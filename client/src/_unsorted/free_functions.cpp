@@ -46102,6 +46102,35 @@ void * CUnknown1010e520::sub_1010e520(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e600 size=0x95
+#include "CHudMessage.h"
+
+float CHudMessage::sub_1010e600(float fadein, float fadeout, float hold, float localTime)
+{
+	float fadeTime = fadein + hold;
+	float fadeBlend;
+
+	if (localTime < 0.0f)
+		return 0.0f;
+
+	if (localTime < fadein)
+	{
+		fadeBlend = 1.0f - ((fadein - localTime) / fadein);
+	}
+	else if (localTime > fadeTime)
+	{
+		if (fadeout > 0.0f)
+			fadeBlend = 1.0f - ((localTime - fadeTime) / fadeout);
+		else
+			fadeBlend = 0.0f;
+	}
+	else
+		fadeBlend = 1.0f;
+
+	return fadeBlend;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f070 size=0x30
 namespace lifted {
 extern char g_102bec80;
