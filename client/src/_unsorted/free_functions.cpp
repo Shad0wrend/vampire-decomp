@@ -2269,6 +2269,20 @@ int sub_1000acd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000ad30 size=0x5a
+#include "C_WeaponMelee_ChangClaw.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_ChangClaw; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_ChangClaw_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_ChangClaw *pRet = new C_WeaponMelee_ChangClaw;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000adf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e422c;
