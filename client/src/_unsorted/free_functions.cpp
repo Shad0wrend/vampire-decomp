@@ -48437,6 +48437,100 @@ void CUnknown10120e60::sub_10120e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120ee0 size=0x1cf
+#include "CPrediction.h"
+#include "ConVar.h"
+#include "Vector.h"
+
+struct IEngineClient_10120ee0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50();
+	virtual int GetMaxClients();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual int IsInGame();
+	virtual void v58(); virtual void v59();
+	virtual void Con_NPrintf(int pos, const char *fmt, ...);
+};
+
+struct CPredFrame_10120ee0
+{
+	const Vector &sub_1009f6e0();
+};
+
+struct CPlayer_10120ee0
+{
+	bool sub_100a2ed0();
+	const Vector &sub_1009f6e0();
+	CPredFrame_10120ee0 *sub_100a2fa0(int commands_acknowledged);
+};
+
+extern IEngineClient_10120ee0 *g_104a57d4;
+extern CPlayer_10120ee0 *g_104a0d50;
+extern ConVar *g_104e170c;
+extern ConVar *g_104e166c;
+extern ConVar *g_104e1624;
+extern int g_104e17e0;
+
+static inline int ConVarGetInt(ConVar *&pParent)
+{
+	return pParent->vfunc1() ? 0 : pParent->m_nValue;
+}
+
+static inline float ConVarGetFloat(ConVar *&pParent)
+{
+	return pParent->vfunc1() ? 0.0f : pParent->m_fValue;
+}
+
+// TARGET: ?sub_10120ee0@CPrediction@@QAEXH@Z
+void CPrediction::sub_10120ee0(int commands_acknowledged)
+{
+	if (!g_104a57d4->IsInGame())
+		return;
+
+	if (!ConVarGetInt(g_104e170c))
+		return;
+
+	CPlayer_10120ee0 *player = g_104a0d50;
+	if (!player)
+		return;
+
+	if (!player->sub_100a2ed0())
+		return;
+
+	Vector origin = player->sub_1009f6e0();
+	Vector delta;
+	VectorSubtract(origin, player->sub_100a2fa0(commands_acknowledged)->sub_1009f6e0(), delta);
+
+	float len = VectorLength(delta);
+	if (len > 64.0f)
+	{
+		((Vector *)((char *)this + 4))->Init();
+		return;
+	}
+
+	if (ConVarGetInt(g_104e166c) && len > 0.5f)
+	{
+		g_104a57d4->Con_NPrintf(20 + (++g_104e17e0 & 7), "pred. error %.3f units", len);
+	}
+
+	*(Vector *)((char *)this + 4) = delta;
+	if (len > 0.25f && g_104a57d4->GetMaxClients() != 1)
+	{
+		*(float *)((char *)this + 0x20) = ConVarGetFloat(g_104e1624);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101223b0 size=0xf
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual void u149(); virtual void u150(); virtual void u151(); virtual void u152(); virtual void u153(); virtual void u154(); virtual void u155(); virtual void u156(); virtual void u157(); virtual void u158(); virtual void u159(); virtual void u160(); virtual void u161(); virtual void u162(); virtual void u163(); virtual void u164(); virtual void u165(); virtual void u166(); virtual void u167(); virtual void u168(); virtual void u169(); virtual void u170(); virtual void u171(); virtual void u172(); virtual void u173(); virtual void u174(); virtual void u175(); virtual void u176(); virtual void u177(); virtual void u178(); virtual int f179(); };
