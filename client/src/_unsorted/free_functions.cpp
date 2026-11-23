@@ -10337,6 +10337,20 @@ int sub_100264d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026530 size=0x5a
+#include "C_ItemKHannahsSafeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKHannahsSafeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKHannahsSafeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKHannahsSafeKey *pRet = new C_ItemKHannahsSafeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100265f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1b88;
