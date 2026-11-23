@@ -25,7 +25,7 @@ int C_TEFootprintDecal::vfunc8()
 
 // VC6 writes C_TEFootprintDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEFootprintDecal *pcd_emit_10037ab0() { return new C_TEFootprintDecal; }
+C_TEFootprintDecal *pcd_emit_10037ab0(const C_TEFootprintDecal &other) { return new C_TEFootprintDecal(other); }
 
 // TARGET: ??_GC_TEFootprintDecal@@UAEPAXI@Z
 // END FUNCTION
