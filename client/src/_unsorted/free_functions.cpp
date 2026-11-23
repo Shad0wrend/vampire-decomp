@@ -13718,6 +13718,29 @@ void __stdcall sub_10057d40(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057dc0 size=0x44
+namespace lifted {
+extern int g_104a0d50;
+struct C100a6740 { int sub_100a6740(int); };
+struct C100a6760 { int sub_100a6760(int); };
+int sub_10114660(int, int);
+int sub_10114690();
+}
+void __stdcall sub_10057dc0(int a0, int a1, int a2)
+{
+    int t0 = lifted::g_104a0d50;
+    if (t0 != 0) {
+        lifted::sub_10114660(a2, a1);
+        int t1 = lifted::sub_10114690();
+        int t2 = lifted::sub_10114690();
+        if (t1 != 0) {
+            ((lifted::C100a6740 *)t0)->sub_100a6740(t2); return;
+        }
+        ((lifted::C100a6760 *)t0)->sub_100a6760(t2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057e10 size=0x3
 void __stdcall sub_10057e10(int a0, int a1, int a2)
 {
