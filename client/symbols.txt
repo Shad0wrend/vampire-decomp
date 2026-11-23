@@ -3644,6 +3644,7 @@
 0x100ca210 func   ?vfunc16@C_World@@UAEHXZ C_World::vfunc16
 0x100ca220 func   ?vfunc15@C_World@@UAEHXZ C_World::vfunc15
 0x100ca230 func   ?sub_100ca230@@YAHXZ sub_100ca230
+0x100ca290 func   ?_C_World_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_World_CreateObject
 0x100ca330 func   ?ClientClassInit@@YAHPAUignored@DT_World@@@Z ClientClassInit
 0x100ca620 func   ?vfunc66@C_World@@UAEHXZ C_World::vfunc66
 0x100ca630 func   ??_GC_World@@UAEPAXI@Z ??_GC_World@@UAEPAXI@Z
