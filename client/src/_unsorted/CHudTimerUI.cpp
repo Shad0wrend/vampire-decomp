@@ -10,3 +10,11 @@ CHudTimerUI *pcd_emit_1005db00() { return new CHudTimerUI; }
 
 // TARGET: ??_GCHudTimerUI@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1005db20 size=0x22
+#include "CHudTimerUI.h"
+CHudTimerUI::~CHudTimerUI()
+{
+	sub_101a9ff0(0);
+}
+// END FUNCTION
