@@ -7071,6 +7071,20 @@ int sub_1001b350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001b3b0 size=0x5a
+#include "C_ItemGEDaneReport.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGEDaneReport; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGEDaneReport_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGEDaneReport *pRet = new C_ItemGEDaneReport;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4e64;
