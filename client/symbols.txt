@@ -3030,6 +3030,7 @@
 0x1009d860 func   ?ClientClassInit@@YAHPAUignored@DT_BaseEntity@@@Z ClientClassInit
 0x1009db70 func   ?sub_1009db70@@YAXXZ sub_1009db70
 0x1009db80 func   ?sub_1009db80@@YADD@Z sub_1009db80
+0x1009db90 func   ??0C_BaseEntity@@QAE@XZ C_BaseEntity::C_BaseEntity
 0x1009dd60 func   ?sub_1009dd60@CUnknown1009dd60@@QAEPAXXZ CUnknown1009dd60::sub_1009dd60
 0x1009dd70 func   ?vfunc0@CMouthInfo@@UAEPAXD@Z CMouthInfo::vfunc0
 0x1009dda0 func   ??_GC_BaseEntity@@UAEPAXI@Z ??_GC_BaseEntity@@UAEPAXI@Z
