@@ -6933,6 +6933,20 @@ int sub_1001abd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001ac30 size=0x5a
+#include "C_ItemGVampyrApocrypha.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGVampyrApocrypha; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGVampyrApocrypha_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGVampyrApocrypha *pRet = new C_ItemGVampyrApocrypha;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001acf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2244;
