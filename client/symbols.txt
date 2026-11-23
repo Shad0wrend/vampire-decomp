@@ -1430,6 +1430,7 @@
 0x10022630 func   ?vfunc16@C_ItemKGimbleKey@@UAEHXZ C_ItemKGimbleKey::vfunc16
 0x10022640 func   ?vfunc15@C_ItemKGimbleKey@@UAEHXZ C_ItemKGimbleKey::vfunc15
 0x10022650 func   ?sub_10022650@@YAHXZ sub_10022650
+0x100226b0 func   ?_C_ItemKGimbleKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKGimbleKey_CreateObject
 0x10022770 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKGimbleKey@@@Z ClientClassInit
 0x10022800 func   ?vfunc17@C_ItemKLuckyStarMurderKey@@UAEHXZ C_ItemKLuckyStarMurderKey::vfunc17
 0x10022890 func   ??_GC_ItemKLuckyStarMurderKey@@UAEPAXI@Z ??_GC_ItemKLuckyStarMurderKey@@UAEPAXI@Z
