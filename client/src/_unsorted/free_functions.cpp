@@ -9693,6 +9693,20 @@ int sub_100241d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10024230 size=0x5a
+#include "C_ItemKTatooParlorKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKTatooParlorKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKTatooParlorKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKTatooParlorKey *pRet = new C_ItemKTatooParlorKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100242f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2fc4;
