@@ -6105,6 +6105,20 @@ int sub_10017ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10017f30 size=0x5a
+#include "C_ItemGGhostPendant.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGhostPendant; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGhostPendant_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGhostPendant *pRet = new C_ItemGGhostPendant;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017ff0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e55b0;
