@@ -5075,6 +5075,20 @@ int sub_10014550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100145b0 size=0x5a
+#include "C_OccultHealRate.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultHealRate; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultHealRate_CreateObject(int entnum, int serialNum)
+{
+	C_OccultHealRate *pRet = new C_OccultHealRate;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6988;
