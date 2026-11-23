@@ -14,3 +14,34 @@ CDiscipline::~CDiscipline()
 	if (m_p1f8) delete m_p1f8;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004f270 size=0x62
+#include "CDiscipline.h"
+
+void CDiscipline::vfunc114(int id, int val)
+{
+	int idx = sub_1004ec90(id);
+	if (idx == -1)
+	{
+		idx = sub_1004ecb0(id);
+		if (idx == -1)
+			return;
+	}
+
+	if (m_Entries[idx].m_unk4 < val)
+	{
+		sub_1004ed80(id, 1, 0);
+	}
+	else if (m_Entries[idx].m_unk4 > 0 && val == 0)
+	{
+		sub_1004ed80(id, 0, 0);
+	}
+
+	m_Entries[idx].m_unk4 = val;
+
+	if (val <= 0)
+	{
+		sub_1004ed00(id);
+	}
+}
+// END FUNCTION
