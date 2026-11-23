@@ -8359,6 +8359,20 @@ int sub_1001f950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001f9b0 size=0x5a
+#include "C_ItemGGarysPhoto.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGarysPhoto; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGarysPhoto_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGarysPhoto *pRet = new C_ItemGGarysPhoto;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001fa70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5a08;
