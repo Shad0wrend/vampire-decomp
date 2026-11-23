@@ -1395,6 +1395,7 @@
 0x100219b0 func   ?vfunc16@C_ItemKOceanHouseUpstairsKey@@UAEHXZ C_ItemKOceanHouseUpstairsKey::vfunc16
 0x100219c0 func   ?vfunc15@C_ItemKOceanHouseUpstairsKey@@UAEHXZ C_ItemKOceanHouseUpstairsKey::vfunc15
 0x100219d0 func   ?sub_100219d0@@YAHXZ sub_100219d0
+0x10021a30 func   ?_C_ItemKOceanHouseUpstairsKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKOceanHouseUpstairsKey_CreateObject
 0x10021af0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOceanHouseUpstairsKey@@@Z ClientClassInit
 0x10021b80 func   ?vfunc17@C_ItemKClinicMaintenanceKey@@UAEHXZ C_ItemKClinicMaintenanceKey::vfunc17
 0x10021c10 func   ??_GC_ItemKClinicMaintenanceKey@@UAEPAXI@Z ??_GC_ItemKClinicMaintenanceKey@@UAEPAXI@Z
