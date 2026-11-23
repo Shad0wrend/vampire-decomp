@@ -80830,6 +80830,121 @@ int CUnknown101c4a80::sub_101c4a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4cf0 size=0x88
+#include <string.h>
+
+class IComboBox_101c4cf0
+{
+public:
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+	virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+	virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+	virtual void v36() = 0; virtual void v37() = 0; virtual void v38() = 0; virtual void v39() = 0;
+	virtual void v40() = 0; virtual void v41() = 0; virtual void v42() = 0; virtual void v43() = 0;
+	virtual void v44() = 0; virtual void v45() = 0; virtual void v46() = 0; virtual void v47() = 0;
+	virtual void v48() = 0; virtual void v49() = 0; virtual void v50() = 0; virtual void v51() = 0;
+	virtual void v52() = 0; virtual void v53() = 0; virtual void v54() = 0; virtual void v55() = 0;
+	virtual void v56() = 0; virtual void v57() = 0; virtual void v58() = 0; virtual void v59() = 0;
+	virtual void v60() = 0; virtual void v61() = 0; virtual void v62() = 0; virtual void v63() = 0;
+	virtual void v64() = 0; virtual void v65() = 0; virtual void v66() = 0; virtual void v67() = 0;
+	virtual void v68() = 0; virtual void v69() = 0; virtual void v70() = 0; virtual void v71() = 0;
+	virtual void v72() = 0; virtual void v73() = 0; virtual void v74() = 0; virtual void v75() = 0;
+	virtual void v76() = 0; virtual void v77() = 0; virtual void v78() = 0; virtual void v79() = 0;
+	virtual void v80() = 0; virtual void v81() = 0; virtual void v82() = 0; virtual void v83() = 0;
+	virtual void v84() = 0; virtual void v85() = 0; virtual void v86() = 0; virtual void v87() = 0;
+	virtual void v88() = 0; virtual void v89() = 0; virtual void v90() = 0; virtual void v91() = 0;
+	virtual void v92() = 0; virtual void v93() = 0; virtual void v94() = 0; virtual void v95() = 0;
+	virtual void v96() = 0; virtual void v97() = 0; virtual void v98() = 0; virtual void v99() = 0;
+	virtual void v100() = 0; virtual void v101() = 0; virtual void v102() = 0; virtual void v103() = 0;
+	virtual void v104() = 0; virtual void v105() = 0; virtual void v106() = 0; virtual void v107() = 0;
+	virtual void GetText(int offset, char *buf, int bufLen) = 0; // slot 108 (+0x1b0)
+	virtual void v109() = 0; virtual void v110() = 0; virtual void v111() = 0; virtual void v112() = 0;
+	virtual void v113() = 0; virtual void v114() = 0; virtual void v115() = 0; virtual void v116() = 0;
+	virtual void v117() = 0; virtual void v118() = 0; virtual void v119() = 0; virtual void v120() = 0;
+	virtual void v121() = 0; virtual void v122() = 0; virtual void v123() = 0; virtual void v124() = 0;
+	virtual void v125() = 0; virtual void v126() = 0; virtual void v127() = 0; virtual void v128() = 0;
+	virtual void v129() = 0; virtual void v130() = 0; virtual void v131() = 0; virtual void v132() = 0;
+	virtual void v133() = 0; virtual void v134() = 0; virtual void v135() = 0; virtual void v136() = 0;
+	virtual void v137() = 0; virtual void v138() = 0; virtual void v139() = 0; virtual void v140() = 0;
+	virtual void v141() = 0; virtual void v142() = 0; virtual void v143() = 0; virtual void v144() = 0;
+	virtual void v145() = 0; virtual void v146() = 0; virtual void v147() = 0; virtual void v148() = 0;
+	virtual void v149() = 0; virtual void v150() = 0; virtual void v151() = 0; virtual void v152() = 0;
+	virtual void v153() = 0; virtual void v154() = 0; virtual void v155() = 0; virtual void v156() = 0;
+	virtual void v157() = 0; virtual void v158() = 0; virtual void v159() = 0; virtual void v160() = 0;
+	virtual void v161() = 0; virtual void v162() = 0; virtual void v163() = 0; virtual void v164() = 0;
+	virtual void v165() = 0; virtual void v166() = 0; virtual void v167() = 0; virtual void v168() = 0;
+	virtual void v169() = 0; virtual void v170() = 0; virtual void v171() = 0; virtual void v172() = 0;
+	virtual void v173() = 0; virtual void v174() = 0; virtual void v175() = 0; virtual void v176() = 0;
+	virtual void v177() = 0; virtual void v178() = 0; virtual void v179() = 0; virtual void v180() = 0;
+	virtual void ActivateItem(int itemID) = 0; // slot 181 (+0x2d4)
+};
+
+class IButton_101c4cf0
+{
+public:
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+	virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+	virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+	virtual void v36() = 0; virtual void v37() = 0; virtual void v38() = 0; virtual void v39() = 0;
+	virtual void v40() = 0; virtual void v41() = 0; virtual void v42() = 0; virtual void v43() = 0;
+	virtual void v44() = 0; virtual void v45() = 0;
+	virtual void SetEnabled(bool state) = 0; // slot 46 (+0xb8)
+};
+
+struct IPanel_101c4cf0
+{
+	bool sub_101aab50();
+};
+
+struct BuildModeDialog_101c4cf0
+{
+	char pad0[0xe4];
+	IPanel_101c4cf0 *m_pCurrentPanel; // 0xe4
+	char pad_e8[0xc];
+	IButton_101c4cf0 *m_pApplyButton; // 0xf4
+	char pad_f8[0x18];
+	bool m_bAutoUpdate; // 0x110
+	char pad_111[0xb];
+	IComboBox_101c4cf0 *m_pAddNewControlCombo; // 0x11c
+
+	void sub_101c4e60(const char *text, int a, int b);
+	void sub_101c4810();
+	void sub_101c4cf0();
+};
+
+// TARGET: BuildModeDialog_101c4cf0::sub_101c4cf0
+void BuildModeDialog_101c4cf0::sub_101c4cf0()
+{
+	char text[40];
+	m_pAddNewControlCombo->GetText(0, text, sizeof(text));
+	if (strcmp(text, "None") != 0)
+	{
+		sub_101c4e60(text, 0, 0);
+		m_pAddNewControlCombo->ActivateItem(0);
+	}
+	if (m_pCurrentPanel->sub_101aab50())
+	{
+		m_pApplyButton->SetEnabled(true);
+	}
+	if (m_bAutoUpdate)
+	{
+		sub_101c4810();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4dd0 size=0x2b
 namespace lifted {
 struct V { virtual int f0(int); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(); virtual void u16(); virtual bool f17(); };
