@@ -4277,6 +4277,7 @@
 0x10124c30 func   ??_GCPlayerProximityProxy@@UAEPAXI@Z ??_GCPlayerProximityProxy@@UAEPAXI@Z
 0x10124d70 func   ?sub_10124d70@@YAHXZ sub_10124d70
 0x10124da0 func   ??_GCPlayerViewProxy@@UAEPAXI@Z ??_GCPlayerViewProxy@@UAEPAXI@Z
+0x10124e80 func   ?sub_10124e80@@YAHXZ sub_10124e80
 0x10124eb0 func   ??_GCPlayerSpeedProxy@@UAEPAXI@Z ??_GCPlayerSpeedProxy@@UAEPAXI@Z
 0x10124fd0 func   ??_GCPlayerPositionProxy@@UAEPAXI@Z ??_GCPlayerPositionProxy@@UAEPAXI@Z
 0x101250b0 func   ??_GCEntitySpeedProxy@@UAEPAXI@Z ??_GCEntitySpeedProxy@@UAEPAXI@Z
