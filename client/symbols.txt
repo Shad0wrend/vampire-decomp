@@ -1960,6 +1960,7 @@
 0x10041730 func   ?sub_10041730@@YADXZ sub_10041730
 0x10041740 func   ??_GC_TestTraceline@@UAEPAXI@Z ??_GC_TestTraceline@@UAEPAXI@Z
 0x10041760 func   ??1C_TestTraceline@@UAE@XZ C_TestTraceline::~C_TestTraceline
+0x10041790 func   ?sub_10041790@CUnknown10041790@@QAEHH@Z CUnknown10041790::sub_10041790
 0x100421e0 func   ?sub_100421e0@CUnknown100421e0@@QAEPAXXZ CUnknown100421e0::sub_100421e0
 0x10042370 func   ?sub_10042370@CUnknown10042370@@QAEPAXXZ CUnknown10042370::sub_10042370
 0x100429f0 func   ?sub_100429f0@@YAHXZ sub_100429f0
