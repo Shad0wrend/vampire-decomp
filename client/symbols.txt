@@ -1642,6 +1642,7 @@
 0x10027590 func   ?vfunc16@C_WeaponRanged_FlameThrower@@UAEHXZ C_WeaponRanged_FlameThrower::vfunc16
 0x100275a0 func   ?vfunc15@C_WeaponRanged_FlameThrower@@UAEHXZ C_WeaponRanged_FlameThrower::vfunc15
 0x100275b0 func   ?sub_100275b0@@YAHXZ sub_100275b0
+0x10027610 func   ?_C_WeaponRanged_FlameThrower_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponRanged_FlameThrower_CreateObject
 0x100276b0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_FlameThrower@@@Z ClientClassInit
 0x10027840 func   ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z
 0x10027980 func   ?vfunc143@C_WeaponRanged_FlameThrower@@UAEXXZ C_WeaponRanged_FlameThrower::vfunc143
