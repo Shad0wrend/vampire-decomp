@@ -20,6 +20,19 @@ int C_BaseNetworkable::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3870 size=0x41
+#include "C_BaseNetworkable.h"
+// TARGET: ??0C_BaseNetworkable@@QAE@XZ
+C_BaseNetworkable::C_BaseNetworkable()
+{
+	m_unk10 = 1;
+	m_unk12 = 0xffff;
+	m_unk14.v = -1;
+	m_unk18 = 0xffff;
+	m_unkc = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3ac0 size=0xc
 #include "C_BaseNetworkable.h"
 int C_BaseNetworkable::vfunc0(int a0)
