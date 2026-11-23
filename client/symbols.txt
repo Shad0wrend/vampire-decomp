@@ -408,6 +408,7 @@
 0x1000b930 func   ?vfunc16@C_WeaponMelee_Tzimisce3Claw@@UAEHXZ C_WeaponMelee_Tzimisce3Claw::vfunc16
 0x1000b940 func   ?vfunc15@C_WeaponMelee_Tzimisce3Claw@@UAEHXZ C_WeaponMelee_Tzimisce3Claw::vfunc15
 0x1000b950 func   ?sub_1000b950@@YAHXZ sub_1000b950
+0x1000b9b0 func   ?_C_WeaponMelee_Tzimisce3Claw_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponMelee_Tzimisce3Claw_CreateObject
 0x1000ba70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Tzimisce3Claw@@@Z ClientClassInit
 0x1000bb00 func   ?vfunc17@C_WeaponMelee_GargoyleFist@@UAEHXZ C_WeaponMelee_GargoyleFist::vfunc17
 0x1000bb90 func   ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z ??_GC_WeaponMelee_GargoyleFist@@UAEPAXI@Z
