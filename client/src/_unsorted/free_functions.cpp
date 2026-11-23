@@ -2361,6 +2361,20 @@ int sub_1000b1d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000b230 size=0x5a
+#include "C_WeaponMelee_AVampBlade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_AVampBlade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_AVampBlade_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_AVampBlade *pRet = new C_WeaponMelee_AVampBlade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b2f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e36c4;
