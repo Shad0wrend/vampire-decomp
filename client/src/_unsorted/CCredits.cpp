@@ -11,6 +11,32 @@ CCredits *pcd_emit_1004dd20(const CCredits &other) { return new CCredits(other);
 // TARGET: ??_GCCredits@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1004dd40 size=0x87
+#include "CCredits.h"
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+// TARGET: ??1CCredits@@UAE@XZ
+CCredits::~CCredits()
+{
+	sub_101a9ff0(0);
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMem) {
+			Plat_Free(m_pMem);
+			m_pMem = 0;
+		}
+		m_allocCount = 0;
+	}
+	m_pElements = m_pMem;
+	if (m_growSize != -1) {
+		if (m_pMem) {
+			Plat_Free(m_pMem);
+			m_pMem = 0;
+		}
+		m_allocCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004ddf0 size=0x57
 #include "CCredits.h"
 
