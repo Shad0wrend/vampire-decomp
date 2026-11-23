@@ -842,6 +842,7 @@
 0x10015430 func   ?vfunc16@C_WeaponIArmor_Lt_Cloth@@UAEHXZ C_WeaponIArmor_Lt_Cloth::vfunc16
 0x10015440 func   ?vfunc15@C_WeaponIArmor_Lt_Cloth@@UAEHXZ C_WeaponIArmor_Lt_Cloth::vfunc15
 0x10015450 func   ?sub_10015450@@YAHXZ sub_10015450
+0x100154b0 func   ?_C_WeaponIArmor_Lt_Cloth_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponIArmor_Lt_Cloth_CreateObject
 0x10015570 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIArmor_Lt_Cloth@@@Z ClientClassInit
 0x10015600 func   ?vfunc17@C_WeaponIArmor_Hvy_Cloth@@UAEHXZ C_WeaponIArmor_Hvy_Cloth::vfunc17
 0x10015690 func   ??_GC_WeaponIArmor_Hvy_Cloth@@UAEPAXI@Z ??_GC_WeaponIArmor_Hvy_Cloth@@UAEPAXI@Z
