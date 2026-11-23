@@ -2683,6 +2683,20 @@ int sub_1000c350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000c3b0 size=0x5a
+#include "C_WeaponMelee_MingXiaoMelee.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_MingXiaoMelee; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_MingXiaoMelee_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_MingXiaoMelee *pRet = new C_WeaponMelee_MingXiaoMelee;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000c470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5fe0;
