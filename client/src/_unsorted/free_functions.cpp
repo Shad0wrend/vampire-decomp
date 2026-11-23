@@ -32629,6 +32629,20 @@ int sub_100ba0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba140 size=0x39
+#include "C_Func_Dust.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Func_Dust; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Func_Dust_CreateObject(int entnum, int serialNum)
+{
+	C_Func_Dust *pRet = new C_Func_Dust;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba1e0 size=0x1f5
 #include "RecvTable.h"
 extern RecvTable g_104a2554;
