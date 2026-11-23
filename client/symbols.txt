@@ -1721,6 +1721,7 @@
 0x1002c1b0 func   ?vfunc8@C_BaseTempEntity@@UAEHXZ C_BaseTempEntity::vfunc8
 0x1002c1c0 func   ?GetClientClass@C_BaseTempEntity@@UAEPAVClientClass@@XZ C_BaseTempEntity::GetClientClass
 0x1002c1c0 func   ?sub_1002c1c0@@YAHXZ sub_1002c1c0
+0x1002c220 func   ?_C_BaseTempEntity_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseTempEntity_CreateObject
 0x1002c2c0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseTempEntity@@@Z ClientClassInit
 0x1002c320 func   ?sub_1002c320@@YAHXZ sub_1002c320
 0x1002c330 func   ?sub_1002c330@@YAHXZ sub_1002c330
