@@ -1,5 +1,5 @@
 {
- "date": "2026-11-22",
+ "date": "2026-11-23",
  "modules": [
   {
    "name": "vampire.dll",
@@ -9,7 +9,7 @@
   {
    "name": "client.dll",
    "code": 1973229,
-   "done": 0.2448666934425347
+   "done": 0.26835689826609493
   },
   {
    "name": "GameUI.dll",
@@ -236,30 +236,30 @@
  "client": [
   {
    "name": "no file yet",
-   "cpp": 304719,
+   "cpp": 330236,
    "asm": 4812,
-   "open": 755242,
-   "n_cpp": 3193,
+   "open": 729725,
+   "n_cpp": 4766,
    "n_asm": 28,
-   "n_open": 4706
+   "n_open": 3133
   },
   {
    "name": "cl_dll",
-   "cpp": 28436,
+   "cpp": 41025,
    "asm": 0,
-   "open": 443140,
-   "n_cpp": 782,
+   "open": 430551,
+   "n_cpp": 1446,
    "n_asm": 0,
-   "n_open": 2420
+   "n_open": 1756
   },
   {
    "name": "game_shared",
-   "cpp": 19694,
+   "cpp": 20430,
    "asm": 0,
-   "open": 60420,
-   "n_cpp": 214,
+   "open": 59684,
+   "n_cpp": 238,
    "n_asm": 0,
-   "n_open": 278
+   "n_open": 254
   },
   {
    "name": "_init",
@@ -272,39 +272,39 @@
   },
   {
    "name": "vgui2/controls",
-   "cpp": 30,
+   "cpp": 482,
    "asm": 0,
-   "open": 10782,
-   "n_cpp": 1,
+   "open": 10330,
+   "n_cpp": 10,
    "n_asm": 0,
-   "n_open": 37
+   "n_open": 28
   },
   {
    "name": "cl_dll/hl2_hud",
-   "cpp": 905,
+   "cpp": 1094,
    "asm": 0,
-   "open": 3557,
-   "n_cpp": 18,
+   "open": 3368,
+   "n_cpp": 34,
    "n_asm": 0,
-   "n_open": 40
+   "n_open": 24
   },
   {
    "name": "dlls",
-   "cpp": 50,
+   "cpp": 86,
    "asm": 0,
-   "open": 2482,
-   "n_cpp": 4,
+   "open": 2446,
+   "n_cpp": 7,
    "n_asm": 0,
-   "n_open": 12
+   "n_open": 9
   },
   {
    "name": "public",
-   "cpp": 698,
+   "cpp": 783,
    "asm": 108,
-   "open": 119,
-   "n_cpp": 14,
+   "open": 34,
+   "n_cpp": 17,
    "n_asm": 1,
-   "n_open": 5
+   "n_open": 2
   },
   {
    "name": "vphysics",
@@ -335,12 +335,12 @@
   },
   {
    "name": "dlls/hl1_dll",
-   "cpp": 0,
+   "cpp": 108,
    "asm": 0,
-   "open": 108,
-   "n_cpp": 0,
+   "open": 0,
+   "n_cpp": 1,
    "n_asm": 0,
-   "n_open": 1
+   "n_open": 0
   }
  ]
 }
