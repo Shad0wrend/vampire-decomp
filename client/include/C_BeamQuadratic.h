@@ -6,4 +6,6 @@
 class C_BeamQuadratic : public CDefaultClientRenderable
 {
 public:
+    C_BeamQuadratic();
+    int m_unk8; int m_unk0c; int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; short m_unk24;
 };
