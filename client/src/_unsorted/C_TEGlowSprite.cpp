@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10038620 size=0x30
+#include "C_TEGlowSprite.h"
+C_TEGlowSprite::C_TEGlowSprite()
+{
+	m_vecOrigin.Init(0, 0, 0);
+	m_vecDir.Init(0, 0, 0);
+	m_unk28 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038760 size=0x6
 #include "C_TEGlowSprite.h"
 namespace lifted {
