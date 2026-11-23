@@ -1514,6 +1514,7 @@
 0x10024430 func   ?vfunc16@C_ItemKMalkavianRefrigeratorKey@@UAEHXZ C_ItemKMalkavianRefrigeratorKey::vfunc16
 0x10024440 func   ?vfunc15@C_ItemKMalkavianRefrigeratorKey@@UAEHXZ C_ItemKMalkavianRefrigeratorKey::vfunc15
 0x10024450 func   ?sub_10024450@@YAHXZ sub_10024450
+0x100244b0 func   ?_C_ItemKMalkavianRefrigeratorKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKMalkavianRefrigeratorKey_CreateObject
 0x10024570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMalkavianRefrigeratorKey@@@Z ClientClassInit
 0x10024600 func   ?vfunc17@C_ItemKTutorialChopshopStairsKey@@UAEHXZ C_ItemKTutorialChopshopStairsKey::vfunc17
 0x10024690 func   ??_GC_ItemKTutorialChopshopStairsKey@@UAEPAXI@Z ??_GC_ItemKTutorialChopshopStairsKey@@UAEPAXI@Z
