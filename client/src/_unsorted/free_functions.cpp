@@ -5383,6 +5383,20 @@ int sub_100156d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10015730 size=0x5a
+#include "C_WeaponIArmor_Hvy_Cloth.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Hvy_Cloth; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Hvy_Cloth_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Hvy_Cloth *pRet = new C_WeaponIArmor_Hvy_Cloth;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100157f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e033c;
