@@ -10,3 +10,8 @@ CHudChat *pcd_emit_100f19d0(const CHudChat &other) { return new CHudChat(other);
 
 // TARGET: ??_GCHudChat@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100f19f0 size=0x1f
+#include "CHudChat.h"
+CHudChat::~CHudChat() {}
+// END FUNCTION
