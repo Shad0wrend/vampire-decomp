@@ -10061,6 +10061,20 @@ int sub_100255d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10025630 size=0x5a
+#include "C_ItemKSarcophagusKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKSarcophagusKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKSarcophagusKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKSarcophagusKey *pRet = new C_ItemKSarcophagusKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100256f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3ca0;
