@@ -6059,6 +6059,20 @@ int sub_10017c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10017cb0 size=0x5a
+#include "C_ItemGCarStereo.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGCarStereo; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGCarStereo_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGCarStereo *pRet = new C_ItemGCarStereo;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3b54;
