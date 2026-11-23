@@ -2044,6 +2044,7 @@
 0x1004c770 func   ?vfunc112@CBloodBar@@UAEXXZ CBloodBar::vfunc112
 0x1004d2f0 func   ?vfunc97@CBloodBar@@UAEXXZ CBloodBar::vfunc97
 0x1004d390 func   ?vfunc114@CBloodBar@@UAEHH@Z CBloodBar::vfunc114
+0x1004d3c0 func   ?vfunc115@CBloodBar@@UAEHH@Z CBloodBar::vfunc115
 0x1004d410 func   ?sub_1004d410@@YGXHH@Z sub_1004d410
 0x1004d490 func   ?sub_1004d490@CUnknown1004d490@@QAEDXZ CUnknown1004d490::sub_1004d490
 0x1004d4a0 func   ?sub_1004d4a0@@YAHXZ sub_1004d4a0
