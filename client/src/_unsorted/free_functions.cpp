@@ -71393,6 +71393,36 @@ bool V::sub_101a30c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a30e0 size=0x55
+namespace lifted {
+struct C101a30c0 { bool sub_101a30c0(int); };
+struct C101a3190 { int sub_101a3190(int); };
+struct C101a31e0 { int sub_101a31e0(int); };
+int sub_101d1296(int);
+}
+struct CUnknown101a30e0 { void sub_101a30e0(int, char); };
+void CUnknown101a30e0::sub_101a30e0(int a0, char a1)
+{
+    if (a1 != 0) {
+        bool t0 = ((lifted::C101a30c0 *)this)->sub_101a30c0(a0);
+        if (t0 == 0) {
+            ((lifted::C101a31e0 *)this)->sub_101a31e0(a0); return;
+        }
+        return;
+    }
+    int t1 = ((lifted::C101a3190 *)this)->sub_101a3190(a0);
+    if (t1 != 0) {
+        int t2 = *(int *)((char *)t1 + 0x10);
+        int t3 = *(int *)((char *)t1 + 0x14);
+        *(int *)((char *)t2 + 0x14) = t3;
+        int t4 = *(int *)((char *)t1 + 0x14);
+        int t5 = *(int *)((char *)t1 + 0x10);
+        *(int *)((char *)t4 + 0x10) = t5;
+        lifted::sub_101d1296(t1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
