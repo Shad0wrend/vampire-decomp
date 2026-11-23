@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10055980 size=0x71
+#include "CHudInfo.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+char *sub_1018c870(const char *);
+// TARGET: ??0CHudInfo@@QAE@H@Z
+CHudInfo::CHudInfo(int a)
+    : CManagedHudElement(a, (int)"HudInfo")
+{
+    memset(m_arr198, 0, sizeof(m_arr198));
+    vfunc63(0);
+    m_n180 = 0;
+    IFontLike *p = sub_101ac830();
+    m_nFont = p->GetFont(sub_1018c870("Trebuchet"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055a00 size=0x1e
 #include "CHudInfo.h"
 
