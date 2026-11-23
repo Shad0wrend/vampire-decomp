@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10034190 size=0x42
+#include "C_TEBloodSprite.h"
+C_TEBloodSprite::C_TEBloodSprite()
+{
+	m_vecOrigin.Init(); m_vecDirection.Init(); m_unk34 = 0; m_unk30 = 0; m_unk2c = 0; m_unk28 = 0; m_unk40 = 0; m_unk3c = 0; m_unk38 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100341e0 size=0x1e
 #include "C_TEBloodSprite.h"
 
