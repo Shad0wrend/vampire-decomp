@@ -40819,6 +40819,19 @@ void CUnknown1010f070::sub_1010f070(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f0a0 size=0x26
+namespace lifted {
+extern char g_102bbea0;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C1010f030 { int sub_1010f030(int, int, int); };
+}
+int sub_1010f0a0(int a0, int a1, int a2)
+{
+    return ((lifted::C1010f030 *)(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbea0)))->sub_1010f030(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f160 size=0x1f
 namespace lifted {
 extern char g_102356b4;
