@@ -6887,6 +6887,20 @@ int sub_1001a950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001a9b0 size=0x5a
+#include "C_ItemGBachJournal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBachJournal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBachJournal_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBachJournal *pRet = new C_ItemGBachJournal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001aa70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102dffc8;
