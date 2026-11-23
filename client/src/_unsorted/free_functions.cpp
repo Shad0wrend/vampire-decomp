@@ -4707,6 +4707,20 @@ int sub_10013150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100131b0 size=0x5a
+#include "C_OccultObfuscate.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultObfuscate; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultObfuscate_CreateObject(int entnum, int serialNum)
+{
+	C_OccultObfuscate *pRet = new C_OccultObfuscate;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0fec;
