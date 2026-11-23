@@ -64049,6 +64049,39 @@ int CUnknown101f1a30::sub_10153720(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153770 size=0x4c
+#include "CUnknown101f0e50.h"
+
+class CUnknown101f0b50
+{
+public:
+	void *sub_10152bb0(int n);
+	CUnknown101f0b50(int n) { sub_10152bb0(n); }
+	~CUnknown101f0b50() {}
+	int m_f00;
+	int m_f04;
+	int m_f08;
+	int m_f0c;
+	int m_f10;
+};
+
+bool CUnknown101f0e50::sub_10153640(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+
+// TARGET: CUnknown101f0e50::sub_10153770
+CVTraitEffectGroup_t *CUnknown101f0e50::sub_10153770(int index)
+{
+	if (sub_10153640(index))
+		return ((CVTraitEffectGroup_t **)m_f08)[index];
+	static CUnknown101f0b50 s_default(-1);
+	return (CVTraitEffectGroup_t *)&s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101537d0 size=0x3
 void __stdcall sub_101537d0(int a0, int a1)
 {
