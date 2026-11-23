@@ -36757,6 +36757,24 @@ void CUnknown100d9210::sub_100d9210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d95a0 size=0x5e
+#include "CFXDiscreetLine.h"
+#include "Vector.h"
+
+struct IEffectsList_100d95a0
+{
+	virtual ~IEffectsList_100d95a0();
+	virtual void AddEffect(CClientSideEffect *pEffect);
+};
+
+extern IEffectsList_100d95a0 *g_102b9850;
+
+void sub_100d95a0(const Vector &start, const Vector &direction, float velocity, float length, float clipLength, float scale, float life, const char *shader)
+{
+	g_102b9850->AddEffect(new CFXDiscreetLine("Line", start, direction, velocity, length, clipLength, scale, life, shader));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9740 size=0x1
 void sub_100d9740()
 {
