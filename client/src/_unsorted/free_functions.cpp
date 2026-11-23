@@ -50609,6 +50609,25 @@ void __stdcall sub_1013f180(CVStatKV *pKV, CVStatInfoList_t *pList, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f250 size=0x3d
+namespace lifted {
+extern char g_102c6a3c;
+extern char g_102c6a44;
+int sub_101d1300(int, int);
+}
+void sub_1013f250(int a0, int a1)
+{
+    int t0 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a44);
+    if (t0 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 2;
+    }
+    int t1 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a3c);
+    if (t1 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f290 size=0x3
 char sub_1013f290()
 {
