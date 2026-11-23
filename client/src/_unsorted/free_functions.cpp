@@ -9739,6 +9739,20 @@ int sub_10024450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100244b0 size=0x5a
+#include "C_ItemKMalkavianRefrigeratorKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMalkavianRefrigeratorKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMalkavianRefrigeratorKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMalkavianRefrigeratorKey *pRet = new C_ItemKMalkavianRefrigeratorKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0130;
