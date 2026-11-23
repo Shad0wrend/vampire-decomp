@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEFogRipple's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEFogRipple *pcd_emit_10037310() { return new C_TEFogRipple; }
+C_TEFogRipple *pcd_emit_10037310(const C_TEFogRipple &other) { return new C_TEFogRipple(other); }
 
 // TARGET: ??_GC_TEFogRipple@@UAEPAXI@Z
 // END FUNCTION
