@@ -10475,6 +10475,20 @@ int sub_10026c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026cb0 size=0x5a
+#include "C_ItemKAshCellKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKAshCellKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKAshCellKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKAshCellKey *pRet = new C_ItemKAshCellKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e29bc;
