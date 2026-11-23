@@ -1024,6 +1024,7 @@
 0x10019530 func   ?vfunc16@C_ItemGBailbondReceipt@@UAEHXZ C_ItemGBailbondReceipt::vfunc16
 0x10019540 func   ?vfunc15@C_ItemGBailbondReceipt@@UAEHXZ C_ItemGBailbondReceipt::vfunc15
 0x10019550 func   ?sub_10019550@@YAHXZ sub_10019550
+0x100195b0 func   ?_C_ItemGBailbondReceipt_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGBailbondReceipt_CreateObject
 0x10019670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBailbondReceipt@@@Z ClientClassInit
 0x10019700 func   ?vfunc17@C_ItemGDriversLicenseGimble@@UAEHXZ C_ItemGDriversLicenseGimble::vfunc17
 0x10019790 func   ??_GC_ItemGDriversLicenseGimble@@UAEPAXI@Z ??_GC_ItemGDriversLicenseGimble@@UAEPAXI@Z
