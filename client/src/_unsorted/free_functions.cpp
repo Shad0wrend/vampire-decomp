@@ -4891,6 +4891,20 @@ int sub_10013b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10013bb0 size=0x5a
+#include "C_OccultBloodBuff.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultBloodBuff; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultBloodBuff_CreateObject(int entnum, int serialNum)
+{
+	C_OccultBloodBuff *pRet = new C_OccultBloodBuff;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4ab4;
