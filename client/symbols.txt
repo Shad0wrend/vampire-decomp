@@ -128,6 +128,7 @@
 0x10003d80 func   ?sub_10003d80@@YAHXZ sub_10003d80
 0x10003de0 func   ?_C_OccultRegen_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_OccultRegen_CreateObject
 0x10003ea0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultRegen@@@Z ClientClassInit
+0x10003f60 func   ??_GC_OccultRegen@@UAEPAXI@Z ??_GC_OccultRegen@@UAEPAXI@Z
 0x10003fa0 func   ?vfunc16@C_ParticleStorm@@UAEHXZ C_ParticleStorm::vfunc16
 0x10003fb0 func   ?vfunc15@C_ParticleStorm@@UAEHXZ C_ParticleStorm::vfunc15
 0x10003fc0 func   ?sub_10003fc0@@YAHXZ sub_10003fc0
