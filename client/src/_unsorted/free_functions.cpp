@@ -30521,6 +30521,129 @@ int CUnknown1009b2a0::sub_1009b2a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c070 size=0x108
+#include "Vector.h"
+#include "C_BaseCombatWeapon.h"
+
+struct WpnData_1009c070
+{
+	char pad0[0x50170];
+	char m_sz50170[0x80];
+	char m_sz501f0[0x80];
+};
+
+struct CWeaponBody_1009c070;
+
+struct IParticleMgr_1009c070
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6(const Vector &v1, const Vector &v2, int a3, int a4, bool a5, const char *s1, const char *s2, CWeaponBody_1009c070 *pEnt, int a9);
+};
+
+extern IParticleMgr_1009c070 *g_1028073c;
+
+struct CCharInner_1009c070
+{
+	char pad0[0xfd0];
+	int m_iGender;
+};
+
+struct COwner_1009c070
+{
+	char pad0[0x3f0];
+	CCharInner_1009c070 *m_pChar;
+};
+
+struct CWeaponBody_1009c070
+{
+	char pad0[0x79c];
+	int m_n79c;
+
+	WpnData_1009c070 *sub_1007b160();
+	COwner_1009c070 *sub_1007bab0();
+	bool sub_1009b8f0();
+	void sub_100a06f0(int idx);
+};
+
+bool CWeaponBody_1009c070::sub_1009b8f0()
+{
+	return m_n79c != 0xff;
+}
+
+struct CWeaponRenderable_1009c070
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual bool ShouldDraw();
+
+	char pad0[0xd8];
+	bool m_bReadyToDraw;        // +0xdc
+	char pad1[0x7c8 - 0xdd];
+	int m_iModelMale;           // +0x7c8
+	int m_iModelFemale;         // +0x7cc
+	char pad2[0x8cf - 0x7d0];
+	bool m_b8cf;                // +0x8cf
+	Vector m_vec8d0;            // +0x8d0
+	Vector m_vec8dc;            // +0x8dc
+	int m_n8e8;                 // +0x8e8
+	bool m_b8ec;                // +0x8ec
+	char pad3[3];
+	int m_n8f0;                 // +0x8f0
+	char pad4[0x920 - 0x8f4];
+	int m_iModelDefault;        // +0x920
+
+	int sub_10092540(int flags, int a1);
+	int sub_1009c070(int flags, int a1);
+};
+
+// TARGET: CWeaponRenderable_1009c070::sub_1009c070
+int CWeaponRenderable_1009c070::sub_1009c070(int flags, int a1)
+{
+	if (m_b8cf)
+	{
+		CWeaponBody_1009c070 *pWpn = (CWeaponBody_1009c070 *)((char *)this - 4);
+		g_1028073c->v6(m_vec8d0, m_vec8dc, 0, m_n8e8, m_b8ec, pWpn->sub_1007b160()->m_sz50170, pWpn->sub_1007b160()->m_sz501f0, pWpn, m_n8f0);
+		m_b8cf = false;
+	}
+
+	if (!m_bReadyToDraw)
+		return 0;
+
+	if (!ShouldDraw())
+		return 0;
+
+	CWeaponBody_1009c070 *pWpn = (CWeaponBody_1009c070 *)((char *)this - 4);
+	COwner_1009c070 *pOwner = pWpn->sub_1007bab0();
+	if (pWpn->sub_1009b8f0())
+	{
+		((C_BaseCombatWeapon *)pWpn)->vfunc240();
+		if (pOwner && pOwner->m_pChar)
+		{
+			if (pOwner->m_pChar->m_iGender == 0)
+				pWpn->sub_100a06f0(m_iModelMale);
+			else
+				pWpn->sub_100a06f0(m_iModelFemale);
+		}
+		else
+		{
+			pWpn->sub_100a06f0(m_iModelDefault);
+		}
+	}
+	else
+	{
+		pWpn->sub_100a06f0(m_iModelDefault);
+	}
+
+	return sub_10092540(flags, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c180 size=0x20
 namespace lifted {
 struct C1007bab0 { int sub_1007bab0(); };
