@@ -4027,6 +4027,7 @@
 0x1010cd60 func   ?sub_1010cd60@@YAHXZ sub_1010cd60
 0x1010cd90 func   ??_GCDivideProxy@@UAEPAXI@Z ??_GCDivideProxy@@UAEPAXI@Z
 0x1010cdb0 func   ?vfunc0@CClampProxy@@UAE_NPAX0@Z CClampProxy::vfunc0
+0x1010cfc0 func   ?sub_1010cfc0@@YAHXZ sub_1010cfc0
 0x1010cff0 func   ??_GCClampProxy@@UAEPAXI@Z ??_GCClampProxy@@UAEPAXI@Z
 0x1010d1b0 func   ??_GCSineProxy@@UAEPAXI@Z ??_GCSineProxy@@UAEPAXI@Z
 0x1010d2c0 func   ??_GCEqualsProxy@@UAEPAXI@Z ??_GCEqualsProxy@@UAEPAXI@Z
