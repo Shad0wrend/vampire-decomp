@@ -67491,6 +67491,24 @@ void CUnknown101733b0::sub_101733b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10173480 size=0x27
+namespace lifted {
+struct C10173350 { int sub_10173350(); };
+struct C101733d0 { int sub_101733d0(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual bool f10(); };
+}
+struct CUnknown10173480 { int sub_10173480(); };
+int CUnknown10173480::sub_10173480()
+{
+    *(int *)((char *)this + 0x274) = 0;
+    bool t0 = ((lifted::V *)this)->f10();
+    if (t0 != 0) {
+        return ((lifted::C101733d0 *)this)->sub_101733d0(0);
+    }
+    return ((lifted::C10173350 *)this)->sub_10173350();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101734b0 size=0x16
 namespace lifted {
 extern char g_1027b3ec;
