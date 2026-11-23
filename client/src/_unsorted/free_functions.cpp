@@ -33275,6 +33275,20 @@ int sub_100bca50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bcab0 size=0x39
+#include "C_PhysBox.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PhysBox; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PhysBox_CreateObject(int entnum, int serialNum)
+{
+	C_PhysBox *pRet = new C_PhysBox;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bcb50 size=0x92
 #include "RecvTable.h"
 extern RecvTable g_104a3208;
