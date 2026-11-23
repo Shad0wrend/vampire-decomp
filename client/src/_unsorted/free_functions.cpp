@@ -994,6 +994,20 @@ int sub_100061b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006210 size=0x39
+#include "C_WeaponRanged_Animalism.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Animalism; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Animalism_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Animalism *pRet = new C_WeaponRanged_Animalism;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100062b0 size=0x134
 #include "RecvTable.h"
 extern RecvTable g_102dfaa0;
