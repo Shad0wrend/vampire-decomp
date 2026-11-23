@@ -1486,6 +1486,7 @@
 0x10023a30 func   ?vfunc16@C_ItemKEmpireMafiaKey@@UAEHXZ C_ItemKEmpireMafiaKey::vfunc16
 0x10023a40 func   ?vfunc15@C_ItemKEmpireMafiaKey@@UAEHXZ C_ItemKEmpireMafiaKey::vfunc15
 0x10023a50 func   ?sub_10023a50@@YAHXZ sub_10023a50
+0x10023ab0 func   ?_C_ItemKEmpireMafiaKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKEmpireMafiaKey_CreateObject
 0x10023b70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKEmpireMafiaKey@@@Z ClientClassInit
 0x10023c00 func   ?vfunc17@C_ItemKEmpireJezebelKey@@UAEHXZ C_ItemKEmpireJezebelKey::vfunc17
 0x10023c90 func   ??_GC_ItemKEmpireJezebelKey@@UAEPAXI@Z ??_GC_ItemKEmpireJezebelKey@@UAEPAXI@Z
