@@ -3051,6 +3051,20 @@ int sub_1000d750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000d7b0 size=0x5a
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Pistol_Anaconda; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Pistol_Anaconda_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Pistol_Anaconda *pRet = new C_WeaponRanged_Pistol_Anaconda;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1b6c;
