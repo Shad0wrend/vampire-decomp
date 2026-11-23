@@ -1304,6 +1304,7 @@
 0x1001f930 func   ?vfunc16@C_ItemGGarysPhoto@@UAEHXZ C_ItemGGarysPhoto::vfunc16
 0x1001f940 func   ?vfunc15@C_ItemGGarysPhoto@@UAEHXZ C_ItemGGarysPhoto::vfunc15
 0x1001f950 func   ?sub_1001f950@@YAHXZ sub_1001f950
+0x1001f9b0 func   ?_C_ItemGGarysPhoto_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGGarysPhoto_CreateObject
 0x1001fa70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysPhoto@@@Z ClientClassInit
 0x1001fb00 func   ?vfunc17@C_ItemGGarysTape@@UAEHXZ C_ItemGGarysTape::vfunc17
 0x1001fb90 func   ??_GC_ItemGGarysTape@@UAEPAXI@Z ??_GC_ItemGGarysTape@@UAEPAXI@Z
