@@ -1769,6 +1769,7 @@
 0x1002f780 func   ?vfunc16@C_SmokeStack@@UAEHXZ C_SmokeStack::vfunc16
 0x1002f790 func   ?vfunc15@C_SmokeStack@@UAEHXZ C_SmokeStack::vfunc15
 0x1002f7a0 func   ?sub_1002f7a0@@YAHXZ sub_1002f7a0
+0x1002f800 func   ?_C_SmokeStack_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_SmokeStack_CreateObject
 0x1002f8a0 func   ?ClientClassInit@@YAHPAUignored@DT_SmokeStack@@@Z ClientClassInit
 0x1002fcf0 func   ??_GC_SmokeStack@@UAEPAXI@Z ??_GC_SmokeStack@@UAEPAXI@Z
 0x1002fd10 func   ??1C_SmokeStack@@UAE@XZ C_SmokeStack::~C_SmokeStack
