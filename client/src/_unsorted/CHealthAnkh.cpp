@@ -39,6 +39,20 @@ CHealthAnkh *pcd_emit_10051050(const CHealthAnkh &other) { return new CHealthAnk
 // TARGET: ??_GCHealthAnkh@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10051070 size=0x62
+#include "CHealthAnkh.h"
+struct CHealthAnkhOwned { virtual ~CHealthAnkhOwned(); };
+// TARGET: ??1CHealthAnkh@@UAE@XZ
+CHealthAnkh::~CHealthAnkh()
+{
+	sub_101a9ff0(0);
+	delete (CHealthAnkhOwned *)m_unk1a0;
+	delete (CHealthAnkhOwned *)m_unk1a4;
+	delete (CHealthAnkhOwned *)m_unk1a8;
+	delete (CHealthAnkhOwned *)m_unk1ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100511b0 size=0x20
 #include "CHealthAnkh.h"
 namespace lifted {
