@@ -1143,6 +1143,7 @@
 0x1001bfb0 func   ?vfunc16@C_ItemGMilligansBuisnesscard@@UAEHXZ C_ItemGMilligansBuisnesscard::vfunc16
 0x1001bfc0 func   ?vfunc15@C_ItemGMilligansBuisnesscard@@UAEHXZ C_ItemGMilligansBuisnesscard::vfunc15
 0x1001bfd0 func   ?sub_1001bfd0@@YAHXZ sub_1001bfd0
+0x1001c030 func   ?_C_ItemGMilligansBuisnesscard_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGMilligansBuisnesscard_CreateObject
 0x1001c0f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGMilligansBuisnesscard@@@Z ClientClassInit
 0x1001c180 func   ?vfunc17@C_ItemGPishaBook@@UAEHXZ C_ItemGPishaBook::vfunc17
 0x1001c210 func   ??_GC_ItemGPishaBook@@UAEPAXI@Z ??_GC_ItemGPishaBook@@UAEPAXI@Z
