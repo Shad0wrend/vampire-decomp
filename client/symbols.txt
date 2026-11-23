@@ -3454,6 +3454,7 @@
 0x100bbe40 func   ?sub_100bbe40@@YAHXZ sub_100bbe40
 0x100bbea0 func   ?_C_HudCounter_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_HudCounter_CreateObject
 0x100bbf40 func   ?ClientClassInit@@YAHPAUignored@DT_HudCounter@@@Z ClientClassInit
+0x100bc060 func   ??0C_HudCounter@@QAE@XZ C_HudCounter::C_HudCounter
 0x100bc060 func   ?sub_100bc060@CUnknown100bc060@@QAEPAXXZ CUnknown100bc060::sub_100bc060
 0x100bc0b0 func   ??_GC_HudCounter@@UAEPAXI@Z ??_GC_HudCounter@@UAEPAXI@Z
 0x100bc0d0 func   ??1C_HudCounter@@UAE@XZ C_HudCounter::~C_HudCounter
