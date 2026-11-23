@@ -2362,6 +2362,7 @@
 0x1004f830 func   ?sub_1004f830@@YADXZ sub_1004f830
 0x10050100 func   ?sub_10050100@CUtlVector16@@QAEXXZ CUtlVector16::sub_10050100
 0x10050140 func   ?sub_10050140@CUnknown10050140@@QAEXXZ CUnknown10050140::sub_10050140
+0x10050160 func   ??0CFeedBar@@QAE@H@Z CFeedBar::CFeedBar
 0x10050200 func   ??_GCFeedBar@@UAEPAXI@Z ??_GCFeedBar@@UAEPAXI@Z
 0x10050220 func   ??1CFeedBar@@UAE@XZ CFeedBar::~CFeedBar
 0x10050550 func   ?vfunc113@CFeedBar@@UAEXXZ CFeedBar::vfunc113
