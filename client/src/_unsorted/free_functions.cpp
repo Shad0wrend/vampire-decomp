@@ -790,6 +790,20 @@ int sub_10005c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005c80 size=0x39
+#include "C_PlasmaBeamNode.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PlasmaBeamNode; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PlasmaBeamNode_CreateObject(int entnum, int serialNum)
+{
+	C_PlasmaBeamNode *pRet = new C_PlasmaBeamNode;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005d20 size=0xb0
 #include "RecvTable.h"
 extern RecvTable g_102df168;
