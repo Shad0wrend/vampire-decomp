@@ -19821,6 +19821,24 @@ int sub_10079320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100793d0 size=0x26
+namespace lifted {
+extern char g_1022b9bc;
+struct C1007a6d0 { int sub_1007a6d0(); };
+int sub_101d12a1(int);
+}
+int sub_100793d0()
+{
+    int t0 = lifted::sub_101d12a1(0x18);
+    if (t0 != 0) {
+        int t1 = ((lifted::C1007a6d0 *)t0)->sub_1007a6d0();
+        *(int *)((char *)t0) = (int)&lifted::g_1022b9bc;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079480 size=0x63
 struct SEntry { char pad[0x1c]; float a[3]; float b[3]; };
 SEntry *sub_1008d9d0(int, int);
