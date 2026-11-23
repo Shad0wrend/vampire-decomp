@@ -34485,6 +34485,20 @@ int sub_100c68b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6910 size=0x39
+#include "C_BaseTerminal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseTerminal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseTerminal_CreateObject(int entnum, int serialNum)
+{
+	C_BaseTerminal *pRet = new C_BaseTerminal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c69b0 size=0x14f
 #include "RecvTable.h"
 extern RecvTable g_104a5258;
