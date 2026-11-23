@@ -2770,6 +2770,7 @@
 0x1007f940 func   ?vfunc16@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc16
 0x1007f950 func   ?vfunc15@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc15
 0x1007f960 func   ?sub_1007f960@@YAHXZ sub_1007f960
+0x1007f9c0 func   ?_C_BaseViewModel_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseViewModel_CreateObject
 0x1007fa60 func   ?ClientClassInit@@YAHPAUignored@DT_BaseViewModel@@@Z ClientClassInit
 0x1007fbb0 func   ?vfunc17@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc17
 0x1007fce0 func   ?vfunc16@C_Beam@@UAEHXZ C_Beam::vfunc16
