@@ -8313,6 +8313,20 @@ int sub_1001f6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001f730 size=0x5a
+#include "C_ItemGGarysFilm.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGarysFilm; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGarysFilm_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGarysFilm *pRet = new C_ItemGGarysFilm;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f7f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e437c;
