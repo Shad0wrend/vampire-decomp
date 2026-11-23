@@ -4523,6 +4523,20 @@ int sub_10012750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100127b0 size=0x5a
+#include "C_OccultHacking.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultHacking; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultHacking_CreateObject(int entnum, int serialNum)
+{
+	C_OccultHacking *pRet = new C_OccultHacking;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6c08;
