@@ -9141,6 +9141,20 @@ int sub_100223d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10022430 size=0x5a
+#include "C_ItemKMalcomOfficeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMalcomOfficeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMalcomOfficeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMalcomOfficeKey *pRet = new C_ItemKMalcomOfficeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100224f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102dfea0;
