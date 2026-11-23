@@ -772,6 +772,7 @@
 0x10013b30 func   ?vfunc16@C_OccultBloodBuff@@UAEHXZ C_OccultBloodBuff::vfunc16
 0x10013b40 func   ?vfunc15@C_OccultBloodBuff@@UAEHXZ C_OccultBloodBuff::vfunc15
 0x10013b50 func   ?sub_10013b50@@YAHXZ sub_10013b50
+0x10013bb0 func   ?_C_OccultBloodBuff_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_OccultBloodBuff_CreateObject
 0x10013c70 func   ?ClientClassInit@@YAHPAUignored@DT_OccultBloodBuff@@@Z ClientClassInit
 0x10013d00 func   ?vfunc17@C_OccultDodge@@UAEHXZ C_OccultDodge::vfunc17
 0x10013d90 func   ??_GC_OccultDodge@@UAEPAXI@Z ??_GC_OccultDodge@@UAEPAXI@Z
