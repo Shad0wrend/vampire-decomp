@@ -4385,6 +4385,20 @@ int sub_10011fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10012030 size=0x5a
+#include "C_ResearchBook_MG_MELEE.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_MG_MELEE; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_MG_MELEE_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_MG_MELEE *pRet = new C_ResearchBook_MG_MELEE;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100120f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e01e8;
