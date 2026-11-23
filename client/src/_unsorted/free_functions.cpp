@@ -10107,6 +10107,20 @@ int sub_10025850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100258b0 size=0x5a
+#include "C_ItemKOHFrontKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKOHFrontKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKOHFrontKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKOHFrontKey *pRet = new C_ItemKOHFrontKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6e1c;
