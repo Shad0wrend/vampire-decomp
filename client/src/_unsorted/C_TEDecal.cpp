@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10035c90 size=0x39
+#include "C_TEDecal.h"
+// TARGET: ??0C_TEDecal@@QAE@XZ
+C_TEDecal::C_TEDecal()
+{
+	m_vecOrigin.Init(0, 0, 0);
+	m_vecStart.Init(0, 0, 0);
+	m_unk28 = 0;
+	m_unk30 = 0;
+	m_unk2c = 0;
+	m_unk38 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035d10 size=0x18
 #include "C_TEDecal.h"
 namespace lifted {
