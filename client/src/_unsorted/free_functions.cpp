@@ -30354,6 +30354,145 @@ float sub_10098720(float x, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099880 size=0x233
+#include "CVStatList_t.h"
+#include <stdlib.h>
+
+// TARGET: ?sub_10099880@CObfEntity@@QAEMXZ
+
+struct IEngine_104a57d4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual int v44();
+};
+
+struct CGlobals_102b8494
+{
+	char m_pad00[0x10];
+	float frametime;
+};
+
+struct INet_10099880
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	virtual int entindex();
+};
+
+struct CStatOwner_10099880
+{
+	char m_pad0000[0x1178];
+	int m_nLists;
+	CVStatList_t **m_pLists;
+
+	CVStatList_t *FindStatList(int type)
+	{
+		for (int i = 0; i < m_nLists; i++)
+		{
+			if (m_pLists[i]->m_field10 == type)
+				return m_pLists[i];
+		}
+		static CVStatList_t s_default(-1);
+		return &s_default;
+	}
+};
+
+struct IBase0_10099880 { virtual void b0(); };
+struct IBase4_10099880 { virtual void b4(); };
+
+struct CObfEntity : public IBase0_10099880, public IBase4_10099880, public INet_10099880
+{
+	char m_pad000c[0x3f8 - 0x0c];
+	CStatOwner_10099880 *m_pOwnerA;
+	CStatOwner_10099880 *m_pOwnerB;
+	char m_pad0400[0xfd4 - 0x400];
+	bool m_bObfuscated;
+	char m_pad0fd5[0x10bc - 0xfd5];
+	int m_nLastFrame;
+	int m_nLastCheckFrame;
+	float m_flCurrentAlpha;
+	float m_flTargetAlpha;
+
+	float sub_10099880();
+};
+
+extern IEngine_104a57d4 *g_104a57d4;
+extern CGlobals_102b8494 *g_102b8494;
+extern CObfEntity *g_104a0d50;
+extern "C" float sub_100cd9e0(float cur, float target, float dt, float rate);
+
+float CObfEntity::sub_10099880()
+{
+	int frame = g_104a57d4->v44();
+	int level;
+	CStatOwner_10099880 *pOwnerA = m_pOwnerA;
+	if (frame == m_nLastFrame)
+		return m_flCurrentAlpha;
+
+	m_nLastFrame = frame;
+	float dt = (float)(g_102b8494->frametime < 0.1 ? 0.1 : g_102b8494->frametime);
+
+	int interval;
+	if (pOwnerA)
+		interval = 5;
+	else
+		interval = 10;
+	if (m_nLastCheckFrame == -100 || abs(frame - m_nLastCheckFrame) > interval)
+	{
+		if (pOwnerA)
+		{
+			level = pOwnerA->FindStatList(3)->sub_1015dbd0(8);
+		}
+		else if (m_pOwnerB)
+		{
+			level = m_pOwnerB->FindStatList(3)->sub_1015dbd0(8);
+		}
+		else
+		{
+			return 255.0f;
+		}
+
+		if (level > 0 && m_bObfuscated)
+		{
+			if (g_104a0d50->entindex() == entindex())
+			{
+				m_flTargetAlpha = (float)((12 - level) * 16);
+			}
+			else if (!m_pOwnerA)
+			{
+				m_flTargetAlpha = (float)((6 - level) * 32);
+			}
+			else
+			{
+				m_flTargetAlpha = 0.0f;
+			}
+		}
+		else
+		{
+			m_flTargetAlpha = 255.0f;
+		}
+		m_nLastCheckFrame = frame;
+	}
+
+	if (m_flCurrentAlpha != m_flTargetAlpha)
+	{
+		m_flCurrentAlpha = sub_100cd9e0(m_flCurrentAlpha, m_flTargetAlpha, dt, 170.0f);
+	}
+	return m_flCurrentAlpha;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b210 size=0x15
 namespace lifted {
 extern int g_104a0d50;
