@@ -632,6 +632,7 @@
 0x10010930 func   ?vfunc16@C_ResearchBook_LG_COMP@@UAEHXZ C_ResearchBook_LG_COMP::vfunc16
 0x10010940 func   ?vfunc15@C_ResearchBook_LG_COMP@@UAEHXZ C_ResearchBook_LG_COMP::vfunc15
 0x10010950 func   ?sub_10010950@@YAHXZ sub_10010950
+0x100109b0 func   ?_C_ResearchBook_LG_COMP_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ResearchBook_LG_COMP_CreateObject
 0x10010a70 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_LG_COMP@@@Z ClientClassInit
 0x10010b00 func   ?vfunc17@C_ResearchBook_HG_COMP@@UAEHXZ C_ResearchBook_HG_COMP::vfunc17
 0x10010b90 func   ??_GC_ResearchBook_HG_COMP@@UAEPAXI@Z ??_GC_ResearchBook_HG_COMP@@UAEPAXI@Z
