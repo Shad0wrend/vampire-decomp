@@ -786,6 +786,7 @@
 0x10014030 func   ?vfunc16@C_OccultThaumDamage@@UAEHXZ C_OccultThaumDamage::vfunc16
 0x10014040 func   ?vfunc15@C_OccultThaumDamage@@UAEHXZ C_OccultThaumDamage::vfunc15
 0x10014050 func   ?sub_10014050@@YAHXZ sub_10014050
+0x100140b0 func   ?_C_OccultThaumDamage_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_OccultThaumDamage_CreateObject
 0x10014170 func   ?ClientClassInit@@YAHPAUignored@DT_OccultThaumDamage@@@Z ClientClassInit
 0x10014200 func   ?vfunc17@C_OccultPassiveDurations@@UAEHXZ C_OccultPassiveDurations::vfunc17
 0x10014290 func   ??_GC_OccultPassiveDurations@@UAEPAXI@Z ??_GC_OccultPassiveDurations@@UAEPAXI@Z
