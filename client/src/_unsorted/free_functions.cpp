@@ -28956,6 +28956,20 @@ int sub_1008e7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e840 size=0x39
+#include "C_AI_BaseNPCTroika.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_AI_BaseNPCTroika; its ClientClass's initializer stores its address
+IClientNetworkable *_C_AI_BaseNPCTroika_CreateObject(int entnum, int serialNum)
+{
+	C_AI_BaseNPCTroika *pRet = new C_AI_BaseNPCTroika;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e8e0 size=0xad
 #include "RecvTable.h"
 extern RecvTable g_10498e88;
