@@ -7853,6 +7853,20 @@ int sub_1001ddd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001de30 size=0x5a
+#include "C_ItemGWarrLedger1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrLedger1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrLedger1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrLedger1 *pRet = new C_ItemGWarrLedger1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001def0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0fd4;
