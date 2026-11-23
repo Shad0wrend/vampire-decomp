@@ -11808,6 +11808,20 @@ int sub_1002f7a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f800 size=0x39
+#include "C_SmokeStack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_SmokeStack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_SmokeStack_CreateObject(int entnum, int serialNum)
+{
+	C_SmokeStack *pRet = new C_SmokeStack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f8a0 size=0x2a9
 #include "RecvTable.h"
 extern RecvTable g_102eae94;
