@@ -39702,6 +39702,115 @@ int sub_100f07a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0cf0 size=0x1a2
+// TARGET: ?sub_100f0cf0@CHud@@QAEXXZ
+extern "C" void free(void *);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+
+extern void sub_100cd110();
+extern int sub_100cd100();
+extern int sub_100ccde0(int);
+extern char *sub_100ccea0(const char *, ...);
+
+struct wrect_t
+{
+	int left;
+	int right;
+	int top;
+	int bottom;
+};
+
+struct HudSprite_t
+{
+	char szName[128];
+	int field_80;
+	void *pSprite;
+	wrect_t rc;
+};
+
+extern HudSprite_t *sub_101a7c80(const char *, int *);
+extern int g_102bbe60[];
+extern int g_102bbe84;
+extern int g_104cfe68;
+
+class CHud
+{
+public:
+	int m_pad00[8];            // 0x00..0x1c
+	int m_iRes;                // 0x20
+	int m_i24;                 // 0x24
+	int m_i28;                 // 0x28
+	int m_i2c;                 // 0x2c
+	HudSprite_t *m_pNum0;      // 0x30
+	HudSprite_t *m_pNum0s;     // 0x34
+	HudSprite_t *m_pNum0g;     // 0x38
+	HudSprite_t *m_pNum0sg;    // 0x3c
+	int m_pad40[5];            // 0x40..0x50
+	HudSprite_t *m_rghSprites; // 0x54
+	int m_i58;                 // 0x58
+	int m_i5c;                 // 0x5c
+	HudSprite_t *m_pSpriteList;// 0x60
+	int m_iSpriteCount;        // 0x64
+	int m_i68;                 // 0x68
+	int m_iSpriteCountAllRes;  // 0x6c
+
+	void sub_100f0860();
+	void sub_100f09d0();
+	HudSprite_t *sub_100f11d0(const char *);
+	void sub_100f0cf0();
+};
+
+void CHud::sub_100f0cf0()
+{
+	sub_100cd110();
+	int nOldRes = m_iRes;
+	m_i68 = 0;
+	sub_100f0860();
+
+	for (int i = g_102bbe84 - 1; i >= 0; i--)
+	{
+		if (sub_100cd100() >= g_102bbe60[i])
+		{
+			if (nOldRes == g_102bbe60[i] && m_pSpriteList)
+			{
+				sub_100f09d0();
+				return;
+			}
+			free(m_pSpriteList);
+			m_pSpriteList = sub_101a7c80(sub_100ccea0("scripts/%d_hud.txt", g_102bbe60[i]), &m_i68);
+			m_iSpriteCount = m_i68;
+			if (m_pSpriteList)
+			{
+				m_iRes = g_102bbe60[i];
+				break;
+			}
+		}
+	}
+
+	sub_100f0860();
+
+	m_rghSprites = new HudSprite_t[m_iSpriteCount + 300];
+	m_iSpriteCountAllRes = m_iSpriteCount + 300;
+	HudSprite_t *p = m_pSpriteList;
+	if (p)
+	{
+		for (int i = 0; i < m_iSpriteCount; i++, p++)
+		{
+			m_rghSprites[i].rc = p->rc;
+			Q_strncpy(m_rghSprites[i].szName, p->szName, 128);
+		}
+	}
+
+	sub_100f09d0();
+	m_pNum0 = sub_100f11d0("number_0");
+	m_pNum0s = sub_100f11d0("number_0s");
+	m_pNum0g = sub_100f11d0("number_0g");
+	m_pNum0sg = sub_100f11d0("number_0sg");
+	m_i58 = 0;
+	m_i28 = sub_100ccde0(g_104cfe68);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f10c0 size=0x4
 struct CUnknown100f10c0 { float sub_100f10c0(); };
 float CUnknown100f10c0::sub_100f10c0()
