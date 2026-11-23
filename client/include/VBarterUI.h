@@ -9,5 +9,6 @@ class VBarterUI : public CHudElement, public CBasePanel
 {
 public:
 	virtual ~VBarterUI();
+	void sub_1016cdc0();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };
