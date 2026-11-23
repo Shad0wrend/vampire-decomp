@@ -3580,6 +3580,7 @@
 0x100c4ca0 func   ?sub_100c4ca0@@YAHXZ sub_100c4ca0
 0x100c4d00 func   ?_C_Sun_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_Sun_CreateObject
 0x100c4da0 func   ?ClientClassInit@@YAHPAUignored@DT_Sun@@@Z ClientClassInit
+0x100c4eb0 func   ??0C_Sun@@QAE@XZ C_Sun::C_Sun
 0x100c4eb0 func   ?sub_100c4eb0@CUnknown100c4eb0@@QAEPAXXZ CUnknown100c4eb0::sub_100c4eb0
 0x100c4f00 func   ??_GC_Sun@@UAEPAXI@Z ??_GC_Sun@@UAEPAXI@Z
 0x100c4f20 func   ??1C_Sun@@UAE@XZ C_Sun::~C_Sun
