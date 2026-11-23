@@ -110,3 +110,25 @@ class PE:
             out.setdefault(self._cstring(self.image_base + name).lower(), []).extend(entries)
             rva += 20
         return out
+
+    def relocated(self) -> list[int]:
+        """The virtual addresses of the image's absolute-address words (its HIGHLOW base relocations), sorted."""
+        cached = getattr(self, "_relocated", None)
+        if cached is not None:
+            return cached
+        rva, size = self.directories[5] if len(self.directories) > 5 else (0, 0)
+        out = []
+        if rva and size:
+            table = self.read(self.image_base + rva, size)
+            at = 0
+            while at + 8 <= len(table):
+                page, length = struct.unpack_from("<II", table, at)
+                if length < 8:
+                    break
+                for k in range(at + 8, min(at + length, len(table)) - 1, 2):
+                    entry = struct.unpack_from("<H", table, k)[0]
+                    if entry >> 12 == 3:  # IMAGE_REL_BASED_HIGHLOW
+                        out.append(self.image_base + page + (entry & 0xFFF))
+                at += length
+        self._relocated = sorted(out)
+        return self._relocated

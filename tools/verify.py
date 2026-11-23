@@ -22,7 +22,8 @@ config/addresses.txt (and config/aliases.txt):
 - data: every byte of each data item (its address, extent and prefix from the head comments of src/_data/*.asm.in)
   outside its relocated words is the game's, and each relocated word (`DD OFFSET`) reaches, in the game, the game
   address of its symbol (the word's game address comes from the label before it, or from the label after it for an
-  item's prefix word);
+  item's prefix word); and every word of an item that the game's base relocations name is relocated in the object
+  (the game's address kept as a number points, in the build, at whatever the build lays out there);
 - vtables: each slot of a vtable the objects emit runs, in the build, the counterpart of the game's slot (a slot
   config/vtable_patches.txt patches is reported as a `slot` difference all the same: its source is not right yet);
 - exports and imports: names and ordinals equal the game's; each export runs the counterpart of the game's;
@@ -533,7 +534,26 @@ class Verifier:
                 if why:
                     out.append(Difference("data", f"0x{addr:08x}", why))
                     first = first or f"0x{addr:08x}"
+                for site in self._raw_words(obj, addr, extent, prefix, label):
+                    out.append(Difference("data", f"0x{site:08x}", "the game relocates this word, the build holds "
+                                          "it as a number: it points elsewhere in the build"))
+                    first = first or f"0x{site:08x}"
             report.data[stem] = "identical" if first is None else f"differs@{first}"
+
+    def _raw_words(self, obj: _Object, addr: int, extent: int, prefix: int, label: str) -> list[int]:
+        """The game addresses of the words of a data item that the game's base relocations name and the object does
+        not relocate: the game's address kept as a number, which the build's layout gives to something else."""
+        sym = obj.defined(label)
+        if sym is None:
+            return []  # _item_bytes reports it
+        offsets = obj.__dict__.setdefault("_relocated_offsets", {})  # per section: one set for all its items
+        ours = offsets.get(sym.section_number)
+        if ours is None:
+            ours = offsets[sym.section_number] = {r.offset for r in obj.sections[sym.section_number].relocations}
+        relocated = self.orig.relocated()
+        lo = bisect.bisect_left(relocated, addr - prefix)
+        hi = bisect.bisect_left(relocated, addr + extent)
+        return [site for site in relocated[lo:hi] if sym.value + site - addr not in ours]
 
     def _item_bytes(self, obj: _Object, addr: int, extent: int, prefix: int, label: str) -> str | None:
         """Why a data item's bytes outside its relocated words are not the game's, or None."""
