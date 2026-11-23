@@ -7301,6 +7301,20 @@ int sub_1001bfd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001c030 size=0x5a
+#include "C_ItemGMilligansBuisnesscard.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGMilligansBuisnesscard; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGMilligansBuisnesscard_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGMilligansBuisnesscard *pRet = new C_ItemGMilligansBuisnesscard;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c0f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2d28;
