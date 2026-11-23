@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003ee10 size=0x2d
+#include "C_TESmoke.h"
+C_TESmoke::C_TESmoke()
+{
+	m_vecOrigin.Init(0, 0, 0);
+	m_vecDirection.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ee40 size=0x1e
 #include "C_TESmoke.h"
 
