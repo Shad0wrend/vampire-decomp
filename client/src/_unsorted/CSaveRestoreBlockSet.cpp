@@ -277,3 +277,13 @@ void CSaveRestoreBlockSet::vfunc9(void *pHandler)
 		*p = pHandler;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c0c0 size=0x53
+#include "CSaveRestoreBlockSet.h"
+
+// TARGET: CSaveRestoreBlockSet::vfunc10
+void CSaveRestoreBlockSet::vfunc10(void *pHandler)
+{
+	Handlers().FindAndRemove(pHandler);
+}
+// END FUNCTION
