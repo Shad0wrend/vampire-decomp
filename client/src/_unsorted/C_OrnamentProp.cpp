@@ -29,3 +29,10 @@ C_OrnamentProp *pcd_emit_100bdb10(const C_OrnamentProp &other) { return new C_Or
 
 // TARGET: ??_GC_OrnamentProp@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100bdb30 size=0x27
+#include "C_OrnamentProp.h"
+C_OrnamentProp::~C_OrnamentProp()
+{
+}
+// END FUNCTION
