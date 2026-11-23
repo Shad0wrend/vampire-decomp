@@ -32441,6 +32441,20 @@ int sub_100b69e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6a40 size=0x5a
+#include "C_FuncAreaPortalWindow.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FuncAreaPortalWindow; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FuncAreaPortalWindow_CreateObject(int entnum, int serialNum)
+{
+	C_FuncAreaPortalWindow *pRet = new C_FuncAreaPortalWindow;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6b20 size=0xed
 #include "RecvTable.h"
 extern RecvTable g_104a22e8;
