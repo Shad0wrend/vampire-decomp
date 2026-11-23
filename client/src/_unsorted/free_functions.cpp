@@ -49251,6 +49251,19 @@ int __stdcall sub_10139e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a130 size=0x32
+namespace lifted {
+extern char g_1028653c;
+int sub_100f2010(int, int, int, int, int, int, int);
+int sub_10139ef0();
+}
+struct CUnknown1013a130 { int sub_1013a130(int, int, int, int); };
+int CUnknown1013a130::sub_1013a130(int a0, int a1, int a2, int a3)
+{
+    return lifted::sub_100f2010(*(int *)((char *)this + 0x10), a0, a1, a2, (int)&lifted::g_1028653c, lifted::sub_10139ef0(), a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a170 size=0x1d
 namespace lifted {
 struct C100f2670 { int sub_100f2670(int); };

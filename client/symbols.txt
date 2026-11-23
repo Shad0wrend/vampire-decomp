@@ -4610,6 +4610,7 @@
 0x10139d20 func   ??_GCHudTextMessage@@UAEPAXI@Z ??_GCHudTextMessage@@UAEPAXI@Z
 0x10139d40 func   ?vfunc1@CHudTextMessage@@UAEXXZ CHudTextMessage::vfunc1
 0x10139e50 func   ?sub_10139e50@@YGHH@Z sub_10139e50
+0x1013a130 func   ?sub_1013a130@CUnknown1013a130@@QAEHHHHH@Z CUnknown1013a130::sub_1013a130
 0x1013a170 func   ?sub_1013a170@CUnknown1013a170@@QAEHH@Z CUnknown1013a170::sub_1013a170
 0x1013a190 func   ?sub_1013a190@CUnknown1013a190@@QAEPAXXZ CUnknown1013a190::sub_1013a190
 0x1013a1a0 func   ?vfunc2@CTextureScrollMaterialProxy@@UAEXXZ CTextureScrollMaterialProxy::vfunc2
