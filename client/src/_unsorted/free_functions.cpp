@@ -17198,6 +17198,20 @@ int sub_1005d870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d8d0 size=0x5a
+#include "C_HudTimer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_HudTimer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_HudTimer_CreateObject(int entnum, int serialNum)
+{
+	C_HudTimer *pRet = new C_HudTimer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d9b0 size=0xcd
 #include "RecvTable.h"
 extern RecvTable g_103eecbc;
