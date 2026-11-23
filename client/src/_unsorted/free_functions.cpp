@@ -657,6 +657,20 @@ int sub_10003fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10004020 size=0x39
+#include "C_ParticleStorm.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ParticleStorm; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ParticleStorm_CreateObject(int entnum, int serialNum)
+{
+	C_ParticleStorm *pRet = new C_ParticleStorm;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100040c0 size=0x1fb
 #include "RecvTable.h"
 extern RecvTable g_102ded3c;
