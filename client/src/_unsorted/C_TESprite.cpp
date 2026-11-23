@@ -6,7 +6,7 @@
 
 // VC6 writes C_TESprite's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TESprite *pcd_emit_1003f410() { return new C_TESprite; }
+C_TESprite *pcd_emit_1003f410(const C_TESprite &other) { return new C_TESprite(other); }
 
 // TARGET: ??_GC_TESprite@@UAEPAXI@Z
 // END FUNCTION
