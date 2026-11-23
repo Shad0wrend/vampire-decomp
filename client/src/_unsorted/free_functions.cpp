@@ -3465,6 +3465,20 @@ int sub_1000edd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000ee30 size=0x5a
+#include "C_WeaponRanged_Rifle_SuperShotgun.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_SuperShotgun; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_SuperShotgun_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_SuperShotgun *pRet = new C_WeaponRanged_Rifle_SuperShotgun;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000eef0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6970;
