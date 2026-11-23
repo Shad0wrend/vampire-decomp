@@ -4033,6 +4033,7 @@
 0x1010d1b0 func   ??_GCSineProxy@@UAEPAXI@Z ??_GCSineProxy@@UAEPAXI@Z
 0x1010d290 func   ?sub_1010d290@@YAHXZ sub_1010d290
 0x1010d2c0 func   ??_GCEqualsProxy@@UAEPAXI@Z ??_GCEqualsProxy@@UAEPAXI@Z
+0x1010d410 func   ?sub_1010d410@@YAHXZ sub_1010d410
 0x1010d440 func   ??_GCFracProxy@@UAEPAXI@Z ??_GCFracProxy@@UAEPAXI@Z
 0x1010d570 func   ??_GCLinearRampProxy@@UAEPAXI@Z ??_GCLinearRampProxy@@UAEPAXI@Z
 0x1010d690 func   ??_GCUniformNoiseProxy@@UAEPAXI@Z ??_GCUniformNoiseProxy@@UAEPAXI@Z
