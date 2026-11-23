@@ -2131,6 +2131,20 @@ int sub_1000a550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000a5b0 size=0x5a
+#include "C_WeaponMelee_TzimisceMelee.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_TzimisceMelee; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_TzimisceMelee_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_TzimisceMelee *pRet = new C_WeaponMelee_TzimisceMelee;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e21bc;
