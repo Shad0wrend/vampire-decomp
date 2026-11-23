@@ -9463,6 +9463,20 @@ int sub_10023550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100235b0 size=0x5a
+#include "C_ItemKNetcafeOfficeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKNetcafeOfficeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKNetcafeOfficeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKNetcafeOfficeKey *pRet = new C_ItemKNetcafeOfficeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3534;
