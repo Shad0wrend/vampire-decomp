@@ -940,6 +940,7 @@
 0x10017730 func   ?vfunc16@C_ItemGAstrolite@@UAEHXZ C_ItemGAstrolite::vfunc16
 0x10017740 func   ?vfunc15@C_ItemGAstrolite@@UAEHXZ C_ItemGAstrolite::vfunc15
 0x10017750 func   ?sub_10017750@@YAHXZ sub_10017750
+0x100177b0 func   ?_C_ItemGAstrolite_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGAstrolite_CreateObject
 0x10017870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGAstrolite@@@Z ClientClassInit
 0x10017900 func   ?vfunc17@C_ItemGCashBox@@UAEHXZ C_ItemGCashBox::vfunc17
 0x10017990 func   ??_GC_ItemGCashBox@@UAEPAXI@Z ??_GC_ItemGCashBox@@UAEPAXI@Z
