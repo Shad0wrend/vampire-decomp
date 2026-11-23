@@ -25815,6 +25815,18 @@ char sub_100923c0(char a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093e20 size=0x1c
+namespace lifted {
+int sub_100681e0(int);
+struct C10093cf0 { int sub_10093cf0(int); };
+}
+struct CUnknown10093e20 { int sub_10093e20(int); };
+int CUnknown10093e20::sub_10093e20(int a0)
+{
+    return ((lifted::C10093cf0 *)this)->sub_10093cf0(lifted::sub_100681e0(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093ef0 size=0xd
 struct CUnknown10093ef0 { int sub_10093ef0(int); };
 int CUnknown10093ef0::sub_10093ef0(int a0)
