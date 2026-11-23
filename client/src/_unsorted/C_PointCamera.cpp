@@ -25,7 +25,7 @@ int C_PointCamera::vfunc15()
 
 // VC6 writes C_PointCamera's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_PointCamera *pcd_emit_100060d0() { return new C_PointCamera; }
+C_PointCamera *pcd_emit_100060d0(const C_PointCamera &other) { return new C_PointCamera(other); }
 
 // TARGET: ??_GC_PointCamera@@UAEPAXI@Z
 // END FUNCTION

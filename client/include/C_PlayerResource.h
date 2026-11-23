@@ -7,6 +7,7 @@
 class C_PlayerResource : public C_BaseEntity
 {
 public:
+	C_PlayerResource();
 	virtual ~C_PlayerResource();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_PlayerResource's own function

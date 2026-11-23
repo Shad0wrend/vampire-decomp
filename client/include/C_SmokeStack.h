@@ -8,6 +8,7 @@
 class C_SmokeStack : public C_BaseParticleEntity, public IPrototypeAppEffect
 {
 public:
+	C_SmokeStack();
 	virtual ~C_SmokeStack();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_SmokeStack's own function

@@ -25,7 +25,7 @@ int C_EntityFlame::vfunc15()
 
 // VC6 writes C_EntityFlame's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_EntityFlame *pcd_emit_100b6610() { return new C_EntityFlame; }
+C_EntityFlame *pcd_emit_100b6610(const C_EntityFlame &other) { return new C_EntityFlame(other); }
 
 // TARGET: ??_GC_EntityFlame@@UAEPAXI@Z
 // END FUNCTION

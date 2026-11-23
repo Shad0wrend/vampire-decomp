@@ -25,7 +25,7 @@ int C_SteamJet::vfunc15()
 
 // VC6 writes C_SteamJet's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_SteamJet *pcd_emit_10030fd0() { return new C_SteamJet; }
+C_SteamJet *pcd_emit_10030fd0(const C_SteamJet &other) { return new C_SteamJet(other); }
 
 // TARGET: ??_GC_SteamJet@@UAEPAXI@Z
 // END FUNCTION

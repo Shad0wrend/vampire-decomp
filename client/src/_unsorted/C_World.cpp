@@ -33,7 +33,7 @@ int C_World::vfunc66()
 
 // VC6 writes C_World's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_World *pcd_emit_100ca630() { return new C_World; }
+C_World *pcd_emit_100ca630(const C_World &other) { return new C_World(other); }
 
 // TARGET: ??_GC_World@@UAEPAXI@Z
 // END FUNCTION

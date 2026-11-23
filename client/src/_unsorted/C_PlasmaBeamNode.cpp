@@ -6,7 +6,7 @@
 
 // VC6 writes C_PlasmaBeamNode's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_PlasmaBeamNode *pcd_emit_100057a0() { return new C_PlasmaBeamNode; }
+C_PlasmaBeamNode *pcd_emit_100057a0(const C_PlasmaBeamNode &other) { return new C_PlasmaBeamNode(other); }
 
 // TARGET: ??_GC_PlasmaBeamNode@@UAEPAXI@Z
 // END FUNCTION

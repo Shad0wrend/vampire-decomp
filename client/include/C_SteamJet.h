@@ -8,6 +8,7 @@
 class C_SteamJet : public C_BaseParticleEntity, public IPrototypeAppEffect
 {
 public:
+	C_SteamJet();
 	virtual ~C_SteamJet();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_SteamJet's own function

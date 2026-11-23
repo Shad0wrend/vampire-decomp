@@ -6,6 +6,7 @@
 class C_WeaponMelee_Torch : public C_BaseCombatWeapon
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	C_WeaponMelee_Torch();
     // the base slots the game's vtable fills with C_WeaponMelee_Torch's own function
     virtual int vfunc15();
     virtual int vfunc16();

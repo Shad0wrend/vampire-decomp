@@ -36,7 +36,7 @@ int C_WeaponRanged_FlameThrower::vfunc15()
 
 // VC6 writes C_WeaponRanged_FlameThrower's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_WeaponRanged_FlameThrower *pcd_emit_10027840() { return new C_WeaponRanged_FlameThrower; }
+C_WeaponRanged_FlameThrower *pcd_emit_10027840(const C_WeaponRanged_FlameThrower &other) { return new C_WeaponRanged_FlameThrower(other); }
 
 // TARGET: ??_GC_WeaponRanged_FlameThrower@@UAEPAXI@Z
 // END FUNCTION

@@ -25,7 +25,7 @@ int C_Func_Dust::vfunc15()
 
 // VC6 writes C_Func_Dust's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_Func_Dust *pcd_emit_100ba960() { return new C_Func_Dust; }
+C_Func_Dust *pcd_emit_100ba960(const C_Func_Dust &other) { return new C_Func_Dust(other); }
 
 // TARGET: ??_GC_Func_Dust@@UAEPAXI@Z
 // END FUNCTION

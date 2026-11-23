@@ -25,7 +25,7 @@ int C_Corpse::vfunc15()
 
 // VC6 writes C_Corpse's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_Corpse *pcd_emit_10002dc0() { return new C_Corpse; }
+C_Corpse *pcd_emit_10002dc0(const C_Corpse &other) { return new C_Corpse(other); }
 
 // TARGET: ??_GC_Corpse@@UAEPAXI@Z
 // END FUNCTION

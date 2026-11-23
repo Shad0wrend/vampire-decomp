@@ -25,7 +25,7 @@ int C_RopeKeyframe::vfunc15()
 
 // VC6 writes C_RopeKeyframe's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_RopeKeyframe *pcd_emit_100bf130() { return new C_RopeKeyframe; }
+C_RopeKeyframe *pcd_emit_100bf130(const C_RopeKeyframe &other) { return new C_RopeKeyframe(other); }
 
 // TARGET: ??_GC_RopeKeyframe@@UAEPAXI@Z
 // END FUNCTION

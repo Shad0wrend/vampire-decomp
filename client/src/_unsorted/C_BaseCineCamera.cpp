@@ -25,7 +25,7 @@ int C_BaseCineCamera::vfunc15()
 
 // VC6 writes C_BaseCineCamera's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseCineCamera *pcd_emit_10001900() { return new C_BaseCineCamera; }
+C_BaseCineCamera *pcd_emit_10001900(const C_BaseCineCamera &other) { return new C_BaseCineCamera(other); }
 
 // TARGET: ??_GC_BaseCineCamera@@UAEPAXI@Z
 // END FUNCTION

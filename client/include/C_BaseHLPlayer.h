@@ -6,6 +6,7 @@
 class C_BaseHLPlayer : public C_BasePlayer
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	C_BaseHLPlayer();
     // the base slots the game's vtable fills with C_BaseHLPlayer's own function
     virtual int vfunc15();
     virtual int vfunc16();

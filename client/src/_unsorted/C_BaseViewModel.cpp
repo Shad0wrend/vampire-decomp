@@ -14,7 +14,7 @@ int C_BaseViewModel::vfunc86()
 
 // VC6 writes C_BaseViewModel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseViewModel *pcd_emit_1007f6f0() { return new C_BaseViewModel; }
+C_BaseViewModel *pcd_emit_1007f6f0(const C_BaseViewModel &other) { return new C_BaseViewModel(other); }
 
 // TARGET: ??_GC_BaseViewModel@@UAEPAXI@Z
 // END FUNCTION

@@ -25,7 +25,7 @@ int C_Func_LOD::vfunc15()
 
 // VC6 writes C_Func_LOD's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_Func_LOD *pcd_emit_100bb6f0() { return new C_Func_LOD; }
+C_Func_LOD *pcd_emit_100bb6f0(const C_Func_LOD &other) { return new C_Func_LOD(other); }
 
 // TARGET: ??_GC_Func_LOD@@UAEPAXI@Z
 // END FUNCTION

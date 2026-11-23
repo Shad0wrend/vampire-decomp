@@ -25,7 +25,7 @@ int C_HudCounter::vfunc15()
 
 // VC6 writes C_HudCounter's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_HudCounter *pcd_emit_100bc0b0() { return new C_HudCounter; }
+C_HudCounter *pcd_emit_100bc0b0(const C_HudCounter &other) { return new C_HudCounter(other); }
 
 // TARGET: ??_GC_HudCounter@@UAEPAXI@Z
 // END FUNCTION

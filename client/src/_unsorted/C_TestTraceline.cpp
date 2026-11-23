@@ -25,7 +25,7 @@ int C_TestTraceline::vfunc15()
 
 // VC6 writes C_TestTraceline's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TestTraceline *pcd_emit_10041740() { return new C_TestTraceline; }
+C_TestTraceline *pcd_emit_10041740(const C_TestTraceline &other) { return new C_TestTraceline(other); }
 
 // TARGET: ??_GC_TestTraceline@@UAEPAXI@Z
 // END FUNCTION

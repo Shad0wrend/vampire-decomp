@@ -7,6 +7,7 @@
 class C_DisciplineProjectile : public C_VampireProjectile
 {
 public:
+	C_DisciplineProjectile();
 	virtual ~C_DisciplineProjectile();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_DisciplineProjectile's own function

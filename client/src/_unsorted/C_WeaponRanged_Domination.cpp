@@ -6,7 +6,7 @@
 
 // VC6 writes C_WeaponRanged_Domination's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_WeaponRanged_Domination *pcd_emit_100070b0() { return new C_WeaponRanged_Domination; }
+C_WeaponRanged_Domination *pcd_emit_100070b0(const C_WeaponRanged_Domination &other) { return new C_WeaponRanged_Domination(other); }
 
 // TARGET: ??_GC_WeaponRanged_Domination@@UAEPAXI@Z
 // END FUNCTION

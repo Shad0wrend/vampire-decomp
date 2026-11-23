@@ -5,5 +5,8 @@
 
 class C_WeaponRanged_Domination : public C_WeaponRanged_Targeted
 {
+public:
+	C_WeaponRanged_Domination();
+private:
 	char m_pad0014[0x9a8 - 0x14];
 };

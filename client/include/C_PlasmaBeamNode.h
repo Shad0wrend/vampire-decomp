@@ -7,6 +7,7 @@
 class C_PlasmaBeamNode : public C_BaseEntity
 {
 public:
+	C_PlasmaBeamNode();
 	virtual ~C_PlasmaBeamNode();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_PlasmaBeamNode's own function

@@ -8,6 +8,7 @@
 class C_BreakableSurface : public C_BaseEntity, public IBrushRenderer
 {
 public:
+	C_BreakableSurface();
 	virtual ~C_BreakableSurface();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BreakableSurface's own function

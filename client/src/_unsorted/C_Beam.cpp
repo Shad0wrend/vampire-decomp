@@ -25,7 +25,7 @@ int C_Beam::vfunc15()
 
 // VC6 writes C_Beam's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_Beam *pcd_emit_10080300() { return new C_Beam; }
+C_Beam *pcd_emit_10080300(const C_Beam &other) { return new C_Beam(other); }
 
 // TARGET: ??_GC_Beam@@UAEPAXI@Z
 // END FUNCTION

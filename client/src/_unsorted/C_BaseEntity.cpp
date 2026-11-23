@@ -297,7 +297,7 @@ int C_BaseEntity::vfunc15()
 
 // VC6 writes C_BaseEntity's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseEntity *pcd_emit_1009dda0() { return new C_BaseEntity; }
+C_BaseEntity *pcd_emit_1009dda0(const C_BaseEntity &other) { return new C_BaseEntity(other); }
 
 // TARGET: ??_GC_BaseEntity@@UAEPAXI@Z
 // END FUNCTION
