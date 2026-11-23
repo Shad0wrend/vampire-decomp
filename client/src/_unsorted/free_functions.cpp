@@ -6657,6 +6657,20 @@ int sub_10019cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019d30 size=0x5a
+#include "C_ItemGJumblesFlyer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGJumblesFlyer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGJumblesFlyer_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGJumblesFlyer *pRet = new C_ItemGJumblesFlyer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019df0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0afc;
