@@ -19803,6 +19803,24 @@ void CUnk10427970::sub_100792d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079320 size=0x26
+namespace lifted {
+extern char g_1022b9a0;
+struct C1007a6d0 { int sub_1007a6d0(); };
+int sub_101d12a1(int);
+}
+int sub_10079320()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C1007a6d0 *)t0)->sub_1007a6d0();
+        *(int *)((char *)t0) = (int)&lifted::g_1022b9a0;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079480 size=0x63
 struct SEntry { char pad[0x1c]; float a[3]; float b[3]; };
 SEntry *sub_1008d9d0(int, int);
