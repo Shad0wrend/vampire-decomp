@@ -6,7 +6,6 @@ class C_RecipientFilter : public IRecipientFilter
 {
 public:
 	C_RecipientFilter();
-	virtual ~C_RecipientFilter() {}
 	void sub_100bdeb0();
 	bool m_bReliable;
 	bool m_bInitMessage;
