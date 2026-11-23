@@ -9233,6 +9233,20 @@ int sub_100228d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10022930 size=0x5a
+#include "C_ItemKLuckyStarMurderKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKLuckyStarMurderKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKLuckyStarMurderKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKLuckyStarMurderKey *pRet = new C_ItemKLuckyStarMurderKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100229f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3f34;
