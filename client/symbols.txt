@@ -2083,6 +2083,7 @@
 0x1003dd40 func   ?vfunc9@C_TEParticleSystem@@UAEHXZ C_TEParticleSystem::vfunc9
 0x1003dd50 func   ?vfunc8@C_TEParticleSystem@@UAEHXZ C_TEParticleSystem::vfunc8
 0x1003dd60 func   ?sub_1003dd60@@YAHXZ sub_1003dd60
+0x1003ddc0 func   ?_C_TEParticleSystem_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_TEParticleSystem_CreateObject
 0x1003de60 func   ?ClientClassInit@@YAHPAUignored@DT_TEParticleSystem@@@Z ClientClassInit
 0x1003df30 func   ??_GC_TEParticleSystem@@UAEPAXI@Z ??_GC_TEParticleSystem@@UAEPAXI@Z
 0x1003df50 func   ?sub_1003df50@CUnknown1003df50@@QAEPAXH@Z CUnknown1003df50::sub_1003df50
