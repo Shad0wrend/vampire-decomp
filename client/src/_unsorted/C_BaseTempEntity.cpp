@@ -95,6 +95,17 @@ int C_BaseTempEntity::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c340 size=0x2c
+#include "C_BaseTempEntity.h"
+extern C_BaseTempEntity *g_102ead6c;
+C_BaseTempEntity::C_BaseTempEntity()
+{
+	m_pNext = g_102ead6c;
+	g_102ead6c = this;
+	m_unkC = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c3c0 size=0x1
 #include "C_BaseTempEntity.h"
 void C_BaseTempEntity::vfunc13()
