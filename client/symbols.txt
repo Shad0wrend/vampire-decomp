@@ -891,6 +891,7 @@
 0x100165b0 func   ?vfunc16@C_WeaponThrown_Grenade_Frag@@UAEHXZ C_WeaponThrown_Grenade_Frag::vfunc16
 0x100165c0 func   ?vfunc15@C_WeaponThrown_Grenade_Frag@@UAEHXZ C_WeaponThrown_Grenade_Frag::vfunc15
 0x100165d0 func   ?sub_100165d0@@YAHXZ sub_100165d0
+0x10016630 func   ?_C_WeaponThrown_Grenade_Frag_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponThrown_Grenade_Frag_CreateObject
 0x100166f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponThrown_Grenade_Frag@@@Z ClientClassInit
 0x10016780 func   ?vfunc17@C_WeaponThrown_Chang_Energy_Ball@@UAEHXZ C_WeaponThrown_Chang_Energy_Ball::vfunc17
 0x10016810 func   ??_GC_WeaponThrown_Chang_Energy_Ball@@UAEPAXI@Z ??_GC_WeaponThrown_Chang_Energy_Ball@@UAEPAXI@Z
