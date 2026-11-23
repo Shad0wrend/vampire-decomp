@@ -2039,6 +2039,20 @@ int sub_1000a050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000a0b0 size=0x5a
+#include "C_WeaponMelee_Claws_Protean4.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Claws_Protean4; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Claws_Protean4_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Claws_Protean4 *pRet = new C_WeaponMelee_Claws_Protean4;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e12ac;
