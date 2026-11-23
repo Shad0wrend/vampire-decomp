@@ -5737,6 +5737,20 @@ int sub_10016ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10016b30 size=0x5a
+#include "C_WeaponThrown_Chang_Ghost.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponThrown_Chang_Ghost; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponThrown_Chang_Ghost_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponThrown_Chang_Ghost *pRet = new C_WeaponThrown_Chang_Ghost;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016bf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6138;
