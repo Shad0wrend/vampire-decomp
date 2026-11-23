@@ -50398,6 +50398,68 @@ bool CUnknown10248a50::sub_10127f20(int unused, const char *pszBuffer, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127fd0 size=0x12c
+#include "CUnknown10248a50.h"
+#include <stdlib.h>
+#include <string.h>
+
+char *sub_10127df0(const char **ppBuffer, bool *pbWasQuoted);
+
+// TARGET: CUnknown10248a50::sub_10127fd0
+void CUnknown10248a50::sub_10127fd0(const char **ppBuffer, int a)
+{
+	while (1)
+	{
+		bool bWasQuoted;
+		const char *pszToken = sub_10127df0(ppBuffer, 0);
+		if (!pszToken || !*pszToken || !strcmp(pszToken, "}"))
+			break;
+
+		CUnknown10248a50 *pSub = sub_10128270(pszToken);
+		const char *pszValue = sub_10127df0(ppBuffer, &bWasQuoted);
+		if (!strcmp(pszValue, "{"))
+		{
+			pSub->sub_10127fd0(ppBuffer, a);
+		}
+		else
+		{
+			if (pSub->m_pszString)
+				delete [] pSub->m_pszString;
+
+			int len = strlen(pszValue);
+			pSub->m_pszString = new char[len + 1];
+			memcpy(pSub->m_pszString, pszValue, len + 1);
+
+			if (bWasQuoted)
+			{
+				pSub->m_iDataType = 0;
+			}
+			else
+			{
+				char *pIntEnd;
+				char *pFloatEnd;
+				int iVal = strtol(pszValue, &pIntEnd, 10);
+				float flVal = (float)strtod(pszValue, &pFloatEnd);
+				if (pFloatEnd > pIntEnd)
+				{
+					pSub->m_flValue = flVal;
+					pSub->m_iDataType = 2;
+				}
+				else if (pIntEnd > pszValue)
+				{
+					pSub->m_iValue = iVal;
+					pSub->m_iDataType = 1;
+				}
+				else
+				{
+					pSub->m_iDataType = 0;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128100 size=0x7c
 #include "CKeyValuesX.h"
 #include "CUtlBuffer.h"
