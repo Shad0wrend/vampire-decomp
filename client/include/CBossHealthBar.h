@@ -4,6 +4,8 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+class CBossHealthBarOwned { public: virtual ~CBossHealthBarOwned(); };
+
 class CBossHealthBar : public CManagedHudElement
 {
 public:
@@ -17,5 +19,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc113();
 	// the slots CBossHealthBar adds to its base's vtable: 114-114, vfuncK at slot K
 	virtual void vfunc114();
-	char m_pad0008[0x1c8 - 0x8];
+	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188; int m_unk18c; int m_unk190; int m_unk194; int m_unk198; int m_unk19c; int m_unk1a0; int m_unk1a4; int m_unk1a8; int m_unk1ac; int m_unk1b0; int m_unk1b4; int m_unk1b8; int m_unk1bc;
+	CBossHealthBarOwned *m_pChild1; CBossHealthBarOwned *m_pChild2;
 };
