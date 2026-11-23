@@ -185,6 +185,7 @@
 0x100067b0 func   ?_C_WeaponRanged_Domination_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponRanged_Domination_CreateObject
 0x10006850 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Domination@@@Z ClientClassInit
 0x10006a20 func   ?sub_10006a20@@YAHXZ sub_10006a20
+0x10006a80 func   ?_C_WeaponRanged_Thaumaturgy_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponRanged_Thaumaturgy_CreateObject
 0x10006b20 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Thaumaturgy@@@Z ClientClassInit
 0x10006d60 func   ?sub_10006d60@CUnknown10006d60@@QAEPAXH@Z CUnknown10006d60::sub_10006d60
 0x10006f90 func   ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z
