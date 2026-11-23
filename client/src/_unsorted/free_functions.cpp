@@ -32313,6 +32313,20 @@ int sub_100b50a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5100 size=0x39
+#include "C_FireSmoke.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FireSmoke; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FireSmoke_CreateObject(int entnum, int serialNum)
+{
+	C_FireSmoke *pRet = new C_FireSmoke;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b51a0 size=0x107
 #include "RecvTable.h"
 extern RecvTable g_104a1f1c;
