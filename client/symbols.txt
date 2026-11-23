@@ -6420,6 +6420,7 @@
 0x101a8c90 func   ?sub_101a8c90@@YAXXZ sub_101a8c90
 0x101a8d60 func   ?sub_101a8d60@XRes@@QAEXPAUXInfo@@@Z XRes::sub_101a8d60
 0x101a9460 func   ??_GPanel@vgui2@@UAEPAXI@Z ??_GPanel@vgui2@@UAEPAXI@Z
+0x101a9530 func   ??0Panel@vgui2@@QAE@PAV01@PBD@Z vgui2::Panel::Panel
 0x101a9780 func   ??1Panel@vgui2@@UAE@XZ vgui2::Panel::~Panel
 0x101a9870 func   ?vfunc19@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc19
 0x101a9950 func   ?sub_101a9950@CUnknown101a9950@@QAEHHHHH@Z CUnknown101a9950::sub_101a9950
