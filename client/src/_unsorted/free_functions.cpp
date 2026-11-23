@@ -76227,6 +76227,164 @@ void sub_10198e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b030 size=0x33c
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+// TARGET: ?sub_1019b030@CViewRender_1019b030@@QAEXMABUCViewSetup_1019b030@@@Z
+
+struct CViewSetup_1019b030
+{
+	int m_00[5];
+	bool clearColor; // 0x14
+	bool clearDepth; // 0x15
+	char m_pad16[0x94 - 0x16];
+};
+
+struct IHWConfig_104a57f0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9();
+	virtual bool v10();
+};
+
+struct IMaterialVar_1019b030
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void SetVecValue(float x, float y, float z);
+};
+
+struct IMaterial_1019b030
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual IMaterialVar_1019b030 *FindVar(const char *pName, bool *pFound, bool bComplain);
+};
+
+struct IRenderView_104a57e4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13();
+	virtual void v14(const Vector &origin, float intensity);
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22();
+	virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void v27();
+	virtual void v28(int a, int b, const Vector &origin);
+	virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(unsigned char *color, void *pMat);
+};
+
+struct CPlayer_104a0d50
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual const Vector &v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52();
+	virtual const Vector &v53();
+};
+
+struct CViewRender_1019b030
+{
+	char m_pad000[0x388];
+	void *m_p388;
+	char m_pad38c[0x3f0 - 0x38c];
+	IMaterial_1019b030 *m_pFeedMats[8];
+	char m_pad410[0x448 - 0x410];
+	bool m_b448;
+	bool m_b449;
+	bool m_b44a;
+	char m_pad44b;
+	float m_fl44c;
+
+	void sub_1019aed0(bool drawSkybox, const CViewSetup_1019b030 &view);
+	void sub_1019b030(float intensity, const CViewSetup_1019b030 &view);
+};
+
+extern CPlayer_104a0d50 *g_104a0d50;
+extern IHWConfig_104a57f0 *g_104a57f0;
+extern IRenderView_104a57e4 *g_104a57e4;
+extern Vector g_104d4970;
+
+void CViewRender_1019b030::sub_1019b030(float intensity, const CViewSetup_1019b030 &view)
+{
+	ScopeTrace trace("CViewRender::DrawFeedingView", g_102de300);
+
+	m_fl44c = 0.0f;
+	if (!(intensity > 0.0f)) return; CPlayer_104a0d50 *pPlayer = g_104a0d50;
+		if (!(pPlayer)) return; m_b448 = true;
+			m_b449 = g_104a57f0->v10();
+
+			CViewSetup_1019b030 feedView = view;
+			if (intensity < 1.0f)
+			{
+				feedView.clearColor = false;
+				feedView.clearDepth = false;
+				m_b44a = false;
+
+				unsigned char color[4];
+				color[0] = 0;
+				color[1] = 0;
+				color[2] = 0;
+				color[3] = (intensity * 255.0f);
+				g_104a57e4->v32(color, m_p388);
+			}
+			else
+			{
+				intensity = 1.0f;
+				feedView.clearColor = true;
+				feedView.clearDepth = true;
+				m_b44a = true;
+			}
+			m_fl44c = intensity;
+
+			Vector origin = pPlayer->v43();
+			const Vector &offset = pPlayer->v53();
+			origin.z += offset.z;
+			g_104a57e4->v14(origin, intensity);
+			g_104a57e4->v28(0, 1, origin);
+
+			if (m_b449)
+			{
+				Vector lightOrigin = origin;
+				lightOrigin.z = (intensity * 100.0f + origin.z) + 30.0f;
+				bool bFound;
+				m_pFeedMats[0]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[1]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[2]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[3]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[4]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[5]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[6]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[7]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+			}
+
+			sub_1019aed0(false, feedView);
+			g_104a57e4->v14(g_104d4970, 0.0f);
+			m_b448 = false;
+			m_b449 = false;
+			m_b44a = false;
+			m_fl44c = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c230 size=0x1f
 struct CUnk102a9640Obj
 {
