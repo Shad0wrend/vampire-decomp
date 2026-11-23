@@ -25925,6 +25925,18 @@ int CUnknown10095b40::sub_10095b40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095b50 size=0x18
+namespace lifted {
+int sub_1007a4d0(int, int);
+int __stdcall sub_1008f900(int);
+}
+struct CUnknown10095b50 { int sub_10095b50(); };
+int CUnknown10095b50::sub_10095b50()
+{
+    return lifted::sub_1007a4d0(lifted::sub_1008f900(-1), *(int *)((char *)this + 0x564));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095b70 size=0x11
 namespace lifted {
 int sub_1007a500(int);
