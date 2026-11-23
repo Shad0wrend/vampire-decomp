@@ -3538,6 +3538,7 @@
 0x100be330 func   ?_C_RopeKeyframe_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_RopeKeyframe_CreateObject
 0x100be3d0 func   ?ClientClassInit@@YAHPAUignored@DT_RopeKeyframe@@@Z ClientClassInit
 0x100be930 func   ?sub_100be930@@YAHXZ sub_100be930
+0x100bf010 func   ??0C_RopeKeyframe@@QAE@XZ C_RopeKeyframe::C_RopeKeyframe
 0x100bf130 func   ??_GC_RopeKeyframe@@UAEPAXI@Z ??_GC_RopeKeyframe@@UAEPAXI@Z
 0x100bf150 func   ?sub_100bf150@CUnknown100bf150@@QAEPADH@Z CUnknown100bf150::sub_100bf150
 0x100bf170 func   ?sub_100bf170@CUnknown100bf170@@QAEHH@Z CUnknown100bf170::sub_100bf170
