@@ -190,6 +190,7 @@
 0x10006d60 func   ?sub_10006d60@CUnknown10006d60@@QAEPAXH@Z CUnknown10006d60::sub_10006d60
 0x10006dc0 func   ??0C_WeaponRanged_Animalism@@QAE@XZ C_WeaponRanged_Animalism::C_WeaponRanged_Animalism
 0x10006f90 func   ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z
+0x10006fb0 func   ??0C_WeaponRanged_Dementation@@QAE@XZ C_WeaponRanged_Dementation::C_WeaponRanged_Dementation
 0x10007020 func   ??_GC_WeaponRanged_Dementation@@UAEPAXI@Z ??_GC_WeaponRanged_Dementation@@UAEPAXI@Z
 0x100070b0 func   ??_GC_WeaponRanged_Domination@@UAEPAXI@Z ??_GC_WeaponRanged_Domination@@UAEPAXI@Z
 0x10007140 func   ??_GC_WeaponRanged_Thaumaturgy@@UAEPAXI@Z ??_GC_WeaponRanged_Thaumaturgy@@UAEPAXI@Z
