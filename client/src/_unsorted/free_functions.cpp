@@ -189,6 +189,20 @@ int sub_100025c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002620 size=0x5a
+#include "C_CameraAnimated.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_CameraAnimated; its ClientClass's initializer stores its address
+IClientNetworkable *_C_CameraAnimated_CreateObject(int entnum, int serialNum)
+{
+	C_CameraAnimated *pRet = new C_CameraAnimated;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100026a0 size=0x7
 struct CUnknown100026a0 { char sub_100026a0(); };
 char CUnknown100026a0::sub_100026a0()
