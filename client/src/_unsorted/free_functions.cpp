@@ -9923,6 +9923,20 @@ int sub_10024e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10024eb0 size=0x5a
+#include "C_ItemKShrekHubThreeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKShrekHubThreeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKShrekHubThreeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKShrekHubThreeKey *pRet = new C_ItemKShrekHubThreeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024f70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e52b0;
