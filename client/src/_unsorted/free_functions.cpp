@@ -34942,6 +34942,20 @@ int sub_100ca230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca290 size=0x39
+#include "C_World.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_World; its ClientClass's initializer stores its address
+IClientNetworkable *_C_World_CreateObject(int entnum, int serialNum)
+{
+	C_World *pRet = new C_World;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca330 size=0x17b
 #include "RecvTable.h"
 extern RecvTable g_104a545c;
