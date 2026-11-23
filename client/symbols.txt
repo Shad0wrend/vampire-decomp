@@ -3488,6 +3488,7 @@
 0x100bce30 func   ?vfunc16@C_PlayerResource@@UAEHXZ C_PlayerResource::vfunc16
 0x100bce40 func   ?vfunc15@C_PlayerResource@@UAEHXZ C_PlayerResource::vfunc15
 0x100bce50 func   ?sub_100bce50@@YAHXZ sub_100bce50
+0x100bceb0 func   ?_C_PlayerResource_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_PlayerResource_CreateObject
 0x100bcf50 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerResource@@@Z ClientClassInit
 0x100bd2f0 func   ?vfunc135@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc135
 0x100bd300 func   ?vfunc136@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc136
