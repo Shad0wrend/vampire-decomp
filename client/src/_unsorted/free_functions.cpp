@@ -34349,6 +34349,20 @@ int sub_100c4ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4d00 size=0x39
+#include "C_Sun.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Sun; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Sun_CreateObject(int entnum, int serialNum)
+{
+	C_Sun *pRet = new C_Sun;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4da0 size=0xf9
 #include "RecvTable.h"
 extern RecvTable g_104a4f04;
