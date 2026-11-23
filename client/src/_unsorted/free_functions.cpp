@@ -4799,6 +4799,20 @@ int sub_10013650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100136b0 size=0x5a
+#include "C_OccultStrength.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultStrength; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultStrength_CreateObject(int entnum, int serialNum)
+{
+	C_OccultStrength *pRet = new C_OccultStrength;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0ae4;
