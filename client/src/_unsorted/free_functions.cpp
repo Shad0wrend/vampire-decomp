@@ -48969,6 +48969,31 @@ template <> int ClientClassInit<DT_Sprite::ignored>(DT_Sprite::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136350 size=0x67
+namespace lifted {
+extern char g_102c5be8;
+extern char g_104d4970;
+struct C10043230 { int sub_10043230(int); };
+struct C1009fc60 { int sub_1009fc60(int, int); };
+struct C100a2850 { int sub_100a2850(int, int); };
+int sub_100a2bb0(int, int, int);
+struct C10136310 { int sub_10136310(int, int); };
+struct C101365d0 { int sub_101365d0(); };
+}
+int sub_10136350(int a0, int a1, int a2, int a3, char a4)
+{
+    int t0 = lifted::sub_100a2bb0((int)&lifted::g_102c5be8, a0, a1);
+    ((lifted::C10136310 *)t0)->sub_10136310(a2, a3);
+    ((lifted::C10043230 *)((char *)t0 + 0x190))->sub_10043230(0);
+    ((lifted::C100a2850 *)t0)->sub_100a2850((int)&lifted::g_104d4970, (int)&lifted::g_104d4970);
+    ((lifted::C1009fc60 *)t0)->sub_1009fc60(9, 0);
+    if (a4 != 0) {
+        ((lifted::C101365d0 *)t0)->sub_101365d0();
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136580 size=0x17
 struct CUnknown10136580 { int sub_10136580(int, int); };
 int CUnknown10136580::sub_10136580(int a0, int a1)
