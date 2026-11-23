@@ -15,6 +15,16 @@ C_TEDecal::C_TEDecal()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035cd0 size=0x1e
+#include "C_TEDecal.h"
+
+// VC6 writes C_TEDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_TEDecal *pcd_emit_10035cd0(const C_TEDecal &other) { return new C_TEDecal(other); }
+
+// TARGET: ??_GC_TEDecal@@UAEPAXI@Z
+// END FUNCTION
+
 // FUNCTION: 0x10035d10 size=0x18
 #include "C_TEDecal.h"
 namespace lifted {
