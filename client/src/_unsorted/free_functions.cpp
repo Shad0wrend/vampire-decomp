@@ -57232,6 +57232,86 @@ void CPtrList101d6400::sub_10143a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143e30 size=0x12a
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include <stdlib.h>
+#include <string.h>
+
+__declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+extern int __cdecl sub_10143060(const void *a, const void *b);
+
+struct CTrait_10143e30
+{
+	int m_unk0;
+	const char *m_pszName;
+	int m_unk8;
+	int m_nScore;
+
+	const char *GetName() const { return m_pszName ? m_pszName : ""; }
+};
+
+struct CWinnerSet_10143e30
+{
+	int sub_10143740(int idx);
+};
+
+struct CWinnerMgr_10143e30
+{
+	CWinnerSet_10143e30 *sub_101439d0();
+};
+
+extern CWinnerMgr_10143e30 g_105e77f8;
+
+struct CUnknown10143e30
+{
+	int m_unk0;
+	int m_unk4;
+	int m_nTraits;
+	CTrait_10143e30 **m_ppTraits;
+	int m_nWinners[4];
+	int m_nNumWinners;
+	int *m_pOrderings;
+
+	void sub_10143e30();
+};
+
+void CUnknown10143e30::sub_10143e30()
+{
+	delete[] m_pOrderings;
+	m_pOrderings = (int *)::operator new(pcd_stage(m_nTraits) * sizeof(int));
+	for (int i = 0; (int)i < (int)m_nTraits; i++)
+	{
+		m_pOrderings[i] = i;
+	}
+
+	qsort(m_pOrderings, m_nTraits, sizeof(int), sub_10143060);
+
+	memset(m_nWinners, -1, sizeof(m_nWinners));
+	m_nNumWinners = 0;
+
+	CWinnerSet_10143e30 *pSet = g_105e77f8.sub_101439d0();
+	if (!(!pSet)) { for (i = 0; i < 4; i++)
+	{
+		m_nWinners[i] = pSet->sub_10143740(i);
+		if (*(m_nWinners + i) != -1)
+			m_nNumWinners++;
+	}
+
+	DevMsg(3, "[CharGenWiz]: Orderings:\n\n");
+	i = 0; while (i < (int)m_nTraits) { CTrait_10143e30 *pTrait = m_ppTraits[m_pOrderings[i]];
+		long score = pTrait->m_nScore;
+		DevMsg(3, "   Trait: %s (%d)\n", pTrait->GetName(), score); i++; }
+
+	DevMsg(3, "Final Winners:\n\n");
+	for (i = 0; 4 > i; i++)
+	{
+		CTrait_10143e30 *pTrait = m_ppTraits[m_nWinners[i]];
+		unsigned int score = pTrait->m_nScore;
+		DevMsg(3, "   Trait: %s (%d)\n", pTrait->GetName(), score);
+	} }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144490 size=0x19
 struct CUnknown10144490 { void * sub_10144490(int); };
 void * CUnknown10144490::sub_10144490(int a0)
