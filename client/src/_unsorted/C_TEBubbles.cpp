@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEBubbles's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBubbles *pcd_emit_10035650() { return new C_TEBubbles; }
+C_TEBubbles *pcd_emit_10035650(const C_TEBubbles &other) { return new C_TEBubbles(other); }
 
 // TARGET: ??_GC_TEBubbles@@UAEPAXI@Z
 // END FUNCTION
