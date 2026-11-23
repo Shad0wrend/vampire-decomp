@@ -48665,6 +48665,18 @@ int __stdcall sub_10139e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a170 size=0x1d
+namespace lifted {
+struct C100f2670 { int sub_100f2670(int); };
+int sub_10139ef0(int);
+}
+struct CUnknown1013a170 { int sub_1013a170(int); };
+int CUnknown1013a170::sub_1013a170(int a0)
+{
+    return ((lifted::C100f2670 *)(*(int *)((char *)this + 0x10)))->sub_100f2670(lifted::sub_10139ef0(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a190 size=0x10
 namespace lifted {
 extern char g_10247bf8;
