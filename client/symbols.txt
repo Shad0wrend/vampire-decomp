@@ -6583,6 +6583,7 @@
 0x101c95e0 func   ?vfunc168@MenuButton@vgui2@@UAEXH@Z vgui2::MenuButton::vfunc168
 0x101c9620 func   ?vfunc163@MenuButton@vgui2@@UAEXHHHH@Z vgui2::MenuButton::vfunc163
 0x101c9630 func   ?vfunc172@MenuButton@vgui2@@UAEHH@Z vgui2::MenuButton::vfunc172
+0x101c9640 func   ?vfunc87@MenuButton@vgui2@@UAEXH@Z vgui2::MenuButton::vfunc87
 0x101c9690 func   ?vfunc169@MenuButton@vgui2@@UAEXXZ vgui2::MenuButton::vfunc169
 0x101c96d0 func   ?vfunc81@MenuButton@vgui2@@UAEXXZ vgui2::MenuButton::vfunc81
 0x101c9740 func   ?vfunc171@MenuButton@vgui2@@UAEHH@Z vgui2::MenuButton::vfunc171
