@@ -471,6 +471,7 @@
 0x1000cfb0 func   ?vfunc16@C_WeaponRanged_Rifle_RemingtonBach@@UAEHXZ C_WeaponRanged_Rifle_RemingtonBach::vfunc16
 0x1000cfc0 func   ?vfunc15@C_WeaponRanged_Rifle_RemingtonBach@@UAEHXZ C_WeaponRanged_Rifle_RemingtonBach::vfunc15
 0x1000cfd0 func   ?sub_1000cfd0@@YAHXZ sub_1000cfd0
+0x1000d030 func   ?_C_WeaponRanged_Rifle_RemingtonBach_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponRanged_Rifle_RemingtonBach_CreateObject
 0x1000d0f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_RemingtonBach@@@Z ClientClassInit
 0x1000d180 func   ?vfunc17@C_WeaponMelee_Sheriff_Sword@@UAEHXZ C_WeaponMelee_Sheriff_Sword::vfunc17
 0x1000d210 func   ??_GC_WeaponMelee_Sheriff_Sword@@UAEPAXI@Z ??_GC_WeaponMelee_Sheriff_Sword@@UAEPAXI@Z
