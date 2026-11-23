@@ -78655,6 +78655,38 @@ void CUnknown101a7a60::sub_101a7a60(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7f20 size=0x7f
+#include "CHudWeaponSelection.h"
+
+extern int g_10678d44;
+extern char g_104cfe38;
+extern int sub_100cd100();
+
+namespace lifted {
+struct C100f2c40 {
+	void sub_100f2c40(int x, int y, int maxX, const char *str, int r, int g, int b, int font);
+};
+}
+
+#define XRES(x) ((int)(x * ((float)sub_100cd100() / 1024.0)))
+
+void CHudWeaponSelection::sub_101a7f20(const char *str, int x, int y, int w, int h)
+{
+	int ox, oy;
+	sub_101a7e90(g_10678d44, str, ox, oy, w, h);
+	((lifted::C100f2c40 *)&g_104cfe38)->sub_100f2c40(
+		x + ox,
+		y + oy,
+		XRES(50),
+		str,
+		255,
+		255,
+		255,
+		g_10678d44
+	);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8c60 size=0x9
 struct CUnknown101a8c60 { void * sub_101a8c60(); };
 void * CUnknown101a8c60::sub_101a8c60()
