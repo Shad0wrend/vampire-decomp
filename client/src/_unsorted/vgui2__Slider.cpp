@@ -43,6 +43,33 @@ void vgui2::Slider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb8e0 size=0x56
+#include "vgui2__Slider.h"
+
+struct SliderFields_101bb8e0
+{
+	char pad0[0x58];
+	int _nobSize;
+	int pad1;
+	int _nobPos[2];
+	char pad2[0x78 - 0x68];
+	int _range[2];
+	int _value;
+};
+
+// TARGET: vgui2::Slider::vfunc119
+void vgui2::Slider::vfunc119()
+{
+	SliderFields_101bb8e0 *self = (SliderFields_101bb8e0 *)this;
+	int wide, tall;
+	vfunc65(wide, tall);
+
+	float fwide = (float)wide;
+	float fvalue = (float)self->_nobPos[0] / (fwide - self->_nobSize);
+	self->_value = (int)(fvalue * (double)(self->_range[1] - self->_range[0]) + self->_range[0] + 0.5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbaf0 size=0x17
 #include "vgui2__Slider.h"
 namespace lifted {
