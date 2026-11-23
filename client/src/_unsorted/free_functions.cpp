@@ -72919,6 +72919,82 @@ void * CUnknown1017f850::sub_1017f850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101805e0 size=0xf5
+struct VGuiPanelStub
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual ~VGuiPanelStub();
+};
+
+struct Item3c
+{
+	VGuiPanelStub *p00;
+	int unk04;
+	VGuiPanelStub *p08;
+	VGuiPanelStub *p0c[5];
+	int unk20;
+};
+
+class CPanelCleanup101805e0
+{
+public:
+	int pad0[8];
+	VGuiPanelStub *m_pObj20;
+	int m_nCount24;
+	VGuiPanelStub **m_pArr28;
+	int pad2c[2];
+	int m_nCount34;
+	int pad38;
+	Item3c *m_pItems3c;
+	int pad40;
+	VGuiPanelStub *m_pObj44;
+
+	void sub_101805e0();
+};
+
+// TARGET: CPanelCleanup101805e0::sub_101805e0
+void CPanelCleanup101805e0::sub_101805e0()
+{
+	if (m_pArr28)
+	{
+		for (int i = 0; i < m_nCount24; i++)
+		{
+			delete m_pArr28[i];
+		}
+		delete[] m_pArr28;
+		m_pArr28 = 0;
+	}
+
+	delete m_pObj20;
+	m_pObj20 = 0;
+
+	if (m_pItems3c)
+	{
+		for (int i = 0; i < m_nCount34; i++)
+		{
+			Item3c *item = &m_pItems3c[i];
+			delete item->p00;
+			item->p00 = 0;
+			delete item->p08;
+			item->p08 = 0;
+			for (int j = 0; j < 5; j++)
+			{
+				delete item->p0c[j];
+				item->p0c[j] = 0;
+			}
+		}
+		delete[] m_pItems3c;
+		m_pItems3c = 0;
+	}
+
+	delete m_pObj44;
+	m_pObj44 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180cd0 size=0xd
 int sub_10180cd0(int a0)
 {
