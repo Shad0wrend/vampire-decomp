@@ -430,6 +430,20 @@ int sub_10003270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100032d0 size=0x5a
+#include "C_ItemPhysicsHand.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemPhysicsHand; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemPhysicsHand_CreateObject(int entnum, int serialNum)
+{
+	C_ItemPhysicsHand *pRet = new C_ItemPhysicsHand;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003390 size=0xca
 #include "RecvTable.h"
 extern RecvTable g_102de8e0;
