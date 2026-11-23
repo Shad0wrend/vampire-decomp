@@ -4201,6 +4201,20 @@ int sub_100115d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10011630 size=0x5a
+#include "C_ResearchBook_MG_BRAWL.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_MG_BRAWL; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_MG_BRAWL_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_MG_BRAWL *pRet = new C_ResearchBook_MG_BRAWL;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100116f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7850;
