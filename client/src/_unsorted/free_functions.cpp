@@ -32517,6 +32517,20 @@ int sub_100b6e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6ef0 size=0x39
+#include "C_BreakableSurface.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BreakableSurface; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BreakableSurface_CreateObject(int entnum, int serialNum)
+{
+	C_BreakableSurface *pRet = new C_BreakableSurface;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6f90 size=0x15b
 #include "RecvTable.h"
 extern RecvTable g_104a2304;
