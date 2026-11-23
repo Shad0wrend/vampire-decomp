@@ -1332,6 +1332,7 @@
 0x10020330 func   ?vfunc16@C_ItemGRingSerialKiller2@@UAEHXZ C_ItemGRingSerialKiller2::vfunc16
 0x10020340 func   ?vfunc15@C_ItemGRingSerialKiller2@@UAEHXZ C_ItemGRingSerialKiller2::vfunc15
 0x10020350 func   ?sub_10020350@@YAHXZ sub_10020350
+0x100203b0 func   ?_C_ItemGRingSerialKiller2_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGRingSerialKiller2_CreateObject
 0x10020470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSerialKiller2@@@Z ClientClassInit
 0x10020500 func   ?vfunc17@C_ItemGGargoyleBook@@UAEHXZ C_ItemGGargoyleBook::vfunc17
 0x10020590 func   ??_GC_ItemGGargoyleBook@@UAEPAXI@Z ??_GC_ItemGGargoyleBook@@UAEPAXI@Z
