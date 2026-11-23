@@ -72001,6 +72001,19 @@ void XRes::sub_101a8d60(XInfo *info)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9950 size=0x29
+namespace lifted {
+struct C101a9890 { int sub_101a9890(int, int); };
+struct C101a98f0 { int sub_101a98f0(int, int); };
+}
+struct CUnknown101a9950 { int sub_101a9950(int, int, int, int); };
+int CUnknown101a9950::sub_101a9950(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C101a9890 *)this)->sub_101a9890(a0, a1);
+    return ((lifted::C101a98f0 *)this)->sub_101a98f0(a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa220 size=0x4
 struct CUnknown101aa220 { int sub_101aa220(); };
 int CUnknown101aa220::sub_101aa220()
