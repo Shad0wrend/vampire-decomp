@@ -10199,6 +10199,20 @@ int sub_10025d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10025db0 size=0x5a
+#include "C_ItemKChineseTheatreKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKChineseTheatreKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKChineseTheatreKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKChineseTheatreKey *pRet = new C_ItemKChineseTheatreKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e27b0;
