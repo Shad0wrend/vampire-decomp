@@ -8037,6 +8037,20 @@ int sub_1001e7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001e830 size=0x5a
+#include "C_ItemGJunkyardBusinesscard.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGJunkyardBusinesscard; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGJunkyardBusinesscard_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGJunkyardBusinesscard *pRet = new C_ItemGJunkyardBusinesscard;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001e8f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0cd8;
