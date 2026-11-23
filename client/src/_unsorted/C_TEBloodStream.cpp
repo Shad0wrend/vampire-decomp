@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEBloodStream's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBloodStream *pcd_emit_10034670() { return new C_TEBloodStream; }
+C_TEBloodStream *pcd_emit_10034670(const C_TEBloodStream &other) { return new C_TEBloodStream(other); }
 
 // TARGET: ??_GC_TEBloodStream@@UAEPAXI@Z
 // END FUNCTION
