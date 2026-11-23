@@ -4983,6 +4983,20 @@ int sub_10014050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100140b0 size=0x5a
+#include "C_OccultThaumDamage.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultThaumDamage; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultThaumDamage_CreateObject(int entnum, int serialNum)
+{
+	C_OccultThaumDamage *pRet = new C_OccultThaumDamage;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4600;
