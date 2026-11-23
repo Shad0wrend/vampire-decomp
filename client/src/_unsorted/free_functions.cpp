@@ -3695,6 +3695,20 @@ int sub_1000fa50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000fab0 size=0x5a
+#include "C_WeaponLockpick.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponLockpick; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponLockpick_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponLockpick *pRet = new C_WeaponLockpick;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000fb70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5d98;
