@@ -1,6 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100608d0 size=0xc3
+#include "CSignUI.h"
+extern char g_103eee48;
+extern CSignUI *g_103eee40;
+// TARGET: ??0CSignUI@@QAE@H@Z
+CSignUI::CSignUI(int a)
+    : CManagedHudElement(a, (int)"SignUI")
+{
+	vfunc63(0);
+	vfunc62(0);
+	vfunc64(0);
+	sub_101a99f0(0);
+	m_unk178 = 0;
+	m_unk17c = 0;
+	g_103eee48 = 0;
+	m_b180 = 1;
+	m_b1c9 = 0;
+	m_f18c = 0.5f;
+	g_103eee40 = this;
+	m_b181 = 0;
+	m_unk188 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100609a0 size=0x1e
 #include "CSignUI.h"
 
