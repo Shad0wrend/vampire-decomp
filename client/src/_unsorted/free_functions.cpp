@@ -24288,6 +24288,20 @@ int sub_1007e230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e290 size=0x39
+#include "C_BaseGrenade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseGrenade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseGrenade_CreateObject(int entnum, int serialNum)
+{
+	C_BaseGrenade *pRet = new C_BaseGrenade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e330 size=0x136
 #include "RecvTable.h"
 extern RecvTable g_104865bc;
