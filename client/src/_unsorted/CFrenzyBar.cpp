@@ -11,6 +11,17 @@ CFrenzyBar *pcd_emit_10050a80(const CFrenzyBar &other) { return new CFrenzyBar(o
 // TARGET: ??_GCFrenzyBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10050aa0 size=0x42
+#include "CFrenzyBar.h"
+// TARGET: ??1CFrenzyBar@@UAE@XZ
+CFrenzyBar::~CFrenzyBar()
+{
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050cb0 size=0x1a
 #include "CFrenzyBar.h"
 namespace lifted {
