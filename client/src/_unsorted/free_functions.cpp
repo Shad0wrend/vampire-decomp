@@ -329,6 +329,20 @@ int sub_10002be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002c40 size=0x39
+#include "C_Corpse.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Corpse; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Corpse_CreateObject(int entnum, int serialNum)
+{
+	C_Corpse *pRet = new C_Corpse;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002ce0 size=0x8f
 #include "RecvTable.h"
 extern RecvTable g_102de784;
