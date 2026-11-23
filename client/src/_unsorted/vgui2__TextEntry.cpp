@@ -366,6 +366,51 @@ void vgui2::TextEntry::vfunc126()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0d90 size=0x12e
+// TARGET: ?vfunc128@TextEntry@vgui2@@UAEXXZ
+#include "vgui2__TextEntry.h"
+#include "utlvector.h"
+
+struct IVGuiSystem_101b0d90
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual int GetClipboardText(int offset, char *buf, int bufLen);
+};
+
+extern IVGuiSystem_101b0d90 *sub_101ac8e0();
+
+void vgui2::TextEntry::vfunc128()
+{
+	if (!((bool *)this)[0x8a])
+		return;
+	if (((bool *)this)[0x89])
+		return;
+
+	CUtlVector<char> buf;
+	int len = *(int *)((char *)this + 0xac);
+	if (len <= 0)
+		len = 1024;
+
+	buf.EnsureCount(len);
+	int nRead = sub_101ac8e0()->GetClipboardText(0, buf.Base(), len);
+	if (nRead < 1)
+		return;
+
+	vfunc131();
+
+	for (int i = 0; i < nRead - 1; i++)
+	{
+		if (buf[i] == 0)
+			break;
+		vfunc120(buf[i]);
+	}
+
+	((bool *)this)[0xb0] = true;
+	vfunc15(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b13e0 size=0x24
 #include "vgui2__TextEntry.h"
 namespace lifted {
