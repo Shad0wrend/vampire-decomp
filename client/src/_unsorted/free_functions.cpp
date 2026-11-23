@@ -4477,6 +4477,20 @@ int sub_100124d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10012530 size=0x5a
+#include "C_ResearchBook_LG_FIREARMS.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_LG_FIREARMS; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_LG_FIREARMS_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_LG_FIREARMS *pRet = new C_ResearchBook_LG_FIREARMS;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100125f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1144;
