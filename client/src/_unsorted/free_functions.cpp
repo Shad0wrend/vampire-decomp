@@ -34439,6 +34439,20 @@ int sub_100c65c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6620 size=0x5a
+#include "C_VampireProjectile_MingXiaoSpit.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_VampireProjectile_MingXiaoSpit; its ClientClass's initializer stores its address
+IClientNetworkable *_C_VampireProjectile_MingXiaoSpit_CreateObject(int entnum, int serialNum)
+{
+	C_VampireProjectile_MingXiaoSpit *pRet = new C_VampireProjectile_MingXiaoSpit;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6700 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_104a4fa0;
