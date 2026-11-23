@@ -12355,6 +12355,17 @@ int sub_10042fe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043000 size=0x1e
+namespace lifted {
+struct C100433c0 { int sub_100433c0(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual int f2(); };
+}
+int sub_10043000(int a0, int a1)
+{
+    return ((lifted::C100433c0 *)a1)->sub_100433c0(a0 + 4, ((lifted::V *)a1)->f2());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043040 size=0x22
 namespace lifted {
 struct C100442b0 { int sub_100442b0(); };
