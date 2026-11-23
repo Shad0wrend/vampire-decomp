@@ -54706,6 +54706,32 @@ int CUtlRBTree12::sub_10137dd0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137f30 size=0x20a
+#include "CGameStringPool.h"
+#include "utlrbtree.h"
+
+extern "C" char *__cdecl _mbsdup(const char *);
+
+// TARGET: ?sub_10137f30@CStringPool@@QAEPADPBD@Z
+char *CStringPool::sub_10137f30(const char *pszValue)
+{
+	CUtlRBTree<const char *, unsigned short> &strings = *(CUtlRBTree<const char *, unsigned short> *)m_pad0000;
+	char *pszNew;
+	unsigned short i = strings.Find(pszValue);
+	bool bNew = (i == strings.InvalidIndex());
+
+	if (!bNew)
+		return (char *)strings[i];
+
+	pszNew = _mbsdup(pszValue);
+
+	if (bNew)
+		strings.Insert(pszNew);
+
+	return pszNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
