@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEGunshotDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEGunshotDecal *pcd_emit_10038a00() { return new C_TEGunshotDecal; }
+C_TEGunshotDecal *pcd_emit_10038a00(const C_TEGunshotDecal &other) { return new C_TEGunshotDecal(other); }
 
 // TARGET: ??_GC_TEGunshotDecal@@UAEPAXI@Z
 // END FUNCTION
