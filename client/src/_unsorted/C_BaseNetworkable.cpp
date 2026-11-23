@@ -43,6 +43,16 @@ C_BaseNetworkable *pcd_emit_100a38c0(const C_BaseNetworkable &other) { return ne
 // TARGET: ??_GC_BaseNetworkable@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100a38e0 size=0x2a
+#include "C_BaseNetworkable.h"
+int sub_100cc2e0(int);
+C_BaseNetworkable::~C_BaseNetworkable()
+{
+    sub_100a3950();
+    sub_100cc2e0(m_unkc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3ac0 size=0xc
 #include "C_BaseNetworkable.h"
 int C_BaseNetworkable::vfunc0(int a0)
