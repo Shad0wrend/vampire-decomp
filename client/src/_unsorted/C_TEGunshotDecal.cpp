@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100389a0 size=0x57
+#include "C_TEGunshotDecal.h"
+C_TEGunshotDecal::C_TEGunshotDecal()
+{
+    m_v1.Init(); m_v2.Init(); m_v3.Init();
+    m_v4.Init();
+    m_unk4c = 0; m_unk50 = 0;
+    m_unk34 = -1; m_unk38 = 0x43; m_unk3c = 1;
+}
+// TARGET: ??0C_TEGunshotDecal@@QAE@XZ
+// END FUNCTION
+
 // FUNCTION: 0x10038a00 size=0x1e
 #include "C_TEGunshotDecal.h"
 
