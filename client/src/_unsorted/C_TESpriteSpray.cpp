@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003f7f0 size=0x39
+#include "C_TESpriteSpray.h"
+// TARGET: ??0C_TESpriteSpray@@QAE@XZ
+C_TESpriteSpray::C_TESpriteSpray()
+{
+	m_vecOrigin.Init();
+	m_vecDirection.Init();
+	m_nModelIndex = 0;
+	m_nSpeed = 0;
+	m_fNoise = 0;
+	m_nCount = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f830 size=0x1e
 #include "C_TESpriteSpray.h"
 
