@@ -2177,6 +2177,20 @@ int sub_1000a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000a830 size=0x5a
+#include "C_WeaponMelee_WerewolfAttacks.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_WerewolfAttacks; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_WerewolfAttacks_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_WerewolfAttacks *pRet = new C_WeaponMelee_WerewolfAttacks;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a8f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e56d0;
