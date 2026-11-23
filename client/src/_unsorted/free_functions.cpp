@@ -31889,6 +31889,20 @@ int sub_100add50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100addb0 size=0x39
+#include "C_DynamicLight.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_DynamicLight; its ClientClass's initializer stores its address
+IClientNetworkable *_C_DynamicLight_CreateObject(int entnum, int serialNum)
+{
+	C_DynamicLight *pRet = new C_DynamicLight;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ade50 size=0x15b
 #include "RecvTable.h"
 extern RecvTable g_104a12e4;
