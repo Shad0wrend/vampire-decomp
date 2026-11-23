@@ -112,6 +112,7 @@
 0x10003580 func   ?sub_10003580@@YAHXZ sub_10003580
 0x100035e0 func   ?_C_ItemGKeyring_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGKeyring_CreateObject
 0x10003680 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGKeyring@@@Z ClientClassInit
+0x10003710 func   ??0C_ItemGKeyring@@QAE@XZ C_ItemGKeyring::C_ItemGKeyring
 0x10003920 func   ?vfunc17@C_ItemKeyGeneric@@UAEHXZ C_ItemKeyGeneric::vfunc17
 0x10003980 func   ?vfunc16@C_ItemKeyGeneric@@UAEHXZ C_ItemKeyGeneric::vfunc16
 0x10003990 func   ?vfunc15@C_ItemKeyGeneric@@UAEHXZ C_ItemKeyGeneric::vfunc15
