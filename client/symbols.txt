@@ -1318,6 +1318,7 @@
 0x1001fe30 func   ?vfunc16@C_ItemGBertramsCD@@UAEHXZ C_ItemGBertramsCD::vfunc16
 0x1001fe40 func   ?vfunc15@C_ItemGBertramsCD@@UAEHXZ C_ItemGBertramsCD::vfunc15
 0x1001fe50 func   ?sub_1001fe50@@YAHXZ sub_1001fe50
+0x1001feb0 func   ?_C_ItemGBertramsCD_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGBertramsCD_CreateObject
 0x1001ff70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBertramsCD@@@Z ClientClassInit
 0x10020000 func   ?vfunc17@C_ItemGRingSerialKiller1@@UAEHXZ C_ItemGRingSerialKiller1::vfunc17
 0x10020090 func   ??_GC_ItemGRingSerialKiller1@@UAEPAXI@Z ??_GC_ItemGRingSerialKiller1@@UAEPAXI@Z
