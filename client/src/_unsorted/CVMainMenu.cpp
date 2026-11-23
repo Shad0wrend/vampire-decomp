@@ -6,7 +6,7 @@
 
 // VC6 writes CVMainMenu's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CVMainMenu *pcd_emit_10065840() { return new CVMainMenu; }
+CVMainMenu *pcd_emit_10065840(const CVMainMenu &other) { return new CVMainMenu(other); }
 
 // TARGET: ??_GCVMainMenu@@UAEPAXI@Z
 // END FUNCTION

@@ -57,6 +57,13 @@ C_VampireProjectile *pcd_emit_10152010(const C_VampireProjectile &other) { retur
 // TARGET: ??_GC_VampireProjectile@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10152030 size=0x27
+#include "C_VampireProjectile.h"
+C_VampireProjectile::~C_VampireProjectile()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152060 size=0xb
 #include "C_VampireProjectile.h"
 namespace lifted {

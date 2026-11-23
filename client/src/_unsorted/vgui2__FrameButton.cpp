@@ -44,7 +44,7 @@ void vgui2::FrameButton::vfunc87(int a0)
 
 // VC6 writes vgui2::FrameButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::FrameButton *pcd_emit_101b8360() { return new vgui2::FrameButton; }
+vgui2::FrameButton *pcd_emit_101b8360(const vgui2::FrameButton &other) { return new vgui2::FrameButton(other); }
 
 // TARGET: ??_GFrameButton@vgui2@@UAEPAXI@Z
 // END FUNCTION

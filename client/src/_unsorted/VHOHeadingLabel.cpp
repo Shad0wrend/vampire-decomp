@@ -6,7 +6,7 @@
 
 // VC6 writes VHOHeadingLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VHOHeadingLabel *pcd_emit_1017d430() { return new VHOHeadingLabel; }
+VHOHeadingLabel *pcd_emit_1017d430(const VHOHeadingLabel &other) { return new VHOHeadingLabel(other); }
 
 // TARGET: ??_GVHOHeadingLabel@@UAEPAXI@Z
 // END FUNCTION

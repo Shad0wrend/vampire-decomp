@@ -6,7 +6,7 @@
 
 // VC6 writes CBasePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CBasePanel *pcd_emit_10163b10() { return new CBasePanel; }
+CBasePanel *pcd_emit_10163b10(const CBasePanel &other) { return new CBasePanel(other); }
 
 // TARGET: ??_GCBasePanel@@UAEPAXI@Z
 // END FUNCTION

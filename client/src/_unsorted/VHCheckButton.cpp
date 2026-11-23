@@ -6,7 +6,7 @@
 
 // VC6 writes VHCheckButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VHCheckButton *pcd_emit_1017d170() { return new VHCheckButton; }
+VHCheckButton *pcd_emit_1017d170(const VHCheckButton &other) { return new VHCheckButton(other); }
 
 // TARGET: ??_GVHCheckButton@@UAEPAXI@Z
 // END FUNCTION

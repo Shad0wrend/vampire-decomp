@@ -8,6 +8,7 @@ class C_BaseAnimating : public C_BaseEntity
 {
 public:
 	C_BaseAnimating();
+	void sub_100966e0();
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function

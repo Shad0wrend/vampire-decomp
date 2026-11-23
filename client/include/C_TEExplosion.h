@@ -7,6 +7,8 @@
 class C_TEExplosion : public C_TEParticleSystem
 {
 public:
+	C_TEExplosion();
+	Vector m_vecNormal; int m_unk28; int m_unk2c; int m_unk30; int m_unk34; char m_chMaterialType; int m_unk3c; int m_unk40; int m_unk44; unsigned char m_unk48;
 	virtual ~C_TEExplosion();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEExplosion's own function

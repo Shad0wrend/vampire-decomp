@@ -6,7 +6,7 @@
 
 // VC6 writes CSignTextBlock's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CSignTextBlock *pcd_emit_10060400() { return new CSignTextBlock; }
+CSignTextBlock *pcd_emit_10060400(const CSignTextBlock &other) { return new CSignTextBlock(other); }
 
 // TARGET: ??_GCSignTextBlock@@UAEPAXI@Z
 // END FUNCTION

@@ -9,6 +9,8 @@ namespace vgui2
 class Label : public vgui2::Panel
 {
 public:
+	Label(vgui2::Panel *, const char *, const char *);
+	void sub_101aa230(void *);
 	virtual ~Label();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Label's own function
@@ -33,13 +35,13 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc109();
 	virtual void vfunc110();
 	virtual int vfunc111(int);
-	virtual void vfunc112();
+	virtual void vfunc112(int, int);
 	virtual int vfunc113(int);
 	virtual int vfunc114(int);
 	virtual int vfunc115(int);
 	virtual int vfunc116(int);
 	virtual void vfunc117(int);
-	virtual void vfunc118();
+	virtual void vfunc118(int);
 	virtual int vfunc119();
 	virtual short vfunc120(short);
 	virtual int vfunc121(int);

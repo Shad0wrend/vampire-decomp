@@ -6,7 +6,7 @@
 
 // VC6 writes VRButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VRButton *pcd_emit_1017b160() { return new VRButton; }
+VRButton *pcd_emit_1017b160(const VRButton &other) { return new VRButton(other); }
 
 // TARGET: ??_GVRButton@@UAEPAXI@Z
 // END FUNCTION

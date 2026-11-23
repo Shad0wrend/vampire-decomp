@@ -20,14 +20,37 @@ int C_BaseNetworkable::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3870 size=0x41
+#include "C_BaseNetworkable.h"
+// TARGET: ??0C_BaseNetworkable@@QAE@XZ
+C_BaseNetworkable::C_BaseNetworkable()
+{
+	m_unk10 = 1;
+	m_unk12 = 0xffff;
+	m_unk14.v = -1;
+	m_unk18 = 0xffff;
+	m_unkc = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a38c0 size=0x1e
 #include "C_BaseNetworkable.h"
 
 // VC6 writes C_BaseNetworkable's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseNetworkable *pcd_emit_100a38c0() { return new C_BaseNetworkable; }
+C_BaseNetworkable *pcd_emit_100a38c0(const C_BaseNetworkable &other) { return new C_BaseNetworkable(other); }
 
 // TARGET: ??_GC_BaseNetworkable@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x100a38e0 size=0x2a
+#include "C_BaseNetworkable.h"
+int sub_100cc2e0(int);
+C_BaseNetworkable::~C_BaseNetworkable()
+{
+    sub_100a3950();
+    sub_100cc2e0(m_unkc);
+}
 // END FUNCTION
 
 // FUNCTION: 0x100a3ac0 size=0xc

@@ -14,7 +14,7 @@ bool CCenterStringPanel::vfunc25(int a0, int a1)
 
 // VC6 writes CCenterStringPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CCenterStringPanel *pcd_emit_10164c30() { return new CCenterStringPanel; }
+CCenterStringPanel *pcd_emit_10164c30(const CCenterStringPanel &other) { return new CCenterStringPanel(other); }
 
 // TARGET: ??_GCCenterStringPanel@@UAEPAXI@Z
 // END FUNCTION

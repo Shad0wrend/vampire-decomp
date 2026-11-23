@@ -6,7 +6,7 @@
 
 // VC6 writes CFXDiscreetLine's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFXDiscreetLine *pcd_emit_10044f50() { return new CFXDiscreetLine; }
+CFXDiscreetLine *pcd_emit_10044f50(const CFXDiscreetLine &other) { return new CFXDiscreetLine(other); }
 
 // TARGET: ??_GCFXDiscreetLine@@UAEPAXI@Z
 // END FUNCTION

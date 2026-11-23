@@ -1,12 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100410b0 size=0x2a
+#include "C_TEWorldDecal.h"
+C_TEWorldDecal::C_TEWorldDecal()
+{
+	m_vecOrigin.Init();
+	m_unk1c = 0;
+	m_unk20 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100410e0 size=0x1e
 #include "C_TEWorldDecal.h"
 
 // VC6 writes C_TEWorldDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEWorldDecal *pcd_emit_100410e0() { return new C_TEWorldDecal; }
+C_TEWorldDecal *pcd_emit_100410e0(const C_TEWorldDecal &other) { return new C_TEWorldDecal(other); }
 
 // TARGET: ??_GC_TEWorldDecal@@UAEPAXI@Z
 // END FUNCTION

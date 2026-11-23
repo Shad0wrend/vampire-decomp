@@ -6,7 +6,7 @@
 
 // VC6 writes CHudCounterElement's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudCounterElement *pcd_emit_100bbe00() { return new CHudCounterElement; }
+CHudCounterElement *pcd_emit_100bbe00(const CHudCounterElement &other) { return new CHudCounterElement(other); }
 
 // TARGET: ??_GCHudCounterElement@@UAEPAXI@Z
 // END FUNCTION

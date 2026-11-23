@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::MessageBox's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::MessageBox *pcd_emit_101c68c0() { return new vgui2::MessageBox; }
+vgui2::MessageBox *pcd_emit_101c68c0(const vgui2::MessageBox &other) { return new vgui2::MessageBox(other); }
 
 // TARGET: ??_GMessageBox@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::BuildModeDialog's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::BuildModeDialog *pcd_emit_101c3a40() { return new vgui2::BuildModeDialog; }
+vgui2::BuildModeDialog *pcd_emit_101c3a40(const vgui2::BuildModeDialog &other) { return new vgui2::BuildModeDialog(other); }
 
 // TARGET: ??_GBuildModeDialog@vgui2@@UAEPAXI@Z
 // END FUNCTION

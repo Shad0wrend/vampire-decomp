@@ -6,7 +6,7 @@
 
 // VC6 writes VMapIconButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VMapIconButton *pcd_emit_10187000() { return new VMapIconButton; }
+VMapIconButton *pcd_emit_10187000(const VMapIconButton &other) { return new VMapIconButton(other); }
 
 // TARGET: ??_GVMapIconButton@@UAEPAXI@Z
 // END FUNCTION

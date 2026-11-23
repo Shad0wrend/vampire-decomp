@@ -1,12 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10039e90 size=0x37
+#include "C_TEImpact.h"
+C_TEImpact::C_TEImpact()
+{
+	m_vecOrigin.Init(); m_vecNormal.Init(); m_unk2c = 0; m_unk28 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039ed0 size=0x1e
 #include "C_TEImpact.h"
 
 // VC6 writes C_TEImpact's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEImpact *pcd_emit_10039ed0() { return new C_TEImpact; }
+C_TEImpact *pcd_emit_10039ed0(const C_TEImpact &other) { return new C_TEImpact(other); }
 
 // TARGET: ??_GC_TEImpact@@UAEPAXI@Z
 // END FUNCTION

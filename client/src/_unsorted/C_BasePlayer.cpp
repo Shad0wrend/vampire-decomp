@@ -175,6 +175,60 @@ void C_BasePlayer::vfunc169(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8920 size=0x100
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+#include "CBaseHandle.h"
+#include "CBaseEntityList.h"
+#include "utlvector.h"
+
+extern CBaseEntityList *g_102b8e98;
+extern CUtlVector<CBaseHandle> g_1049d8f8;
+extern CUtlVector<CBaseHandle> g_1049d978;
+
+void sub_10186e20(C_BasePlayer *, int);
+
+inline IHandleEntity *CBaseHandle::Get() const
+{
+	if (!IsValid())
+		return 0;
+	const CBaseEntityListEntry *pInfo = &g_102b8e98->m_EntPtrArray[GetEntryIndex()];
+	if (pInfo->m_SerialNumber != GetSerialNumber())
+		return 0;
+	return (IHandleEntity *)pInfo->m_pEntity;
+}
+
+C_BaseCombatWeapon *C_BasePlayer::vfunc165(int slot, int pos)
+{
+	CUtlVector<CBaseHandle> *pList = &g_1049d8f8;
+	if (*(int *)((char *)this + 0x1624) != 0)
+		pList = &g_1049d978;
+
+	if (pos >= 7 || slot >= 6)
+		return 0;
+
+	int bestPos = 7;
+	C_BaseCombatWeapon *pBest = 0;
+
+	for (int i = 0; i < pList->Count(); i++)
+	{
+		C_BaseCombatWeapon *pWeapon = (C_BaseCombatWeapon *)(*pList)[i].Get();
+		if (!pWeapon)
+			continue;
+		if (!pWeapon->vfunc176())
+			continue;
+		if (pWeapon->vfunc220() == slot && pWeapon->vfunc221() <= bestPos && pWeapon->vfunc221() >= pos)
+		{
+			bestPos = pWeapon->vfunc221();
+			pBest = pWeapon;
+		}
+	}
+
+	sub_10186e20(this, 0);
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a99b0 size=0x1e
 #include "C_BasePlayer.h"
 namespace lifted {
@@ -263,5 +317,92 @@ int C_BasePlayer::vfunc196(int a0, int a1, int a2)
     *(int *)((char *)this + 0x188c) = a1;
     *(int *)((char *)this + 0x1890) = a2;
     return a2;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100aa280 size=0x93
+#include "C_BasePlayer.h"
+
+extern unsigned int g_104cfe50;
+
+struct Engine_100aa280
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual void v28();
+	virtual void v29();
+	virtual void v30();
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual double v39(int);
+};
+
+extern Engine_100aa280 *g_104a57d4;
+
+struct Mode_100aa280
+{
+	int a;
+	int b;
+	void sub_100a8f90(C_BasePlayer *pPlayer);
+};
+
+struct PlayerFields_100aa280
+{
+	char pad0[0x15f0];
+	float m_flNextTime;
+	char pad1[0x1614 - 0x15f4];
+	Mode_100aa280 m_Modes[2];
+	int m_iMode;
+};
+
+// TARGET: C_BasePlayer::vfunc191
+void C_BasePlayer::vfunc191()
+{
+	g_104cfe50 &= 0xfefff7ff;
+
+	PlayerFields_100aa280 *self = (PlayerFields_100aa280 *)this;
+	if (!&self->m_Modes[self->m_iMode])
+	{
+		vfunc160(0);
+		return;
+	}
+
+	if (self->m_flNextTime < g_104a57d4->v39(0))
+	{
+		self->m_flNextTime = g_104a57d4->v39(0) + 0.01;
+		self->m_Modes[self->m_iMode].sub_100a8f90(this);
+	}
 }
 // END FUNCTION

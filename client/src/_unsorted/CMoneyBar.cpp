@@ -6,9 +6,17 @@
 
 // VC6 writes CMoneyBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CMoneyBar *pcd_emit_1005f2a0() { return new CMoneyBar; }
+CMoneyBar *pcd_emit_1005f2a0(const CMoneyBar &other) { return new CMoneyBar(other); }
 
 // TARGET: ??_GCMoneyBar@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1005f2c0 size=0x22
+#include "CMoneyBar.h"
+CMoneyBar::~CMoneyBar()
+{
+	sub_101a9ff0(0);
+}
 // END FUNCTION
 
 // FUNCTION: 0x1005f540 size=0x1

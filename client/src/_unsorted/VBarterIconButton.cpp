@@ -6,7 +6,7 @@
 
 // VC6 writes VBarterIconButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VBarterIconButton *pcd_emit_1016ae60() { return new VBarterIconButton; }
+VBarterIconButton *pcd_emit_1016ae60(const VBarterIconButton &other) { return new VBarterIconButton(other); }
 
 // TARGET: ??_GVBarterIconButton@@UAEPAXI@Z
 // END FUNCTION

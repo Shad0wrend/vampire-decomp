@@ -11,4 +11,5 @@ public:
 	virtual float *vfunc2(char flag, int unused) = 0;
 	virtual float *slot3(char bDucked, char b1edc) = 0;
 	virtual float *slot4(int which, char flag) = 0;
+	void * vfunc0(char);	// as in IParticleEffect (transplant)
 };

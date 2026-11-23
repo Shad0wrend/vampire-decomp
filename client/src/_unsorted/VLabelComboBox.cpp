@@ -6,7 +6,7 @@
 
 // VC6 writes VLabelComboBox's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VLabelComboBox *pcd_emit_10176420() { return new VLabelComboBox; }
+VLabelComboBox *pcd_emit_10176420(const VLabelComboBox &other) { return new VLabelComboBox(other); }
 
 // TARGET: ??_GVLabelComboBox@@UAEPAXI@Z
 // END FUNCTION

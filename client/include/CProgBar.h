@@ -8,6 +8,7 @@ class CProgBar : public CManagedHudElement
 {
 public:
 	virtual ~CProgBar();
+	void sub_1005fcb0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CProgBar's own function
 	virtual void vfunc98();

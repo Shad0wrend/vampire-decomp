@@ -29,3 +29,11 @@ C_DynamicProp *pcd_emit_100bd8e0() { return new C_DynamicProp; }
 
 // TARGET: ??_GC_DynamicProp@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100bd900 size=0x27
+#include "C_DynamicProp.h"
+// TARGET: ??1C_DynamicProp@@UAE@XZ
+C_DynamicProp::~C_DynamicProp()
+{
+}
+// END FUNCTION

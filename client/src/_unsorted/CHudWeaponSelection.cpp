@@ -6,7 +6,7 @@
 
 // VC6 writes CHudWeaponSelection's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudWeaponSelection *pcd_emit_101a7660() { return new CHudWeaponSelection; }
+CHudWeaponSelection *pcd_emit_101a7660(const CHudWeaponSelection &other) { return new CHudWeaponSelection(other); }
 
 // TARGET: ??_GCHudWeaponSelection@@UAEPAXI@Z
 // END FUNCTION

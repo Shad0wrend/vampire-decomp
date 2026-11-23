@@ -8,6 +8,10 @@ class CHudElement
 {
 public:
 	bool sub_100f05b0();
+	CHudElement(int a);
+	int m_unk4;
+	int m_unk8;
+	int m_unkc;
 	static void operator delete(void *pMem) { free(pMem); }
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CHudElement adds to its base's vtable: 0-12, vfuncK at slot K

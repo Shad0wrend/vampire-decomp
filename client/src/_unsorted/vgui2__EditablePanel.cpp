@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::EditablePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::EditablePanel *pcd_emit_101b46c0() { return new vgui2::EditablePanel; }
+vgui2::EditablePanel *pcd_emit_101b46c0(const vgui2::EditablePanel &other) { return new vgui2::EditablePanel(other); }
 
 // TARGET: ??_GEditablePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION

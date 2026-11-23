@@ -10,6 +10,11 @@ class Panel : public vgui2::IClientPanel
 {
 public:
 	static void operator delete(void *pMem);
+	Panel(Panel *parent, const char *name);
+	void sub_101ab300(int, int);
+	void sub_101a9ff0(int);
+	int sub_101a99f0(int);
+	int m_unk4[(0x170 - 4) / 4];
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Panel adds to its base's vtable: 0-106, vfuncK at slot K
 	virtual int vfunc0();
@@ -77,7 +82,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc62(char);
 	virtual bool vfunc63(char);
 	virtual bool vfunc64(char);
-	virtual void vfunc65();
+	virtual void vfunc65(int &wide, int &tall);
 	virtual int vfunc66(int);
 	virtual bool vfunc67();
 	virtual int vfunc68();

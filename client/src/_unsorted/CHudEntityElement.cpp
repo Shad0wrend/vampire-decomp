@@ -6,7 +6,7 @@
 
 // VC6 writes CHudEntityElement's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudEntityElement *pcd_emit_100bc2f0() { return new CHudEntityElement; }
+CHudEntityElement *pcd_emit_100bc2f0(const CHudEntityElement &other) { return new CHudEntityElement(other); }
 
 // TARGET: ??_GCHudEntityElement@@UAEPAXI@Z
 // END FUNCTION

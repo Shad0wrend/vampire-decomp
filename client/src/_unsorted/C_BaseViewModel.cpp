@@ -19,6 +19,33 @@ C_BaseViewModel *pcd_emit_1007f6f0(const C_BaseViewModel &other) { return new C_
 // TARGET: ??_GC_BaseViewModel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1007f710 size=0x9c
+#include "C_BaseViewModel.h"
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+void sub_100ab050(C_BaseViewModel *);
+// TARGET: ??1C_BaseViewModel@@UAE@XZ
+C_BaseViewModel::~C_BaseViewModel()
+{
+	sub_100ab050(this);
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMem) {
+			Plat_Free(m_pMem);
+			m_pMem = 0;
+		}
+		m_allocCount = 0;
+	}
+	m_pElements = m_pMem;
+	if (m_growSize != -1) {
+		if (m_pMem) {
+			Plat_Free(m_pMem);
+			m_pMem = 0;
+		}
+		m_allocCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f7b0 size=0x1
 #include "C_BaseViewModel.h"
 void C_BaseViewModel::vfunc21()

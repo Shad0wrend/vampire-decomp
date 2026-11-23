@@ -10,6 +10,7 @@ public:
 	virtual ~C_BaseFlex();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseFlex's own function
+	void sub_100c40a0();
 	virtual int vfunc15();
 	virtual int vfunc16();
 	virtual int vfunc70();

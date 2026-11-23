@@ -6,7 +6,7 @@
 
 // VC6 writes VQQuestButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VQQuestButton *pcd_emit_101880d0() { return new VQQuestButton; }
+VQQuestButton *pcd_emit_101880d0(const VQQuestButton &other) { return new VQQuestButton(other); }
 
 // TARGET: ??_GVQQuestButton@@UAEPAXI@Z
 // END FUNCTION

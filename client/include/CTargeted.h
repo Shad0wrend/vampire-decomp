@@ -14,5 +14,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	virtual bool vfunc107();
 	virtual void vfunc112();
-	char m_pad0008[0x224 - 0x8];
+	char m_pad0008[0x40];
+	struct CTgtObj *m_p1b4; struct CTgtObj *m_p1b8; struct CTgtObj *m_p1bc; struct CTgtObj *m_p1c0; struct CTgtObj *m_p1c4; struct CTgtObj *m_p1c8; struct CTgtObj *m_p1cc;
+	char m_pad01d0[0x50];
+	struct CTgtObj *m_p220;
 };

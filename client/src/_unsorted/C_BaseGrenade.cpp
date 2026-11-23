@@ -74,6 +74,14 @@ void C_BaseGrenade::vfunc21()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f130 size=0x27
+#include "C_BaseGrenade.h"
+// TARGET: ??1C_BaseGrenade@@UAE@XZ
+C_BaseGrenade::~C_BaseGrenade()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f160 size=0x4
 #include "C_BaseGrenade.h"
 int C_BaseGrenade::vfunc152()

@@ -6,7 +6,16 @@
 
 // VC6 writes CProgBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CProgBar *pcd_emit_1005fb20() { return new CProgBar; }
+CProgBar *pcd_emit_1005fb20(const CProgBar &other) { return new CProgBar(other); }
 
 // TARGET: ??_GCProgBar@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1005fc80 size=0x29
+#include "CProgBar.h"
+CProgBar::~CProgBar()
+{
+	sub_101a9ff0(0);
+	sub_1005fcb0();
+}
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes CHudLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudLabel *pcd_emit_10164190() { return new CHudLabel; }
+CHudLabel *pcd_emit_10164190(const CHudLabel &other) { return new CHudLabel(other); }
 
 // TARGET: ??_GCHudLabel@@UAEPAXI@Z
 // END FUNCTION

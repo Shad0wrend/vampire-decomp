@@ -6,7 +6,7 @@
 
 // VC6 writes CVGuiScreenPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CVGuiScreenPanel *pcd_emit_100c8c80() { return new CVGuiScreenPanel; }
+CVGuiScreenPanel *pcd_emit_100c8c80(const CVGuiScreenPanel &other) { return new CVGuiScreenPanel(other); }
 
 // TARGET: ??_GCVGuiScreenPanel@@UAEPAXI@Z
 // END FUNCTION

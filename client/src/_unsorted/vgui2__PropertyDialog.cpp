@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::PropertyDialog's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::PropertyDialog *pcd_emit_101b6e10() { return new vgui2::PropertyDialog; }
+vgui2::PropertyDialog *pcd_emit_101b6e10(const vgui2::PropertyDialog &other) { return new vgui2::PropertyDialog(other); }
 
 // TARGET: ??_GPropertyDialog@vgui2@@UAEPAXI@Z
 // END FUNCTION

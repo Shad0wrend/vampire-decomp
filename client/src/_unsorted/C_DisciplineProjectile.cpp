@@ -30,6 +30,13 @@ C_DisciplineProjectile *pcd_emit_10146550(const C_DisciplineProjectile &other) {
 // TARGET: ??_GC_DisciplineProjectile@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10146570 size=0x27
+#include "C_DisciplineProjectile.h"
+C_DisciplineProjectile::~C_DisciplineProjectile()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101465a0 size=0x1
 #include "C_DisciplineProjectile.h"
 void C_DisciplineProjectile::vfunc143()

@@ -6,7 +6,7 @@
 
 // VC6 writes CVProfPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CVProfPanel *pcd_emit_1018da50() { return new CVProfPanel; }
+CVProfPanel *pcd_emit_1018da50(const CVProfPanel &other) { return new CVProfPanel(other); }
 
 // TARGET: ??_GCVProfPanel@@UAEPAXI@Z
 // END FUNCTION

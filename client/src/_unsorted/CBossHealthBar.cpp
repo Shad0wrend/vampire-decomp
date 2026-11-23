@@ -1,14 +1,48 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1004d4b0 size=0xc6
+#include "CBossHealthBar.h"
+char *sub_1018c870(const char *);
+CBossHealthBar::CBossHealthBar(int a)
+    : CManagedHudElement(a, (int)"BossHP")
+{
+	sub_1004d610();
+	vfunc63(0);
+	sub_101a9890(m_unk178, m_unk17c);
+	sub_101a98f0(m_unk180, m_unk184);
+	m_b198 = 0;
+	m_b19a = 0;
+	m_b199 = 0;
+	m_unk194 = 0xff;
+	m_pChild2 = 0;
+	m_pChild1 = 0;
+	sub_1004d710(0, 0, 0, 1);
+	IFontLike *p = sub_101ac830();
+	m_nFont = p->GetFont(sub_1018c870("Copperplate"));
+	sub_1004d850();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d5a0 size=0x1e
 #include "CBossHealthBar.h"
 
 // VC6 writes CBossHealthBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CBossHealthBar *pcd_emit_1004d5a0() { return new CBossHealthBar; }
+CBossHealthBar *pcd_emit_1004d5a0(const CBossHealthBar &other) { return new CBossHealthBar(other); }
 
 // TARGET: ??_GCBossHealthBar@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1004d5c0 size=0x42
+#include "CBossHealthBar.h"
+// TARGET: ??1CBossHealthBar@@UAE@XZ
+CBossHealthBar::~CBossHealthBar()
+{
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+}
 // END FUNCTION
 
 // FUNCTION: 0x1004d880 size=0x8

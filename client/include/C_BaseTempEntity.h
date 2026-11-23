@@ -38,4 +38,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc13();
 	virtual bool vfunc14();
 	virtual bool vfunc15();
+	C_BaseTempEntity();
+	C_BaseTempEntity *m_pNext;
+	int m_unkC;
 };

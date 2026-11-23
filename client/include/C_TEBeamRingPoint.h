@@ -3,10 +3,15 @@
 // the destructor is slot 10 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "C_TEBaseBeam.h"
+#include "Vector.h"
 
 class C_TEBeamRingPoint : public C_TEBaseBeam
 {
 public:
+	C_TEBeamRingPoint();
+	Vector m_vecCenter;
+	float m_flStartRadius;
+	float m_flEndRadius;
 	virtual ~C_TEBeamRingPoint();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEBeamRingPoint's own function

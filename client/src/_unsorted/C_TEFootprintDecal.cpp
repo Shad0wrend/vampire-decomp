@@ -20,12 +20,20 @@ int C_TEFootprintDecal::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037a70 size=0x3a
+#include "C_TEFootprintDecal.h"
+C_TEFootprintDecal::C_TEFootprintDecal()
+{
+	m_vecOrigin.Init(); m_unk28 = 0; m_unk2c = 0; m_unk30 = 0; m_unk34 = 0; m_unk38 = 0; m_unk40 = 0; m_unk3c = 'C';
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037ab0 size=0x1e
 #include "C_TEFootprintDecal.h"
 
 // VC6 writes C_TEFootprintDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEFootprintDecal *pcd_emit_10037ab0() { return new C_TEFootprintDecal; }
+C_TEFootprintDecal *pcd_emit_10037ab0(const C_TEFootprintDecal &other) { return new C_TEFootprintDecal(other); }
 
 // TARGET: ??_GC_TEFootprintDecal@@UAEPAXI@Z
 // END FUNCTION

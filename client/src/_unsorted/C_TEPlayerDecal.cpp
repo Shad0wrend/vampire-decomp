@@ -1,12 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003e770 size=0x30
+#include "C_TEPlayerDecal.h"
+C_TEPlayerDecal::C_TEPlayerDecal()
+{
+	m_vecOrigin.Init(0, 0, 0);
+	m_vecDir.Init(0, 0, 0);
+	m_unk28 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e7a0 size=0x1e
 #include "C_TEPlayerDecal.h"
 
 // VC6 writes C_TEPlayerDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEPlayerDecal *pcd_emit_1003e7a0() { return new C_TEPlayerDecal; }
+C_TEPlayerDecal *pcd_emit_1003e7a0(const C_TEPlayerDecal &other) { return new C_TEPlayerDecal(other); }
 
 // TARGET: ??_GC_TEPlayerDecal@@UAEPAXI@Z
 // END FUNCTION

@@ -4,9 +4,12 @@
 #pragma once
 #include "C_BaseTempEntity.h"
 
+#include "Vector.h"
 class C_TEMuzzleFlash : public C_BaseTempEntity
 {
 public:
+	C_TEMuzzleFlash();
+	Vector m_vecOrigin; Vector m_vecDirection; float m_flScale; int m_unk2c;
 	virtual ~C_TEMuzzleFlash();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEMuzzleFlash's own function

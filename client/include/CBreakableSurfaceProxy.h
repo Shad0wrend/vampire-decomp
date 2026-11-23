@@ -3,9 +3,10 @@
 #pragma once
 #include "CEntityMaterialProxy.h"
 
+class C_BaseEntity;
 class CBreakableSurfaceProxy : public CEntityMaterialProxy
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CBreakableSurfaceProxy adds to its base's vtable: 4-4, vfuncK at slot K
-    virtual void vfunc4();
+    virtual void vfunc4(C_BaseEntity *pEntity);
 };

@@ -6,7 +6,21 @@
 
 // VC6 writes VItemInfoUI's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VItemInfoUI *pcd_emit_101847f0() { return new VItemInfoUI; }
+VItemInfoUI *pcd_emit_101847f0(const VItemInfoUI &other) { return new VItemInfoUI(other); }
 
 // TARGET: ??_GVItemInfoUI@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10184810 size=0x49
+#include "VItemInfoUI.h"
+typedef vgui2::Label TLabel;
+typedef vgui2::TextEntry TEntry;
+// TARGET: ??1VItemInfoUI@@UAE@XZ
+VItemInfoUI::~VItemInfoUI()
+{
+	sub_10184ba0();
+	((TLabel *)((char *)this + 0x368))->TLabel::~TLabel();
+	((TEntry *)((char *)this + 0x240))->TEntry::~TEntry();
+	((TLabel *)((char *)this + 0x188))->TLabel::~TLabel();
+}
 // END FUNCTION

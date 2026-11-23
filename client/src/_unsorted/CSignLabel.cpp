@@ -6,7 +6,7 @@
 
 // VC6 writes CSignLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CSignLabel *pcd_emit_10060730() { return new CSignLabel; }
+CSignLabel *pcd_emit_10060730(const CSignLabel &other) { return new CSignLabel(other); }
 
 // TARGET: ??_GCSignLabel@@UAEPAXI@Z
 // END FUNCTION

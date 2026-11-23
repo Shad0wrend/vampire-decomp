@@ -1,14 +1,44 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10050160 size=0x9e
+#include "CFeedBar.h"
+CFeedBar::CFeedBar(int a) : CManagedHudElement(a, (int)"FeedBar")
+{
+	sub_10050270();
+	vfunc63(0);
+	sub_101a9890(m_unk178, m_unk17c);
+	sub_101a98f0(m_unk18c, m_unk190);
+	m_b1a4 = 0;
+	m_b1a6 = 0;
+	m_b1a5 = 0;
+	m_unk1a0 = 0xff;
+	m_pChild2 = 0;
+	m_pChild1 = 0;
+	sub_100503d0(15, 0);
+	sub_10050530();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050200 size=0x1e
 #include "CFeedBar.h"
 
 // VC6 writes CFeedBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFeedBar *pcd_emit_10050200() { return new CFeedBar; }
+CFeedBar *pcd_emit_10050200(const CFeedBar &other) { return new CFeedBar(other); }
 
 // TARGET: ??_GCFeedBar@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x10050220 size=0x42
+#include "CFeedBar.h"
+// TARGET: ??1CFeedBar@@UAE@XZ
+CFeedBar::~CFeedBar()
+{
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+}
 // END FUNCTION
 
 // FUNCTION: 0x10050550 size=0x8

@@ -14,5 +14,16 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	virtual bool vfunc107();
 	virtual void vfunc112();
-	char m_pad0008[0x1a8 - 0x8];
+	CAmmoCounter(int a);
+	struct IFontLike { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int GetFont(const char *); };
+	IFontLike *sub_101ac830();
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	void sub_1004bc40();
+	void sub_1004bdd0();
+	int m_unk174; int m_n178; int m_n17c; int m_n180; int m_n184;
+	char m_pad0188[0x198 - 0x188];
+	int m_n198; char m_b19c; char m_b19d; char m_b19e; char m_pad19f;
+	int m_nFont;
+	struct CAmmoCounterChild { virtual ~CAmmoCounterChild(); } *m_pUnk1a4;
 };

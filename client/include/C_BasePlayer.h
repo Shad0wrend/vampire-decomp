@@ -4,6 +4,7 @@
 #pragma once
 #include "C_BaseVCombatCharacter.h"
 
+class C_BaseCombatWeapon;
 class C_BasePlayer : public C_BaseVCombatCharacter
 {
 public:
@@ -38,12 +39,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc157();
 	virtual void vfunc158();
 	virtual void vfunc159();
-	virtual void vfunc160();
+	virtual void vfunc160(int);
 	virtual void vfunc161();
 	virtual void vfunc162();
 	virtual void vfunc163();
 	virtual void vfunc164();
-	virtual void vfunc165();
+	virtual C_BaseCombatWeapon * vfunc165(int, int);
 	virtual void vfunc166();
 	virtual void vfunc167();
 	virtual void vfunc168(int);

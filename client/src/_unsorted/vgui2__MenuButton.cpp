@@ -20,7 +20,7 @@ void vgui2::MenuButton::vfunc167(int a0)
 
 // VC6 writes vgui2::MenuButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::MenuButton *pcd_emit_101c95b0() { return new vgui2::MenuButton; }
+vgui2::MenuButton *pcd_emit_101c95b0(const vgui2::MenuButton &other) { return new vgui2::MenuButton(other); }
 
 // TARGET: ??_GMenuButton@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -55,7 +55,7 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in [`client/`](client/): 11,142 of 16,012 functions (69.6%), 478,593 of 1,690,577 code bytes (28.3%) as of 2026-11-23 |
+| `client.dll` (client game code) | In progress in [`client/`](client/): 11,280 of 16,013 functions (70.4%), 494,254 of 1,690,578 code bytes (29.2%) as of 2026-11-23 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |

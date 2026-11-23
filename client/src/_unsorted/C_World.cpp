@@ -38,6 +38,42 @@ C_World *pcd_emit_100ca630(const C_World &other) { return new C_World(other); }
 // TARGET: ??_GC_World@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100ca650 size=0xf7
+#include "C_World.h"
+#include "CUtlLinkedList12.h"
+extern CUtlLinkedList12 g_104a56cc;
+void sub_10067f70();
+// TARGET: ??1C_World@@UAE@XZ
+C_World::~C_World()
+{
+	int i = g_104a56cc.m_Head;
+	while (i != -1) {
+		if (g_104a56cc.m_pMemory[i].m_pData == this)
+			break;
+		i = g_104a56cc.m_pMemory[i].m_Next;
+	}
+	if (i != -1) {
+		if (g_104a56cc.IsInList(i)) {
+			CUtlLinkedList12Node *pBase = g_104a56cc.m_pMemory;
+			CUtlLinkedList12Node *pOldElem = &pBase[i];
+			if (pOldElem->m_Previous != -1)
+				pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+			else
+				g_104a56cc.m_Head = pOldElem->m_Next;
+			if (pOldElem->m_Next != -1)
+				pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+			else
+				g_104a56cc.m_Tail = pOldElem->m_Previous;
+			pOldElem->m_Previous = pOldElem->m_Next = i;
+			--g_104a56cc.m_ElementCount;
+		}
+		g_104a56cc.m_pMemory[i].m_Next = g_104a56cc.m_FirstFree;
+		g_104a56cc.m_FirstFree = i;
+	}
+	sub_10067f70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca990 size=0x1f
 #include "C_World.h"
 namespace lifted {

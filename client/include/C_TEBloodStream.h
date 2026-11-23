@@ -7,6 +7,8 @@
 class C_TEBloodStream : public C_TEParticleSystem
 {
 public:
+	C_TEBloodStream();
+	Vector m_vecDirection; int m_unk28; int m_unk2c; int m_unk30; int m_unk34; int m_unk38;
 	virtual ~C_TEBloodStream();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEBloodStream's own function

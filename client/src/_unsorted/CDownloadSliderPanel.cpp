@@ -6,7 +6,7 @@
 
 // VC6 writes CDownloadSliderPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CDownloadSliderPanel *pcd_emit_10165b00() { return new CDownloadSliderPanel; }
+CDownloadSliderPanel *pcd_emit_10165b00(const CDownloadSliderPanel &other) { return new CDownloadSliderPanel(other); }
 
 // TARGET: ??_GCDownloadSliderPanel@@UAEPAXI@Z
 // END FUNCTION

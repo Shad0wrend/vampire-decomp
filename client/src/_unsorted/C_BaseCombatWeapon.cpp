@@ -676,6 +676,34 @@ int C_BaseCombatWeapon::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d4d0 size=0x4c
+#include "C_BaseCombatWeapon.h"
+
+class Player_1007d4d0
+{
+public:
+	int sub_100a8ba0(int);
+};
+
+extern Player_1007d4d0 *g_104a0d50;
+
+// TARGET: C_BaseCombatWeapon::vfunc221
+int C_BaseCombatWeapon::vfunc221()
+{
+	Player_1007d4d0 *player = g_104a0d50;
+	if (!player)
+		return -1;
+
+	int slot = vfunc220();
+	int sum = 0;
+	for (int i = 0; i < slot; i++)
+	{
+		sum += player->sub_100a8ba0(i);
+	}
+	return *(int *)((char *)this + 0x79c) - sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d800 size=0x8
 #include "C_BaseCombatWeapon.h"
 namespace lifted {

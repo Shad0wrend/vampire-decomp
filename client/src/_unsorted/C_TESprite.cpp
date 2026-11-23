@@ -1,12 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003f3d0 size=0x3c
+#include "C_TESprite.h"
+C_TESprite::C_TESprite()
+{
+    m_vecOrigin.Init();
+    m_vecB.Init();
+    m_vecC.Init();
+    m_unk28 = 0;
+    m_unk38 = 0;
+}
+// TARGET: ??0C_TESprite@@QAE@XZ
+// END FUNCTION
+
 // FUNCTION: 0x1003f410 size=0x1e
 #include "C_TESprite.h"
 
 // VC6 writes C_TESprite's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TESprite *pcd_emit_1003f410() { return new C_TESprite; }
+C_TESprite *pcd_emit_1003f410(const C_TESprite &other) { return new C_TESprite(other); }
 
 // TARGET: ??_GC_TESprite@@UAEPAXI@Z
 // END FUNCTION

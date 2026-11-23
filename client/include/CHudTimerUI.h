@@ -4,6 +4,8 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+struct CIntM1 { int v; CIntM1() { v = -1; } };
+
 class CHudTimerUI : public CManagedHudElement
 {
 public:
@@ -14,5 +16,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc107();
 	// the slots CHudTimerUI adds to its base's vtable: 114-114, vfuncK at slot K
 	virtual int vfunc114(int, int, int);
-	char m_pad0008[0x1a0 - 0x8];
+	CHudTimerUI(int parent);
+	void sub_1005db50();
+	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188; char m_unk18c; char m_unk18d; char m_unk18e; char m_unk18f; int m_unk190; CIntM1 m_unk194; int m_unk198; int m_unk19c;
 };

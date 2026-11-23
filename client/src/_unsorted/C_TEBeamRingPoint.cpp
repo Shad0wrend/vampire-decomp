@@ -1,12 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10033b60 size=0x2a
+#include "C_TEBeamRingPoint.h"
+C_TEBeamRingPoint::C_TEBeamRingPoint()
+{
+	m_vecCenter.Init(0, 0, 0);
+	m_flStartRadius = 0;
+	m_flEndRadius = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033b90 size=0x1e
 #include "C_TEBeamRingPoint.h"
 
 // VC6 writes C_TEBeamRingPoint's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBeamRingPoint *pcd_emit_10033b90() { return new C_TEBeamRingPoint; }
+C_TEBeamRingPoint *pcd_emit_10033b90(const C_TEBeamRingPoint &other) { return new C_TEBeamRingPoint(other); }
 
 // TARGET: ??_GC_TEBeamRingPoint@@UAEPAXI@Z
 // END FUNCTION

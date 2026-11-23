@@ -3,11 +3,15 @@
 // the destructor is slot 10 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "C_BaseTempEntity.h"
+#include "Vector.h"
 
 class C_TEGunshotDecal : public C_BaseTempEntity
 {
 public:
+	C_TEGunshotDecal();
 	virtual ~C_TEGunshotDecal();
+	Vector m_v1, m_v2, m_v3; int m_unk34;
+	char m_unk38; int m_unk3c; Vector m_v4; int m_unk4c, m_unk50;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEGunshotDecal's own function
 	virtual int vfunc8();

@@ -1,12 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100369f0 size=0x41
+#include "C_TEExplosion.h"
+// TARGET: ??0C_TEExplosion@@QAE@XZ
+C_TEExplosion::C_TEExplosion()
+{
+	m_vecNormal.Init();
+	m_unk28 = 0;
+	m_unk2c = 0;
+	m_unk30 = 0;
+	m_unk34 = 0;
+	m_unk3c = 0;
+	m_unk40 = 0;
+	m_unk44 = 0;
+	m_chMaterialType = 'C';
+	m_unk48 = 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036a40 size=0x1e
 #include "C_TEExplosion.h"
 
 // VC6 writes C_TEExplosion's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEExplosion *pcd_emit_10036a40() { return new C_TEExplosion; }
+C_TEExplosion *pcd_emit_10036a40(const C_TEExplosion &other) { return new C_TEExplosion(other); }
 
 // TARGET: ??_GC_TEExplosion@@UAEPAXI@Z
 // END FUNCTION

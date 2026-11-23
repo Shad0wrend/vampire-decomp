@@ -6,7 +6,7 @@
 
 // VC6 writes CharEditStatsPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CharEditStatsPanel *pcd_emit_1017d730() { return new CharEditStatsPanel; }
+CharEditStatsPanel *pcd_emit_1017d730(const CharEditStatsPanel &other) { return new CharEditStatsPanel(other); }
 
 // TARGET: ??_GCharEditStatsPanel@@UAEPAXI@Z
 // END FUNCTION

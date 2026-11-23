@@ -8,6 +8,7 @@
 class CManagedHudElement : public CBasePanel, public IManagedHudElement
 {
 public:
+	CManagedHudElement(int a, int b);
 	virtual ~CManagedHudElement();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CManagedHudElement adds to its base's vtable: 112-113, vfuncK at slot K

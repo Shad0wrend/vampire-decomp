@@ -1,12 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10056130 size=0x92
+#include "CHudInfoBar.h"
+extern CHudInfoBar *g_103eea74;
+// TARGET: ??0CHudInfoBar@@QAE@H@Z
+CHudInfoBar::CHudInfoBar(int parent) : CManagedHudElement(parent, (int)"InfoBar")
+{
+	m_unk1a4 = 0;
+	sub_100565b0();
+	g_103eea74 = this;
+	vfunc63(0);
+	vfunc64(1);
+	m_unk178 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100561d0 size=0x1e
 #include "CHudInfoBar.h"
 
 // VC6 writes CHudInfoBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudInfoBar *pcd_emit_100561d0() { return new CHudInfoBar; }
+CHudInfoBar *pcd_emit_100561d0(const CHudInfoBar &other) { return new CHudInfoBar(other); }
 
 // TARGET: ??_GCHudInfoBar@@UAEPAXI@Z
 // END FUNCTION

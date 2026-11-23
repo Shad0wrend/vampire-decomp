@@ -4,6 +4,8 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+class CStealthChild { public: virtual ~CStealthChild(); };
+
 class CStealth : public CManagedHudElement
 {
 public:
@@ -13,5 +15,20 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc97();
 	virtual void vfunc98();
 	virtual bool vfunc107();
-	char m_pad0008[0x208 - 0x8];
+	char m_pad0008[0x1b0 - 0x174];
+	CStealthChild *m_p1b0;
+	CStealthChild *m_arr1b4[5];
+	CStealthChild *m_p1c8;
+	int m_unk1cc;
+	CStealthChild *m_p1d0;
+	CStealthChild *m_p1d4;
+	CStealthChild *m_p1d8;
+	CStealthChild *m_p1dc;
+	CStealthChild *m_p1e0;
+	CStealthChild *m_p1e4;
+	CStealthChild *m_arr1e8[4];
+	int m_unk1f8;
+	CStealthChild *m_p1fc;
+	CStealthChild *m_p200;
+	CStealthChild *m_p204;
 };

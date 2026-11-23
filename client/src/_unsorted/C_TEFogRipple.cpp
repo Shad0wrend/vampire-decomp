@@ -1,12 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100372e0 size=0x2d
+#include "C_TEFogRipple.h"
+C_TEFogRipple::C_TEFogRipple()
+{
+	m_vecStart.Init(0, 0, 0);
+	m_vecEnd.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037310 size=0x1e
 #include "C_TEFogRipple.h"
 
 // VC6 writes C_TEFogRipple's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEFogRipple *pcd_emit_10037310() { return new C_TEFogRipple; }
+C_TEFogRipple *pcd_emit_10037310(const C_TEFogRipple &other) { return new C_TEFogRipple(other); }
 
 // TARGET: ??_GC_TEFogRipple@@UAEPAXI@Z
 // END FUNCTION

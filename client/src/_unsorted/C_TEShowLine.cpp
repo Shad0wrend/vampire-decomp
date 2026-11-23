@@ -1,12 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003ea60 size=0x24
+#include "C_TEShowLine.h"
+// TARGET: ??0C_TEShowLine@@QAE@XZ
+C_TEShowLine::C_TEShowLine()
+{
+	m_vecEnd.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ea90 size=0x1e
 #include "C_TEShowLine.h"
 
 // VC6 writes C_TEShowLine's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEShowLine *pcd_emit_1003ea90() { return new C_TEShowLine; }
+C_TEShowLine *pcd_emit_1003ea90(const C_TEShowLine &other) { return new C_TEShowLine(other); }
 
 // TARGET: ??_GC_TEShowLine@@UAEPAXI@Z
 // END FUNCTION

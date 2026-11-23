@@ -6,7 +6,7 @@
 
 // VC6 writes CHudMessage's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudMessage *pcd_emit_1010e540() { return new CHudMessage; }
+CHudMessage *pcd_emit_1010e540(const CHudMessage &other) { return new CHudMessage(other); }
 
 // TARGET: ??_GCHudMessage@@UAEPAXI@Z
 // END FUNCTION

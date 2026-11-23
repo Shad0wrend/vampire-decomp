@@ -6,9 +6,98 @@
 
 // VC6 writes CCredits's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CCredits *pcd_emit_1004dd20() { return new CCredits; }
+CCredits *pcd_emit_1004dd20(const CCredits &other) { return new CCredits(other); }
 
 // TARGET: ??_GCCredits@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1004dd40 size=0x87
+#include "CCredits.h"
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+// TARGET: ??1CCredits@@UAE@XZ
+CCredits::~CCredits()
+{
+	sub_101a9ff0(0);
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMem) {
+			Plat_Free(m_pMem);
+			m_pMem = 0;
+		}
+		m_allocCount = 0;
+	}
+	m_pElements = m_pMem;
+	if (m_growSize != -1) {
+		if (m_pMem) {
+			Plat_Free(m_pMem);
+			m_pMem = 0;
+		}
+		m_allocCount = 0;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1004ddf0 size=0x57
+#include "CCredits.h"
+
+struct IEngine_104a57d4
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual void v28();
+	virtual void v29();
+	virtual void v30();
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual float v39(int);
+};
+
+extern IEngine_104a57d4 *g_104a57d4;
+
+void CCredits::vfunc114(const char *a1)
+{
+	if (sub_1004e220(a1))
+	{
+		*(float *)((char *)this + 0x18c) = g_104a57d4->v39(0);
+		vfunc5_hud(true);
+	}
+	else
+	{
+		vfunc5_hud(false);
+	}
+}
 // END FUNCTION
 
 // FUNCTION: 0x1004dea0 size=0x8

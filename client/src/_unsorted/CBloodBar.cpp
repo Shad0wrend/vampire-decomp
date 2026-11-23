@@ -6,9 +6,27 @@
 
 // VC6 writes CBloodBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CBloodBar *pcd_emit_1004c690() { return new CBloodBar; }
+CBloodBar *pcd_emit_1004c690(const CBloodBar &other) { return new CBloodBar(other); }
 
 // TARGET: ??_GCBloodBar@@UAEPAXI@Z
+// END FUNCTION
+
+// FUNCTION: 0x1004c6b0 size=0xb2
+#include "CBloodBar.h"
+// TARGET: ??1CBloodBar@@UAE@XZ
+CBloodBar::~CBloodBar()
+{
+	sub_101a9ff0(0);
+	delete m_p1a4;
+	delete m_p1ac;
+	delete m_p1b0;
+	delete m_p1b4;
+	delete m_p1b8;
+	delete m_p1bc;
+	delete m_p1c0;
+	delete m_p1c4;
+	delete m_p1c8;
+}
 // END FUNCTION
 
 // FUNCTION: 0x1004c770 size=0xb

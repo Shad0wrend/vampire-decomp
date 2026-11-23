@@ -37,6 +37,56 @@ C_BaseAnimating *pcd_emit_1008f5a0(const C_BaseAnimating &other) { return new C_
 // TARGET: ??_GC_BaseAnimating@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1008f5c0 size=0x12a
+#include "C_BaseAnimating.h"
+#include "UtlMem.h"
+struct VecView { UtlMem m; int m_Size; int *m_pElements; };
+struct Dtorable { virtual ~Dtorable(); };
+struct Elem14 { UtlMem m; int m_Size; int *m_pElements; void sub_10096d70(); };
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+#define PURGETAIL(v) \
+	(v)->m_pElements = (v)->m.m_pMemory; \
+	if ((v)->m.m_growSize != -1) { \
+		if ((v)->m.m_pMemory) { Plat_Free((v)->m.m_pMemory); (v)->m.m_pMemory = 0; } \
+		(v)->m.m_allocationCount = 0; \
+	}
+// TARGET: ??1C_BaseAnimating@@UAE@XZ
+C_BaseAnimating::~C_BaseAnimating()
+{
+	char *self = (char *)this;
+	sub_100966e0();
+	delete *(void **)(self + 0x6d8);
+	Dtorable *p = *(Dtorable **)(self + 0x6b0);
+	if (p) delete p;
+	VecView *v = (VecView *)(self + 0x770);
+	v->m_Size = 0;
+	v->m.sub_10096f90();
+	PURGETAIL(v)
+	v = (VecView *)(self + 0x728);
+	v->m_Size = 0;
+	v->m.sub_10096f60();
+	PURGETAIL(v)
+	v = (VecView *)(self + 0x6f4);
+	v->m_Size = 0;
+	v->m.sub_10096d10();
+	v->m_pElements = v->m.m_pMemory;
+	v->m.sub_10096d10();
+	v = (VecView *)(self + 0x67c);
+	v->m_Size = 0;
+	v->m.sub_10096e70();
+	PURGETAIL(v)
+	Elem14 *e = (Elem14 *)(self + 0x4f8);
+	int n = 2;
+	do {
+		e--;
+		e->sub_10096d70();
+		e->m.sub_10096d40();
+		e->m_pElements = e->m.m_pMemory;
+		e->m.sub_10096d40();
+	} while (--n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b60 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc124(int a0, int a1)

@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::ToggleButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::ToggleButton *pcd_emit_101bc350() { return new vgui2::ToggleButton; }
+vgui2::ToggleButton *pcd_emit_101bc350(const vgui2::ToggleButton &other) { return new vgui2::ToggleButton(other); }
 
 // TARGET: ??_GToggleButton@vgui2@@UAEPAXI@Z
 // END FUNCTION

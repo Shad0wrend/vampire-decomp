@@ -4,6 +4,8 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+class CHudUseIconOwned { public: virtual ~CHudUseIconOwned(); };
+
 class CHudUseIcon : public CManagedHudElement
 {
 public:
@@ -12,5 +14,15 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CHudUseIcon's own function
 	virtual void vfunc98();
 	virtual bool vfunc107();
-	char m_pad0008[0x218 - 0x8];
+	int m_unk174;
+	CHudUseIconOwned *m_pChild1; CHudUseIconOwned *m_pChild2; CHudUseIconOwned *m_pChild3;
+	int m_unk184; int m_unk188;
+	CHudUseIconOwned *m_pChild4; CHudUseIconOwned *m_pChild5;
+	CHudUseIcon(int parent);
+	void sub_1005e1a0();
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	int m_unk194; int m_unk198; int m_unk19c; int m_unk1a0; int m_unk1a4; float m_f1a8; char m_b1ac; char m_pad1ad[0x1c0 - 0x1ad];
+	int m_unk1c0; int m_unk1c4; char m_pad1c8; char m_arr1c9[0x40];
+	char m_pad209[0x218 - 0x209];
 };

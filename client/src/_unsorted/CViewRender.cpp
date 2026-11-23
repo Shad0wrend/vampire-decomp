@@ -161,6 +161,41 @@ bool CViewRender::vfunc43()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f9b0 size=0x7e
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+struct IViewEffects_1018f9b0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+};
+
+struct IClientShadowMgr_1018f9b0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+};
+
+extern IViewEffects_1018f9b0 *g_102d5050;
+extern IClientShadowMgr_1018f9b0 *g_1028073c;
+
+// TARGET: CViewRender::vfunc1
+void CViewRender::vfunc1()
+{
+	ScopeTrace trace("CViewRender::LevelInit", g_102de300);
+
+	g_102d5050->v2();
+	g_1028073c->v3();
+
+	*(int *)((char *)this + 0x374) = 0;
+	*(int *)((char *)this + 0x378) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191700 size=0x8
 #include "CViewRender.h"
 void CViewRender::vfunc16()

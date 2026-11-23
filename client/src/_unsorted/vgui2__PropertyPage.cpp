@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::PropertyPage's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::PropertyPage *pcd_emit_101bb3b0() { return new vgui2::PropertyPage; }
+vgui2::PropertyPage *pcd_emit_101bb3b0(const vgui2::PropertyPage &other) { return new vgui2::PropertyPage(other); }
 
 // TARGET: ??_GPropertyPage@vgui2@@UAEPAXI@Z
 // END FUNCTION

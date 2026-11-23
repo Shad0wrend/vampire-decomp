@@ -1,12 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10035950 size=0x39
+#include "C_TEBubbleTrail.h"
+// TARGET: ??0C_TEBubbleTrail@@QAE@XZ
+C_TEBubbleTrail::C_TEBubbleTrail()
+{
+	m_vecMins.Init();
+	m_vecMaxs.Init();
+	m_flWaterZ = 0;
+	m_nModelIndex = 0;
+	m_nCount = 0;
+	m_fSpeed = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035990 size=0x1e
 #include "C_TEBubbleTrail.h"
 
 // VC6 writes C_TEBubbleTrail's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBubbleTrail *pcd_emit_10035990() { return new C_TEBubbleTrail; }
+C_TEBubbleTrail *pcd_emit_10035990(const C_TEBubbleTrail &other) { return new C_TEBubbleTrail(other); }
 
 // TARGET: ??_GC_TEBubbleTrail@@UAEPAXI@Z
 // END FUNCTION

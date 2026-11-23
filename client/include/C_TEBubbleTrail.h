@@ -4,9 +4,12 @@
 #pragma once
 #include "C_BaseTempEntity.h"
 
+#include "Vector.h"
 class C_TEBubbleTrail : public C_BaseTempEntity
 {
 public:
+	C_TEBubbleTrail();
+	Vector m_vecMins; Vector m_vecMaxs; int m_flWaterZ; int m_nModelIndex; int m_nCount; int m_fSpeed;
 	virtual ~C_TEBubbleTrail();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEBubbleTrail's own function
