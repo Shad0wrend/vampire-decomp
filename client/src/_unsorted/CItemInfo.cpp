@@ -28,6 +28,16 @@ CItemInfo *pcd_emit_1005edc0(const CItemInfo &other) { return new CItemInfo(othe
 // TARGET: ??_GCItemInfo@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1005ede0 size=0x32
+#include "CItemInfo.h"
+// TARGET: ??1CItemInfo@@UAE@XZ
+CItemInfo::~CItemInfo()
+{
+	sub_101a9ff0(0);
+	delete m_unk190;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f030 size=0x1
 #include "CItemInfo.h"
 void CItemInfo::vfunc97()
