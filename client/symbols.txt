@@ -4257,6 +4257,7 @@
 0x100f7da0 func   ?sub_100f7da0@@YAXXZ sub_100f7da0
 0x100f7db0 func   ?sub_100f7db0@@YAXXZ sub_100f7db0
 0x100f7dc0 func   ?sub_100f7dc0@@YAXXZ sub_100f7dc0
+0x100f7dd0 func   ?sub_100f7dd0@@YAXPBEPAEHHHH@Z sub_100f7dd0
 0x100f7f20 func   ?sub_100f7f20@@YAHXZ sub_100f7f20
 0x100f7f30 func   ?sub_100f7f30@@YAHXZ sub_100f7f30
 0x100f86a0 func   ?sub_100f86a0@CUnknown100f86a0@@QAEDH@Z CUnknown100f86a0::sub_100f86a0

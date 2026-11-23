@@ -40967,6 +40967,52 @@ void sub_100f7dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7dd0 size=0x149
+void sub_100f7dd0(const unsigned char *pSrc, unsigned char *pDst, int srcWidth, int srcHeight, int dstWidth, int dstHeight)
+{
+	int x, y, c;
+
+	if (srcWidth == 1 && dstWidth == 1)
+	{
+		for (y = 0; y < dstHeight; y++)
+		{
+			for (c = 0; c < 2; c++)
+			{
+				pDst[y * 2 + c] = (pSrc[y * 4 + c] + pSrc[y * 4 + 2 + c]) >> 2;
+			}
+		}
+		return;
+	}
+
+	if (srcHeight == 1 && dstHeight == 1)
+	{
+		for (x = 0; x < dstWidth; x++)
+		{
+			for (c = 0; c < 2; c++)
+			{
+				pDst[x * 2 + c] = (pSrc[x * 4 + c] + pSrc[x * 4 + 2 + c]) >> 2;
+			}
+		}
+		return;
+	}
+
+	for (y = 0; y < dstHeight; y++)
+	{
+		for (x = 0; x < dstWidth; x++)
+		{
+			for (c = 0; c < 2; c++)
+			{
+				pDst[(y * dstWidth + x) * 2 + c] =
+					(pSrc[((y * 2) * srcWidth + x * 2) * 2 + c] +
+					 pSrc[((y * 2) * srcWidth + x * 2 + 1) * 2 + c] +
+					 pSrc[((y * 2 + 1) * srcWidth + x * 2) * 2 + c] +
+					 pSrc[((y * 2 + 1) * srcWidth + x * 2 + 1) * 2 + c]) >> 2;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7f20 size=0x5
 namespace lifted {
 int sub_100f7730();
