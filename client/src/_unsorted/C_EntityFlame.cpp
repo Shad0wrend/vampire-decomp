@@ -29,3 +29,11 @@ C_EntityFlame *pcd_emit_100b6610(const C_EntityFlame &other) { return new C_Enti
 
 // TARGET: ??_GC_EntityFlame@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100b6630 size=0x3c
+#include "C_EntityFlame.h"
+// TARGET: ??1C_EntityFlame@@UAE@XZ
+C_EntityFlame::~C_EntityFlame()
+{
+}
+// END FUNCTION
