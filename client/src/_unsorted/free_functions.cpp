@@ -68447,6 +68447,19 @@ void sub_10186d00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186dd0 size=0x23
+namespace lifted {
+extern char g_102bbe88;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C10184bc0 { int sub_10184bc0(int, int, int); };
+}
+int sub_10186dd0(int a0, int a1)
+{
+    return ((lifted::C10184bc0 *)(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbe88)))->sub_10184bc0(a0, a1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186e00 size=0x1c
 struct CUnk102036e0Target { void sub_10186620(int a); };
 struct CUnk102036e0Table { CUnk102036e0Target *sub_100f0ed0(const char *name); };
