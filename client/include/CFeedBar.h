@@ -19,6 +19,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc113();
 	// the slots CFeedBar adds to its base's vtable: 114-114, vfuncK at slot K
 	virtual void vfunc114();
-	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188; int m_unk18c; int m_unk190; int m_unk194; int m_unk198; int m_unk19c; int m_unk1a0; int m_unk1a4; int m_unk1a8; int m_unk1ac; int m_unk1b0; int m_unk1b4;
+	CFeedBar(int a);
+	void sub_100503d0(int a, int b);
+	void sub_10050530();
+	void sub_10050270();
+	void sub_101a9890(int a, int b);
+	void sub_101a98f0(int a, int b);
+	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188; int m_unk18c; int m_unk190; int m_unk194; int m_unk198; int m_unk19c; int m_unk1a0; char m_b1a4; char m_b1a5; char m_b1a6; char m_b1a7; int m_unk1a8; int m_unk1ac; int m_unk1b0; int m_unk1b4;
 	CFeedBarOwned *m_pChild1; CFeedBarOwned *m_pChild2;
 };
