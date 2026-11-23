@@ -1591,6 +1591,7 @@
 0x10025fb0 func   ?vfunc16@C_ItemKHitmanLuKey@@UAEHXZ C_ItemKHitmanLuKey::vfunc16
 0x10025fc0 func   ?vfunc15@C_ItemKHitmanLuKey@@UAEHXZ C_ItemKHitmanLuKey::vfunc15
 0x10025fd0 func   ?sub_10025fd0@@YAHXZ sub_10025fd0
+0x10026030 func   ?_C_ItemKHitmanLuKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKHitmanLuKey_CreateObject
 0x100260f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKHitmanLuKey@@@Z ClientClassInit
 0x10026180 func   ?vfunc17@C_ItemKHitmanJiKey@@UAEHXZ C_ItemKHitmanJiKey::vfunc17
 0x10026210 func   ??_GC_ItemKHitmanJiKey@@UAEPAXI@Z ??_GC_ItemKHitmanJiKey@@UAEPAXI@Z
