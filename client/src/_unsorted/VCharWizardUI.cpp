@@ -10,3 +10,18 @@ VCharWizardUI *pcd_emit_10174950(const VCharWizardUI &other) { return new VCharW
 
 // TARGET: ??_GVCharWizardUI@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10174970 size=0x48
+#include "VCharWizardUI.h"
+extern int g_105fb1f8;
+typedef vgui2::TextEntry TE;
+typedef vgui2::Label LB;
+// TARGET: ??1VCharWizardUI@@UAE@XZ
+VCharWizardUI::~VCharWizardUI()
+{
+	sub_10174b20();
+	g_105fb1f8 = 0;
+	((TE *)((char *)this + 0x238))->TE::~TE();
+	((LB *)((char *)this + 0x180))->LB::~LB();
+}
+// END FUNCTION
