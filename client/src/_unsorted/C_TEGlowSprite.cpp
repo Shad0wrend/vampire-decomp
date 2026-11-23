@@ -11,6 +11,16 @@ C_TEGlowSprite::C_TEGlowSprite()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038650 size=0x1e
+#include "C_TEGlowSprite.h"
+
+// VC6 writes C_TEGlowSprite's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_TEGlowSprite *pcd_emit_10038650(const C_TEGlowSprite &other) { return new C_TEGlowSprite(other); }
+
+// TARGET: ??_GC_TEGlowSprite@@UAEPAXI@Z
+// END FUNCTION
+
 // FUNCTION: 0x10038760 size=0x6
 #include "C_TEGlowSprite.h"
 namespace lifted {
