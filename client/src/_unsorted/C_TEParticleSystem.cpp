@@ -19,3 +19,13 @@ int C_TEParticleSystem::vfunc8()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003df30 size=0x1e
+#include "C_TEParticleSystem.h"
+
+// VC6 writes C_TEParticleSystem's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_TEParticleSystem *pcd_emit_1003df30(const C_TEParticleSystem &other) { return new C_TEParticleSystem(other); }
+
+// TARGET: ??_GC_TEParticleSystem@@UAEPAXI@Z
+// END FUNCTION
