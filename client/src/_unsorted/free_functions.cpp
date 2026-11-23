@@ -16256,6 +16256,95 @@ int sub_1004ea50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f0c0 size=0xe1
+#include "CVStatInfoList_t.h"
+#include "utlvector.h"
+
+extern CVStatInfoList_t g_105f8c60;
+
+struct IEngineSound
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void EmitSound(void *filter, int iEntIndex, int iChannel, const char *pSample, float flVolume, int iSoundLevel, int iFlags, int iPitch, const void *pOrigin, const void *pDirection, bool bUpdatePositions, float soundtime);
+};
+
+extern IEngineSound *g_104a5818;
+
+struct SoundStr
+{
+	const char *psz;
+	const char *ToCStr() const { return psz ? psz : ""; }
+};
+
+struct CUnknown100be160
+{
+	int vtbl;
+	int flags;
+	CUtlMemory<int> m_Memory;
+	int m_Size;
+	int *m_pElements;
+	char pad[0x2c - 0x1c];
+
+	void *sub_100be160();
+};
+
+struct CUnknown100be160Buf
+{
+	int vtbl;
+	int flags;
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	int *m_pElements;
+	char pad[0x2c - 0x1c];
+
+	CUnknown100be160 *AsFilter() { return (CUnknown100be160 *)this; }
+	~CUnknown100be160Buf()
+	{
+		((CUtlVector<int> *)&m_pMemory)->~CUtlVector<int>();
+	}
+};
+
+struct StatSoundEntry
+{
+	int id;
+	int unk;
+	bool enabled;
+};
+
+class CHudStatSound
+{
+public:
+	char pad[0x1ac];
+	StatSoundEntry entries[6];
+
+	int sub_1004ec90(int stat);
+	void sub_1004f0c0(int stat, float volume, int pitch, int flags);
+};
+
+// TARGET: CHudStatSound::sub_1004f0c0
+void CHudStatSound::sub_1004f0c0(int stat, float volume, int pitch, int flags)
+{
+	int idx = sub_1004ec90(stat);
+	if (idx == -1)
+		return;
+	if (!entries[idx].enabled)
+		return;
+
+	CVStatInfo_t *info = g_105f8c60.sub_1015cfe0(stat);
+	const char *sound = ((SoundStr *)&info->m_apszSound[1])->ToCStr();
+	if (sound[0] == 0)
+		return;
+
+	CUnknown100be160Buf filter;
+	filter.AsFilter()->sub_100be160();
+	g_104a5818->EmitSound(&filter, -1, 2 * stat + 0x88, sound, volume, 0, flags, pitch, 0, 0, true, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f810 size=0x17
 namespace lifted {
 extern int g_10284b9c;
