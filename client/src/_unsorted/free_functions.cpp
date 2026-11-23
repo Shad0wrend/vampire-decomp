@@ -58613,6 +58613,110 @@ int sub_10145650(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145660 size=0x13c
+#include "C_BaseEntity.h"
+#include "CVDmg_t.h"
+
+__declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_1007db20();
+
+struct CVFeat_10145660
+{
+	int m_id;
+	char pad[0x34];
+	void *sub_1014ada0(int id);
+	int sub_1014b6b0(C_BaseEntity *pSrc);
+};
+
+extern int g_105e8138;
+extern CVFeat_10145660 **g_105e813c;
+extern unsigned char g_10680f34;
+extern CVFeat_10145660 g_10680f40;
+
+struct CRoll_10145660;
+extern void (*g_105e7b24)(CRoll_10145660 *);
+
+inline CVFeat_10145660 *FindFeat_10145660(int id)
+{
+	for (int i = 0; i < g_105e8138; i++)
+	{
+		if (g_105e813c[i]->m_id == id)
+			return g_105e813c[i];
+	}
+	if (!(g_10680f34 & 1))
+	{
+		g_10680f34 |= 1;
+		g_10680f40.sub_1014ada0(-1);
+		atexit(sub_1007db20);
+	}
+	return &g_10680f40;
+}
+
+struct CRoll_10145660
+{
+	int m_n00;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	CVDmgBlock16_t m_block1c;
+	int m_n2c;
+	int m_n30;
+	int m_n34;
+	int m_n38;
+
+	void sub_10145660(C_BaseEntity *pSrc, C_BaseEntity *pDst, CVDmgBlock16_t *pBlock, int nDice, int nDifficulty, int nExtra);
+};
+
+// TARGET: CRoll_10145660::sub_10145660
+void CRoll_10145660::sub_10145660(C_BaseEntity *pSrc, C_BaseEntity *pDst, CVDmgBlock16_t *pBlock, int nDice, int nDifficulty, int nExtra)
+{
+	if (nDice > 250)
+	{
+		DevMsg(1, "Warning: Dice roll count out of bounds: %d, capped at %d\n", nDice, 250);
+		nDice = 250;
+	}
+
+	m_n00 = nDice;
+	m_n34 = nDice;
+	m_n04 = nExtra;
+	m_n38 = 0;
+	m_n08 = 0;
+	m_n0c = 0;
+
+	if (pSrc)
+		m_n14 = pSrc->entindex();
+	else
+		m_n14 = 0;
+
+	if (pDst)
+		m_n18 = pDst->entindex();
+	else
+		m_n18 = 0;
+
+	if (pBlock)
+		m_block1c = *pBlock;
+
+	m_n2c = nDifficulty - 1;
+
+	if (g_105e7b24)
+		g_105e7b24(this);
+
+	if (pBlock && m_block1c.m_a == 4 && pSrc)
+	{
+		m_n10 = FindFeat_10145660(m_block1c.m_b)->sub_1014b6b0(pSrc);
+	}
+	else
+	{
+		m_n10 = 0;
+	}
+	m_n30 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101457a0 size=0x95
 #include "CUnknown101d8a70.h"
 #include "ConVar.h"
