@@ -5,6 +5,5 @@
 class C_OccultRegen : public C_BaseCombatWeapon
 {
 public:
-	C_OccultRegen();
-	virtual ~C_OccultRegen();
+	virtual ~C_OccultRegen() {}
 };
