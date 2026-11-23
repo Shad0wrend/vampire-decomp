@@ -10521,6 +10521,20 @@ int sub_10026e80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026ee0 size=0x39
+#include "C_WeaponMelee_Torch.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Torch; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Torch_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Torch *pRet = new C_WeaponMelee_Torch;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026f80 size=0x8f
 #include "RecvTable.h"
 extern RecvTable g_102e2054;
