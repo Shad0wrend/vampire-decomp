@@ -54,3 +54,20 @@ VHotkeysUI::~VHotkeysUI()
 	sub_10183aa0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101839a0 size=0x28
+#include "VHotkeysUI.h"
+namespace lifted {
+struct C10177ea0 { int sub_10183ad0(); };
+struct C10177eb0 { int sub_10183af0(); };
+struct C101a99f0 { int sub_101a99f0(int); };
+}
+int VHotkeysUI::vfunc21(int a0)
+{
+    int t0 = ((lifted::C101a99f0 *)this)->sub_101a99f0(a0);
+    if (((char)a0) != 0) {
+        return ((lifted::C10177eb0 *)this)->sub_10183af0();
+    }
+    return ((lifted::C10177ea0 *)this)->sub_10183ad0();
+}
+// END FUNCTION
