@@ -5429,6 +5429,20 @@ int sub_10015950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100159b0 size=0x5a
+#include "C_WeaponIArmor_Lt_Leather.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Lt_Leather; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Lt_Leather_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Lt_Leather *pRet = new C_WeaponIArmor_Lt_Leather;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015a70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6f70;
