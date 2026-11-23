@@ -1487,6 +1487,20 @@ int sub_10008250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100082b0 size=0x5a
+#include "C_WeaponMelee_BushHook.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_BushHook; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_BushHook_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_BushHook *pRet = new C_WeaponMelee_BushHook;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e10c0;
