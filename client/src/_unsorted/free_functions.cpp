@@ -32995,6 +32995,20 @@ int sub_100bbe40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbea0 size=0x39
+#include "C_HudCounter.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_HudCounter; its ClientClass's initializer stores its address
+IClientNetworkable *_C_HudCounter_CreateObject(int entnum, int serialNum)
+{
+	C_HudCounter *pRet = new C_HudCounter;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbf40 size=0x104
 #include "RecvTable.h"
 extern RecvTable g_104a2df4;
