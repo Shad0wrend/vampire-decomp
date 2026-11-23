@@ -11,6 +11,16 @@ CAmmoCounter *pcd_emit_1004bbd0(const CAmmoCounter &other) { return new CAmmoCou
 // TARGET: ??_GCAmmoCounter@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1004bbf0 size=0x35
+#include "CAmmoCounter.h"
+CAmmoCounter::~CAmmoCounter()
+{
+	if (m_pUnk1a4)
+		delete m_pUnk1a4;
+	m_pUnk1a4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004bc30 size=0xb
 #include "CAmmoCounter.h"
 namespace lifted {
