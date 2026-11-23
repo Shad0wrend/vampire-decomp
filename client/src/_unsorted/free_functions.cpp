@@ -29305,6 +29305,24 @@ template <> int ClientClassInit<DT_BreakableSurface::ignored>(DT_BreakableSurfac
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7bb0 size=0x37
+namespace lifted {
+struct C100b7bf0 { int sub_100b7bf0(int); };
+struct C100b7e60 { int sub_100b7e60(int); };
+struct C100b85f0 { int sub_100b85f0(int); };
+}
+struct CUnknown100b7bb0 { char sub_100b7bb0(int, int); };
+char CUnknown100b7bb0::sub_100b7bb0(int a0, int a1)
+{
+    if ((*(int *)((char *)this + 0x30)) == 1) {
+        ((lifted::C100b7e60 *)((char *)this + -1040))->sub_100b7e60(a1);
+    }
+    ((lifted::C100b85f0 *)((int)this + -1040))->sub_100b85f0(a1);
+    ((lifted::C100b7bf0 *)((int)this + -1040))->sub_100b7bf0(a1);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9b80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_100b9b80(const Vector &v) const

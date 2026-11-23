@@ -3100,6 +3100,7 @@
 0x100b7760 func   ??_GC_BreakableSurface@@UAEPAXI@Z ??_GC_BreakableSurface@@UAEPAXI@Z
 0x100b7780 func   ??1C_BreakableSurface@@UAE@XZ C_BreakableSurface::~C_BreakableSurface
 0x100b7b00 func   ?vfunc79@C_BreakableSurface@@UAE_NXZ C_BreakableSurface::vfunc79
+0x100b7bb0 func   ?sub_100b7bb0@CUnknown100b7bb0@@QAEDHH@Z CUnknown100b7bb0::sub_100b7bb0
 0x100b9b80 func   ?sub_100b9b80@Vector@@QBE?AV1@ABV1@@Z Vector::sub_100b9b80
 0x100b9bf0 func   ?sub_100b9bf0@CUnknown100b9bf0@@QAEXXZ CUnknown100b9bf0::sub_100b9bf0
 0x100b9cd0 func   ?sub_100b9cd0@@YAHXZ sub_100b9cd0
