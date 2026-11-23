@@ -7163,6 +7163,20 @@ int sub_1001b850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001b8b0 size=0x5a
+#include "C_ItemGGiovanniInvitationMaria.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGiovanniInvitationMaria; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGiovanniInvitationMaria_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGiovanniInvitationMaria *pRet = new C_ItemGGiovanniInvitationMaria;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4b00;
