@@ -611,6 +611,7 @@
 0x100101b0 func   ?vfunc16@C_ItemMWallet@@UAEHXZ C_ItemMWallet::vfunc16
 0x100101c0 func   ?vfunc15@C_ItemMWallet@@UAEHXZ C_ItemMWallet::vfunc15
 0x100101d0 func   ?sub_100101d0@@YAHXZ sub_100101d0
+0x10010230 func   ?_C_ItemMWallet_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemMWallet_CreateObject
 0x100102f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMWallet@@@Z ClientClassInit
 0x10010380 func   ?vfunc17@C_ItemMMoneyClip@@UAEHXZ C_ItemMMoneyClip::vfunc17
 0x10010410 func   ??_GC_ItemMMoneyClip@@UAEPAXI@Z ??_GC_ItemMMoneyClip@@UAEPAXI@Z
