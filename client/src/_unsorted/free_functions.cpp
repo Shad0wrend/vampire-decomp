@@ -39524,6 +39524,67 @@ int CUnknown100f0180::sub_100f0180(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0310 size=0xc5
+#include "ConVar.h"
+
+int sub_100cd0f0();
+
+struct XHud
+{
+	int m_unk0;
+	float m_flTime;
+	void *sub_100f11d0(const char *);
+};
+
+extern XHud g_104cfe38;
+extern ConVar g_10678d48;
+
+struct HistItem
+{
+	int type;
+	float DisplayTime;
+	int iCount;
+	int bIsIcon;
+	int iId;
+	void *icon;
+};
+
+struct HistoryResource
+{
+	int m_unk0[4];
+	HistItem m_rgHistory[12];
+	int m_iHistoryGap;
+	int m_iCurrentHistorySlot;
+
+	void sub_100f0310(int iType, const char *szName, int iCount);
+};
+
+void HistoryResource::sub_100f0310(int iType, const char *szName, int iCount)
+{
+	if (iType != 3)
+		return;
+
+	if (32 + m_iHistoryGap * (m_iCurrentHistorySlot + 2) > sub_100cd0f0() - 64 || m_iCurrentHistorySlot >= 12)
+	{
+		m_iCurrentHistorySlot = 0;
+	}
+
+	HistItem *pItem = &m_rgHistory[m_iCurrentHistorySlot++];
+	void *pIcon = g_104cfe38.sub_100f11d0(szName);
+	if (!pIcon)
+		return;
+
+	pItem->bIsIcon = 1;
+	pItem->icon = pIcon;
+	pItem->type = iType;
+	pItem->iId = -1;
+	pItem->iCount = iCount;
+
+	float fl = g_10678d48.GetFloat();
+	pItem->DisplayTime = g_104cfe38.m_flTime + fl;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0510 size=0x29
 namespace lifted {
 extern char g_10234d64;
