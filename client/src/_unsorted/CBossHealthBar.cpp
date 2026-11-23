@@ -11,6 +11,17 @@ CBossHealthBar *pcd_emit_1004d5a0(const CBossHealthBar &other) { return new CBos
 // TARGET: ??_GCBossHealthBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1004d5c0 size=0x42
+#include "CBossHealthBar.h"
+// TARGET: ??1CBossHealthBar@@UAE@XZ
+CBossHealthBar::~CBossHealthBar()
+{
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d880 size=0x8
 #include "CBossHealthBar.h"
 namespace lifted {
