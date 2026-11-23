@@ -10,5 +10,6 @@ class VBarterUI : public CHudElement, public CBasePanel
 public:
 	virtual ~VBarterUI();
 	void sub_1016cdc0();
+	bool sub_10170aa0(void *pItem, bool bSell);
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };
