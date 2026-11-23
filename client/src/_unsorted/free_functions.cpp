@@ -27315,6 +27315,18 @@ char CUnknown100a2e40::sub_100a2e40(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2e50 size=0x1c
+namespace lifted {
+struct C100a2970 { int sub_100a2970(int); };
+int sub_100a2a90(int);
+}
+struct CUnknown100a2e50 { int sub_100a2e50(int); };
+int CUnknown100a2e50::sub_100a2e50(int a0)
+{
+    return ((lifted::C100a2970 *)this)->sub_100a2970(lifted::sub_100a2a90(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e80 size=0x7
 struct CUnknown100a2e80 { char sub_100a2e80(); };
 char CUnknown100a2e80::sub_100a2e80()
