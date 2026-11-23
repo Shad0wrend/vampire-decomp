@@ -34,3 +34,8 @@ CManagedHudElement *pcd_emit_1005f110(const CManagedHudElement &other) { return 
 
 // TARGET: ??_GCManagedHudElement@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1005f130 size=0x1f
+#include "CManagedHudElement.h"
+CManagedHudElement::~CManagedHudElement() {}
+// END FUNCTION
