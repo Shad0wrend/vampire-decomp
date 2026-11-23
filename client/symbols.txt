@@ -107,6 +107,7 @@
 0x10003250 func   ?vfunc16@C_ItemPhysicsHand@@UAEHXZ C_ItemPhysicsHand::vfunc16
 0x10003260 func   ?vfunc15@C_ItemPhysicsHand@@UAEHXZ C_ItemPhysicsHand::vfunc15
 0x10003270 func   ?sub_10003270@@YAHXZ sub_10003270
+0x100032d0 func   ?_C_ItemPhysicsHand_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemPhysicsHand_CreateObject
 0x10003390 func   ?ClientClassInit@@YAHPAUignored@DT_ItemPhysicsHand@@@Z ClientClassInit
 0x10003580 func   ?sub_10003580@@YAHXZ sub_10003580
 0x10003680 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGKeyring@@@Z ClientClassInit
