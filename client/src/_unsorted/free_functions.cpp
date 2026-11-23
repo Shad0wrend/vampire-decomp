@@ -7669,6 +7669,20 @@ int sub_1001d3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001d430 size=0x5a
+#include "C_ItemGEyes.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGEyes; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGEyes_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGEyes *pRet = new C_ItemGEyes;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d4f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1d30;
