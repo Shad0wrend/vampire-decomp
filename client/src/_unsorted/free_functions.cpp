@@ -6703,6 +6703,20 @@ int sub_10019f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019fb0 size=0x5a
+#include "C_ItemGLarryBriefcase.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGLarryBriefcase; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGLarryBriefcase_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGLarryBriefcase *pRet = new C_ItemGLarryBriefcase;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5920;
