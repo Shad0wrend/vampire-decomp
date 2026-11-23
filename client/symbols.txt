@@ -1129,6 +1129,7 @@
 0x1001bab0 func   ?vfunc16@C_ItemGGuyMagazine@@UAEHXZ C_ItemGGuyMagazine::vfunc16
 0x1001bac0 func   ?vfunc15@C_ItemGGuyMagazine@@UAEHXZ C_ItemGGuyMagazine::vfunc15
 0x1001bad0 func   ?sub_1001bad0@@YAHXZ sub_1001bad0
+0x1001bb30 func   ?_C_ItemGGuyMagazine_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGGuyMagazine_CreateObject
 0x1001bbf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGuyMagazine@@@Z ClientClassInit
 0x1001bc80 func   ?vfunc17@C_ItemGBrotherhoodFlyer@@UAEHXZ C_ItemGBrotherhoodFlyer::vfunc17
 0x1001bd10 func   ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z
