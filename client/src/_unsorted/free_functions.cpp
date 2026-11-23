@@ -1625,6 +1625,20 @@ int sub_100089d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10008a30 size=0x5a
+#include "C_WeaponMelee_FireAxe.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_FireAxe; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_FireAxe_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_FireAxe *pRet = new C_WeaponMelee_FireAxe;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008af0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3820;
