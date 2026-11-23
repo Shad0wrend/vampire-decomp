@@ -1164,6 +1164,7 @@
 0x1001c730 func   ?vfunc16@C_ItemGWarrens4Passkey@@UAEHXZ C_ItemGWarrens4Passkey::vfunc16
 0x1001c740 func   ?vfunc15@C_ItemGWarrens4Passkey@@UAEHXZ C_ItemGWarrens4Passkey::vfunc15
 0x1001c750 func   ?sub_1001c750@@YAHXZ sub_1001c750
+0x1001c7b0 func   ?_C_ItemGWarrens4Passkey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGWarrens4Passkey_CreateObject
 0x1001c870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWarrens4Passkey@@@Z ClientClassInit
 0x1001c900 func   ?vfunc17@C_ItemGWirelessCamera1@@UAEHXZ C_ItemGWirelessCamera1::vfunc17
 0x1001c990 func   ??_GC_ItemGWirelessCamera1@@UAEPAXI@Z ??_GC_ItemGWirelessCamera1@@UAEPAXI@Z
