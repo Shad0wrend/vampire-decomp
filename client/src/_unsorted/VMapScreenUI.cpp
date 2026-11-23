@@ -27,3 +27,13 @@ VMapScreenUI::VMapScreenUI(int a)
     g_105fb874 = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101873a0 size=0x1e
+#include "VMapScreenUI.h"
+
+// VC6 writes VMapScreenUI's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+VMapScreenUI *pcd_emit_101873a0(const VMapScreenUI &other) { return new VMapScreenUI(other); }
+
+// TARGET: ??_GVMapScreenUI@@UAEPAXI@Z
+// END FUNCTION
