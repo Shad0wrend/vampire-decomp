@@ -6013,6 +6013,20 @@ int sub_100179d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10017a30 size=0x5a
+#include "C_ItemGCashBox.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGCashBox; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGCashBox_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGCashBox *pRet = new C_ItemGCashBox;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017af0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1174;
