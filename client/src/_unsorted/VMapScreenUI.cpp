@@ -37,3 +37,13 @@ VMapScreenUI *pcd_emit_101873a0(const VMapScreenUI &other) { return new VMapScre
 
 // TARGET: ??_GVMapScreenUI@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101873c0 size=0x33
+#include "VMapScreenUI.h"
+#include "VMapFrameLabel.h"
+VMapScreenUI::~VMapScreenUI()
+{
+	sub_10187860();
+	((VMapFrameLabel *)((char *)this + 0x188))->VMapFrameLabel::~VMapFrameLabel();
+}
+// END FUNCTION
