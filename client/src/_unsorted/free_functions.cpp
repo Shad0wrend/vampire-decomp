@@ -2223,6 +2223,20 @@ int sub_1000aa50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000aab0 size=0x5a
+#include "C_WeaponMelee_SabbatLeaderAttack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_SabbatLeaderAttack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_SabbatLeaderAttack_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_SabbatLeaderAttack *pRet = new C_WeaponMelee_SabbatLeaderAttack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000ab70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1700;
