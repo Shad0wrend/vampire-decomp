@@ -3,6 +3,7 @@
 // the destructor is slot 10 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "C_BaseTempEntity.h"
+#include "Vector.h"
 
 class C_TEBeamSpline : public C_BaseTempEntity
 {
@@ -12,4 +13,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEBeamSpline's own function
 	virtual int vfunc8();
 	virtual int vfunc9();
+	C_TEBeamSpline();
+	Vector m_vecPoints[16];
+	int m_nPoints;
 };
