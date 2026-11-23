@@ -8589,6 +8589,20 @@ int sub_100205d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10020630 size=0x5a
+#include "C_ItemGGargoyleBook.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGargoyleBook; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGargoyleBook_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGargoyleBook *pRet = new C_ItemGGargoyleBook;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100206f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0440;
