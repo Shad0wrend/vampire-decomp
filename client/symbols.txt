@@ -3502,6 +3502,7 @@
 0x100bd700 func   ?vfunc16@C_DynamicProp@@UAEHXZ C_DynamicProp::vfunc16
 0x100bd710 func   ?vfunc15@C_DynamicProp@@UAEHXZ C_DynamicProp::vfunc15
 0x100bd720 func   ?sub_100bd720@@YAHXZ sub_100bd720
+0x100bd780 func   ?_C_DynamicProp_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_DynamicProp_CreateObject
 0x100bd820 func   ?ClientClassInit@@YAHPAUignored@DT_DynamicProp@@@Z ClientClassInit
 0x100bd8b0 func   ?sub_100bd8b0@CUnknown100bd8b0@@QAEPAXXZ CUnknown100bd8b0::sub_100bd8b0
 0x100bd8e0 func   ??_GC_DynamicProp@@UAEPAXI@Z ??_GC_DynamicProp@@UAEPAXI@Z
