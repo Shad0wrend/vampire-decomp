@@ -33521,6 +33521,20 @@ int sub_100bd950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd9b0 size=0x39
+#include "C_OrnamentProp.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OrnamentProp; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OrnamentProp_CreateObject(int entnum, int serialNum)
+{
+	C_OrnamentProp *pRet = new C_OrnamentProp;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bda50 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_104a3a24;
