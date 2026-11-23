@@ -36236,6 +36236,153 @@ JustAfew:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0140 size=0x16e
+#include "CBaseHandle.h"
+#include "CClientThinkList.h"
+#include "IClientThinkable.h"
+
+class IEngineClient_100d0140
+{
+public:
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+	virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+	virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+	virtual void v36() = 0; virtual void v37() = 0; virtual void v38() = 0;
+	virtual float Time(int a0) = 0;
+};
+
+extern IEngineClient_100d0140 *g_104a57d4;
+
+class CClientEntityList_100d0140
+{
+public:
+	IClientThinkable *sub_100d0e20(CBaseHandle hEnt);
+};
+
+extern CClientEntityList_100d0140 *sub_1009e230();
+
+struct ThinkEntry_t
+{
+	CBaseHandle m_hEnt;
+	float m_flNextClientThink;
+	float m_flLastClientThink;
+};
+
+struct ThinkEntryNode_t
+{
+	ThinkEntry_t m_Element;
+	unsigned short m_Previous;
+	unsigned short m_Next;
+};
+
+class ThinkEntryList_t
+{
+public:
+	ThinkEntryNode_t *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	unsigned short m_Head;
+	unsigned short m_Tail;
+	unsigned short m_FirstFree;
+	unsigned short m_ElementCount;
+	unsigned short m_TotalElements;
+	unsigned short m_pad16;
+	ThinkEntryNode_t *m_pElements;
+
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+	unsigned short Head() const { return m_Head; }
+	unsigned short Next(unsigned short i) const { return m_pMemory[i].m_Next; }
+	ThinkEntry_t &Element(unsigned short i) { return m_pMemory[i].m_Element; }
+	ThinkEntry_t &operator[](unsigned short i) { return m_pMemory[i].m_Element; }
+
+	bool IsInList(unsigned short i) const
+	{
+		return i < m_TotalElements && m_pMemory[i].m_Previous != i;
+	}
+
+	void Unlink(unsigned short elem)
+	{
+		if (IsInList(elem))
+		{
+			ThinkEntryNode_t *pBase = m_pMemory;
+			ThinkEntryNode_t *pOldElem = &pBase[elem];
+			if (pOldElem->m_Previous != InvalidIndex())
+				pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+			else
+				m_Head = pOldElem->m_Next;
+			if (pOldElem->m_Next != InvalidIndex())
+				pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+			else
+				m_Tail = pOldElem->m_Previous;
+			pOldElem->m_Previous = pOldElem->m_Next = elem;
+			--m_ElementCount;
+		}
+	}
+
+	void Remove(unsigned short elem)
+	{
+		Unlink(elem);
+		m_pMemory[elem].m_Next = m_FirstFree;
+		m_FirstFree = elem;
+	}
+};
+
+class CClientThinkList_100d0140 : public CClientThinkList
+{
+public:
+	ThinkEntryList_t m_ThinkEntries;
+
+	void sub_100d0000(CBaseHandle hEnt);
+	void sub_100d0410();
+	void sub_100d0140();
+};
+
+// TARGET: CClientThinkList_100d0140::sub_100d0140
+void CClientThinkList_100d0140::sub_100d0140()
+{
+	float currentTime = g_104a57d4->Time(0);
+
+	int iCur = m_ThinkEntries.Head();
+	while (iCur != m_ThinkEntries.InvalidIndex())
+	{
+		int iNext = m_ThinkEntries.Next(iCur);
+		ThinkEntry_t *pEntry = &m_ThinkEntries[iCur];
+		IClientThinkable *pThink = sub_1009e230()->sub_100d0e20(pEntry->m_hEnt);
+		if (pThink)
+		{
+			if (pEntry->m_flNextClientThink == -1293.0f)
+			{
+				pThink->ClientThink();
+			}
+			else if (pEntry->m_flNextClientThink < currentTime)
+			{
+				pEntry->m_flNextClientThink = currentTime;
+				pThink->ClientThink();
+				pEntry = &m_ThinkEntries[iCur];
+				if (pEntry->m_flNextClientThink == currentTime)
+				{
+					sub_100d0000(pEntry->m_hEnt);
+				}
+			}
+			m_ThinkEntries[iCur].m_flLastClientThink = currentTime;
+		}
+		else
+		{
+			m_ThinkEntries.Remove(iCur);
+		}
+		iCur = iNext;
+	}
+
+	sub_100d0410();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d05d0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
