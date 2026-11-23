@@ -79211,6 +79211,50 @@ int CUnknown101bd770::sub_101bd770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bddb0 size=0xb2
+#include "vgui2__TreeNode.h"
+
+struct CPanelPos_101bddb0
+{
+	void sub_101a9890(int x, int y);
+};
+
+struct CUnknown101bc8b0
+{
+	int sub_101bc8b0();
+};
+
+// TARGET: ?sub_101bddb0@TreeNode@vgui2@@QAEXAAH0H0@Z
+void vgui2::TreeNode::sub_101bddb0(int &nStart, int &nCount, int x, int &y)
+{
+	if (nStart == 0)
+	{
+		sub_101a99f0(1);
+		((CPanelPos_101bddb0 *)this)->sub_101a9890(x, y);
+		y += (*(CUnknown101bc8b0 **)((char *)this + 0x88))->sub_101bc8b0();
+		nCount--;
+	}
+	else
+	{
+		nStart--;
+		sub_101a99f0(0);
+	}
+
+	x += 20;
+	for (int i = 0; i < *(int *)((char *)this + 0x80); i++)
+	{
+		if (nCount > 0 && *(bool *)((char *)this + 0x70))
+		{
+			(*(vgui2::TreeNode ***)((char *)this + 0x74))[i]->sub_101bddb0(nStart, nCount, x, y);
+		}
+		else
+		{
+			(*(vgui2::TreeNode ***)((char *)this + 0x74))[i]->vfunc21(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be160 size=0xaa
 #include "CUtlVector4.h"
 
