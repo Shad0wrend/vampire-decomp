@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10033480 size=0x2d
+#include "C_TEBeamPoints.h"
+C_TEBeamPoints::C_TEBeamPoints()
+{
+	m_vecStart.Init();
+	m_vecEnd.Init();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100334b0 size=0x1e
 #include "C_TEBeamPoints.h"
 
