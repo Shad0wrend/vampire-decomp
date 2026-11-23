@@ -11,4 +11,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc1(int);
 	virtual void vfunc2();
 	virtual ~IMaterialProxy();
+	void * vfunc3(char);	// as in IParticleEffect (transplant)
 };

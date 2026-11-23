@@ -4,4 +4,6 @@
 
 class IMoveHelper
 {
+public:
+	void * vfunc14(char);	// as in IParticleEffect (transplant)
 };

@@ -11,4 +11,5 @@ public:
 	virtual void vfunc4() = 0;
 	virtual void vfunc5() = 0;
 	virtual void vfunc6() = 0;
+	void * vfunc0(char);	// as in IParticleEffect (transplant)
 };

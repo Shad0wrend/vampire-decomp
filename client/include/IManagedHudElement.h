@@ -11,4 +11,5 @@ public:
 	virtual void vfunc3_hud() {}
 	virtual void vfunc4_hud() {}
 	virtual void vfunc5_hud(bool) {}
+	void * vfunc0(char);	// as in IParticleEffect (transplant)
 };
