@@ -534,6 +534,7 @@
 0x1000e630 func   ?vfunc16@C_WeaponRanged_Smg_Mac10@@UAEHXZ C_WeaponRanged_Smg_Mac10::vfunc16
 0x1000e640 func   ?vfunc15@C_WeaponRanged_Smg_Mac10@@UAEHXZ C_WeaponRanged_Smg_Mac10::vfunc15
 0x1000e650 func   ?sub_1000e650@@YAHXZ sub_1000e650
+0x1000e6b0 func   ?_C_WeaponRanged_Smg_Mac10_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponRanged_Smg_Mac10_CreateObject
 0x1000e770 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Smg_Mac10@@@Z ClientClassInit
 0x1000e800 func   ?vfunc17@C_WeaponRanged_Rifle_Remington@@UAEHXZ C_WeaponRanged_Rifle_Remington::vfunc17
 0x1000e890 func   ??_GC_WeaponRanged_Rifle_Remington@@UAEPAXI@Z ??_GC_WeaponRanged_Rifle_Remington@@UAEPAXI@Z
