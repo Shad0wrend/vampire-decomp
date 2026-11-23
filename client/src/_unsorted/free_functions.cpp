@@ -44802,6 +44802,43 @@ void __cdecl sub_1010b1d0(float p1, float p2, float p3, int p4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b7e0 size=0x1e7
+#include "matrix3x4_t.h"
+
+void sub_101082f0(const float *in1, const float in2[3][4], float *out);
+
+static inline float FloatMakePositive(float f)
+{
+	unsigned long bits = (*(unsigned long *)&f) & 0x7FFFFFFF;
+	return *(float *)&bits;
+}
+
+void sub_1010b7e0(const matrix3x4_t &transform, const Vector &vecMinsIn, const Vector &vecMaxsIn, Vector &vecMinsOut, Vector &vecMaxsOut)
+{
+	Vector localCenter = (vecMinsIn + vecMaxsIn) * 0.5f;
+
+	Vector localExtents;
+	VectorSubtract(vecMaxsIn, localCenter, localExtents);
+
+	Vector newCenter;
+	sub_101082f0(localCenter.Base(), transform.m_flMatVal, newCenter.Base());
+
+	Vector newExtents;
+	newExtents.x = FloatMakePositive(localExtents.x * transform.m_flMatVal[0][0]) +
+		FloatMakePositive(localExtents.y * transform.m_flMatVal[1][0]) +
+		FloatMakePositive(localExtents.z * transform.m_flMatVal[2][0]);
+	newExtents.y = FloatMakePositive(localExtents.x * transform.m_flMatVal[0][1]) +
+		FloatMakePositive(localExtents.y * transform.m_flMatVal[1][1]) +
+		FloatMakePositive(localExtents.z * transform.m_flMatVal[2][1]);
+	newExtents.z = FloatMakePositive(localExtents.x * transform.m_flMatVal[0][2]) +
+		FloatMakePositive(localExtents.y * transform.m_flMatVal[1][2]) +
+		FloatMakePositive(localExtents.z * transform.m_flMatVal[2][2]);
+
+	vecMinsOut = newCenter - newExtents;
+	vecMaxsOut = newCenter + newExtents;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b9d0 size=0xab
 #include "Vector.h"
 // TARGET: sub_1010b9d0
