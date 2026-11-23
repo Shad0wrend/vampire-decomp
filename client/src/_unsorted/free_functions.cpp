@@ -63497,6 +63497,21 @@ int CUnknown1015c0a0::sub_1015c0a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c0e0 size=0x3a
+namespace lifted {
+struct C10158250 { int sub_10158250(int, int, int); };
+struct C10161440 { int sub_10161440(int); };
+}
+struct CUnknown1015c0e0 { int sub_1015c0e0(int); };
+int CUnknown1015c0e0::sub_1015c0e0(int a0)
+{
+    if (a0 != 0) {
+        return ((lifted::C10158250 *)((char *)a0 + 0x10e0))->sub_10158250(*(int *)((char *)this + 0xc), *(int *)((char *)this + 0x10), ((lifted::C10161440 *)((char *)this + 0x60))->sub_10161440(a0));
+    }
+    return ((lifted::C10161440 *)((char *)this + 0x60))->sub_10161440(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c280 size=0x6b
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
