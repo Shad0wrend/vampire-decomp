@@ -55,3 +55,19 @@ void CViewportClientSystem::vfunc6()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10166680 size=0x1e
+#include "CViewportClientSystem.h"
+namespace lifted {
+int sub_100f3f80();
+int sub_101d1296(int);
+}
+CViewportClientSystem * CViewportClientSystem::vfunc8(unsigned int a0)
+{
+    int t0 = lifted::sub_100f3f80();
+    if ((*(char *)&a0 & 1) != 0) {
+        lifted::sub_101d1296((int)this);
+    }
+    return this;
+}
+// END FUNCTION
