@@ -15253,6 +15253,20 @@ int sub_10041460()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100414c0 size=0x39
+#include "C_TestTraceline.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_TestTraceline; its ClientClass's initializer stores its address
+IClientNetworkable *_C_TestTraceline_CreateObject(int entnum, int serialNum)
+{
+	C_TestTraceline *pRet = new C_TestTraceline;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041560 size=0x16b
 #include "RecvTable.h"
 extern RecvTable g_103ec9b0;
