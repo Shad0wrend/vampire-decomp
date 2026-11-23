@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEBeamPoints's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBeamPoints *pcd_emit_100334b0() { return new C_TEBeamPoints; }
+C_TEBeamPoints *pcd_emit_100334b0(const C_TEBeamPoints &other) { return new C_TEBeamPoints(other); }
 
 // TARGET: ??_GC_TEBeamPoints@@UAEPAXI@Z
 // END FUNCTION
