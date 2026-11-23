@@ -71519,6 +71519,119 @@ void sub_10170440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170aa0 size=0x114
+// TARGET: ?sub_10170aa0@VBarterUI@@QAE_NPAX_N@Z
+#include "VBarterUI.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern int sub_10186830();
+
+struct BarterPlayer_10170aa0
+{
+	char pad[0x16d4];
+	int m_i16d4;
+	int sub_10097fd0(int a, int b);
+};
+
+struct BarterEntityList_10170aa0
+{
+	void *sub_100d0cf0(int idx);
+};
+
+struct BarterEngine_10170aa0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void ClientCmd(const char *cmd, int flag);
+};
+
+#define V1(x) virtual void _v##x() {}
+#define V4(x) V1(x##0) V1(x##1) V1(x##2) V1(x##3)
+#define V16(x) V4(x##0) V4(x##1) V4(x##2) V4(x##3)
+
+struct BarterItem_10170aa0
+{
+	V16(a) V16(b) V16(c) V16(d) V16(e) V16(f) V16(g) V16(h) V16(i) V16(j) // 0..159
+	V4(k0) V4(k1) V1(k20) // 160..168
+	virtual int call_v169(); // 169 (+0x2a4)
+	V1(l0) V1(l1) V4(l2) V4(l3) // 170..179
+	V16(m) V16(n) // 180..211
+	V4(o0) V4(o1) V1(o20) V1(o21) V1(o22) // 212..222
+	virtual int call_v223(); // 223 (+0x37c)
+
+	char pad[0x798];
+	int m_i79c;
+
+	bool sub_1007d790(BarterPlayer_10170aa0 *pPlayer, void *pMerchant, bool bFlag);
+	bool sub_1007d760(BarterPlayer_10170aa0 *pPlayer, void *pMerchant, bool bFlag);
+};
+
+extern BarterPlayer_10170aa0 *g_104a0d50;
+extern BarterEntityList_10170aa0 *g_102b8e9c;
+extern BarterEngine_10170aa0 *g_104a57d4;
+
+bool VBarterUI::sub_10170aa0(void *pItemVoid, bool bSell)
+{
+	BarterPlayer_10170aa0 *pPlayer = g_104a0d50;
+	bool bRet = false;
+	if (!pPlayer)
+		return false;
+
+	void *pMerchant = g_102b8e9c->sub_100d0cf0(pPlayer->m_i16d4);
+	BarterItem_10170aa0 *pItem = (BarterItem_10170aa0 *)pItemVoid;
+	int nIdx = pItem->m_i79c;
+	if (nIdx < 0)
+		return false;
+
+	char szCmd[80];
+	if (bSell)
+	{
+		if (sub_10186830())
+		{
+			if (pItem->sub_1007d790(pPlayer, pMerchant, false))
+			{
+				sprintf(szCmd, "vbarter sell %d", nIdx);
+				bRet = true;
+			}
+		}
+		else
+		{
+			sprintf(szCmd, "vbarter give %d", nIdx);
+			bRet = true;
+		}
+	}
+	else
+	{
+		if (sub_10186830())
+		{
+			bool bFlag = false;
+			if (pPlayer->sub_10097fd0(pItem->call_v223(), pItem->call_v169()))
+				bFlag = true;
+			if (pItem->sub_1007d760(pPlayer, pMerchant, bFlag))
+			{
+				sprintf(szCmd, "vbarter buy %d", nIdx);
+				bRet = true;
+			}
+		}
+		else
+		{
+			sprintf(szCmd, "vbarter take %d", nIdx);
+			bRet = true;
+		}
+	}
+
+	if (bRet)
+		g_104a57d4->ClientCmd(szCmd, 1);
+
+	return bRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170bc0 size=0x2a
 namespace lifted {
 extern char g_1027b3d0;
