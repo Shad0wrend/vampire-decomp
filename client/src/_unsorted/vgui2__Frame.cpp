@@ -116,6 +116,20 @@ bool vgui2::Frame::vfunc140(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9230 size=0x23
+#include "vgui2__Frame.h"
+namespace lifted {
+extern char g_102d4cdc;
+struct C101b4f40 { int sub_101b4f40(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(int, int); };
+}
+void vgui2::Frame::vfunc75(int a0)
+{
+    ((lifted::V *)a0)->f15((int)&lifted::g_102d4cdc, -1);
+    ((lifted::C101b4f40 *)this)->sub_101b4f40(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9260 size=0x8
 #include "vgui2__Frame.h"
 namespace lifted {
