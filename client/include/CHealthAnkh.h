@@ -17,5 +17,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CHealthAnkh adds to its base's vtable: 114-115, vfuncK at slot K
 	virtual void vfunc114(int);
 	virtual void vfunc115();
-	char m_pad0008[0x1b0 - 0x8];
+	CHealthAnkh(int parent);
+	void sub_10051100();
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188;
+	char m_unk18c; char m_unk18d; char m_unk18e; char m_unk18f;
+	int m_unk190; int m_unk194; int m_unk198; int m_unk19c; int m_unk1a0; int m_unk1a4; int m_unk1a8; int m_unk1ac;
 };
