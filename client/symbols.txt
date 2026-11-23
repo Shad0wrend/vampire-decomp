@@ -1528,6 +1528,7 @@
 0x10024930 func   ?vfunc16@C_ItemKTawniApartmentKey@@UAEHXZ C_ItemKTawniApartmentKey::vfunc16
 0x10024940 func   ?vfunc15@C_ItemKTawniApartmentKey@@UAEHXZ C_ItemKTawniApartmentKey::vfunc15
 0x10024950 func   ?sub_10024950@@YAHXZ sub_10024950
+0x100249b0 func   ?_C_ItemKTawniApartmentKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKTawniApartmentKey_CreateObject
 0x10024a70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKTawniApartmentKey@@@Z ClientClassInit
 0x10024b00 func   ?vfunc17@C_ItemKShrekHubOneKey@@UAEHXZ C_ItemKShrekHubOneKey::vfunc17
 0x10024b90 func   ??_GC_ItemKShrekHubOneKey@@UAEPAXI@Z ??_GC_ItemKShrekHubOneKey@@UAEPAXI@Z
