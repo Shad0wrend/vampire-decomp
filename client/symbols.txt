@@ -1052,6 +1052,7 @@
 0x10019f30 func   ?vfunc16@C_ItemGLarryBriefcase@@UAEHXZ C_ItemGLarryBriefcase::vfunc16
 0x10019f40 func   ?vfunc15@C_ItemGLarryBriefcase@@UAEHXZ C_ItemGLarryBriefcase::vfunc15
 0x10019f50 func   ?sub_10019f50@@YAHXZ sub_10019f50
+0x10019fb0 func   ?_C_ItemGLarryBriefcase_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGLarryBriefcase_CreateObject
 0x1001a070 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLarryBriefcase@@@Z ClientClassInit
 0x1001a100 func   ?vfunc17@C_ItemGHorrorTape_1@@UAEHXZ C_ItemGHorrorTape_1::vfunc17
 0x1001a190 func   ??_GC_ItemGHorrorTape_1@@UAEPAXI@Z ??_GC_ItemGHorrorTape_1@@UAEPAXI@Z
