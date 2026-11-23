@@ -2545,6 +2545,20 @@ int sub_1000bbd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000bc30 size=0x5a
+#include "C_WeaponMelee_GargoyleFist.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_GargoyleFist; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_GargoyleFist_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_GargoyleFist *pRet = new C_WeaponMelee_GargoyleFist;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000bcf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4634;
