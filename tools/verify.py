@@ -48,7 +48,7 @@ from pathlib import Path
 from .blocks import sources
 from .cfg import (Block, read_addresses, read_aliases, read_blocks, read_build, read_fixups, read_known,
                   read_layout, read_patches)
-from .coff import SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
+from .coff import SYM_CLASS_EXTERNAL, SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
 from .mapfile import read_map
 from .pe import PE
 
@@ -417,12 +417,41 @@ class Verifier:
             return "missing", [why]
         placed: dict[int, int] = {}
         problems = self.check_code(obj, roots, placed)
-        problems = sorted(problems + self.check_block_data(obj, placed), key=lambda p: (p[0] != block.addr, p[0], p[1]))
+        problems += self.check_block_data(obj, placed) + self.import_slot_definitions(obj)
+        problems = sorted(problems, key=lambda p: (p[0] != block.addr, p[0], p[1]))
         if not problems:
             return "identical", []
         a, offset, _ = problems[0]
         status = f"differs@0x{offset:x}" if a == block.addr else f"differs@0x{a:08x}+0x{offset:x}"
         return status, [f"0x{a:08x}+0x{o:x}: {w}" for a, o, w in problems]
+
+    def import_slot_definitions(self, obj: _Object) -> list[tuple[int, int, str]]:
+        """Problems (game address, 0, why) of the names the object defines (data, zero-initialized data or a
+        communal) at one of the game's import slots. Such a name must stay an extern, which config/aliases.txt binds
+        to the import: a definition makes the link bind every unit's use of the name to this variable instead, and
+        the build calls through a zero word (the code bytes are the same either way)."""
+        slots = self._import_slots()
+        out = []
+        for sym in obj.coff.symbols if slots else ():
+            if sym.storage_class != SYM_CLASS_EXTERNAL:
+                continue
+            if sym.is_defined:
+                home = obj.sections.get(sym.section_number)
+                if home is None or home.characteristics & CODE:
+                    continue
+            elif sym.section_number != 0 or not sym.value:  # an undefined extern; value > 0 is a communal's size
+                continue
+            addr = self.resolve(obj, sym)
+            if addr in slots:
+                out.append((addr, 0, f"{sym.name} is defined here, at the game's import slot 0x{addr:08x}: every "
+                                     f"use binds to this variable, not the import (declare it extern)"))
+        return sorted(out)
+
+    def _import_slots(self) -> set[int]:
+        if getattr(self, "_slots", None) is None:
+            read = getattr(self.orig, "import_slots", None)
+            self._slots = set(read()) if read is not None else set()
+        return self._slots
 
     def check_block_data(self, obj: _Object, placed: dict[int, int]) -> list[tuple[int, int, str]]:
         """Problems (game address, offset, why) of the initialized data a block's object defines at game addresses

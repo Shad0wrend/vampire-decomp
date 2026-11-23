@@ -132,3 +132,18 @@ class PE:
                 at += length
         self._relocated = sorted(out)
         return self._relocated
+
+    def import_slots(self) -> set[int]:
+        """The virtual addresses of the import address table's slots (each import descriptor's FirstThunk array)."""
+        rva = self.directories[1][0] if len(self.directories) > 1 else 0
+        out: set[int] = set()
+        while rva:
+            lookup, _, _, name, first = struct.unpack("<IIIII", self.read(self.image_base + rva, 20))
+            if not (lookup or name or first):
+                break
+            at, slot = self.image_base + (lookup or first), self.image_base + first
+            while struct.unpack("<I", self.read(at, 4))[0]:
+                out.add(slot)
+                at, slot = at + 4, slot + 4
+            rva += 20
+        return out
