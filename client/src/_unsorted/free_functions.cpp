@@ -4569,6 +4569,20 @@ int sub_100129d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10012a30 size=0x5a
+#include "C_OccultFrenzy.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultFrenzy; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultFrenzy_CreateObject(int entnum, int serialNum)
+{
+	C_OccultFrenzy *pRet = new C_OccultFrenzy;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012af0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e27e8;
