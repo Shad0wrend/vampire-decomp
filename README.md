@@ -43,15 +43,19 @@ The data is in the sources as well: initialized and constant data in `src/_data/
   - identical: all 16,590 function blocks in `src/`, all 2,388 static initializers and all 34 data objects;
   - checked: 282 vtables (21,448 slots, every one filled by the compiler), 591 exports (the 32 SafeDisc data
     tables among them) and 179 imports;
-  - no difference is left: `config/known_differences.txt` and `config/vtable_patches.txt` are empty (2026-11-23).
+  - no difference is left: `config/known_differences.txt` and `config/vtable_patches.txt` are empty (2026-11-23);
+  - `ninja ownership` finds what makes each byte of the original file: all but 668 of its 7,860,281 bytes (three
+    spots of compiler thunks and one 324-byte block of `.data`).
 
-  Still open before it can replace the original: an in-game test of the standalone DLL.
+  In the game (2026-11-23), the standalone DLL in place of the original loaded a map and was played for 150
+  seconds (two Hollywood areas, saving, the pause menu) with no crash. It is not yet the same file byte for byte:
+  its layout (where each function and table sits, and the padding between them) differs from the original's.
 
 ### The rest of the game
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in a separate project: 10,804 of 16,012 functions (67.5%), 453,678 of 1,690,577 code bytes (26.8%) as of 2026-11-23 |
+| `client.dll` (client game code) | In progress in a separate project: 11,142 of 16,012 functions (69.6%), 478,593 of 1,690,577 code bytes (28.3%) as of 2026-11-23 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |
@@ -120,6 +124,9 @@ It prints a summary, writes `build\report.json` and exits 0 when every differenc
 reason, in `config/known_differences.txt`; today that list is empty, so any difference fails the check.
 `python -m tools.verify --function 0x<address>` shows one function's
 bytes next to the game's (disassembled when `pip install capstone` is installed).
+
+`ninja ownership` gives every byte of `orig\vampire.dll` an owner (code, data, vtables, library code, linker
+tables, padding...), writes `build\ownership.json` and exits 1 while any byte has none.
 
 ## Legal
 
