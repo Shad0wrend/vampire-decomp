@@ -38924,6 +38924,110 @@ int CUnknown100e02c0::sub_100e02c0(int a0, int a1, int a2, int a3, int a4, int a
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0300 size=0x1af
+#include "Vector.h"
+#include "ConVar.h"
+
+struct ColorRGBExp32_100e0300
+{
+	unsigned char r, g, b;
+	signed char exponent;
+};
+
+struct DetailPropLightstyle_100e0300
+{
+	ColorRGBExp32_100e0300 m_Lighting;
+	unsigned char m_Style;
+};
+
+struct IVEngineClient_100e0300
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75();
+	virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83();
+	virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87();
+	virtual void v88(); virtual void v89(); virtual void v90();
+	virtual void LinearToGamma(float *linear, float *gamma);
+	virtual float LightStyleValue(int style);
+	virtual void v93();
+	virtual void ComputeDynamicLighting(const Vector &pt, const Vector *pNormal, Vector &color);
+};
+
+extern ConVar *g_104cf3e4;
+extern IVEngineClient_100e0300 *g_104a57d4;
+extern float g_104d4f90[];
+extern DetailPropLightstyle_100e0300 *g_104cf4a8;
+
+static inline float TexLightToLinear_100e0300(int c, int exponent)
+{
+	return (float)c * g_104d4f90[exponent];
+}
+
+struct CDetailModel_100e0300
+{
+	void *vptr;
+	Vector m_Origin;
+	char pad10[0x2c];
+	unsigned char m_LightStyleCount;
+	ColorRGBExp32_100e0300 m_Color;
+	char pad41[3];
+	unsigned int m_LightStyle;
+
+	void sub_100e0300(float *color);
+};
+
+// TARGET: CDetailModel_100e0300::sub_100e0300
+void CDetailModel_100e0300::sub_100e0300(float *color)
+{
+	if ((g_104cf3e4->vfunc1() ? 0 : g_104cf3e4->m_nValue) == 1)
+	{
+		color[0] = color[1] = color[2] = 1.0f;
+		return;
+	}
+
+	Vector tmp;
+	Vector normal(1, 0, 0);
+	g_104a57d4->ComputeDynamicLighting(m_Origin, &normal, tmp);
+
+	float val = g_104a57d4->LightStyleValue(0);
+	color[0] = tmp[0] + val * TexLightToLinear_100e0300(m_Color.r, m_Color.exponent);
+	color[1] = tmp[1] + val * TexLightToLinear_100e0300(m_Color.g, m_Color.exponent);
+	color[2] = tmp[2] + val * TexLightToLinear_100e0300(m_Color.b, m_Color.exponent);
+
+	for (int i = 0; i < m_LightStyleCount; ++i)
+	{
+		DetailPropLightstyle_100e0300 &lighting = g_104cf4a8[m_LightStyle + i];
+		val = g_104a57d4->LightStyleValue(lighting.m_Style);
+		if (val != 0)
+		{
+			color[0] += val * TexLightToLinear_100e0300(lighting.m_Lighting.r, lighting.m_Lighting.exponent);
+			color[1] += val * TexLightToLinear_100e0300(lighting.m_Lighting.g, lighting.m_Lighting.exponent);
+			color[2] += val * TexLightToLinear_100e0300(lighting.m_Lighting.b, lighting.m_Lighting.exponent);
+		}
+	}
+
+	g_104a57d4->LinearToGamma(color, color);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
