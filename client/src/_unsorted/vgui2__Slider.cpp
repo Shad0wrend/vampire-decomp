@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::Slider's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::Slider *pcd_emit_101bb780() { return new vgui2::Slider; }
+vgui2::Slider *pcd_emit_101bb780(const vgui2::Slider &other) { return new vgui2::Slider(other); }
 
 // TARGET: ??_GSlider@vgui2@@UAEPAXI@Z
 // END FUNCTION

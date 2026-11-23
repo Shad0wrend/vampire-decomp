@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::CGrid's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::CGrid *pcd_emit_101666f0() { return new vgui2::CGrid; }
+vgui2::CGrid *pcd_emit_101666f0(const vgui2::CGrid &other) { return new vgui2::CGrid(other); }
 
 // TARGET: ??_GCGrid@vgui2@@UAEPAXI@Z
 // END FUNCTION

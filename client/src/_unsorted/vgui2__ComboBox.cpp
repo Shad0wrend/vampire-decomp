@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::ComboBox's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::ComboBox *pcd_emit_101c78f0() { return new vgui2::ComboBox; }
+vgui2::ComboBox *pcd_emit_101c78f0(const vgui2::ComboBox &other) { return new vgui2::ComboBox(other); }
 
 // TARGET: ??_GComboBox@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes CLoadingDiscPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CLoadingDiscPanel *pcd_emit_10167430() { return new CLoadingDiscPanel; }
+CLoadingDiscPanel *pcd_emit_10167430(const CLoadingDiscPanel &other) { return new CLoadingDiscPanel(other); }
 
 // TARGET: ??_GCLoadingDiscPanel@@UAEPAXI@Z
 // END FUNCTION

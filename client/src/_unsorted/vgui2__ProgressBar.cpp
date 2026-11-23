@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::ProgressBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::ProgressBar *pcd_emit_101c6530() { return new vgui2::ProgressBar; }
+vgui2::ProgressBar *pcd_emit_101c6530(const vgui2::ProgressBar &other) { return new vgui2::ProgressBar(other); }
 
 // TARGET: ??_GProgressBar@vgui2@@UAEPAXI@Z
 // END FUNCTION

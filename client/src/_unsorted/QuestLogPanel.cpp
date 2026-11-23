@@ -6,7 +6,7 @@
 
 // VC6 writes QuestLogPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-QuestLogPanel *pcd_emit_10188050() { return new QuestLogPanel; }
+QuestLogPanel *pcd_emit_10188050(const QuestLogPanel &other) { return new QuestLogPanel(other); }
 
 // TARGET: ??_GQuestLogPanel@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes CConnectMessagePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CConnectMessagePanel *pcd_emit_10165240() { return new CConnectMessagePanel; }
+CConnectMessagePanel *pcd_emit_10165240(const CConnectMessagePanel &other) { return new CConnectMessagePanel(other); }
 
 // TARGET: ??_GCConnectMessagePanel@@UAEPAXI@Z
 // END FUNCTION

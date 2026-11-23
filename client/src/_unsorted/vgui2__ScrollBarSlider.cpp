@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::ScrollBarSlider's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::ScrollBarSlider *pcd_emit_101c9e50() { return new vgui2::ScrollBarSlider; }
+vgui2::ScrollBarSlider *pcd_emit_101c9e50(const vgui2::ScrollBarSlider &other) { return new vgui2::ScrollBarSlider(other); }
 
 // TARGET: ??_GScrollBarSlider@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -14,7 +14,7 @@ bool CMessageCharsPanel::vfunc25(int a0, int a1)
 
 // VC6 writes CMessageCharsPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CMessageCharsPanel *pcd_emit_10168200() { return new CMessageCharsPanel; }
+CMessageCharsPanel *pcd_emit_10168200(const CMessageCharsPanel &other) { return new CMessageCharsPanel(other); }
 
 // TARGET: ??_GCMessageCharsPanel@@UAEPAXI@Z
 // END FUNCTION

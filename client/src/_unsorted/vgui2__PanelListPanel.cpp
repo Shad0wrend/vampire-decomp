@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::PanelListPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::PanelListPanel *pcd_emit_101ca820() { return new vgui2::PanelListPanel; }
+vgui2::PanelListPanel *pcd_emit_101ca820(const vgui2::PanelListPanel &other) { return new vgui2::PanelListPanel(other); }
 
 // TARGET: ??_GPanelListPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::CheckButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::CheckButton *pcd_emit_101baa10() { return new vgui2::CheckButton; }
+vgui2::CheckButton *pcd_emit_101baa10(const vgui2::CheckButton &other) { return new vgui2::CheckButton(other); }
 
 // TARGET: ??_GCheckButton@vgui2@@UAEPAXI@Z
 // END FUNCTION

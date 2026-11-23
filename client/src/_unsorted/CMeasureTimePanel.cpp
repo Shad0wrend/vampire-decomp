@@ -6,7 +6,7 @@
 
 // VC6 writes CMeasureTimePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CMeasureTimePanel *pcd_emit_10167e70() { return new CMeasureTimePanel; }
+CMeasureTimePanel *pcd_emit_10167e70(const CMeasureTimePanel &other) { return new CMeasureTimePanel(other); }
 
 // TARGET: ??_GCMeasureTimePanel@@UAEPAXI@Z
 // END FUNCTION

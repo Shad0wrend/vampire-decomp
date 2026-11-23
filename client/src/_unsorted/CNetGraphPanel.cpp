@@ -6,7 +6,7 @@
 
 // VC6 writes CNetGraphPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CNetGraphPanel *pcd_emit_10168c80() { return new CNetGraphPanel; }
+CNetGraphPanel *pcd_emit_10168c80(const CNetGraphPanel &other) { return new CNetGraphPanel(other); }
 
 // TARGET: ??_GCNetGraphPanel@@UAEPAXI@Z
 // END FUNCTION

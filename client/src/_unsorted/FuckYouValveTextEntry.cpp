@@ -6,7 +6,7 @@
 
 // VC6 writes FuckYouValveTextEntry's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-FuckYouValveTextEntry *pcd_emit_10170e00() { return new FuckYouValveTextEntry; }
+FuckYouValveTextEntry *pcd_emit_10170e00(const FuckYouValveTextEntry &other) { return new FuckYouValveTextEntry(other); }
 
 // TARGET: ??_GFuckYouValveTextEntry@@UAEPAXI@Z
 // END FUNCTION

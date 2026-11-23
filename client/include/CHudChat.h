@@ -5,9 +5,11 @@
 #include "CHudElement.h"
 #include "vgui2__Panel.h"
 
+class CHudChatLine : public vgui2::Panel { public: CHudChatLine *sub_100f13a0(vgui2::Panel *parent, const char *name); };
 class CHudChat : public CHudElement, public vgui2::Panel
 {
 public:
+	CHudChat(int a);
 	virtual ~CHudChat();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

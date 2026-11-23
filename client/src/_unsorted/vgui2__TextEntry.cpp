@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::TextEntry's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::TextEntry *pcd_emit_101acd90() { return new vgui2::TextEntry; }
+vgui2::TextEntry *pcd_emit_101acd90(const vgui2::TextEntry &other) { return new vgui2::TextEntry(other); }
 
 // TARGET: ??_GTextEntry@vgui2@@UAEPAXI@Z
 // END FUNCTION

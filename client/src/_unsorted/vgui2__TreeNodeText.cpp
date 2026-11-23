@@ -46,7 +46,7 @@ void vgui2::TreeNodeText::vfunc81()
 
 // VC6 writes vgui2::TreeNodeText's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::TreeNodeText *pcd_emit_101bcc80() { return new vgui2::TreeNodeText; }
+vgui2::TreeNodeText *pcd_emit_101bcc80(const vgui2::TreeNodeText &other) { return new vgui2::TreeNodeText(other); }
 
 // TARGET: ??_GTreeNodeText@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes CHudChatLine's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CHudChatLine *pcd_emit_100f1420() { return new CHudChatLine; }
+CHudChatLine *pcd_emit_100f1420(const CHudChatLine &other) { return new CHudChatLine(other); }
 
 // TARGET: ??_GCHudChatLine@@UAEPAXI@Z
 // END FUNCTION

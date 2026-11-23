@@ -13,7 +13,7 @@ void CBitmapButton::vfunc97()
 
 // VC6 writes CBitmapButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CBitmapButton *pcd_emit_10164280() { return new CBitmapButton; }
+CBitmapButton *pcd_emit_10164280(const CBitmapButton &other) { return new CBitmapButton(other); }
 
 // TARGET: ??_GCBitmapButton@@UAEPAXI@Z
 // END FUNCTION

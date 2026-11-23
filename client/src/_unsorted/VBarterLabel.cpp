@@ -6,7 +6,7 @@
 
 // VC6 writes VBarterLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VBarterLabel *pcd_emit_1016b180() { return new VBarterLabel; }
+VBarterLabel *pcd_emit_1016b180(const VBarterLabel &other) { return new VBarterLabel(other); }
 
 // TARGET: ??_GVBarterLabel@@UAEPAXI@Z
 // END FUNCTION

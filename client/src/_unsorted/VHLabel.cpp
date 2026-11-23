@@ -6,7 +6,7 @@
 
 // VC6 writes VHLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VHLabel *pcd_emit_1018ca50() { return new VHLabel; }
+VHLabel *pcd_emit_1018ca50(const VHLabel &other) { return new VHLabel(other); }
 
 // TARGET: ??_GVHLabel@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes CFPSPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFPSPanel *pcd_emit_10165fb0() { return new CFPSPanel; }
+CFPSPanel *pcd_emit_10165fb0(const CFPSPanel &other) { return new CFPSPanel(other); }
 
 // TARGET: ??_GCFPSPanel@@UAEPAXI@Z
 // END FUNCTION

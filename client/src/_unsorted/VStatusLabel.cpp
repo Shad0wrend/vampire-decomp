@@ -6,7 +6,7 @@
 
 // VC6 writes VStatusLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VStatusLabel *pcd_emit_1018cc50() { return new VStatusLabel; }
+VStatusLabel *pcd_emit_1018cc50(const VStatusLabel &other) { return new VStatusLabel(other); }
 
 // TARGET: ??_GVStatusLabel@@UAEPAXI@Z
 // END FUNCTION

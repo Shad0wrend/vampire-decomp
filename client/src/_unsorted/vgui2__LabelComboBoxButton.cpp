@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::LabelComboBoxButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::LabelComboBoxButton *pcd_emit_101bae50() { return new vgui2::LabelComboBoxButton; }
+vgui2::LabelComboBoxButton *pcd_emit_101bae50(const vgui2::LabelComboBoxButton &other) { return new vgui2::LabelComboBoxButton(other); }
 
 // TARGET: ??_GLabelComboBoxButton@vgui2@@UAEPAXI@Z
 // END FUNCTION

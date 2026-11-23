@@ -14,7 +14,7 @@ int CTextMessagePanel::vfunc7(int a0, int a1, int a2)
 
 // VC6 writes CTextMessagePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CTextMessagePanel *pcd_emit_1016a770() { return new CTextMessagePanel; }
+CTextMessagePanel *pcd_emit_1016a770(const CTextMessagePanel &other) { return new CTextMessagePanel(other); }
 
 // TARGET: ??_GCTextMessagePanel@@UAEPAXI@Z
 // END FUNCTION

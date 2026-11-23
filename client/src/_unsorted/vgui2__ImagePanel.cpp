@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::ImagePanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::ImagePanel *pcd_emit_101c5950() { return new vgui2::ImagePanel; }
+vgui2::ImagePanel *pcd_emit_101c5950(const vgui2::ImagePanel &other) { return new vgui2::ImagePanel(other); }
 
 // TARGET: ??_GImagePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION

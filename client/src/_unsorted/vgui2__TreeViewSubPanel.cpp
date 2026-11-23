@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::TreeViewSubPanel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::TreeViewSubPanel *pcd_emit_101bc6e0() { return new vgui2::TreeViewSubPanel; }
+vgui2::TreeViewSubPanel *pcd_emit_101bc6e0(const vgui2::TreeViewSubPanel &other) { return new vgui2::TreeViewSubPanel(other); }
 
 // TARGET: ??_GTreeViewSubPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION

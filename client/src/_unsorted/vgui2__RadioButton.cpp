@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::RadioButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::RadioButton *pcd_emit_101c5d30() { return new vgui2::RadioButton; }
+vgui2::RadioButton *pcd_emit_101c5d30(const vgui2::RadioButton &other) { return new vgui2::RadioButton(other); }
 
 // TARGET: ??_GRadioButton@vgui2@@UAEPAXI@Z
 // END FUNCTION

@@ -6,7 +6,7 @@
 
 // VC6 writes VUnderscoreLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VUnderscoreLabel *pcd_emit_1017d550() { return new VUnderscoreLabel; }
+VUnderscoreLabel *pcd_emit_1017d550(const VUnderscoreLabel &other) { return new VUnderscoreLabel(other); }
 
 // TARGET: ??_GVUnderscoreLabel@@UAEPAXI@Z
 // END FUNCTION

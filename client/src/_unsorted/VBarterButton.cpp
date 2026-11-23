@@ -14,7 +14,7 @@ int VBarterButton::vfunc164(int a0, int a1, int a2, int a3)
 
 // VC6 writes VBarterButton's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VBarterButton *pcd_emit_1016cda0() { return new VBarterButton; }
+VBarterButton *pcd_emit_1016cda0(const VBarterButton &other) { return new VBarterButton(other); }
 
 // TARGET: ??_GVBarterButton@@UAEPAXI@Z
 // END FUNCTION

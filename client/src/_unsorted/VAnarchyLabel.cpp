@@ -6,7 +6,7 @@
 
 // VC6 writes VAnarchyLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-VAnarchyLabel *pcd_emit_10170eb0() { return new VAnarchyLabel; }
+VAnarchyLabel *pcd_emit_10170eb0(const VAnarchyLabel &other) { return new VAnarchyLabel(other); }
 
 // TARGET: ??_GVAnarchyLabel@@UAEPAXI@Z
 // END FUNCTION

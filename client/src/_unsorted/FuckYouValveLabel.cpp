@@ -6,7 +6,7 @@
 
 // VC6 writes FuckYouValveLabel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-FuckYouValveLabel *pcd_emit_10170d60() { return new FuckYouValveLabel; }
+FuckYouValveLabel *pcd_emit_10170d60(const FuckYouValveLabel &other) { return new FuckYouValveLabel(other); }
 
 // TARGET: ??_GFuckYouValveLabel@@UAEPAXI@Z
 // END FUNCTION
