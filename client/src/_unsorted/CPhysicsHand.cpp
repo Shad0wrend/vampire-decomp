@@ -1,6 +1,29 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1005f610 size=0x96
+#include "CPhysicsHand.h"
+int sub_100cd100();
+int sub_100cd0f0();
+extern bool g_103eedf8;
+extern bool g_103eedf9;
+// TARGET: ??0CPhysicsHand@@QAE@H@Z
+CPhysicsHand::CPhysicsHand(int a)
+    : CManagedHudElement(a, (int)"PhysicsHand")
+{
+    sub_1005f750();
+    vfunc63(0);
+    sub_101a9890((sub_100cd100() - m_unk178) / 2, (sub_100cd0f0() - m_unk17c) / 2);
+    m_b194 = true;
+    m_b196 = false;
+    m_b195 = false;
+    m_n190 = 0xff;
+    sub_1005f800();
+    g_103eedf8 = false;
+    g_103eedf9 = false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f6e0 size=0x1e
 #include "CPhysicsHand.h"
 
