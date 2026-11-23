@@ -3588,6 +3588,7 @@
 0x100c65a0 func   ?vfunc16@C_VampireProjectile_MingXiaoSpit@@UAEHXZ C_VampireProjectile_MingXiaoSpit::vfunc16
 0x100c65b0 func   ?vfunc15@C_VampireProjectile_MingXiaoSpit@@UAEHXZ C_VampireProjectile_MingXiaoSpit::vfunc15
 0x100c65c0 func   ?sub_100c65c0@@YAHXZ sub_100c65c0
+0x100c6620 func   ?_C_VampireProjectile_MingXiaoSpit_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_VampireProjectile_MingXiaoSpit_CreateObject
 0x100c6680 func   ??_GC_VampireProjectile_MingXiaoSpit@@UAEPAXI@Z ??_GC_VampireProjectile_MingXiaoSpit@@UAEPAXI@Z
 0x100c6700 func   ?ClientClassInit@@YAHPAUignored@DT_VampireProjectile_MingXiaoSpit@@@Z ClientClassInit
 0x100c6840 func   ?vfunc144@C_VampireProjectile@@UAE_NXZ C_VampireProjectile::vfunc144
