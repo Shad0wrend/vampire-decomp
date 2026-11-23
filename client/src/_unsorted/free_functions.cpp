@@ -1763,6 +1763,20 @@ int sub_10009150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100091b0 size=0x5a
+#include "C_WeaponMelee_OccultBlade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_OccultBlade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_OccultBlade_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_OccultBlade *pRet = new C_WeaponMelee_OccultBlade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3b6c;
