@@ -95,16 +95,6 @@ int C_BaseTempEntity::vfunc8()
 }
 // END FUNCTION
 
-// FUNCTION: 0x1002c370 size=0x1e
-#include "C_BaseTempEntity.h"
-
-// VC6 writes C_BaseTempEntity's scalar deleting destructor where it emits the class's vtable; `new` in a function
-// nothing calls makes it emit both here
-C_BaseTempEntity *pcd_emit_1002c370() { return new C_BaseTempEntity; }
-
-// TARGET: ??_GC_BaseTempEntity@@UAEPAXI@Z
-// END FUNCTION
-
 // FUNCTION: 0x1002c3c0 size=0x1
 #include "C_BaseTempEntity.h"
 void C_BaseTempEntity::vfunc13()
