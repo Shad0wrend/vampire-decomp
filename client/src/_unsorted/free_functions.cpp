@@ -32180,6 +32180,20 @@ int sub_100b3050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b30b0 size=0x5a
+#include "C_FuncParticle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FuncParticle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FuncParticle_CreateObject(int entnum, int serialNum)
+{
+	C_FuncParticle *pRet = new C_FuncParticle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3190 size=0x14a
 #include "RecvTable.h"
 extern RecvTable g_104a1bec;
