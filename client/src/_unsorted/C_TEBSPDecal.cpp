@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10035230 size=0x2d
+#include "C_TEBSPDecal.h"
+C_TEBSPDecal::C_TEBSPDecal()
+{
+	m_vecOrigin.Init(0, 0, 0);
+	m_vecEnd.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035260 size=0x1e
 #include "C_TEBSPDecal.h"
 
