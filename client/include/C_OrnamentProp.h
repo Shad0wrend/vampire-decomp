@@ -7,9 +7,11 @@
 class C_OrnamentProp : public C_DynamicProp
 {
 public:
+	C_OrnamentProp();
 	virtual ~C_OrnamentProp();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_OrnamentProp's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
+	char m_pad0014[0x790 - 0x14];
 };

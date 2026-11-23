@@ -6,7 +6,9 @@
 class C_RopeKeyframe : public C_BaseEntity
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	C_RopeKeyframe();
     // the base slots the game's vtable fills with C_RopeKeyframe's own function
     virtual int vfunc15();
     virtual int vfunc16();
+    char m_pad0014[0x728 - 0x14];
 };

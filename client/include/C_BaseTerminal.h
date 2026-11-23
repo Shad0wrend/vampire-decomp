@@ -7,6 +7,7 @@
 class C_BaseTerminal : public C_BaseAnimating
 {
 public:
+	C_BaseTerminal();
 	virtual ~C_BaseTerminal();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseTerminal's own function
@@ -14,4 +15,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc16();
 	virtual bool vfunc25(int);
 	virtual void vfunc29(char);
+	char m_pad0014[0xf20 - 0x14];
 };

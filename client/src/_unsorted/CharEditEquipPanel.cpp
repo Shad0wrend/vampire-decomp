@@ -35,3 +35,20 @@ void CharEditEquipPanel::vfunc119()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1017abc0 size=0x28
+#include "CharEditEquipPanel.h"
+namespace lifted {
+struct C1017ac30 { int sub_1017ac30(); };
+struct C1017ac40 { int sub_1017ac40(); };
+struct C101a99f0 { int sub_101a99f0(int); };
+}
+int CharEditEquipPanel::vfunc21(int a0)
+{
+    int t0 = ((lifted::C101a99f0 *)this)->sub_101a99f0(a0);
+    if (((char)a0) != 0) {
+        return ((lifted::C1017ac40 *)this)->sub_1017ac40();
+    }
+    return ((lifted::C1017ac30 *)this)->sub_1017ac30();
+}
+// END FUNCTION

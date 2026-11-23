@@ -25,7 +25,7 @@ int C_DisciplineProjectile::vfunc15()
 
 // VC6 writes C_DisciplineProjectile's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_DisciplineProjectile *pcd_emit_10146550() { return new C_DisciplineProjectile; }
+C_DisciplineProjectile *pcd_emit_10146550(const C_DisciplineProjectile &other) { return new C_DisciplineProjectile(other); }
 
 // TARGET: ??_GC_DisciplineProjectile@@UAEPAXI@Z
 // END FUNCTION

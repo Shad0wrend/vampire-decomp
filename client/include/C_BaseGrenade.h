@@ -7,6 +7,7 @@
 class C_BaseGrenade : public C_BaseCombatCharacter
 {
 public:
+	C_BaseGrenade();
 	virtual ~C_BaseGrenade();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseGrenade's own function
@@ -27,4 +28,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual float vfunc158();
 	virtual int vfunc159(int);
 	virtual int vfunc160(int);
+	char m_pad0014[0x10f8 - 0x14];
 };

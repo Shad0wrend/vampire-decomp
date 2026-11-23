@@ -10,3 +10,21 @@ VRButton *pcd_emit_1017b160() { return new VRButton; }
 
 // TARGET: ??_GVRButton@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1017b2d0 size=0x25
+#include "VRButton.h"
+namespace lifted {
+extern int g_105fb6e4;
+struct C10181ad0 { int sub_10181ad0(int); };
+struct C101b4210 { int sub_101b4210(); };
+}
+void VRButton::vfunc85()
+{
+    int t0 = ((lifted::C101b4210 *)this)->sub_101b4210();
+    if ((*(int *)((char *)this + 0xf0)) != -1) {
+        if (lifted::g_105fb6e4 != 0) {
+            ((lifted::C10181ad0 *)lifted::g_105fb6e4)->sub_10181ad0(*(int *)((char *)this + 0xf0));
+        }
+    }
+}
+// END FUNCTION

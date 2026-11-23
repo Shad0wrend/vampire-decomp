@@ -7,6 +7,7 @@
 class C_BaseEntity : public IClientEntity
 {
 public:
+	C_BaseEntity();
 	virtual ICollideable *GetClientCollideable();	// IClientUnknown slot 2
 	virtual IClientNetworkable *GetClientNetworkable();	// IClientUnknown slot 3
 	virtual IClientRenderable *GetClientRenderable();	// IClientUnknown slot 4
@@ -70,6 +71,7 @@ public:
 	virtual unsigned int *vfunc1();	// overrides IHandleEntity::vfunc1, pure there; C_BaseEntity has a vtable of its own in the game
 	virtual ~C_BaseEntity();
 	static void operator delete(void *pMem);
+	static void *operator new(size_t stAllocateBlock);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_BaseEntity adds to its base's vtable: 14-119, vfuncK at slot K
 	virtual int vfunc14();
@@ -80,7 +82,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc19();
 	virtual void vfunc20();
 	virtual void vfunc21();
-	virtual void vfunc22();
+	virtual bool Init(int entnum, int iSerialNum);
 	virtual void vfunc23();
 	virtual int vfunc24();
 	virtual bool vfunc25(int);
@@ -118,7 +120,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc57(int, int, int);
 	virtual bool vfunc58();
 	virtual int vfunc59();
-	virtual void vfunc60();
+	virtual int vfunc60(int, int);
 	virtual void vfunc61();
 	virtual int vfunc62();
 	virtual int vfunc63();

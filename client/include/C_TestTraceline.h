@@ -7,9 +7,11 @@
 class C_TestTraceline : public C_BaseEntity
 {
 public:
+	C_TestTraceline();
 	virtual ~C_TestTraceline();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TestTraceline's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
+	char m_pad0014[0x418 - 0x14];
 };

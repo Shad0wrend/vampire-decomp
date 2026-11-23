@@ -25,7 +25,7 @@ int C_BreakableSurface::vfunc15()
 
 // VC6 writes C_BreakableSurface's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BreakableSurface *pcd_emit_100b7760() { return new C_BreakableSurface; }
+C_BreakableSurface *pcd_emit_100b7760(const C_BreakableSurface &other) { return new C_BreakableSurface(other); }
 
 // TARGET: ??_GC_BreakableSurface@@UAEPAXI@Z
 // END FUNCTION

@@ -37,4 +37,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc8();
 	virtual int vfunc9();
 	virtual ~C_BaseNetworkable();
+	char m_pad000c[0x1c - 0xc];
 };

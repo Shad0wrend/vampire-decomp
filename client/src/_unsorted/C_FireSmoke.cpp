@@ -25,7 +25,7 @@ int C_FireSmoke::vfunc15()
 
 // VC6 writes C_FireSmoke's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_FireSmoke *pcd_emit_100b5490() { return new C_FireSmoke; }
+C_FireSmoke *pcd_emit_100b5490(const C_FireSmoke &other) { return new C_FireSmoke(other); }
 
 // TARGET: ??_GC_FireSmoke@@UAEPAXI@Z
 // END FUNCTION

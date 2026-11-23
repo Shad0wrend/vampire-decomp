@@ -7,9 +7,11 @@
 class C_Sun : public C_BaseEntity
 {
 public:
+	C_Sun();
 	virtual ~C_Sun();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_Sun's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
+	char m_pad0014[0x4c0 - 0x14];
 };

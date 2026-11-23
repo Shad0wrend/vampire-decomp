@@ -36,7 +36,7 @@ int C_ItemKeyGeneric::vfunc15()
 
 // VC6 writes C_ItemKeyGeneric's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_ItemKeyGeneric *pcd_emit_10003ba0() { return new C_ItemKeyGeneric; }
+C_ItemKeyGeneric *pcd_emit_10003ba0(const C_ItemKeyGeneric &other) { return new C_ItemKeyGeneric(other); }
 
 // TARGET: ??_GC_ItemKeyGeneric@@UAEPAXI@Z
 // END FUNCTION

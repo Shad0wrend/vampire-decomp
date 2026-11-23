@@ -25,3 +25,35 @@ void CBloodBar::vfunc97()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004d390 size=0x27
+#include "CBloodBar.h"
+namespace lifted {
+struct C1004d300 { int sub_1004d300(); };
+struct C1004d460 { int sub_1004d460(); };
+}
+int CBloodBar::vfunc114(int a0)
+{
+    if ((*(int *)((char *)this + 0x190)) > a0) {
+        ((lifted::C1004d460 *)this)->sub_1004d460();
+    }
+    *(int *)((char *)this + 0x190) = a0;
+    return ((lifted::C1004d300 *)this)->sub_1004d300();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1004d3c0 size=0x27
+#include "CBloodBar.h"
+namespace lifted {
+struct C1004d300 { int sub_1004d300(); };
+struct C1004d460 { int sub_1004d460(); };
+}
+int CBloodBar::vfunc115(int a0)
+{
+    if ((*(int *)((char *)this + 0x194)) > a0) {
+        ((lifted::C1004d460 *)this)->sub_1004d460();
+    }
+    *(int *)((char *)this + 0x194) = a0;
+    return ((lifted::C1004d300 *)this)->sub_1004d300();
+}
+// END FUNCTION

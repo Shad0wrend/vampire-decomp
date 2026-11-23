@@ -25,7 +25,7 @@ int C_BaseTerminal::vfunc15()
 
 // VC6 writes C_BaseTerminal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseTerminal *pcd_emit_100c6bf0() { return new C_BaseTerminal; }
+C_BaseTerminal *pcd_emit_100c6bf0(const C_BaseTerminal &other) { return new C_BaseTerminal(other); }
 
 // TARGET: ??_GC_BaseTerminal@@UAEPAXI@Z
 // END FUNCTION

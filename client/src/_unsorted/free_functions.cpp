@@ -40,6 +40,20 @@ int sub_100011e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001240 size=0x39
+#include "C_BaseCineCamera.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseCineCamera; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseCineCamera_CreateObject(int entnum, int serialNum)
+{
+	C_BaseCineCamera *pRet = new C_BaseCineCamera;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100012e0 size=0x15b
 #include "RecvTable.h"
 extern RecvTable g_102de368;
@@ -175,6 +189,20 @@ int sub_100025c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002620 size=0x5a
+#include "C_CameraAnimated.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_CameraAnimated; its ClientClass's initializer stores its address
+IClientNetworkable *_C_CameraAnimated_CreateObject(int entnum, int serialNum)
+{
+	C_CameraAnimated *pRet = new C_CameraAnimated;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100026a0 size=0x7
 struct CUnknown100026a0 { char sub_100026a0(); };
 char CUnknown100026a0::sub_100026a0()
@@ -216,6 +244,20 @@ extern char g_102de74c;
 int sub_10002900()
 {
     return (int)&lifted::g_102de74c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10002960 size=0x39
+#include "C_BaseHLPlayer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseHLPlayer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseHLPlayer_CreateObject(int entnum, int serialNum)
+{
+	C_BaseHLPlayer *pRet = new C_BaseHLPlayer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -284,6 +326,20 @@ extern char g_102de768;
 int sub_10002be0()
 {
     return (int)&lifted::g_102de768;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10002c40 size=0x39
+#include "C_Corpse.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Corpse; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Corpse_CreateObject(int entnum, int serialNum)
+{
+	C_Corpse *pRet = new C_Corpse;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -374,6 +430,20 @@ int sub_10003270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100032d0 size=0x5a
+#include "C_ItemPhysicsHand.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemPhysicsHand; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemPhysicsHand_CreateObject(int entnum, int serialNum)
+{
+	C_ItemPhysicsHand *pRet = new C_ItemPhysicsHand;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003390 size=0xca
 #include "RecvTable.h"
 extern RecvTable g_102de8e0;
@@ -440,6 +510,20 @@ extern char g_102dead0;
 int sub_100039a0()
 {
     return (int)&lifted::g_102dead0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10003a00 size=0x39
+#include "C_ItemKeyGeneric.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKeyGeneric; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKeyGeneric_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKeyGeneric *pRet = new C_ItemKeyGeneric;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -573,6 +657,20 @@ int sub_10003fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10004020 size=0x39
+#include "C_ParticleStorm.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ParticleStorm; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ParticleStorm_CreateObject(int entnum, int serialNum)
+{
+	C_ParticleStorm *pRet = new C_ParticleStorm;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100040c0 size=0x1fb
 #include "RecvTable.h"
 extern RecvTable g_102ded3c;
@@ -692,6 +790,20 @@ int sub_10005c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005c80 size=0x39
+#include "C_PlasmaBeamNode.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PlasmaBeamNode; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PlasmaBeamNode_CreateObject(int entnum, int serialNum)
+{
+	C_PlasmaBeamNode *pRet = new C_PlasmaBeamNode;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005d20 size=0xb0
 #include "RecvTable.h"
 extern RecvTable g_102df168;
@@ -774,6 +886,20 @@ extern char g_102df184;
 int sub_10005eb0()
 {
     return (int)&lifted::g_102df184;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10005f10 size=0x39
+#include "C_PointCamera.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PointCamera; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PointCamera_CreateObject(int entnum, int serialNum)
+{
+	C_PointCamera *pRet = new C_PointCamera;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -868,6 +994,20 @@ int sub_100061b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006210 size=0x39
+#include "C_WeaponRanged_Animalism.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Animalism; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Animalism_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Animalism *pRet = new C_WeaponRanged_Animalism;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100062b0 size=0x134
 #include "RecvTable.h"
 extern RecvTable g_102dfaa0;
@@ -907,6 +1047,20 @@ extern char g_102dfad0;
 int sub_10006480()
 {
     return (int)&lifted::g_102dfad0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100064e0 size=0x39
+#include "C_WeaponRanged_Dementation.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Dementation; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Dementation_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Dementation *pRet = new C_WeaponRanged_Dementation;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -952,6 +1106,20 @@ int sub_10006750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100067b0 size=0x39
+#include "C_WeaponRanged_Domination.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Domination; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Domination_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Domination *pRet = new C_WeaponRanged_Domination;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10006850 size=0x134
 #include "RecvTable.h"
 extern RecvTable g_102df4a0;
@@ -991,6 +1159,20 @@ extern char g_102df87c;
 int sub_10006a20()
 {
     return (int)&lifted::g_102df87c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10006a80 size=0x39
+#include "C_WeaponRanged_Thaumaturgy.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Thaumaturgy; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Thaumaturgy_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Thaumaturgy *pRet = new C_WeaponRanged_Thaumaturgy;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1135,6 +1317,20 @@ int sub_10007850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100078b0 size=0x5a
+#include "C_SelectFireMachineGun.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_SelectFireMachineGun; its ClientClass's initializer stores its address
+IClientNetworkable *_C_SelectFireMachineGun_CreateObject(int entnum, int serialNum)
+{
+	C_SelectFireMachineGun *pRet = new C_SelectFireMachineGun;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2710;
@@ -1199,6 +1395,20 @@ int sub_10007d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007db0 size=0x5a
+#include "C_WeaponMelee.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee *pRet = new C_WeaponMelee;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e52f8;
@@ -1228,6 +1438,20 @@ extern char g_102e13ec;
 int sub_10007fd0()
 {
     return (int)&lifted::g_102e13ec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10008030 size=0x5a
+#include "C_WeaponMelee_BaseballBat.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_BaseballBat; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_BaseballBat_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_BaseballBat *pRet = new C_WeaponMelee_BaseballBat;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1263,6 +1487,20 @@ int sub_10008250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100082b0 size=0x5a
+#include "C_WeaponMelee_BushHook.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_BushHook; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_BushHook_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_BushHook *pRet = new C_WeaponMelee_BushHook;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e10c0;
@@ -1292,6 +1530,20 @@ extern char g_102e23e8;
 int sub_100084d0()
 {
     return (int)&lifted::g_102e23e8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10008530 size=0x5a
+#include "C_WeaponMelee_Claws.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Claws; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Claws_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Claws *pRet = new C_WeaponMelee_Claws;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1327,6 +1579,20 @@ int sub_10008750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100087b0 size=0x5a
+#include "C_WeaponMelee_Fists.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Fists; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Fists_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Fists *pRet = new C_WeaponMelee_Fists;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e23d4;
@@ -1356,6 +1622,20 @@ extern char g_102e6ec8;
 int sub_100089d0()
 {
     return (int)&lifted::g_102e6ec8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10008a30 size=0x5a
+#include "C_WeaponMelee_FireAxe.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_FireAxe; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_FireAxe_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_FireAxe *pRet = new C_WeaponMelee_FireAxe;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1391,6 +1671,20 @@ int sub_10008c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10008cb0 size=0x5a
+#include "C_WeaponMelee_Katana.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Katana; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Katana_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Katana *pRet = new C_WeaponMelee_Katana;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10008d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7010;
@@ -1420,6 +1714,20 @@ extern char g_102e1f9c;
 int sub_10008ed0()
 {
     return (int)&lifted::g_102e1f9c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10008f30 size=0x5a
+#include "C_WeaponMelee_Knife.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Knife; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Knife_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Knife *pRet = new C_WeaponMelee_Knife;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1455,6 +1763,20 @@ int sub_10009150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100091b0 size=0x5a
+#include "C_WeaponMelee_OccultBlade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_OccultBlade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_OccultBlade_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_OccultBlade *pRet = new C_WeaponMelee_OccultBlade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3b6c;
@@ -1484,6 +1806,20 @@ extern char g_102e27c8;
 int sub_100093d0()
 {
     return (int)&lifted::g_102e27c8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10009430 size=0x5a
+#include "C_WeaponMelee_Stake.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Stake; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Stake_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Stake *pRet = new C_WeaponMelee_Stake;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1519,6 +1855,20 @@ int sub_10009650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100096b0 size=0x5a
+#include "C_WeaponMelee_Sledgehammer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Sledgehammer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Sledgehammer_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Sledgehammer *pRet = new C_WeaponMelee_Sledgehammer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4acc;
@@ -1548,6 +1898,20 @@ extern char g_102e5b9c;
 int sub_100098d0()
 {
     return (int)&lifted::g_102e5b9c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10009930 size=0x5a
+#include "C_WeaponMelee_TireIron.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_TireIron; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_TireIron_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_TireIron *pRet = new C_WeaponMelee_TireIron;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1583,6 +1947,20 @@ int sub_10009b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10009bb0 size=0x5a
+#include "C_WeaponMelee_Baton.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Baton; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Baton_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Baton *pRet = new C_WeaponMelee_Baton;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e74ec;
@@ -1612,6 +1990,20 @@ extern char g_102e3a4c;
 int sub_10009dd0()
 {
     return (int)&lifted::g_102e3a4c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10009e30 size=0x5a
+#include "C_WeaponMelee_SeveredArm.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_SeveredArm; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_SeveredArm_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_SeveredArm *pRet = new C_WeaponMelee_SeveredArm;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1647,6 +2039,20 @@ int sub_1000a050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000a0b0 size=0x5a
+#include "C_WeaponMelee_Claws_Protean4.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Claws_Protean4; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Claws_Protean4_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Claws_Protean4 *pRet = new C_WeaponMelee_Claws_Protean4;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e12ac;
@@ -1676,6 +2082,20 @@ extern char g_102e19b4;
 int sub_1000a2d0()
 {
     return (int)&lifted::g_102e19b4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000a330 size=0x5a
+#include "C_WeaponMelee_Claws_Protean5.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Claws_Protean5; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Claws_Protean5_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Claws_Protean5 *pRet = new C_WeaponMelee_Claws_Protean5;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1711,6 +2131,20 @@ int sub_1000a550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000a5b0 size=0x5a
+#include "C_WeaponMelee_TzimisceMelee.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_TzimisceMelee; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_TzimisceMelee_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_TzimisceMelee *pRet = new C_WeaponMelee_TzimisceMelee;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000a670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e21bc;
@@ -1740,6 +2174,20 @@ extern char g_102e4a4c;
 int sub_1000a7d0()
 {
     return (int)&lifted::g_102e4a4c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000a830 size=0x5a
+#include "C_WeaponMelee_WerewolfAttacks.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_WerewolfAttacks; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_WerewolfAttacks_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_WerewolfAttacks *pRet = new C_WeaponMelee_WerewolfAttacks;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1775,6 +2223,20 @@ int sub_1000aa50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000aab0 size=0x5a
+#include "C_WeaponMelee_SabbatLeaderAttack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_SabbatLeaderAttack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_SabbatLeaderAttack_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_SabbatLeaderAttack *pRet = new C_WeaponMelee_SabbatLeaderAttack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000ab70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1700;
@@ -1804,6 +2266,20 @@ extern char g_102dffdc;
 int sub_1000acd0()
 {
     return (int)&lifted::g_102dffdc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000ad30 size=0x5a
+#include "C_WeaponMelee_ChangClaw.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_ChangClaw; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_ChangClaw_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_ChangClaw *pRet = new C_WeaponMelee_ChangClaw;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1839,6 +2315,20 @@ int sub_1000af50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000afb0 size=0x5a
+#include "C_WeaponMelee_ChangBlade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_ChangBlade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_ChangBlade_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_ChangBlade *pRet = new C_WeaponMelee_ChangBlade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1a4c;
@@ -1868,6 +2358,20 @@ extern char g_102e6754;
 int sub_1000b1d0()
 {
     return (int)&lifted::g_102e6754;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000b230 size=0x5a
+#include "C_WeaponMelee_AVampBlade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_AVampBlade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_AVampBlade_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_AVampBlade *pRet = new C_WeaponMelee_AVampBlade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1903,6 +2407,20 @@ int sub_1000b450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000b4b0 size=0x5a
+#include "C_WeaponMelee_Tzimisce2Claw.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Tzimisce2Claw; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Tzimisce2Claw_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Tzimisce2Claw *pRet = new C_WeaponMelee_Tzimisce2Claw;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7958;
@@ -1932,6 +2450,20 @@ extern char g_102e0a5c;
 int sub_1000b6d0()
 {
     return (int)&lifted::g_102e0a5c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000b730 size=0x5a
+#include "C_WeaponRanged_Tzimisce2Head.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Tzimisce2Head; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Tzimisce2Head_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Tzimisce2Head *pRet = new C_WeaponRanged_Tzimisce2Head;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -1967,6 +2499,20 @@ int sub_1000b950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000b9b0 size=0x5a
+#include "C_WeaponMelee_Tzimisce3Claw.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Tzimisce3Claw; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Tzimisce3Claw_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Tzimisce3Claw *pRet = new C_WeaponMelee_Tzimisce3Claw;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000ba70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e15b4;
@@ -1996,6 +2542,20 @@ extern char g_102e088c;
 int sub_1000bbd0()
 {
     return (int)&lifted::g_102e088c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000bc30 size=0x5a
+#include "C_WeaponMelee_GargoyleFist.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_GargoyleFist; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_GargoyleFist_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_GargoyleFist *pRet = new C_WeaponMelee_GargoyleFist;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2031,6 +2591,20 @@ int sub_1000be50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000beb0 size=0x5a
+#include "C_WeaponMelee_HengeyokaiFist.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_HengeyokaiFist; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_HengeyokaiFist_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_HengeyokaiFist *pRet = new C_WeaponMelee_HengeyokaiFist;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000bf70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2278;
@@ -2060,6 +2634,20 @@ extern char g_102e516c;
 int sub_1000c0d0()
 {
     return (int)&lifted::g_102e516c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000c130 size=0x5a
+#include "C_WeaponMelee_ManBatClaw.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_ManBatClaw; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_ManBatClaw_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_ManBatClaw *pRet = new C_WeaponMelee_ManBatClaw;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2095,6 +2683,20 @@ int sub_1000c350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000c3b0 size=0x5a
+#include "C_WeaponMelee_MingXiaoMelee.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_MingXiaoMelee; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_MingXiaoMelee_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_MingXiaoMelee *pRet = new C_WeaponMelee_MingXiaoMelee;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000c470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5fe0;
@@ -2124,6 +2726,20 @@ extern char g_102e04f0;
 int sub_1000c5d0()
 {
     return (int)&lifted::g_102e04f0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000c630 size=0x5a
+#include "C_WeaponMelee_MingXiaoTentacle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_MingXiaoTentacle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_MingXiaoTentacle_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_MingXiaoTentacle *pRet = new C_WeaponMelee_MingXiaoTentacle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2159,6 +2775,20 @@ int sub_1000c850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000c8b0 size=0x5a
+#include "C_WeaponMelee_ZombieFists.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_ZombieFists; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_ZombieFists_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_ZombieFists *pRet = new C_WeaponMelee_ZombieFists;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000c970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e775c;
@@ -2188,6 +2818,20 @@ extern char g_102e4000;
 int sub_1000cad0()
 {
     return (int)&lifted::g_102e4000;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000cb30 size=0x5a
+#include "C_WeaponRanged_MingXiao_Spit.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_MingXiao_Spit; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_MingXiao_Spit_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_MingXiao_Spit *pRet = new C_WeaponRanged_MingXiao_Spit;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2223,6 +2867,20 @@ int sub_1000cd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000cdb0 size=0x5a
+#include "C_WeaponMelee_Claws_Ghoul.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Claws_Ghoul; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Claws_Ghoul_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Claws_Ghoul *pRet = new C_WeaponMelee_Claws_Ghoul;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000ce70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e56b8;
@@ -2252,6 +2910,20 @@ extern char g_102e763c;
 int sub_1000cfd0()
 {
     return (int)&lifted::g_102e763c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000d030 size=0x5a
+#include "C_WeaponRanged_Rifle_RemingtonBach.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_RemingtonBach; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_RemingtonBach_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_RemingtonBach *pRet = new C_WeaponRanged_Rifle_RemingtonBach;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2287,6 +2959,20 @@ int sub_1000d250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000d2b0 size=0x5a
+#include "C_WeaponMelee_Sheriff_Sword.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Sheriff_Sword; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Sheriff_Sword_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Sheriff_Sword *pRet = new C_WeaponMelee_Sheriff_Sword;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e55e4;
@@ -2316,6 +3002,20 @@ extern char g_102e39ac;
 int sub_1000d4d0()
 {
     return (int)&lifted::g_102e39ac;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000d530 size=0x5a
+#include "C_WeaponRanged.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged *pRet = new C_WeaponRanged;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2351,6 +3051,20 @@ int sub_1000d750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000d7b0 size=0x5a
+#include "C_WeaponRanged_Pistol_Anaconda.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Pistol_Anaconda; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Pistol_Anaconda_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Pistol_Anaconda *pRet = new C_WeaponRanged_Pistol_Anaconda;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000d870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1b6c;
@@ -2380,6 +3094,20 @@ extern char g_102e50cc;
 int sub_1000d9d0()
 {
     return (int)&lifted::g_102e50cc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000da30 size=0x5a
+#include "C_WeaponRanged_Rifle_Crossbow.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_Crossbow; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_Crossbow_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_Crossbow *pRet = new C_WeaponRanged_Rifle_Crossbow;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2415,6 +3143,20 @@ int sub_1000dc50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000dcb0 size=0x5a
+#include "C_WeaponRanged_Rifle_Crossbow_Flaming.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_Crossbow_Flaming; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_Crossbow_Flaming_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_Crossbow_Flaming *pRet = new C_WeaponRanged_Rifle_Crossbow_Flaming;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000dd70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5400;
@@ -2444,6 +3186,20 @@ extern char g_102e314c;
 int sub_1000ded0()
 {
     return (int)&lifted::g_102e314c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000df30 size=0x5a
+#include "C_WeaponRanged_Pistol_DesertEagle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Pistol_DesertEagle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Pistol_DesertEagle_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Pistol_DesertEagle *pRet = new C_WeaponRanged_Pistol_DesertEagle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2479,6 +3235,20 @@ int sub_1000e150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000e1b0 size=0x5a
+#include "C_WeaponRanged_Pistol_Glock.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Pistol_Glock; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Pistol_Glock_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Pistol_Glock *pRet = new C_WeaponRanged_Pistol_Glock;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000e270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3640;
@@ -2508,6 +3278,20 @@ extern char g_102e13b8;
 int sub_1000e3d0()
 {
     return (int)&lifted::g_102e13b8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000e430 size=0x5a
+#include "C_WeaponRanged_Rifle_M37.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_M37; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_M37_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_M37 *pRet = new C_WeaponRanged_Rifle_M37;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2543,6 +3327,20 @@ int sub_1000e650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000e6b0 size=0x5a
+#include "C_WeaponRanged_Smg_Mac10.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Smg_Mac10; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Smg_Mac10_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Smg_Mac10 *pRet = new C_WeaponRanged_Smg_Mac10;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000e770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6648;
@@ -2572,6 +3370,20 @@ extern char g_102e0380;
 int sub_1000e8d0()
 {
     return (int)&lifted::g_102e0380;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000e930 size=0x5a
+#include "C_WeaponRanged_Rifle_Remington.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_Remington; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_Remington_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_Remington *pRet = new C_WeaponRanged_Rifle_Remington;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2607,6 +3419,20 @@ int sub_1000eb50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000ebb0 size=0x5a
+#include "C_WeaponRanged_Rifle_SteyrAug.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_SteyrAug; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_SteyrAug_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_SteyrAug *pRet = new C_WeaponRanged_Rifle_SteyrAug;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000ec70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2794;
@@ -2636,6 +3462,20 @@ extern char g_102e2cf0;
 int sub_1000edd0()
 {
     return (int)&lifted::g_102e2cf0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000ee30 size=0x5a
+#include "C_WeaponRanged_Rifle_SuperShotgun.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_SuperShotgun; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_SuperShotgun_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_SuperShotgun *pRet = new C_WeaponRanged_Rifle_SuperShotgun;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2671,6 +3511,20 @@ int sub_1000f050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000f0b0 size=0x5a
+#include "C_WeaponRanged_Smg_Uzi.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Smg_Uzi; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Smg_Uzi_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Smg_Uzi *pRet = new C_WeaponRanged_Smg_Uzi;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e68b4;
@@ -2700,6 +3554,20 @@ extern char g_102e59a4;
 int sub_1000f2d0()
 {
     return (int)&lifted::g_102e59a4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000f330 size=0x5a
+#include "C_WeaponRanged_Pistol_Thirtyeight.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Pistol_Thirtyeight; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Pistol_Thirtyeight_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Pistol_Thirtyeight *pRet = new C_WeaponRanged_Pistol_Thirtyeight;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2735,6 +3603,20 @@ int sub_1000f550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000f5b0 size=0x5a
+#include "C_WeaponIWritten.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIWritten; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIWritten_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIWritten *pRet = new C_WeaponIWritten;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000f670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0ebc;
@@ -2764,6 +3646,20 @@ extern char g_102e6788;
 int sub_1000f7d0()
 {
     return (int)&lifted::g_102e6788;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000f830 size=0x5a
+#include "C_WeaponIGeneric.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIGeneric; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIGeneric_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIGeneric *pRet = new C_WeaponIGeneric;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2799,6 +3695,20 @@ int sub_1000fa50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000fab0 size=0x5a
+#include "C_WeaponLockpick.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponLockpick; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponLockpick_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponLockpick *pRet = new C_WeaponLockpick;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000fb70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5d98;
@@ -2828,6 +3738,20 @@ extern char g_102e225c;
 int sub_1000fcd0()
 {
     return (int)&lifted::g_102e225c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1000fd30 size=0x5a
+#include "C_WeaponUnarmed.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponUnarmed; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponUnarmed_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponUnarmed *pRet = new C_WeaponUnarmed;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2863,6 +3787,20 @@ int sub_1000ff50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000ffb0 size=0x5a
+#include "C_WeaponWallet.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponWallet; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponWallet_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponWallet *pRet = new C_WeaponWallet;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4618;
@@ -2892,6 +3830,20 @@ extern char g_102e6a70;
 int sub_100101d0()
 {
     return (int)&lifted::g_102e6a70;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10010230 size=0x5a
+#include "C_ItemMWallet.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemMWallet; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemMWallet_CreateObject(int entnum, int serialNum)
+{
+	C_ItemMWallet *pRet = new C_ItemMWallet;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2927,6 +3879,20 @@ int sub_10010450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100104b0 size=0x5a
+#include "C_ItemMMoneyClip.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemMMoneyClip; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemMMoneyClip_CreateObject(int entnum, int serialNum)
+{
+	C_ItemMMoneyClip *pRet = new C_ItemMMoneyClip;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e03b8;
@@ -2956,6 +3922,20 @@ extern char g_102e1548;
 int sub_100106d0()
 {
     return (int)&lifted::g_102e1548;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10010730 size=0x5a
+#include "C_ItemMMoneyEnvelope.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemMMoneyEnvelope; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemMMoneyEnvelope_CreateObject(int entnum, int serialNum)
+{
+	C_ItemMMoneyEnvelope *pRet = new C_ItemMMoneyEnvelope;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -2991,6 +3971,20 @@ int sub_10010950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100109b0 size=0x5a
+#include "C_ResearchBook_LG_COMP.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_LG_COMP; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_LG_COMP_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_LG_COMP *pRet = new C_ResearchBook_LG_COMP;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010a70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e260c;
@@ -3020,6 +4014,20 @@ extern char g_102e1e74;
 int sub_10010bd0()
 {
     return (int)&lifted::g_102e1e74;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10010c30 size=0x5a
+#include "C_ResearchBook_HG_COMP.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_HG_COMP; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_HG_COMP_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_HG_COMP *pRet = new C_ResearchBook_HG_COMP;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3055,6 +4063,20 @@ int sub_10010e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10010eb0 size=0x5a
+#include "C_ResearchBook_MG_SEC.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_MG_SEC; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_MG_SEC_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_MG_SEC *pRet = new C_ResearchBook_MG_SEC;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010f70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5630;
@@ -3084,6 +4106,20 @@ extern char g_102e47fc;
 int sub_100110d0()
 {
     return (int)&lifted::g_102e47fc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10011130 size=0x5a
+#include "C_ResearchBook_MG_FIN.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_MG_FIN; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_MG_FIN_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_MG_FIN *pRet = new C_ResearchBook_MG_FIN;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3119,6 +4155,20 @@ int sub_10011350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100113b0 size=0x5a
+#include "C_ResearchBook_HG_FIRE.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_HG_FIRE; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_HG_FIRE_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_HG_FIRE *pRet = new C_ResearchBook_HG_FIRE;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10011470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4fa0;
@@ -3148,6 +4198,20 @@ extern char g_102e3974;
 int sub_100115d0()
 {
     return (int)&lifted::g_102e3974;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10011630 size=0x5a
+#include "C_ResearchBook_MG_BRAWL.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_MG_BRAWL; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_MG_BRAWL_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_MG_BRAWL *pRet = new C_ResearchBook_MG_BRAWL;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3183,6 +4247,20 @@ int sub_10011850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100118b0 size=0x5a
+#include "C_ResearchBook_LG_DODGE.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_LG_DODGE; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_LG_DODGE_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_LG_DODGE *pRet = new C_ResearchBook_LG_DODGE;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10011970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6b00;
@@ -3212,6 +4290,20 @@ extern char g_102e0b10;
 int sub_10011ad0()
 {
     return (int)&lifted::g_102e0b10;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10011b30 size=0x5a
+#include "C_ResearchBook_HG_MELEE.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_HG_MELEE; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_HG_MELEE_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_HG_MELEE *pRet = new C_ResearchBook_HG_MELEE;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3247,6 +4339,20 @@ int sub_10011d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10011db0 size=0x5a
+#include "C_ResearchBook_HG_DODGE.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_HG_DODGE; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_HG_DODGE_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_HG_DODGE *pRet = new C_ResearchBook_HG_DODGE;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10011e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2d10;
@@ -3276,6 +4382,20 @@ extern char g_102e26ac;
 int sub_10011fd0()
 {
     return (int)&lifted::g_102e26ac;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10012030 size=0x5a
+#include "C_ResearchBook_MG_MELEE.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_MG_MELEE; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_MG_MELEE_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_MG_MELEE *pRet = new C_ResearchBook_MG_MELEE;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3311,6 +4431,20 @@ int sub_10012250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100122b0 size=0x5a
+#include "C_ResearchBook_LG_STEALTH.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_LG_STEALTH; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_LG_STEALTH_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_LG_STEALTH *pRet = new C_ResearchBook_LG_STEALTH;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102dfffc;
@@ -3340,6 +4474,20 @@ extern char g_102e0458;
 int sub_100124d0()
 {
     return (int)&lifted::g_102e0458;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10012530 size=0x5a
+#include "C_ResearchBook_LG_FIREARMS.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_LG_FIREARMS; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_LG_FIREARMS_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_LG_FIREARMS *pRet = new C_ResearchBook_LG_FIREARMS;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3375,6 +4523,20 @@ int sub_10012750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100127b0 size=0x5a
+#include "C_OccultHacking.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultHacking; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultHacking_CreateObject(int entnum, int serialNum)
+{
+	C_OccultHacking *pRet = new C_OccultHacking;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6c08;
@@ -3404,6 +4566,20 @@ extern char g_102e0a44;
 int sub_100129d0()
 {
     return (int)&lifted::g_102e0a44;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10012a30 size=0x5a
+#include "C_OccultFrenzy.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultFrenzy; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultFrenzy_CreateObject(int entnum, int serialNum)
+{
+	C_OccultFrenzy *pRet = new C_OccultFrenzy;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3439,6 +4615,20 @@ int sub_10012c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10012cb0 size=0x5a
+#include "C_OccultLockpicking.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultLockpicking; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultLockpicking_CreateObject(int entnum, int serialNum)
+{
+	C_OccultLockpicking *pRet = new C_OccultLockpicking;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5e50;
@@ -3468,6 +4658,20 @@ extern char g_102e79f4;
 int sub_10012ed0()
 {
     return (int)&lifted::g_102e79f4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10012f30 size=0x5a
+#include "C_OccultPresence.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultPresence; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultPresence_CreateObject(int entnum, int serialNum)
+{
+	C_OccultPresence *pRet = new C_OccultPresence;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3503,6 +4707,20 @@ int sub_10013150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100131b0 size=0x5a
+#include "C_OccultObfuscate.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultObfuscate; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultObfuscate_CreateObject(int entnum, int serialNum)
+{
+	C_OccultObfuscate *pRet = new C_OccultObfuscate;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0fec;
@@ -3532,6 +4750,20 @@ extern char g_102e0588;
 int sub_100133d0()
 {
     return (int)&lifted::g_102e0588;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10013430 size=0x5a
+#include "C_OccultDexterity.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultDexterity; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultDexterity_CreateObject(int entnum, int serialNum)
+{
+	C_OccultDexterity *pRet = new C_OccultDexterity;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3567,6 +4799,20 @@ int sub_10013650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100136b0 size=0x5a
+#include "C_OccultStrength.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultStrength; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultStrength_CreateObject(int entnum, int serialNum)
+{
+	C_OccultStrength *pRet = new C_OccultStrength;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0ae4;
@@ -3596,6 +4842,20 @@ extern char g_102e57dc;
 int sub_100138d0()
 {
     return (int)&lifted::g_102e57dc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10013930 size=0x5a
+#include "C_OccultExperience.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultExperience; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultExperience_CreateObject(int entnum, int serialNum)
+{
+	C_OccultExperience *pRet = new C_OccultExperience;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3631,6 +4891,20 @@ int sub_10013b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10013bb0 size=0x5a
+#include "C_OccultBloodBuff.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultBloodBuff; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultBloodBuff_CreateObject(int entnum, int serialNum)
+{
+	C_OccultBloodBuff *pRet = new C_OccultBloodBuff;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4ab4;
@@ -3660,6 +4934,20 @@ extern char g_102e1fcc;
 int sub_10013dd0()
 {
     return (int)&lifted::g_102e1fcc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10013e30 size=0x5a
+#include "C_OccultDodge.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultDodge; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultDodge_CreateObject(int entnum, int serialNum)
+{
+	C_OccultDodge *pRet = new C_OccultDodge;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3695,6 +4983,20 @@ int sub_10014050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100140b0 size=0x5a
+#include "C_OccultThaumDamage.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultThaumDamage; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultThaumDamage_CreateObject(int entnum, int serialNum)
+{
+	C_OccultThaumDamage *pRet = new C_OccultThaumDamage;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4600;
@@ -3724,6 +5026,20 @@ extern char g_102e1f10;
 int sub_100142d0()
 {
     return (int)&lifted::g_102e1f10;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10014330 size=0x5a
+#include "C_OccultPassiveDurations.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultPassiveDurations; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultPassiveDurations_CreateObject(int entnum, int serialNum)
+{
+	C_OccultPassiveDurations *pRet = new C_OccultPassiveDurations;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3759,6 +5075,20 @@ int sub_10014550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100145b0 size=0x5a
+#include "C_OccultHealRate.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultHealRate; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultHealRate_CreateObject(int entnum, int serialNum)
+{
+	C_OccultHealRate *pRet = new C_OccultHealRate;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6988;
@@ -3788,6 +5118,20 @@ extern char g_102e15c8;
 int sub_100147d0()
 {
     return (int)&lifted::g_102e15c8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10014830 size=0x5a
+#include "C_GargoyleTalisman.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_GargoyleTalisman; its ClientClass's initializer stores its address
+IClientNetworkable *_C_GargoyleTalisman_CreateObject(int entnum, int serialNum)
+{
+	C_GargoyleTalisman *pRet = new C_GargoyleTalisman;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3823,6 +5167,20 @@ int sub_10014a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10014ab0 size=0x5a
+#include "C_BloodPack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BloodPack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BloodPack_CreateObject(int entnum, int serialNum)
+{
+	C_BloodPack *pRet = new C_BloodPack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014b70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0324;
@@ -3855,6 +5213,20 @@ int sub_10014cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10014d30 size=0x5a
+#include "C_BlueBloodPack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BlueBloodPack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BlueBloodPack_CreateObject(int entnum, int serialNum)
+{
+	C_BlueBloodPack *pRet = new C_BlueBloodPack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014df0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e145c;
@@ -3884,6 +5256,20 @@ extern char g_102e09bc;
 int sub_10014f50()
 {
     return (int)&lifted::g_102e09bc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10014fb0 size=0x5a
+#include "C_ElderVitaePack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ElderVitaePack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ElderVitaePack_CreateObject(int entnum, int serialNum)
+{
+	C_ElderVitaePack *pRet = new C_ElderVitaePack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -3951,6 +5337,20 @@ int sub_10015450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100154b0 size=0x5a
+#include "C_WeaponIArmor_Lt_Cloth.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Lt_Cloth; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Lt_Cloth_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Lt_Cloth *pRet = new C_WeaponIArmor_Lt_Cloth;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5898;
@@ -3980,6 +5380,20 @@ extern char g_102e0280;
 int sub_100156d0()
 {
     return (int)&lifted::g_102e0280;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10015730 size=0x5a
+#include "C_WeaponIArmor_Hvy_Cloth.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Hvy_Cloth; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Hvy_Cloth_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Hvy_Cloth *pRet = new C_WeaponIArmor_Hvy_Cloth;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4015,6 +5429,20 @@ int sub_10015950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100159b0 size=0x5a
+#include "C_WeaponIArmor_Lt_Leather.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Lt_Leather; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Lt_Leather_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Lt_Leather *pRet = new C_WeaponIArmor_Lt_Leather;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015a70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6f70;
@@ -4047,6 +5475,20 @@ int sub_10015bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10015c30 size=0x5a
+#include "C_WeaponIArmor_Hvy_Leather.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Hvy_Leather; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Hvy_Leather_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Hvy_Leather *pRet = new C_WeaponIArmor_Hvy_Leather;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015cf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7658;
@@ -4076,6 +5518,20 @@ extern char g_102e435c;
 int sub_10015e50()
 {
     return (int)&lifted::g_102e435c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10015eb0 size=0x5a
+#include "C_WeaponIArmor_Body_Armor.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Body_Armor; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Body_Armor_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Body_Armor *pRet = new C_WeaponIArmor_Body_Armor;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4143,6 +5599,20 @@ int sub_10016350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100163b0 size=0x5a
+#include "C_WeaponIThrownGrenade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIThrownGrenade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIThrownGrenade_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIThrownGrenade *pRet = new C_WeaponIThrownGrenade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0204;
@@ -4172,6 +5642,20 @@ extern char g_102e0570;
 int sub_100165d0()
 {
     return (int)&lifted::g_102e0570;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10016630 size=0x5a
+#include "C_WeaponThrown_Grenade_Frag.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponThrown_Grenade_Frag; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponThrown_Grenade_Frag_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponThrown_Grenade_Frag *pRet = new C_WeaponThrown_Grenade_Frag;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4207,6 +5691,20 @@ int sub_10016850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100168b0 size=0x5a
+#include "C_WeaponThrown_Chang_Energy_Ball.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponThrown_Chang_Energy_Ball; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponThrown_Chang_Energy_Ball_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponThrown_Chang_Energy_Ball *pRet = new C_WeaponThrown_Chang_Energy_Ball;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1a18;
@@ -4236,6 +5734,20 @@ extern char g_102e0368;
 int sub_10016ad0()
 {
     return (int)&lifted::g_102e0368;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10016b30 size=0x5a
+#include "C_WeaponThrown_Chang_Ghost.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponThrown_Chang_Ghost; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponThrown_Chang_Ghost_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponThrown_Chang_Ghost *pRet = new C_WeaponThrown_Chang_Ghost;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4271,6 +5783,20 @@ int sub_10016d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10016db0 size=0x5a
+#include "C_ItemGDrugsMorphineBottle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDrugsMorphineBottle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDrugsMorphineBottle_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDrugsMorphineBottle *pRet = new C_ItemGDrugsMorphineBottle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e02a0;
@@ -4300,6 +5826,20 @@ extern char g_102e16e4;
 int sub_10016fd0()
 {
     return (int)&lifted::g_102e16e4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10017030 size=0x5a
+#include "C_ItemGDrugsPerscriptionBottle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDrugsPerscriptionBottle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDrugsPerscriptionBottle_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDrugsPerscriptionBottle *pRet = new C_ItemGDrugsPerscriptionBottle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4335,6 +5875,20 @@ int sub_10017250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100172b0 size=0x5a
+#include "C_ItemGDrugsPillBottle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDrugsPillBottle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDrugsPillBottle_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDrugsPillBottle *pRet = new C_ItemGDrugsPillBottle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e44d4;
@@ -4364,6 +5918,20 @@ extern char g_102e5be8;
 int sub_100174d0()
 {
     return (int)&lifted::g_102e5be8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10017530 size=0x5a
+#include "C_ItemGDrugsDrugBox.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDrugsDrugBox; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDrugsDrugBox_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDrugsDrugBox *pRet = new C_ItemGDrugsDrugBox;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4399,6 +5967,20 @@ int sub_10017750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100177b0 size=0x5a
+#include "C_ItemGAstrolite.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGAstrolite; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGAstrolite_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGAstrolite *pRet = new C_ItemGAstrolite;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6d60;
@@ -4428,6 +6010,20 @@ extern char g_102e2d3c;
 int sub_100179d0()
 {
     return (int)&lifted::g_102e2d3c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10017a30 size=0x5a
+#include "C_ItemGCashBox.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGCashBox; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGCashBox_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGCashBox *pRet = new C_ItemGCashBox;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4463,6 +6059,20 @@ int sub_10017c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10017cb0 size=0x5a
+#include "C_ItemGCarStereo.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGCarStereo; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGCarStereo_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGCarStereo *pRet = new C_ItemGCarStereo;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3b54;
@@ -4492,6 +6102,20 @@ extern char g_102e62a8;
 int sub_10017ed0()
 {
     return (int)&lifted::g_102e62a8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10017f30 size=0x5a
+#include "C_ItemGGhostPendant.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGhostPendant; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGhostPendant_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGhostPendant *pRet = new C_ItemGGhostPendant;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4527,6 +6151,20 @@ int sub_10018150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100181b0 size=0x5a
+#include "C_ItemGRing03.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRing03; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRing03_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRing03 *pRet = new C_ItemGRing03;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6eb4;
@@ -4556,6 +6194,20 @@ extern char g_102e6290;
 int sub_100183d0()
 {
     return (int)&lifted::g_102e6290;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10018430 size=0x5a
+#include "C_ItemGRingGold.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRingGold; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRingGold_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRingGold *pRet = new C_ItemGRingGold;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4591,6 +6243,20 @@ int sub_10018650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100186b0 size=0x5a
+#include "C_ItemGRingSilver.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRingSilver; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRingSilver_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRingSilver *pRet = new C_ItemGRingSilver;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0e68;
@@ -4620,6 +6286,20 @@ extern char g_102e1320;
 int sub_100188d0()
 {
     return (int)&lifted::g_102e1320;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10018930 size=0x5a
+#include "C_ItemGWatchNormal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWatchNormal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWatchNormal_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWatchNormal *pRet = new C_ItemGWatchNormal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4655,6 +6335,20 @@ int sub_10018b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10018bb0 size=0x5a
+#include "C_ItemGWatchFancy.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWatchFancy; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWatchFancy_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWatchFancy *pRet = new C_ItemGWatchFancy;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e12f4;
@@ -4684,6 +6378,20 @@ extern char g_102e1b4c;
 int sub_10018dd0()
 {
     return (int)&lifted::g_102e1b4c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10018e30 size=0x5a
+#include "C_ItemGLillyPhoto.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGLillyPhoto; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGLillyPhoto_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGLillyPhoto *pRet = new C_ItemGLillyPhoto;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4719,6 +6427,20 @@ int sub_10019050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100190b0 size=0x5a
+#include "C_ItemGLillyDiary.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGLillyDiary; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGLillyDiary_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGLillyDiary *pRet = new C_ItemGLillyDiary;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1440;
@@ -4748,6 +6470,20 @@ extern char g_102e2170;
 int sub_100192d0()
 {
     return (int)&lifted::g_102e2170;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10019330 size=0x5a
+#include "C_ItemGLillyPurse.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGLillyPurse; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGLillyPurse_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGLillyPurse *pRet = new C_ItemGLillyPurse;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4783,6 +6519,20 @@ int sub_10019550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100195b0 size=0x5a
+#include "C_ItemGBailbondReceipt.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBailbondReceipt; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBailbondReceipt_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBailbondReceipt *pRet = new C_ItemGBailbondReceipt;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4244;
@@ -4812,6 +6562,20 @@ extern char g_102e0114;
 int sub_100197d0()
 {
     return (int)&lifted::g_102e0114;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10019830 size=0x5a
+#include "C_ItemGDriversLicenseGimble.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDriversLicenseGimble; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDriversLicenseGimble_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDriversLicenseGimble *pRet = new C_ItemGDriversLicenseGimble;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4847,6 +6611,20 @@ int sub_10019a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019ab0 size=0x5a
+#include "C_ItemGWerewolfBlood.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWerewolfBlood; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWerewolfBlood_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWerewolfBlood *pRet = new C_ItemGWerewolfBlood;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019b70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4a84;
@@ -4876,6 +6654,20 @@ extern char g_102e3ad0;
 int sub_10019cd0()
 {
     return (int)&lifted::g_102e3ad0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10019d30 size=0x5a
+#include "C_ItemGJumblesFlyer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGJumblesFlyer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGJumblesFlyer_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGJumblesFlyer *pRet = new C_ItemGJumblesFlyer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4911,6 +6703,20 @@ int sub_10019f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019fb0 size=0x5a
+#include "C_ItemGLarryBriefcase.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGLarryBriefcase; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGLarryBriefcase_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGLarryBriefcase *pRet = new C_ItemGLarryBriefcase;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5920;
@@ -4940,6 +6746,20 @@ extern char g_102e4a30;
 int sub_1001a1d0()
 {
     return (int)&lifted::g_102e4a30;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001a230 size=0x5a
+#include "C_ItemGHorrorTape_1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGHorrorTape_1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGHorrorTape_1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGHorrorTape_1 *pRet = new C_ItemGHorrorTape_1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -4975,6 +6795,20 @@ int sub_1001a450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001a4b0 size=0x5a
+#include "C_ItemGHorrorTape_2.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGHorrorTape_2; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGHorrorTape_2_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGHorrorTape_2 *pRet = new C_ItemGHorrorTape_2;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e13d4;
@@ -5004,6 +6838,20 @@ extern char g_102e3da0;
 int sub_1001a6d0()
 {
     return (int)&lifted::g_102e3da0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001a730 size=0x5a
+#include "C_ItemGOHDiary.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGOHDiary; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGOHDiary_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGOHDiary *pRet = new C_ItemGOHDiary;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5039,6 +6887,20 @@ int sub_1001a950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001a9b0 size=0x5a
+#include "C_ItemGBachJournal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBachJournal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBachJournal_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBachJournal *pRet = new C_ItemGBachJournal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001aa70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102dffc8;
@@ -5068,6 +6930,20 @@ extern char g_102e2620;
 int sub_1001abd0()
 {
     return (int)&lifted::g_102e2620;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001ac30 size=0x5a
+#include "C_ItemGVampyrApocrypha.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGVampyrApocrypha; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGVampyrApocrypha_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGVampyrApocrypha *pRet = new C_ItemGVampyrApocrypha;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5103,6 +6979,20 @@ int sub_1001ae50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001aeb0 size=0x5a
+#include "C_ItemGPishaFetish.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGPishaFetish; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGPishaFetish_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGPishaFetish *pRet = new C_ItemGPishaFetish;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001af70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3344;
@@ -5132,6 +7022,20 @@ extern char g_102e6118;
 int sub_1001b0d0()
 {
     return (int)&lifted::g_102e6118;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001b130 size=0x5a
+#include "C_ItemGEDanePrintReport.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGEDanePrintReport; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGEDanePrintReport_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGEDanePrintReport *pRet = new C_ItemGEDanePrintReport;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5167,6 +7071,20 @@ int sub_1001b350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001b3b0 size=0x5a
+#include "C_ItemGEDaneReport.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGEDaneReport; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGEDaneReport_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGEDaneReport *pRet = new C_ItemGEDaneReport;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4e64;
@@ -5196,6 +7114,20 @@ extern char g_102e2554;
 int sub_1001b5d0()
 {
     return (int)&lifted::g_102e2554;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001b630 size=0x5a
+#include "C_ItemGGiovanniInvitationVictor.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGiovanniInvitationVictor; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGiovanniInvitationVictor_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGiovanniInvitationVictor *pRet = new C_ItemGGiovanniInvitationVictor;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5231,6 +7163,20 @@ int sub_1001b850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001b8b0 size=0x5a
+#include "C_ItemGGiovanniInvitationMaria.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGiovanniInvitationMaria; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGiovanniInvitationMaria_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGiovanniInvitationMaria *pRet = new C_ItemGGiovanniInvitationMaria;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001b970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4b00;
@@ -5260,6 +7206,20 @@ extern char g_102e55fc;
 int sub_1001bad0()
 {
     return (int)&lifted::g_102e55fc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001bb30 size=0x5a
+#include "C_ItemGGuyMagazine.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGuyMagazine; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGuyMagazine_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGuyMagazine *pRet = new C_ItemGGuyMagazine;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5295,6 +7255,20 @@ int sub_1001bd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001bdb0 size=0x5a
+#include "C_ItemGBrotherhoodFlyer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBrotherhoodFlyer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBrotherhoodFlyer_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBrotherhoodFlyer *pRet = new C_ItemGBrotherhoodFlyer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001be70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e520c;
@@ -5324,6 +7298,20 @@ extern char g_102e4e7c;
 int sub_1001bfd0()
 {
     return (int)&lifted::g_102e4e7c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001c030 size=0x5a
+#include "C_ItemGMilligansBuisnesscard.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGMilligansBuisnesscard; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGMilligansBuisnesscard_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGMilligansBuisnesscard *pRet = new C_ItemGMilligansBuisnesscard;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5359,6 +7347,20 @@ int sub_1001c250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001c2b0 size=0x5a
+#include "C_ItemGPishaBook.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGPishaBook; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGPishaBook_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGPishaBook *pRet = new C_ItemGPishaBook;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e634c;
@@ -5388,6 +7390,20 @@ extern char g_102e19cc;
 int sub_1001c4d0()
 {
     return (int)&lifted::g_102e19cc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001c530 size=0x5a
+#include "C_ItemGBadluckTalisman.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBadluckTalisman; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBadluckTalisman_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBadluckTalisman *pRet = new C_ItemGBadluckTalisman;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5423,6 +7439,20 @@ int sub_1001c750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001c7b0 size=0x5a
+#include "C_ItemGWarrens4Passkey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrens4Passkey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrens4Passkey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrens4Passkey *pRet = new C_ItemGWarrens4Passkey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5f58;
@@ -5452,6 +7482,20 @@ extern char g_102e464c;
 int sub_1001c9d0()
 {
     return (int)&lifted::g_102e464c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001ca30 size=0x5a
+#include "C_ItemGWirelessCamera1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWirelessCamera1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWirelessCamera1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWirelessCamera1 *pRet = new C_ItemGWirelessCamera1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5487,6 +7531,20 @@ int sub_1001cc50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001ccb0 size=0x5a
+#include "C_ItemGWirelessCamera2.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWirelessCamera2; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWirelessCamera2_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWirelessCamera2 *pRet = new C_ItemGWirelessCamera2;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001cd70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3c10;
@@ -5516,6 +7574,20 @@ extern char g_102e7b04;
 int sub_1001ced0()
 {
     return (int)&lifted::g_102e7b04;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001cf30 size=0x5a
+#include "C_ItemGWirelessCamera3.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWirelessCamera3; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWirelessCamera3_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWirelessCamera3 *pRet = new C_ItemGWirelessCamera3;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5551,6 +7623,20 @@ int sub_1001d150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001d1b0 size=0x5a
+#include "C_ItemGWirelessCamera4.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWirelessCamera4; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWirelessCamera4_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWirelessCamera4 *pRet = new C_ItemGWirelessCamera4;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3bf8;
@@ -5580,6 +7666,20 @@ extern char g_102e2310;
 int sub_1001d3d0()
 {
     return (int)&lifted::g_102e2310;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001d430 size=0x5a
+#include "C_ItemGEyes.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGEyes; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGEyes_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGEyes *pRet = new C_ItemGEyes;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5615,6 +7715,20 @@ int sub_1001d650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001d6b0 size=0x5a
+#include "C_ItemGHattersScreenplay.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGHattersScreenplay; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGHattersScreenplay_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGHattersScreenplay *pRet = new C_ItemGHattersScreenplay;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001d770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4c94;
@@ -5644,6 +7758,20 @@ extern char g_102e01cc;
 int sub_1001d8d0()
 {
     return (int)&lifted::g_102e01cc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001d930 size=0x5a
+#include "C_ItemGStake.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGStake; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGStake_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGStake *pRet = new C_ItemGStake;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5679,6 +7807,20 @@ int sub_1001db50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001dbb0 size=0x5a
+#include "C_ItemGWarrClipboard.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrClipboard; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrClipboard_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrClipboard *pRet = new C_ItemGWarrClipboard;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001dc70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1bd4;
@@ -5708,6 +7850,20 @@ extern char g_102e60c8;
 int sub_1001ddd0()
 {
     return (int)&lifted::g_102e60c8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001de30 size=0x5a
+#include "C_ItemGWarrLedger1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrLedger1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrLedger1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrLedger1 *pRet = new C_ItemGWarrLedger1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5743,6 +7899,20 @@ int sub_1001e050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001e0b0 size=0x5a
+#include "C_ItemGWarrLedger2.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrLedger2; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrLedger2_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrLedger2 *pRet = new C_ItemGWarrLedger2;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001e170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1008;
@@ -5772,6 +7942,20 @@ extern char g_102e25d8;
 int sub_1001e2d0()
 {
     return (int)&lifted::g_102e25d8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001e330 size=0x5a
+#include "C_ItemGMercurioJournal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGMercurioJournal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGMercurioJournal_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGMercurioJournal *pRet = new C_ItemGMercurioJournal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5807,6 +7991,20 @@ int sub_1001e550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001e5b0 size=0x5a
+#include "C_ItemGHannahsApptBook.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGHannahsApptBook; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGHannahsApptBook_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGHannahsApptBook *pRet = new C_ItemGHannahsApptBook;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001e670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e04dc;
@@ -5836,6 +8034,20 @@ extern char g_102e0e9c;
 int sub_1001e7d0()
 {
     return (int)&lifted::g_102e0e9c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001e830 size=0x5a
+#include "C_ItemGJunkyardBusinesscard.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGJunkyardBusinesscard; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGJunkyardBusinesscard_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGJunkyardBusinesscard *pRet = new C_ItemGJunkyardBusinesscard;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5871,6 +8083,20 @@ int sub_1001ea50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001eab0 size=0x5a
+#include "C_ItemGIdolCat.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGIdolCat; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGIdolCat_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGIdolCat *pRet = new C_ItemGIdolCat;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001eb70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7504;
@@ -5900,6 +8126,20 @@ extern char g_102dff74;
 int sub_1001ecd0()
 {
     return (int)&lifted::g_102dff74;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001ed30 size=0x5a
+#include "C_ItemGIdolCrane.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGIdolCrane; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGIdolCrane_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGIdolCrane *pRet = new C_ItemGIdolCrane;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5935,6 +8175,20 @@ int sub_1001ef50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001efb0 size=0x5a
+#include "C_ItemGIdolDragon.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGIdolDragon; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGIdolDragon_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGIdolDragon *pRet = new C_ItemGIdolDragon;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1e90;
@@ -5964,6 +8218,20 @@ extern char g_102e0bb0;
 int sub_1001f1d0()
 {
     return (int)&lifted::g_102e0bb0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001f230 size=0x5a
+#include "C_ItemGIdolElephant.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGIdolElephant; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGIdolElephant_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGIdolElephant *pRet = new C_ItemGIdolElephant;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -5999,6 +8267,20 @@ int sub_1001f450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001f4b0 size=0x5a
+#include "C_ItemGGarysCD.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGarysCD; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGarysCD_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGarysCD *pRet = new C_ItemGGarysCD;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4778;
@@ -6028,6 +8310,20 @@ extern char g_102e5c88;
 int sub_1001f6d0()
 {
     return (int)&lifted::g_102e5c88;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001f730 size=0x5a
+#include "C_ItemGGarysFilm.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGarysFilm; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGarysFilm_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGarysFilm *pRet = new C_ItemGGarysFilm;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6063,6 +8359,20 @@ int sub_1001f950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001f9b0 size=0x5a
+#include "C_ItemGGarysPhoto.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGarysPhoto; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGarysPhoto_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGarysPhoto *pRet = new C_ItemGGarysPhoto;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001fa70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5a08;
@@ -6092,6 +8402,20 @@ extern char g_102e5154;
 int sub_1001fbd0()
 {
     return (int)&lifted::g_102e5154;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1001fc30 size=0x5a
+#include "C_ItemGGarysTape.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGarysTape; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGarysTape_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGarysTape *pRet = new C_ItemGGarysTape;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6127,6 +8451,20 @@ int sub_1001fe50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001feb0 size=0x5a
+#include "C_ItemGBertramsCD.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBertramsCD; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBertramsCD_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBertramsCD *pRet = new C_ItemGBertramsCD;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ff70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4020;
@@ -6156,6 +8494,20 @@ extern char g_102dfeec;
 int sub_100200d0()
 {
     return (int)&lifted::g_102dfeec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10020130 size=0x5a
+#include "C_ItemGRingSerialKiller1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRingSerialKiller1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRingSerialKiller1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRingSerialKiller1 *pRet = new C_ItemGRingSerialKiller1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6191,6 +8543,20 @@ int sub_10020350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100203b0 size=0x5a
+#include "C_ItemGRingSerialKiller2.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRingSerialKiller2; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRingSerialKiller2_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRingSerialKiller2 *pRet = new C_ItemGRingSerialKiller2;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e67a4;
@@ -6220,6 +8586,20 @@ extern char g_102e5e7c;
 int sub_100205d0()
 {
     return (int)&lifted::g_102e5e7c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10020630 size=0x5a
+#include "C_ItemGGargoyleBook.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGargoyleBook; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGargoyleBook_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGargoyleBook *pRet = new C_ItemGGargoyleBook;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6255,6 +8635,20 @@ int sub_10020850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100208b0 size=0x5a
+#include "C_ItemGVVPhoto.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGVVPhoto; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGVVPhoto_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGVVPhoto *pRet = new C_ItemGVVPhoto;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3b08;
@@ -6284,6 +8678,20 @@ extern char g_102e45e4;
 int sub_10020ad0()
 {
     return (int)&lifted::g_102e45e4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10020b30 size=0x5a
+#include "C_ItemGSewerBook1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGSewerBook1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGSewerBook1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGSewerBook1 *pRet = new C_ItemGSewerBook1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6319,6 +8727,20 @@ int sub_10020d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10020db0 size=0x5a
+#include "C_ItemKGalleryNoirKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKGalleryNoirKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKGalleryNoirKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKGalleryNoirKey *pRet = new C_ItemKGalleryNoirKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5618;
@@ -6348,6 +8770,20 @@ extern char g_102e4a98;
 int sub_10020fd0()
 {
     return (int)&lifted::g_102e4a98;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10021030 size=0x5a
+#include "C_ItemKLillyKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKLillyKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKLillyKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKLillyKey *pRet = new C_ItemKLillyKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6383,6 +8819,20 @@ int sub_10021250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100212b0 size=0x5a
+#include "C_ItemKMuriettaKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMuriettaKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMuriettaKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMuriettaKey *pRet = new C_ItemKMuriettaKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0030;
@@ -6412,6 +8862,20 @@ extern char g_102e56e4;
 int sub_100214d0()
 {
     return (int)&lifted::g_102e56e4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10021530 size=0x5a
+#include "C_ItemKOceanHouseSewerKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKOceanHouseSewerKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKOceanHouseSewerKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKOceanHouseSewerKey *pRet = new C_ItemKOceanHouseSewerKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6447,6 +8911,20 @@ int sub_10021750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100217b0 size=0x5a
+#include "C_ItemKOceanHouseBasementKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKOceanHouseBasementKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKOceanHouseBasementKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKOceanHouseBasementKey *pRet = new C_ItemKOceanHouseBasementKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e59c0;
@@ -6476,6 +8954,20 @@ extern char g_102e1a30;
 int sub_100219d0()
 {
     return (int)&lifted::g_102e1a30;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10021a30 size=0x5a
+#include "C_ItemKOceanHouseUpstairsKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKOceanHouseUpstairsKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKOceanHouseUpstairsKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKOceanHouseUpstairsKey *pRet = new C_ItemKOceanHouseUpstairsKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6511,6 +9003,20 @@ int sub_10021c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10021cb0 size=0x5a
+#include "C_ItemKClinicMaintenanceKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKClinicMaintenanceKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKClinicMaintenanceKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKClinicMaintenanceKey *pRet = new C_ItemKClinicMaintenanceKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e31f0;
@@ -6540,6 +9046,20 @@ extern char g_102e6bec;
 int sub_10021ed0()
 {
     return (int)&lifted::g_102e6bec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10021f30 size=0x5a
+#include "C_ItemKClinicStairsKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKClinicStairsKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKClinicStairsKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKClinicStairsKey *pRet = new C_ItemKClinicStairsKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6575,6 +9095,20 @@ int sub_10022150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100221b0 size=0x5a
+#include "C_ItemKClinicCSKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKClinicCSKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKClinicCSKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKClinicCSKey *pRet = new C_ItemKClinicCSKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0e84;
@@ -6604,6 +9138,20 @@ extern char g_102e7868;
 int sub_100223d0()
 {
     return (int)&lifted::g_102e7868;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10022430 size=0x5a
+#include "C_ItemKMalcomOfficeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMalcomOfficeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMalcomOfficeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMalcomOfficeKey *pRet = new C_ItemKMalcomOfficeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6639,6 +9187,20 @@ int sub_10022650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100226b0 size=0x5a
+#include "C_ItemKGimbleKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKGimbleKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKGimbleKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKGimbleKey *pRet = new C_ItemKGimbleKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0784;
@@ -6668,6 +9230,20 @@ extern char g_102e3f18;
 int sub_100228d0()
 {
     return (int)&lifted::g_102e3f18;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10022930 size=0x5a
+#include "C_ItemKLuckyStarMurderKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKLuckyStarMurderKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKLuckyStarMurderKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKLuckyStarMurderKey *pRet = new C_ItemKLuckyStarMurderKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6703,6 +9279,20 @@ int sub_10022b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10022bb0 size=0x5a
+#include "C_ItemKLeopoldIntKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKLeopoldIntKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKLeopoldIntKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKLeopoldIntKey *pRet = new C_ItemKLeopoldIntKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022c70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5d14;
@@ -6732,6 +9322,20 @@ extern char g_102e1e58;
 int sub_10022dd0()
 {
     return (int)&lifted::g_102e1e58;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10022e30 size=0x5a
+#include "C_ItemKMuseumBasementKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMuseumBasementKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMuseumBasementKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMuseumBasementKey *pRet = new C_ItemKMuseumBasementKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6767,6 +9371,20 @@ int sub_10023050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100230b0 size=0x5a
+#include "C_ItemKMuseumStoreroomKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMuseumStoreroomKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMuseumStoreroomKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMuseumStoreroomKey *pRet = new C_ItemKMuseumStoreroomKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e71a4;
@@ -6796,6 +9414,20 @@ extern char g_102e62c0;
 int sub_100232d0()
 {
     return (int)&lifted::g_102e62c0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10023330 size=0x5a
+#include "C_ItemKMuseumStorageKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMuseumStorageKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMuseumStorageKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMuseumStorageKey *pRet = new C_ItemKMuseumStorageKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6831,6 +9463,20 @@ int sub_10023550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100235b0 size=0x5a
+#include "C_ItemKNetcafeOfficeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKNetcafeOfficeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKNetcafeOfficeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKNetcafeOfficeKey *pRet = new C_ItemKNetcafeOfficeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023670 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3534;
@@ -6860,6 +9506,20 @@ extern char g_102e25f0;
 int sub_100237d0()
 {
     return (int)&lifted::g_102e25f0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10023830 size=0x5a
+#include "C_ItemKEDaneKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKEDaneKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKEDaneKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKEDaneKey *pRet = new C_ItemKEDaneKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6895,6 +9555,20 @@ int sub_10023a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10023ab0 size=0x5a
+#include "C_ItemKEmpireMafiaKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKEmpireMafiaKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKEmpireMafiaKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKEmpireMafiaKey *pRet = new C_ItemKEmpireMafiaKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023b70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e760c;
@@ -6924,6 +9598,20 @@ extern char g_102e01b4;
 int sub_10023cd0()
 {
     return (int)&lifted::g_102e01b4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10023d30 size=0x5a
+#include "C_ItemKEmpireJezebelKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKEmpireJezebelKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKEmpireJezebelKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKEmpireJezebelKey *pRet = new C_ItemKEmpireJezebelKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -6959,6 +9647,20 @@ int sub_10023f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10023fb0 size=0x5a
+#include "C_ItemKCarsonApartmentKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKCarsonApartmentKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKCarsonApartmentKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKCarsonApartmentKey *pRet = new C_ItemKCarsonApartmentKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0cbc;
@@ -6988,6 +9690,20 @@ extern char g_102e5ec8;
 int sub_100241d0()
 {
     return (int)&lifted::g_102e5ec8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10024230 size=0x5a
+#include "C_ItemKTatooParlorKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKTatooParlorKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKTatooParlorKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKTatooParlorKey *pRet = new C_ItemKTatooParlorKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7023,6 +9739,20 @@ int sub_10024450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100244b0 size=0x5a
+#include "C_ItemKMalkavianRefrigeratorKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMalkavianRefrigeratorKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMalkavianRefrigeratorKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMalkavianRefrigeratorKey *pRet = new C_ItemKMalkavianRefrigeratorKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0130;
@@ -7052,6 +9782,20 @@ extern char g_102dffac;
 int sub_100246d0()
 {
     return (int)&lifted::g_102dffac;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10024730 size=0x5a
+#include "C_ItemKTutorialChopshopStairsKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKTutorialChopshopStairsKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKTutorialChopshopStairsKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKTutorialChopshopStairsKey *pRet = new C_ItemKTutorialChopshopStairsKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7087,6 +9831,20 @@ int sub_10024950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100249b0 size=0x5a
+#include "C_ItemKTawniApartmentKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKTawniApartmentKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKTawniApartmentKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKTawniApartmentKey *pRet = new C_ItemKTawniApartmentKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024a70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e52c8;
@@ -7116,6 +9874,20 @@ extern char g_102e4668;
 int sub_10024bd0()
 {
     return (int)&lifted::g_102e4668;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10024c30 size=0x5a
+#include "C_ItemKShrekHubOneKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKShrekHubOneKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKShrekHubOneKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKShrekHubOneKey *pRet = new C_ItemKShrekHubOneKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7151,6 +9923,20 @@ int sub_10024e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10024eb0 size=0x5a
+#include "C_ItemKShrekHubThreeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKShrekHubThreeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKShrekHubThreeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKShrekHubThreeKey *pRet = new C_ItemKShrekHubThreeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024f70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e52b0;
@@ -7180,6 +9966,20 @@ extern char g_102e0bcc;
 int sub_100250d0()
 {
     return (int)&lifted::g_102e0bcc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10025130 size=0x5a
+#include "C_ItemKShrekHubFourKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKShrekHubFourKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKShrekHubFourKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKShrekHubFourKey *pRet = new C_ItemKShrekHubFourKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7215,6 +10015,20 @@ int sub_10025350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100253b0 size=0x5a
+#include "C_ItemKKikiKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKKikiKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKKikiKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKKikiKey *pRet = new C_ItemKKikiKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e54a0;
@@ -7244,6 +10058,20 @@ extern char g_102e0554;
 int sub_100255d0()
 {
     return (int)&lifted::g_102e0554;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10025630 size=0x5a
+#include "C_ItemKSarcophagusKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKSarcophagusKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKSarcophagusKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKSarcophagusKey *pRet = new C_ItemKSarcophagusKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7279,6 +10107,20 @@ int sub_10025850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100258b0 size=0x5a
+#include "C_ItemKOHFrontKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKOHFrontKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKOHFrontKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKOHFrontKey *pRet = new C_ItemKOHFrontKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6e1c;
@@ -7308,6 +10150,20 @@ extern char g_102e3c54;
 int sub_10025ad0()
 {
     return (int)&lifted::g_102e3c54;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10025b30 size=0x5a
+#include "C_ItemKFUOfficeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKFUOfficeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKFUOfficeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKFUOfficeKey *pRet = new C_ItemKFUOfficeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7343,6 +10199,20 @@ int sub_10025d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10025db0 size=0x5a
+#include "C_ItemKChineseTheatreKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKChineseTheatreKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKChineseTheatreKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKChineseTheatreKey *pRet = new C_ItemKChineseTheatreKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10025e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e27b0;
@@ -7372,6 +10242,20 @@ extern char g_102e2d54;
 int sub_10025fd0()
 {
     return (int)&lifted::g_102e2d54;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10026030 size=0x5a
+#include "C_ItemKHitmanLuKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKHitmanLuKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKHitmanLuKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKHitmanLuKey *pRet = new C_ItemKHitmanLuKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7407,6 +10291,20 @@ int sub_10026250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100262b0 size=0x5a
+#include "C_ItemKHitmanJiKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKHitmanJiKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKHitmanJiKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKHitmanJiKey *pRet = new C_ItemKHitmanJiKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3fb8;
@@ -7436,6 +10334,20 @@ extern char g_102e79dc;
 int sub_100264d0()
 {
     return (int)&lifted::g_102e79dc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10026530 size=0x5a
+#include "C_ItemKHannahsSafeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKHannahsSafeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKHannahsSafeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKHannahsSafeKey *pRet = new C_ItemKHannahsSafeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7471,6 +10383,20 @@ int sub_10026750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100267b0 size=0x5a
+#include "C_ItemKSkylineHavenKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKSkylineHavenKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKSkylineHavenKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKSkylineHavenKey *pRet = new C_ItemKSkylineHavenKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0ca4;
@@ -7500,6 +10426,20 @@ extern char g_102e766c;
 int sub_100269d0()
 {
     return (int)&lifted::g_102e766c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10026a30 size=0x5a
+#include "C_ItemKMuseumOfficeKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMuseumOfficeKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMuseumOfficeKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMuseumOfficeKey *pRet = new C_ItemKMuseumOfficeKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7535,6 +10475,20 @@ int sub_10026c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026cb0 size=0x5a
+#include "C_ItemKAshCellKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKAshCellKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKAshCellKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKAshCellKey *pRet = new C_ItemKAshCellKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e29bc;
@@ -7564,6 +10518,20 @@ extern char g_102e580c;
 int sub_10026e80()
 {
     return (int)&lifted::g_102e580c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10026ee0 size=0x39
+#include "C_WeaponMelee_Torch.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Torch; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Torch_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Torch *pRet = new C_WeaponMelee_Torch;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -7614,6 +10582,25 @@ void * CUnknown10027020::sub_10027020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027080 size=0x35
+namespace lifted {
+struct C100272a0 { int sub_100272a0(); };
+struct C1007bab0 { int sub_1007bab0(); };
+struct C1009c070 { int sub_1009c070(int, int); };
+}
+struct CUnknown10027080 { int sub_10027080(int, int); };
+int CUnknown10027080::sub_10027080(int a0, int a1)
+{
+    int t0 = ((lifted::C1007bab0 *)((char *)this + -4))->sub_1007bab0();
+    if (t0 != 0) {
+        if (((*(char *)((char *)this + 0x70)) & 0x40) == 0) {
+            ((lifted::C100272a0 *)((char *)this + -4))->sub_100272a0();
+        }
+    }
+    return ((lifted::C1009c070 *)this)->sub_1009c070(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100275b0 size=0x6
 namespace lifted {
 extern char g_102ea150;
@@ -7621,6 +10608,20 @@ extern char g_102ea150;
 int sub_100275b0()
 {
     return (int)&lifted::g_102ea150;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10027610 size=0x39
+#include "C_WeaponRanged_FlameThrower.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_FlameThrower; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_FlameThrower_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_FlameThrower *pRet = new C_WeaponRanged_FlameThrower;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -8341,6 +11342,31 @@ template <> int ClientClassInit<DT_BatSwarm::ignored>(DT_BatSwarm::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a9c0 size=0x70
+namespace lifted {
+struct C1002aa30 { bool sub_1002aa30(); };
+struct C100919c0 { int sub_100919c0(int, int, int, int, int); };
+struct C100922c0 { int sub_100922c0(); };
+}
+struct CUnknown1002a9c0 { char sub_1002a9c0(int, int, int, int, int); };
+char CUnknown1002a9c0::sub_1002a9c0(int a0, int a1, int a2, int a3, int a4)
+{
+    if ((*(int *)((char *)this + 0xaac)) >= 0) {
+        if ((*(int *)((char *)this + 0xaac)) < 0x20) {
+            bool t0 = ((lifted::C1002aa30 *)((char *)this + -4))->sub_1002aa30();
+            if (t0 != 0) {
+                if ((*(int *)((char *)this + 0xaac)) != (*(int *)((char *)this + 0xab0))) {
+                    int t1 = ((lifted::C100922c0 *)((char *)this + -4))->sub_100922c0();
+                    *(int *)((char *)this + 0xab0) = *(int *)((char *)this + 0xaac);
+                }
+                return (char)(((lifted::C100919c0 *)this)->sub_100919c0(a0, a1, a2, a3, a4));
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b340 size=0x4b
 namespace lifted {
 struct C1002aa30 { int sub_1002aa30(); };
@@ -8782,6 +11808,20 @@ int sub_1002f7a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f800 size=0x39
+#include "C_SmokeStack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_SmokeStack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_SmokeStack_CreateObject(int entnum, int serialNum)
+{
+	C_SmokeStack *pRet = new C_SmokeStack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f8a0 size=0x2a9
 #include "RecvTable.h"
 extern RecvTable g_102eae94;
@@ -8847,6 +11887,20 @@ extern char g_102eb568;
 int sub_10030c50()
 {
     return (int)&lifted::g_102eb568;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10030cb0 size=0x39
+#include "C_SteamJet.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_SteamJet; its ClientClass's initializer stores its address
+IClientNetworkable *_C_SteamJet_CreateObject(int entnum, int serialNum)
+{
+	C_SteamJet *pRet = new C_SteamJet;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -12199,6 +15253,20 @@ int sub_10041460()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100414c0 size=0x39
+#include "C_TestTraceline.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_TestTraceline; its ClientClass's initializer stores its address
+IClientNetworkable *_C_TestTraceline_CreateObject(int entnum, int serialNum)
+{
+	C_TestTraceline *pRet = new C_TestTraceline;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041560 size=0x16b
 #include "RecvTable.h"
 extern RecvTable g_103ec9b0;
@@ -12260,6 +15328,23 @@ void * CUnknown100416e0::sub_100416e0()
 char sub_10041730()
 {
     return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10041790 size=0x2d
+namespace lifted {
+struct C1009f6e0 { int sub_1009f6e0(); };
+struct C1009f6f0 { int sub_1009f6f0(); };
+struct C100a0450 { int sub_100a0450(); };
+struct C100a2030 { int sub_100a2030(int); };
+struct C100a2100 { int sub_100a2100(int); };
+}
+struct CUnknown10041790 { int sub_10041790(int); };
+int CUnknown10041790::sub_10041790(int a0)
+{
+    ((lifted::C100a0450 *)((char *)this + -8))->sub_100a0450();
+    ((lifted::C100a2030 *)((char *)this + -8))->sub_100a2030(((lifted::C1009f6e0 *)((char *)this + -8))->sub_1009f6e0());
+    return ((lifted::C100a2100 *)((char *)this + -8))->sub_100a2100(((lifted::C1009f6f0 *)((char *)this + -8))->sub_1009f6f0());
 }
 // END FUNCTION
 
@@ -12352,6 +15437,17 @@ struct C100432a0 { int sub_100432a0(int); };
 int sub_10042fe0(int a0, int a1)
 {
     return ((lifted::C100432a0 *)a1)->sub_100432a0(*(int *)((char *)a0 + 4));
+}
+// END FUNCTION
+
+// FUNCTION: 0x10043000 size=0x1e
+namespace lifted {
+struct C100433c0 { int sub_100433c0(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual int f2(); };
+}
+int sub_10043000(int a0, int a1)
+{
+    return ((lifted::C100433c0 *)a1)->sub_100433c0(a0 + 4, ((lifted::V *)a1)->f2());
 }
 // END FUNCTION
 
@@ -12669,6 +15765,42 @@ void * CUnknown10049fc0::sub_10049fc0()
     int t0 = lifted::sub_10049030(0x3c, -1046478848, 0x41a00000, 0x3dcccccd, 0x3e4ccccd, 0x3f666666, 0x3f800000);
     *(int *)this = (int)&lifted::g_10227c00;
     return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1004a630 size=0x26
+namespace lifted {
+extern char g_10227c20;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1004a630()
+{
+    int t0 = lifted::sub_101d12a1(0x1c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10227c20;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1004a7d0 size=0x26
+namespace lifted {
+extern char g_10227c34;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1004a7d0()
+{
+    int t0 = lifted::sub_101d12a1(0x1c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10227c34;
+        return t0;
+    }
+    return 0;
 }
 // END FUNCTION
 
@@ -13528,6 +16660,22 @@ void sub_100576b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057710 size=0x26
+namespace lifted {
+int sub_101d12a1(int);
+}
+struct CUnknown10057710 { int sub_10057710(int); };
+int CUnknown10057710::sub_10057710(int a0)
+{
+    int t0 = lifted::sub_101d12a1(8);
+    *(int *)((char *)t0) = a0;
+    int t1 = *(int *)((char *)this + 0x170);
+    *(int *)((char *)t0 + 4) = t1;
+    *(int *)((char *)this + 0x170) = t0;
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a20 size=0x2a
 namespace lifted {
 extern int g_104a0d50;
@@ -13616,6 +16764,29 @@ void __stdcall sub_10057d20(int a0, int a1, int a2)
 // FUNCTION: 0x10057d40 size=0x3
 void __stdcall sub_10057d40(int a0, int a1, int a2)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x10057dc0 size=0x44
+namespace lifted {
+extern int g_104a0d50;
+struct C100a6740 { int sub_100a6740(int); };
+struct C100a6760 { int sub_100a6760(int); };
+int sub_10114660(int, int);
+int sub_10114690();
+}
+void __stdcall sub_10057dc0(int a0, int a1, int a2)
+{
+    int t0 = lifted::g_104a0d50;
+    if (t0 != 0) {
+        lifted::sub_10114660(a2, a1);
+        int t1 = lifted::sub_10114690();
+        int t2 = lifted::sub_10114690();
+        if (t1 != 0) {
+            ((lifted::C100a6740 *)t0)->sub_100a6740(t2); return;
+        }
+        ((lifted::C100a6760 *)t0)->sub_100a6760(t2);
+    }
 }
 // END FUNCTION
 
@@ -14027,6 +17198,20 @@ int sub_1005d870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d8d0 size=0x5a
+#include "C_HudTimer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_HudTimer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_HudTimer_CreateObject(int entnum, int serialNum)
+{
+	C_HudTimer *pRet = new C_HudTimer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d9b0 size=0xcd
 #include "RecvTable.h"
 extern RecvTable g_103eecbc;
@@ -14429,6 +17614,29 @@ void sub_100656a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066400 size=0x34
+namespace lifted {
+extern int g_104a5828;
+struct C10065950 { int sub_10065950(); };
+struct C10065d30 { bool sub_10065d30(); };
+struct C10067610 { int sub_10067610(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual bool f22(); virtual int f23(); };
+}
+struct CUnknown10066400 { void sub_10066400(); };
+void CUnknown10066400::sub_10066400()
+{
+    bool t0 = ((lifted::V *)this)->f22();
+    if (t0 != 0) {
+        bool t1 = ((lifted::C10065d30 *)this)->sub_10065d30();
+        if (t1 != 0) {
+            ((lifted::V *)lifted::g_104a5828)->f23();
+            ((lifted::C10065950 *)this)->sub_10065950();
+            ((lifted::C10067610 *)this)->sub_10067610(0xb);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100666a0 size=0x2c
 namespace lifted {
 extern int g_104a5818;
@@ -14463,6 +17671,24 @@ void CUnknown10067520::sub_10067520()
         ((lifted::V *)(*(int *)((char *)this + 0x300)))->f0(1);
     }
     *(int *)((char *)this + 0x300) = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100675e0 size=0x2f
+namespace lifted {
+extern char g_102887e0;
+struct C10065c90 { bool sub_10065c90(); };
+struct C100666d0 { int sub_100666d0(int, int, int); };
+struct C10067610 { int sub_10067610(int); };
+}
+struct CUnknown100675e0 { void sub_100675e0(int); };
+void CUnknown100675e0::sub_100675e0(int a0)
+{
+    bool t0 = ((lifted::C10065c90 *)this)->sub_10065c90();
+    if (t0 == 0) {
+        ((lifted::C10067610 *)this)->sub_10067610(a0);
+        ((lifted::C100666d0 *)this)->sub_100666d0((int)&lifted::g_102887e0, 0x3f800000, 1);
+    }
 }
 // END FUNCTION
 
@@ -19740,6 +22966,42 @@ void CUnk10427970::sub_100792d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079320 size=0x26
+namespace lifted {
+extern char g_1022b9a0;
+struct C1007a6d0 { int sub_1007a6d0(); };
+int sub_101d12a1(int);
+}
+int sub_10079320()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C1007a6d0 *)t0)->sub_1007a6d0();
+        *(int *)((char *)t0) = (int)&lifted::g_1022b9a0;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100793d0 size=0x26
+namespace lifted {
+extern char g_1022b9bc;
+struct C1007a6d0 { int sub_1007a6d0(); };
+int sub_101d12a1(int);
+}
+int sub_100793d0()
+{
+    int t0 = lifted::sub_101d12a1(0x18);
+    if (t0 != 0) {
+        int t1 = ((lifted::C1007a6d0 *)t0)->sub_1007a6d0();
+        *(int *)((char *)t0) = (int)&lifted::g_1022b9bc;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079480 size=0x63
 struct SEntry { char pad[0x1c]; float a[3]; float b[3]; };
 SEntry *sub_1008d9d0(int, int);
@@ -21026,6 +24288,20 @@ int sub_1007e230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e290 size=0x39
+#include "C_BaseGrenade.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseGrenade; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseGrenade_CreateObject(int entnum, int serialNum)
+{
+	C_BaseGrenade *pRet = new C_BaseGrenade;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e330 size=0x136
 #include "RecvTable.h"
 extern RecvTable g_104865bc;
@@ -21210,6 +24486,20 @@ int sub_1007f960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f9c0 size=0x39
+#include "C_BaseViewModel.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseViewModel; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseViewModel_CreateObject(int entnum, int serialNum)
+{
+	C_BaseViewModel *pRet = new C_BaseViewModel;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fa60 size=0x131
 #include "RecvTable.h"
 extern RecvTable g_10486a60;
@@ -21245,6 +24535,20 @@ extern char g_10487084;
 int sub_1007fd00()
 {
     return (int)&lifted::g_10487084;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007fd60 size=0x39
+#include "C_Beam.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Beam; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Beam_CreateObject(int entnum, int serialNum)
+{
+	C_Beam *pRet = new C_Beam;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -21362,6 +24666,26 @@ Vector3 *C_Beam::sub_100806f0()
 	((BeamView *)this)->sub_1009f8a0();
 	sub_10107f80((Vector3 *)(self + 0x498), (Vector3 *)(self + 0x26c), &vecStatic);
 	return &vecStatic;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10080840 size=0x49
+namespace lifted {
+extern char g_102acf84;
+struct C1007db80 { int sub_1007db80(int); };
+struct C10080890 { int sub_10080890(int, int); };
+int sub_100a2bb0(int, int, int);
+struct C100a2de0 { int sub_100a2de0(int); };
+}
+int sub_10080840(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+    int t0 = lifted::sub_100a2bb0((int)&lifted::g_102acf84, a0, a1);
+    if (t0 != 0) {
+        ((lifted::C10080890 *)t0)->sub_10080890(a3, a4);
+        ((lifted::C100a2de0 *)t0)->sub_100a2de0(a5);
+        ((lifted::C1007db80 *)t0)->sub_1007db80(a5);
+    }
+    return t0;
 }
 // END FUNCTION
 
@@ -25608,6 +28932,20 @@ void * CUnknown1008e730::sub_1008e730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e790 size=0x24
+namespace lifted {
+struct C10094b20 { int sub_10094b20(int); };
+struct C1015e580 { int sub_1015e580(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual int f9(); };
+}
+struct CUnknown1008e790 { int sub_1008e790(int); };
+int CUnknown1008e790::sub_1008e790(int a0)
+{
+    ((lifted::C1015e580 *)((char *)this + 0x115c))->sub_1015e580(((lifted::V *)this)->f9());
+    return ((lifted::C10094b20 *)this)->sub_10094b20(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e7e0 size=0x6
 namespace lifted {
 extern char g_10498e9c;
@@ -25615,6 +28953,20 @@ extern char g_10498e9c;
 int sub_1008e7e0()
 {
     return (int)&lifted::g_10498e9c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1008e840 size=0x39
+#include "C_AI_BaseNPCTroika.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_AI_BaseNPCTroika; its ClientClass's initializer stores its address
+IClientNetworkable *_C_AI_BaseNPCTroika_CreateObject(int entnum, int serialNum)
+{
+	C_AI_BaseNPCTroika *pRet = new C_AI_BaseNPCTroika;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -25815,6 +29167,18 @@ char sub_100923c0(char a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093e20 size=0x1c
+namespace lifted {
+int sub_100681e0(int);
+struct C10093cf0 { int sub_10093cf0(int); };
+}
+struct CUnknown10093e20 { int sub_10093e20(int); };
+int CUnknown10093e20::sub_10093e20(int a0)
+{
+    return ((lifted::C10093cf0 *)this)->sub_10093cf0(lifted::sub_100681e0(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093ef0 size=0xd
 struct CUnknown10093ef0 { int sub_10093ef0(int); };
 int CUnknown10093ef0::sub_10093ef0(int a0)
@@ -25917,11 +29281,36 @@ int CUnknown10095b00::sub_10095b00(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095b10 size=0x22
+namespace lifted {
+int sub_1007a470(int, int);
+int __stdcall sub_1008f900(int);
+}
+struct CUnknown10095b10 { int sub_10095b10(int); };
+int CUnknown10095b10::sub_10095b10(int a0)
+{
+    *(int *)((char *)this + 0x564) = lifted::sub_1007a470(lifted::sub_1008f900(-1), a0);
+    return *(int *)((char *)this + 0x564);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095b40 size=0x7
 struct CUnknown10095b40 { int sub_10095b40(); };
 int CUnknown10095b40::sub_10095b40()
 {
     return *(int *)((char *)this + 0x564);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10095b50 size=0x18
+namespace lifted {
+int sub_1007a4d0(int, int);
+int __stdcall sub_1008f900(int);
+}
+struct CUnknown10095b50 { int sub_10095b50(); };
+int CUnknown10095b50::sub_10095b50()
+{
+    return lifted::sub_1007a4d0(lifted::sub_1008f900(-1), *(int *)((char *)this + 0x564));
 }
 // END FUNCTION
 
@@ -27291,6 +30680,18 @@ char CUnknown100a2e40::sub_100a2e40(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2e50 size=0x1c
+namespace lifted {
+struct C100a2970 { int sub_100a2970(int); };
+int sub_100a2a90(int);
+}
+struct CUnknown100a2e50 { int sub_100a2e50(int); };
+int CUnknown100a2e50::sub_100a2e50(int a0)
+{
+    return ((lifted::C100a2970 *)this)->sub_100a2970(lifted::sub_100a2a90(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e80 size=0x7
 struct CUnknown100a2e80 { char sub_100a2e80(); };
 char CUnknown100a2e80::sub_100a2e80()
@@ -27318,6 +30719,23 @@ struct CUnknown100a2fc0 { int sub_100a2fc0(); };
 int CUnknown100a2fc0::sub_100a2fc0()
 {
     return *(int *)((char *)this + 0x3d8);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a2fd0 size=0x1d
+namespace lifted {
+struct C100a31e0 { int sub_100a31e0(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual int f17(); };
+}
+struct CUnknown100a2fd0 { void sub_100a2fd0(); };
+void CUnknown100a2fd0::sub_100a2fd0()
+{
+    int t0 = ((lifted::V *)this)->f17();
+    if (t0 != 0) {
+        if ((*(char *)((char *)t0 + 0x11)) == 0) {
+            ((lifted::C100a31e0 *)this)->sub_100a31e0(t0);
+        }
+    }
 }
 // END FUNCTION
 
@@ -27999,6 +31417,23 @@ int CUnknown100a5a50::sub_100a5a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5b30 size=0x29
+namespace lifted {
+extern int g_104a0d50;
+struct C100978e0 { int sub_100978e0(int); };
+struct C100a99d0 { bool sub_100a99d0(); };
+}
+struct CUnknown100a5b30 { int sub_100a5b30(int); };
+int CUnknown100a5b30::sub_100a5b30(int a0)
+{
+    bool t0 = ((lifted::C100a99d0 *)((char *)this + -8))->sub_100a99d0();
+    if (t0 != 0) {
+        lifted::g_104a0d50 = (int)((char *)this + -8);
+    }
+    return ((lifted::C100978e0 *)this)->sub_100978e0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6740 size=0x13
 namespace lifted {
 extern char g_105f8b98;
@@ -28454,6 +31889,20 @@ int sub_100add50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100addb0 size=0x39
+#include "C_DynamicLight.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_DynamicLight; its ClientClass's initializer stores its address
+IClientNetworkable *_C_DynamicLight_CreateObject(int entnum, int serialNum)
+{
+	C_DynamicLight *pRet = new C_DynamicLight;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ade50 size=0x15b
 #include "RecvTable.h"
 extern RecvTable g_104a12e4;
@@ -28681,6 +32130,20 @@ int sub_100b2a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2aa0 size=0x5a
+#include "C_ThaumaturgyParticle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ThaumaturgyParticle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ThaumaturgyParticle_CreateObject(int entnum, int serialNum)
+{
+	C_ThaumaturgyParticle *pRet = new C_ThaumaturgyParticle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2b80 size=0xb0
 #include "RecvTable.h"
 extern RecvTable g_104a153c;
@@ -28714,6 +32177,20 @@ extern char g_104a1c1c;
 int sub_100b3050()
 {
     return (int)&lifted::g_104a1c1c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100b30b0 size=0x5a
+#include "C_FuncParticle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FuncParticle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FuncParticle_CreateObject(int entnum, int serialNum)
+{
+	C_FuncParticle *pRet = new C_FuncParticle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -28836,6 +32313,20 @@ int sub_100b50a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5100 size=0x39
+#include "C_FireSmoke.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FireSmoke; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FireSmoke_CreateObject(int entnum, int serialNum)
+{
+	C_FireSmoke *pRet = new C_FireSmoke;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b51a0 size=0x107
 #include "RecvTable.h"
 extern RecvTable g_104a1f1c;
@@ -28901,6 +32392,20 @@ int sub_100b63f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6450 size=0x39
+#include "C_EntityFlame.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_EntityFlame; its ClientClass's initializer stores its address
+IClientNetworkable *_C_EntityFlame_CreateObject(int entnum, int serialNum)
+{
+	C_EntityFlame *pRet = new C_EntityFlame;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b64f0 size=0x92
 #include "RecvTable.h"
 extern RecvTable g_104a1f34;
@@ -28933,6 +32438,20 @@ extern char g_104a2190;
 int sub_100b69e0()
 {
     return (int)&lifted::g_104a2190;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100b6a40 size=0x5a
+#include "C_FuncAreaPortalWindow.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FuncAreaPortalWindow; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FuncAreaPortalWindow_CreateObject(int entnum, int serialNum)
+{
+	C_FuncAreaPortalWindow *pRet = new C_FuncAreaPortalWindow;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -28998,6 +32517,20 @@ int sub_100b6e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6ef0 size=0x39
+#include "C_BreakableSurface.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BreakableSurface; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BreakableSurface_CreateObject(int entnum, int serialNum)
+{
+	C_BreakableSurface *pRet = new C_BreakableSurface;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6f90 size=0x15b
 #include "RecvTable.h"
 extern RecvTable g_104a2304;
@@ -29029,6 +32562,24 @@ template <> int ClientClassInit<DT_BreakableSurface::ignored>(DT_BreakableSurfac
 	};
 	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
 	return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100b7bb0 size=0x37
+namespace lifted {
+struct C100b7bf0 { int sub_100b7bf0(int); };
+struct C100b7e60 { int sub_100b7e60(int); };
+struct C100b85f0 { int sub_100b85f0(int); };
+}
+struct CUnknown100b7bb0 { char sub_100b7bb0(int, int); };
+char CUnknown100b7bb0::sub_100b7bb0(int a0, int a1)
+{
+    if ((*(int *)((char *)this + 0x30)) == 1) {
+        ((lifted::C100b7e60 *)((char *)this + -1040))->sub_100b7e60(a1);
+    }
+    ((lifted::C100b85f0 *)((int)this + -1040))->sub_100b85f0(a1);
+    ((lifted::C100b7bf0 *)((int)this + -1040))->sub_100b7bf0(a1);
+    return 0;
 }
 // END FUNCTION
 
@@ -29075,6 +32626,20 @@ extern char g_104a26d4;
 int sub_100ba0e0()
 {
     return (int)&lifted::g_104a26d4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100ba140 size=0x39
+#include "C_Func_Dust.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Func_Dust; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Func_Dust_CreateObject(int entnum, int serialNum)
+{
+	C_Func_Dust *pRet = new C_Func_Dust;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -29253,6 +32818,20 @@ int sub_100bb4f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb550 size=0x39
+#include "C_Func_LOD.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Func_LOD; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Func_LOD_CreateObject(int entnum, int serialNum)
+{
+	C_Func_LOD *pRet = new C_Func_LOD;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb5f0 size=0x92
 #include "RecvTable.h"
 extern RecvTable g_104a2b7c;
@@ -29310,6 +32889,20 @@ extern char g_104a2c34;
 int sub_100bb9a0()
 {
     return (int)&lifted::g_104a2c34;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bba00 size=0x5a
+#include "C_FuncMonitor.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FuncMonitor; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FuncMonitor_CreateObject(int entnum, int serialNum)
+{
+	C_FuncMonitor *pRet = new C_FuncMonitor;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -29402,6 +32995,20 @@ int sub_100bbe40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbea0 size=0x39
+#include "C_HudCounter.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_HudCounter; its ClientClass's initializer stores its address
+IClientNetworkable *_C_HudCounter_CreateObject(int entnum, int serialNum)
+{
+	C_HudCounter *pRet = new C_HudCounter;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbf40 size=0x104
 #include "RecvTable.h"
 extern RecvTable g_104a2df4;
@@ -29473,6 +33080,26 @@ void CUnknown100bc150::sub_100bc150()
 int __stdcall sub_100bc170(int a0, int a1)
 {
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bc180 size=0x3b
+namespace lifted {
+struct C1009fff0 { int sub_1009fff0(int); };
+struct C100bc110 { int sub_100bc110(); };
+struct C100bc150 { int sub_100bc150(); };
+}
+struct CUnknown100bc180 { int sub_100bc180(int); };
+int CUnknown100bc180::sub_100bc180(int a0)
+{
+    if (a0 == 0) {
+        ((lifted::C100bc110 *)((char *)this + -8))->sub_100bc110();
+        return ((lifted::C1009fff0 *)this)->sub_1009fff0(a0);
+    }
+    if (a0 == 2) {
+        ((lifted::C100bc150 *)((char *)this + -8))->sub_100bc150();
+    }
+    return ((lifted::C1009fff0 *)this)->sub_1009fff0(a0);
 }
 // END FUNCTION
 
@@ -29557,6 +33184,26 @@ int __stdcall sub_100bc680(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc690 size=0x3b
+namespace lifted {
+struct C1009fff0 { int sub_1009fff0(int); };
+struct C100bc620 { int sub_100bc620(); };
+struct C100bc660 { int sub_100bc660(); };
+}
+struct CUnknown100bc690 { int sub_100bc690(int); };
+int CUnknown100bc690::sub_100bc690(int a0)
+{
+    if (a0 == 0) {
+        ((lifted::C100bc620 *)((char *)this + -8))->sub_100bc620();
+        return ((lifted::C1009fff0 *)this)->sub_1009fff0(a0);
+    }
+    if (a0 == 2) {
+        ((lifted::C100bc660 *)((char *)this + -8))->sub_100bc660();
+    }
+    return ((lifted::C1009fff0 *)this)->sub_1009fff0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc6f0 size=0x6
 namespace lifted {
 extern char g_104a3064;
@@ -29625,6 +33272,20 @@ extern char g_104a31ec;
 int sub_100bca50()
 {
     return (int)&lifted::g_104a31ec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bcab0 size=0x39
+#include "C_PhysBox.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PhysBox; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PhysBox_CreateObject(int entnum, int serialNum)
+{
+	C_PhysBox *pRet = new C_PhysBox;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -29726,6 +33387,20 @@ extern char g_104a38dc;
 int sub_100bce50()
 {
     return (int)&lifted::g_104a38dc;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bceb0 size=0x39
+#include "C_PlayerResource.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PlayerResource; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PlayerResource_CreateObject(int entnum, int serialNum)
+{
+	C_PlayerResource *pRet = new C_PlayerResource;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -29846,6 +33521,20 @@ int sub_100bd950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd9b0 size=0x39
+#include "C_OrnamentProp.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OrnamentProp; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OrnamentProp_CreateObject(int entnum, int serialNum)
+{
+	C_OrnamentProp *pRet = new C_OrnamentProp;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bda50 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_104a3a24;
@@ -29954,6 +33643,25 @@ void CUnknown100bdeb0::sub_100bdeb0()
     if (lifted::g_104a0d50 != 0) {
         *(int *)((char *)this + 0x14) = 0;
         lifted::sub_100bded0(lifted::g_104a0d50);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bdff0 size=0x37
+namespace lifted {
+extern int g_104a0d50;
+extern int g_104a57d4;
+struct C100bded0 { int sub_100bded0(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual int f34(); };
+}
+struct CUnknown100bdff0 { void sub_100bdff0(int); };
+void CUnknown100bdff0::sub_100bdff0(int a0)
+{
+    int t0 = ((lifted::V *)lifted::g_104a57d4)->f34();
+    if (((1 << t0) & a0) != 0) {
+        if (lifted::g_104a0d50 != 0) {
+            ((lifted::C100bded0 *)this)->sub_100bded0(lifted::g_104a0d50);
+        }
     }
 }
 // END FUNCTION
@@ -30087,6 +33795,20 @@ extern char g_104a3d24;
 int sub_100be2d0()
 {
     return (int)&lifted::g_104a3d24;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100be330 size=0x39
+#include "C_RopeKeyframe.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_RopeKeyframe; its ClientClass's initializer stores its address
+IClientNetworkable *_C_RopeKeyframe_CreateObject(int entnum, int serialNum)
+{
+	C_RopeKeyframe *pRet = new C_RopeKeyframe;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -30627,6 +34349,20 @@ int sub_100c4ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4d00 size=0x39
+#include "C_Sun.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Sun; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Sun_CreateObject(int entnum, int serialNum)
+{
+	C_Sun *pRet = new C_Sun;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4da0 size=0xf9
 #include "RecvTable.h"
 extern RecvTable g_104a4f04;
@@ -30703,6 +34439,20 @@ int sub_100c65c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6620 size=0x5a
+#include "C_VampireProjectile_MingXiaoSpit.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_VampireProjectile_MingXiaoSpit; its ClientClass's initializer stores its address
+IClientNetworkable *_C_VampireProjectile_MingXiaoSpit_CreateObject(int entnum, int serialNum)
+{
+	C_VampireProjectile_MingXiaoSpit *pRet = new C_VampireProjectile_MingXiaoSpit;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6700 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_104a4fa0;
@@ -30732,6 +34482,20 @@ extern char g_104a4fe0;
 int sub_100c68b0()
 {
     return (int)&lifted::g_104a4fe0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c6910 size=0x39
+#include "C_BaseTerminal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseTerminal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseTerminal_CreateObject(int entnum, int serialNum)
+{
+	C_BaseTerminal *pRet = new C_BaseTerminal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -31175,6 +34939,20 @@ extern char g_104a56b4;
 int sub_100ca230()
 {
     return (int)&lifted::g_104a56b4;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100ca290 size=0x39
+#include "C_World.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_World; its ClientClass's initializer stores its address
+IClientNetworkable *_C_World_CreateObject(int entnum, int serialNum)
+{
+	C_World *pRet = new C_World;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -32346,6 +36124,25 @@ int __stdcall sub_100d5150(int a0, int a1)
     *(int *)((char *)a1) = 0x400;
     *(int *)((char *)a0) = 0x400;
     return a1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100d5790 size=0x74
+namespace lifted {
+extern int g_104a57d4;
+extern char g_104cf0d8;
+struct C100d59b0 { int sub_100d59b0(int, int, int); };
+int sub_101d21d3(int);
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual int f63(); virtual int f64(int); };
+}
+void sub_100d5790()
+{
+    int t0 = ((lifted::V *)lifted::g_104a57d4)->f63();
+    if (t0 == 4) {
+        int t1 = lifted::sub_101d21d3(((lifted::V *)lifted::g_104a57d4)->f64(1));
+        int t2 = lifted::sub_101d21d3(((lifted::V *)lifted::g_104a57d4)->f64(2));
+        ((lifted::C100d59b0 *)((int)&lifted::g_104cf0d8))->sub_100d59b0(t1, t2, lifted::sub_101d21d3(((lifted::V *)lifted::g_104a57d4)->f64(3)));
+    }
 }
 // END FUNCTION
 
@@ -35385,6 +39182,24 @@ int CUnk10129770::sub_100ee900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eea30 size=0x26
+namespace lifted {
+extern char g_10234ce4;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_100eea30()
+{
+    int t0 = lifted::sub_101d12a1(0x18);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10234ce4;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efe70 size=0x8
 struct CUnknown100efe70 { void sub_100efe70(); };
 void CUnknown100efe70::sub_100efe70()
@@ -36400,9 +40215,46 @@ void CUnknown10101d90::sub_10101d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101db0 size=0x40
+namespace lifted {
+extern char g_102bda4c;
+extern char g_102bda58;
+extern char g_102bda64;
+extern char g_104d2de0;
+extern char g_104d350c;
+extern char g_104d393c;
+struct C10101d10 { int sub_10101d10(int, int); };
+}
+struct CUnknown10101db0 { int sub_10101db0(); };
+int CUnknown10101db0::sub_10101db0()
+{
+    *(int *)((char *)this + 0xdc) = 0;
+    ((lifted::C10101d10 *)this)->sub_10101d10((int)&lifted::g_102bda64, (int)&lifted::g_104d2de0);
+    ((lifted::C10101d10 *)this)->sub_10101d10((int)&lifted::g_102bda58, (int)&lifted::g_104d350c);
+    return ((lifted::C10101d10 *)this)->sub_10101d10((int)&lifted::g_102bda4c, (int)&lifted::g_104d393c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x10102fe0 size=0x31
+namespace lifted {
+struct C10100f80 { int sub_10100f80(int, int); };
+struct C101068a0 { int sub_101068a0(int); };
+}
+struct CUnknown10102fe0 { int sub_10102fe0(int, int); };
+int CUnknown10102fe0::sub_10102fe0(int a0, int a1)
+{
+    if ((*(int *)((char *)this + 0xec)) == 0) {
+        if ((*(int *)((char *)this + 0x28)) != 0) {
+            ((lifted::C101068a0 *)this)->sub_101068a0(a1);
+        }
+    }
+    return ((lifted::C10100f80 *)this)->sub_10100f80(a0, a1);
 }
 // END FUNCTION
 
@@ -39918,6 +43770,240 @@ void sub_1010c620(const Vector &v1, const Vector &v2, const Vector &v3, Vector &
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c820 size=0x26
+namespace lifted {
+extern char g_1023553c;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010c820()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_1023553c;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010c9d0 size=0x26
+namespace lifted {
+extern char g_10235550;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010c9d0()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_10235550;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010cb80 size=0x26
+namespace lifted {
+extern char g_10235564;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010cb80()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_10235564;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010cd60 size=0x26
+namespace lifted {
+extern char g_10235578;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010cd60()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_10235578;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010cfc0 size=0x26
+namespace lifted {
+extern char g_1023558c;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010cfc0()
+{
+    int t0 = lifted::sub_101d12a1(0x2c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_1023558c;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010d180 size=0x26
+namespace lifted {
+extern char g_102355a0;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1010d180()
+{
+    int t0 = lifted::sub_101d12a1(0x3c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_102355a0;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010d290 size=0x26
+namespace lifted {
+extern char g_102355b4;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010d290()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_102355b4;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010d410 size=0x26
+namespace lifted {
+extern char g_102355c8;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010d410()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_102355c8;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010d540 size=0x26
+namespace lifted {
+extern char g_102355dc;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1010d540()
+{
+    int t0 = lifted::sub_101d12a1(0x24);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_102355dc;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010d660 size=0x26
+namespace lifted {
+extern char g_102355f0;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1010d660()
+{
+    int t0 = lifted::sub_101d12a1(0x24);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_102355f0;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010d840 size=0x26
+namespace lifted {
+extern char g_10235604;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1010d840()
+{
+    int t0 = lifted::sub_101d12a1(0x3c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235604;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010da30 size=0x26
+namespace lifted {
+extern char g_10235618;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010da30()
+{
+    int t0 = lifted::sub_101d12a1(0x44);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_10235618;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010dad0 size=0x26
+namespace lifted {
+extern char g_1023562c;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010dad0()
+{
+    int t0 = lifted::sub_101d12a1(0x14);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_1023562c;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010db50 size=0x18
 namespace lifted {
 extern char g_10235640;
@@ -39928,6 +44014,24 @@ int sub_1010db50()
     int t0 = lifted::sub_101d12a1(4);
     if (t0 != 0) {
         *(int *)((char *)t0) = (int)&lifted::g_10235640;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010dd70 size=0x26
+namespace lifted {
+extern char g_10235654;
+struct C100e3460 { int sub_100e3460(); };
+int sub_101d12a1(int);
+}
+int sub_1010dd70()
+{
+    int t0 = lifted::sub_101d12a1(0x1c);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e3460 *)t0)->sub_100e3460();
+        *(int *)((char *)t0) = (int)&lifted::g_10235654;
         return t0;
     }
     return 0;
@@ -40367,6 +44471,19 @@ void CUnknown1010f070::sub_1010f070(int a0, int a1, int a2)
         *(char *)((char *)this + 0xdc) = 1;
         *(int *)((char *)this + 0xd4) = t1;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010f0a0 size=0x26
+namespace lifted {
+extern char g_102bbea0;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C1010f030 { int sub_1010f030(int, int, int); };
+}
+int sub_1010f0a0(int a0, int a1, int a2)
+{
+    return ((lifted::C1010f030 *)(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbea0)))->sub_1010f030(a0, a1, a2);
 }
 // END FUNCTION
 
@@ -41243,6 +45360,24 @@ int CUnknown10119600::sub_10119600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119730 size=0x35
+namespace lifted {
+struct C1011be90 { int sub_1011be90(int); };
+}
+int __stdcall sub_10119730(int a0, int a1)
+{
+    int t0 = ((lifted::C1011be90 *)a0)->sub_1011be90(a1);
+    if (t0 != 0) {
+        *(int *)((char *)t0 + 4) = -1;
+    }
+    int t1 = ((lifted::C1011be90 *)a1)->sub_1011be90(a0);
+    if (t1 != 0) {
+        *(int *)((char *)t1 + 4) = -1;
+    }
+    return t1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119d90 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>
@@ -41453,6 +45588,18 @@ void S10032fb0::sub_1011a3c0(int num)
         m_pMemory = g_101e3104(m_pMemory, m_nAllocationCount * 0x18);
     else
         m_pMemory = g_101e3100(m_nAllocationCount * 0x18);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1011abc0 size=0x15
+namespace lifted {
+struct C100a29b0 { int sub_100a29b0(int); };
+}
+struct CUnknown1011abc0 { int sub_1011abc0(); };
+int CUnknown1011abc0::sub_1011abc0()
+{
+    ((lifted::C100a29b0 *)this)->sub_100a29b0(2);
+    return ((lifted::C100a29b0 *)this)->sub_100a29b0(1);
 }
 // END FUNCTION
 
@@ -43208,6 +47355,25 @@ int CUnknown10123d30::sub_10123d30(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124440 size=0x48
+namespace lifted {
+extern int g_102c2468;
+struct C101243f0 { int sub_101243f0(int, int, int, int); };
+int sub_10124490(int, int, int);
+}
+struct CUnknown10124440 { int sub_10124440(int, int, int); };
+int CUnknown10124440::sub_10124440(int a0, int a1, int a2)
+{
+    int t0 = lifted::g_102c2468 + 1;
+    lifted::g_102c2468 = t0;
+    char t1 = *(char *)((char *)a0 + 0x10);
+    if (t1 == 0) {
+        lifted::sub_10124490(a0, a1, a2);
+    }
+    return ((lifted::C101243f0 *)this)->sub_101243f0(lifted::g_102c2468, a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124740 size=0x1e
 namespace lifted {
 extern char g_102c25c0;
@@ -43267,6 +47433,114 @@ struct CUnknown10124870 { int sub_10124870(int, int); };
 int CUnknown10124870::sub_10124870(int a0, int a1)
 {
     return lifted::sub_101245d0((int)this, (int)&lifted::g_102c283c, *(int *)((char *)a0));
+}
+// END FUNCTION
+
+// FUNCTION: 0x10124c00 size=0x26
+namespace lifted {
+extern char g_10235c4c;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_10124c00()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235c4c;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10124d70 size=0x26
+namespace lifted {
+extern char g_10235c60;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_10124d70()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235c60;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10124e80 size=0x26
+namespace lifted {
+extern char g_10235c74;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_10124e80()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235c74;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10124fa0 size=0x26
+namespace lifted {
+extern char g_10235c88;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_10124fa0()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235c88;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10125080 size=0x26
+namespace lifted {
+extern char g_10235c9c;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_10125080()
+{
+    int t0 = lifted::sub_101d12a1(0xc);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235c9c;
+        return t0;
+    }
+    return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10125180 size=0x26
+namespace lifted {
+extern char g_10235cb0;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_10125180()
+{
+    int t0 = lifted::sub_101d12a1(0x18);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10235cb0;
+        return t0;
+    }
+    return 0;
 }
 // END FUNCTION
 
@@ -48099,6 +52373,31 @@ template <> int ClientClassInit<DT_Sprite::ignored>(DT_Sprite::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136350 size=0x67
+namespace lifted {
+extern char g_102c5be8;
+extern char g_104d4970;
+struct C10043230 { int sub_10043230(int); };
+struct C1009fc60 { int sub_1009fc60(int, int); };
+struct C100a2850 { int sub_100a2850(int, int); };
+int sub_100a2bb0(int, int, int);
+struct C10136310 { int sub_10136310(int, int); };
+struct C101365d0 { int sub_101365d0(); };
+}
+int sub_10136350(int a0, int a1, int a2, int a3, char a4)
+{
+    int t0 = lifted::sub_100a2bb0((int)&lifted::g_102c5be8, a0, a1);
+    ((lifted::C10136310 *)t0)->sub_10136310(a2, a3);
+    ((lifted::C10043230 *)((char *)t0 + 0x190))->sub_10043230(0);
+    ((lifted::C100a2850 *)t0)->sub_100a2850((int)&lifted::g_104d4970, (int)&lifted::g_104d4970);
+    ((lifted::C1009fc60 *)t0)->sub_1009fc60(9, 0);
+    if (a4 != 0) {
+        ((lifted::C101365d0 *)t0)->sub_101365d0();
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136580 size=0x17
 struct CUnknown10136580 { int sub_10136580(int, int); };
 int CUnknown10136580::sub_10136580(int a0, int a1)
@@ -48600,6 +52899,31 @@ int __stdcall sub_10139e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a130 size=0x32
+namespace lifted {
+extern char g_1028653c;
+int sub_100f2010(int, int, int, int, int, int, int);
+int sub_10139ef0();
+}
+struct CUnknown1013a130 { int sub_1013a130(int, int, int, int); };
+int CUnknown1013a130::sub_1013a130(int a0, int a1, int a2, int a3)
+{
+    return lifted::sub_100f2010(*(int *)((char *)this + 0x10), a0, a1, a2, (int)&lifted::g_1028653c, lifted::sub_10139ef0(), a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1013a170 size=0x1d
+namespace lifted {
+struct C100f2670 { int sub_100f2670(int); };
+int sub_10139ef0(int);
+}
+struct CUnknown1013a170 { int sub_1013a170(int); };
+int CUnknown1013a170::sub_1013a170(int a0)
+{
+    return ((lifted::C100f2670 *)(*(int *)((char *)this + 0x10)))->sub_100f2670(lifted::sub_10139ef0(a0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a190 size=0x10
 namespace lifted {
 extern char g_10247bf8;
@@ -48642,6 +52966,24 @@ int sub_1013a3d0()
 // FUNCTION: 0x1013a7d0 size=0x1
 void sub_1013a7d0()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1013bab0 size=0x26
+namespace lifted {
+extern char g_10247c0c;
+struct C100e32d0 { int sub_100e32d0(); };
+int sub_101d12a1(int);
+}
+int sub_1013bab0()
+{
+    int t0 = lifted::sub_101d12a1(0x10);
+    if (t0 != 0) {
+        int t1 = ((lifted::C100e32d0 *)t0)->sub_100e32d0();
+        *(int *)((char *)t0) = (int)&lifted::g_10247c0c;
+        return t0;
+    }
+    return 0;
 }
 // END FUNCTION
 
@@ -49775,6 +54117,25 @@ void __stdcall sub_1013f180(CVStatKV *pKV, CVStatInfoList_t *pList, int *pOut)
 			block.sub_10160690(nType, i);
 			pOut[i] = sub_1015e9e0(&block, pszValue);
 		} ++i; } }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1013f250 size=0x3d
+namespace lifted {
+extern char g_102c6a3c;
+extern char g_102c6a44;
+int sub_101d1300(int, int);
+}
+void sub_1013f250(int a0, int a1)
+{
+    int t0 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a44);
+    if (t0 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 2;
+    }
+    int t1 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a3c);
+    if (t1 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 1;
+    }
 }
 // END FUNCTION
 
@@ -52410,6 +56771,20 @@ extern char g_105e809c;
 int sub_10146300()
 {
     return (int)&lifted::g_105e809c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10146360 size=0x39
+#include "C_DisciplineProjectile.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_DisciplineProjectile; its ClientClass's initializer stores its address
+IClientNetworkable *_C_DisciplineProjectile_CreateObject(int entnum, int serialNum)
+{
+	C_DisciplineProjectile *pRet = new C_DisciplineProjectile;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
 }
 // END FUNCTION
 
@@ -55712,6 +60087,25 @@ bool CUnknown101e98c0Item::sub_1014df20(CDataNode *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014dfc0 size=0x3d
+namespace lifted {
+extern char g_102c6a3c;
+extern char g_102c6a44;
+int sub_101d1300(int, int);
+}
+void sub_1014dfc0(int a0, int a1)
+{
+    int t0 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a44);
+    if (t0 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 2;
+    }
+    int t1 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a3c);
+    if (t1 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e070 size=0xd
 struct CUnknown1014e070 { void * sub_1014e070(); };
 void * CUnknown1014e070::sub_1014e070()
@@ -57397,6 +61791,25 @@ int sub_100a2930();
 int sub_101520c0()
 {
     return lifted::sub_100a2930();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10152220 size=0x2e
+namespace lifted {
+struct C10094890 { int sub_10094890(int); };
+struct C100a2600 { bool sub_100a2600(); };
+struct C100a2760 { int sub_100a2760(int, int); };
+}
+struct CUnknown10152220 { void sub_10152220(int); };
+void CUnknown10152220::sub_10152220(int a0)
+{
+    int t0 = ((lifted::C10094890 *)this)->sub_10094890(a0);
+    if (a0 == 0) {
+        bool t1 = ((lifted::C100a2600 *)((int)this + -8))->sub_100a2600();
+        if (t1 != 0) {
+            ((lifted::C100a2760 *)((int)this + -8))->sub_100a2760(a0, a0);
+        }
+    }
 }
 // END FUNCTION
 
@@ -62672,6 +67085,36 @@ int CVStatInfo_t::sub_1015bf50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c0a0 size=0x3a
+namespace lifted {
+struct C101581e0 { int sub_101581e0(int, int, int); };
+struct C10161440 { int sub_10161440(int); };
+}
+struct CUnknown1015c0a0 { int sub_1015c0a0(int); };
+int CUnknown1015c0a0::sub_1015c0a0(int a0)
+{
+    if (a0 != 0) {
+        return ((lifted::C101581e0 *)((char *)a0 + 0x10e0))->sub_101581e0(*(int *)((char *)this + 0xc), *(int *)((char *)this + 0x10), ((lifted::C10161440 *)((char *)this + 0x4c))->sub_10161440(a0));
+    }
+    return ((lifted::C10161440 *)((char *)this + 0x4c))->sub_10161440(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1015c0e0 size=0x3a
+namespace lifted {
+struct C10158250 { int sub_10158250(int, int, int); };
+struct C10161440 { int sub_10161440(int); };
+}
+struct CUnknown1015c0e0 { int sub_1015c0e0(int); };
+int CUnknown1015c0e0::sub_1015c0e0(int a0)
+{
+    if (a0 != 0) {
+        return ((lifted::C10158250 *)((char *)a0 + 0x10e0))->sub_10158250(*(int *)((char *)this + 0xc), *(int *)((char *)this + 0x10), ((lifted::C10161440 *)((char *)this + 0x60))->sub_10161440(a0));
+    }
+    return ((lifted::C10161440 *)((char *)this + 0x60))->sub_10161440(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c280 size=0x6b
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
@@ -66752,6 +71195,22 @@ int sub_10170f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171400 size=0x28
+namespace lifted {
+extern int g_105fb14c;
+struct C10170f60 { int sub_10170f60(); };
+struct C10180c40 { int sub_10180c40(int, int); };
+}
+void sub_10171400()
+{
+    if (lifted::g_105fb14c != 0) {
+        if ((*(int *)((char *)lifted::g_105fb14c + 0x274)) != 0) {
+            ((lifted::C10180c40 *)(*(int *)((char *)(((lifted::C10170f60 *)(*(int *)((char *)lifted::g_105fb14c + 0x274)))->sub_10170f60()) + 0xedc)))->sub_10180c40(-1, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172ac0 size=0x3
 char sub_10172ac0()
 {
@@ -66876,6 +71335,24 @@ void CUnknown101733b0::sub_101733b0()
     if ((*(int *)((char *)this + 0x274)) == 0) {
         lifted::sub_101733d0(1);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10173480 size=0x27
+namespace lifted {
+struct C10173350 { int sub_10173350(); };
+struct C101733d0 { int sub_101733d0(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual bool f10(); };
+}
+struct CUnknown10173480 { int sub_10173480(); };
+int CUnknown10173480::sub_10173480()
+{
+    *(int *)((char *)this + 0x274) = 0;
+    bool t0 = ((lifted::V *)this)->f10();
+    if (t0 != 0) {
+        return ((lifted::C101733d0 *)this)->sub_101733d0(0);
+    }
+    return ((lifted::C10173350 *)this)->sub_10173350();
 }
 // END FUNCTION
 
@@ -67074,6 +71551,18 @@ void sub_101746d0()
     if (lifted::g_105fb14c != 0) {
         ((lifted::C101733d0 *)lifted::g_105fb14c)->sub_101733d0(0);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10174b20 size=0x2b
+namespace lifted {
+struct C101a9950 { int sub_101a9950(int, int, int, int); };
+}
+struct CUnknown10174b20 { int sub_10174b20(); };
+int CUnknown10174b20::sub_10174b20()
+{
+    ((lifted::C101a9950 *)((char *)this + 0x180))->sub_101a9950(0, 0, 0, 0);
+    return ((lifted::C101a9950 *)((char *)this + 0x238))->sub_101a9950(0, 0, 0, 0);
 }
 // END FUNCTION
 
@@ -67338,6 +71827,19 @@ void sub_10177ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177eb0 size=0x16
+namespace lifted {
+struct C10177a20 { int sub_10177a20(); };
+struct C101aa0a0 { int sub_101aa0a0(int); };
+}
+struct CUnknown10177eb0 { int sub_10177eb0(); };
+int CUnknown10177eb0::sub_10177eb0()
+{
+    ((lifted::C10177a20 *)this)->sub_10177a20();
+    return ((lifted::C101aa0a0 *)this)->sub_101aa0a0(0x3e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177ed0 size=0x8
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual int f119(); };
@@ -67456,6 +71958,19 @@ void sub_1017ac30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ac40 size=0x16
+namespace lifted {
+struct C1017a7f0 { int sub_1017a7f0(); };
+struct C101aa0a0 { int sub_101aa0a0(int); };
+}
+struct CUnknown1017ac40 { int sub_1017ac40(); };
+int CUnknown1017ac40::sub_1017ac40()
+{
+    ((lifted::C1017a7f0 *)this)->sub_1017a7f0();
+    return ((lifted::C101aa0a0 *)this)->sub_101aa0a0(0x3e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017b130 size=0x2f
 namespace lifted {
 extern char g_1024c4b4;
@@ -67530,6 +72045,19 @@ void sub_1017c570()
 // FUNCTION: 0x1017c650 size=0x1
 void sub_1017c650()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1017c660 size=0x16
+namespace lifted {
+struct C1017c580 { int sub_1017c580(); };
+struct C101aa0a0 { int sub_101aa0a0(int); };
+}
+struct CUnknown1017c660 { int sub_1017c660(); };
+int CUnknown1017c660::sub_1017c660()
+{
+    ((lifted::C1017c580 *)this)->sub_1017c580();
+    return ((lifted::C101aa0a0 *)this)->sub_101aa0a0(0x3e8);
 }
 // END FUNCTION
 
@@ -67926,6 +72454,19 @@ void sub_10182450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182460 size=0x16
+namespace lifted {
+struct C10181cc0 { int sub_10181cc0(); };
+struct C101aa0a0 { int sub_101aa0a0(int); };
+}
+struct CUnknown10182460 { int sub_10182460(); };
+int CUnknown10182460::sub_10182460()
+{
+    ((lifted::C10181cc0 *)this)->sub_10181cc0();
+    return ((lifted::C101aa0a0 *)this)->sub_101aa0a0(0x3e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101825b0 size=0x25
 namespace lifted {
 extern char g_1027b3a8;
@@ -68294,6 +72835,19 @@ void sub_10186d00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186dd0 size=0x23
+namespace lifted {
+extern char g_102bbe88;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C10184bc0 { int sub_10184bc0(int, int, int); };
+}
+int sub_10186dd0(int a0, int a1)
+{
+    return ((lifted::C10184bc0 *)(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbe88)))->sub_10184bc0(a0, a1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186e00 size=0x1c
 struct CUnk102036e0Target { void sub_10186620(int a); };
 struct CUnk102036e0Table { CUnk102036e0Target *sub_100f0ed0(const char *name); };
@@ -68411,6 +72965,24 @@ int CUnknown10187c40::sub_10187c40()
 {
     ((lifted::C101aa0a0 *)((char *)this + 0x10))->sub_101aa0a0(0x76c);
     return ((lifted::V *)((char *)this + 0x10))->f54(2);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10187c60 size=0x34
+namespace lifted {
+extern char g_102cfa60;
+struct C10187ca0 { int sub_10187ca0(); };
+struct C101ab3d0 { int sub_101ab3d0(int); };
+int sub_101e28e0(int, int);
+}
+struct CUnknown10187c60 { int sub_10187c60(int); };
+int CUnknown10187c60::sub_10187c60(int a0)
+{
+    int t0 = lifted::sub_101e28e0(a0, (int)&lifted::g_102cfa60);
+    if (t0 == 0) {
+        return ((lifted::C10187ca0 *)((char *)this + -16))->sub_10187ca0();
+    }
+    return ((lifted::C101ab3d0 *)this)->sub_101ab3d0(a0);
 }
 // END FUNCTION
 
@@ -68556,6 +73128,24 @@ void sub_101895f0()
 // FUNCTION: 0x10189a20 size=0x1
 void sub_10189a20()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x10189a30 size=0x31
+namespace lifted {
+extern char g_102d39ec;
+extern int g_104a57d4;
+struct C10189600 { int sub_10189600(); };
+struct C101aa0a0 { int sub_101aa0a0(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual int f27(int, int); };
+}
+struct CUnknown10189a30 { int sub_10189a30(); };
+int CUnknown10189a30::sub_10189a30()
+{
+    int t0 = ((lifted::V *)lifted::g_104a57d4)->f27((int)&lifted::g_102d39ec, 1);
+    *(char *)((char *)this + 0xc0d8) = 1;
+    ((lifted::C10189600 *)this)->sub_10189600();
+    return ((lifted::C101aa0a0 *)this)->sub_101aa0a0(0x3e8);
 }
 // END FUNCTION
 
@@ -68889,6 +73479,24 @@ extern int g_105fbc28;
 void sub_1018d6f0()
 {
     lifted::g_105fbc28 = (int)&lifted::g_1018d700;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018db60 size=0x34
+namespace lifted {
+extern char g_102d41c4;
+struct C1018e2e0 { int sub_1018e2e0(); };
+struct C101ab3d0 { int sub_101ab3d0(int); };
+int sub_101e28e0(int, int);
+}
+struct CUnknown1018db60 { int sub_1018db60(int); };
+int CUnknown1018db60::sub_1018db60(int a0)
+{
+    int t0 = lifted::sub_101e28e0(a0, (int)&lifted::g_102d41c4);
+    if (t0 == 0) {
+        return ((lifted::C1018e2e0 *)((char *)this + -16))->sub_1018e2e0();
+    }
+    return ((lifted::C101ab3d0 *)this)->sub_101ab3d0(a0);
 }
 // END FUNCTION
 
@@ -70228,6 +74836,36 @@ bool V::sub_101a30c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a30e0 size=0x55
+namespace lifted {
+struct C101a30c0 { bool sub_101a30c0(int); };
+struct C101a3190 { int sub_101a3190(int); };
+struct C101a31e0 { int sub_101a31e0(int); };
+int sub_101d1296(int);
+}
+struct CUnknown101a30e0 { void sub_101a30e0(int, char); };
+void CUnknown101a30e0::sub_101a30e0(int a0, char a1)
+{
+    if (a1 != 0) {
+        bool t0 = ((lifted::C101a30c0 *)this)->sub_101a30c0(a0);
+        if (t0 == 0) {
+            ((lifted::C101a31e0 *)this)->sub_101a31e0(a0); return;
+        }
+        return;
+    }
+    int t1 = ((lifted::C101a3190 *)this)->sub_101a3190(a0);
+    if (t1 != 0) {
+        int t2 = *(int *)((char *)t1 + 0x10);
+        int t3 = *(int *)((char *)t1 + 0x14);
+        *(int *)((char *)t2 + 0x14) = t3;
+        int t4 = *(int *)((char *)t1 + 0x14);
+        int t5 = *(int *)((char *)t1 + 0x10);
+        *(int *)((char *)t4 + 0x10) = t5;
+        lifted::sub_101d1296(t1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
@@ -71270,6 +75908,32 @@ void XRes::sub_101a8d60(XInfo *info)
 		if (p)
 			info->statusS[j] = ADD(p);
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a9950 size=0x29
+namespace lifted {
+struct C101a9890 { int sub_101a9890(int, int); };
+struct C101a98f0 { int sub_101a98f0(int, int); };
+}
+struct CUnknown101a9950 { int sub_101a9950(int, int, int, int); };
+int CUnknown101a9950::sub_101a9950(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C101a9890 *)this)->sub_101a9890(a0, a1);
+    return ((lifted::C101a98f0 *)this)->sub_101a98f0(a2, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a9980 size=0x29
+namespace lifted {
+struct C101a98c0 { int sub_101a98c0(int, int); };
+struct C101a9920 { int sub_101a9920(int, int); };
+}
+struct CUnknown101a9980 { int sub_101a9980(int, int, int, int); };
+int CUnknown101a9980::sub_101a9980(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C101a98c0 *)this)->sub_101a98c0(a0, a1);
+    return ((lifted::C101a9920 *)this)->sub_101a9920(a2, a3);
 }
 // END FUNCTION
 
@@ -72366,6 +77030,20 @@ struct CUnknown101bb300 { int sub_101bb300(int); };
 int CUnknown101bb300::sub_101bb300(int a0)
 {
     return ((lifted::V *)(*(int *)((char *)this + 0xfc)))->f123(0, ((lifted::V *)(((lifted::V *)(((lifted::C101ac8c0 *)this)->sub_101ac8c0()))->f4(((lifted::C101aa220 *)this)->sub_101aa220())))->f1(a0, 0));
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bb350 size=0x2b
+namespace lifted {
+struct C101aa230 { int sub_101aa230(int); };
+struct C101c0e90 { int sub_101c0e90(int); };
+}
+struct CUnknown101bb350 { int sub_101bb350(int); };
+int CUnknown101bb350::sub_101bb350(int a0)
+{
+    ((lifted::C101aa230 *)this)->sub_101aa230(a0);
+    ((lifted::C101c0e90 *)(*(int *)((char *)this + 0xf8)))->sub_101c0e90(a0);
+    return ((lifted::C101aa230 *)(*(int *)((char *)this + 0xfc)))->sub_101aa230(a0);
 }
 // END FUNCTION
 

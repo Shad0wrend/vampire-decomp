@@ -6,7 +6,7 @@
 
 // VC6 writes C_AI_BaseNPCTroika's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_AI_BaseNPCTroika *pcd_emit_1008e770() { return new C_AI_BaseNPCTroika; }
+C_AI_BaseNPCTroika *pcd_emit_1008e770(const C_AI_BaseNPCTroika &other) { return new C_AI_BaseNPCTroika(other); }
 
 // TARGET: ??_GC_AI_BaseNPCTroika@@UAEPAXI@Z
 // END FUNCTION

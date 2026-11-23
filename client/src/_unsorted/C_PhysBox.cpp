@@ -25,7 +25,7 @@ int C_PhysBox::vfunc15()
 
 // VC6 writes C_PhysBox's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_PhysBox *pcd_emit_100bcc30() { return new C_PhysBox; }
+C_PhysBox *pcd_emit_100bcc30(const C_PhysBox &other) { return new C_PhysBox(other); }
 
 // TARGET: ??_GC_PhysBox@@UAEPAXI@Z
 // END FUNCTION

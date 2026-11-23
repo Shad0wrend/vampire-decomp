@@ -7,6 +7,7 @@
 class C_World : public C_BaseEntity
 {
 public:
+	C_World();
 	virtual ~C_World();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_World's own function
@@ -15,4 +16,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc19();
 	virtual void vfunc21();
 	virtual int vfunc66();
+	char m_pad0014[0x450 - 0x14];
 };

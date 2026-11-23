@@ -59,7 +59,7 @@ void C_PlayerResource::vfunc138(int a0)
 
 // VC6 writes C_PlayerResource's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_PlayerResource *pcd_emit_100bd330() { return new C_PlayerResource; }
+C_PlayerResource *pcd_emit_100bd330(const C_PlayerResource &other) { return new C_PlayerResource(other); }
 
 // TARGET: ??_GC_PlayerResource@@UAEPAXI@Z
 // END FUNCTION

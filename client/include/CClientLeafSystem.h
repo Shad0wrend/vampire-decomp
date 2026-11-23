@@ -12,4 +12,6 @@ public:
     bool vfunc16(char);
     void vfunc22();
     void vfunc23();
+public:
+    int vfunc10(int, int, int);
 };

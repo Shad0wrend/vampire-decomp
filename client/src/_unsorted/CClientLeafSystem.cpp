@@ -32,3 +32,16 @@ bool CClientLeafSystem::vfunc16(char a0)
     return *(bool *)&a0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d2a10 size=0x25
+#include "CClientLeafSystem.h"
+namespace lifted {
+struct C100d2800 { int sub_100d2800(int, int, int); };
+struct C100d28a0 { int sub_100d28a0(int); };
+}
+int CClientLeafSystem::vfunc10(int a0, int a1, int a2)
+{
+    ((lifted::C100d28a0 *)this)->sub_100d28a0(a0);
+    return ((lifted::C100d2800 *)this)->sub_100d2800(a0, a1, a2);
+}
+// END FUNCTION

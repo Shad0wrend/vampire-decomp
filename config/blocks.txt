@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb b83c9583dd4c; do not edit by hand
+# written by pcdecomp standalone from vtmb 21e44f39c401; do not edit by hand
 10025e50 0x2a b ?sub_10025e50@@YGXPADIHP8CUnkElem@@AEXXZ@Z 4f6c62a3a157
 10025ed0 0x1a b ?sub_10025ed0@@YAHXZ 38b0de5140fe
 10025f00 0x51 b ?sub_10025f00@CConstantForceController@@QAEXPBVVector@@0@Z 894f4e0356b0
@@ -1946,7 +1946,7 @@
 10090180 0x1d3 b ?sub_10090180@CBaseAnimating@@QAE_NPBVVector@@H_N@Z 9c7fe0107382
 100903e0 0x82 b ?sub_100903e0@CBaseAnimating@@QAEDXZ 139b0a9dc5a5
 100904a0 0xad b ?sub_100904a0@CBaseAnimating@@QAEXXZ 874c777fbb8a
-10090580 0x26b b ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z 06701e27c46d
+10090580 0x26b b ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z e314178238fe
 10090890 0x86 b ?sub_10090890@CBaseAnimating@@QAEXM@Z 578dd1b7d915
 10090950 0x170 b ?sub_10090950@CBaseAnimating@@QAEXXZ 7a8b2d4cb2e5
 10090b20 0x79 b ?sub_10090b20@@YIXPAD@Z 10420f39e4c6

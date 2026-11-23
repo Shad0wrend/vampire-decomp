@@ -221,7 +221,7 @@ int C_BaseCombatWeapon::vfunc246(int a0, int a1, int a2)
 
 // VC6 writes C_BaseCombatWeapon's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseCombatWeapon *pcd_emit_1007ab20() { return new C_BaseCombatWeapon; }
+C_BaseCombatWeapon *pcd_emit_1007ab20(const C_BaseCombatWeapon &other) { return new C_BaseCombatWeapon(other); }
 
 // TARGET: ??_GC_BaseCombatWeapon@@UAEPAXI@Z
 // END FUNCTION

@@ -151,7 +151,7 @@ int C_BaseGrenade::vfunc160(int a0)
 
 // VC6 writes C_BaseGrenade's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseGrenade *pcd_emit_1007f1e0() { return new C_BaseGrenade; }
+C_BaseGrenade *pcd_emit_1007f1e0(const C_BaseGrenade &other) { return new C_BaseGrenade(other); }
 
 // TARGET: ??_GC_BaseGrenade@@UAEPAXI@Z
 // END FUNCTION

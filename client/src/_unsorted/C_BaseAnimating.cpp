@@ -32,7 +32,7 @@ int C_BaseAnimating::vfunc15()
 
 // VC6 writes C_BaseAnimating's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseAnimating *pcd_emit_1008f5a0() { return new C_BaseAnimating; }
+C_BaseAnimating *pcd_emit_1008f5a0(const C_BaseAnimating &other) { return new C_BaseAnimating(other); }
 
 // TARGET: ??_GC_BaseAnimating@@UAEPAXI@Z
 // END FUNCTION

@@ -22,7 +22,8 @@ config/addresses.txt (and config/aliases.txt):
 - data: every byte of each data item (its address, extent and prefix from the head comments of src/_data/*.asm.in)
   outside its relocated words is the game's, and each relocated word (`DD OFFSET`) reaches, in the game, the game
   address of its symbol (the word's game address comes from the label before it, or from the label after it for an
-  item's prefix word);
+  item's prefix word); and every word of an item that the game's base relocations name is relocated in the object
+  (the game's address kept as a number points, in the build, at whatever the build lays out there);
 - vtables: each slot of a vtable the objects emit runs, in the build, the counterpart of the game's slot (a slot
   config/vtable_patches.txt patches is reported as a `slot` difference all the same: its source is not right yet);
 - exports and imports: names and ordinals equal the game's; each export runs the counterpart of the game's;
@@ -47,7 +48,7 @@ from pathlib import Path
 from .blocks import sources
 from .cfg import (Block, read_addresses, read_aliases, read_blocks, read_build, read_fixups, read_known,
                   read_layout, read_patches)
-from .coff import SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
+from .coff import SYM_CLASS_EXTERNAL, SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
 from .mapfile import read_map
 from .pe import PE
 
@@ -241,6 +242,7 @@ class Verifier:
         self.stubs = 0
         self.ilt = ilt_stubs(self.orig)
         self.game_xcu = self._game_xcu()
+        self.claims: list[tuple[int, int, str, str]] = []
 
     @classmethod
     def for_objects(cls, orig, addresses: dict[str, int], aliases: dict[str, str], blocks: list[Block],
@@ -254,7 +256,14 @@ class Verifier:
         v.block_addresses = {b.addr for b in blocks}
         v.patched, v.known, v.fixed, v.stubs, v.ilt = {}, [], set(), 0, ilt
         v.game_xcu = v._game_xcu()
+        v.claims = []
         return v
+
+    def claim(self, addr: int, size: int, kind: str, owner: str) -> None:
+        """Record that the game's bytes [addr, addr + size) were compared with `owner`'s (tools.ownership reads the
+        claims): kind is code / fill / data / vtable / initializer table."""
+        if size > 0:
+            self.claims.append((addr, size, kind, owner))
 
     # --- addresses ---------------------------------------------------------------------------------------------
     def lookup(self, name: str) -> int | None:
@@ -324,8 +333,9 @@ class Verifier:
             section = obj.sections[sym.section_number]
             data = section.data[sym.value:]
             n = len(data) if size is None else size
+            fill = b""
             if len(data) > n and all(b in FILL for b in data[n:]):
-                data = data[:n]  # the game's recorded size leaves the alignment fill out
+                data, fill = data[:n], data[n:]  # the game's recorded size leaves the alignment fill out
             if len(data) != n:
                 problems.append((addr, min(len(data), n), f"the object's code is {len(data)} bytes, the game's {n}"))
                 n = min(len(data), n)
@@ -334,6 +344,12 @@ class Verifier:
             except ValueError:
                 problems.append((addr, 0, "outside the original's sections"))
                 continue
+            self.claim(addr, n, "code", f"{obj.name}:{sym.name}")
+            try:
+                if fill and self.orig.read(addr + n, len(fill)) == fill:
+                    self.claim(addr + n, len(fill), "fill", f"{obj.name}:{sym.name}")
+            except ValueError:
+                pass
             at = self.map.address(sym.name, obj.name) if self.map is not None else None
             try:
                 built = self.built.read(at, n) if at is not None else data[:n]
@@ -416,12 +432,41 @@ class Verifier:
             return "missing", [why]
         placed: dict[int, int] = {}
         problems = self.check_code(obj, roots, placed)
-        problems = sorted(problems + self.check_block_data(obj, placed), key=lambda p: (p[0] != block.addr, p[0], p[1]))
+        problems += self.check_block_data(obj, placed) + self.import_slot_definitions(obj)
+        problems = sorted(problems, key=lambda p: (p[0] != block.addr, p[0], p[1]))
         if not problems:
             return "identical", []
         a, offset, _ = problems[0]
         status = f"differs@0x{offset:x}" if a == block.addr else f"differs@0x{a:08x}+0x{offset:x}"
         return status, [f"0x{a:08x}+0x{o:x}: {w}" for a, o, w in problems]
+
+    def import_slot_definitions(self, obj: _Object) -> list[tuple[int, int, str]]:
+        """Problems (game address, 0, why) of the names the object defines (data, zero-initialized data or a
+        communal) at one of the game's import slots. Such a name must stay an extern, which config/aliases.txt binds
+        to the import: a definition makes the link bind every unit's use of the name to this variable instead, and
+        the build calls through a zero word (the code bytes are the same either way)."""
+        slots = self._import_slots()
+        out = []
+        for sym in obj.coff.symbols if slots else ():
+            if sym.storage_class != SYM_CLASS_EXTERNAL:
+                continue
+            if sym.is_defined:
+                home = obj.sections.get(sym.section_number)
+                if home is None or home.characteristics & CODE:
+                    continue
+            elif sym.section_number != 0 or not sym.value:  # an undefined extern; value > 0 is a communal's size
+                continue
+            addr = self.resolve(obj, sym)
+            if addr in slots:
+                out.append((addr, 0, f"{sym.name} is defined here, at the game's import slot 0x{addr:08x}: every "
+                                     f"use binds to this variable, not the import (declare it extern)"))
+        return sorted(out)
+
+    def _import_slots(self) -> set[int]:
+        if getattr(self, "_slots", None) is None:
+            read = getattr(self.orig, "import_slots", None)
+            self._slots = set(read()) if read is not None else set()
+        return self._slots
 
     def check_block_data(self, obj: _Object, placed: dict[int, int]) -> list[tuple[int, int, str]]:
         """Problems (game address, offset, why) of the initialized data a block's object defines at game addresses
@@ -457,6 +502,7 @@ class Verifier:
                 except ValueError:
                     problems.append((addr, 0, f"{sym.name}: outside the original's sections"))
                     continue
+                self.claim(addr, size, "data", f"{obj.name}:{sym.name}")
                 first = next((i for i in range(size) if i not in masked and ours[i] != game[i]), None)
                 if first is not None:
                     problems.append((addr, first, f"{sym.name}: byte 0x{ours[first]:02x}, the game's "
@@ -478,6 +524,10 @@ class Verifier:
                                       else "not in the build's map"))
                 continue
             report.slots["vtables"] += 1
+            self.claim(game_vt, end - sym.value, "vtable", f"{obj.name}:{sym.name}")
+            for r in section.relocations:  # the words before the vtable: its RTTI locator (/GR)
+                if r.offset + 4 <= sym.value and not self._data_word(obj, section, r, game_vt - sym.value + r.offset):
+                    self.claim(game_vt - sym.value + r.offset, 4, "vtable", f"{obj.name}:{sym.name}")
             for r in sorted(section.relocations, key=lambda r: r.offset):
                 if not sym.value <= r.offset < end:
                     continue
@@ -533,7 +583,26 @@ class Verifier:
                 if why:
                     out.append(Difference("data", f"0x{addr:08x}", why))
                     first = first or f"0x{addr:08x}"
+                for site in self._raw_words(obj, addr, extent, prefix, label):
+                    out.append(Difference("data", f"0x{site:08x}", "the game relocates this word, the build holds "
+                                          "it as a number: it points elsewhere in the build"))
+                    first = first or f"0x{site:08x}"
             report.data[stem] = "identical" if first is None else f"differs@{first}"
+
+    def _raw_words(self, obj: _Object, addr: int, extent: int, prefix: int, label: str) -> list[int]:
+        """The game addresses of the words of a data item that the game's base relocations name and the object does
+        not relocate: the game's address kept as a number, which the build's layout gives to something else."""
+        sym = obj.defined(label)
+        if sym is None:
+            return []  # _item_bytes reports it
+        offsets = obj.__dict__.setdefault("_relocated_offsets", {})  # per section: one set for all its items
+        ours = offsets.get(sym.section_number)
+        if ours is None:
+            ours = offsets[sym.section_number] = {r.offset for r in obj.sections[sym.section_number].relocations}
+        relocated = self.orig.relocated()
+        lo = bisect.bisect_left(relocated, addr - prefix)
+        hi = bisect.bisect_left(relocated, addr + extent)
+        return [site for site in relocated[lo:hi] if sym.value + site - addr not in ours]
 
     def _item_bytes(self, obj: _Object, addr: int, extent: int, prefix: int, label: str) -> str | None:
         """Why a data item's bytes outside its relocated words are not the game's, or None."""
@@ -549,6 +618,7 @@ class Verifier:
             game = self.orig.read(addr - prefix, end - start)
         except ValueError:
             return f"{label}: outside the original's sections"
+        self.claim(addr - prefix, end - start, "data", f"{obj.name}:{label}")
         masked = {i for r in section.relocations if start <= r.offset < end
                   for i in range(r.offset - start, r.offset - start + 4)}
         first = next((i for i in range(end - start) if i not in masked and ours[i] != game[i]), None)
@@ -625,6 +695,10 @@ class Verifier:
         return [self.follow(w) for w in self._table(self.orig, lo, hi)]
 
     def check_tables(self, report: Report, out: list[Difference]) -> None:
+        values = self.values.get("verify", {})
+        game_lo, game_hi = values.get("xc_a", self.lookup("___xc_a")), values.get("xc_z", self.lookup("___xc_z"))
+        if self.game_xcu is not None:
+            self.claim(game_lo, game_hi + 4 - game_lo, "initializer table", "___xc_a..___xc_z")
         lo, hi = self.map.publics.get("___xc_a"), self.map.publics.get("___xc_z")
         if self.game_xcu is not None and lo is not None and hi is not None:
             report.xcu = len(self.game_xcu)

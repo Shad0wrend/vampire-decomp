@@ -7,10 +7,12 @@
 class C_FireSmoke : public C_BaseEntity
 {
 public:
+	C_FireSmoke();
 	virtual ~C_FireSmoke();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_FireSmoke's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
 	virtual void vfunc37();
+	char m_pad0014[0x2808 - 0x14];
 };

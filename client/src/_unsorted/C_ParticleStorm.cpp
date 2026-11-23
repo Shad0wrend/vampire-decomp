@@ -25,7 +25,7 @@ int C_ParticleStorm::vfunc15()
 
 // VC6 writes C_ParticleStorm's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_ParticleStorm *pcd_emit_10004400() { return new C_ParticleStorm; }
+C_ParticleStorm *pcd_emit_10004400(const C_ParticleStorm &other) { return new C_ParticleStorm(other); }
 
 // TARGET: ??_GC_ParticleStorm@@UAEPAXI@Z
 // END FUNCTION

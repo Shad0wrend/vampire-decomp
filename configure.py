@@ -1,4 +1,5 @@
-"""Configure the build: writes build.ninja; then `ninja` builds build/<target> and `ninja verify` checks it.
+"""Configure the build: writes build.ninja; then `ninja` builds build/<target> and `ninja verify` checks it
+(`ninja ownership` tells which bytes of the original no source makes yet).
 
     python configure.py [--vc6 DIR] [--orig FILE]
 
@@ -143,6 +144,10 @@ def main(argv: list[str] | None = None) -> int:
         "  command = $python -m tools.verify --orig \"$orig\" --build build",
         "  description = verify",
         "  pool = console",
+        "rule ownership",
+        "  command = $python -m tools.ownership --orig \"$orig\" --vc6 \"$vc6\" --build build",
+        "  description = ownership",
+        "  pool = console",
         "rule configure",
         "  command = $python configure.py --vc6 \"$vc6\" --orig \"$orig\"",
         "  description = configure",
@@ -211,6 +216,7 @@ def main(argv: list[str] | None = None) -> int:
                  f"config\\build.toml")
     lines.append(f"build {_esc(final)}: patch {_esc(unpatched)} | $map config\\vtable_patches.txt")
     lines.append(f"build verify: verify {_esc(final)}")
+    lines.append(f"build ownership: ownership {_esc(final)}")
     lines.append(f"default {_esc(final)}")
 
     regen = [Path("configure.py"), *sorted(p.relative_to(root) for p in (root / "tools").glob("*.py")),

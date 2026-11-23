@@ -7,10 +7,12 @@
 class C_PhysBox : public C_BaseEntity
 {
 public:
+	C_PhysBox();
 	virtual ~C_PhysBox();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_PhysBox's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
 	virtual int vfunc86();
+	char m_pad0014[0x418 - 0x14];
 };

@@ -297,7 +297,7 @@ int C_BaseEntity::vfunc15()
 
 // VC6 writes C_BaseEntity's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseEntity *pcd_emit_1009dda0() { return new C_BaseEntity; }
+C_BaseEntity *pcd_emit_1009dda0(const C_BaseEntity &other) { return new C_BaseEntity(other); }
 
 // TARGET: ??_GC_BaseEntity@@UAEPAXI@Z
 // END FUNCTION
@@ -681,6 +681,30 @@ int C_BaseEntity::vfunc32()
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc33()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a3340 size=0x19
+#include "C_BaseEntity.h"
+namespace lifted {
+struct C100a3360 { int sub_100a3360(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(); };
+}
+int C_BaseEntity::vfunc35(int a0)
+{
+    return ((lifted::C100a3360 *)this)->sub_100a3360(a0, ((lifted::V *)this)->f14());
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a3380 size=0x19
+#include "C_BaseEntity.h"
+namespace lifted {
+struct C100a33a0 { int sub_100a33a0(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(); };
+}
+int C_BaseEntity::vfunc36(int a0)
+{
+    return ((lifted::C100a33a0 *)this)->sub_100a33a0(a0, ((lifted::V *)this)->f14());
 }
 // END FUNCTION
 

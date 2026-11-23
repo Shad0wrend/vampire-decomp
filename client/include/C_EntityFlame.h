@@ -7,10 +7,12 @@
 class C_EntityFlame : public C_BaseEntity
 {
 public:
+	C_EntityFlame();
 	virtual ~C_EntityFlame();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_EntityFlame's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
 	virtual void vfunc37();
+	char m_pad0014[0x428 - 0x14];
 };

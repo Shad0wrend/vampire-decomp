@@ -5,4 +5,5 @@
 
 class CTrailParticles : public CSimpleEmitter
 {
+	char m_pad0004[0xf4 - 0x4];
 };

@@ -25,7 +25,7 @@ int C_Sun::vfunc15()
 
 // VC6 writes C_Sun's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_Sun *pcd_emit_100c4f00() { return new C_Sun; }
+C_Sun *pcd_emit_100c4f00(const C_Sun &other) { return new C_Sun(other); }
 
 // TARGET: ??_GC_Sun@@UAEPAXI@Z
 // END FUNCTION

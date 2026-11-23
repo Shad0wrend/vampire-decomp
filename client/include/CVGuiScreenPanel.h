@@ -10,4 +10,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc110();
     // the slots CVGuiScreenPanel adds to its base's vtable: 118-118, vfuncK at slot K
     virtual void vfunc118();
+    char m_pad0004[0x7c - 0x4];
 };

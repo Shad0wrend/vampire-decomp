@@ -575,7 +575,7 @@ extern "C" void *sub_100fbc90(const char *pszName, const float *pA, const float 
 extern "C" CBaseEntity *sub_10136580(const char *pszClassname);
 extern "C" void sub_101d1280(void *p);
 extern "C" void sub_101cd940(void *p);
-void (*g_109f362c)(const char *pszFormat, ...);
+extern void (*g_109f362c)(const char *pszFormat, ...);	// tier0 Warning: the import slot, never a definition
 void sub_101c0b10();
 extern float g_1070d1b0[3];
 extern float g_1070d9d0[3];

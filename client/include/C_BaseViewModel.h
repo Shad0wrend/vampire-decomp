@@ -7,6 +7,7 @@
 class C_BaseViewModel : public C_BaseAnimating
 {
 public:
+	C_BaseViewModel();
 	virtual ~C_BaseViewModel();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseViewModel's own function
@@ -29,4 +30,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc143();
 	virtual void vfunc144();
 	virtual void vfunc145();
+	char m_pad0014[0x7f8 - 0x14];
 };
