@@ -5121,6 +5121,20 @@ int sub_100147d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10014830 size=0x5a
+#include "C_GargoyleTalisman.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_GargoyleTalisman; its ClientClass's initializer stores its address
+IClientNetworkable *_C_GargoyleTalisman_CreateObject(int entnum, int serialNum)
+{
+	C_GargoyleTalisman *pRet = new C_GargoyleTalisman;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100148f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1a7c;
