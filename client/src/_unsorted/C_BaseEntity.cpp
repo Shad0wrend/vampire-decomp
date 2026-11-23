@@ -696,6 +696,18 @@ int C_BaseEntity::vfunc35(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3380 size=0x19
+#include "C_BaseEntity.h"
+namespace lifted {
+struct C100a33a0 { int sub_100a33a0(int, int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual int f14(); };
+}
+int C_BaseEntity::vfunc36(int a0)
+{
+    return ((lifted::C100a33a0 *)this)->sub_100a33a0(a0, ((lifted::V *)this)->f14());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a33c0 size=0x3
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc34()
