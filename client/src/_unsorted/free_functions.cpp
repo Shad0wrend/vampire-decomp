@@ -8543,6 +8543,20 @@ int sub_10020350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100203b0 size=0x5a
+#include "C_ItemGRingSerialKiller2.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRingSerialKiller2; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRingSerialKiller2_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRingSerialKiller2 *pRet = new C_ItemGRingSerialKiller2;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10020470 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e67a4;
