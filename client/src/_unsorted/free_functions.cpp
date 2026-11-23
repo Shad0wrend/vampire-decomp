@@ -6243,6 +6243,20 @@ int sub_10018650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100186b0 size=0x5a
+#include "C_ItemGRingSilver.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRingSilver; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRingSilver_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRingSilver *pRet = new C_ItemGRingSilver;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0e68;
