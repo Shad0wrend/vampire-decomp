@@ -1813,6 +1813,7 @@
 0x10032700 func   ?vfunc9@C_TEBaseBeam@@UAEHXZ C_TEBaseBeam::vfunc9
 0x10032710 func   ?vfunc8@C_TEBaseBeam@@UAEHXZ C_TEBaseBeam::vfunc8
 0x10032720 func   ?sub_10032720@@YAHXZ sub_10032720
+0x10032780 func   ?_C_TEBaseBeam_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_TEBaseBeam_CreateObject
 0x10032820 func   ?ClientClassInit@@YAHPAUignored@DT_BaseBeam@@@Z ClientClassInit
 0x10032a20 func   ??_GC_TEBeamEntPoint@@UAEPAXI@Z ??_GC_TEBeamEntPoint@@UAEPAXI@Z
 0x10032a40 func   ??1C_TEBeamEntPoint@@UAE@XZ C_TEBeamEntPoint::~C_TEBeamEntPoint
