@@ -7807,6 +7807,20 @@ int sub_1001db50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001dbb0 size=0x5a
+#include "C_ItemGWarrClipboard.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWarrClipboard; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWarrClipboard_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWarrClipboard *pRet = new C_ItemGWarrClipboard;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001dc70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1bd4;
