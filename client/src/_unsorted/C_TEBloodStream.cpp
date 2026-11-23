@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10034630 size=0x3c
+#include "C_TEBloodStream.h"
+// TARGET: ??0C_TEBloodStream@@QAE@XZ
+C_TEBloodStream::C_TEBloodStream()
+{
+	m_vecOrigin.Init();
+	m_vecDirection.Init();
+	m_unk34 = 0;
+	m_unk30 = 0;
+	m_unk2c = 0;
+	m_unk28 = 0;
+	m_unk38 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034670 size=0x1e
 #include "C_TEBloodStream.h"
 
