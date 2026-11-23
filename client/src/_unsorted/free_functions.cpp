@@ -72235,6 +72235,49 @@ int CUnknown10168ca0::sub_10168ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10169900 size=0x1a4
+#include "ConVar.h"
+
+struct vrect_t
+{
+	int x, y, width, height;
+};
+
+extern ConVar g_105fae88;
+extern int sub_100cd100();
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+class CNetGraphPanel_10169900
+{
+public:
+	void sub_10169900(vrect_t *rect, int width, int *x, int *y);
+};
+
+// TARGET: CNetGraphPanel_10169900::sub_10169900
+void CNetGraphPanel_10169900::sub_10169900(vrect_t *rect, int width, int *x, int *y)
+{
+	*x = rect->x + 5;
+
+	switch (g_105fae88.GetInt())
+	{
+	case 0:
+		break;
+	case 1:
+		*x = rect->x + rect->width - 5 - width;
+		break;
+	case 2:
+		*x = rect->x + (rect->width - 10 - width) / 2;
+		break;
+	default:
+		*x = (int)(rect->x + clamp(g_105fae88.GetInt() * ((double)sub_100cd100() / 640.0), 5.0, (double)(rect->width - width - 5)));
+		break;
+	}
+
+	*y = rect->y + rect->height - 29;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a690 size=0x1
 void sub_1016a690()
 {
