@@ -72512,6 +72512,53 @@ char __stdcall sub_101642d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164350 size=0x59
+struct color32_10164350
+{
+	unsigned char r, g, b, a;
+};
+
+class Color_10164350
+{
+public:
+	Color_10164350(int r, int g, int b, int a)
+	{
+		_color[0] = (unsigned char)r;
+		_color[1] = (unsigned char)g;
+		_color[2] = (unsigned char)b;
+		_color[3] = (unsigned char)a;
+	}
+	unsigned char _color[4];
+};
+
+struct BitmapImg_10164350
+{
+	char pad[0x4c];
+	bool sub_10164520(void *pPanel, const char *pFileName);
+	void sub_10164980(const Color_10164350 &clr);
+};
+
+struct CBitmapButton_10164350
+{
+	char pad0[0xf0];
+	BitmapImg_10164350 m_pImage[4];   // 0xf0 .. 0x220 (4 * 0x4c = 0x130)
+	bool m_bImageLoaded[4];           // 0x220
+
+	void sub_10164350(int type, const char *pFileName, color32_10164350 color);
+};
+
+// TARGET: CBitmapButton_10164350::sub_10164350
+void CBitmapButton_10164350::sub_10164350(int type, const char *pFileName, color32_10164350 color)
+{
+	m_bImageLoaded[type] = m_pImage[type].sub_10164520(this, pFileName);
+	if (m_bImageLoaded[type])
+	{
+		Color_10164350 c(color.r, color.g, color.b, color.a);
+		m_pImage[type].sub_10164980(c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164690 size=0xa
 struct CUnknown10164690 { int sub_10164690(int); };
 int CUnknown10164690::sub_10164690(int a0)
