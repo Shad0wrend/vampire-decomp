@@ -20,6 +20,30 @@ int C_PlayerResource::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd200 size=0xe5
+#include "C_PlayerResource.h"
+#include <string.h>
+extern C_PlayerResource *g_104a38f8;
+// TARGET: ??0C_PlayerResource@@QAE@XZ
+C_PlayerResource::C_PlayerResource()
+{
+	memset(m_a728, 0, sizeof(m_a728));
+	memset(m_ab48, 0, sizeof(m_ab48));
+	memset(m_abcc, 0, sizeof(m_abcc));
+	memset(m_ac50, 0, sizeof(m_ac50));
+	memset(m_a410, 0, sizeof(m_a410));
+	memset(m_a494, 0, sizeof(m_a494));
+	memset(m_a518, 0, sizeof(m_a518));
+	memset(m_a59c, 0, sizeof(m_a59c));
+	memset(m_a620, 0, sizeof(m_a620));
+	memset(m_a6a4, 0, sizeof(m_a6a4));
+	memset(m_acd4, 0, sizeof(m_acd4));
+	memset(m_ad58, 0, sizeof(m_ad58));
+	memset(m_ad79, 0, sizeof(m_ad79));
+	g_104a38f8 = this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd2f0 size=0x5
 #include "C_PlayerResource.h"
 int C_PlayerResource::vfunc135(int a0)
