@@ -17888,6 +17888,87 @@ void CUnknown10066400::sub_10066400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100664e0 size=0xe1
+#include "utlvector.h"
+
+struct ParticleSystem_100664e0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual bool v10();
+	virtual void v11();
+	virtual void *v12(const char *name);
+	virtual void *v13(void *tmpl, float *vec1, float *vec2, void *cb1, void *cb2, int zero);
+};
+
+extern ParticleSystem_100664e0 *g_104a581c;
+
+struct MainMenuParticle_100664e0
+{
+	char name[0x40];
+	void *pTemplate;
+	void *pEmitter;
+	float pos[3];
+	float ang[3];
+	void *pCallback;
+};
+
+class MainMenu_100664e0
+{
+public:
+	char pad[0x2ec];
+	CUtlVector<MainMenuParticle_100664e0> m_Particles;
+
+	void sub_10067030();
+	void sub_100664e0();
+};
+
+// TARGET: MainMenu_100664e0::sub_100664e0
+void MainMenu_100664e0::sub_100664e0()
+{
+	if (!g_104a581c->v10())
+		return;
+
+	if (m_Particles.Count() == 0)
+		sub_10067030();
+
+	for (int i = 0; i < m_Particles.Count(); )
+	{
+		m_Particles[i].pTemplate = g_104a581c->v12(m_Particles[i].name);
+		if (!m_Particles[i].pTemplate)
+		{
+			m_Particles.Remove(i);
+		}
+		else
+		{
+			m_Particles[i].pEmitter = g_104a581c->v13(
+				m_Particles[i].pTemplate,
+				m_Particles[i].pos,
+				m_Particles[i].ang,
+				m_Particles[i].pCallback,
+				m_Particles[i].pCallback,
+				0);
+			if (!m_Particles[i].pEmitter)
+			{
+				m_Particles.Remove(i);
+			}
+			else
+			{
+				i++;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100666a0 size=0x2c
 namespace lifted {
 extern int g_104a5818;
