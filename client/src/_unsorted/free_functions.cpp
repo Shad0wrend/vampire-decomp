@@ -5691,6 +5691,20 @@ int sub_10016850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100168b0 size=0x5a
+#include "C_WeaponThrown_Chang_Energy_Ball.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponThrown_Chang_Energy_Ball; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponThrown_Chang_Energy_Ball_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponThrown_Chang_Energy_Ball *pRet = new C_WeaponThrown_Chang_Energy_Ball;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016970 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1a18;
