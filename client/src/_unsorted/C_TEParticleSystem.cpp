@@ -20,6 +20,14 @@ int C_TEParticleSystem::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003df00 size=0x24
+#include "C_TEParticleSystem.h"
+C_TEParticleSystem::C_TEParticleSystem()
+{
+	m_vecOrigin.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003df30 size=0x1e
 #include "C_TEParticleSystem.h"
 
