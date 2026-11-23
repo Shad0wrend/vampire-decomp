@@ -11,6 +11,17 @@ CFeedBar *pcd_emit_10050200(const CFeedBar &other) { return new CFeedBar(other);
 // TARGET: ??_GCFeedBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10050220 size=0x42
+#include "CFeedBar.h"
+// TARGET: ??1CFeedBar@@UAE@XZ
+CFeedBar::~CFeedBar()
+{
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050550 size=0x8
 #include "CFeedBar.h"
 namespace lifted {
