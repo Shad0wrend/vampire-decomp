@@ -1632,6 +1632,7 @@
 0x10026e60 func   ?vfunc16@C_WeaponMelee_Torch@@UAEHXZ C_WeaponMelee_Torch::vfunc16
 0x10026e70 func   ?vfunc15@C_WeaponMelee_Torch@@UAEHXZ C_WeaponMelee_Torch::vfunc15
 0x10026e80 func   ?sub_10026e80@@YAHXZ sub_10026e80
+0x10026ee0 func   ?_C_WeaponMelee_Torch_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponMelee_Torch_CreateObject
 0x10026f80 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Torch@@@Z ClientClassInit
 0x10027020 func   ?sub_10027020@CUnknown10027020@@QAEPAXXZ CUnknown10027020::sub_10027020
 0x10027060 func   ??_GC_WeaponMelee_Torch@@UAEPAXI@Z ??_GC_WeaponMelee_Torch@@UAEPAXI@Z
