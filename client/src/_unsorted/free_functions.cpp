@@ -72014,6 +72014,19 @@ int CUnknown101a9950::sub_101a9950(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9980 size=0x29
+namespace lifted {
+struct C101a98c0 { int sub_101a98c0(int, int); };
+struct C101a9920 { int sub_101a9920(int, int); };
+}
+struct CUnknown101a9980 { int sub_101a9980(int, int, int, int); };
+int CUnknown101a9980::sub_101a9980(int a0, int a1, int a2, int a3)
+{
+    ((lifted::C101a98c0 *)this)->sub_101a98c0(a0, a1);
+    return ((lifted::C101a9920 *)this)->sub_101a9920(a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa220 size=0x4
 struct CUnknown101aa220 { int sub_101aa220(); };
 int CUnknown101aa220::sub_101aa220()
