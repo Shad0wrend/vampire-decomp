@@ -4,10 +4,13 @@
 #pragma once
 #include "CHudElement.h"
 #include "CBasePanel.h"
+#include "vgui2__Label.h"
+#include "vgui2__TextEntry.h"
 
 class VCharWizardUI : public CHudElement, public CBasePanel
 {
 public:
 	virtual ~VCharWizardUI();
+	void sub_10174b20();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };
