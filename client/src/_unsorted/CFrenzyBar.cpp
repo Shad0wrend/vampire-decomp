@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100509c0 size=0x9e
+#include "CFrenzyBar.h"
+// TARGET: ??0CFrenzyBar@@QAE@H@Z
+CFrenzyBar::CFrenzyBar(int parent) : CManagedHudElement(parent, (int)"FrenzyBar")
+{
+	sub_10050af0();
+	vfunc63(0);
+	sub_101a9890(m_unk178, m_unk17c);
+	sub_101a98f0(m_unk188, m_unk18c);
+	m_unk194 = 0;
+	m_unk196 = 0;
+	m_unk195 = 0;
+	m_unk190 = 0xff;
+	m_pChild2 = 0;
+	m_pChild1 = 0;
+	sub_10050ba0(11, 0);
+	vfunc112();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050a80 size=0x1e
 #include "CFrenzyBar.h"
 
