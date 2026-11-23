@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100360c0 size=0x39
+#include "C_TEDynamicLight.h"
+C_TEDynamicLight::C_TEDynamicLight()
+{
+	m_vecOrigin.Init(); m_unk20 = 0; m_unk24 = 0; m_unk28 = 0; m_unk2c = 0; m_unk1c = 0; m_unk30 = 0; m_unk34 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036100 size=0x1e
 #include "C_TEDynamicLight.h"
 
