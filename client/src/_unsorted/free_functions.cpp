@@ -40,6 +40,20 @@ int sub_100011e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001240 size=0x39
+#include "C_BaseCineCamera.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseCineCamera; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseCineCamera_CreateObject(int entnum, int serialNum)
+{
+	C_BaseCineCamera *pRet = new C_BaseCineCamera;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100012e0 size=0x15b
 #include "RecvTable.h"
 extern RecvTable g_102de368;
