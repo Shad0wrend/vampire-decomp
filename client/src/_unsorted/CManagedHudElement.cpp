@@ -24,3 +24,13 @@ CManagedHudElement::CManagedHudElement(int a, int b) : CBasePanel(a, b)
 	((MHEView *)(IManagedHudElement *)this)->sub_1005f150(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005f110 size=0x1e
+#include "CManagedHudElement.h"
+
+// VC6 writes CManagedHudElement's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CManagedHudElement *pcd_emit_1005f110(const CManagedHudElement &other) { return new CManagedHudElement(other); }
+
+// TARGET: ??_GCManagedHudElement@@UAEPAXI@Z
+// END FUNCTION
