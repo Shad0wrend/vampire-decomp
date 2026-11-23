@@ -2776,6 +2776,7 @@
 0x1007fce0 func   ?vfunc16@C_Beam@@UAEHXZ C_Beam::vfunc16
 0x1007fcf0 func   ?vfunc15@C_Beam@@UAEHXZ C_Beam::vfunc15
 0x1007fd00 func   ?sub_1007fd00@@YAHXZ sub_1007fd00
+0x1007fd60 func   ?_C_Beam_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_Beam_CreateObject
 0x1007fe00 func   ?ClientClassInit@@YAHPAUignored@DT_BeamPredictableId@@@Z ClientClassInit
 0x1007ff00 func   ?ClientClassInit@@YAHPAUignored@DT_Beam@@@Z ClientClassInit
 0x10080300 func   ??_GC_Beam@@UAEPAXI@Z ??_GC_Beam@@UAEPAXI@Z
