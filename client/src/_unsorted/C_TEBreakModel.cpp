@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEBreakModel's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBreakModel *pcd_emit_10034ee0() { return new C_TEBreakModel; }
+C_TEBreakModel *pcd_emit_10034ee0(const C_TEBreakModel &other) { return new C_TEBreakModel(other); }
 
 // TARGET: ??_GC_TEBreakModel@@UAEPAXI@Z
 // END FUNCTION
