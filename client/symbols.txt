@@ -3419,6 +3419,7 @@
 0x100bb4f0 func   ?sub_100bb4f0@@YAHXZ sub_100bb4f0
 0x100bb550 func   ?_C_Func_LOD_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_Func_LOD_CreateObject
 0x100bb5f0 func   ?ClientClassInit@@YAHPAUignored@DT_Func_LOD@@@Z ClientClassInit
+0x100bb6a0 func   ??0C_Func_LOD@@QAE@XZ C_Func_LOD::C_Func_LOD
 0x100bb6a0 func   ?sub_100bb6a0@CUnknown100bb6a0@@QAEPAXXZ CUnknown100bb6a0::sub_100bb6a0
 0x100bb6f0 func   ??_GC_Func_LOD@@UAEPAXI@Z ??_GC_Func_LOD@@UAEPAXI@Z
 0x100bb980 func   ?vfunc16@C_FuncMonitor@@UAEHXZ C_FuncMonitor::vfunc16
