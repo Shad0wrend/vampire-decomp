@@ -1855,6 +1855,20 @@ int sub_10009650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100096b0 size=0x5a
+#include "C_WeaponMelee_Sledgehammer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Sledgehammer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Sledgehammer_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Sledgehammer *pRet = new C_WeaponMelee_Sledgehammer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10009770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4acc;
