@@ -10,3 +10,19 @@ CHudUseIcon *pcd_emit_1005e100(const CHudUseIcon &other) { return new CHudUseIco
 
 // TARGET: ??_GCHudUseIcon@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1005e120 size=0x7c
+#include "CHudUseIcon.h"
+extern int g_103eede0;
+// TARGET: ??1CHudUseIcon@@UAE@XZ
+CHudUseIcon::~CHudUseIcon()
+{
+	g_103eede0 = 0;
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+	delete m_pChild3;
+	delete m_pChild4;
+	delete m_pChild5;
+}
+// END FUNCTION
