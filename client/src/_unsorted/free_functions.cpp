@@ -56562,6 +56562,25 @@ bool CUnknown101e98c0Item::sub_1014df20(CDataNode *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014dfc0 size=0x3d
+namespace lifted {
+extern char g_102c6a3c;
+extern char g_102c6a44;
+int sub_101d1300(int, int);
+}
+void sub_1014dfc0(int a0, int a1)
+{
+    int t0 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a44);
+    if (t0 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 2;
+    }
+    int t1 = lifted::sub_101d1300(a1, (int)&lifted::g_102c6a3c);
+    if (t1 != 0) {
+        *(int *)((char *)a0) = (*(int *)((char *)a0)) | 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e070 size=0xd
 struct CUnknown1014e070 { void * sub_1014e070(); };
 void * CUnknown1014e070::sub_1014e070()
