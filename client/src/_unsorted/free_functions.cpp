@@ -32892,6 +32892,20 @@ int sub_100bb9a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bba00 size=0x5a
+#include "C_FuncMonitor.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_FuncMonitor; its ClientClass's initializer stores its address
+IClientNetworkable *_C_FuncMonitor_CreateObject(int entnum, int serialNum)
+{
+	C_FuncMonitor *pRet = new C_FuncMonitor;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbae0 size=0x8f
 #include "RecvTable.h"
 extern RecvTable g_104a2c50;
