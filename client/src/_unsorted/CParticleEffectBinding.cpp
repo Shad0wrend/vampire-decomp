@@ -17,3 +17,38 @@ CParticleEffectBinding::CParticleEffectBinding()
 	m_unk26 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10115e10 size=0x8f
+#include "CParticleEffectBinding.h"
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+struct PEBElem { unsigned short pad0, pad2, m_Prev, m_Next; };
+CParticleEffectBinding::~CParticleEffectBinding()
+{
+	if (m_unk30)
+		m_unk30->sub_101176b0(this);
+	sub_10116e10();
+	if (m_List.m_s14 != 0)
+	{
+		unsigned short prev = 0xffff;
+		for (int i = m_List.m_s14 - 1; i >= 0; --i)
+		{
+			((PEBElem *)m_List.m_a)[(unsigned short)i].m_Next = prev;
+			((PEBElem *)m_List.m_a)[(unsigned short)i].m_Prev = i;
+			prev = i;
+		}
+		m_List.m_s10 = 0;
+		m_List.m_s0c = -1;
+		m_List.m_s0e = -1;
+		m_List.m_s12 = 0;
+	}
+	if (m_List.m_c != -1)
+	{
+		if (m_List.m_a)
+		{
+			Plat_Free((void *)m_List.m_a);
+			m_List.m_a = 0;
+		}
+		m_List.m_b = 0;
+	}
+}
+// END FUNCTION
