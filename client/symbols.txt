@@ -3459,6 +3459,7 @@
 0x100b7bb0 func   ?sub_100b7bb0@CUnknown100b7bb0@@QAEDHH@Z CUnknown100b7bb0::sub_100b7bb0
 0x100b9b80 func   ?sub_100b9b80@Vector@@QBE?AV1@ABV1@@Z Vector::sub_100b9b80
 0x100b9bf0 func   ?sub_100b9bf0@CUnknown100b9bf0@@QAEXXZ CUnknown100b9bf0::sub_100b9bf0
+0x100b9c50 func   ?vfunc4@CBreakableSurfaceProxy@@UAEXPAVC_BaseEntity@@@Z CBreakableSurfaceProxy::vfunc4
 0x100b9cd0 func   ?sub_100b9cd0@@YAHXZ sub_100b9cd0
 0x100ba0c0 func   ?vfunc16@C_Func_Dust@@UAEHXZ C_Func_Dust::vfunc16
 0x100ba0d0 func   ?vfunc15@C_Func_Dust@@UAEHXZ C_Func_Dust::vfunc15
