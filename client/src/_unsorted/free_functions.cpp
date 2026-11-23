@@ -31547,6 +31547,58 @@ int CUnknown100a6760::sub_100a6760(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6920 size=0x46
+struct CEntInfo
+{
+	void *m_pEntity;
+	int m_SerialNumber;
+	CEntInfo *m_pPrev;
+};
+
+struct EntList
+{
+	void *vtable;
+	CEntInfo e[8192];
+};
+
+extern EntList *g_102b8e98;
+
+struct CBaseHandle
+{
+	unsigned long m_Index;
+
+	void *Get() const
+	{
+		if (m_Index == 0xFFFFFFFF)
+			return 0;
+		CEntInfo *pInfo = &g_102b8e98->e[m_Index & 0x1FFF];
+		if (pInfo->m_SerialNumber != (int)(m_Index >> 13))
+			return 0;
+		return pInfo->m_pEntity;
+	}
+};
+
+struct CUnknown100a6920
+{
+	char pad[0x19c4];
+	CBaseHandle m_hEnt;
+	bool m_bPrev;
+	bool m_bCur;
+
+	bool sub_100a6920();
+};
+
+bool CUnknown100a6920::sub_100a6920()
+{
+	if (m_bCur != m_bPrev && !m_bCur)
+	{
+		if (m_hEnt.Get() != 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6b00 size=0x5
 namespace lifted {
 int sub_10098800();
