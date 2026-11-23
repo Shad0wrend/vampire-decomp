@@ -4845,6 +4845,20 @@ int sub_100138d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10013930 size=0x5a
+#include "C_OccultExperience.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultExperience; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultExperience_CreateObject(int entnum, int serialNum)
+{
+	C_OccultExperience *pRet = new C_OccultExperience;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100139f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e12c4;
