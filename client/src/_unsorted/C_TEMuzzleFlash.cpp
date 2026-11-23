@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003da50 size=0x37
+#include "C_TEMuzzleFlash.h"
+// TARGET: ??0C_TEMuzzleFlash@@QAE@XZ
+C_TEMuzzleFlash::C_TEMuzzleFlash()
+{
+	m_vecOrigin.Init();
+	m_vecDirection.Init();
+	m_flScale = 1.0f;
+	m_unk2c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003da90 size=0x1e
 #include "C_TEMuzzleFlash.h"
 
