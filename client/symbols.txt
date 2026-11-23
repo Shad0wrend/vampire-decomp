@@ -2755,6 +2755,7 @@
 0x1007f360 func   ?_C_BaseParticleEntity_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseParticleEntity_CreateObject
 0x1007f400 func   ?ClientClassInit@@YAHPAUignored@DT_BaseParticleEntity@@@Z ClientClassInit
 0x1007f490 func   ?vfunc17@C_BaseParticleEntity@@UAEHXZ C_BaseParticleEntity::vfunc17
+0x1007f4a0 func   ??0C_BaseParticleEntity@@QAE@XZ C_BaseParticleEntity::C_BaseParticleEntity
 0x1007f4a0 func   ?sub_1007f4a0@CUnknown1007f4a0@@QAEPAXXZ CUnknown1007f4a0::sub_1007f4a0
 0x1007f530 func   ?vfunc120@C_BaseParticleEntity@@UAEXXZ C_BaseParticleEntity::vfunc120
 0x1007f6d0 func   ?vfunc86@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc86
