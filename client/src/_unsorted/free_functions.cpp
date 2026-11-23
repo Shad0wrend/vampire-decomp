@@ -3879,6 +3879,20 @@ int sub_10010450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100104b0 size=0x5a
+#include "C_ItemMMoneyClip.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemMMoneyClip; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemMMoneyClip_CreateObject(int entnum, int serialNum)
+{
+	C_ItemMMoneyClip *pRet = new C_ItemMMoneyClip;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010570 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e03b8;
