@@ -1570,6 +1570,7 @@
 0x10025830 func   ?vfunc16@C_ItemKOHFrontKey@@UAEHXZ C_ItemKOHFrontKey::vfunc16
 0x10025840 func   ?vfunc15@C_ItemKOHFrontKey@@UAEHXZ C_ItemKOHFrontKey::vfunc15
 0x10025850 func   ?sub_10025850@@YAHXZ sub_10025850
+0x100258b0 func   ?_C_ItemKOHFrontKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKOHFrontKey_CreateObject
 0x10025970 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOHFrontKey@@@Z ClientClassInit
 0x10025a00 func   ?vfunc17@C_ItemKFUOfficeKey@@UAEHXZ C_ItemKFUOfficeKey::vfunc17
 0x10025a90 func   ??_GC_ItemKFUOfficeKey@@UAEPAXI@Z ??_GC_ItemKFUOfficeKey@@UAEPAXI@Z
