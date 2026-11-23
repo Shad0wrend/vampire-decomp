@@ -11,6 +11,14 @@ CMoneyBar *pcd_emit_1005f2a0(const CMoneyBar &other) { return new CMoneyBar(othe
 // TARGET: ??_GCMoneyBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1005f2c0 size=0x22
+#include "CMoneyBar.h"
+CMoneyBar::~CMoneyBar()
+{
+	sub_101a9ff0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f540 size=0x1
 #include "CMoneyBar.h"
 void CMoneyBar::vfunc97()
