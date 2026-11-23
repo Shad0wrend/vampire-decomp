@@ -21564,6 +21564,26 @@ Vector3 *C_Beam::sub_100806f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080840 size=0x49
+namespace lifted {
+extern char g_102acf84;
+struct C1007db80 { int sub_1007db80(int); };
+struct C10080890 { int sub_10080890(int, int); };
+int sub_100a2bb0(int, int, int);
+struct C100a2de0 { int sub_100a2de0(int); };
+}
+int sub_10080840(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+    int t0 = lifted::sub_100a2bb0((int)&lifted::g_102acf84, a0, a1);
+    if (t0 != 0) {
+        ((lifted::C10080890 *)t0)->sub_10080890(a3, a4);
+        ((lifted::C100a2de0 *)t0)->sub_100a2de0(a5);
+        ((lifted::C1007db80 *)t0)->sub_1007db80(a5);
+    }
+    return t0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e00 size=0x5
 int __stdcall sub_10080e00(int a0)
 {
