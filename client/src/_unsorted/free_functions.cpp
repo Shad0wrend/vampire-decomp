@@ -14509,6 +14509,29 @@ void sub_100656a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066400 size=0x34
+namespace lifted {
+extern int g_104a5828;
+struct C10065950 { int sub_10065950(); };
+struct C10065d30 { bool sub_10065d30(); };
+struct C10067610 { int sub_10067610(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual bool f22(); virtual int f23(); };
+}
+struct CUnknown10066400 { void sub_10066400(); };
+void CUnknown10066400::sub_10066400()
+{
+    bool t0 = ((lifted::V *)this)->f22();
+    if (t0 != 0) {
+        bool t1 = ((lifted::C10065d30 *)this)->sub_10065d30();
+        if (t1 != 0) {
+            ((lifted::V *)lifted::g_104a5828)->f23();
+            ((lifted::C10065950 *)this)->sub_10065950();
+            ((lifted::C10067610 *)this)->sub_10067610(0xb);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100666a0 size=0x2c
 namespace lifted {
 extern int g_104a5818;
