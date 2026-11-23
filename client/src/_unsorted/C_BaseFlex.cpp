@@ -30,6 +30,28 @@ C_BaseFlex *pcd_emit_100c38f0() { return new C_BaseFlex; }
 // TARGET: ??_GC_BaseFlex@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100c3910 size=0x98
+#include "C_BaseFlex.h"
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+struct FlexVec { void *m_pMemory; int m_allocationCount; int m_growSize; int m_size; void *m_pElements; };
+// TARGET: ??1C_BaseFlex@@UAE@XZ
+C_BaseFlex::~C_BaseFlex()
+{
+	sub_100c40a0();
+	FlexVec *v = (FlexVec *)((char *)this + 0xfb4);
+	v->m_size = 0;
+	if (v->m_growSize != -1) {
+		if (v->m_pMemory) { Plat_Free(v->m_pMemory); v->m_pMemory = 0; }
+		v->m_allocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	if (v->m_growSize != -1) {
+		if (v->m_pMemory) { Plat_Free(v->m_pMemory); v->m_pMemory = 0; }
+		v->m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4200 size=0x6
 #include "C_BaseFlex.h"
 namespace lifted {
