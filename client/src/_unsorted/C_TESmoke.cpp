@@ -6,7 +6,7 @@
 
 // VC6 writes C_TESmoke's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TESmoke *pcd_emit_1003ee40() { return new C_TESmoke; }
+C_TESmoke *pcd_emit_1003ee40(const C_TESmoke &other) { return new C_TESmoke(other); }
 
 // TARGET: ??_GC_TESmoke@@UAEPAXI@Z
 // END FUNCTION
