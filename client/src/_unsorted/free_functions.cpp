@@ -24486,6 +24486,20 @@ int sub_1007f960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f9c0 size=0x39
+#include "C_BaseViewModel.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseViewModel; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseViewModel_CreateObject(int entnum, int serialNum)
+{
+	C_BaseViewModel *pRet = new C_BaseViewModel;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fa60 size=0x131
 #include "RecvTable.h"
 extern RecvTable g_10486a60;
