@@ -1779,6 +1779,7 @@
 0x10030c30 func   ?vfunc16@C_SteamJet@@UAEHXZ C_SteamJet::vfunc16
 0x10030c40 func   ?vfunc15@C_SteamJet@@UAEHXZ C_SteamJet::vfunc15
 0x10030c50 func   ?sub_10030c50@@YAHXZ sub_10030c50
+0x10030cb0 func   ?_C_SteamJet_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_SteamJet_CreateObject
 0x10030d50 func   ?ClientClassInit@@YAHPAUignored@DT_SteamJet@@@Z ClientClassInit
 0x10030fd0 func   ??_GC_SteamJet@@UAEPAXI@Z ??_GC_SteamJet@@UAEPAXI@Z
 0x10030ff0 func   ??1C_SteamJet@@UAE@XZ C_SteamJet::~C_SteamJet
