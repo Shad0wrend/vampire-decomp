@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10032190 size=0x30
+#include "C_TEMetalSparks.h"
+C_TEMetalSparks::C_TEMetalSparks()
+{
+	m_vecOrigin.Init(0, 0, 0);
+	m_vecDir.Init(0, 0, 0);
+	m_unk28 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100321c0 size=0x1e
 #include "C_TEMetalSparks.h"
 
