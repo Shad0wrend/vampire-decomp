@@ -11,6 +11,20 @@ CVMenuButton *pcd_emit_10065390() { return new CVMenuButton; }
 // TARGET: ??_GCVMenuButton@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10065440 size=0x25
+#include "CVMenuButton.h"
+namespace lifted {
+extern int g_103ef0b4;
+struct C100675e0 { int sub_100675e0(int); };
+struct C101b4250 { int sub_101b4250(int); };
+}
+void CVMenuButton::vfunc87(int a0)
+{
+    ((lifted::C100675e0 *)lifted::g_103ef0b4)->sub_100675e0(*(int *)((char *)this + 0xf0));
+    ((lifted::C101b4250 *)this)->sub_101b4250(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065470 size=0x17
 #include "CVMenuButton.h"
 namespace lifted {
