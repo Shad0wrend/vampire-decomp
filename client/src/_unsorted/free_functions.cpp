@@ -33798,6 +33798,20 @@ int sub_100be2d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be330 size=0x39
+#include "C_RopeKeyframe.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_RopeKeyframe; its ClientClass's initializer stores its address
+IClientNetworkable *_C_RopeKeyframe_CreateObject(int entnum, int serialNum)
+{
+	C_RopeKeyframe *pRet = new C_RopeKeyframe;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be3d0 size=0x1f7
 #include "RecvTable.h"
 extern RecvTable g_104a3d40;
