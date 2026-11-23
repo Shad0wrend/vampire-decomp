@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEMuzzleFlash's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEMuzzleFlash *pcd_emit_1003da90() { return new C_TEMuzzleFlash; }
+C_TEMuzzleFlash *pcd_emit_1003da90(const C_TEMuzzleFlash &other) { return new C_TEMuzzleFlash(other); }
 
 // TARGET: ??_GC_TEMuzzleFlash@@UAEPAXI@Z
 // END FUNCTION
