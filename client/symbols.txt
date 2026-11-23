@@ -3566,6 +3566,7 @@
 0x100c3680 func   ?sub_100c3680@@YAHXZ sub_100c3680
 0x100c36e0 func   ?_C_BaseFlex_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseFlex_CreateObject
 0x100c3780 func   ?ClientClassInit@@YAHPAUignored@DT_BaseFlex@@@Z ClientClassInit
+0x100c3880 func   ??0C_BaseFlex@@QAE@XZ C_BaseFlex::C_BaseFlex
 0x100c38f0 func   ??_GC_BaseFlex@@UAEPAXI@Z ??_GC_BaseFlex@@UAEPAXI@Z
 0x100c3910 func   ??1C_BaseFlex@@UAE@XZ C_BaseFlex::~C_BaseFlex
 0x100c4200 func   ?vfunc143@C_BaseFlex@@UAEHXZ C_BaseFlex::vfunc143
