@@ -52732,6 +52732,90 @@ int CUnknown101355d0::sub_101355d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135720 size=0x1e9
+// TARGET: ?sub_10135720@CSplinePatch@@QAEXMM@Z
+#include "VMatrix.h"
+
+struct Vector4D
+{
+	float x, y, z, w;
+	Vector4D() {}
+	Vector4D(float X, float Y, float Z, float W) : x(X), y(Y), z(Z), w(W) {}
+};
+
+extern VMatrix g_105e5af0;
+extern void sub_101a29b0(const VMatrix &mat, const Vector4D &vIn, Vector4D &vOut);
+
+class CSplinePatch
+{
+public:
+	int m_is;           // 0x00
+	int m_it;           // 0x04
+	float m_fs;         // 0x08
+	float m_ft;         // 0x0c
+	int m_Width;        // 0x10
+	int m_Height;       // 0x14
+	int m_pad18[22];    // 0x18..0x6c
+	Vector4D m_SVec;    // 0x70
+	Vector4D m_TVec;    // 0x80
+	float m_flTension;  // 0x90
+
+	void sub_101355f0();
+	void sub_10135720(float s, float t);
+};
+
+void CSplinePatch::sub_10135720(float s, float t)
+{
+	m_is = (int)s;
+	m_it = (int)t;
+
+	if (m_is >= m_Width)
+	{
+		m_is = m_Width - 1;
+		m_fs = 1.0f;
+	}
+	else
+	{
+		m_fs = s - m_is;
+	}
+
+	if (m_it >= m_Height)
+	{
+		m_it = m_Height - 1;
+		m_ft = 1.0f;
+	}
+	else
+	{
+		m_ft = t - m_it;
+	}
+
+	sub_101355f0();
+
+	Vector4D sVec;
+	Vector4D tVec;
+
+	sVec.x = m_fs * m_fs * m_fs;
+	sVec.y = m_fs * m_fs;
+	sVec.z = m_fs;
+	sVec.w = 1.0f;
+
+	tVec.x = m_ft * m_ft * m_ft;
+	tVec.y = m_ft * m_ft;
+	tVec.z = m_ft;
+	tVec.w = 1.0f;
+
+	g_105e5af0.Init(
+		-0.5 * m_flTension, 1.5 * m_flTension, -1.5 * m_flTension, 0.5 * m_flTension,
+		m_flTension, -2.5 * m_flTension, 2.0 * m_flTension, -0.5 * m_flTension,
+		-0.5 * m_flTension, m_flTension - 1.0f, 1.0 - 0.5 * m_flTension, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f
+	);
+
+	sub_101a29b0(g_105e5af0, sVec, m_SVec);
+	sub_101a29b0(g_105e5af0, tVec, m_TVec);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135da0 size=0x6
 namespace lifted {
 extern char g_105e5b30;
