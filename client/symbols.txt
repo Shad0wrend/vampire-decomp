@@ -3511,6 +3511,7 @@
 0x100bd930 func   ?vfunc16@C_OrnamentProp@@UAEHXZ C_OrnamentProp::vfunc16
 0x100bd940 func   ?vfunc15@C_OrnamentProp@@UAEHXZ C_OrnamentProp::vfunc15
 0x100bd950 func   ?sub_100bd950@@YAHXZ sub_100bd950
+0x100bd9b0 func   ?_C_OrnamentProp_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_OrnamentProp_CreateObject
 0x100bda50 func   ?ClientClassInit@@YAHPAUignored@DT_OrnamentProp@@@Z ClientClassInit
 0x100bdae0 func   ?sub_100bdae0@CUnknown100bdae0@@QAEPAXXZ CUnknown100bdae0::sub_100bdae0
 0x100bdb10 func   ??_GC_OrnamentProp@@UAEPAXI@Z ??_GC_OrnamentProp@@UAEPAXI@Z
