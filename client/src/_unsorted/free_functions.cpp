@@ -1162,6 +1162,20 @@ int sub_10006a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006a80 size=0x39
+#include "C_WeaponRanged_Thaumaturgy.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Thaumaturgy; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Thaumaturgy_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Thaumaturgy *pRet = new C_WeaponRanged_Thaumaturgy;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10006b20 size=0x134
 #include "RecvTable.h"
 extern RecvTable g_102dfab8;
