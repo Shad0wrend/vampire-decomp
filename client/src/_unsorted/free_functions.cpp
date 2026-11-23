@@ -6565,6 +6565,20 @@ int sub_100197d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019830 size=0x5a
+#include "C_ItemGDriversLicenseGimble.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDriversLicenseGimble; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDriversLicenseGimble_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDriversLicenseGimble *pRet = new C_ItemGDriversLicenseGimble;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100198f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3378;
