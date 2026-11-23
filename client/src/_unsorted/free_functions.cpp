@@ -5967,6 +5967,20 @@ int sub_10017750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100177b0 size=0x5a
+#include "C_ItemGAstrolite.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGAstrolite; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGAstrolite_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGAstrolite *pRet = new C_ItemGAstrolite;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10017870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6d60;
