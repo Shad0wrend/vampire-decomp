@@ -8773,6 +8773,20 @@ int sub_10020fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10021030 size=0x5a
+#include "C_ItemKLillyKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKLillyKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKLillyKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKLillyKey *pRet = new C_ItemKLillyKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100210f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e68ec;
