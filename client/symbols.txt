@@ -1276,6 +1276,7 @@
 0x1001ef30 func   ?vfunc16@C_ItemGIdolDragon@@UAEHXZ C_ItemGIdolDragon::vfunc16
 0x1001ef40 func   ?vfunc15@C_ItemGIdolDragon@@UAEHXZ C_ItemGIdolDragon::vfunc15
 0x1001ef50 func   ?sub_1001ef50@@YAHXZ sub_1001ef50
+0x1001efb0 func   ?_C_ItemGIdolDragon_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGIdolDragon_CreateObject
 0x1001f070 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGIdolDragon@@@Z ClientClassInit
 0x1001f100 func   ?vfunc17@C_ItemGIdolElephant@@UAEHXZ C_ItemGIdolElephant::vfunc17
 0x1001f190 func   ??_GC_ItemGIdolElephant@@UAEPAXI@Z ??_GC_ItemGIdolElephant@@UAEPAXI@Z
