@@ -8451,6 +8451,20 @@ int sub_1001fe50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001feb0 size=0x5a
+#include "C_ItemGBertramsCD.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBertramsCD; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBertramsCD_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBertramsCD *pRet = new C_ItemGBertramsCD;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001ff70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4020;
