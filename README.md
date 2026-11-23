@@ -9,11 +9,11 @@ function with the game's own compiler, compares it with the original byte for by
 identical. The functions were written by AI agents working through pcdecomp, by hand, and by pcdecomp's own
 automatic passes (machine drafts, copies of already matched twin functions).
 
-## Status (2026-11-22)
+## Status (2026-11-23)
 
 ![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
 
-The picture is drawn by `tools/make_progress_svg.py` from `docs/progress.json` (numbers of 2026-11-22). To redraw
+The picture is drawn by `tools/make_progress_svg.py` from `docs/progress.json` (numbers of 2026-11-23). To redraw
 it: `python tools/make_progress_svg.py`; with `--collect --client <client project> --game <game folder>` it first
 reads the numbers again from pcdecomp's databases and the game's files.
 
@@ -51,7 +51,7 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in a separate project: 8,511 of 16,012 functions (53.2%), 413,966 of 1,690,577 code bytes (24.5%) as of 2026-11-22 |
+| `client.dll` (client game code) | In progress in a separate project: 10,804 of 16,012 functions (67.5%), 453,678 of 1,690,577 code bytes (26.8%) as of 2026-11-23 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |
@@ -117,7 +117,8 @@ ninja verify
 - that every block in `src/` is listed in `config/blocks.txt` (an unlisted one is built but not checked).
 
 It prints a summary, writes `build\report.json` and exits 0 when every difference it finds is listed, with its
-reason, in `config/known_differences.txt`. `python -m tools.verify --function 0x<address>` shows one function's
+reason, in `config/known_differences.txt`; today that list is empty, so any difference fails the check.
+`python -m tools.verify --function 0x<address>` shows one function's
 bytes next to the game's (disassembled when `pip install capstone` is installed).
 
 ## Legal
