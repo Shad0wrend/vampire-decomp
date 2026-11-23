@@ -3355,6 +3355,7 @@
 0x100b50a0 func   ?sub_100b50a0@@YAHXZ sub_100b50a0
 0x100b5100 func   ?_C_FireSmoke_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_FireSmoke_CreateObject
 0x100b51a0 func   ?ClientClassInit@@YAHPAUignored@DT_FireSmoke@@@Z ClientClassInit
+0x100b52c0 func   ??0C_FireSmoke@@QAE@XZ C_FireSmoke::C_FireSmoke
 0x100b5470 func   ??_GCLitSmokeEmitter@@UAEPAXI@Z ??_GCLitSmokeEmitter@@UAEPAXI@Z
 0x100b5490 func   ??_GC_FireSmoke@@UAEPAXI@Z ??_GC_FireSmoke@@UAEPAXI@Z
 0x100b54f0 func   ??1C_FireSmoke@@UAE@XZ C_FireSmoke::~C_FireSmoke
