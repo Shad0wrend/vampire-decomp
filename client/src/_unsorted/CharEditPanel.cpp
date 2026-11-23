@@ -54,3 +54,17 @@ void CharEditPanel::vfunc3()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10174690 size=0x12
+#include "CharEditPanel.h"
+namespace lifted {
+extern int g_105fb14c;
+struct C10181ad0 { int sub_101733d0(int); };
+}
+void CharEditPanel::vfunc7()
+{
+    if (lifted::g_105fb14c != 0) {
+        ((lifted::C10181ad0 *)lifted::g_105fb14c)->sub_101733d0(0x0);
+    }
+}
+// END FUNCTION
