@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10035610 size=0x39
+#include "C_TEBubbles.h"
+C_TEBubbles::C_TEBubbles()
+{
+	m_vecMins.Init(); m_vecMaxs.Init(); m_unk28 = 0; m_unk2c = 0; m_unk30 = 0; m_unk34 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035650 size=0x1e
 #include "C_TEBubbles.h"
 
