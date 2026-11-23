@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1005da90 size=0x70
+#include "CHudTimerUI.h"
+// TARGET: ??0CHudTimerUI@@QAE@H@Z
+CHudTimerUI::CHudTimerUI(int parent) : CManagedHudElement(parent, (int)"HudTimer")
+{
+	sub_1005db50();
+	vfunc63(0);
+	vfunc64(1);
+	m_unk194.v = -1;
+	m_unk190 = 0;
+	m_unk188 = 0;
+	m_unk18c = 0;
+	m_unk198 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005db00 size=0x1e
 #include "CHudTimerUI.h"
 
