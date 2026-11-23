@@ -4,9 +4,12 @@
 #pragma once
 #include "CClientSideEffect.h"
 
+class Vector;
+
 class CFXDiscreetLine : public CClientSideEffect
 {
 public:
+	CFXDiscreetLine(const char *name, const Vector &start, const Vector &direction, float velocity, float length, float clipLength, float scale, float life, const char *shader);
 	virtual ~CFXDiscreetLine();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CFXDiscreetLine's own function
