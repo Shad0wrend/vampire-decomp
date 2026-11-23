@@ -3349,6 +3349,7 @@
 0x100a9df0 func   ?vfunc184@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc184
 0x100aa240 func   ?vfunc195@C_BasePlayer@@UAEPADXZ C_BasePlayer::vfunc195
 0x100aa250 func   ?vfunc196@C_BasePlayer@@UAEHHHH@Z C_BasePlayer::vfunc196
+0x100aa280 func   ?vfunc191@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc191
 0x100aa410 func   ?sub_100aa410@CUnknown100aa410@@QAEXH@Z CUnknown100aa410::sub_100aa410
 0x100aa450 func   ?sub_100aa450@CUnknown100aa450@@QAEHXZ CUnknown100aa450::sub_100aa450
 0x100aa460 func   ?sub_100aa460@CUnknown100aa460@@QAEHXZ CUnknown100aa460::sub_100aa460
