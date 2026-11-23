@@ -3833,6 +3833,20 @@ int sub_100101d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10010230 size=0x5a
+#include "C_ItemMWallet.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemMWallet; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemMWallet_CreateObject(int entnum, int serialNum)
+{
+	C_ItemMWallet *pRet = new C_ItemMWallet;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100102f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4c7c;
