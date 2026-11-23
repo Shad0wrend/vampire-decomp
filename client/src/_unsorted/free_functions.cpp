@@ -6151,6 +6151,20 @@ int sub_10018150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100181b0 size=0x5a
+#include "C_ItemGRing03.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGRing03; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGRing03_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGRing03 *pRet = new C_ItemGRing03;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10018270 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6eb4;
