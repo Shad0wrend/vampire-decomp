@@ -30887,6 +30887,75 @@ int CUnknown100a13f0::sub_100a13f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1b40 size=0x195
+#include "C_BaseEntity.h"
+#include "CUnknown1070b254.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "Vector.h"
+
+class IVModelRender_100a1b40
+{
+public:
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual void v4() = 0;
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+	virtual void v8() = 0;
+	virtual void v9() = 0;
+	virtual void v10() = 0;
+	virtual void v11() = 0;
+	virtual void v12() = 0;
+	virtual void v13() = 0;
+	virtual void v14() = 0;
+	virtual void v15() = 0;
+	virtual void AddDecal(unsigned short handle, const Ray_t &ray, const Vector &decalUp, int decalIndex, int body, bool noPokeThru, int maxLODToDecal) = 0;
+};
+
+extern IVModelRender_100a1b40 *g_104a57d8;
+
+class C_BaseEntity_100a1b40 : public C_BaseEntity
+{
+public:
+	char m_pad[0x164 - sizeof(C_BaseEntity)];
+	unsigned short m_ModelInstance;
+
+	void sub_1009f0a0();
+	void sub_100a1b40(const Ray_t &ray, int hitbox, int decalIndex, bool doTrace, CGameTrace &tr, int maxLODToDecal);
+};
+
+// TARGET: C_BaseEntity_100a1b40::sub_100a1b40
+void C_BaseEntity_100a1b40::sub_100a1b40(const Ray_t &ray, int hitbox, int decalIndex, bool doTrace, CGameTrace &tr, int maxLODToDecal)
+{
+	if (doTrace)
+	{
+		g_104a582c->vfunc2((Ray_t *)&ray, 0x46004003, (CBaseEntity *)this, &tr);
+		if (tr.m_fraction == 1.0f)
+			return;
+		tr.m_pEnt = (CBaseEntity *)this;
+	}
+
+	sub_1009f0a0();
+
+	Vector up(0, 0, 1);
+
+	if (doTrace && Collideable_vfunc6() == 6 && !tr.m_startsolid && !tr.m_allsolid)
+	{
+		Ray_t normalRay;
+		normalRay.Init(*(Vector *)tr.m_endpos, *(Vector *)tr.m_endpos - *(Vector *)tr.m_planeNormal);
+		g_104a57d8->AddDecal(m_ModelInstance, normalRay, up, decalIndex, 0, true, maxLODToDecal);
+	}
+	else
+	{
+		g_104a57d8->AddDecal(m_ModelInstance, ray, up, decalIndex, 0, false, maxLODToDecal);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1eb0 size=0x10
 namespace lifted {
 int sub_101d270e(int, int);
