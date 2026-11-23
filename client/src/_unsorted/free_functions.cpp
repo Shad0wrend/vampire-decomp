@@ -41456,6 +41456,18 @@ void S10032fb0::sub_1011a3c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011abc0 size=0x15
+namespace lifted {
+struct C100a29b0 { int sub_100a29b0(int); };
+}
+struct CUnknown1011abc0 { int sub_1011abc0(); };
+int CUnknown1011abc0::sub_1011abc0()
+{
+    ((lifted::C100a29b0 *)this)->sub_100a29b0(2);
+    return ((lifted::C100a29b0 *)this)->sub_100a29b0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011abe0 size=0x8
 namespace lifted {
 int __stdcall sub_100a29b0(int);
