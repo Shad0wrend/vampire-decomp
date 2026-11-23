@@ -3337,6 +3337,7 @@
 0x100b2a20 func   ?vfunc16@C_ThaumaturgyParticle@@UAEHXZ C_ThaumaturgyParticle::vfunc16
 0x100b2a30 func   ?vfunc15@C_ThaumaturgyParticle@@UAEHXZ C_ThaumaturgyParticle::vfunc15
 0x100b2a40 func   ?sub_100b2a40@@YAHXZ sub_100b2a40
+0x100b2aa0 func   ?_C_ThaumaturgyParticle_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ThaumaturgyParticle_CreateObject
 0x100b2b00 func   ??_GC_ThaumaturgyParticle@@UAEPAXI@Z ??_GC_ThaumaturgyParticle@@UAEPAXI@Z
 0x100b2b80 func   ?ClientClassInit@@YAHPAUignored@DT_ThaumaturgyParticle@@@Z ClientClassInit
 0x100b3030 func   ?vfunc16@C_FuncParticle@@UAEHXZ C_FuncParticle::vfunc16
