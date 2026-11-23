@@ -24538,6 +24538,20 @@ int sub_1007fd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fd60 size=0x39
+#include "C_Beam.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Beam; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Beam_CreateObject(int entnum, int serialNum)
+{
+	C_Beam *pRet = new C_Beam;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fe00 size=0x83
 #include "RecvTable.h"
 extern RecvTable g_104870cc;
