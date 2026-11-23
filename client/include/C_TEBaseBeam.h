@@ -7,6 +7,21 @@
 class C_TEBaseBeam : public C_BaseTempEntity
 {
 public:
+	C_TEBaseBeam();
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+	int m_unk1c;
+	int m_unk20;
+	int m_unk24;
+	int m_unk28;
+	int m_unk2c;
+	int m_unk30;
+	int m_unk34;
+	int m_unk38;
+	int m_unk3c;
+	int m_unk40;
+	int m_unk44;
 	virtual ~C_TEBaseBeam();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_TEBaseBeam's own function
