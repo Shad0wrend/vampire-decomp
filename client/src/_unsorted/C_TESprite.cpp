@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003f3d0 size=0x3c
+#include "C_TESprite.h"
+C_TESprite::C_TESprite()
+{
+    m_vecOrigin.Init();
+    m_vecB.Init();
+    m_vecC.Init();
+    m_unk28 = 0;
+    m_unk38 = 0;
+}
+// TARGET: ??0C_TESprite@@QAE@XZ
+// END FUNCTION
+
 // FUNCTION: 0x1003f410 size=0x1e
 #include "C_TESprite.h"
 
