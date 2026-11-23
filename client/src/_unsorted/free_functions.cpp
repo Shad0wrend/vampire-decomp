@@ -4017,6 +4017,20 @@ int sub_10010bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10010c30 size=0x5a
+#include "C_ResearchBook_HG_COMP.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_HG_COMP; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_HG_COMP_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_HG_COMP *pRet = new C_ResearchBook_HG_COMP;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010cf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e42dc;
