@@ -4753,6 +4753,20 @@ int sub_100133d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10013430 size=0x5a
+#include "C_OccultDexterity.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultDexterity; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultDexterity_CreateObject(int entnum, int serialNum)
+{
+	C_OccultDexterity *pRet = new C_OccultDexterity;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100134f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e44ec;
