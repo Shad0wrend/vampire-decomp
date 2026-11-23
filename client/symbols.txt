@@ -4683,6 +4683,7 @@
 0x10120e40 func   ??_GCPrediction@@UAEPAXI@Z ??_GCPrediction@@UAEPAXI@Z
 0x10120e60 func   ??1IPrediction@@UAE@XZ IPrediction::~IPrediction
 0x10120e60 func   ?sub_10120e60@CUnknown10120e60@@QAEXXZ CUnknown10120e60::sub_10120e60
+0x10120e70 func   ?vfunc0@IPrediction@@QAEPAXD@Z IPrediction::vfunc0
 0x10120ed0 func   ?vfunc2@CPrediction@@UAEXXZ CPrediction::vfunc2
 0x101223b0 func   ?sub_101223b0@@YGHH@Z sub_101223b0
 0x10122430 func   ?sub_10122430@@YGHH@Z sub_10122430
