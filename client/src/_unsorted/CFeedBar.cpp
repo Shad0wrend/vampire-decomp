@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10050160 size=0x9e
+#include "CFeedBar.h"
+CFeedBar::CFeedBar(int a) : CManagedHudElement(a, (int)"FeedBar")
+{
+	sub_10050270();
+	vfunc63(0);
+	sub_101a9890(m_unk178, m_unk17c);
+	sub_101a98f0(m_unk18c, m_unk190);
+	m_b1a4 = 0;
+	m_b1a6 = 0;
+	m_b1a5 = 0;
+	m_unk1a0 = 0xff;
+	m_pChild2 = 0;
+	m_pChild1 = 0;
+	sub_100503d0(15, 0);
+	sub_10050530();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050200 size=0x1e
 #include "CFeedBar.h"
 
