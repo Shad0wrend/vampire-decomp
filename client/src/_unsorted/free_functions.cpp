@@ -2453,6 +2453,20 @@ int sub_1000b6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000b730 size=0x5a
+#include "C_WeaponRanged_Tzimisce2Head.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Tzimisce2Head; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Tzimisce2Head_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Tzimisce2Head *pRet = new C_WeaponRanged_Tzimisce2Head;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b7f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3794;
