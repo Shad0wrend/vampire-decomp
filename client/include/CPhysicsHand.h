@@ -4,6 +4,8 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+class CPhysicsHandOwned { public: virtual ~CPhysicsHandOwned(); };
+
 class CPhysicsHand : public CManagedHudElement
 {
 public:
@@ -14,5 +16,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	virtual bool vfunc107();
 	virtual void vfunc112();
-	char m_pad0008[0x1a0 - 0x8];
+	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188; int m_unk18c; int m_unk190; int m_unk194;
+	CPhysicsHandOwned *m_pChild1; CPhysicsHandOwned *m_pChild2;
 };
