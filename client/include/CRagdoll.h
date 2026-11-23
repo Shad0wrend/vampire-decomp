@@ -6,4 +6,5 @@ class CRagdoll : public IRagdoll
 {
 public:
 	virtual ~CRagdoll();
+	char m_pad0004[0x384 - 0x4];
 };

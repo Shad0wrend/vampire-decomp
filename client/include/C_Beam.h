@@ -20,4 +20,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_Beam adds to its base's vtable: 120-121, vfuncK at slot K
 	virtual void vfunc120();
 	virtual int vfunc121();
+	char m_pad0014[0x4b8 - 0x14];
 };

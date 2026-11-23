@@ -14,4 +14,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc107();
 	// the slots CHudTimerUI adds to its base's vtable: 114-114, vfuncK at slot K
 	virtual int vfunc114(int, int, int);
+	char m_pad0008[0x1a0 - 0x8];
 };

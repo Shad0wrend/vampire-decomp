@@ -5,4 +5,5 @@
 
 class CFleckParticles : public CSimpleEmitter
 {
+	char m_pad0004[0xec - 0x4];
 };

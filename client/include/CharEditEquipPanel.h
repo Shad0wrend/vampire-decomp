@@ -19,4 +19,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CharEditEquipPanel adds to its base's vtable: 123-124, vfuncK at slot K
 	virtual int vfunc123();
 	virtual void vfunc124(int);
+	char m_pad0004[0xec - 0x4];
 };

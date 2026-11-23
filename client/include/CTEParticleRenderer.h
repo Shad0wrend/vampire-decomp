@@ -8,4 +8,5 @@ class CTEParticleRenderer : public CParticleEffect
 {
 public:
 	virtual ~CTEParticleRenderer();
+	char m_pad0004[0x7c - 0x4];
 };

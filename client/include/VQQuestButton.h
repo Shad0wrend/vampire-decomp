@@ -15,4 +15,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc164(int, int, int, int);
 	// the slots VQQuestButton adds to its base's vtable: 166-166, vfuncK at slot K
 	virtual int vfunc166(char);
+	char m_pad0004[0xfc - 0x4];
 };

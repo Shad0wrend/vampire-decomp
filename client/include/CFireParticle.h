@@ -5,4 +5,5 @@
 
 class CFireParticle : public CSimpleEmitter
 {
+	char m_pad0004[0x78 - 0x4];
 };

@@ -12,4 +12,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CHudInfo's own function
 	virtual void vfunc98();
 	virtual bool vfunc107();
+	char m_pad0008[0x324 - 0x8];
 };
