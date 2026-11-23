@@ -4108,6 +4108,7 @@
 0x100e21f0 func   ??1CBaseEntityList@@QAE@XZ CBaseEntityList::~CBaseEntityList
 0x100e21f0 func   ?sub_100e21f0@CBaseEntityList@@QAEXXZ CBaseEntityList::sub_100e21f0
 0x100e2340 func   ?sub_100e2340@CUnknown100e2340@@QAEHHHHH@Z CUnknown100e2340::sub_100e2340
+0x100e24a0 func   ?sub_100e24a0@CEntityListAdd_100e24a0@@QAE?AVCBaseHandle@@PAUIHandleEnt_100e24a0@@HH@Z CEntityListAdd_100e24a0::sub_100e24a0
 0x100e2590 func   ?sub_100e2590@CBaseEntityList@@QAEXI@Z CBaseEntityList::sub_100e2590
 0x100e2780 func   ?vfunc0@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc0
 0x100e2790 func   ?vfunc1@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc1

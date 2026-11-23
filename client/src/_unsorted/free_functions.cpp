@@ -39373,6 +39373,75 @@ int CUnknown100e2340::sub_100e2340(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e24a0 size=0xe2
+#include "CBaseEntityList.h"
+#include "CUtlLinkedList6.h"
+#include "CBaseHandle.h"
+
+extern void __cdecl sub_100e2950(CUtlLinkedList6Node *pNode, const unsigned short *pValue);
+
+struct IHandleEnt_100e24a0
+{
+	virtual void SetRefEHandle(const CBaseHandle &handle);
+};
+
+struct IEntityListCb_100e24a0
+{
+	virtual void OnAddEntity(IHandleEnt_100e24a0 *pEnt, CBaseHandle handle);
+};
+
+struct LL6Add_100e24a0 : CUtlLinkedList6
+{
+	void LinkToTail(unsigned short elem)
+	{
+		sub_100e27a0(elem);
+		CUtlLinkedList6Node &newElem = InternalElement(elem);
+		newElem.m_Next = InvalidIndex();
+		newElem.m_Previous = m_Tail;
+		m_Tail = elem;
+		if (newElem.m_Previous == InvalidIndex())
+			m_Head = elem;
+		else
+			InternalElement(newElem.m_Previous).m_Next = elem;
+		++m_ElementCount;
+	}
+
+	unsigned short AddToTail(const unsigned short &src)
+	{
+		unsigned short elem = sub_100e2840(false);
+		LinkToTail(elem);
+		sub_100e2950(&InternalElement(elem), &src);
+		return elem;
+	}
+};
+
+struct CEntityListAdd_100e24a0 : CBaseEntityList
+{
+	CBaseHandle sub_100e24a0(IHandleEnt_100e24a0 *pEnt, int iSlot, int iForcedSerialNum);
+};
+
+// TARGET: CEntityListAdd_100e24a0::sub_100e24a0
+CBaseHandle CEntityListAdd_100e24a0::sub_100e24a0(IHandleEnt_100e24a0 *pEnt, int iSlot, int iForcedSerialNum)
+{
+	CBaseEntityListEntry *pSlot = &m_EntPtrArray[iSlot];
+	pSlot->m_pEntity = pEnt;
+
+	if (iForcedSerialNum != -1)
+	{
+		pSlot->m_SerialNumber = iForcedSerialNum;
+	}
+
+	unsigned short idx = (unsigned short)iSlot;
+	*(unsigned short *)&pSlot->m_pad = ((LL6Add_100e24a0 *)&m_Live)->AddToTail(idx);
+
+	CBaseHandle retVal(iSlot, pSlot->m_SerialNumber);
+	pEnt->SetRefEHandle(retVal);
+	((IEntityListCb_100e24a0 *)this)->OnAddEntity(pEnt, retVal);
+
+	return retVal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2590 size=0x1ec
 #include "utlrbtree.h"
 #include "utlvector.h"
