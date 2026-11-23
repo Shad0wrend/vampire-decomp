@@ -457,6 +457,7 @@
 0x1000cab0 func   ?vfunc16@C_WeaponRanged_MingXiao_Spit@@UAEHXZ C_WeaponRanged_MingXiao_Spit::vfunc16
 0x1000cac0 func   ?vfunc15@C_WeaponRanged_MingXiao_Spit@@UAEHXZ C_WeaponRanged_MingXiao_Spit::vfunc15
 0x1000cad0 func   ?sub_1000cad0@@YAHXZ sub_1000cad0
+0x1000cb30 func   ?_C_WeaponRanged_MingXiao_Spit_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponRanged_MingXiao_Spit_CreateObject
 0x1000cbf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_MingXiao_Spit@@@Z ClientClassInit
 0x1000cc80 func   ?vfunc17@C_WeaponMelee_Claws_Ghoul@@UAEHXZ C_WeaponMelee_Claws_Ghoul::vfunc17
 0x1000cd10 func   ??_GC_WeaponMelee_Claws_Ghoul@@UAEPAXI@Z ??_GC_WeaponMelee_Claws_Ghoul@@UAEPAXI@Z
