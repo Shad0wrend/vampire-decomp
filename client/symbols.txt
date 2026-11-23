@@ -1416,6 +1416,7 @@
 0x10022130 func   ?vfunc16@C_ItemKClinicCSKey@@UAEHXZ C_ItemKClinicCSKey::vfunc16
 0x10022140 func   ?vfunc15@C_ItemKClinicCSKey@@UAEHXZ C_ItemKClinicCSKey::vfunc15
 0x10022150 func   ?sub_10022150@@YAHXZ sub_10022150
+0x100221b0 func   ?_C_ItemKClinicCSKey_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemKClinicCSKey_CreateObject
 0x10022270 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKClinicCSKey@@@Z ClientClassInit
 0x10022300 func   ?vfunc17@C_ItemKMalcomOfficeKey@@UAEHXZ C_ItemKMalcomOfficeKey::vfunc17
 0x10022390 func   ??_GC_ItemKMalcomOfficeKey@@UAEPAXI@Z ??_GC_ItemKMalcomOfficeKey@@UAEPAXI@Z
