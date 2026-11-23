@@ -4,6 +4,7 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+class CHudAreaIconObj { public: virtual ~CHudAreaIconObj(); };
 class CHudAreaIcon : public CManagedHudElement
 {
 public:
@@ -14,5 +15,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc107();
 	// the slots CHudAreaIcon adds to its base's vtable: 114-114, vfuncK at slot K
 	virtual void vfunc114();
-	char m_pad0008[0x1b4 - 0x8];
+	int m_unk174;
+	CHudAreaIconObj *m_p178;
+	int m_unk17c; int m_unk180; int m_unk184; int m_unk188; int m_unk18c;
+	int m_unk190; int m_unk194; int m_unk198;
+	CHudAreaIconObj *m_p19c;
+	CHudAreaIconObj *m_p1a0;
+	CHudAreaIconObj *m_p1a4;
+	int m_unk1a8; int m_unk1ac; int m_unk1b0;
 };
