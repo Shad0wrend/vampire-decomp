@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10033b60 size=0x2a
+#include "C_TEBeamRingPoint.h"
+C_TEBeamRingPoint::C_TEBeamRingPoint()
+{
+	m_vecCenter.Init(0, 0, 0);
+	m_flStartRadius = 0;
+	m_flEndRadius = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033b90 size=0x1e
 #include "C_TEBeamRingPoint.h"
 
