@@ -3,7 +3,22 @@
 #pragma once
 #include "CDefaultClientRenderable.h"
 
+#include "Vector.h"
+struct CPEBList
+{
+	int m_a; int m_b; int m_c;
+	short m_s0c; short m_s0e; short m_s10; short m_s12; short m_s14; short m_s16;
+	int m_x18;
+	void sub_10117b60();
+	CPEBList() { m_a = 0; m_b = 0; m_c = 0; sub_10117b60(); m_x18 = m_a; }
+};
 class CParticleEffectBinding : public CDefaultClientRenderable
 {
 public:
+	CParticleEffectBinding();
+	unsigned short m_unk08; unsigned short m_unk0a;
+	Vector m_Min; Vector m_Max;
+	unsigned short m_unk24; unsigned short m_unk26; unsigned short m_unk28; unsigned short m_unk2a;
+	int m_unk2c; int m_unk30; int m_unk34;
+	CPEBList m_List;
 };
