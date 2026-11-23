@@ -18,5 +18,7 @@ public:
 	void sub_1004ed00(int id);
 	char m_pad0174[0x1a8 - 0x174];
 	int m_nEntries;
-	CDisciplineEntry m_Entries[1];
+	CDisciplineEntry m_Entries[6];
+	CDisciplineChild *m_p1f4;
+	CDisciplineChild *m_p1f8;
 };
