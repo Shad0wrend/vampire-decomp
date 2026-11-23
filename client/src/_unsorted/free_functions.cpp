@@ -5029,6 +5029,20 @@ int sub_100142d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10014330 size=0x5a
+#include "C_OccultPassiveDurations.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultPassiveDurations; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultPassiveDurations_CreateObject(int entnum, int serialNum)
+{
+	C_OccultPassiveDurations *pRet = new C_OccultPassiveDurations;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100143f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5a38;
