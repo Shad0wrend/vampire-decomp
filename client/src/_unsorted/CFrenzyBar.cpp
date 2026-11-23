@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10050a80 size=0x1e
+#include "CFrenzyBar.h"
+
+// VC6 writes CFrenzyBar's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CFrenzyBar *pcd_emit_10050a80(const CFrenzyBar &other) { return new CFrenzyBar(other); }
+
+// TARGET: ??_GCFrenzyBar@@UAEPAXI@Z
+// END FUNCTION
+
 // FUNCTION: 0x10050cb0 size=0x1a
 #include "CFrenzyBar.h"
 namespace lifted {
