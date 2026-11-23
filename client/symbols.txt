@@ -2536,6 +2536,7 @@
 0x1005f2a0 func   ??_GCMoneyBar@@UAEPAXI@Z ??_GCMoneyBar@@UAEPAXI@Z
 0x1005f2c0 func   ??1CMoneyBar@@UAE@XZ CMoneyBar::~CMoneyBar
 0x1005f540 func   ?vfunc97@CMoneyBar@@UAEXXZ CMoneyBar::vfunc97
+0x1005f610 func   ??0CPhysicsHand@@QAE@H@Z CPhysicsHand::CPhysicsHand
 0x1005f6b0 func   ?sub_1005f6b0@CUnknown1005f6b0@@QAEDD@Z CUnknown1005f6b0::sub_1005f6b0
 0x1005f6c0 func   ?sub_1005f6c0@@YAHXZ sub_1005f6c0
 0x1005f6d0 func   ?sub_1005f6d0@CUnknown1005f6d0@@QAEDXZ CUnknown1005f6d0::sub_1005f6d0
