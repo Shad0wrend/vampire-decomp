@@ -32818,6 +32818,20 @@ int sub_100bb4f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb550 size=0x39
+#include "C_Func_LOD.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_Func_LOD; its ClientClass's initializer stores its address
+IClientNetworkable *_C_Func_LOD_CreateObject(int entnum, int serialNum)
+{
+	C_Func_LOD *pRet = new C_Func_LOD;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb5f0 size=0x92
 #include "RecvTable.h"
 extern RecvTable g_104a2b7c;
