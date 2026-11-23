@@ -1658,6 +1658,7 @@
 0x100283d0 func   ?sub_100283d0@@YAHXZ sub_100283d0
 0x10028430 func   ?_C_WeaponGravityGun_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponGravityGun_CreateObject
 0x10028500 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponPhysCannon@@@Z ClientClassInit
+0x100285a0 func   ??0C_BeamQuadratic@@QAE@XZ C_BeamQuadratic::C_BeamQuadratic
 0x100285d0 func   ?sub_100285d0@@YADXZ sub_100285d0
 0x100285e0 func   ?sub_100285e0@@YAHXZ sub_100285e0
 0x100285f0 func   ?sub_100285f0@@YAHXZ sub_100285f0
