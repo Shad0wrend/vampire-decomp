@@ -66,6 +66,16 @@ void CHudElement::vfunc5(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0550 size=0x1e
+#include "CHudElement.h"
+
+// VC6 writes CHudElement's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+CHudElement *pcd_emit_100f0550(const CHudElement &other) { return new CHudElement(other); }
+
+// TARGET: ??_GCHudElement@@UAEPAXI@Z
+// END FUNCTION
+
 // FUNCTION: 0x100f0590 size=0xa
 #include "CHudElement.h"
 bool CHudElement::vfunc11(char a0)
