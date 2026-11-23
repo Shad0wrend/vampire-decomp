@@ -15,7 +15,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc112();
 	virtual void vfunc113();
 	// the slots CHudInfoBar adds to its base's vtable: 114-116, vfuncK at slot K
-	virtual void vfunc114();
+	virtual int vfunc114(int, int, int);
 	virtual int vfunc115(int, int);
 	virtual int vfunc116(int, int);
 };
