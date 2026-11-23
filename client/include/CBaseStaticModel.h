@@ -35,6 +35,9 @@ public:
 	virtual void GetRenderBoundsWorldspace(Vector &mins, Vector &maxs);	// IClientRenderable slot 19
 	virtual bool Renderable_vfunc20();	// IClientRenderable slot 20
 	virtual ~CBaseStaticModel();
-	char m_unk8[0x3c - 0x8 + 0];
+	CBaseStaticModel();
+	char m_unk8[0x38 - 0x8];
+	int m_unk38;
 	unsigned short m_unk3c;
+	unsigned char m_unk3e;
 };
