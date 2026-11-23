@@ -590,6 +590,7 @@
 0x1000fa30 func   ?vfunc16@C_WeaponLockpick@@UAEHXZ C_WeaponLockpick::vfunc16
 0x1000fa40 func   ?vfunc15@C_WeaponLockpick@@UAEHXZ C_WeaponLockpick::vfunc15
 0x1000fa50 func   ?sub_1000fa50@@YAHXZ sub_1000fa50
+0x1000fab0 func   ?_C_WeaponLockpick_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponLockpick_CreateObject
 0x1000fb70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponLockpick@@@Z ClientClassInit
 0x1000fc00 func   ?vfunc17@C_WeaponUnarmed@@UAEHXZ C_WeaponUnarmed::vfunc17
 0x1000fc90 func   ??_GC_WeaponUnarmed@@UAEPAXI@Z ??_GC_WeaponUnarmed@@UAEPAXI@Z
