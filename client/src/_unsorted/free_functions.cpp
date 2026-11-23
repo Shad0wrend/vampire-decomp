@@ -9049,6 +9049,20 @@ int sub_10021ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10021f30 size=0x5a
+#include "C_ItemKClinicStairsKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKClinicStairsKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKClinicStairsKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKClinicStairsKey *pRet = new C_ItemKClinicStairsKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021ff0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e518c;
