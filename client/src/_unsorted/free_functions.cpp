@@ -6749,6 +6749,20 @@ int sub_1001a1d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001a230 size=0x5a
+#include "C_ItemGHorrorTape_1.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGHorrorTape_1; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGHorrorTape_1_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGHorrorTape_1 *pRet = new C_ItemGHorrorTape_1;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a2f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e140c;
