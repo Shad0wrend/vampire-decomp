@@ -75540,6 +75540,133 @@ void CUnknown10193340::sub_10193340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101935e0 size=0x1a9
+#include "Vector.h"
+
+struct model_t;
+
+struct IVModelInfo_101935e0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual const model_t *GetModel(int modelindex);
+	virtual void v3();
+	virtual void v4();
+	virtual int GetModelFrameCount(const model_t *model);
+};
+
+struct CGlobals_101935e0
+{
+	char m_pad0[0xc];
+	float curtime;
+};
+
+struct BeamInfo_t_101935e0
+{
+	int m_nType;              // 0x00
+	char m_pad04[0x10];       // 0x04..0x13
+	Vector m_vecStart;        // 0x14
+	Vector m_vecEnd;          // 0x20
+	int m_nModelIndex;        // 0x2c
+	int m_unk30;              // 0x30
+	int m_nHaloIndex;         // 0x34
+	int m_unk38;              // 0x38
+	float m_flHaloScale;      // 0x3c
+	float m_flLife;           // 0x40
+	float m_flWidth;          // 0x44
+	float m_flEndWidth;       // 0x48
+	float m_flFadeLength;     // 0x4c
+	float m_flAmplitude;      // 0x50
+	float m_flBrightness;     // 0x54
+	float m_flSpeed;          // 0x58
+	char m_pad5c[0x18];       // 0x5c..0x73
+	int m_nSegments;          // 0x74
+};
+
+struct Beam_t_101935e0
+{
+	char m_pad0[0x28];        // 0x00..0x27
+	int type;                 // 0x28
+	int flags;                // 0x2c
+	int m_unk30;              // 0x30
+	Vector attachment[2];     // 0x34, 0x40
+	char m_pad4c[0x60];       // 0x4c..0xab
+	Vector delta;             // 0xac
+	char m_padb8[0x10];       // 0xb8..0xc7
+	float t;                  // 0xc8
+	float die;                // 0xcc
+	float width;              // 0xd0
+	float endWidth;           // 0xd4
+	float fadeLength;         // 0xd8
+	float amplitude;          // 0xdc
+	float freq;               // 0xe0
+	char m_pade4[0xc];        // 0xe4..0xef
+	float brightness;         // 0xf0
+	float speed;              // 0xf4
+	float frame;              // 0xf8
+	float frameRate;          // 0xfc
+	int segments;             // 0x100
+	char m_pad104[0x50];      // 0x104..0x153
+	int modelIndex;           // 0x154
+	int haloIndex;            // 0x158
+	float haloScale;          // 0x15c
+	int frameCount;           // 0x160
+};
+
+extern IVModelInfo_101935e0 *g_104a57f8;
+extern CGlobals_101935e0 *g_102b8494;
+
+struct CUnknown101935e0
+{
+	void sub_101935e0(Beam_t_101935e0 *pBeam, const BeamInfo_t_101935e0 &beamInfo);
+};
+
+void CUnknown101935e0::sub_101935e0(Beam_t_101935e0 *pBeam, const BeamInfo_t_101935e0 &beamInfo)
+{
+	const model_t *pSprite = g_104a57f8->GetModel(beamInfo.m_nModelIndex);
+	if (!pSprite)
+		return;
+
+	pBeam->type = (beamInfo.m_nType < 0) ? 0 : beamInfo.m_nType;
+	pBeam->modelIndex = beamInfo.m_nModelIndex;
+	pBeam->haloIndex = beamInfo.m_nHaloIndex;
+	pBeam->haloScale = beamInfo.m_flHaloScale;
+	pBeam->frameRate = 0.0f;
+	pBeam->frame = 0.0f;
+	pBeam->frameCount = g_104a57f8->GetModelFrameCount(pSprite);
+	pBeam->t = g_102b8494->curtime * beamInfo.m_flSpeed;
+	pBeam->die = g_102b8494->curtime + beamInfo.m_flLife;
+	pBeam->width = beamInfo.m_flWidth;
+	pBeam->endWidth = beamInfo.m_flEndWidth;
+	pBeam->fadeLength = beamInfo.m_flFadeLength;
+	pBeam->amplitude = beamInfo.m_flAmplitude;
+	pBeam->brightness = beamInfo.m_flBrightness;
+	pBeam->speed = beamInfo.m_flSpeed;
+	pBeam->freq = beamInfo.m_flLife;
+	pBeam->flags = 0;
+
+	pBeam->attachment[0] = beamInfo.m_vecStart;
+	pBeam->attachment[1] = beamInfo.m_vecEnd;
+	VectorSubtract(beamInfo.m_vecEnd, beamInfo.m_vecStart, pBeam->delta);
+
+	if (beamInfo.m_nSegments == -1)
+	{
+		if (pBeam->amplitude >= 0.5)
+		{
+			pBeam->segments = (int)(VectorLength(pBeam->delta) * 0.25 + 3.0);
+		}
+		else
+		{
+			pBeam->segments = (int)(VectorLength(pBeam->delta) * 0.075 + 3.0);
+		}
+	}
+	else
+	{
+		pBeam->segments = beamInfo.m_nSegments;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101963a0 size=0x1a
 namespace lifted {
 extern char g_10618750;
