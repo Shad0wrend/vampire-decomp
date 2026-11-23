@@ -11,6 +11,46 @@ vgui2::LabelComboBoxButton *pcd_emit_101bae50() { return new vgui2::LabelComboBo
 // TARGET: ??_GLabelComboBoxButton@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bae70 size=0xf4
+#include "vgui2__LabelComboBoxButton.h"
+
+struct Color
+{
+	unsigned int raw;
+	Color() {}
+};
+
+struct IScheme
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual int GetFont(const char *fontName);
+	virtual void v5();
+	virtual Color GetColor(const char *colorName);
+};
+
+using namespace vgui2;
+
+int LabelComboBoxButton::vfunc74(int pSchemeArg)
+{
+	IScheme *pScheme = (IScheme *)pSchemeArg;
+	Button::vfunc74(pSchemeArg);
+
+	vfunc118(pScheme->GetFont("Marlett"));
+	vfunc111(3);
+	vfunc112(3, 0);
+
+	vfunc154(pScheme->GetColor("MenuButton/ArmedArrowColor").raw, pScheme->GetColor("MenuButton/ArmedBgColor").raw);
+	vfunc155(pScheme->GetColor("MenuButton/ArmedArrowColor").raw, pScheme->GetColor("MenuButton/ArmedBgColor").raw);
+
+	*(unsigned int *)((char *)this + 0x100) = pScheme->GetColor("MenuButton/ButtonArrowColor").raw;
+	*(unsigned int *)((char *)this + 0x104) = pScheme->GetColor("MenuButton/ButtonBgColor").raw;
+	return vfunc153(*(unsigned int *)((char *)this + 0x100), *(unsigned int *)((char *)this + 0x104));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101baf70 size=0x5
 #include "vgui2__LabelComboBoxButton.h"
 int vgui2::LabelComboBoxButton::vfunc164(int a0, int a1, int a2, int a3)
