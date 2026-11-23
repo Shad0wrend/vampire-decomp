@@ -20,6 +20,20 @@ C_TETracer *pcd_emit_10040950(const C_TETracer &other) { return new C_TETracer(o
 // TARGET: ??_GC_TETracer@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10040a60 size=0x8c
+#include "C_TETracer.h"
+#include "C_RecipientFilter.h"
+
+void sub_10040990(IRecipientFilter &filter, float delay, const Vector *start, const Vector *end, int firerIndex);
+
+void C_TETracer::PostDataUpdate(int updateType)
+{
+	CBroadcastRecipientFilter filter;
+	sub_10040990(filter, 0.0f, &m_vecStart, &m_vecEnd, m_iFirerIndex);
+}
+// TARGET: ?PostDataUpdate@C_TETracer@@UAEXH@Z
+// END FUNCTION
+
 // FUNCTION: 0x10040af0 size=0x6
 #include "C_TETracer.h"
 namespace lifted {
