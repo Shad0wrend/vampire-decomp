@@ -14,5 +14,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	virtual bool vfunc107();
 	virtual void vfunc112();
-	char m_pad0008[0x1a8 - 0x8];
+	char m_pad0174[0x30];
+	struct CAmmoCounterChild { virtual ~CAmmoCounterChild(); } *m_pUnk1a4;
 };
