@@ -9187,6 +9187,20 @@ int sub_10022650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100226b0 size=0x5a
+#include "C_ItemKGimbleKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKGimbleKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKGimbleKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKGimbleKey *pRet = new C_ItemKGimbleKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10022770 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0784;
