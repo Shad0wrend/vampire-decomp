@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEBSPDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBSPDecal *pcd_emit_10035260() { return new C_TEBSPDecal; }
+C_TEBSPDecal *pcd_emit_10035260(const C_TEBSPDecal &other) { return new C_TEBSPDecal(other); }
 
 // TARGET: ??_GC_TEBSPDecal@@UAEPAXI@Z
 // END FUNCTION
