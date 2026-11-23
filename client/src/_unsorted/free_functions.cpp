@@ -77852,6 +77852,56 @@ void sub_101a2b60(VMatrix &dst, const Vector &v, float angleDegrees)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2c80 size=0x1b0
+#include "VMatrix.h"
+#include <math.h>
+
+void sub_101a23f0(float *m);
+void sub_10108fd0(const float *start, float scale, const float *direction, float *dest);
+void sub_101a2b60(VMatrix &dst, const Vector &vAxisOfRotation, float angleDegrees);
+
+static inline float FloatMakePositive(float f)
+{
+	unsigned long bits = (*(unsigned long *)&f) & 0x7FFFFFFF;
+	return *(float *)&bits;
+}
+
+void sub_101a2c80(VMatrix &dst, const Vector &initialDirection, const Vector &finalDirection)
+{
+	float angle = DotProduct(initialDirection, finalDirection);
+	Vector axis;
+
+	if (angle - 1.0 > -1e-3)
+	{
+		sub_101a23f0(&dst.m[0][0]);
+		return;
+	}
+
+	if (angle + 1.0 < 1e-3)
+	{
+		int iAxis = 0;
+		if (FloatMakePositive(finalDirection[1]) < FloatMakePositive(finalDirection[0]))
+			iAxis = 1;
+		if (FloatMakePositive(finalDirection[2]) < FloatMakePositive(finalDirection[iAxis]))
+			iAxis = 2;
+
+		axis.Init(0.0f, 0.0f, 0.0f);
+		axis[iAxis] = 1.0f;
+		sub_10108fd0(axis.Base(), -DotProduct(axis, finalDirection), finalDirection.Base(), axis.Base());
+		VectorNormalize(axis);
+		angle = 180.0f;
+	}
+	else
+	{
+		CrossProduct(initialDirection, finalDirection, axis);
+		VectorNormalize(axis);
+		angle = (float)(acos(angle) * (180.0 / 3.14159265358979323846));
+	}
+
+	sub_101a2b60(dst, axis, angle);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2e30 size=0x59
 #include "VMatrix.h"
 #include <math.h>
