@@ -145,7 +145,7 @@ def main(argv: list[str] | None = None) -> int:
         "  description = verify",
         "  pool = console",
         "rule ownership",
-        "  command = $python -m tools.ownership --orig \"$orig\" --build build",
+        "  command = $python -m tools.ownership --orig \"$orig\" --vc6 \"$vc6\" --build build",
         "  description = ownership",
         "  pool = console",
         "rule configure",

@@ -1,6 +1,6 @@
 """Give every byte of the original DLL an owner: how far the build is from the same file (`ninja ownership`).
 
-    python -m tools.ownership [--orig orig/<target>] [--build build] [--show N]
+    python -m tools.ownership [--orig orig/<target>] [--vc6 DIR] [--lib DIR ...] [--build build] [--show N]
 
 Verify compares the build with the game rule by rule; this audit asks the other question: which source makes each
 byte of the original file? Owners, in this order (the first one wins):
@@ -10,6 +10,9 @@ byte of the original file? Owners, in this order (the first one wins):
 - what the linker writes: the headers (headers), the incremental-link stubs (stubs), the import section, the import
   directory and import address table (imports), the export directory (exports), the base relocations (base
   relocations), the debug directory and the record it points at (debug);
+- what the link takes from the libraries config/build.toml names (LIBC.LIB, found in VC6's LIB folder or a --lib
+  folder): the sections tools.libraries finds at one place of the original (library), and the linker's thunks for
+  the functions of import libraries (import thunks);
 - what is left when a whole run of bytes no one owns is 0xCC in code (padding: the incremental link's room after
   each function and its stub table's reserve) or zero (zero fill: alignment, the rest of a file-aligned section);
   a mixed run gives its trailing 0xCC / zeros to padding / zero fill.
@@ -27,11 +30,13 @@ from collections import Counter
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
+from . import vc6
 from .cfg import read_build
+from .libraries import Placement, import_thunks, place
 from .verify import Verifier
 
-KINDS = ("code", "fill", "data", "vtable", "initializer table", "headers", "stubs", "imports", "exports",
-         "base relocations", "debug", "padding", "zero fill")
+KINDS = ("code", "fill", "data", "vtable", "initializer table", "library", "import thunks", "headers", "stubs",
+         "imports", "exports", "base relocations", "debug", "padding", "zero fill")
 EXPORT, IMPORT, BASERELOC, DEBUG, IAT = 0, 1, 5, 6, 12
 FREE = re.compile(rb"\x00+")  # a run of bytes no one owns (_Owners.kind)
 
@@ -59,6 +64,9 @@ class Audit:
     slot_misses: list[tuple[int, int, int]] = field(default_factory=list)  # (address, size, room) off the rule
     slots: int = 0  # function rooms checked against the rule
     differences: int = 0  # verify's unknown differences (bytes it compared that are not the game's)
+    libraries: list[str] = field(default_factory=list)  # the libraries read
+    missing_libraries: list[str] = field(default_factory=list)  # the libraries not found: their bytes stay unknown
+    placements: list[Placement] = field(default_factory=list)  # where the original holds their sections
 
 
 class _Owners:
@@ -84,6 +92,17 @@ class _Owners:
     def free_runs(self):
         """(start, end) of each run of bytes no one owns yet."""
         return [(m.start(), m.end()) for m in FREE.finditer(self.kind)]
+
+    def unexplained(self) -> list[tuple[int, int]]:
+        """(start, end) addresses of each run of bytes no one owns inside a section that is not all 0xCC (code) or
+        zeros: where something must still make the bytes."""
+        out = []
+        for start, end in self.free_runs():
+            for s in self.sections:
+                lo, hi = max(start, s.raw_offset), min(end, s.raw_offset + s.raw_size)
+                if lo < hi and self.image.data[lo:hi].strip(b"\xcc\x00" if s.executable else b"\x00"):
+                    out.append((s.va + lo - s.raw_offset, s.va + hi - s.raw_offset))
+        return out
 
     def mark(self, va: int, size: int, kind: str) -> None:
         """Mark [va, va + size): the part each section holds in the file."""
@@ -162,7 +181,29 @@ def _slot_misses(claims: list[tuple[int, int, str, str]], owners: _Owners) -> tu
     return checked, misses
 
 
-def audit(root: Path, orig: Path, build: str = "build") -> Audit:
+def lib_folders(vc6_dir: Path | None) -> list[Path]:
+    """The folders the link searches for libraries: VC6's (vcvars32.bat's LIB), if VC6 is found."""
+    try:
+        root = vc6.find(vc6_dir)
+    except SystemExit:
+        return []
+    return [root / "VC98" / "LIB", root / "VC98" / "MFC" / "LIB"]
+
+
+def _libraries(values: dict, lib_dirs: list[Path]) -> tuple[list[tuple[str, bytes]], list[str]]:
+    """(name, bytes) of each library config/build.toml names that `lib_dirs` hold, and the names of the others."""
+    found, missing = [], []
+    for name in values.get("link", {}).get("libs", []):
+        path = next((Path(d) / name for d in lib_dirs if (Path(d) / name).is_file()), None)
+        if path is None:
+            missing.append(name)
+        else:
+            found.append((name, path.read_bytes()))
+    return found, missing
+
+
+def audit(root: Path, orig: Path, build: str = "build", lib_dirs: list[Path] | None = None) -> Audit:
+    """`lib_dirs`: the folders the libraries are read from (default: VC6's, from $VC6_DIR or its installed place)."""
     v = Verifier(Path(root), Path(orig), build)
     report = v.run()
     image = v.orig
@@ -182,8 +223,15 @@ def audit(root: Path, orig: Path, build: str = "build") -> Audit:
             owners.mark(image.image_base + rva, size, kind)
     for offset, size in _debug_records(image):
         owners.mark_file(offset, size, "debug")
+    for thunk in import_thunks(image, owners.unexplained()):
+        owners.mark(thunk, 6, "import thunks")
+    libraries, missing = _libraries(v.values, lib_folders(None) if lib_dirs is None else lib_dirs)
+    placements = place(image, libraries, v.addresses, v.ilt, owners.unexplained()) if libraries else []
+    for p in placements:
+        owners.mark(p.va, p.size, "library")
     _fill_runs(owners, image.data)
-    out = Audit(size=len(image.data), differences=len(report.unknown))
+    out = Audit(size=len(image.data), differences=len(report.unknown), libraries=[n for n, _ in libraries],
+                missing_libraries=missing, placements=placements)
     counts = Counter(owners.kind)
     out.counts = {KINDS[k - 1]: counts[k] for k in sorted(counts) if k}
     names = sorted((a, n) for n, a in v.addresses.items() if "/" not in n)
@@ -204,21 +252,35 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="tools.ownership", description=__doc__.splitlines()[0])
     p.add_argument("--root", type=Path, default=Path.cwd(), help=argparse.SUPPRESS)
     p.add_argument("--orig", type=Path, help="the original DLL (default: orig/<target name>)")
+    p.add_argument("--vc6", type=Path, help="the folder holding VC98: its LIB folder holds LIBC.LIB (default: $VC6_DIR, "
+                                            "else VC6's installed place)")
+    p.add_argument("--lib", type=Path, action="append", default=[], help="another folder to read libraries from "
+                                                                         "(searched first)")
     p.add_argument("--build", default="build")
     p.add_argument("--show", type=int, default=20, help="unknown runs to print, biggest first (default 20)")
     args = p.parse_args(argv)
     root = args.root.resolve()
     target = read_build(root / "config" / "build.toml")["target"]["name"]
     orig = args.orig if args.orig is not None else root / "orig" / target
-    a = audit(root, orig, args.build)
+    a = audit(root, orig, args.build, lib_dirs=[*args.lib, *lib_folders(args.vc6)])
     data = asdict(a)
     data["unknown"] = [{**asdict(r), "va": None if r.va is None else f"0x{r.va:08x}"} for r in a.unknown]
     data["slot_misses"] = [{"address": f"0x{x:08x}", "size": s, "room": r} for x, s, r in a.slot_misses]
+    data["placements"] = [{**asdict(x), "va": f"0x{x.va:08x}"} for x in a.placements]
     (root / args.build / "ownership.json").write_text(json.dumps(data, indent=1), encoding="utf-8")
     print(f"ownership of {orig} ({a.size:,} bytes)")
     for kind in KINDS:
         if a.counts.get(kind):
             print(f"  {kind:18s} {a.counts[kind]:>11,}  {100 * a.counts[kind] / a.size:5.1f}%")
+    for name in a.libraries:
+        how = Counter(x.how for x in a.placements if x.library == name)
+        if how:
+            print(f"{name}: {sum(how.values()):,} sections placed ("
+                  + ", ".join(f"{how[k]:,} by {k}" for k in ("name", "reference", "content") if how[k]) + ")")
+        else:
+            print(f"{name}: no section placed")
+    for name in a.missing_libraries:
+        print(f"{name} not found: its bytes stay unknown (pass --vc6, or --lib with its folder)")
     unknown = sum(r.size for r in a.unknown)
     print(f"unknown: {unknown:,} bytes in {len(a.unknown):,} runs")
     for r in sorted(a.unknown, key=lambda r: -r.size)[:args.show]:
