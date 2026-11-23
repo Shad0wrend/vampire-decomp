@@ -583,6 +583,7 @@
 0x1000f7b0 func   ?vfunc16@C_WeaponIGeneric@@UAEHXZ C_WeaponIGeneric::vfunc16
 0x1000f7c0 func   ?vfunc15@C_WeaponIGeneric@@UAEHXZ C_WeaponIGeneric::vfunc15
 0x1000f7d0 func   ?sub_1000f7d0@@YAHXZ sub_1000f7d0
+0x1000f830 func   ?_C_WeaponIGeneric_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponIGeneric_CreateObject
 0x1000f8f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIGeneric@@@Z ClientClassInit
 0x1000f980 func   ?vfunc17@C_WeaponLockpick@@UAEHXZ C_WeaponLockpick::vfunc17
 0x1000fa10 func   ??_GC_WeaponLockpick@@UAEPAXI@Z ??_GC_WeaponLockpick@@UAEPAXI@Z
