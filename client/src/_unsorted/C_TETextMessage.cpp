@@ -6,7 +6,7 @@
 
 // VC6 writes C_TETextMessage's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TETextMessage *pcd_emit_1003fbc0() { return new C_TETextMessage; }
+C_TETextMessage *pcd_emit_1003fbc0(const C_TETextMessage &other) { return new C_TETextMessage(other); }
 
 // TARGET: ??_GC_TETextMessage@@UAEPAXI@Z
 // END FUNCTION
