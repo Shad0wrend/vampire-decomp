@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEBloodSprite's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEBloodSprite *pcd_emit_100341e0() { return new C_TEBloodSprite; }
+C_TEBloodSprite *pcd_emit_100341e0(const C_TEBloodSprite &other) { return new C_TEBloodSprite(other); }
 
 // TARGET: ??_GC_TEBloodSprite@@UAEPAXI@Z
 // END FUNCTION
