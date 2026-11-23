@@ -450,6 +450,7 @@
 0x1000c830 func   ?vfunc16@C_WeaponMelee_ZombieFists@@UAEHXZ C_WeaponMelee_ZombieFists::vfunc16
 0x1000c840 func   ?vfunc15@C_WeaponMelee_ZombieFists@@UAEHXZ C_WeaponMelee_ZombieFists::vfunc15
 0x1000c850 func   ?sub_1000c850@@YAHXZ sub_1000c850
+0x1000c8b0 func   ?_C_WeaponMelee_ZombieFists_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_WeaponMelee_ZombieFists_CreateObject
 0x1000c970 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_ZombieFists@@@Z ClientClassInit
 0x1000ca00 func   ?vfunc17@C_WeaponRanged_MingXiao_Spit@@UAEHXZ C_WeaponRanged_MingXiao_Spit::vfunc17
 0x1000ca90 func   ??_GC_WeaponRanged_MingXiao_Spit@@UAEPAXI@Z ??_GC_WeaponRanged_MingXiao_Spit@@UAEPAXI@Z
