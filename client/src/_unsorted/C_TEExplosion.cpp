@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEExplosion's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEExplosion *pcd_emit_10036a40() { return new C_TEExplosion; }
+C_TEExplosion *pcd_emit_10036a40(const C_TEExplosion &other) { return new C_TEExplosion(other); }
 
 // TARGET: ??_GC_TEExplosion@@UAEPAXI@Z
 // END FUNCTION
