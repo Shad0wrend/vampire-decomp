@@ -10611,6 +10611,20 @@ int sub_100275b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027610 size=0x39
+#include "C_WeaponRanged_FlameThrower.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_FlameThrower; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_FlameThrower_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_FlameThrower *pRet = new C_WeaponRanged_FlameThrower;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100276b0 size=0xea
 #include "RecvTable.h"
 extern RecvTable g_102ea138;
