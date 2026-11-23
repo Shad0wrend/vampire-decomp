@@ -6473,6 +6473,20 @@ int sub_100192d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019330 size=0x5a
+#include "C_ItemGLillyPurse.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGLillyPurse; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGLillyPurse_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGLillyPurse *pRet = new C_ItemGLillyPurse;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100193f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7588;
