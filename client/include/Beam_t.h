@@ -6,4 +6,8 @@
 class Beam_t : public CDefaultClientRenderable
 {
 public:
+	Beam_t();
+	void sub_10192db0();
+	int m_unk8[(0x104 - 8) / 4];
+	struct BeamFill { int m_a[10]; BeamFill() { for (int i = 0; i < 10; i++) m_a[i] = -1; } } m_fill;
 };
