@@ -3741,6 +3741,20 @@ int sub_1000fcd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000fd30 size=0x5a
+#include "C_WeaponUnarmed.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponUnarmed; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponUnarmed_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponUnarmed *pRet = new C_WeaponUnarmed;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000fdf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5048;
