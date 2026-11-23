@@ -5213,6 +5213,20 @@ int sub_10014cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10014d30 size=0x5a
+#include "C_BlueBloodPack.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BlueBloodPack; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BlueBloodPack_CreateObject(int entnum, int serialNum)
+{
+	C_BlueBloodPack *pRet = new C_BlueBloodPack;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10014df0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e145c;
