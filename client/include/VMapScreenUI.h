@@ -5,6 +5,8 @@
 #include "CHudElement.h"
 #include "CBasePanel.h"
 
+class VMapBkg { public: VMapBkg(CBasePanel *p, const char *name, void *d, int z); void sub_101aa230(void *); char m_data[0xf0]; };
+
 class VMapScreenUI : public CHudElement, public CBasePanel
 {
 public:
