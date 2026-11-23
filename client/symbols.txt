@@ -3624,6 +3624,7 @@
 0x100c8c80 func   ??_GCVGuiScreenPanel@@UAEPAXI@Z ??_GCVGuiScreenPanel@@UAEPAXI@Z
 0x100c8ca0 func   ?sub_100c8ca0@CUnknown100c8ca0@@QAEPAXHHH@Z CUnknown100c8ca0::sub_100c8ca0
 0x100c8e30 func   ?sub_100c8e30@@YAHXZ sub_100c8e30
+0x100c8e90 func   ?_C_VGuiScreen_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_VGuiScreen_CreateObject
 0x100c8f30 func   ?ClientClassInit@@YAHPAUignored@DT_VGuiScreen@@@Z ClientClassInit
 0x100c9160 func   ?sub_100c9160@CUnknown100c9160@@QAEHH@Z CUnknown100c9160::sub_100c9160
 0x100c92f0 func   ?sub_100c92f0@CUnknown100c92f0@@QAEHXZ CUnknown100c92f0::sub_100c92f0
