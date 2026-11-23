@@ -175,6 +175,60 @@ void C_BasePlayer::vfunc169(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8920 size=0x100
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+#include "CBaseHandle.h"
+#include "CBaseEntityList.h"
+#include "utlvector.h"
+
+extern CBaseEntityList *g_102b8e98;
+extern CUtlVector<CBaseHandle> g_1049d8f8;
+extern CUtlVector<CBaseHandle> g_1049d978;
+
+void sub_10186e20(C_BasePlayer *, int);
+
+inline IHandleEntity *CBaseHandle::Get() const
+{
+	if (!IsValid())
+		return 0;
+	const CBaseEntityListEntry *pInfo = &g_102b8e98->m_EntPtrArray[GetEntryIndex()];
+	if (pInfo->m_SerialNumber != GetSerialNumber())
+		return 0;
+	return (IHandleEntity *)pInfo->m_pEntity;
+}
+
+C_BaseCombatWeapon *C_BasePlayer::vfunc165(int slot, int pos)
+{
+	CUtlVector<CBaseHandle> *pList = &g_1049d8f8;
+	if (*(int *)((char *)this + 0x1624) != 0)
+		pList = &g_1049d978;
+
+	if (pos >= 7 || slot >= 6)
+		return 0;
+
+	int bestPos = 7;
+	C_BaseCombatWeapon *pBest = 0;
+
+	for (int i = 0; i < pList->Count(); i++)
+	{
+		C_BaseCombatWeapon *pWeapon = (C_BaseCombatWeapon *)(*pList)[i].Get();
+		if (!pWeapon)
+			continue;
+		if (!pWeapon->vfunc176())
+			continue;
+		if (pWeapon->vfunc220() == slot && pWeapon->vfunc221() <= bestPos && pWeapon->vfunc221() >= pos)
+		{
+			bestPos = pWeapon->vfunc221();
+			pBest = pWeapon;
+		}
+	}
+
+	sub_10186e20(this, 0);
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a99b0 size=0x1e
 #include "C_BasePlayer.h"
 namespace lifted {
