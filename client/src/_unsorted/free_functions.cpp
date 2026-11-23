@@ -4615,6 +4615,20 @@ int sub_10012c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10012cb0 size=0x5a
+#include "C_OccultLockpicking.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultLockpicking; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultLockpicking_CreateObject(int entnum, int serialNum)
+{
+	C_OccultLockpicking *pRet = new C_OccultLockpicking;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012d70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5e50;
