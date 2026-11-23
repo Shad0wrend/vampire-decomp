@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10040d00 size=0x33
+#include "C_TEUserTracer.h"
+C_TEUserTracer::C_TEUserTracer()
+{
+	m_vecOrigin.Init(); m_vecEnd.Init(); m_unk28 = 0; m_unk2c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040d40 size=0x1e
 #include "C_TEUserTracer.h"
 
