@@ -7255,6 +7255,20 @@ int sub_1001bd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001bdb0 size=0x5a
+#include "C_ItemGBrotherhoodFlyer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBrotherhoodFlyer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBrotherhoodFlyer_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBrotherhoodFlyer *pRet = new C_ItemGBrotherhoodFlyer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001be70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e520c;
