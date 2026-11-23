@@ -10383,6 +10383,20 @@ int sub_10026750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100267b0 size=0x5a
+#include "C_ItemKSkylineHavenKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKSkylineHavenKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKSkylineHavenKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKSkylineHavenKey *pRet = new C_ItemKSkylineHavenKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0ca4;
