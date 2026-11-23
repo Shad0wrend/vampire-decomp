@@ -5,7 +5,12 @@
 
 class C_TEParticleSystem : public C_BaseTempEntity
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+	C_TEParticleSystem();
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with C_TEParticleSystem's own function
     virtual int vfunc8();
     virtual int vfunc9();
