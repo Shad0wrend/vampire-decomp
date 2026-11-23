@@ -8911,6 +8911,20 @@ int sub_10021750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100217b0 size=0x5a
+#include "C_ItemKOceanHouseBasementKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKOceanHouseBasementKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKOceanHouseBasementKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKOceanHouseBasementKey *pRet = new C_ItemKOceanHouseBasementKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10021870 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e59c0;
