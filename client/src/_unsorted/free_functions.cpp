@@ -33390,6 +33390,20 @@ int sub_100bce50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bceb0 size=0x39
+#include "C_PlayerResource.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PlayerResource; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PlayerResource_CreateObject(int entnum, int serialNum)
+{
+	C_PlayerResource *pRet = new C_PlayerResource;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bcf50 size=0x2a0
 #include "RecvTable.h"
 extern RecvTable g_104a33b4;
