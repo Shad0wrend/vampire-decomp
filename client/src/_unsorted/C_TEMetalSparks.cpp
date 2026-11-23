@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEMetalSparks's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEMetalSparks *pcd_emit_100321c0() { return new C_TEMetalSparks; }
+C_TEMetalSparks *pcd_emit_100321c0(const C_TEMetalSparks &other) { return new C_TEMetalSparks(other); }
 
 // TARGET: ??_GC_TEMetalSparks@@UAEPAXI@Z
 // END FUNCTION
