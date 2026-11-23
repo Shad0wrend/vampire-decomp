@@ -16,7 +16,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc112();
 	virtual void vfunc113();
 	// the slots CCredits adds to its base's vtable: 114-115, vfuncK at slot K
-	virtual void vfunc114();
+	bool sub_1004e220(const char *);
+	virtual void vfunc114(const char *);
 	virtual void vfunc115();
 	char m_pad0008[0x1c4 - 0x8];
 };
