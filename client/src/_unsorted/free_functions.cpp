@@ -9371,6 +9371,20 @@ int sub_10023050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100230b0 size=0x5a
+#include "C_ItemKMuseumStoreroomKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKMuseumStoreroomKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKMuseumStoreroomKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKMuseumStoreroomKey *pRet = new C_ItemKMuseumStoreroomKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10023170 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e71a4;
