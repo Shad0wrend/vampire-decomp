@@ -6289,6 +6289,20 @@ int sub_100188d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10018930 size=0x5a
+#include "C_ItemGWatchNormal.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWatchNormal; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWatchNormal_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWatchNormal *pRet = new C_ItemGWatchNormal;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100189f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e3138;
