@@ -242,6 +242,7 @@ class Verifier:
         self.stubs = 0
         self.ilt = ilt_stubs(self.orig)
         self.game_xcu = self._game_xcu()
+        self.claims: list[tuple[int, int, str, str]] = []
 
     @classmethod
     def for_objects(cls, orig, addresses: dict[str, int], aliases: dict[str, str], blocks: list[Block],
@@ -255,7 +256,14 @@ class Verifier:
         v.block_addresses = {b.addr for b in blocks}
         v.patched, v.known, v.fixed, v.stubs, v.ilt = {}, [], set(), 0, ilt
         v.game_xcu = v._game_xcu()
+        v.claims = []
         return v
+
+    def claim(self, addr: int, size: int, kind: str, owner: str) -> None:
+        """Record that the game's bytes [addr, addr + size) were compared with `owner`'s (tools.ownership reads the
+        claims): kind is code / fill / data / vtable / initializer table."""
+        if size > 0:
+            self.claims.append((addr, size, kind, owner))
 
     # --- addresses ---------------------------------------------------------------------------------------------
     def lookup(self, name: str) -> int | None:
@@ -325,8 +333,9 @@ class Verifier:
             section = obj.sections[sym.section_number]
             data = section.data[sym.value:]
             n = len(data) if size is None else size
+            fill = b""
             if len(data) > n and all(b in FILL for b in data[n:]):
-                data = data[:n]  # the game's recorded size leaves the alignment fill out
+                data, fill = data[:n], data[n:]  # the game's recorded size leaves the alignment fill out
             if len(data) != n:
                 problems.append((addr, min(len(data), n), f"the object's code is {len(data)} bytes, the game's {n}"))
                 n = min(len(data), n)
@@ -335,6 +344,12 @@ class Verifier:
             except ValueError:
                 problems.append((addr, 0, "outside the original's sections"))
                 continue
+            self.claim(addr, n, "code", f"{obj.name}:{sym.name}")
+            try:
+                if fill and self.orig.read(addr + n, len(fill)) == fill:
+                    self.claim(addr + n, len(fill), "fill", f"{obj.name}:{sym.name}")
+            except ValueError:
+                pass
             at = self.map.address(sym.name, obj.name) if self.map is not None else None
             try:
                 built = self.built.read(at, n) if at is not None else data[:n]
@@ -487,6 +502,7 @@ class Verifier:
                 except ValueError:
                     problems.append((addr, 0, f"{sym.name}: outside the original's sections"))
                     continue
+                self.claim(addr, size, "data", f"{obj.name}:{sym.name}")
                 first = next((i for i in range(size) if i not in masked and ours[i] != game[i]), None)
                 if first is not None:
                     problems.append((addr, first, f"{sym.name}: byte 0x{ours[first]:02x}, the game's "
@@ -508,6 +524,10 @@ class Verifier:
                                       else "not in the build's map"))
                 continue
             report.slots["vtables"] += 1
+            self.claim(game_vt, end - sym.value, "vtable", f"{obj.name}:{sym.name}")
+            for r in section.relocations:  # the words before the vtable: its RTTI locator (/GR)
+                if r.offset + 4 <= sym.value and not self._data_word(obj, section, r, game_vt - sym.value + r.offset):
+                    self.claim(game_vt - sym.value + r.offset, 4, "vtable", f"{obj.name}:{sym.name}")
             for r in sorted(section.relocations, key=lambda r: r.offset):
                 if not sym.value <= r.offset < end:
                     continue
@@ -598,6 +618,7 @@ class Verifier:
             game = self.orig.read(addr - prefix, end - start)
         except ValueError:
             return f"{label}: outside the original's sections"
+        self.claim(addr - prefix, end - start, "data", f"{obj.name}:{label}")
         masked = {i for r in section.relocations if start <= r.offset < end
                   for i in range(r.offset - start, r.offset - start + 4)}
         first = next((i for i in range(end - start) if i not in masked and ours[i] != game[i]), None)
@@ -674,6 +695,10 @@ class Verifier:
         return [self.follow(w) for w in self._table(self.orig, lo, hi)]
 
     def check_tables(self, report: Report, out: list[Difference]) -> None:
+        values = self.values.get("verify", {})
+        game_lo, game_hi = values.get("xc_a", self.lookup("___xc_a")), values.get("xc_z", self.lookup("___xc_z"))
+        if self.game_xcu is not None:
+            self.claim(game_lo, game_hi + 4 - game_lo, "initializer table", "___xc_a..___xc_z")
         lo, hi = self.map.publics.get("___xc_a"), self.map.publics.get("___xc_z")
         if self.game_xcu is not None and lo is not None and hi is not None:
             report.xcu = len(self.game_xcu)
