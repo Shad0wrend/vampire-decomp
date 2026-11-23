@@ -67364,6 +67364,22 @@ int sub_10170f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171400 size=0x28
+namespace lifted {
+extern int g_105fb14c;
+struct C10170f60 { int sub_10170f60(); };
+struct C10180c40 { int sub_10180c40(int, int); };
+}
+void sub_10171400()
+{
+    if (lifted::g_105fb14c != 0) {
+        if ((*(int *)((char *)lifted::g_105fb14c + 0x274)) != 0) {
+            ((lifted::C10180c40 *)(*(int *)((char *)(((lifted::C10170f60 *)(*(int *)((char *)lifted::g_105fb14c + 0x274)))->sub_10170f60()) + 0xedc)))->sub_10180c40(-1, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172ac0 size=0x3
 char sub_10172ac0()
 {
