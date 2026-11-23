@@ -6266,6 +6266,7 @@
 0x101b6e50 func   ?vfunc147@PropertyDialog@vgui2@@UAEHXZ vgui2::PropertyDialog::vfunc147
 0x101b6e60 func   ?vfunc146@PropertyDialog@vgui2@@UAEHHH@Z vgui2::PropertyDialog::vfunc146
 0x101b6e80 func   ?vfunc148@PropertyDialog@vgui2@@UAEHXZ vgui2::PropertyDialog::vfunc148
+0x101b7040 func   ?vfunc78@PropertyDialog@vgui2@@UAEXH@Z vgui2::PropertyDialog::vfunc78
 0x101b7130 func   ?sub_101b7130@CUnknown101b7130@@QAEHXZ CUnknown101b7130::sub_101b7130
 0x101b7140 func   ?sub_101b7140@CUnknown101b7140@@QAEHXZ CUnknown101b7140::sub_101b7140
 0x101b7150 func   ?vfunc149@PropertyDialog@vgui2@@UAEHM@Z vgui2::PropertyDialog::vfunc149
