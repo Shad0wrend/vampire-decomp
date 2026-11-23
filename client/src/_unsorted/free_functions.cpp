@@ -4937,6 +4937,20 @@ int sub_10013dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10013e30 size=0x5a
+#include "C_OccultDodge.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_OccultDodge; its ClientClass's initializer stores its address
+IClientNetworkable *_C_OccultDodge_CreateObject(int entnum, int serialNum)
+{
+	C_OccultDodge *pRet = new C_OccultDodge;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10013ef0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e6e00;
