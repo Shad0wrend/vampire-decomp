@@ -67740,6 +67740,18 @@ void sub_101746d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174b20 size=0x2b
+namespace lifted {
+struct C101a9950 { int sub_101a9950(int, int, int, int); };
+}
+struct CUnknown10174b20 { int sub_10174b20(); };
+int CUnknown10174b20::sub_10174b20()
+{
+    ((lifted::C101a9950 *)((char *)this + 0x180))->sub_101a9950(0, 0, 0, 0);
+    return ((lifted::C101a9950 *)((char *)this + 0x238))->sub_101a9950(0, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174c00 size=0x29
 namespace lifted {
 struct C10174d50 { int sub_10174d50(); };

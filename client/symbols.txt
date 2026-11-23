@@ -5608,6 +5608,7 @@
 0x101746d0 func   ?sub_101746d0@@YAXXZ sub_101746d0
 0x10174950 func   ??_GVCharWizardUI@@UAEPAXI@Z ??_GVCharWizardUI@@UAEPAXI@Z
 0x10174970 func   ??1VCharWizardUI@@UAE@XZ VCharWizardUI::~VCharWizardUI
+0x10174b20 func   ?sub_10174b20@CUnknown10174b20@@QAEHXZ CUnknown10174b20::sub_10174b20
 0x10174c00 func   ?sub_10174c00@CUnknown10174c00@@QAEHH@Z CUnknown10174c00::sub_10174c00
 0x10174c40 func   ?sub_10174c40@@YAXXZ sub_10174c40
 0x10174d40 func   ?sub_10174d40@@YADXZ sub_10174d40
