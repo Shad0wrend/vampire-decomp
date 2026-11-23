@@ -36,6 +36,23 @@ void CharEditInfoPanel::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c600 size=0x28
+#include "CharEditInfoPanel.h"
+namespace lifted {
+struct C1017c650 { int sub_1017c650(); };
+struct C1017c660 { int sub_1017c660(); };
+struct C101a99f0 { int sub_101a99f0(int); };
+}
+int CharEditInfoPanel::vfunc21(int a0)
+{
+    int t0 = ((lifted::C101a99f0 *)this)->sub_101a99f0(a0);
+    if (((char)a0) != 0) {
+        return ((lifted::C1017c660 *)this)->sub_1017c660();
+    }
+    return ((lifted::C1017c650 *)this)->sub_1017c650();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c640 size=0xe
 #include "CharEditInfoPanel.h"
 namespace lifted {

@@ -5670,6 +5670,7 @@
 0x1017c550 func   ?sub_1017c550@@YGXH@Z sub_1017c550
 0x1017c560 func   ?vfunc119@CharEditInfoPanel@@UAEXXZ CharEditInfoPanel::vfunc119
 0x1017c570 func   ?sub_1017c570@@YAXXZ sub_1017c570
+0x1017c600 func   ?vfunc21@CharEditInfoPanel@@UAEHH@Z CharEditInfoPanel::vfunc21
 0x1017c640 func   ?vfunc3@CharEditInfoPanel@@UAEXXZ CharEditInfoPanel::vfunc3
 0x1017c650 func   ?sub_1017c650@@YAXXZ sub_1017c650
 0x1017c660 func   ?sub_1017c660@CUnknown1017c660@@QAEHXZ CUnknown1017c660::sub_1017c660
