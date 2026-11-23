@@ -11,6 +11,14 @@ C_BaseCombatCharacter *pcd_emit_10097ec0() { return new C_BaseCombatCharacter; }
 // TARGET: ??_GC_BaseCombatCharacter@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10097ee0 size=0x27
+#include "C_BaseCombatCharacter.h"
+// TARGET: ??1C_BaseCombatCharacter@@UAE@XZ
+C_BaseCombatCharacter::~C_BaseCombatCharacter()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100981d0 size=0x6
 #include "C_BaseCombatCharacter.h"
 namespace lifted {
