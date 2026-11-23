@@ -62157,6 +62157,45 @@ int CUnknown1014d9b0::sub_1014d9b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014da00 size=0x86
+#include "CVStatList_t.h"
+
+struct CStatOwner_1014da00
+{
+	char m_pad0000[0x1178];
+	int m_nLists;
+	CVStatList_t **m_pLists;
+
+	CVStatList_t *FindStatList(int type)
+	{
+		for (int i = 0; i < m_nLists; i++)
+		{
+			if (m_pLists[i]->m_field10 == type)
+				return m_pLists[i];
+		}
+		static CVStatList_t s_default(-1);
+		return &s_default;
+	}
+};
+
+struct CUnknown1014da00
+{
+	char m_pad0000[0x374];
+	int m_arr374[1];
+
+	int sub_1014da00(CStatOwner_1014da00 *pOwner);
+};
+
+// TARGET: CUnknown1014da00::sub_1014da00
+int CUnknown1014da00::sub_1014da00(CStatOwner_1014da00 *pOwner)
+{
+	int val = pOwner->FindStatList(3)->sub_1015dbd0(8);
+	if (val > 0)
+		return m_arr374[val];
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014da90 size=0x7
 struct CUnknown1014da90 { float sub_1014da90(); };
 float CUnknown1014da90::sub_1014da90()
