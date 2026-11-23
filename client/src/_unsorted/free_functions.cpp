@@ -8360,6 +8360,31 @@ template <> int ClientClassInit<DT_BatSwarm::ignored>(DT_BatSwarm::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a9c0 size=0x70
+namespace lifted {
+struct C1002aa30 { bool sub_1002aa30(); };
+struct C100919c0 { int sub_100919c0(int, int, int, int, int); };
+struct C100922c0 { int sub_100922c0(); };
+}
+struct CUnknown1002a9c0 { char sub_1002a9c0(int, int, int, int, int); };
+char CUnknown1002a9c0::sub_1002a9c0(int a0, int a1, int a2, int a3, int a4)
+{
+    if ((*(int *)((char *)this + 0xaac)) >= 0) {
+        if ((*(int *)((char *)this + 0xaac)) < 0x20) {
+            bool t0 = ((lifted::C1002aa30 *)((char *)this + -4))->sub_1002aa30();
+            if (t0 != 0) {
+                if ((*(int *)((char *)this + 0xaac)) != (*(int *)((char *)this + 0xab0))) {
+                    int t1 = ((lifted::C100922c0 *)((char *)this + -4))->sub_100922c0();
+                    *(int *)((char *)this + 0xab0) = *(int *)((char *)this + 0xaac);
+                }
+                return (char)(((lifted::C100919c0 *)this)->sub_100919c0(a0, a1, a2, a3, a4));
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b340 size=0x4b
 namespace lifted {
 struct C1002aa30 { int sub_1002aa30(); };
