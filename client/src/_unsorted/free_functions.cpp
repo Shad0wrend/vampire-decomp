@@ -9647,6 +9647,20 @@ int sub_10023f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10023fb0 size=0x5a
+#include "C_ItemKCarsonApartmentKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKCarsonApartmentKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKCarsonApartmentKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKCarsonApartmentKey *pRet = new C_ItemKCarsonApartmentKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024070 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e0cbc;
