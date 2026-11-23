@@ -5783,6 +5783,20 @@ int sub_10016d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10016db0 size=0x5a
+#include "C_ItemGDrugsMorphineBottle.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGDrugsMorphineBottle; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGDrugsMorphineBottle_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGDrugsMorphineBottle *pRet = new C_ItemGDrugsMorphineBottle;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10016e70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e02a0;
