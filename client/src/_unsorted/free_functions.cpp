@@ -3419,6 +3419,20 @@ int sub_1000eb50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000ebb0 size=0x5a
+#include "C_WeaponRanged_Rifle_SteyrAug.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponRanged_Rifle_SteyrAug; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponRanged_Rifle_SteyrAug_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponRanged_Rifle_SteyrAug *pRet = new C_WeaponRanged_Rifle_SteyrAug;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000ec70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e2794;
