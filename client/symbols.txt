@@ -1150,6 +1150,7 @@
 0x1001c230 func   ?vfunc16@C_ItemGPishaBook@@UAEHXZ C_ItemGPishaBook::vfunc16
 0x1001c240 func   ?vfunc15@C_ItemGPishaBook@@UAEHXZ C_ItemGPishaBook::vfunc15
 0x1001c250 func   ?sub_1001c250@@YAHXZ sub_1001c250
+0x1001c2b0 func   ?_C_ItemGPishaBook_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGPishaBook_CreateObject
 0x1001c370 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGPishaBook@@@Z ClientClassInit
 0x1001c400 func   ?vfunc17@C_ItemGBadluckTalisman@@UAEHXZ C_ItemGBadluckTalisman::vfunc17
 0x1001c490 func   ??_GC_ItemGBadluckTalisman@@UAEPAXI@Z ??_GC_ItemGBadluckTalisman@@UAEPAXI@Z
