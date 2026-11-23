@@ -933,6 +933,7 @@
 0x100174b0 func   ?vfunc16@C_ItemGDrugsDrugBox@@UAEHXZ C_ItemGDrugsDrugBox::vfunc16
 0x100174c0 func   ?vfunc15@C_ItemGDrugsDrugBox@@UAEHXZ C_ItemGDrugsDrugBox::vfunc15
 0x100174d0 func   ?sub_100174d0@@YAHXZ sub_100174d0
+0x10017530 func   ?_C_ItemGDrugsDrugBox_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_ItemGDrugsDrugBox_CreateObject
 0x100175f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGDrugsDrugBox@@@Z ClientClassInit
 0x10017680 func   ?vfunc17@C_ItemGAstrolite@@UAEHXZ C_ItemGAstrolite::vfunc17
 0x10017710 func   ??_GC_ItemGAstrolite@@UAEPAXI@Z ??_GC_ItemGAstrolite@@UAEPAXI@Z
