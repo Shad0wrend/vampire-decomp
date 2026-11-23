@@ -166,6 +166,7 @@
 0x10005e90 func   ?vfunc16@C_PointCamera@@UAEHXZ C_PointCamera::vfunc16
 0x10005ea0 func   ?vfunc15@C_PointCamera@@UAEHXZ C_PointCamera::vfunc15
 0x10005eb0 func   ?sub_10005eb0@@YAHXZ sub_10005eb0
+0x10005f10 func   ?_C_PointCamera_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_PointCamera_CreateObject
 0x10005fb0 func   ?ClientClassInit@@YAHPAUignored@DT_PointCamera@@@Z ClientClassInit
 0x10006090 func   ?sub_10006090@CUnknown10006090@@QAEPAXXZ CUnknown10006090::sub_10006090
 0x100060d0 func   ??_GC_PointCamera@@UAEPAXI@Z ??_GC_PointCamera@@UAEPAXI@Z
