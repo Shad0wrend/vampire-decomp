@@ -247,6 +247,20 @@ int sub_10002900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002960 size=0x39
+#include "C_BaseHLPlayer.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_BaseHLPlayer; its ClientClass's initializer stores its address
+IClientNetworkable *_C_BaseHLPlayer_CreateObject(int entnum, int serialNum)
+{
+	C_BaseHLPlayer *pRet = new C_BaseHLPlayer;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002a00 size=0x95
 #include "RecvTable.h"
 extern RecvTable g_102de694;
