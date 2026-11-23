@@ -41816,6 +41816,24 @@ int CUnknown10119600::sub_10119600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119730 size=0x35
+namespace lifted {
+struct C1011be90 { int sub_1011be90(int); };
+}
+int __stdcall sub_10119730(int a0, int a1)
+{
+    int t0 = ((lifted::C1011be90 *)a0)->sub_1011be90(a1);
+    if (t0 != 0) {
+        *(int *)((char *)t0 + 4) = -1;
+    }
+    int t1 = ((lifted::C1011be90 *)a1)->sub_1011be90(a0);
+    if (t1 != 0) {
+        *(int *)((char *)t1 + 4) = -1;
+    }
+    return t1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119d90 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>
