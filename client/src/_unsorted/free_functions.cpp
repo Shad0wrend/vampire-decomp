@@ -9877,6 +9877,20 @@ int sub_10024bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10024c30 size=0x5a
+#include "C_ItemKShrekHubOneKey.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemKShrekHubOneKey; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemKShrekHubOneKey_CreateObject(int entnum, int serialNum)
+{
+	C_ItemKShrekHubOneKey *pRet = new C_ItemKShrekHubOneKey;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10024cf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4f88;
