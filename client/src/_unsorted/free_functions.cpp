@@ -27357,6 +27357,23 @@ int CUnknown100a2fc0::sub_100a2fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2fd0 size=0x1d
+namespace lifted {
+struct C100a31e0 { int sub_100a31e0(int); };
+struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual int f17(); };
+}
+struct CUnknown100a2fd0 { void sub_100a2fd0(); };
+void CUnknown100a2fd0::sub_100a2fd0()
+{
+    int t0 = ((lifted::V *)this)->f17();
+    if (t0 != 0) {
+        if ((*(char *)((char *)t0 + 0x11)) == 0) {
+            ((lifted::C100a31e0 *)this)->sub_100a31e0(t0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2ff0 size=0x1e
 namespace lifted {
 int sub_100a2fd0();
