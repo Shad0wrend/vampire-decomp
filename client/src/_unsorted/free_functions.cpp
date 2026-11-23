@@ -5521,6 +5521,20 @@ int sub_10015e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10015eb0 size=0x5a
+#include "C_WeaponIArmor_Body_Armor.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponIArmor_Body_Armor; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponIArmor_Body_Armor_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponIArmor_Body_Armor *pRet = new C_WeaponIArmor_Body_Armor;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10015f70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e19e8;
