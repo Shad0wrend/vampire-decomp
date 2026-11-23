@@ -7393,6 +7393,20 @@ int sub_1001c4d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001c530 size=0x5a
+#include "C_ItemGBadluckTalisman.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGBadluckTalisman; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGBadluckTalisman_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGBadluckTalisman *pRet = new C_ItemGBadluckTalisman;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001c5f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e7628;
