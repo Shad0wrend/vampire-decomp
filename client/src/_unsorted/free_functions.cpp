@@ -7209,6 +7209,20 @@ int sub_1001bad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001bb30 size=0x5a
+#include "C_ItemGGuyMagazine.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGGuyMagazine; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGGuyMagazine_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGGuyMagazine *pRet = new C_ItemGGuyMagazine;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001bbf0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e5298;
