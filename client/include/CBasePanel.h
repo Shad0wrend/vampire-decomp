@@ -7,6 +7,7 @@
 class CBasePanel : public vgui2::Panel
 {
 public:
+	CBasePanel(int a, int b);
 	virtual ~CBasePanel();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CBasePanel's own function
