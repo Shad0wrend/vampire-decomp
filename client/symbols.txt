@@ -4273,6 +4273,7 @@
 0x10124780 func   ?sub_10124780@CUnknown10124780@@QAEHHH@Z CUnknown10124780::sub_10124780
 0x101247f0 func   ?sub_101247f0@CUnknown101247f0@@QAEHH@Z CUnknown101247f0::sub_101247f0
 0x10124870 func   ?sub_10124870@CUnknown10124870@@QAEHHH@Z CUnknown10124870::sub_10124870
+0x10124c00 func   ?sub_10124c00@@YAHXZ sub_10124c00
 0x10124c30 func   ??_GCPlayerProximityProxy@@UAEPAXI@Z ??_GCPlayerProximityProxy@@UAEPAXI@Z
 0x10124da0 func   ??_GCPlayerViewProxy@@UAEPAXI@Z ??_GCPlayerViewProxy@@UAEPAXI@Z
 0x10124eb0 func   ??_GCPlayerSpeedProxy@@UAEPAXI@Z ??_GCPlayerSpeedProxy@@UAEPAXI@Z
