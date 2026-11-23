@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10040920 size=0x2d
+#include "C_TETracer.h"
+C_TETracer::C_TETracer()
+{
+	m_vecStart.Init(0, 0, 0);
+	m_vecEnd.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040af0 size=0x6
 #include "C_TETracer.h"
 namespace lifted {
