@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100372e0 size=0x2d
+#include "C_TEFogRipple.h"
+C_TEFogRipple::C_TEFogRipple()
+{
+	m_vecStart.Init(0, 0, 0);
+	m_vecEnd.Init(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037310 size=0x1e
 #include "C_TEFogRipple.h"
 
