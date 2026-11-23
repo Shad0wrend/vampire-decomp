@@ -10,6 +10,11 @@ class VMapBkg { public: VMapBkg(CBasePanel *p, const char *name, void *d, int z)
 class VMapScreenUI : public CHudElement, public CBasePanel
 {
 public:
+	VMapScreenUI(int a);
+	char m_b180;
+	int m_n184;
+	VMapBkg m_bkg;
+	char m_b278;
 	virtual ~VMapScreenUI();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

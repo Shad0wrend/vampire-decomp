@@ -8,6 +8,7 @@ class CHudElement
 {
 public:
 	bool sub_100f05b0();
+	CHudElement(int a);
 	int m_unk4;
 	int m_unk8;
 	int m_unkc;
