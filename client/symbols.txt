@@ -3464,6 +3464,7 @@
 0x100bc2c0 func   ?sub_100bc2c0@CUnknown100bc2c0@@QAEPAXHH@Z CUnknown100bc2c0::sub_100bc2c0
 0x100bc2f0 func   ??_GCHudEntityElement@@UAEPAXI@Z ??_GCHudEntityElement@@UAEPAXI@Z
 0x100bc330 func   ?sub_100bc330@@YAHXZ sub_100bc330
+0x100bc390 func   ?_C_HudEntity_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_HudEntity_CreateObject
 0x100bc4b0 func   ?ClientClassInit@@YAHPAUignored@DT_HudEntity@@@Z ClientClassInit
 0x100bc660 func   ?sub_100bc660@CUnknown100bc660@@QAEXXZ CUnknown100bc660::sub_100bc660
 0x100bc680 func   ?sub_100bc680@@YGHHH@Z sub_100bc680
