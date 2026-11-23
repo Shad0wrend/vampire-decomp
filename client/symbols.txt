@@ -3597,6 +3597,7 @@
 0x100c6890 func   ?vfunc16@C_BaseTerminal@@UAEHXZ C_BaseTerminal::vfunc16
 0x100c68a0 func   ?vfunc15@C_BaseTerminal@@UAEHXZ C_BaseTerminal::vfunc15
 0x100c68b0 func   ?sub_100c68b0@@YAHXZ sub_100c68b0
+0x100c6910 func   ?_C_BaseTerminal_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseTerminal_CreateObject
 0x100c69b0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseTerminal@@@Z ClientClassInit
 0x100c6b10 func   ?sub_100c6b10@@YAXHH@Z sub_100c6b10
 0x100c6bf0 func   ??_GC_BaseTerminal@@UAEPAXI@Z ??_GC_BaseTerminal@@UAEPAXI@Z
