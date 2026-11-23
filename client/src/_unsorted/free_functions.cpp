@@ -4431,6 +4431,20 @@ int sub_10012250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100122b0 size=0x5a
+#include "C_ResearchBook_LG_STEALTH.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ResearchBook_LG_STEALTH; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ResearchBook_LG_STEALTH_CreateObject(int entnum, int serialNum)
+{
+	C_ResearchBook_LG_STEALTH *pRet = new C_ResearchBook_LG_STEALTH;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10012370 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102dfffc;
