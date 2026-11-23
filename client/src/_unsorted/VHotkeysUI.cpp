@@ -1,6 +1,41 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10182610 size=0xdf
+#include "VHotkeysUI.h"
+class IVScheme { public: virtual int v0(); virtual void *LoadScheme(const char *); };
+IVScheme *sub_101ac8c0();
+extern char g_102de300[];
+extern char g_105fb760;
+extern void (*g_101e3108)(const char *pMsg, ...);
+// TARGET: ??0VHotkeysUI@@QAE@H@Z
+VHotkeysUI::VHotkeysUI(int a)
+    : CBasePanel(0, a), CHudElement(a), m_Label(this, "BkgFrame", g_102de300)
+{
+	VHotkeysTail *t = Tail();
+	t->m_b1e14 = 0;
+	void *scheme = sub_101ac8c0()->LoadScheme("Resource/VampireScheme.res");
+	if (!scheme)
+		g_101e3108("Error loading '%s'\n", "Resource/VampireScheme.res");
+	CBasePanel::sub_101aa230(scheme);
+	vfunc21(0);
+	vfunc39(0);
+	m_Label.sub_101aa230(scheme);
+	vfunc54(2);
+	g_105fb760 = 1;
+	t->m_n1d44 = 0;
+	t->m_n1d48 = 0;
+	t->m_n1d40 = 0;
+	for (int i = 0; i < 10; i++) {
+		t->m_arr[i].f2 = 0;
+		t->m_arr[i].f3 = 0;
+		t->m_arr[i].f4 = 0;
+		t->m_arr[i].f0 = 0;
+		t->m_arr[i].f1 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101826f0 size=0x1e
 #include "VHotkeysUI.h"
 
