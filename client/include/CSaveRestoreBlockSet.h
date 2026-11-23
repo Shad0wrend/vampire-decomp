@@ -73,6 +73,8 @@ public:
 	void vfunc7(void *pSave, int a, int b);	// for every handler whose block name is found in the entry table (name at +0, offset at +0x24 unless -1) seeks the save/restore stream to base + offset and forwards (pSave, a, b) to the handler's slot 7; finally seeks to base + m_nSize
 	void vfunc8();	// slot 8: calls slot 8 of every handler, then empties the entry table (CUtlVector Purge)
 	void vfunc9(void *pHandler);	// AddHandler: CUtlVector::AddToTail
+	void vfunc10(void *pHandler);	// RemoveBlockHandler: CUtlVector::FindAndRemove
+	CUtlVector<void *> &Handlers() { return *(CUtlVector<void *> *)&m_pHandlers; }
 
 	// Inlined CUtlVector<void *> pieces.
 	void GrowMemory(int num)
