@@ -6,7 +6,7 @@
 
 // VC6 writes C_TEPlayerDecal's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_TEPlayerDecal *pcd_emit_1003e7a0() { return new C_TEPlayerDecal; }
+C_TEPlayerDecal *pcd_emit_1003e7a0(const C_TEPlayerDecal &other) { return new C_TEPlayerDecal(other); }
 
 // TARGET: ??_GC_TEPlayerDecal@@UAEPAXI@Z
 // END FUNCTION
