@@ -6841,6 +6841,20 @@ int sub_1001a6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001a730 size=0x5a
+#include "C_ItemGOHDiary.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGOHDiary; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGOHDiary_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGOHDiary *pRet = new C_ItemGOHDiary;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001a7f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e1568;
