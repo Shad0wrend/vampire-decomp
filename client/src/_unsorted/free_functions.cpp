@@ -6611,6 +6611,20 @@ int sub_10019a50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10019ab0 size=0x5a
+#include "C_ItemGWerewolfBlood.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_ItemGWerewolfBlood; its ClientClass's initializer stores its address
+IClientNetworkable *_C_ItemGWerewolfBlood_CreateObject(int entnum, int serialNum)
+{
+	C_ItemGWerewolfBlood *pRet = new C_ItemGWerewolfBlood;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10019b70 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102e4a84;
