@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100dfe00 size=0x28
+#include "CBaseStaticModel.h"
+CBaseStaticModel::CBaseStaticModel() : m_unk38(0), m_unk3e(0xff)
+{
+	m_unk3c = 0xffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfe50 size=0x24
 #include "CBaseStaticModel.h"
 struct CLeafView
