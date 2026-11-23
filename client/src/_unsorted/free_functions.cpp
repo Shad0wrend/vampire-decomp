@@ -32261,6 +32261,79 @@ int CUnknown100af140::sub_100af140(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b13d0 size=0xea
+#include "vector.h"
+
+struct IRenderable
+{
+	virtual void v0();
+	virtual const Vector &GetRenderOrigin();
+};
+
+struct ParticleNode
+{
+	char pad00[0x10];
+	Vector origin;
+	char pad1c[0x14];
+	float mat[3][4];
+};
+
+struct ParticleEntity2
+{
+	int vtbl0;
+	IRenderable renderable;
+	char pad08[0x428 - 0x08];
+	int field428;
+	float r;
+	float g;
+	float b;
+	float a;
+	int field43c;
+	char pad440[0x470 - 0x440];
+	ParticleNode *m_pNode;
+	char pad474[0x47c - 0x474];
+	int m_nCount;
+};
+
+struct ParticleOut
+{
+	float r;
+	float g;
+	float b;
+	float pad0c;
+	float a;
+	char pad14[0x20 - 0x14];
+	int field20;
+	int pad24;
+	int field28;
+};
+
+// TARGET: sub_100b13d0
+void __cdecl sub_100b13d0(Vector &outPos, Vector &outRight, Vector &outUp, ParticleOut *outProps, int a4, int a5, ParticleEntity2 *pEnt)
+{
+	if (pEnt->m_nCount < 1)
+	{
+		outPos = pEnt->renderable.GetRenderOrigin();
+		return;
+	}
+
+	outPos = pEnt->m_pNode->origin;
+	outRight.x = pEnt->m_pNode->mat[0][1];
+	outRight.y = pEnt->m_pNode->mat[1][1];
+	outRight.z = pEnt->m_pNode->mat[2][1];
+	outUp.x = pEnt->m_pNode->mat[0][2];
+	outUp.y = pEnt->m_pNode->mat[1][2];
+	outUp.z = pEnt->m_pNode->mat[2][2];
+
+	outProps->r = pEnt->r * 255.0f;
+	outProps->g = pEnt->g * 255.0f;
+	outProps->b = pEnt->b * 255.0f;
+	outProps->a = pEnt->a * 255.0f;
+	outProps->field28 = pEnt->field428;
+	outProps->field20 = pEnt->field43c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a40 size=0x6
 namespace lifted {
 extern char g_104a1c00;
