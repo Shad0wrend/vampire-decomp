@@ -889,6 +889,20 @@ int sub_10005eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005f10 size=0x39
+#include "C_PointCamera.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_PointCamera; its ClientClass's initializer stores its address
+IClientNetworkable *_C_PointCamera_CreateObject(int entnum, int serialNum)
+{
+	C_PointCamera *pRet = new C_PointCamera;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005fb0 size=0xcd
 #include "RecvTable.h"
 extern RecvTable g_102df2a8;
