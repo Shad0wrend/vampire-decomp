@@ -3479,6 +3479,7 @@
 0x100bca50 func   ?sub_100bca50@@YAHXZ sub_100bca50
 0x100bcab0 func   ?_C_PhysBox_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_PhysBox_CreateObject
 0x100bcb50 func   ?ClientClassInit@@YAHPAUignored@DT_PhysBox@@@Z ClientClassInit
+0x100bcc00 func   ??0C_PhysBox@@QAE@XZ C_PhysBox::C_PhysBox
 0x100bcc00 func   ?sub_100bcc00@CUnknown100bcc00@@QAEPAXXZ CUnknown100bcc00::sub_100bcc00
 0x100bcc30 func   ??_GC_PhysBox@@UAEPAXI@Z ??_GC_PhysBox@@UAEPAXI@Z
 0x100bcc70 func   ??1C_PhysBox@@UAE@XZ C_PhysBox::~C_PhysBox
