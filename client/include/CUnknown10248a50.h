@@ -29,6 +29,7 @@ public:
 		// the jump stub of sub_10247e40, as its own recursion calls it
 	void sub_101279a0(const char *pszName);	// stub 0x10013958: sets the node's name
 	void sub_10127fd0(const char **ppBuffer, int a);	// stub 0x1000a321: reads the children after a '{'
+	CUnknown10248a50 *sub_10128270(const char *pszName);
 	void sub_10127c60();	// the destructor body called through its stub (0x100046f1 for 0x10247da0), as the code that deletes a node calls it
 	CUnknown10248a50 *sub_10128350(const char *pszKeyName, bool bCreate);	// "FindKey" (stub 0x1001569a): the child node of that name, null when there is none (and not bCreate)
 	int sub_101284c0(const char *pszKeyName, int nDefault);	// "GetInt" (stub 0x1000461a)
