@@ -11,6 +11,17 @@ CPhysicsHand *pcd_emit_1005f6e0(const CPhysicsHand &other) { return new CPhysics
 // TARGET: ??_GCPhysicsHand@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1005f700 size=0x42
+#include "CPhysicsHand.h"
+// TARGET: ??1CPhysicsHand@@UAE@XZ
+CPhysicsHand::~CPhysicsHand()
+{
+	sub_101a9ff0(0);
+	delete m_pChild1;
+	delete m_pChild2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fa30 size=0x1
 #include "CPhysicsHand.h"
 void CPhysicsHand::vfunc97()
