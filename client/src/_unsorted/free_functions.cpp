@@ -1809,6 +1809,20 @@ int sub_100093d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10009430 size=0x5a
+#include "C_WeaponMelee_Stake.h"
+
+// the factory IMPLEMENT_CLIENTCLASS writes for C_WeaponMelee_Stake; its ClientClass's initializer stores its address
+IClientNetworkable *_C_WeaponMelee_Stake_CreateObject(int entnum, int serialNum)
+{
+	C_WeaponMelee_Stake *pRet = new C_WeaponMelee_Stake;
+	if (!pRet)
+		return 0;
+	pRet->Init(entnum, serialNum);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100094f0 size=0x72
 #include "RecvTable.h"
 extern RecvTable g_102dfebc;
