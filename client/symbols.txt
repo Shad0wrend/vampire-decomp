@@ -3425,6 +3425,7 @@
 0x100bb980 func   ?vfunc16@C_FuncMonitor@@UAEHXZ C_FuncMonitor::vfunc16
 0x100bb990 func   ?vfunc15@C_FuncMonitor@@UAEHXZ C_FuncMonitor::vfunc15
 0x100bb9a0 func   ?sub_100bb9a0@@YAHXZ sub_100bb9a0
+0x100bba00 func   ?_C_FuncMonitor_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_FuncMonitor_CreateObject
 0x100bba60 func   ??_GC_FuncMonitor@@UAEPAXI@Z ??_GC_FuncMonitor@@UAEPAXI@Z
 0x100bbae0 func   ?ClientClassInit@@YAHPAUignored@DT_FuncMonitor@@@Z ClientClassInit
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
