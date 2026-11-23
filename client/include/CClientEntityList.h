@@ -7,4 +7,12 @@
 class CClientEntityList : public CBaseEntityList, public IClientEntityList
 {
 public:
+	CClientEntityList();
+	void sub_100d0b40();
+	int m_i18040; int m_i18044; int m_i18048;
+	char m_pad1804c[0x2804c - 0x1804c];
+	struct Tail {
+		int a; int b; int c; unsigned short d; unsigned short e; unsigned short f; unsigned short g; unsigned short h; int i;
+		Tail() { a = 0; b = 0; c = 0; d = 0xffff; e = 0xffff; f = 0xffff; h = 0; g = 0; i = 0; }
+	} m_tail;
 };
