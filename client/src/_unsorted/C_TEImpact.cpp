@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10039e90 size=0x37
+#include "C_TEImpact.h"
+C_TEImpact::C_TEImpact()
+{
+	m_vecOrigin.Init(); m_vecNormal.Init(); m_unk2c = 0; m_unk28 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039ed0 size=0x1e
 #include "C_TEImpact.h"
 
