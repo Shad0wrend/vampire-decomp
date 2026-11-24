@@ -11,6 +11,17 @@ CParticleEffect *pcd_emit_10117f60() { return new CParticleEffect; }
 // TARGET: ??_GCParticleEffect@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10118030 size=0x2a
+#include "CParticleEffect.h"
+#include "CParticleEffectBinding.h"
+void CParticleEffect::vfunc5(int a)
+{
+	CParticleEffectBinding *b = (CParticleEffectBinding *)&m_unk08;
+	if (!b->sub_10116710() && sub_10117fc0())
+		b->m_unk34 |= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118060 size=0x3
 // TARGET: sub_10118060
 void __stdcall sub_10118060(int)
