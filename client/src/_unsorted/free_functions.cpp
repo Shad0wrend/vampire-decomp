@@ -61523,6 +61523,21 @@ void * CUnknown10142e50::sub_10142e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142ee0 size=0x2f
+struct Buf_10142ee0 {
+	int m_unk0; int m_unk4; int m_n8; void *m_pc; void *m_p10;
+	void sub_10142ee0();
+};
+void Buf_10142ee0::sub_10142ee0()
+{
+	delete m_pc;
+	m_pc = 0;
+	delete m_p10;
+	m_p10 = 0;
+	m_n8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143120 size=0x24
 struct VObj { int m0, m4; int m_n; int mc; int *m_pData; void sub_10142ff0(); int sub_10143120(int i); };
 // TARGET: ?sub_10143120@VObj@@QAEHH@Z
