@@ -46256,6 +46256,27 @@ void sub_100f5ad0(const void *src, void *dst, int a2, int a3, float srcGamma, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f66f0 size=0x45
+// TARGET: sub_100f66f0
+void __cdecl sub_100f66f0(unsigned char *src, int w, int h, unsigned char *dst)
+{
+	unsigned char *end = src + w * h * 4;
+	if (src < end)
+	{
+		unsigned char *p = dst + 2;
+		do
+		{
+			p[-2] = src[0] - 0x7f;
+			p[-1] = src[1] - 0x7f;
+			p[0] = src[3];
+			p[1] = 0xff;
+			src += 4;
+			p += 4;
+		} while (src < end);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6740 size=0x35
 // TARGET: sub_100f6740
 void sub_100f6740(unsigned char *src, int w, int h, unsigned char *dst)
