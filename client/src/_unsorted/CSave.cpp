@@ -420,3 +420,34 @@ void CSave::vfunc32(const int *pHandles, int count)
 	vfunc10(indices, count);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129f40 size=0x89
+#include "CSave.h"
+
+struct EntInfo_t { void *m_pEntity; int m_SerialNumber; EntInfo_t *m_pPrev; };
+struct EntList_t { int m_unk0; EntInfo_t m_EntPtrArray[8192]; };
+extern EntList_t *g_102b8e98;
+
+struct EHandleT {
+    unsigned long m_Index;
+    void *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        EntInfo_t *pInfo = &g_102b8e98->m_EntPtrArray[m_Index & 0x1fff];
+        if (pInfo->m_SerialNumber == (int)(m_Index >> 13))
+            return pInfo->m_pEntity;
+        return 0;
+    }
+};
+
+// TARGET: CSave::vfunc37
+void CSave::vfunc37(const char *pszName, void *pData, int count)
+{
+    int entityArray[256];
+    const EHandleT *pHandles = (const EHandleT *)pData;
+    for (int i = 0; i < count; i++)
+        entityArray[i] = sub_10129a30(pHandles[i].Get());
+    vfunc9(pszName, entityArray, count);
+}
+// END FUNCTION
