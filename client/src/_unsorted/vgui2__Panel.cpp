@@ -100,6 +100,216 @@ void vgui2::Panel::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9b80 size=0x2f9
+#include "vgui2__Panel.h"
+#include "vgui2__BuildGroup.h"
+#include "utlvector.h"
+
+namespace vgui2
+{
+
+struct IPanel_Paint
+{
+	virtual void u0();
+	virtual void u1();
+	virtual void u2();
+	virtual void u3();
+	virtual void u4();
+	virtual void u5();
+	virtual void u6();
+	virtual void u7();
+	virtual void u8();
+	virtual void u9();
+	virtual void GetClipRect(unsigned int vpanel, int &x0, int &y0, int &x1, int &y1);
+};
+
+struct ISurface_Paint
+{
+	virtual void u0();
+	virtual void u1();
+	virtual void u2();
+	virtual void u3();
+	virtual void u4();
+	virtual void u5();
+	virtual void u6();
+	virtual void u7();
+	virtual void PushMakeCurrent(unsigned int vpanel, bool useInsets);
+	virtual void PopMakeCurrent(unsigned int vpanel);
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14();
+	virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24();
+	virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29();
+	virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34();
+	virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39();
+	virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44();
+	virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49();
+	virtual void SwapBuffers(unsigned int vpanel);
+	virtual void Invalidate(unsigned int vpanel);
+	virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56();
+	virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61();
+	virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66();
+	virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71();
+	virtual void u72(); virtual void u73(); virtual void u74();
+	virtual bool ShouldPaintChildPanel(unsigned int vpanel);
+};
+
+struct PanelLayout
+{
+	virtual unsigned int GetVPanel();
+	virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5();
+	virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10();
+	virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15();
+	virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20();
+	virtual void u21();
+	virtual bool IsVisible();
+	virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27();
+	virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32();
+	virtual void u33(); virtual void u34(); virtual void u35();
+	virtual int GetChildCount();
+	virtual PanelLayout *GetChild(int index);
+	virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42();
+	virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47();
+	virtual bool IsPopup();
+	virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53();
+	virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58();
+	virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63();
+	virtual void u64(); virtual void u65(); virtual void u66();
+	virtual bool IsBuildGroupEnabled();
+	virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72();
+	virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77();
+	virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82();
+	virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87();
+	virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92();
+	virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96();
+	virtual void PaintBackground();
+	virtual void Paint();
+	virtual void PaintBorder();
+	virtual void PaintBuildOverlay();
+	virtual void u101(); virtual void u102();
+	virtual void PostChildPaint();
+	virtual void u104(); virtual void u105();
+	virtual void PaintTraverse(bool repaint);
+
+	int m_pad04[4];
+	void *_border;                // +0x14
+	bool _needsRepaint;           // +0x18
+	char m_pad19[3];
+	BuildGroup *_buildGroup;      // +0x1c
+	int m_pad20[2];
+	bool _paintBorderEnabled;     // +0x28
+	bool _paintBackgroundEnabled; // +0x29
+	bool _paintEnabled;           // +0x2a
+	char m_pad2b[0x29];
+	bool _postChildPaintEnabled;  // +0x54
+};
+
+struct PHandle_Paint
+{
+	unsigned int m_hPanel;
+	PanelLayout *sub_101ac670();
+};
+
+}
+
+vgui2::ISurface_Paint *sub_101ac8d0();
+vgui2::IPanel_Paint *sub_101ac900();
+
+// TARGET: ?vfunc106@Panel@vgui2@@UAEX_N@Z
+void vgui2::Panel::vfunc106(bool repaint)
+{
+	PanelLayout *self = (PanelLayout *)this;
+
+	if (!self->IsVisible())
+	{
+		return;
+	}
+
+	if (self->_needsRepaint)
+	{
+		repaint = true;
+	}
+
+	self->_needsRepaint = false;
+
+	int clipRect[4];
+	sub_101ac900()->GetClipRect(self->GetVPanel(), clipRect[0], clipRect[1], clipRect[2], clipRect[3]);
+
+	if ((clipRect[2] <= clipRect[0]) || (clipRect[3] <= clipRect[1]))
+	{
+		repaint = false;
+	}
+
+	if (repaint && (self->_paintBorderEnabled || self->_paintBackgroundEnabled || self->_paintEnabled))
+	{
+		sub_101ac8d0()->PushMakeCurrent(self->GetVPanel(), false);
+		if (self->_paintBackgroundEnabled)
+		{
+			self->PaintBackground();
+		}
+		sub_101ac8d0()->PopMakeCurrent(self->GetVPanel());
+
+		sub_101ac8d0()->PushMakeCurrent(self->GetVPanel(), true);
+		if (self->_paintEnabled)
+		{
+			self->Paint();
+		}
+		sub_101ac8d0()->PopMakeCurrent(self->GetVPanel());
+	}
+
+	int childCount = self->GetChildCount();
+	for (int i = 0; i < childCount; i++)
+	{
+		PanelLayout *child = self->GetChild(i);
+		if (!child->IsPopup())
+		{
+			if (sub_101ac8d0()->ShouldPaintChildPanel(child->GetVPanel()))
+			{
+				child->PaintTraverse(repaint);
+			}
+			else
+			{
+				sub_101ac8d0()->Invalidate(child->GetVPanel());
+				if (repaint)
+				{
+					child->_needsRepaint = true;
+				}
+			}
+		}
+	}
+
+	if (repaint)
+	{
+		if (self->_paintBorderEnabled && self->_border != 0)
+		{
+			sub_101ac8d0()->PushMakeCurrent(self->GetVPanel(), false);
+			self->PaintBorder();
+			sub_101ac8d0()->PopMakeCurrent(self->GetVPanel());
+		}
+
+		if (self->IsBuildGroupEnabled())
+		{
+			CUtlVector<PHandle_Paint> *controlGroup = (CUtlVector<PHandle_Paint> *)self->_buildGroup->vfunc14();
+			for (int i = 0; i < controlGroup->Size(); ++i)
+			{
+				sub_101ac8d0()->PushMakeCurrent(((*controlGroup)[i].sub_101ac670())->GetVPanel(), false);
+				((*controlGroup)[i].sub_101ac670())->PaintBuildOverlay();
+				sub_101ac8d0()->PopMakeCurrent(((*controlGroup)[i].sub_101ac670())->GetVPanel());
+			}
+			self->_buildGroup->vfunc18();
+		}
+
+		if (self->_postChildPaintEnabled)
+		{
+			sub_101ac8d0()->PushMakeCurrent(self->GetVPanel(), false);
+			self->PostChildPaint();
+			sub_101ac8d0()->PopMakeCurrent(self->GetVPanel());
+		}
+	}
+
+	sub_101ac8d0()->SwapBuffers(self->GetVPanel());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9e80 size=0x17
 #include "vgui2__Panel.h"
 namespace lifted {
