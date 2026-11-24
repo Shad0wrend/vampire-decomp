@@ -31535,6 +31535,14 @@ int CUnknown1009f100::sub_1009f100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f140 size=0x12
+struct S_1009f140 { char pad[0x74]; int m_fl; };
+bool __fastcall sub_1009f140(S_1009f140 *self, int edx, int mask)
+{
+	return (self->m_fl & mask) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f160 size=0x28
 struct CUnknown1009f160 { void sub_1009f160(int, char); };
 void CUnknown1009f160::sub_1009f160(int a0, char a1)
