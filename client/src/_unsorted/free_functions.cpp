@@ -83347,6 +83347,31 @@ GridCell *GridV::sub_10166d90(int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166dd0 size=0x46
+struct CUnk10166dd0 {
+	char pad[0x5c];
+	int m5c;
+	char pad2[0x64 - 0x60];
+	int m64;
+	char pad3[0x6c - 0x68];
+	int *m6c;
+	char pad4[0x74 - 0x70];
+	int *m74;
+	void sub_10166dd0(int i);
+};
+// TARGET: ?sub_10166dd0@CUnk10166dd0@@QAEXH@Z
+void CUnk10166dd0::sub_10166dd0(int i)
+{
+	int pos = m64;
+	if (i)
+		pos += m74[i - 1] + m6c[i - 1];
+	for (; i < m5c; i++) {
+		m74[i] = pos;
+		pos += m6c[i] + m64;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166e20 size=0x39
 struct CGridLayout10166 {
 	char pad0[0x60];
