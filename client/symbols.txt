@@ -4247,6 +4247,7 @@
 0x100e0540 func   ?vfunc3@CDetailObjectSystem@@UAEXXZ CDetailObjectSystem::vfunc3
 0x100e0550 func   ?vfunc6@CDetailObjectSystem@@UAEXXZ CDetailObjectSystem::vfunc6
 0x100e0560 func   ?sub_100e0560@@YGXH@Z sub_100e0560
+0x100e0570 func   ?sub_100e0570@V0570@@QAEPAHI@Z V0570::sub_100e0570
 0x100e05a0 func   ?vfunc11@CDetailObjectSystem@@UAEPADI@Z CDetailObjectSystem::vfunc11
 0x100e1040 func   ?sub_100e1040@UtlMem@@QAEXXZ UtlMem::sub_100e1040
 0x100e1290 func   ?sub_100e1290@UtlMem@@QAEXXZ UtlMem::sub_100e1290
