@@ -208,6 +208,19 @@ int vgui2::Label::vfunc121(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2e30 size=0x2a
+#include "vgui2__Label.h"
+struct V_101b2e30 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(void *); };
+void vgui2::Label::vfunc105(vgui2::Panel *p)
+{
+	V_101b2e30 *w = *(V_101b2e30 **)((char *)this + 0xa4);
+	if (w && p == this)
+		w->v15(0);
+	else
+		Panel::vfunc105(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3290 size=0x23
 #include "vgui2__Label.h"
 namespace lifted {
