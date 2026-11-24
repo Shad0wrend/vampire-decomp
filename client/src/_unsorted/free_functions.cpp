@@ -34095,6 +34095,15 @@ void sub_100b4a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4d10 size=0x18
+struct S100_100b4d10 { int m[25]; };
+void sub_100b4d10(S100_100b4d10 *dst, const S100_100b4d10 *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4d30 size=0x8f
 #include "CUtlVector40.h"
 
