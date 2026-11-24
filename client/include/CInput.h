@@ -20,6 +20,7 @@ public:
     int m_unk24;
     void *m_unk28;
     int m_unk2c[(0x54 - 0x2c) / 4];
+    int sub_10100f10();
     int m_unk54;
     int m_unk58;
     int m_unk5c;
