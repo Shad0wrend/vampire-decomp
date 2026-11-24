@@ -70936,6 +70936,29 @@ void * CUnknown10141eb0::sub_10141eb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141f70 size=0x62
+#include "CUnknown101439f0.h"
+
+extern int g_105e775c;
+extern void **g_105e7760;
+
+struct Self_10141f70 { int m_0; int m_4; int m_8; int m_c; };
+
+char __fastcall sub_10141f70(Self_10141f70 *self, void *edx)
+{
+	CUnknown101439f0 *o;
+	if (self->m_4 >= 0 && self->m_4 < g_105e775c)
+		o = (CUnknown101439f0 *)g_105e7760[self->m_4];
+	else
+	{
+		static CUnknown101439f0 s(-1);
+		o = &s;
+	}
+	int v = o->m_c;
+	return v >= self->m_8 && v <= self->m_c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141fe0 size=0x14
 struct CUnknown10141fe0 { void * sub_10141fe0(); };
 void * CUnknown10141fe0::sub_10141fe0()
