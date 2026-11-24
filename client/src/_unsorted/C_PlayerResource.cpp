@@ -144,6 +144,12 @@ int PRView::sub_100bd4c0(int i)
 int C_PlayerResource::vfunc130(int i) { if (!vfunc133(i)) return 0; return m_abcc[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x100bd680 size=0x28
+#include "C_PlayerResource.h"
+// TARGET: ?vfunc131@C_PlayerResource@@UAEHH@Z
+int C_PlayerResource::vfunc131(int i) { if (!vfunc133(i)) return 0; return m_ac50[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100bd6f0 size=0xe
 #include "C_PlayerResource.h"
 // TARGET: C_PlayerResource::vfunc134
