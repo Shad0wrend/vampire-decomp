@@ -175,6 +175,7 @@
 0x100052c0 func   ?sub_100052c0@CIC@@QAEXPBE@Z CIC::sub_100052c0
 0x100052f0 func   ?sub_100052f0@PixW@@QAEXPAE@Z PixW::sub_100052f0
 0x10005330 func   ?sub_10005330@S10005330@@QAEXHHHH@Z S10005330::sub_10005330
+0x10005480 func   ?sub_10005480@@YA?AV?$CSmartPtr@VCPlasmaSpray@@@@PBD@Z sub_10005480
 0x100054f0 func   ??_GCPlasmaSpray@@UAEPAXI@Z ??_GCPlasmaSpray@@UAEPAXI@Z
 0x10005510 func   ?vfunc11@CPlasmaSpray@@QAEXPAXH@Z CPlasmaSpray::vfunc11
 0x10005710 func   ??0C_PlasmaBeamNode@@QAE@XZ C_PlasmaBeamNode::C_PlasmaBeamNode

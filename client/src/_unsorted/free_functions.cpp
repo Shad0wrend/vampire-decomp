@@ -954,6 +954,31 @@ void S10005330::sub_10005330(int i, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005480 size=0x61
+#include "CPlasmaSpray.h"
+
+template <class T>
+class CSmartPtr
+{
+public:
+	CSmartPtr(T *pObj) { m_pObj = 0; *this = pObj; }
+	void operator=(T *pObj)
+	{
+		if (pObj)
+			pObj->sub_10117fd0();
+		if (m_pObj)
+			m_pObj->sub_10117fe0();
+		m_pObj = pObj;
+	}
+	T *m_pObj;
+};
+
+CSmartPtr<CPlasmaSpray> sub_10005480(const char *name)
+{
+	return CSmartPtr<CPlasmaSpray>(new CPlasmaSpray(name));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100058e0 size=0x3
 char sub_100058e0()
 {
