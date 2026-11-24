@@ -56,6 +56,28 @@ int vgui2::KeyValues::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6450 size=0x42
+#include "vgui2__KeyValues.h"
+extern "C" int __cdecl atoi(const char *);
+int vgui2::KeyValues::vfunc9(const char *keyName, int defaultValue)
+{
+	KeyValues *dat = vfunc4(keyName, 0);
+	if (dat)
+	{
+		switch (dat->m_unk10)
+		{
+		case 1:
+			return atoi((const char *)dat->m_pName);
+		case 3:
+			return (int)dat->m_flValue;
+		default:
+			return dat->m_unkc;
+		}
+	}
+	return defaultValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b64a0 size=0x28
 #include "vgui2__KeyValues.h"
 namespace lifted {
