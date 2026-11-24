@@ -22,4 +22,5 @@ public:
 	virtual float vfunc1(int i);
 	virtual int vfunc2();
 	virtual float vfunc3(int i);
+	virtual float vfunc4(int i);
 };
