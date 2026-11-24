@@ -31844,6 +31844,15 @@ int __stdcall sub_1009ffe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a06f0 size=0x15
+struct CUnknown1009fbb0 { void sub_1009fbb0(int a); void sub_100a06f0(int a); };
+void CUnknown1009fbb0::sub_100a06f0(int a)
+{
+	if (a != -1)
+		sub_1009fbb0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1200 size=0x1
 void sub_100a1200()
 {
