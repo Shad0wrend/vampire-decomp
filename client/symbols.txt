@@ -6495,6 +6495,7 @@
 0x10154ae0 func   ?sub_10154ae0@CUnknown10154ae0@@QAEPAXXZ CUnknown10154ae0::sub_10154ae0
 0x10154b40 func   ?sub_10154b40@@YIXPAH@Z sub_10154b40
 0x10154b70 func   ?sub_10154b70@CUnknown101f35c0@@QAEXHPAVCUnknown101f3d80@@HH@Z CUnknown101f35c0::sub_10154b70
+0x10154c40 func   ?sub_10154c40@CUnknown101f3d80@@QAE_NXZ CUnknown101f3d80::sub_10154c40
 0x10154c90 func   ?sub_10154c90@CUnknown101f3d80@@QAE_NXZ CUnknown101f3d80::sub_10154c90
 0x10154df0 func   ?sub_10154df0@CUnknown101f39d0@@QAEHPBD@Z CUnknown101f39d0::sub_10154df0
 0x10154f60 func   ?sub_10154f60@CVSoundFileFolder_t@@QAEXHHH@Z CVSoundFileFolder_t::sub_10154f60

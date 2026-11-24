@@ -76486,6 +76486,23 @@ void CUnknown101f35c0::sub_10154b70(int a, CUnknown101f3d80 *pOwner, int b, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154c40 size=0x49
+#include "CUnknown101f3d80.h"
+__declspec(dllimport) void Warning(const char *, ...);
+bool CUnknown101f3d80::sub_10154c40()
+{
+    if (!sub_10154c90())
+        return false;
+    for (int i = 0; i < m_nCount; i++)
+        ((CUnknown101f3d80 *)m_pItems[i])->sub_10154c40();
+    if (!m_n04) {
+        Warning("ERROR: SndTable: m_pcvParentSndFileTable == NULL !!!");
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154c90 size=0x156
 #include "CUnknown101f3d80.h"
 #include "IFileSystemFind.h"
