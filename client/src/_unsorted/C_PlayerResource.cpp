@@ -88,6 +88,16 @@ C_PlayerResource *pcd_emit_100bd330(const C_PlayerResource &other) { return new 
 // TARGET: ??_GC_PlayerResource@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100bd350 size=0x31
+#include "C_PlayerResource.h"
+extern C_PlayerResource *g_104a38f8;
+// TARGET: ??1C_PlayerResource@@UAE@XZ
+C_PlayerResource::~C_PlayerResource()
+{
+	g_104a38f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd390 size=0x28
 #include "C_PlayerResource.h"
 // TARGET: ?vfunc120@C_PlayerResource@@UAEHH@Z
