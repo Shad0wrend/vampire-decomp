@@ -69598,6 +69598,57 @@ int CUnknown10141b00::sub_10141b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141b10 size=0x59
+struct NameRec8
+{
+	char m_pad0[4];
+	const char *m_name;
+};
+
+struct SelfView
+{
+	char m_pad0[4];
+	int m_index;
+};
+
+class InitView
+{
+public:
+	void *sub_101439f0(int);
+};
+
+extern int g_105e775c;
+extern NameRec8 **g_105e7760;
+extern char g_10680e28;
+extern char g_10680e30[16];
+
+void sub_10144c90();
+extern "C" int atexit(void (*)(void));
+
+const char *__fastcall sub_10141b10(SelfView *self)
+{
+	NameRec8 *p;
+	int i = self->m_index;
+
+	if ( i >= 0 && i < g_105e775c )
+	{
+		p = g_105e7760[i];
+	}
+	else
+	{
+		if ( ( g_10680e28 & 1 ) == 0 )
+		{
+			g_10680e28 |= 1;
+			((InitView *)g_10680e30)->sub_101439f0(-1);
+			atexit(sub_10144c90);
+		}
+		p = (NameRec8 *)g_10680e30;
+	}
+
+	return p->m_name ? p->m_name : "";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141b70 size=0xd
 namespace lifted {
 extern char g_102de300;
