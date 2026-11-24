@@ -59280,6 +59280,16 @@ char CUnknown10141710::sub_10141710(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141790 size=0x13
+struct S_10141790 { int a, b, c, d; };
+char __fastcall sub_10141790(S_10141790 *self)
+{
+	if (self->c > 0)
+		return 1;
+	return self->d > 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141810 size=0x8
 namespace lifted {
 struct C10142000 { int sub_10142000(); };
