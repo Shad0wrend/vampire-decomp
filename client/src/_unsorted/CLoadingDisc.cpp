@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10167960 size=0x30
+#include "CLoadingDisc.h"
+void *sub_101ac650(unsigned int);
+struct LDPanel { LDPanel *sub_101670d0(int a); };
+int CLoadingDisc::vfunc0(int a)
+{
+	LDPanel *p = (LDPanel *)sub_101ac650(0xa0);
+	LDPanel *r;
+	if (p)
+		r = p->sub_101670d0(a);
+	else
+		r = 0;
+	return (int)(*(LDPanel **)((char *)this + 4) = r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167990 size=0x24
 #include "CLoadingDisc.h"
 namespace lifted {
