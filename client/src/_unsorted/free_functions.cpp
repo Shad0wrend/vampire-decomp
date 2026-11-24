@@ -18540,6 +18540,22 @@ void HudChild_t::sub_100578a0(int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057900 size=0x52
+#include "CHudManagerPanel.h"
+#include "CHudInfoBar.h"
+
+// TARGET: HudChild_t::sub_10057900
+void HudChild_t::sub_10057900(int a1, int a2, int a3)
+{
+	for ( HudChildNode *p = m_pNodes; p; p = p->m_pNext )
+	{
+		CHudInfoBar *pBar = dynamic_cast<CHudInfoBar *>(p->m_pElement);
+		if ( pBar )
+			pBar->vfunc114(a1, a2, a3);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a20 size=0x2a
 namespace lifted {
 extern int g_104a0d50;
