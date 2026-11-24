@@ -6417,6 +6417,7 @@
 0x1016ae80 func   ??1VBarterIconButton@@UAE@XZ VBarterIconButton::~VBarterIconButton
 0x1016ae80 func   ?sub_1016ae80@CUnknown1016ae80@@QAEHXZ CUnknown1016ae80::sub_1016ae80
 0x1016afb0 func   ?vfunc85@VBarterIconButton@@UAEXXZ VBarterIconButton::vfunc85
+0x1016afd0 func   ?vfunc86@VBarterIconButton@@UAEXXZ VBarterIconButton::vfunc86
 0x1016aff0 func   ?vfunc87@VBarterIconButton@@UAEXH@Z VBarterIconButton::vfunc87
 0x1016b000 func   ?vfunc89@VBarterIconButton@@UAEXH@Z VBarterIconButton::vfunc89
 0x1016b020 func   ?sub_1016b020@CUnknown1016b020@@QAEPAXHHHH@Z CUnknown1016b020::sub_1016b020
