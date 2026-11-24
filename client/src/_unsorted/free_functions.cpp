@@ -85192,6 +85192,22 @@ void CUnknown101c0c20::sub_101c0c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0c70 size=0x29
+struct CUnknown101c7500 { void sub_101c7500(); };
+struct VView64 {
+	char pad[0x64];
+	int m_nCount;
+	int m_unk68;
+	CUnknown101c7500 **m_pItems;
+	CUnknown101c7500 *Get(int i) { if (i >= 0 && i < m_nCount) return m_pItems[i]; return 0; }
+	void sub_101c0c70(int i);
+};
+void VView64::sub_101c0c70(int i)
+{
+	Get(i)->sub_101c7500();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0ca0 size=0xa
 struct CUnknown101c0ca0 { int sub_101c0ca0(int); };
 int CUnknown101c0ca0::sub_101c0ca0(int a0)
