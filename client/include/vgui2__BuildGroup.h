@@ -4,6 +4,8 @@
 
 namespace vgui2
 {
+class Panel;
+
 class BuildGroup
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -30,6 +32,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc19();
     virtual void vfunc20(int, int);
     virtual void vfunc21();
-    virtual void vfunc22();
+    virtual int vfunc22(Panel *);
 };
 }
