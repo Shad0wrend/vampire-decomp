@@ -9,4 +9,5 @@ public:
 class C_LocalTempEntity : public C_LocalTempEntityPad, public C_SpriteRenderer
 {
 public:
+	int m_unk7f0; int m_unk7f4; int m_unk7f8; int m_unk7fc; int m_unk800; int m_unk804; int m_unk808; int m_unk80c;
 };

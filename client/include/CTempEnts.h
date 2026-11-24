@@ -3,6 +3,7 @@
 // the destructor is slot 20 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "ITempEnts.h"
+#include "C_LocalTempEntity.h"
 
 class CTempEnts : public ITempEnts
 {
@@ -11,7 +12,8 @@ public:
 	void sub_1003cee0();
 	void *sub_1003cf20(const void *, const void *);
 	struct TempEntView *sub_1003cdd0(const void *org, void *model);
-	int m_unk4[(0xfbf48 - 4) / 4];
+	int m_unk4;
+	C_LocalTempEntity m_TempEnts[500];
 	void *m_pFreeTempEnts;
 	void *m_pHead;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
