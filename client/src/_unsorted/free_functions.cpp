@@ -27572,6 +27572,33 @@ int sub_1007de00(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007df80 size=0x4a
+struct CollideV_1007df80 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5();
+	virtual int v6();
+	virtual int v7();
+};
+
+struct EntityV_1007dfd0 {
+	bool sub_1007dfd0();
+};
+
+struct EntityV_1007df80 {
+	bool sub_1007df80();
+};
+
+bool EntityV_1007df80::sub_1007df80()
+{
+	CollideV_1007df80 *pCol = (CollideV_1007df80 *)((char *)this + 0xc);
+	if (pCol->v7() & 0x10)
+		return false;
+	if (pCol->v6() == 1 || pCol->v6() == 6 || pCol->v6() == 2)
+		return true;
+	return ((EntityV_1007dfd0 *)this)->sub_1007dfd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfd0 size=0x60
 struct CollideV_1007dfd0 {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();

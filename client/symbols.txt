@@ -3067,6 +3067,7 @@
 0x1007de80 func   ?vfunc31@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc31
 0x1007df40 func   ?vfunc88@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc88
 0x1007df70 func   ?vfunc87@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc87
+0x1007df80 func   ?sub_1007df80@EntityV_1007df80@@QAE_NXZ EntityV_1007df80::sub_1007df80
 0x1007dfd0 func   ?sub_1007dfd0@EntityV_1007dfd0@@QAE_NXZ EntityV_1007dfd0::sub_1007dfd0
 0x1007e030 func   ?vfunc115@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc115
 0x1007e210 func   ?vfunc16@C_BaseGrenade@@UAEHXZ C_BaseGrenade::vfunc16
