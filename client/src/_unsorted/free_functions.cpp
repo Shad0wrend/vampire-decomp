@@ -49312,6 +49312,23 @@ bool sub_101111f0(const unsigned short *a, const unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10111320 size=0x2f
+struct Elem_10111320 { unsigned short m_id; unsigned short m_next; int m_rest[4]; };
+struct List_10111320 {
+	int m_unk0;
+	Elem_10111320 *m_pElems;
+	int m_unk8; int m_unkc; int m_unk10;
+	unsigned short m_nFree;
+	void sub_10111320(unsigned short h);
+};
+void List_10111320::sub_10111320(unsigned short h)
+{
+	m_pElems[h].m_id = h;
+	m_pElems[h].m_next = m_nFree;
+	m_nFree = h;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10111ac0 size=0x1f
 int sub_10111ac0(int a0, int a1)
 {
