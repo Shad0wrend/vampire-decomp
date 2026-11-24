@@ -47953,6 +47953,23 @@ void sub_100f24a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f24b0 size=0x2f
+#include "CHudChat.h"
+
+int sub_10114660(int, int);
+void sub_10114690();
+char *sub_101146e0();
+void sub_100f1fb0(CHudChat *self, const char *fmt, ...);
+
+// TARGET: CHudChat::sub_100f24b0
+void CHudChat::sub_100f24b0(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	sub_10114690();
+	sub_100f1fb0(this, "%s", sub_101146e0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f24e0 size=0x2e
 struct Line_100f24e0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();

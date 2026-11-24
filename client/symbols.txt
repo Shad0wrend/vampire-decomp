@@ -4849,6 +4849,7 @@
 0x100f2410 func   ?sub_100f2410@@YAPADPBD@Z sub_100f2410
 0x100f2490 func   ?sub_100f2490@@YGXH@Z sub_100f2490
 0x100f24a0 func   ?sub_100f24a0@@YAXXZ sub_100f24a0
+0x100f24b0 func   ?sub_100f24b0@CHudChat@@QAEXHHH@Z CHudChat::sub_100f24b0
 0x100f24e0 func   ?sub_100f24e0@Chat_100f24e0@@QAEPAULine_100f24e0@@XZ Chat_100f24e0::sub_100f24e0
 0x100f25a0 func   ?sub_100f25a0@@YAXXZ sub_100f25a0
 0x100f25b0 func   ?vfunc13@CHudChat@@UAEXHH@Z CHudChat::vfunc13
