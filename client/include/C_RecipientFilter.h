@@ -5,13 +5,14 @@
 class C_RecipientFilter : public IRecipientFilter
 {
 public:
-	virtual int vfunc5();
-	virtual bool vfunc4();
 	C_RecipientFilter();
 	virtual bool vfunc1();
 	virtual int vfunc2();
-	void sub_100bdeb0();
+	virtual int vfunc3(int);
+	virtual bool vfunc4();
+	virtual int vfunc5();
 	virtual bool vfunc6();
+	void sub_100bdeb0();
 	bool m_bReliable;
 	bool m_bInitMessage;
 	CUtlVector<int> m_Recipients;
