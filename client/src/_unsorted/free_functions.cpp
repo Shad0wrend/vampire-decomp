@@ -32367,6 +32367,13 @@ int CUnknown100a2e90::sub_100a2e90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2eb0 size=0x1b
+struct Gl2eb0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual int v15(); };
+extern Gl2eb0 *g_1027bbf4;
+struct V2eb0 { char pad[0xdc]; int m; bool sub_100a2eb0(); };
+bool V2eb0::sub_100a2eb0() { return m == g_1027bbf4->v15() ? true : false; }
+// END FUNCTION
+
 // FUNCTION: 0x100a2ed0 size=0xc
 struct V_100a2ed0 { int m_unk[0x3d8 / 4]; int m_p3d8; };
 // TARGET: sub_100a2ed0
