@@ -3882,6 +3882,7 @@
 0x100c8b10 func   ??1C_MultiplayRules@@UAE@XZ C_MultiplayRules::~C_MultiplayRules
 0x100c8b10 func   ?sub_100c8b10@CUnknown100c8b10@@QAEHXZ CUnknown100c8b10::sub_100c8b10
 0x100c8b60 func   ??_GC_SingleplayRules@@UAEPAXI@Z ??_GC_SingleplayRules@@UAEPAXI@Z
+0x100c8b90 func   ??_GC_MultiplayRules@@UAEPAXI@Z ??_GC_MultiplayRules@@UAEPAXI@Z
 0x100c8c50 func   ?sub_100c8c50@CUnknown100c8c50@@QAEPAXHH@Z CUnknown100c8c50::sub_100c8c50
 0x100c8c80 func   ??_GCVGuiScreenPanel@@UAEPAXI@Z ??_GCVGuiScreenPanel@@UAEPAXI@Z
 0x100c8ca0 func   ?sub_100c8ca0@CUnknown100c8ca0@@QAEPAXHHH@Z CUnknown100c8ca0::sub_100c8ca0
