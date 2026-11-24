@@ -44290,6 +44290,21 @@ void sub_100f5ad0(const void *src, void *dst, int a2, int a3, float srcGamma, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6740 size=0x35
+// TARGET: sub_100f6740
+void sub_100f6740(unsigned char *src, int w, int h, unsigned char *dst)
+{
+  unsigned char *end = src + w * h * 4;
+  unsigned char *d = dst;
+  while (src < end) {
+    d[0] = src[0] - 0x7f;
+    d[1] = src[1] - 0x7f;
+    src += 4;
+    d += 2;
+  }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6a40 size=0x39
 namespace lifted {
 bool sub_100f6860(int, int, int, int);
