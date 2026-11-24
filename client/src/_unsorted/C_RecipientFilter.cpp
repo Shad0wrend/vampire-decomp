@@ -20,6 +20,16 @@ int C_RecipientFilter::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde80 size=0x28
+#include "C_RecipientFilter.h"
+int C_RecipientFilter::vfunc3(int slot)
+{
+	if (slot >= 0 && slot < vfunc2())
+		return m_Recipients[slot];
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be070 size=0x8
 #include "C_RecipientFilter.h"
 
