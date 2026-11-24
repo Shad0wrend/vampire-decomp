@@ -22,6 +22,26 @@ bool C_WeaponRanged_Animalism::vfunc189(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006d20 size=0x3c
+#include "C_WeaponRanged_Animalism.h"
+#include "CBaseHandle.h"
+struct AnimView10006d20 {
+    char m_unk[0x8fc];
+    CBaseHandle m_h8fc;
+    char m_unk900[0x978 - 0x900];
+    int m_n978;
+    int m_n97c;
+};
+void sub_10064dd0(CBaseHandle h, char flag);
+// TARGET: C_WeaponRanged_Animalism::vfunc167
+void C_WeaponRanged_Animalism::vfunc167()
+{
+    AnimView10006d20 *t = (AnimView10006d20 *)this;
+    bool b = (t->m_n978 == 6 && t->m_n97c <= 5);
+    sub_10064dd0(t->m_h8fc, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10006f90 size=0x1e
 #include "C_WeaponRanged_Animalism.h"
 
