@@ -86411,6 +86411,37 @@ struct V69a0 { char pad[0x60]; int n; char pad2[0x70 - 0x64]; int *arr; int sub_
 int V69a0::sub_101669c0(int i) { if (i < 0 || i >= n) return 0; return arr[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10166af0 size=0x59
+struct CUnknown10166af0
+{
+	char m_pad0[0x5c];
+	int m_nWidth;
+	int m_nHeight;
+	char m_pad64[0x8];
+	int *m_p6c;
+	int *m_p70;
+	int *m_p74;
+	int *m_p78;
+
+	bool sub_10166af0(int x, int y, int *p1, int *p2, int *p3, int *p4);
+};
+
+bool CUnknown10166af0::sub_10166af0(int x, int y, int *p1, int *p2, int *p3, int *p4)
+{
+	if ( x < 0 || x >= m_nWidth )
+		return false;
+
+	if ( y < 0 || y >= m_nHeight )
+		return false;
+
+	*p1 = m_p74[x];
+	*p3 = m_p6c[x];
+	*p2 = m_p78[y];
+	*p4 = m_p70[y];
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166b50 size=0x49
 struct CUnk10166dd0 {
 	void sub_10166dd0(int);
