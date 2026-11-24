@@ -7934,6 +7934,7 @@
 0x101b4e90 func   ?vfunc59@EditablePanel@vgui2@@UAEXH@Z vgui2::EditablePanel::vfunc59
 0x101b4ea0 func   ?vfunc58@EditablePanel@vgui2@@UAEXH@Z vgui2::EditablePanel::vfunc58
 0x101b4eb0 func   ?vfunc15@EditablePanel@vgui2@@UAEHH@Z vgui2::EditablePanel::vfunc15
+0x101b4ee0 func   ?vfunc80@EditablePanel@vgui2@@UAEXXZ vgui2::EditablePanel::vfunc80
 0x101b4f40 func   ?vfunc75@EditablePanel@vgui2@@UAEXH@Z vgui2::EditablePanel::vfunc75
 0x101b4f70 func   ?vfunc105@EditablePanel@vgui2@@UAEXPAVPanel@2@@Z vgui2::EditablePanel::vfunc105
 0x101b4ff0 func   ?vfunc72@EditablePanel@vgui2@@UAEHH@Z vgui2::EditablePanel::vfunc72

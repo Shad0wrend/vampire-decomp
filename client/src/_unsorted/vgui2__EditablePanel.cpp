@@ -161,6 +161,39 @@ int vgui2::EditablePanel::vfunc15(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4ee0 size=0x51
+#include "vgui2__EditablePanel.h"
+
+struct Sub5c {
+	virtual vgui2::Panel *v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual vgui2::Panel *v6();
+};
+
+typedef vgui2::Panel BasePanel;
+
+// TARGET: vgui2::EditablePanel::vfunc80
+void vgui2::EditablePanel::vfunc80()
+{
+	vgui2::Panel *p = ((Sub5c *)((char *)this + 0x5c))->v6();
+	if (p && p != this) {
+		p->vfunc15(0);
+		((BasePanel *)this)->BasePanel::vfunc80();
+		return;
+	}
+	vgui2::Panel *q = ((Sub5c *)((char *)this + 0x5c))->v0();
+	if (q) {
+		q->vfunc15(0);
+		q->vfunc80();
+	}
+	((BasePanel *)this)->BasePanel::vfunc80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4f40 size=0x2b
 #include "vgui2__EditablePanel.h"
 struct XObj5 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };
