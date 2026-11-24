@@ -37424,6 +37424,180 @@ int CUnknown100bf170::sub_100bf170(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf1e0 size=0x171
+#include "Vector.h"
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) char *Q_stristr(char *pStr, const char *pSearch);
+
+struct IVModelInfo_100bf1e0
+{
+	virtual void v0();
+	virtual const char *GetModelName(const void *model);
+	virtual const void *GetModel(int modelindex);
+};
+extern IVModelInfo_100bf1e0 *g_104a57f8;
+
+struct IMaterial_100bf1e0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual int GetMappingHeight();
+};
+
+struct IMaterialSystem_100bf1e0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual IMaterial_100bf1e0 *FindMaterial(const char *pMaterialName, bool *pFound, bool complain);
+};
+extern IMaterialSystem_100bf1e0 *g_104a57ec;
+
+struct IVEngineClient_100bf1e0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float Time(int);
+};
+extern IVEngineClient_100bf1e0 *g_104a57d4;
+
+struct CRopeView
+{
+	void sub_10128a90(int n);
+};
+
+struct CCollisionProp_100bf1e0
+{
+	void sub_100433c0(const Vector &mins, const Vector &maxs);
+};
+
+struct CEntPrimary_100bf1e0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51();
+	virtual const Vector &WorldAlignMins();
+	virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57();
+	virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61(); virtual void v62();
+	virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71(); virtual void v72();
+	virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77();
+	virtual void v78(); virtual void v79(); virtual void v80(); virtual void v81(); virtual void v82();
+	virtual void SetNextClientThink(float nextThinkTime);
+};
+
+template <class T>
+inline T clamp_100bf1e0(T const &val, T const &minVal, T const &maxVal)
+{
+	if (val > maxVal)
+		return maxVal;
+	else if (val < minVal)
+		return minVal;
+	else
+		return val;
+}
+
+struct C_RopeKeyframe_Net
+{
+	char pad0[0x188];
+	CCollisionProp_100bf1e0 m_Collision; // +0x188
+	char pad18c[0x408 - 0x189];
+	bool m_bNewDataThisFrame;            // +0x408
+	char pad409[0x448 - 0x409];
+	int m_iRopeMaterialModel;            // +0x448
+	int pad44c;
+	CRopeView m_RopePhysics;             // +0x450
+	char pad451[0x6b0 - 0x451];
+	int m_nSegments;                     // +0x6b0
+	char pad6b4[0x6e0 - 0x6b4];
+	IMaterial_100bf1e0 *m_pMaterial;     // +0x6e0
+	int m_TextureHeight;                 // +0x6e4
+
+	void sub_100a1340(int updateType);
+	void sub_100bf1e0(int updateType);
+};
+
+// TARGET: C_RopeKeyframe_Net::sub_100bf1e0
+void C_RopeKeyframe_Net::sub_100bf1e0(int updateType)
+{
+	sub_100a1340(updateType);
+
+	m_bNewDataThisFrame = true;
+
+	if (updateType != 0)
+		return;
+
+	char str[512];
+	const void *pModel = g_104a57f8->GetModel(m_iRopeMaterialModel);
+	if (pModel)
+	{
+		Q_strncpy(str, g_104a57f8->GetModelName(pModel), sizeof(str));
+
+		char *pExt = Q_stristr(str, ".vmt");
+		if (pExt)
+			pExt[0] = 0;
+	}
+	else
+	{
+		Q_strncpy(str, "asdf", sizeof(str));
+	}
+
+	m_pMaterial = g_104a57ec->FindMaterial(str, 0, true);
+	if (m_pMaterial)
+		m_TextureHeight = m_pMaterial->GetMappingHeight();
+	else
+		m_TextureHeight = 1;
+
+	m_nSegments = clamp_100bf1e0(m_nSegments, 2, 10);
+	m_RopePhysics.sub_10128a90(m_nSegments);
+
+	CEntPrimary_100bf1e0 *pEnt = (CEntPrimary_100bf1e0 *)((char *)this - 8);
+	m_Collision.sub_100433c0(Vector(-10.0f, -10.0f, -10.0f), -pEnt->WorldAlignMins());
+
+	pEnt->SetNextClientThink((float)(g_104a57d4->Time(0) + 0.0666));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf6b0 size=0x4b
 namespace lifted {
 struct C100bf1a0 { int sub_100bf1a0(); };
