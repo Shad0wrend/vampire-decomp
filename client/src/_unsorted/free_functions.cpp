@@ -66901,6 +66901,11 @@ int CUnknown10153ef0::sub_10153ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153f00 size=0x9
+struct CUnknown10153f00 { int a[5]; int m; bool sub_10153f00(); };
+bool __fastcall sub_10153f00(char *self, int edx) { if (*(int *)(self - 0x14)) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x10153f10 size=0x20
 struct CVBaseA { int a; };
 struct CVBaseB { int b; };
