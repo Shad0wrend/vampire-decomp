@@ -53105,6 +53105,20 @@ int CUnknown10123d30::sub_10123d30(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123e30 size=0x35
+#include <string.h>
+struct PCV {
+  char pad[0x2c]; bool m_b2c;
+  void sub_10123e30(int type, void *dst, void *src, int count);
+};
+// TARGET: PCV::sub_10123e30
+void PCV::sub_10123e30(int type, void *dst, void *src, int count)
+{
+  if (m_b2c && type != 1)
+    memcpy(dst, src, count * 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123f90 size=0x30
 struct PC {
 	char pad[0x2c]; char m_b;
