@@ -16090,6 +16090,15 @@ void * CUnknown10049fc0::sub_10049fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004a330 size=0x18
+struct S44_1004a330 { int m[11]; };
+void sub_1004a330(S44_1004a330 *dst, const S44_1004a330 *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004a630 size=0x26
 namespace lifted {
 extern char g_10227c20;
