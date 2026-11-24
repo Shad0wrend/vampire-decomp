@@ -89225,6 +89225,43 @@ int CUnknown101c0ee0::sub_101c0ee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2310 size=0x91
+struct CPanel
+{
+    void sub_101a9980(int &x, int &y, int &wide, int &tall);
+    void sub_101a9890(int x, int y);
+    void sub_101a98f0(int wide, int tall);
+};
+
+struct CBuildGroup_101c2310
+{
+    int m_0;
+    int m_4;
+    int _snapX;
+    int _snapY;
+
+    void sub_101c2310(CPanel *panel);
+};
+
+// TARGET: CBuildGroup_101c2310::sub_101c2310
+void CBuildGroup_101c2310::sub_101c2310(CPanel *panel)
+{
+    int x, y, wide, tall;
+    panel->sub_101a9980(x, y, wide, tall);
+
+    x = (x / _snapX) * _snapX;
+    y = (y / _snapY) * _snapY;
+    panel->sub_101a9890(x, y);
+
+    int x2 = x + wide;
+    int y2 = y + tall;
+    x2 = (x2 / _snapX) * _snapX;
+    y2 = (y2 / _snapY) * _snapY;
+
+    panel->sub_101a98f0(x2 - x, y2 - y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b20 size=0x4
 struct CUnknown101c2b20 { char * sub_101c2b20(); };
 char * CUnknown101c2b20::sub_101c2b20()
