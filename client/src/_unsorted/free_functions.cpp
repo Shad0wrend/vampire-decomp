@@ -31972,6 +31972,22 @@ void Anim_1008fcd0::sub_1008fcd0(int i, S48_10108430 *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091910 size=0x4a
+#include "C_BaseAnimating.h"
+void sub_10108430(void *dst, int arg);
+struct AnimView2 { char pad[0x770]; char *m_pData; char pad2[8]; int m_nCount; };
+struct Ent72 { char b[72]; };
+bool C_BaseAnimating::sub_10091910(int idx, int arg)
+{
+	AnimView2 *v = (AnimView2 *)this;
+	if (idx >= 1 && idx <= v->m_nCount && vfunc140()) {
+		sub_10108430(&((Ent72 *)v->m_pData)[idx - 1], arg);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100921d0 size=0xe7
 #include "CBaseEntityList.h"
 
