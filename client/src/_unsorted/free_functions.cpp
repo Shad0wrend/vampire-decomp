@@ -53379,6 +53379,22 @@ int __stdcall sub_10115e00(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115ea0 size=0x3a
+struct SVal10115 { int a, b, c; ~SVal10115() {} };
+struct SOwner10115 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(SVal10115 *p); };
+struct COwner10115 {
+	char pad[0x28];
+	SOwner10115 *m_pOwner;
+	SVal10115 *sub_10115ea0();
+};
+SVal10115 *COwner10115::sub_10115ea0()
+{
+	static SVal10115 s;
+	m_pOwner->v6(&s);
+	return &s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115ef0 size=0x6
 namespace lifted {
 extern char g_104d5190;
