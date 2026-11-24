@@ -91711,6 +91711,48 @@ void __stdcall sub_10193790(BeamV *b, BeamInfoV *i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101938a0 size=0x4d
+#include "CViewRenderBeams.h"
+
+struct BeamInfoView
+{
+	char m_pad0[0x2c];
+	int m_n2c;
+	char m_pad1[0x70 - 0x30];
+	bool m_b70;
+};
+
+class CUnknown101935e0View
+{
+public:
+	void sub_101935e0(Beam_t *pBeam, const void *pInfo);
+};
+
+struct CGlobalsView
+{
+	char m_pad[0xc];
+	int curtime;
+};
+
+extern CGlobalsView *g_102b8494;
+
+Beam_t *CViewRenderBeams::sub_101938a0(void *pInfo)
+{
+	BeamInfoView *info = (BeamInfoView *)pInfo;
+	Beam_t *pBeam = sub_10193470(info->m_b70);
+	if ( !pBeam )
+		return pBeam;
+
+	*(int *)((char *)pBeam + 0xcc) = g_102b8494->curtime;
+
+	if ( info->m_n2c < 0 )
+		return 0;
+
+	((CUnknown101935e0View *)this)->sub_101935e0(pBeam, pInfo);
+	return pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194d30 size=0x38
 #include <math.h>
 void sub_10194d30(float *table, int n)
