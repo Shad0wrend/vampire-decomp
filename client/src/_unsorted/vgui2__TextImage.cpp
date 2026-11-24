@@ -31,6 +31,54 @@ int vgui2::TextImage::vfunc28(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9e20 size=0x59
+#include "vgui2__TextImage.h"
+
+struct CTextImageLayout
+{
+	char m_pad00[0x2c];
+	int m_i2c;
+};
+
+class ILocalizeView
+{
+public:
+	virtual void l0() = 0;
+	virtual void l1() = 0;
+	virtual void l2() = 0;
+	virtual void l3() = 0;
+	virtual void l4() = 0;
+	virtual void l5() = 0;
+	virtual void l6() = 0;
+	virtual void l7() = 0;
+	virtual void l8() = 0;
+	virtual void l9() = 0;
+	virtual void l10() = 0;
+	virtual char *l11(unsigned short) = 0;
+};
+
+void *sub_101ac920();
+
+extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
+
+// TARGET: vgui2::TextImage::vfunc29
+void vgui2::TextImage::vfunc29(char *buf, int size)
+{
+	CTextImageLayout *s = (CTextImageLayout *)this;
+	if (s->m_i2c != 0xffff)
+	{
+		const char *txt = ((ILocalizeView *)sub_101ac920())->l11((unsigned short)s->m_i2c);
+		buf[0] = '#';
+		strncpy(buf + 1, txt, size - 1);
+		buf[size - 1] = 0;
+	}
+	else
+	{
+		vfunc28((int)buf, size);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9e80 size=0x39
 #include "vgui2__TextImage.h"
 struct TIView { char pad[0x1c]; int m1c; int m20; int m24; };
