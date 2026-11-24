@@ -97,6 +97,17 @@ int vgui2::Label::vfunc111(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2960 size=0x30
+#include "vgui2__Label.h"
+// TARGET: vgui2::Label::vfunc129
+void vgui2::Label::vfunc129()
+{
+	int w, h;
+	vfunc110(&w, &h);
+	((Panel *)this)->sub_101a98f0(w, h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b29b0 size=0x24
 #include "vgui2__Label.h"
 namespace lifted {
