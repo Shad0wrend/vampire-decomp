@@ -61888,6 +61888,28 @@ void sub_10147780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147990 size=0x17
+struct CUnknown101472e0 { int a, b, c, d; CUnknown101472e0 *sub_101472e0(); };
+CUnknown101472e0 *CUnknown101472e0::sub_101472e0()
+{
+	a = 1;
+	b = 0;
+	c = 0;
+	d = 0;
+	return this;
+}
+struct SOwner_10147990 { int a, b, c; CUnknown101472e0 m; SOwner_10147990 *sub_10147990(); };
+// TARGET: ?sub_10147990@SOwner_10147990@@QAEPAU1@XZ
+SOwner_10147990 *SOwner_10147990::sub_10147990()
+{
+	m.sub_101472e0();
+	c = 0;
+	a = 0;
+	b = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101479b0 size=0x11
 namespace lifted {
 struct C10147300 { int sub_10147300(); };
