@@ -34285,6 +34285,24 @@ template <> int ClientClassInit<DT_EnvParticle::ignored>(DT_EnvParticle::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aeea0 size=0x2b
+#include "C_EnvParticle.h"
+struct XPSys { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(void *); };
+extern XPSys *g_104a581c;
+struct XEnvView { int u0[0x70 / 4]; int m_i70; int u1[(0x468 - 0x74) / 4]; void *m_p468; };
+// TARGET: C_EnvParticle::sub_100aeea0
+int C_EnvParticle::sub_100aeea0(int a, int b)
+{
+	XEnvView *p = (XEnvView *)this;
+	if (p->m_p468 && !(p->m_i70 & 0x400)) {
+		g_104a581c->v17(p->m_p468);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeed0 size=0x25
 namespace lifted {
 extern int g_104a581c;
