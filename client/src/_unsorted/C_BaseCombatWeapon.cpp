@@ -358,6 +358,15 @@ int __stdcall sub_1007b650(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b6b0 size=0x1a
+#include "C_BaseCombatWeapon.h"
+// TARGET: C_BaseCombatWeapon::vfunc150
+bool C_BaseCombatWeapon::vfunc150(int a)
+{
+	return vfunc148(a) != -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b6d0 size=0xc
 #include "C_BaseCombatWeapon.h"
 namespace lifted {

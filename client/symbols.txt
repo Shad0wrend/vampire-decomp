@@ -2776,6 +2776,7 @@
 0x1007b630 func   ?vfunc147@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc147
 0x1007b640 func   ?vfunc217@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc217
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
+0x1007b6b0 func   ?vfunc150@C_BaseCombatWeapon@@UAE_NH@Z C_BaseCombatWeapon::vfunc150
 0x1007b6d0 func   ?vfunc218@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc218
 0x1007b6e0 func   ?vfunc219@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc219
 0x1007b6f0 func   ?vfunc223@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc223
