@@ -40609,6 +40609,20 @@ int sub_100ccde0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cce00 size=0x41
+struct PV { char pad[0x88]; int l; int r; };
+int sub_100cd100();
+// TARGET: sub_100cce00
+int sub_100cce00(PV *p)
+{
+	if (!p)
+		return 10;
+	int w = p->r - p->l;
+	int s = sub_100cd100();
+	return (int)(w * (s * 0.0015625));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccea0 size=0x23
 #include <stdarg.h>
 extern char g_104a6840[0x400];
