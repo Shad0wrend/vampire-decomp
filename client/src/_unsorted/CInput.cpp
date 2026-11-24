@@ -101,6 +101,27 @@ bool CInput::vfunc48()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff950 size=0x56
+#include "CInput.h"
+
+struct InputView
+{
+    virtual void iv0() = 0;
+    virtual bool vfunc1() = 0;
+    char m_pad04[0x24];
+    float m_fl28;        // +0x28
+};
+
+extern InputView *g_104d2134;
+extern InputView *g_104d24f4;
+
+void CInput::vfunc49(float *a, float *b)
+{
+    *a = g_104d2134->vfunc1() ? 0.0f : g_104d2134->m_fl28;
+    *b = g_104d24f4->vfunc1() ? 0.0f : g_104d24f4->m_fl28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff9b0 size=0x1b
 #include "CInput.h"
 namespace lifted {
