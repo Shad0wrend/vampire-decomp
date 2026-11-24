@@ -17,3 +17,11 @@ void __stdcall sub_100e1b10(int, int, int, int, int, int, int, int, int, int, in
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e2060 size=0x3
+// TARGET: sub_100e2060
+bool sub_100e2060()
+{
+	return false;
+}
+// END FUNCTION
