@@ -30,6 +30,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc101();
 	virtual int vfunc102();
 	virtual void vfunc129();
+	void sub_101a98f0(int, int);
 	// the slots Button adds to its base's vtable: 138-165, vfuncK at slot K
 	virtual void vfunc138(char);
 	virtual bool vfunc139();
