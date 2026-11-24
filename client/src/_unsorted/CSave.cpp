@@ -54,6 +54,12 @@ void CSave::vfunc1(int pos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128fd0 size=0x10
+#include "CSave.h"
+// TARGET: CSave::vfunc8
+bool CSave::vfunc8(const void *pData, int nBytes) { return sub_101299c0(pData, nBytes * 2); }
+// END FUNCTION
+
 // FUNCTION: 0x10129070 size=0x40
 #include "CSave.h"
 #include <string.h>
