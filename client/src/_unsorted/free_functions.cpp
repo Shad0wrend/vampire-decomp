@@ -39747,6 +39747,25 @@ void CUnknown100d3f70::sub_100d3f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5010 size=0x37
+struct E10 { unsigned short m_0; unsigned short pad[4]; };
+struct E16 { int m_0; unsigned short m_4; unsigned short pad[5]; };
+struct MV {
+  int m_0; E10 *m_pA; char pad8[0x20 - 8]; E16 *m_pB;
+  void sub_100d5010(unsigned short i);
+};
+// TARGET: MV::sub_100d5010
+void MV::sub_100d5010(unsigned short i)
+{
+  E16 *e = &m_pB[i];
+  unsigned short j = e->m_4;
+  if (j != 0xffff) {
+    m_pA[j].m_0 = 0xffff;
+    e->m_4 = 0xffff;
+  }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5130 size=0x7
 // TARGET: sub_100d5130
 void __fastcall sub_100d5130(char *self)
