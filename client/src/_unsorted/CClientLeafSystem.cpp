@@ -123,6 +123,19 @@ int CClientLeafSystem::vfunc10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2b00 size=0x2f
+#include "CClientLeafSystem.h"
+struct Ent_100d2b00 { int m_u0; unsigned short m_w4; unsigned short m_w6; int m_u8; };
+struct View_100d2b00 { char pad[0xc]; Ent_100d2b00 *m_pEnts; };
+void CClientLeafSystem::vfunc8(int idx, int v, unsigned int *a, unsigned int *b)
+{
+	Ent_100d2b00 *p = &((View_100d2b00 *)this)->m_pEnts[idx];
+	p->m_u8 = v;
+	*a = p->m_w4;
+	*b = p->m_w6;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2b30 size=0x1e
 #include "CClientLeafSystem.h"
 struct LeafE_100d2b30 { int a, b, c; };
