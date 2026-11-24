@@ -53,6 +53,22 @@ C_BaseNetworkable::~C_BaseNetworkable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3a90 size=0x1c
+#include "C_BaseNetworkable.h"
+__declspec(dllimport) void DevMsg(int, const char *, ...);
+class ClientClass
+{
+public:
+	void *m_pCreateFn;
+	void *m_pCreateEventFn;
+	const char *m_pNetworkName;
+};
+void C_BaseNetworkable::ReceiveMessage(int classID, bf_read &msg)
+{
+	DevMsg( 1, "Unhandled entity message for C_BaseNetworkable %s.\n", GetClientClass()->m_pNetworkName );
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3ac0 size=0xc
 #include "C_BaseNetworkable.h"
 int C_BaseNetworkable::vfunc0(int a0)
