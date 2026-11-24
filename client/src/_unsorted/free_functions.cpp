@@ -32396,6 +32396,19 @@ void CUnknown1009fbb0::sub_100a06f0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0710 size=0x2b
+#include "C_BaseEntity.h"
+struct CUnknown1009fbb0 { void sub_100a06f0(int); };
+struct IMI_100a0710 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual int v12(const char *); };
+extern IMI_100a0710 *g_104a57f8;
+bool C_BaseEntity::sub_100a0710(const char *name)
+{
+	int idx = g_104a57f8->v12(name);
+	((CUnknown1009fbb0 *)this)->sub_100a06f0(idx);
+	return idx != -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1200 size=0x1
 void sub_100a1200()
 {
