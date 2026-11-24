@@ -6,7 +6,7 @@
 
 // VC6 writes CFireParticle's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFireParticle *pcd_emit_10118ab0() { return new CFireParticle; }
+CFireParticle *pcd_emit_10118ab0(const CFireParticle &other) { return new CFireParticle(other); }
 
 // TARGET: ??_GCFireParticle@@UAEPAXI@Z
 // END FUNCTION

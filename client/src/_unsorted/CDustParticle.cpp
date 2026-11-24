@@ -12,7 +12,7 @@ float CDustParticle::vfunc8(PartT *p, float dt) { float t = 1.0f - p->m_fl2c / p
 
 // VC6 writes CDustParticle's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CDustParticle *pcd_emit_1002f460() { return new CDustParticle; }
+CDustParticle *pcd_emit_1002f460(const CDustParticle &other) { return new CDustParticle(other); }
 
 // TARGET: ??_GCDustParticle@@UAEPAXI@Z
 // END FUNCTION

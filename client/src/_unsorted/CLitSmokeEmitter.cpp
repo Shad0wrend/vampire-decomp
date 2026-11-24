@@ -29,7 +29,7 @@ void CLitSmokeEmitter::sub_10030790(int a, int b, int c, int d)
 
 // VC6 writes CLitSmokeEmitter's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CLitSmokeEmitter *pcd_emit_100b5470() { return new CLitSmokeEmitter; }
+CLitSmokeEmitter *pcd_emit_100b5470(const CLitSmokeEmitter &other) { return new CLitSmokeEmitter(other); }
 
 // TARGET: ??_GCLitSmokeEmitter@@UAEPAXI@Z
 // END FUNCTION

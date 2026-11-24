@@ -6,7 +6,7 @@
 
 // VC6 writes CTrailParticles's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CTrailParticles *pcd_emit_10045ee0() { return new CTrailParticles; }
+CTrailParticles *pcd_emit_10045ee0(const CTrailParticles &other) { return new CTrailParticles(other); }
 
 // TARGET: ??_GCTrailParticles@@UAEPAXI@Z
 // END FUNCTION

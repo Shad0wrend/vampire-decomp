@@ -6,7 +6,7 @@
 
 // VC6 writes CSimple3DEmitter's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CSimple3DEmitter *pcd_emit_10115c20() { return new CSimple3DEmitter; }
+CSimple3DEmitter *pcd_emit_10115c20(const CSimple3DEmitter &other) { return new CSimple3DEmitter(other); }
 
 // TARGET: ??_GCSimple3DEmitter@@UAEPAXI@Z
 // END FUNCTION

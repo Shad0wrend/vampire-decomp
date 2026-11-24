@@ -3,6 +3,7 @@
 // the destructor is slot 0 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "CParticleEffect.h"
+#include "CSmokeEmitterAux.h"
 
 struct SimpleParticleAux_t
 {
@@ -15,6 +16,7 @@ struct SimpleParticleAux_t
 class CSimpleEmitter : public CParticleEffect
 {
 public:
+	CSimpleEmitter(const char *name);
 	virtual ~CSimpleEmitter();
 	float vfunc8(struct SimpleParticle8 *p, int unused);
 	float vfunc9(struct XSP *p, int unused);

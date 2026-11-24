@@ -7,5 +7,8 @@ class CLitSmokeEmitter : public CSimpleEmitter
 {
 public:
 	void sub_10030790(int a, int b, int c, int d);
-	char m_pad0004[0xdc - 0x4];
+	CLitSmokeEmitter(const char *name) : CSimpleEmitter(name) {}
+	int m_unk70;
+	int m_unk74;
+	CSmokeEmitterAux m_aux;
 };

@@ -6,7 +6,7 @@
 
 // VC6 writes CEmberEffect's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CEmberEffect *pcd_emit_10118800() { return new CEmberEffect; }
+CEmberEffect *pcd_emit_10118800(const CEmberEffect &other) { return new CEmberEffect(other); }
 
 // TARGET: ??_GCEmberEffect@@UAEPAXI@Z
 // END FUNCTION
