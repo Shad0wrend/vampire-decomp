@@ -10,3 +10,10 @@ CParticleEffect *pcd_emit_10117f60() { return new CParticleEffect; }
 
 // TARGET: ??_GCParticleEffect@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10118060 size=0x3
+// TARGET: sub_10118060
+void __stdcall sub_10118060(int)
+{
+}
+// END FUNCTION
