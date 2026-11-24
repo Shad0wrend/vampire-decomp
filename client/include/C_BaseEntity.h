@@ -14,6 +14,7 @@ public:
 	char *sub_1009f770();
 	void *sub_100a2d70();
 	void sub_100a1a70(int a);
+	void sub_100a2030(const void *);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
 	virtual ICollideable *GetClientCollideable();	// IClientUnknown slot 2

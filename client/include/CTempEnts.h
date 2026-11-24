@@ -8,6 +8,8 @@ class CTempEnts : public ITempEnts
 {
 public:
 	void sub_1003ce90(void *, int);
+	void sub_1003cee0();
+	void *sub_1003cf20(const void *, const void *);
 	struct TempEntView *sub_1003cdd0(const void *org, void *model);
 	int m_unk4[(0xfbf48 - 4) / 4];
 	void *m_pFreeTempEnts;
