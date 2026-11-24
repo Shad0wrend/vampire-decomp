@@ -58774,6 +58774,14 @@ char __stdcall sub_10140440(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140450 size=0x15
+#include "CUnknown101d7520.h"
+bool CUnknown101d7520Rule::sub_10140450(void *pArg)
+{
+	return m_sub.sub_10161bb0(pArg) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101405a0 size=0x1
 void sub_101405a0()
 {
