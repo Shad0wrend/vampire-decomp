@@ -194,6 +194,41 @@ int vgui2::Label::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b29f0 size=0x52
+#include "vgui2__Label.h"
+#include "vgui2__Panel.h"
+
+typedef vgui2::Panel BasePanel;
+
+struct C4 {
+	unsigned char r, g, b, a;
+	bool operator!=(const C4 &o) const
+	{
+		return r != o.r || g != o.g || b != o.b || a != o.a;
+	}
+};
+
+struct Sub5c {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3(int);
+};
+
+// TARGET: vgui2::Label::vfunc51
+int vgui2::Label::vfunc51(int color)
+{
+	C4 cur;
+	C4 *p = (C4 *)vfunc53((int)&cur);
+	if (*p != *(C4 *)&color) {
+		((BasePanel *)this)->BasePanel::vfunc51(color);
+		(*(Sub5c **)((char *)this + 0x5c))->v3(color);
+		return vfunc6();
+	}
+	return (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2a50 size=0x19
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc53(int p) { int t; Panel::vfunc53((int)&t); *(int *)p = t; return p; }

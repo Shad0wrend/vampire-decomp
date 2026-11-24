@@ -7880,6 +7880,7 @@
 0x101b2990 func   ?vfunc118@Label@vgui2@@UAEXH@Z vgui2::Label::vfunc118
 0x101b29b0 func   ?vfunc11@Label@vgui2@@UAEXHH@Z vgui2::Label::vfunc11
 0x101b29e0 func   ?vfunc119@Label@vgui2@@UAEHXZ vgui2::Label::vfunc119
+0x101b29f0 func   ?vfunc51@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc51
 0x101b2a50 func   ?vfunc53@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc53
 0x101b2a70 func   ?vfunc113@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc113
 0x101b2a80 func   ?vfunc114@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc114
