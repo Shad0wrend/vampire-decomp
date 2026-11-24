@@ -4099,6 +4099,7 @@
 0x100d7180 func   ?sub_100d7180@CClientShadowMgr@@QAEXHGPAH@Z CClientShadowMgr::sub_100d7180
 0x100d8230 func   ?vfunc2@CShadowProxy@@UAEXXZ CShadowProxy::vfunc2
 0x100d8260 func   ?sub_100d8260@CUnknown100d8260@@QAEXXZ CUnknown100d8260::sub_100d8260
+0x100d8270 func   ?vfunc0@CShadowProxy@@UAE_NPAX0@Z CShadowProxy::vfunc0
 0x100d8310 func   ?sub_100d8310@@YAHXZ sub_100d8310
 0x100d8330 func   ?sub_100d8330@CUnknown100d8330@@QAEPAXXZ CUnknown100d8330::sub_100d8330
 0x100d8350 func   ?vfunc2@CShadowModelProxy@@UAEXXZ CShadowModelProxy::vfunc2
