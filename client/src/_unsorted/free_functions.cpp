@@ -64743,6 +64743,25 @@ int sub_10136350(int a0, int a1, int a2, int a3, char a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136520 size=0x54
+extern "C" double __cdecl fmod(double, double);
+
+struct CSpriteFloatView
+{
+    char m_pad00[0x434];
+    float m_flAccum;    // +0x434
+    char m_pad438[0x450 - 0x438];
+    float m_flPeriod;   // +0x450
+};
+
+void __fastcall sub_10136520(CSpriteFloatView *p, int, float dt)
+{
+    p->m_flAccum += dt;
+    if (p->m_flAccum > p->m_flPeriod && p->m_flPeriod > 0.0f)
+        p->m_flAccum = (float)fmod(p->m_flAccum, p->m_flPeriod);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136580 size=0x17
 struct CUnknown10136580 { int sub_10136580(int, int); };
 int CUnknown10136580::sub_10136580(int a0, int a1)
