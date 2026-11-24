@@ -31,3 +31,11 @@ float CVFeatList_t::vfunc3(int i)
 	return (float)m_aEntries[i].m_unk0c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1014d700 size=0x11
+#include "CVFeatList_t.h"
+float CVFeatList_t::vfunc4(int i)
+{
+	return (float)m_aEntries[i].m_unk10;
+}
+// END FUNCTION
