@@ -44542,6 +44542,11 @@ __declspec(naked) void sub_101085a0(const float *start, float scale, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108650 size=0x10
+// TARGET: sub_10108650
+int sub_10108650(int x) { int n = 0; while (x >>= 1) n++; return n; }
+// END FUNCTION
+
 // FUNCTION: 0x10108660 size=0x146
 #include "Vector.h"
 #include "matrix3x4_t.h"
