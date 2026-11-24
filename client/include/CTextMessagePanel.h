@@ -16,7 +16,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CTextMessagePanel adds to its base's vtable: 107-113, vfuncK at slot K
 	virtual int vfunc107(int, int);
 	virtual int vfunc108(int, int, int, int, char);
-	virtual void vfunc109();
+	virtual void vfunc109(int *, int *, int);
 	virtual int vfunc110(int);
 	virtual int vfunc111();
 	virtual void vfunc112();
