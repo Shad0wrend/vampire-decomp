@@ -88570,6 +88570,28 @@ void Tbl_101a3140::sub_101a3140(void (*pfn)(Node_101a3140 *))
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3170 size=0x12
+struct CEntry18
+{
+	int m_unk00, m_unk04, m_unk08, m_unk0c;
+	CEntry18 *m_pPrev;	// 0x10
+	CEntry18 *m_pNext;	// 0x14
+};
+struct CTable18
+{
+	CEntry18 m_entries[256];
+	void sub_101a3170();
+};
+void CTable18::sub_101a3170()
+{
+	for ( int i = 0; i < 256; i++ )
+	{
+		m_entries[i].m_pPrev = &m_entries[i];
+		m_entries[i].m_pNext = &m_entries[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
