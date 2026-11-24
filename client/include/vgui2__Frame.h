@@ -26,7 +26,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc97();
 	virtual void vfunc101();
 	virtual int vfunc102();
-	virtual void vfunc107();
+	virtual void vfunc107(int);
 	// the slots Frame adds to its base's vtable: 118-144, vfuncK at slot K
 	virtual int vfunc118(int, char);
 	virtual bool vfunc119(char);
