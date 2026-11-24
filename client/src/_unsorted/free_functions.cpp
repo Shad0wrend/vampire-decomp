@@ -77817,6 +77817,12 @@ int CUnknown1017d660::sub_1017d660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017dc00 size=0x1a
+struct E1017 { int a; int b; };
+struct V1017 { char pad[0x80]; E1017 e[7]; int sub_1017dc00(); };
+int V1017::sub_1017dc00() { int s = 0; for (int i = 0; i < 7; i++) s += e[i].a; return s; }
+// END FUNCTION
+
 // FUNCTION: 0x1017f1d0 size=0xbf
 #include "CUnknown10203240.h"
 struct CUnknown1017b270 { int sub_1017b270(int); };
