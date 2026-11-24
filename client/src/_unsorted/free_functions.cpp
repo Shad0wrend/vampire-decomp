@@ -17697,6 +17697,27 @@ void CUnk_10054670::sub_10054670(int arg0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100547a0 size=0x5e
+#include <string.h>
+
+__declspec(dllimport) const char *Q_stristr(const char *pStr, const char *pSearch);
+
+bool sub_100547a0(const char *pStr)
+{
+	if (!pStr || strlen(pStr) == 0)
+		return false;
+
+	if (Q_stristr(pStr, "auto-end"))
+		return true;
+	if (Q_stristr(pStr, "auto_end"))
+		return true;
+	if (Q_stristr(pStr, "auto end"))
+		return true;
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054800 size=0x5e
 #include <string.h>
 
