@@ -39915,6 +39915,26 @@ void UtlMem::sub_100d8830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d89a0 size=0x33
+struct LLNode { int pad0; short pad4; unsigned short a; unsigned short b; };
+struct LLView {
+    LLNode *m_p;
+    char pad[0x10];
+    unsigned short m_n;
+    int sub_100d89a0(unsigned short i);
+};
+// TARGET: LLView::sub_100d89a0
+int LLView::sub_100d89a0(unsigned short i)
+{
+    if (i < m_n) {
+        LLNode *n = (LLNode *)((char *)m_p + i * 10);
+        if (n->a != i || n->b == i)
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8c90 size=0x128
 #include "CUtlLinkedList240.h"
 extern void *(__cdecl *g_101e3100)(unsigned int);

@@ -4214,6 +4214,7 @@
 0x100d8790 func   ?sub_100d8790@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_100d8790
 0x100d87c0 func   ?sub_100d87c0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d87c0
 0x100d8830 func   ?sub_100d8830@UtlMem@@QAEXXZ UtlMem::sub_100d8830
+0x100d89a0 func   ?sub_100d89a0@LLView@@QAEHG@Z LLView::sub_100d89a0
 0x100d8c90 func   ?sub_100d8c90@CUtlLinkedList240@@QAEG_N@Z CUtlLinkedList240::sub_100d8c90
 0x100d8dc0 func   ?sub_100d8dc0@CUnknown100d8dc0@@QAEPAXXZ CUnknown100d8dc0::sub_100d8dc0
 0x100d8dd0 func   ?sub_100d8dd0@S100d8dd0@@QAEXG@Z S100d8dd0::sub_100d8dd0
