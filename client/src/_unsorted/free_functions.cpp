@@ -83467,6 +83467,36 @@ void sub_10171400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172850 size=0x29
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##0) V4(n##1) V4(n##2) V4(n##3)
+struct VRefTarget {
+	V16(p0) V16(p1) V16(p2) V16(p3)
+	virtual void s64a(); virtual void s65a(); virtual void s66a(); virtual void s67a(); virtual void s68a(); virtual void s69a();
+	virtual void s70a(); virtual void s71a(); virtual void s72a(); virtual void s73a(); virtual void s74a(); virtual void s75a(); virtual void s76a(); virtual void s77a();
+	virtual void Refresh(const char *s);
+};
+struct VRefPanel {
+	V16(q0) V16(q1) V16(q2) V16(q3) V16(q4) V16(q5) V16(q6) V16(q7) V16(q8)
+	virtual void t144a(); virtual void t145a(); virtual void t146a();
+	virtual VRefTarget *GetTarget();
+};
+struct CVSPanelX {
+	int m_unk0; int m_unk4; int m_unk8; int m_unkc;
+	VRefPanel m_panel;
+	void sub_10172850();
+	void sub_10172c50();
+};
+// TARGET: ?sub_10172850@CVSPanelX@@QAEXXZ
+void CVSPanelX::sub_10172850()
+{
+	sub_10172c50();
+	VRefTarget *t = m_panel.GetTarget();
+	if (t)
+		t->Refresh("refresh");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172ac0 size=0x3
 char sub_10172ac0()
 {
