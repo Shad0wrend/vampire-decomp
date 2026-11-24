@@ -56740,6 +56740,15 @@ bool sub_10139300(const unsigned short *a, const unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139320 size=0x16
+struct CUnknown10139320Entry { int m_unk[4]; };
+struct CUnknown10139320 { int m_unk0; char *m_pData; CUnknown10139320Entry *sub_10139320(unsigned int idx); };
+CUnknown10139320Entry *CUnknown10139320::sub_10139320(unsigned int idx)
+{
+	return (CUnknown10139320Entry *)(m_pData + 8 + (idx & 0xffff) * 16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
