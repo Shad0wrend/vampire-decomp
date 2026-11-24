@@ -680,6 +680,17 @@ void C_BaseEntity::vfunc37()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0df0 size=0x3f
+#include "C_BaseEntity.h"
+void __stdcall sub_100a0df0(C_BaseEntity *ent, float *pos, float *ang)
+{
+	const float *o = (const float *)&ent->GetAbsOrigin();
+	pos[0] = o[0]; pos[1] = o[1]; pos[2] = o[2];
+	const float *a = (const float *)&ent->GetAbsAngles();
+	ang[0] = a[0]; ang[1] = a[1]; ang[2] = a[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a11e0 size=0x7
 #include "C_BaseEntity.h"
 namespace lifted {
