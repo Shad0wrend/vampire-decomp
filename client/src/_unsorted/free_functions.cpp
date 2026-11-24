@@ -83106,6 +83106,27 @@ int CUnknown1016f470::sub_1016f470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016f500 size=0x2d
+#include <string.h>
+#include "VBarterUI.h"
+#define V1(n) virtual void v##n();
+#define V10(n) V1(n##0) V1(n##1) V1(n##2) V1(n##3) V1(n##4) V1(n##5) V1(n##6) V1(n##7) V1(n##8) V1(n##9)
+#define V100(n) V10(n##0) V10(n##1) V10(n##2) V10(n##3) V10(n##4) V10(n##5) V10(n##6) V10(n##7) V10(n##8) V10(n##9)
+struct NameSrc {
+	V1(0) V1(1) V1(2) V1(3) V1(4) V1(5) V1(6) V1(7) V1(8) V1(9)
+	V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+	V100(1) V10(20) V10(21)
+	V1(220) V1(221) V1(222)
+	virtual const char *GetName();
+};
+struct VBarterUIView : public VBarterUI { void sub_1016f500(NameSrc *p, char c); };
+void VBarterUIView::sub_1016f500(NameSrc *p, char c)
+{
+	strcpy((char *)this + 0x450, p->GetName());
+	*((char *)this + 0x4d0) = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016f530 size=0x7
 struct CUnknown1016f530 { char * sub_1016f530(); };
 char * CUnknown1016f530::sub_1016f530()
