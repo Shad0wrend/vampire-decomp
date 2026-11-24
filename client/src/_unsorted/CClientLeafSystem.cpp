@@ -79,6 +79,13 @@ struct V1c70 { char pad[0x20]; El1c70 *arr; void sub_100d1c70(unsigned int h, ch
 void V1c70::sub_100d1c70(unsigned int h, char v) { arr[h & 0xffff].f = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100d1de0 size=0x23
+#include "CClientLeafSystem.h"
+struct LeafRec { int a0, a4, a8, ac; unsigned short w10; short w12; int a14, a18, a1c, a20, a24, a28, a2c, a30; };
+// TARGET: ?vfunc5@CClientLeafSystem@@UAE_NG@Z
+bool CClientLeafSystem::vfunc5(unsigned short h) { return ((LeafRec *)m_pData)[h].w10 != 0xffff; }
+// END FUNCTION
+
 // FUNCTION: 0x100d2a10 size=0x25
 #include "CClientLeafSystem.h"
 namespace lifted {
