@@ -43374,6 +43374,22 @@ extern CUnknown100f2740 *g_104d0f58;
 void sub_100f2750() { CUnknown100f2740 *p = g_104d0f58; while (p) { p->fn(); p = (CUnknown100f2740 *)p->sub_100f2740(); } }
 // END FUNCTION
 
+// FUNCTION: 0x100f2770 size=0x2d
+struct XHChild { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); };
+struct XHud
+{
+	char u0[0x24]; int m_i24; char u1[0x40 - 0x28]; XHChild **m_pList; char u2[0x4c - 0x44]; int m_nList; char u3[0x70 - 0x50]; int m_i70;
+	void sub_100f2770(int, int, int);
+};
+void XHud::sub_100f2770(int a, int b, int c)
+{
+	for (int i = 0; i < m_nList; i++)
+		m_pList[i]->v7();
+	m_i24 = 0;
+	m_i70 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f27a0 size=0x3
 void __stdcall sub_100f27a0(int a0, int a1, int a2)
 {
