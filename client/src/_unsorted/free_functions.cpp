@@ -89489,6 +89489,16 @@ void sub_101a7510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7530 size=0x17
+#include "CHud.h"
+extern CHud g_104cfe38;
+void sub_101a7b70(CHudElement *);
+void sub_101a7530()
+{
+	sub_101a7b70(g_104cfe38.sub_100f0ed0("CHudWeaponSelection"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7640 size=0x20
 namespace lifted {
 extern char g_1024fd10;
