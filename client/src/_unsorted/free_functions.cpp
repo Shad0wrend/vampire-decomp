@@ -59020,6 +59020,14 @@ int CUnknown10141240::sub_10141240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101412e0 size=0x12
+#include "CUnknown10141350.h"
+char CUnknown10141350::sub_101412e0()
+{
+	return m_unk10 >= sub_10141350();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141300 size=0x3a
 namespace lifted {
 extern char g_105e77d0;
