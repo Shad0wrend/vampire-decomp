@@ -26,6 +26,16 @@ void __stdcall sub_100adbc0(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adbe0 size=0x6
+#include "C_ClientStats.h"
+
+// TARGET: C_ClientStats::vfunc11
+int C_ClientStats::vfunc11()
+{
+	return 0x1b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adca0 size=0x1
 #include "C_ClientStats.h"
 
