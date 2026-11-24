@@ -149,6 +149,35 @@ bool C_BaseAnimating::vfunc67()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093fd0 size=0x4e
+#include "C_BaseAnimating.h"
+
+struct Blob60 { int d[0x18]; };
+struct Blob16 { int d[4]; };
+
+struct AnimView
+{
+	char m_pad0[0x574];
+	Blob60 m_574;
+	Blob60 m_5d4;
+	char m_pad634[0x644 - 0x634];
+	int m_644;
+	int m_648;
+	char m_pad64c[0x65c - 0x64c];
+	Blob16 m_65c;
+	Blob16 m_66c;
+};
+
+int C_BaseAnimating::vfunc70()
+{
+	AnimView *v = (AnimView *)this;
+	v->m_574 = v->m_5d4;
+	v->m_65c = v->m_66c;
+	v->m_644 = v->m_648;
+	return C_BaseEntity::vfunc70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094e90 size=0x22
 #include "C_BaseAnimating.h"
 namespace lifted {
