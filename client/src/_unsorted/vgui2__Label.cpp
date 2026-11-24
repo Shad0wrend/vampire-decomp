@@ -247,6 +247,20 @@ int vgui2::Label::vfunc126()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2dc0 size=0x42
+#include "vgui2__Label.h"
+// TARGET: vgui2::Label::vfunc124
+void vgui2::Label::vfunc124(int idx, int val) {
+	if (idx >= 0 && idx < m_h80) {
+		short *p = &((short *)m_i74)[idx];
+		if (*p != val) {
+			*p = val;
+			vfunc57(0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2e10 size=0x1e
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc121(int a0)
