@@ -4188,6 +4188,7 @@
 0x100ca010 func   ?sub_100ca010@@YAXH@Z sub_100ca010
 0x100ca020 func   ?sub_100ca020@@YAXHH@Z sub_100ca020
 0x100ca040 func   ?sub_100ca040@@YAXH@Z sub_100ca040
+0x100ca050 func   ?sub_100ca050@FactoryView@@QAEPAXHHHH@Z FactoryView::sub_100ca050
 0x100ca0b0 func   ?sub_100ca0b0@UtlMem@@QAEXH@Z UtlMem::sub_100ca0b0
 0x100ca210 func   ?vfunc16@C_World@@UAEHXZ C_World::vfunc16
 0x100ca220 func   ?vfunc15@C_World@@UAEHXZ C_World::vfunc15
