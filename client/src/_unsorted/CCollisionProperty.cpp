@@ -20,6 +20,17 @@ int CCollisionProperty::vfunc11()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100432e0 size=0x8
+#include "CCollisionProperty.h"
+#include "C_BaseEntity.h"
+
+// TARGET: CCollisionProperty::vfunc8
+const Vector &CCollisionProperty::vfunc8()
+{
+	return ((C_BaseEntity *)m_unk3c)->GetAbsOrigin();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043440 size=0x4
 #include "CCollisionProperty.h"
 
