@@ -89051,6 +89051,28 @@ void VMapScreenUI::sub_10187860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101878c0 size=0x53
+// TARGET: VMapScreenUI::sub_101878c0
+#include "VMapScreenUI.h"
+
+void VMapScreenUI::sub_101878c0(int nArg0, int nArg1)
+{
+	bool bChanged = false;
+	bool bNew = (nArg0 != 0);
+	if ( bNew != m_b180 )
+		bChanged = true;
+	m_b180 = bNew;
+	if ( nArg1 )
+		m_n184 = nArg1;
+	m_n184 |= 1;
+	if ( bChanged )
+	{
+		sub_10187860();
+		sub_10187400();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187920 size=0x22
 namespace lifted {
 extern char g_1027b3b4;
