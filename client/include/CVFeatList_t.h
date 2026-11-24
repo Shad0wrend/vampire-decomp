@@ -19,4 +19,5 @@ public:
 	VFeatEntry_t m_aEntries[1];	// 0x160, 24 bytes each
 
 	virtual float vfunc0(int i);
+	virtual float vfunc1(int i);
 };
