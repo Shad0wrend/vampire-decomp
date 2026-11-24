@@ -24944,6 +24944,13 @@ struct CWpnView7d8 { char pad[0x7d8]; unsigned char m_a : 1; unsigned char m_b :
 bool CWpnView7d8::sub_1007cd70() { return m_b; }
 // END FUNCTION
 
+// FUNCTION: 0x1007cda0 size=0x11
+struct CWpnObj1007cda0 { char pad[0x244c]; void *m_p; };
+CWpnObj1007cda0 *sub_1007b160();
+// TARGET: sub_1007cda0
+bool sub_1007cda0() { void *p = sub_1007b160()->m_p; if (p) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1007cdc0 size=0x1c
 namespace block_10256200 {
 unsigned char __fastcall sub_1007cd70(unsigned char *self)
