@@ -43842,6 +43842,107 @@ void CDetailModel_100e0300::sub_100e0300(float *color)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0900 size=0x137
+#include "CDetailObjectSystem.h"
+#include <string.h>
+struct Buf_100e0900 {
+	char *m_pBuffer;
+	int m_nSize;
+	int m_nGrow;
+	int m_nGet;
+	int m_nPut;
+	unsigned char m_nError;
+	unsigned char m_nFlags;
+	bool sub_1013cbb0(int n);
+	void sub_1013c970(void *p, int n);
+	int GetInt()
+	{
+		int i;
+		if (!(m_nFlags & 1))
+		{
+			if (sub_1013cbb0(4))
+			{
+				i = *(int *)(m_pBuffer + m_nGet);
+				m_nGet += 4;
+			}
+			else
+				i = 0;
+		}
+		else
+			sub_1013ce00(this, "%d", &i);
+		return i;
+	}
+	static void sub_1013ce00(Buf_100e0900 *b, const char *fmt, ...);
+};
+struct IEng_100e0900 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35();
+	virtual void *LoadModel(const char *name);
+};
+struct IMI_100e0900 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15();
+	virtual bool IsModelVertexLit(void *model);
+};
+extern IEng_100e0900 *g_104a57d4;
+extern IMI_100e0900 *g_104a57f8;
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+struct Vec_100e0900 {
+	void **m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_Size;
+	void **m_pElements;
+	void sub_100e12c0(int num);
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_allocationCount)
+			sub_100e12c0(m_Size + num - m_allocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(void *));
+	}
+	void AddToTail(void *src)
+	{
+		int elem = m_Size;
+		GrowVector(1);
+		ShiftElementsRight(elem, 1);
+		void **p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+void CDetailObjectSystem::sub_100e0900(Buf_100e0900 &buf)
+{
+	int count = buf.GetInt();
+	while (--count >= 0)
+	{
+		char lump[128];
+		buf.sub_1013c970(lump, 128);
+		void *model = g_104a57d4->LoadModel(lump);
+		if (g_104a57f8->IsModelVertexLit(model))
+		{
+			Warning("Detail prop model %s is using vertex-lit materials!\nIt must use unlit materials!\n", lump);
+			model = g_104a57d4->LoadModel("models/error/error.mdl");
+		}
+		((Vec_100e0900 *)((char *)this + 8))->AddToTail(model);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1000 size=0x34
 struct Elem { char pad[0x4c]; unsigned short a; unsigned short b; };
 struct CL {
