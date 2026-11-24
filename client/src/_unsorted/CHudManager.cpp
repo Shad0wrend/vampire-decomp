@@ -32,3 +32,16 @@ void CHudManager::vfunc113(int mask)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10057f80 size=0x30
+#include "CHudManager.h"
+struct IHE { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int v4(); virtual void v5(int); };
+struct HNode { IHE *m_p; HNode *m_pNext; };
+void CHudManager::vfunc114(int mask)
+{
+	for (HNode *n = *(HNode **)((char *)this + 0x170); n; n = n->m_pNext) {
+		if (mask & n->m_p->v4())
+			n->m_p->v5(1);
+	}
+}
+// END FUNCTION
