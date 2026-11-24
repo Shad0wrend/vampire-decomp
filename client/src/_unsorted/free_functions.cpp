@@ -51586,6 +51586,19 @@ int sub_10106e50(int hModule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106ed0 size=0x5e
+#include "ScopeTrace.h"
+
+// TARGET: sub_10106ed0
+extern "C" void *CreateInterface(const char *, int *);
+
+void *sub_10106ed0()
+{
+	ScopeTrace trace("Sys_GetFactoryThis", g_102de300);
+	return (void *)&CreateInterface;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106f30 size=0x69
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
