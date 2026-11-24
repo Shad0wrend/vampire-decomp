@@ -26382,6 +26382,15 @@ int __stdcall sub_100879a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100879b0 size=0xf
+#include "bf_write.h"
+// TARGET: bf_write::sub_100879b0
+void bf_write::sub_100879b0(int val)
+{
+	sub_10086970(&val, 32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100879e0 size=0x45
 struct CStrParser {
 	char m_pad[0x10];
