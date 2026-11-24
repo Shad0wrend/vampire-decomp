@@ -36654,6 +36654,23 @@ void UtlMem::sub_100b4e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4fd0 size=0x3e
+struct A { int u0; float v; };
+struct B { char pad[0x414]; float cur; int u418, u41c, u420; float old; float prev; float prevv; };
+void sub_100b4fd0(A *a, B *b)
+{
+	float v = a->v;
+	if (v != b->cur) {
+		if (v != b->prevv) {
+			b->old = b->old;
+			b->prev = b->old;
+			b->prevv = v;
+		}
+	}
+	b->cur = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b50a0 size=0x6
 namespace lifted {
 extern char g_104a2178;
