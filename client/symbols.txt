@@ -3713,6 +3713,7 @@
 0x100a9c10 func   ?vfunc185@C_BasePlayer@@UAEXH@Z C_BasePlayer::vfunc185
 0x100a9c90 func   ?sub_100a9c90@CUnknown100a9c90@@QAEXXZ CUnknown100a9c90::sub_100a9c90
 0x100a9ca0 func   ?vfunc94@C_BasePlayer@@UAE_NXZ C_BasePlayer::vfunc94
+0x100a9cb0 func   ?vfunc181@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc181
 0x100a9de0 func   ?sub_100a9de0@CUnknown100a9de0@@QAEMXZ CUnknown100a9de0::sub_100a9de0
 0x100a9df0 func   ?vfunc184@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc184
 0x100aa240 func   ?vfunc195@C_BasePlayer@@UAEPADXZ C_BasePlayer::vfunc195

@@ -460,6 +460,34 @@ bool C_BasePlayer::vfunc94()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9cb0 size=0x53
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+struct CGlobals_102b8494
+{
+	char m_pad0[0xc];
+	float curtime;	// 0x0c
+};
+
+extern CGlobals_102b8494 *g_102b8494;
+
+// TARGET: C_BasePlayer::vfunc181
+void C_BasePlayer::vfunc181()
+{
+	if ( g_102b8494->curtime < *(float *)((char *)this + 0xfd8) )
+		return;
+
+	if ( !vfunc148() )
+		return;
+
+	if ( !((C_BaseCombatWeapon *)vfunc148())->vfunc168() )
+		return;
+
+	((C_BaseCombatWeapon *)vfunc148())->vfunc191();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9df0 size=0x1
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc184()
