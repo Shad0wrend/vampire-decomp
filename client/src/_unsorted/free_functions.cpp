@@ -11415,6 +11415,11 @@ bool __stdcall sub_1002b3e0(S_1002b3e0 *p, int, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b400 size=0x1c
+struct V2b400 { char pad[0xc]; unsigned short a, b, c, d, e; void sub_1002b400(); };
+void V2b400::sub_1002b400() { a = 0xffff; b = 0xffff; c = 0xffff; e = 0; d = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1002b4e0 size=0x3
 struct CUnknown1002b4e0 { void * sub_1002b4e0(); };
 void * CUnknown1002b4e0::sub_1002b4e0()
