@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100e1900 size=0x1d
+#include "CDummyMaterialProxy.h"
+extern "C++" __declspec(dllimport) void DevMsg(int, const char *, ...);
+// TARGET: CDummyMaterialProxy::CDummyMaterialProxy
+CDummyMaterialProxy::CDummyMaterialProxy()
+{
+	DevMsg(1, "CDummyMaterialProxy::CDummyMaterialProxy()\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1920 size=0xc
 #include "CDummyMaterialProxy.h"
 namespace lifted {
