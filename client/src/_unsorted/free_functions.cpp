@@ -53864,6 +53864,23 @@ void sub_101094e0(const QAngle &angles, matrix3x4_t &matrix)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101097a0 size=0x62
+void sub_10109660(int, int);
+void sub_101080e0(int, int, float *);
+void sub_10108540(float *, int, int);
+
+void __cdecl sub_101097a0(int a1, int a2, int a3)
+{
+	float v[3];
+	sub_10109660(a1, a3);
+	sub_101080e0(a2, a3, v);
+	v[0] *= -1.0f;
+	v[1] *= -1.0f;
+	v[2] *= -1.0f;
+	sub_10108540(v, 3, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109810 size=0x71
 #include "Vector.h"
 
