@@ -39,3 +39,13 @@ public:
 		virtual void vfunc0(bool on);
 	};
 };
+
+class SmokeStackMaterials
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
