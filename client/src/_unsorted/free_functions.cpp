@@ -14541,6 +14541,13 @@ int CUnknown1003dab0::sub_1003dab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003dad0 size=0x20
+struct I3dad0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(float *, float *, int, int); };
+extern I3dad0 *g_102ba388;
+struct V3dad0 { char pad[0xc]; float a[3]; float b[3]; int m24; void sub_1003dad0(int); };
+void V3dad0::sub_1003dad0(int) { g_102ba388->v5(a, b, m24, 0); }
+// END FUNCTION
+
 // FUNCTION: 0x1003daf0 size=0x1d
 namespace lifted {
 extern int g_102ba388;
