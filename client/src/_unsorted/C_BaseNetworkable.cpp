@@ -53,6 +53,18 @@ C_BaseNetworkable::~C_BaseNetworkable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a39d0 size=0x2c
+#include "C_BaseNetworkable.h"
+// TARGET: ?NotifyShouldTransmit@C_BaseNetworkable@@UAEXH@Z
+void C_BaseNetworkable::NotifyShouldTransmit(int state)
+{
+	if (state == 0)
+		sub_100a3a60(0);
+	else if (state == 2)
+		sub_100a3a60(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3a90 size=0x1c
 #include "C_BaseNetworkable.h"
 __declspec(dllimport) void DevMsg(int, const char *, ...);
