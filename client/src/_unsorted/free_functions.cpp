@@ -19342,6 +19342,20 @@ void CUnkFadeF::sub_1005f550(bool on)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f590 size=0x4d
+struct EngV { void **vt; };
+extern EngV *g_104a5820;
+extern double g_10227ec8;
+extern double g_1022a380;
+int sub_100cd100();
+void __stdcall sub_1005f590(int a, int b, int *out)
+{
+	int r = ((int (__cdecl *)(EngV *, int, int))g_104a5820->vt[15])(g_104a5820, a, b);
+	int n = sub_100cd100();
+	*out = (int)((n * g_1022a380 * g_10227ec8 - r) * 0.5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f6b0 size=0xa
 struct CUnknown1005f6b0 { char sub_1005f6b0(char); };
 char CUnknown1005f6b0::sub_1005f6b0(char a0)
