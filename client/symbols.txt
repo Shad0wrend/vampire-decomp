@@ -4669,6 +4669,7 @@
 0x1010f750 func   ?sub_1010f750@CView@@QAEXXZ CView::sub_1010f750
 0x1010f760 func   ?sub_1010f760@CView@@QAEXXZ CView::sub_1010f760
 0x1010f770 func   ?vfunc19@CMoveHelperClient@@QAEXXZ CMoveHelperClient::vfunc19
+0x1010f7f0 func   ?sub_1010f7f0@CView@@QAEXPAX@Z CView::sub_1010f7f0
 0x1010f800 func   ?vfunc7@CMoveHelperClient@@UAE_NXZ CMoveHelperClient::vfunc7
 0x1010f810 func   ?sub_1010f810@@YGXH@Z sub_1010f810
 0x1010f820 func   ?sub_1010f820@@YGNH@Z sub_1010f820

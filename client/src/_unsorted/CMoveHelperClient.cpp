@@ -99,6 +99,13 @@ void CMoveHelperClient::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f7f0 size=0xe
+extern "C" void free(void *);
+struct CView { void sub_1010f7f0(void *); };
+// TARGET: ?sub_1010f7f0@CView@@QAEXPAX@Z
+void CView::sub_1010f7f0(void *p) { free(p); }
+// END FUNCTION
+
 // FUNCTION: 0x1010f800 size=0x3
 #include "CMoveHelperClient.h"
 
