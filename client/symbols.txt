@@ -4020,6 +4020,7 @@
 0x100d3450 func   ?sub_100d3450@V2b400@@QAEXXZ V2b400::sub_100d3450
 0x100d3470 func   ?sub_100d3470@UtlMem@@QAEXXZ UtlMem::sub_100d3470
 0x100d3a80 func   ?sub_100d3a80@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100d3a80
+0x100d3c10 func   ?sub_100d3c10@V_100d3c10@@QAEXXZ V_100d3c10::sub_100d3c10
 0x100d3c30 func   ?sub_100d3c30@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100d3c30
 0x100d3cc0 func   ?sub_100d3cc0@UtlMem@@QAEXXZ UtlMem::sub_100d3cc0
 0x100d3e00 func   ?sub_100d3e00@UtlMem@@QAEXXZ UtlMem::sub_100d3e00

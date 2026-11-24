@@ -38305,6 +38305,11 @@ void CUtlLinkedList8::sub_100d3a80(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3c10 size=0x1c
+struct V_100d3c10 { char pad[0xc]; unsigned short a, b, c, d, e; void sub_100d3c10(); };
+void V_100d3c10::sub_100d3c10() { a = 0xffff; b = 0xffff; c = 0xffff; e = 0; d = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100d3c30 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
