@@ -37635,6 +37635,14 @@ void CClientThinkList_100d02b0::sub_100d02b0( CBaseHandle hEnt )
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0480 size=0x15
+struct SItem_100d0480 { int a; unsigned int key; };
+bool sub_100d0480(const SItem_100d0480 *a, const SItem_100d0480 *b)
+{
+	return a->key < b->key;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d05d0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
