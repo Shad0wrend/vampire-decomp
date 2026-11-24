@@ -42669,6 +42669,19 @@ void sub_100cd9a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cda70 size=0x5d
+#include "Vector.h"
+
+// TARGET: sub_100cda70
+float sub_100cda70(const Vector *a, const Vector *b, const Vector *c)
+{
+	Vector v;
+	v = *b - *a;
+	VectorNormalize(v);
+	return DotProduct(v, *c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdad0 size=0x23
 #include <math.h>
 struct Vec { float x, y, z; };
