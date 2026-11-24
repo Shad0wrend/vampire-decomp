@@ -55832,6 +55832,20 @@ void CStringPool::sub_10137d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137dc0 size=0x7
+struct CSelf10137dc0
+{
+	int m_unk00; int m_unk04; int m_unk08; int m_unk0c;
+	short m_unk10; unsigned short m_unk12;
+};
+
+// TARGET: sub_10137dc0
+int __fastcall sub_10137dc0(CSelf10137dc0 *self)
+{
+	return self->m_unk12;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137dd0 size=0x15b
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"

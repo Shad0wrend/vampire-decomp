@@ -5164,6 +5164,7 @@
 0x10137ce0 func   ?sub_10137ce0@@YA_NPAPBD0@Z sub_10137ce0
 0x10137d40 func   ??0CStringPool@@QAE@XZ CStringPool::CStringPool
 0x10137d90 func   ?sub_10137d90@CStringPool@@QAEXXZ CStringPool::sub_10137d90
+0x10137dc0 func   ?sub_10137dc0@@YIHPAUCSelf10137dc0@@@Z sub_10137dc0
 0x10137dd0 func   ?sub_10137dd0@CUtlRBTree12@@QAEHH@Z CUtlRBTree12::sub_10137dd0
 0x10137f30 func   ?sub_10137f30@CStringPool@@QAEPADPBD@Z CStringPool::sub_10137f30
 0x10138320 func   ?LinkToParent@?$CUtlRBTree@PBDG@@QAEXGG_N@Z CUtlRBTree<char const *,unsigned short>::LinkToParent
