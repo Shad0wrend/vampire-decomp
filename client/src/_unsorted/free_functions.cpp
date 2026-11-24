@@ -76223,6 +76223,17 @@ int sub_10170f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101713e0 size=0x18
+struct CHost_101713e0 { char m_pad[0x274]; void *m274; };
+extern CHost_101713e0 *g_105fb14c;
+char sub_101713e0()
+{
+	if (g_105fb14c)
+		return g_105fb14c->m274 != 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10171400 size=0x28
 namespace lifted {
 extern int g_105fb14c;
