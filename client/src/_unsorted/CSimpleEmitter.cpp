@@ -10,3 +10,11 @@ CSimpleEmitter *pcd_emit_10118130() { return new CSimpleEmitter; }
 
 // TARGET: ??_GCSimpleEmitter@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10118360 size=0x14
+#include "CSimpleEmitter.h"
+float CSimpleEmitter::vfunc10(SimpleParticleAux_t *p, float dt)
+{
+	return p->m_fl24 += dt * p->m_fl38;
+}
+// END FUNCTION
