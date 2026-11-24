@@ -18508,6 +18508,22 @@ int CUnknown10057710::sub_10057710(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057840 size=0x52
+#include "CHudManagerPanel.h"
+#include "CHudTimerUI.h"
+
+// TARGET: HudChild_t::sub_10057840
+void HudChild_t::sub_10057840(int a1, int a2, int a3)
+{
+	for ( HudChildNode *p = m_pNodes; p; p = p->m_pNext )
+	{
+		CHudTimerUI *pTimer = dynamic_cast<CHudTimerUI *>(p->m_pElement);
+		if ( pTimer )
+			pTimer->vfunc114(a1, a2, a3);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a20 size=0x2a
 namespace lifted {
 extern int g_104a0d50;
