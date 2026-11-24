@@ -11,6 +11,16 @@ CFXQuad *pcd_emit_100e5d20() { return new CFXQuad; }
 // TARGET: ??_GCFXQuad@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100e6530 size=0x13
+#include "CFXQuad.h"
+bool CFXQuad::vfunc3()
+{
+	if (m_flB < m_flA)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6550 size=0x1a
 #include "CFXQuad.h"
 namespace lifted {
