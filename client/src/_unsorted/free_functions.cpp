@@ -88171,6 +88171,120 @@ int CUnknown101b5770::sub_101b5770(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5f60 size=0x2ec
+extern "C" void *__cdecl _alloca(unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+struct IFileSystem_101b5f60
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void Write(const void *pInput, int size, void *file);
+};
+
+void __cdecl sub_101b6250(IFileSystem_101b5f60 *filesystem, void *f, int indentLevel);
+
+struct KeyValues_101b5f60
+{
+	virtual const char *GetName();
+
+	int m_iKeyName;            // +0x04
+	char *m_sValue;            // +0x08
+	union {
+		int m_iValue;
+		float m_flValue;
+	};                         // +0x0c
+	int m_iDataType;           // +0x10
+	KeyValues_101b5f60 *m_pPeer; // +0x14
+	KeyValues_101b5f60 *m_pSub;  // +0x18
+
+	void sub_101b5f60(IFileSystem_101b5f60 *filesystem, void *f, int indentLevel);
+};
+
+// TARGET: KeyValues_101b5f60::sub_101b5f60
+void KeyValues_101b5f60::sub_101b5f60(IFileSystem_101b5f60 *filesystem, void *f, int indentLevel)
+{
+	sub_101b6250(filesystem, f, indentLevel);
+	filesystem->Write("\"", 1, f);
+	filesystem->Write(GetName(), strlen(GetName()), f);
+	filesystem->Write("\"\n", 2, f);
+
+	sub_101b6250(filesystem, f, indentLevel);
+	filesystem->Write("{\n", 2, f);
+
+	for (KeyValues_101b5f60 *dat = m_pSub; dat != 0; dat = dat->m_pPeer)
+	{
+		if (dat->m_pSub)
+		{
+			dat->sub_101b5f60(filesystem, f, indentLevel + 1);
+		}
+		else
+		{
+			switch (dat->m_iDataType)
+			{
+			case 1:
+				if (dat->m_sValue && *(dat->m_sValue))
+				{
+					sub_101b6250(filesystem, f, indentLevel + 1);
+					filesystem->Write("\"", 1, f);
+
+					int len = strlen(dat->m_sValue);
+					char *buf = (char *)_alloca(len * 2 + 2);
+					char *p = buf;
+					for (int i = 0; i <= len; i++)
+					{
+						if (dat->m_sValue[i] == '\"')
+						{
+							*p++ = '\\';
+						}
+						*p++ = dat->m_sValue[i];
+					}
+
+					filesystem->Write(dat->GetName(), strlen(dat->GetName()), f);
+					filesystem->Write("\"\t\t\"", 4, f);
+					filesystem->Write(buf, strlen(buf), f);
+					filesystem->Write("\"\n", 2, f);
+				}
+				break;
+
+			case 2:
+				{
+					sub_101b6250(filesystem, f, indentLevel + 1);
+					filesystem->Write("\"", 1, f);
+					filesystem->Write(dat->GetName(), strlen(dat->GetName()), f);
+					filesystem->Write("\"\t\t\"", 4, f);
+
+					char buf[32];
+					sprintf(buf, "%d", dat->m_iValue);
+					filesystem->Write(buf, strlen(buf), f);
+					filesystem->Write("\"\n", 2, f);
+				}
+				break;
+
+			case 3:
+				{
+					sub_101b6250(filesystem, f, indentLevel + 1);
+					filesystem->Write("\"", 1, f);
+					filesystem->Write(dat->GetName(), strlen(dat->GetName()), f);
+					filesystem->Write("\"\t\t\"", 4, f);
+
+					char buf[48];
+					sprintf(buf, "%f", dat->m_flValue);
+					filesystem->Write(buf, strlen(buf), f);
+					filesystem->Write("\"\n", 2, f);
+				}
+				break;
+			}
+		}
+	}
+
+	sub_101b6250(filesystem, f, indentLevel);
+	filesystem->Write("}\n", 2, f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6250 size=0x29
 struct IWriter_101b6250 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(const char *s, int n, int a); };
 void sub_101b6250(IWriter_101b6250 *p, int a, int count)
