@@ -9,5 +9,4 @@ public:
 class C_LocalTempEntity : public C_LocalTempEntityPad, public C_SpriteRenderer
 {
 public:
-	virtual ~C_LocalTempEntity();
 };
