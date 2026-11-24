@@ -28,6 +28,26 @@ BitmapImage *pcd_emit_101644a0(const BitmapImage &other) { return new BitmapImag
 // TARGET: ??_GBitmapImage@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101644c0 size=0x55
+#include "BitmapImage.h"
+
+class CUnknown10164a80
+{
+public:
+	void sub_10164a80(int, int, int, int, int);
+};
+
+// TARGET: BitmapImage::BitmapImage
+BitmapImage::BitmapImage(const char *pSzFilename, int nArg)
+{
+	m_clr.Init(0xff);
+	m_unk28 = 0;
+	m_unk24 = 0;
+	sub_10164520((int)pSzFilename, nArg);
+	((CUnknown10164a80 *)this)->sub_10164a80(0, 0, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164960 size=0x11
 #include "BitmapImage.h"
 namespace lifted {
