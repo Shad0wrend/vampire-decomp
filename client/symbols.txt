@@ -2799,6 +2799,7 @@
 0x10078e20 func   ?vfunc2@CAlphaMaterialProxy@@UAEXXZ CAlphaMaterialProxy::vfunc2
 0x10078e50 func   ?sub_10078e50@CUnknown10078e50@@QAEXXZ CUnknown10078e50::sub_10078e50
 0x10078e60 func   ?vfunc0@CAlphaMaterialProxy@@UAE_NPAX0@Z CAlphaMaterialProxy::vfunc0
+0x10078e90 func   ?vfunc1@CAlphaMaterialProxy@@UAEXH@Z CAlphaMaterialProxy::vfunc1
 0x10078f00 func   ?sub_10078f00@@YAHXZ sub_10078f00
 0x10078f20 func   ?sub_10078f20@CUnk10427480@@QAEPAHH@Z CUnk10427480::sub_10078f20
 0x10078f90 func   ?sub_10078f90@CTable@@QAEHH@Z CTable::sub_10078f90
