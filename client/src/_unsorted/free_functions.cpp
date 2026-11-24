@@ -42936,6 +42936,40 @@ void UtlMem::sub_100d3470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d34a0 size=0x56
+#include "CSaveRestoreBlockSet.h"
+
+struct CUtlList8
+{
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    unsigned short m_Head;
+    unsigned short m_Tail;
+    unsigned short m_FirstFree;
+    unsigned short m_ElementCount;
+    unsigned short m_TotalElements;
+    unsigned short m_pad16;
+    void *m_pElements;
+};
+
+CUtlList8 *__fastcall sub_100d34a0(CUtlList8 *p, int, int growSize, int initSize)
+{
+    p->m_pMemory = 0;
+    p->m_allocationCount = initSize;
+    p->m_growSize = growSize;
+    if (initSize)
+        p->m_pMemory = g_101e3100(initSize * 8);
+    p->m_TotalElements = 0;
+    p->m_Head = 0xffff;
+    p->m_Tail = 0xffff;
+    p->m_FirstFree = 0xffff;
+    p->m_pElements = p->m_pMemory;
+    p->m_ElementCount = 0;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3500 size=0x4d
 #include "CUtlLinkedList8.h"
 
