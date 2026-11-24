@@ -825,6 +825,17 @@ Vector Vector::sub_10004d80(float fl) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100052c0 size=0x2e
+struct CIC {
+	char pad[0xc0]; unsigned int *m_pOut;
+	void sub_100052c0(const unsigned char *c);
+};
+void CIC::sub_100052c0(const unsigned char *c)
+{
+	*m_pOut = (((c[3] << 8 | c[0]) << 8 | c[1]) << 8) | c[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005330 size=0x24
 struct S10005330 {
 	char pad[0xb0]; int *m_p[1];

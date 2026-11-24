@@ -167,6 +167,7 @@
 0x10004e30 func   ?vfunc0@IParticleEffect@@QAEPAXD@Z IParticleEffect::vfunc0
 0x10004e50 func   ?vfunc2@IPrototypeAppEffect@@UAE_NHH@Z IPrototypeAppEffect::vfunc2
 0x10004e60 func   ?vfunc0@IPrototypeAppEffect@@UAEPAXD@Z IPrototypeAppEffect::vfunc0
+0x100052c0 func   ?sub_100052c0@CIC@@QAEXPBE@Z CIC::sub_100052c0
 0x10005330 func   ?sub_10005330@S10005330@@QAEXHHHH@Z S10005330::sub_10005330
 0x100054f0 func   ??_GCPlasmaSpray@@UAEPAXI@Z ??_GCPlasmaSpray@@UAEPAXI@Z
 0x10005710 func   ??0C_PlasmaBeamNode@@QAE@XZ C_PlasmaBeamNode::C_PlasmaBeamNode
