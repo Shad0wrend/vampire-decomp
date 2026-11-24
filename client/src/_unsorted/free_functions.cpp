@@ -14962,6 +14962,28 @@ int CUnknown1003f140::sub_1003f140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f170 size=0x22
+struct IG_102ba388
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void v3(const void *, int, int, const void *);
+};
+extern IG_102ba388 *g_102ba388;
+struct Obj_1003f170
+{
+	int m_unk0, m_unk4, m_unk8;
+	float m_a[3];
+	int m_b;
+	int m_c;
+	int m_d;
+	void sub_1003f170(int);
+};
+void Obj_1003f170::sub_1003f170(int)
+{
+	g_102ba388->v3(m_a, m_b, m_c, &m_d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f1a0 size=0x20
 namespace lifted {
 extern int g_102ba388;
