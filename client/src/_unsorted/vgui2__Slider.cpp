@@ -106,6 +106,11 @@ int vgui2::Slider::vfunc110(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc2a0 size=0x8
+#include "vgui2__Slider.h"
+void vgui2::Slider::vfunc88(int a) { vfunc87(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101bc2b0 size=0x18
 #include "vgui2__Slider.h"
 namespace lifted {
