@@ -70418,6 +70418,56 @@ void CPtrList101d6400::sub_10142000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142340 size=0x5e
+struct Sub16A_10142340 { void sub_10141fe0(); };
+struct Sub16B_10142340 { void sub_101416f0(); };
+struct Sub48_10142340 { void sub_101417b0(); };
+
+struct BigV_10142340 {
+	int m0;
+	int m4;
+	int m8;
+	int m_c;
+	int m10;
+	int m14;
+	char m18[0x10];
+	char m28;
+	char m29;
+	char m_pad2a[2];
+	int m2c;
+	int m30;
+	char m34[0x10];
+	char m44[0x10];
+	char m54[4 * 0x48];
+	BigV_10142340 *sub_10142340(int a);
+};
+
+BigV_10142340 *BigV_10142340::sub_10142340(int a)
+{
+	((Sub16A_10142340 *)((char *)this + 0x18))->sub_10141fe0();
+	((Sub16B_10142340 *)((char *)this + 0x34))->sub_101416f0();
+	((Sub16B_10142340 *)((char *)this + 0x44))->sub_101416f0();
+
+	Sub48_10142340 *p = (Sub48_10142340 *)((char *)this + 0x54);
+	for (int i = 0; i < 4; i++)
+	{
+		p->sub_101417b0();
+		p = (Sub48_10142340 *)((char *)p + 0x48);
+	}
+
+	m14 = -1;
+	m0 = a;
+	m4 = 0;
+	m8 = 0;
+	m10 = 0;
+	m_c = 0;
+	m28 = 0;
+	m29 = 0;
+	m2c = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101423a0 size=0x28
 struct E10141810 { char pad[0x48]; void sub_10141810(); };
 struct L10142000 { char pad[0x3c]; void sub_10142000(); };
