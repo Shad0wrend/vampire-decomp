@@ -42038,6 +42038,24 @@ UtlMem *UtlMem::sub_100d3c30(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3c70 size=0x46
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+struct Mem8 {
+	char *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	void sub_100d3c70(int num);
+};
+void Mem8::sub_100d3c70(int num) {
+	if (m_nAllocationCount < num && m_nGrowSize != -1) {
+		m_nAllocationCount = num;
+		if (m_pMemory)
+			m_pMemory = (char *)g_101e3104(m_pMemory, num * 8);
+		else
+			m_pMemory = (char *)g_101e3100(num * 8);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3cc0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
