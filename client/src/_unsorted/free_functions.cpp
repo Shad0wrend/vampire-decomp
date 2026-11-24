@@ -78330,6 +78330,14 @@ int CUnknown10189c20::sub_10189c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a6d0 size=0x15
+struct S_1018a6d0 { char pad[0x18c]; int m_fl; };
+bool __fastcall sub_1018a6d0(S_1018a6d0 *self, int edx, int mask)
+{
+	return (self->m_fl & mask) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a6f0 size=0x34
 struct CUnknown1018a6f0 { void sub_1018a6f0(int, char); };
 void CUnknown1018a6f0::sub_1018a6f0(int a0, char a1)

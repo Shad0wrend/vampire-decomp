@@ -6623,6 +6623,7 @@
 0x10189c30 func   ?vfunc12@CGUIClientRenderable@@UAEPADXZ CGUIClientRenderable::vfunc12
 0x10189c40 func   ?vfunc13@CGUIClientRenderable@@UAEPADXZ CGUIClientRenderable::vfunc13
 0x1018a1f0 func   ?vfunc10@CGUIClientRenderable@@UAEXPAVVector@@PAVQuaternion@@@Z CGUIClientRenderable::vfunc10
+0x1018a6d0 func   ?sub_1018a6d0@@YI_NPAUS_1018a6d0@@HH@Z sub_1018a6d0
 0x1018a6f0 func   ?sub_1018a6f0@CUnknown1018a6f0@@QAEXHD@Z CUnknown1018a6f0::sub_1018a6f0
 0x1018b240 func   ?vfunc88@CStudiomodelPanel@@UAEXXZ CStudiomodelPanel::vfunc88
 0x1018b250 func   ??_GCStudiomodelPanel@@UAEPAXI@Z ??_GCStudiomodelPanel@@UAEPAXI@Z
