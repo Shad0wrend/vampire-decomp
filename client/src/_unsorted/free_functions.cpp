@@ -14578,6 +14578,12 @@ int CUnknown1003e7c0::sub_1003e7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e800 size=0x13
+extern void (*g_101e3120)(int, const char *, ...);
+struct CUnknown1003e800 { void sub_1003e800(int a); };
+void CUnknown1003e800::sub_1003e800(int a) { g_101e3120(1, "TODO:  Reenable spray logos\n"); }
+// END FUNCTION
+
 // FUNCTION: 0x1003e820 size=0x11
 extern void (*g_101e3120)(int, const char *, ...);
 // TARGET: sub_1003e820
