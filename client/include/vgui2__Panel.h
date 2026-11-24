@@ -14,14 +14,17 @@ public:
 	void sub_101ab300(int, int);
 	void sub_101a9ff0(int);
 	int sub_101a99f0(int);
-	int m_unk4[(0x170 - 4) / 4];
+	int m_unk4[(0x18 - 4) / 4];
+	bool m_b18;
+	char m_c19; char m_c1a; char m_c1b;
+	int m_unk1c[(0x170 - 0x1c) / 4];
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Panel adds to its base's vtable: 0-106, vfuncK at slot K
 	virtual int vfunc0();
 	virtual void * vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual int vfunc4();
+	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual int vfunc6();
 	virtual int vfunc7(int, int, int);
