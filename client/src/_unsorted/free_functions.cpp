@@ -53097,6 +53097,12 @@ void __fastcall sub_1012c9c0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c9d0 size=0xf
+struct CThunkView1012c9d0 { virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); };
+// TARGET: sub_1012c9d0
+void __fastcall sub_1012c9d0(char *self) { ((CThunkView1012c9d0 *)(self - 0xdc))->vfunc2(); }
+// END FUNCTION
+
 // FUNCTION: 0x1012d3f0 size=0x10b
 struct SndInfo {
     int a;
