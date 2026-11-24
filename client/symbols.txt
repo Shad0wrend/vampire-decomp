@@ -4134,6 +4134,7 @@
 0x100ccd60 func   ?sub_100ccd60@@YAXHHHHHHHH@Z sub_100ccd60
 0x100ccdc0 func   ?sub_100ccdc0@@YAHH@Z sub_100ccdc0
 0x100ccde0 func   ?sub_100ccde0@@YAHH@Z sub_100ccde0
+0x100ccea0 func   ?sub_100ccea0@@YAPADPBDZZ sub_100ccea0
 0x100cced0 func   ?sub_100cced0@@YADH@Z sub_100cced0
 0x100cd000 func   ?sub_100cd000@@YAXMPBM0PAM@Z sub_100cd000
 0x100cd030 func   ?sub_100cd030@@YAXHHHZZ sub_100cd030

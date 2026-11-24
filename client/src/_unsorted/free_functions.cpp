@@ -40253,6 +40253,20 @@ int sub_100ccde0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccea0 size=0x23
+#include <stdarg.h>
+extern char g_104a6840[0x400];
+extern "C" __declspec(dllimport) int Q_vsnprintf(char *dest, int maxLen, const char *fmt, va_list args);
+char *sub_100ccea0(const char *fmt, ...)
+{
+	va_list argptr;
+	va_start(argptr, fmt);
+	Q_vsnprintf(g_104a6840, 0x400, fmt, argptr);
+	va_end(argptr);
+	return g_104a6840;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cced0 size=0x24
 namespace lifted {
 extern int g_104a57d4;
