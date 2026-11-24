@@ -5232,6 +5232,7 @@
 0x1011ef90 func   ?sub_1011ef90@?$CUtlVector@V?$CUtlVector@HV?$CUtlMemory@H@@@@V?$CUtlMemory@V?$CUtlVector@HV?$CUtlMemory@H@@@@@@@@QAEXXZ CUtlVector<CUtlVector<int,CUtlMemory<int> >,CUtlMemory<CUtlVector<int,CUtlMemory<int> > > >::sub_1011ef90
 0x1011f020 func   ?sub_1011f020@UtlMem@@QAEXXZ UtlMem::sub_1011f020
 0x1011f050 func   ?sub_1011f050@UtlMem@@QAEXXZ UtlMem::sub_1011f050
+0x1011f080 func   ?sub_1011f080@?$CUtlVector@V?$CUtlVector@HV?$CUtlMemory@H@@@@V?$CUtlMemory@V?$CUtlVector@HV?$CUtlMemory@H@@@@@@@@QAEXXZ CUtlVector<CUtlVector<int,CUtlMemory<int> >,CUtlMemory<CUtlVector<int,CUtlMemory<int> > > >::sub_1011f080
 0x1011f110 func   ?sub_1011f110@UtlMem@@QAEXXZ UtlMem::sub_1011f110
 0x1011f140 func   ?sub_1011f140@UtlMem@@QAEXXZ UtlMem::sub_1011f140
 0x1011f170 func   ?sub_1011f170@?$CUtlVector@V?$CUtlVector@HV?$CUtlMemory@H@@@@V?$CUtlMemory@V?$CUtlVector@HV?$CUtlMemory@H@@@@@@@@QAEXXZ CUtlVector<CUtlVector<int,CUtlMemory<int> >,CUtlMemory<CUtlVector<int,CUtlMemory<int> > > >::sub_1011f170
