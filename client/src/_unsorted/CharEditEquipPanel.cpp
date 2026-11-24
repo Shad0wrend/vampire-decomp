@@ -36,6 +36,17 @@ void CharEditEquipPanel::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ab90 size=0x21
+#include "CharEditEquipPanel.h"
+int sub_1016a6b0();
+void CharEditEquipPanel::vfunc123()
+{
+	int n = sub_1016a6b0();
+	vfunc33(n);
+	sub_101aa0a0(1000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017abc0 size=0x28
 #include "CharEditEquipPanel.h"
 namespace lifted {
