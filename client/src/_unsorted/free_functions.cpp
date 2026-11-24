@@ -15773,6 +15773,22 @@ void * CUnknown10042370::sub_10042370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100429a0 size=0x20
+#include "C_ClientStats.h"
+struct StatObj_100429a0 { virtual double v0(); };
+struct Stats_100429a0 : public C_ClientStats
+{
+	void sub_100429a0(int i);
+};
+// TARGET: Stats_100429a0::sub_100429a0
+void Stats_100429a0::sub_100429a0(int i)
+{
+	StatObj_100429a0 *p = (StatObj_100429a0 *)m_unk308;
+	if (p)
+		((double *)((char *)this + 0x158))[i] = p->v0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100429f0 size=0x3d
 namespace lifted {
 extern char g_10042a30;
