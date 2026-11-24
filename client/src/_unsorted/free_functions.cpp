@@ -95714,6 +95714,19 @@ void CUnknown101c6f00::sub_101c6f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7080 size=0x30
+#include "vgui2__MenuItem.h"
+#include "vgui2__Menu.h"
+#include "vgui2__Button.h"
+
+void vgui2::MenuItem::sub_101c7080()
+{
+	((vgui2::Menu *)vfunc31())->sub_101c0080(this);
+	Button::vfunc138(1);
+	((vgui2::Menu *)vfunc31())->vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c70b0 size=0x29
 namespace lifted {
 int sub_101b4230();
