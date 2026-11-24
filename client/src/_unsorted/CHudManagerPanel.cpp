@@ -57,6 +57,17 @@ int CHudManagerPanel::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058e20 size=0x1a
+#include "CHudManagerPanel.h"
+// TARGET: CHudManagerPanel::vfunc6
+void CHudManagerPanel::vfunc6()
+{
+	m_nCount++;
+	if (m_pChild)
+		m_pChild->v21(m_nCount <= 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058e60 size=0x8
 #include "CHudManagerPanel.h"
 namespace lifted {
