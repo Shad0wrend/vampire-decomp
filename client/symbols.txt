@@ -4636,6 +4636,7 @@
 0x1010f670 func   ?sub_1010f670@@YGXHHHHHHHHHHHH@Z sub_1010f670
 0x1010f680 func   ?sub_1010f680@@YAPAVCPhysSurfacePropsIface@@XZ sub_1010f680
 0x1010f760 func   ?sub_1010f760@CView@@QAEXXZ CView::sub_1010f760
+0x1010f770 func   ?vfunc19@CMoveHelperClient@@QAEXXZ CMoveHelperClient::vfunc19
 0x1010f800 func   ?vfunc7@CMoveHelperClient@@UAE_NXZ CMoveHelperClient::vfunc7
 0x1010f810 func   ?sub_1010f810@@YGXH@Z sub_1010f810
 0x1010f820 func   ?sub_1010f820@@YGNH@Z sub_1010f820

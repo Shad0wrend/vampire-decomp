@@ -73,6 +73,17 @@ struct CView { void sub_1010f760(); };
 void CView::sub_1010f760() { g_104a57f8->v6(); }
 // END FUNCTION
 
+// FUNCTION: 0x1010f770 size=0xb
+#include "CMoveHelperClient.h"
+struct IView_104a57f8 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); };
+extern IView_104a57f8 *g_104a57f8;
+// TARGET: CMoveHelperClient::vfunc19
+void CMoveHelperClient::vfunc19()
+{
+	g_104a57f8->v3();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f800 size=0x3
 #include "CMoveHelperClient.h"
 
