@@ -21,7 +21,8 @@ public:
 	void vfunc5(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc12(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc22(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
-	void vfunc33(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
+	void vfunc33(int filter, int delay, int pos, int dir);
+	void vfunc34(int filter, int delay, int pos, int dir, int extra);	// as in C_TempEntsSystem (transplant)
 	void vfunc38(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc41(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 };
