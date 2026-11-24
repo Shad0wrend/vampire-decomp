@@ -228,3 +228,8 @@ void CInput::vfunc54()
     *(char *)((char *)this + 0xe4) = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101062d0 size=0x9
+#include "CInput.h"
+bool CInput::vfunc18() { if (m_unk28) return true; return false; }
+// END FUNCTION
