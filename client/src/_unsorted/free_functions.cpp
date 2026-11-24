@@ -37787,6 +37787,13 @@ void sub_100d1500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1530 size=0x11
+struct S12_100d1530 { int a, b, c; };
+extern S12_100d1530 *g_104cee1c;
+// TARGET: sub_100d1530
+S12_100d1530 *sub_100d1530(int i) { return &g_104cee1c[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100d15b0 size=0x22
 struct CUnknown100b7a90 {
 	void sub_100d1630();
