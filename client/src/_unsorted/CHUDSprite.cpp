@@ -51,6 +51,28 @@ int CHudSprite::vfunc5(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f39b0 size=0x57
+#include "IHudSprite.h"
+
+struct V3d50View100f39b0
+{
+	El3d50 *sub_100f3d50(int a);
+};
+
+// TARGET: CHudSprite::vfunc6
+void CHudSprite::vfunc6(int a1, int r, int g, int b)
+{
+	El3d50 *v = ((V3d50View100f39b0 *)this)->sub_100f3d50(a1);
+	if (!v)
+		return;
+	m_pSprite = (CHudSpriteInner *)sub_100f3e20(v);
+	if (!m_pSprite)
+		return;
+	m_pSprite->sub_10136f20(r * 0.00392156862745098,
+		g * 0.00392156862745098, b * 0.00392156862745098);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3a60 size=0x54
 #include "IHudSprite.h"
 
