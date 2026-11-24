@@ -19,7 +19,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc102();
 	// the slots PropertySheet adds to its base's vtable: 107-129, vfuncK at slot K
 	virtual void vfunc107();
-	virtual void vfunc108();
+	virtual void vfunc108(int);
 	virtual int vfunc109(int);
 	virtual int vfunc110(int);
 	virtual void vfunc111();
@@ -38,7 +38,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc124(int);
 	virtual int vfunc125(int);
 	virtual void vfunc126();
-	virtual void vfunc127();
+	virtual void vfunc127(int);
 	virtual int vfunc128();
 	virtual void vfunc129();
 };
