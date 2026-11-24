@@ -335,6 +335,45 @@ int vgui2::Frame::vfunc131()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b94b0 size=0x5a
+#include "vgui2__Frame.h"
+
+struct VGuiSystemView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void *s3();
+};
+
+struct VGuiSurfaceView
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual bool s20(void *, int);
+};
+
+int sub_101ac8b0();
+int sub_101ac900();
+
+namespace vgui2
+{
+void Frame::vfunc87(int a)
+{
+	if (!vfunc67())
+	{
+		void *p = ((VGuiSystemView *)sub_101ac8b0())->s3();
+		if (!p || !((VGuiSurfaceView *)sub_101ac900())->s20(p, vfunc0()))
+			vfunc15(0);
+	}
+	Panel::vfunc87(a);
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9510 size=0x2a
 #include "vgui2__Frame.h"
 struct IV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int v6(); };
