@@ -51748,6 +51748,13 @@ void S10123a60::sub_10123a60(int a, int *dst, int *src, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123ba0 size=0x23
+#include <string.h>
+struct CCopy { char pad[0x2c]; bool m_b; void sub_10123ba0(int type, void *dst, const void *src, int n); };
+// TARGET: ?sub_10123ba0@CCopy@@QAEXHPAXPBXH@Z
+void CCopy::sub_10123ba0(int type, void *dst, const void *src, int n) { if (m_b && type != 1) memcpy(dst, src, n * 4); }
+// END FUNCTION
+
 // FUNCTION: 0x10123d30 size=0x19
 namespace lifted {
 struct C10123e30 { int sub_10123e30(int, int, int, int); };
