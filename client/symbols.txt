@@ -3949,6 +3949,7 @@
 0x100c4200 func   ?vfunc143@C_BaseFlex@@UAEHXZ C_BaseFlex::vfunc143
 0x100c4270 func   ?sub_100c4270@@YAXPBDPAD@Z sub_100c4270
 0x100c48e0 func   ?sub_100c48e0@@YGPAUStudioNamedRec24@@PAUStudioHdr8c@@PBD@Z sub_100c48e0
+0x100c4940 func   ?sub_100c4940@CModel_c4940@@QAEXHMPAUStudioHdr_c4940@@0_N@Z CModel_c4940::sub_100c4940
 0x100c4b10 func   ?sub_100c4b10@CUnknown100b6f80@@QAEHPAUCUnknown100b6f80Hdr@@HPAH@Z CUnknown100b6f80::sub_100c4b10
 0x100c4ba0 func   ?sub_100c4ba0@@YAXHPAUTSet@@@Z sub_100c4ba0
 0x100c4c10 func   ?sub_100c4c10@UtlMem@@QAEXH@Z UtlMem::sub_100c4c10

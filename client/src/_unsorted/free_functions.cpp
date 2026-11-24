@@ -38255,6 +38255,151 @@ StudioNamedRec24 * __stdcall sub_100c48e0(StudioHdr8c *pHdr, const char *pszName
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4940 size=0x179
+extern float g_104a4a90[];
+
+struct SubEntry_c4940 {
+	int entryIdx;
+	int unk4;
+};
+
+struct FlexWeight_c4940 {
+	int index;
+	float weight;
+	int unk8;
+};
+
+struct StudioHdr_c4940;
+
+struct Entry_c4940 {
+	int nameIndex;
+	int type;
+	int count;
+	int unk0c;
+	int activeIndex;
+	int dataIndex;
+
+	const char *GetName() const { return (const char *)this + nameIndex; }
+	SubEntry_c4940 *GetSub(int i)
+	{
+		if (i < 0 || i >= count)
+			return 0;
+		return (SubEntry_c4940 *)((char *)this + dataIndex) + i;
+	}
+	FlexWeight_c4940 *GetWeights(int i)
+	{
+		return (FlexWeight_c4940 *)((char *)this + dataIndex) + i;
+	}
+
+	int sub_100c4b10(StudioHdr_c4940 *pHdr, int idx, FlexWeight_c4940 **ppOut);
+};
+
+struct StudioHdr_c4940 {
+	char pad0[0x8c];
+	int numEntries;
+	int entryIndex;
+	int pad94;
+	int numMap98;
+	int map9cIndex;
+	int padA0;
+	int padA4;
+	int mapA8Index;
+
+	Entry_c4940 *pEntry(int i) { return (Entry_c4940 *)((char *)this + entryIndex) + i; }
+	int *pMap9c() { return (int *)((char *)this + map9cIndex); }
+	int *pMapA8() { return (int *)((char *)this + mapA8Index); }
+
+	Entry_c4940 *sub_100c4ac0(int idx);
+
+	inline Entry_c4940 *GetEntryByMap(int idx)
+	{
+		if (idx < 0 || idx >= numMap98)
+			return 0;
+		int entryIdx = pMap9c()[idx];
+		if (entryIdx == -1)
+			return 0;
+		return pEntry(entryIdx);
+	}
+
+	inline Entry_c4940 *ResolveEntry(int idx)
+	{
+		Entry_c4940 *p = pEntry(idx);
+		if (p->type == 1)
+		{
+			SubEntry_c4940 *sub = p->GetSub(p->activeIndex);
+			if (sub && sub->entryIdx != -1)
+				return sub_100c4ac0(sub->entryIdx);
+		}
+		return p;
+	}
+};
+
+void sub_100c4ba0(StudioHdr_c4940 *pHdr, Entry_c4940 *pEntry);
+
+struct CModel_c4940 {
+	Entry_c4940 *sub_100c48e0(StudioHdr_c4940 *pHdr, const char *name);
+	void sub_100c4940(int idx, float weight, StudioHdr_c4940 *pHdr, StudioHdr_c4940 *pOverride, bool bFlag);
+};
+
+static inline int ResolveWeights(Entry_c4940 *pEntry, StudioHdr_c4940 *pHdr, int idx, FlexWeight_c4940 **ppOut)
+{
+	*ppOut = 0;
+	if (pEntry->type == 1)
+	{
+		SubEntry_c4940 *sub = pEntry->GetSub(pEntry->activeIndex);
+		if (sub && sub->entryIdx != -1)
+		{
+			Entry_c4940 *next = pHdr->pEntry(sub->entryIdx);
+			if (next)
+				return next->sub_100c4b10(pHdr, idx, ppOut);
+		}
+		return -1;
+	}
+	*ppOut = pEntry->GetWeights(idx);
+	return pEntry->count;
+}
+
+// TARGET: CModel_c4940::sub_100c4940
+void CModel_c4940::sub_100c4940(int idx, float weight, StudioHdr_c4940 *pHdr, StudioHdr_c4940 *pOverride, bool bFlag)
+{
+	Entry_c4940 *pEntry = pHdr->GetEntryByMap(idx);
+	if (!pEntry)
+		return;
+
+	if (bFlag && pEntry->type == 1)
+	{
+		sub_100c4ba0(pHdr, pEntry);
+	}
+
+	pEntry = pHdr->ResolveEntry(pEntry - pHdr->pEntry(0));
+
+	if (pOverride)
+	{
+		const char *name = pEntry->GetName();
+		if (name)
+		{
+			Entry_c4940 *pFound = sub_100c48e0(pOverride, name);
+			if (pFound)
+			{
+				pHdr = pOverride;
+				pEntry = pFound;
+			}
+		}
+	}
+
+	FlexWeight_c4940 *pWeights;
+	int count = ResolveWeights(pEntry, pHdr, 0, &pWeights);
+	if (pWeights && count > 0)
+	{
+		for (int i = 0; i < count; i++, pWeights++)
+		{
+			int flexIdx = pHdr->pMapA8()[pWeights->index];
+			g_104a4a90[flexIdx] += weight * pWeights->weight;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4b10 size=0x81
 #include "CUnknown100b6f80.h"
 
