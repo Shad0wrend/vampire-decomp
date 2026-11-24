@@ -36819,6 +36819,25 @@ void sub_100b1b40( Vector *pOut, int a2, int a3, Particle_100b1b40 *pParticle, b
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1f80 size=0x4b
+struct V3 { float x, y, z; };
+struct EPInner { char pad[0x10]; V3 m_pos; };
+struct EPView { char pad[0x470]; EPInner *m_p470; char pad2[8]; int m_n47c; };
+extern void (*g_101e311c)(const char *pMsg, ...);
+void sub_100b1f80(V3 *a, V3 *b, int c, int d, int e, int f, EPView *p)
+{
+	if (p->m_n47c == 1) {
+		*a = p->m_p470->m_pos;
+		return;
+	}
+	g_101e311c("C_EnvParticle::EntityLineCallback ERROR\n");
+	float m = 3.402823466e+38f;
+	a->x = m;
+	a->y = m;
+	a->z = m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a40 size=0x6
 namespace lifted {
 extern char g_104a1c00;
