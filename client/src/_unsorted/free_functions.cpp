@@ -15900,6 +15900,23 @@ void CUnknown100dcd00::sub_100437f0(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043ef0 size=0x18
+struct CUnknown10095d00 { bool sub_10095d00(int a, int b); };
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct CUnknown10043ef0Iface {
+V8(a) V8(b) V8(c)
+virtual CUnknown10095d00 *v24();
+};
+struct CUnknown10043ef0 { int m_unk[15]; CUnknown10043ef0Iface *m_pIface; bool sub_10043ef0(int a, int b); };
+bool CUnknown10043ef0::sub_10043ef0(int a, int b)
+{
+	CUnknown10095d00 *p = m_pIface->v24();
+	if (p)
+		return p->sub_10095d00(a, b);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044070 size=0x2c
 namespace lifted {
 struct C10043da0 { int sub_10043da0(int, int); };
