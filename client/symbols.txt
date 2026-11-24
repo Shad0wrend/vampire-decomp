@@ -4336,6 +4336,7 @@
 0x100f4180 func   ?sub_100f4180@@YAXXZ sub_100f4180
 0x100f4190 func   ?sub_100f4190@@YAXPBD@Z sub_100f4190
 0x100f41e0 func   ?sub_100f41e0@@YAXXZ sub_100f41e0
+0x100f41f0 func   ?sub_100f41f0@@YAXXZ sub_100f41f0
 0x100f4200 func   ?sub_100f4200@@YAXXZ sub_100f4200
 0x100f4230 func   ?sub_100f4230@@YAXXZ sub_100f4230
 0x100f4270 func   ?sub_100f4270@@YAXP6IXPAX@Z@Z sub_100f4270

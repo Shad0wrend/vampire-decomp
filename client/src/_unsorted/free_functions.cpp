@@ -42040,6 +42040,16 @@ void sub_100f4270(void (*)());
 void sub_100f41e0() { sub_100f4270(sub_100f42f0); }
 // END FUNCTION
 
+// FUNCTION: 0x100f41f0 size=0xc
+void sub_100f4300();
+void sub_100f42a0(void (*)());
+// TARGET: sub_100f41f0
+void sub_100f41f0()
+{
+	sub_100f42a0(sub_100f4300);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4200 size=0x2a
 void sub_100f42a0(void *pfn);
 void sub_100f4310();
