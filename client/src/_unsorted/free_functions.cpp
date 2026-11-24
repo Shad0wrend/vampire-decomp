@@ -42417,6 +42417,15 @@ char sub_100f6a40(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6ce0 size=0x13
+extern "C" void *memcpy(void *, const void *, unsigned int);
+#pragma intrinsic(memcpy)
+void sub_100f6ce0(const int *src, int *dst, int n)
+{
+	memcpy(dst, src, n * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71d0 size=0x5
 namespace lifted {
 int sub_100f6ce0();
