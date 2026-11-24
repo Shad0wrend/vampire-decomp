@@ -94849,6 +94849,35 @@ int CUnknown101beb70::sub_101beb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0080 size=0x4f
+#include "vgui2__Menu.h"
+
+struct MenuItemView_101c6f00 { void sub_101c6f00(); };
+
+struct MenuView_101c0080 {
+	char pad00[0x64];
+	volatile int m_nCount;
+	char pad68[0x6c - 0x68];
+	void **m_pItems;
+	void *GetItem(int i)
+	{
+		if (i < 0 || i >= m_nCount)
+			return 0;
+		return m_pItems[i];
+	}
+};
+
+void vgui2::Menu::sub_101c0080(void *pExcept)
+{
+	MenuView_101c0080 *v = (MenuView_101c0080 *)this;
+	for (int i = 0; i < v->m_nCount; i++)
+	{
+		if (v->GetItem(i) != pExcept)
+			((MenuItemView_101c6f00 *)v->GetItem(i))->sub_101c6f00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0760 size=0xd
 struct CUnknown101c0760 { int sub_101c0760(); };
 int CUnknown101c0760::sub_101c0760()
