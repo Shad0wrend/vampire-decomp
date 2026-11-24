@@ -93655,6 +93655,26 @@ void BuildModeDialog_101c4cf0::sub_101c4cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4d80 size=0x41
+struct IV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); };
+struct BV {
+	char pad[0x10c]; int a; int b; int c;  // 0x10c,0x110(char!),0x114
+};
+struct BM {
+	char pad[0x10c]; void *m10c; bool m110; char p[3]; void *m114; char q[8]; IV *m120;
+	void sub_101c4810();
+	void sub_101c4d80(void *p);
+};
+void BM::sub_101c4d80(void *p) {
+	if (p == m10c) {
+		m110 = !m110;
+		if (m110) sub_101c4810();
+	} else if (p == m114) {
+		m120->v15();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4dd0 size=0x2b
 namespace lifted {
 struct V { virtual int f0(int); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual int f15(); virtual void u16(); virtual bool f17(); };
