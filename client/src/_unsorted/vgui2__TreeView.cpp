@@ -30,6 +30,158 @@ int vgui2::TreeView::vfunc110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd430 size=0x19b
+#include "vgui2__TreeView.h"
+#include "utlvector.h"
+
+struct TreeNode_101bd430
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4();
+	virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14();
+	virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual ~TreeNode_101bd430();
+
+	char m_pad04[0x58];
+	int m_ItemIndex;                       // 0x5c
+	TreeNode_101bd430 *m_pParent;          // 0x60
+	char m_pad64[0x10];
+	CUtlVector<TreeNode_101bd430 *> m_Children; // 0x74
+
+	int GetChildrenCount() { return m_Children.Count(); }
+};
+
+template <class T, class I = unsigned short>
+class CUtlLinkedList_101bd430
+{
+public:
+	struct ListElem_t
+	{
+		T m_Element;
+		I m_Previous;
+		I m_Next;
+	};
+
+	CUtlMemory<ListElem_t> m_Memory;
+	I m_Head;
+	I m_Tail;
+	I m_FirstFree;
+	I m_ElementCount;
+	I m_TotalElements;
+	ListElem_t *m_pElements;
+
+	static inline I InvalidIndex() { return (I)~0; }
+
+	ListElem_t &InternalElement(I i) { return m_Memory[i]; }
+	ListElem_t const &InternalElement(I i) const { return m_Memory[i]; }
+
+	inline T &Element(I i) { return m_Memory[i].m_Element; }
+	inline T &operator[](I i) { return m_Memory[i].m_Element; }
+
+	inline I Previous(I i) const { return InternalElement(i).m_Previous; }
+
+	inline bool IsValidIndex(I i) const
+	{
+		return (i < m_TotalElements) && (i >= 0) &&
+			((m_Memory[i].m_Previous != i) || (m_Memory[i].m_Next == i));
+	}
+
+	inline bool IsInList(I i) const
+	{
+		return (i < m_TotalElements) && (i >= 0) && (Previous(i) != i);
+	}
+
+	void Unlink(I elem)
+	{
+		if (IsInList(elem))
+		{
+			ListElem_t *pBase = m_Memory.Base();
+			ListElem_t *pOldElem = &pBase[elem];
+
+			if (pOldElem->m_Previous != InvalidIndex())
+			{
+				pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+			}
+			else
+			{
+				m_Head = pOldElem->m_Next;
+			}
+
+			if (pOldElem->m_Next != InvalidIndex())
+			{
+				pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+			}
+			else
+			{
+				m_Tail = pOldElem->m_Previous;
+			}
+
+			pOldElem->m_Previous = pOldElem->m_Next = elem;
+			--m_ElementCount;
+		}
+	}
+
+	void Free(I elem)
+	{
+		Unlink(elem);
+		ListElem_t &internalElem = InternalElement(elem);
+		Destruct(&internalElem.m_Element);
+		internalElem.m_Next = m_FirstFree;
+		m_FirstFree = elem;
+	}
+
+	void Remove(I elem)
+	{
+		Free(elem);
+	}
+};
+
+struct TreeViewLayout_101bd430
+{
+	char m_pad[0x78];
+	CUtlLinkedList_101bd430<TreeNode_101bd430 *, int> m_NodeList;
+};
+
+#define m_NodeList (((TreeViewLayout_101bd430 *)this)->m_NodeList)
+
+// TARGET: vgui2::TreeView::vfunc111
+void vgui2::TreeView::vfunc111(int itemIndex, bool bPromoteChildren)
+{
+	if (!m_NodeList.IsValidIndex(itemIndex))
+		return;
+
+	TreeNode_101bd430 *pNode = m_NodeList[itemIndex];
+	TreeNode_101bd430 *pParent = pNode->m_pParent;
+
+	if (bPromoteChildren && pParent)
+	{
+		int i;
+		for (i = 0; i < pNode->GetChildrenCount(); i++)
+		{
+			TreeNode_101bd430 *pChild = pNode->m_Children[i];
+			pChild->m_pParent = pParent;
+		}
+	}
+	else
+	{
+		int i;
+		for (i = 0; i < pNode->GetChildrenCount(); i++)
+		{
+			TreeNode_101bd430 *pDeleteChild = pNode->m_Children[i];
+			vfunc111(pDeleteChild->m_ItemIndex, false);
+		}
+	}
+
+	if (pParent)
+	{
+		pParent->m_Children.FindAndRemove(pNode);
+	}
+
+	m_NodeList.Remove(itemIndex);
+	delete pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd810 size=0x12
 #include "vgui2__TreeView.h"
 int vgui2::TreeView::vfunc117()
