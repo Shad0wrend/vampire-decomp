@@ -100,6 +100,12 @@ char * vgui2::EditablePanel::vfunc116()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4ea0 size=0x9
+#include "vgui2__EditablePanel.h"
+struct EPView { virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(int); };
+void vgui2::EditablePanel::vfunc58(int a) { ((EPView *)((char *)this + 0x5c))->f4(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101b5170 size=0x24
 #include "vgui2__EditablePanel.h"
 namespace lifted {
