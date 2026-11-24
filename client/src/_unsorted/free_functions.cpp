@@ -40231,6 +40231,29 @@ int __stdcall sub_100c0350(int type, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0850 size=0x5b
+#include "C_RopeKeyframe.h"
+
+extern int g_102b5c5c;
+extern float g_102b5c60[];
+extern float g_104a3b90[][8];
+
+// TARGET: C_RopeKeyframe::sub_100c0850
+void C_RopeKeyframe::sub_100c0850(float **pSubdivs, int *pSubdivCount)
+{
+	if (m_RopeFlags & 2)
+	{
+		*pSubdivs = g_102b5c60;
+		*pSubdivCount = g_102b5c5c;
+		return;
+	}
+	if (m_nSubdivs > 8)
+		m_nSubdivs = 8;
+	*pSubdivs = g_104a3b90[m_nSubdivs];
+	*pSubdivCount = m_nSubdivs;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c08b0 size=0x63
 struct Vector3 { float x, y, z; };
 struct IFace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
