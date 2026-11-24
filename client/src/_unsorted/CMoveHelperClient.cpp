@@ -35,3 +35,10 @@ void CMoveHelperClient::vfunc3()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010f670 size=0x3
+// TARGET: sub_1010f670
+void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, int, int)
+{
+}
+// END FUNCTION
