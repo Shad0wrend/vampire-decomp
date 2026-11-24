@@ -20,6 +20,22 @@ float C_VampireProjectile::vfunc145()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6860 size=0x11
+struct B1_100c6860 { int a; };
+struct B2_100c6860 { int b; };
+struct T_100c6860 : B1_100c6860, B2_100c6860 { void f(); };
+struct V_100c6860 : T_100c6860 {
+	int m_unk[(0x20 - 12) / 4];
+	void (T_100c6860::*m_pfn)();
+};
+// TARGET: sub_100c6860
+void __fastcall sub_100c6860(V_100c6860 *self)
+{
+	if (self->m_pfn)
+		(self->*self->m_pfn)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6880 size=0x3
 #include "C_VampireProjectile.h"
 int C_VampireProjectile::vfunc86()
