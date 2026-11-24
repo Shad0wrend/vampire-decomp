@@ -6,7 +6,7 @@
 
 // VC6 writes C_BaseCombatCharacter's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-C_BaseCombatCharacter *pcd_emit_10097ec0() { return new C_BaseCombatCharacter; }
+C_BaseCombatCharacter *pcd_emit_10097ec0(const C_BaseCombatCharacter &other) { return new C_BaseCombatCharacter(other); }
 
 // TARGET: ??_GC_BaseCombatCharacter@@UAEPAXI@Z
 // END FUNCTION
