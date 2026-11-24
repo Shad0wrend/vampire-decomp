@@ -75642,6 +75642,192 @@ int CUnknown10178720::sub_10178720(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178790 size=0x87
+extern int g_105fb5e4;
+
+struct IScheme_10178790
+{
+	virtual void vfunc0() = 0;
+	virtual void *GetImage(const char *imageName) = 0;
+};
+
+struct CPanel_10178790
+{
+	IScheme_10178790 *sub_101ac830();
+};
+
+struct CWidget_10178790
+{
+	virtual void vfunc0() = 0;
+	virtual void vfunc1() = 0;
+	virtual void vfunc2() = 0;
+	virtual void vfunc3() = 0;
+	virtual void vfunc4() = 0;
+	virtual void vfunc5() = 0;
+	virtual void vfunc6() = 0;
+	virtual void vfunc7() = 0;
+	virtual void vfunc8() = 0;
+	virtual void vfunc9() = 0;
+	virtual void vfunc10() = 0;
+	virtual void vfunc11() = 0;
+	virtual void vfunc12() = 0;
+	virtual void vfunc13() = 0;
+	virtual void vfunc14() = 0;
+	virtual void vfunc15() = 0;
+	virtual void vfunc16() = 0;
+	virtual void vfunc17() = 0;
+	virtual void vfunc18() = 0;
+	virtual void vfunc19() = 0;
+	virtual void vfunc20() = 0;
+	virtual void vfunc21() = 0;
+	virtual void vfunc22() = 0;
+	virtual void vfunc23() = 0;
+	virtual void vfunc24() = 0;
+	virtual void vfunc25() = 0;
+	virtual void vfunc26() = 0;
+	virtual void vfunc27() = 0;
+	virtual void vfunc28() = 0;
+	virtual void vfunc29() = 0;
+	virtual void vfunc30() = 0;
+	virtual void vfunc31() = 0;
+	virtual void vfunc32() = 0;
+	virtual void vfunc33() = 0;
+	virtual void vfunc34() = 0;
+	virtual void vfunc35() = 0;
+	virtual void vfunc36() = 0;
+	virtual void vfunc37() = 0;
+	virtual void vfunc38() = 0;
+	virtual void vfunc39() = 0;
+	virtual void vfunc40() = 0;
+	virtual void vfunc41() = 0;
+	virtual void vfunc42() = 0;
+	virtual void vfunc43() = 0;
+	virtual void vfunc44() = 0;
+	virtual void vfunc45() = 0;
+	virtual void vfunc46() = 0;
+	virtual void vfunc47() = 0;
+	virtual void vfunc48() = 0;
+	virtual void vfunc49() = 0;
+	virtual void vfunc50() = 0;
+	virtual void vfunc51() = 0;
+	virtual void vfunc52() = 0;
+	virtual void vfunc53() = 0;
+	virtual void vfunc54() = 0;
+	virtual void vfunc55() = 0;
+	virtual void vfunc56() = 0;
+	virtual void vfunc57() = 0;
+	virtual void vfunc58() = 0;
+	virtual void vfunc59() = 0;
+	virtual void vfunc60() = 0;
+	virtual void vfunc61() = 0;
+	virtual void vfunc62() = 0;
+	virtual void vfunc63() = 0;
+	virtual void vfunc64() = 0;
+	virtual void vfunc65() = 0;
+	virtual void vfunc66() = 0;
+	virtual void vfunc67() = 0;
+	virtual void vfunc68() = 0;
+	virtual void vfunc69() = 0;
+	virtual void vfunc70() = 0;
+	virtual void vfunc71() = 0;
+	virtual void vfunc72() = 0;
+	virtual void vfunc73() = 0;
+	virtual void vfunc74() = 0;
+	virtual void vfunc75() = 0;
+	virtual void vfunc76() = 0;
+	virtual void vfunc77() = 0;
+	virtual void vfunc78() = 0;
+	virtual void vfunc79() = 0;
+	virtual void vfunc80() = 0;
+	virtual void vfunc81() = 0;
+	virtual void vfunc82() = 0;
+	virtual void vfunc83() = 0;
+	virtual void vfunc84() = 0;
+	virtual void vfunc85() = 0;
+	virtual void vfunc86() = 0;
+	virtual void vfunc87() = 0;
+	virtual void vfunc88() = 0;
+	virtual void vfunc89() = 0;
+	virtual void vfunc90() = 0;
+	virtual void vfunc91() = 0;
+	virtual void vfunc92() = 0;
+	virtual void vfunc93() = 0;
+	virtual void vfunc94() = 0;
+	virtual void vfunc95() = 0;
+	virtual void vfunc96() = 0;
+	virtual void vfunc97() = 0;
+	virtual void vfunc98() = 0;
+	virtual void vfunc99() = 0;
+	virtual void vfunc100() = 0;
+	virtual void vfunc101() = 0;
+	virtual void vfunc102() = 0;
+	virtual void vfunc103() = 0;
+	virtual void vfunc104() = 0;
+	virtual void vfunc105() = 0;
+	virtual void vfunc106() = 0;
+	virtual void vfunc107() = 0;
+	virtual void vfunc108() = 0;
+	virtual void vfunc109() = 0;
+	virtual void vfunc110() = 0;
+	virtual void vfunc111() = 0;
+	virtual void vfunc112() = 0;
+	virtual void vfunc113() = 0;
+	virtual void vfunc114() = 0;
+	virtual void vfunc115() = 0;
+	virtual void vfunc116() = 0;
+	virtual void vfunc117() = 0;
+	virtual void vfunc118() = 0;
+	virtual void vfunc119() = 0;
+	virtual void vfunc120() = 0;
+	virtual void vfunc121() = 0;
+	virtual void vfunc122() = 0;
+	virtual void SetImage(int index, void *image, int offset) = 0;
+};
+
+class CEquipItem_10178790
+{
+public:
+	CPanel_10178790 *m_pParent;
+	char m_pad04[0x10];
+	CWidget_10178790 *m_pBubble;
+	int m_unk18;
+	int m_nCost;
+	bool m_bEquipped;
+
+	void sub_10178790(bool bEquip);
+};
+
+// TARGET: ?sub_10178790@CEquipItem_10178790@@QAEX_N@Z
+void CEquipItem_10178790::sub_10178790(bool bEquip)
+{
+	IScheme_10178790 *pScheme = 0;
+	if (m_pParent)
+	{
+		pScheme = m_pParent->sub_101ac830();
+	}
+	if (m_bEquipped != bEquip)
+	{
+		m_bEquipped = bEquip;
+		if (bEquip)
+		{
+			if (m_pBubble && pScheme)
+			{
+				m_pBubble->SetImage(0, pScheme->GetImage("interface/charactermaintenance/cm_EquipBubble"), 0);
+			}
+			g_105fb5e4 += m_nCost;
+		}
+		else
+		{
+			if (m_pBubble)
+			{
+				m_pBubble->SetImage(0, 0, 0);
+			}
+			g_105fb5e4 -= m_nCost;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179840 size=0x10
 namespace lifted {
 extern int g_105fb5f4;
