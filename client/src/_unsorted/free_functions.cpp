@@ -95742,6 +95742,20 @@ int CUnknown101c70b0::sub_101c70b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c71b0 size=0x2c
+#include "vgui2__MenuItem.h"
+
+void vgui2::MenuItem::sub_101c71b0()
+{
+	if (*(vgui2::Panel **)((char *)this + 0xf0))
+	{
+		(*(vgui2::Panel **)((char *)this + 0xf0))->vfunc101();
+		(*(vgui2::Panel **)((char *)this + 0xf0))->vfunc21(1);
+		sub_101c7080();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c71e0 size=0xe
 struct CView { char pad[0xf0]; int mf0; int sub_101c71e0(); };
 // TARGET: ?sub_101c71e0@CView@@QAEHXZ
