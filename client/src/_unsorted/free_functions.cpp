@@ -56246,6 +56246,29 @@ extern const char g_102c03f0[];
 void sub_1011527a() { g_104e0750.sub_10106be0((void *)sub_10115293, g_102c03f0); }
 // END FUNCTION
 
+// FUNCTION: 0x101152d0 size=0x5c
+#include "ParticleSphereProxy.h"
+
+struct IMatCtorView { void sub_101154c0(); };
+
+extern void __stdcall sub_10001000(void *, int, int, void *);
+extern void sub_100a5410();
+extern char vt_102357d4[];
+
+#pragma optimize("", off)
+ParticleSphereProxy *ParticleSphereProxy::sub_101152d0()
+{
+	((IMatCtorView *)this)->sub_101154c0();
+	sub_10001000((char *)this + 0x10, 0xc, 0x14, (void *)sub_100a5410);
+	*(void **)this = vt_102357d4;
+	m_pLights = 0;
+	m_unk4[0] = (int)((char *)this + 0x10);
+	m_unk4[1] = (int)((char *)this + 0x100);
+	return this;
+}
+#pragma optimize("", on)
+// END FUNCTION
+
 // FUNCTION: 0x101154e0 size=0x13
 struct CView { int a, b; int *sub_101154e0(); };
 #pragma optimize("", off)
