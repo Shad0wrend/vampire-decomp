@@ -81067,6 +81067,11 @@ void CUnknown101aab60::sub_101aab60(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aab80 size=0x8
+struct S { int a[19]; unsigned char b0 : 1; unsigned char b1 : 1; unsigned char b2 : 1; bool sub_101aab80(); };
+bool S::sub_101aab80() { return b1; }
+// END FUNCTION
+
 // FUNCTION: 0x101aab90 size=0x13
 struct CUnknown101aab90 { void sub_101aab90(char); };
 void CUnknown101aab90::sub_101aab90(char a0)
