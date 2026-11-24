@@ -7,6 +7,7 @@ class C_WeaponRanged_Animalism : public C_WeaponRanged_Targeted
 {
 public:
 	C_WeaponRanged_Animalism();
+	virtual int vfunc16();
 private:
 	char m_pad0014[0x9a8 - 0x14];
 };
