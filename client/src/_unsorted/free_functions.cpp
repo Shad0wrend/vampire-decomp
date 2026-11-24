@@ -38793,6 +38793,26 @@ int CUnknown100d6320::sub_100d6320(int a0, int a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6510 size=0x22
+struct Elem_100d6510
+{
+	char m_unk[0xa8];
+	short m_s;
+	char m_unkaa[0xf0 - 0xaa];
+};
+struct Mgr_100d6510
+{
+	char m_unk[0x2c];
+	Elem_100d6510 *m_pElems;
+	void sub_100d6510(unsigned short i);
+};
+// TARGET: Mgr_100d6510::sub_100d6510
+void Mgr_100d6510::sub_100d6510(unsigned short i)
+{
+	m_pElems[i].m_s = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7130 size=0x46
 #include "CClientShadowMgr.h"
 // TARGET: CClientShadowMgr::sub_100d7130
