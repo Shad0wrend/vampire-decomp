@@ -129,6 +129,25 @@ int vgui2::Image::vfunc13(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6a80 size=0x39
+#include "vgui2__Image.h"
+struct ISurf15 {
+  virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+  virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+  virtual int v15(int, int, int, int);
+};
+ISurf15 *sub_101ac8d0();
+// TARGET: vgui2::Image::vfunc14
+int vgui2::Image::vfunc14(int a, int b, int c, int d)
+{
+  a += m_unk04;
+  b += m_unk08;
+  c += m_unk04;
+  d += m_unk08;
+  return sub_101ac8d0()->v15(a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6b10 size=0xc
 #include "vgui2__Image.h"
 namespace lifted {
