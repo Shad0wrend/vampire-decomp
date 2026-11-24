@@ -34,3 +34,12 @@ void CFXDiscreetLine::vfunc4()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100456b0 size=0x17
+#include "CFXDiscreetLine.h"
+void CFXDiscreetLine::vfunc5(double dt)
+{
+	m_flUnk30 += dt;
+	m_flUnk10 -= dt;
+}
+// END FUNCTION

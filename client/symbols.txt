@@ -2386,6 +2386,7 @@
 0x10045630 func   ?sub_10045630@@YAXPAVVector@@00@Z sub_10045630
 0x10045670 func   ?vfunc3@CFXDiscreetLine@@UAE_NXZ CFXDiscreetLine::vfunc3
 0x10045690 func   ?vfunc4@CFXDiscreetLine@@UAEXXZ CFXDiscreetLine::vfunc4
+0x100456b0 func   ?vfunc5@CFXDiscreetLine@@UAEXN@Z CFXDiscreetLine::vfunc5
 0x100456d0 func   ?sub_100456d0@CUnknown100456d0@@QAEPAXHHHHHHHHH@Z CUnknown100456d0::sub_100456d0
 0x10045740 func   ??_GCFXLine@@UAEPAXI@Z ??_GCFXLine@@UAEPAXI@Z
 0x10045760 func   ??1CFXLine@@UAE@XZ CFXLine::~CFXLine
