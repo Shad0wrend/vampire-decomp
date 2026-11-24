@@ -8,6 +8,8 @@ namespace vgui2
 {
 class Image : public vgui2::IImage
 {
+public:
+	int m_unk04; int m_unk08;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Image adds to its base's vtable: 0-25, vfuncK at slot K
 	virtual int vfunc0();
