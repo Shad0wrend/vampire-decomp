@@ -13362,6 +13362,19 @@ int CUnknown10034f00::sub_10034f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10034f20 size=0x37
+struct ITempEntsView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6();
+	virtual void v7(int a, int b, int c, float d, int e, int f, int g, int h);
+};
+extern ITempEntsView *g_1028073c;
+void sub_10034f20(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+	g_1028073c->v7(a3, a4, a5, (float)a7, a9, a8, a6, a10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034f60 size=0x37
 struct IFx_1028073c {
   virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();

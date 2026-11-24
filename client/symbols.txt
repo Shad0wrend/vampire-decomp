@@ -1964,6 +1964,7 @@
 0x10034ee0 func   ??_GC_TEBreakModel@@UAEPAXI@Z ??_GC_TEBreakModel@@UAEPAXI@Z
 0x10034f00 func   ??1C_TEBreakModel@@UAE@XZ C_TEBreakModel::~C_TEBreakModel
 0x10034f00 func   ?sub_10034f00@CUnknown10034f00@@QAEHXZ CUnknown10034f00::sub_10034f00
+0x10034f20 func   ?sub_10034f20@@YAXHHHHHHHHHH@Z sub_10034f20
 0x10034f60 func   ?sub_10034f60@BrkV@@QAEXH@Z BrkV::sub_10034f60
 0x10034fa0 func   ?vfunc9@C_TEBreakModel@@UAEHXZ C_TEBreakModel::vfunc9
 0x10034fb0 func   ?vfunc8@C_TEBreakModel@@UAEHXZ C_TEBreakModel::vfunc8
