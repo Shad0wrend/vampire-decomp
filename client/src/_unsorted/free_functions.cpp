@@ -18500,6 +18500,27 @@ void CUnknown10058700::sub_10058700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10059af0 size=0x79
+#include "CMeshBuilder.h"
+
+static inline unsigned char FastFToC(float c)
+{
+	float dc = c * 255.0f + (float)(1 << 23);
+	return (unsigned char)((*(unsigned int *)&dc) & 0xff);
+}
+
+static inline void WriteColor3ub(unsigned char *dst, unsigned char r, unsigned char g, unsigned char b)
+{
+	int col = b | (g << 8) | (r << 16) | 0xFF000000;
+	*(int *)dst = col;
+}
+
+void CMeshBuilder::sub_10059af0(const float *rgb)
+{
+	WriteColor3ub(m_pCurrColor, FastFToC(rgb[0]), FastFToC(rgb[1]), FastFToC(rgb[2]));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d6e0 size=0x6a
 struct TraceEnt { const char *a; void *b; void *c; };
 extern int *g_101e3128;
