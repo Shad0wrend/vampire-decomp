@@ -52,7 +52,7 @@ public:
     virtual float vfunc20();
     virtual void vfunc21(char);
     virtual void vfunc22();
-    virtual void vfunc23();
+    virtual void vfunc23(int, int);
     virtual bool vfunc24();
     virtual void vfunc25();
     virtual bool vfunc26();
