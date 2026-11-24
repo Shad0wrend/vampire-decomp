@@ -51,6 +51,66 @@ int CHudSprite::vfunc5(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3a60 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc7
+void CHudSprite::vfunc7(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(false);
+	m_pSprite->sub_10137020(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3ac0 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc9
+void CHudSprite::vfunc9(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(false);
+	m_pSprite->sub_10137850(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3b70 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc10
+void CHudSprite::vfunc10(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(false);
+	m_pSprite->sub_10137020(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3bd0 size=0x4a
 #include "IHudSprite.h"
 
@@ -68,6 +128,26 @@ void CHudSprite::vfunc13(int frame, int x, int y, int a3)
 		return;
 	m_pSprite->sub_10136f60(true);
 	m_pSprite->sub_10136ff0(frame, x, y, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3c20 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc12
+void CHudSprite::vfunc12(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(true);
+	m_pSprite->sub_10137020(a1, x, y, a4, a5, a6);
 }
 // END FUNCTION
 
