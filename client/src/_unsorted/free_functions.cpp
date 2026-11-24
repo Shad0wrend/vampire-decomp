@@ -26489,6 +26489,17 @@ extern const char *g_102abcb0[];
 const char *sub_1007d8c0(int i) { return g_102abcb0[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x1007d900 size=0x2a
+struct CInfoView { char pad[0x2558]; int m_n2558; char pad2[0x4fe9c - 0x255c]; int m_n4fe9c; };
+struct CUnk1007d900 { CInfoView *sub_1007b160(); bool sub_1007d900(); };
+bool CUnk1007d900::sub_1007d900()
+{
+	if (!sub_1007b160()->m_n4fe9c)
+		return false;
+	return sub_1007b160()->m_n2558 > 0 ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d930 size=0x1a
 char *sub_1007b160();
 
