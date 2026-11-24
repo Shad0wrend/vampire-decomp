@@ -193,6 +193,12 @@ int CUnknown10001f20::sub_10001f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001f70 size=0x21
+struct Vec1f70 { float x, y, z; };
+struct V1f70 { char pad[0x468]; Vec1f70 v; Vec1f70 sub_10001f70(); };
+Vec1f70 V1f70::sub_10001f70() { return v; }
+// END FUNCTION
+
 // FUNCTION: 0x10002200 size=0x3
 void __stdcall sub_10002200(int a0)
 {
