@@ -10,3 +10,12 @@ CMoveHelperClient *pcd_emit_1010f1a0() { return new CMoveHelperClient; }
 
 // TARGET: ??_GCMoveHelperClient@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1010f3e0 size=0x1
+#include "CMoveHelperClient.h"
+
+// TARGET: CMoveHelperClient::vfunc3
+void CMoveHelperClient::vfunc3()
+{
+}
+// END FUNCTION
