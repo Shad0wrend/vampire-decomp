@@ -39366,6 +39366,33 @@ int sub_100ca8c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca8d0 size=0xb8
+struct IModelInfoView {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual int GetModelIndex(const char *name);
+};
+extern IModelInfoView *g_104a57f8;
+extern short g_104a56f0, g_104a5470, g_104a5472, g_104a56f8, g_104a56f4, g_104a5474, g_104a56f2, g_104a56f6;
+extern char *g_102b8014;
+void sub_101a47b0();
+
+// TARGET: sub_100ca8d0
+void sub_100ca8d0()
+{
+    sub_101a47b0();
+    g_104a56f0 = g_104a57f8->GetModelIndex("sprites/zerogxplode.vmt");
+    g_104a5470 = g_104a57f8->GetModelIndex("sprites/WXplo1.vmt");
+    g_104a5472 = g_104a57f8->GetModelIndex("sprites/steam1.vmt");
+    g_104a56f8 = g_104a57f8->GetModelIndex("sprites/bubble.vmt");
+    g_104a56f4 = g_104a57f8->GetModelIndex("sprites/bloodspray.vmt");
+    g_104a5474 = g_104a57f8->GetModelIndex("sprites/blood.vmt");
+    g_104a56f2 = g_104a57f8->GetModelIndex(g_102b8014);
+    g_104a56f6 = g_104a57f8->GetModelIndex("sprites/laserdot.vmt");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca9c0 size=0x1e
 struct E_100ca9c0 { int a, b, c; };
 extern int g_104a56e4;

@@ -4044,6 +4044,7 @@
 0x100ca650 func   ??1C_World@@UAE@XZ C_World::~C_World
 0x100ca7f0 func   ?sub_100ca7f0@@YAHXZ sub_100ca7f0
 0x100ca8c0 func   ?sub_100ca8c0@@YAHXZ sub_100ca8c0
+0x100ca8d0 func   ?sub_100ca8d0@@YAXXZ sub_100ca8d0
 0x100ca990 func   ?vfunc21@C_World@@UAEXXZ C_World::vfunc21
 0x100ca9b0 func   ?vfunc19@C_World@@UAEXXZ C_World::vfunc19
 0x100ca9c0 func   ?sub_100ca9c0@@YAHXZ sub_100ca9c0
