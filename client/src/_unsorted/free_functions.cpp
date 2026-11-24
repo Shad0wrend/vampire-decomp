@@ -42192,6 +42192,39 @@ void sub_100dc610(CObjY *p, const Vector *a1, const Vector *a2, const Vector *a3
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc730 size=0xc6
+static inline float FloatMakePositive_local(float f)
+{
+	int i = *(int *)&f;
+	i &= 0x7fffffff;
+	return *(float *)&i;
+}
+
+// TARGET: sub_100dc730
+void sub_100dc730(const float *v, float *out)
+{
+	out[0] = 0.0f;
+	out[1] = 1.0f;
+
+	if (FloatMakePositive_local(v[0]) > FloatMakePositive_local(v[1]))
+	{
+		if (FloatMakePositive_local(v[0]) > FloatMakePositive_local(v[2]))
+		{
+			out[0] = 1.0f;
+			out[1] = 2.0f;
+		}
+	}
+	else
+	{
+		if (FloatMakePositive_local(v[1]) > FloatMakePositive_local(v[2]))
+		{
+			out[0] = 0.0f;
+			out[1] = 2.0f;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc800 size=0x1a5
 #include "Vector.h"
 struct SegPair { Vector o; Vector d; char pad[0x18]; bool b; int pad2; };
