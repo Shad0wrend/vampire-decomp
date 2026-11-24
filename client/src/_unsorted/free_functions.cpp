@@ -36750,6 +36750,69 @@ bool C_BreakableSurface::sub_100b7450(int x, int y) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b74f0 size=0xd0
+#include "C_BreakableSurface.h"
+__declspec(dllimport) void Warning(const char *, ...);
+struct MatRefView
+{
+	void *m_p;
+	MatRefView *sub_100cd1c0(const char *pName);
+	void sub_100cd1e0();
+	void sub_100cd1f0(const char *pName);
+	void sub_100cd220(void *pMaterial);
+};
+struct IMatVarView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual const char *GetStringValue();
+};
+struct IMatView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual IMatVarView *FindVar(const char *pName, bool *pFound, bool bComplain);
+};
+struct IModelInfoView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12();
+	virtual int GetModelMaterialCount(void *pModel);
+	virtual void GetModelMaterials(void *pModel, int count, IMatView **ppMaterial);
+};
+struct IRenderableView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void *GetModel();
+};
+extern IModelInfoView *g_104a57f8;
+void C_BreakableSurface::sub_100b74f0()
+{
+	{
+		MatRefView tmp;
+		tmp.sub_100cd1c0( 0 );
+		( (MatRefView *)( (char *)this + 0x938 ) )->m_p = tmp.m_p;
+		tmp.sub_100cd1e0();
+	}
+	MatRefView *pRef = (MatRefView *)( (char *)this + 0x938 );
+	IRenderableView *pRend = (IRenderableView *)( (char *)this + 4 );
+	int materialCount = g_104a57f8->GetModelMaterialCount( pRend->GetModel() );
+	if ( materialCount != 1 )
+	{
+		Warning( "Encountered func_breakablesurf that has a material applied to more than one surface!\n" );
+		pRef->sub_100cd1f0( "debug/debugempty.h" );
+		return;
+	}
+	{
+		IMatView *pMaterial;
+		g_104a57f8->GetModelMaterials( pRend->GetModel(), 1, &pMaterial );
+		bool foundVar;
+		IMatVarView *pCrackName = pMaterial->FindVar( "$crackmaterial", &foundVar, false );
+		if ( foundVar )
+			pRef->sub_100cd1f0( pCrackName->GetStringValue() );
+		else
+			pRef->sub_100cd220( pMaterial );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b75c0 size=0x59
 struct MH_100b75c0
 {
