@@ -48916,6 +48916,16 @@ void __fastcall sub_10107550(Vector *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101075a0 size=0x3f
+float sub_101075a0(const float *v)
+{
+	float l = v[0] * v[0] + v[1] * v[1] + v[2] * v[2];
+	if (l < 1.0f)
+		return 1.0f;
+	return 1.0f / l;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101075e0 size=0x28
 // TARGET: sub_101075e0
 float __cdecl sub_101075e0(float x)
