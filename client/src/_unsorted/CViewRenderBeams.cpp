@@ -6,7 +6,7 @@
 
 // VC6 writes CViewRenderBeams's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CViewRenderBeams *pcd_emit_10193320() { return new CViewRenderBeams; }
+CViewRenderBeams *pcd_emit_10193320(const CViewRenderBeams &other) { return new CViewRenderBeams(other); }
 
 // TARGET: ??_GCViewRenderBeams@@UAEPAXI@Z
 // END FUNCTION
