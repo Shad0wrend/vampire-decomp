@@ -59619,6 +59619,16 @@ void CPtrList101d6400::sub_10142000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101425f0 size=0x16
+int sub_10141bb0(const char *);
+struct S_101425f0 { int a, b; const char *m; int sub_101425f0(); };
+int S_101425f0::sub_101425f0()
+{
+	const char *p = m ? m : "";
+	return sub_10141bb0(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142610 size=0xd
 namespace lifted {
 extern char g_102de300;
