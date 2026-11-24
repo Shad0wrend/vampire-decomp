@@ -20517,6 +20517,37 @@ int __stdcall sub_10066700(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066720 size=0x5d
+struct SchemeView
+{
+	char m_pad0000[0x2d8];
+	float m_fl2d8;
+};
+
+struct OutView
+{
+	char m_pad0000[0xc];
+	float m_flc;
+	char m_pad0010[0x28 - 0x10];
+	float m_fl28;
+};
+
+extern SchemeView *g_103ef0b4;
+
+// TARGET: sub_10066720
+void sub_10066720(int a, int b, int c, OutView *out)
+{
+	float f = g_103ef0b4->m_fl2d8 * 0.003921569f;
+	f *= 4.0f;
+	if (f > 1.0f)
+		f = 1.0f;
+	else if (f < 0.0f)
+		f = 0.0f;
+	out->m_flc = f;
+	out->m_fl28 = f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067520 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
