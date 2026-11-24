@@ -159,6 +159,18 @@ char CUnknown10001990::sub_10001990(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100019a0 size=0x26
+#include "C_BaseCineCamera.h"
+struct CShotFlags_10001f20 { char m_pad[0x20]; unsigned char : 6; unsigned char m_b6 : 1; };
+struct CUnknown10001f20 { CShotFlags_10001f20 *sub_10001f20(); };
+bool C_BaseCineCamera::sub_100019a0()
+{
+	if (m_f4a4 > 1.0)
+		return false;
+	return ((CUnknown10001f20 *)this)->sub_10001f20()->m_b6;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100019d0 size=0x50
 namespace lifted {
 int sub_10001a20();
