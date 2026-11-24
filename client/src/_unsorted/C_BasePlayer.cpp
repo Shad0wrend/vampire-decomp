@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002af0 size=0xe
+struct V_10002af0 { int m_unk[0x19cc / 4]; int m_n19cc; };
+// TARGET: sub_10002af0
+int __fastcall sub_10002af0(V_10002af0 *self)
+{
+	return self->m_n19cc != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002b00 size=0x7
 #include "C_BasePlayer.h"
 int C_BasePlayer::vfunc84()
