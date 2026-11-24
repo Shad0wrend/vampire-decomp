@@ -76535,6 +76535,12 @@ void CEquipItem_10178790::sub_10178790(bool bEquip)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178820 size=0xf
+struct CToggleView10178790 { char pad[0x20]; bool m_b20; void sub_10178790(bool); void sub_10178820(); };
+// TARGET: CToggleView10178790::sub_10178820
+void CToggleView10178790::sub_10178820() { sub_10178790(!m_b20); }
+// END FUNCTION
+
 // FUNCTION: 0x10179840 size=0x10
 namespace lifted {
 extern int g_105fb5f4;
