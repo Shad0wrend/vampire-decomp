@@ -55393,6 +55393,17 @@ unsigned short CUtlRBTree16::sub_10112270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112720 size=0x57
+#include "CUtlRBTree16.h"
+
+// TARGET: CUtlRBTree16::sub_10112720
+const CUtlRBTree16::Links_t &CUtlRBTree16::sub_10112720(unsigned short i) const
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114660 size=0x19
 namespace lifted {
 extern char g_104dff38;
