@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100adb90 size=0x6
+#include "C_ClientStats.h"
+
+// TARGET: C_ClientStats::vfunc6
+int C_ClientStats::vfunc6()
+{
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adbb0 size=0x3
 // TARGET: sub_100adbb0
 int sub_100adbb0()
