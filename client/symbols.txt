@@ -5097,6 +5097,7 @@
 0x1012a170 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1012a200 func   ?vfunc34@IRestore@@UAEPAXE@Z IRestore::vfunc34
 0x1012a220 func   ?vfunc2@CRestore@@UAEHPAVCBaseEntity@@H@Z CRestore::vfunc2
+0x1012a240 func   ?vfunc10@CRestore@@UAEHXZ CRestore::vfunc10
 0x1012a260 func   ?vfunc32@CRestore@@UAE_NXZ CRestore::vfunc32
 0x1012a270 func   ?vfunc33@CRestore@@UAEHXZ CRestore::vfunc33
 0x1012a2f0 func   ?sub_1012a2f0@CRestore@@QAEHXZ CRestore::sub_1012a2f0

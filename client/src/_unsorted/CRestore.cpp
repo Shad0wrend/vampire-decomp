@@ -36,6 +36,16 @@ int CRestore::vfunc2(CBaseEntity * a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a240 size=0x16
+#include "CRestore.h"
+int CRestore::vfunc10()
+{
+	unsigned short v;
+	vfunc9(&v);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a260 size=0x4
 #include "CRestore.h"
 bool CRestore::vfunc32()
