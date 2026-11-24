@@ -16,6 +16,7 @@ struct HudChild_t
 	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(bool);
 	void sub_10057840(int, int, int);
 	void sub_100578a0(int, int, int);
+	void sub_10057900(int, int, int);
 	char m_pad4[0x16c];
 	HudChildNode *m_pNodes;	// 0x170
 };
