@@ -7,4 +7,5 @@ class C_Sprite : public C_BaseEntity
 {
 public:
 	virtual int vfunc16();
+	virtual int vfunc17();
 };
