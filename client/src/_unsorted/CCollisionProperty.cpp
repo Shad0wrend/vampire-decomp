@@ -48,3 +48,13 @@ void CCollisionProperty::vfunc17()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10044640 size=0x7
+#include "CCollisionProperty.h"
+
+// TARGET: CCollisionProperty::vfunc12
+int CCollisionProperty::vfunc12()
+{
+	return m_unk44;
+}
+// END FUNCTION
