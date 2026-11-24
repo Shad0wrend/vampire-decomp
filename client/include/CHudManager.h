@@ -4,6 +4,8 @@
 #pragma once
 #include "CBasePanel.h"
 
+struct SHudElem { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int GetFlags(); virtual void Show(int); virtual bool IsHidden(); };
+struct SHudNode { SHudElem *m_pElem; SHudNode *m_pNext; };
 class CHudManager : public CBasePanel
 {
 public:
@@ -13,7 +15,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc112();
 	virtual void vfunc113(int);
 	virtual void vfunc114(int);
-	virtual void vfunc115();
+	virtual void vfunc115(int);
 	virtual bool vfunc116(int);
-	char m_pad0004[0x194 - 0x4];
+	SHudNode *m_pHead;
+	int m_unk4[(0x194 - 0x8) / 4];
 };
