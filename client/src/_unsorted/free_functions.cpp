@@ -33044,6 +33044,17 @@ void * CUnknown100a5480::sub_100a5480(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5910 size=0x1c
+struct G5910 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual int v29(); };
+struct V5910;
+extern V5910 *g_104a0d50;
+extern G5910 *g_1027ba58;
+struct V5910 { bool sub_100a5910(); };
+bool V5910::sub_100a5910() { if (g_104a0d50 != this) return true; return g_1027ba58->v29() ? true : false; }
+// END FUNCTION
+
 // FUNCTION: 0x100a5a20 size=0x5
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual int f9(); };
