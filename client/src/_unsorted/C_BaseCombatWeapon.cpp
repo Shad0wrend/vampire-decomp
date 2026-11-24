@@ -496,6 +496,19 @@ bool C_BaseCombatWeapon::vfunc175()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bdd0 size=0x1d
+#include "C_BaseCombatWeapon.h"
+struct CGlobals_102b8494 { float realtime, framecount, absoluteframetime, curtime; };
+extern CGlobals_102b8494 *g_102b8494;
+// TARGET: C_BaseCombatWeapon::vfunc182
+bool C_BaseCombatWeapon::vfunc182()
+{
+	if (g_102b8494->curtime > *(float *)((char *)this + 0x918))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bdf0 size=0xd
 #include "C_BaseCombatWeapon.h"
 int C_BaseCombatWeapon::vfunc183(int a0)
