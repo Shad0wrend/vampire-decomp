@@ -8,6 +8,17 @@ void CClientEffectPrecacheSystem::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0760 size=0x24
+#include "CClientEffectPrecacheSystem.h"
+struct E100d0760 { virtual void v0(int); };
+void CClientEffectPrecacheSystem::vfunc5()
+{
+	E100d0760 **p = *(E100d0760 ***)((char *)this + 4);
+	for (int i = 0; i < *(int *)((char *)this + 0x10); i++)
+		(*(E100d0760 ***)((char *)this + 4))[i]->v0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0890 size=0x3
 #include "CClientEffectPrecacheSystem.h"
 bool CClientEffectPrecacheSystem::vfunc0()
