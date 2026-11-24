@@ -10,3 +10,13 @@ int CCopyRecipientFilter::vfunc2()
 	return m_unk14;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10134870 size=0x4
+#include "CCopyRecipientFilter.h"
+
+// TARGET: CCopyRecipientFilter::vfunc5
+int CCopyRecipientFilter::vfunc5()
+{
+	return m_unk20;
+}
+// END FUNCTION
