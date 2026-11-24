@@ -63658,6 +63658,17 @@ void sub_1013a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a940 size=0x3f
+#include "CUnknown1006c1c0.h"
+void sub_1013a940(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char *pDst)
+{
+	for (int i = 0; i < pInfo->m_nCount; i++, pDst++) {
+		*pDst = pBuf->m_pData[pBuf->m_nC + 3];
+		pBuf->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b160 size=0x6f
 extern "C" __declspec(dllimport) void Plat_Free(void *pMem);
 
