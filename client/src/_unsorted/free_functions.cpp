@@ -41912,6 +41912,16 @@ void CMem16_t::sub_100d05d0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0640 size=0x4e
+#include "CClientEffectPrecacheSystem.h"
+
+CClientEffectPrecacheSystem *sub_100d0640()
+{
+	static CClientEffectPrecacheSystem s_ClientEffectPrecacheSystem;
+	return &s_ClientEffectPrecacheSystem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d09b0 size=0x6
 namespace lifted {
 extern char g_104bede4;
