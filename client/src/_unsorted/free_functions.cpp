@@ -25610,6 +25610,16 @@ void * CUnknown10086500::sub_10086500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086510 size=0xc
+extern void (*g_10488230)();
+// TARGET: sub_10086510
+void sub_10086510()
+{
+	if (g_10488230)
+		g_10488230();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086520 size=0xa
 namespace lifted {
 extern int g_10488230;
