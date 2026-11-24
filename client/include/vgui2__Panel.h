@@ -13,6 +13,7 @@ public:
 	Panel(Panel *parent, const char *name);
 	void sub_101ab300(int, int);
 	void sub_101a9ff0(int);
+	void sub_101aa0a0(int);
 	int sub_101a99f0(int);
 	int m_unk4[(0x18 - 4) / 4];
 	bool m_b18;
@@ -53,7 +54,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc30();
 	virtual void vfunc31();
 	virtual int vfunc32(int);
-	virtual void vfunc33();
+	virtual void vfunc33(int);
 	virtual bool vfunc34(int);
 	virtual void vfunc35();
 	virtual int vfunc36();
