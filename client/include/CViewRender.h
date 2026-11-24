@@ -8,6 +8,7 @@ class CViewRender : public IViewRender
 public:
     void sub_1019af80(bool, int);
     void sub_1019c970();
+    void sub_1019d8f0(const char *view);
     void sub_1019a950(int, void *, void *, int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CViewRender's own function
