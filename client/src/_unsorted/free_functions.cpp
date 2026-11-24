@@ -62808,6 +62808,11 @@ int __stdcall sub_1014a260(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a7c0 size=0x8
+struct S { int a[5]; unsigned m14; bool sub_1014a7c0(); };
+bool S::sub_1014a7c0() { if (m14 == 1) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1014a9c0 size=0x1c
 namespace lifted {
 int __stdcall sub_1014a7d0(int);
