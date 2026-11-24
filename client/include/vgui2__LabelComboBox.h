@@ -14,7 +14,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with LabelComboBox's own function
 	virtual void vfunc87(int);
 	virtual void vfunc101();
-	virtual void vfunc118();
+	virtual void vfunc118(int);
 	virtual int vfunc164(int, int, int, int);
 	// the slots LabelComboBox adds to its base's vtable: 166-167, vfuncK at slot K
 	virtual int vfunc166();
