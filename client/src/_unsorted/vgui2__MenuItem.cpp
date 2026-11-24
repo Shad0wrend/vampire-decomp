@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c6c10 size=0x40
+#include "vgui2__MenuItem.h"
+using namespace vgui2;
+// TARGET: ??0MenuItem@vgui2@@QAE@HHHHD@Z
+MenuItem::MenuItem(int a, int b, int c, int d, char e) : Button(a, b, c)
+{
+	*(int *)((char *)this + 0xf0) = d;
+	*((char *)this + 0xf4) = e;
+	vfunc166();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6c50 size=0x1e
 #include "vgui2__MenuItem.h"
 
