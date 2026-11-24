@@ -71725,6 +71725,15 @@ char CVStatListManager_t::sub_1015e580(int time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015eb00 size=0xc
+extern int g_102cb108[];
+// TARGET: sub_1015eb00
+int sub_1015eb00(int i)
+{
+	return g_102cb108[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015eb20 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
