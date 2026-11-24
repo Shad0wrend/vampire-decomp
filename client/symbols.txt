@@ -4643,6 +4643,7 @@
 0x100f6ce0 func   ?sub_100f6ce0@@YAXPBHPAHH@Z sub_100f6ce0
 0x100f6d00 func   ?sub_100f6d00@@YAXPAE0H@Z sub_100f6d00
 0x100f6e90 func   ?sub_100f6e90@@YAXPAE0H@Z sub_100f6e90
+0x100f6f60 func   ?sub_100f6f60@@YAXPAE0H@Z sub_100f6f60
 0x100f6fe0 func   ?sub_100f6fe0@@YAXPBEPAEH@Z sub_100f6fe0
 0x100f71a0 func   ?sub_100f71a0@@YAXPAE0H@Z sub_100f71a0
 0x100f71d0 func   ?sub_100f71d0@@YAHXZ sub_100f71d0

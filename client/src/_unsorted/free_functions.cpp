@@ -44503,6 +44503,19 @@ void sub_100f6d00(unsigned char *src, unsigned char *dst, int n)
 void sub_100f6e90(unsigned char *src, unsigned char *dst, int n) { unsigned char *end = src + n * 4; while (src < end) { *dst = src[3]; src += 4; dst++; } }
 // END FUNCTION
 
+// FUNCTION: 0x100f6f60 size=0x37
+void sub_100f6f60(unsigned char *src, unsigned char *dst, int n)
+{
+    unsigned char *end = src + n * 4;
+    for (; src < end; src += 4, dst += 4) {
+        dst[0] = src[3];
+        dst[1] = src[0];
+        dst[2] = src[1];
+        dst[3] = src[2];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6fe0 size=0x31
 void sub_100f6fe0(const unsigned char *src, unsigned char *dst, int n)
 {
