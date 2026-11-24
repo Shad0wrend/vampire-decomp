@@ -46588,6 +46588,48 @@ void sub_100e30f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3270 size=0x54
+#include "CClampProxy.h"
+
+class IMaterialVarView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual float GetFloatValue();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void GetVecValue(float *pOut, int nCount);
+	virtual int VectorSize();
+};
+
+// TARGET: CClampProxy::CInput::sub_100e3270
+float CClampProxy::CInput::sub_100e3270()
+{
+	if ( !m_b )
+		return m_a;
+	if ( m_c < 0 )
+		return ((IMaterialVarView *)m_b)->GetFloatValue();
+	int n = ((IMaterialVarView *)m_b)->VectorSize();
+	if ( m_c >= n )
+		return 0.0f;
+	float arr[4];
+	((IMaterialVarView *)m_b)->GetVecValue(arr, n);
+	return arr[m_c];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e32d0 size=0x10
 namespace lifted {
 extern char g_10234ae8;
