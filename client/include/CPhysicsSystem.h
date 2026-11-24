@@ -7,4 +7,5 @@ class CPhysicsSystem : public CAutoGameSystem
 {
 public:
 	virtual void vfunc1();
+	virtual void vfunc7(int);
 };
