@@ -705,6 +705,22 @@ void C_BaseEntity::vfunc103(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2d70 size=0x2d
+#include "C_BaseEntity.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+void *C_BaseEntity::sub_100a2d70()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x98);
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e10 size=0xd
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc49(int a0)
