@@ -35,7 +35,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc14();
 	virtual void vfunc15(int, int, float, float);
 	virtual void vfunc16(int);
-	virtual void vfunc17();
+	virtual void vfunc17(int, int, int, int, int, int);
 	virtual void vfunc18();
 	virtual void vfunc19(const Vector &, const QAngle &, const QAngle &, int, const Vector &);
 	// the slots CTempEnts adds to its base's vtable: 20-26, vfuncK at slot K
