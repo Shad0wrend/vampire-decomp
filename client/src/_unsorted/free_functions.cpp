@@ -84551,6 +84551,19 @@ bool CUnknown101aa570::sub_101aa570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa590 size=0x30
+#include "vgui2__Panel.h"
+struct IP17 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual bool v17(); };
+void vgui2::Panel::sub_101aa590()
+{
+	if (vfunc67()) {
+		if ((*(IP17 **)((char *)this + 0x1c))->v17())
+			vfunc4();
+	} else
+		vfunc96();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aab50 size=0x7
 struct CUnknown101aab50 { int sub_101aab50(); };
 int CUnknown101aab50::sub_101aab50()
