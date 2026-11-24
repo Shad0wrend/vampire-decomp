@@ -17641,6 +17641,27 @@ struct S_1004ec90 { char pad[0x1ac]; SE_1004ec90 e[6]; int sub_1004ec90(int v); 
 int S_1004ec90::sub_1004ec90(int v) { for (int i = 0; i < 6; i++) if (e[i].a == v) return i; return -1; }
 // END FUNCTION
 
+// FUNCTION: 0x1004ecb0 size=0x4f
+#include "CDiscipline.h"
+
+int CDiscipline::sub_1004ecb0(int id)
+{
+	for (int i = 0; i < 6; i++)
+	{
+		if (m_Entries[i].m_nId == -1)
+		{
+			m_Entries[i].m_nId = id;
+			m_Entries[i].m_b8 = 0;
+			IManagedHudElement *pElement = (IManagedHudElement *)((char *)this + 0x170);
+			*(int *)((char *)pElement + 0x38) += 1;
+			pElement->vfunc5_hud(true);
+			return i;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f0c0 size=0xe1
 #include "CVStatInfoList_t.h"
 #include "utlvector.h"
