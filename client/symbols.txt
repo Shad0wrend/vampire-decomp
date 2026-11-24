@@ -2220,6 +2220,7 @@
 0x10040d40 func   ??_GC_TEUserTracer@@UAEPAXI@Z ??_GC_TEUserTracer@@UAEPAXI@Z
 0x10040d60 func   ??1C_TEUserTracer@@UAE@XZ C_TEUserTracer::~C_TEUserTracer
 0x10040d60 func   ?sub_10040d60@CUnknown10040d60@@QAEHXZ CUnknown10040d60::sub_10040d60
+0x10040d80 func   ?sub_10040d80@@YAXHHHHHHH@Z sub_10040d80
 0x10040e70 func   ?vfunc9@C_TEUserTracer@@UAEHXZ C_TEUserTracer::vfunc9
 0x10040e80 func   ?vfunc8@C_TEUserTracer@@UAEHXZ C_TEUserTracer::vfunc8
 0x10040e90 func   ?sub_10040e90@@YAHXZ sub_10040e90
