@@ -5216,6 +5216,7 @@
 0x101230d0 func   ?vfunc13@CPrediction@@UAEHXZ CPrediction::vfunc13
 0x101230e0 func   ?vfunc14@CPrediction@@UAE_NXZ CPrediction::vfunc14
 0x101230f0 func   ?vfunc7@CPrediction@@UAEHXZ CPrediction::vfunc7
+0x10123110 func   ?vfunc8@CPrediction@@UAEXPAVVector@@@Z CPrediction::vfunc8
 0x10123150 func   ?vfunc9@CPrediction@@UAEXH@Z CPrediction::vfunc9
 0x101231c0 func   ?vfunc11@CPrediction@@UAEXPBVVector@@@Z CPrediction::vfunc11
 0x10123200 func   ?vfunc15@CPrediction@@UAEHXZ CPrediction::vfunc15

@@ -67,6 +67,24 @@ int CPrediction::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123110 size=0x37
+#include "CPrediction.h"
+#include "C_BasePlayer.h"
+#include "Vector.h"
+extern C_BasePlayer *g_104a0d50;
+// TARGET: CPrediction::vfunc8
+void CPrediction::vfunc8(Vector *v)
+{
+    if (g_104a0d50 == 0) {
+        v->x = 0;
+        v->y = 0;
+        v->z = 0;
+    } else {
+        *v = g_104a0d50->GetAbsOrigin();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123150 size=0x28
 #include "CPrediction.h"
 namespace lifted {
