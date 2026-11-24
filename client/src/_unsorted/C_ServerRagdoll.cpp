@@ -107,6 +107,21 @@ int C_ServerRagdoll::vfunc125(int flags, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125a70 size=0x38
+#include "C_ServerRagdoll.h"
+struct CGlobalsRag { float f0; float f4; float f8; float fc; float frametime; };
+extern CGlobalsRag *g_102b8494;
+float sub_1010c2e0(float target, float value, float speed);
+struct RagView : public C_ServerRagdoll { char pad[0xae0 - sizeof(C_ServerRagdoll)]; float m_fae0; float m_fae4; };
+// TARGET: C_ServerRagdoll::vfunc37
+void C_ServerRagdoll::vfunc37()
+{
+    C_BaseAnimating::vfunc37();
+    RagView *r = (RagView *)this;
+    r->m_fae4 = sub_1010c2e0(r->m_fae0, r->m_fae4, g_102b8494->frametime * 5.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125e50 size=0x6
 #include "C_ServerRagdoll.h"
 namespace lifted {
