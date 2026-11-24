@@ -141,6 +141,39 @@ int vgui2::Frame::vfunc130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9270 size=0x59
+#include "vgui2__Frame.h"
+#include <string.h>
+
+int sub_101e28e0(const char *s1, const char *s2);
+
+typedef void (__fastcall *VFn)(void *);
+
+class Panel78View
+{
+public:
+	void sub_101ab3d0(const char *pName);
+};
+
+void vgui2::Frame::vfunc78(int nName)
+{
+	const char *pName = (const char *)nName;
+
+	if ( !sub_101e28e0( pName, "Close" ) )
+	{
+		(*(VFn **)this)[129]( this );
+	}
+	else if ( !strcmp( pName, "Minimize" ) )
+	{
+		(*(VFn **)this)[131]( this );
+	}
+	else
+	{
+		((Panel78View *)this)->sub_101ab3d0( pName );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b92d0 size=0x154
 extern void *sub_101ac650(unsigned int size);
 
