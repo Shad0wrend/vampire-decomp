@@ -25044,6 +25044,12 @@ int sub_1007d890(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d8c0 size=0xc
+extern const char *g_102abcb0[];
+// TARGET: sub_1007d8c0
+const char *sub_1007d8c0(int i) { return g_102abcb0[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x1007d930 size=0x1a
 char *sub_1007b160();
 
