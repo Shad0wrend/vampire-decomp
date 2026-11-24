@@ -47799,6 +47799,90 @@ int CUnknown100f17e0::sub_100f17e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f17f0 size=0x52
+// TARGET: ChatItem::sub_100f17f0
+struct Engine
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual void v28();
+	virtual void v29();
+	virtual void v30();
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual float v39(int);
+	virtual void v40();
+	virtual void v41();
+	virtual void v42();
+	virtual void v43();
+	virtual void v44();
+	virtual void v45();
+	virtual void v46();
+	virtual void v47();
+	virtual void v48();
+	virtual void v49();
+	virtual void v50();
+	virtual void v51();
+	virtual void v52();
+	virtual void v53();
+	virtual void v54();
+	virtual void v55();
+	virtual void v56();
+	virtual int v57();
+	virtual int v58();
+};
+
+extern Engine *g_104a57d4;
+
+struct ChatItem
+{
+	bool sub_100f17f0();
+};
+
+bool ChatItem::sub_100f17f0()
+{
+	if ( !g_104a57d4->v57() && !g_104a57d4->v58() )
+		return true;
+	float fA = g_104a57d4->v39(0);
+	float fB = *(float *)((char *)this + 0xb8);
+	if ( fB <= fA )
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1850 size=0x7
 struct CUnknown100f1850 { float sub_100f1850(); };
 float CUnknown100f1850::sub_100f1850()
