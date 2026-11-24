@@ -73916,6 +73916,31 @@ void CDiscValues_101e9080::sub_1014dae0(int *pA, int *pB, int *pC, int *pD)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014db30 size=0x54
+struct CSub101583e0
+{
+	int sub_101583e0(int a, int b, int c, int *p);
+};
+
+struct CView1014db30
+{
+	char m_unk000[0x3b0];
+	float m_fl3b0;
+	float sub_1014db30(int arg);
+};
+
+float CView1014db30::sub_1014db30(int arg)
+{
+	int i;
+	float f = m_fl3b0;
+	i = 100;
+	((CSub101583e0 *)((char *)arg + 0x10e0))->sub_101583e0(10, 0, 0x20, &i);
+	if (i != 100)
+		return i * f * 0.01f;
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ddf0 size=0x23
 char __fastcall sub_1008eb70(void *pOther);
 
