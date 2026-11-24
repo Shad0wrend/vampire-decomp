@@ -96,6 +96,27 @@ C_BaseAnimating::~C_BaseAnimating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f720 size=0x61
+#include "C_BaseAnimating.h"
+
+int C_BaseAnimating::vfunc86()
+{
+	if (!vfunc71() || !*(void **)((char *)this + 0x6ac) || sub_1009f140(0x60))
+		return 0;
+	void *p = *(void **)((char *)this + 0x6ac);
+	int n = *(int *)((char *)p + 0x108);
+	if (n == 0)
+		return 2;
+	if (n == 1)
+	{
+		void *q = *(void **)((char *)p + 0x10c);
+		if (*(int *)((char *)q + (int)p + 0xc) == 1)
+			return 2;
+	}
+	return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f8a0 size=0x52
 #include "C_BaseAnimating.h"
 #include "StudioHdr.h"
