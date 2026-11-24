@@ -30,6 +30,17 @@ void __stdcall sub_10001030(char *ptr, unsigned size, int count, PMF_1004ddc0 pm
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001070 size=0x3f
+float sub_10001070(float a, float b, float c, float d)
+{
+	if (a > b)
+		return a - c * d;
+	if (a < b)
+		return a + c * d;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100010b0 size=0x11
 // TARGET: sub_100010b0
 float sub_100010b0(float a, float b)
