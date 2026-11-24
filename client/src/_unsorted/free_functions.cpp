@@ -56868,6 +56868,36 @@ bool CUtlRBTree12::sub_1013ddc0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e040 size=0x1c0
+#include "utlrbtree.h"
+
+struct CRBTree12Entry_10194f30 { char data[4]; };
+
+// TARGET: ?sub_1013e040@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QAEXG@Z
+template <>
+void CUtlRBTree<CRBTree12Entry_10194f30, unsigned short>::sub_1013e040(unsigned short elem)
+{
+	unsigned short leftchild = LeftChild(elem);
+	SetLeftChild(elem, RightChild(leftchild));
+	if (RightChild(leftchild) != InvalidIndex())
+		SetParent(RightChild(leftchild), elem);
+
+	if (leftchild != InvalidIndex())
+		SetParent(leftchild, Parent(elem));
+	if (!IsRoot(elem)) {
+		if (IsRightChild(elem))
+			SetRightChild(Parent(elem), leftchild);
+		else
+			SetLeftChild(Parent(elem), leftchild);
+	} else
+		m_Root = leftchild;
+
+	SetRightChild(leftchild, elem);
+	if (elem != InvalidIndex())
+		SetParent(elem, leftchild);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e3a0 size=0x18b
 #include "CUnknown101d3a10.h"
 #include "CVStatInfoList_t.h"
