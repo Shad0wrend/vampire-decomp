@@ -25091,6 +25091,15 @@ void sub_1007d7f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d840 size=0x16
+struct T_1007d840 { char pad[0x3c0]; int m; };
+struct S_1007d840 { T_1007d840 *sub_1007b180(); bool sub_1007d840(); };
+bool S_1007d840::sub_1007d840()
+{
+	return (sub_1007b180()->m & 1) == 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d890 size=0x2e
 #include <string.h>
 // TARGET: sub_1007d890
