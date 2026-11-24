@@ -10,6 +10,7 @@ public:
 	virtual int vfunc16();
 	virtual bool vfunc189(int a);
 	virtual void vfunc167();
+	virtual int vfunc246(int, int, int);
 private:
 	char m_pad0014[0x9a8 - 0x14];
 };
