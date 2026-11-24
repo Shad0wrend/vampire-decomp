@@ -54230,6 +54230,42 @@ char CUnknown1011ac80::sub_1011ac80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ac90 size=0xd7
+#include "C_BaseEntity.h"
+#include "ConVar.h"
+#include "type_info.h"
+extern ConVar g_104e0ad8;
+extern type_info g_102c0dfc;
+extern void (*g_101e3108)(const char *, ...);
+struct IEngTime_ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37();
+	virtual float Time();
+};
+extern IEngTime_ *g_104a57d4;
+typedef void (C_BaseEntity::*BASEPTR)();
+void C_BaseEntity::sub_1011ac90(BASEPTR thinkFunc, int a, int b)
+{
+	float thinkLimit = g_104e0ad8.GetFloat();
+	float startTime = 0.0f;
+	if (thinkLimit)
+		startTime = g_104a57d4->Time();
+	if (thinkFunc)
+		(this->*thinkFunc)();
+	if (thinkLimit) {
+		float time = (g_104a57d4->Time() - startTime) * 1000.0f;
+		if (time > thinkLimit)
+			g_101e3108("CLIENT:  %s(%s) thinking for %.02f ms!!!\n", vfunc114(), g_102c0dfc.raw_name(), time);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b1d0 size=0x77
 #include "CDataObjectAccessSystem.h"
 
