@@ -37086,6 +37086,19 @@ int sub_100ca8c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca9c0 size=0x1e
+struct E_100ca9c0 { int a, b, c; };
+extern int g_104a56e4;
+extern int g_104a56d8;
+extern E_100ca9c0 *g_104a56cc;
+int sub_100ca9c0()
+{
+	if (g_104a56e4)
+		return g_104a56cc[g_104a56d8].a;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca9e0 size=0x11
 int sub_100ca9e0(int a0, int a1)
 {
