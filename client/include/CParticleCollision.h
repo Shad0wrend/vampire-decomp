@@ -13,4 +13,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     float m_flGravity;
     float m_flCollisionDampen;
     float m_flAngularCollisionDampen;
+    void sub_10114d80();
 };
