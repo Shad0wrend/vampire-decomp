@@ -57368,6 +57368,16 @@ CUnknown1024b000 *CUnknown1024b000::sub_1013d0a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d0d0 size=0x16
+#include "CUnknown1024b2d0.h"
+CUnknown1024b2d0 *sub_1013d090();
+struct CUnknown1013d0d0 { CUnknown1024b2d0Id m_id; const char *sub_1013d0d0(); };
+const char *CUnknown1013d0d0::sub_1013d0d0()
+{
+	return sub_1013d090()->sub_1013d6f0(m_id);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d0f0 size=0x8
 namespace lifted {
 extern char g_102c63d0;
