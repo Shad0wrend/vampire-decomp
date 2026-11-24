@@ -38,3 +38,15 @@ void CViewEffects::vfunc8(Vector &origin, QAngle &angles, float factor)
 	VectorAdd(m_vecAppliedOffset, origin, origin);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101976d0 size=0x5f
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewEffects::vfunc10
+void CViewEffects::vfunc10()
+{
+	ScopeTrace trace("CViewEffects::StartHolyLight", g_102de300);
+	*(char *)((char *)this + 0x99) = 1;
+}
+// END FUNCTION
