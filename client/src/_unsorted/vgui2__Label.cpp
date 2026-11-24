@@ -115,6 +115,11 @@ int vgui2::Label::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2a50 size=0x19
+#include "vgui2__Label.h"
+int vgui2::Label::vfunc53(int p) { int t; Panel::vfunc53((int)&t); *(int *)p = t; return p; }
+// END FUNCTION
+
 // FUNCTION: 0x101b2a70 size=0xd
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc113(int a0)
