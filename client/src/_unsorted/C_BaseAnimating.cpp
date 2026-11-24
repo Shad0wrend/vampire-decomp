@@ -151,6 +151,15 @@ void C_BaseAnimating::vfunc37()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095070 size=0x14
+#include "C_BaseAnimating.h"
+int C_BaseAnimating::vfunc62()
+{
+	DoAnimationEvents();
+	return C_BaseEntity::vfunc62();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095870 size=0x6
 #include "C_BaseAnimating.h"
 namespace lifted {
