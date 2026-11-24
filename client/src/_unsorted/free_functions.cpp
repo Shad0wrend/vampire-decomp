@@ -88872,6 +88872,31 @@ void CUnknown10187230::sub_10187230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187860 size=0x52
+#include "VMapScreenUI.h"
+#include "vgui2__Panel.h"
+
+struct CUnknown10187230 { void sub_10187230(); };
+
+// TARGET: VMapScreenUI::sub_10187860
+void VMapScreenUI::sub_10187860()
+{
+	vgui2::Panel *p = *(vgui2::Panel **)((char *)this + 0x274);
+	if (p)
+		delete p;
+	*(vgui2::Panel **)((char *)this + 0x274) = 0;
+	vgui2::Panel **arr = (vgui2::Panel **)((char *)this + 0x244);
+	for (int i = 0; i < 12; i++) {
+		vgui2::Panel *q = *arr;
+		if (q)
+			delete q;
+		*arr = 0;
+		arr++;
+	}
+	((CUnknown10187230 *)((char *)this + 0x188))->sub_10187230();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187920 size=0x22
 namespace lifted {
 extern char g_1027b3b4;
