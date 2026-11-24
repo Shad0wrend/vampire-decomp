@@ -19,3 +19,16 @@ CProgBar::~CProgBar()
 	sub_1005fcb0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005fe10 size=0x27
+#include "CProgBar.h"
+void CProgBar::vfunc112()
+{
+	m_b17c = 0;
+	m_b17d = 0;
+	m_b17e = 0;
+	m_n178 = 0;
+	m_n1a8 = 0;
+	m_b1b4 = 0;
+}
+// END FUNCTION
