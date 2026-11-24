@@ -818,6 +818,21 @@ void C_BaseEntity::vfunc99(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ac30 size=0x13
+struct B1 { int a; };
+struct B2 { int b; };
+struct T_1011ac30 : B1, B2 { void f(int); };
+struct V_1011ac30 : T_1011ac30 {
+	int m_unk[(0x30 - 12) / 4];
+	void (T_1011ac30::*m_pfn)(int);
+};
+void __fastcall sub_1011ac30(V_1011ac30 *self, int edx, int a)
+{
+	if (self->m_pfn)
+		(self->*self->m_pfn)(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ac50 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc101(int a0)
