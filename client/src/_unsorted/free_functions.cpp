@@ -34630,6 +34630,38 @@ int __stdcall sub_1009ffe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a01e0 size=0x57
+struct IPredictablesView
+{
+    virtual void *vfunc0(int i) = 0;
+    virtual int vfunc1() = 0;
+};
+extern IPredictablesView *g_102af678;
+
+struct EntityView
+{
+    char m_pad00[0xcc];
+    int m_cc;              // +0xcc
+    bool sub_100a2ba0();
+};
+
+struct ArgView
+{
+    bool sub_10120a10(void *p);
+};
+
+EntityView *__cdecl sub_100a01e0(ArgView *arg)
+{
+    int count = g_102af678->vfunc1();
+    for (int i = 0; i < count; i++) {
+        EntityView *ent = (EntityView *)g_102af678->vfunc0(i);
+        if (ent && ent->sub_100a2ba0() && arg->sub_10120a10(&ent->m_cc))
+            return ent;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a02e0 size=0x35
 #include "C_BaseEntity.h"
 char *C_BaseEntity::sub_1009f760() { return (char *)this + 0x2b4; }
