@@ -137,6 +137,25 @@ C_BasePlayer *pcd_emit_100a54a0() { return new C_BasePlayer; }
 void C_BasePlayer::vfunc177() { IsTransparent(); }
 // END FUNCTION
 
+// FUNCTION: 0x100a58b0 size=0x45
+#include "C_BasePlayer.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+// TARGET: C_BasePlayer::vfunc119
+void C_BasePlayer::vfunc119(int ent) {
+	unsigned int *ph = (unsigned int *)((char *)this + 0x14e8);
+	void *p;
+	if (*ph == 0xffffffff)
+		p = 0;
+	else {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[*ph & 0x1fff];
+		p = (e->m_SerialNumber == (int)(*ph >> 13)) ? e->m_pEntity : 0;
+	}
+	if ((void *)ent == p)
+		*ph = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5900 size=0x9
 struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); };
 void __fastcall sub_100a5900(char *self, int edx) { ((V *)(self + 4))->v11(); }
