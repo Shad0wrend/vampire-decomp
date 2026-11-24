@@ -534,6 +534,38 @@ template <> int ClientClassInit<DT_ItemPhysicsHand::ignored>(DT_ItemPhysicsHand:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003470 size=0x5d
+#include "Vector.h"
+
+struct WeaponView
+{
+	char m_pad0000[0x970];
+	unsigned char m_b970;
+	unsigned char m_b971;
+	char m_pad0972[2];
+	Vector m_v974;
+	void sub_1009b2c0(int);
+	void sub_10003470(int arg);
+};
+void sub_1005fa60(Vector v);
+void sub_1005fa50(char b);
+
+// TARGET: WeaponView::sub_10003470
+void WeaponView::sub_10003470(int arg)
+{
+	sub_1009b2c0(arg);
+	if (m_b970 && m_b971)
+	{
+		sub_1005fa60(m_v974);
+		sub_1005fa50(1);
+	}
+	else
+	{
+		sub_1005fa50(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003580 size=0x6
 namespace lifted {
 extern char g_102deaec;
