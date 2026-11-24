@@ -77458,6 +77458,41 @@ void CUnknown10152220::sub_10152220(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152250 size=0x5c
+// TARGET: CUnknown10152250::sub_10152250
+struct CUnknown10152250
+{
+	int sub_10094b20(int updateType);
+	void sub_10152250(int updateType);
+	char m_pad[0x78c];
+	int m_unk78c;
+	char m_pad790[4];
+	int m_unk794;
+	char m_pad798[8];
+	int m_unk7a0;
+	char m_pad7a4[8];
+	int m_unk7ac;
+	char m_pad7b0[0x2c];
+	int m_unk7dc;
+};
+
+void sub_10109420(void *);
+void sub_101094e0(void *, void *);
+void sub_10108540(void *, int, void *);
+
+void CUnknown10152250::sub_10152250(int updateType)
+{
+	sub_10094b20(updateType);
+	if (m_unk78c >= 0 && m_unk7dc == 0)
+	{
+		sub_10109420(&m_unk7ac);
+		sub_101094e0(&m_unk7a0, &m_unk7ac);
+		sub_10108540(&m_unk794, 3, &m_unk7ac);
+		m_unk7dc = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101522b0 size=0x5
 namespace lifted {
 int sub_10095f30();
