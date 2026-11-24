@@ -45,6 +45,13 @@ void CDetailObjectSystem::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0560 size=0x3
+// TARGET: sub_100e0560
+void __stdcall sub_100e0560(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e08f0 size=0x1
 #include "CDetailObjectSystem.h"
 // TARGET: CDetailObjectSystem::vfunc5
