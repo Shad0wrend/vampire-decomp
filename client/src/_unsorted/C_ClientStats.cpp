@@ -85,6 +85,12 @@ int C_ClientStats::vfunc16(int i)
 int C_ClientStats::vfunc17(int i) { return (&m_Stats[25])[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x100adc30 size=0xe
+#include "C_ClientStats.h"
+// TARGET: C_ClientStats::vfunc18
+double C_ClientStats::vfunc18(int i) { return ((double *)((char *)this + 0x80))[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100adc50 size=0xd
 #include "C_ClientStats.h"
 void C_ClientStats::vfunc0(int v) { m_unk308 = v; }
