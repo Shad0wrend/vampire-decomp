@@ -14734,6 +14734,30 @@ void CUnknown1003ce90::sub_1003ce90(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003cee0 size=0x32
+struct CUnknown1003ce90 { void sub_1003ce90(void *node, void *prev); };
+struct TE_1003cee0 { char m_unk[0x7a8]; TE_1003cee0 *m_pNext; char m_unk2[0x7cc - 0x7ac]; int m_iFlag; };
+struct Mgr_1003cee0 : CUnknown1003ce90 {
+	char m_unk[0xfbf4c];
+	TE_1003cee0 *m_pHead;
+	bool sub_1003cee0();
+};
+bool Mgr_1003cee0::sub_1003cee0()
+{
+	TE_1003cee0 *prev = 0;
+	for (TE_1003cee0 *p = m_pHead; p; p = p->m_pNext)
+	{
+		if (!p->m_iFlag)
+		{
+			sub_1003ce90(p, prev);
+			return true;
+		}
+		prev = p;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dab0 size=0x12
 namespace lifted {
 extern char g_10226fec;
