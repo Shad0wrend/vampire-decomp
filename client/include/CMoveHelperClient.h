@@ -13,4 +13,5 @@ public:
 	virtual bool vfunc7();
 	virtual void vfunc12();
 	virtual ~CMoveHelperClient();
+	void vfunc19();
 };
