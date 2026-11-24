@@ -5563,6 +5563,7 @@
 0x10124eb0 func   ??_GCPlayerSpeedProxy@@UAEPAXI@Z ??_GCPlayerSpeedProxy@@UAEPAXI@Z
 0x10124fa0 func   ?sub_10124fa0@@YAHXZ sub_10124fa0
 0x10124fd0 func   ??_GCPlayerPositionProxy@@UAEPAXI@Z ??_GCPlayerPositionProxy@@UAEPAXI@Z
+0x10124ff0 func   ?vfunc1@CEntitySpeedProxy@@UAEXH@Z CEntitySpeedProxy::vfunc1
 0x10125080 func   ?sub_10125080@@YAHXZ sub_10125080
 0x101250b0 func   ??_GCEntitySpeedProxy@@UAEPAXI@Z ??_GCEntitySpeedProxy@@UAEPAXI@Z
 0x10125180 func   ?sub_10125180@@YAHXZ sub_10125180
