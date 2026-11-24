@@ -43072,6 +43072,13 @@ void CHelper_100fccf0::sub_100fccf0( const Vector &origin, const QAngle &angles 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fdb30 size=0x17
+float sub_100fdb30(float value)
+{
+	return (3.0 - 2.0 * value) * (value * value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101b70 size=0xb
 namespace lifted {
 extern int g_1027ba58;
