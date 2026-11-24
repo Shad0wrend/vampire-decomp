@@ -79881,6 +79881,22 @@ void CPanelCleanup101805e0::sub_101805e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180c00 size=0x31
+struct SPan { char pad[0xc0]; char m_a[0x4c]; char m_b[0x4c]; char m_c[0x4c]; };
+extern SPan *g_105fb6e4;
+void *sub_10180c00(int i)
+{
+	if (g_105fb6e4) {
+		switch (i) {
+		case 0: return g_105fb6e4->m_a;
+		case 1: return g_105fb6e4->m_b;
+		case 2: return g_105fb6e4->m_c;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180cd0 size=0xd
 int sub_10180cd0(int a0)
 {
