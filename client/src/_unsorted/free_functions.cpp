@@ -87363,6 +87363,75 @@ int CUnknown101ab870::sub_101ab870()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac570 size=0xc1
+struct ISymTable_101ac570
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int GetSymbolForString(const char *name);
+};
+
+ISymTable_101ac570 *__cdecl sub_101ac930();
+
+struct MessageMapItem_t_101ac570
+{
+	const char *name;        // +0x00
+	char pad04[0x28 - 4];
+	const char *firstparam;  // +0x28
+	int pad2c;
+	const char *secondparam; // +0x30
+	int nameSymbol;          // +0x34
+	int firstparamSymbol;    // +0x38
+	int secondparamSymbol;   // +0x3c
+};
+
+struct PanelMessageMap_101ac570
+{
+	MessageMapItem_t_101ac570 *dataDesc; // +0x00
+	int dataNumFields;                   // +0x04
+	const char *dataClassName;           // +0x08
+	PanelMessageMap_101ac570 *baseMap;   // +0x0c
+	int processed;                       // +0x10
+};
+
+extern PanelMessageMap_101ac570 g_102d8128;
+
+// TARGET: sub_101ac570
+void __stdcall sub_101ac570(PanelMessageMap_101ac570 *map)
+{
+	while (map && !map->processed)
+	{
+		if (map->baseMap == (PanelMessageMap_101ac570 *)1)
+		{
+			map->baseMap = &g_102d8128;
+		}
+
+		for (int i = 0; i < map->dataNumFields; i++)
+		{
+			MessageMapItem_t_101ac570 *item = &map->dataDesc[i];
+			if (item->name)
+				item->nameSymbol = sub_101ac930()->GetSymbolForString(item->name);
+			else
+				item->nameSymbol = -1;
+
+			if (item->firstparam)
+				item->firstparamSymbol = sub_101ac930()->GetSymbolForString(item->firstparam);
+			else
+				item->firstparamSymbol = -1;
+
+			if (item->secondparam)
+				item->secondparamSymbol = sub_101ac930()->GetSymbolForString(item->secondparam);
+			else
+				item->secondparamSymbol = -1;
+		}
+
+		map->processed = 1;
+		map = map->baseMap;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac670 size=0x31
 struct XR2 { virtual void v0(); virtual void *v1(); };
 struct XR1 { virtual void v0(); virtual XR2 *v1(void *); };
