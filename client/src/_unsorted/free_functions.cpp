@@ -30785,6 +30785,12 @@ float sub_10098720(float x, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099870 size=0xe
+struct CView { char pad[0xfd0]; int mfd0; int sub_10099870(); };
+// TARGET: ?sub_10099870@CView@@QAEHXZ
+int CView::sub_10099870() { return mfd0 != 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10099880 size=0x233
 #include "CVStatList_t.h"
 #include <stdlib.h>
