@@ -17258,6 +17258,44 @@ float sub_1004b3a0(const matrix3x4_t *pMatrix, const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b4b0 size=0x57
+struct IEntry1004b4b0;
+
+struct IEntryPart1004b4b0
+{
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3();
+	virtual void p4(); virtual void p5(); virtual void p6(); virtual void p7();
+	virtual void p8(); virtual void p9(); virtual void p10(); virtual void p11();
+	virtual void p12();
+	virtual IEntry1004b4b0 *p13();
+};
+
+struct IEntry1004b4b0
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+	virtual void e4(); virtual void e5();
+	virtual IEntry1004b4b0 *e6();
+};
+
+char sub_1004b4b0(IEntry1004b4b0 *a1, IEntry1004b4b0 *a2)
+{
+	if (a2)
+	{
+		if (a1 == a2)
+			return 0;
+		IEntry1004b4b0 *s1 = a1->e6();
+		IEntry1004b4b0 *s2 = a2->e6();
+		if (s1 && s2)
+		{
+			if (((IEntryPart1004b4b0 *)((char *)s1 + 0xc))->p13() == s2)
+				return 0;
+			return ((IEntryPart1004b4b0 *)((char *)s2 + 0xc))->p13() != s1;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b5c0 size=0x19
 namespace lifted {
 extern char g_10227c78;
