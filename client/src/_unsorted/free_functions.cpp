@@ -56397,6 +56397,14 @@ int CUnknown10136f40::sub_10136f40(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136f60 size=0x17
+struct V_10136f60 { void sub_10136f90(int); };
+void __fastcall sub_10136f60(V_10136f60 *self, int edx, char c)
+{
+	self->sub_10136f90(c ? 5 : 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136f80 size=0x10
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual int f2(float); };
