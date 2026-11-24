@@ -3987,6 +3987,7 @@
 0x100c93a0 func   ?sub_100c93a0@CUnknown100c93a0@@QAEHXZ CUnknown100c93a0::sub_100c93a0
 0x100c9790 func   ?sub_100c9790@CVGuiScreen_100c9790@@QAEHABVVector@@@Z CVGuiScreen_100c9790::sub_100c9790
 0x100c9d40 func   ?sub_100c9d40@CUnknown100c9d40@@QAEHXZ CUnknown100c9d40::sub_100c9d40
+0x100c9d50 func   ?sub_100c9d50@HList@@QAEPAXH@Z HList::sub_100c9d50
 0x100ca010 func   ?sub_100ca010@@YAXH@Z sub_100ca010
 0x100ca020 func   ?sub_100ca020@@YAXHH@Z sub_100ca020
 0x100ca040 func   ?sub_100ca040@@YAXH@Z sub_100ca040
