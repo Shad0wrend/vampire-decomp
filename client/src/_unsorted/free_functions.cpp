@@ -57758,6 +57758,27 @@ void CPC::sub_101239d0(int type, void *outvalue, const void *invalue, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123a10 size=0x48
+struct PredView {
+	char pad[0x14];
+	bool m_b14;
+	int sub_10123a10(const short *outvalue, const short *invalue, int count);
+	bool sub_10123470();
+};
+int PredView::sub_10123a10(const short *outvalue, const short *invalue, int count)
+{
+	if (!m_b14)
+		return 0;
+	if (sub_10123470()) {
+		for (int i = 0; i < count; i++) {
+			if (outvalue[i] != invalue[i])
+				return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123a60 size=0x23
 #include <string.h>
 struct S10123a60 {
