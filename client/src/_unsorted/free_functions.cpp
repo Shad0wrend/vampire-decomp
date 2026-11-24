@@ -44574,6 +44574,19 @@ int sub_100f71e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f71f0 size=0x37
+void sub_100f71f0(unsigned char *src, unsigned char *dst, int n)
+{
+    unsigned char *end = src + n * 4;
+    for (; src < end; src += 4, dst += 4) {
+        dst[0] = src[3];
+        dst[1] = src[2];
+        dst[2] = src[1];
+        dst[3] = src[0];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f72b0 size=0x35
 void sub_100f72b0(unsigned char *src, unsigned char *dst, int count)
 {
