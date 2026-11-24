@@ -18,6 +18,11 @@ void CPhysicsSystem::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119100 size=0x8
+#include "CPhysicsSystem.h"
+void CPhysicsSystem::vfunc2() { m_unk14 = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10119190 size=0x1
 // TARGET: sub_10119190
 void sub_10119190()
