@@ -28625,6 +28625,12 @@ void sub_1008b850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b890 size=0xd
+int sub_1008b6c0(int, int, float, int, int, int, int);
+// TARGET: sub_1008b890
+int sub_1008b890(int a, int b, float c, int d, int e, int f, int g) { return sub_1008b6c0(a, b, c, d, e, f, g); }
+// END FUNCTION
+
 // FUNCTION: 0x1008c060 size=0x186
 struct StudioHdr
 {
