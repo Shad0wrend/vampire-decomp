@@ -949,6 +949,18 @@ void C_BaseCombatWeapon::vfunc236(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009bda0 size=0x2a
+#include "C_BaseCombatWeapon.h"
+extern void *g_104a0d50;
+bool C_BaseCombatWeapon::vfunc240()
+{
+	if (!sub_1007bab0())
+		return false;
+	void *pPlayer = g_104a0d50;
+	return sub_1007bab0() == pPlayer;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009bdd0 size=0x2b
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
