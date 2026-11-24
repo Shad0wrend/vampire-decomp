@@ -56110,6 +56110,21 @@ void CUnknown10117850::sub_10117850(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117920 size=0x58
+#include "CParticleMgr.h"
+
+int CParticleMgr::sub_10117920(Vector *p, float t)
+{
+	if (m_nCount < 0 || m_nCount >= 20)
+		return 0;
+
+	m_entries[m_nCount].m_v = *p;
+	m_entries[m_nCount].m_t = t;
+	m_nCount++;
+	return m_nCount * 2 - 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117a80 size=0x57
 #include "CParticleMgr.h"
 #include "Vector.h"
