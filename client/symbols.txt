@@ -4232,6 +4232,7 @@
 0x100c8c50 func   ?sub_100c8c50@CUnknown100c8c50@@QAEPAXHH@Z CUnknown100c8c50::sub_100c8c50
 0x100c8c80 func   ??_GCVGuiScreenPanel@@UAEPAXI@Z ??_GCVGuiScreenPanel@@UAEPAXI@Z
 0x100c8ca0 func   ?sub_100c8ca0@CUnknown100c8ca0@@QAEPAXHHH@Z CUnknown100c8ca0::sub_100c8ca0
+0x100c8d60 func   ?sub_100c8d60@CVGuiScreenPanel@@QAEPAVPanel@vgui2@@PAV23@PBD@Z CVGuiScreenPanel::sub_100c8d60
 0x100c8e10 func   ?vfunc16@C_VGuiScreen@@UAEHXZ C_VGuiScreen::vfunc16
 0x100c8e30 func   ?sub_100c8e30@@YAHXZ sub_100c8e30
 0x100c8e90 func   ?_C_VGuiScreen_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_VGuiScreen_CreateObject
