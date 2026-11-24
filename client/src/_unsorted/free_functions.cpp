@@ -47365,6 +47365,18 @@ float CUnknown100f10c0::sub_100f10c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f11d0 size=0x27
+#include "CHud.h"
+
+void *CHud::sub_100f11d0(const char *pName)
+{
+	int idx = sub_100f0980(pName);
+	if (idx < 0)
+		return 0;
+	return (void *)(*(int *)((char *)this + 0x54) + idx * 0x98);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1330 size=0x20
 namespace lifted {
 extern int g_104cfe50;
