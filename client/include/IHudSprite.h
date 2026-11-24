@@ -13,9 +13,24 @@ public:
 	int sub_10136ff0(int frame, int x, int y, int a3);
 };
 
+struct El3d50;
 class CHudSprite : public IHudSprite
 {
 public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual int vfunc5(int idx, int unused);
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	int *sub_100f3e20(El3d50 *p);
 	virtual void vfunc13(int frame, int x, int y, int a3);
 
 	int m_unk04;
