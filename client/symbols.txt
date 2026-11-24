@@ -7548,6 +7548,7 @@
 0x101b6950 func   ?vfunc2@Image@vgui2@@UAEHHH@Z vgui2::Image::vfunc2
 0x101b6970 func   ?sub_101b6970@CUnknown101b6970@@QAEHHH@Z CUnknown101b6970::sub_101b6970
 0x101b6990 func   ?vfunc9@Image@vgui2@@UAEHHH@Z vgui2::Image::vfunc9
+0x101b69b0 func   ?vfunc11@Image@vgui2@@UAEXUColor4b@@@Z vgui2::Image::vfunc11
 0x101b69f0 func   ?vfunc10@Image@vgui2@@UAEHXZ vgui2::Image::vfunc10
 0x101b6a00 func   ?vfunc12@Image@vgui2@@UAEXHHHH@Z vgui2::Image::vfunc12
 0x101b6a40 func   ?vfunc13@Image@vgui2@@UAEHHHHH@Z vgui2::Image::vfunc13
