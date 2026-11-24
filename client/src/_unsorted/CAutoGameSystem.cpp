@@ -29,6 +29,13 @@ void CAutoGameSystem::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044620 size=0x3
+// TARGET: sub_10044620
+void __stdcall sub_10044620(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9b20 size=0x3
 #include "CDirtySpatialPartitionEntityList.h"
 bool CAutoGameSystem::vfunc0()
