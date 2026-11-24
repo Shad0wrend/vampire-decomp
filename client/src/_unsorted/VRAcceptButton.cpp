@@ -10,3 +10,22 @@ VRAcceptButton *pcd_emit_1017d640(const VRAcceptButton &other) { return new VRAc
 
 // TARGET: ??_GVRAcceptButton@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x1017d6a0 size=0x39
+#include "VRAcceptButton.h"
+struct SItem { void sub_1017d310(int a); };
+struct SEntry { SItem *m_p; int m_unk[8]; };
+struct SPanel {
+	char pad[0x18c];
+	int m_n;
+	int m_unk190;
+	SEntry *m_pEntries;
+};
+extern SPanel *g_105fb6e4;
+// TARGET: VRAcceptButton::vfunc86
+void VRAcceptButton::vfunc86()
+{
+	for (int i = 0; i < g_105fb6e4->m_n; i++)
+		g_105fb6e4->m_pEntries[i].m_p->sub_1017d310(0);
+}
+// END FUNCTION
