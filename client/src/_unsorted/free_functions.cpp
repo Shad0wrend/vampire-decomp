@@ -94730,6 +94730,36 @@ int CUnknown101a79f0::sub_101a79f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7a00 size=0x5a
+#include "CHudWeaponSelection.h"
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+extern C_BasePlayer *g_104a0d50;
+extern "C" int _strcmpi(const char *, const char *);
+
+// TARGET: CHudWeaponSelection::sub_101a7a00
+void CHudWeaponSelection::sub_101a7a00()
+{
+	C_BasePlayer *player = g_104a0d50;
+	if (player)
+	{
+		C_BaseCombatWeapon *weapon = *(C_BaseCombatWeapon **)((char *)this + 0x20);
+		if (weapon)
+		{
+			if (!_strcmpi((char *)weapon->sub_1007b160() + 0x2450, "bloodpack"))
+			{
+				player->vfunc168((int)weapon);
+				if (*(int *)((char *)weapon + 0x7ac))
+					return;
+			}
+		}
+	}
+	*(char *)((char *)this + 0x1c) = 0;
+	vfunc11(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7a60 size=0x59
 namespace lifted {
 extern int g_104a0d50;
