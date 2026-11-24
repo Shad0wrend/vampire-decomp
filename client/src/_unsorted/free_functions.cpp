@@ -87653,6 +87653,39 @@ int vgui2::CGrid::sub_101669e0(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166a50 size=0x61
+#include "vgui2__Panel.h"
+
+struct GridCell;
+struct GridV {
+	char pad[0x5c];
+	int m5c;
+	int m60;
+	GridCell *sub_10166d90(int x, int y);
+	int sub_10166a50(int nIndex);
+};
+struct GridCell { vgui2::Panel *pPanel; };
+
+int GridV::sub_10166a50(int nIndex)
+{
+	if (nIndex < 0 || nIndex >= m60)
+		return 0;
+	int nMax = 0;
+	for (int i = 0; i < m5c; i++)
+	{
+		GridCell *cell = sub_10166d90(i, nIndex);
+		if (cell->pPanel)
+		{
+			int a, b;
+			cell->pPanel->sub_101a9920(&a, &b);
+			if (b > nMax)
+				nMax = b;
+		}
+	}
+	return nMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166af0 size=0x59
 struct CUnknown10166af0
 {
