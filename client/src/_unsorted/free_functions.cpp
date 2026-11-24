@@ -87626,6 +87626,33 @@ struct V69a0 { char pad[0x60]; int n; char pad2[0x70 - 0x64]; int *arr; int sub_
 int V69a0::sub_101669c0(int i) { if (i < 0 || i >= n) return 0; return arr[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x101669e0 size=0x61
+#include "vgui2__CGrid.h"
+
+struct GridCell { vgui2::Panel *m_pPanel; int m_unk4; int m_unk8; int m_unkC; int m_unk10; };
+struct GridInner { char m_pad0[0x5c]; int m_nCols; int m_nRows; };
+
+int vgui2::CGrid::sub_101669e0(int x)
+{
+	GridInner *g = (GridInner *)this;
+	if (x < 0 || x >= g->m_nCols)
+		return 0;
+	int max = 0;
+	for (int y = 0; y < g->m_nRows; y++)
+	{
+		GridCell *cell = (GridCell *)sub_10166d90(x, y);
+		if (cell->m_pPanel)
+		{
+			int w, h;
+			cell->m_pPanel->sub_101a9920(&w, &h);
+			if (w > max)
+				max = w;
+		}
+	}
+	return max;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166af0 size=0x59
 struct CUnknown10166af0
 {
