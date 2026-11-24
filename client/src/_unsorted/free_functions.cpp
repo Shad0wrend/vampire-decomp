@@ -31937,6 +31937,26 @@ int __stdcall sub_1009ffe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0450 size=0x19
+#include "C_BaseEntity.h"
+struct IEng_104a57d4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual float v42();
+};
+extern IEng_104a57d4 *g_104a57d4;
+struct EntView { char pad[0x144]; float t; };
+// TARGET: C_BaseEntity::sub_100a0450
+void C_BaseEntity::sub_100a0450()
+{
+	((EntView *)this)->t = g_104a57d4->v42();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a06f0 size=0x15
 struct CUnknown1009fbb0 { void sub_1009fbb0(int a); void sub_100a06f0(int a); };
 void CUnknown1009fbb0::sub_100a06f0(int a)
