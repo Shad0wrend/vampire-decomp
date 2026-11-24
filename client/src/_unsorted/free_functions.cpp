@@ -25525,6 +25525,15 @@ template <> int ClientClassInit<DT_BaseViewModel::ignored>(DT_BaseViewModel::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fc70 size=0x18
+struct SSrc_1007fc70 { int m0; float m4; };
+struct SDst_1007fc70 { char m_pad[0x490]; float m490; };
+void sub_1007fc70(SSrc_1007fc70 *src, SDst_1007fc70 *dst)
+{
+	dst->m490 = src->m4 * 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fd00 size=0x6
 namespace lifted {
 extern char g_10487084;
