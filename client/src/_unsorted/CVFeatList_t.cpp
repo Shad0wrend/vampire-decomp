@@ -39,3 +39,15 @@ float CVFeatList_t::vfunc4(int i)
 	return (float)m_aEntries[i].m_unk10;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1014d720 size=0x33
+#include "CVFeatList_t.h"
+// TARGET: ?vfunc5@CVFeatList_t@@UAEMH@Z
+float CVFeatList_t::vfunc5(int i)
+{
+	VFeatEntry_t *p = &m_aEntries[i];
+	if (*(float *)&p->m_unk14 > 1.0)
+		return *(float *)&p->m_unk14;
+	return 2.0f;
+}
+// END FUNCTION
