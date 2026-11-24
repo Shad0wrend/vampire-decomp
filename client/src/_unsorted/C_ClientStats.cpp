@@ -106,6 +106,25 @@ double C_ClientStats::vfunc19(int i) { return ((double *)&m_Stats[0x8b])[i]; }
 void C_ClientStats::vfunc0(int v) { m_unk308 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100adc60 size=0x3c
+#include "C_ClientStats.h"
+struct StatsView { int vptr; char pad[0x1c]; __int64 m20[6]; int m50[6]; int m68[6]; char pad2[0x230 - 0x80]; int m230[0x36]; };
+// TARGET: C_ClientStats::vfunc1
+void C_ClientStats::vfunc1()
+{
+	StatsView *v = (StatsView *)this;
+	int i;
+	for (i = 0; i < 0x36; i++)
+		v->m230[i] = 0;
+	for (i = 0; i < 6; i++)
+	{
+		v->m20[i] = 0;
+		v->m50[i] = 0x7fffffff;
+		v->m68[i] = 0x80000000;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adca0 size=0x1
 #include "C_ClientStats.h"
 
