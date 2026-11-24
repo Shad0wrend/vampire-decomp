@@ -43101,6 +43101,47 @@ Shadow240 *ShadowArray_100d8620::sub_100d8620(unsigned int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8640 size=0x4f
+struct CUtlLinkedList10Node
+{
+	char m_Data[6];
+	unsigned short m_Previous;
+	unsigned short m_Next;
+};
+
+class CUtlLinkedList10
+{
+public:
+	CUtlLinkedList10Node *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	unsigned short m_Head;
+	unsigned short m_Tail;
+	unsigned short m_FirstFree;
+	unsigned short m_ElementCount;
+	unsigned short m_TotalElements;
+	void sub_100d8640();
+};
+
+void CUtlLinkedList10::sub_100d8640()
+{
+	if (m_TotalElements == 0)
+		return;
+	unsigned short next = (unsigned short)0xffff;
+	for (int i = m_TotalElements - 1; i >= 0; i--)
+	{
+		unsigned short idx = (unsigned short)i;
+		m_pMemory[idx].m_Next = next;
+		m_pMemory[idx].m_Previous = idx;
+		next = idx;
+	}
+	m_FirstFree = 0;
+	m_Head = (unsigned short)0xffff;
+	m_Tail = (unsigned short)0xffff;
+	m_ElementCount = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8690 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
