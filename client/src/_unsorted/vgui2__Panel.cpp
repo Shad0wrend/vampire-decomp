@@ -674,6 +674,22 @@ bool vgui2::Panel::vfunc104(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab090 size=0x34
+#include "vgui2__Panel.h"
+struct IPanelView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11();
+	virtual int Slot12(int vpanel, int a, int b, int c, int d);
+};
+IPanelView *sub_101ac900();
+// TARGET: vgui2::Panel::vfunc8
+int vgui2::Panel::vfunc8(int a, int b, int c, int d)
+{
+	return sub_101ac900()->Slot12(vfunc0(), a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab210 size=0x4
 #include "vgui2__Panel.h"
 bool vgui2::Panel::vfunc47()
