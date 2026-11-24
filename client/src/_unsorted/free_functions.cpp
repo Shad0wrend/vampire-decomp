@@ -33114,6 +33114,54 @@ void CUnknown100ac780::sub_100ac780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad130 size=0x81
+#include "Vector.h"
+#include "matrix3x4_t.h"
+
+extern void sub_10107e40( const matrix3x4_t &in, float *q, Vector &pos );
+extern void sub_10108510( const matrix3x4_t &in, int column, Vector &out );
+
+struct BoneItem_100ad130
+{
+	int m_nBone;
+	char m_pad[0x48];
+	Vector m_vec4c;
+	Vector m_vec58;
+};
+
+struct BoneHolder_100ad130
+{
+	int m_unk0;
+	matrix3x4_t *m_pMatrices;
+};
+
+class CUnknown100ad130
+{
+public:
+	char m_pad0[0x1c];
+	int m_1c;
+	int m_20;
+	int m_nCount;
+	BoneItem_100ad130 *m_pItems;
+	int m_nRootBone;
+	float m_q30[4];
+	Vector m_vec40;
+
+	void sub_100ad130( BoneHolder_100ad130 *pBones, float flUnused );
+};
+
+void CUnknown100ad130::sub_100ad130( BoneHolder_100ad130 *pBones, float flUnused )
+{
+	m_1c = 0;
+	sub_10107e40( pBones->m_pMatrices[m_nRootBone], m_q30, m_vec40 );
+	for ( int i = 0; i < m_nCount; ++i )
+	{
+		sub_10108510( pBones->m_pMatrices[m_pItems[i].m_nBone], 3, m_pItems[i].m_vec4c );
+		m_pItems[i].m_vec58 = m_pItems[i].m_vec4c;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ad710 size=0x9
 namespace lifted {
 extern char g_1022e914;
