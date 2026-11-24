@@ -130,3 +130,25 @@ double __stdcall sub_1010f820(int x)
 	return x;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010f830 size=0x3d
+struct G { int u0; void *p; int idx; };
+extern G *g_102b8e9c;
+struct H {
+	unsigned long m;
+	bool operator==(const H &o) const { return m == o.m; }
+};
+static inline H Cur()
+{
+	H r;
+	if (g_102b8e9c->p)
+		r.m = g_102b8e9c->idx << 13;
+	else
+		r.m = 0xFFFFFFFF;
+	return r;
+}
+bool __stdcall sub_1010f830(const H *h)
+{
+	return *h == Cur();
+}
+// END FUNCTION
