@@ -42422,6 +42422,15 @@ int CUnknown100f4320::sub_100f4320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4420 size=0x15
+struct CUnknown102bc9e0 { int m_unk[7]; };
+extern CUnknown102bc9e0 g_102bc9e0[];
+CUnknown102bc9e0 *sub_100f4420(int i)
+{
+	return &g_102bc9e0[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5ad0 size=0xba
 #include <string.h>
 
