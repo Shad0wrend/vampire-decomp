@@ -51767,6 +51767,20 @@ void CPrediction::sub_10120ee0(int commands_acknowledged)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10122350 size=0x27
+struct P10122350 { char pad[0x18c8]; int m_v; };
+void sub_10120730();
+void sub_1007ddd0(int);
+void sub_1007de00(P10122350 *);
+void __stdcall sub_10122350(P10122350 *p, int v)
+{
+	sub_10120730();
+	p->m_v = v;
+	sub_1007ddd0(v);
+	sub_1007de00(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122380 size=0x22
 struct Player_10122380
 {
