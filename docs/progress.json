@@ -9,7 +9,7 @@
   {
    "name": "client.dll",
    "code": 1973229,
-   "done": 0.32894218495467287
+   "done": 0.3485064474151189
   },
   {
    "name": "GameUI.dll",
@@ -236,30 +236,30 @@
  "client": [
   {
    "name": "no file yet",
-   "cpp": 397686,
+   "cpp": 411167,
    "asm": 4850,
-   "open": 662258,
-   "n_cpp": 5638,
+   "open": 648778,
+   "n_cpp": 5835,
    "n_asm": 30,
-   "n_open": 2262
+   "n_open": 2066
   },
   {
    "name": "cl_dll",
-   "cpp": 71569,
-   "asm": 0,
-   "open": 400007,
-   "n_cpp": 1911,
-   "n_asm": 0,
-   "n_open": 1291
+   "cpp": 85035,
+   "asm": 1495,
+   "open": 385047,
+   "n_cpp": 2043,
+   "n_asm": 4,
+   "n_open": 1156
   },
   {
    "name": "game_shared",
-   "cpp": 23416,
+   "cpp": 25919,
    "asm": 0,
-   "open": 56698,
-   "n_cpp": 306,
+   "open": 54195,
+   "n_cpp": 324,
    "n_asm": 0,
-   "n_open": 186
+   "n_open": 168
   },
   {
    "name": "_init",
@@ -272,30 +272,30 @@
   },
   {
    "name": "vgui2/controls",
-   "cpp": 862,
+   "cpp": 2102,
    "asm": 0,
-   "open": 9950,
-   "n_cpp": 12,
+   "open": 8710,
+   "n_cpp": 21,
    "n_asm": 0,
-   "n_open": 26
+   "n_open": 17
   },
   {
    "name": "cl_dll/hl2_hud",
-   "cpp": 1487,
+   "cpp": 1552,
    "asm": 0,
-   "open": 2975,
-   "n_cpp": 42,
+   "open": 2910,
+   "n_cpp": 43,
    "n_asm": 0,
-   "n_open": 16
+   "n_open": 15
   },
   {
    "name": "dlls",
-   "cpp": 706,
+   "cpp": 771,
    "asm": 0,
-   "open": 1826,
-   "n_cpp": 10,
+   "open": 1761,
+   "n_cpp": 12,
    "n_asm": 0,
-   "n_open": 6
+   "n_open": 4
   },
   {
    "name": "public",
@@ -308,21 +308,21 @@
   },
   {
    "name": "vphysics",
-   "cpp": 0,
+   "cpp": 469,
    "asm": 0,
-   "open": 469,
-   "n_cpp": 0,
+   "open": 0,
+   "n_cpp": 1,
    "n_asm": 0,
-   "n_open": 1
+   "n_open": 0
   },
   {
    "name": "Tracker/ServerBrowser",
-   "cpp": 0,
+   "cpp": 292,
    "asm": 0,
-   "open": 292,
-   "n_cpp": 0,
+   "open": 0,
+   "n_cpp": 1,
    "n_asm": 0,
-   "n_open": 1
+   "n_open": 0
   },
   {
    "name": "tier1",
