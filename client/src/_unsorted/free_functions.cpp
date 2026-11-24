@@ -12736,6 +12736,151 @@ int CUnknown10034690::sub_10034690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100346b0 size=0x423
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "Vector.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_104a5738;
+
+struct StandardParticle_t
+{
+	char pad0[0xc];
+	Vector m_Pos;
+	Vector m_Velocity;
+	float m_Lifetime;
+	unsigned char m_EffectData;
+	unsigned char pad1;
+	unsigned short m_EffectDataWord;
+	unsigned char m_Color[4];
+
+	inline void SetColor(float r, float g, float b)
+	{
+		m_Color[0] = (unsigned char)(r * 255.9f);
+		m_Color[1] = (unsigned char)(g * 255.9f);
+		m_Color[2] = (unsigned char)(b * 255.9f);
+	}
+
+	inline void SetAlpha(float a)
+	{
+		m_Color[3] = (unsigned char)(a * 255.9f);
+	}
+};
+
+struct TEParticleRenderer_t
+{
+	StandardParticle_t *sub_1003e020();
+	void sub_10117fe0();
+};
+
+template <class T>
+class CSmartPtr
+{
+public:
+	~CSmartPtr()
+	{
+		if (m_pObj)
+			m_pObj->sub_10117fe0();
+	}
+
+	bool operator!() const
+	{
+		return m_pObj == 0;
+	}
+
+	T *operator->() const
+	{
+		return m_pObj;
+	}
+
+	T *m_pObj;
+};
+
+extern CSmartPtr<TEParticleRenderer_t> sub_1003dfb0(const char *pDebugName, const Vector &vOrigin);
+
+// TARGET: sub_100346b0
+void sub_100346b0(int filter, float delay,
+	const Vector *org, const Vector *dir, int r, int g, int b, int a, int amount)
+{
+	CSmartPtr<TEParticleRenderer_t> pRen = sub_1003dfb0("TEBloodStream", *org);
+	if (!pRen)
+		return;
+
+	int speed = amount;
+	float arc = 0.05f;
+	Vector dirCopy;
+	VectorCopy(*dir, dirCopy);
+	VectorNormalize(dirCopy);
+
+	for (int num = 0; num < 100; num += 1)
+	{
+		StandardParticle_t *p = pRen->sub_1003e020();
+		if (p)
+		{
+			p->SetColor((int)r * g_104a5738->vfunc1(0.7f, 1.0f), g, b);
+			p->SetAlpha(a);
+			p->m_Pos = *org;
+			p->m_Lifetime = 2.0f;
+			Vector dir2;
+
+			p->m_EffectData = 9;
+			VectorCopy(dirCopy, dir2);
+			dir2[2] -= arc;
+			arc -= 0.005;
+
+			VectorScale(dir2, speed, p->m_Velocity);
+			speed = speed - 0.00001;
+		}
+	}
+
+	arc = 0.075f;
+	for (int count = 0; count < (amount / 5); count = count + 1)
+	{
+		StandardParticle_t *p = pRen->sub_1003e020();
+		if (p)
+		{
+			p->m_Lifetime = 3.0f;
+			p->SetColor(r * g_104a5738->vfunc1(0.7f, 1.0f), g, b);
+			p->SetAlpha(a);
+			p->m_Pos = *org;
+			p->m_EffectData = 8;
+
+			Vector dir2;
+			VectorCopy(dirCopy, dir2);
+			dir2[2] -= arc;
+			arc -= 0.005;
+
+			float num = pcd_stage(g_104a5738->vfunc1(0.0f, 1.0f));
+			speed = amount * num;
+			num *= 1.7;
+			VectorScale(dir2, num, dir2);
+			p->m_Velocity = (int)speed * dir2;
+
+			for (char i = 0; 2 > i; i++)
+			{
+				StandardParticle_t *p2 = pRen->sub_1003e020();
+				if (p2)
+				{
+					p2->m_Lifetime = 3.0f;
+					p2->SetColor(g_104a5738->vfunc1(0.7f, 1.0f), g, b);
+					p2->SetAlpha(a);
+					p2->m_Pos.Init(
+						(*org)[0] + g_104a5738->vfunc1(-1.0f, 1.0f),
+						(*org)[1] + g_104a5738->vfunc1(-1.0f, 1.0f),
+						(*org)[2] + g_104a5738->vfunc1(-1.0f, 1.0f));
+					p2->m_EffectData = 8;
+
+					VectorCopy(dirCopy, dir2);
+					dir2[2] -= arc;
+					VectorScale(dir2, num, dir2);
+					p2->m_Velocity = speed * dir2;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034c30 size=0x6
 namespace lifted {
 extern char g_102ec9d8;

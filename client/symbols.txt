@@ -1894,6 +1894,7 @@
 0x10034670 func   ??_GC_TEBloodStream@@UAEPAXI@Z ??_GC_TEBloodStream@@UAEPAXI@Z
 0x10034690 func   ??1C_TEBloodStream@@UAE@XZ C_TEBloodStream::~C_TEBloodStream
 0x10034690 func   ?sub_10034690@CUnknown10034690@@QAEHXZ CUnknown10034690::sub_10034690
+0x100346b0 func   ?sub_100346b0@@YAXHMPBVVector@@0HHHHH@Z sub_100346b0
 0x10034bf0 func   ?vfunc0@IRecipientFilter@@QAEPAXD@Z IRecipientFilter::vfunc0
 0x10034c10 func   ?vfunc9@C_TEBloodStream@@UAEHXZ C_TEBloodStream::vfunc9
 0x10034c20 func   ?vfunc8@C_TEBloodStream@@UAEHXZ C_TEBloodStream::vfunc8
