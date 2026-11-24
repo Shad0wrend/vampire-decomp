@@ -27,6 +27,12 @@ vgui2::Panel *pcd_emit_101a9460(const vgui2::Panel &other) { return new vgui2::P
 // TARGET: ??_GPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101a9860 size=0xd
+#include "vgui2__Panel.h"
+// TARGET: vgui2::Panel::vfunc18
+const char *vgui2::Panel::vfunc18() { const char *s = *(const char **)((char *)this + 0x2c); return s ? s : ""; }
+// END FUNCTION
+
 // FUNCTION: 0x101a9870 size=0x16
 #include "vgui2__Panel.h"
 namespace lifted {

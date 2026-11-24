@@ -6694,6 +6694,7 @@
 0x101a9460 func   ??_GPanel@vgui2@@UAEPAXI@Z ??_GPanel@vgui2@@UAEPAXI@Z
 0x101a9530 func   ??0Panel@vgui2@@QAE@PAV01@PBD@Z vgui2::Panel::Panel
 0x101a9780 func   ??1Panel@vgui2@@UAE@XZ vgui2::Panel::~Panel
+0x101a9860 func   ?vfunc18@Panel@vgui2@@UAEPBDXZ vgui2::Panel::vfunc18
 0x101a9870 func   ?vfunc19@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc19
 0x101a9950 func   ?sub_101a9950@CUnknown101a9950@@QAEHHHHH@Z CUnknown101a9950::sub_101a9950
 0x101a9980 func   ?sub_101a9980@CUnknown101a9980@@QAEHHHHH@Z CUnknown101a9980::sub_101a9980
