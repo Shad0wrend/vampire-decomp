@@ -97001,6 +97001,45 @@ int CUnknown101c4e60::sub_101c4e60(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4ec0 size=0x54
+#include "vgui2__Panel.h"
+
+#define VV(n) virtual void v##n() = 0;
+struct SchemeView
+{
+    VV(0) VV(1) VV(2) VV(3) VV(4) VV(5) VV(6) VV(7) VV(8) VV(9)
+    VV(10) VV(11) VV(12) VV(13) VV(14) VV(15) VV(16) VV(17) VV(18) VV(19)
+    VV(20) VV(21) VV(22) VV(23) VV(24) VV(25) VV(26) VV(27) VV(28) VV(29)
+    VV(30) VV(31) VV(32) VV(33) VV(34) VV(35) VV(36) VV(37) VV(38) VV(39)
+    VV(40) VV(41) VV(42) VV(43) VV(44) VV(45) VV(46) VV(47) VV(48) VV(49)
+    VV(50) VV(51) VV(52) VV(53) VV(54) VV(55) VV(56) VV(57) VV(58) VV(59)
+    VV(60) VV(61) VV(62) VV(63) VV(64) VV(65) VV(66) VV(67) VV(68) VV(69)
+    VV(70) VV(71)
+    virtual void vfunc72(int *a, int *b) = 0;
+};
+
+void *sub_101ac8d0();
+
+struct BuildModeView
+{
+    char m_pad00[0x128];
+    vgui2::Panel *m_128;    // +0x128
+    void sub_101c4ec0();
+};
+
+void BuildModeView::sub_101c4ec0()
+{
+    int a, b;
+    SchemeView *p = (SchemeView *)sub_101ac8d0();
+    p->vfunc72(&b, &a);
+    int x = b;
+    int y = a;
+    m_128->sub_101a9890(x, y);
+    m_128->vfunc49();
+    m_128->vfunc21(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4f20 size=0xe
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual int f21(int); };
