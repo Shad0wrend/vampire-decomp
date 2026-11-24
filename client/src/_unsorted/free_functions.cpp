@@ -57825,6 +57825,27 @@ void PC::sub_10123b20(int mode, void *dst, const void *src, unsigned int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123b50 size=0x49
+struct PredView {
+	char pad[0x14];
+	bool m_b14;
+	int sub_10123b50(const char *outvalue, const char *invalue, int count);
+	bool sub_10123470();
+};
+int PredView::sub_10123b50(const char *outvalue, const char *invalue, int count)
+{
+	if (!m_b14)
+		return 0;
+	if (sub_10123470()) {
+		for (int i = 0; i < count; i++) {
+			if (outvalue[i] != invalue[i])
+				return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123ba0 size=0x23
 #include <string.h>
 struct CCopy { char pad[0x2c]; bool m_b; void sub_10123ba0(int type, void *dst, const void *src, int n); };
