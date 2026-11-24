@@ -53,3 +53,14 @@ CHudChat *pcd_emit_100f19d0(const CHudChat &other) { return new CHudChat(other);
 #include "CHudChat.h"
 CHudChat::~CHudChat() {}
 // END FUNCTION
+
+// FUNCTION: 0x100f25b0 size=0x24
+#include "CHudChat.h"
+// TARGET: CHudChat::vfunc13
+void CHudChat::vfunc13(int w, int h)
+{
+	m_w7c = w;
+	m_h80 = h;
+	((vgui2::Panel *)this)->sub_101a9890(w, h);
+}
+// END FUNCTION
