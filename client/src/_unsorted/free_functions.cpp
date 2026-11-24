@@ -37716,6 +37716,15 @@ void sub_100cd000(float t, const float *a, const float *b, float *out) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd060 size=0x25
+#include <stdarg.h>
+struct Obj;
+struct ObjVT { void *f[7]; void (__cdecl *f7)(Obj *, int, int, int, int, va_list); };
+struct Obj { ObjVT *vt; };
+extern Obj *g_102cef78;
+void sub_100cd060(int a, int b, int c, ...) { va_list ap; va_start(ap, c); g_102cef78->vt->f7(g_102cef78, 0, a, b, c, ap); }
+// END FUNCTION
+
 // FUNCTION: 0x100cd0b0 size=0x14
 namespace lifted {
 extern int g_104a57d4;
