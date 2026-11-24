@@ -32985,6 +32985,25 @@ void CUnknown10094890::sub_10094890(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100948d0 size=0x5f
+#include "C_BaseAnimating.h"
+
+// TARGET: C_BaseAnimating::sub_100948d0
+struct Block10 { int m[10]; };
+
+void __stdcall sub_100a13d0(int);
+
+void C_BaseAnimating::sub_100948d0(int a)
+{
+	sub_100a13d0(a);
+	*(char *)((char *)this + 0x6a2) = *(char *)((char *)this + 0x6a1);
+	*(int *)((char *)this + 0x470) = *(int *)((char *)this + 0x418);
+	*(Block10 *)((char *)this + 0x478) = *(Block10 *)((char *)this + 0x420);
+	*(int *)((char *)this + 0x474) = *(int *)((char *)this + 0x41c);
+	*(Block10 *)((char *)this + 0x4a0) = *(Block10 *)((char *)this + 0x448);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094ec0 size=0x18
 namespace lifted {
 int sub_1008cc60(int, int);
