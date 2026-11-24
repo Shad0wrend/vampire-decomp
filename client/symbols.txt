@@ -2408,6 +2408,7 @@
 0x1004a670 func   ??_GCTextureTransformProxy@@UAEPAXI@Z ??_GCTextureTransformProxy@@UAEPAXI@Z
 0x1004a7d0 func   ?sub_1004a7d0@@YAHXZ sub_1004a7d0
 0x1004a800 func   ??_GCMatrixRotateProxy@@UAEPAXI@Z ??_GCMatrixRotateProxy@@UAEPAXI@Z
+0x1004a820 func   ??0CSmokeEmitterAux@@QAE@XZ CSmokeEmitterAux::CSmokeEmitterAux
 0x1004a950 func   ?sub_1004a950@CUnknown1004a950@@QAEHHH@Z CUnknown1004a950::sub_1004a950
 0x1004a980 func   ?sub_1004a980@@YAXXZ sub_1004a980
 0x1004a9c0 func   ?sub_1004a9c0@@YAXXZ sub_1004a9c0
