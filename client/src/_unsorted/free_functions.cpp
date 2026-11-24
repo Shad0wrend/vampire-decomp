@@ -53946,6 +53946,19 @@ int UtlVec8::sub_1011eee0(int elem, const UtlVec8Elem *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ef90 size=0x8b
+#include "utlvector.h"
+
+template <>
+void CUtlVector< CUtlVector<int> >::sub_1011ef90()
+{
+	for (int i = m_Size; --i >= 0; )
+		Destruct(&Element(i));
+
+	m_Size = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f020 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
