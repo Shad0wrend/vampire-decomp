@@ -2,6 +2,9 @@
 // declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22)
 #pragma once
 
+class Vector;
+class QAngle;
+
 class ITempEnts
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -25,5 +28,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc16();
     virtual void vfunc17();
     virtual void vfunc18();
-    virtual void vfunc19();
+    virtual void vfunc19(const Vector &, const QAngle &, const QAngle &, int, const Vector &);
 };
