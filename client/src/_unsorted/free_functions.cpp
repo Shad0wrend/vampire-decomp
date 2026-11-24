@@ -65649,6 +65649,15 @@ int CUnknown10151780::sub_10151780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151790 size=0xf
+extern char g_105e867c;
+// TARGET: sub_10151790
+char *sub_10151790()
+{
+	return g_105e867c ? &g_105e867c : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101517a0 size=0x13
 namespace lifted {
 extern char g_102c9f50;
