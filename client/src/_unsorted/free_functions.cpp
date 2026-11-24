@@ -55918,6 +55918,36 @@ void CUnknown10117850::sub_10117850(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117a80 size=0x57
+#include "CParticleMgr.h"
+#include "Vector.h"
+
+extern float g_102c06f8;
+
+struct CParticleMgrLayout
+{
+	void *m_vtable;
+	int m_unk4;
+	Vector m_v0;
+	float m_fl14;
+	Vector m_v1;
+	float m_fl24;
+	char m_pad28[0x120];
+	int m_n148;
+};
+
+// TARGET: CParticleMgr::sub_10117a80
+void CParticleMgr::sub_10117a80()
+{
+	CParticleMgrLayout *self = (CParticleMgrLayout *)this;
+	self->m_v0 = Vector(0.0f, 0.0f, -g_102c06f8);
+	self->m_fl14 = g_102c06f8 * g_102c06f8 * 4.0f;
+	self->m_v1.Init(0.0f, 0.0f, g_102c06f8);
+	self->m_fl24 = g_102c06f8 * g_102c06f8 * 4.0f;
+	self->m_n148 = 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ae0 size=0x11
 namespace lifted {
 extern int g_104a57d4;

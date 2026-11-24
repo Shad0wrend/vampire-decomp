@@ -5370,6 +5370,7 @@
 0x10117360 func   ??1CParticleMgr@@UAE@XZ CParticleMgr::~CParticleMgr
 0x101175a0 func   ?sub_101175a0@CUnknown101175a0@@QAEHXZ CUnknown101175a0::sub_101175a0
 0x10117850 func   ?sub_10117850@CUnknown10117850@@QAEXH@Z CUnknown10117850::sub_10117850
+0x10117a80 func   ?sub_10117a80@CParticleMgr@@QAEXXZ CParticleMgr::sub_10117a80
 0x10117ae0 func   ?sub_10117ae0@@YAHXZ sub_10117ae0
 0x10117b00 func   ?sub_10117b00@@YAHHH@Z sub_10117b00
 0x10117b20 func   ?sub_10117b20@@YAHHH@Z sub_10117b20
