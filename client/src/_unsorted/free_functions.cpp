@@ -16574,6 +16574,78 @@ int sub_10052ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054670 size=0x125
+#include <string.h>
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+class CNamedListX
+{
+public:
+	int sub_1013fdf0(const char *name);
+};
+
+class IScheme_10054670
+{
+public:
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual int GetFont(const char *fontName) = 0;
+};
+
+class CPlayer_10054670
+{
+public:
+	int sub_1008ebb0();
+};
+
+class CPanel_10054670
+{
+public:
+	IScheme_10054670 *sub_101ac830();
+};
+
+extern CNamedListX g_105e74fc;
+extern CPlayer_10054670 *g_104a0d50;
+const char *sub_1018c870(const char *name);
+
+class CUnk_10054670
+{
+public:
+	void sub_10054670(int arg0);
+};
+
+// TARGET: ?sub_10054670@CUnk_10054670@@QAEXH@Z
+void CUnk_10054670::sub_10054670(int arg0)
+{
+	ScopeTrace trace("CHudDialog::DialogCommandReset", g_102de300);
+
+	*((char *)this + 0x190) = 1;
+	memset((char *)this + 0x324c, 0, 0x800);
+	memset((char *)this + 0x3a50, 0, 0x2000);
+	memset((char *)this + 0x5a50, 0, 0x10);
+	memset((char *)this + 0x5a60, 0, 0x10);
+	*(int *)((char *)this + 0x3a4c) = arg0;
+
+	CPlayer_10054670 *pPlayer = g_104a0d50;
+	if (pPlayer)
+	{
+		static int nMalk = g_105e74fc.sub_1013fdf0("Player_Malkavian");
+		IScheme_10054670 *pScheme = ((CPanel_10054670 *)this)->sub_101ac830();
+		if (pPlayer->sub_1008ebb0() != nMalk)
+		{
+			*(int *)((char *)this + 0x9d0) = pScheme->GetFont(sub_1018c870("Dlg_Base"));
+		}
+		else
+		{
+			*(int *)((char *)this + 0x9d0) = pScheme->GetFont(sub_1018c870("Dlg_Malk"));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
