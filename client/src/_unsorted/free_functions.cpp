@@ -34487,6 +34487,21 @@ void CUnk100aa4a0::sub_100aa4a0(Pair *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa6d0 size=0x48
+#include "C_BasePlayer.h"
+
+extern float __fastcall sub_100aa5f0(C_BasePlayer *pThis);
+
+float __fastcall sub_100aa6d0(C_BasePlayer *pThis)
+{
+	float fMax = (float)(*(int *)((char *)pThis + 0x16a0));
+	float fCur = sub_100aa5f0(pThis);
+	if (fCur == fMax || fMax < 0.001f)
+		return 1.0f;
+	return fCur / fMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aacb0 size=0x59
 struct CUnknown101a5290 {
     void *m_pMemory;
