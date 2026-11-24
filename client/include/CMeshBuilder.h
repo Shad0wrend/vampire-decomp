@@ -21,4 +21,5 @@ public:
 	unsigned char *m_pCurrColor;
 	void sub_10049f90(unsigned short idx);
 	void sub_10059af0(const float *rgb);
+	void sub_1004afc0(float r, float g, float b, float a);
 };
