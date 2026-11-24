@@ -27,6 +27,45 @@ int vgui2::Frame::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b8860 size=0x5f
+#include "vgui2__Frame.h"
+#include "vgui2__Panel.h"
+
+// TARGET: vgui2::Frame::vfunc125
+int sub_101ac8d0();
+
+class ISurf83
+{
+public:
+#define D(n) virtual void d##n();
+	D(0) D(1) D(2) D(3) D(4) D(5) D(6) D(7) D(8) D(9)
+	D(10) D(11) D(12) D(13) D(14) D(15) D(16) D(17) D(18) D(19)
+	D(20) D(21) D(22) D(23) D(24) D(25) D(26) D(27) D(28) D(29)
+	D(30) D(31) D(32) D(33) D(34) D(35) D(36) D(37) D(38) D(39)
+	D(40) D(41) D(42) D(43) D(44) D(45) D(46) D(47) D(48) D(49)
+	D(50) D(51) D(52) D(53) D(54) D(55) D(56) D(57) D(58) D(59)
+	D(60) D(61) D(62) D(63) D(64) D(65) D(66) D(67) D(68) D(69)
+	D(70) D(71) D(72) D(73) D(74) D(75) D(76) D(77) D(78) D(79)
+	D(80) D(81) D(82)
+#undef D
+	virtual void vfunc83(int *, int *, int *, int *);
+};
+
+struct PVX
+{
+	int sub_101ab1a0();
+	int sub_101ab130();
+	void sub_101a9890(int, int);
+};
+
+void vgui2::Frame::vfunc125()
+{
+	int a, b, c, d;
+	((ISurf83 *)sub_101ac8d0())->vfunc83(&d, &c, &b, &a);
+	((PVX *)this)->sub_101a9890((b - ((PVX *)this)->sub_101ab130()) / 2, (a - ((PVX *)this)->sub_101ab1a0()) / 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b8e30 size=0x12
 #include "vgui2__Frame.h"
 namespace lifted {
