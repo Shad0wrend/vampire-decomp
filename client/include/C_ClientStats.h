@@ -9,6 +9,7 @@ public:
 	virtual int vfunc10();
 	virtual int vfunc11();
 	int vfunc16(int);
+	virtual int vfunc17(int);
 	virtual int vfunc14(int);
 	int m_Stats[1];
 };
