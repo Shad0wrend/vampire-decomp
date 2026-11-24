@@ -89479,6 +89479,16 @@ void CUtlRBTreeBig::sub_101a7290(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7510 size=0x17
+#include "CHud.h"
+extern CHud g_104cfe38;
+void sub_101a7b40(CHudElement *);
+void sub_101a7510()
+{
+	sub_101a7b40(g_104cfe38.sub_100f0ed0("CHudWeaponSelection"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7640 size=0x20
 namespace lifted {
 extern char g_1024fd10;
