@@ -92156,6 +92156,33 @@ void CUnknown10192cb0::sub_10192cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192e00 size=0x5c
+#include "Vector.h"
+
+struct GetterView
+{
+	char m_pad00[0x24];
+	int m_n24;
+	char m_pad28[0x30 - 0x28];
+	Vector m_vec30;
+	char m_pad3c[0xa8 - 0x3c];
+	Vector m_vecA8;
+};
+
+extern void sub_10108fd0(const float *, float, const float *, float *);
+
+void *__fastcall sub_10192e00(GetterView *self, int)
+{
+	if (self->m_n24 == 0x18 || self->m_n24 == 0x1a)
+	{
+		static Vector s_origin;
+		sub_10108fd0(self->m_vec30.Base(), 0.5f, self->m_vecA8.Base(), s_origin.Base());
+		return &s_origin;
+	}
+	return &self->m_vec30;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192e70 size=0x6
 namespace lifted {
 extern char g_104d5190;
