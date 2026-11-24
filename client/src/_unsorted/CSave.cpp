@@ -60,6 +60,11 @@ void CSave::vfunc1(int pos)
 bool CSave::vfunc8(const void *pData, int nBytes) { return sub_101299c0(pData, nBytes * 2); }
 // END FUNCTION
 
+// FUNCTION: 0x10128fe0 size=0x14
+#include "CSave.h"
+bool CSave::vfunc10(const void *pData, int nBytes) { return sub_101299c0(pData, nBytes * 4); }
+// END FUNCTION
+
 // FUNCTION: 0x10129070 size=0x40
 #include "CSave.h"
 #include <string.h>
