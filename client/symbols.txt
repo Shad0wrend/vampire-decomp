@@ -8181,6 +8181,7 @@
 0x101c0080 func   ?sub_101c0080@Menu@vgui2@@QAEXPAX@Z vgui2::Menu::sub_101c0080
 0x101c00d0 func   ?vfunc78@Menu@vgui2@@UAEXH@Z vgui2::Menu::vfunc78
 0x101c03e0 func   ?vfunc90@Menu@vgui2@@UAEXH@Z vgui2::Menu::vfunc90
+0x101c0590 func   ?vfunc74@Menu@vgui2@@UAEHH@Z vgui2::Menu::vfunc74
 0x101c0750 func   ?vfunc129@Menu@vgui2@@UAEHXZ vgui2::Menu::vfunc129
 0x101c0760 func   ?sub_101c0760@CUnknown101c0760@@QAEHXZ CUnknown101c0760::sub_101c0760
 0x101c0820 func   ?vfunc133@Menu@vgui2@@UAEHXZ vgui2::Menu::vfunc133

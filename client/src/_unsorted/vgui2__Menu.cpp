@@ -201,6 +201,27 @@ void vgui2::Menu::vfunc90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0590 size=0x4f
+#include "vgui2__Menu.h"
+
+struct ISchemeView {
+	virtual void d0(); virtual void d1(); virtual void d2();
+	virtual void d3(); virtual void d4(); virtual void d5();
+	virtual int *v6(int *pOut, const char *name);
+};
+
+int vgui2::Menu::vfunc74(int pScheme)
+{
+	Panel::vfunc74(pScheme);
+	int color;
+	int *p1 = ((ISchemeView *)pScheme)->v6(&color, "Menu/FgColor");
+	vfunc51(*p1);
+	int *p2 = ((ISchemeView *)pScheme)->v6(&color, "Menu/BgColor");
+	int nRet = vfunc50(*p2);
+	return nRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0750 size=0x4
 #include "vgui2__Menu.h"
 int vgui2::Menu::vfunc129()
