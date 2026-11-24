@@ -68224,6 +68224,45 @@ char __fastcall sub_10141790(S_10141790 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101417b0 size=0x51
+struct Sub28 { void sub_10141fe0(); };
+struct Sub10 { void sub_101416f0(); };
+
+struct Obj417 {
+	int m0, m4, m8, mc, m10;
+	char m14, m15, m16, m17, m18, m19, m1a, m1b, m1c, m1d, m1e;
+	char m1f;
+	int m20, m24;
+};
+
+// TARGET: sub_101417b0
+void *__fastcall sub_101417b0(void *self)
+{
+	((Sub28 *)((char *)self + 0x28))->sub_10141fe0();
+	((Sub10 *)((char *)self + 0x38))->sub_101416f0();
+	Obj417 *o = (Obj417 *)self;
+	o->m0 = 0;
+	o->m8 = 0;
+	o->m24 = 0;
+	o->m20 = 0;
+	o->m4 = -1;
+	o->mc = -1;
+	o->m10 = -1;
+	o->m14 = 0;
+	o->m15 = 0;
+	o->m16 = 0;
+	o->m17 = 0;
+	o->m18 = 0;
+	o->m19 = 0;
+	o->m1a = 0;
+	o->m1b = 0;
+	o->m1c = 0;
+	o->m1d = 0;
+	o->m1e = 0;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141810 size=0x8
 namespace lifted {
 struct C10142000 { int sub_10142000(); };
