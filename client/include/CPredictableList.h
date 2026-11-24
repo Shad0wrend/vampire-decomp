@@ -7,5 +7,6 @@ class CPredictableList : public IPredictableList
 {
 public:
 	int m_unk04; int m_unk08; int m_unk0c; void *m_unk10;
+	virtual void vfunc0(int);
 	virtual void *vfunc1();
 };
