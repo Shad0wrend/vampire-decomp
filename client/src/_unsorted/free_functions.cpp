@@ -35109,6 +35109,29 @@ int sub_100a3510(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3530 size=0x52
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct VecView {
+	void *m_pMemory;
+	int m_nAllocation;
+	int m_nGrowSize;
+	int m_nSize;
+	void sub_100a3530(int start, int count);
+};
+
+// TARGET: VecView::sub_100a3530
+void VecView::sub_100a3530(int start, int count)
+{
+	int remaining = m_nSize - start - count;
+	if (remaining <= 0)
+		return;
+	if (count <= 0)
+		return;
+	memmove((char *)m_pMemory + (start + count) * 28, (char *)m_pMemory + start * 28, remaining * 28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3590 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
