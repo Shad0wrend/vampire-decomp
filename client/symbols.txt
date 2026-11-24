@@ -3670,6 +3670,7 @@
 0x100a99d0 func   ?sub_100a99d0@Obj_100a99d0@@QAEDXZ Obj_100a99d0::sub_100a99d0
 0x100a99f0 func   ?vfunc189@C_BasePlayer@@UAEXH@Z C_BasePlayer::vfunc189
 0x100a9a00 func   ?vfunc179@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc179
+0x100a9a30 func   ?vfunc180@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc180
 0x100a9a80 func   ?sub_100a9a80@CUnknown100a9a80@@QAEHH@Z CUnknown100a9a80::sub_100a9a80
 0x100a9ac0 func   ?vfunc62@C_BasePlayer@@UAEHXZ C_BasePlayer::vfunc62
 0x100a9af0 func   ?sub_100a9af0@@YGHH@Z sub_100a9af0

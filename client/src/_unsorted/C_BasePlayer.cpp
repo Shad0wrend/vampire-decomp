@@ -382,6 +382,25 @@ void C_BasePlayer::vfunc179()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9a30 size=0x4d
+#include "C_BasePlayer.h"
+struct PlayerView { char p0[0x63c]; int m63c; char p1[0x1704 - 0x640]; int m1704; };
+void C_BasePlayer::vfunc180()
+{
+	if (vfunc18()) {
+		vfunc182();
+		int f = sub_100a2450();
+		PlayerView *v = (PlayerView *)this;
+		if (f & 1)
+			v->m1704 = 0;
+		if (v->m63c == -1)
+			v->m63c = 0;
+		vfunc136(0);
+	}
+	sub_100aa040();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ac0 size=0x23
 #include "C_BasePlayer.h"
 namespace lifted {
