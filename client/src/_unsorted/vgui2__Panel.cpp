@@ -422,6 +422,31 @@ int vgui2::Panel::vfunc99()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9ea0 size=0x56
+#include "vgui2__Panel.h"
+
+extern void *sub_101ac8d0();
+
+struct ISurfV97
+{
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual void d8(); virtual void d9();
+	virtual void s10(int a);
+	virtual void d11();
+	virtual void s12(int a, int b, int c, int d);
+};
+
+void vgui2::Panel::vfunc97()
+{
+	int a, b, c;
+	sub_101a9920(&c, &b);
+	vfunc52((int)&a);
+	((ISurfV97 *)sub_101ac8d0())->s10(a);
+	((ISurfV97 *)sub_101ac8d0())->s12(0, 0, c, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9f00 size=0x1
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc98()
