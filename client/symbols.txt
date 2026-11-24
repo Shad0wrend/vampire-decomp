@@ -4680,6 +4680,7 @@
 0x10101b70 func   ?sub_10101b70@@YAHXZ sub_10101b70
 0x10101b80 func   ?sub_10101b80@@YADXZ sub_10101b80
 0x10101b90 func   ?sub_10101b90@@YADD@Z sub_10101b90
+0x10101cd0 func   ?vfunc11@CInput@@UAEHPBD@Z CInput::vfunc11
 0x10101d60 func   ?sub_10101d60@CUnknown10101d60@@QAEPAXXZ CUnknown10101d60::sub_10101d60
 0x10101d90 func   ?sub_10101d90@CUnknown10101d90@@QAEXXZ CUnknown10101d90::sub_10101d90
 0x10101da0 func   ?vfunc56@CInput@@UAEHXZ CInput::vfunc56

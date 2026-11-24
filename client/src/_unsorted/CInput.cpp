@@ -177,6 +177,20 @@ int CInput::vfunc45()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101cd0 size=0x34
+#include "CInput.h"
+#include <string.h>
+// TARGET: CInput::vfunc11
+int CInput::vfunc11(const char *name)
+{
+	for (CInputKey *p = m_pKeys; p; p = p->next) {
+		if (!_strcmpi(name, p->name))
+			return p->value;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101da0 size=0x7
 #include "CInput.h"
 int CInput::vfunc56()
