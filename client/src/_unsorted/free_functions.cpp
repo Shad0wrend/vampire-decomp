@@ -15054,6 +15054,23 @@ int CUnknown1003ee60::sub_1003ee60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ee80 size=0x30
+struct ITE_1003ee80 { virtual void v0(); virtual void v1(); virtual void v2(void *, int, float, float); };
+extern ITE_1003ee80 *g_102ba388;
+struct Smoke_1003ee80 {
+	char m_unk[0xc];
+	char m_org[0xc];
+	int m_i18;
+	float m_f1c;
+	int m_i20;
+	void sub_1003ee80(int a);
+};
+void Smoke_1003ee80::sub_1003ee80(int a)
+{
+	g_102ba388->v2(m_org, m_i18, m_f1c * 10.0f, (float)m_i20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003eeb0 size=0x2e
 struct ITE_1003eeb0 { virtual void v0(); virtual void v1(); virtual void v2(int, int, float, float); };
 extern ITE_1003eeb0 *g_102ba388;
