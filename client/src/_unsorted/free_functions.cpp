@@ -54652,6 +54652,13 @@ int CUnknown10130be0::sub_10130be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130bf0 size=0x13
+bool sub_10130bf0(const unsigned short *a, const unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130c30 size=0x1a
 struct CUnk101b66b0
 {
