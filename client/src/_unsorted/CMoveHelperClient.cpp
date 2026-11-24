@@ -27,6 +27,22 @@ CMoveHelperClient *pcd_emit_1010f1a0() { return new CMoveHelperClient; }
 // TARGET: ??_GCMoveHelperClient@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1010f1c0 size=0x5f
+#include "CMoveHelperClient.h"
+#include "utlvector.h"
+
+// TARGET: CMoveHelperClient::~CMoveHelperClient
+extern int g_104df784;
+extern char vt_10235714;
+
+CMoveHelperClient::~CMoveHelperClient()
+{
+	g_104df784 = 0;
+	((CUtlVector<int> *)((char *)this + 0xc))->~CUtlVector<int>();
+	*(void **)this = &vt_10235714;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f260 size=0x8
 #include "CMoveHelperClient.h"
 
