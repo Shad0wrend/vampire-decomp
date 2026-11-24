@@ -71734,6 +71734,11 @@ int sub_1015eb00(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015eb10 size=0xc
+extern int g_102cb118[];
+int sub_1015eb10(int i) { return g_102cb118[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x1015eb20 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
