@@ -41411,6 +41411,14 @@ void sub_100ebf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ebf50 size=0x17
+extern int g_104cfab8[];
+void sub_100ebf50(int a, int b)
+{
+	g_104cfab8[a * 2 + b] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec360 size=0x6
 namespace lifted {
 extern int g_104df784;
