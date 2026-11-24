@@ -533,6 +533,58 @@ int vgui2::Panel::vfunc72(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa5c0 size=0x58
+#include "vgui2__Panel.h"
+#include "vgui2__BuildGroup.h"
+
+struct VGuiSystemView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void s5();
+	virtual void s6();
+	virtual void s7();
+	virtual void s8();
+	virtual int s9();
+};
+
+struct VGuiSchemeView
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31();
+	virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35();
+	virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39();
+	virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43();
+	virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47();
+	virtual void s48(); virtual void s49(); virtual void s50(); virtual void s51();
+	virtual int s52(int);
+};
+
+int sub_101ac8b0();
+int sub_101ac8d0();
+
+int vgui2::Panel::vfunc12()
+{
+	int i = vfunc55();
+	if (vfunc67())
+		i = (*(vgui2::BuildGroup **)((char *)this + 0x1c))->vfunc22(this);
+
+	if (((VGuiSystemView *)sub_101ac8b0())->s9() != 0)
+		i = ((VGuiSystemView *)sub_101ac8b0())->s9();
+
+	return ((VGuiSchemeView *)sub_101ac8d0())->s52(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa620 size=0x1
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc83()
