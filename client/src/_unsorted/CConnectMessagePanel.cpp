@@ -36,3 +36,31 @@ void CConnectMessagePanel::vfunc2()
     ((lifted::V *)this)->f21(((lifted::V *)this)->f107());
 }
 // END FUNCTION
+
+// FUNCTION: 0x101652c0 size=0x54
+#include "CConnectMessagePanel.h"
+#include "ConVar.h"
+
+static __forceinline const char *ConVarString(ConVar *p)
+{
+	if ( p->m_pParent->vfunc1() )
+		return "";
+	if ( p->m_nFlags & 0x1000 )
+		return "FCVAR_NEVER_AS_STRING";
+	p = p->m_pParent;
+	if ( p->m_pszString )
+		return p->m_pszString;
+	return "";
+}
+
+// TARGET: CConnectMessagePanel::vfunc107
+char CConnectMessagePanel::vfunc107()
+{
+	ConVar *pA = *(ConVar **)((char *)this + 0x5c);
+	void *pB = *(void **)((char *)this + 0x60);
+	void *pC = *(void **)((char *)this + 0x64);
+	if ( !pA || !pB || !pC )
+		return 0;
+	return ConVarString(pA)[0] != '0';
+}
+// END FUNCTION
