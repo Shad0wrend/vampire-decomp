@@ -82709,6 +82709,31 @@ GridCell *GridV::sub_10166d90(int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166e20 size=0x39
+struct CGridLayout10166 {
+	char pad0[0x60];
+	int m_nCount;
+	char pad64[4];
+	int m_nSpacing;
+	char pad6c[4];
+	int *m_pSizes;
+	char pad74[4];
+	int *m_pOffsets;
+	void sub_10166e20(int i);
+};
+void CGridLayout10166::sub_10166e20(int i)
+{
+	int pos = m_nSpacing;
+	if (i)
+		pos += m_pOffsets[i - 1];
+	for (; i < m_nCount; i++)
+	{
+		m_pOffsets[i] = pos;
+		pos += m_pSizes[i] + m_nSpacing;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166ee0 size=0x1a
 namespace lifted {
 int sub_101ac8d0();
