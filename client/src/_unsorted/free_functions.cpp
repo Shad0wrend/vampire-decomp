@@ -38588,6 +38588,20 @@ int sub_100d09b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0a40 size=0x2c
+#include "CEntListView.h"
+// TARGET: CEntListView::sub_100d0a40
+void *CEntListView::sub_100d0a40(unsigned int hHandle)
+{
+	if (hHandle != 0xFFFFFFFF) {
+		CBaseEntityListEntry *e = (CBaseEntityListEntry *)((char *)this - 0x18038) + (hHandle & 0x1fff);
+		if (e->m_SerialNumber == (int)(hHandle >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0c40 size=0xb
 struct SEntry { int a; int b; };
 struct CView { int m0, m4, m8, mC; SEntry e[1]; int sub_100d0c40(int i); };
