@@ -3493,6 +3493,7 @@
 0x100a0bd0 func   ?vfunc75@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc75
 0x100a0de0 func   ?vfunc37@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc37
 0x100a0df0 func   ?sub_100a0df0@@YGXPAVC_BaseEntity@@PAM1@Z sub_100a0df0
+0x100a0df0 func   ?vfunc64@C_BaseEntity@@UAEXPAV1@PAM1@Z C_BaseEntity::vfunc64
 0x100a11e0 func   ?vfunc81@C_BaseEntity@@UAEMXZ C_BaseEntity::vfunc81
 0x100a11f0 func   ?vfunc82@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc82
 0x100a1200 func   ?ClientThink@C_BaseEntity@@UAEXXZ C_BaseEntity::ClientThink
