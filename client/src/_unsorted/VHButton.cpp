@@ -168,3 +168,19 @@ void VHButton::vfunc86()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1017d0c0 size=0x4e
+#include "VHButton.h"
+
+extern void sub_1017c680(const char *);
+
+void VHButton::vfunc143(char state)
+{
+	bool bWasArmed = vfunc144();
+	Button::vfunc143(state);
+	if (vfunc144() != bWasArmed)
+	{
+		sub_1017c680(vfunc144() ? "interface/bubble_click_on.wav" : "interface/bubble_click_off.wav");
+	}
+}
+// END FUNCTION
