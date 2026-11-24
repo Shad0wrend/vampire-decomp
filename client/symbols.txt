@@ -5652,6 +5652,7 @@
 0x101349e0 func   ?sub_101349e0@CUnknown101349e0@@QAEPAUCSoundPatch@@PAXHPBD@Z CUnknown101349e0::sub_101349e0
 0x10134d30 func   ?sub_10134d30@@YGXPAUCSndView101339f0@@@Z sub_10134d30
 0x10134d40 func   ?sub_10134d40@@YGXPAX@Z sub_10134d40
+0x10134d70 func   ?vfunc16@CSoundControllerImp@@UAEMPAXHPAUenvelopePoint_t@@H@Z CSoundControllerImp::vfunc16
 0x10134e80 func   ?sub_10134e80@SC_10134e80@@QAEXHHPAUPair_10134e80@@@Z SC_10134e80::sub_10134e80
 0x10134ea0 func   ?sub_10134ea0@VSndCtl@@QAEXH@Z VSndCtl::sub_10134ea0
 0x10134f80 func   ?sub_10134f80@CView@@QAEXH@Z CView::sub_10134f80
