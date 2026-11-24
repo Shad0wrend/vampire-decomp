@@ -5,5 +5,6 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual int vfunc6();
+	virtual int vfunc10();
 	virtual int vfunc11();
 };
