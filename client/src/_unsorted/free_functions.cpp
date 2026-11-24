@@ -83833,6 +83833,66 @@ struct CByteView101643b0 { char pad[0x220]; char m_a[1]; char sub_101643b0(int i
 char CByteView101643b0::sub_101643b0(int i) { return m_a[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10164520 size=0x4d
+#include "BitmapImage.h"
+
+struct CUnknown10164690 { int sub_10164690(int n); };
+
+struct VSingleton
+{
+	virtual void p0();
+	virtual void p1();
+	virtual void p2();
+	virtual void p3();
+	virtual void p4();
+	virtual void p5();
+	virtual void p6();
+	virtual void p7();
+	virtual void p8();
+	virtual void p9();
+	virtual void p10();
+	virtual void p11();
+	virtual void p12();
+	virtual void p13();
+	virtual void p14();
+	virtual void p15();
+	virtual void p16();
+	virtual void p17();
+	virtual void p18();
+	virtual void p19();
+	virtual void p20();
+	virtual void p21();
+	virtual void p22();
+	virtual void p23();
+	virtual void p24();
+	virtual void p25();
+	virtual void p26();
+	virtual void p27(void *a, int b, int c);
+	virtual void p28();
+	virtual void p29();
+	virtual void p30();
+	virtual void p31();
+	virtual void p32();
+	virtual void p33();
+	virtual void p34();
+	virtual void p35();
+	virtual void p36();
+	virtual void p37();
+	virtual void *p38(int a);
+};
+
+int sub_101ac8d0();
+
+bool BitmapImage::sub_10164520(int arg0, int arg1)
+{
+	((CUnknown10164690 *)this)->sub_10164690(arg0);
+	m_hTexture = (int)((VSingleton *)(void *)sub_101ac8d0())->p38(0);
+	((VSingleton *)(void *)sub_101ac8d0())->p27((void *)m_hTexture, arg1, 0);
+	this->vfunc2((int)&m_unk2c, (int)&m_unk30);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164690 size=0xa
 struct CUnknown10164690 { int sub_10164690(int); };
 int CUnknown10164690::sub_10164690(int a0)
