@@ -5,7 +5,18 @@
 
 class CInput : public IInput
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+    int m_unk04;
+    int m_unk08;
+    int m_unk0c;
+    int m_unk10;
+    int m_unk14;
+    int m_unk18;
+    int m_unk1c;
+    int m_unk20;
+    int m_unk24;
+    void *m_unk28;
+    // vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CInput adds to its base's vtable: 0-56, vfuncK at slot K
     virtual void vfunc0();
     virtual void vfunc1();
@@ -25,7 +36,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc15();
     virtual void vfunc16();
     virtual void vfunc17();
-    virtual void vfunc18();
+    virtual bool vfunc18();
     virtual int vfunc19();
     virtual void vfunc20();
     virtual void vfunc21();
