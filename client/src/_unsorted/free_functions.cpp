@@ -11441,6 +11441,41 @@ int sub_1002a040(int *p, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a080 size=0x59
+#include "Tier1.h"
+
+struct Node60
+{
+	int m_n0;
+	float m_fl4;
+	char m_pad[0x3c - 8];
+};
+
+int sub_1002a080(Node60 *pList)
+{
+	int best = -1;
+	int bestOfs = -0x3c;
+	int i = 0;
+	int ofs;
+
+	for ( ofs = 0; ofs < 0xbb8; ofs += 0x3c, i++ )
+	{
+		Node60 *pCur = (Node60 *)((char *)pList + ofs);
+		if ( pCur->m_n0 == 0 )
+			return i;
+
+		if ( best == -1 || pCur->m_fl4 > *(float *)((char *)pList + bestOfs + 4) )
+		{
+			best = i;
+			bestOfs = ofs;
+		}
+	}
+
+	g_101e3108("Warning: CLIENT flamethrower list Overflow!!!!\n");
+	return best;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002a0e0 size=0x4c
 struct Node60 { int d[8]; int m_n20; int m_n24; int e[5]; };
 int sub_1002a080(Node60 *);

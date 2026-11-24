@@ -1752,6 +1752,7 @@
 0x10029e60 func   ?sub_10029e60@@YAHXZ sub_10029e60
 0x10029e70 func   ?sub_10029e70@@YAXPAUCLinkElem@@0@Z sub_10029e70
 0x1002a040 func   ?sub_1002a040@@YAHPAHH@Z sub_1002a040
+0x1002a080 func   ?sub_1002a080@@YAHPAUNode60@@@Z sub_1002a080
 0x1002a0e0 func   ?sub_1002a0e0@@YAXPAUNode60@@0H@Z sub_1002a0e0
 0x1002a1a0 func   ?sub_1002a1a0@@YAHXZ sub_1002a1a0
 0x1002a1e0 func   ?vfunc50@CInput@@UAEMXZ CInput::vfunc50
