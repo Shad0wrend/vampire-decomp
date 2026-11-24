@@ -52515,6 +52515,19 @@ void S10123a60::sub_10123a60(int a, int *dst, int *src, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123b20 size=0x2f
+extern "C" void *memcpy(void *, const void *, unsigned int);
+struct PC {
+	char pad[0x2c]; char m_b;
+	void sub_10123b20(int mode, void *dst, const void *src, unsigned int n);
+};
+void PC::sub_10123b20(int mode, void *dst, const void *src, unsigned int n)
+{
+	if (m_b && mode != 1)
+		memcpy(dst, src, n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123ba0 size=0x23
 #include <string.h>
 struct CCopy { char pad[0x2c]; bool m_b; void sub_10123ba0(int type, void *dst, const void *src, int n); };
