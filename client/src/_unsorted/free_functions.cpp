@@ -40904,6 +40904,13 @@ char __stdcall sub_100e6ea0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7850 size=0xf
+struct SP { char pad[0x1990]; int m1990; };
+struct CView { int m0; int m4; SP *m8; char sub_100e7850(); };
+// TARGET: ?sub_100e7850@CView@@QAEDXZ
+char CView::sub_100e7850() { return m8->m1990 <= 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100e7870 size=0x1a1
 #include "CGameMovement.h"
 #include "CGameMovementViews.h"
