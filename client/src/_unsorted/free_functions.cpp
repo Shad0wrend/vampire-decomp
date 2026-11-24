@@ -38913,6 +38913,19 @@ void CUtlMemory12::sub_100d3e30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3ea0 size=0x2a
+struct Ent12 { int a; int b; unsigned short m_s; unsigned short m_t; };
+struct Tbl12 {
+	Ent12 *m_p; int m_a; int m_b; int m_c; int m_d; unsigned short m_n;
+	int sub_100d3ea0(unsigned short i);
+};
+int Tbl12::sub_100d3ea0(unsigned short i)
+{
+	if (i < m_n && m_p[i].m_s != i) return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3ed0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
