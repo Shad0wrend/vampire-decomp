@@ -48722,6 +48722,18 @@ R1042c030 sub_100ee8c0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee8e0 size=0x1e
+#include "CGameTrace.h"
+#include "CClientEntityList.h"
+
+extern CClientEntityList *g_102b8e9c;
+
+bool CGameTrace::sub_100ee8e0() const
+{
+	return m_pEnt == (CBaseEntity *)g_102b8e9c->sub_100d0cf0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee900 size=0x19
 struct CUnk10129770
 {
