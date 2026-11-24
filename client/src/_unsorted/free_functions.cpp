@@ -83203,6 +83203,17 @@ void sub_101a8c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8d30 size=0x27
+struct XInfo { char pad[0x95e]; unsigned short m_w95e; };
+struct XRes { void sub_101a8d60(XInfo *p); void sub_101a8d30(XInfo *p); };
+void *sub_101a4770(unsigned short n);
+void XRes::sub_101a8d30(XInfo *p)
+{
+	if (p)
+		sub_101a8d60((XInfo *)sub_101a4770(p->m_w95e));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8d60 size=0x44d
 #include <stdio.h>
 #include <stdlib.h>
