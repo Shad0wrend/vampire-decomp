@@ -40128,6 +40128,19 @@ int sub_100dfc90(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfcd0 size=0x1e
+struct IGlobal_104a57e8
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual int __cdecl v7(int, int, int);
+};
+extern IGlobal_104a57e8 *g_104a57e8;
+int sub_100dfcd0(int a, int b, int c)
+{
+	return g_104a57e8->v7(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfdf0 size=0x6
 namespace lifted {
 extern char g_104cf470;
