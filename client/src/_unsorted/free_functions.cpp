@@ -77815,6 +77815,31 @@ void CScorePanelTemp::sub_10174c80(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174d10 size=0x27
+struct B10174d10 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(int);
+};
+struct S10174d10 {
+	int pad[4];
+	B10174d10 m_b;
+	void sub_10174d10();
+	void sub_10174fe0();
+};
+extern bool g_105fb201;
+void S10174d10::sub_10174d10()
+{
+	if (g_105fb201) {
+		g_105fb201 = false;
+		m_b.v21(0);
+		sub_10174fe0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174d40 size=0x6
 namespace lifted {
 extern char g_105fb201;
