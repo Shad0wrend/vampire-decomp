@@ -14432,6 +14432,46 @@ int CUnknown10038670::sub_10038670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038700 size=0x59
+extern char g_104d4970[];
+
+struct CEffectView
+{
+	char m_pad[0x7c4];
+	float m_fl7c4;
+};
+
+class IEffectsView
+{
+public:
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual void v4() = 0;
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+	virtual void v8() = 0;
+	virtual void v9() = 0;
+	virtual void v10() = 0;
+	virtual void v11() = 0;
+	virtual void v12() = 0;
+	virtual void v13() = 0;
+	virtual CEffectView *GlowSprite(int a1, void *a2, int a3, int a4, int a5, int a6, float a7, int a8, int a9, int a10, int a11, int a12) = 0;
+};
+
+extern IEffectsView *g_1028073c;
+
+// TARGET: sub_10038700
+void sub_10038700(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+	CEffectView *p = g_1028073c->GlowSprite(a3, g_104d4970, a6, a4, 5, 0, a7 / 255.0, a5, 0x10100, 0xff, 0xff, 0xff);
+	if (p)
+		p->m_fl7c4 = 0.2f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038780 size=0x6
 namespace lifted {
 extern char g_102ee4a4;
