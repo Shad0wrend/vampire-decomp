@@ -426,3 +426,16 @@ void CInput::vfunc21(char b) { m_unk24 = b != 0; }
 #include "CInput.h"
 bool CInput::vfunc24() { if (m_unk24) return true; return false; }
 // END FUNCTION
+
+// FUNCTION: 0x10106b20 size=0x13
+#include "CInput.h"
+void CInput::vfunc19()
+{
+	if ( m_unk28 != 0 )
+	{
+		m_unk2c[(0x54 - 0x2c) / 4] = 0;
+		m_unk2c[(0x58 - 0x2c) / 4] = 0;
+		m_unk2c[(0x50 - 0x2c) / 4] = 0;
+	}
+}
+// END FUNCTION
