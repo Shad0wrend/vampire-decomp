@@ -59874,6 +59874,23 @@ char *CClanInfoView::sub_1013f320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f3a0 size=0x2e
+struct V4_1013f3a0 { int v; };
+struct S_1013f3a0 {
+	char m_unk[0x40];
+	V4_1013f3a0 m_a[6];
+	V4_1013f3a0 sub_1013f3a0(int i);
+};
+V4_1013f3a0 S_1013f3a0::sub_1013f3a0(int i)
+{
+	if (i < 0)
+		i = 0;
+	else if (i >= 6)
+		i = 5;
+	return m_a[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f420 size=0xc
 struct CUnknown1013f420 { int sub_1013f420(int); };
 int CUnknown1013f420::sub_1013f420(int a0)
