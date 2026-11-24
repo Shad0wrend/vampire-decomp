@@ -43671,6 +43671,14 @@ void sub_101073f0(float radians, float *sine, float *cosine)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101074e0 size=0x14
+float sub_101074d0(float x);
+float sub_101074e0(float x)
+{
+	return 1.0f / sub_101074d0(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
