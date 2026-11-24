@@ -497,6 +497,56 @@ int C_BaseEntity::vfunc80(int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009feb0 size=0xb8
+#include "C_BaseEntity.h"
+#include "Tier1.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct EntBrushView {
+    V4(a) V4(b) V4(c) V4(d) V4(e) V4(f) V4(g) V4(h) V4(i) V4(j)
+    V4(k) V4(l) V4(m) V4(n) V4(o) V4(p) V4(q) V4(r) V4(s) V4(t)
+    virtual int DrawBrushModel(bool bTransparent);
+};
+struct ModelInfoView {
+    virtual void v0();
+    virtual const char *GetModelName(int model);
+    virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+    virtual int GetModelType(int model);
+};
+extern ModelInfoView *g_104a57f8;
+extern void (*g_101e3114)(const char *, ...);
+struct ClientClassView { void *a; void *b; const char *m_pNetworkName; };
+
+// TARGET: C_BaseEntity::DrawModel
+int C_BaseEntity::DrawModel(int flags, int a1)
+{
+    if (!*((char *)this + 0xe0))
+        return 0;
+
+    int drawn = 0;
+    if (!*(int *)((char *)this + 0x40))
+        return drawn;
+
+    int modelType = g_104a57f8->GetModelType(*(int *)((char *)this + 0x40));
+    switch (modelType) {
+    case 1:
+        drawn = ((EntBrushView *)this)->DrawBrushModel(flags & 0x80000000 ? true : false);
+        break;
+    case 3:
+        g_101e3114("ERROR:  Can't draw studio model %s because %s is not derived from C_BaseAnimating\n",
+            g_104a57f8->GetModelName(*(int *)((char *)this + 0x40)),
+            ((ClientClassView *)GetClientClass())->m_pNetworkName ? ((ClientClassView *)GetClientClass())->m_pNetworkName : "unknown");
+        break;
+    case 2:
+        g_101e3114("ERROR:  Sprite model's not supported any more except in legacy temp ents\n");
+        break;
+    default:
+        break;
+    }
+    return drawn;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a06e0 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc67()
