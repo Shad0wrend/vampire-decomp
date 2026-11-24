@@ -51034,6 +51034,94 @@ void List_10111320::sub_10111320(unsigned short h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10111750 size=0x36c
+#include "utlrbtree.h"
+
+struct CRBTreeElem12_10111750
+{
+	char m_data[12];
+};
+
+class Tree_10111750 : public CUtlRBTree<CRBTreeElem12_10111750, unsigned short>
+{
+public:
+	Links_t const &sub_10112840(unsigned short i) const;
+	void sub_101128a0(unsigned short i);
+	void sub_10111750(unsigned short elem);
+};
+
+static inline unsigned short L_Parent(const Tree_10111750 *t, unsigned short i) { return t->sub_10112840(i).m_Parent; }
+static inline unsigned short L_Left(const Tree_10111750 *t, unsigned short i) { return t->sub_10112840(i).m_Left; }
+static inline unsigned short L_Right(const Tree_10111750 *t, unsigned short i) { return t->sub_10112840(i).m_Right; }
+static inline bool L_IsLeft(const Tree_10111750 *t, unsigned short i) { return L_Left(t, L_Parent(t, i)) == i; }
+static inline Tree_10111750::NodeColor_t L_Color(const Tree_10111750 *t, unsigned short i) { return (Tree_10111750::NodeColor_t)t->sub_10112840(i).m_Tag; }
+
+// TARGET: Tree_10111750::sub_10111750
+void Tree_10111750::sub_10111750(unsigned short elem)
+{
+	if (elem != InvalidIndex())
+	{
+		unsigned short x, y;
+
+		if ((L_Left(this, elem) == InvalidIndex()) || (L_Right(this, elem) == InvalidIndex()))
+		{
+			y = elem;
+		}
+		else
+		{
+			y = L_Right(this, elem);
+			while (L_Left(this, y) != InvalidIndex())
+				y = L_Left(this, y);
+		}
+
+		if (L_Left(this, y) != InvalidIndex())
+			x = L_Left(this, y);
+		else
+			x = L_Right(this, y);
+
+		if (x != InvalidIndex())
+			SetParent(x, L_Parent(this, y));
+		if (!IsRoot(y))
+		{
+			if (L_IsLeft(this, y))
+				SetLeftChild(L_Parent(this, y), x);
+			else
+				SetRightChild(L_Parent(this, y), x);
+		}
+		else
+			m_Root = x;
+
+		NodeColor_t ycolor = L_Color(this, y);
+		if (y != elem)
+		{
+			SetParent(y, L_Parent(this, elem));
+			SetRightChild(y, L_Right(this, elem));
+			SetLeftChild(y, L_Left(this, elem));
+
+			if (!IsRoot(elem))
+			{
+				if (L_IsLeft(this, elem))
+					SetLeftChild(L_Parent(this, elem), y);
+				else
+					SetRightChild(L_Parent(this, elem), y);
+			}
+			else
+				m_Root = y;
+
+			if (LeftChild(y) != InvalidIndex())
+				SetParent(LeftChild(y), y);
+			if (RightChild(y) != InvalidIndex())
+				SetParent(RightChild(y), y);
+
+			SetColor(y, Color(elem));
+		}
+
+		if ((x != InvalidIndex()) && (ycolor == BLACK))
+			sub_101128a0(x);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10111ac0 size=0x1f
 int sub_10111ac0(int a0, int a1)
 {
