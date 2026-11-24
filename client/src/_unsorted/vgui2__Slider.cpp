@@ -24,6 +24,25 @@ int vgui2::Slider::vfunc111(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb7d0 size=0x47
+#include "vgui2__Slider.h"
+struct SliderView { char pad[0x78]; int m_lo; int m_hi; int m_val; };
+// TARGET: ?vfunc107@Slider@vgui2@@UAEXH@Z
+void vgui2::Slider::vfunc107(int value)
+{
+	SliderView *s = (SliderView *)this;
+	int old = s->m_val;
+	if (value < s->m_lo)
+		value = s->m_lo;
+	if (value > s->m_hi)
+		value = s->m_hi;
+	s->m_val = value;
+	vfunc118();
+	if (s->m_val != old)
+		vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb820 size=0x7
 #include "vgui2__Slider.h"
 int vgui2::Slider::vfunc108()
