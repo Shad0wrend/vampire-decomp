@@ -60992,6 +60992,28 @@ void sub_101433b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101434d0 size=0x28
+struct A101433a0 { int d[3]; void sub_101433a0(); };
+struct B10141fe0 { int d[4]; void sub_10141fe0(); };
+void A101433a0::sub_101433a0() { d[0] = -1; d[1] = -1; d[2] = -1; }
+void B10141fe0::sub_10141fe0() { d[0] = 1; d[1] = 0; d[2] = 0; d[3] = 0; }
+struct S101434d0 {
+	int m_a; int m_b; A101433a0 m_x; B10141fe0 m_y; int m_c; int m_d;
+	S101434d0 *sub_101434d0(int a);
+};
+// TARGET: ?sub_101434d0@S101434d0@@QAEPAU1@H@Z
+S101434d0 *S101434d0::sub_101434d0(int a)
+{
+	m_x.sub_101433a0();
+	m_y.sub_10141fe0();
+	m_a = a;
+	m_b = 0;
+	m_c = 0;
+	m_d = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143500 size=0x11
 namespace lifted {
 struct C10142000 { int sub_10142000(); };
