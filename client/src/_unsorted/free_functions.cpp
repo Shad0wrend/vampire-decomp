@@ -38542,6 +38542,33 @@ int sub_100be930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100befd0 size=0x3e
+struct CCycleCount {
+	unsigned __int64 m_Int64;
+	CCycleCount() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSamples = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSamples
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+};
+struct CFastTimer {
+	unsigned __int64 m_Duration;
+	void sub_100befd0();
+};
+void CFastTimer::sub_100befd0()
+{
+	CCycleCount cnt;
+	cnt.Sample();
+	m_Duration = cnt.m_Int64 - m_Duration;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf150 size=0x1d
 namespace lifted {
 struct C10128b50 { int sub_10128b50(int); };
