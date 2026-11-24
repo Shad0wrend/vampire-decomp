@@ -13,6 +13,7 @@ public:
 	int m_unk1bc04;
 	int m_unk1bc08;
 	Beam_t *sub_10193470(bool bInit);
+	Beam_t *sub_101938a0(void *pInfo);
 	void *m_pFirst;
 	int m_unk1bc10;
 	int m_unk1bc14;
