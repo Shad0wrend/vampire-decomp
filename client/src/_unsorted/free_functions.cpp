@@ -32298,6 +32298,24 @@ void C_BaseAnimating::sub_100966e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096c80 size=0x42
+extern void *(__cdecl *g_101e3100)(unsigned int);
+struct Elem60 { int d[15]; };
+struct Mem60 {
+	Elem60 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_unkC; int m_unk10;
+	Mem60 *sub_10096c80(int grow, int count);
+};
+Mem60 *Mem60::sub_10096c80(int grow, int count) {
+	m_pMemory = 0;
+	m_nAllocationCount = count;
+	m_nGrowSize = grow;
+	if (count) m_pMemory = (Elem60 *)g_101e3100(count * sizeof(Elem60));
+	m_unkC = 0;
+	m_unk10 = (int)m_pMemory;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096cd0 size=0x36
 #include "CUtlMemory76.h"
 extern void *(__cdecl *g_101e3100)(unsigned int);
