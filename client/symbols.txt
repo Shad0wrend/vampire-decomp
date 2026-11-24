@@ -49,6 +49,7 @@
 0x100025b0 func   ?vfunc15@C_CameraAnimated@@UAEHXZ C_CameraAnimated::vfunc15
 0x100025c0 func   ?sub_100025c0@@YAHXZ sub_100025c0
 0x10002620 func   ?_C_CameraAnimated_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_CameraAnimated_CreateObject
+0x10002680 func   ?sub_10002680@C_BaseAnimating@@QAEXH@Z C_BaseAnimating::sub_10002680
 0x10002690 func   ?vfunc141@C_BaseAnimating@@UAEXXZ C_BaseAnimating::vfunc141
 0x100026a0 func   ?sub_100026a0@CUnknown100026a0@@QAEDXZ CUnknown100026a0::sub_100026a0
 0x100026b0 func   ??_GC_CameraAnimated@@UAEPAXI@Z ??_GC_CameraAnimated@@UAEPAXI@Z
