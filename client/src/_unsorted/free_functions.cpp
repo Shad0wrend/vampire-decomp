@@ -44391,6 +44391,17 @@ void __stdcall sub_100f27e0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2c00 size=0x3c
+// TARGET: sub_100f2c00
+void sub_100f2c00(int *r, int *g, int *b, int a)
+{
+	float s = a * 0.003921569f;
+	*r = (int)(*r * s);
+	*g = (int)(*g * s);
+	*b = (int)(*b * s);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3640 size=0x35
 namespace lifted {
 extern char g_102351cc;
