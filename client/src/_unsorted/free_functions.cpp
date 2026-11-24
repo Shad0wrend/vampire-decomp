@@ -82627,6 +82627,19 @@ void CUnknown101935e0::sub_101935e0(Beam_t_101935e0 *pBeam, const BeamInfo_t_101
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194d30 size=0x38
+#include <math.h>
+void sub_10194d30(float *table, int n)
+{
+	float step = 3.141592653589793 / n;
+	float x = 0.0f;
+	for (int i = 0; i < n; i++) {
+		table[i] = (float)sin(x);
+		x += step;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101963a0 size=0x1a
 namespace lifted {
 extern char g_10618750;
