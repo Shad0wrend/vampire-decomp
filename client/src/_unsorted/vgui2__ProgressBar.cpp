@@ -11,6 +11,29 @@ vgui2::ProgressBar *pcd_emit_101c6530(const vgui2::ProgressBar &other) { return 
 // TARGET: ??_GProgressBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c6620 size=0x55
+#include "vgui2__ProgressBar.h"
+
+struct PBFloat
+{
+    char m_pad00[0x5c];
+    float m_flProgress;   // +0x5c
+};
+
+void vgui2::ProgressBar::vfunc107(float val)
+{
+    PBFloat *self = (PBFloat *)this;
+    if (val != self->m_flProgress) {
+        if (val < 0.0f)
+            val = 0.0f;
+        else if (val > 1.0f)
+            val = 1.0f;
+        self->m_flProgress = val;
+        vfunc6();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6760 size=0x6
 #include "vgui2__ProgressBar.h"
 namespace lifted {
