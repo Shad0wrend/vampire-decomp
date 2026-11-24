@@ -31256,6 +31256,93 @@ void Anim_1008fcd0::sub_1008fcd0(int i, S48_10108430 *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100921d0 size=0xe7
+#include "CBaseEntityList.h"
+
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
+
+struct model_t;
+
+struct IVModelInfo_100921d0
+{
+	virtual void v0();
+	virtual const char *GetModelName(const model_t *model);
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual int GetModelType(const model_t *model);
+};
+
+extern CBaseEntityList *g_102b8e98;
+extern IVModelInfo_100921d0 *g_104a57f8;
+
+struct IBase0_100921d0
+{
+	virtual void b0();
+};
+
+struct IClientRenderable_100921d0
+{
+	virtual void r0();
+	virtual void r1();
+	virtual void r2();
+	virtual void r3();
+	virtual void r4();
+	virtual void r5();
+	virtual void r6();
+	virtual void r7();
+	virtual const model_t *GetModel();
+};
+
+struct Ent_100921d0 : public IBase0_100921d0, public IClientRenderable_100921d0
+{
+	char pad_8[0x180];
+	unsigned int m_hMoveParent; // 0x188
+	char pad_18c[0x278];
+	void *m_pField404; // 0x404
+
+	Ent_100921d0 *GetFollowedEntity()
+	{
+		unsigned int h = m_hMoveParent;
+		if (h != 0xffffffff)
+		{
+			CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+			if (e->m_SerialNumber == (int)(h >> 13))
+				return (Ent_100921d0 *)e->m_pEntity;
+		}
+		return 0;
+	}
+
+	void *sub_100921d0();
+};
+
+// TARGET: ?sub_100921d0@Ent_100921d0@@QAEPAXXZ
+void *Ent_100921d0::sub_100921d0()
+{
+	Ent_100921d0 *follow = GetFollowedEntity();
+	if (!follow)
+		return 0;
+
+	if (!follow->GetModel())
+	{
+		Warning("mod_studio: MOVETYPE_FOLLOW with no model.\n");
+		return 0;
+	}
+
+	if (g_104a57f8->GetModelType(follow->GetModel()) != 3)
+	{
+		Warning("Attached %s (mod_studio) to %s (%d)\n",
+			g_104a57f8->GetModelName(GetModel()),
+			g_104a57f8->GetModelName(follow->GetModel()),
+			g_104a57f8->GetModelType(follow->GetModel()));
+		return 0;
+	}
+
+	return follow->m_pField404;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100922c0 size=0x1a
 namespace lifted {
 extern int g_1049c4d4;
