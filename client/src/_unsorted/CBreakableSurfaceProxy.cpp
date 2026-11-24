@@ -42,3 +42,10 @@ void CBreakableSurfaceProxy::vfunc4(C_BaseEntity *pEntity)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10124ae0 size=0xc
+struct IV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(int); };
+struct CView { void sub_10124ae0(); };
+// TARGET: ?sub_10124ae0@CView@@QAEXXZ
+void CView::sub_10124ae0() { IV *p = (IV *)this; if (p) p->v3(1); }
+// END FUNCTION
