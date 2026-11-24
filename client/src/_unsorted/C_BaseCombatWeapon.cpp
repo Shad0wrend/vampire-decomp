@@ -1050,6 +1050,35 @@ bool __fastcall sub_1007d450(V_1007d450 *self)
 bool C_BaseCombatWeapon::vfunc177() { void *p = *(void **)((char *)sub_1007b160() + 0x2444); if (p) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1007d480 size=0x4f
+#include "C_BaseCombatWeapon.h"
+
+struct Player { int sub_100a8ba0(int i); };
+
+extern int g_104a0d50;
+
+struct WeaponView { char pad[0x79c]; int m_79c; };
+
+int C_BaseCombatWeapon::vfunc220()
+{
+	Player *pPlayer = (Player *)(void *)g_104a0d50;
+	if ( !pPlayer )
+		return -1;
+	WeaponView *pThis = (WeaponView *)this;
+	int total = 0;
+	for ( int i = 0; i < 7; i++ )
+	{
+		if ( pThis->m_79c >= total )
+		{
+			if ( pThis->m_79c < total + pPlayer->sub_100a8ba0(i) )
+				return i;
+		}
+		total += pPlayer->sub_100a8ba0(i);
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d4d0 size=0x4c
 #include "C_BaseCombatWeapon.h"
 
