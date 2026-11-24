@@ -37747,6 +37747,35 @@ template <> int ClientClassInit<DT_FuncParticle::ignored>(DT_FuncParticle::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3560 size=0x5c
+#include "C_EnvParticle.h"
+
+extern C_EnvParticle *g_104a1d10[128];
+extern void (__cdecl *g_101e3114)(const char *fmt, ...);
+
+struct ParticleInit { void sub_100af000(); };
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+// TARGET: sub_100b3560
+C_EnvParticle *sub_100b3560()
+{
+	for (int i = 0; i < 0x80; i++)
+	{
+		if (!g_104a1d10[i])
+		{
+			void *mem = C_BaseEntity::operator new(0x4c0);
+			C_EnvParticle *p = mem ? ::new (mem) C_EnvParticle : 0;
+			g_104a1d10[i] = p;
+			((ParticleInit *)p)->sub_100af000();
+			return g_104a1d10[i];
+		}
+	}
+	g_101e3114("Warning: Client-side particles maxed out!\n");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4560 size=0x18
 #include <string.h>
 extern char g_104a1d10[0x200];
