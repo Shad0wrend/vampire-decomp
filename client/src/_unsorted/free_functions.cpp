@@ -47704,6 +47704,13 @@ int sub_101104b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110f70 size=0x13
+bool sub_10110f70(const unsigned short *a, const unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10111ac0 size=0x1f
 int sub_10111ac0(int a0, int a1)
 {

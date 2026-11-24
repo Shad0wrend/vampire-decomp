@@ -4718,6 +4718,7 @@
 0x101104b0 func   ?sub_101104b0@@YAHXZ sub_101104b0
 0x101105e0 func   ??_GCPanelMetaClassMgrImp@@UAEPAXI@Z ??_GCPanelMetaClassMgrImp@@UAEPAXI@Z
 0x10110600 func   ??1CPanelMetaClassMgrImp@@UAE@XZ CPanelMetaClassMgrImp::~CPanelMetaClassMgrImp
+0x10110f70 func   ?sub_10110f70@@YA_NPBG0@Z sub_10110f70
 0x10111ac0 func   ?sub_10111ac0@@YAHHH@Z sub_10111ac0
 0x10112250 func   ?sub_10112250@@YAXPAUE101b6b60@@PBU1@@Z sub_10112250
 0x10112270 func   ?sub_10112270@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_10112270
