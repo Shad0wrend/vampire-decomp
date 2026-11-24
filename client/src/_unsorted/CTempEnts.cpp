@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003b530 size=0x36
+#include "CTempEnts.h"
+
+CTempEnts::CTempEnts()
+{
+	sub_1003cd80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b570 size=0x1e
 #include "CTempEnts.h"
 
