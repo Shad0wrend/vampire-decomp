@@ -73,6 +73,12 @@ void CClientLeafSystem::vfunc0(IClientRenderable *pRenderable, bool bRenderWithV
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1c70 size=0x1d
+struct El1c70 { char pad[0x15]; char f; char pad2[0x34 - 0x16]; };
+struct V1c70 { char pad[0x20]; El1c70 *arr; void sub_100d1c70(unsigned int h, char v); };
+void V1c70::sub_100d1c70(unsigned int h, char v) { arr[h & 0xffff].f = v; }
+// END FUNCTION
+
 // FUNCTION: 0x100d2a10 size=0x25
 #include "CClientLeafSystem.h"
 namespace lifted {
