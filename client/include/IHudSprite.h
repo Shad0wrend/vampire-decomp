@@ -29,7 +29,7 @@ public:
 	virtual void vfunc7(int a1, int x, int y, int a4, int a5, int a6);
 	virtual void vfunc8();
 	virtual void vfunc9(int a1, int x, int y, int a4, int a5, int a6);
-	virtual void vfunc10();
+	virtual void vfunc10(int a1, int x, int y, int a4, int a5, int a6);
 	virtual void vfunc11();
 	virtual void vfunc12();
 	int *sub_100f3e20(El3d50 *p);
