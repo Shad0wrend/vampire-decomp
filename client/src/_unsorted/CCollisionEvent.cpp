@@ -31,3 +31,12 @@ void __stdcall sub_10119480(int, int)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101195f0 size=0x3
+#include "CCollisionEvent.h"
+
+// TARGET: CCollisionEvent::vfunc2
+void CCollisionEvent::vfunc2(int, int, int, int, int)
+{
+}
+// END FUNCTION

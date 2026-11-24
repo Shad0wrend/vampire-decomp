@@ -4671,6 +4671,7 @@
 0x10119480 func   ?sub_10119480@@YGXHH@Z sub_10119480
 0x101194a0 func   ?sub_101194a0@@YGDH@Z sub_101194a0
 0x101194b0 func   ?sub_101194b0@@YGHH@Z sub_101194b0
+0x101195f0 func   ?vfunc2@CCollisionEvent@@UAEXHHHHH@Z CCollisionEvent::vfunc2
 0x10119600 func   ?sub_10119600@CUnknown10119600@@QAEHXZ CUnknown10119600::sub_10119600
 0x10119730 func   ?sub_10119730@@YGHHH@Z sub_10119730
 0x10119d90 func   ?sub_10119d90@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10119d90
