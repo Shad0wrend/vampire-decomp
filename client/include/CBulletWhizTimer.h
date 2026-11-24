@@ -5,6 +5,8 @@
 class CBulletWhizTimer
 {
 public:
+	int m_unk04; int m_unk08;
+	virtual void vfunc2();
 	CBulletWhizTimer *vfunc8(unsigned int flags);
 	void sub_100f3f80();
 };
