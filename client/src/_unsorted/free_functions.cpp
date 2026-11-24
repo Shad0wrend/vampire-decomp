@@ -11725,6 +11725,24 @@ void sub_1002c3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c400 size=0x2f
+#include "C_BaseTempEntity.h"
+#include "CUnknown1002c3b0.h"
+extern C_BaseTempEntity *g_102ead70;
+int CUnknown1002c3b0::sub_1002c3b0() { return m_c; }
+// TARGET: sub_1002c400
+void sub_1002c400()
+{
+	C_BaseTempEntity *p = g_102ead70;
+	while (p) {
+		C_BaseTempEntity *next = (C_BaseTempEntity *)((CUnknown1002c3b0 *)p)->sub_1002c3b0();
+		delete p;
+		p = next;
+	}
+	g_102ead70 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c4a0 size=0x1
 void sub_1002c4a0()
 {
