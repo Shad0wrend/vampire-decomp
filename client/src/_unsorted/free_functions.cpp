@@ -86551,6 +86551,24 @@ void CUnknown101c0c20::sub_101c0c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0c30 size=0x33
+struct CUnknown101c7510 { void sub_101c7510(int); };
+struct VV {
+  char pad[0x64];
+  int m_n;
+  int pad68;
+  CUnknown101c7510 **m_p;
+  void sub_101c0c30(int i, int a);
+};
+// TARGET: VV::sub_101c0c30
+void VV::sub_101c0c30(int i, int a)
+{
+  CUnknown101c7510 *p;
+  if (i >= 0 && i < m_n) p = m_p[i]; else p = 0;
+  p->sub_101c7510(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0c70 size=0x29
 struct CUnknown101c7500 { void sub_101c7500(); };
 struct VView64 {
