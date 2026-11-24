@@ -418,6 +418,24 @@ unsigned int * C_BaseEntity::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f210 size=0x48
+#include "C_BaseEntity.h"
+struct IClientMode11 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10();
+    virtual bool ShouldDrawEntity(C_BaseEntity *);
+};
+extern IClientMode11 *g_105f99d8;
+// TARGET: ?ShouldDraw@C_BaseEntity@@UAE_NXZ
+bool C_BaseEntity::ShouldDraw()
+{
+    if (g_105f99d8 && !g_105f99d8->ShouldDrawEntity(this))
+        return false;
+    return !IsDormant() && ((int *)this)[0x40 / 4] && !(((char *)this)[0x74] & 0x40) && ((int *)this)[0x44 / 4];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f2c0 size=0x5
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc27(int a0, int a1, int a2)
