@@ -401,6 +401,24 @@ bool C_BaseEntity::Init(int entnum, int iSerialNum)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e0b0 size=0x3c
+#include "C_BaseEntity.h"
+
+struct ModelInfoView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual int v12(const char *);
+};
+extern ModelInfoView *g_104a57f8;
+
+// TARGET: C_BaseEntity::vfunc60
+void C_BaseEntity::vfunc60(int a, int b)
+{
+	sub_1009e0f0(a ? g_104a57f8->v12((const char *)a) : -1, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f050 size=0xf
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc0(int a0)
