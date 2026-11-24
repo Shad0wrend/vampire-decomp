@@ -220,6 +220,19 @@ int vgui2::Button::vfunc160(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3f40 size=0x35
+#include "vgui2__Button.h"
+// TARGET: vgui2::Button::vfunc148
+void vgui2::Button::vfunc148(int bit, bool on)
+{
+	unsigned int *flags = (unsigned int *)((char *)this + 0xc0);
+	if (on)
+		*flags |= 1 << (bit + 1);
+	else
+		*flags &= ~(1 << (bit + 1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3f80 size=0x1a
 #include "vgui2__Button.h"
 bool vgui2::Button::vfunc149(int n) { return (*(int *)((char *)this + 0xc0) & (1 << (n + 1))) ? true : false; }
