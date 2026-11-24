@@ -6892,6 +6892,7 @@
 0x101745c0 func   ?sub_101745c0@@YAHXZ sub_101745c0
 0x10174640 func   ?sub_10174640@CUnknown10174640@@QAEXXZ CUnknown10174640::sub_10174640
 0x10174650 func   ?vfunc3@CharEditPanel@@UAEXXZ CharEditPanel::vfunc3
+0x10174670 func   ?vfunc4@CharEditPanel@@UAEXXZ CharEditPanel::vfunc4
 0x10174690 func   ?vfunc7@CharEditPanel@@UAEXXZ CharEditPanel::vfunc7
 0x101746b0 func   ?sub_101746b0@@YADXZ sub_101746b0
 0x101746d0 func   ?sub_101746d0@@YAXXZ sub_101746d0
