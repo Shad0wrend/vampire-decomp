@@ -13,7 +13,7 @@ public:
     virtual void vfunc5();
     virtual void vfunc6();
     virtual void vfunc7();
-    virtual void vfunc8();
+    virtual float vfunc8(struct FireSmokeParticle_10118a50 *p, float dt);
     virtual void vfunc9();
     virtual void vfunc10();
     virtual void vfunc11(int, int);
