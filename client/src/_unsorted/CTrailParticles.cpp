@@ -11,6 +11,15 @@ CTrailParticles *pcd_emit_10045ee0(const CTrailParticles &other) { return new CT
 // TARGET: ??_GCTrailParticles@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10045f00 size=0x3f
+#include "CTrailParticles.h"
+void CTrailParticles::vfunc13(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+	m_fFlags |= a8 | 2;
+	m_ParticleCollision.vfunc4(a1, a2, a3, a4, a5, a6, a7);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045f40 size=0x221
 #include "CTrailParticles.h"
 #include "VMatrix.h"
