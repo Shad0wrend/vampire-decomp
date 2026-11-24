@@ -47171,6 +47171,25 @@ CUnknown102bc9e0 *sub_100f4420(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f45b0 size=0x3e
+int sub_100f45b0(int w, int h)
+{
+	if (w < 1 || h < 1)
+		return 0;
+	int n = 1;
+	while (w != 1 || h != 1) {
+		w >>= 1;
+		h >>= 1;
+		if (w < 1)
+			w = 1;
+		if (h < 1)
+			h = 1;
+		n++;
+	}
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5ad0 size=0xba
 #include <string.h>
 
