@@ -84910,6 +84910,25 @@ int PV::sub_101ab130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab1a0 size=0x32
+#include "vgui2__Panel.h"
+struct IPanelView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void GetSize(int vpanel, int &wide, int &tall);
+};
+IPanelView *sub_101ac900();
+struct PV : vgui2::Panel {
+	int sub_101ab1a0();
+};
+// TARGET: PV::sub_101ab1a0
+int PV::sub_101ab1a0()
+{
+	int tall, wide;
+	sub_101ac900()->GetSize(vfunc0(), wide, tall);
+	return tall;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab1e0 size=0x2d
 #include "vgui2__Panel.h"
 struct IPanelView {
