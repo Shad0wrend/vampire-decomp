@@ -83801,6 +83801,31 @@ struct V69a0 { char pad[0x60]; int n; char pad2[0x70 - 0x64]; int *arr; int sub_
 int V69a0::sub_101669c0(int i) { if (i < 0 || i >= n) return 0; return arr[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10166b50 size=0x49
+struct CUnk10166dd0 {
+	void sub_10166dd0(int);
+	char pad[0x58];
+	bool m_b58;
+	char pad59[3];
+	int m_nCount;
+	char pad60[0x0c];
+	int *m_pData;
+	bool sub_10166b50(CUnk10166dd0 *other);
+};
+// TARGET: ?sub_10166b50@CUnk10166dd0@@QAE_NPAU1@@Z
+bool CUnk10166dd0::sub_10166b50(CUnk10166dd0 *other)
+{
+	if (other && other->m_nCount == m_nCount) {
+		for (int i = 0; i < m_nCount; i++)
+			m_pData[i] = other->m_pData[i];
+		sub_10166dd0(0);
+		m_b58 = true;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166c00 size=0x24
 struct S10166c00 {
 	char pad[0x60]; int m_n; int m_unk64; int m_c; int m_unk6c; int *m_b; int m_unk74; int *m_a;
