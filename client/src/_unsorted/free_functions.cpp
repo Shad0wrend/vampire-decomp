@@ -80746,6 +80746,12 @@ void * CUnknown101a8c60::sub_101a8c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8c70 size=0xa
+#include <stdlib.h>
+struct CUnknown101a8c70 { void *p; void sub_101a8c70(); };
+void CUnknown101a8c70::sub_101a8c70() { free(p); }
+// END FUNCTION
+
 // FUNCTION: 0x101a8c90 size=0x1
 void sub_101a8c90()
 {
