@@ -70,6 +70,12 @@ int vgui2::PropertySheet::vfunc120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8aa0 size=0xf
+#include "vgui2__PropertySheet.h"
+// TARGET: vgui2::PropertySheet::vfunc15
+int vgui2::PropertySheet::vfunc15(int x) { vgui2::Panel *p = *(vgui2::Panel **)((char *)this + 0x70); if (p) return p->vfunc15(x); }
+// END FUNCTION
+
 // FUNCTION: 0x101c8d70 size=0x12
 #include "vgui2__PropertySheet.h"
 namespace lifted {
