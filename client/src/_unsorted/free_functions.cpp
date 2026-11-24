@@ -35838,6 +35838,30 @@ void * CUnknown100a5480::sub_100a5480(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a54c0 size=0x56
+#include "C_BasePlayer.h"
+#include "CUnknown101e0f00.h"
+
+class CGlobalsView100a54c0 { public: char m_pad0[0xc]; float curtime; };
+extern CGlobalsView100a54c0 *g_102b8494;
+extern CUnknown101e0f00 g_105e80d0;
+
+// TARGET: C_BasePlayer::sub_100a54c0
+bool C_BasePlayer::sub_100a54c0(int a, int b)
+{
+	int idx = g_105e80d0.sub_10149d40(a, b);
+	if ( idx != -1 )
+	{
+		CUnknown101e0f00Entry *pEntry = g_105e80d0.sub_10149ce0(idx);
+		float flElapsed = g_102b8494->curtime - *(float *)((char *)this + 0x14f0 + idx * 4);
+		float flRecovery = pEntry->m_flRecoveryTime;
+		if ( flElapsed < flRecovery )
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5910 size=0x1c
 struct G5910 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
  virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
