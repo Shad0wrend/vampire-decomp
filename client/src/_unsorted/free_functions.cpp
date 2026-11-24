@@ -30450,6 +30450,22 @@ template <> int ClientClassInit<DT_BaseAnimating::ignored>(DT_BaseAnimating::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008fcd0 size=0x23
+struct S48_10108430 { int m_a0, m_a4, m_a8, m_ac, m_a10, m_a14, m_a18, m_a1c, m_a20, m_a24, m_a28, m_a2c; };
+void sub_10108430(const S48_10108430 *, S48_10108430 *);
+struct Anim_1008fcd0
+{
+	char m_unk[0x6e8];
+	S48_10108430 *m_pArr;
+	void sub_1008fcd0(int i, S48_10108430 *dst);
+};
+// TARGET: Anim_1008fcd0::sub_1008fcd0
+void Anim_1008fcd0::sub_1008fcd0(int i, S48_10108430 *dst)
+{
+	sub_10108430(&m_pArr[i], dst);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100922c0 size=0x1a
 namespace lifted {
 extern int g_1049c4d4;

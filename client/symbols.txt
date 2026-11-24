@@ -3116,6 +3116,7 @@
 0x1008f3c0 func   ??0C_BaseAnimating@@QAE@XZ C_BaseAnimating::C_BaseAnimating
 0x1008f5a0 func   ??_GC_BaseAnimating@@UAEPAXI@Z ??_GC_BaseAnimating@@UAEPAXI@Z
 0x1008f5c0 func   ??1C_BaseAnimating@@UAE@XZ C_BaseAnimating::~C_BaseAnimating
+0x1008fcd0 func   ?sub_1008fcd0@Anim_1008fcd0@@QAEXHPAUS48_10108430@@@Z Anim_1008fcd0::sub_1008fcd0
 0x10090b60 func   ?vfunc124@C_BaseAnimating@@UAEXHH@Z C_BaseAnimating::vfunc124
 0x100910f0 func   ?vfunc66@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc66
 0x10091640 func   ?vfunc131@C_BaseAnimating@@UAEXHHHHHH@Z C_BaseAnimating::vfunc131
