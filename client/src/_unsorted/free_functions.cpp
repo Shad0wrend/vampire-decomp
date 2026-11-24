@@ -48282,6 +48282,16 @@ void * CUnknown10114db0::sub_10114db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011527a size=0x19
+#include "InterfaceReg.h"
+extern InterfaceReg g_104e0750;
+void *sub_10115293();
+extern const char g_102c03f0[];
+#pragma optimize("", off)
+// TARGET: sub_1011527a
+void sub_1011527a() { g_104e0750.sub_10106be0((void *)sub_10115293, g_102c03f0); }
+// END FUNCTION
+
 // FUNCTION: 0x101154e0 size=0x13
 struct CView { int a, b; int *sub_101154e0(); };
 #pragma optimize("", off)

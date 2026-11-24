@@ -4784,6 +4784,7 @@
 0x10114730 func   ?sub_10114730@@YAMXZ sub_10114730
 0x10114770 func   ?sub_10114770@CUnknown10114770@@QAEPAXXZ CUnknown10114770::sub_10114770
 0x10114db0 func   ?sub_10114db0@CUnknown10114db0@@QAEPAXXZ CUnknown10114db0::sub_10114db0
+0x1011527a func   ?sub_1011527a@@YAXXZ sub_1011527a
 0x101154c0 func   ??0IMaterialProxy@@QAE@XZ IMaterialProxy::IMaterialProxy
 0x101154e0 func   ?sub_101154e0@CView@@QAEPAHXZ CView::sub_101154e0
 0x10115500 func   ?sub_10115500@CView@@QAEPAHXZ CView::sub_10115500
