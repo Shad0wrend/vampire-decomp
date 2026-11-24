@@ -17818,6 +17818,28 @@ void sub_100576b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100576d0 size=0x3b
+#include "CManagedHudElement.h"
+struct HudNode1005 {
+    IManagedHudElement *m_p;
+    HudNode1005 *m_next;
+};
+struct HudHost1005 {
+    char m_unk[0x170];
+    HudNode1005 *m_head;
+    void sub_100576d0();
+};
+// TARGET: HudHost1005::sub_100576d0
+void HudHost1005::sub_100576d0()
+{
+    for (HudNode1005 *n = m_head; n; n = n->m_next) {
+        CManagedHudElement *e = dynamic_cast<CManagedHudElement *>(n->m_p);
+        if (e)
+            e->vfunc113();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057710 size=0x26
 namespace lifted {
 int sub_101d12a1(int);
