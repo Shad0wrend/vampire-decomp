@@ -16672,6 +16672,23 @@ void sub_10043220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043540 size=0x36
+#include "Vector.h"
+struct CCollView {
+	int m_unk0;
+	Vector m_mins;
+	Vector m_maxs;
+	Vector *sub_10043540(const Vector &in, Vector *out);
+};
+Vector *CCollView::sub_10043540(const Vector &in, Vector *out)
+{
+	out->x = in.x * (m_maxs.x - m_mins.x) + m_mins.x;
+	out->y = in.y * (m_maxs.y - m_mins.y) + m_mins.y;
+	out->z = in.z * (m_maxs.z - m_mins.z) + m_mins.z;
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043580 size=0xfa
 #include "CUnknown100dc9f0.h"
 #include "TempVector.h"
