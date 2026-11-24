@@ -52780,6 +52780,17 @@ bool CSave::sub_10129350(const unsigned short *pToken, void *pData, void *pRootM
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129540 size=0x17
+#include "CSave.h"
+struct typedescription_t { int fieldType; };
+bool CSave::sub_10129540(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField)
+{
+	if (pField->fieldType <= 10)
+		return sub_10129350((const unsigned short *)pszName, pData, pRootMap, pField);
+	return sub_1012a060((int)pszName, pData, pRootMap, pField);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129560 size=0x4c
 #include "CSave.h"
 
