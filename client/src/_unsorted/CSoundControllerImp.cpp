@@ -103,3 +103,18 @@ void __stdcall sub_10134d40(void *p)
 	sub_10133a00(p);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10134e80 size=0x1f
+struct Pair_10134e80 { int a, b; };
+struct SC_10134e80
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(int, int, Pair_10134e80);
+	void sub_10134e80(int, int, Pair_10134e80 *);
+};
+void SC_10134e80::sub_10134e80(int a, int b, Pair_10134e80 *c)
+{
+	v16(a, b, *c);
+}
+// END FUNCTION
