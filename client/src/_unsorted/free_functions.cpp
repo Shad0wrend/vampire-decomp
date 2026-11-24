@@ -43610,6 +43610,23 @@ float sub_101073e0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101073f0 size=0x13
+void sub_101073f0(float radians, float *sine, float *cosine)
+{
+	_asm
+	{
+		fld		DWORD PTR [radians]
+		fsincos
+
+		mov edx, DWORD PTR [cosine]
+		mov eax, DWORD PTR [sine]
+
+		fstp DWORD PTR [edx]
+		fstp DWORD PTR [eax]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
