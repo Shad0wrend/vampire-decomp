@@ -76940,6 +76940,19 @@ char __stdcall sub_1016d110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ed80 size=0x29
+struct CPlayerData_104a0d50 { char pad[0x16d4]; int m_n16d4; };
+extern CPlayerData_104a0d50 *g_104a0d50;
+char __stdcall sub_1016ed80(void *p)
+{
+	if (!g_104a0d50)
+		return 0;
+	if (!p)
+		return 0;
+	return g_104a0d50->m_n16d4 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016eea0 size=0x48
 namespace lifted {
 extern char g_102bbe88;
