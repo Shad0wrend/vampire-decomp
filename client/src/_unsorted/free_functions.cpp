@@ -89890,6 +89890,27 @@ void CTable18::sub_101a3170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3190 size=0x45
+extern "C" int memcmp(const void *, const void *, unsigned int);
+#pragma intrinsic(memcmp)
+struct HNode { unsigned char key[16]; int m_unk10; HNode *next; };
+unsigned char sub_101a2f00(const void *key);
+struct CHashX {
+    HNode b[256];
+    HNode *sub_101a3190(const void *key);
+};
+// TARGET: CHashX::sub_101a3190
+HNode *CHashX::sub_101a3190(const void *key)
+{
+    HNode *bucket = &b[sub_101a2f00(key)];
+    for (HNode *n = bucket->next; n != bucket; n = n->next) {
+        if (memcmp(key, n, 16) == 0)
+            return n;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
