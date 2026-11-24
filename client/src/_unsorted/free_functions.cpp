@@ -18719,6 +18719,25 @@ char CUnknown100624d0::sub_100624d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063590 size=0x32
+struct XKey14
+{
+	char u[0x14]; char m_down; char m_pressed; char m_released;
+	void sub_10063590(char down);
+};
+void XKey14::sub_10063590(char down)
+{
+	if (!m_down && down) {
+		m_pressed = 1;
+		m_released = 0;
+	} else if (m_down && !down) {
+		m_released = 1;
+		m_pressed = down;
+	}
+	m_down = down;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063960 size=0x6
 int sub_10063960()
 {
