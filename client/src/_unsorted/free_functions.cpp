@@ -37891,6 +37891,12 @@ extern S12_100d1570 *g_104cee1c;
 short *sub_100d1570(int i) { return &((short *)&g_104cee1c[i])[1]; }
 // END FUNCTION
 
+// FUNCTION: 0x100d1590 size=0x16
+struct S12_100d1590 { int a, b, c; };
+extern S12_100d1590 *g_104cee4c;
+S12_100d1590 *sub_100d1590(unsigned short i) { return &g_104cee4c[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100d15b0 size=0x22
 struct CUnknown100b7a90 {
 	void sub_100d1630();
