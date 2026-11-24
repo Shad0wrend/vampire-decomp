@@ -4470,6 +4470,7 @@
 0x10103310 func   ?vfunc8@CInput@@UAEXH@Z CInput::vfunc8
 0x10104360 func   ?sub_10104360@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_10104360
 0x10104380 func   ?sub_10104380@CUnknown10104380@@QAEPAXH@Z CUnknown10104380::sub_10104380
+0x10104440 func   ?vfunc7@CInput@@UAEPADH@Z CInput::vfunc7
 0x10104730 func   ?vfunc55@CInput@@UAEHH@Z CInput::vfunc55
 0x10105ef0 func   ?vfunc1@CInput@@UAEXXZ CInput::vfunc1
 0x10105f20 func   ?vfunc54@CInput@@UAEXXZ CInput::vfunc54

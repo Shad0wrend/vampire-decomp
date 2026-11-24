@@ -192,6 +192,14 @@ void CInput::vfunc8(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104440 size=0x15
+#include "CInput.h"
+char *CInput::vfunc7(int i)
+{
+	return *(char **)((char *)this + 0x1c0) + i * 96;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104730 size=0x15
 #include "CInput.h"
 namespace lifted {
