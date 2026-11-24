@@ -47500,6 +47500,28 @@ void sub_100f6ec0(unsigned char *src, unsigned char *dst, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6f10 size=0x44
+void sub_100f6f10(unsigned char *src, unsigned char *dst, int n)
+{
+	unsigned char *end = src + n * 4;
+	for (; src < end; src += 4, dst += 3)
+	{
+		if (src[3] == 0)
+		{
+			dst[2] = 0;
+			dst[1] = 0;
+			dst[0] = 0xff;
+		}
+		else
+		{
+			dst[2] = src[0];
+			dst[1] = src[1];
+			dst[0] = src[2];
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6f60 size=0x37
 void sub_100f6f60(unsigned char *src, unsigned char *dst, int n)
 {
