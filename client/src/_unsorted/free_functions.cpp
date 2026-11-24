@@ -16053,6 +16053,18 @@ void * CUnknown10042370::sub_10042370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042960 size=0x33
+struct CV {
+	char pad[0xc0];
+	unsigned int *m_p;
+	void sub_10042960(unsigned char a, int b, int c, unsigned char d);
+};
+void CV::sub_10042960(unsigned char a, int b, int c, unsigned char d)
+{
+	*m_p = (((d << 8 | a) << 8 | (b & 0xff)) << 8) | (c & 0xff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100429a0 size=0x20
 #include "C_ClientStats.h"
 struct StatObj_100429a0 { virtual double v0(); };
