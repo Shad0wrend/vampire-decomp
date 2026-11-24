@@ -35296,6 +35296,38 @@ struct V5910 { bool sub_100a5910(); };
 bool V5910::sub_100a5910() { if (g_104a0d50 != this) return true; return g_1027ba58->v29() ? true : false; }
 // END FUNCTION
 
+// FUNCTION: 0x100a5930 size=0x47
+struct IFace53 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52();
+	virtual float v53(); };
+extern IFace53 *g_1027ba58;
+struct RView100a5930 {
+	bool sub_100a5930();
+	bool sub_100a99d0();
+	bool sub_10098780();
+};
+// TARGET: RView100a5930::sub_100a5930
+bool RView100a5930::sub_100a5930()
+{
+	if (((RView100a5930 *)((char *)this - 4))->sub_100a99d0()) {
+		float v = g_1027ba58->v53();
+		if (v > 0.01 && v < 1.0)
+			return true;
+	}
+	return sub_10098780();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5a20 size=0x5
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual int f9(); };
