@@ -2618,6 +2618,7 @@
 0x100578a0 func   ?sub_100578a0@HudChild_t@@QAEXHHH@Z HudChild_t::sub_100578a0
 0x10057900 func   ?sub_10057900@HudChild_t@@QAEXHHH@Z HudChild_t::sub_10057900
 0x10057960 func   ?sub_10057960@HudChild_t@@QAEXHHH@Z HudChild_t::sub_10057960
+0x100579c0 func   ?sub_100579c0@PanelView@@QAEXHHH@Z PanelView::sub_100579c0
 0x10057a20 func   ?sub_10057a20@@YGXHHH@Z sub_10057a20
 0x10057ca0 func   ?sub_10057ca0@PanelView@@QAEXHHH@Z PanelView::sub_10057ca0
 0x10057d00 func   ?sub_10057d00@@YGXHHH@Z sub_10057d00
