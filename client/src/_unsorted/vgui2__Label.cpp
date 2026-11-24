@@ -56,6 +56,12 @@ void vgui2::Label::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b23c0 size=0x1a
+#include "vgui2__Label.h"
+struct Sub23c0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(int a); };
+void vgui2::Label::vfunc87(int a) { Sub23c0 *p = *(Sub23c0 **)((char *)this + 0xa4); if (p) p->v15(0); }
+// END FUNCTION
+
 // FUNCTION: 0x101b23e0 size=0x8
 #include "vgui2__Label.h"
 namespace lifted {
