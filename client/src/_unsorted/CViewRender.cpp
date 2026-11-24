@@ -233,6 +233,17 @@ void CViewRender::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191610 size=0x5e
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+void *CViewRender::vfunc14()
+{
+	ScopeTrace trace("CViewRender::GetViewSetup", g_102de300);
+	return (void *)((char *)this + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191700 size=0x8
 #include "CViewRender.h"
 void CViewRender::vfunc16()
