@@ -18982,6 +18982,26 @@ void __stdcall sub_10057e10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057e20 size=0x4f
+#include "CProgBar.h"
+#include "CHudManagerPanel.h"
+
+struct HudNode { IManagedHudElement *elem; HudNode *next; };
+struct PanelView {
+	char pad[0x170];
+	HudNode *m170;
+	void sub_10057e20(int a, int b, int c);
+};
+void PanelView::sub_10057e20(int a, int b, int c)
+{
+	for (HudNode *n = m170; n; n = n->next) {
+		CProgBar *f = dynamic_cast<CProgBar *>(n->elem);
+		if (f)
+			f->sub_1005fe40(a, b, c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057e70 size=0x5b
 #include "CCredits.h"
 #include "CHudManagerPanel.h"
