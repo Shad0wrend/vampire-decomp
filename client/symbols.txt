@@ -2281,6 +2281,7 @@
 0x100445f0 func   ?vfunc3@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc3
 0x10044600 func   ?vfunc4@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc4
 0x10044610 func   ?vfunc6@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc6
+0x10044630 func   ?vfunc17@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc17
 0x10044eb0 func   ??0CFXDiscreetLine@@QAE@PBDABVVector@@1MMMMM0@Z CFXDiscreetLine::CFXDiscreetLine
 0x10044f50 func   ??_GCFXDiscreetLine@@UAEPAXI@Z ??_GCFXDiscreetLine@@UAEPAXI@Z
 0x10044f70 func   ??1CFXDiscreetLine@@UAE@XZ CFXDiscreetLine::~CFXDiscreetLine
