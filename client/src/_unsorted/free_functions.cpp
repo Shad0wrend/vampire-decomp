@@ -49492,6 +49492,32 @@ void sub_100f7330(unsigned char *src, unsigned char *dst, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7360 size=0x58
+void sub_100f7360(unsigned char *src, unsigned char *dst, int count)
+{
+	unsigned char *end = src + count * 3;
+	while (src < end)
+	{
+		if (src[0] == 0 && src[1] == 0 && src[2] == 0xff)
+		{
+			dst[0] = 0;
+			dst[1] = 0;
+			dst[2] = 0;
+			dst[3] = 0;
+		}
+		else
+		{
+			dst[0] = src[0];
+			dst[1] = src[1];
+			dst[2] = src[2];
+			dst[3] = 0xff;
+		}
+		src += 3;
+		dst += 4;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7420 size=0x37
 void sub_100f7420(unsigned char *src, unsigned char *dst, int n)
 {
