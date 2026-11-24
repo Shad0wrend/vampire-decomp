@@ -4,6 +4,7 @@
 #pragma once
 #include "vgui2__IClientPanel.h"
 
+struct CHUDSprite10059620 { void sub_10059620(int, int, int, int); };
 namespace vgui2
 {
 class Panel : public vgui2::IClientPanel
@@ -39,7 +40,12 @@ public:
 	int m_unk8c; int m_unk90;
 	int m_i94;
 	int m_i98;
-	int m_unk9c[(0x170 - 0x9c) / 4];
+	int m_unk9c[(0xb8 - 0x9c) / 4];
+	int m_n0b8;
+	int m_n0bc;
+	CHUDSprite10059620 *m_pSprite;
+	int m_unk0c4[(0x170 - 0xc4) / 4];
+	void sub_101a98c0(int *, int *);
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
