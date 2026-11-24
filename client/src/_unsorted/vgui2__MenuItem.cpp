@@ -22,6 +22,55 @@ void vgui2::MenuItem::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c71f0 size=0x1f4
+#include "vgui2__MenuItem.h"
+extern "C" int atoi(const char *);
+#define D1(n) virtual void n(){}
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+#define D16(p) D4(p##1) D4(p##2) D4(p##3) D4(p##4)
+struct Col { unsigned v; };
+struct Sch {
+	virtual const char *GetResourceString(const char *, int);
+	D1(a1) D1(a2) D1(a3) virtual int GetFont(const char *); virtual Col GetColor(const char *, Col);
+};
+struct Arr { D16(q) D4(r) D4(s) D4(t) D1(u1) D1(u2) virtual void sf(int); };
+struct Par { D16(q) D16(r) D16(s) D4(t) D4(u) D1(w) virtual int s57(int, int); };
+struct MV {
+	D16(a) D4(b) D4(c) D4(d) D1(e1) D1(e2) D1(e3) virtual Par *GetParent();
+	D16(h) D4(i) virtual Col s52(); virtual Col s53();
+	D16(j) D16(k) D16(l) D4(m) D4(n) D1(o1) D1(o1b)
+	virtual void s112(int);
+	D4(v) D1(w1) D1(w2) virtual int s119(); D1(s120) D1(s121) virtual void s122(Arr *, int); virtual void s123(int, void *, int);
+	D16(x) D4(y) D4(z) D4(zz) D1(z1) virtual void s153(Col, Col); virtual void s154(Col, Col); virtual void s155(Col, Col);
+	char pad[0xf0]; bool chk; Arr *arrow; struct Chk *check;
+};
+struct Chk { int pad[8]; int font; };
+// TARGET: vgui2::MenuItem::vfunc74
+int vgui2::MenuItem::vfunc74(int pS)
+{
+	Sch *s = (Sch *)pS;
+	MV *t = (MV *)this;
+	Button::vfunc74(pS);
+	t->s153(s->GetColor("Menu/FgColor", t->s53()), s->GetColor("Menu/BgColor", t->s52()));
+	t->s154(s->GetColor("Menu/ArmedFgColor", t->s53()), s->GetColor("Menu/ArmedBgColor", t->s52()));
+	t->s155(s->GetColor("Menu/ArmedFgColor", t->s53()), s->GetColor("Menu/ArmedBgColor", t->s52()));
+	t->s112(atoi(s->GetResourceString("Menu/TextInset", 0)));
+	Chk *c = t->check;
+	if (c)
+		c->font = s->GetFont("Marlett");
+	if (t->arrow) {
+		t->s122(t->arrow, 0);
+		if (t->s119() != -1)
+			t->arrow->sf(t->s119());
+		else
+			t->arrow->sf(s->GetFont("Marlett"));
+	} else if (t->chk) {
+		t->s123(0, t->check, 0);
+	}
+	return t->GetParent()->s57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7480 size=0x5
 #include "vgui2__MenuItem.h"
 int vgui2::MenuItem::vfunc164(int a0, int a1, int a2, int a3)
