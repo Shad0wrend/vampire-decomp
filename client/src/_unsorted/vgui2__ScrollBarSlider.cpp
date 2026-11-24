@@ -65,6 +65,11 @@ int vgui2::ScrollBarSlider::vfunc111(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca620 size=0x8
+#include "vgui2__ScrollBarSlider.h"
+void vgui2::ScrollBarSlider::vfunc88(int a) { vfunc87(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101ca630 size=0x18
 #include "vgui2__ScrollBarSlider.h"
 namespace lifted {
