@@ -9,6 +9,17 @@ char * ClientModeHLNormal::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029690 size=0x27
+#include "ClientModeHLNormal.h"
+int sub_1016a6b0();
+void ClientModeHLNormal::vfunc4()
+{
+	if (sub_1016a6b0())
+		m_sub.v33(0);
+	m_sub.v21(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029770 size=0x3
 #include "ClientModeHLNormal.h"
 void ClientModeHLNormal::vfunc22(int a0, int a1)
