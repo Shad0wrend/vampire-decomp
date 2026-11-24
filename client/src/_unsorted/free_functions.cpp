@@ -30,6 +30,12 @@ void __stdcall sub_10001030(char *ptr, unsigned size, int count, PMF_1004ddc0 pm
 }
 // END FUNCTION
 
+// FUNCTION: 0x100010e0 size=0xd
+extern "C" double sqrt(double);
+// TARGET: sub_100010e0
+float sub_100010e0(float a, float b) { return (float)sqrt(a * 2 - b); }
+// END FUNCTION
+
 // FUNCTION: 0x100011e0 size=0x6
 namespace lifted {
 extern char g_102de670;
