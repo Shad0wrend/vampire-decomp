@@ -84478,6 +84478,15 @@ int CUnknown101b5770::sub_101b5770(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6250 size=0x29
+struct IWriter_101b6250 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(const char *s, int n, int a); };
+void sub_101b6250(IWriter_101b6250 *p, int a, int count)
+{
+	for (int i = 0; i < count; i++)
+		p->v3("\t", 1, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6840 size=0x12
 namespace lifted {
 int sub_101ac930();
