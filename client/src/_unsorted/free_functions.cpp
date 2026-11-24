@@ -90769,6 +90769,27 @@ int sub_1018f3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f570 size=0x55
+#include "Vector.h"
+
+struct Plane1018f570
+{
+	Vector normal;
+	float dist;
+};
+
+// TARGET: sub_1018f570
+bool sub_1018f570(Plane1018f570 *pPlanes, int nCount, const Vector &vDir, float flDist)
+{
+	for ( int i = 0; i < nCount; i = 1 + i )
+	{
+		if ( -flDist > (DotProduct(pPlanes[i].normal, vDir) - pPlanes[i].dist) )
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f600 size=0xb
 namespace lifted {
 extern int g_102d43d8;
