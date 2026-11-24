@@ -856,6 +856,17 @@ int C_BaseCombatWeapon::vfunc203()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c230 size=0x47
+#include "C_BaseCombatWeapon.h"
+struct VecD { float x, y, z; VecD(float a, float b, float c) { x = a; y = b; z = c; } ~VecD() {} };
+// TARGET: C_BaseCombatWeapon::vfunc204
+int C_BaseCombatWeapon::vfunc204()
+{
+    static VecD v(0.02618f, 0.02618f, 0.02618f);
+    return (int)&v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c290 size=0xc
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
