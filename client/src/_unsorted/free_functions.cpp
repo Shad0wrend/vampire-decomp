@@ -71814,6 +71814,28 @@ char CUnknown101e9f10::sub_1014e590(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e600 size=0x30
+struct CUnk1014e030 { char sub_1014e030(int, int, int); };
+struct CUnknown101e9f10 {
+	int m_unk0; int m_n; CUnk1014e030 **m_pItems;
+	char sub_1014e590(int i);
+	char sub_1014e600(int a, int b, int c, int i);
+};
+char CUnknown101e9f10::sub_1014e590(int i)
+{
+	if (i > -1 && i < m_n)
+		return 1;
+	return 0;
+}
+// TARGET: ?sub_1014e600@CUnknown101e9f10@@QAEDHHHH@Z
+char CUnknown101e9f10::sub_1014e600(int a, int b, int c, int i)
+{
+	if (sub_1014e590(i))
+		return m_pItems[i]->sub_1014e030(a, b, c);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e630 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
