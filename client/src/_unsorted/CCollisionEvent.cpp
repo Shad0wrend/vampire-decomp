@@ -24,3 +24,10 @@ void CCollisionEvent::vfunc7()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10119480 size=0x3
+// TARGET: sub_10119480
+void __stdcall sub_10119480(int, int)
+{
+}
+// END FUNCTION
