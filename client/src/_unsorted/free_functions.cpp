@@ -88143,6 +88143,21 @@ void CUnknown101935e0::sub_101935e0(Beam_t_101935e0 *pBeam, const BeamInfo_t_101
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193790 size=0x45
+struct BeamInfoV { char pad[0x5c]; int m5c; float m60; float m64, m68, m6c; char pad2[0x78 - 0x70]; int m78; };
+struct BeamV { char pad[0x2c]; int m2c; char pad2[0xe4 - 0x30]; float me4, me8, mec; char pad3[0xf8 - 0xf0]; float mf8; float mfc; };
+// TARGET: ?sub_10193790@@YGXPAUBeamV@@PAUBeamInfoV@@@Z
+void __stdcall sub_10193790(BeamV *b, BeamInfoV *i)
+{
+	b->mfc = (float)i->m5c;
+	b->mf8 = i->m60;
+	b->m2c |= i->m78;
+	b->me4 = i->m64;
+	b->me8 = i->m68;
+	b->mec = i->m6c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194d30 size=0x38
 #include <math.h>
 void sub_10194d30(float *table, int n)

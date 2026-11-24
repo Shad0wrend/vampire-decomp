@@ -7402,6 +7402,7 @@
 0x10193340 func   ?sub_10193340@CUnknown10193340@@QAEXXZ CUnknown10193340::sub_10193340
 0x10193450 func   ?vfunc1@CViewRenderBeams@@UAEXXZ CViewRenderBeams::vfunc1
 0x101935e0 func   ?sub_101935e0@CUnknown101935e0@@QAEXPAUBeam_t_101935e0@@ABUBeamInfo_t_101935e0@@@Z CUnknown101935e0::sub_101935e0
+0x10193790 func   ?sub_10193790@@YGXPAUBeamV@@PAUBeamInfoV@@@Z sub_10193790
 0x10194d30 func   ?sub_10194d30@@YAXPAMH@Z sub_10194d30
 0x101963a0 func   ?sub_101963a0@@YAHHHH@Z sub_101963a0
 0x10196b90 func   ?vfunc8@CViewEffects@@UAEXAAVVector@@AAVQAngle@@M@Z CViewEffects::vfunc8
