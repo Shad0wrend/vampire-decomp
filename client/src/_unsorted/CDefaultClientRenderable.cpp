@@ -14,3 +14,10 @@ int CDefaultClientRenderable::vfunc8(int a0, int a1)
     return a1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100286b0 size=0x3
+// TARGET: sub_100286b0
+void __stdcall sub_100286b0(int)
+{
+}
+// END FUNCTION
