@@ -73,6 +73,15 @@ void CSave::vfunc19(const char **ppStrings, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101290b0 size=0xf
+#include "CSave.h"
+// TARGET: CSave::vfunc24
+void CSave::vfunc24(const Vector &value)
+{
+	sub_101299c0(&value, 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101290f0 size=0x1a
 #include "CSave.h"
 
