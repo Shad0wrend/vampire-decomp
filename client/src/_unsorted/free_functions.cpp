@@ -61557,6 +61557,25 @@ struct VObj { int m0, m4; int m_n; int mc; int *m_pData; void sub_10142ff0(); in
 int VObj::sub_10143120(int i) { sub_10142ff0(); if (m_n > 0) return m_pData[i]; return -1; }
 // END FUNCTION
 
+// FUNCTION: 0x10143150 size=0x2f
+struct XVec
+{
+	char u0[8]; int m_Size; char u1[4]; int *m_pElements;
+	void sub_10142ff0();
+	int sub_10143150(int v);
+};
+int XVec::sub_10143150(int v)
+{
+	sub_10142ff0();
+	if (m_pElements) {
+		for (int i = 0; i < m_Size; i++)
+			if (m_pElements[i] == v)
+				return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143180 size=0x14
 struct CUnknown10143180 { void * sub_10143180(); };
 void * CUnknown10143180::sub_10143180()
