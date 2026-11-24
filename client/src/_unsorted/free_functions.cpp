@@ -34151,6 +34151,35 @@ char CUnknown100a8dc0::sub_100a8dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8f90 size=0x39
+#include "C_BasePlayer.h"
+struct CUnknown100a8dc0 {
+    int m_state;
+    char sub_100a8dc0();
+    void sub_100a8f90(C_BasePlayer *p);
+};
+char sub_10170bf0();
+void sub_10186d40();
+char CUnknown100a8dc0::sub_100a8dc0()
+{
+    return m_state > 0 && m_state < 7;
+}
+// TARGET: CUnknown100a8dc0::sub_100a8f90
+void CUnknown100a8dc0::sub_100a8f90(C_BasePlayer *p)
+{
+    if (sub_100a8dc0()) {
+        if (!sub_10170bf0())
+            sub_10186d40();
+        return;
+    }
+    if (m_state == 0) {
+        sub_10186d40();
+    } else if (m_state == 7) {
+        p->vfunc160(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8fd0 size=0x2c
 #include "C_BasePlayer.h"
 struct CUnknown100a8dc0 {
