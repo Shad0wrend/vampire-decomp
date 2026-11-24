@@ -620,3 +620,23 @@ C_BaseCombatWeapon *C_BasePlayer::vfunc192()
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100aa3b0 size=0x55
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+// TARGET: C_BasePlayer::vfunc193
+C_BaseCombatWeapon *C_BasePlayer::vfunc193()
+{
+	for ( int i = 5; i >= 0; i-- )
+	{
+		for ( int j = 6; j >= 0; j-- )
+		{
+			C_BaseCombatWeapon *pWeapon = vfunc166(i, j, 0);
+			if ( pWeapon && pWeapon->vfunc176() )
+				return pWeapon;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
