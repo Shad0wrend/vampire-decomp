@@ -14,7 +14,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc4();
     virtual void vfunc5();
     virtual void vfunc6();
-    virtual void vfunc7();
+    virtual void vfunc7(int);
     CViewportClientSystem *vfunc8(unsigned int flags);	// as in IGameSystem (transplant)
     void sub_100f3f80();	// as in IGameSystem (transplant)
 };
