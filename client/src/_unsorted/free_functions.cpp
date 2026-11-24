@@ -89526,6 +89526,25 @@ int CUnknown10174fe0::sub_10174fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175b30 size=0x60
+#include "VCharWizardUI.h"
+#include "vgui2__Panel.h"
+
+void VCharWizardUI::sub_10175b30()
+{
+	vgui2::Panel **p = &m_groups[0].m_p10;
+	int n = 4;
+	do
+	{
+		if (p[-4]) { p[-4]->vfunc71(); p[-4] = 0; }
+		if (p[-3]) { p[-3]->vfunc71(); p[-3] = 0; }
+		if (p[0])  { p[0]->vfunc71();  p[0] = 0; }
+		if (p[-1]) { p[-1]->vfunc71(); p[-1] = 0; }
+		p += 5;
+	} while (--n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175e80 size=0x2c
 #include "CHud.h"
 extern char g_105fb1fe;
