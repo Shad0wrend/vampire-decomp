@@ -11009,6 +11009,23 @@ int __stdcall sub_10028790(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028820 size=0x26
+void sub_1005fa50(int);
+struct V8370 {
+	int m_unk0; int m_unk4; int m_unk8; char pad[0x28]; bool m_b34;
+	void sub_10028820(int a);
+};
+// TARGET: ?sub_10028820@V8370@@QAEXH@Z
+void V8370::sub_10028820(int a)
+{
+	m_unk8 = a;
+	if (m_b34)
+		sub_1005fa50(1);
+	else
+		sub_1005fa50(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028850 size=0x8
 int __stdcall sub_10028850(int a0, int a1)
 {
