@@ -17,6 +17,17 @@ void CTextMessage::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ac10 size=0x14
+#include "CTextMessage.h"
+#include "C_BaseEntity.h"
+int CTextMessage::vfunc5(int a, int b)
+{
+	if (m_pEnt)
+		return m_pEnt->vfunc113(a, b);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016ac50 size=0x10
 #include "CTextMessage.h"
 namespace lifted {
