@@ -15763,6 +15763,23 @@ int CUnknown1003f850::sub_1003f850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f870 size=0x46
+struct V3f { float x, y, z; };
+struct FxView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+	virtual void v17(const V3f &pos, const V3f &dir, int model, int count, int speed, int noise);
+};
+extern FxView *g_1028073c;
+struct SpraySub {
+	char pad[0xc]; V3f m_vecOrigin; V3f m_vecDirection; int m_nModelIndex; int m_nSpeed; float m_fNoise; int m_nCount;
+	void sub_1003f870(int updateType);
+};
+void SpraySub::sub_1003f870(int updateType) {
+	g_1028073c->v17(m_vecOrigin, m_vecDirection, m_nModelIndex, m_nCount, (int)(m_nSpeed * 0.2), (int)(m_fNoise * 100.0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f8c0 size=0x46
 #include "ITempEnts.h"
 extern ITempEnts *g_1028073c;
