@@ -287,6 +287,32 @@ bool vgui2::TextEntry::vfunc142(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afb30 size=0x4f
+#include "vgui2__TextEntry.h"
+
+struct VTextEntry_101afaf0 { bool sub_101afaf0(int); };
+struct VTextEntry_101afee0 { void sub_101afee0(); };
+
+int vgui2::TextEntry::vfunc110()
+{
+	vfunc165();
+	int n = *(int *)((char *)this + 0x70);
+	if (((VTextEntry_101afaf0 *)this)->sub_101afaf0(n))
+	{
+		if (!*(char *)((char *)this + 0x74))
+			*(char *)((char *)this + 0x75) = 1;
+	}
+	if (!*(char *)((char *)this + 0x75) && n > 0)
+	{
+		n--;
+		*(int *)((char *)this + 0x70) = n;
+	}
+	((VTextEntry_101afee0 *)this)->sub_101afee0();
+	vfunc109();
+	return vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afd20 size=0x49
 #include "vgui2__TextEntry.h"
 struct SurfView63 {
