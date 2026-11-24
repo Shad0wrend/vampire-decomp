@@ -77615,6 +77615,18 @@ char CUnknown10186a80::sub_10186a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186a90 size=0x12
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct O_10186a90 {
+V8(a) V8(b) V8(c) V8(d) V8(e) V8(f) V8(g) V8(h) V8(i) V8(j) V8(k) V8(l) V8(m) V8(n) V8(o) V8(p) V8(q) V8(r) V8(s)
+virtual void last(); };
+struct S_10186a90 { char pad[0x240]; O_10186a90 m; };
+void __fastcall sub_10186a90(S_10186a90 *self)
+{
+	self->m.last();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186ad0 size=0x1e
 namespace lifted {
 struct C101aa0a0 { int sub_101aa0a0(int); };
