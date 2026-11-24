@@ -19,6 +19,7 @@ public:
     void vfunc23();
 public:
     int vfunc10(int, int, int);
+    bool vfunc9(int, int);
     void vfunc0(class IClientRenderable *pRenderable, bool bRenderWithViewModels);
     void sub_100d1b60(class IClientRenderable *pRenderable, int group, int flags);
 };
