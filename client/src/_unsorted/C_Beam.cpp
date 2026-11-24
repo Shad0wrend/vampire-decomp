@@ -47,6 +47,59 @@ void C_Beam::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100803c0 size=0x8f
+#include "C_Beam.h"
+#include "CBaseHandle.h"
+
+struct CEntInfo_100803c0
+{
+	IHandleEntity *m_pEntity;
+	int m_SerialNumber;
+	int m_pPrev;
+};
+
+struct CBaseEntityList_100803c0
+{
+	void *vtable;
+	CEntInfo_100803c0 m_EntPtrArray[1];
+};
+
+extern CBaseEntityList_100803c0 *g_102b8e98;
+
+struct C_Beam_Helper_100803c0
+{
+	char pad_0[0x4a4];
+	CBaseHandle m_hEndEntity;
+
+	void sub_10080450(int pEntity);
+	void sub_10080490(C_BaseEntity *pEntity);
+};
+
+inline C_BaseEntity *GetEntity_100803c0(const CBaseHandle &h)
+{
+	if (!h.IsValid())
+		return 0;
+	const CEntInfo_100803c0 *pInfo = &g_102b8e98->m_EntPtrArray[h.GetEntryIndex()];
+	if (pInfo->m_SerialNumber == h.GetSerialNumber())
+		return (C_BaseEntity *)pInfo->m_pEntity;
+	return 0;
+}
+
+void C_Beam::vfunc21()
+{
+	if (Collideable_vfunc13())
+	{
+		((C_Beam_Helper_100803c0 *)this)->sub_10080450(Collideable_vfunc13());
+	}
+
+	C_Beam_Helper_100803c0 *pSelf = (C_Beam_Helper_100803c0 *)this;
+	if (GetEntity_100803c0(pSelf->m_hEndEntity))
+	{
+		pSelf->sub_10080490(GetEntity_100803c0(pSelf->m_hEndEntity));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e40 size=0x3
 #include "C_Beam.h"
 int C_Beam::vfunc121()
