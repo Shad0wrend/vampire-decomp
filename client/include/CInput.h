@@ -8,6 +8,7 @@ class CInput : public IInput
 public:
     void sub_10106880(int);
     void sub_10101df0();
+    void sub_10101d10(const char *, int);
     int m_unk04;
     int m_unk08;
     int m_unk0c;
