@@ -292,6 +292,16 @@ int vgui2::Button::vfunc77()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b41e0 size=0x22
+#include "vgui2__Button.h"
+// TARGET: vgui2::Button::vfunc165
+void vgui2::Button::vfunc165(int a)
+{
+	vfunc143(a != 0);
+	vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4210 size=0x1d
 #include "vgui2__Button.h"
 namespace lifted {
