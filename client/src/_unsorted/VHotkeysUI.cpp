@@ -71,3 +71,32 @@ int VHotkeysUI::vfunc21(int a0)
     return ((lifted::C10177ea0 *)this)->sub_10183ad0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10183b10 size=0x4f
+#include "VHotkeysUI.h"
+#include "vgui2__Panel.h"
+
+extern "C" int _strcmpi(const char *s1, const char *s2);
+
+struct VHotkeysHelper
+{
+	void sub_10183b60();
+	void sub_10183b90();
+};
+
+void VHotkeysUI::vfunc78(int arg)
+{
+	const char *cmd = (const char *)arg;
+	if (_strcmpi(cmd, "CancelClicked") == 0)
+	{
+		((VHotkeysHelper *)this)->sub_10183b60();
+		return;
+	}
+	if (_strcmpi(cmd, "OKClicked") == 0)
+	{
+		((VHotkeysHelper *)this)->sub_10183b90();
+		return;
+	}
+	CBasePanel::vfunc78(arg);
+}
+// END FUNCTION
