@@ -392,6 +392,21 @@ int vgui2::TextEntry::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b06b0 size=0x4b
+#include "vgui2__TextEntry.h"
+struct TEView2 { char pad[0xb0]; bool m_b0; };
+void vgui2::TextEntry::vfunc121(const char *text)
+{
+	if (text && *text) {
+		vfunc131();
+		for (const char *p = text; *p; p++)
+			vfunc120(*p);
+		if (((TEView2 *)this)->m_b0)
+			vfunc157();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b09c0 size=0xf
 #include "vgui2__TextEntry.h"
 namespace lifted {
