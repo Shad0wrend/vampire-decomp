@@ -41536,6 +41536,25 @@ int CUnknown100d1130::sub_100d1130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1140 size=0x41
+struct SubIface { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual bool v8(); };
+struct SlotObj { int a; int b; SubIface sub; };
+struct SlotEntry { SlotObj *p; unsigned short pad; unsigned short next; };
+struct ListHolder { char pad[0x2804c]; SlotEntry *entries; };
+extern ListHolder *g_102b8e9c;
+struct Iter { unsigned short cur; SlotObj *sub_100d1140(); };
+SlotObj *Iter::sub_100d1140() {
+	SlotObj *o;
+	do {
+		if (cur == 0xffff) return 0;
+		SlotEntry *e = &g_102b8e9c->entries[cur];
+		o = e->p;
+		cur = e->next;
+	} while (o->sub.v8());
+	return o;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1190 size=0x8d
 #include "CUtlLinkedList8.h"
 
