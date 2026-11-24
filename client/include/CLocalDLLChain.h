@@ -49,6 +49,7 @@ public:
 class CLocalDLLChain
 {
 public:
-	virtual void vfunc0(CLocalDLLChainVisitor *pVisitor);	// walks a (zeroed) local chain of 0x34 byte entries and hands each entry of type 1 or 4 to the visitor's slot 2
+	virtual void vfunc0(CLocalDLLChainVisitor *pVisitor);
+	virtual void vfunc1(int value);	// walks a (zeroed) local chain of 0x34 byte entries and hands each entry of type 1 or 4 to the visitor's slot 2
 };
 #endif
