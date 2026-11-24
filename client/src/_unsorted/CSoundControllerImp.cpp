@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101342e0 size=0x48
+#include "utlvector.h"
+
+struct SoundPatch_101342e0
+{
+	void sub_10133a20();
+};
+
+struct SoundCtl_101342e0
+{
+	char pad_0[0x0c];
+	CUtlVector<SoundPatch_101342e0 *> m_soundList; // 0x0c..0x1f
+	char pad_20[0x0c];
+	int m_nField2c;                                // 0x2c
+
+	void sub_101342e0();
+};
+
+void SoundCtl_101342e0::sub_101342e0()
+{
+	for (int i = m_soundList.Count() - 1; i >= 0; i--)
+	{
+		m_soundList[i]->sub_10133a20();
+	}
+	m_soundList.Purge();
+	m_nField2c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101349e0 size=0xc2
 #include "Pool.h"
 #include "CBaseHandle.h"
