@@ -32731,6 +32731,20 @@ int __stdcall sub_1009ffe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a02e0 size=0x35
+#include "C_BaseEntity.h"
+char *C_BaseEntity::sub_1009f760() { return (char *)this + 0x2b4; }
+char *C_BaseEntity::sub_1009f770() { return (char *)this + 0x2c4; }
+// TARGET: C_BaseEntity::sub_100a02e0
+void C_BaseEntity::sub_100a02e0(bool force)
+{
+    if (force || *(int *)((char *)this + 0x4c) != 0x17) {
+        vfunc40(sub_1009f760());
+        vfunc42(sub_1009f770());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0450 size=0x19
 #include "C_BaseEntity.h"
 struct IEng_104a57d4

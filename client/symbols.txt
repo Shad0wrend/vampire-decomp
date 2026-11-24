@@ -3363,6 +3363,7 @@
 0x1009ffe0 func   ?sub_1009ffe0@@YGHHH@Z sub_1009ffe0
 0x1009fff0 func   ?NotifyShouldTransmit@C_BaseEntity@@UAEXH@Z C_BaseEntity::NotifyShouldTransmit
 0x100a0240 func   ?PreDataUpdate@C_BaseEntity@@UAEXH@Z C_BaseEntity::PreDataUpdate
+0x100a02e0 func   ?sub_100a02e0@C_BaseEntity@@QAEX_N@Z C_BaseEntity::sub_100a02e0
 0x100a0450 func   ?sub_100a0450@C_BaseEntity@@QAEXXZ C_BaseEntity::sub_100a0450
 0x100a0470 func   ?PostDataUpdate@C_BaseEntity@@UAEXH@Z C_BaseEntity::PostDataUpdate
 0x100a06e0 func   ?vfunc67@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc67
