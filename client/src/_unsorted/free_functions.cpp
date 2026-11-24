@@ -80095,6 +80095,29 @@ int CUnknown10202a50::sub_1015ed00(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ed50 size=0x3f
+#include "CUnknown10202ba0.h"
+bool CUnknown10202ba0::sub_1015ed50(int *pIndex)
+{
+	if (!m_bClamp)
+	{
+		if (*pIndex < 0 || *pIndex >= m_nEntries)
+			return false;
+	}
+	else
+	{
+		if (*pIndex < 0)
+		{
+			*pIndex = 0;
+			return true;
+		}
+		if (*pIndex >= m_nEntries)
+			*pIndex = m_nEntries - 1;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ed90 size=0x66
 #include "CUnknown10202b10.h"
 extern char g_102de300[];
