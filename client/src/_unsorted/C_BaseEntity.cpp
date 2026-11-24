@@ -417,6 +417,18 @@ void C_BaseEntity::vfunc38(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f300 size=0x26
+#include "C_BaseEntity.h"
+struct ModelInfoView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int GetModelType(int idx); };
+extern ModelInfoView *g_104a57f8;
+int C_BaseEntity::vfunc86()
+{
+	if (*(int *)((char *)this + 0x74) & 0x60)
+		return 0;
+	return g_104a57f8->GetModelType(*(int *)((char *)this + 0x40)) == 3 ? 2 : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f640 size=0x5
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc116(int a0, int a1)
