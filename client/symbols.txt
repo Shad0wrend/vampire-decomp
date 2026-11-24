@@ -4718,6 +4718,7 @@
 0x10114700 func   ?sub_10114700@@YAHXZ sub_10114700
 0x10114770 func   ?sub_10114770@CUnknown10114770@@QAEPAXXZ CUnknown10114770::sub_10114770
 0x10114db0 func   ?sub_10114db0@CUnknown10114db0@@QAEPAXXZ CUnknown10114db0::sub_10114db0
+0x10115500 func   ?sub_10115500@CView@@QAEPAHXZ CView::sub_10115500
 0x10115c20 func   ??_GCSimple3DEmitter@@UAEPAXI@Z ??_GCSimple3DEmitter@@UAEPAXI@Z
 0x10115d40 func   ??0CParticleEffectBinding@@QAE@XZ CParticleEffectBinding::CParticleEffectBinding
 0x10115dd0 func   ?sub_10115dd0@@YGHHH@Z sub_10115dd0

@@ -47819,6 +47819,13 @@ void * CUnknown10114db0::sub_10114db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115500 size=0x11
+struct CView { int a, b; int *sub_10115500(); };
+#pragma optimize("", off)
+// TARGET: ?sub_10115500@CView@@QAEPAHXZ
+int *CView::sub_10115500() { return &b + 1; }
+// END FUNCTION
+
 // FUNCTION: 0x10115dd0 size=0x5
 int __stdcall sub_10115dd0(int a0, int a1)
 {
