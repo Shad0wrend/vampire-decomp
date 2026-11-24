@@ -91373,6 +91373,67 @@ int CUnknown101c0ee0::sub_101c0ee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c20d0 size=0xad
+extern void *sub_101b6840(unsigned int size);
+struct KV_101c20d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11();
+	virtual void *GetPtr(const char *keyName, void *def);
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+	virtual void SetPtr(const char *keyName, void *value);
+	KV_101c20d0 *sub_101b5670(const char *name);
+	KV_101c20d0 *sub_101b5690(const char *name, const char *k, const char *v);
+};
+struct IVGui_101c20d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c20d0 *sub_101ac8f0();
+struct Ctx_101c20d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual bool RequestInfo(KV_101c20d0 *data);
+};
+struct Pnl_101c20d0 {
+	virtual int GetVPanel();
+};
+struct BG_101c20d0 {
+	char pad[0x5c];
+	Ctx_101c20d0 *ctx;
+	Pnl_101c20d0 *sub_101c20d0();
+};
+// TARGET: BG_101c20d0::sub_101c20d0
+Pnl_101c20d0 *BG_101c20d0::sub_101c20d0()
+{
+	Pnl_101c20d0 *dlg = 0;
+	KV_101c20d0 *data = (KV_101c20d0 *)sub_101b6840(0x1c);
+	if (data)
+		data = data->sub_101b5670("BuildDialog");
+	else
+		data = 0;
+	data->SetPtr("BuildGroupPtr", this);
+	if (ctx->RequestInfo(data))
+	{
+		dlg = (Pnl_101c20d0 *)data->GetPtr("PanelPtr", 0);
+		if (dlg)
+		{
+			KV_101c20d0 *msg = (KV_101c20d0 *)sub_101b6840(0x1c);
+			if (msg)
+				msg = msg->sub_101b5690("SetTitle", "text", "Control Editor");
+			else
+				msg = 0;
+			sub_101ac8f0()->PostMessage(dlg->GetVPanel(), msg, 0, 0.0f);
+		}
+	}
+	return dlg;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2310 size=0x91
 struct CPanel
 {
