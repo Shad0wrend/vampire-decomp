@@ -2395,6 +2395,7 @@
 0x10045760 func   ??1CFXLine@@UAE@XZ CFXLine::~CFXLine
 0x10045c50 func   ?vfunc3@CFXLine@@UAE_NXZ CFXLine::vfunc3
 0x10045c70 func   ?vfunc4@CFXLine@@UAEXXZ CFXLine::vfunc4
+0x10045c90 func   ?vfunc5@CFXLine@@UAEXN@Z CFXLine::vfunc5
 0x10045eb0 func   ?sub_10045eb0@CUnknown10045eb0@@QAEPAXH@Z CUnknown10045eb0::sub_10045eb0
 0x10045ee0 func   ??_GCTrailParticles@@UAEPAXI@Z ??_GCTrailParticles@@UAEPAXI@Z
 0x10045f40 func   ?vfunc3@CTrailParticles@@QAE_NPAUTrailParticle@@PAUParticleDraw@@AAM@Z CTrailParticles::vfunc3

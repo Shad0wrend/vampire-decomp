@@ -34,3 +34,18 @@ void CFXLine::vfunc4()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10045c90 size=0x3d
+#include "CFXLine.h"
+void sub_10108fd0(const float *a, float s, const float *b, float *c);
+void CFXLine::vfunc5(double dt)
+{
+	m_flUnk2c -= dt;
+	float f = (float)dt;
+	float *p = (float *)((char *)this + 0x10);
+	float *d = (float *)((char *)this + 0x34);
+	sub_10108fd0(p, f, d, p);
+	float *q = (float *)((char *)this + 0x1c);
+	sub_10108fd0(q, f, d, q);
+}
+// END FUNCTION
