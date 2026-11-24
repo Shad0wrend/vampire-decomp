@@ -54536,6 +54536,27 @@ bool CPanelMetaClassMgrImp::sub_10110ab0(const char *pFileName, CKeyValuesX *pKe
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110ef0 size=0x52
+struct Node {
+	Node *sub_10128350(const char *key, int a);
+	void sub_10128260(Node *p);
+	Node *sub_101283a0();
+	Node *sub_101283b0();
+};
+
+// TARGET: sub_10110ef0
+void sub_10110ef0(Node *node, const char *key)
+{
+	Node *found = node->sub_10128350(key, 0);
+	if (found)
+		node->sub_10128260(found);
+	for (Node *p = node->sub_101283a0(); p; p = p->sub_101283b0()) {
+		if (p->sub_101283a0())
+			sub_10110ef0(p, key);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110f70 size=0x13
 bool sub_10110f70(const unsigned short *a, const unsigned short *b)
 {
