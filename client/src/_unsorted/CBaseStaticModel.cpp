@@ -53,6 +53,16 @@ bool CBaseStaticModel::ShouldDraw()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dffc0 size=0x2d
+#include "CBaseStaticModel.h"
+// TARGET: ?GetRenderBoundsWorldspace@CBaseStaticModel@@UAEXAAVVector@@0@Z
+void CBaseStaticModel::GetRenderBoundsWorldspace(Vector &mins, Vector &maxs)
+{
+	mins = m_vecMins;
+	maxs = m_vecMaxs;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e13b0 size=0x3
 #include "CBaseStaticModel.h"
 ICollideable * CBaseStaticModel::GetClientCollideable()
