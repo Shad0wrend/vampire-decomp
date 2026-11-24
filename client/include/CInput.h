@@ -28,7 +28,7 @@ public:
     virtual char *vfunc7(int i);
     virtual void vfunc8(int);
     virtual void vfunc9();
-    virtual void vfunc10();
+    virtual int vfunc10(int, int, int);
     virtual void vfunc11();
     virtual void vfunc12();
     virtual void vfunc13();
