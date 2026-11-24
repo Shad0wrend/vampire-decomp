@@ -100,6 +100,15 @@ void CCredits::vfunc114(const char *a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004de80 size=0x1e
+#include "CCredits.h"
+void CCredits::vfunc112()
+{
+	vfunc115();
+	vfunc5_hud(false);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004dea0 size=0x8
 #include "CCredits.h"
 namespace lifted {
