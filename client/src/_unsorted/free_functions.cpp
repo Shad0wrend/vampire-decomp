@@ -14578,6 +14578,12 @@ int CUnknown1003e7c0::sub_1003e7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e820 size=0x11
+extern void (*g_101e3120)(int, const char *, ...);
+// TARGET: sub_1003e820
+void sub_1003e820() { g_101e3120(1, "TODO:  Reenable spray logos\n"); }
+// END FUNCTION
+
 // FUNCTION: 0x1003e860 size=0x6
 namespace lifted {
 extern char g_103eb108;
