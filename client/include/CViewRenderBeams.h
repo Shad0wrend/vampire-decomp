@@ -12,7 +12,10 @@ public:
 	Beam_t m_Beams[128];
 	int m_unk1bc04;
 	int m_unk1bc08;
-	int m_pFirst;
+	void *m_pFirst;
+	int m_unk1bc10;
+	int m_unk1bc14;
+	int m_nNumBeamTrails;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CViewRenderBeams's own function
 	virtual void vfunc0();
