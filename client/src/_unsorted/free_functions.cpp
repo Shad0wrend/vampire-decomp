@@ -39815,6 +39815,56 @@ void CModel_c4940::sub_100c4940(int idx, float weight, StudioHdr_c4940 *pHdr, St
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4ac0 size=0x4d
+struct sub_100c4ac0_Elem
+{
+	int m_nNext;
+	int m_nValue;
+};
+
+struct sub_100c4ac0_Node
+{
+	int m_nOffset0;
+	int m_nType;
+	int m_nCount;
+	int m_nPad0c;
+	int m_nIndex;
+	int m_nDataOffset;
+};
+
+struct sub_100c4ac0_Holder
+{
+	char m_Pad0[0x90];
+	int m_nArrayOffset;
+	sub_100c4ac0_Node *sub_100c4ac0(int i);
+};
+
+sub_100c4ac0_Node *sub_100c4ac0_Holder::sub_100c4ac0(int i)
+{
+	int offset = this->m_nArrayOffset;
+	sub_100c4ac0_Node *p = (sub_100c4ac0_Node *)((char *)this + (offset + i * sizeof(sub_100c4ac0_Node)));
+	if (p->m_nType == 1)
+	{
+		do
+		{
+			int idx = p->m_nIndex;
+			if (idx < 0)
+				break;
+			if (idx >= p->m_nCount)
+				break;
+			sub_100c4ac0_Elem *e = (sub_100c4ac0_Elem *)((char *)p + p->m_nDataOffset + idx * 8);
+			if (!e)
+				break;
+			int next = e->m_nNext;
+			if (next == -1)
+				break;
+			p = (sub_100c4ac0_Node *)((char *)this + (offset + next * sizeof(sub_100c4ac0_Node)));
+		} while (p->m_nType == 1);
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4b10 size=0x81
 #include "CUnknown100b6f80.h"
 
