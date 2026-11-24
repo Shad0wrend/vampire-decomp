@@ -16,6 +16,15 @@ int CCopyRecipientFilter::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134840 size=0xd
+struct V_10134840 { int m_unk[2]; int *m_pArr; };
+// TARGET: sub_10134840
+int __fastcall sub_10134840(V_10134840 *self, int edx, int i)
+{
+	return self->m_pArr[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134850 size=0xa
 struct CUnknown10134850 { int a; unsigned m; int sub_10134850(); };
 int CUnknown10134850::sub_10134850() { return (m >> 2) & 1; }
