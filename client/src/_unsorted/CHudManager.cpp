@@ -45,3 +45,19 @@ void CHudManager::vfunc114(int mask)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10058000 size=0x3b
+#include "CHudManager.h"
+struct IHudFlagObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int GetFlags(); virtual void v5(); virtual bool Test(); };
+struct CHudNode58 { IHudFlagObj *m_pObj; CHudNode58 *m_pNext; };
+// TARGET: CHudManager::vfunc116
+bool CHudManager::vfunc116(int flags)
+{
+	for (CHudNode58 *p = *(CHudNode58 **)((char *)this + 0x170); p; p = p->m_pNext)
+	{
+		if ((flags & p->m_pObj->GetFlags()) && p->m_pObj->Test())
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
