@@ -31622,6 +31622,14 @@ struct CView { char pad[0x248]; float m248[1]; float sub_1009f6b0(int); };
 float CView::sub_1009f6b0(int i) { return m248[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x1009f6c0 size=0x12
+struct S_1009f6c0 { char pad[0x248]; float m[1]; };
+void __fastcall sub_1009f6c0(S_1009f6c0 *self, int edx, int i, float v)
+{
+	self->m[i] = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f6e0 size=0x7
 struct CUnknown1009f6e0 { char * sub_1009f6e0(); };
 char * CUnknown1009f6e0::sub_1009f6e0()
