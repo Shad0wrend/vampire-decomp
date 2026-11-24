@@ -120,6 +120,22 @@ bool SM_100d5830::sub_100d5830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5ce0 size=0x4f
+#include "CClientShadowMgr.h"
+#include "Vector.h"
+
+void CClientShadowMgr::vfunc14(const void *pDirection)
+{
+	const Vector *pDir = (const Vector *)pDirection;
+	Vector &vec = *(Vector *)&m_unk08;
+	vec = *pDir;
+	(*g_102be4e8)(vec);
+	unsigned short h = m_Shadows.m_Head;
+	while ( h != CUtlLinkedList240::InvalidIndex() )
+		h = m_Shadows.m_pMemory[h].m_Next;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7e50 size=0x1c
 #include "CClientShadowMgr.h"
 void *CClientShadowMgr::vfunc16(unsigned short h)
