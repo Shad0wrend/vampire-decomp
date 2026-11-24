@@ -42127,6 +42127,28 @@ void HistoryResource::sub_100f0310(int iType, const char *szName, int iCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0410 size=0x1e
+struct HE_100f0410 { int a, b, c, d, e, f; };
+struct Hist_100f0410
+{
+	int m_unk0, m_unk4, m_unk8, m_unkc;
+	HE_100f0410 m_e[12];
+	int m_unk130;
+	int m_unk134;
+	void sub_100f0410();
+};
+// TARGET: Hist_100f0410::sub_100f0410
+void Hist_100f0410::sub_100f0410()
+{
+	for (int i = 0; i < 12; i++)
+	{
+		if (m_e[i].a != 0)
+			return;
+	}
+	m_unk134 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0510 size=0x29
 namespace lifted {
 extern char g_10234d64;

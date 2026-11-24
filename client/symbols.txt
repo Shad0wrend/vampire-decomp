@@ -4401,6 +4401,7 @@
 0x100f0160 func   ?sub_100f0160@@YIXPAUS_100f0160@@@Z sub_100f0160
 0x100f0180 func   ?sub_100f0180@CUnknown100f0180@@QAEHH@Z CUnknown100f0180::sub_100f0180
 0x100f0310 func   ?sub_100f0310@HistoryResource@@QAEXHPBDH@Z HistoryResource::sub_100f0310
+0x100f0410 func   ?sub_100f0410@Hist_100f0410@@QAEXXZ Hist_100f0410::sub_100f0410
 0x100f0430 func   ?sub_100f0430@CHudHistoryResource@@QAE_NXZ CHudHistoryResource::sub_100f0430
 0x100f0460 func   ?vfunc5@CHudHistoryResource@@UAEXH@Z CHudHistoryResource::vfunc5
 0x100f0510 func   ??0CHudElement@@QAE@H@Z CHudElement::CHudElement
