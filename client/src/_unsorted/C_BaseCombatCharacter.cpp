@@ -19,6 +19,22 @@ C_BaseCombatCharacter::~C_BaseCombatCharacter()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097fa0 size=0x2d
+#include "C_BaseCombatCharacter.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+void *C_BaseCombatCharacter::vfunc148()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x105c);
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100981d0 size=0x6
 #include "C_BaseCombatCharacter.h"
 namespace lifted {
