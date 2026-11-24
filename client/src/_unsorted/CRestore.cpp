@@ -239,6 +239,12 @@ void CRestore::vfunc6(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a7d0 size=0x11
+#include "CRestore.h"
+// TARGET: CRestore::vfunc5
+void CRestore::vfunc5() { char buf[32]; vfunc6(buf); }
+// END FUNCTION
+
 // FUNCTION: 0x1012a7f0 size=0x42
 #include "utlrbtree.h"
 #include "CRestore.h"
