@@ -70985,6 +70985,39 @@ int CNamedList9fd0::sub_1014e680(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e6d0 size=0x4c
+#include "CUnknown101f0e50.h"
+
+class CUnknown101f0b50
+{
+public:
+	void *sub_1014de80(int n);
+	CUnknown101f0b50(int n) { sub_1014de80(n); }
+	~CUnknown101f0b50() {}
+	int m_f00;
+	int m_f04;
+	int m_f08;
+	int m_f0c;
+	int m_f10;
+};
+
+bool CUnknown101f0e50::sub_1014e590(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+
+// TARGET: CUnknown101f0e50::sub_1014e6d0
+CVTraitEffectGroup_t *CUnknown101f0e50::sub_1014e6d0(int index)
+{
+	if (sub_1014e590(index))
+		return ((CVTraitEffectGroup_t **)m_f08)[index];
+	static CUnknown101f0b50 s_default(-1);
+	return (CVTraitEffectGroup_t *)&s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014edb0 size=0xa
 namespace lifted {
 extern int g_105e8638;

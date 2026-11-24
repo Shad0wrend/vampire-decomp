@@ -6166,6 +6166,7 @@
 0x1014e590 func   ?sub_1014e590@CUnknown101e9f10@@QAEDH@Z CUnknown101e9f10::sub_1014e590
 0x1014e630 func   ?sub_1014e630@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_1014e630
 0x1014e680 func   ?sub_1014e680@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_1014e680
+0x1014e6d0 func   ?sub_1014e6d0@CUnknown101f0e50@@QAEPAVCVTraitEffectGroup_t@@H@Z CUnknown101f0e50::sub_1014e6d0
 0x1014edb0 func   ?sub_1014edb0@@YAHH@Z sub_1014edb0
 0x1014edc0 func   ?sub_1014edc0@@YAHH@Z sub_1014edc0
 0x1014edd0 func   ?sub_1014edd0@@YAHH@Z sub_1014edd0
