@@ -33327,6 +33327,84 @@ char * CUnknown1009f770::sub_1009f770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f8a0 size=0x1c3
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+struct CEntInfoX { void *m_pEntity; int m_SerialNumber; int m_pPrev; };
+struct CEntListX { int m_pad; CEntInfoX m_Ents[1]; };
+extern CEntListX *g_102b8e98;
+extern char g_102af675;
+extern float g_104d5190, g_104d5194, g_104d5198;
+inline void *GetHandleEnt(const CBaseHandle &h)
+{
+	if (h.m_Index == 0xffffffff)
+		return 0;
+	CEntInfoX *p = &g_102b8e98->m_Ents[h.m_Index & 0x1fff];
+	if (p->m_SerialNumber == (int)(h.m_Index >> 13))
+		return p->m_pEntity;
+	return 0;
+}
+struct VecX
+{
+	float x, y, z;
+	VecX &operator=(const VecX &o) { x = o.x; y = o.y; z = o.z; return *this; }
+};
+struct EntF
+{
+	char pad0[0x74]; unsigned char f74;
+	char pad75[0x184 - 0x75]; unsigned int m_fFlags;
+	char pad188[0x208 - 0x188]; CBaseHandle m_hParent;
+	char pad20c[0x23c - 0x20c]; VecX v23c; VecX v248; VecX v254; VecX v260; VecX v26c;
+};
+struct ParentV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual VecX *GetAbsOrigin(); };
+void sub_101094e0(void *, void *);
+void sub_10108540(void *, int, void *);
+void sub_10108a50(void *, void *, void *);
+void sub_10108430(void *, void *);
+void sub_10108510(void *, int, void *);
+void sub_10107eb0(void *, void *);
+void sub_100ccf00(void *);
+// TARGET: C_BaseEntity::sub_1009f8a0
+void C_BaseEntity::sub_1009f8a0()
+{
+	if (!g_102af675)
+		return;
+	EntF *e = (EntF *)this;
+	if (!(e->m_fFlags & 0x800))
+		return;
+	e->m_fFlags &= ~0x800;
+	sub_101094e0(vfunc41(), &e->v26c);
+	sub_10108540(vfunc39(), 3, &e->v26c);
+	if (!GetHandleEnt(e->m_hParent))
+	{
+		e->v23c = e->v254;
+		e->v248 = e->v260;
+		sub_100ccf00(&e->v248);
+		return;
+	}
+	unsigned char b = e->f74;
+	if (b & 1)
+	{
+		sub_1009f780();
+		return;
+	}
+	float m34[12];
+	float m33[12];
+	sub_10108a50(sub_1009f7f0(m34), &e->v26c, m33);
+	sub_10108430(m33, &e->v26c);
+	sub_10108510(&e->v26c, 3, &e->v23c);
+	if (g_104d5190 == e->v260.x && g_104d5194 == e->v260.y && g_104d5198 == e->v260.z)
+	{
+		ParentV *pParent = (ParentV *)GetHandleEnt(e->m_hParent);
+		e->v248 = *pParent->GetAbsOrigin();
+	}
+	else
+	{
+		sub_10107eb0(&e->v26c, &e->v248);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fb40 size=0x4
 struct CUnknown1009fb40 { int sub_1009fb40(); };
 int CUnknown1009fb40::sub_1009fb40()
