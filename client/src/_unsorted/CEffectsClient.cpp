@@ -10,3 +10,10 @@ CEffectsClient *pcd_emit_100e1ae0() { return new CEffectsClient; }
 
 // TARGET: ??_GCEffectsClient@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100e1b10 size=0x3
+// TARGET: sub_100e1b10
+void __stdcall sub_100e1b10(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int)
+{
+}
+// END FUNCTION
