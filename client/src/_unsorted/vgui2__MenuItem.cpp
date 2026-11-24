@@ -11,6 +11,70 @@ vgui2::MenuItem *pcd_emit_101c6c50(const vgui2::MenuItem &other) { return new vg
 // TARGET: ??_GMenuItem@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c6cb0 size=0x122
+#include "vgui2__MenuItem.h"
+#include "MenuItemCheckImage.h"
+#include <stddef.h>
+
+#define FI(off) (*(int *)((char *)this + (off)))
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##a) V4(n##b) V4(n##c) V4(n##d)
+struct SubPanelView {
+    V16(a) V16(b)
+    virtual void x32();
+    virtual void SetParentItem(void *item);
+    V4(c) 
+    virtual void x38(); virtual void x39(); virtual void x40();
+    virtual void Fn41(void *item);
+};
+struct MenuView {
+    V16(a) V16(b) V16(c) V16(d) V16(e) V16(f)
+    V4(g) V4(h) V4(i)
+    virtual void x108(); virtual void x109(); virtual void x110();
+    virtual void s111(int);
+    virtual void s112(int, int);
+    V4(j) virtual void x117(); virtual void x118(); virtual void x119(); virtual void x120(); virtual void x121();
+    virtual void s122(int, int);
+    virtual void s123(int, int, int);
+    V4(k)
+    virtual void s128(int);
+    V16(l)
+    virtual void s145(int);
+    V4(m) virtual void x150(); virtual void x151();
+    virtual void s152(int);
+    void sub_101c7510(int a);
+};
+struct Obj38 { void *sub_101b9bc0(const char *s, int v); };
+void *operator new(size_t size);
+
+// TARGET: vgui2::MenuItem::vfunc166
+void vgui2::MenuItem::vfunc166()
+{
+    MenuView *v = (MenuView *)this;
+    FI(0xf8) = 0;
+    FI(0xfc) = 0;
+    if (FI(0xf0)) {
+        ((SubPanelView *)FI(0xf0))->SetParentItem(this);
+        Obj38 *mem = (Obj38 *)::operator new(0x38);
+        void *p = mem ? mem->sub_101b9bc0(" 4", sub_101aa220()) : 0;
+        FI(0xf8) = (int)p;
+        v->s122((int)p, 0);
+        ((SubPanelView *)FI(0xf0))->Fn41(this);
+    } else if (*((char *)this + 0xf4)) {
+        v->s128(1);
+        MenuItemCheckImage *img = new MenuItemCheckImage(this);
+        FI(0xfc) = (int)img;
+        v->s123(0, (int)img, 0);
+        v->sub_101c7510(0);
+    }
+    v->s152(0);
+    v->s111(3);
+    v->s145(0);
+    v->s112(6, 0);
+    v->s111(3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c70e0 size=0xf
 #include "vgui2__MenuItem.h"
 namespace lifted {
