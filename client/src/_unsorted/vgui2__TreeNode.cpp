@@ -46,6 +46,37 @@ void __fastcall sub_101bce10(void *self, int edx, bool b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcf20 size=0x53
+#include "vgui2__TreeNode.h"
+
+struct TreeColor
+{
+	unsigned char c[4];
+	TreeColor() {}
+	operator int() const { return *(const int *)c; }
+};
+
+struct TreeScheme
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual TreeColor GetColor(const char *name);
+	virtual TreeColor GetColor(const char *name, TreeColor def);
+};
+
+int vgui2::TreeNode::vfunc74(int nScheme)
+{
+	Panel::vfunc74(nScheme);
+	vfunc60((void *)0);
+	TreeScheme *pScheme = (TreeScheme *)nScheme;
+	return vfunc50(pScheme->GetColor("ListBgColor",
+		pScheme->GetColor("WindowDisabledBgColor")));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bcf80 size=0xb
 #include "vgui2__TreeNode.h"
 namespace lifted {
