@@ -52826,6 +52826,29 @@ void CView1010eff0::sub_1010eff0(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f030 size=0x3f
+void sub_10114660(int, int);
+int sub_101146e0();
+extern int g_104cfe3c;
+struct CView1010eff0
+{
+	char pad[0x94];
+	int m_n94;
+	char pad2[0xdc - 0x98];
+	char m_bDc;
+	void sub_1010eff0(int, int);
+	void sub_1010f030(int a, int b, int c);
+};
+void CView1010eff0::sub_1010f030(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	int r = sub_101146e0();
+	sub_1010eff0(r, g_104cfe3c);
+	m_n94 = g_104cfe3c;
+	m_bDc = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f070 size=0x30
 namespace lifted {
 extern char g_102bec80;
