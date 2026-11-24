@@ -2948,6 +2948,7 @@
 0x1007f4a0 func   ?sub_1007f4a0@CUnknown1007f4a0@@QAEPAXXZ CUnknown1007f4a0::sub_1007f4a0
 0x1007f530 func   ?vfunc120@C_BaseParticleEntity@@UAEXXZ C_BaseParticleEntity::vfunc120
 0x1007f600 func   ??0C_BaseViewModel@@QAE@XZ C_BaseViewModel::C_BaseViewModel
+0x1007f6a0 func   ?vfunc145@C_BaseViewModel@@UAEPAXXZ C_BaseViewModel::vfunc145
 0x1007f6d0 func   ?vfunc86@C_BaseViewModel@@UAEHXZ C_BaseViewModel::vfunc86
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0
 0x1007f6f0 func   ??_GC_BaseViewModel@@UAEPAXI@Z ??_GC_BaseViewModel@@UAEPAXI@Z
