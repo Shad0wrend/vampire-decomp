@@ -72578,6 +72578,25 @@ char CUnknown101e9f10::sub_1014e590(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e5b0 size=0x47
+struct CUnknown101e9f10 {
+	int m_unk0;
+	int m_n4;
+	bool sub_1014e600(int a, int b, int c, int d);
+	int sub_1014e5b0(int a, int b, int c);
+};
+// TARGET: ?sub_1014e5b0@CUnknown101e9f10@@QAEHHHH@Z
+int CUnknown101e9f10::sub_1014e5b0(int a, int b, int c)
+{
+	int n = 0;
+	for (int i = 0; i < m_n4; i++) {
+		if (sub_1014e600(a, b, c, i))
+			n++;
+	}
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e600 size=0x30
 struct CUnk1014e030 { char sub_1014e030(int, int, int); };
 struct CUnknown101e9f10 {
