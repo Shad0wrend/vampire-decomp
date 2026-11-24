@@ -105,6 +105,27 @@ int vgui2::Label::vfunc107(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2450 size=0x41
+#include "vgui2__Label.h"
+struct CUnknown101b9d50 { void sub_101b9d50(int); };
+struct LabelView2 {
+	char pad[0x5c];
+	CUnknown101b9d50 *m5c;
+	char pad2[0x88 - 0x60];
+	int m88;
+	int m8c;
+};
+// TARGET: ?vfunc112@Label@vgui2@@UAEXHH@Z
+void vgui2::Label::vfunc112(int w, int h)
+{
+	LabelView2 *v = (LabelView2 *)this;
+	v->m88 = w;
+	v->m8c = h;
+	sub_101a9920(&w, &h);
+	v->m5c->sub_101b9d50(w - v->m88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2950 size=0xf
 #include "vgui2__Label.h"
 namespace lifted {
