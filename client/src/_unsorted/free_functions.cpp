@@ -87317,6 +87317,38 @@ void sub_10179840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a630 size=0x51
+class CEquipItem_10178790
+{
+public:
+	void sub_10178790(int n);
+	char m_pad[0x24];
+};
+
+struct CPlayerView1017a630
+{
+	char m_pad0[0x14c4];
+	void *m_p14c4;	// 0x14c4
+};
+
+extern CEquipItem_10178790 g_105fb458[11];
+extern int g_105fb5e4;
+extern int g_105fb5ec;
+extern void *g_105fb5f0;
+extern CPlayerView1017a630 *g_104a0d50;
+
+// TARGET: sub_1017a630
+void sub_1017a630()
+{
+	for ( CEquipItem_10178790 *p = g_105fb458; (int)p < (int)&g_105fb458[11]; p++ )
+		p->sub_10178790(0);
+
+	g_105fb5e4 = 0;
+	g_105fb5ec = 0;
+	g_105fb5f0 = g_104a0d50 ? g_104a0d50->m_p14c4 : g_104a0d50->m_p14c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a7c0 size=0x3
 void __stdcall sub_1017a7c0(int a0)
 {
