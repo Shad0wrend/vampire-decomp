@@ -44810,6 +44810,21 @@ void sub_100f7230(unsigned char *src, unsigned char *dst, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7270 size=0x3a
+void sub_100f7270(unsigned char *src, unsigned char *dst, int n)
+{
+	unsigned char *end = src + n * 3;
+	while (src < end) {
+		dst[0] = src[2];
+		dst[1] = src[1];
+		dst[2] = src[0];
+		dst[3] = 0xff;
+		src += 3;
+		dst += 4;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f72b0 size=0x35
 void sub_100f72b0(unsigned char *src, unsigned char *dst, int count)
 {
