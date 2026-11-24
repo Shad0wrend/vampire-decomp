@@ -11304,6 +11304,20 @@ void * CUnknown100295b0::sub_100295b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029c30 size=0x2e
+struct XG { virtual void v0(); virtual char v1(); char u[0x2c - 4]; int m_i2c; };
+extern XG *g_102ea42c;
+bool sub_10029c30()
+{
+	int p;
+	if (g_102ea42c->v1())
+		p = 0;
+	else
+		p = g_102ea42c->m_i2c;
+	return p != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029e70 size=0x36
 // TARGET: sub_10029e70
 struct CLinkElem
