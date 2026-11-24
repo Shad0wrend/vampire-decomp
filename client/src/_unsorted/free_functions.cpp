@@ -16015,6 +16015,27 @@ int CUnknown100400c0::sub_100400c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100400e0 size=0x43
+#include "Vector.h"
+
+// TARGET: Obj_100400e0::sub_100400e0
+bool sub_100b3640(Vector, int, Vector);
+
+struct Obj_100400e0
+{
+	char m_pad0[0xc];
+	Vector m_vecOrigin;
+	Vector m_vecDir;
+	unsigned char m_unk24;
+	void sub_100400e0(int updateType);
+};
+
+void Obj_100400e0::sub_100400e0(int updateType)
+{
+	sub_100b3640(m_vecOrigin, (int)m_unk24, m_vecDir);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040150 size=0x6
 namespace lifted {
 extern char g_103ec240;
