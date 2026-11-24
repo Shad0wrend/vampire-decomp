@@ -50119,6 +50119,26 @@ void CUnknown10116010::sub_10116010(char a0, char a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116580 size=0x34
+struct Elem { int pad; unsigned short a; unsigned short b; };
+struct CL {
+	char pad[0x38];
+	Elem *m_p;
+	int m_unk3c[4];
+	unsigned short m_n;
+	int sub_10116580(unsigned char c);
+};
+int CL::sub_10116580(unsigned char c)
+{
+	unsigned short i = c;
+	if (i < m_n) {
+		if (m_p[i].a != i || m_p[i].b == i)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116710 size=0x7
 #include "CParticleEffectBinding.h"
 
