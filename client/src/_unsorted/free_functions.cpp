@@ -25994,6 +25994,26 @@ bool C_BaseCombatWeapon::sub_1007d950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d970 size=0x3b
+struct Slot { char pad[0x2668]; int f; char pad2[0x1093c - 0x266c]; };
+struct CUnk1007d970
+{
+	char pad[0x7ac];
+	int m7ac[2];
+	Slot *sub_1007b160();
+	void sub_1007d970(int);
+};
+void CUnk1007d970::sub_1007d970(int)
+{
+	for (int i = 0; i < 2; i++)
+	{
+		int *p = &sub_1007b160()[i].f;
+		if (*p != -1)
+			m7ac[i] = *p;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dae0 size=0x6
 namespace lifted {
 extern char g_1027ace8;
