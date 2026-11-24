@@ -53231,6 +53231,65 @@ CSmartPtr<CUnknown101187e0> sub_10118820(int pDebugName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101189f0 size=0x53
+#include <stddef.h>
+
+void *operator new(size_t size);
+
+class CUnknown101189b0
+{
+public:
+	char pad[0x68];
+	int m_Flags;
+	int m_RefCount;
+	char pad2[0x88 - 0x70];
+
+	void *sub_101189b0(int pDebugName);
+	void sub_10117fa0(bool bDynamic);
+	void sub_10117fd0();
+	void sub_10117fe0();
+};
+
+void CUnknown101189b0::sub_10117fa0(bool bDynamic)
+{
+	if (bDynamic)
+		m_Flags |= 2;
+	else
+		m_Flags &= ~2;
+}
+
+template <class T>
+class CSmartPtr
+{
+public:
+	CSmartPtr(T *pObj)
+	{
+		m_pObj = 0;
+		*this = pObj;
+	}
+
+	void operator=(T *pObj)
+	{
+		if (pObj)
+			pObj->sub_10117fd0();
+		if (m_pObj)
+			m_pObj->sub_10117fe0();
+		m_pObj = pObj;
+	}
+
+	T *m_pObj;
+};
+
+// TARGET: sub_101189f0
+CSmartPtr<CUnknown101189b0> sub_101189f0(int pDebugName)
+{
+	CUnknown101189b0 *pMem = (CUnknown101189b0 *)::operator new(0x88);
+	CUnknown101189b0 *pRet = pMem ? (CUnknown101189b0 *)pMem->sub_101189b0(pDebugName) : 0;
+	pRet->sub_10117fa0(true);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118a90 size=0x19
 namespace lifted {
 extern char g_10235a08;
