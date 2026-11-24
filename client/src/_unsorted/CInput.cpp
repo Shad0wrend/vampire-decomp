@@ -282,6 +282,90 @@ bool CInput::vfunc26()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105d50 size=0x13e
+#include "CInput.h"
+#include "CUserCmd.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+struct ICvar_10105d50
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void *FindVar(const char *var_name);
+};
+extern ICvar_10105d50 *g_104a57e0;
+
+struct CInputFields_10105d50
+{
+	char pad0[0x20];
+	int m_fMouseInitialized;       // 0x20
+	int m_fRestoreSPI;             // 0x24
+	int m_n28;                     // 0x28
+	int m_fJoystickAvailable;      // 0x2c
+	int m_fJoystickAdvancedInit;   // 0x30
+	int m_fJoystickHasPOVControl;  // 0x34
+	char pad38[0x5c - 0x38];
+	int m_fMouseActive;            // 0x5c
+	int m_rgOrigMouseParms[3];     // 0x60
+	int m_rgNewMouseParms[3];      // 0x6c
+	int m_fMouseParmsValid;        // 0x78
+	char pad7c[0xe0 - 0x7c];
+	int m_ne0;                     // 0xe0
+	bool m_be4;                    // 0xe4
+	int m_ne8;                     // 0xe8
+	char padec[0x138 - 0xec];
+	int m_n138;                    // 0x138
+	int m_n13c;                    // 0x13c
+	char pad140[0x1bc - 0x140];
+	float m_flLastForwardMove;     // 0x1bc
+	CUserCmd *m_pCommands;         // 0x1c0
+	int m_n1c4;                    // 0x1c4
+	void *m_pCmdRate;              // 0x1c8
+	void *m_pUpdateRate;           // 0x1cc
+
+	void sub_101062e0();
+	void sub_101009f0();
+	void sub_10101db0();
+	void sub_101003b0();
+};
+
+// TARGET: CInput::vfunc0
+void CInput::vfunc0()
+{
+	CInputFields_10105d50 *f = (CInputFields_10105d50 *)this;
+	f->m_pCommands = new CUserCmd[64];
+
+	f->m_fMouseInitialized = 0;
+	f->m_fRestoreSPI = 0;
+	f->m_fMouseActive = 0;
+	f->m_n28 = 0;
+	memset(f->m_rgOrigMouseParms, 0, sizeof(f->m_rgOrigMouseParms));
+	memset(f->m_rgNewMouseParms, 0, sizeof(f->m_rgNewMouseParms));
+
+	f->m_rgNewMouseParms[2] = 1;
+
+	f->m_fMouseParmsValid = 0;
+	f->m_fJoystickAvailable = 0;
+	f->m_fJoystickAdvancedInit = 0;
+	f->m_fJoystickHasPOVControl = 0;
+	f->m_flLastForwardMove = 0.0f;
+	f->m_n13c = 0;
+	f->m_n138 = 0;
+	f->m_be4 = false;
+	f->m_ne8 = 0;
+	f->m_ne0 = 0;
+
+	f->sub_101062e0();
+	f->sub_101009f0();
+	f->sub_10101db0();
+	f->sub_101003b0();
+
+	f->m_pCmdRate = g_104a57e0->FindVar("cl_cmdrate");
+	f->m_pUpdateRate = g_104a57e0->FindVar("cl_updaterate");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105ef0 size=0x2b
 #include "CInput.h"
 namespace lifted {
