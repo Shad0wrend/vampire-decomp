@@ -28,7 +28,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	virtual void vfunc101();
 	virtual int vfunc102();
-	virtual void vfunc105();
+	virtual void vfunc105(Panel *);
 	// the slots Label adds to its base's vtable: 107-137, vfuncK at slot K
 	virtual int vfunc107(int);
 	virtual int vfunc108(int);
