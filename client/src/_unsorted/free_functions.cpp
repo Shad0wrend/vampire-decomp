@@ -836,6 +836,21 @@ void CIC::sub_100052c0(const unsigned char *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100052f0 size=0x37
+struct PixW {
+  char pad0[0x14]; int m_14; char pad18[0x58 - 0x18]; char *m_p58; char pad5c[0x98 - 0x5c]; int m_98;
+  void sub_100052f0(unsigned char *p);
+};
+// TARGET: PixW::sub_100052f0
+void PixW::sub_100052f0(unsigned char *p)
+{
+  unsigned int c = 0xffffff00 | p[0];
+  c = (c << 8) | p[1];
+  c = (c << 8) | p[2];
+  *(unsigned int *)(m_p58 + m_98 * m_14) = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005330 size=0x24
 struct S10005330 {
 	char pad[0xb0]; int *m_p[1];
