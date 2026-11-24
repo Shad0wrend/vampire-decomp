@@ -729,6 +729,18 @@ void C_BaseCombatWeapon::vfunc200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cc00 size=0x29
+#include "C_BaseCombatWeapon.h"
+struct CWeaponInfo_1007b160 { char pad[0x4fea0]; int m_n4fea0; };
+bool C_BaseCombatWeapon::vfunc250()
+{
+	bool r = false;
+	if (sub_1007b160())
+		r = ((CWeaponInfo_1007b160 *)sub_1007b160())->m_n4fea0 != 0;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cde0 size=0x6
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
