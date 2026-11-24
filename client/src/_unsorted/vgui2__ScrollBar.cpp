@@ -11,6 +11,18 @@ vgui2::ScrollBar *pcd_emit_101beee0(const vgui2::ScrollBar &other) { return new 
 // TARGET: ??_GScrollBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bef40 size=0x1a
+#include "vgui2__ScrollBar.h"
+struct SBView_101bef40 { char pad[0x60]; vgui2::Panel *m_p; };
+// TARGET: vgui2::ScrollBar::vfunc62
+bool vgui2::ScrollBar::vfunc62(char c)
+{
+	vgui2::Panel *p = ((SBView_101bef40 *)this)->m_p;
+	if (p)
+		return p->vfunc62(c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf080 size=0xb
 #include "vgui2__ScrollBar.h"
 namespace lifted {
