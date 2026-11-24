@@ -83185,6 +83185,18 @@ int CVStatInfo_t::sub_1015bf50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015bfe0 size=0x5d
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatInfo_t::sub_1015bfe0
+bool CVStatInfo_t::sub_1015bfe0(int arg)
+{
+	ScopeTrace trace("CVStatInfo_t::PassesIncPreDependencyTest", g_102de300);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c0a0 size=0x3a
 namespace lifted {
 struct C101581e0 { int sub_101581e0(int, int, int); };
