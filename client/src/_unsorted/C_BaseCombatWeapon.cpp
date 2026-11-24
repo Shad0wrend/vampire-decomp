@@ -297,6 +297,206 @@ void C_BaseCombatWeapon::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ad90 size=0x3b5
+#include "C_BaseCombatWeapon.h"
+#include "StatOwner2.h"
+#include "CUnknown102029c0.h"
+
+char __cdecl sub_101a48b0(void *fs, const char *name, void *p);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_101e3108)(const char *fmt, ...);
+extern char g_102de300[];
+extern void *g_104a580c;
+
+struct EngineSoundV
+{
+	virtual void vfunc0(const char *, int);
+};
+extern EngineSoundV *g_104a5818;
+
+struct AmmoV
+{
+	int sub_10078f40(const char *);
+};
+struct AmmoGet
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual AmmoV *v6();
+};
+extern AmmoGet *g_104a56fc;
+
+struct XRes
+{
+	void sub_101a8d30(void *p);
+};
+extern XRes g_10678dd4;
+
+struct NLV
+{
+	int sub_10157b30(void *);
+};
+extern NLV g_105f8b98;
+
+extern StatOwner2 g_105f93c0;
+
+struct DmgV
+{
+	void sub_10158ef0(void *);
+};
+
+struct WeapHelper
+{
+	void sub_1007cc30(void *);
+	void sub_100a2910(const char *);
+};
+
+struct WeaponSoundSet
+{
+	char m_Sounds[25][16][0x94];
+	int m_nCounts[25];
+};
+struct WeaponAmmoRec
+{
+	char m_pad0[0x14];
+	char m_szAmmo[0x100];
+	int m_iAmmoType;
+	char m_pad118[0x2198 - 0x118];
+	WeaponSoundSet m_Sounds;
+};
+struct WeaponAttackRec
+{
+	int m_n0;
+	char m_szName[0x80];
+	char m_szTag[0x80];
+	int m_nTag104;
+	int m_nKey108;
+	int m_n10c[3];
+	char m_Dmg118[0x1dc - 0x118];
+	char m_szBotch[0x80];
+	int m_nBotch25c;
+	char m_pad260[0x490 - 0x260];
+	WeaponSoundSet m_Sounds;
+	char m_padec34[0xec84 - 0xec34];
+};
+struct WeaponInfoView
+{
+	char m_pad0[0x242c];
+	int m_nFlags242c;
+	char m_pad2430[0x2450 - 0x2430];
+	char m_Keys2450[0x2560 - 0x2450];
+	char m_sz2560[0x80];
+	int m_n25e0;
+	char m_pad25e4[0x2668 - 0x25e4];
+	WeaponAmmoRec m_Ammo[2];
+	WeaponAttackRec m_Attacks[3];
+	char m_pad4fe6c[0x50378 - 0x4fe6c];
+	WeaponSoundSet m_Sounds;
+};
+
+struct WeaponNamedRec
+{
+	int m_nId;
+	const char *m_pszName;
+};
+extern int g_105e8630;
+extern WeaponNamedRec **g_105e8634;
+extern int g_105e85a4;
+extern WeaponNamedRec **g_105e85a8;
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_102de300;
+}
+
+inline int LookupKeyA(const char *name)
+{
+	for (int i = 0; i < g_105e8630; i++)
+		if (!_strcmpi(STRINGR(g_105e8634[i]->m_pszName), name))
+			return g_105e8634[i]->m_nId;
+	return -1;
+}
+
+inline int LookupKeyB(const char *name)
+{
+	for (int i = 0; i < g_105e85a4; i++)
+		if (!_strcmpi(STRINGR(g_105e85a8[i]->m_pszName), name))
+			return g_105e85a8[i]->m_nId;
+	return -1;
+}
+
+struct WeapFields
+{
+	char m_pad0[0x7a4];
+	int m_iAmmoType[2];
+};
+
+#define INFO() ((WeaponInfoView *)sub_1007b160())
+#define F ((WeapFields *)this)
+
+// TARGET: C_BaseCombatWeapon::vfunc21
+void C_BaseCombatWeapon::vfunc21()
+{
+	if (sub_101a48b0(g_104a580c, vfunc114(), (char *)this + 0x95e)) {
+		int i, j, k;
+		{
+			WeaponSoundSet &set = INFO()->m_Sounds;
+			for (k = 0; k < 25; k++)
+				for (j = 0; j < set.m_nCounts[k]; j++)
+					g_104a5818->vfunc0(set.m_Sounds[k][j], 0);
+		}
+		for (i = 0; i < 2; i++) {
+			WeaponAmmoRec *r = &INFO()->m_Ammo[i];
+			if (r->m_szAmmo[0]) {
+				r->m_iAmmoType = F->m_iAmmoType[i] = g_104a56fc->v6()->sub_10078f40(r->m_szAmmo);
+				F->m_iAmmoType[i] = g_104a56fc->v6()->sub_10078f40(r->m_szAmmo);
+			} else
+				F->m_iAmmoType[i] = -1;
+			*(int *)((char *)&F->m_iAmmoType[i] + 0x118) = r->m_iAmmoType;
+			{
+				WeaponSoundSet &set = r->m_Sounds;
+				for (k = 0; k < 25; k++)
+					for (j = 0; j < set.m_nCounts[k]; j++)
+						g_104a5818->vfunc0(set.m_Sounds[k][j], 0);
+			}
+		}
+		g_10678dd4.sub_101a8d30(this);
+		((WeapHelper *)this)->sub_1007cc30(INFO()->m_Keys2450);
+		INFO()->m_n25e0 = g_105f8b98.sub_10157b30(INFO()->m_sz2560);
+		int tmp = g_105f93c0.sub_1015f160("TagStrings");
+		if (tmp == -1)
+			g_101e3108("Unable to find String List!\n");
+		for (i = 0; i < 3; i++) {
+			WeaponAttackRec *r = &INFO()->m_Attacks[i];
+			if (r->m_szName[0]) {
+				r->m_nTag104 = 0;
+				if (tmp != -1)
+					r->m_nTag104 = g_105f93c0.sub_1015f270(tmp)->sub_1015ed00(r->m_szName);
+				r->m_nKey108 = LookupKeyA(r->m_szTag);
+				((DmgV *)((char *)this + 0x7dc + i * 0x44))->sub_10158ef0(r->m_Dmg118);
+				r->m_nBotch25c = LookupKeyB(r->m_szBotch);
+				{
+					WeaponSoundSet &set = r->m_Sounds;
+					for (k = 0; k < 25; k++)
+						for (j = 0; j < set.m_nCounts[k]; j++)
+							((WeapHelper *)this)->sub_100a2910(set.m_Sounds[k][j]);
+				}
+			}
+		}
+		{
+			const char *s = (const char *)vfunc215(0);
+			if (s && *s)
+				sub_100a0710(s);
+		}
+	}
+	*((char *)this + 0x94c) = (INFO()->m_nFlags242c & 8) == 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b5f0 size=0xd
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
