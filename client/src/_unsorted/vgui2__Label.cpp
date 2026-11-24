@@ -25,6 +25,15 @@ void vgui2::Label::vfunc117(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2370 size=0x17
+#include "vgui2__Label.h"
+// TARGET: vgui2::Label::vfunc72
+int vgui2::Label::vfunc72(int a)
+{
+	return (*(short *)((char *)this + 0xac) == (short)a) ? (int)this : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2390 size=0xf
 #include "vgui2__Label.h"
 short vgui2::Label::vfunc120(short a0)
