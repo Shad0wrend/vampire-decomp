@@ -85728,6 +85728,22 @@ void sub_10187920(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187950 size=0x21
+#include "CHud.h"
+extern CHud g_104cfe38;
+struct ItemInfo_10187950 {
+	char pad[0x180];
+	unsigned char m_b180;
+};
+int sub_10187950()
+{
+	ItemInfo_10187950 *p = (ItemInfo_10187950 *)g_104cfe38.sub_100f0ed0("VMapScreenUI");
+	if (p)
+		return p->m_b180;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187a90 size=0x3c
 namespace lifted {
 struct C10187400 { int sub_10187400(); };
