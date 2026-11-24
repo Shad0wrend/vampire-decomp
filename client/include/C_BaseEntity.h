@@ -19,6 +19,7 @@ public:
 	void sub_1009f780();
 	void *sub_1009f7f0(void *);
 	void sub_1011c7f0();
+	void sub_1011ac90(void (C_BaseEntity::*thinkFunc)(), int a, int b);	// PhysicsDispatchThink: the two trailing ints are the rest of the 16-byte member pointer
 	void sub_100a2030(const void *);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
