@@ -12052,6 +12052,21 @@ void Obj_100319d0::sub_100319d0(int x, int y, int z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100319f0 size=0x22
+struct S100319f0 {
+	char pad[0xac];
+	float *m_pVec;
+	void sub_100319f0(const float *s);
+};
+void S100319f0::sub_100319f0(const float *s)
+{
+	float *d = m_pVec;
+	*d++ = *s++;
+	*d++ = *s++;
+	*d = *s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100321e0 size=0x12
 namespace lifted {
 extern char g_10225c30;
