@@ -116,6 +116,18 @@ struct EPView { virtual void f0(); virtual void f1(); virtual void f2(); virtual
 void vgui2::EditablePanel::vfunc58(int a) { ((EPView *)((char *)this + 0x5c))->f4(a); }
 // END FUNCTION
 
+// FUNCTION: 0x101b4f40 size=0x2b
+#include "vgui2__EditablePanel.h"
+struct XObj5 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };
+// TARGET: vgui2::EditablePanel::vfunc75
+void vgui2::EditablePanel::vfunc75(int a)
+{
+	sub_101ab4e0(a);
+	((XObj5 *)m_p58)->v5(a);
+	sub_101a9920(&m_i70, &m_i74);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5170 size=0x24
 #include "vgui2__EditablePanel.h"
 namespace lifted {
