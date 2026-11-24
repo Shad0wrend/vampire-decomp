@@ -33713,6 +33713,20 @@ float CUnknown100a9de0::sub_100a9de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa320 size=0x2b
+extern int g_104a0d4c;
+struct PV {
+	char pad[0x16f4]; int m_flags;
+	bool sub_100aa320(int mask, bool b);
+};
+bool PV::sub_100aa320(int mask, bool b)
+{
+	if (b)
+		return (g_104a0d4c & mask) ? true : false;
+	return (m_flags & mask) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa410 size=0x32
 namespace lifted {
 int sub_1004c500();
