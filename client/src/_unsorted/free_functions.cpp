@@ -81177,6 +81177,13 @@ int sub_101a5bf0()
 CValRecord &(CValRecord::*pcd_force)(const CValRecord &) = &CValRecord::operator=;
 // END FUNCTION
 
+// FUNCTION: 0x101a6760 size=0x13
+bool sub_101a6760(const unsigned short *a, const unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x10b
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
