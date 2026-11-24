@@ -436,6 +436,19 @@ void vgui2::TextEntry::vfunc128()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1050 size=0x3c
+#include "vgui2__TextEntry.h"
+bool vgui2::TextEntry::vfunc164(int a1, int a2, int a3, int a4)
+{
+	if (*(char *)((char *)this + 0x8b) && a1 == 1) {
+		int *p = (int *)a2;
+		*p = vfunc171((char *)this + 0x58, *p, a3, a4);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b13e0 size=0x24
 #include "vgui2__TextEntry.h"
 namespace lifted {
