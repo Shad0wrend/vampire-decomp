@@ -41330,6 +41330,15 @@ int sub_100ec360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec370 size=0x12
+struct S_b_100ec370 { char pad[0x90]; int m; };
+struct S_a_100ec370 { int a, b; S_b_100ec370 *p; };
+bool __fastcall sub_100ec370(S_a_100ec370 *self)
+{
+	return self->p->m > 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec390 size=0xb
 struct CUnknown100ec390 { void sub_100ec390(); };
 void CUnknown100ec390::sub_100ec390()
