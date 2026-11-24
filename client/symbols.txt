@@ -5154,6 +5154,7 @@
 0x10120e60 func   ??1IPrediction@@UAE@XZ IPrediction::~IPrediction
 0x10120e60 func   ?sub_10120e60@CUnknown10120e60@@QAEXXZ CUnknown10120e60::sub_10120e60
 0x10120e70 func   ?vfunc0@IPrediction@@QAEPAXD@Z IPrediction::vfunc0
+0x10120e90 func   ?vfunc1@CPrediction@@UAEXXZ CPrediction::vfunc1
 0x10120ed0 func   ?vfunc2@CPrediction@@UAEXXZ CPrediction::vfunc2
 0x10120ee0 func   ?sub_10120ee0@CPrediction@@QAEXH@Z CPrediction::sub_10120ee0
 0x10122350 func   ?sub_10122350@@YGXPAUP10122350@@H@Z sub_10122350

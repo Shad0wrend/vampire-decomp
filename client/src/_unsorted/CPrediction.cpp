@@ -11,6 +11,17 @@ CPrediction *pcd_emit_10120e40() { return new CPrediction; }
 // TARGET: ??_GCPrediction@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10120e90 size=0x31
+#include "CPrediction.h"
+struct CV_10120e90 { virtual void v0(); virtual bool v1(); char pad[0x2c - 4]; void *m_p2c; };
+extern CV_10120e90 *g_104e170c;
+struct View_10120e90 { char pad[0x34]; bool m_b34; };
+void CPrediction::vfunc1()
+{
+	((View_10120e90 *)this)->m_b34 = (g_104e170c->v1() ? 0 : g_104e170c->m_p2c) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120ed0 size=0x1
 #include "CPrediction.h"
 void CPrediction::vfunc2()
