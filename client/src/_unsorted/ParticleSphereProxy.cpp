@@ -12,6 +12,16 @@ bool ParticleSphereProxy::vfunc0(void *pMaterial, void *pKeyValues)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115430 size=0x38
+#include "ParticleSphereProxy.h"
+#pragma optimize("", off)
+// TARGET: ParticleSphereProxy::vfunc2
+void ParticleSphereProxy::vfunc2()
+{
+	delete this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115470 size=0x2e
 #include "ParticleSphereProxy.h"
 #pragma optimize("", off)
