@@ -43304,6 +43304,16 @@ int sub_101073c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101073e0 size=0x7
+#include <math.h>
+
+// TARGET: sub_101073e0
+float sub_101073e0(float x)
+{
+	return (float)cos(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
