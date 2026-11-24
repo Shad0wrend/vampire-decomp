@@ -29839,6 +29839,73 @@ int sub_1008b6c0(int, int, float, int, int, int, int);
 int sub_1008b890(int a, int b, float c, int d, int e, int f, int g) { return sub_1008b6c0(a, b, c, d, e, f, g); }
 // END FUNCTION
 
+// FUNCTION: 0x1008b8a0 size=0x267
+#include "ScopeTrace.h"
+#include "StudioHdr.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "matrix3x4_t.h"
+
+struct cplane_t
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+
+extern bool sub_100dbbf0(const Ray_t &ray, const matrix3x4_t &boneToWorld, const Vector &mins, const Vector &maxs, float flTolerance, CGameTrace *pTrace);
+
+bool sub_1008b8a0(const Ray_t &ray, StudioHdr *pStudioHdr, StudioHitboxSet *set, matrix3x4_t **hitboxbones, int fContentsMask, CGameTrace *pTrace)
+{
+	ScopeTrace _trace("bone_setup.cpp SweepBoxToStudio()", g_102de300);
+
+	int hitbox = -1;
+	pTrace->m_fraction = 1.0f;
+	pTrace->m_startsolid = false;
+
+	Ray_t localRay = ray;
+
+	for (int i = 0; i < set->m_nHitboxes; i++)
+	{
+		StudioHitbox *pbox = set->Hitbox(i);
+		if (!(pStudioHdr->Bone(pbox->m_iBone)->m_nFlags9c & fContentsMask))
+			continue;
+
+		CGameTrace boxTrace;
+		if (sub_100dbbf0(localRay, *hitboxbones[pbox->m_iBone], pbox->m_vecMins, pbox->m_vecMaxs, 0.0f, &boxTrace))
+		{
+			*(Vector *)pTrace->m_startpos = *(Vector *)boxTrace.m_startpos;
+			*(Vector *)pTrace->m_endpos = *(Vector *)boxTrace.m_endpos;
+			*(cplane_t *)pTrace->m_planeNormal = *(cplane_t *)boxTrace.m_planeNormal;
+			pTrace->m_fraction *= boxTrace.m_fraction;
+			pTrace->m_allsolid = boxTrace.m_allsolid;
+			pTrace->m_startsolid = boxTrace.m_startsolid;
+			hitbox = i;
+
+			localRay.m_Delta[0] *= boxTrace.m_fraction;
+			localRay.m_Delta[1] *= boxTrace.m_fraction;
+			localRay.m_Delta[2] *= boxTrace.m_fraction;
+
+			if (pTrace->m_startsolid)
+				break;
+		}
+	}
+
+	if (hitbox >= 0)
+	{
+		pTrace->m_hitgroup = set->Hitbox(hitbox)->m_iGroup;
+		pTrace->m_hitbox = hitbox;
+		pTrace->m_contents = pStudioHdr->Bone(set->Hitbox(hitbox)->m_iBone)->m_nFlags9c | 0x40000000;
+		pTrace->m_physicsbone = pStudioHdr->Bone(set->Hitbox(hitbox)->m_iBone)->m_nPhysicsBone94;
+		return true;
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008c060 size=0x186
 struct StudioHdr
 {
