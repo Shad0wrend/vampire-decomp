@@ -16,6 +16,7 @@ public:
 	vgui2::Label m_Label;
 	VHotkeysUI(int a);
 	virtual int vfunc21(int);
+	virtual void vfunc78(int);
 	VHotkeysTail *Tail() { return (VHotkeysTail *)((char *)this + 0x1d40); }
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };
