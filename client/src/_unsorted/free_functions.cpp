@@ -45291,6 +45291,17 @@ void CInput_101030c0::sub_101030c0( int a1, FrameData_101030c0 *pFrame )
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104320 size=0x36
+#include "Vector.h"
+struct VH : Vector {
+	int sub_10104320(const Vector &v) const;
+};
+int VH::sub_10104320(const Vector &v) const
+{
+	return v.x != x || v.y != y || v.z != z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
