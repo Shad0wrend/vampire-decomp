@@ -53778,6 +53778,12 @@ struct CThunkView1012c9d0 { virtual void vfunc0(); virtual void vfunc1(); virtua
 void __fastcall sub_1012c9d0(char *self) { ((CThunkView1012c9d0 *)(self - 0xdc))->vfunc2(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012cc40 size=0x1b
+struct O2cc40 { virtual void v0(); virtual void v1(); virtual void v2(); };
+extern int g_105e5540;
+void sub_1012cc40() { ((O2cc40 *)&g_105e5540)->v2(); ((O2cc40 *)&g_105e5540)->v1(); }
+// END FUNCTION
+
 // FUNCTION: 0x1012cd20 size=0x1a
 struct B1012 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int v9(); };
 struct V1012 { int pad0; int pad4; B1012 b; void sub_1012cd20(int p); };
