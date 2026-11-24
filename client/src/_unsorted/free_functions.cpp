@@ -56246,6 +56246,25 @@ extern const char g_102c03f0[];
 void sub_1011527a() { g_104e0750.sub_10106be0((void *)sub_10115293, g_102c03f0); }
 // END FUNCTION
 
+// FUNCTION: 0x10115293 size=0x37
+#include "ParticleSphereProxy.h"
+
+extern void *__cdecl operator new(unsigned int);
+
+#pragma optimize("", off)
+ParticleSphereProxy *sub_10115293()
+{
+	ParticleSphereProxy *p = (ParticleSphereProxy *)operator new(0x154);
+	ParticleSphereProxy *r;
+	if (p)
+		r = p->sub_101152d0();
+	else
+		r = 0;
+	return r;
+}
+#pragma optimize("", on)
+// END FUNCTION
+
 // FUNCTION: 0x101152d0 size=0x5c
 #include "ParticleSphereProxy.h"
 
