@@ -65276,6 +65276,19 @@ int CUnknown101517a0::sub_101517a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101517c0 size=0x4
+struct CSelf101517c0
+{
+	int m_unk00; int m_unk04; int m_unk08; int m_unk0c; int m_unk10; int m_unk14; int m_unk18;
+};
+
+// TARGET: sub_101517c0
+void __fastcall sub_101517c0(CSelf101517c0 *self)
+{
+	++self->m_unk18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151820 size=0x1e
 struct CUnknown10151820 { void * sub_10151820(); };
 void * CUnknown10151820::sub_10151820()
