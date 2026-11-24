@@ -33407,6 +33407,18 @@ int sub_100a3710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3770 size=0x36
+#include "C_BaseNetworkable.h"
+IClientNetworkable *sub_100a3770(int entnum, int serial)
+{
+    C_BaseNetworkable *p = new C_BaseNetworkable;
+    if (!p)
+        return 0;
+    p->sub_100a3910(entnum, serial);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3810 size=0x50
 #include "RecvTable.h"
 extern RecvTable g_1049e3a4;

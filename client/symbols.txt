@@ -3465,6 +3465,7 @@
 0x100a3700 func   ?vfunc8@C_BaseNetworkable@@UAEHXZ C_BaseNetworkable::vfunc8
 0x100a3710 func   ?GetClientClass@C_BaseNetworkable@@UAEPAVClientClass@@XZ C_BaseNetworkable::GetClientClass
 0x100a3710 func   ?sub_100a3710@@YAHXZ sub_100a3710
+0x100a3770 func   ?sub_100a3770@@YAPAVIClientNetworkable@@HH@Z sub_100a3770
 0x100a3810 func   ?ClientClassInit@@YAHPAUignored@DT_BaseNetworkable@@@Z ClientClassInit
 0x100a3870 func   ??0C_BaseNetworkable@@QAE@XZ C_BaseNetworkable::C_BaseNetworkable
 0x100a38c0 func   ??_GC_BaseNetworkable@@UAEPAXI@Z ??_GC_BaseNetworkable@@UAEPAXI@Z
