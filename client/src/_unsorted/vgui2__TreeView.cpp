@@ -242,6 +242,38 @@ void vgui2::TreeView::vfunc11(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be080 size=0x5e
+#include "vgui2__TreeView.h"
+
+class Color_101be080 {
+public:
+	int m_v;
+	Color_101be080() {}
+	Color_101be080(const Color_101be080 &o) { m_v = o.m_v; }
+};
+
+struct ISchemeV_101be080 {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void *GetBorder(const char *name);
+	virtual void v4();
+	virtual Color_101be080 GetColorDef(const char *name, int def);
+	virtual Color_101be080 GetColor(const char *name);
+};
+
+struct PanelBaseV_101be080 {
+	void sub_101ab490(int pScheme);
+};
+
+int vgui2::TreeView::vfunc74(int pScheme)
+{
+	((PanelBaseV_101be080 *)this)->sub_101ab490(pScheme);
+
+	ISchemeV_101be080 *s = (ISchemeV_101be080 *)pScheme;
+	vfunc60(s->GetBorder("ButtonDepressedBorder"));
+	return vfunc50(s->GetColorDef("ListBgColor", s->GetColor("WindowDisabledBgColor").m_v).m_v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be0e0 size=0x17
 #include "vgui2__TreeView.h"
 namespace lifted {
