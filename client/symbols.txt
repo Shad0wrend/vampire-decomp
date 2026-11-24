@@ -4385,6 +4385,7 @@
 0x100d3450 func   ?sub_100d3450@V2b400@@QAEXXZ V2b400::sub_100d3450
 0x100d3470 func   ?sub_100d3470@UtlMem@@QAEXXZ UtlMem::sub_100d3470
 0x100d3500 func   ?sub_100d3500@CUtlLinkedList8@@QAEXXZ CUtlLinkedList8::sub_100d3500
+0x100d3550 func   ?sub_100d3550@CUnknown100d3550@@QAEPAV1@HH@Z CUnknown100d3550::sub_100d3550
 0x100d35b0 func   ?sub_100d35b0@CUtlLinkedList12u@@QAEXXZ CUtlLinkedList12u::sub_100d35b0
 0x100d3930 func   ?sub_100d3930@LLView@@QAEHG@Z LLView::sub_100d3930
 0x100d3a80 func   ?sub_100d3a80@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100d3a80

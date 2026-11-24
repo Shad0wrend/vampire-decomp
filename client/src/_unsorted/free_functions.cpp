@@ -42776,6 +42776,44 @@ void CUtlLinkedList8::sub_100d3500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3550 size=0x55
+extern void *(__cdecl *g_101e3100)(unsigned int);
+
+class CUnknown100d3550
+{
+public:
+	void *m_pData;
+	int m_nAllocCount;
+	int m_nGrowSize;
+	unsigned short m_Head;
+	unsigned short m_Tail;
+	unsigned short m_FirstFree;
+	unsigned short m_ElementCount;
+	unsigned short m_NumAlloced;
+	unsigned short m_pad16;
+	void *m_pElements;
+
+	CUnknown100d3550 *sub_100d3550(int growSize, int allocCount);
+};
+
+// TARGET: CUnknown100d3550::sub_100d3550
+CUnknown100d3550 *CUnknown100d3550::sub_100d3550(int growSize, int allocCount)
+{
+	m_pData = 0;
+	m_nAllocCount = allocCount;
+	m_nGrowSize = growSize;
+	if ( allocCount )
+		m_pData = g_101e3100(allocCount * 12);
+	m_NumAlloced = 0;
+	m_Head = 0xffff;
+	m_Tail = 0xffff;
+	m_FirstFree = 0xffff;
+	m_pElements = m_pData;
+	m_ElementCount = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d35b0 size=0x50
 // TARGET: CUtlLinkedList12u::sub_100d35b0
 
