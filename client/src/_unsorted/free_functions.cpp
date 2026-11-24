@@ -86552,6 +86552,23 @@ void CViewRender_101997e0::sub_101997e0(WorldListInfo_t &info, CRenderList &rend
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019aed0 size=0xa1
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+struct WaterLocals { char B[0x10]; char A[0x48018]; };
+// TARGET: CViewRender::sub_1019aed0
+void CViewRender::sub_1019aed0(bool bFlag, int arg1)
+{
+	ScopeTrace trace("CViewRender::ViewDrawScene_NoWater", g_102de300, g_102de300);
+	WaterLocals l;
+	sub_1019c970();
+	int flags = 0x530;
+	if (bFlag)
+		flags = 0xd30;
+	sub_1019a950(arg1, l.B, l.A, 0, flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019af80 size=0xa1
 #include "CViewRender.h"
 #include "ScopeTrace.h"
