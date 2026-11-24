@@ -52,6 +52,16 @@ int CRestore::vfunc33()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a2f0 size=0x7
+#include "CRestore.h"
+
+// TARGET: CRestore::sub_1012a2f0
+int CRestore::sub_1012a2f0()
+{
+	return *(int *)((char *)m_pData + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a300 size=0x1d
 #include "CRestore.h"
 
