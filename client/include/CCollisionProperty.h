@@ -9,6 +9,9 @@ class CCollisionProperty : public ICollideable
 public:
     virtual void *vfunc0();
     virtual void *vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
     virtual const Vector &vfunc8();
     virtual Vector &vfunc1();
     virtual void vfunc17();
