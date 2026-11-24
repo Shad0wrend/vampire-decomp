@@ -204,6 +204,22 @@ void __fastcall sub_100018d0(V_100018d0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dbb0 size=0x52
+// TARGET: CBaseEntView::sub_1007dbb0
+#include "C_BaseEntity.h"
+#include "Vector.h"
+
+struct CBaseEntView
+{
+	Vector sub_1007dbb0();
+};
+
+Vector CBaseEntView::sub_1007dbb0()
+{
+	return ((C_BaseEntity *)(void *)this)->GetAbsOrigin() + *(Vector *)((char *)this + 0x148);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dc10 size=0x5
 #include "C_BaseEntity.h"
 namespace lifted {

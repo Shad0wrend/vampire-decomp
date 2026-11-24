@@ -3028,6 +3028,7 @@
 0x1007db70 func   ?sub_1007db70@CUnknown1007db70@@QAEHXZ CUnknown1007db70::sub_1007db70
 0x1007db80 func   ?sub_1007db80@CUnknown1007db80@@QAEHH@Z CUnknown1007db80::sub_1007db80
 0x1007dba0 func   ?sub_1007dba0@CUnknown1007dba0@@QAEDXZ CUnknown1007dba0::sub_1007dba0
+0x1007dbb0 func   ?sub_1007dbb0@CBaseEntView@@QAE?AVVector@@XZ CBaseEntView::sub_1007dbb0
 0x1007dc10 func   ?vfunc108@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc108
 0x1007dc20 func   ?vfunc109@C_BaseEntity@@UAEPADXZ C_BaseEntity::vfunc109
 0x1007dc30 func   ?vfunc110@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc110
