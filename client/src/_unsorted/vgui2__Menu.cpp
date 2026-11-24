@@ -152,6 +152,18 @@ int vgui2::Menu::vfunc127(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c00d0 size=0x44
+#include "vgui2__Menu.h"
+int sub_101b6840(int size);
+struct CUnknown101b5690 { void *sub_101b5690(int, int, int); };
+// TARGET: vgui2::Menu::vfunc78
+void vgui2::Menu::vfunc78(int cmd) {
+	CUnknown101b5690 *kv = (CUnknown101b5690 *)sub_101b6840(0x1c);
+	vfunc43(kv ? kv->sub_101b5690((int)"Command", (int)"command", cmd) : 0);
+	Panel::vfunc78(cmd);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c03e0 size=0x3e
 #include "vgui2__Menu.h"
 struct SbV {
