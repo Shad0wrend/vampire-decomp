@@ -7318,6 +7318,7 @@
 0x101beee0 func   ??_GScrollBar@vgui2@@UAEPAXI@Z ??_GScrollBar@vgui2@@UAEPAXI@Z
 0x101bef40 func   ?vfunc62@ScrollBar@vgui2@@UAE_ND@Z vgui2::ScrollBar::vfunc62
 0x101bef60 func   ?vfunc63@ScrollBar@vgui2@@UAE_ND@Z vgui2::ScrollBar::vfunc63
+0x101bef80 func   ?vfunc64@ScrollBar@vgui2@@UAE_ND@Z vgui2::ScrollBar::vfunc64
 0x101bf080 func   ?vfunc107@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc107
 0x101bf090 func   ?vfunc108@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc108
 0x101bf0a0 func   ?vfunc109@ScrollBar@vgui2@@UAEHXZ vgui2::ScrollBar::vfunc109
