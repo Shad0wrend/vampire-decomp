@@ -411,6 +411,18 @@ void vgui2::Button::vfunc91(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b43a0 size=0x4a
+#include "vgui2__Button.h"
+void vgui2::Button::vfunc94(int code) {
+ if (*((char *)this + 0xbe) && (code == 0x41 || code == 0x40)) {
+  vfunc138(1);
+  vfunc89(0);
+ }
+ *((char *)this + 0xbe) = 0;
+ vfunc138(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4480 size=0x36
 #include "vgui2__Button.h"
 void vgui2::Button::vfunc129()
