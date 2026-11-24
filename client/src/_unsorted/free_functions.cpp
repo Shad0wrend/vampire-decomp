@@ -47883,6 +47883,15 @@ void CMem8b_t::sub_10117d70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117fd0 size=0x4
+#include "CParticleEffect.h"
+// TARGET: CParticleEffect::sub_10117fd0
+void CParticleEffect::sub_10117fd0()
+{
+	m_unk6c++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118080 size=0x24
 namespace lifted {
 struct C101166d0 { int sub_101166d0(int, int, int); };
