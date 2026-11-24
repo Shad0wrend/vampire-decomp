@@ -25170,6 +25170,26 @@ int *CUnk10427480::sub_10078f20(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078f40 size=0x49
+extern "C" int _strcmpi(const char *, const char *);
+struct NameEnt { const char *m_pName; int m_pad[8]; };
+struct NameTable {
+    int m_nCount;
+    NameEnt m_Ents[1];
+    int sub_10078f40(const char *name);
+};
+int NameTable::sub_10078f40(const char *name)
+{
+    if (name) {
+        for (int i = 1; i < m_nCount; i++) {
+            if (!_strcmpi(name, m_Ents[i].m_pName))
+                return i;
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078f90 size=0x53
 struct SubObj { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };
 struct Inner { int pad0; SubObj *pObj; };
