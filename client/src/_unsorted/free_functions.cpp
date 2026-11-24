@@ -15409,6 +15409,55 @@ int CUnknown10041100::sub_10041100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100411c0 size=0x84
+#include "ConVar.h"
+#include "CClientEntityList.h"
+#include "C_BaseEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+class ICvarFind
+{
+public:
+	virtual void vfunc0() = 0;
+	virtual void vfunc1() = 0;
+	virtual ConVar *FindVar(const char *var_name) = 0;
+};
+
+class IVEfxDecal
+{
+public:
+	virtual int Draw_DecalIndex(int id) = 0;
+	virtual void vfunc1() = 0;
+	virtual void DecalShoot(int textureIndex, int entity, int modelIndex, const Vector &model_origin, const QAngle &model_angles, const Vector &position, const Vector *saxis, int flags) = 0;
+};
+
+extern ICvarFind *g_104a57e0;
+extern IVEfxDecal *g_104a57dc;
+extern CClientEntityList *g_102b8e9c;
+
+void sub_100411c0(void *filter, float delay, const Vector *pos, int index)
+{
+	ConVar *r_decals = g_104a57e0->FindVar("r_decals");
+	if (r_decals && r_decals->GetInt())
+	{
+		C_BaseEntity *ent = g_102b8e9c->sub_100d0cf0(0);
+		if (ent)
+		{
+			g_104a57dc->DecalShoot(
+				g_104a57dc->Draw_DecalIndex(index),
+				0,
+				*(int *)((char *)ent + 0x40),
+				ent->GetAbsOrigin(),
+				ent->GetAbsAngles(),
+				*pos,
+				0,
+				0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041270 size=0x6
 namespace lifted {
 extern char g_103ec624;
