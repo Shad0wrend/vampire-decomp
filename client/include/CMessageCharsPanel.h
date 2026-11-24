@@ -18,5 +18,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CMessageCharsPanel adds to its base's vtable: 107-109, vfuncK at slot K
 	virtual void vfunc107();
 	virtual void vfunc108();
-	virtual void vfunc109();
+	virtual bool vfunc109();
 };
