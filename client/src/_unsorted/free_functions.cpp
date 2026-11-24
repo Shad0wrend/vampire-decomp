@@ -48984,6 +48984,45 @@ int CUnknown100f14a0::sub_100f14a0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1780 size=0x5d
+#include "ConVar.h"
+
+struct EngineView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float v39(int);
+};
+
+struct ChatLineView
+{
+	char m_pad00b8[0xb8];
+	float m_fl0b8;
+	float m_fl0bc;
+	int m_n0c0;
+	void sub_100f1780();
+};
+
+extern EngineView *g_104a57d4;
+extern ConVar *g_104cff04;
+extern int g_102bc100;
+
+// TARGET: ChatLineView::sub_100f1780
+void ChatLineView::sub_100f1780()
+{
+	m_fl0bc = g_104a57d4->v39(0);
+	float t = g_104cff04->vfunc1() ? 0.0f : g_104cff04->m_fValue;
+	m_fl0b8 = t + m_fl0bc;
+	m_n0c0 = g_102bc100;
+	g_102bc100 = g_102bc100 + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f17e0 size=0x7
 struct CUnknown100f17e0 { int sub_100f17e0(); };
 int CUnknown100f17e0::sub_100f17e0()
