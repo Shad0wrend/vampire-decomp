@@ -39476,6 +39476,25 @@ void sub_100d1960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1b20 size=0x38
+struct ILeaf100d { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+ virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); };
+struct Node100d { ILeaf100d *m_p; char pad[0x2e]; unsigned short m_next; };
+struct List100d {
+    char pad[0x1c]; Node100d *m_nodes; int m20; int m24; unsigned short m_head;
+    void sub_100d1b20();
+};
+// TARGET: List100d::sub_100d1b20
+void List100d::sub_100d1b20()
+{
+    unsigned short i = m_head;
+    while (i != 0xffff) {
+        m_nodes[i].m_p->v11();
+        i = m_nodes[i].m_next;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d27e0 size=0x17
 namespace lifted {
 struct C100d2560 { int sub_100d2560(int, int); };
