@@ -94573,6 +94573,16 @@ void sub_101a6b10(unsigned short *dst, unsigned short *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6b40 size=0x5a
+#include "CUtlRBTreeBig.h"
+
+CUtlRBTreeBig::Links_t &CUtlRBTreeBig::sub_101a6b40(unsigned short i)
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6ba0 size=0x559
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
