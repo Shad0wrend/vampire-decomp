@@ -8,6 +8,15 @@ void sub_1010f180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f190 size=0x1
+#include "CMoveHelperClient.h"
+
+// TARGET: CMoveHelperClient::vfunc12
+void CMoveHelperClient::vfunc12()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f1a0 size=0x1e
 #include "CMoveHelperClient.h"
 
