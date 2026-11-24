@@ -54584,6 +54584,50 @@ int CL::sub_101165c0(unsigned char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116680 size=0x4d
+struct CLNode
+{
+	unsigned char m_byte0;
+	char m_pad[3];
+	CLNode *m_prev;
+	CLNode *m_next;
+};
+
+struct CLBucket
+{
+	CLNode *m_pData;
+	unsigned short m_prev;
+	unsigned short m_next;
+};
+
+struct CL
+{
+	char m_pad0[0x38];
+	CLBucket *m_pBuckets;
+	char m_pad3c[0x4c - 0x3c];
+	unsigned short m_count;
+
+	bool sub_10116580(unsigned char e);
+	void sub_10116680(CLNode *pNode, int e);
+};
+
+void CL::sub_10116680(CLNode *pNode, int e)
+{
+	if ( sub_10116580(e) )
+	{
+		pNode->m_byte0 = (unsigned char)e;
+		int idx = e & 0xff;
+		pNode->m_prev->m_next = pNode->m_next;
+		pNode->m_next->m_prev = pNode->m_prev;
+		CLNode *head = m_pBuckets[idx].m_pData;
+		pNode->m_prev = head;
+		pNode->m_next = head->m_next;
+		head->m_next = pNode;
+		pNode->m_next->m_prev = pNode;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101166d0 size=0x3d
 struct V3 { float x, y, z; };
 struct S { int u0, u4, u8; V3 a; V3 b; int u24, u28, u2c, u30; unsigned long flags; };
