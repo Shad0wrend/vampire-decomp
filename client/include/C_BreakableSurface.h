@@ -23,5 +23,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	bool sub_100b7450(int x, int y);
 	void sub_100b74f0();
 	bool m_bUnk438;
-	char m_pad043d[0x940 - 0x43d];
+	char m_pad043d[0x464 - 0x43d];
+	int m_nPanelFlags[1];
+	char m_pad0468[0x940 - 0x468];
+	bool sub_100b80f0(int x, int y);
 };
