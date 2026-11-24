@@ -82656,6 +82656,28 @@ void CUnknown101668e0::sub_101668e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166960 size=0x32
+struct CGridLayout10166 {
+	char pad0[0x58];
+	bool m_bDirty;
+	char pad59[7];
+	int m_nCount;
+	char pad64[0x70 - 0x64];
+	int *m_pSizes;
+	void sub_10166e20(int i);
+	bool sub_10166960(int i, int size);
+};
+bool CGridLayout10166::sub_10166960(int i, int size)
+{
+	if (i < 0 || i >= m_nCount)
+		return false;
+	m_pSizes[i] = size;
+	sub_10166e20(i + 1);
+	m_bDirty = true;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101669a0 size=0x1b
 struct V69a0 { char pad[0x5c]; int n; char pad2[0x6c - 0x60]; int *arr; int sub_101669a0(int i); };
 int V69a0::sub_101669a0(int i) { if (i < 0 || i >= n) return 0; return arr[i]; }
