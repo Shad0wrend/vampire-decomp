@@ -51723,6 +51723,12 @@ struct S { int a[5]; void *m14; bool sub_10128340(); };
 bool S::sub_10128340() { if (m14) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x10128350 size=0xd
+struct CView { int sub_101282e0(int, int); int sub_10128350(int, int); };
+// TARGET: ?sub_10128350@CView@@QAEHHH@Z
+int CView::sub_10128350(int a, int b) { b = *(volatile int *)&b; return sub_101282e0(a, b); }
+// END FUNCTION
+
 // FUNCTION: 0x101283a0 size=0x4
 struct CUnknown101283a0 { int sub_101283a0(); };
 int CUnknown101283a0::sub_101283a0()
