@@ -220,6 +220,11 @@ int vgui2::Button::vfunc160(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3f80 size=0x1a
+#include "vgui2__Button.h"
+bool vgui2::Button::vfunc149(int n) { return (*(int *)((char *)this + 0xc0) & (1 << (n + 1))) ? true : false; }
+// END FUNCTION
+
 // FUNCTION: 0x101b3ff0 size=0x2e
 #include "vgui2__Button.h"
 namespace lifted {
