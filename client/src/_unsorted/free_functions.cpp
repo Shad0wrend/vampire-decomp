@@ -46150,6 +46150,22 @@ struct VHud { char pad[0x5c]; bool m_b5c; void sub_100f0ea0(int a, int b, int c)
 void VHud::sub_100f0ea0(int a, int b, int c) { sub_10114660(c, b); m_b5c = sub_10114690() != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100f0ed0 size=0x58
+#include "CHud.h"
+#include "CHudElement.h"
+extern "C" int _strcmpi(const char *, const char *);
+extern void (*g_101e3120)(int, const char *, ...);
+CHudElement *CHud::sub_100f0ed0(const char *pName)
+{
+	for (int i = 0; i < m_HudListSize; i++) {
+		if (_strcmpi((const char *)m_HudListMem[i]->vfunc8(), pName) == 0)
+			return m_HudListMem[i];
+	}
+	g_101e3120(1, "Could not find Hud Element: %s\n", pName);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f10c0 size=0x4
 struct CUnknown100f10c0 { float sub_100f10c0(); };
 float CUnknown100f10c0::sub_100f10c0()
