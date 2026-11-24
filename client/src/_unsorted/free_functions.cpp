@@ -68819,6 +68819,11 @@ void CVTraitEffectGroup_t::sub_10156f70(CVStatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157030 size=0x8
+struct S { int a[3]; unsigned m0c; bool sub_10157030(); };
+bool S::sub_10157030() { if (m0c != (unsigned)-1) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x10157040 size=0x52
 #include "CVTraitEffectGroup_t.h"
 
