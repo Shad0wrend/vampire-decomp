@@ -168,6 +168,23 @@ void C_BasePlayer::vfunc154(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7640 size=0x60
+#include "C_BasePlayer.h"
+#include "Vector.h"
+
+struct CUnknown1009f6e0 { char *sub_1009f6e0(); };
+
+bool C_BasePlayer::vfunc74()
+{
+	Vector delta;
+	delta = *(Vector *)((CUnknown1009f6e0 *)this)->sub_1009f6e0() - *(Vector *)((char *)this + 0x54);
+	for (int i = 0; i < 3; i++)
+		if (delta[i] > 128.0)
+			return true;
+	return C_BaseEntity::vfunc74();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a7ab0 size=0x1a
 #include "C_BasePlayer.h"
 namespace lifted {
