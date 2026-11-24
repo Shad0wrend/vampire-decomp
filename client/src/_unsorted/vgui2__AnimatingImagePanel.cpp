@@ -38,6 +38,21 @@ void vgui2::AnimatingImagePanel::vfunc97()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5790 size=0x49
+struct Sys { virtual void a0(){} virtual void a1(){} virtual void a2(){} virtual void a3(){} virtual int GetTimeMillis(){return 0;} };
+Sys *sub_101ac8e0();
+struct View { virtual void v0(){} virtual void v1(){} virtual void v2(){} virtual void v3(){} virtual void v4(){} virtual void v5(){} virtual void Repaint(){}
+ int pad[(0x58-4)/4]; int m_iCur; int m_iNext; int p60; void *p64; int p68; int p6c; int m_iCount;
+ bool IsValid(int i) { return i >= 0 && i < m_iCount; } };
+void __fastcall sub_101c5790(View *self) {
+ if (sub_101ac8e0()->GetTimeMillis() >= self->m_iNext) {
+  self->m_iNext = sub_101ac8e0()->GetTimeMillis() + 100;
+  if (!self->IsValid(++self->m_iCur)) self->m_iCur = 0;
+  self->Repaint();
+ }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c57e0 size=0x27
 #include "vgui2__AnimatingImagePanel.h"
 namespace lifted {
