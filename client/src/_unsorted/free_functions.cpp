@@ -59329,6 +59329,29 @@ void sub_10128400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128430 size=0x48
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+extern char g_104e23f8[];
+struct CNode {
+	const char *m_name;
+	CNode *sub_101283b0();
+};
+struct CHead {
+	CNode *sub_101283a0();
+	CNode *sub_10128430(const char *name);
+};
+CNode *CHead::sub_10128430(const char *name)
+{
+	CNode *p = sub_101283a0();
+	strcpy(g_104e23f8, name);
+	while (p && _strcmpi(name, p->m_name))
+		p = p->sub_101283b0();
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128480 size=0x3d
 #include <string.h>
 
