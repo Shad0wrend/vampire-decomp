@@ -8,6 +8,7 @@ class KeyValues
 {
 public:
     static void *operator new(unsigned int);
+    KeyValues(const char *, const char *, int);
     KeyValues(const char *, const char *, const char *);
     ~KeyValues();
     int m_unk4;
