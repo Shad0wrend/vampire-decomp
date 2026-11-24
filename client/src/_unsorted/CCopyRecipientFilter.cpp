@@ -11,6 +11,16 @@ int CCopyRecipientFilter::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134860 size=0x4
+#include "CCopyRecipientFilter.h"
+
+// TARGET: CCopyRecipientFilter::vfunc4
+bool CCopyRecipientFilter::vfunc4()
+{
+	return m_unk1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134870 size=0x4
 #include "CCopyRecipientFilter.h"
 
