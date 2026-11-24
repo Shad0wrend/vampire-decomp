@@ -11,5 +11,5 @@ public:
 	int m_unk10;
 
 	int sub_10141350();	// returns m_unk08
-	bool sub_101412e0();	// m_unk10 >= sub_10141350()
+	char sub_101412e0();	// m_unk10 >= sub_10141350()
 };
