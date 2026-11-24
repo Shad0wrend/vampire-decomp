@@ -10,6 +10,7 @@ public:
     class Viewport : public vgui2::Panel
     {
     public:
+        virtual int vfunc17();
         virtual void vfunc97();
         virtual void vfunc107();
     };
