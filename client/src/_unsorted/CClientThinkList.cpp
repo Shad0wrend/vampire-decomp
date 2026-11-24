@@ -50,3 +50,12 @@ void CClientThinkList::vfunc6()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d0130 size=0x3
+#include "CClientThinkList.h"
+
+// TARGET: CClientThinkList::vfunc7
+void CClientThinkList::vfunc7(int)
+{
+}
+// END FUNCTION
