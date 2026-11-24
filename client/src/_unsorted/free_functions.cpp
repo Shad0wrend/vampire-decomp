@@ -34208,6 +34208,21 @@ void CUnknown101a5290::sub_100aacb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aad10 size=0x35
+#include <string.h>
+struct IntVec {
+  int *m_pData; int m_a; int m_b; int m_Size;
+  void sub_100aad10(int elem, int num);
+};
+// TARGET: IntVec::sub_100aad10
+void IntVec::sub_100aad10(int elem, int num)
+{
+  int numToMove = m_Size - elem - num;
+  if (numToMove > 0 && num > 0)
+    memmove(&m_pData[elem], &m_pData[elem + num], numToMove * sizeof(int));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aad50 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
