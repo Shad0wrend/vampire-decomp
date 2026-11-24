@@ -7600,6 +7600,7 @@
 0x101bd430 func   ?vfunc111@TreeView@vgui2@@UAEXH_N@Z vgui2::TreeView::vfunc111
 0x101bd770 func   ?sub_101bd770@CUnknown101bd770@@QAEHXZ CUnknown101bd770::sub_101bd770
 0x101bd810 func   ?vfunc117@TreeView@vgui2@@UAEHXZ vgui2::TreeView::vfunc117
+0x101bd830 func   ?vfunc118@TreeView@vgui2@@UAEHH@Z vgui2::TreeView::vfunc118
 0x101bd870 func   ?vfunc119@TreeView@vgui2@@UAEHXZ vgui2::TreeView::vfunc119
 0x101bd950 func   ?sub_101bd950@VTree@@QAEHH@Z VTree::sub_101bd950
 0x101bd980 func   ?vfunc11@TreeView@vgui2@@UAEXHH@Z vgui2::TreeView::vfunc11

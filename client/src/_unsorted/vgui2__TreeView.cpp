@@ -193,6 +193,23 @@ int vgui2::TreeView::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd830 size=0x32
+#include "vgui2__TreeView.h"
+struct TVNode { int a; int b; int c; };
+struct TVView { char pad[0x78]; TVNode *m_nodes; char pad2[0x94 - 0x7c]; int m_count; };
+// TARGET: vgui2::TreeView::vfunc118
+int vgui2::TreeView::vfunc118(int i)
+{
+    TVView *v = (TVView *)this;
+    if (i < v->m_count && i >= 0) {
+        TVNode &n = v->m_nodes[i];
+        if (n.b != i || n.c == i)
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd870 size=0x7
 #include "vgui2__TreeView.h"
 int vgui2::TreeView::vfunc119()
