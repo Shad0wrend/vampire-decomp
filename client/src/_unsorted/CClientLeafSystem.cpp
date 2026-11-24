@@ -85,3 +85,9 @@ int CClientLeafSystem::vfunc10(int a0, int a1, int a2)
     return ((lifted::C100d2800 *)this)->sub_100d2800(a0, a1, a2);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d3310 size=0x19
+#include "CClientLeafSystem.h"
+// TARGET: CClientLeafSystem::vfunc21
+void *CClientLeafSystem::vfunc21(unsigned short h) { return &m_pData->m_Items[h]; }
+// END FUNCTION
