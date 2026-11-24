@@ -36080,6 +36080,27 @@ int CUnknown100aeff0::sub_100aeff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af000 size=0x3a
+struct CUnknown10044400 { void sub_10044400(); };
+struct CUnk100e2360 { void sub_100e2360(void *out, void *ent); };
+extern CUnk100e2360 *g_102b8e9c;
+struct CUnknown100af000 {
+	int m_unk[0x11]; int m_n44; char pad[0x190 - 0x48]; CUnknown10044400 m_sub190; char pad2[0x3e0 - 0x191]; char m_b3e0;
+	void sub_100a1a70(int);
+	void sub_100af000();
+};
+// TARGET: ?sub_100af000@CUnknown100af000@@QAEXXZ
+void CUnknown100af000::sub_100af000()
+{
+	int tmp;
+	g_102b8e9c->sub_100e2360(&tmp, this);
+	sub_100a1a70(2);
+	m_sub190.sub_10044400();
+	m_n44 = -1;
+	m_b3e0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100af0b0 size=0x20
 struct CUnknown100af0b0 { char sub_100af0b0(); };
 char CUnknown100af0b0::sub_100af0b0()
