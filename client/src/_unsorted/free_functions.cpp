@@ -33658,6 +33658,22 @@ char CUnknown100a8dc0::sub_100a8dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8fd0 size=0x2c
+#include "C_BasePlayer.h"
+struct CUnknown100a8dc0 {
+	int m_n;
+	char sub_100a8dc0();
+	void sub_100a8fd0(C_BasePlayer *p);
+};
+void CUnknown100a8dc0::sub_100a8fd0(C_BasePlayer *p)
+{
+	if (sub_100a8dc0()) {
+		*(int *)((char *)p + 0x1a0c) = *(int *)((char *)p + 0x1a08);
+		p->vfunc168(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9910 size=0x5
 char __stdcall sub_100a9910(int a0)
 {
