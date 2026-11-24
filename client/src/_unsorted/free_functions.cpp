@@ -38485,6 +38485,15 @@ struct VList { char pad[0x1803c]; IMgr m_mgr; int sub_100d0df0(CBaseHandle h); }
 int VList::sub_100d0df0(CBaseHandle h) { IRes *p = m_mgr.v2(h); if (p) return p->v2(); return 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100d0e20 size=0x27
+#include "CClientEntityList.h"
+struct IRes { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); };
+struct IMgr { virtual int v0(); virtual int v1(); virtual IRes *v2(CBaseHandle h); };
+struct VList { char pad[0x1803c]; IMgr m_mgr; int sub_100d0e20(CBaseHandle h); };
+// TARGET: ?sub_100d0e20@VList@@QAEHVCBaseHandle@@@Z
+int VList::sub_100d0e20(CBaseHandle h) { IRes *p = m_mgr.v2(h); if (p) return p->v7(); return 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100d10d0 size=0xc
 namespace lifted {
 int sub_100d10e0();
