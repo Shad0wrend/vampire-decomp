@@ -69268,6 +69268,18 @@ int sub_10151720(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151740 size=0x3a
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+int sub_10151740(char **list, int n, const char *s)
+{
+    for (int i = 0; i < n; i++) {
+        if (_strcmpi(list[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151780 size=0xd
 namespace lifted {
 extern char g_102de300;
