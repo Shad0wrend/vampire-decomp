@@ -122,6 +122,47 @@ void C_ServerRagdoll::vfunc37()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125ab0 size=0x88
+#include "C_ServerRagdoll.h"
+
+struct StudioHdr_10125ab0
+{
+	char pad_0[0x110];
+	int numseq;
+};
+
+struct BoneList_10125ab0
+{
+	int data[12];
+	void sub_1008e230(StudioHdr_10125ab0 *hdr, int mask);
+};
+
+struct ServerRagdoll_Helper_10125ab0
+{
+	char pad_0[0x648];
+	int m_nField648;
+	char pad_64c[0x498];
+	float m_flFieldAE4;
+	int m_nFieldAE8;
+};
+
+extern void sub_1008a110(StudioHdr_10125ab0 *hdr, int a2, int a3, int a4, int a5, int a6, BoneList_10125ab0 *pBones, float a8, int a9);
+
+void C_ServerRagdoll::vfunc131(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+	C_BaseAnimating::vfunc131(a1, a2, a3, a4, a5, a6);
+
+	ServerRagdoll_Helper_10125ab0 *pSelf = (ServerRagdoll_Helper_10125ab0 *)this;
+	StudioHdr_10125ab0 *pHdr = (StudioHdr_10125ab0 *)a1;
+	if (pSelf->m_nFieldAE8 >= 0 && pSelf->m_nFieldAE8 < pHdr->numseq)
+	{
+		BoneList_10125ab0 boneList;
+		boneList.sub_1008e230(pHdr, a6);
+		sub_1008a110(pHdr, a2, a3, pSelf->m_nFieldAE8, pSelf->m_nField648, a4, &boneList, pSelf->m_flFieldAE4, a5);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125e50 size=0x6
 #include "C_ServerRagdoll.h"
 namespace lifted {
