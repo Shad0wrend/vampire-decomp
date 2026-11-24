@@ -236,6 +236,24 @@ void vgui2::TextEntry::vfunc86()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af2f0 size=0x50
+#include "vgui2__TextEntry.h"
+int sub_101ac8b0();
+
+struct InputView { virtual void vfunc0(); virtual void vfunc1(int); };
+
+void vgui2::TextEntry::vfunc89(int)
+{
+	*(char *)((char *)this + 0x8c) = 0;
+	((InputView *)sub_101ac8b0())->vfunc1(0);
+	int a, b;
+	if (vfunc158((int)&b, (int)&a)) {
+		if (a - b == 0)
+			*(int *)((char *)this + 0x9c) = -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af3c0 size=0x8
 #include "vgui2__TextEntry.h"
 void vgui2::TextEntry::vfunc79()
