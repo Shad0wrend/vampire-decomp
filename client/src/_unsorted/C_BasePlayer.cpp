@@ -18,6 +18,22 @@ int C_BasePlayer::vfunc84()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002b10 size=0x2d
+#include "C_BasePlayer.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+C_BaseCombatWeapon *C_BasePlayer::vfunc167()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x1a08);
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return (C_BaseCombatWeapon *)e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002b70 size=0x5
 #include "C_BasePlayer.h"
 int C_BasePlayer::vfunc175(int a0, int a1)

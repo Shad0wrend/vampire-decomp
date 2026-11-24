@@ -71,6 +71,7 @@
 0x10002ab0 func   ?sub_10002ab0@CUnknown10002ab0@@QAEPAXXZ CUnknown10002ab0::sub_10002ab0
 0x10002af0 func   ?sub_10002af0@@YIHPAUV_10002af0@@@Z sub_10002af0
 0x10002b00 func   ?vfunc84@C_BasePlayer@@UAEHXZ C_BasePlayer::vfunc84
+0x10002b10 func   ?vfunc167@C_BasePlayer@@UAEPAVC_BaseCombatWeapon@@XZ C_BasePlayer::vfunc167
 0x10002b70 func   ?vfunc175@C_BasePlayer@@UAEHHH@Z C_BasePlayer::vfunc175
 0x10002b80 func   ?vfunc176@C_BasePlayer@@UAEMXZ C_BasePlayer::vfunc176
 0x10002b90 func   ??_GC_BaseHLPlayer@@UAEPAXI@Z ??_GC_BaseHLPlayer@@UAEPAXI@Z
