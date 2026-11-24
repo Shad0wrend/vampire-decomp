@@ -40346,6 +40346,14 @@ int CUnknown100e2340::sub_100e2340(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2480 size=0x12
+#include "CBaseEntityList.h"
+void __fastcall sub_100e2480(CBaseEntityList *self, int edx, int i)
+{
+	self->sub_100e2590(i & 0x1fff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e24a0 size=0xe2
 #include "CBaseEntityList.h"
 #include "CUtlLinkedList6.h"
