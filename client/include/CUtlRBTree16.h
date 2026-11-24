@@ -29,6 +29,7 @@ public:
 	static unsigned short InvalidIndex() { return 0xffff; }
 
 	const Links_t &sub_10112720(unsigned short i) const;
+	const Links_t &sub_10113190(unsigned short i) const;
 
 	bool sub_101130d0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	bool sub_10114120(unsigned short i) const;
