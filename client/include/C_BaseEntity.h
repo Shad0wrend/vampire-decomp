@@ -8,6 +8,7 @@ class C_BaseEntity : public IClientEntity
 {
 public:
 	C_BaseEntity();
+	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
 	virtual ICollideable *GetClientCollideable();	// IClientUnknown slot 2
 	virtual IClientNetworkable *GetClientNetworkable();	// IClientUnknown slot 3
 	virtual IClientRenderable *GetClientRenderable();	// IClientUnknown slot 4
