@@ -136,6 +136,55 @@ void vgui2::MenuItem::vfunc85()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6fe0 size=0x61
+#include "vgui2__MenuItem.h"
+
+extern void *sub_101b6840(unsigned int size);
+
+struct KV_101c6fe0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16();
+	virtual void v17(const char *key, int value);
+	KV_101c6fe0 *sub_101b5670(const char *name);
+};
+
+struct IVGui_101c6fe0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c6fe0 *sub_101ac8f0();
+
+struct PanelLike_101c6fe0 {
+	virtual int GetVPanel();
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30();
+	virtual PanelLike_101c6fe0 *GetParent();
+};
+
+void vgui2::MenuItem::vfunc86()
+{
+	KV_101c6fe0 *msg = (KV_101c6fe0 *)sub_101b6840(0x1c);
+	if (msg)
+		msg = msg->sub_101b5670("CursorExitedMenuItem");
+	else
+		msg = 0;
+
+	msg->v17("VPanel", vfunc0());
+	PanelLike_101c6fe0 *parent = (PanelLike_101c6fe0 *)vfunc31();
+	sub_101ac8f0()->PostMessage(parent->GetVPanel(), msg, 0, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7050 size=0x2e
 #include "vgui2__MenuItem.h"
 struct CUnknown101c0c10 { int sub_101c0c10(); };
