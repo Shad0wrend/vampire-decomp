@@ -5045,6 +5045,7 @@
 0x10104750 func   ?vfunc20@CInput@@UAEMXZ CInput::vfunc20
 0x10104790 func   ?vfunc26@CInput@@UAE_NXZ CInput::vfunc26
 0x10105d50 func   ?vfunc0@CInput@@UAEXXZ CInput::vfunc0
+0x10105e90 func   ?vfunc0@CUserCmd@@QAEPAXD@Z CUserCmd::vfunc0
 0x10105ef0 func   ?vfunc1@CInput@@UAEXXZ CInput::vfunc1
 0x10105f20 func   ?vfunc54@CInput@@UAEXXZ CInput::vfunc54
 0x10106240 func   ?vfunc16@CInput@@UAEXXZ CInput::vfunc16
