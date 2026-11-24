@@ -61927,6 +61927,24 @@ int CUnknown101416a0::sub_101416a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101416b0 size=0x36
+struct PlayerV104 { char pad[0xd80]; char m_bd80; int sub_1008ebb0(); };
+struct Obj101416b0 { char pad[0x10]; int m_i10; int sub_101416b0(); };
+PlayerV104 *sub_10170f60();
+extern PlayerV104 *g_104a0d50;
+// TARGET: Obj101416b0::sub_101416b0
+int Obj101416b0::sub_101416b0()
+{
+    char flag = 0;
+    PlayerV104 *p = sub_10170f60();
+    if (p)
+        flag = p->m_bd80;
+    if (g_104a0d50 && (!flag || m_i10 == -1))
+        return g_104a0d50->sub_1008ebb0();
+    return m_i10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141710 size=0x74
 namespace lifted {
 extern char g_102bb2e4;
