@@ -5170,6 +5170,7 @@
 0x10134870 func   ?vfunc5@CCopyRecipientFilter@@UAEHXZ CCopyRecipientFilter::vfunc5
 0x10134880 func   ?vfunc6@CCopyRecipientFilter@@UAE_NXZ CCopyRecipientFilter::vfunc6
 0x101349e0 func   ?sub_101349e0@CUnknown101349e0@@QAEPAUCSoundPatch@@PAXHPBD@Z CUnknown101349e0::sub_101349e0
+0x10134d30 func   ?sub_10134d30@@YGXPAUCSndView101339f0@@@Z sub_10134d30
 0x10134f80 func   ?sub_10134f80@CView@@QAEXH@Z CView::sub_10134f80
 0x10134f90 func   ?sub_10134f90@@YIXPADH@Z sub_10134f90
 0x10134fa0 func   ?sub_10134fa0@CAutoGameSystem@@QAEPAXI@Z CAutoGameSystem::sub_10134fa0

@@ -88,3 +88,9 @@ CSoundPatch *CUnknown101349e0::sub_101349e0(void *filter, int nEntIndex, const c
 	return pSound;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10134d30 size=0xc
+struct CSndView101339f0 { void sub_101339f0(); };
+// TARGET: sub_10134d30
+void __stdcall sub_10134d30(CSndView101339f0 *p) { p->sub_101339f0(); }
+// END FUNCTION
