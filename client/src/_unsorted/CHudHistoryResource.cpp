@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100f00e0 size=0x2d
+#include "CHudHistoryResource.h"
+CHudHistoryResource::CHudHistoryResource(int a) : CHudElement(a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0110 size=0x1e
 #include "CHudHistoryResource.h"
 
