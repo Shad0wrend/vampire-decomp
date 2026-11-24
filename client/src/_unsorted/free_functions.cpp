@@ -47688,6 +47688,23 @@ int sub_100f45b0(int w, int h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f57b0 size=0x48
+int sub_100f57b0(int n)
+{
+	switch (n) {
+	case 20: return 2;
+	case 14: return 0x100;
+	case 15: return 0x200;
+	case 13: return 0;
+	case 16: return 0;
+	case 17: return 0;
+	case 18: return 0;
+	case 19: return 0;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5ad0 size=0xba
 #include <string.h>
 
