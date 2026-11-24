@@ -56,6 +56,17 @@ void QuestLogPanel::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189960 size=0x21
+#include "QuestLogPanel.h"
+int sub_1016a6b0();
+void QuestLogPanel::vfunc123()
+{
+	int n = sub_1016a6b0();
+	vfunc33(n);
+	sub_101aa0a0(1000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189a10 size=0xe
 #include "QuestLogPanel.h"
 namespace lifted {
