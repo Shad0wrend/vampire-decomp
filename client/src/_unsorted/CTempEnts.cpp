@@ -139,6 +139,12 @@ int CTempEnts::vfunc6(int a0, int a1, int a2, int a3, char a4, int a5, int a6, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d5e0 size=0x23
+#include "CTempEnts.h"
+// TARGET: ?vfunc1@CTempEnts@@UAEXXZ
+void CTempEnts::vfunc1() { while (m_pHead) sub_1003ce90(m_pHead, 0); }
+// END FUNCTION
+
 // FUNCTION: 0x1003d610 size=0x21
 #include "CTempEnts.h"
 namespace lifted {
