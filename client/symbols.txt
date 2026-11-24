@@ -3890,6 +3890,7 @@
 0x100bf6b0 func   ?sub_100bf6b0@CUnknown100bf6b0@@QAEHHH@Z CUnknown100bf6b0::sub_100bf6b0
 0x100bf700 func   ?sub_100bf700@CUnknown100bf700@@QAEHXZ CUnknown100bf700::sub_100bf700
 0x100c08b0 func   ?sub_100c08b0@CUnknown100c08b0@@QAEXXZ CUnknown100c08b0::sub_100c08b0
+0x100c0920 func   ?sub_100c0920@Obj100c0920@@QAEXHH@Z Obj100c0920::sub_100c0920
 0x100c0960 func   ?sub_100c0960@CUnknown100c0960@@QAEPAXXZ CUnknown100c0960::sub_100c0960
 0x100c0a30 func   ?vfunc9@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc9
 0x100c0a40 func   ?vfunc2@C_SoundscapeSystem@@UAEXXZ C_SoundscapeSystem::vfunc2

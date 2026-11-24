@@ -37118,6 +37118,23 @@ void CUnknown100c08b0::sub_100c08b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0920 size=0x3a
+void sub_10114660(int, int);
+float sub_101146d0();
+struct Obj100c0920 {
+    char pad[0x6e8]; float m6e8; float m6ec; float m6f0;
+    void sub_100c0920(int a, int b);
+};
+// TARGET: Obj100c0920::sub_100c0920
+void Obj100c0920::sub_100c0920(int a, int b)
+{
+    sub_10114660(b, a);
+    m6e8 = sub_101146d0();
+    m6ec = sub_101146d0();
+    m6f0 = sub_101146d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0960 size=0x3
 struct CUnknown100c0960 { void * sub_100c0960(); };
 void * CUnknown100c0960::sub_100c0960()
