@@ -94,3 +94,12 @@ void CTextMessagePanel::vfunc2()
     ((lifted::V *)this)->f21(((lifted::V *)this)->f112());
 }
 // END FUNCTION
+
+// FUNCTION: 0x1016a9c0 size=0xc
+struct V_1016a9c0 { int m_unk[0x14060 / 4]; int m_n14060; };
+// TARGET: sub_1016a9c0
+bool __fastcall sub_1016a9c0(V_1016a9c0 *self)
+{
+	return self->m_n14060 ? true : false;
+}
+// END FUNCTION
