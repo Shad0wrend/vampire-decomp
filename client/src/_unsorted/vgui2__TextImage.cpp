@@ -11,6 +11,14 @@ vgui2::TextImage *pcd_emit_101b9c30() { return new vgui2::TextImage; }
 // TARGET: ??_GTextImage@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b9c50 size=0x1d
+#include "vgui2__TextImage.h"
+vgui2::TextImage::~TextImage()
+{
+	delete m_pText;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9df0 size=0x21
 #include "vgui2__TextImage.h"
 namespace lifted {
