@@ -118,3 +118,10 @@ void SC_10134e80::sub_10134e80(int a, int b, Pair_10134e80 *c)
 	v16(a, b, *c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10134ea0 size=0x24
+struct SndItem { void sub_10133e50(int a); };
+struct VSndCtl { int m0, m4, m8; SndItem **m_pData; int m10, m14; int m_n; void sub_10134ea0(int a); };
+// TARGET: ?sub_10134ea0@VSndCtl@@QAEXH@Z
+void VSndCtl::sub_10134ea0(int a) { for (int i = m_n - 1; i >= 0; i--) m_pData[i]->sub_10133e50(a); }
+// END FUNCTION
