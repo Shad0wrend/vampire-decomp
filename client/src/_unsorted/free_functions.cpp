@@ -40339,6 +40339,15 @@ int sub_100cd130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd140 size=0x13
+struct Entry16 { int m_a, m_b, m_c, m_d; };
+extern Entry16 g_104a5848[];
+int sub_100cd140( int index )
+{
+	return g_104a5848[index & 0xff].m_a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd1c0 size=0x1d
 namespace lifted {
 int __stdcall sub_100cd1f0(int);
