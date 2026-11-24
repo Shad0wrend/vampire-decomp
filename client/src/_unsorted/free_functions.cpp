@@ -78135,6 +78135,13 @@ char sub_1018c840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c850 size=0x11
+int sub_1018c850(int x)
+{
+	return x * 3 / 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ca20 size=0x25
 namespace lifted {
 extern char g_1024f33c;
