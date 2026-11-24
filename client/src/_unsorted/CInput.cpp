@@ -185,6 +185,24 @@ int CInput::vfunc56()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102500 size=0x17
+#include "CInput.h"
+struct IGlobal_105f99d8 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual int v16(int a, int b, int c);
+};
+extern IGlobal_105f99d8 *g_105f99d8;
+int CInput::vfunc10(int a, int b, int c)
+{
+	if (g_105f99d8)
+		return g_105f99d8->v16(a, b, c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103310 size=0x3
 #include "CInput.h"
 void CInput::vfunc8(int a0)
