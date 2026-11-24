@@ -40331,6 +40331,106 @@ void MV::sub_100d5010(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5050 size=0xd5
+extern void (__cdecl *g_101e3114)(const char *fmt, ...);
+
+struct TexInfo_100d5050
+{
+	unsigned short m_Fragment; // 0
+	unsigned short m_Size;     // 2
+	unsigned short m_Power;    // 4
+	unsigned short m_Prev;     // 6
+	unsigned short m_Next;     // 8
+};
+
+struct FragInfo_100d5050
+{
+	unsigned short m_Block;     // 0
+	unsigned short m_Index;     // 2
+	unsigned short m_Texture;   // 4
+	unsigned short m_Pad;       // 6
+	unsigned int m_FrameUsed;   // 8
+	unsigned short m_Previous;  // 0xc
+	unsigned short m_Next;      // 0xe
+};
+
+struct FragList_100d5050
+{
+	unsigned short m_Head;  // 0
+	unsigned short m_Tail;  // 2
+	unsigned short m_Count; // 4
+	unsigned short m_Prev;  // 6
+	unsigned short m_Next;  // 8
+};
+
+struct TexAlloc_100d5050
+{
+	char pad_0[4];
+	TexInfo_100d5050 *m_pTextures;    // 0x04
+	char pad_8[0x18];
+	FragInfo_100d5050 *m_pFragments;  // 0x20
+	char pad_24[8];
+	FragList_100d5050 *m_pFragLists;  // 0x2c
+	char pad_30[0x20];
+	unsigned short m_TotalFragments;  // 0x50
+	char pad_52[6];
+	unsigned short m_Cache[9];        // 0x58
+	char pad_6a[0x22];
+	unsigned int m_CurrentFrame;      // 0x8c
+
+	void sub_100d4ba0(unsigned short f);
+	void sub_100d5010(unsigned short f);
+
+	bool IsValidFragment(unsigned short elem) const
+	{
+		return (elem < m_TotalFragments) &&
+			((m_pFragments[elem].m_Previous != elem) || (m_pFragments[elem].m_Next == elem));
+	}
+
+	bool sub_100d5050(unsigned short h);
+};
+
+bool TexAlloc_100d5050::sub_100d5050(unsigned short h)
+{
+	TexInfo_100d5050 &info = m_pTextures[h];
+	if (info.m_Fragment != 0xffff)
+	{
+		sub_100d4ba0(info.m_Fragment);
+		return false;
+	}
+
+	int power = info.m_Power;
+	unsigned short f;
+	bool done = false;
+	while (!done)
+	{
+		f = m_pFragLists[m_Cache[power]].m_Head;
+		if (!IsValidFragment(f))
+		{
+			g_101e3114("CTextureAllocator::UseTexture got invalid head index. PANIC!!!\n");
+			done = true;
+		}
+		if (m_pFragments[f].m_FrameUsed != m_CurrentFrame)
+		{
+			done = true;
+		}
+		else
+		{
+			--power;
+		}
+	}
+
+	sub_100d5010(f);
+
+	info.m_Fragment = f;
+	m_pFragments[f].m_Texture = h;
+
+	sub_100d4ba0(f);
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5130 size=0x7
 // TARGET: sub_100d5130
 void __fastcall sub_100d5130(char *self)
