@@ -45532,6 +45532,40 @@ int sub_100f07a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0930 size=0x4d
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+
+struct HudVecOwner {
+    int m_unk0[0x40 / 4];
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+};
+
+// TARGET: sub_100f0930
+void __fastcall sub_100f0930(HudVecOwner *self, int edx)
+{
+    self->m_size = 0;
+    if (self->m_growSize != -1) {
+        if (self->m_pMemory) {
+            Plat_Free(self->m_pMemory);
+            self->m_pMemory = 0;
+        }
+        self->m_allocationCount = 0;
+    }
+    self->m_pElements = self->m_pMemory;
+    if (self->m_growSize != -1) {
+        if (self->m_pMemory) {
+            Plat_Free(self->m_pMemory);
+            self->m_pMemory = 0;
+        }
+        self->m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0cf0 size=0x1a2
 // TARGET: ?sub_100f0cf0@CHud@@QAEXXZ
 extern "C" void free(void *);
