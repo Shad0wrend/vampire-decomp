@@ -38552,6 +38552,33 @@ void CUnknown100b5610::sub_100b5610(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5640 size=0x61
+#include "Vector.h"
+
+struct CUnknown10118080 { void sub_10118080(Vector *v); };
+struct FireView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual Vector *v9();
+	char pad[0x450 - 4];
+	CUnknown10118080 *m450;
+	CUnknown10118080 *m454;
+	char pad2[0x2800 - 0x458];
+	void *m2800;
+	void sub_100b5640();
+};
+void FireView::sub_100b5640()
+{
+	CUnknown10118080 *p = m450;
+	if (p)
+		p->sub_10118080(v9());
+	p = m454;
+	if (p)
+		p->sub_10118080(v9());
+	if (m2800)
+		*(Vector *)((char *)m2800 + 4) = *v9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b56b0 size=0x3
 char sub_100b56b0()
 {
