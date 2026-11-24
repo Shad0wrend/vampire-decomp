@@ -11413,6 +11413,32 @@ char CUnknown1002a9c0::sub_1002a9c0(int a0, int a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b260 size=0x23
+struct Elem_1002b260 { int a, b, c; };
+struct Outer_1002b260
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	virtual Elem_1002b260 *v9();
+};
+struct Inner_1002b260
+{
+	char m_unk[0xaac];
+	int m_idx;
+	int m_unkab0;
+	int m_unkab4;
+	Elem_1002b260 m_elems[32];
+	Elem_1002b260 *sub_1002b260();
+};
+// TARGET: Inner_1002b260::sub_1002b260
+Elem_1002b260 *Inner_1002b260::sub_1002b260()
+{
+	if (m_idx >= 0 && m_idx < 32)
+		return &m_elems[m_idx];
+	return ((Outer_1002b260 *)((char *)this - 4))->v9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b340 size=0x4b
 namespace lifted {
 struct C1002aa30 { int sub_1002aa30(); };
