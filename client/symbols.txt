@@ -4997,6 +4997,7 @@
 0x10117b60 func   ?sub_10117b60@V2b400@@QAEXXZ V2b400::sub_10117b60
 0x10117b80 func   ?sub_10117b80@@YAHHH@Z sub_10117b80
 0x10117ba0 func   ?sub_10117ba0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117ba0
+0x10117c30 func   ?sub_10117c30@XLL@@QAEHG@Z XLL::sub_10117c30
 0x10117c70 func   ?sub_10117c70@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117c70
 0x10117d00 func   ?sub_10117d00@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d00
 0x10117d70 func   ?sub_10117d70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d70

@@ -49956,6 +49956,24 @@ void CUtlLinkedList8::sub_10117ba0(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117c30 size=0x31
+struct XNode8 { unsigned short a0, a2, m_a4, m_a6; };
+struct XLL
+{
+	XNode8 *m_pMemory; char u[0x10]; unsigned short m_n14;
+	int sub_10117c30(unsigned short i);
+};
+int XLL::sub_10117c30(unsigned short i)
+{
+	if (i < m_n14) {
+		XNode8 &n = m_pMemory[i];
+		if (n.m_a4 != i || n.m_a6 == i)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117c70 size=0x8d
 #include "CUtlLinkedList8.h"
 
