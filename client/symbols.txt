@@ -7488,6 +7488,7 @@
 0x101aa660 func   ?vfunc87@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc87
 0x101aa670 func   ?vfunc88@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc88
 0x101aa680 func   ?vfunc89@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc89
+0x101aa6f0 func   ?sub_101aa6f0@Panel@vgui2@@QAEXH@Z vgui2::Panel::sub_101aa6f0
 0x101aa6f0 func   ?vfunc92@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc92
 0x101aa780 func   ?vfunc95@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc95
 0x101aa7a0 func   ?vfunc96@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc96
