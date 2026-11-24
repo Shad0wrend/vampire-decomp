@@ -64440,6 +64440,42 @@ int CUnknown101365c0::sub_101365c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136c50 size=0x51
+// TARGET: sub_10136c50
+#include "Vector.h"
+
+struct VtblObj
+{
+	virtual void v0();
+	virtual Vector *v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18(Vector *a, Vector *b);
+};
+
+void __fastcall sub_10136c50(VtblObj *self, int edx, Vector *a, Vector *b)
+{
+	self->v18(a, b);
+	Vector *v = self->v1();
+	*a += *v;
+	*b += *v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136d70 size=0x1c
 namespace lifted {
 extern int g_105e5d70;
