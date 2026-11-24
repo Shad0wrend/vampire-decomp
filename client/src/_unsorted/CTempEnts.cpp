@@ -92,6 +92,53 @@ void CTempEnts::vfunc15(int client, int modelIndex, float zoffset, float life)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003c5d0 size=0x75
+#include "CTempEnts.h"
+struct IEng_1003c5d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual double Time(int);
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50();
+	virtual int GetMaxClients();
+};
+extern IEng_1003c5d0 *g_104a57d4;
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+struct Tent_1003c5d0 {
+	char pad[0x7a8];
+	Tent_1003c5d0 *next;
+	int flags;
+	float die;
+	char pad2[0x1c];
+	short clientIndex;
+};
+void CTempEnts::vfunc16(int client)
+{
+	if (client < 0 || client > g_104a57d4->GetMaxClients())
+	{
+		Warning("Bad client in KillAttachedTents()!\n");
+		return;
+	}
+	Tent_1003c5d0 *pTemp = (Tent_1003c5d0 *)m_pHead;
+	while (pTemp)
+	{
+		if (pTemp->flags & 0x8000)
+		{
+			if (pTemp->clientIndex == client)
+				pTemp->die = (float)g_104a57d4->Time(0);
+		}
+		pTemp = pTemp->next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c710 size=0x162
 #include "CTempEnts.h"
 
