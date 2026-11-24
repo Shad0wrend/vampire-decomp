@@ -57103,6 +57103,18 @@ int sub_1013a3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a4d0 size=0x19
+typedef void *(*CreateInterfaceFn)(const char *, int *);
+extern void *g_105e74bc;
+bool sub_1013a4d0(CreateInterfaceFn factory)
+{
+    g_105e74bc = factory("VBaseFileSystem002", 0);
+    if (!g_105e74bc)
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a7d0 size=0x1
 void sub_1013a7d0()
 {
