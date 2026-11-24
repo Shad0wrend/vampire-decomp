@@ -36798,6 +36798,21 @@ void sub_100b4a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4cc0 size=0x47
+extern "C" void *memmove(void *, const void *, unsigned int);
+struct Elem100 { int d[25]; };
+struct VecView {
+    Elem100 *m_pMemory; int m_a; int m_b; int m_Size;
+    void sub_100b4cc0(int elem, int num);
+};
+void VecView::sub_100b4cc0(int elem, int num)
+{
+    int n = m_Size - elem - num;
+    if (n > 0 && num > 0)
+        memmove(&m_pMemory[elem + num], &m_pMemory[elem], n * sizeof(Elem100));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4d10 size=0x18
 struct S100_100b4d10 { int m[25]; };
 void sub_100b4d10(S100_100b4d10 *dst, const S100_100b4d10 *src)
