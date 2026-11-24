@@ -43,6 +43,18 @@ void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f680 size=0x6
+#include "CPhysicsIfaces.h"
+
+extern CPhysSurfacePropsIface *g_104e0c94;
+
+// TARGET: sub_1010f680
+CPhysSurfacePropsIface *sub_1010f680()
+{
+	return g_104e0c94;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f800 size=0x3
 #include "CMoveHelperClient.h"
 

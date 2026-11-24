@@ -4608,6 +4608,7 @@
 0x1010f390 func   ?sub_1010f390@SCopy@@QAEAAU1@ABU1@@Z SCopy::sub_1010f390
 0x1010f3e0 func   ?vfunc3@CMoveHelperClient@@UAEXXZ CMoveHelperClient::vfunc3
 0x1010f670 func   ?sub_1010f670@@YGXHHHHHHHHHHHH@Z sub_1010f670
+0x1010f680 func   ?sub_1010f680@@YAPAVCPhysSurfacePropsIface@@XZ sub_1010f680
 0x1010f800 func   ?vfunc7@CMoveHelperClient@@UAE_NXZ CMoveHelperClient::vfunc7
 0x1010f810 func   ?sub_1010f810@@YGXH@Z sub_1010f810
 0x1010f870 func   ?sub_1010f870@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1010f870
