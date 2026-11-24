@@ -47208,6 +47208,22 @@ void __fastcall sub_100f0930(HudVecOwner *self, int edx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0980 size=0x4e
+#include "CHud.h"
+#include <string.h>
+
+int CHud::sub_100f0980(const char *pName)
+{
+	for (int i = 0; i < *(int *)((char *)this + 0x64); i++)
+	{
+		char *pElem = (char *)*(int *)((char *)this + 0x54) + i * 0x98;
+		if (strncmp(pName, pElem, 0x80) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0cf0 size=0x1a2
 // TARGET: ?sub_100f0cf0@CHud@@QAEXXZ
 extern "C" void free(void *);
