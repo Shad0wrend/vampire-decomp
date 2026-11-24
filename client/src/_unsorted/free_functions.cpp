@@ -85867,6 +85867,23 @@ int CUnknown101bd770::sub_101bd770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bdcf0 size=0x31
+struct XTN
+{
+	char u0[0x70]; bool m_bExpanded; char u1[3]; XTN **m_pChildren; char u2[8]; int m_nChildren;
+	int sub_101bdcf0();
+};
+int XTN::sub_101bdcf0()
+{
+	int n = 1;
+	if (m_bExpanded) {
+		for (int i = 0; i < m_nChildren; i++)
+			n += m_pChildren[i]->sub_101bdcf0();
+	}
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bddb0 size=0xb2
 #include "vgui2__TreeNode.h"
 
