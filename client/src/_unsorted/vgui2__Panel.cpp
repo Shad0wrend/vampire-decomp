@@ -730,6 +730,26 @@ void vgui2::Panel::vfunc101()
 bool vgui2::Panel::vfunc69() { if (vfunc55()) return false; return true; }
 // END FUNCTION
 
+// FUNCTION: 0x101ab390 size=0x32
+#include "vgui2__Panel.h"
+struct SurfView {
+ virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+ virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+ virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+ virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+ virtual void s24(); virtual void s25(); virtual void s26();
+ virtual void GetScreenSize(int &wide, int &tall);
+};
+SurfView *sub_101ac8b0();
+// TARGET: vgui2::Panel::vfunc70
+void vgui2::Panel::vfunc70()
+{
+    int wide, tall;
+    sub_101ac8b0()->GetScreenSize(wide, tall);
+    vfunc25(wide, tall);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab3d0 size=0x3
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc78(int a0)
