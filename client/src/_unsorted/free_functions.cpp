@@ -43943,6 +43943,20 @@ int sub_100f71e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7330 size=0x2f
+void sub_100f7330(unsigned char *src, unsigned char *dst, int count)
+{
+	unsigned char *end = src + count;
+	for (; src < end; src++, dst += 4)
+	{
+		dst[0] = 255;
+		dst[1] = 255;
+		dst[2] = 255;
+		dst[3] = *src;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7710 size=0x5
 namespace lifted {
 int sub_100f6ce0();
