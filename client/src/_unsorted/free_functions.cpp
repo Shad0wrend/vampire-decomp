@@ -31964,6 +31964,20 @@ int CUnknown100a13f0::sub_100a13f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1b20 size=0x18
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct IVModelInfo_104a57f8 {
+virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5();
+virtual int v6(int);
+};
+extern IVModelInfo_104a57f8 *g_104a57f8;
+struct CUnknown100a1b20 { int m_unk[16]; int m_nModel; bool sub_100a1b20(); };
+bool CUnknown100a1b20::sub_100a1b20()
+{
+	return g_104a57f8->v6(m_nModel) == 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1b40 size=0x195
 #include "C_BaseEntity.h"
 #include "CUnknown1070b254.h"
