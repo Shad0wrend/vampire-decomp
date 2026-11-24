@@ -12,6 +12,7 @@ struct C_SpriteMembers14
 class C_Sprite : public C_BaseEntity, public C_SpriteMembers14, public C_SpriteRenderer
 {
 public:
+	void sub_10136310(const char *name, int a);
 	virtual int vfunc16();
 	virtual int vfunc17();
 };
