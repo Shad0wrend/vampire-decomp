@@ -56443,6 +56443,21 @@ void sub_10136d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136f00 size=0x18
+struct IFace_104a57ec {
+virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
+virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+virtual void d0();
+virtual int v25(int a, int *p, int n);
+};
+extern IFace_104a57ec *g_104a57ec;
+int sub_10136f00(int a)
+{
+	return g_104a57ec->v25(a, &a, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136f20 size=0x18
 struct CUnknown10136f20 { int sub_10136f20(int, int, int); };
 int CUnknown10136f20::sub_10136f20(int a0, int a1, int a2)
