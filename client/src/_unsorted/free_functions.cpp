@@ -76532,6 +76532,22 @@ const char *__stdcall sub_101563f0(const char *szName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156520 size=0x3d
+__declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+int __stdcall sub_101563f0(const char *name);
+void __stdcall sub_10156520(int unused, const char *name)
+{
+	if (name)
+	{
+		int p = sub_101563f0(name);
+		if (p)
+			DevMsg(2, "VWhisper: Client Playing: %s\n", p);
+		else
+			DevMsg(2, "VWhisper: Client: No Sounds found: %s\n", name);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156560 size=0x14f
 #include "CUnknown101f5050.h"
 #include "CUnknown101f5150.h"
