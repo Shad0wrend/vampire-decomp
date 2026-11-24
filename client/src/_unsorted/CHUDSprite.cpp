@@ -11,6 +11,20 @@ CHUDSprite *pcd_emit_10059330(const CHUDSprite &other) { return new CHUDSprite(o
 // TARGET: ??_GCHUDSprite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100f3690 size=0x18
+#include "IHudSprite.h"
+int CHudSprite::vfunc17(int a0)
+{
+    int t0 = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x24) = t0;
+    int t1 = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x28) = t1;
+    int t2 = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x2c) = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3950 size=0x26
 #include "IHudSprite.h"
 struct V3d50 { El3d50 *sub_100f3d50(int); };
