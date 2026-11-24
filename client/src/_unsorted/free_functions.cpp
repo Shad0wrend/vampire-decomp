@@ -16867,6 +16867,15 @@ int sub_1004e330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e800 size=0x2c
+extern "C" int isspace(int);
+void sub_1004e800(const char **pp)
+{
+	while (**pp && isspace(**pp))
+		(*pp)++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e830 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
