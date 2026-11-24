@@ -1681,6 +1681,7 @@
 0x100286b0 func   ?sub_100286b0@@YGXH@Z sub_100286b0
 0x100286d0 func   ?sub_100286d0@CUnknown100286d0@@QAEPADXZ CUnknown100286d0::sub_100286d0
 0x100286e0 func   ?vfunc2@CDefaultClientRenderable@@UAEHXZ CDefaultClientRenderable::vfunc2
+0x100286f0 func   ?sub_100286f0@CUnknown100286f0@@QAEPAHXZ CUnknown100286f0::sub_100286f0
 0x10028700 func   ?sub_10028700@@YAHXZ sub_10028700
 0x10028710 func   ?sub_10028710@@YAHXZ sub_10028710
 0x10028720 func   ?sub_10028720@@YAHXZ sub_10028720

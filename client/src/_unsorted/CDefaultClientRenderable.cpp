@@ -32,6 +32,11 @@ int CDefaultClientRenderable::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100286f0 size=0xb
+struct CUnknown100286f0 { int a; int m; int *sub_100286f0(); };
+int *CUnknown100286f0::sub_100286f0() { return this ? &m : 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10028700 size=0x3
 // TARGET: sub_10028700
 int sub_10028700()
