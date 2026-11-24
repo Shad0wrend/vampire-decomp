@@ -1738,6 +1738,7 @@
 0x1002a640 func   ??0C_BatSwarm@@QAE@XZ C_BatSwarm::C_BatSwarm
 0x1002a9c0 func   ?sub_1002a9c0@CUnknown1002a9c0@@QAEDHHHHH@Z CUnknown1002a9c0::sub_1002a9c0
 0x1002b340 func   ?sub_1002b340@CUnknown1002b340@@QAEHHH@Z CUnknown1002b340::sub_1002b340
+0x1002b3e0 func   ?sub_1002b3e0@@YG_NPAUS_1002b3e0@@HH@Z sub_1002b3e0
 0x1002b4e0 func   ?sub_1002b4e0@CUnknown1002b4e0@@QAEPAXXZ CUnknown1002b4e0::sub_1002b4e0
 0x1002c020 func   ?sub_1002c020@@YAXXZ sub_1002c020
 0x1002c080 func   ?sub_1002c080@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_1002c080

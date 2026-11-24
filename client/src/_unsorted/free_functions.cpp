@@ -11405,6 +11405,16 @@ int CUnknown1002b340::sub_1002b340(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b3e0 size=0x1b
+struct S_1002b3e0 { int m_unk0, m_unk4, m_unk8; int m_unkc; };
+void sub_100da050(S_1002b3e0 *, int *, int);
+bool __stdcall sub_1002b3e0(S_1002b3e0 *p, int, int c)
+{
+	sub_100da050(p, &p->m_unkc, c);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b4e0 size=0x3
 struct CUnknown1002b4e0 { void * sub_1002b4e0(); };
 void * CUnknown1002b4e0::sub_1002b4e0()
