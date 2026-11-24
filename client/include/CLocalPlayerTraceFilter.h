@@ -4,6 +4,6 @@
 class CLocalPlayerTraceFilter : public ITraceFilter
 {
 public:
-	virtual int vfunc0(void *, int);
+	virtual bool vfunc0(void *, int);
 	virtual int vfunc1();
 };

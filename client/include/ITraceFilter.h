@@ -3,6 +3,6 @@
 class ITraceFilter
 {
 public:
-	virtual int vfunc0(void *, int) = 0;
+	virtual bool vfunc0(void *, int) = 0;
 	virtual int vfunc1() = 0;
 };
