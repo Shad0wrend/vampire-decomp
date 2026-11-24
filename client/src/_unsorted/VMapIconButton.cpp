@@ -23,6 +23,11 @@ void VMapIconButton::vfunc85()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187130 size=0x1e
+#include "VMapIconButton.h"
+void VMapIconButton::vfunc86() { Panel::vfunc86(); *((char *)this + 0xc1) = 0; *((char *)this + 0xc2) = 0; *(int *)((char *)this + 0xc4) = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x101871a0 size=0x14
 #include "VMapIconButton.h"
 void VMapIconButton::vfunc89(int a0)

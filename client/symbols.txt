@@ -6674,6 +6674,7 @@
 0x10187000 func   ??_GVMapIconButton@@UAEPAXI@Z ??_GVMapIconButton@@UAEPAXI@Z
 0x10187020 func   ??1VMapIconButton@@UAE@XZ VMapIconButton::~VMapIconButton
 0x10187110 func   ?vfunc85@VMapIconButton@@UAEXXZ VMapIconButton::vfunc85
+0x10187130 func   ?vfunc86@VMapIconButton@@UAEXXZ VMapIconButton::vfunc86
 0x101871a0 func   ?vfunc89@VMapIconButton@@UAEXH@Z VMapIconButton::vfunc89
 0x101871c0 func   ??0VMapBkg@@QAE@PAVCBasePanel@@PBDPAXH@Z VMapBkg::VMapBkg
 0x101871c0 func   ?sub_101871c0@CUnknown101871c0@@QAEPAXHHHH@Z CUnknown101871c0::sub_101871c0
