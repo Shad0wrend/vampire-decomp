@@ -78474,6 +78474,29 @@ void CUnknown10157d20::sub_10157d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157d70 size=0x48
+#include "CUnknown101f0e50.h"
+extern CUnknown101f0e50 g_105f8b98;
+struct IntList10157d70 {
+	int m_count;
+	int m_data[1];
+	void sub_10157d70(int unused, int value);
+};
+void IntList10157d70::sub_10157d70(int unused, int value)
+{
+	if (g_105f8b98.sub_10157af0(value)) {
+		for (int i = 0; i < m_count; i++) {
+			if (m_data[i] == value) {
+				if (i < m_count - 1)
+					m_data[i] = m_data[m_count - 1];
+				m_count--;
+				return;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158060 size=0x55
 #include "CUnknown101f9b70.h"
 #include "CUnknown101f0e50.h"
