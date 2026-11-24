@@ -2490,6 +2490,7 @@
 0x10051070 func   ??1CHealthAnkh@@UAE@XZ CHealthAnkh::~CHealthAnkh
 0x100510e0 func   ?sub_100510e0@V10e0@@QAEXXZ V10e0::sub_100510e0
 0x100511b0 func   ?vfunc114@CHealthAnkh@@UAEXH@Z CHealthAnkh::vfunc114
+0x100511d0 func   ?vfunc115@CHealthAnkh@@UAEXH@Z CHealthAnkh::vfunc115
 0x10051ad0 func   ?vfunc97@CHealthAnkh@@UAEXXZ CHealthAnkh::vfunc97
 0x10051ae0 func   ?sub_10051ae0@XKey1c@@QAEXD@Z XKey1c::sub_10051ae0
 0x10051b20 func   ?sub_10051b20@@YGXH@Z sub_10051b20

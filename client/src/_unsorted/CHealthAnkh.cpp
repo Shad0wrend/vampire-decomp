@@ -72,6 +72,18 @@ void CHealthAnkh::vfunc114(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100511d0 size=0x36
+#include "CHealthAnkh.h"
+#include "CVStatInfoList_t.h"
+extern CVStatInfoList_t g_105f9220;
+// TARGET: CHealthAnkh::vfunc115
+void CHealthAnkh::vfunc115(int a)
+{
+	int d = g_105f9220.sub_1015cfe0(0x11)->DefaultValue();
+	m_unk194 = a * 100 / d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051ad0 size=0x1
 #include "CHealthAnkh.h"
 void CHealthAnkh::vfunc97()
