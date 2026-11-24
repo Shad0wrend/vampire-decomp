@@ -44,7 +44,7 @@ public:
     virtual void vfunc23();
     virtual bool vfunc24();
     virtual void vfunc25();
-    virtual void vfunc26();
+    virtual bool vfunc26();
     virtual void vfunc27();
     virtual void vfunc28();
     virtual void vfunc29();
