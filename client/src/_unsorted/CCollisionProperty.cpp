@@ -68,6 +68,12 @@ virtual void v50(); virtual void v51(); };
 void __fastcall sub_10043500(CCollisionProperty *self, int edx) { ((V *)self->m_unk3c)->v51(); }
 // END FUNCTION
 
+// FUNCTION: 0x10043510 size=0xb
+#include "CCollisionProperty.h"
+struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); };
+void __fastcall sub_10043510(CCollisionProperty *self, int edx) { ((V *)((char *)self->m_unk3c + 4))->v8(); }
+// END FUNCTION
+
 // FUNCTION: 0x10043520 size=0xa
 #include "CCollisionProperty.h"
 struct V { virtual void v0(); };
