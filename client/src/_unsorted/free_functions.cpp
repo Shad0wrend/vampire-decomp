@@ -80911,6 +80911,23 @@ void sub_10198e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198e70 size=0x29
+struct CInner_q { virtual int v0(); virtual char v1(); char pad[0x2c - 4]; int m_n2c; };
+struct COuter_p { int m_n0; CInner_q *m_pq; };
+struct VView380 {
+	char pad[0x380];
+	COuter_p *m_p380;
+	char sub_10198e70();
+};
+char VView380::sub_10198e70()
+{
+	COuter_p *p = m_p380;
+	if (p && (p->m_pq->v1() || !p->m_pq->m_n2c))
+		return 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101997e0 size=0x129
 #include <string.h>
 #include "ScopeTrace.h"

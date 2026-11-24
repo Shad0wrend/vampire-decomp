@@ -6960,6 +6960,7 @@
 0x10198d80 func   ?sub_10198d80@@YAHXZ sub_10198d80
 0x10198d90 func   ?sub_10198d90@@YADD@Z sub_10198d90
 0x10198e60 func   ?sub_10198e60@@YAXXZ sub_10198e60
+0x10198e70 func   ?sub_10198e70@VView380@@QAEDXZ VView380::sub_10198e70
 0x10199590 func   ?vfunc11@CViewRender@@UAEPADXZ CViewRender::vfunc11
 0x101995a0 func   ?vfunc12@CViewRender@@UAEPADXZ CViewRender::vfunc12
 0x101997e0 func   ?sub_101997e0@CViewRender_101997e0@@QAEXAAUWorldListInfo_t@@AAUCRenderList@@_N@Z CViewRender_101997e0::sub_101997e0
