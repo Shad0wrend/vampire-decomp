@@ -9,6 +9,13 @@ CCollisionEvent::CCollisionEvent()
 // TARGET: ??0CCollisionEvent@@QAE@XZ
 // END FUNCTION
 
+// FUNCTION: 0x10119460 size=0x3
+// TARGET: sub_10119460
+void __stdcall sub_10119460(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119470 size=0x1
 #include "CCollisionEvent.h"
 
