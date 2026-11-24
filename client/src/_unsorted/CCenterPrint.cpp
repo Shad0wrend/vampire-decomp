@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10165020 size=0x22
+struct S10165020 { int a; void **m_p; };
+void sub_10165020(S10165020 *s, int b, int c)
+{
+	void **p = s->m_p;
+	if (p)
+		((void (__cdecl *)(void *, int, int *))(*(void ***)p)[109])(p, b, &c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101650a0 size=0x10
 #include "CCenterPrint.h"
 namespace lifted {
