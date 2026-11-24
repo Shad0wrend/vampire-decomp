@@ -84,6 +84,29 @@ void CPrediction::vfunc9(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101231c0 size=0x32
+#include "CPrediction.h"
+#include "Vector.h"
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct PlayerView {
+ V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+ V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6)
+ virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+ virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9(); virtual void d0(); virtual void d1();
+ virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+ virtual void d8(); virtual void d9(); virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+ virtual void e4(); virtual void e5();
+ virtual void vfunc196(Vector v);
+};
+extern PlayerView *g_104a0d50;
+// TARGET: CPrediction::vfunc11
+void CPrediction::vfunc11(const Vector *v)
+{
+    if (g_104a0d50)
+        g_104a0d50->vfunc196(*v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123200 size=0x4
 #include "CPrediction.h"
 int CPrediction::vfunc15()
