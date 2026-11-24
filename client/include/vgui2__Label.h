@@ -11,6 +11,7 @@ class Label : public vgui2::Panel
 public:
 	Label(vgui2::Panel *, const char *, const char *);
 	void sub_101aa230(void *);
+	void sub_101a9920(int *, int *);
 	virtual ~Label();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Label's own function
