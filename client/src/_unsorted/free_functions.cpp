@@ -19643,6 +19643,25 @@ void sub_10064b10(char v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064b60 size=0x41
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern char g_103eee68[];
+extern int g_103eee64;
+extern int g_103eef40;
+extern char g_103eee59;
+extern char g_103eef9d;
+void sub_10064b10(char);
+void sub_10064b60(const char *s, int a, int b, char c)
+{
+	g_103eef9d = 1;
+	Q_strncpy(g_103eee68, s, 64);
+	g_103eee64 = b;
+	g_103eef40 = a;
+	g_103eee59 = c;
+	sub_10064b10(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {
