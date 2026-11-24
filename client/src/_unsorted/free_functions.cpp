@@ -62477,6 +62477,42 @@ void sub_1013a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b160 size=0x6f
+extern "C" __declspec(dllimport) void Plat_Free(void *pMem);
+
+struct CUtlBuf_1013b160 {
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_pad[3];
+
+	void sub_1013c8a0(void *pBuf, int nSize, int nFlags);
+	~CUtlBuf_1013b160()
+	{
+		if (m_nGrowSize != -1)
+		{
+			if (m_pMemory)
+			{
+				Plat_Free(m_pMemory);
+			}
+		}
+	}
+};
+
+void sub_1013b1d0(void *a, void *b, void *buf);
+void sub_1013ac80(CUtlBuf_1013b160 *buf, void *b, void *c);
+
+// TARGET: sub_1013b160
+void sub_1013b160(void *a, void *b, void *c)
+{
+	char buf[0x800];
+	sub_1013b1d0(a, b, buf);
+	CUtlBuf_1013b160 utlbuf;
+	utlbuf.sub_1013c8a0(buf, 0x800, 0);
+	sub_1013ac80(&utlbuf, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b350 size=0x6f
 extern "C" __declspec(dllimport) void Plat_Free(void *pMem);
 
