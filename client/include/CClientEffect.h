@@ -49,3 +49,13 @@ public:
 		virtual void vfunc0(bool on);
 	};
 };
+
+class PrecacheEffectBreakableSurface
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
