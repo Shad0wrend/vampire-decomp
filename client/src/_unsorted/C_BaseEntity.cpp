@@ -247,6 +247,17 @@ int __fastcall sub_1007dd90(V_1007dd90 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dda0 size=0x1e
+#include "C_BaseEntity.h"
+bool C_BaseEntity::vfunc65(int a, int flags)
+{
+	bool r = true;
+	if (*(int *)((char *)this + 0x2d0) == 1 && !(flags & 0x4000000))
+		r = false;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007de10 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc92(int a0, int a1)
