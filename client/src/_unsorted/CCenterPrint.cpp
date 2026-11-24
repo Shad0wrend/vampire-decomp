@@ -24,6 +24,22 @@ void CCenterPrint::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101650b0 size=0x30
+#include "CCenterPrint.h"
+void *sub_101ac650(unsigned int);
+struct LDPanel { LDPanel *sub_10164b50(int a); };
+int CCenterPrint::vfunc4(int a)
+{
+	LDPanel *p = (LDPanel *)sub_101ac650(0x480);
+	LDPanel *r;
+	if (p)
+		r = p->sub_10164b50(a);
+	else
+		r = 0;
+	return (int)(*(LDPanel **)((char *)this + 4) = r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101650e0 size=0x24
 #include "CCenterPrint.h"
 namespace lifted {
