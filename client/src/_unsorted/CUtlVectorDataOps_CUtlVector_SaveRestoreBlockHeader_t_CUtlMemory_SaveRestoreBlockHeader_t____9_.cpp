@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012bcc0 size=0x5
+#include "CUtlVectorDataOps.h"
+
+struct SaveRestoreBlockHeader_t;
+
+// TARGET: CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc4
+bool CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc4(SaveRestoreFieldInfo_t *fieldInfo, const char *szValue)
+{
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c200 size=0xc4
 #include "CSaveRestoreBlockSet.h"
 #include "datamap.h"
