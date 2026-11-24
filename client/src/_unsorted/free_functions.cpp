@@ -85727,6 +85727,26 @@ void sub_10170360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101703e0 size=0x46
+// TARGET: VBarterUI::sub_101703e0
+#include "VBarterUI.h"
+
+void VBarterUI::sub_101703e0(int nArg)
+{
+	if ( ((char *)this)[0x181] )
+	{
+		if ( nArg == 6 )
+			nArg = 5;
+		sub_1016f4a0();
+		char *pItem = *(char **)((char *)this + 0x188);
+		if ( pItem )
+			pItem[0xba] = 1;
+	}
+	*(int *)((char *)this + 0x44c) = nArg;
+	sub_1016d150();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170430 size=0xd
 struct CUnknown10170430 { char sub_10170430(char); };
 char CUnknown10170430::sub_10170430(char a0)
