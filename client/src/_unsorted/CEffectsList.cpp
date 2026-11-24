@@ -220,3 +220,16 @@ void CEffectsList::vfunc3(double frametime)
 	g_VProfCurrentProfile.ExitScope();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d9510 size=0x2a
+#include "CEffectsList.h"
+// TARGET: CEffectsList::vfunc4
+void CEffectsList::vfunc4()
+{
+	for (int i = m_nEffects - 1; i >= 0; i--)
+	{
+		if (m_rgEffects[i])
+			vfunc2(m_rgEffects[i]);
+	}
+}
+// END FUNCTION
