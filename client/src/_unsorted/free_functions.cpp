@@ -81992,6 +81992,23 @@ void __cdecl sub_1015fa50(const char *pszName, const char *pszKind)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fb10 size=0x4e
+extern int g_105f9828;
+extern char g_105f9420[];
+
+extern "C" char *strcpy(char *, const char *);
+extern "C" char *_strlwr(char *);
+
+char *sub_1015fb10(const char *pszSrc)
+{
+	if (++g_105f9828 >= 2)
+		g_105f9828 = 0;
+	strcpy(g_105f9420 + g_105f9828 * 256, pszSrc);
+	_strlwr(g_105f9420 + g_105f9828 * 256);
+	return g_105f9420 + g_105f9828 * 256;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fbc0 size=0x2f
 #include "FileSystemViews.h"
 #include <string.h>
