@@ -82009,6 +82009,23 @@ char *sub_1015fb10(const char *pszSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fb60 size=0x4e
+extern int g_105f982c;
+extern char g_105f9620[];
+
+extern "C" char *strcpy(char *, const char *);
+extern "C" char *_strlwr(char *);
+
+char *sub_1015fb60(const char *pszSrc)
+{
+	if (++g_105f982c >= 2)
+		g_105f982c = 0;
+	strcpy(g_105f9620 + g_105f982c * 256, pszSrc);
+	_strlwr(g_105f9620 + g_105f982c * 256);
+	return g_105f9620 + g_105f982c * 256;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fbc0 size=0x2f
 #include "FileSystemViews.h"
 #include <string.h>
