@@ -41978,6 +41978,17 @@ void * CUnknown100e9e40::sub_100e9e40(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9e70 size=0x24
+#include "CGameMovement.h"
+struct CGlobals_102b8494 { float m_f0; float m_f4; float m_f8; float curtime; };
+extern CGlobals_102b8494 *g_102b8494;
+struct CPlayerView_bc { char m_pad[0xbc]; float m_flBc; };
+int CGameMovement::sub_100e9e70()
+{
+	return ((CPlayerView_bc *)m_pPlayer)->m_flBc > g_102b8494->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea250 size=0x1
 void sub_100ea250()
 {
