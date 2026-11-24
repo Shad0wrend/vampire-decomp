@@ -83673,6 +83673,11 @@ int sub_101cb0b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cbdf0 size=0xf
+struct S { int a, b, w, h; };
+int sub_101cbdf0(S *p) { return p->h * p->w * 4; }
+// END FUNCTION
+
 // FUNCTION: 0x101d0d28 size=0x18
 // TARGET: sub_101d0d28
 void sub_101d0d40();
