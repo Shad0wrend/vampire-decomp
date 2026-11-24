@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10164430 size=0x4a
+#include "BitmapImage.h"
+
+struct CUnknown10164a80 { void sub_10164a80(int, int, int, int, int); };
+
+// TARGET: BitmapImage::BitmapImage
+BitmapImage::BitmapImage()
+{
+	m_clr.Init(255);
+	m_unk28 = 0;
+	m_unk24 = 0;
+	m_unk34 = 0;
+	m_hTexture = -1;
+	((CUnknown10164a80 *)this)->sub_10164a80(0, 0, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101644a0 size=0x1e
 #include "BitmapImage.h"
 
