@@ -38960,6 +38960,36 @@ void sub_100c6b10(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7e60 size=0x5a
+class CClampX
+{
+public:
+	char m_pad[0x7ac];
+	int m_nSize;
+	char m_pad2[0xe80 - 0x7b0];
+	int m_nA;
+	int m_nB;
+	void sub_100c7e60(int a, int b);
+};
+// TARGET: CClampX::sub_100c7e60
+void CClampX::sub_100c7e60(int a, int b)
+{
+	int lim = m_nSize - 1;
+	int lim2 = m_nSize - 2;
+	for (;;)
+	{
+		a = a > lim ? lim : (a < 0 ? 0 : a);
+		b = b > lim ? lim : (b < 0 ? 0 : b);
+		if (a + b < lim2)
+			break;
+		a--;
+		b--;
+	}
+	m_nA = a;
+	m_nB = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c7f30 size=0x8
 struct CUnknown100c7f30 { void sub_100c7f30(); };
 void CUnknown100c7f30::sub_100c7f30()
