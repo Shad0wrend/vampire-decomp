@@ -25262,6 +25262,21 @@ char sub_1007d930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d950 size=0x1d
+#include "C_BaseCombatWeapon.h"
+struct WpnSub_1007d950 { int m_unk0; int m_nType; };
+struct WpnData_1007d950 { char m_unk[0x1bc]; WpnSub_1007d950 m_sub; };
+// TARGET: C_BaseCombatWeapon::sub_1007d950
+bool C_BaseCombatWeapon::sub_1007d950()
+{
+	WpnSub_1007d950 *p = &((WpnData_1007d950 *)sub_1007b180())->m_sub;
+	int n = p->m_nType;
+	if (n == 9 || n == 10)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dae0 size=0x6
 namespace lifted {
 extern char g_1027ace8;
