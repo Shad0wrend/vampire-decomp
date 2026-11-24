@@ -93564,6 +93564,36 @@ void CUnknown101c2e30::sub_101c2e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c45b0 size=0x43
+#include "vgui2__TextEntry.h"
+extern "C" int __cdecl atoi(const char *);
+struct SViewA : vgui2::Panel { virtual void vfunc107(const char *); };
+struct SViewB : vgui2::TextEntry
+{
+	virtual void v173(); virtual void v174(); virtual void v175(); virtual void v176();
+	virtual void v177(); virtual void v178(); virtual void v179(); virtual void v180();
+	virtual void vfunc181(int);
+};
+struct SUnk101c45b0
+{
+	int m_unk0;
+	SViewA *m_pA;
+	SViewB *m_pB;
+	int m_unkC[(0x4c - 0xc) / 4];
+	int m_nType;
+};
+void __stdcall sub_101c45b0(SUnk101c45b0 *p, const char *psz)
+{
+	if (p->m_nType >= 4 && p->m_nType <= 5)
+	{
+		int n = atoi(psz);
+		p->m_pB->vfunc181(n);
+	}
+	else
+		p->m_pA->vfunc107(psz);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c47b0 size=0x5c
 namespace lifted {
 struct C101aab50 { bool sub_101aab50(); };
