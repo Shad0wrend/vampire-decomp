@@ -160,6 +160,13 @@ void C_BasePlayer::vfunc158()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7c30 size=0xb
+#include "C_BasePlayer.h"
+bool sub_10050f60();
+// TARGET: C_BasePlayer::vfunc163
+bool C_BasePlayer::vfunc163() { if (sub_10050f60()) return false; return true; }
+// END FUNCTION
+
 // FUNCTION: 0x100a8030 size=0x8
 #include "C_BasePlayer.h"
 namespace lifted {
