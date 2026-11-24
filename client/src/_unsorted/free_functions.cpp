@@ -47948,6 +47948,12 @@ void * CUnknown10114db0::sub_10114db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101154e0 size=0x13
+struct CView { int a, b; int *sub_101154e0(); };
+#pragma optimize("", off)
+int *CView::sub_101154e0() { return (int *)((char *)this + 0x16c); }
+// END FUNCTION
+
 // FUNCTION: 0x10115500 size=0x11
 struct CView { int a, b; int *sub_10115500(); };
 #pragma optimize("", off)
