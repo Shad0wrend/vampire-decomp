@@ -65521,6 +65521,17 @@ int sub_10151570(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151580 size=0xe
+extern bool (*g_105e8660)();
+// TARGET: sub_10151580
+bool sub_10151580()
+{
+	if (g_105e8660)
+		return g_105e8660();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151600 size=0x1f
 struct CUnknown10151600 { void * sub_10151600(int); };
 void * CUnknown10151600::sub_10151600(int a0)
