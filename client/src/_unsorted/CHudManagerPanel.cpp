@@ -24,6 +24,19 @@ void CHudManagerPanel::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058dd0 size=0x1b
+#include "CHudManagerPanel.h"
+extern int g_104a0d50;
+bool sub_1018c770();
+// TARGET: CHudManagerPanel::vfunc2
+bool CHudManagerPanel::vfunc2(int)
+{
+	if (!g_104a0d50)
+		return true;
+	return sub_1018c770() ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058df0 size=0xb
 #include "CHudManagerPanel.h"
 namespace lifted {
