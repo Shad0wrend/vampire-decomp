@@ -18524,6 +18524,22 @@ void HudChild_t::sub_10057840(int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100578a0 size=0x52
+#include "CHudManagerPanel.h"
+#include "CSignUI.h"
+
+// TARGET: HudChild_t::sub_100578a0
+void HudChild_t::sub_100578a0(int a1, int a2, int a3)
+{
+	for ( HudChildNode *p = m_pNodes; p; p = p->m_pNext )
+	{
+		CSignUI *pSign = dynamic_cast<CSignUI *>(p->m_pElement);
+		if ( pSign )
+			pSign->vfunc114(a1, a2, a3);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a20 size=0x2a
 namespace lifted {
 extern int g_104a0d50;

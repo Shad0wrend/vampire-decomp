@@ -2609,6 +2609,7 @@
 0x100576d0 func   ?sub_100576d0@HudHost1005@@QAEXXZ HudHost1005::sub_100576d0
 0x10057710 func   ?sub_10057710@CUnknown10057710@@QAEHH@Z CUnknown10057710::sub_10057710
 0x10057840 func   ?sub_10057840@HudChild_t@@QAEXHHH@Z HudChild_t::sub_10057840
+0x100578a0 func   ?sub_100578a0@HudChild_t@@QAEXHHH@Z HudChild_t::sub_100578a0
 0x10057a20 func   ?sub_10057a20@@YGXHHH@Z sub_10057a20
 0x10057ca0 func   ?sub_10057ca0@PanelView@@QAEXHHH@Z PanelView::sub_10057ca0
 0x10057d00 func   ?sub_10057d00@@YGXHHH@Z sub_10057d00
