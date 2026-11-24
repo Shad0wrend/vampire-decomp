@@ -40686,6 +40686,17 @@ char sub_100cced0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccf00 size=0x43
+void sub_100ccf00(float *a) {
+	for (int i = 0; i < 3; i++) {
+		if (a[i] > 180.0)
+			a[i] -= 360.0;
+		else if (a[i] < -180.0)
+			a[i] += 360.0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd000 size=0x2e
 // TARGET: sub_100cd000
 void sub_100cd000(float t, const float *a, const float *b, float *out) {
