@@ -43523,6 +43523,40 @@ void UtlMem::sub_100d8830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8860 size=0x54
+#include "CSaveRestoreBlockSet.h"
+
+struct CUtlList10
+{
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    unsigned short m_Head;
+    unsigned short m_Tail;
+    unsigned short m_FirstFree;
+    unsigned short m_ElementCount;
+    unsigned short m_TotalElements;
+    unsigned short m_pad16;
+    void *m_pElements;
+};
+
+CUtlList10 *__fastcall sub_100d8860(CUtlList10 *p, int, int growSize, int initSize)
+{
+    p->m_pMemory = 0;
+    p->m_allocationCount = initSize;
+    p->m_growSize = growSize;
+    if (initSize)
+        p->m_pMemory = g_101e3100(initSize * 10);
+    p->m_TotalElements = 0;
+    p->m_Head = 0xffff;
+    p->m_Tail = 0xffff;
+    p->m_FirstFree = 0xffff;
+    p->m_pElements = p->m_pMemory;
+    p->m_ElementCount = 0;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d88c0 size=0x3d
 struct E { char pad[0xec]; unsigned short a; unsigned short b; };
 struct M { E *arr; int u4, u8, uc, u10; unsigned short count; };
