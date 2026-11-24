@@ -3,12 +3,32 @@
 #pragma once
 #include "C_BaseEntity.h"
 
+#include "CBaseRopePhysics.h"
+
 class C_RopeKeyframe : public C_BaseEntity
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
+	class CPhysicsDelegate : public CSimplePhysics::IHelper
+	{
+	public:
+		virtual void vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel);
+		virtual void vfunc1(CRopeNode *pNodes, int nNodes);
+
+		C_RopeKeyframe *m_pKeyframe;
+	};
+
 	C_RopeKeyframe();
     // the base slots the game's vtable fills with C_RopeKeyframe's own function
     virtual int vfunc15();
     virtual int vfunc16();
-    char m_pad0014[0x728 - 0x14];
+    char m_pad0014[0x414 - 0x14];
+    unsigned int m_LockedPoints[2];
+    bool m_bApplyWind;
+    char m_pad041d[0x6f0 - 0x41d];
+    Vector m_vForce;
+    float m_flCurWindTime;
+    float m_flWindDuration;
+    int m_pad0704;
+    Vector m_vWindDir;
+    char m_pad0714[0x728 - 0x714];
 };
