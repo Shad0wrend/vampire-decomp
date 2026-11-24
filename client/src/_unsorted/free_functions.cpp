@@ -18317,6 +18317,20 @@ int sub_100650b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100652c0 size=0x17
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct O_100652c0 {
+V8(a) V8(b) V8(c) V8(d)
+virtual void E0(); virtual void E1(); virtual void E2(); virtual void E3(); virtual void E4(); virtual void E5(); virtual void E6();
+virtual float v39(int); };
+extern O_100652c0 *g_104a57d4;
+extern float g_103eefec;
+void sub_100652c0()
+{
+	g_103eefec = g_104a57d4->v39(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100652e0 size=0xb
 namespace lifted {
 extern int g_103eefec;
