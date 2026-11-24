@@ -3464,6 +3464,7 @@
 0x100adbd0 func   ?vfunc10@C_ClientStats@@UAEHXZ C_ClientStats::vfunc10
 0x100adbe0 func   ?vfunc11@C_ClientStats@@UAEHXZ C_ClientStats::vfunc11
 0x100adbf0 func   ?vfunc14@C_ClientStats@@UAEHH@Z C_ClientStats::vfunc14
+0x100adc00 func   ?vfunc15@C_ClientStats@@UAE_JH@Z C_ClientStats::vfunc15
 0x100adc10 func   ?vfunc16@C_ClientStats@@QAEHH@Z C_ClientStats::vfunc16
 0x100adc20 func   ?vfunc17@C_ClientStats@@UAEHH@Z C_ClientStats::vfunc17
 0x100adc30 func   ?vfunc18@C_ClientStats@@UAENH@Z C_ClientStats::vfunc18
