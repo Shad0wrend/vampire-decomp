@@ -32462,6 +32462,16 @@ int CUnknown100a13f0::sub_100a13f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1a70 size=0x2c
+#include "C_BaseEntity.h"
+struct ILeaf { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual unsigned short v4(IClientRenderable *, int); };
+extern ILeaf *g_102b9060;
+void C_BaseEntity::sub_100a1a70(int a)
+{
+	*(unsigned short *)((char *)this + 0xe8) = g_102b9060->v4((IClientRenderable *)this, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1b20 size=0x18
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 struct IVModelInfo_104a57f8 {
