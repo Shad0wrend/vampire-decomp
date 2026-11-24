@@ -12,6 +12,7 @@ public:
 	virtual ~TextEntry();
 	void sub_101af9e0(int a);
 	bool sub_101aff70(int n);
+	int sub_101afbf0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextEntry's own function
 	virtual void vfunc11(int, int);
