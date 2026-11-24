@@ -9,3 +9,12 @@ void ClientModeHLNormal::Viewport::vfunc97()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10029570 size=0x1
+#include "ClientModeHLNormal.h"
+
+// TARGET: ClientModeHLNormal::Viewport::vfunc107
+void ClientModeHLNormal::Viewport::vfunc107()
+{
+}
+// END FUNCTION
