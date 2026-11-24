@@ -4628,6 +4628,7 @@
 0x10105f20 func   ?vfunc54@CInput@@UAEXXZ CInput::vfunc54
 0x101062d0 func   ?vfunc18@CInput@@UAE_NXZ CInput::vfunc18
 0x101062e0 func   ?sub_101062e0@CUnknown101062e0@@QAEHXZ CUnknown101062e0::sub_101062e0
+0x10106310 func   ?vfunc25@CInput@@UAEXXZ CInput::vfunc25
 0x101063f0 func   ?sub_101063f0@CUnknown101063f0@@QAEHHH@Z CUnknown101063f0::sub_101063f0
 0x10106860 func   ?sub_10106860@@YGHHH@Z sub_10106860
 0x10106880 func   ?sub_10106880@@YGHHH@Z sub_10106880
