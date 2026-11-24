@@ -18625,6 +18625,25 @@ void CUnknown1005fcb0::sub_1005fcb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fdd0 size=0x32
+struct XKey0c
+{
+	char u[0xc]; char m_down; char m_pressed; char m_released;
+	void sub_1005fdd0(char down);
+};
+void XKey0c::sub_1005fdd0(char down)
+{
+	if (!m_down && down) {
+		m_pressed = 1;
+		m_released = 0;
+	} else if (m_down && !down) {
+		m_released = 1;
+		m_pressed = down;
+	}
+	m_down = down;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060d60 size=0xd
 struct CView { char pad[0x18c]; float m18c; float sub_10060d60(); };
 // TARGET: ?sub_10060d60@CView@@QAEMXZ
