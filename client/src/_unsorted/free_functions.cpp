@@ -57236,6 +57236,10 @@ int __stdcall sub_10139e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139ef0 size=0x1c
+char *sub_10139ef0(char *s) { char *p = s; if (*p) { do { if (*p == 13) *p = 10; } while (*++p); } return s; }
+// END FUNCTION
+
 // FUNCTION: 0x1013a130 size=0x32
 namespace lifted {
 extern char g_1028653c;
