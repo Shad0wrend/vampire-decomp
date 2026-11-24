@@ -3901,6 +3901,7 @@
 0x100bd3f0 func   ?vfunc122@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc122
 0x100bd420 func   ?vfunc123@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc123
 0x100bd450 func   ?vfunc124@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc124
+0x100bd480 func   ?vfunc125@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc125
 0x100bd4c0 func   ?sub_100bd4c0@PRView@@QAEHH@Z PRView::sub_100bd4c0
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
 0x100bd620 func   ?vfunc129@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc129
