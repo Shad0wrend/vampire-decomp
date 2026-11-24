@@ -69766,6 +69766,34 @@ int CUnknown10143500::sub_10143500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101435f0 size=0x57
+void operator delete(void *p);
+
+struct CView101435f0
+{
+	char m_pad0[0x24];
+	int m_Count;      // 0x24
+	void **m_pArray;  // 0x28
+	void sub_101435f0();
+};
+
+void CView101435f0::sub_101435f0()
+{
+	if (m_pArray)
+	{
+		for (int i = 0; i < m_Count; i++)
+		{
+			if (m_pArray[i])
+				operator delete(m_pArray[i]);
+			m_pArray[i] = 0;
+		}
+		operator delete(m_pArray);
+		m_pArray = 0;
+	}
+	m_Count = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101437b0 size=0x14
 struct CUnknown101437b0 { void * sub_101437b0(); };
 void * CUnknown101437b0::sub_101437b0()
