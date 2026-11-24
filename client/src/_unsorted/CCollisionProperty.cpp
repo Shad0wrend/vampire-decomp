@@ -37,6 +37,20 @@ const Vector &CCollisionProperty::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100432f0 size=0x2e
+#include "CCollisionProperty.h"
+struct IEntV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual int *v10(); };
+extern int g_104d5190;
+int *CCollisionProperty::sub_100432f0(char a)
+{
+	if (!a) {
+		if ((m_unk44 & 0x80) || m_unk40 == 2 || m_unk40 == 0)
+			return &g_104d5190;
+	}
+	return ((IEntV *)m_unk3c)->v10();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043440 size=0x4
 #include "CCollisionProperty.h"
 
