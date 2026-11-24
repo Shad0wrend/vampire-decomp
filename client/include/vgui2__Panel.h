@@ -18,7 +18,14 @@ public:
 	int m_unk4[(0x18 - 4) / 4];
 	bool m_b18;
 	char m_c19; char m_c1a; char m_c1b;
-	int m_unk1c[(0x7c - 0x1c) / 4];
+	int m_unk1c[(0x58 - 0x1c) / 4];
+	void *m_p58;
+	int m_unk5c[(0x70 - 0x5c) / 4];
+	int m_i70;
+	int m_i74;
+	int m_unk78;
+	void sub_101a9920(int *, int *);
+	void sub_101ab4e0(int);
 	int m_w7c;
 	int m_h80;
 	int m_unk84[(0x170 - 0x84) / 4];
