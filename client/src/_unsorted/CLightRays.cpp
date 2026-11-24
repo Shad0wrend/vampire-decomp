@@ -40,3 +40,12 @@ CLightRays *pcd_emit_10049140() { return new CLightRays; }
 
 // TARGET: ??_GCLightRays@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10049160 size=0x53
+#include "CLightRays.h"
+
+// TARGET: CLightRays::~CLightRays
+CLightRays::~CLightRays()
+{
+}
+// END FUNCTION
