@@ -42456,6 +42456,48 @@ void UtlMem::sub_100d33d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3400 size=0x50
+struct CUtlLinkedList12uNode
+{
+	char m_Data[8];
+	unsigned short m_Previous;
+	unsigned short m_Next;
+};
+
+class CUtlLinkedList12u
+{
+public:
+	CUtlLinkedList12uNode *m_pMemory;	// 0x00
+	int m_allocationCount;	// 0x04
+	int m_growSize;	// 0x08
+	unsigned short m_Head;	// 0x0c
+	unsigned short m_Tail;	// 0x0e
+	unsigned short m_FirstFree;	// 0x10
+	unsigned short m_ElementCount;	// 0x12
+	unsigned short m_NumAlloced;	// 0x14
+
+	void sub_100d3400();
+};
+
+void CUtlLinkedList12u::sub_100d3400()
+{
+	if ( m_NumAlloced != 0 )
+	{
+		unsigned short next = 0xffff;
+		for ( int i = (int)m_NumAlloced - 1; i >= 0; --i )
+		{
+			m_pMemory[(unsigned short)i].m_Next = next;
+			m_pMemory[(unsigned short)i].m_Previous = (unsigned short)i;
+			next = (unsigned short)i;
+		}
+		m_FirstFree = 0;
+		m_Head = 0xffff;
+		m_Tail = 0xffff;
+		m_ElementCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3450 size=0x1c
 struct V2b400 { char pad[0xc]; unsigned short a, b, c, d, e; void sub_100d3450(); };
 void V2b400::sub_100d3450() { a = 0xffff; b = 0xffff; c = 0xffff; e = 0; d = 0; }
