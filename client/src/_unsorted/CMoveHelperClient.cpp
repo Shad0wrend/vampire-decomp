@@ -65,6 +65,14 @@ CPhysSurfacePropsIface *sub_1010f680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f760 size=0xb
+struct IMI { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); };
+extern IMI *g_104a57f8;
+struct CView { void sub_1010f760(); };
+// TARGET: ?sub_1010f760@CView@@QAEXXZ
+void CView::sub_1010f760() { g_104a57f8->v6(); }
+// END FUNCTION
+
 // FUNCTION: 0x1010f800 size=0x3
 #include "CMoveHelperClient.h"
 
