@@ -60436,6 +60436,11 @@ void CUnknown10143e30::sub_10143e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143f60 size=0x1c
+struct V3f60 { char pad[0x10]; int a[3]; int sub_10143f60(int v); };
+int V3f60::sub_10143f60(int v) { for (int i = 0; i < 3; i++) if (a[i] == v) return i; return -1; }
+// END FUNCTION
+
 // FUNCTION: 0x10144490 size=0x19
 struct CUnknown10144490 { void * sub_10144490(int); };
 void * CUnknown10144490::sub_10144490(int a0)
