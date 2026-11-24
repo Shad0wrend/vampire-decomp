@@ -3220,6 +3220,7 @@
 0x1009f650 func   ?vfunc118@C_BaseEntity@@UAEXH@Z C_BaseEntity::vfunc118
 0x1009f660 func   ?vfunc119@C_BaseEntity@@UAEXH@Z C_BaseEntity::vfunc119
 0x1009f670 func   ?sub_1009f670@@YIMPAUV_1009f670@@HH@Z sub_1009f670
+0x1009f680 func   ?sub_1009f680@C_BaseEntity@@QAEXHM@Z C_BaseEntity::sub_1009f680
 0x1009f6a0 func   ?GetAbsAngles@C_BaseEntity@@UBEABVQAngle@@XZ C_BaseEntity::GetAbsAngles
 0x1009f6b0 func   ?sub_1009f6b0@CView@@QAEMH@Z CView::sub_1009f6b0
 0x1009f6c0 func   ?sub_1009f6c0@@YIXPAUS_1009f6c0@@HHM@Z sub_1009f6c0

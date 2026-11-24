@@ -31616,6 +31616,14 @@ float __fastcall sub_1009f670(V_1009f670 *self, int edx, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f680 size=0x12
+#include "C_BaseEntity.h"
+void C_BaseEntity::sub_1009f680(int i, float v)
+{
+	((float *)((char *)this + 0x23c))[i] = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f6b0 size=0xe
 struct CView { char pad[0x248]; float m248[1]; float sub_1009f6b0(int); };
 // TARGET: ?sub_1009f6b0@CView@@QAEMH@Z
