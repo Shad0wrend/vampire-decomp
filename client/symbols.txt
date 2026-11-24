@@ -4677,6 +4677,7 @@
 0x1011f050 func   ?sub_1011f050@UtlMem@@QAEXXZ UtlMem::sub_1011f050
 0x1011f110 func   ?sub_1011f110@UtlMem@@QAEXXZ UtlMem::sub_1011f110
 0x1011f140 func   ?sub_1011f140@UtlMem@@QAEXXZ UtlMem::sub_1011f140
+0x1011f170 func   ?sub_1011f170@?$CUtlVector@V?$CUtlVector@HV?$CUtlMemory@H@@@@V?$CUtlMemory@V?$CUtlVector@HV?$CUtlMemory@H@@@@@@@@QAEXXZ CUtlVector<CUtlVector<int,CUtlMemory<int> >,CUtlMemory<CUtlVector<int,CUtlMemory<int> > > >::sub_1011f170
 0x1011f200 func   ?sub_1011f200@UtlMem@@QAEXXZ UtlMem::sub_1011f200
 0x1011f230 func   ?sub_1011f230@UtlMem@@QAEXXZ UtlMem::sub_1011f230
 0x1011f2f0 func   ?sub_1011f2f0@UtlMem@@QAEXXZ UtlMem::sub_1011f2f0
