@@ -5,6 +5,7 @@
 class C_RecipientFilter : public IRecipientFilter
 {
 public:
+	virtual int vfunc5();
 	C_RecipientFilter();
 	virtual bool vfunc1();
 	void sub_100bdeb0();
