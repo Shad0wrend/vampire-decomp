@@ -31305,6 +31305,21 @@ void C_BaseAnimating::sub_100966e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096cd0 size=0x36
+#include "CUtlMemory76.h"
+extern void *(__cdecl *g_101e3100)(unsigned int);
+// TARGET: CUtlMemory76::sub_10096cd0
+CUtlMemory76 *CUtlMemory76::sub_10096cd0(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_101e3100(allocationCount * 76);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d10 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
