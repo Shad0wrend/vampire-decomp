@@ -4122,6 +4122,7 @@
 0x100c4200 func   ?vfunc143@C_BaseFlex@@UAEHXZ C_BaseFlex::vfunc143
 0x100c4210 func   ?sub_100c4210@@YIXPAUAnimHolder@@HPBDPADH@Z sub_100c4210
 0x100c4270 func   ?sub_100c4270@@YAXPBDPAD@Z sub_100c4270
+0x100c4880 func   ?sub_100c4880@C_BaseFlex@@QAEHPBD@Z C_BaseFlex::sub_100c4880
 0x100c48e0 func   ?sub_100c48e0@@YGPAUStudioNamedRec24@@PAUStudioHdr8c@@PBD@Z sub_100c48e0
 0x100c4940 func   ?sub_100c4940@CModel_c4940@@QAEXHMPAUStudioHdr_c4940@@0_N@Z CModel_c4940::sub_100c4940
 0x100c4ac0 func   ?sub_100c4ac0@sub_100c4ac0_Holder@@QAEPAUsub_100c4ac0_Node@@H@Z sub_100c4ac0_Holder::sub_100c4ac0

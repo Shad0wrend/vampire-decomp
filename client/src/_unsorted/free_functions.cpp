@@ -40553,6 +40553,31 @@ void sub_100c4270(const char *in, char *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4880 size=0x5b
+#include "C_BaseFlex.h"
+
+extern int g_104a4c90;
+extern char *g_104a4498[256];
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" char *_mbsdup(const char *);
+
+int C_BaseFlex::sub_100c4880(const char *pszName)
+{
+	int i;
+	for (i = 0; i < g_104a4c90; i++)
+	{
+		if (_strcmpi(g_104a4498[i], pszName) == 0)
+			return i;
+	}
+	if (g_104a4c90 < 0x100)
+	{
+		g_104a4498[g_104a4c90] = _mbsdup(pszName);
+		g_104a4c90++;
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c48e0 size=0x60
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 struct StudioNamedRec24 {
