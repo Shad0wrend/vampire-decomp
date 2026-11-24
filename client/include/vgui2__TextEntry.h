@@ -11,6 +11,7 @@ class TextEntry : public vgui2::Panel
 public:
 	virtual ~TextEntry();
 	void sub_101af9e0(int a);
+	bool sub_101aff70(int n);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextEntry's own function
 	virtual void vfunc11(int, int);
@@ -90,7 +91,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc156();
 	virtual int vfunc157();
 	virtual bool vfunc158(int, int);
-	virtual void vfunc159();
+	virtual void vfunc159(int, int *, int *);
 	virtual void vfunc160();
 	virtual void vfunc161(int *, int *);
 	virtual void vfunc162();
