@@ -8,4 +8,6 @@ class CPanelMetaClassMgrImp : public IPanelMetaClassMgr
 {
 public:
 	virtual ~CPanelMetaClassMgrImp();
+	bool sub_101107c0(const char *pFileName, const char *pName, class CKeyValuesX *pKeyValues, int keyValueIdx);
+	bool sub_10110ab0(const char *pFileName, class CKeyValuesX *pKeyValues, int keyValueIdx);
 };
