@@ -6,7 +6,7 @@
 
 // VC6 writes CTempEnts's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CTempEnts *pcd_emit_1003b570() { return new CTempEnts; }
+CTempEnts *pcd_emit_1003b570(const CTempEnts &other) { return new CTempEnts(other); }
 
 // TARGET: ??_GCTempEnts@@UAEPAXI@Z
 // END FUNCTION
