@@ -85828,6 +85828,27 @@ void __stdcall sub_101779a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101779b0 size=0x4a
+extern "C" int sprintf(char *, const char *, ...);
+struct NL { int sub_1013fdf0(int); };
+struct Eng { virtual void v0(){} virtual void v1(){} virtual void v2(){} virtual void v3(){} virtual void v4(){} virtual void v5(){} virtual void v6(){} virtual void v7(){} virtual void v8(){} virtual void v9(){}
+virtual void v10(){} virtual void v11(){} virtual void v12(){} virtual void v13(){} virtual void v14(){} virtual void v15(){} virtual void v16(){} virtual void v17(){} virtual void v18(){} virtual void v19(){}
+virtual void v20(){} virtual void v21(){} virtual void v22(){} virtual void v23(){} virtual void v24(){} virtual void v25(){} virtual void v26(){} virtual void ServerCmd(const char *, int){} };
+extern int g_104a0d50;
+extern NL g_105e74fc;
+extern Eng *g_104a57d4;
+void __stdcall sub_101779b0(int a) {
+ if (g_104a0d50) {
+  int i = g_105e74fc.sub_1013fdf0(a);
+  if (i >= 0) {
+   char buf[32];
+   sprintf(buf, "vclan %d", i);
+   g_104a57d4->ServerCmd(buf, 1);
+  }
+ }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177a10 size=0x1
 void sub_10177a10()
 {

@@ -7117,6 +7117,7 @@
 0x10177370 func   ?vfunc78@CharEditCharPanel@@UAEXH@Z CharEditCharPanel::vfunc78
 0x10177990 func   ?vfunc102@CharEditCharPanel@@UAEHXZ CharEditCharPanel::vfunc102
 0x101779a0 func   ?sub_101779a0@@YGXH@Z sub_101779a0
+0x101779b0 func   ?sub_101779b0@@YGXH@Z sub_101779b0
 0x10177a00 func   ?vfunc119@CharEditCharPanel@@UAEXXZ CharEditCharPanel::vfunc119
 0x10177a10 func   ?sub_10177a10@@YAXXZ sub_10177a10
 0x10177aa0 func   ?vfunc123@CharEditCharPanel@@UAEXXZ CharEditCharPanel::vfunc123
