@@ -8,6 +8,7 @@ public:
 	virtual int vfunc5();
 	C_RecipientFilter();
 	virtual bool vfunc1();
+	virtual int vfunc2();
 	void sub_100bdeb0();
 	bool m_bReliable;
 	bool m_bInitMessage;
