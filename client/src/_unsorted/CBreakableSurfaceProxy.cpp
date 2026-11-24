@@ -49,3 +49,18 @@ struct CView { void sub_10124ae0(); };
 // TARGET: ?sub_10124ae0@CView@@QAEXXZ
 void CView::sub_10124ae0() { IV *p = (IV *)this; if (p) p->v3(1); }
 // END FUNCTION
+
+// FUNCTION: 0x10124af0 size=0x26
+#include "CBreakableSurfaceProxy.h"
+struct R10124af0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void *v6(); };
+struct Q10124af0 { virtual R10124af0 *v0(); };
+void CBreakableSurfaceProxy::vfunc1(int a)
+{
+	Q10124af0 *q = (Q10124af0 *)a;
+	if (q) {
+		void *p = q->v0()->v6();
+		if (p)
+			vfunc4((C_BaseEntity *)p);
+	}
+}
+// END FUNCTION
