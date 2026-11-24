@@ -153,6 +153,24 @@ int vgui2::PropertySheet::vfunc128()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9430 size=0x39
+#include "vgui2__PropertySheet.h"
+void vgui2::PropertySheet::vfunc92(int code)
+{
+	switch (code) {
+	case 0x59:
+		vfunc127(m_w7c - 1);
+		break;
+	case 0x5b:
+		vfunc127(m_w7c + 1);
+		break;
+	default:
+		Panel::sub_101aa6f0(code);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9520 size=0x6
 #include "vgui2__PropertySheet.h"
 namespace lifted {
