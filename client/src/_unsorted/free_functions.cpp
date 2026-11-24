@@ -32024,6 +32024,22 @@ void * CUnknown1009f040::sub_1009f040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f0a0 size=0x2a
+struct IModelRender_1009f0a0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual unsigned short CreateHandle(void *a, int b, int c); };
+extern IModelRender_1009f0a0 *g_104a57d8;
+struct CBE_1009f0a0 {
+	int m_unk0; int m_unk4[0x58];
+	unsigned short m_h164;
+	void sub_1009f0a0();
+};
+// TARGET: CBE_1009f0a0::sub_1009f0a0
+void CBE_1009f0a0::sub_1009f0a0()
+{
+	if (m_h164 == 0xffff)
+		m_h164 = g_104a57d8->CreateHandle(&m_unk4[0], 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f100 size=0xa
 struct CUnknown1009f100 { int sub_1009f100(); };
 int CUnknown1009f100::sub_1009f100()
