@@ -30450,6 +30450,23 @@ template <> int ClientClassInit<DT_BaseAnimating::ignored>(DT_BaseAnimating::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f6f0 size=0x23
+struct I1008f6f0 { virtual struct R1008f6f0 *v0(int); };
+struct R1008f6f0 { char pad[0xe4]; unsigned m_flags; };
+struct S1008f6f0 {
+	char pad[0x3c]; int m_h;
+	bool sub_1008f6f0();
+};
+extern I1008f6f0 *g_104a57d8;
+bool S1008f6f0::sub_1008f6f0()
+{
+	R1008f6f0 *p = g_104a57d8->v0(m_h);
+	if (!p)
+		return false;
+	return (p->m_flags & 0x20) >> 5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fcd0 size=0x23
 struct S48_10108430 { int m_a0, m_a4, m_a8, m_ac, m_a10, m_a14, m_a18, m_a1c, m_a20, m_a24, m_a28, m_a2c; };
 void sub_10108430(const S48_10108430 *, S48_10108430 *);
