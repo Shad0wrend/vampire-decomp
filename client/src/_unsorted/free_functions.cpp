@@ -63982,6 +63982,95 @@ void sub_101433b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101433c0 size=0x102
+#include "StatOwner2.h"
+#include "CUnknown102029c0.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_102de300[];
+extern int g_102c6ef0;
+extern StatOwner2 g_105f93c0;
+
+struct KeyValues_101433c0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12();
+	virtual const char *GetString(const char *keyName, const char *defaultValue);
+};
+
+struct NameRec4_101433c0
+{
+	int pad0;
+	const char *m_pszName;
+};
+
+struct NameRec8_101433c0
+{
+	int pad0;
+	int pad4;
+	const char *m_pszName;
+};
+
+extern int g_105e77ec;
+extern NameRec4_101433c0 **g_105e77f0;
+extern int g_105e775c;
+extern NameRec8_101433c0 **g_105e7760;
+
+inline const char *STR_101433c0(const char *const &s)
+{
+	return s ? s : g_102de300;
+}
+
+inline int LookupA_101433c0(const char *name)
+{
+	for (int i = 0; i < g_105e77ec; i++)
+		if (!_strcmpi(STR_101433c0(g_105e77f0[i]->m_pszName), name))
+			return i;
+	return -1;
+}
+
+inline int LookupB_101433c0(const char *name)
+{
+	for (int i = 0; i < g_105e775c; i++)
+		if (!_strcmpi(STR_101433c0(g_105e7760[i]->m_pszName), name))
+			return i;
+	return -1;
+}
+
+struct CUnknown101433c0
+{
+	int m_n00;
+	int m_n04;
+	int m_n08;
+
+	bool sub_101433c0(KeyValues_101433c0 *kv);
+};
+
+// TARGET: CUnknown101433c0::sub_101433c0
+bool CUnknown101433c0::sub_101433c0(KeyValues_101433c0 *kv)
+{
+	if (kv)
+	{
+		const char *s = kv->GetString("TraitCombination", g_102de300);
+		if (s[0] != 0)
+			m_n00 = LookupA_101433c0(s);
+
+		s = kv->GetString("Index", g_102de300);
+		if (s[0] != 0)
+			m_n04 = g_105f93c0.sub_1015f270(g_102c6ef0)->sub_1015ed00(s);
+
+		s = kv->GetString("Trait", g_102de300);
+		if (s[0] != 0)
+			m_n08 = LookupB_101433c0(s);
+
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101434d0 size=0x28
 struct A101433a0 { int d[3]; void sub_101433a0(); };
 struct B10141fe0 { int d[4]; void sub_10141fe0(); };
