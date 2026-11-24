@@ -78461,6 +78461,19 @@ char __stdcall sub_1016ed80(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016edb0 size=0x36
+struct Inner1016 { char pad[0x4fe9c]; int m_i4fe9c; };
+struct Obj1016 { Inner1016 *sub_1007b160(); };
+char __stdcall sub_1016edb0(Obj1016 *o)
+{
+    if (!o)
+        return 0;
+    if (!o->sub_1007b160())
+        return 0;
+    return o->sub_1007b160()->m_i4fe9c != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016eea0 size=0x48
 namespace lifted {
 extern char g_102bbe88;
