@@ -36313,6 +36313,17 @@ template <> int ClientClassInit<DT_FuncParticle::ignored>(DT_FuncParticle::ignor
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4560 size=0x18
+#include <string.h>
+extern char g_104a1d10[0x200];
+extern char g_104a1d08;
+void sub_100b4560()
+{
+	memset(g_104a1d10, 0, sizeof(g_104a1d10));
+	g_104a1d08 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4750 size=0x24
 extern int g_104a1d10[128];
 extern int g_104a1f10;
