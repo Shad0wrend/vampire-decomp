@@ -32460,6 +32460,22 @@ template <> int ClientClassInit<DT_BaseAnimatingOverlay::ignored>(DT_BaseAnimati
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097f10 size=0x2e
+struct CAmmoOwner97 {
+	char pad[0xfdc];
+	int m_iAmmo[32];
+	void sub_10097f10(int iCount, int iAmmoIndex);
+};
+void CAmmoOwner97::sub_10097f10(int iCount, int iAmmoIndex)
+{
+	if (iCount <= 0)
+		return;
+	m_iAmmo[iAmmoIndex] -= iCount;
+	if (m_iAmmo[iAmmoIndex] < 0)
+		m_iAmmo[iAmmoIndex] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097f40 size=0x12
 struct S_10097f40 { char pad[0xfdc]; int m[32]; };
 void __fastcall sub_10097f40(S_10097f40 *self)
