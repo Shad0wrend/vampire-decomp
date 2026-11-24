@@ -6669,6 +6669,7 @@
 0x10165790 func   ?vfunc2@CDebugOverlay@@UAEXXZ CDebugOverlay::vfunc2
 0x101657b0 func   ?vfunc107@CDebugOverlay@@UAE_NXZ CDebugOverlay::vfunc107
 0x101657d0 func   ?vfunc98@CDebugOverlay@@UAEXXZ CDebugOverlay::vfunc98
+0x10165950 func   ?vfunc0@CDebugOverlayPanel@@UAEHH@Z CDebugOverlayPanel::vfunc0
 0x10165980 func   ?vfunc1@CDebugOverlayPanel@@UAEXXZ CDebugOverlayPanel::vfunc1
 0x10165b00 func   ??_GCDownloadSliderPanel@@UAEPAXI@Z ??_GCDownloadSliderPanel@@UAEPAXI@Z
 0x10165b20 func   ??1CDownloadSliderPanel@@UAE@XZ CDownloadSliderPanel::~CDownloadSliderPanel
