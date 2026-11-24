@@ -96,6 +96,30 @@ C_BaseAnimating::~C_BaseAnimating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f8a0 size=0x52
+#include "C_BaseAnimating.h"
+#include "StudioHdr.h"
+
+struct ModelInfoView { virtual StudioHdr *GetStudiomodel(const void *); };
+extern ModelInfoView *g_104a57d8;
+
+// TARGET: C_BaseAnimating::vfunc71
+bool C_BaseAnimating::vfunc71()
+{
+	*(void **)((char *)this + 0x6ac) = 0;
+	void *pModel = *(void **)((char *)this + 0x40);
+	if (!pModel)
+		return false;
+	StudioHdr *hdr = g_104a57d8->GetStudiomodel(pModel);
+	if (!hdr)
+		return false;
+	char *pName = hdr->m_name[0] ? hdr->m_name : 0;
+	vfunc49((int)pName);
+	*(void **)((char *)this + 0x6ac) = hdr;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b60 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc124(int a0, int a1)
