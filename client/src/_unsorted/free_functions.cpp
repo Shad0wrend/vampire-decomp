@@ -42584,6 +42584,12 @@ void CUnknown100f3680::sub_100f3680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3d50 size=0x1f
+struct El3d50 { int a, b, c; };
+struct V3d50 { char pad[0x30]; El3d50 *arr; int n; bool Valid(int j) { return j >= 0 && j < n; } El3d50 *Get(int j) { return Valid(j) ? &arr[j] : 0; } El3d50 *sub_100f3d50(int i); };
+El3d50 *V3d50::sub_100f3d50(int i) { return Get(i - 1); }
+// END FUNCTION
+
 // FUNCTION: 0x100f3f40 size=0x17
 namespace lifted {
 extern char g_10235220;
