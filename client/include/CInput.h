@@ -58,8 +58,8 @@ public:
     virtual bool vfunc26();
     virtual void vfunc27();
     virtual void vfunc28();
-    virtual void vfunc29();
-    virtual void vfunc30();
+    virtual int vfunc29();
+    virtual float vfunc30();
     virtual void vfunc31();
     virtual int vfunc32(int);
     virtual void vfunc33();
