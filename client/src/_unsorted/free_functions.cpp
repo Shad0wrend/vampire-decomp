@@ -56966,6 +56966,19 @@ int CUnknown10124780::sub_10124780(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101247d0 size=0x1d
+struct CPredDescData;
+void sub_101245d0( CPredDescData *pData, const char *fmt, ... );
+struct CPredFloatView
+{
+	void sub_101247d0( const float *pIn, const float *pOut );
+};
+void CPredFloatView::sub_101247d0( const float *pIn, const float *pOut )
+{
+	sub_101245d0( (CPredDescData *)this, "float (%f)\n", *pIn );
+}
+// END FUNCTION
+
 // FUNCTION: 0x101247f0 size=0x16
 namespace lifted {
 extern char g_102c26ec;
