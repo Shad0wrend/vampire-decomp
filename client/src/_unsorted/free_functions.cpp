@@ -37464,6 +37464,13 @@ int sub_100d09b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0c40 size=0xb
+struct SEntry { int a; int b; };
+struct CView { int m0, m4, m8, mC; SEntry e[1]; int sub_100d0c40(int i); };
+// TARGET: ?sub_100d0c40@CView@@QAEHH@Z
+int CView::sub_100d0c40(int i) { return e[i].a; }
+// END FUNCTION
+
 // FUNCTION: 0x100d0c80 size=0x4
 struct CUnknown100d0c80 { int sub_100d0c80(); };
 int CUnknown100d0c80::sub_100d0c80()
