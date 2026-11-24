@@ -57024,6 +57024,31 @@ void * CUnknown10125410::sub_10125410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125690 size=0x75
+struct Hdr_10125690 { char pad[0xc]; char name[1]; };
+struct Rag_10125690 {
+	virtual void Delete(int flags);
+	int m_count;
+	Rag_10125690 *sub_101251d0();
+	void sub_10125210(void *a, Hdr_10125690 *h, void *c, int d, void *e, void *f, float g);
+};
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+// TARGET: sub_10125690
+Rag_10125690 *sub_10125690(void *ent, Hdr_10125690 *hdr, void *force, int bone, void *prev, void *btw, float dt)
+{
+	Rag_10125690 *mem = (Rag_10125690 *)operator new(0x384);
+	Rag_10125690 *p = mem ? mem->sub_101251d0() : 0;
+	p->sub_10125210(ent, hdr, force, bone, prev, btw, dt);
+	if (!(p->m_count > 0))
+	{
+		Msg("Bad ragdoll for %s\n", hdr->name);
+		p->Delete(1);
+		p = 0;
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125790 size=0x5
 namespace lifted {
 int sub_10094890();
