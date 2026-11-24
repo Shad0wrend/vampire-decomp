@@ -16,7 +16,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc112();
 	// the slots CHealthAnkh adds to its base's vtable: 114-115, vfuncK at slot K
 	virtual void vfunc114(int);
-	virtual void vfunc115();
+	virtual void vfunc115(int);
 	CHealthAnkh(int parent);
 	void sub_10051100();
 	void sub_101a9890(int, int);
