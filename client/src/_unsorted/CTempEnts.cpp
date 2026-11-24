@@ -125,6 +125,146 @@ void CTempEnts::vfunc4(const void *pos, int r, int g, int b, int a, int modelInd
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ca30 size=0x260
+#include "CTempEnts.h"
+#include "ConVar.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct model_t;
+
+struct IUniformRandomStream_1003ca30
+{
+	virtual void SetSeed(int iSeed);
+	virtual float RandomFloat(float flMinVal, float flMaxVal);
+	virtual int RandomInt(int iMinVal, int iMaxVal);
+};
+
+struct IVEngineClient_1003ca30
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual double Time(int);
+};
+
+struct LocalTempEnt_1003ca30
+{
+	char pad_0[0x48];
+	int m_nRenderMode;      // 0x48
+	char pad_4c[0x514];
+	int m_nBody;            // 0x560
+	char pad_564[0x248];
+	int flags;              // 0x7ac
+	float die;              // 0x7b0
+	char pad_7b4[0x14];
+	int hitSound;           // 0x7c8
+	char pad_7cc[0x14];
+	float tempent_angles[3];// 0x7e0
+	int m_nRenderAmt;       // 0x7ec
+
+	void sub_100a2100(const QAngle &angles);
+	void sub_1003a840(float x, float y, float z);
+};
+
+struct CTempEnts_Helper_1003ca30
+{
+	char pad_0[0xfbf78];
+	const model_t *m_pShells[6];
+
+	LocalTempEnt_1003ca30 *sub_1003cdd0(const Vector &org, model_t *model);
+};
+
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+extern ConVar *g_102eec5c;
+extern ConVar *g_105fb29c;
+extern IUniformRandomStream_1003ca30 *g_104a5738;
+extern IVEngineClient_1003ca30 *g_104a57d4;
+
+void CTempEnts::vfunc19(const Vector &pos1, const QAngle &angles, const QAngle &gunAngles, int type, const Vector &vel)
+{
+	if (g_102eec5c->vfunc1() || !g_102eec5c->m_nValue)
+		return;
+
+	if (g_105fb29c->vfunc1() || !g_105fb29c->m_nValue)
+		return;
+
+	if (type < 0 || type > 5)
+		return;
+
+	if (type == -1)
+		return;
+
+	const model_t *pModel = ((CTempEnts_Helper_1003ca30 *)this)->m_pShells[type];
+	if (pModel == 0)
+		return;
+
+	LocalTempEnt_1003ca30 *pTemp = ((CTempEnts_Helper_1003ca30 *)this)->sub_1003cdd0(pos1, (model_t *)pModel);
+	if (pTemp == 0)
+		return;
+
+	if (type == 2)
+	{
+		pTemp->hitSound = 0x80;
+	}
+	else if (type >= 3)
+	{
+		pTemp->hitSound = 0x1000;
+	}
+	else
+	{
+		pTemp->hitSound = 0x20;
+	}
+
+	pTemp->m_nBody = 0;
+	pTemp->flags |= 0xa6;
+
+	pTemp->tempent_angles[0] = g_104a5738->RandomFloat(-256.0f, 255.0f);
+	pTemp->tempent_angles[1] = g_104a5738->RandomFloat(-256.0f, 255.0f);
+	pTemp->tempent_angles[2] = g_104a5738->RandomFloat(-256.0f, 255.0f);
+
+	if (type >= 3)
+	{
+		pTemp->sub_100a2100(angles);
+	}
+	else
+	{
+		pTemp->sub_100a2100(gunAngles);
+	}
+
+	pTemp->m_nRenderMode = 0;
+	pTemp->m_nRenderAmt = 255;
+
+	Vector dir;
+	sub_101090a0(angles, &dir, 0, 0);
+
+	dir *= g_104a5738->RandomFloat(150.0f, 200.0f);
+	dir += vel;
+
+	if (type >= 3)
+	{
+		pTemp->sub_1003a840(vel.x, vel.y, vel.z);
+	}
+	else
+	{
+		pTemp->sub_1003a840(
+			dir[0] + g_104a5738->RandomFloat(-64.0f, 64.0f),
+			dir[1] + g_104a5738->RandomFloat(-64.0f, 64.0f),
+			dir[2] + g_104a5738->RandomFloat(0.0f, 64.0f));
+	}
+
+	pTemp->die = g_104a5738->RandomFloat(0.0f, 1.0f) + g_104a57d4->Time(0) + 5.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003cc90 size=0x39
 #include "CTempEnts.h"
 namespace lifted {
