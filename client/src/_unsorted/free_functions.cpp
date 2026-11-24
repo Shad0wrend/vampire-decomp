@@ -45788,6 +45788,29 @@ void sub_100f1870(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2410 size=0x75
+extern char g_104cff48[];
+
+#pragma optimize("", off)
+// TARGET: sub_100f2410
+char *sub_100f2410(const char *in)
+{
+    const char *p = in;
+    char *out = g_104cff48;
+    while (*p) {
+        if (out - g_104cff48 >= 4094)
+            break;
+        if (*p == '&')
+            *out++ = '&';
+        *out++ = *p;
+        p++;
+    }
+    *out = 0;
+    return g_104cff48;
+}
+#pragma optimize("", on)
+// END FUNCTION
+
 // FUNCTION: 0x100f2490 size=0x3
 void __stdcall sub_100f2490(int a0)
 {
