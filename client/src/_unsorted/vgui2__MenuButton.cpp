@@ -108,6 +108,19 @@ void vgui2::MenuButton::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c96f0 size=0x41
+#include "vgui2__MenuButton.h"
+struct KV101b5670 { KV101b5670 *sub_101b5670(const char *); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc170@MenuButton@vgui2@@UAEHXZ
+int vgui2::MenuButton::vfunc170()
+{
+	vfunc169();
+	KV101b5670 *kv = (KV101b5670 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b5670("MenuClose") : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9740 size=0xd
 #include "vgui2__MenuButton.h"
 int vgui2::MenuButton::vfunc171(int a0)
