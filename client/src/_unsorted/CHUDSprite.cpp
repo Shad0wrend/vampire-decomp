@@ -71,6 +71,22 @@ void CHudSprite::vfunc13(int frame, int x, int y, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3d10 size=0x3d
+#include "IHudSprite.h"
+struct SpriteRect4
+{
+	int l, t, r, b;
+};
+void CHudSprite::vfunc18(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+	m_unk04 = a1;
+	*(SpriteRect4 *)&m_unk08 = *(SpriteRect4 *)&a2;
+	m_unk18 = a6;
+	m_unk1c = a7;
+	m_unk20 = a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3d70 size=0x3a
 #include "IHudSprite.h"
 extern "C" void *memset(void *, int, unsigned int);
