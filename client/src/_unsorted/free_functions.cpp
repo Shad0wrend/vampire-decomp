@@ -38261,6 +38261,30 @@ struct CView { int m0, m4, m8, mC; SEntry e[1]; int sub_100d0c40(int i); };
 int CView::sub_100d0c40(int i) { return e[i].a; }
 // END FUNCTION
 
+// FUNCTION: 0x100d0c50 size=0x23
+struct Ent_100d0c50
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual int v5();
+};
+struct Entry_100d0c50 { Ent_100d0c50 *m_pEnt; int m_a; int m_b; };
+struct List_100d0c50
+{
+	int sub_100d0c50(int i);
+};
+// TARGET: List_100d0c50::sub_100d0c50
+int List_100d0c50::sub_100d0c50(int i)
+{
+	if (i >= 0)
+	{
+		Ent_100d0c50 *e = ((Entry_100d0c50 *)((char *)this - 0x18038))[i].m_pEnt;
+		if (e)
+			return e->v5();
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0c80 size=0x4
 struct CUnknown100d0c80 { int sub_100d0c80(); };
 int CUnknown100d0c80::sub_100d0c80()
