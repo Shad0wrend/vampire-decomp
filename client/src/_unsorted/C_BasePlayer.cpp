@@ -34,6 +34,25 @@ C_BaseCombatWeapon *C_BasePlayer::vfunc167()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002b40 size=0x2d
+#include "C_BasePlayer.h"
+struct EntInfo_10002b40 { void *m_pEntity; int m_SerialNumber; EntInfo_10002b40 *m_pPrev; };
+struct EntList_10002b40 { int m_unk0; EntInfo_10002b40 m_Info[0x2000]; };
+extern EntList_10002b40 *g_102b8e98;
+struct View_10002b40 { char pad[0x1a0c]; unsigned long m_hHandle; void *sub_10002b40(); };
+void *View_10002b40::sub_10002b40()
+{
+	unsigned long h = m_hHandle;
+	if (h != 0xffffffff)
+	{
+		EntInfo_10002b40 *pInfo = &g_102b8e98->m_Info[h & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(h >> 13))
+			return pInfo->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002b70 size=0x5
 #include "C_BasePlayer.h"
 int C_BasePlayer::vfunc175(int a0, int a1)
