@@ -4529,6 +4529,7 @@
 0x10104380 func   ?sub_10104380@CUnknown10104380@@QAEPAXH@Z CUnknown10104380::sub_10104380
 0x10104440 func   ?vfunc7@CInput@@UAEPADH@Z CInput::vfunc7
 0x10104730 func   ?vfunc55@CInput@@UAEHH@Z CInput::vfunc55
+0x10104790 func   ?vfunc26@CInput@@UAE_NXZ CInput::vfunc26
 0x10105ef0 func   ?vfunc1@CInput@@UAEXXZ CInput::vfunc1
 0x10105f20 func   ?vfunc54@CInput@@UAEXXZ CInput::vfunc54
 0x101062d0 func   ?vfunc18@CInput@@UAE_NXZ CInput::vfunc18

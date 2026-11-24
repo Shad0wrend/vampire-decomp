@@ -230,6 +230,28 @@ int CInput::vfunc55(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104790 size=0x1d
+#include "CInput.h"
+struct SubObj_10104790
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual int v8();
+};
+struct Player_10104790
+{
+	int m_unk0, m_unk4, m_unk8;
+	SubObj_10104790 m_sub;
+};
+extern Player_10104790 *g_104a0d50;
+// TARGET: CInput::vfunc26
+bool CInput::vfunc26()
+{
+	if (g_104a0d50 && g_104a0d50->m_sub.v8() == 9)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105ef0 size=0x2b
 #include "CInput.h"
 namespace lifted {
