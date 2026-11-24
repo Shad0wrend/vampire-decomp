@@ -38262,6 +38262,11 @@ void UtlMem::sub_100d33d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3450 size=0x1c
+struct V2b400 { char pad[0xc]; unsigned short a, b, c, d, e; void sub_100d3450(); };
+void V2b400::sub_100d3450() { a = 0xffff; b = 0xffff; c = 0xffff; e = 0; d = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100d3470 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
