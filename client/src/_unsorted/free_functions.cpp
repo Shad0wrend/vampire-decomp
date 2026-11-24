@@ -52129,6 +52129,33 @@ void S1011d6a0::sub_1010f8c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110330 size=0xf9
+#include "CKeyValuesX.h"
+extern "C" int sscanf(const char *, const char *, ...);
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+int sub_100cd100();
+int sub_100cd0f0();
+bool sub_10110330( CKeyValuesX *pValues, const char* pFieldName, int& x, int& y, int& w, int& h )
+{
+	x = y = w = h = 0;
+	const char *pRectString = pValues->sub_10128590( pFieldName, "0 0 0 0" );
+	if ( !pRectString || !pRectString[ 0 ] )
+		return false;
+	int scanned;
+	scanned = sscanf( pRectString, "%i %i %i %i", &x, &y, &w, &h );
+	if ( scanned != 4 )
+	{
+		Warning( "Couldn't scan rectangle values from %s\n", pRectString );
+		return false;
+	}
+	x = ( x * ( ( float )sub_100cd100() / 640.0 ) );
+	y = ( y * ( ( float )sub_100cd0f0() / 480.0 ) );
+	w = ( w * ( ( float )sub_100cd100() / 640.0 ) );
+	h = ( h * ( ( float )sub_100cd0f0() / 480.0 ) );
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110430 size=0x9
 struct CUnknown10110430 { void * sub_10110430(); };
 void * CUnknown10110430::sub_10110430()
