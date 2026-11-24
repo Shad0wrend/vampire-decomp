@@ -24577,6 +24577,15 @@ int sub_1007a690(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a6c0 size=0xc
+extern int g_102aaee8[];
+// TARGET: sub_1007a6c0
+int sub_1007a6c0(int i)
+{
+	return g_102aaee8[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a6d0 size=0x12
 namespace lifted {
 extern char g_1022b9d8;
