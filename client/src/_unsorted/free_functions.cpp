@@ -39786,6 +39786,11 @@ void CUnknown100e1450::sub_100e1450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1460 size=0x9
+struct CUnknown100e1460 { int a[4]; int m; bool sub_100e1460(); };
+bool CUnknown100e1460::sub_100e1460() { if (m) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x100e1470 size=0x6
 int sub_100e1470()
 {
