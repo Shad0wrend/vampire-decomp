@@ -53218,6 +53218,21 @@ struct CCopy { char pad[0x2c]; bool m_b; void sub_10123ba0(int type, void *dst, 
 void CCopy::sub_10123ba0(int type, void *dst, const void *src, int n) { if (m_b && type != 1) memcpy(dst, src, n * 4); }
 // END FUNCTION
 
+// FUNCTION: 0x10123c90 size=0x36
+#include <string.h>
+struct CPC {
+	char pad[0x2c];
+	bool m_b2c;
+	void sub_10123c90(int type, char *outstr, const char *instr);
+};
+void CPC::sub_10123c90(int type, char *outstr, const char *instr)
+{
+	if (!m_b2c || type == 1)
+		return;
+	memcpy(outstr, instr, strlen(instr) + 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123d30 size=0x19
 namespace lifted {
 struct C10123e30 { int sub_10123e30(int, int, int, int); };
