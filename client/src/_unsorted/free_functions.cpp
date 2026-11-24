@@ -43835,6 +43835,23 @@ void Mgr_100d6510::sub_100d6510(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6c40 size=0x59
+#include "VMatrix.h"
+
+void sub_101a2e90(VMatrix &mat, float x, float y, float z);
+void sub_101a2600(const VMatrix &a, const VMatrix &b, VMatrix &out);
+
+void sub_100d6c40(VMatrix &mat1, float *pScale, VMatrix &out)
+{
+	VMatrix mat;
+
+	sub_101a2e90(mat, 1.0f / pScale[0], 1.0f / pScale[1], 1.0f);
+	mat[1][3] = 0.5f;
+	mat[0][3] = 0.5f;
+	sub_101a2600(mat, mat1, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7130 size=0x46
 #include "CClientShadowMgr.h"
 // TARGET: CClientShadowMgr::sub_100d7130
