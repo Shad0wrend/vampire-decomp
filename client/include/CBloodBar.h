@@ -29,5 +29,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	CBloodBarChild *m_p1c0;
 	CBloodBarChild *m_p1c4;
 	CBloodBarChild *m_p1c8;
-	char m_pad01cc[0x1dc - 0x1cc];
+	char m_pad01cc[0x1d4 - 0x1cc];
+	float m_flTime1d4;
+	char m_pad01d8[0x1dc - 0x1d8];
+	void sub_1004d460();
 };
