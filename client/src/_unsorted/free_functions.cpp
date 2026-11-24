@@ -16658,6 +16658,12 @@ int sub_1004ea50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ec90 size=0x1f
+struct SE_1004ec90 { int a, b, c; };
+struct S_1004ec90 { char pad[0x1ac]; SE_1004ec90 e[6]; int sub_1004ec90(int v); };
+int S_1004ec90::sub_1004ec90(int v) { for (int i = 0; i < 6; i++) if (e[i].a == v) return i; return -1; }
+// END FUNCTION
+
 // FUNCTION: 0x1004f0c0 size=0xe1
 #include "CVStatInfoList_t.h"
 #include "utlvector.h"
