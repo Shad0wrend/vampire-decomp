@@ -5638,6 +5638,7 @@
 0x10152030 func   ??1C_VampireProjectile@@UAE@XZ C_VampireProjectile::~C_VampireProjectile
 0x10152060 func   ?vfunc21@C_VampireProjectile@@UAEXXZ C_VampireProjectile::vfunc21
 0x10152070 func   ?vfunc19@C_VampireProjectile@@UAEXXZ C_VampireProjectile::vfunc19
+0x101520b0 func   ?sub_101520b0@CUnknown101520b0@@QAE_NXZ CUnknown101520b0::sub_101520b0
 0x101520c0 func   ?sub_101520c0@@YAHXZ sub_101520c0
 0x101520d0 func   ?vfunc96@C_VampireProjectile@@UAEXHHHH@Z C_VampireProjectile::vfunc96
 0x101520e0 func   ?vfunc143@C_VampireProjectile@@UAEXXZ C_VampireProjectile::vfunc143
