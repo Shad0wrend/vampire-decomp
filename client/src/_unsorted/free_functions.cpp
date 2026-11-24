@@ -39358,6 +39358,16 @@ void sub_100df340(unsigned int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df380 size=0x10
+struct P_100df380 { int m_unk[6]; int m_nFlags; };
+struct V_100df380 { int m_unk0; P_100df380 *m_pParent; };
+// TARGET: sub_100df380
+bool __fastcall sub_100df380(V_100df380 *self, int edx, int flags)
+{
+	return self->m_pParent->m_nFlags & flags ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df390 size=0xd
 struct P_100df390 { int m_unk[6]; int m_nFlags; };
 struct V_100df390 { int m_unk0; P_100df390 *m_pParent; };
