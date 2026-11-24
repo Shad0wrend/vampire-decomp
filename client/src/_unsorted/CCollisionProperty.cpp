@@ -20,6 +20,16 @@ int CCollisionProperty::vfunc11()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043440 size=0x4
+#include "CCollisionProperty.h"
+
+// TARGET: CCollisionProperty::vfunc1
+Vector &CCollisionProperty::vfunc1()
+{
+	return m_vecMins;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043450 size=0x4
 #include "CCollisionProperty.h"
 
