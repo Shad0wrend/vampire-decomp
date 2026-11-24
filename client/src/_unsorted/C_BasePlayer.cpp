@@ -401,6 +401,14 @@ int C_BasePlayer::vfunc62()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9b00 size=0x4d
+#include "Vector.h"
+#include "C_BasePlayer.h"
+Vector C_BasePlayer::vfunc150(const Vector &v) {
+ return *(Vector *)((char *)this + 0x148) + v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9bd0 size=0x3
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc151(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
