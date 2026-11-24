@@ -86020,6 +86020,28 @@ void sub_10187f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187f70 size=0x26
+#include "CHud.h"
+struct VMapSub {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual bool v22();
+};
+struct VMapElem { int m_unk[4]; VMapSub m_sub; };
+extern CHud g_104cfe38;
+void sub_10187f00();
+void sub_10187da0();
+// TARGET: sub_10187f70
+void sub_10187f70()
+{
+	VMapElem *e = (VMapElem *)g_104cfe38.sub_100f0ed0("VMapScreenUI");
+	if (e->m_sub.v22())
+		sub_10187f00();
+	else
+		sub_10187da0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187fa0 size=0x16
 namespace lifted {
 extern char g_1027b3b4;

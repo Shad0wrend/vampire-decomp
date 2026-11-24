@@ -7155,6 +7155,7 @@
 0x10187d80 func   ?sub_10187d80@@YAHXZ sub_10187d80
 0x10187d90 func   ?sub_10187d90@@YGXH@Z sub_10187d90
 0x10187f00 func   ?sub_10187f00@@YAXXZ sub_10187f00
+0x10187f70 func   ?sub_10187f70@@YAXXZ sub_10187f70
 0x10187fa0 func   ?sub_10187fa0@@YAHXZ sub_10187fa0
 0x10187fc0 func   ?sub_10187fc0@@YAHXZ sub_10187fc0
 0x10188030 func   ??1QuestLogPanel@@UAE@XZ QuestLogPanel::~QuestLogPanel
