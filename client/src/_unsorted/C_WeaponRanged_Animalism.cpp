@@ -11,6 +11,37 @@ int C_WeaponRanged_Animalism::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006c70 size=0x62
+#include "C_WeaponRanged_Animalism.h"
+
+struct StatV_10006c70 { char *sub_1015ecd0(int); };
+struct StatOwnerV_10006c70 { StatV_10006c70 *sub_1015f270(int); };
+extern StatOwnerV_10006c70 g_105f93c0;
+void sub_10064b60(const char *, int, int, char);
+
+struct Weap_10006c70 {
+	char m_pad[0x978];
+	int m_978;
+	int m_97c;
+	int m_980;
+	int m_984;
+	int m_988;
+	int m_98c;
+	int m_990;
+	int m_994;
+	int m_998;
+	int m_99c;
+};
+
+bool C_WeaponRanged_Animalism::vfunc188()
+{
+	Weap_10006c70 *w = (Weap_10006c70 *)this;
+	bool b = (w->m_978 == 6 && w->m_97c <= 5);
+	sub_10064b60(g_105f93c0.sub_1015f270(w->m_99c)->sub_1015ecd0(w->m_97c), w->m_97c, w->m_988, b);
+	return C_BaseCombatWeapon::vfunc188();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10006ce0 size=0x18
 #include "C_WeaponRanged_Animalism.h"
 void sub_10064c60();
