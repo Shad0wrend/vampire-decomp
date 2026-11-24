@@ -83130,6 +83130,24 @@ void CUnknown101a30e0::sub_101a30e0(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3140 size=0x30
+struct Node_101a3140 { int m_unk[5]; Node_101a3140 *m_pNext; };
+struct Bucket_101a3140 { int m_unk[5]; Bucket_101a3140 *m_pNext; };
+struct Tbl_101a3140 {
+	Node_101a3140 m_Buckets[256];
+	void sub_101a3140(void (*pfn)(Node_101a3140 *));
+};
+void Tbl_101a3140::sub_101a3140(void (*pfn)(Node_101a3140 *))
+{
+	for (int i = 0; i < 256; i++)
+	{
+		Node_101a3140 *head = &m_Buckets[i];
+		for (Node_101a3140 *p = head->m_pNext; p != head; p = p->m_pNext)
+			pfn(p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
