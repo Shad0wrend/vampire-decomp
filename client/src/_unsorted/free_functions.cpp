@@ -80429,6 +80429,11 @@ unsigned short sub_101a58d0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5a40 size=0x9
+extern unsigned short g_1061994a;
+int sub_101a5a40() { return g_1061994a; }
+// END FUNCTION
+
 // FUNCTION: 0x101a5a50 size=0x24
 extern int g_1061993c;
 
