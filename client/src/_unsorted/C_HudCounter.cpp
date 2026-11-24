@@ -29,3 +29,12 @@ C_HudCounter *pcd_emit_100bc0b0(const C_HudCounter &other) { return new C_HudCou
 
 // TARGET: ??_GC_HudCounter@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100bc0d0 size=0x32
+#include "C_HudCounter.h"
+// TARGET: ??1C_HudCounter@@UAE@XZ
+C_HudCounter::~C_HudCounter()
+{
+	sub_100bc150();
+}
+// END FUNCTION
