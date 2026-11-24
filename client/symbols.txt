@@ -7224,6 +7224,7 @@
 0x101aab60 func   ?sub_101aab60@CUnknown101aab60@@QAEXD@Z CUnknown101aab60::sub_101aab60
 0x101aab80 func   ?sub_101aab80@S@@QAE_NXZ S::sub_101aab80
 0x101aab90 func   ?sub_101aab90@CUnknown101aab90@@QAEXD@Z CUnknown101aab90::sub_101aab90
+0x101aabb0 func   ?vfunc9@Panel@vgui2@@UAEHHHHH@Z vgui2::Panel::vfunc9
 0x101aabf0 func   ?vfunc36@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc36
 0x101aac60 func   ?vfunc58@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc58
 0x101aac90 func   ?vfunc59@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc59
