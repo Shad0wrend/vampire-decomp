@@ -18,6 +18,15 @@ CBaseAnimatedTextureProxy *pcd_emit_1007a6f0() { return new CBaseAnimatedTexture
 // TARGET: ??_GCBaseAnimatedTextureProxy@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1007a710 size=0x16
+#include "CBaseAnimatedTextureProxy.h"
+inline IMaterialProxy::~IMaterialProxy() {}
+CBaseAnimatedTextureProxy::~CBaseAnimatedTextureProxy()
+{
+	sub_1007a800();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a730 size=0xc
 #include "CBaseAnimatedTextureProxy.h"
 namespace lifted {
