@@ -26230,6 +26230,19 @@ void sub_1007bf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c1a0 size=0x13
+struct CWeaponAmmoView
+{
+	char m_pad[0x7a4];
+	int m_iClip[2];	// 0x7a4
+	char sub_1007c1a0( int index );
+};
+char CWeaponAmmoView::sub_1007c1a0( int index )
+{
+	return m_iClip[index] >= 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1c0 size=0x5
 char __stdcall sub_1007c1c0(int a0, int a1, int a2, int a3)
 {
