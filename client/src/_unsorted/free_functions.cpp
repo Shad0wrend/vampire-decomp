@@ -53553,6 +53553,18 @@ int CL::sub_101165c0(unsigned char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101166d0 size=0x3d
+struct V3 { float x, y, z; };
+struct S { int u0, u4, u8; V3 a; V3 b; int u24, u28, u2c, u30; unsigned long flags; };
+void __fastcall sub_101166d0(S *self, int edx, const V3 *a, const V3 *b, bool c)
+{
+	self->a.x = a->x; self->a.y = a->y; self->a.z = a->z;
+	self->b.x = b->x; self->b.y = b->y; self->b.z = b->z;
+	if (c)
+		self->flags &= ~8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116710 size=0x7
 #include "CParticleEffectBinding.h"
 
