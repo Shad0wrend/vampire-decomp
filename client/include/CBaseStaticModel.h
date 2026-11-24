@@ -37,7 +37,8 @@ public:
 	virtual bool Renderable_vfunc20();	// IClientRenderable slot 20
 	virtual ~CBaseStaticModel();
 	CBaseStaticModel();
-	int m_unk8; int m_unkc; int m_unk10; int m_unk14; int m_unk18; int m_unk1c;
+	Vector m_vecOrigin;	// 0x8
+	int m_unk14; int m_unk18; int m_unk1c;
 	Vector m_vecMins;	// 0x20
 	Vector m_vecMaxs;	// 0x2c
 	int m_unk38;
