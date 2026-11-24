@@ -847,6 +847,22 @@ void vgui2::Panel::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab490 size=0x49
+#include "vgui2__Panel.h"
+struct KVView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual int *v6(int *, const char *);
+};
+// TARGET: ?vfunc74@Panel@vgui2@@UAEHH@Z
+int vgui2::Panel::vfunc74(int a)
+{
+	KVView *kv = (KVView *)a;
+	int c;
+	vfunc51(*kv->v6(&c, "FgColor"));
+	return vfunc50(*kv->v6(&c, "BgColor"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab860 size=0x6
 #include "vgui2__Panel.h"
 namespace lifted {
