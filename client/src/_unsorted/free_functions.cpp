@@ -58742,6 +58742,22 @@ void sub_1013a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b5e0 size=0x31
+#include "CUnknown1006bea0.h"
+#pragma pack(push, 1)
+struct XImgHdr { char u[5]; unsigned short m_w; unsigned char m_bpp; };
+#pragma pack(pop)
+extern char g_105e70b8[];
+bool sub_1013b5e0(CUnknown1006bea0 *r, XImgHdr *h)
+{
+	int n = (h->m_bpp >> 3) * h->m_w;
+	if (n > 0x400)
+		return false;
+	r->sub_1013c970(g_105e70b8, n);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013bab0 size=0x26
 namespace lifted {
 extern char g_10247c0c;

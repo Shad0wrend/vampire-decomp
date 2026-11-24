@@ -5590,6 +5590,7 @@
 0x1013a3d0 func   ?sub_1013a3d0@@YAHXZ sub_1013a3d0
 0x1013a4d0 func   ?sub_1013a4d0@@YA_NP6APAXPBDPAH@Z@Z sub_1013a4d0
 0x1013a7d0 func   ?sub_1013a7d0@@YAXXZ sub_1013a7d0
+0x1013b5e0 func   ?sub_1013b5e0@@YA_NPAVCUnknown1006bea0@@PAUXImgHdr@@@Z sub_1013b5e0
 0x1013bab0 func   ?sub_1013bab0@@YAHXZ sub_1013bab0
 0x1013bae0 func   ??_GCTimeMaterialProxy@@UAEPAXI@Z ??_GCTimeMaterialProxy@@UAEPAXI@Z
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
