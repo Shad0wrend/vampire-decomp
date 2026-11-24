@@ -43396,6 +43396,16 @@ float __fastcall sub_10107630(Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101076c0 size=0x8
+float sub_10107630();
+
+// TARGET: sub_101076c0
+void sub_101076c0()
+{
+	sub_10107630();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107730 size=0xa3
 // TARGET: sub_10107730
 #include "Vector.h"
