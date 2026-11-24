@@ -7,6 +7,7 @@ struct VObj5 { virtual void f0(); virtual void f1(); virtual void f2(); virtual 
 class CLabelHeader : public vgui2::Label
 {
 public:
+	CLabelHeader(vgui2::Panel *p, const char *n, const char *t) : vgui2::Label(p, n, t) {}
 	virtual ~CLabelHeader() { VObj5 *o = *(VObj5 **)((char *)this + 0xb8); if (o) o->d(1); }
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CLabelHeader's own function
