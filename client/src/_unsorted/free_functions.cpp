@@ -31287,6 +31287,24 @@ void AnimView::sub_10096650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100966e0 size=0x35
+#include "C_BaseAnimating.h"
+struct CUnknown100ac740 { CUnknown100ac740 *m_pNext; void sub_100ac740(); };
+// TARGET: C_BaseAnimating::sub_100966e0
+void C_BaseAnimating::sub_100966e0()
+{
+	CUnknown100ac740 *&head = *(CUnknown100ac740 **)((char *)this + 0x724);
+	CUnknown100ac740 *p = head;
+	while (p) {
+		CUnknown100ac740 *n = p->m_pNext;
+		p->sub_100ac740();
+		delete p;
+		p = n;
+	}
+	head = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d10 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
