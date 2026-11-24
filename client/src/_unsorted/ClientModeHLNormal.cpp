@@ -38,6 +38,24 @@ void ClientModeHLNormal::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029700 size=0x41
+#include "ClientModeHLNormal.h"
+struct CUnkInputObj { int sub_100f29d0(float a, int b); };
+struct IUnkG4cfdf4 { virtual void v0(); virtual bool IsX(); char m_pad[0x28]; int m_n2c; };
+extern IUnkG4cfdf4 *g_104cfdf4;
+extern CUnkInputObj g_104cfe38;
+int ClientModeHLNormal::vfunc6(float a, int b)
+{
+	int v;
+	if (g_104cfdf4->IsX())
+		v = 0;
+	else
+		v = g_104cfdf4->m_n2c;
+	m_sub.v21(v != 0);
+	return g_104cfe38.sub_100f29d0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029770 size=0x3
 #include "ClientModeHLNormal.h"
 void ClientModeHLNormal::vfunc22(int a0, int a1)

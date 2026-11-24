@@ -1736,6 +1736,7 @@
 0x100295e0 func   ?vfunc7@ClientModeHLNormal@@UAEPADXZ ClientModeHLNormal::vfunc7
 0x10029690 func   ?vfunc4@ClientModeHLNormal@@UAEXXZ ClientModeHLNormal::vfunc4
 0x100296c0 func   ?vfunc5@ClientModeHLNormal@@UAEXXZ ClientModeHLNormal::vfunc5
+0x10029700 func   ?vfunc6@ClientModeHLNormal@@UAEHMH@Z ClientModeHLNormal::vfunc6
 0x10029770 func   ?vfunc22@ClientModeHLNormal@@UAEXHH@Z ClientModeHLNormal::vfunc22
 0x10029780 func   ?vfunc24@ClientModeHLNormal@@UAEXH@Z ClientModeHLNormal::vfunc24
 0x100297b0 func   ?vfunc27@ClientModeHLNormal@@UAE_NXZ ClientModeHLNormal::vfunc27
