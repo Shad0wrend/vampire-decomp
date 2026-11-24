@@ -87739,6 +87739,43 @@ void CNetGraphPanel_10169900::sub_10169900(vrect_t *rect, int width, int *x, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10169c20 size=0x5e
+#include "CNetGraphPanel.h"
+
+// TARGET: CNetGraphPanel::sub_10169c20
+struct GraphSubX
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x28];
+	int m_unk2c;
+};
+
+struct GraphX
+{
+	char m_pad0[4];
+	GraphSubX *m_pSub;
+};
+
+class ISurfX
+{
+public:
+#define D(n) virtual void d##n();
+	D(0) D(1) D(2) D(3) D(4) D(5) D(6) D(7) D(8) D(9) D(10) D(11)
+#undef D
+	virtual void __cdecl vfunc12(void *, int, int, int, int, int, int, const char *, int);
+};
+
+extern ISurfX *g_104a5820;
+
+void CNetGraphPanel::sub_10169c20(int a0, int a1)
+{
+	GraphX *g = *(GraphX **)((char *)this + 0x98d4);
+	g_104a5820->vfunc12(*(void **)((char *)this + 0x98d0), a0, a1, 0xe5, 0xe5, 0xb2, 0xff, "%i/s",
+		g->m_pSub->vfunc1() ? 0 : g->m_pSub->m_unk2c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a690 size=0x1
 void sub_1016a690()
 {
