@@ -38463,6 +38463,19 @@ int List_100d0d60::sub_100d0d60(CBaseHandle h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0d90 size=0x27
+#include "CClientEntityList.h"
+struct N100d0d90 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int v4(); };
+struct IV100d0d90 { virtual void v0(); virtual void v1(); virtual N100d0d90 *v2(CBaseHandle h); };
+int CClientEntityList::sub_100d0d90(CBaseHandle h)
+{
+	N100d0d90 *p = ((IV100d0d90 *)((char *)this + 0x1803c))->v2(h);
+	if (p)
+		return p->v4();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0df0 size=0x27
 #include "CClientEntityList.h"
 struct IRes { virtual int v0(); virtual int v1(); virtual int v2(); };
