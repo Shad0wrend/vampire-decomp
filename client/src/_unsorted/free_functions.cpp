@@ -38459,6 +38459,22 @@ bool sub_100d0480(const SItem_100d0480 *a, const SItem_100d0480 *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d05a0 size=0x2b
+struct Elem_100d05a0 { int m_unk0; int m_unk4; int m_unk8; unsigned short m_id; unsigned short m_unkE; };
+struct Pool_100d05a0 {
+	Elem_100d05a0 *m_pElems;
+	int m_unk4[4];
+	unsigned short m_nCount;
+	int sub_100d05a0(unsigned short h);
+};
+int Pool_100d05a0::sub_100d05a0(unsigned short h)
+{
+	if (h < m_nCount && m_pElems[h].m_id != h)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d05d0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
