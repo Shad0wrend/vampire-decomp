@@ -24,3 +24,10 @@ void CLocalDLLChain::vfunc0(CLocalDLLChainVisitor *pVisitor)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e1530 size=0xc
+#include "CLocalDLLChain.h"
+extern int g_104cf514;
+// TARGET: CLocalDLLChain::vfunc1
+void CLocalDLLChain::vfunc1(int value) { g_104cf514 = value; }
+// END FUNCTION
