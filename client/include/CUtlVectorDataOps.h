@@ -15,4 +15,5 @@ public:
 	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);	// Restore(SaveRestoreFieldInfo_t &, IRestore *)
 	virtual bool vfunc2(SaveRestoreFieldInfo_t *fieldInfo);	// IsEmpty: the size (+0xc) of the vector the field points to is zero
 	virtual void vfunc3(SaveRestoreFieldInfo_t *fieldInfo);	// MakeEmpty: zeroes the size (+0xc) of the vector the field points to
+	virtual bool vfunc4(SaveRestoreFieldInfo_t *fieldInfo, const char *szValue);	// Parse: the default returns false
 };
