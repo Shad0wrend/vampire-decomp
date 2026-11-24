@@ -19503,6 +19503,21 @@ void CUnknown100613a0::sub_100613a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061640 size=0x46
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+__declspec(dllimport) int Q_strnicmp(const char *, const char *, int);
+extern const char *g_102878e8[9];
+int sub_10061640(const char *s)
+{
+    for (int i = 0; i <= 8; i++) {
+        if (!Q_strnicmp(s, g_102878e8[i], strlen(s)))
+            return i;
+    }
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062280 size=0x1e
 struct CUnknown10062280 { char sub_10062280(char, char, char, char); };
 char CUnknown10062280::sub_10062280(char a0, char a1, char a2, char a3)
