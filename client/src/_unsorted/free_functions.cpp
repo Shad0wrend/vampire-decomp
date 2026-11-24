@@ -10719,6 +10719,12 @@ void CUnknown10028020::sub_10028020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028370 size=0x20
+struct Mem8370 { void sub_10028820(void *); };
+struct V8370 { char pad[0x970]; Mem8370 m; void sub_1009b2c0(int); void sub_10028370(int p); };
+void V8370::sub_10028370(int p) { sub_1009b2c0(p); m.sub_10028820((char *)this - 8); }
+// END FUNCTION
+
 // FUNCTION: 0x100283d0 size=0x6
 namespace lifted {
 extern char g_102ea238;
