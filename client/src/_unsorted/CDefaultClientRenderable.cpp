@@ -22,6 +22,16 @@ void __stdcall sub_100286b0(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100286e0 size=0x3
+#include "CDefaultClientRenderable.h"
+
+// TARGET: CDefaultClientRenderable::vfunc2
+int CDefaultClientRenderable::vfunc2()
+{
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028700 size=0x3
 // TARGET: sub_10028700
 int sub_10028700()
