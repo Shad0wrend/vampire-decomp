@@ -32358,6 +32358,21 @@ void LocalBaseAnimating_10095f30::sub_10095f30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095f90 size=0x1b
+#include "C_BaseAnimating.h"
+struct RendView10095f90 {
+	bool sub_10095f90();
+	bool sub_1009fca0();
+};
+// TARGET: RendView10095f90::sub_10095f90
+bool RendView10095f90::sub_10095f90()
+{
+	if (((C_BaseAnimating *)((char *)this - 4))->sub_10093e40())
+		return true;
+	return sub_1009fca0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095fb0 size=0xa
 struct CUnknown10095fb0 { int sub_10095fb0(); };
 int CUnknown10095fb0::sub_10095fb0()
