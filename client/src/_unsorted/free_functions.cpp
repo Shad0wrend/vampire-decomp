@@ -38677,6 +38677,32 @@ bool C_BreakableSurface::sub_100b80f0(int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8460 size=0x5d
+#include "C_BreakableSurface.h"
+
+struct BreakPanel
+{
+	char m_unk0[3];
+	signed char m_b3;
+	signed char m_b4;
+	char m_unk5[3];
+	unsigned short m_n8;
+};
+
+int C_BreakableSurface::sub_100b8460(int x, int y)
+{
+	unsigned short i = m_n454;
+	while (i != 0xffff)
+	{
+		BreakPanel *p = &((BreakPanel *)m_pArray)[i];
+		if (p->m_b4 == y && p->m_b3 == x)
+			return i;
+		i = p->m_n8;
+	}
+	return 0xffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9b80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_100b9b80(const Vector &v) const
