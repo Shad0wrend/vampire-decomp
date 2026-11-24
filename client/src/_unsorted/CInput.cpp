@@ -233,3 +233,8 @@ void CInput::vfunc54()
 #include "CInput.h"
 bool CInput::vfunc18() { if (m_unk28) return true; return false; }
 // END FUNCTION
+
+// FUNCTION: 0x101069c0 size=0x9
+#include "CInput.h"
+bool CInput::vfunc24() { if (m_unk24) return true; return false; }
+// END FUNCTION
