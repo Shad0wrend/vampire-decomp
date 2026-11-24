@@ -8,6 +8,7 @@ public:
 	virtual int vfunc7(int);
 	virtual int vfunc10();
 	virtual int vfunc11();
+	virtual __int64 vfunc15(int);
 	int vfunc16(int);
 	virtual int vfunc17(int);
 	virtual int vfunc14(int);
