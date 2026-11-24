@@ -14842,6 +14842,55 @@ int CUnknown1003a840::sub_1003a840(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003cdd0 size=0xb2
+#include "CTempEnts.h"
+#include "C_BaseEntity.h"
+#include "Tier1.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct EngTimeView {
+    V4(a) V4(b) V4(c) V4(d) V4(e) V4(f) V4(g) V4(h) V4(i)
+    virtual void x36(); virtual void x37(); virtual void x38();
+    virtual float Time(int);
+};
+struct TempEntView {
+    V4(a) V4(b) V4(c) V4(d) V4(e) V4(f) V4(g) V4(h) V4(i) V4(j)
+    V4(k) V4(l) V4(m) V4(n) V4(o) V4(p) V4(q) V4(r) V4(s) V4(t)
+    V4(u) V4(v) V4(w) V4(x) V4(y) V4(z) V4(A) V4(B) V4(C) V4(D)
+    V4(E) V4(F) V4(G) V4(H) V4(I)
+    virtual void y40(); virtual void y41(); virtual void y42();
+    virtual void Prepare(void *model, float t);
+    void sub_100a2030(const void *org);
+    void sub_100a1a70(int a);
+};
+extern EngTimeView *g_104a57d4;
+void (*g_101e3120)(int, const char *, ...);
+
+// TARGET: CTempEnts::sub_1003cdd0
+TempEntView *CTempEnts::sub_1003cdd0(const void *org, void *model)
+{
+    TempEntView *pTemp;
+
+    if (!model) {
+        g_101e3120(1, "Can't create temporary entity with NULL model!\n");
+        return 0;
+    }
+    pTemp = (TempEntView *)m_pFreeTempEnts;
+    if (!pTemp) {
+        g_101e3120(1, "Overflow %d temporary ents!\n", 500);
+        return 0;
+    }
+    m_pFreeTempEnts = *(void **)((char *)pTemp + 0x7a8);
+    pTemp->Prepare(model, g_104a57d4->Time(0));
+    *(int *)((char *)pTemp + 0x7cc) = 0;
+    pTemp->sub_100a2030(org);
+    *(void **)((char *)pTemp + 0x7a8) = m_pHead;
+    m_pHead = pTemp;
+    pTemp->sub_100a1a70(5);
+    return pTemp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ce90 size=0x48
 namespace lifted {
 struct C100a1fc0 { int sub_100a1fc0(); };
