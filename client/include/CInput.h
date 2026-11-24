@@ -18,7 +18,12 @@ public:
     int m_unk20;
     int m_unk24;
     void *m_unk28;
-    int m_unk2c[(0xdc - 0x2c) / 4];
+    int m_unk2c[(0x54 - 0x2c) / 4];
+    int m_unk54;
+    int m_unk58;
+    int m_unk5c;
+    int m_unk60;
+    int m_unk64[(0xdc - 0x64) / 4];
     struct CInputKey { char name[0x20]; int value; CInputKey *next; };
     CInputKey *m_pKeys;
     // vtable-slot layer (2026-11-22), from the game's vtables
