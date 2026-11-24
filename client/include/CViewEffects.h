@@ -37,6 +37,7 @@ public:
     float m_flAppliedAngle;
     Vector m_vecShakeOffset;
     float m_flShakeAngle;
+    bool sub_101977a0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CViewEffects adds to its base's vtable: 0-17, vfuncK at slot K
     virtual void vfunc0();
