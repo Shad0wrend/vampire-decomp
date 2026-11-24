@@ -34,6 +34,22 @@ bool ClientModeShared::vfunc13()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4200 size=0x16
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct O_100d4200 {
+V8(a) V8(b) V8(c) V8(d) V8(e) V8(f) V8(g) V8(h) V8(i) V8(j) V8(k) V8(l) V8(m) V8(n) V8(o) V8(p) V8(q) V8(r) V8(s) V8(t) V8(u) V8(v) V8(w) V8(x) V8(y) V8(z) V8(A) V8(B) V8(C) V8(D)
+virtual void E0(); virtual void E1(); virtual void E2(); virtual void E3(); virtual void E4();
+virtual void v245(int, int); };
+O_100d4200 *sub_1009b210();
+struct S_100d4200 { void sub_100d4200(int a, int b); };
+void S_100d4200::sub_100d4200(int a, int b)
+{
+	O_100d4200 *p = sub_1009b210();
+	if (p)
+		p->v245(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4220 size=0x3
 #include "ClientModeShared.h"
 bool ClientModeShared::vfunc26()

@@ -3998,6 +3998,7 @@
 0x100d4030 func   ?vfunc2@ClientModeShared@@UAEXXZ ClientModeShared::vfunc2
 0x100d41e0 func   ?vfunc11@ClientModeShared@@UAE_NH@Z ClientModeShared::vfunc11
 0x100d41f0 func   ?vfunc13@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc13
+0x100d4200 func   ?sub_100d4200@S_100d4200@@QAEXHH@Z S_100d4200::sub_100d4200
 0x100d4220 func   ?vfunc26@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc26
 0x100d4230 func   ?vfunc10@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc10
 0x100d4290 func   ?vfunc14@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc14
