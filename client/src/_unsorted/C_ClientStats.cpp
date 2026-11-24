@@ -11,6 +11,16 @@ int C_ClientStats::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adba0 size=0x8
+#include "C_ClientStats.h"
+
+// TARGET: C_ClientStats::vfunc7
+int C_ClientStats::vfunc7(int)
+{
+	return (int)"";
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adbb0 size=0x3
 // TARGET: sub_100adbb0
 int sub_100adbb0()
