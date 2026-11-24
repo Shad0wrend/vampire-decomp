@@ -18,7 +18,11 @@ public:
 	int m_unk4[(0x18 - 4) / 4];
 	bool m_b18;
 	char m_c19; char m_c1a; char m_c1b;
-	int m_unk1c[(0x170 - 0x1c) / 4];
+	int m_unk1c[(0x7c - 0x1c) / 4];
+	int m_w7c;
+	int m_h80;
+	int m_unk84[(0x170 - 0x84) / 4];
+	void sub_101a9890(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Panel adds to its base's vtable: 0-106, vfuncK at slot K
 	virtual int vfunc0();
