@@ -84222,6 +84222,21 @@ int CUnknown10174fe0::sub_10174fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175e80 size=0x2c
+#include "CHud.h"
+extern char g_105fb1fe;
+extern char g_105fb200;
+extern CHud g_104cfe38;
+struct CScorePanelTemp { void sub_10174c80(const char *a); };
+void sub_10175e80()
+{
+	if (g_105fb1fe) {
+		g_105fb200 = 1;
+		((CScorePanelTemp *)g_104cfe38.sub_100f0ed0("VCharWizardUI"))->sub_10174c80("Trait_Male_vs_Female");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10176360 size=0x20
 namespace lifted {
 extern char g_1024baec;
