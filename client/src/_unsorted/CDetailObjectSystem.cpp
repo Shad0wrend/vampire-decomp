@@ -52,6 +52,15 @@ void __stdcall sub_100e0560(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e05a0 size=0x19
+#include "CDetailObjectSystem.h"
+// TARGET: CDetailObjectSystem::vfunc11
+char *CDetailObjectSystem::vfunc11(unsigned int i)
+{
+	return (char *)m_data.m_unk1c + (i & 0xffff) * 80 + 0x20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e08f0 size=0x1
 #include "CDetailObjectSystem.h"
 // TARGET: CDetailObjectSystem::vfunc5
