@@ -417,6 +417,27 @@ void vgui2::Frame::vfunc133()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9700 size=0x34
+#include "vgui2__Frame.h"
+struct ChildView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void SetVisibleLike(int a);
+};
+struct HolderView {
+	virtual ChildView *Get();
+};
+// TARGET: vgui2::Frame::vfunc107
+void vgui2::Frame::vfunc107(int a)
+{
+	sub_101b4d70(a);
+	ChildView *p = ((HolderView *)vfunc116())->Get();
+	if (p)
+		p->SetVisibleLike(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9970 size=0x3
 #include "vgui2__Frame.h"
 void vgui2::Frame::vfunc93(int a0)
