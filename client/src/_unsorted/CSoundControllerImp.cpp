@@ -94,3 +94,12 @@ struct CSndView101339f0 { void sub_101339f0(); };
 // TARGET: sub_10134d30
 void __stdcall sub_10134d30(CSndView101339f0 *p) { p->sub_101339f0(); }
 // END FUNCTION
+
+// FUNCTION: 0x10134d40 size=0xc
+void __fastcall sub_10133a00(void *self);
+// TARGET: sub_10134d40
+void __stdcall sub_10134d40(void *p)
+{
+	sub_10133a00(p);
+}
+// END FUNCTION
