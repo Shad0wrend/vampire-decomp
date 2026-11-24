@@ -63399,6 +63399,42 @@ void __fastcall sub_101391d0(CTreeHolder1024a120 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139260 size=0x3f
+extern "C" void __declspec(dllimport) Plat_Free(void *);
+struct CUnknown1024b370 { void sub_1013d330(); };
+struct HNode
+{
+	int m_unk0;
+	void *m_pMem;
+	int m_n8;
+	int m_nAlloc;
+	int m_n10, m_n14;
+	CUnknown1024b370 m_sub;
+	~HNode()
+	{
+		m_sub.sub_1013d330();
+		if (m_nAlloc != -1)
+		{
+			if (m_pMem)
+			{
+				Plat_Free(m_pMem);
+				m_pMem = 0;
+			}
+			m_n8 = 0;
+		}
+	}
+};
+struct Holder
+{
+	HNode *m_p;
+	void sub_10139260();
+};
+void Holder::sub_10139260()
+{
+	delete m_p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101392a0 size=0x54
 #include "CUnknown1024a230.h"
 #include "CUnknown1024b2d0.h"
