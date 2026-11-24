@@ -37520,6 +37520,27 @@ void Holder_100cd220::sub_100cd220(IThing_100cd220 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd240 size=0x1e
+struct IThing_100cd240
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(int);
+};
+struct Holder_100cd240
+{
+	IThing_100cd240 *m_p;
+	void sub_100cd240(const Holder_100cd240 *o);
+};
+// TARGET: Holder_100cd240::sub_100cd240
+void Holder_100cd240::sub_100cd240(const Holder_100cd240 *o)
+{
+	m_p = o->m_p;
+	if (m_p)
+		m_p->v12(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd260 size=0x29
 namespace lifted {
 extern int g_104a57ec;
