@@ -132,6 +132,17 @@ int vgui2::PropertyDialog::vfunc155()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b7100 size=0x2e
+#include "vgui2__PropertyDialog.h"
+#include "vgui2__EditablePanel.h"
+int vgui2::PropertyDialog::vfunc108()
+{
+	EditablePanel *p = dynamic_cast<EditablePanel *>((Panel *)vfunc145());
+	if (p)
+		return p->vfunc108();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b7150 size=0x13
 #include "vgui2__PropertyDialog.h"
 namespace lifted {
