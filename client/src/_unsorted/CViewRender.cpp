@@ -202,6 +202,18 @@ void CViewRender::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018fab0 size=0x5f
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewRender::sub_1018fab0
+int CViewRender::sub_1018fab0()
+{
+	ScopeTrace trace("CViewRender::FrameNumber", g_102de300);
+	return *(int *)((char *)this + 0x374);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190360 size=0x2c
 #include "CViewRender.h"
 struct XEng39 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
