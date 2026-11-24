@@ -618,6 +618,27 @@ bool C_BaseEntity::vfunc67()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a08a0 size=0x3d
+#include "C_BaseEntity.h"
+#include "Vector.h"
+struct EntView {
+	char pad[0x54];
+	Vector v0, v1;
+	int a6;
+	int c70;
+	char pad3[0x29c - 0x74];
+	Vector w0, w1;
+};
+// TARGET: C_BaseEntity::vfunc70
+int C_BaseEntity::vfunc70()
+{
+	EntView *p = (EntView *)this;
+	p->v0 = p->w0;
+	p->v1 = p->w1;
+	return p->a6 = p->c70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a08e0 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc71()
