@@ -64733,6 +64733,22 @@ void sub_1013a730(CUnknown1006c1c0 *reader, CUnknownImgInfo *info, unsigned char
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a780 size=0x4d
+#include "CUnknown1006c1c0.h"
+
+void sub_1013a780(CUnknown1006c1c0 *pReader, CUnknownImgInfo *pInfo, unsigned char *pOut)
+{
+	for ( int i = 0; i < pInfo->m_nCount; i++, pOut += 3 )
+	{
+		unsigned char *p = pReader->m_pData + pReader->m_nC;
+		pOut[2] = p[0];
+		pOut[1] = p[1];
+		pOut[0] = p[2];
+		pReader->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a7d0 size=0x1
 void sub_1013a7d0()
 {
