@@ -24783,6 +24783,15 @@ int HV::sub_1007bb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bba0 size=0xe
+struct V_1007bba0 { int m_unk[0x790 / 4]; float m_f790[1]; };
+// TARGET: sub_1007bba0
+float __fastcall sub_1007bba0(V_1007bba0 *self, int edx, int i)
+{
+	return self->m_f790[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bbb0 size=0x2a
 namespace lifted {
 struct V { virtual void u0(); virtual int f1(); };
