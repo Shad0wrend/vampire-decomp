@@ -190,6 +190,20 @@ void vgui2::EditablePanel::vfunc105(vgui2::Panel *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4ff0 size=0x48
+#include "vgui2__EditablePanel.h"
+// TARGET: ?vfunc72@EditablePanel@vgui2@@UAEHH@Z
+int vgui2::EditablePanel::vfunc72(int a)
+{
+	for (int i = 0; i < vfunc36(); i++) {
+		int r = vfunc37(i)->vfunc72(a);
+		if (r)
+			return r;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5170 size=0x24
 #include "vgui2__EditablePanel.h"
 namespace lifted {
