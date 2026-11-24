@@ -18292,6 +18292,33 @@ const char * __stdcall sub_10056510(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056550 size=0x58
+struct HudEntry56 { char *name; char gender; char pad[23]; };
+extern HudEntry56 g_103ee160[];
+extern char g_103ee140[];
+extern void *g_104a0d50;
+int __stdcall sub_101d159d(char *, const char *, ...);
+
+const char * __stdcall sub_10056510(int i)
+{
+    if (i < 0 || i >= 0x53)
+        return "CHudInfoBar_Error";
+    return g_103ee160[i].name ? g_103ee160[i].name : "";
+}
+
+char * __stdcall sub_10056550(int i)
+{
+    const char *psz = sub_10056510(i);
+    if (g_103ee160[i].gender && g_104a0d50)
+    {
+        char *gender = ((int *)g_104a0d50)[0xfd0 / 4] ? "M" : "F";
+        sub_101d159d(g_103ee140, "%s_%s", psz, gender);
+        return g_103ee140;
+    }
+    return (char *)psz;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100565b0 size=0x14c
 #include "CHudInfoBar.h"
 
