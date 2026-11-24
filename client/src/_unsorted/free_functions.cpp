@@ -50136,6 +50136,29 @@ float sub_100fdb30(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100b40 size=0x58
+extern char g_104d2ce4;
+extern char g_104d2ce8;
+extern char g_104d2cec;
+extern char g_104d2cf0;
+extern char g_104d2cf4;
+extern char g_104d2cf8;
+
+void *__stdcall sub_10100b40(int index)
+{
+	switch (index)
+	{
+	case 1: return &g_104d2ce8;
+	case 2: return &g_104d2cec;
+	case 3: return &g_104d2cf0;
+	case 4: return &g_104d2cf4;
+	case 5: return &g_104d2cf8;
+	case 0: return &g_104d2ce4;
+	default: return &g_104d2ce4;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101b20 size=0x47
 struct QA { float x, y, z; };
 struct IG45 {
