@@ -53088,6 +53088,15 @@ void CUnknown102496a0::sub_1012c770(CRopeNode *pNodes, int nNodes, CBaseRopePhys
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c9c0 size=0xf
+struct I_1012c9c0 { virtual void v0(); virtual void v1(); };
+// TARGET: sub_1012c9c0
+void __fastcall sub_1012c9c0(char *self)
+{
+	((I_1012c9c0 *)(self - 0xdc))->v1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d3f0 size=0x10b
 struct SndInfo {
     int a;
