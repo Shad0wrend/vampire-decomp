@@ -23,6 +23,18 @@ bool vgui2::ScrollBar::vfunc62(char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bef60 size=0x1a
+#include "vgui2__ScrollBar.h"
+struct SBView_101bef60 { char pad[0x60]; vgui2::Panel *m_p; };
+// TARGET: vgui2::ScrollBar::vfunc63
+bool vgui2::ScrollBar::vfunc63(char c)
+{
+	vgui2::Panel *p = ((SBView_101bef60 *)this)->m_p;
+	if (p)
+		return p->vfunc63(c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf080 size=0xb
 #include "vgui2__ScrollBar.h"
 namespace lifted {
