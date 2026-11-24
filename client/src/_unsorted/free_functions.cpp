@@ -48529,6 +48529,23 @@ struct CView { int a, b; int sub_10115520(); };
 int CView::sub_10115520() { return *(int *)((char *)this + 0x148); }
 // END FUNCTION
 
+// FUNCTION: 0x10115c00 size=0x1f
+struct S_10115c00
+{
+	char pad[0xac];
+	float *m_p;
+	void sub_10115c00(float x, float y, float z);
+};
+void S_10115c00::sub_10115c00(float x, float y, float z)
+{
+	float *p = m_p;
+	*p = x;
+	p++;
+	p[0] = y;
+	p[1] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115dd0 size=0x5
 int __stdcall sub_10115dd0(int a0, int a1)
 {
