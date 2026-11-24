@@ -25877,6 +25877,21 @@ int sub_1007dae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007db30 size=0x35
+#include <string.h>
+struct IntVec {
+  int *m_pData; int m_a; int m_b; int m_Size;
+  void sub_1007db30(int elem, int num);
+};
+// TARGET: IntVec::sub_1007db30
+void IntVec::sub_1007db30(int elem, int num)
+{
+  int numToMove = m_Size - elem - num;
+  if (numToMove > 0 && num > 0)
+    memmove(&m_pData[elem], &m_pData[elem + num], numToMove * sizeof(int));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007db70 size=0x3
 struct CUnknown1007db70 { int sub_1007db70(); };
 int CUnknown1007db70::sub_1007db70()
