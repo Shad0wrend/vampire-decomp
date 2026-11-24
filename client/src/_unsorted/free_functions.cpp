@@ -34785,6 +34785,12 @@ int CUnknown100bb3b0::sub_100bb3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb3d0 size=0x1b
+struct V3d0 { int a0, a4, a8; int m0c, m10, m14; int m18, m1c; int m20; void sub_100bb3d0(int); };
+void sub_100bae90(int *, int *, int, int);
+void V3d0::sub_100bb3d0(int) { sub_100bae90(&m0c, &m20, m18, m1c); }
+// END FUNCTION
+
 // FUNCTION: 0x100bb3f0 size=0x1d
 namespace lifted {
 int sub_100bae90(int, int, int, int);
