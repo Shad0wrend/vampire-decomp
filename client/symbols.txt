@@ -1969,6 +1969,7 @@
 0x10035670 func   ??1C_TEBubbles@@UAE@XZ C_TEBubbles::~C_TEBubbles
 0x10035670 func   ?sub_10035670@CUnknown10035670@@QAEHXZ CUnknown10035670::sub_10035670
 0x10035690 func   ?sub_10035690@@YAHHHHHHHHH@Z sub_10035690
+0x100356c0 func   ?sub_100356c0@VNet_bubbles@@QAEXH@Z VNet_bubbles::sub_100356c0
 0x100356f0 func   ?vfunc9@C_TEBubbles@@UAEHXZ C_TEBubbles::vfunc9
 0x10035700 func   ?vfunc8@C_TEBubbles@@UAEHXZ C_TEBubbles::vfunc8
 0x10035710 func   ?sub_10035710@@YAHXZ sub_10035710
