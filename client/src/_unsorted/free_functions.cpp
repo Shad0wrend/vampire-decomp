@@ -75674,6 +75674,11 @@ void CUnknown101668e0::sub_101668e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101669a0 size=0x1b
+struct V69a0 { char pad[0x5c]; int n; char pad2[0x6c - 0x60]; int *arr; int sub_101669a0(int i); };
+int V69a0::sub_101669a0(int i) { if (i < 0 || i >= n) return 0; return arr[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x10166d70 size=0x18
 struct CUnknown10166d70 { int sub_10166d70(); };
 int CUnknown10166d70::sub_10166d70()
