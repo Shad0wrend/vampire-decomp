@@ -195,6 +195,69 @@ int C_BaseAnimating::vfunc62()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100954d0 size=0x117
+#include "C_BaseAnimating.h"
+
+struct CGlobalVars_100954d0
+{
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVars_100954d0 *g_102b8494;
+
+struct C_BaseAnimating_Fields
+{
+	char pad0[0x70];
+	float m_flAnimTime;
+	char pad74[0x508 - 0x74];
+	float m_flGroundSpeed;
+	char pad50c[0x510 - 0x50c];
+	bool m_bSequenceFinished;
+	bool m_bSequenceLoops;
+	char pad512[0x63c - 0x512];
+	int m_nSequence;
+	float m_flPlaybackRate;
+	float m_flUnk644;
+	float m_flCycle;
+	float sub_100955f0(int iSequence);
+};
+
+// TARGET: C_BaseAnimating::vfunc136
+float C_BaseAnimating::vfunc136(float flInterval)
+{
+	C_BaseAnimating_Fields *f = (C_BaseAnimating_Fields *)this;
+	if (flInterval == 0.0)
+	{
+		flInterval = 0.1f;
+	}
+
+	flInterval = (flInterval + g_102b8494->curtime) - f->m_flAnimTime;
+	if (flInterval <= 0.001)
+	{
+		return 0.0f;
+	}
+
+	f->m_flCycle += vfunc138(f->m_nSequence) * f->m_flPlaybackRate * flInterval;
+	f->m_flAnimTime += flInterval;
+
+	if (f->m_flCycle < 0.0 || f->m_flCycle >= 1.0)
+	{
+		if (f->m_bSequenceLoops)
+		{
+			f->m_flCycle -= (int)(f->m_flCycle);
+		}
+		else
+		{
+			f->m_flCycle = (f->m_flCycle < 0.0f) ? 0.0f : 1.0f;
+		}
+		f->m_bSequenceFinished = true;
+	}
+
+	f->m_flGroundSpeed = f->sub_100955f0(f->m_nSequence);
+	return flInterval;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095870 size=0x6
 #include "C_BaseAnimating.h"
 namespace lifted {
