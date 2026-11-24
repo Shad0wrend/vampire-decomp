@@ -41341,6 +41341,15 @@ void sub_100dfb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfb80 size=0x36
+struct IGlobal104a57e8 { virtual void __cdecl v0(int, int, int, int, int, int, int, int); };
+extern IGlobal104a57e8 *g_104a57e8;
+void sub_100dfb80(int a, int b, int c, int d, int e, int f, int g, int h)
+{
+    g_104a57e8->v0(a, b, c, d, e, f, g, h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfbc0 size=0x39
 namespace lifted {
 extern int g_104a57e8;

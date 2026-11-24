@@ -4329,6 +4329,7 @@
 0x100dfb50 func   ?sub_100dfb50@CUnknown100dfb50@@QAEHXZ CUnknown100dfb50::sub_100dfb50
 0x100dfb60 func   ?sub_100dfb60@@YAXXZ sub_100dfb60
 0x100dfb70 func   ?sub_100dfb70@@YAXXZ sub_100dfb70
+0x100dfb80 func   ?sub_100dfb80@@YAXHHHHHHHH@Z sub_100dfb80
 0x100dfbc0 func   ?sub_100dfbc0@@YAHHHHHHHHHH@Z sub_100dfbc0
 0x100dfc00 func   ?sub_100dfc00@@YAHHHHHHHHHHH@Z sub_100dfc00
 0x100dfc40 func   ?sub_100dfc40@@YAHH@Z sub_100dfc40
