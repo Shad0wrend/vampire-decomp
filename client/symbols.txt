@@ -7032,6 +7032,7 @@
 0x10164160 func   ?sub_10164160@CUnknown10164160@@QAEPAXHHH@Z CUnknown10164160::sub_10164160
 0x10164190 func   ??_GCHudLabel@@UAEPAXI@Z ??_GCHudLabel@@UAEPAXI@Z
 0x101641b0 func   ?vfunc74@CHudLabel@@UAEHH@Z CHudLabel::vfunc74
+0x10164210 func   ??0CBitmapButton@@QAE@PAVPanel@vgui2@@PBD1@Z CBitmapButton::CBitmapButton
 0x10164270 func   ?vfunc97@CBitmapButton@@UAEXXZ CBitmapButton::vfunc97
 0x10164280 func   ??_GCBitmapButton@@UAEPAXI@Z ??_GCBitmapButton@@UAEPAXI@Z
 0x101642a0 func   ??1CBitmapButton@@UAE@XZ CBitmapButton::~CBitmapButton
