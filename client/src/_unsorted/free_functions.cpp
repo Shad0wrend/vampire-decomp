@@ -16045,6 +16045,21 @@ void Stats_100429a0::sub_100429a0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100429c0 size=0x30
+struct ITimer { virtual double v0(); };
+struct TD {
+	char pad[0x80]; double m_a[27];
+	double m_b[27];
+	char pad2[0x308 - 0x230]; ITimer *m_pT;
+	void sub_100429c0(int i);
+};
+void TD::sub_100429c0(int i)
+{
+	if (m_pT)
+		m_a[i] += m_pT->v0() - m_b[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100429f0 size=0x3d
 namespace lifted {
 extern char g_10042a30;
