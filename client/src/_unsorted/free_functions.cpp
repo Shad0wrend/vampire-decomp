@@ -99103,6 +99103,54 @@ int CUnknown101c7470::sub_101c7470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7490 size=0x5d
+extern void *sub_101b6840(unsigned int size);
+
+struct KV_101c7490 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	KV_101c7490 *sub_101b5670(const char *name);
+};
+
+struct IVGui_101c7490 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c7490 *sub_101ac8f0();
+
+struct PanelLike_101c7490 {
+	virtual int GetVPanel(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30();
+	virtual PanelLike_101c7490 *GetParent();
+};
+
+struct Self_101c7490 : PanelLike_101c7490 {
+	void sub_101c7490();
+};
+
+// TARGET: Self_101c7490::sub_101c7490
+void Self_101c7490::sub_101c7490()
+{
+	KV_101c7490 *msg = (KV_101c7490 *)sub_101b6840(0x1c);
+	if (msg)
+		msg = msg->sub_101b5670("KeyModeSet");
+	else
+		msg = 0;
+
+	sub_101ac8f0()->PostMessage(GetParent()->GetVPanel(), msg, GetVPanel(), 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c74f0 size=0x7
 struct CUnknown101c74f0 { char sub_101c74f0(); };
 char CUnknown101c74f0::sub_101c74f0()
