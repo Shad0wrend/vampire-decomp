@@ -60995,6 +60995,14 @@ int __stdcall sub_101465e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146660 size=0x15
+struct CBitSet_10146660 { unsigned int m_bits; char sub_10146660(int bit); };
+char CBitSet_10146660::sub_10146660(int bit)
+{
+	return (m_bits & (1 << bit)) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466a0 size=0x18
 struct CUnknown101da9e0 { void * sub_101466a0(int); };
 void * CUnknown101da9e0::sub_101466a0(int a0)
