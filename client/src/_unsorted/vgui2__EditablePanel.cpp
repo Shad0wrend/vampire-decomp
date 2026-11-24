@@ -100,6 +100,16 @@ char * vgui2::EditablePanel::vfunc116()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4e90 size=0x9
+#include "vgui2__EditablePanel.h"
+struct SubObj59 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };
+// TARGET: vgui2::EditablePanel::vfunc59
+void vgui2::EditablePanel::vfunc59(int a)
+{
+	((SubObj59 *)((char *)this + 0x5c))->v5(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4ea0 size=0x9
 #include "vgui2__EditablePanel.h"
 struct EPView { virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(int); };
