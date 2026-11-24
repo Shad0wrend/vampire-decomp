@@ -356,6 +356,16 @@ void C_BasePlayer::vfunc185(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9ca0 size=0xb
+#include "C_BasePlayer.h"
+struct Obj_100a99d0 { char sub_100a99d0(); };
+// TARGET: C_BasePlayer::vfunc94
+bool C_BasePlayer::vfunc94()
+{
+	return ((Obj_100a99d0 *)this)->sub_100a99d0() ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9df0 size=0x1
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc184()
