@@ -45,3 +45,14 @@ void CDiscipline::vfunc114(int id, int val)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004f2e0 size=0x23
+#include "CDiscipline.h"
+bool sub_10163bf0();
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CDiscipline::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
