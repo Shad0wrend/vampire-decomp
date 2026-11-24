@@ -51120,6 +51120,29 @@ int CUnknown101180b0::sub_101180b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101180c0 size=0x3a
+struct Vec3 { float x, y, z; };
+struct PItem { char pad[0xc]; float vx, vy, vz; };
+struct PList { PItem *sub_101165f0(int a, int b); };
+struct PMgr {
+	char pad[8];
+	PList m_list;
+	PItem *sub_101180c0(int a, int b, const Vec3 *v);
+};
+PItem *PMgr::sub_101180c0(int a, int b, const Vec3 *v)
+{
+	if ((unsigned char)b == 0xff)
+		return 0;
+	PItem *p = m_list.sub_101165f0(a, b);
+	if (!p)
+		return 0;
+	p->vx = v->x;
+	p->vy = v->y;
+	p->vz = v->z;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118100 size=0x2c
 namespace lifted {
 extern char g_1023595c;
