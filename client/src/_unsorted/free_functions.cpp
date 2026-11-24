@@ -64599,6 +64599,34 @@ int __stdcall sub_10139e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139e70 size=0x4d
+struct sub_10139e70_Entry
+{
+	int m_nValue;
+	int m_Pad4[9];
+	const char *m_pszName;
+};
+
+sub_10139e70_Entry *sub_100cd0b0(const char *pszName);
+
+const char *__stdcall sub_10139e70(const char *pszName, int *pOut)
+{
+	if (!pszName)
+		return "";
+	if (pszName[0] == '#')
+	{
+		sub_10139e70_Entry *pEntry = sub_100cd0b0(pszName + 1);
+		if (pEntry && pEntry->m_pszName)
+		{
+			if (pOut && pEntry->m_nValue < 0)
+				*pOut = -pEntry->m_nValue;
+			return pEntry->m_pszName;
+		}
+	}
+	return pszName;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139ec0 size=0x24
 #include <string.h>
 void sub_10139ec0(char *s)
