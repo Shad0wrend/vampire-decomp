@@ -4867,6 +4867,7 @@
 0x1011e820 func   ?sub_1011e820@@YAHH@Z sub_1011e820
 0x1011e830 func   ?sub_1011e830@@YA_NPBH0@Z sub_1011e830
 0x1011e850 func   ?sub_1011e850@@YAHH@Z sub_1011e850
+0x1011e860 func   ?sub_1011e860@@YA_NPBH0@Z sub_1011e860
 0x1011e880 func   ?sub_1011e880@@YAHH@Z sub_1011e880
 0x1011ebc0 func   ?sub_1011ebc0@CUtlHash_1011ebc0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011ebc0::sub_1011ebc0
 0x1011ecd0 func   ?sub_1011ecd0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ecd0

@@ -49057,6 +49057,13 @@ int sub_1011e850(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e860 size=0x16
+bool sub_1011e860(const int *a, const int *b)
+{
+	return *a == *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e880 size=0x7
 int sub_1011e880(int a0)
 {
