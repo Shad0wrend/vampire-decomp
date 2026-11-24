@@ -14,4 +14,15 @@ public:
 	void sub_10174b20();
 	int sub_10174c60();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
+	struct PanelGroup
+	{
+		vgui2::Panel *m_p0;
+		vgui2::Panel *m_p4;
+		vgui2::Panel *m_p8;
+		vgui2::Panel *m_pC;
+		vgui2::Panel *m_p10;
+	};
+	int m_unk180[(0x360 - 0x180) / 4];
+	PanelGroup m_groups[4];
+	void sub_10175b30();
 };
