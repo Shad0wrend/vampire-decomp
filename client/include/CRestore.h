@@ -87,6 +87,7 @@ public:
 	virtual int vfunc31(int *pValues, int count, int nBytesAvailable);	// slot 31: like slot 30 on the save index records (sub_101a2410): -1 when there is none, the record's live entity handle (+0x10), else minus the record's index (+4) when that is within 1..0xfffe (otherwise -1); zero-fills up to the third argument
 
 	CRestore(void *pData);	// 0x101a12a0
+	int sub_1012a2f0();
 
 	// Searches the field table starting from the remembered position, wrapping around.
 	CRestoreField *sub_1012a560(const char *name, CRestoreField *fields, int count, int *pStart);
