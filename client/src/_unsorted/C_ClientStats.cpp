@@ -70,6 +70,12 @@ int C_ClientStats::vfunc16(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adc20 size=0xb
+#include "C_ClientStats.h"
+// TARGET: C_ClientStats::vfunc17
+int C_ClientStats::vfunc17(int i) { return (&m_Stats[25])[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100adca0 size=0x1
 #include "C_ClientStats.h"
 
