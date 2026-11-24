@@ -12,10 +12,10 @@ did and writes a `vampire.dll` with the same SHA-1 as the patch 1.2 original:
 3fe64bc0d9d7eca64976adc668617ca2814e5e4a  orig/vampire.dll
 ```
 
-The matching was done with **pcdecomp**, a tool for matching decompilation of 32-bit Windows games. It compiles one
-function at a time with the original compiler, compares the result with the game's bytes and keeps the source only
-when the two agree. The functions came from three sources: AI agents working through pcdecomp, hand work, and
-pcdecomp's automatic passes (machine drafts and copies of twin functions that had already matched).
+The matching itself was done with an internal tool (pcdecomp) that is not released, and nothing in this repository
+needs it. It compiles one function at a time with the original compiler, compares the result with the game's bytes
+and keeps the source only when the two agree. The functions came from three sources: AI agents working through that
+tool, hand work, and its automatic passes (machine drafts and copies of twin functions that had already matched).
 
 ## Status (2026-11-24)
 
@@ -44,7 +44,7 @@ Data lives in the sources too. Initialized and constant data is in `src/_data/`,
 
 | Build | Command | Result |
 |---|---|---|
-| Hybrid | (pcdecomp) | The original DLL with the compiled functions linked in. Loads and plays in the game. |
+| Hybrid | (internal tool) | The original DLL with the compiled functions linked in. Loads and plays in the game. |
 | Standalone | `ninja` | A new `build/vampire.dll` linked by VC6's `link.exe`. Same program, different file layout. |
 | Identical | `ninja identical` | `build/identical/vampire.dll`, the original file byte for byte. |
 
@@ -70,8 +70,8 @@ rule: the jump-stub table, the padding, `.idata`, the exports, `.reloc` and the 
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |
 
 The chart is drawn by `tools/make_progress_svg.py` from `docs/progress.json`. Run it as is to redraw the chart; with
-`--collect --client <client project> --game <game folder>` it first re-reads the numbers from pcdecomp's databases
-and the game's files.
+`--collect --client <client project> --game <game folder>` it first re-reads the numbers from the internal tool's
+databases and the game's files, so that option only works where the tool ran.
 
 ## What is in this repository
 
@@ -83,7 +83,7 @@ and the game's files.
 | `config/` | Tables the build reads: block list, aliases, fix-ups, `.bss` layout, import lists, known differences, and the original's layout (`config/layout/`) |
 | `orig/` | Where your own `vampire.dll` goes (git-ignored) |
 | `symbols.txt` | Every address with its symbol name |
-| `project.toml` | pcdecomp's project settings (compiler flags, prelude, agent settings) |
+| `project.toml` | Settings of the internal matching tool (compiler flags, prelude, agent settings); the build does not need it |
 | `docs/` | How the build works ([building.md](docs/building.md)), plus research notes on VC6 register allocation and the standalone link |
 | `CLAUDE.md` | The working guide the agents followed: the VC6 code-generation idioms that decide a match |
 | `phase0/` | The first experiments, which tested whether matching was possible at all |
@@ -91,9 +91,8 @@ and the game's files.
 
 **No game files are included.** To build or check anything you need your own legally obtained copy of the game, namely
 `vampire.dll` from patch 1.2 (SHA-1 `3fe64bc0d9d7eca64976adc668617ca2814e5e4a`), and Visual C++ 6.0. The game was
-built with VC6 build 9044. The build needs nothing else. If you want to match new functions with pcdecomp itself, point
-`binary`, `cl` and `vcvars` in `project.toml` at these files on your machine. pcdecomp's database (`project.db`) and
-its cache are not part of the repository.
+built with VC6 build 9044. The build needs nothing else; the matching tool's own database and cache are not part of
+the repository.
 
 ## Building
 
