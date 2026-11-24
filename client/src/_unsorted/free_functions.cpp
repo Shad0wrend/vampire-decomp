@@ -49642,6 +49642,33 @@ void CUnknown10123500::sub_10123500(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101236b0 size=0x5d
+class CPredictionCopy_101236b0
+{
+public:
+	char m_pad0[0x14];
+	bool m_bErrorCheck;
+
+	void sub_10123300( const char *fmt, ... );
+	void sub_101233b0( int dt, const char *fmt, ... );
+	void sub_101236b0( int dt, float *outvalue, const float *invalue, int count );
+};
+
+void CPredictionCopy_101236b0::sub_101236b0( int dt, float *outvalue, const float *invalue, int count )
+{
+	if ( !m_bErrorCheck )
+		return;
+
+	if ( dt == 0 )
+	{
+		int i = 0;
+		sub_10123300( "float differs (net %f pred %f) diff(%f)\n", invalue[ i ], outvalue[ i ], outvalue[ i ] - invalue[ i ] );
+	}
+
+	sub_101233b0( dt, "float (%f)\n", outvalue[ 0 ] );
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123710 size=0x42
 namespace lifted {
 extern char g_102c26ec;
