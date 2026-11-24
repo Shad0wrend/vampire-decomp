@@ -467,6 +467,16 @@ void C_BaseEntity::vfunc119(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fb50 size=0x45
+#include "Vector.h"
+#include "C_BaseEntity.h"
+void C_BaseEntity::Collideable_vfunc1(int a0, int a1)
+{
+	*(Vector *)a0 = vfunc52();
+	*(Vector *)a1 = vfunc53();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fba0 size=0x7
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc51()
