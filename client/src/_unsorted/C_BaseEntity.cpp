@@ -393,6 +393,59 @@ CMouthInfo * C_BaseEntity::GetMouth()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fe30 size=0x7a
+#include "C_BaseEntity.h"
+
+class CClientStatsTime_1009fe30
+{
+public:
+	virtual double GetTime() = 0;
+};
+
+struct CClientStats_1009fe30
+{
+	char pad0[0x148];
+	double m_flTotalTime;
+	char pad1[0x220 - 0x150];
+	double m_flStartTime;
+	char pad2[0x308 - 0x228];
+	CClientStatsTime_1009fe30 *m_pTime;
+
+	void BeginTimedStat()
+	{
+		if (m_pTime)
+		{
+			m_flStartTime = m_pTime->GetTime();
+		}
+	}
+
+	void EndTimedStat()
+	{
+		if (m_pTime)
+		{
+			m_flTotalTime += m_pTime->GetTime() - m_flStartTime;
+		}
+	}
+};
+
+class IRenderView_104a57e4
+{
+public:
+	virtual void DrawBrushModel(C_BaseEntity *baseentity, const model_t *model, const Vector &origin, const QAngle &angles, int flags) = 0;
+};
+
+int sub_100ad7a0();
+extern IRenderView_104a57e4 *g_104a57e4;
+
+int C_BaseEntity::vfunc80(int flags)
+{
+	((CClientStats_1009fe30 *)sub_100ad7a0())->BeginTimedStat();
+	g_104a57e4->DrawBrushModel(this, *(const model_t **)((char *)this + 0x40), GetAbsOrigin(), GetAbsAngles(), flags);
+	((CClientStats_1009fe30 *)sub_100ad7a0())->EndTimedStat();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a06e0 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc67()
