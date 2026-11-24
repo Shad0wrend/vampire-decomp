@@ -59524,6 +59524,16 @@ int CUnknown10141b80::sub_10141b80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141b90 size=0x16
+int sub_10141bb0(const char *);
+struct S_10141b90 { int a, b; const char *m; int sub_10141b90(); };
+int S_10141b90::sub_10141b90()
+{
+	const char *p = m ? m : "";
+	return sub_10141bb0(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141bb0 size=0x5
 int sub_10141bb0(int a0)
 {
