@@ -85548,6 +85548,21 @@ int sub_101ac930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aca60 size=0x35
+typedef int (*PFN101)(void *, int);
+int sub_101aca60(void *obj, PFN101 *fns, int n)
+{
+    for (int i = 0; i < n; i++) {
+        if (fns[i]) {
+            int r = fns[i](obj, 0);
+            if (r)
+                return r;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae190 size=0x43
 struct Item { char pad[0x58]; int m_pos; };
 struct Vec {
