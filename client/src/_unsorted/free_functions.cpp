@@ -56982,6 +56982,20 @@ void CUnknown1024b370::sub_1013d7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d820 size=0x7
+struct CSelf1013d820
+{
+	int m_unk00; int m_unk04; int m_unk08; int m_unk0c;
+	short m_unk10; unsigned short m_unk12;
+};
+
+// TARGET: sub_1013d820
+int __fastcall sub_1013d820(CSelf1013d820 *self)
+{
+	return self->m_unk12;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dd10 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_1013dd10(int elem, int num)
