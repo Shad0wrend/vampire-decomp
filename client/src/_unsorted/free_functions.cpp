@@ -18754,6 +18754,30 @@ void __stdcall sub_10057a20(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057ab0 size=0x5b
+#include "CHealthAnkh.h"
+#include "CHudManagerPanel.h"
+
+struct HudNode { IManagedHudElement *elem; HudNode *next; };
+struct PanelView {
+	char pad[0x170];
+	HudNode *m170;
+	void sub_10057ab0(int a, int b, int c);
+};
+void sub_10114660(int a, int b);
+int sub_10114690();
+void PanelView::sub_10057ab0(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	int v = sub_10114690();
+	for (HudNode *n = m170; n; n = n->next) {
+		CHealthAnkh *f = dynamic_cast<CHealthAnkh *>(n->elem);
+		if (f)
+			f->vfunc114(v);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057ca0 size=0x5d
 #include "CFrenzyBar.h"
 #include "CHudManagerPanel.h"
