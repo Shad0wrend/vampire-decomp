@@ -6,7 +6,6 @@
 class CTextImage2 : public vgui2::Image
 {
 public:
-	int m_unk0c; int m_unk10; int m_unk14; int m_unk18;
 	vgui2::Image *m_p1c;
 	vgui2::Image *m_p20;
 	virtual ~CTextImage2() { delete m_p1c; delete m_p20; }
