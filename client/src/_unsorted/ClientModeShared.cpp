@@ -117,6 +117,21 @@ int ClientModeShared::vfunc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4410 size=0x28
+#include "ClientModeShared.h"
+struct CObj_100f2490 { void sub_100f2490(int a); };
+extern CObj_100f2490 *g_104cef90;
+extern int g_104cef94;
+void ClientModeShared::vfunc17(int a)
+{
+	if (!g_104cef94) {
+		g_104cef94 = a;
+		if (g_104cef90)
+			g_104cef90->sub_100f2490(a);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4440 size=0x1a
 #include "ClientModeShared.h"
 namespace lifted {
