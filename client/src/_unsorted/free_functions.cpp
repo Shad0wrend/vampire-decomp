@@ -37195,6 +37195,59 @@ void CClientThinkList_100d0140::sub_100d0140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d02b0 size=0xf9
+#include "CBaseHandle.h"
+#include "utlvector.h"
+
+extern int sub_1009e230();
+
+class CUnknown1009f100
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int v3();
+
+	int sub_1009f100();
+	void sub_1009f110( bool bMark );
+};
+
+class CEntityList_100d02b0
+{
+public:
+	CUnknown1009f100 *sub_100d0dc0( CBaseHandle hEnt );
+};
+
+class CClientThinkList_100d02b0
+{
+public:
+	char m_pad0[0x40];
+	CUtlVector<CBaseHandle> m_DeleteList;
+
+	void sub_100d02b0( CBaseHandle hEnt );
+};
+
+void CClientThinkList_100d02b0::sub_100d02b0( CBaseHandle hEnt )
+{
+	if ( !hEnt.IsValid() )
+		return;
+
+	CUnknown1009f100 *pEnt = ((CEntityList_100d02b0 *)sub_1009e230())->sub_100d0dc0( hEnt );
+	if ( !pEnt )
+		return;
+
+	if ( (char)pEnt->sub_1009f100() )
+		return;
+
+	if ( pEnt->v3() )
+		return;
+
+	m_DeleteList.AddToTail( hEnt );
+	pEnt->sub_1009f110( true );
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d05d0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
