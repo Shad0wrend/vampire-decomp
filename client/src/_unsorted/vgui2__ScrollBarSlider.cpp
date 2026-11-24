@@ -53,6 +53,29 @@ void vgui2::ScrollBarSlider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca250 size=0x61
+#include "vgui2__ScrollBarSlider.h"
+#define D1(n) virtual void n(){}
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+#define D16(p) D4(p##1) D4(p##2) D4(p##3) D4(p##4)
+struct Col { unsigned v; };
+struct Sch { D1(a1) D1(a2) D1(a3) virtual int GetBorder(const char *); D1(b1) D1(b2) virtual Col GetColor(const char *); };
+struct SV {
+	D16(a) D16(b) D16(c) D1(d1) D1(d2) virtual void SetBg(Col); virtual void SetFg(Col);
+	char pad[0x84]; int border;
+};
+// TARGET: vgui2::ScrollBarSlider::vfunc74
+int vgui2::ScrollBarSlider::vfunc74(int pS)
+{
+	Sch *s = (Sch *)pS;
+	SV *t = (SV *)this;
+	sub_101ab490(pS);
+	t->SetFg(s->GetColor("ScrollBarSlider/ScrollBarSliderFgColor"));
+	t->SetBg(s->GetColor("ScrollBarSlider/ScrollBarSliderBgColor"));
+	return t->border = s->GetBorder("ButtonBorder");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca400 size=0x1b
 #include "vgui2__ScrollBarSlider.h"
 // TARGET: vgui2::ScrollBarSlider::vfunc110
