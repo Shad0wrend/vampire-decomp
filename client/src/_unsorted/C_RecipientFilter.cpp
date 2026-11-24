@@ -20,6 +20,18 @@ int C_RecipientFilter::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be070 size=0x8
+#include "C_RecipientFilter.h"
+
+// TARGET: C_RecipientFilter::vfunc4
+bool C_RecipientFilter::vfunc4()
+{
+	if (m_nBufSize == 1)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be080 size=0x4
 #include "C_RecipientFilter.h"
 
