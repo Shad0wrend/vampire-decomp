@@ -391,6 +391,21 @@ void CInput::vfunc54()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106290 size=0x3f
+#include "CInput.h"
+extern void (__stdcall *g_101e30e4)(int, int, void *, int);
+void CInput::vfunc17()
+{
+	if (m_unk28 && m_unk20) {
+		if (m_unk5c)
+			g_101e30e4(4, 0, &m_unk60, 0);
+		m_unk28 = 0;
+		m_unk54 = 0;
+		m_unk58 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101062d0 size=0x9
 #include "CInput.h"
 bool CInput::vfunc18() { if (m_unk28) return true; return false; }
