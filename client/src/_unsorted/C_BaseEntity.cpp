@@ -261,6 +261,22 @@ void C_BaseEntity::vfunc93(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007de30 size=0x3c
+#include "C_BaseEntity.h"
+struct IGlobal104a5738 { virtual void v0(); virtual void v1(); virtual int v2(int, int); };
+extern IGlobal104a5738 *g_104a5738;
+// TARGET: C_BaseEntity::vfunc91
+int C_BaseEntity::vfunc91(int a, int b)
+{
+	int v = *(int *)((char *)this + 0x48);
+	if (v == 4)
+		return -1;
+	if (v && b == 0x47)
+		return 0x34;
+	return g_104a5738->v2(0, 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007de70 size=0x7
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc30()

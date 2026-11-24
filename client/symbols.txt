@@ -2948,6 +2948,7 @@
 0x1007de00 func   ?sub_1007de00@@YAHH@Z sub_1007de00
 0x1007de10 func   ?vfunc92@C_BaseEntity@@UAEXHH@Z C_BaseEntity::vfunc92
 0x1007de20 func   ?vfunc93@C_BaseEntity@@UAEXHHH@Z C_BaseEntity::vfunc93
+0x1007de30 func   ?vfunc91@C_BaseEntity@@UAEHHH@Z C_BaseEntity::vfunc91
 0x1007de70 func   ?vfunc30@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc30
 0x1007de80 func   ?vfunc31@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc31
 0x1007df40 func   ?vfunc88@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc88
