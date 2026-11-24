@@ -57959,6 +57959,50 @@ void CPrediction::sub_10120ee0(int commands_acknowledged)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121920 size=0x75
+#include "C_BaseEntity.h"
+#include "Tier1.h"
+
+struct IPredictables {
+	virtual void *GetPredictable(int i);
+	virtual int GetPredictableCount();
+};
+struct V_100a2600 { bool sub_100a2600(); };
+
+extern IPredictables *g_102af678;
+
+void sub_10121920()
+{
+	int c = g_102af678->GetPredictableCount();
+	int i;
+	int shutdown_count = 0;
+	int release_count = 0;
+
+	for (i = c - 1; i >= 0; i--)
+	{
+		C_BaseEntity *ent = (C_BaseEntity *)g_102af678->GetPredictable(i);
+		if (!ent)
+			continue;
+
+		if (((V_100a2600 *)ent)->sub_100a2600())
+		{
+			ent->sub_100a2580();
+			shutdown_count++;
+		}
+		else
+		{
+			ent->Release();
+			release_count++;
+		}
+	}
+
+	if ((release_count > 0) || (shutdown_count > 0))
+	{
+		g_101e3108("Shutdown %i predictable entities and %i client-created entities\n", shutdown_count, release_count);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122350 size=0x27
 struct P10122350 { char pad[0x18c8]; int m_v; };
 void sub_10120730();
