@@ -13,5 +13,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseCineCamera's own function
 	virtual int vfunc15();
 	virtual int vfunc16();
-	char m_pad0014[0x4c8 - 0x14];
+	bool sub_100019a0();
+	char m_pad0014[0x4a4 - 0x14];
+	float m_f4a4;
+	char m_pad04a8[0x4c8 - 0x4a8];
 };
