@@ -11,6 +11,20 @@ vgui2::BuildModeDialog *pcd_emit_101c3a40(const vgui2::BuildModeDialog &other) {
 // TARGET: ??_GBuildModeDialog@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c4cd0 size=0x1a
+#include "vgui2__BuildModeDialog.h"
+struct BMD_101c4cd0 {
+	void sub_101c4810();
+};
+void vgui2::BuildModeDialog::vfunc92(int code)
+{
+	if (code == 0x40)
+		((BMD_101c4cd0 *)this)->sub_101c4810();
+	else
+		this->sub_101b9740(code);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c54d0 size=0x6
 #include "vgui2__BuildModeDialog.h"
 namespace lifted {
