@@ -40,6 +40,11 @@ void CStudiomodelPanel::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018be40 size=0x9
+struct CUnknown1018be40 { char pad[0x74]; char a; char b; void sub_1018be40(); };
+void CUnknown1018be40::sub_1018be40() { b = a = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1018be50 size=0x1c
 #include "CStudiomodelPanel.h"
 namespace lifted {
