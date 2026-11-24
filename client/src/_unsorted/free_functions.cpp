@@ -85594,6 +85594,38 @@ int CUnknown1016f470::sub_1016f470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016f4a0 size=0x51
+// TARGET: VBarterUI::sub_1016f4a0
+#include "VBarterUI.h"
+
+struct BarterRef
+{
+	void *m_pItem;	// 0x00
+	int m_unk4;	// 0x04
+	int m_unk8;	// 0x08
+};
+
+void VBarterUI::sub_1016f4a0()
+{
+	BarterRef *p = (BarterRef *)((char *)this + 0x188);
+	for ( int i = 24; i > 0; i-- )
+	{
+		char *pItem = (char *)p->m_pItem;
+		if ( pItem && pItem[0xba] )
+			pItem[0xba] = 0;
+		p++;
+	}
+	BarterRef *q = (BarterRef *)((char *)this + 0x2a8);
+	for ( int j = 32; j > 0; j-- )
+	{
+		char *pItem = (char *)q->m_pItem;
+		if ( pItem && pItem[0xba] )
+			pItem[0xba] = 0;
+		q++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016f500 size=0x2d
 #include <string.h>
 #include "VBarterUI.h"
