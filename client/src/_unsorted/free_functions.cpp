@@ -37101,6 +37101,17 @@ char CUnknown100b7bb0::sub_100b7bb0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b80f0 size=0x3d
+#include "C_BreakableSurface.h"
+bool C_BreakableSurface::sub_100b80f0(int x, int y)
+{
+	bool bIn = (x < m_nWidth && y < m_nHeight && x >= 0 && y >= 0);
+	if (!bIn)
+		return true;
+	return m_nPanelFlags[x * 16 + y] & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9b80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_100b9b80(const Vector &v) const

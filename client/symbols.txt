@@ -3777,6 +3777,7 @@
 0x100b7b00 func   ?vfunc79@C_BreakableSurface@@UAE_NXZ C_BreakableSurface::vfunc79
 0x100b7b20 func   ?IsTransparent@C_BreakableSurface@@UAE_NXZ C_BreakableSurface::IsTransparent
 0x100b7bb0 func   ?sub_100b7bb0@CUnknown100b7bb0@@QAEDHH@Z CUnknown100b7bb0::sub_100b7bb0
+0x100b80f0 func   ?sub_100b80f0@C_BreakableSurface@@QAE_NHH@Z C_BreakableSurface::sub_100b80f0
 0x100b9b80 func   ?sub_100b9b80@Vector@@QBE?AV1@ABV1@@Z Vector::sub_100b9b80
 0x100b9bf0 func   ?sub_100b9bf0@CUnknown100b9bf0@@QAEXXZ CUnknown100b9bf0::sub_100b9bf0
 0x100b9c50 func   ?vfunc4@CBreakableSurfaceProxy@@UAEXPAVC_BaseEntity@@@Z CBreakableSurfaceProxy::vfunc4
