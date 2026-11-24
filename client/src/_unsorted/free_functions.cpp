@@ -61233,6 +61233,36 @@ CLinkNode1c *CLinkList::sub_10128270(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101282e0 size=0x59
+#include "CKeyValuesX.h"
+
+int sub_101e28e0(const char *s1, const char *s2);
+
+CKeyValuesX *CKeyValuesX::sub_101282e0(const char *pszName, bool bCreate)
+{
+	CKeyValuesX *pSub = m_pSub;
+
+	while ( pSub )
+	{
+		if ( sub_101e28e0( pSub->sub_10127c70(), pszName ) == 0 )
+			return pSub;
+		pSub = pSub->m_pPeer;
+	}
+
+	if ( m_pBase18 )
+	{
+		CKeyValuesX *pFound = m_pBase18->sub_101282e0( pszName, 0 );
+		if ( pFound )
+			return pFound;
+	}
+
+	if ( bCreate )
+		pSub = sub_10128270( pszName );
+
+	return pSub;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128340 size=0x9
 struct S { int a[5]; void *m14; bool sub_10128340(); };
 bool S::sub_10128340() { if (m14) return true; return false; }
