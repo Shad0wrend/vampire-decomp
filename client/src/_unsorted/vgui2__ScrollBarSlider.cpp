@@ -53,6 +53,18 @@ void vgui2::ScrollBarSlider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca200 size=0x42
+#include "vgui2__ScrollBarSlider.h"
+struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc120@ScrollBarSlider@vgui2@@UAEHXZ
+int vgui2::ScrollBarSlider::vfunc120()
+{
+	KV101b56c0 *kv = (KV101b56c0 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b56c0("ScrollBarSliderMoved", "position", m_w7c) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca250 size=0x61
 #include "vgui2__ScrollBarSlider.h"
 #define D1(n) virtual void n(){}
