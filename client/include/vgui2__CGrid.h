@@ -14,5 +14,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CGrid's own function
 	virtual void vfunc97();
 	virtual void vfunc98();
+	void *sub_10166d90(int x, int y);
+	int sub_101669e0(int x);
 };
 }
