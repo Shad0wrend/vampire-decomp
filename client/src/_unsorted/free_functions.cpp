@@ -48020,6 +48020,12 @@ struct CView { int a, b; int *sub_10115500(); };
 int *CView::sub_10115500() { return &b + 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10115520 size=0x14
+struct CView { int a, b; int sub_10115520(); };
+#pragma optimize("", off)
+int CView::sub_10115520() { return *(int *)((char *)this + 0x148); }
+// END FUNCTION
+
 // FUNCTION: 0x10115dd0 size=0x5
 int __stdcall sub_10115dd0(int a0, int a1)
 {
