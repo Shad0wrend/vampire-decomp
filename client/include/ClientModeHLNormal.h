@@ -2,9 +2,17 @@
 // declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22) (its vtable has no deleting destructor: no virtual destructor)
 #pragma once
 #include "ClientModeShared.h"
+#include "vgui2__Panel.h"
 
 class ClientModeHLNormal : public ClientModeShared
 {
+public:
+    class Viewport : public vgui2::Panel
+    {
+    public:
+        virtual void vfunc97();
+        virtual void vfunc107();
+    };
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with ClientModeHLNormal's own function
     virtual void vfunc1();
