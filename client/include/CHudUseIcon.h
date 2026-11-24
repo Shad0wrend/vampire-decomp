@@ -20,6 +20,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	CHudUseIconOwned *m_pChild4; CHudUseIconOwned *m_pChild5;
 	CHudUseIcon(int parent);
 	void sub_1005e1a0();
+	const char *sub_1005e400(int);
+	void sub_1005e4a0(bool);
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 	int m_unk194; int m_unk198; int m_unk19c; int m_unk1a0; int m_unk1a4; float m_f1a8; char m_b1ac; char m_pad1ad[0x1c0 - 0x1ad];
