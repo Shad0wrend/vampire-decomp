@@ -61464,6 +61464,27 @@ int CUnknown101445f0::sub_101445f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144740 size=0x2b
+struct S_10144740 {
+	int m_n0, m_n4, m_n8, m_nc;
+	int m_a[9];
+	int m_n34, m_n38;
+	S_10144740 *sub_10144740();
+};
+S_10144740 *S_10144740::sub_10144740()
+{
+	m_n0 = 1;
+	m_n4 = 0;
+	m_n8 = 0;
+	m_nc = 0;
+	for (int i = 0; i < 9; i++)
+		m_a[i] = 0;
+	m_n34 = -1;
+	m_n38 = -1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144770 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
