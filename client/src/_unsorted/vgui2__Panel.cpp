@@ -350,6 +350,11 @@ void vgui2::Panel::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9fc0 size=0x21
+#include "vgui2__Panel.h"
+bool vgui2::Panel::vfunc73() { if ((char)vfunc22() && *((char *)this + 0x29) && *((unsigned char *)this + 0x27) == 0xff) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x101aa080 size=0x3
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc10(int a0)
