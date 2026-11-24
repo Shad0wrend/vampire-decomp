@@ -665,6 +665,19 @@ void CUtlMemory192::sub_10003c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003c90 size=0x39
+struct SBase { int pad[0x974 / 4]; int m_a; int m_b; void sub_1009b2c0(int a); void sub_10003c90(int a); };
+void sub_10186d70(void *p);
+void SBase::sub_10003c90(int a)
+{
+	sub_1009b2c0(a);
+	if (m_b != m_a) {
+		sub_10186d70((char *)this - 8);
+		m_b = m_a;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003d80 size=0x6
 namespace lifted {
 extern char g_102dec00;
