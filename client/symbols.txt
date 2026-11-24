@@ -4862,6 +4862,7 @@
 0x1011e410 func   ?vfunc3@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEXI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc3
 0x1011e7d0 func   ?sub_1011e7d0@@YA_NPBH0@Z sub_1011e7d0
 0x1011e7f0 func   ?sub_1011e7f0@@YAHH@Z sub_1011e7f0
+0x1011e800 func   ?sub_1011e800@@YA_NPBH0@Z sub_1011e800
 0x1011e820 func   ?sub_1011e820@@YAHH@Z sub_1011e820
 0x1011e850 func   ?sub_1011e850@@YAHH@Z sub_1011e850
 0x1011e880 func   ?sub_1011e880@@YAHH@Z sub_1011e880
