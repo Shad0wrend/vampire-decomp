@@ -106,6 +106,15 @@ void vgui2::Panel::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9b70 size=0xd
+#include "vgui2__Panel.h"
+// TARGET: vgui2::Panel::vfunc4
+void vgui2::Panel::vfunc4()
+{
+	vfunc106(m_b18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9b80 size=0x2f9
 #include "vgui2__Panel.h"
 #include "vgui2__BuildGroup.h"
