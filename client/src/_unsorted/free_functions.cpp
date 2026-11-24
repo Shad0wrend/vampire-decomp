@@ -42617,6 +42617,30 @@ bool sub_100ce3d0(const unsigned short *a, const unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce920 size=0x5b
+#include "CClassMap.h"
+
+struct ClassMapLinks
+{
+	unsigned short m_Left;
+	unsigned short m_Right;
+	unsigned short m_Parent;
+	unsigned short m_Tag;
+};
+
+static __inline unsigned short ClassMapInvalidIndex()
+{
+	return (unsigned short)~0;
+}
+
+// TARGET: CClassMap::sub_100ce920
+ClassMapEntry *CClassMap::sub_100ce920(unsigned short i)
+{
+	static ClassMapLinks s_Sentinel = { ClassMapInvalidIndex(), ClassMapInvalidIndex(), ClassMapInvalidIndex(), 1 };
+	return (i != ClassMapInvalidIndex()) ? &m_pElements[i] : (ClassMapEntry *)&s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0140 size=0x16e
 #include "CBaseHandle.h"
 #include "CClientThinkList.h"
