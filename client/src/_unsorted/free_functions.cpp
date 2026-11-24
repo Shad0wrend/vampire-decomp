@@ -57144,6 +57144,18 @@ void CUnknown10124810::sub_10124810(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124840 size=0x2b
+void sub_101245d0(void *self, const char *fmt, ...);
+struct CUnknown10124840 {
+	void sub_10124840(const float *v, int n);
+};
+// TARGET: ?sub_10124840@CUnknown10124840@@QAEXPBMH@Z
+void CUnknown10124840::sub_10124840(const float *v, int n)
+{
+	sub_101245d0(this, "vector (%f %f %f)\n", v[0], v[1], v[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124870 size=0x18
 namespace lifted {
 extern char g_102c283c;
