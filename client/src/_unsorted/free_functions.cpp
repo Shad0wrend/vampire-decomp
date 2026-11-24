@@ -35371,6 +35371,14 @@ template <> int ClientClassInit<DT_BreakableSurface::ignored>(DT_BreakableSurfac
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7450 size=0x33
+#include "C_BreakableSurface.h"
+// TARGET: C_BreakableSurface::sub_100b7450
+bool C_BreakableSurface::sub_100b7450(int x, int y) {
+  return x < m_nWidth && y < m_nHeight && x >= 0 && y >= 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7620 size=0x27
 struct IMatVar { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual int v11(); virtual int v12(); virtual int v13(); virtual int v14(); virtual int v15(); virtual int v16(); virtual int v17(); virtual void *v18(); };
 struct IMatX { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual IMatVar *FindVar(const char *, void *, bool); };
