@@ -45620,6 +45620,25 @@ void CInput::sub_10101df0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101025b0 size=0x3b
+struct ObjX { virtual int vfunc0(); virtual bool vfunc1(); char pad[0x24]; float m_f28; };
+extern ObjX *g_104d3d9c;
+extern unsigned char g_104d2e54;
+float __stdcall sub_101025b0(float x)
+{
+	float r = x;
+	if (g_104d2e54 & 1) {
+		float s;
+		if (g_104d3d9c->vfunc1())
+			s = 0.0f;
+		else
+			s = g_104d3d9c->m_f28;
+		r = s * x;
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
