@@ -87,6 +87,15 @@ void vgui2::MenuItem::vfunc166()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7050 size=0x2e
+#include "vgui2__MenuItem.h"
+struct CUnknown101c0c10 { int sub_101c0c10(); };
+void vgui2::MenuItem::vfunc94(int code) {
+ if (((CUnknown101c0c10 *)vfunc31())->sub_101c0c10() != 1 || !*(int *)((char *)this + 0xf0))
+  Button::vfunc94(code);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c70e0 size=0xf
 #include "vgui2__MenuItem.h"
 namespace lifted {
