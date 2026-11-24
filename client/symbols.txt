@@ -4324,6 +4324,7 @@
 0x100d9210 func   ?sub_100d9210@CUnknown100d9210@@QAEXXZ CUnknown100d9210::sub_100d9210
 0x100d9220 func   ?vfunc0@IEffectsList@@QAEPAXD@Z IEffectsList::vfunc0
 0x100d9240 func   ?vfunc1@CEffectsList@@UAEXPAVCClientSideEffect@@@Z CEffectsList::vfunc1
+0x100d9280 func   ?vfunc2@CEffectsList@@UAEXPAVCClientSideEffect@@@Z CEffectsList::vfunc2
 0x100d95a0 func   ?sub_100d95a0@@YAXABVVector@@0MMMMMPBD@Z sub_100d95a0
 0x100d9740 func   ?sub_100d9740@@YAXXZ sub_100d9740
 0x100d9b20 func   ?vfunc0@CAutoGameSystem@@UAE_NXZ CAutoGameSystem::vfunc0
