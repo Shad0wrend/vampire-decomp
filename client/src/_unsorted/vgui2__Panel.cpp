@@ -49,6 +49,30 @@ int vgui2::Panel::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a99b0 size=0x3d
+#include "vgui2__Panel.h"
+struct Chain2 { virtual void c0(); virtual int Slot1(); };
+struct Chain1 { virtual void c0(); virtual Chain2 *Slot1(int); };
+struct SurfView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual int Slot18(int);
+};
+SurfView *sub_101ac900();
+int vgui2::Panel::vfunc31()
+{
+	int h = sub_101ac900()->Slot18(vfunc0());
+	if (h)
+	{
+		Chain1 *c = (Chain1 *)sub_101ac900();
+		return (c->Slot1(h))->Slot1();
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9a20 size=0x1e
 #include "vgui2__Panel.h"
 namespace lifted {
