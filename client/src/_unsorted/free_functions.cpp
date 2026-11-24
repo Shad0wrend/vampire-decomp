@@ -26105,6 +26105,18 @@ void VStore::sub_100817f0(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081820 size=0x2b
+#include "CMeshBuilder.h"
+// TARGET: CMeshBuilder::sub_10081820
+void CMeshBuilder::sub_10081820(const float *v)
+{
+	float *pDst = (float *)(m_p70 + m_i2c * m_i98);
+	*pDst++ = *v++;
+	*pDst++ = *v++;
+	*pDst = *v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084560 size=0x35
 struct CUnknown10084560 { void * sub_10084560(); };
 void * CUnknown10084560::sub_10084560()
