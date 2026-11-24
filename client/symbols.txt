@@ -7578,6 +7578,7 @@
 0x101c0880 func   ?vfunc84@Menu@vgui2@@UAEXHH@Z vgui2::Menu::vfunc84
 0x101c0990 func   ?sub_101c0990@MV@@QAEXH@Z MV::sub_101c0990
 0x101c0a80 func   ?sub_101c0a80@CUnknown101c0a80@@QAEHXZ CUnknown101c0a80::sub_101c0a80
+0x101c0ae0 func   ?sub_101c0ae0@XPan@@QAEXH@Z XPan::sub_101c0ae0
 0x101c0c10 func   ?sub_101c0c10@CUnknown101c0c10@@QAEHXZ CUnknown101c0c10::sub_101c0c10
 0x101c0c20 func   ?sub_101c0c20@CUnknown101c0c20@@QAEXXZ CUnknown101c0c20::sub_101c0c20
 0x101c0c70 func   ?sub_101c0c70@VView64@@QAEXH@Z VView64::sub_101c0c70

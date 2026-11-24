@@ -85574,6 +85574,20 @@ int CUnknown101c0a80::sub_101c0a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0ae0 size=0x2c
+#include "CUnknown101c70b0.h"
+struct XO2 { virtual void v0(); virtual CUnknown101c70b0 *v1(); };
+struct XO { virtual void v0(); virtual XO2 *v1(int); };
+XO *sub_101ac900();
+struct XPan { int u[0x84 / 4]; int m_i84; void sub_101c0ae0(int a); };
+// TARGET: XPan::sub_101c0ae0
+void XPan::sub_101c0ae0(int a)
+{
+	if (!m_i84)
+		sub_101ac900()->v1(a)->v1()->sub_101c70b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0c10 size=0x7
 struct CUnknown101c0c10 { int sub_101c0c10(); };
 int CUnknown101c0c10::sub_101c0c10()
