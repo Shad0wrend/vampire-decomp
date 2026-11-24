@@ -39607,6 +39607,22 @@ int CUnknown100bf700::sub_100bf700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0350 size=0x54
+// TARGET: sub_100c0350
+int __stdcall sub_100c0350(int type, int value)
+{
+	if (type == 7)
+		return value * 6 / 4;
+	else if (type == 6)
+		return value * 3 - 6;
+	else if (type == 4)
+		return value * 2 - 2;
+	else if (type == 5)
+		return value * 2;
+	return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c08b0 size=0x63
 struct Vector3 { float x, y, z; };
 struct IFace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
