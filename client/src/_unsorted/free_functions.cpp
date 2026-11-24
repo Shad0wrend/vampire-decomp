@@ -49482,6 +49482,40 @@ CUnknown102bc9e0 *sub_100f4420(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4500 size=0x5b
+struct FmtInfo
+{
+	int m_i0;
+	int m_i4;
+};
+
+void *sub_100f4420(int format);
+
+// TARGET: sub_100f4500
+int sub_100f4500(int width, int height, int format, int levels)
+{
+	int total = 0;
+	if (levels > 0)
+	{
+		int bpp = ((FmtInfo *)sub_100f4420(format))->m_i4;
+		do
+		{
+			total += bpp * width * height;
+			if (width == 1 && height == 1)
+				break;
+			width >>= 1;
+			height >>= 1;
+			if (width < 1)
+				width = 1;
+			if (height < 1)
+				height = 1;
+			--levels;
+		} while (levels > 0);
+	}
+	return total;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4560 size=0x47
 void sub_100f4560(int *w, int *h, int n)
 {
