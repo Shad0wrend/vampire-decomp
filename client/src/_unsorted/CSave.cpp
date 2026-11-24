@@ -434,6 +434,21 @@ void CSave::vfunc32(const int *pHandles, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129e90 size=0x56
+#include "CSave.h"
+
+int __stdcall sub_10129a20(int handle) { return -1; }
+
+// TARGET: CSave::vfunc35
+void CSave::vfunc35(const char *pszName, void *pData, int count)
+{
+    int buffer[256];
+    for (int i = 0; i < count; i++)
+        buffer[i] = sub_10129a20(((int *)pData)[i]);
+    vfunc9(pszName, buffer, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129ef0 size=0x4e
 #include "CSave.h"
 
