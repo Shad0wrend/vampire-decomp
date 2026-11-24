@@ -106,3 +106,9 @@ int PRView::sub_100bd4c0(int i)
 	return m6a4[i];
 }
 // END FUNCTION
+
+// FUNCTION: 0x100bd6f0 size=0xe
+#include "C_PlayerResource.h"
+// TARGET: C_PlayerResource::vfunc134
+char C_PlayerResource::vfunc134(int i) { return m_ad79[i]; }
+// END FUNCTION
