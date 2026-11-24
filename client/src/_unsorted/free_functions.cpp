@@ -60944,6 +60944,12 @@ int sub_10146f90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147000 size=0xc
+extern int g_102c7c04[];
+// TARGET: sub_10147000
+int sub_10147000(int i) { return g_102c7c04[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x101470d0 size=0x10e
 #include "CUnknown101dbc60.h"
 
