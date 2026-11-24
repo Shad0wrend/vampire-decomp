@@ -60922,6 +60922,11 @@ int sub_10146f10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146f80 size=0xc
+extern int g_102c7bfc[];
+int sub_10146f80(int i) { return g_102c7bfc[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x10146f90 size=0x63
 #include <string.h>
 extern const char *g_102c7c04[4];
