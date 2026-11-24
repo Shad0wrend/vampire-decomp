@@ -45,3 +45,19 @@ void CHudMessage::vfunc2()
     *(int *)((char *)this + 0xe0) = t1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010e5d0 size=0x2d
+#include "CHudMessage.h"
+#include <string.h>
+struct XHM { char u0[0x10]; int a[16]; int b[16]; char u1[0xd4 - 0x90]; int m_d4; int m_d8; char m_dc; };
+// TARGET: CHudMessage::vfunc7
+void CHudMessage::vfunc7()
+{
+	XHM *p = (XHM *)this;
+	memset(p->a, 0, sizeof(p->a));
+	memset(p->b, 0, sizeof(p->b));
+	p->m_d4 = 0;
+	p->m_d8 = 0;
+	p->m_dc = 0;
+}
+// END FUNCTION
