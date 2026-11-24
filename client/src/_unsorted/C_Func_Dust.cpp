@@ -29,3 +29,11 @@ C_Func_Dust *pcd_emit_100ba960(const C_Func_Dust &other) { return new C_Func_Dus
 
 // TARGET: ??_GC_Func_Dust@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100ba980 size=0x38
+#include "C_Func_Dust.h"
+// TARGET: ??1C_Func_Dust@@UAE@XZ
+C_Func_Dust::~C_Func_Dust()
+{
+}
+// END FUNCTION
