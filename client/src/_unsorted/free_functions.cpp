@@ -55304,6 +55304,11 @@ void * CUnknown101bcef0::sub_101347f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134f90 size=0x8
+struct V { virtual void v0(); };
+void __fastcall sub_10134f90(char *self, int edx) { ((V *)(self - 4))->v0(); }
+// END FUNCTION
+
 // FUNCTION: 0x10134fa0 size=0x9e
 #include "CDirtySpatialPartitionEntityList.h"
 #include "utlvector.h"
