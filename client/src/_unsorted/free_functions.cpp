@@ -60765,6 +60765,25 @@ void CPtrList101d6400::sub_10142000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101423a0 size=0x28
+struct E10141810 { char pad[0x48]; void sub_10141810(); };
+struct L10142000 { char pad[0x3c]; void sub_10142000(); };
+struct S101423a0 {
+	char pad0[0x18]; L10142000 m_l; E10141810 m_e[4];
+	void sub_101423a0();
+};
+void S101423a0::sub_101423a0()
+{
+	E10141810 *p = m_e + 4;
+	int n = 4;
+	do {
+		--p;
+		p->sub_10141810();
+	} while (--n);
+	m_l.sub_10142000();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101425f0 size=0x16
 int sub_10141bb0(const char *);
 struct S_101425f0 { int a, b; const char *m; int sub_101425f0(); };
