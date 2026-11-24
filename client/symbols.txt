@@ -3441,6 +3441,7 @@
 0x100adbc0 func   ?sub_100adbc0@@YGXH@Z sub_100adbc0
 0x100adbd0 func   ?vfunc10@C_ClientStats@@UAEHXZ C_ClientStats::vfunc10
 0x100adbe0 func   ?vfunc11@C_ClientStats@@UAEHXZ C_ClientStats::vfunc11
+0x100adbf0 func   ?vfunc14@C_ClientStats@@UAEHH@Z C_ClientStats::vfunc14
 0x100adca0 func   ?vfunc2@C_ClientStats@@UAEXXZ C_ClientStats::vfunc2
 0x100add30 func   ?vfunc16@C_DynamicLight@@UAEHXZ C_DynamicLight::vfunc16
 0x100add40 func   ?vfunc15@C_DynamicLight@@UAEHXZ C_DynamicLight::vfunc15

@@ -56,6 +56,11 @@ int C_ClientStats::vfunc11()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adbf0 size=0xb
+#include "C_ClientStats.h"
+int C_ClientStats::vfunc14(int i) { return m_Stats[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100adca0 size=0x1
 #include "C_ClientStats.h"
 
