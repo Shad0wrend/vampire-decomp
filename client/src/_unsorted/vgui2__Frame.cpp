@@ -302,6 +302,25 @@ int vgui2::Frame::vfunc131()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9510 size=0x2a
+#include "vgui2__Frame.h"
+struct IV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int v6(); };
+struct FView {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24(); virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29(); virtual void a30();
+	virtual IV *v31();
+};
+int vgui2::Frame::vfunc21(int a)
+{
+	sub_101a99f0(a);
+	int r = (int)((FView *)this)->v31();
+	if (r)
+		r = ((FView *)this)->v31()->v6();
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9540 size=0x13
 #include "vgui2__Frame.h"
 namespace lifted {
