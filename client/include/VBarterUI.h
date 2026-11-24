@@ -13,5 +13,6 @@ public:
 	void sub_1016b790();
 	void sub_1016edf0();
 	bool sub_10170aa0(void *pItem, bool bSell);
+	void sub_1016f4a0();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };
