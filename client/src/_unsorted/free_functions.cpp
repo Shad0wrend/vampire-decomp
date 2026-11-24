@@ -41507,6 +41507,24 @@ void CDetailModel_100e0300::sub_100e0300(float *color)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1000 size=0x34
+struct Elem { char pad[0x4c]; unsigned short a; unsigned short b; };
+struct CL {
+	Elem *m_p;
+	int m_unk4[4];
+	unsigned short m_n;
+	int sub_100e1000(unsigned short i);
+};
+int CL::sub_100e1000(unsigned short i)
+{
+	if (i < m_n) {
+		if (m_p[i].a != i || m_p[i].b == i)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
