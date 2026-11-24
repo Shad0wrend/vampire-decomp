@@ -254,6 +254,29 @@ int vgui2::Label::vfunc132()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2c20 size=0x4f
+#include "vgui2__Label.h"
+
+struct LabelView_123 {
+	char pad00[0x60];
+	int *m60;
+	char pad64[0x74 - 0x64];
+	short *m74;
+};
+
+void vgui2::Label::vfunc123(int index, int value, int value2)
+{
+	LabelView_123 *v = (LabelView_123 *)this;
+	vfunc135(index);
+	if (v->m60[index] != value || v->m74[index] != value2)
+	{
+		v->m60[index] = value;
+		v->m74[index] = value2;
+		vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2c70 size=0xd
 struct CView { char pad[0x60]; int *m60; int sub_101b2c70(int); };
 // TARGET: ?sub_101b2c70@CView@@QAEHH@Z
