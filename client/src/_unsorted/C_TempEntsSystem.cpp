@@ -281,6 +281,46 @@ void C_TempEntsSystem::vfunc41(int filter, int delay, int pos, int dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6270 size=0x4b
+#include "C_TempEntsSystem.h"
+
+extern int g_104a0d50;
+extern void (__cdecl *g_101e3114)(const char *, ...);
+
+struct CTempEntRecipientFilter
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int v2();
+	bool sub_100be140();
+	void sub_100bdf90(int);
+};
+
+static inline bool CanRunTempEnt(const C_TempEntsSystem *p)
+{
+	if (p->m_nSuppressCount > 0)
+		return false;
+	return !p->m_bSuppressEvent;
+}
+
+// TARGET: C_TempEntsSystem::vfunc2
+void C_TempEntsSystem::vfunc2(int filter, int delay, int pos, int dir, int extra)
+{
+	if (!CanRunTempEnt(this))
+		return;
+
+	CTempEntRecipientFilter *pFilter = (CTempEntRecipientFilter *)filter;
+	if (!pFilter->sub_100be140())
+	{
+		pFilter->sub_100bdf90(g_104a0d50);
+	}
+	if (!pFilter->v2())
+		return;
+
+	g_101e3114("client temp ent TParticle not implemented\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6420 size=0x20
 #include "C_TempEntsSystem.h"
 namespace lifted {
