@@ -56167,6 +56167,29 @@ void CFloatUnit::sub_101335e0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133610 size=0x20
+struct Obj_10133610
+{
+	float m_a;
+	float m_b;
+	int m_unk8;
+	bool m_bFlag;
+	bool sub_10133610();
+};
+// TARGET: Obj_10133610::sub_10133610
+bool Obj_10133610::sub_10133610()
+{
+	if (m_bFlag)
+	{
+		m_bFlag = false;
+		return true;
+	}
+	if (m_a != m_b)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133630 size=0x23
 float __cdecl sub_1010c2e0(float a, float b, float c);
 
