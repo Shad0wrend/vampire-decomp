@@ -69,6 +69,14 @@ int vgui2::TextEntry::vfunc137(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad500 size=0x24
+struct IFont { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); };
+IFont *sub_101ac8e0();
+struct VTE { char pad[0x88]; char m_b88; char pad2[0x94 - 0x89]; int m_i94; int m_i98; void sub_101ad500(); };
+// TARGET: ?sub_101ad500@VTE@@QAEXXZ
+void VTE::sub_101ad500() { m_b88 = 0; m_i94 = sub_101ac8e0()->v4() + m_i98; }
+// END FUNCTION
+
 // FUNCTION: 0x101ad530 size=0x12
 #include "vgui2__TextEntry.h"
 namespace lifted {
