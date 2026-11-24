@@ -75,7 +75,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual ~Panel();
 	virtual int vfunc21(int);
 	virtual int vfunc22();
-	virtual void vfunc23();
+	virtual void vfunc23(void *, void *, void *);
 	virtual int vfunc24(int, int, int);
 	virtual bool vfunc25(int, int);
 	virtual void vfunc26();
@@ -90,7 +90,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc35();
 	virtual int vfunc36();
 	virtual Panel *vfunc37(int);
-	virtual void vfunc38();
+	virtual vgui2::Panel *vfunc38(int, int);
 	virtual bool vfunc39(char);
 	virtual bool vfunc40();
 	virtual void vfunc41(int);
