@@ -31541,6 +31541,15 @@ char * CUnknown1009f360::sub_1009f360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f670 size=0xe
+struct V_1009f670 { int m_unk[0x23c / 4]; float m_f23c[1]; };
+// TARGET: sub_1009f670
+float __fastcall sub_1009f670(V_1009f670 *self, int edx, int i)
+{
+	return self->m_f23c[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f6e0 size=0x7
 struct CUnknown1009f6e0 { char * sub_1009f6e0(); };
 char * CUnknown1009f6e0::sub_1009f6e0()
