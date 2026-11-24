@@ -56583,6 +56583,13 @@ CUnknown1024a230 *CUnknown1024a230::sub_101392a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139300 size=0x13
+bool sub_10139300(const unsigned short *a, const unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
