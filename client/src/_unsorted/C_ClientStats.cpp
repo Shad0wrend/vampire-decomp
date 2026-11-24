@@ -114,3 +114,15 @@ void C_ClientStats::vfunc2()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100adcb0 size=0x1e
+#include "C_ClientStats.h"
+// TARGET: C_ClientStats::vfunc3
+void C_ClientStats::vfunc3()
+{
+	for (int i = 0; i < 0x36; i++)
+		m_Stats[31 + i] = 0;
+	for (int j = 0; j < 6; j++)
+		m_Stats[j] = 0;
+}
+// END FUNCTION
