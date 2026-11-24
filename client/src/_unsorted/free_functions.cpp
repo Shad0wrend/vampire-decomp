@@ -82580,6 +82580,35 @@ CUnknown102029c0 *CUnknown10203240::sub_1015f2f0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f600 size=0x53
+#include <string.h>
+extern char g_102de300[];
+
+struct SNamedEntry1015f600 {
+	int m_id;
+	const char *m_pszName;
+};
+
+extern int g_105e85c0;
+extern SNamedEntry1015f600 **g_105e85c4;
+
+inline const char *NameOf1015f600(const char *const *pp)
+{
+	return *pp ? *pp : g_102de300;
+}
+
+// TARGET: sub_1015f600
+int sub_1015f600(const char *pszName)
+{
+	for (int i = 0; i < g_105e85c0; i++)
+	{
+		if (!_strcmpi(NameOf1015f600(&g_105e85c4[i]->m_pszName), pszName))
+			return g_105e85c4[i]->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f660 size=0x1c
 struct CUnk102036e0Target { void sub_1015ecd0(int a); };
 struct CUnk102036e0Table { CUnk102036e0Target *sub_1015f2f0(const char *name); };
