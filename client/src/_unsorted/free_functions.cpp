@@ -52628,6 +52628,25 @@ int sub_101104b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110ab0 size=0x5d
+#include "CPanelMetaClassMgrImp.h"
+#include "CKeyValuesX.h"
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+bool CPanelMetaClassMgrImp::sub_10110ab0(const char *pFileName, CKeyValuesX *pKeyValues, int keyValueIdx)
+{
+	CKeyValuesX *pIter = pKeyValues->sub_101283a0();
+	while (pIter)
+	{
+		if (!sub_101107c0(pFileName, pIter->sub_10127c70(), pIter, keyValueIdx))
+		{
+			Warning("MetaClass missing for %s\n", pIter->sub_10127c70());
+		}
+		pIter = pIter->sub_101283b0();
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110f70 size=0x13
 bool sub_10110f70(const unsigned short *a, const unsigned short *b)
 {
