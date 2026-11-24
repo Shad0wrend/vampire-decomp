@@ -14933,6 +14933,45 @@ bool Mgr_1003cee0::sub_1003cee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003cf20 size=0xbc
+#include "CTempEnts.h"
+#include "C_BaseEntity.h"
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+#define D16(p) D4(p##1) D4(p##2) D4(p##3) D4(p##4)
+extern void (*g_101e3120)(int, const char *, ...);
+struct IEngT { D16(a) D16(b) D4(c) virtual void e1(){} virtual void e2(){} virtual void e3(){} virtual float Time(int); };
+extern IEngT *g_104a57d4;
+struct TE {
+	D16(a) D16(b) D16(c) D16(d) D16(e) D16(f) D16(g) D16(h) D4(i) D4(j) D4(k) virtual void k1(){} virtual void k2(){} virtual void k3(){} virtual void Prepare(const void *, float);
+};
+struct TEF { int vp; char pad[0x7a4]; TE *next; char pad2[0x7cc - 0x7ac]; int priority; };
+// TARGET: CTempEnts::sub_1003cf20
+void *CTempEnts::sub_1003cf20(const void *org, const void *model)
+{
+	if (!model)
+	{
+		g_101e3120(1, "temporary ent model invalid\n");
+		return 0;
+	}
+	if (!m_pFreeTempEnts)
+		sub_1003cee0();
+	TEF *pTemp = (TEF *)m_pFreeTempEnts;
+	if (!pTemp)
+	{
+		g_101e3120(1, "Couldn't alloc a high priority TENT!\n");
+		return 0;
+	}
+	m_pFreeTempEnts = pTemp->next;
+	pTemp->next = (TE *)m_pHead;
+	m_pHead = pTemp;
+	((TE *)pTemp)->Prepare(model, g_104a57d4->Time(0));
+	pTemp->priority = 1;
+	((C_BaseEntity *)pTemp)->sub_100a2030(org);
+	((C_BaseEntity *)pTemp)->sub_100a1a70(5);
+	return pTemp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dab0 size=0x12
 namespace lifted {
 extern char g_10226fec;
