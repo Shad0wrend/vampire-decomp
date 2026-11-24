@@ -6720,6 +6720,7 @@
 0x10170f70 func   ?sub_10170f70@@YAHXZ sub_10170f70
 0x10170f90 func   ??1CharEditPanel@@UAE@XZ CharEditPanel::~CharEditPanel
 0x10171320 func   ?vfunc118@CLabelHeader@@UAEXXZ CLabelHeader::vfunc118
+0x10171330 func   ??_GCLabelHeader@@UAEPAXI@Z ??_GCLabelHeader@@UAEPAXI@Z
 0x10171370 func   ??_GCharEditPanel@@UAEPAXI@Z ??_GCharEditPanel@@UAEPAXI@Z
 0x10171390 func   ?sub_10171390@@YAXXZ sub_10171390
 0x101713c0 func   ?sub_101713c0@@YAX_N@Z sub_101713c0
