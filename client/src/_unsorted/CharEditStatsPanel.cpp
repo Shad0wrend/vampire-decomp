@@ -11,6 +11,17 @@ CharEditStatsPanel *pcd_emit_1017d730(const CharEditStatsPanel &other) { return 
 // TARGET: ??_GCharEditStatsPanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10182330 size=0x21
+#include "CharEditStatsPanel.h"
+int sub_1016a6b0();
+void CharEditStatsPanel::vfunc123()
+{
+	int n = sub_1016a6b0();
+	vfunc33(n);
+	sub_101aa0a0(1000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182440 size=0x1
 #include "CharEditStatsPanel.h"
 void CharEditStatsPanel::vfunc3()
