@@ -85009,6 +85009,23 @@ int CUnknown101a9980::sub_101a9980(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9af0 size=0x35
+#include "vgui2__Panel.h"
+struct IObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int v4(int); };
+IObj *sub_101ac8c0();
+// TARGET: vgui2::Panel::sub_101a9af0
+void vgui2::Panel::sub_101a9af0()
+{
+  char *flag = (char *)this + 0x31;
+  if (*flag) {
+    IObj *o = sub_101ac8c0();
+    int r = o->v4(sub_101aa220());
+    vfunc74(r);
+    *flag = 0;
+  }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa220 size=0x4
 struct CUnknown101aa220 { int sub_101aa220(); };
 int CUnknown101aa220::sub_101aa220()
