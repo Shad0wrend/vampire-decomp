@@ -6964,6 +6964,7 @@
 0x10174d90 func   ?sub_10174d90@@YAXH@Z sub_10174d90
 0x10174dc0 func   ?sub_10174dc0@@YAXXZ sub_10174dc0
 0x10174e30 func   ?sub_10174e30@@YAXXZ sub_10174e30
+0x10174ea0 func   ?sub_10174ea0@@YAXXZ sub_10174ea0
 0x10174ed0 func   ?sub_10174ed0@@YAHXZ sub_10174ed0
 0x10174f90 func   ?sub_10174f90@@YAXXZ sub_10174f90
 0x10174fb0 func   ?sub_10174fb0@@YAHXZ sub_10174fb0

@@ -84187,6 +84187,27 @@ void sub_10174e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174ea0 size=0x2d
+#include "CHud.h"
+extern CHud g_104cfe38;
+struct VA {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual bool v22();
+};
+struct VCharWizView { int m_unk0; int m_unk4; int m_unk8; int m_unkc; VA m_Panel; };
+void sub_10174e30();
+void sub_10174d90(const char *name);
+void sub_10174ea0()
+{
+	VCharWizView *p = (VCharWizView *)g_104cfe38.sub_100f0ed0("VCharWizardUI");
+	if (p->m_Panel.v22())
+		sub_10174e30();
+	else
+		sub_10174d90("Help_Popup0");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174ed0 size=0x16
 namespace lifted {
 extern char g_1027b3dc;
