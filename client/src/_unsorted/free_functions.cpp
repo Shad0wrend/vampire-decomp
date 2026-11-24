@@ -72818,6 +72818,13 @@ char CVStatListManager_t::sub_1015e580(int time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015e610 size=0x1c
+int sub_100a2a90(int);
+struct E3f4 { char pad[0x3f4]; int m; int Get() { return m; } };
+struct V5e610 { char pad[0x1c]; int h; E3f4 *Look() { return (E3f4 *)sub_100a2a90(h); } int sub_1015e610(); };
+int V5e610::sub_1015e610() { E3f4 *e = Look(); int r = 0; if (e != 0) r = e->Get(); return r; }
+// END FUNCTION
+
 // FUNCTION: 0x1015eb00 size=0xc
 extern int g_102cb108[];
 // TARGET: sub_1015eb00
