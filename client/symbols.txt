@@ -3678,6 +3678,7 @@
 0x100b3190 func   ?ClientClassInit@@YAHPAUignored@DT_FuncParticle@@@Z ClientClassInit
 0x100b4750 func   ?sub_100b4750@@YAXXZ sub_100b4750
 0x100b4780 func   ?sub_100b4780@@YAXXZ sub_100b4780
+0x100b48d0 func   ?sub_100b48d0@@YAPAVC_EnvParticle@@PBDHHHH@Z sub_100b48d0
 0x100b4a60 func   ?sub_100b4a60@@YAXXZ sub_100b4a60
 0x100b4d10 func   ?sub_100b4d10@@YAXPAUS100_100b4d10@@PBU1@@Z sub_100b4d10
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30
