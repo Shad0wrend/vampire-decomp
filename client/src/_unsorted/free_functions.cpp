@@ -31988,6 +31988,25 @@ int CUnknown10094020::sub_10094020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094090 size=0x3c
+#include "C_BaseEntity.h"
+struct CUnknown10094020 { int sub_10094020(); };
+struct CollTarget { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(int, int); };
+struct CollView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual int v8();
+	char pad[0x6a4 - 4];
+	CollTarget *m6a4;
+	void sub_10094090(int a, int b);
+};
+void CollView::sub_10094090(int a, int b) {
+	if ((char)((CUnknown10094020 *)((char *)this - 0xc))->sub_10094020() && v8() != 0xc)
+		m6a4->v3(a, b);
+	else
+		((C_BaseEntity *)((char *)this - 0xc))->C_BaseEntity::Collideable_vfunc1(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094860 size=0x27
 namespace lifted {
 int __stdcall sub_100a0240(int);
