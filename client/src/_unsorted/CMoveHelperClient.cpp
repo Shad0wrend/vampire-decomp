@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1010f180 size=0x1
+// TARGET: sub_1010f180
+void sub_1010f180()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f1a0 size=0x1e
 #include "CMoveHelperClient.h"
 
