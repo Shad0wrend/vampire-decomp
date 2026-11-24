@@ -6285,6 +6285,7 @@
 0x10174b20 func   ?sub_10174b20@CUnknown10174b20@@QAEHXZ CUnknown10174b20::sub_10174b20
 0x10174c00 func   ?sub_10174c00@CUnknown10174c00@@QAEHH@Z CUnknown10174c00::sub_10174c00
 0x10174c40 func   ?sub_10174c40@@YAXXZ sub_10174c40
+0x10174c50 func   ?sub_10174c50@CView@@QAEXXZ CView::sub_10174c50
 0x10174c80 func   ?sub_10174c80@CScorePanelTemp@@QAEXH@Z CScorePanelTemp::sub_10174c80
 0x10174d40 func   ?sub_10174d40@@YADXZ sub_10174d40
 0x10174d70 func   ?sub_10174d70@CUnknown10174d70@@QAEHXZ CUnknown10174d70::sub_10174d70
