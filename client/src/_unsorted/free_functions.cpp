@@ -85408,6 +85408,22 @@ void sub_10186810(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186830 size=0x21
+#include "CHud.h"
+extern CHud g_104cfe38;
+struct ItemInfo_10186830 {
+	char pad[0x180];
+	unsigned char m_b180;
+};
+int sub_10186830()
+{
+	ItemInfo_10186830 *p = (ItemInfo_10186830 *)g_104cfe38.sub_100f0ed0("VItemInfoUI");
+	if (p)
+		return p->m_b180;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186970 size=0x29
 namespace lifted {
 struct C10186ab0 { int sub_10186ab0(); };
