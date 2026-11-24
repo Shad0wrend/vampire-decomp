@@ -204,6 +204,39 @@ int CUnknown100019d0::sub_100019d0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001c20 size=0x60
+struct CamSingletonV_10001c20 {
+	virtual void v0();
+	virtual bool v1();
+	char m_pad[0x24];
+	float m_fl28;
+};
+extern CamSingletonV_10001c20 *g_102de30c;
+
+struct CamShotV_10001c20 {
+	char m_pad[0x100];
+	float m_fl100;
+};
+
+struct CineV_10001c20 {
+	char m_pad[0x480];
+	float m_fl480;
+	CamShotV_10001c20 *sub_10001f20();
+	float sub_10001c20(int arg);
+};
+
+float CineV_10001c20::sub_10001c20(int arg)
+{
+	if (!g_102de30c->v1() && g_102de30c->m_fl28 > 10.0f)
+	{
+		if (g_102de30c->v1())
+			return 0.0f;
+		return g_102de30c->m_fl28;
+	}
+	return (m_fl480 = sub_10001f20()->m_fl100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001f20 size=0x12
 namespace lifted {
 extern char g_102ea298;
