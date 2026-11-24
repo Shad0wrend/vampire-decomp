@@ -70,6 +70,18 @@ void vgui2::Slider::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb940 size=0x45
+#include "vgui2__Slider.h"
+struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: vgui2::Slider::vfunc120
+int vgui2::Slider::vfunc120()
+{
+	KV101b56c0 *kv = (KV101b56c0 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b56c0("SliderMoved", "position", m_h80) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbaf0 size=0x17
 #include "vgui2__Slider.h"
 namespace lifted {
