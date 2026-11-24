@@ -4171,6 +4171,7 @@
 0x100c5bf0 func   ?vfunc29@C_TempEntsSystem@@QAEXHHH@Z C_TempEntsSystem::vfunc29
 0x100c5c50 func   ?vfunc30@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc30
 0x100c5cb0 func   ?vfunc31@C_TempEntsSystem@@QAEXHHHHH@Z C_TempEntsSystem::vfunc31
+0x100c5d10 func   ?vfunc32@C_TempEntsSystem@@QAEXHHHHHH@Z C_TempEntsSystem::vfunc32
 0x100c5d80 func   ?vfunc33@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc33
 0x100c5fb0 func   ?vfunc38@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc38
 0x100c60e0 func   ?vfunc41@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc41
