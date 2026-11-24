@@ -75423,6 +75423,47 @@ void CVStatCost_t::sub_1015a080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a110 size=0x9c
+#include "CVTraitDependencyValue_t.h"
+#include "ScopeTrace.h"
+
+struct DmgBlock_1015a110
+{
+	int m_a, m_b, m_c, m_d;
+	void sub_10161370();
+};
+
+struct StatAction_1015a110
+{
+	int m_field00;                // 0x00
+	int m_field04;                // 0x04
+	int m_field08;                // 0x08
+	int m_field0c;                // 0x0c
+	CVTraitDependencyValue_t m_dep; // 0x10..0x3b
+	int m_field3c;                // 0x3c
+	DmgBlock_1015a110 m_block;    // 0x40..0x4f
+	int m_field50;                // 0x50
+	int m_field54;                // 0x54
+
+	StatAction_1015a110 *sub_1015a110(int a1, int a2);
+};
+
+StatAction_1015a110 *StatAction_1015a110::sub_1015a110(int a1, int a2)
+{
+	m_dep.sub_10161800();
+	m_block.sub_10161370();
+	ScopeTrace trace("CVStatAction_t::CVStatAction_t", g_102de300, g_102de300);
+	m_field08 = -1;
+	m_field3c = -1;
+	m_field00 = 0;
+	m_field04 = 0;
+	m_field0c = 999999;
+	m_field50 = a1;
+	m_field54 = a2;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a230 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_101e3124;
