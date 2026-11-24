@@ -6792,6 +6792,7 @@
 0x10164f00 func   ?vfunc2@CCenterStringPanel@@UAEXXZ CCenterStringPanel::vfunc2
 0x10164ff0 func   ?sub_10164ff0@CUnknown10164ff0@@QAEPAXXZ CUnknown10164ff0::sub_10164ff0
 0x10165020 func   ?sub_10165020@@YAXPAUS10165020@@HH@Z sub_10165020
+0x10165050 func   ?sub_10165050@@YAXPAUCPObj@@HHHHHH@Z sub_10165050
 0x101650a0 func   ?vfunc3@CCenterPrint@@UAEXXZ CCenterPrint::vfunc3
 0x101650b0 func   ?vfunc4@CCenterPrint@@UAEHH@Z CCenterPrint::vfunc4
 0x101650e0 func   ?vfunc5@CCenterPrint@@UAEXXZ CCenterPrint::vfunc5
