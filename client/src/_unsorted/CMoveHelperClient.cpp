@@ -43,6 +43,16 @@ void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f800 size=0x3
+#include "CMoveHelperClient.h"
+
+// TARGET: CMoveHelperClient::vfunc7
+bool CMoveHelperClient::vfunc7()
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f810 size=0x3
 // TARGET: sub_1010f810
 void __stdcall sub_1010f810(int)
