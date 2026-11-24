@@ -42308,6 +42308,28 @@ void UtlMem::sub_100d3470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3500 size=0x4d
+#include "CUtlLinkedList8.h"
+
+void CUtlLinkedList8::sub_100d3500()
+{
+	if ( m_NumAlloced != 0 )
+	{
+		unsigned short next = 0xffff;
+		for ( int i = (int)m_NumAlloced - 1; i >= 0; --i )
+		{
+			m_pMemory[(unsigned short)i].m_Next = next;
+			m_pMemory[(unsigned short)i].m_Previous = (unsigned short)i;
+			next = (unsigned short)i;
+		}
+		m_FirstFree = 0;
+		m_Head = 0xffff;
+		m_Tail = 0xffff;
+		m_ElementCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3930 size=0x33
 struct LLNode { int pad0; int pad4; unsigned short a; unsigned short b; };
 struct LLView {
