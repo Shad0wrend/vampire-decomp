@@ -33,7 +33,13 @@ public:
 	void sub_101ab4e0(int);
 	int m_w7c;
 	int m_h80;
-	int m_unk84[(0x170 - 0x84) / 4];
+	int m_unk84;
+	bool m_b88;
+	char m_c89; char m_c8a; char m_c8b;
+	int m_unk8c; int m_unk90;
+	int m_i94;
+	int m_i98;
+	int m_unk9c[(0x170 - 0x9c) / 4];
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
