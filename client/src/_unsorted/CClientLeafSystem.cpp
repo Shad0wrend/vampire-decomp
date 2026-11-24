@@ -92,6 +92,17 @@ int CClientLeafSystem::vfunc10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2b30 size=0x1e
+#include "CClientLeafSystem.h"
+struct LeafE_100d2b30 { int a, b, c; };
+struct LeafView_100d2b30 { char pad[0xc]; LeafE_100d2b30 *m_p; };
+// TARGET: CClientLeafSystem::vfunc9
+bool CClientLeafSystem::vfunc9(int i, int v)
+{
+	return ((LeafView_100d2b30 *)this)->m_p[i].c == v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3310 size=0x19
 #include "CClientLeafSystem.h"
 // TARGET: CClientLeafSystem::vfunc21
