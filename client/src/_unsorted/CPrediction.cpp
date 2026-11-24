@@ -102,6 +102,24 @@ void CPrediction::vfunc9(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123180 size=0x3a
+#include "CPrediction.h"
+#include "C_BasePlayer.h"
+#include "Vector.h"
+extern C_BasePlayer *g_104a0d50;
+// TARGET: CPrediction::vfunc10
+void CPrediction::vfunc10(Vector *v)
+{
+    if (g_104a0d50 == 0) {
+        v->x = 0;
+        v->y = 0;
+        v->z = 0;
+    } else {
+        *v = *(Vector *)g_104a0d50->vfunc195();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101231c0 size=0x32
 #include "CPrediction.h"
 #include "Vector.h"
