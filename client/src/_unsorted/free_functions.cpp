@@ -17755,6 +17755,33 @@ char sub_1004f830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f840 size=0x48
+struct IEng27 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+    virtual void v25(); virtual void v26();
+    virtual void ServerCmd(const char *, bool);
+};
+extern IEng27 *g_104a57d4;
+extern bool g_103ede7c;
+extern int g_103ede80;
+extern int g_10284b9c;
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+void sub_1004f810();
+void sub_1004f840()
+{
+    char buf[48];
+    if (g_103ede7c) {
+        Q_snprintf(buf, 48, "vdiscipline %d %d", g_10284b9c, g_103ede80);
+        g_104a57d4->ServerCmd(buf, true);
+    }
+    sub_1004f810();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 

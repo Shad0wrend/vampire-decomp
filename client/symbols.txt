@@ -2510,6 +2510,7 @@
 0x1004f2e0 func   ?vfunc107@CDiscipline@@UAE_NXZ CDiscipline::vfunc107
 0x1004f810 func   ?sub_1004f810@@YAHXZ sub_1004f810
 0x1004f830 func   ?sub_1004f830@@YADXZ sub_1004f830
+0x1004f840 func   ?sub_1004f840@@YAXXZ sub_1004f840
 0x10050100 func   ?sub_10050100@CUtlVector16@@QAEXXZ CUtlVector16::sub_10050100
 0x10050140 func   ?sub_10050140@CUnknown10050140@@QAEXXZ CUnknown10050140::sub_10050140
 0x10050160 func   ??0CFeedBar@@QAE@H@Z CFeedBar::CFeedBar
