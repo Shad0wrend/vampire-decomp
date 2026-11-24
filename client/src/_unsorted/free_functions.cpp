@@ -16414,6 +16414,16 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10049f90 size=0x2e
+#include "CMeshBuilder.h"
+// TARGET: CMeshBuilder::sub_10049f90
+void CMeshBuilder::sub_10049f90(unsigned short idx)
+{
+	m_pIndices[m_nIndexCount++] = m_wIndexOffset + idx;
+	m_nCurrentIndex = m_nIndexCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049fc0 size=0x32
 namespace lifted {
 extern char g_10227c00;
