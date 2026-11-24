@@ -68534,6 +68534,11 @@ int __fastcall sub_10156770(CUnknownStat101f69a0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156970 size=0x9
+struct CUnknown10156970 { int a[4]; int m; bool sub_10156970(); };
+bool CUnknown10156970::sub_10156970() { if (m) return false; return true; }
+// END FUNCTION
+
 // FUNCTION: 0x10156980 size=0x164
 #include "CUnknown101f6c50.h"
 
