@@ -11,6 +11,14 @@ CDetailObjectSystem::CDetailObjectSystem()
 // TARGET: ??0CDetailObjectSystem@@QAE@XZ
 // END FUNCTION
 
+// FUNCTION: 0x100e0520 size=0x3
+// TARGET: sub_100e0520
+bool sub_100e0520()
+{
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e0530 size=0x1
 #include "CDetailObjectSystem.h"
 
