@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100ad720 size=0xe
+extern int g_102b2178[];
+// TARGET: sub_100ad720
+int __stdcall sub_100ad720(int i)
+{
+	return g_102b2178[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adb90 size=0x6
 #include "C_ClientStats.h"
 

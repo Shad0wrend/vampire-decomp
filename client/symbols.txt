@@ -3450,6 +3450,7 @@
 0x100ac780 func   ?sub_100ac780@CUnknown100ac780@@QAEXXZ CUnknown100ac780::sub_100ac780
 0x100ad130 func   ?sub_100ad130@CUnknown100ad130@@QAEXPAUBoneHolder_100ad130@@M@Z CUnknown100ad130::sub_100ad130
 0x100ad710 func   ?sub_100ad710@CUnknown100ad710@@QAEPAXXZ CUnknown100ad710::sub_100ad710
+0x100ad720 func   ?sub_100ad720@@YGHH@Z sub_100ad720
 0x100ad790 func   ?sub_100ad790@@YAHXZ sub_100ad790
 0x100ad7a0 func   ?sub_100ad7a0@@YAHXZ sub_100ad7a0
 0x100adb90 func   ?vfunc6@C_ClientStats@@UAEHXZ C_ClientStats::vfunc6
