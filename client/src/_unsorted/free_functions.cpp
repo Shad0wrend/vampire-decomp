@@ -58362,6 +58362,23 @@ struct CView { int sub_101282e0(int, int); int sub_10128350(int, int); };
 int CView::sub_10128350(int a, int b) { b = *(volatile int *)&b; return sub_101282e0(a, b); }
 // END FUNCTION
 
+// FUNCTION: 0x10128360 size=0x33
+#include <string.h>
+struct CNamedNode;
+struct CNamedNode {
+	const char *m_pName;
+	CNamedNode *sub_101283b0();
+	CNamedNode *sub_10128360();
+};
+CNamedNode *CNamedNode::sub_10128360()
+{
+	CNamedNode *p = sub_101283b0();
+	while (p && _strcmpi(m_pName, p->m_pName))
+		p = p->sub_101283b0();
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101283a0 size=0x4
 struct CUnknown101283a0 { int sub_101283a0(); };
 int CUnknown101283a0::sub_101283a0()
