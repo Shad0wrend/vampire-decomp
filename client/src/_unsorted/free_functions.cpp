@@ -37856,6 +37856,12 @@ void sub_100cd530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdad0 size=0x23
+#include <math.h>
+struct Vec { float x, y, z; };
+float sub_100cdad0(const Vec *a, const Vec *b) { return fabs(a->z - b->z) + fabs(a->y - b->y) + fabs(a->x - b->x); }
+// END FUNCTION
+
 // FUNCTION: 0x100cdb00 size=0x36
 #include <string.h>
 
