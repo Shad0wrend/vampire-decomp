@@ -35521,6 +35521,31 @@ int PlrView14d8::sub_100a63d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6420 size=0x2b
+struct SEntry { char pad[0x1c]; const char *m_psz; };
+struct SList { SEntry *sub_10149ce0(int); };
+extern SList g_105e80d0;
+extern char g_102de300[];
+struct PlrView14d8 {
+	int sub_100a63d0();
+	const char *sub_100a6420();
+};
+// TARGET: ?sub_100a6420@PlrView14d8@@QAEPBDXZ
+const char *PlrView14d8::sub_100a6420()
+{
+	int n = sub_100a63d0();
+	if (n != -1) {
+		const char *const *pp = &g_105e80d0.sub_10149ce0(n)->m_psz;
+		const char *s = *pp;
+		if (!s)
+			s = g_102de300;
+		if (*s)
+			return s;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6740 size=0x13
 namespace lifted {
 extern char g_105f8b98;
