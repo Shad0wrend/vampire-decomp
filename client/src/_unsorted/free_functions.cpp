@@ -41031,6 +41031,40 @@ void CUnknown100c7f40::sub_100c7f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7f50 size=0x5a
+#include "C_BaseTerminal.h"
+#include <string.h>
+
+struct EngineView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12(void *);
+};
+
+extern EngineView *g_104a57d4;
+
+void C_BaseTerminal::sub_100c7f50()
+{
+	m_bE88 = 0;
+	g_104a57d4->v12(this);
+	memset(m_rgData, m_bE74 | 0x20, sizeof(m_rgData));
+	m_nE7c = 0;
+	m_nE78 = m_nE80;
+	m_b7a8 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c84c0 size=0x12
 namespace lifted {
 extern char g_102336ec;
