@@ -37802,6 +37802,58 @@ template <> int ClientClassInit<DT_FireSmoke::ignored>(DT_FireSmoke::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b55b0 size=0x58
+#include "C_FireSmoke.h"
+
+struct CSpriteFlame
+{
+	char m_pad00[0x50];
+	unsigned char m_b50;
+	unsigned char m_b51;
+	unsigned char m_b52;
+	char m_pad53[0x444 - 0x53];
+	float m_fl444;
+
+	void sub_10136580(int a, int b);
+};
+
+class IViewRenderView
+{
+public:
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual void v4() = 0;
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+	virtual void v8() = 0;
+	virtual void v9() = 0;
+	virtual void AddVisibleEntity(C_Sprite *pFlame) = 0;
+};
+
+extern IViewRenderView *g_102d43d8;
+
+// TARGET: C_FireSmoke::sub_100b55b0
+void C_FireSmoke::sub_100b55b0()
+{
+	for (int i = 0; i < 8; i++)
+	{
+		C_Sprite *pFlame = &m_entFlames[i];
+		CSpriteFlame *pView = (CSpriteFlame *)pFlame;
+		if (pView->m_fl444 > 0.0f)
+		{
+			pView->m_b50 = 0xff;
+			pView->m_b51 = 0xff;
+			pView->m_b52 = 0xff;
+			pView->sub_10136580(0xff, 0);
+			g_102d43d8->AddVisibleEntity(pFlame);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5610 size=0x28
 namespace lifted {
 int __stdcall sub_100a1340(int);
