@@ -576,6 +576,14 @@ int vgui2::Panel::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aad10 size=0x22
+#include "vgui2__Panel.h"
+struct ISurf { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); };
+ISurf *sub_101ac8b0();
+// TARGET: ?vfunc56@Panel@vgui2@@UAE_NXZ
+bool vgui2::Panel::vfunc56() { ISurf *s = sub_101ac8b0(); int a = vfunc0(); return s->v3() == a ? true : false; }
+// END FUNCTION
+
 // FUNCTION: 0x101aad40 size=0xa
 #include "vgui2__Panel.h"
 int vgui2::Panel::vfunc29(int a0)
