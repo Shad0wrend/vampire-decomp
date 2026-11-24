@@ -52461,6 +52461,31 @@ void S1011d6a0::sub_1010f8c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110290 size=0x9d
+#include "CKeyValuesX.h"
+extern "C" int sscanf(const char *, const char *, ...);
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+int sub_100cd100();
+int sub_100cd0f0();
+bool sub_10110290( CKeyValuesX *pValues, const char* pFieldName, int& x, int& y )
+{
+	x = y = 0;
+	const char *pCoordString = pValues->sub_10128590( pFieldName, "0 0" );
+	if ( !pCoordString || !pCoordString[ 0 ] )
+		return false;
+	int scanned;
+	scanned = sscanf( pCoordString, "%i %i", &x, &y );
+	if ( scanned != 2 )
+	{
+		Warning( "Couldn't scan 2d coordinate values from %s\n", pCoordString );
+		return false;
+	}
+	x = ( x * ( ( float )sub_100cd100() / 640.0 ) );
+	y = ( y * ( ( float )sub_100cd0f0() / 480.0 ) );
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110330 size=0xf9
 #include "CKeyValuesX.h"
 extern "C" int sscanf(const char *, const char *, ...);
