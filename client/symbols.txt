@@ -1768,6 +1768,7 @@
 0x1002b260 func   ?sub_1002b260@Inner_1002b260@@QAEPAUElem_1002b260@@XZ Inner_1002b260::sub_1002b260
 0x1002b290 func   ?sub_1002b290@Inner_1002b290@@QAEPAUElem_1002b290@@XZ Inner_1002b290::sub_1002b290
 0x1002b340 func   ?sub_1002b340@CUnknown1002b340@@QAEHHH@Z CUnknown1002b340::sub_1002b340
+0x1002b390 func   ?vfunc38@C_BatSwarm@@UAEXHH@Z C_BatSwarm::vfunc38
 0x1002b3e0 func   ?sub_1002b3e0@@YG_NPAUS_1002b3e0@@HH@Z sub_1002b3e0
 0x1002b400 func   ?sub_1002b400@V2b400@@QAEXXZ V2b400::sub_1002b400
 0x1002b4e0 func   ?sub_1002b4e0@CUnknown1002b4e0@@QAEPAXXZ CUnknown1002b4e0::sub_1002b4e0
