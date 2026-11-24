@@ -3686,6 +3686,7 @@
 0x100bbba0 func   ??_GC_GameRules@@UAEPAXI@Z ??_GC_GameRules@@UAEPAXI@Z
 0x100bbbc0 func   ??1C_GameRules@@UAE@XZ C_GameRules::~C_GameRules
 0x100bbbe0 func   ?vfunc6@C_GameRules@@UAEHXZ C_GameRules::vfunc6
+0x100bbc00 func   ?vfunc7@C_GameRules@@UAEHXZ C_GameRules::vfunc7
 0x100bbc30 func   ?vfunc5@C_GameRules@@UAEHXZ C_GameRules::vfunc5
 0x100bbc40 func   ?sub_100bbc40@@YAHXZ sub_100bbc40
 0x100bbc60 func   ?vfunc1@C_GameRules@@UAEXXZ C_GameRules::vfunc1
