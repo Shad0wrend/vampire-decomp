@@ -2529,6 +2529,7 @@
 0x100561d0 func   ??_GCHudInfoBar@@UAEPAXI@Z ??_GCHudInfoBar@@UAEPAXI@Z
 0x100561f0 func   ?sub_100561f0@@YAHXZ sub_100561f0
 0x10056200 func   ??1CHudInfoBar@@UAE@XZ CHudInfoBar::~CHudInfoBar
+0x10056510 func   ?sub_10056510@@YGPBDH@Z sub_10056510
 0x10056b20 func   ?vfunc116@CHudInfoBar@@UAEHHH@Z CHudInfoBar::vfunc116
 0x10056b40 func   ?vfunc115@CHudInfoBar@@UAEHHH@Z CHudInfoBar::vfunc115
 0x10056f00 func   ?sub_10056f00@@YGHH@Z sub_10056f00

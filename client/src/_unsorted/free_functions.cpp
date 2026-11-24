@@ -17646,6 +17646,20 @@ int sub_100561f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056510 size=0x38
+struct HudEntry56 { const char *name; int pad[6]; };
+extern HudEntry56 g_103ee160[];
+const char * __stdcall sub_10056510(int i)
+{
+    if (i < 0 || i >= 0x53)
+        return "CHudInfoBar_Error";
+    HudEntry56 *e = &g_103ee160[i];
+    if (e->name)
+        return e->name;
+    return "";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056f00 size=0x28
 namespace lifted {
 extern char g_102864ec;
