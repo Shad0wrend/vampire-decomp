@@ -30841,6 +30841,16 @@ void __fastcall sub_10097f40(S_10097f40 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097f80 size=0x18
+struct CHost_10097f80 { char m_pad[0xfdc]; int m_aVals[1]; int sub_10097f80(int i); };
+int CHost_10097f80::sub_10097f80(int i)
+{
+	if (i == -1)
+		return 0;
+	return m_aVals[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100981f0 size=0x6
 namespace lifted {
 extern char g_1049d79c;
