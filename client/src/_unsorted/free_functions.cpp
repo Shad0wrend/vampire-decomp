@@ -44532,6 +44532,27 @@ void * CUnknown10106b40::sub_10106b40(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106bb0 size=0x2b
+struct Reg_10106bb0 {
+	void ***m_pp;
+	int m_unk4;
+	void (*m_pfnFree)(void *);
+	Reg_10106bb0 *m_pNext;
+};
+extern Reg_10106bb0 *g_104d404c;
+void sub_10106bb0()
+{
+	for (Reg_10106bb0 *p = g_104d404c; p; p = p->m_pNext)
+	{
+		if (p->m_pp)
+		{
+			p->m_pfnFree(*p->m_pp);
+			*p->m_pp = 0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106be0 size=0x7c
 #include "InterfaceReg.h"
 
