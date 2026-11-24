@@ -7,7 +7,7 @@ class CParticleCollision : public CBaseSimpleCollision
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CParticleCollision adds to its base's vtable: 4-5, vfuncK at slot K
-    virtual void vfunc4();
+    virtual void vfunc4(int, int, int, int, int, int, int);
     virtual bool vfunc5(Vector &origin, Vector &velocity, float *rollDelta, float timeDelta, CGameTrace *pTrace);
 
     float m_flGravity;
