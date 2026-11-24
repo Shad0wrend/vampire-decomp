@@ -96,6 +96,29 @@ int vgui2::KeyValues::vfunc12(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b64d0 size=0x47
+#include "vgui2__KeyValues.h"
+extern "C" double atof(const char *);
+// TARGET: vgui2::KeyValues::vfunc10
+float vgui2::KeyValues::vfunc10(const char *keyName, float defaultValue)
+{
+    KeyValues *dat = vfunc4(keyName, 0);
+    if (dat) {
+        switch (dat->m_unk10) {
+        case 1:
+            return (float)atof((const char *)dat->m_pName);
+        case 2:
+            return (float)dat->m_unkc;
+        case 3:
+            return dat->m_flValue;
+        default:
+            return 0.0f;
+        }
+    }
+    return defaultValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6640 size=0x21
 #include "vgui2__KeyValues.h"
 namespace lifted {
