@@ -20,6 +20,7 @@ public:
     void *m_unk3c;
     int m_unk40;
     unsigned short m_unk44;
+    int *sub_100432f0(char a);
     int vfunc11();
     int vfunc12();
 };
