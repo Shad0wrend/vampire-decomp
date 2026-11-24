@@ -18789,6 +18789,19 @@ int CUnknown100666a0::sub_100666a0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100666d0 size=0x24
+struct I100666d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(int, int, int, int, int);
+};
+extern I100666d0 *g_104a5818;
+void __stdcall sub_100666d0(int a, int b, int c)
+{
+	g_104a5818->v10(a, b, 100, c | 0x2800, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066700 size=0x1e
 namespace lifted {
 extern int g_104a5818;
