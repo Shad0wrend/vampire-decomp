@@ -94415,6 +94415,38 @@ int CUnknown101c4a80::sub_101c4a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4ae0 size=0x49
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+#define D1(n) virtual void n##a(); 
+#define D10(n) D1(n##0) D1(n##1) D1(n##2) D1(n##3) D1(n##4) D1(n##5) D1(n##6) D1(n##7) D1(n##8) D1(n##9)
+struct Del21 { D10(p) D10(q) virtual void v20(); virtual void v21(); };
+struct Name19 { D10(p) virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual const char *v19(); };
+struct BMView {
+	D10(a) D10(b) D10(c) D10(d) D10(e) D10(f) D10(g) D10(h) D10(i) D10(j) D10(k) D10(l) D10(m) D10(n)
+	virtual void w140(); virtual void w141(); virtual void w142(); virtual void w143(); virtual void w144();
+	virtual void w145(); virtual void w146(); virtual void w147();
+	virtual Del21 *get148();
+	char pad0[0xe4 - 4];
+	Name19 *m_pName;
+	char pad1[0x130 - 0xe8];
+	Del21 *m_p130;
+	char m_sz[32];
+	void sub_101c4ae0();
+};
+void BMView::sub_101c4ae0()
+{
+	if (m_p130) {
+		m_p130->v21();
+		m_p130 = 0;
+	}
+	m_p130 = get148();
+	strcpy(m_sz, m_pName->v19());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4cf0 size=0x88
 #include <string.h>
 
