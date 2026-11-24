@@ -78063,6 +78063,100 @@ void sub_10198e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101997e0 size=0x129
+#include <string.h>
+#include "ScopeTrace.h"
+
+struct RenderEntry_t
+{
+	int a, b, c;
+};
+
+struct CRenderList
+{
+	RenderEntry_t m_RenderGroups[6][4096];
+	int m_RenderGroupCounts[6];
+};
+
+struct WorldListInfo_t
+{
+	int m_ViewFogVolume;
+	int m_LeafCount;
+	int *m_pLeafList;
+};
+
+struct SetupRenderInfo_t
+{
+	CRenderList *m_pRenderList;
+	int m_nRenderFrame;
+	bool m_bDrawDetailObjects;
+	bool m_bArg3;
+};
+
+struct IClientMode_101997e0
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4();
+	virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual bool ShouldDrawDetailObjects();
+};
+
+struct ConVar_101997e0
+{
+	virtual void u0();
+	virtual bool IsCommand();
+	char m_pad04[0x28];
+	int m_nValue;
+};
+
+struct IClientLeafSystem_101997e0
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4();
+	virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12();
+	virtual void CollateRenderablesInLeaf(WorldListInfo_t *pInfo, int leaf, int leafIndex, SetupRenderInfo_t &setupInfo);
+};
+
+extern IClientMode_101997e0 *g_105f99d8;
+extern ConVar_101997e0 *g_1061901c;
+extern IClientLeafSystem_101997e0 *g_102b9060;
+
+void __cdecl sub_101995e0(RenderEntry_t *pList, int count);
+
+struct CViewRender_101997e0
+{
+	char m_pad000[0x378];
+	int m_BuildWorldListsNumber;
+
+	void sub_101997e0(WorldListInfo_t &info, CRenderList &renderList, bool bArg3);
+};
+
+// TARGET: ?sub_101997e0@CViewRender_101997e0@@QAEXAAUWorldListInfo_t@@AAUCRenderList@@_N@Z
+void CViewRender_101997e0::sub_101997e0(WorldListInfo_t &info, CRenderList &renderList, bool bArg3)
+{
+	ScopeTrace trace("CViewRender::SetupRenderList", g_102de300);
+
+	memset(renderList.m_RenderGroupCounts, 0, sizeof(renderList.m_RenderGroupCounts));
+
+	SetupRenderInfo_t setupInfo;
+	setupInfo.m_pRenderList = &renderList;
+	setupInfo.m_nRenderFrame = m_BuildWorldListsNumber;
+	setupInfo.m_bDrawDetailObjects = !bArg3 && g_105f99d8->ShouldDrawDetailObjects() && (!g_1061901c->IsCommand() && g_1061901c->m_nValue);
+	setupInfo.m_bArg3 = bArg3;
+
+	IClientLeafSystem_101997e0 *pClientLeafSystem = g_102b9060;
+	for (int i = 0; i < info.m_LeafCount; i++)
+	{
+		int nTranslucent = renderList.m_RenderGroupCounts[2];
+		pClientLeafSystem->CollateRenderablesInLeaf(&info, info.m_pLeafList[i], i, setupInfo);
+		int nNewTranslucent = renderList.m_RenderGroupCounts[2] - nTranslucent;
+		if (nNewTranslucent)
+		{
+			sub_101995e0(&renderList.m_RenderGroups[2][nTranslucent], nNewTranslucent);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b030 size=0x33c
 #include "ScopeTrace.h"
 #include "Vector.h"
