@@ -48652,6 +48652,11 @@ int sub_10117b40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117b60 size=0x1c
+struct V2b400 { char pad[0xc]; unsigned short a, b, c, d, e; void sub_10117b60(); };
+void V2b400::sub_10117b60() { a = 0xffff; b = 0xffff; c = 0xffff; e = 0; d = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10117b80 size=0x11
 int sub_10117b80(int a0, int a1)
 {
