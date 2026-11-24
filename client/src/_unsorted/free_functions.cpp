@@ -56005,6 +56005,13 @@ void sub_10138bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138bc0 size=0xb
+struct SInner { char pad[0x12]; unsigned short w; };
+struct CView { SInner *p; int sub_10138bc0(); };
+// TARGET: ?sub_10138bc0@CView@@QAEHXZ
+int CView::sub_10138bc0() { return p->w; }
+// END FUNCTION
+
 // FUNCTION: 0x10138bd0 size=0xdb
 #include "CUtlRBTree16.h"
 
