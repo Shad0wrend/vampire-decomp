@@ -84888,6 +84888,38 @@ int CUnknown101646b0::sub_101646b0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164900 size=0x53
+// TARGET: BitmapView::sub_10164900
+struct SrcImage
+{
+	void sub_101a9920(int *a, int *b);
+};
+
+struct BitmapView
+{
+	char m_pad[0x24];
+	int m_24;
+	int m_28;
+	int m_2c;
+	int m_30;
+	void sub_101646d0(int a, int b, int c, int d, int e, int f);
+	void sub_10164900(SrcImage *pSrc, int x, int y);
+};
+
+void BitmapView::sub_10164900(SrcImage *pSrc, int x, int y)
+{
+	int w, h;
+	if ( pSrc )
+		pSrc->sub_101a9920(&w, &h);
+	else
+	{
+		w = m_2c;
+		h = m_30;
+	}
+	sub_101646d0(m_24, m_28, w, h, x, y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164980 size=0xc
 struct CUnknown10164980 { int sub_10164980(int); };
 int CUnknown10164980::sub_10164980(int a0)
