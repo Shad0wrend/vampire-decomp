@@ -33224,6 +33224,29 @@ char __stdcall sub_100a9910(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a99d0 size=0x1b
+struct IEng_104a57d4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual int v34();
+};
+extern IEng_104a57d4 *g_104a57d4;
+struct Obj_100a99d0
+{
+	int m_unk0, m_unk4, m_unk8, m_unkc, m_unk10, m_unk14, m_unk18, m_unk1c, m_unk20, m_unk24, m_unk28, m_unk2c, m_unk30, m_unk34, m_unk38, m_unk3c, m_unk40;
+	int m_unk44;
+	char sub_100a99d0();
+};
+// TARGET: Obj_100a99d0::sub_100a99d0
+char Obj_100a99d0::sub_100a99d0()
+{
+	return m_unk44 == g_104a57d4->v34();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9a80 size=0x37
 struct CUnknown100a9a80 { int sub_100a9a80(int); };
 int CUnknown100a9a80::sub_100a9a80(int a0)
