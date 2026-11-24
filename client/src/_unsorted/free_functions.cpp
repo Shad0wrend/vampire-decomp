@@ -42442,6 +42442,12 @@ int CUnknown100f2740::sub_100f2740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2750 size=0x1d
+struct CUnknown100f2740 { CUnknown100f2740 *next; void (*fn)(); int sub_100f2740(); };
+extern CUnknown100f2740 *g_104d0f58;
+void sub_100f2750() { CUnknown100f2740 *p = g_104d0f58; while (p) { p->fn(); p = (CUnknown100f2740 *)p->sub_100f2740(); } }
+// END FUNCTION
+
 // FUNCTION: 0x100f27a0 size=0x3
 void __stdcall sub_100f27a0(int a0, int a1, int a2)
 {
