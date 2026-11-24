@@ -53,6 +53,11 @@ CHealthAnkh::~CHealthAnkh()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100510e0 size=0x1e
+struct V10e0 { char pad[0x190]; int a, b, c, d; void sub_100510e0(); };
+void V10e0::sub_100510e0() { c = -1; d = -1; a = 0; b = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100511b0 size=0x20
 #include "CHealthAnkh.h"
 namespace lifted {
