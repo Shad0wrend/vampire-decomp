@@ -11556,6 +11556,25 @@ void * CUnknown1002b4e0::sub_1002b4e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b4f0 size=0x34
+struct LLNode2 { char pad[0x304]; unsigned short a; unsigned short b; };
+struct LLView2 {
+    LLNode2 *m_p;
+    char pad[0x10];
+    unsigned short m_n;
+    int sub_1002b4f0(unsigned short i);
+};
+// TARGET: LLView2::sub_1002b4f0
+int LLView2::sub_1002b4f0(unsigned short i)
+{
+    if (i < m_n) {
+        if (m_p[i].a != i)
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c020 size=0x8
 namespace lifted {
 extern char g_102eacf8;
