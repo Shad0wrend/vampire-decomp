@@ -13471,6 +13471,27 @@ int CUnknown10036560::sub_10036560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036590 size=0x20
+struct IGlobal_102ba388
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(void *, void *, char);
+};
+extern IGlobal_102ba388 *g_102ba388;
+struct Obj_10036590
+{
+	int m_unk0, m_unk4, m_unk8;
+	int m_unkc, m_unk10, m_unk14;
+	int m_unk18, m_unk1c, m_unk20;
+	char m_c24;
+	void sub_10036590(int);
+};
+// TARGET: Obj_10036590::sub_10036590
+void Obj_10036590::sub_10036590(int)
+{
+	g_102ba388->v7(&m_unkc, &m_unk18, m_c24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100365b0 size=0x1b
 namespace lifted {
 extern int g_102ba388;
