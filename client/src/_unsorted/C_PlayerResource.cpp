@@ -109,6 +109,12 @@ int C_PlayerResource::vfunc121(int i)
 int C_PlayerResource::vfunc122(int i) { if (!vfunc133(i)) return 0; return m_a518[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x100bd420 size=0x28
+#include "C_PlayerResource.h"
+// TARGET: ?vfunc123@C_PlayerResource@@UAEHH@Z
+int C_PlayerResource::vfunc123(int i) { if (!vfunc133(i)) return 0; return m_a59c[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100bd450 size=0x28
 #include "C_PlayerResource.h"
 int C_PlayerResource::vfunc124(int i) { if (!vfunc133(i)) return 0; return m_a620[i]; }
