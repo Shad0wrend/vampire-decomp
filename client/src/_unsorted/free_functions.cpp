@@ -79416,6 +79416,14 @@ void sub_101895f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189890 size=0x22
+struct S10189890 { int pad[3]; int m_n; };
+int sub_10189890(S10189890 **a, S10189890 **b)
+{
+	return (*a)->m_n < (*b)->m_n ? 1 : -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189a20 size=0x1
 void sub_10189a20()
 {
