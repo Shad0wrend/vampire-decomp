@@ -1,4 +1,4 @@
-# written by pcdecomp standalone from vtmb 21e44f39c401; do not edit by hand
+# written by pcdecomp standalone from vtmb d26392692221; do not edit by hand
 [target]
 name = "vampire.dll"
 sha1 = "3fe64bc0d9d7eca64976adc668617ca2814e5e4a"
@@ -18,3 +18,28 @@ dlls = ["tier0.dll", "vstdlib.dll", "vampire_python21.dll"]
 [verify]
 xc_a = 273887232
 xc_z = 273899648
+
+[identical]
+pe_header = 224
+timestamp = 1102032814
+characteristics = 8462
+linker = [6, 0]
+entry = "__DllMainCRTStartup@12"
+os_version = [4, 0]
+image_version = [0, 0]
+subsystem_version = [4, 0]
+subsystem = 2
+dll_characteristics = 0
+stack = [1048576, 4096]
+heap = [1048576, 4096]
+section_align = 4096
+file_align = 4096
+rich = [[12, 7291, 6], [11, 8047, 10], [14, 7299, 33], [10, 8047, 116], [1, 0, 179], [19, 8034, 5], [49, 9044, 448], [4, 8447, 7]]
+export_directory = 273865584
+export_timestamp = 1101953502
+export_name = "vampire.dll"
+debug_directory = 272912384
+debug_timestamp = 1101953503
+pdb = "E:\\Vampire\\main\\dlls\\Release\\vampire.pdb"
+pdb_signature = 1101953502
+pdb_age = 2

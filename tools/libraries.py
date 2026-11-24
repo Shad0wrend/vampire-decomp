@@ -7,16 +7,21 @@ A section of a library object is placed where the original holds it:
 - by content: its bytes (the words its relocations fill left out) are at exactly one place of what no owner has yet.
 Each place is checked before it is taken: the bytes match outside the relocated words, the original has a base
 relocation at exactly the section's address words, every relocation whose target is known reaches it, and no other
-section of a library is there. The linker's thunk for a function of an import library (`jmp [__imp_X]`) is found by
-its shape (import_thunks). Standard library only, like every tool here."""
+section of a library is there. An uninitialized (.bss) section has no bytes, nor has a COMMON symbol (room the link
+gives in .bss): the original's words that name them say where they are (library_bss). The linker's thunk for a
+function of an import library (`jmp [__imp_X]`) is found by its shape (import_thunks); what an import library defines
+(`__imp_X`, the thunk's X) comes from its short import records (import_symbols). Standard library only, like every
+tool here."""
 
 from __future__ import annotations
 
 import bisect
 import struct
 from collections import deque
+from collections.abc import Iterable
 from dataclasses import dataclass
 
+from .cfg import LibrarySection
 from .coff import SCN_CNT_UNINITIALIZED_DATA, Coff, CoffError
 
 DIR32, DIR32NB, REL32 = 0x6, 0x7, 0x14
@@ -27,6 +32,8 @@ ANCHOR = 8  # fixed bytes in a row a content search starts from
 EVIDENCE = 4  # a section with no such row: fixed bytes, plus 4 for each relocation checked, it needs at its one place
 IAT = 12
 ARCHIVE = b"!<arch>\n"
+IMPORT_RECORD = b"\x00\x00\xff\xff"  # a short import record's first words: IMAGE_FILE_MACHINE_UNKNOWN, 0xFFFF
+CODE_IMPORT = 0  # an import record's type: 0 code, 1 data, 2 const
 
 
 @dataclass
@@ -37,6 +44,8 @@ class Placement:
     member: str  # the object's name in the library
     section: str
     how: str  # name, reference or content
+    member_index: int  # the member's position in the archive (read_archive)
+    number: int  # the section's number in the member
 
 
 def read_archive(data: bytes) -> list[tuple[str, bytes]]:
@@ -324,7 +333,149 @@ def place(image, libraries: list[tuple[str, bytes]], addresses: dict[str, int], 
     out = []
     for key, va in sorted(placer.at.items(), key=lambda kv: kv[1]):
         sec = placer.sections[key]
-        out.append(Placement(va, len(sec.data), sec.library, sec.member, sec.section.name, placer.how[key]))
+        out.append(Placement(va, len(sec.data), sec.library, sec.member, sec.section.name, placer.how[key], key[1],
+                             key[2]))
+    return out
+
+
+def symbol_addresses(archives: dict[str, list[tuple[str, bytes]]], placed: Iterable[LibrarySection]) -> dict[str, int]:
+    """External name -> game address of every symbol a placed section defines: `placed` is the library-sections table
+    (config/layout/libraries.txt), `archives` each library's members as read_archive reads them. A member that is not
+    the one the table names there (the library changed since the table was written) is a ValueError."""
+    out: dict[str, int] = {}
+    parsed: dict[tuple[str, int], Coff] = {}
+    for p in placed:
+        coff = parsed.get((p.library, p.member_index))
+        if coff is None:
+            members = archives.get(p.library)
+            if members is None or not 0 <= p.member_index < len(members) or members[p.member_index][0] != p.member:
+                raise ValueError(f"{p.library}: member {p.member_index} is not {p.member} (the library changed: run "
+                                 f"pcdecomp standalone)")
+            coff = parsed[(p.library, p.member_index)] = Coff.parse(members[p.member_index][1])
+        for sym in coff.symbols:
+            if sym.storage_class == EXTERNAL and sym.section_number == p.section:
+                out.setdefault(sym.name, p.addr + sym.value)
+    return out
+
+
+def library_bss(image, archives: dict[str, list[tuple[str, bytes]]],
+                placed: Iterable[LibrarySection]) -> tuple[list[LibrarySection], dict[str, int], list[str]]:
+    """Where the original holds the uninitialized space the placed library sections name (`placed`, the
+    library-sections table; `archives` each library's members as read_archive reads them): the rows of their .bss
+    sections, the addresses of their COMMON symbols, and the problems. Neither has bytes to search for: each word of a
+    placed section whose relocation names one says where it is, less the addend (and, in a .bss section, the symbol's
+    value). A .bss section is named by a symbol of its own member or an external one defines; a COMMON symbol (C's
+    `int x;`: an external of no section, its size as its value, that no member defines) by its name, and the link
+    gives it room in .bss. The words naming one must agree, and it must lie inside a section's virtual extent (bss is
+    virtual space, past the raw data where the link puts it); else a problem, and no row or address."""
+    parsed: dict[tuple[str, int], Coff | None] = {}
+
+    def coff(library: str, index: int) -> Coff | None:
+        if (library, index) not in parsed:
+            data = archives[library][index][1]
+            try:
+                parsed[(library, index)] = None if data[:4] == IMPORT_RECORD else Coff.parse(data)
+            except (CoffError, struct.error, IndexError, UnicodeDecodeError):
+                parsed[(library, index)] = None
+        return parsed[(library, index)]
+
+    def uninitialized(c: Coff) -> set[int]:
+        return {s.number for s in c.sections if s.characteristics & SCN_CNT_UNINITIALIZED_DATA}
+
+    defined: dict[str, tuple[str, int, int, int]] = {}  # external name -> (library, member, section, value) in a bss
+    anywhere: set[str] = set()  # the externals some member defines (in any section, or absolute)
+    common: dict[str, int] = {}  # COMMON name -> its size (the largest any member asks)
+    for library, members in archives.items():
+        for index in range(len(members)):
+            c = coff(library, index)
+            if c is None:
+                continue
+            bss = uninitialized(c)
+            for sym in c.symbols:
+                if sym.storage_class != EXTERNAL:
+                    continue
+                if sym.section_number == 0:
+                    if sym.value:
+                        common[sym.name] = max(common.get(sym.name, 0), sym.value)
+                    continue
+                anywhere.add(sym.name)
+                if sym.section_number in bss:
+                    defined.setdefault(sym.name, (library, index, sym.section_number, sym.value))
+    common = {name: size for name, size in common.items() if name not in anywhere}
+    placed = list(placed)
+    taken = {(p.library, p.member_index, p.section) for p in placed}
+    # a bss section (library, member, number) or a COMMON name -> address -> the words' sites
+    named: dict[tuple[str, int, int] | str, dict[int, list[int]]] = {}
+    for p in placed:
+        c = coff(p.library, p.member_index) if p.library in archives else None
+        section = next((s for s in c.sections if s.number == p.section), None) if c is not None else None
+        if section is None:
+            continue
+        symbols, bss = {s.index: s for s in c.symbols}, uninitialized(c)
+        for r in section.relocations:
+            target = symbols.get(r.symbol_index)
+            if r.type != DIR32 or target is None:
+                continue
+            if target.section_number in bss:
+                key, value = (p.library, p.member_index, target.section_number), target.value
+            elif target.section_number == 0 and target.name in defined:
+                library, index, number, value = defined[target.name]
+                key = (library, index, number)
+            elif target.section_number == 0 and target.name in common:
+                key, value = target.name, 0
+            else:
+                continue
+            if key in taken:
+                continue
+            site = p.addr + r.offset
+            addr = (struct.unpack("<I", image.read(site, 4))[0] - struct.unpack_from("<I", section.data, r.offset)[0]
+                    - value) & MASK
+            named.setdefault(key, {}).setdefault(addr, []).append(site)
+    rows, addresses, problems = [], {}, []
+    for key, found in named.items():
+        if isinstance(key, str):
+            what, size = f"the COMMON symbol {key} ({common[key]} bytes)", common[key]
+        else:
+            library, index, number = key
+            size = len(next(s for s in coff(library, index).sections if s.number == number).data)
+            what = f"{library}:{archives[library][index][0]}: its uninitialized section #{number}"
+        words = ", ".join(f"0x{a:08x} (the word at 0x{sites[0]:08x})" for a, sites in sorted(found.items()))
+        if len(found) > 1:
+            problems.append(f"{what}: the original's words name it at {words}")
+            continue
+        (addr,) = found
+        if not any(s.va <= addr and addr + size <= s.va + s.size for s in image.sections):
+            problems.append(f"{what}: the original's words name it at {words}, outside every section's virtual "
+                            f"extent")
+            continue
+        if isinstance(key, str):
+            addresses[key] = addr
+        else:
+            rows.append(LibrarySection(addr, library, index, archives[library][index][0], number))
+    return sorted(rows, key=lambda r: r.addr), addresses, problems
+
+
+def import_symbols(archive: bytes) -> dict[str, tuple[str, str]]:
+    """The symbols an import library defines -> (DLL, import name), from each short import record: `__imp_<symbol>`
+    (its IAT slot) and, for a code import, `<symbol>` (the linker's thunk). The import name is the symbol by the
+    record's name type: 1 as is, 2 without a leading `?`, `@` or `_`, 3 also cut at the first `@`; 0 imports by
+    ordinal: `#<ordinal>`. A symbol two records define keeps the first."""
+    out: dict[str, tuple[str, str]] = {}
+    for _, data in read_archive(archive):
+        if len(data) < 20 or data[:4] != IMPORT_RECORD or struct.unpack_from("<H", data, 4)[0] != 0:
+            continue  # an object (an anonymous object starts the same, with a version of 1 or more)
+        ordinal, bits = struct.unpack_from("<HH", data, 16)
+        symbol, dll = (s.decode("latin1") for s in data[20:].split(b"\0", 2)[:2])
+        kind, name_type = bits & 3, bits >> 2 & 7
+        name = symbol
+        if name_type == 0:
+            name = f"#{ordinal}"
+        elif name_type in (2, 3):
+            name = name[1:] if name[:1] in ("?", "@", "_") else name
+            name = name.split("@", 1)[0] if name_type == 3 else name
+        out.setdefault(f"__imp_{symbol}", (dll, name))
+        if kind == CODE_IMPORT:
+            out.setdefault(symbol, (dll, name))
     return out
 
 
