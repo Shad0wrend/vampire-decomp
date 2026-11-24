@@ -13,4 +13,5 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc7(int);
+	CAutoGameSystem *vfunc8(unsigned int flags);	// as in CDirtySpatialPartitionEntityList (transplant)
 };

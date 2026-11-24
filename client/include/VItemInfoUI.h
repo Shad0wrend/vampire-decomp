@@ -14,4 +14,5 @@ public:
 	void sub_10184ba0();
 	void sub_10186860();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
+	void sub_101838a0();	// provisional, like sub_10186860 (transplant)
 };
