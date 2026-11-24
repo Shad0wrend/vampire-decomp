@@ -2164,6 +2164,7 @@
 0x1003a470 func   ?sub_1003a470@@YAHXZ sub_1003a470
 0x1003a510 func   ?sub_1003a510@@YAHXZ sub_1003a510
 0x1003a580 func   ?ClientClassInit@@YAHPAUignored@DT_TEKillPlayerAttachments@@@Z ClientClassInit
+0x1003a740 func   ??0C_LocalTempEntity@@IAE@XZ C_LocalTempEntity::C_LocalTempEntity
 0x1003a740 func   ??0C_LocalTempEntity@@QAE@XZ C_LocalTempEntity::C_LocalTempEntity
 0x1003a740 func   ?sub_1003a740@CUnknown1003a740@@QAEPAXXZ CUnknown1003a740::sub_1003a740
 0x1003a780 func   ??_GC_LocalTempEntity@@UAEPAXI@Z ??_GC_LocalTempEntity@@UAEPAXI@Z
