@@ -85962,6 +85962,19 @@ void sub_10186d00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186d70 size=0x2e
+#include "CHud.h"
+#include "VItemInfoUI.h"
+extern CHud g_104cfe38;
+extern int g_105fb7e8;
+extern char g_105fb7e4;
+void sub_10186d70(int n)
+{
+	if (g_105fb7e8 == n)
+		((VItemInfoUI *)g_104cfe38.sub_100f0ed0("VItemInfoUI"))->sub_10184bc0(g_105fb7e8, g_105fb7e4, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186dd0 size=0x23
 namespace lifted {
 extern char g_102bbe88;
