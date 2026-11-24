@@ -19234,6 +19234,31 @@ char CUnknown1005f290::sub_1005f290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f550 size=0x40
+struct CUnkFadeF {
+	char m_pad0[8];
+	float m_flAlpha;
+	int m_nC;
+	bool m_bOn;
+	bool m_bFadeIn;
+	bool m_bFadeOut;
+	void sub_1005f550(bool on);
+};
+void CUnkFadeF::sub_1005f550(bool on)
+{
+	if (!m_bOn && on) {
+		m_flAlpha = 0;
+		m_bFadeIn = true;
+		m_bFadeOut = false;
+	} else if (m_bOn && !on) {
+		m_flAlpha = 255.0f;
+		m_bFadeOut = true;
+		m_bFadeIn = on;
+	}
+	m_bOn = on;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f6b0 size=0xa
 struct CUnknown1005f6b0 { char sub_1005f6b0(char); };
 char CUnknown1005f6b0::sub_1005f6b0(char a0)
