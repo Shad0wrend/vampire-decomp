@@ -65489,6 +65489,24 @@ bool sub_1013a4d0(CreateInterfaceFn factory)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a670 size=0x53
+// TARGET: sub_1013a670
+#include "CUnknown1006c1c0.h"
+
+void sub_1013a670(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char *pOut)
+{
+	for ( int i = 0; i < pInfo->m_nCount; i++, pOut += 4 )
+	{
+		unsigned char *pSrc = pBuf->m_pData + pBuf->m_nC;
+		pOut[0] = pSrc[0];
+		pOut[1] = pSrc[1];
+		pOut[2] = pSrc[2];
+		pOut[3] = pSrc[3];
+		pBuf->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a6d0 size=0x53
 #include "CUnknown1006c1c0.h"
 
