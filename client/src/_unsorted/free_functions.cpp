@@ -77518,6 +77518,14 @@ void CUnknown10184ba0::sub_10184ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101867f0 size=0x12
+struct S_101867f0 { char pad[0x180]; bool m; };
+void __fastcall sub_101867f0(S_101867f0 *self, int edx, int a)
+{
+	self->m = a != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186810 size=0x20
 namespace lifted {
 extern char g_102bbe88;
