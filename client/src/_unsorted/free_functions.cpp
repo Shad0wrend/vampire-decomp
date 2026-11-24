@@ -33796,6 +33796,36 @@ int sub_100a2a90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2b30 size=0x66
+#include "Tier1.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct EngCmdView {
+    V4(a) V4(b) V4(c) V4(d) V4(e) V4(f) V4(g) V4(h) V4(i) V4(j)
+    V4(k) V4(l) V4(m) V4(n) V4(o)
+    virtual void x60(); virtual void x61(); virtual void x62();
+    virtual int Cmd_Argc();
+    virtual const char *Cmd_Argv(int i);
+};
+struct ClassMapView {
+    virtual void v0(); virtual void v1(); virtual void v2();
+    virtual int GetClassSize(const char *name);
+};
+extern EngCmdView *g_104a57d4;
+ClassMapView *sub_100cde00();
+
+// TARGET: sub_100a2b30
+void sub_100a2b30()
+{
+    if (g_104a57d4->Cmd_Argc() != 2) {
+        g_101e3108("cl_sizeof <gameclassname>\n");
+        return;
+    }
+    int size = sub_100cde00()->GetClassSize(g_104a57d4->Cmd_Argv(1));
+    g_101e3108("%s is %i bytes\n", g_104a57d4->Cmd_Argv(1), size);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2da0 size=0x8
 namespace lifted {
 int __stdcall sub_100a29b0(int);
