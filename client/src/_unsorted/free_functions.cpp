@@ -64770,6 +64770,35 @@ void __fastcall sub_101363c0(CSpriteView *p, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136400 size=0x33
+struct CGlobalsView
+{
+    char m_pad00[0xc];
+    float curtime;
+};
+extern CGlobalsView *g_102b8494;
+
+struct CSpriteView
+{
+    char m_pad00[0x78];
+    float m_fl78;       // +0x78
+    char m_pad7c[0x438 - 0x7c];
+    float m_fl438;      // +0x438
+    void sub_101363c0();
+    void sub_100a2930();
+};
+
+void __fastcall sub_10136400(CSpriteView *p, int)
+{
+    if (g_102b8494->curtime > p->m_fl438) {
+        p->sub_100a2930();
+        return;
+    }
+    p->sub_101363c0();
+    p->m_fl78 = g_102b8494->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136520 size=0x54
 extern "C" double __cdecl fmod(double, double);
 
