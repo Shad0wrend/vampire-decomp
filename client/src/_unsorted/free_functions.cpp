@@ -89117,6 +89117,31 @@ int sub_101a2f30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3000 size=0x37
+struct CTable18Node { char pad[0x14]; CTable18Node *m_pNext; };
+struct CTable18Bucket { char pad[0x14]; CTable18Node *m_pFirst; };
+struct CTable18 {
+	CTable18Bucket m_Buckets[256];
+	void sub_101a3170();
+	void sub_101a3000();
+};
+void CTable18::sub_101a3000()
+{
+	for (int i = 0; i < 256; i++)
+	{
+		CTable18Node *pHead = (CTable18Node *)&m_Buckets[i];
+		CTable18Node *p = pHead->m_pNext;
+		while (p != pHead)
+		{
+			CTable18Node *pNext = p->m_pNext;
+			delete p;
+			p = pNext;
+		}
+	}
+	sub_101a3170();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a30c0 size=0x13
 struct V {
 	int sub_101a3190(int);
