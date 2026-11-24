@@ -50,3 +50,15 @@ void CViewEffects::vfunc10()
 	*(char *)((char *)this + 0x99) = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101977a0 size=0x5f
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewEffects::sub_101977a0
+bool CViewEffects::sub_101977a0()
+{
+	ScopeTrace trace("CViewEffects::IsHolyLightActive", g_102de300);
+	return *(bool *)((char *)this + 0x99);
+}
+// END FUNCTION
