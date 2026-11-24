@@ -48682,6 +48682,23 @@ char sub_10101b90(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101d10 size=0x49
+#include "CInput.h"
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+// TARGET: ?sub_10101d10@CInput@@QAEXPBDH@Z
+void CInput::sub_10101d10(const char *name, int value)
+{
+	if (!vfunc11(name)) {
+		CInputKey *k = new CInputKey;
+		strcpy(k->name, name);
+		k->value = value;
+		k->next = m_pKeys;
+		m_pKeys = k;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101d60 size=0x23
 namespace lifted {
 extern char g_102352ec;
