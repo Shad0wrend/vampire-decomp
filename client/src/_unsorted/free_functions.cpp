@@ -37725,6 +37725,11 @@ extern Obj *g_102cef78;
 void sub_100cd060(int a, int b, int c, ...) { va_list ap; va_start(ap, c); g_102cef78->vt->f7(g_102cef78, 0, a, b, c, ap); }
 // END FUNCTION
 
+// FUNCTION: 0x100cd090 size=0x1d
+void sub_100cd060(int a, int b, int c, ...);
+int sub_100cd090(int a) { int local; sub_100cd060((int)&a, (int)&local, a); return a; }
+// END FUNCTION
+
 // FUNCTION: 0x100cd0b0 size=0x14
 namespace lifted {
 extern int g_104a57d4;
