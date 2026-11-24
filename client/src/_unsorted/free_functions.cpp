@@ -69905,6 +69905,27 @@ int CUnknown10142610::sub_10142610()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142620 size=0x5a
+#include "CUnknown10141210.h"
+
+extern int g_105e7788;
+extern CUnknown10141210 **g_105e778c;
+
+// TARGET: sub_10142620
+void __fastcall sub_10142620(void *self, int edx)
+{
+	((int *)self)[0x2c / 4]++;
+	int i = ((int *)self)[0x30 / 4];
+	if (i >= 0 && i < g_105e7788)
+	{
+		g_105e778c[i]->sub_10141370();
+		return;
+	}
+	static CUnknown10141210 s_default(-1);
+	s_default.sub_10141370();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101427d0 size=0x1b
 struct CUnknown101427d0 { void * sub_101427d0(); };
 void * CUnknown101427d0::sub_101427d0()
