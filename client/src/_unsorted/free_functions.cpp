@@ -37819,6 +37819,13 @@ extern S12_100d1530 *g_104cee1c;
 S12_100d1530 *sub_100d1530(int i) { return &g_104cee1c[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x100d1570 size=0x12
+struct S12_100d1570 { int a, b, c; };
+struct S14_100d1570 { char pad[2]; };
+extern S12_100d1570 *g_104cee1c;
+short *sub_100d1570(int i) { return &((short *)&g_104cee1c[i])[1]; }
+// END FUNCTION
+
 // FUNCTION: 0x100d15b0 size=0x22
 struct CUnknown100b7a90 {
 	void sub_100d1630();
