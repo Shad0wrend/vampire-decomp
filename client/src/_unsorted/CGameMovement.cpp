@@ -235,3 +235,22 @@ float CGameMovement::vfunc6(const QAngle &angles, const Vector &vec, float scale
 	return s * scale;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ed950 size=0x4f
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+
+struct VMove_100a2450 { int sub_100a2450(); };
+
+void CGameMovement::vfunc25()
+{
+	if (m_bDc)
+		return;
+	if ((((VMove_100a2450 *)m_pMove)->sub_100a2450() & 2) == 0)
+		return;
+	((CMovePlayerView *)m_pPlayer)->m_flForwardMove *= 0.33333334f;
+	((CMovePlayerView *)m_pPlayer)->m_flSideMove *= 0.33333334f;
+	((CMovePlayerView *)m_pPlayer)->m_flUpMove *= 0.33333334f;
+	m_bDc = 1;
+}
+// END FUNCTION
