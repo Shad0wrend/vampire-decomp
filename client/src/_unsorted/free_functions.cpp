@@ -20285,6 +20285,35 @@ void sub_10064df0(C_BaseCombatWeapon *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065050 size=0x5f
+extern unsigned char g_1028809c[];
+
+void sub_10065050(int mode)
+{
+	switch (mode)
+	{
+	case 0:
+		g_1028809c[0] = 0x7f;
+		g_1028809c[1] = 0;
+		g_1028809c[2] = 0;
+		g_1028809c[3] = 0xff;
+		break;
+	case 1:
+		g_1028809c[0] = 0;
+		g_1028809c[1] = 0x7f;
+		g_1028809c[2] = 0;
+		g_1028809c[3] = 0xff;
+		break;
+	case 2:
+		g_1028809c[0] = 0x7f;
+		g_1028809c[1] = 0x7f;
+		g_1028809c[2] = 0x7f;
+		g_1028809c[3] = 0xff;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100650b0 size=0xa
 namespace lifted {
 extern int g_103eef5c;
