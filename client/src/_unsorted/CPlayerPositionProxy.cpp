@@ -1,6 +1,32 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10124f10 size=0x52
+#include "CPlayerPositionProxy.h"
+#include "C_BasePlayer.h"
+#include "Vector.h"
+
+struct ResultVarView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12();
+	virtual void SetVecValue(const float *pVal, int nComps);
+};
+extern C_BasePlayer *g_104a0d50;
+
+// TARGET: CPlayerPositionProxy::vfunc1
+void CPlayerPositionProxy::vfunc1(int a)
+{
+	if (g_104a0d50) {
+		float scale = *(float *)((char *)this + 0xc);
+		Vector v;
+		VectorMultiply(g_104a0d50->GetAbsOrigin(), scale, v);
+		((ResultVarView *)*(void **)((char *)this + 4))->SetVecValue(v.Base(), 3);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124fd0 size=0x1e
 #include "CPlayerPositionProxy.h"
 
