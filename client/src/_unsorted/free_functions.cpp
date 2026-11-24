@@ -65823,6 +65823,17 @@ void CPtrList101d6400::sub_10151890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151b20 size=0x11
+struct CUnknown10151b20 { int m_unk0; int m_unk4; int m_unk8; int *m_pItems; int m_nCur; int sub_10151b20(); };
+int CUnknown10151b20::sub_10151b20()
+{
+	int r = 0;
+	if (m_nCur != -1)
+		r = m_pItems[m_nCur];
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151d20 size=0x6
 namespace lifted {
 extern char g_105e8894;
