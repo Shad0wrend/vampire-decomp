@@ -10,3 +10,12 @@ CDetailObjectSystem::CDetailObjectSystem()
 }
 // TARGET: ??0CDetailObjectSystem@@QAE@XZ
 // END FUNCTION
+
+// FUNCTION: 0x100e0530 size=0x1
+#include "CDetailObjectSystem.h"
+
+// TARGET: CDetailObjectSystem::vfunc1
+void CDetailObjectSystem::vfunc1()
+{
+}
+// END FUNCTION

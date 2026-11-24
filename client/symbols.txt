@@ -4071,6 +4071,7 @@
 0x100e02c0 func   ?sub_100e02c0@CUnknown100e02c0@@QAEHHHHHHHD@Z CUnknown100e02c0::sub_100e02c0
 0x100e0300 func   ?sub_100e0300@CDetailModel_100e0300@@QAEXPAM@Z CDetailModel_100e0300::sub_100e0300
 0x100e04b0 func   ??0CDetailObjectSystem@@QAE@XZ CDetailObjectSystem::CDetailObjectSystem
+0x100e0530 func   ?vfunc1@CDetailObjectSystem@@UAEXXZ CDetailObjectSystem::vfunc1
 0x100e1040 func   ?sub_100e1040@UtlMem@@QAEXXZ UtlMem::sub_100e1040
 0x100e1290 func   ?sub_100e1290@UtlMem@@QAEXXZ UtlMem::sub_100e1290
 0x100e12c0 func   ?sub_100e12c0@UtlMem@@QAEXH@Z UtlMem::sub_100e12c0
