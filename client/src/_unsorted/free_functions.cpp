@@ -27044,6 +27044,19 @@ template <> int ClientClassInit<DT_Beam::ignored>(DT_Beam::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080450 size=0x3f
+#include "C_Beam.h"
+struct EntV { virtual void v0(); virtual int *Slot1(); };
+void C_Beam::sub_10080450(EntV *pEnt)
+{
+	if (pEnt)
+		*(int *)((char *)this + 0x428) = *pEnt->Slot1();
+	else
+		*(int *)((char *)this + 0x428) = -1;
+	((CUnknown100a2de0 *)this)->sub_100a2de0((int)pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100806f0 size=0xe7
 #include "C_Beam.h"
 struct EntInfo { void *m_pEntity; unsigned int m_Serial; int m_unk8; };
