@@ -21,7 +21,7 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual int vfunc4(int, int);
 	virtual int vfunc5(int idx, int unused);
 	virtual void vfunc6();
 	virtual void vfunc7();
