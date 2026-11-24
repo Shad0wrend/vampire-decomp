@@ -21,3 +21,11 @@ void __stdcall sub_100286b0(int)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10028700 size=0x3
+// TARGET: sub_10028700
+int sub_10028700()
+{
+	return 0;
+}
+// END FUNCTION
