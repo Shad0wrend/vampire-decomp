@@ -4875,6 +4875,7 @@
 0x100f3950 func   ?vfunc4@CHudSprite@@UAEHHH@Z CHudSprite::vfunc4
 0x100f3980 func   ?vfunc5@CHudSprite@@UAEHHH@Z CHudSprite::vfunc5
 0x100f3a60 func   ?vfunc7@CHudSprite@@UAEXHHHHHH@Z CHudSprite::vfunc7
+0x100f3ac0 func   ?vfunc9@CHudSprite@@UAEXHHHHHH@Z CHudSprite::vfunc9
 0x100f3bd0 func   ?vfunc13@CHudSprite@@UAEXHHHH@Z CHudSprite::vfunc13
 0x100f3d10 func   ?vfunc18@CHudSprite@@QAEXHHHHHHHH@Z CHudSprite::vfunc18
 0x100f3d50 func   ?sub_100f3d50@V3d50@@QAEPAUEl3d50@@H@Z V3d50::sub_100f3d50
