@@ -140,7 +140,8 @@ public:
 		// id | 0x80000000, called with this in ecx (the game's member form of the free function)
 	void *sub_1014a9e0(int a, int b, int c);	// the target of the source for the discipline reference (pSource, c): sub_101e28e0 of the source when the entry applies to the pair (sub_101e1a60 with 1), else 0
 	void *sub_1014a9c0(void *pSource);	// the target object of the source (stub 0x10004d6d)
-	int sub_10149d40(int a, int b);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
+	int sub_10149d40(int a, int b);
+	CUnknown101e0f00Entry *sub_10149ce0(int index);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
 	char sub_1014a270(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, char flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
 		// applies the entry's effect (stub 0x1000ae07)
 		// applies the effect of a mask to the pair with one more value (stub 0x1000fb4b)
