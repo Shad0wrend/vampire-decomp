@@ -8138,6 +8138,7 @@
 0x101b67d0 func   ?vfunc19@KeyValues@vgui2@@UAEXXZ vgui2::KeyValues::vfunc19
 0x101b6800 func   ?vfunc20@KeyValues@vgui2@@UAEHH@Z vgui2::KeyValues::vfunc20
 0x101b6820 func   ?vfunc21@KeyValues@vgui2@@UAEXXZ vgui2::KeyValues::vfunc21
+0x101b6840 func   ??2KeyValues@vgui2@@SAPAXI@Z ??2KeyValues@vgui2@@SAPAXI@Z
 0x101b6840 func   ?sub_101b6840@@YAHH@Z sub_101b6840
 0x101b6860 func   ?sub_101b6860@@YAHH@Z sub_101b6860
 0x101b6880 func   ??0Image@vgui2@@QAE@XZ vgui2::Image::Image
