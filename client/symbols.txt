@@ -4705,6 +4705,7 @@
 0x100ee920 func   ?sub_100ee920@CUnknown100ee920@@QAEHXZ CUnknown100ee920::sub_100ee920
 0x100eea30 func   ?sub_100eea30@@YAHXZ sub_100eea30
 0x100eea60 func   ??_GGlobalWetnessProxy@@UAEPAXI@Z ??_GGlobalWetnessProxy@@UAEPAXI@Z
+0x100eea80 func   ?vfunc0@ClientEffectRegister@PrecacheEffectGlow@@UAEX_N@Z PrecacheEffectGlow::ClientEffectRegister::vfunc0
 0x100eed10 func   ??0CGlowOverlay@@QAE@XZ CGlowOverlay::CGlowOverlay
 0x100eed70 func   ??_GCGlowOverlay@@UAEPAXI@Z ??_GCGlowOverlay@@UAEPAXI@Z
 0x100eed90 func   ??1CGlowOverlay@@UAE@XZ CGlowOverlay::~CGlowOverlay
