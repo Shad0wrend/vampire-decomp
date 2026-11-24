@@ -32568,6 +32568,129 @@ void sub_1009c7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c7f0 size=0x155
+#include "C_BaseCombatWeapon.h"
+#include "CBaseEntityList.h"
+
+extern CBaseEntityList *g_102b8e98;
+
+struct CBaseHandle_1009c7f0;
+
+struct EntListHelper_1009c7f0 : public CBaseEntityList
+{
+	inline void *sub_1007aca0(const CBaseHandle_1009c7f0 &h) const;
+};
+
+struct CBaseHandle_1009c7f0
+{
+	unsigned long m_Index;
+
+	inline void *Get() const
+	{
+		return ((EntListHelper_1009c7f0 *)g_102b8e98)->sub_1007aca0(*this);
+	}
+};
+
+inline void *EntListHelper_1009c7f0::sub_1007aca0(const CBaseHandle_1009c7f0 &h) const
+{
+	unsigned int idx = h.m_Index;
+	if (idx != 0xffffffff)
+	{
+		const CBaseEntityListEntry *pInfo = &m_EntPtrArray[idx & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(idx >> 13))
+			return pInfo->m_pEntity;
+	}
+	return 0;
+}
+
+typedef void *(EntListHelper_1009c7f0::*LookupFn_t)(const CBaseHandle_1009c7f0 &) const;
+LookupFn_t g_force_emit = &EntListHelper_1009c7f0::sub_1007aca0;
+
+template <class T>
+struct CHandle_1009c7f0 : public CBaseHandle_1009c7f0
+{
+	inline T *Get() const
+	{
+		return (T *)CBaseHandle_1009c7f0::Get();
+	}
+
+	inline bool operator==(const CHandle_1009c7f0<T> &other) const
+	{
+		return Get() == other.Get();
+	}
+};
+
+struct WeaponVec_1009c7f0
+{
+	CHandle_1009c7f0<C_BaseCombatWeapon> *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	CHandle_1009c7f0<C_BaseCombatWeapon> *m_pElements;
+
+	void sub_1007db30(int elem, int num);
+
+	inline int Count() const { return m_Size; }
+	inline CHandle_1009c7f0<C_BaseCombatWeapon> &operator[](int i) { return m_pMemory[i]; }
+	inline const CHandle_1009c7f0<C_BaseCombatWeapon> &Element(int i) const { return m_pMemory[i]; }
+
+	inline int Find(const CHandle_1009c7f0<C_BaseCombatWeapon> &src) const
+	{
+		for (int i = 0; i < Count(); ++i)
+		{
+			if (Element(i) == src)
+				return i;
+		}
+		return -1;
+	}
+
+	inline void Remove(int elem)
+	{
+		sub_1007db30(elem, 1);
+		--m_Size;
+	}
+
+	inline void FindAndRemove(const CHandle_1009c7f0<C_BaseCombatWeapon> &src)
+	{
+		int elem = Find(src);
+		if (elem != -1)
+			Remove(elem);
+	}
+};
+
+extern WeaponVec_1009c7f0 g_1049d978;
+
+// TARGET: sub_1009c7f0
+C_BaseCombatWeapon *sub_1009c7f0(int slot, int pos)
+{
+	int i = 0;
+	while (i < g_1049d978.Count())
+	{
+		C_BaseCombatWeapon *pWeapon = g_1049d978[i].Get();
+		if (*(int *)((char *)pWeapon + 0x79c) == 0xff)
+		{
+			g_1049d978.FindAndRemove(g_1049d978[i]);
+		}
+		else
+		{
+			i++;
+		}
+	}
+
+	for (int j = 0; j < g_1049d978.Count(); j++)
+	{
+		C_BaseCombatWeapon *pWeapon = g_1049d978[j].Get();
+		if (pWeapon->vfunc220() == slot && pWeapon->vfunc221() == pos)
+		{
+			if (*(int *)((char *)pWeapon->sub_1007b160() + 0x2444) != 0)
+				return pWeapon;
+		}
+	}
+
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c950 size=0x12
 namespace lifted {
 extern int g_104a0d50;
