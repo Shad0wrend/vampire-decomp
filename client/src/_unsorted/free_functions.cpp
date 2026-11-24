@@ -15082,6 +15082,12 @@ template <> int ClientClassInit<DT_TETextMessage::ignored>(DT_TETextMessage::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040050 size=0x11
+extern void (*g_101e3118)(int, const char *, ...);
+// TARGET: sub_10040050
+void sub_10040050() { g_101e3118(1, "TE_TextMessage:  Not ported\n"); }
+// END FUNCTION
+
 // FUNCTION: 0x100400c0 size=0x12
 namespace lifted {
 extern char g_10227478;
