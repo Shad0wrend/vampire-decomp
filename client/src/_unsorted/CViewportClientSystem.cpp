@@ -56,6 +56,15 @@ void CViewportClientSystem::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166650 size=0x3
+#include "CViewportClientSystem.h"
+
+// TARGET: CViewportClientSystem::vfunc7
+void CViewportClientSystem::vfunc7(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166680 size=0x1e
 #include "CViewportClientSystem.h"
 namespace lifted {
