@@ -65343,6 +65343,17 @@ void CUnknown101eb820::sub_1014f820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fbe0 size=0x17
+struct S_1014fbe0 { int m0, m4, m8, idx[3]; S_1014fbe0 *sub_1014fbe0(int a); };
+S_1014fbe0 *S_1014fbe0::sub_1014fbe0(int a)
+{
+	m0 = a;
+	for (int i = 0; i < 3; i++)
+		idx[i] = -1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014fc00 size=0x1
 void sub_1014fc00()
 {
