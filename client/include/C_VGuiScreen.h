@@ -8,10 +8,13 @@ struct CVGuiMemB { int m_unk0; void sub_10110440(); ~CVGuiMemB() { sub_10110440(
 class C_VGuiScreen : public C_BaseEntity
 {
 public:
-	char m_pad0014[0x450 - 0x14];
+	char m_pad0014[0x43c - 0x14];
+	int m_n43c;
+	char m_pad0440[0x450 - 0x440];
 	CVGuiMemA m_a;
 	CVGuiMemA m_b;
 	char m_pad0458[0x498 - 0x458];
 	CVGuiMemB m_c;
 	virtual int vfunc16();
+	virtual int vfunc64(int, int, int);
 };
