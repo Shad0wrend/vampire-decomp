@@ -4,6 +4,7 @@
 #pragma once
 #include "vgui2__IImage.h"
 
+struct Color4b { unsigned char r, g, b, a; };
 namespace vgui2
 {
 class Image : public vgui2::IImage
@@ -23,7 +24,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc8(int);
 	virtual int vfunc9(int, int);
 	virtual int vfunc10();
-	virtual void vfunc11();
+	virtual void vfunc11(Color4b c);
 	virtual void vfunc12(int, int, int, int);
 	virtual int vfunc13(int, int, int, int);
 	virtual int vfunc14(int, int, int, int);
