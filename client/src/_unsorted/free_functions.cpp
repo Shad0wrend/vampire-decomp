@@ -17540,6 +17540,27 @@ void CUnk_10054670::sub_10054670(int arg0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054800 size=0x5e
+#include <string.h>
+
+__declspec(dllimport) const char *Q_stristr(const char *pStr, const char *pSearch);
+
+bool sub_10054800(const char *pStr)
+{
+	if (!pStr || strlen(pStr) == 0)
+		return false;
+
+	if (Q_stristr(pStr, "auto-link"))
+		return true;
+	if (Q_stristr(pStr, "auto_link"))
+		return true;
+	if (Q_stristr(pStr, "auto link"))
+		return true;
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
