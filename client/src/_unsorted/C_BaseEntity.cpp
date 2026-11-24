@@ -178,6 +178,16 @@ bool C_BaseEntity::vfunc117(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100018d0 size=0xf
+struct I_100018d0 { virtual void v0(); virtual void v1(); };
+struct V_100018d0 { int m_unk[0x190 / 4]; I_100018d0 m_obj; };
+// TARGET: sub_100018d0
+void __fastcall sub_100018d0(V_100018d0 *self)
+{
+	self->m_obj.v1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dc10 size=0x5
 #include "C_BaseEntity.h"
 namespace lifted {
