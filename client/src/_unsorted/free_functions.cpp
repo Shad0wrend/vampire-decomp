@@ -77972,6 +77972,13 @@ int CUnknown1018b350::sub_1018b350(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018bc40 size=0xf
+struct SB { void sub_1018afa0(int); };
+struct CView { char pad[0x58]; SB *m58; void sub_1018bc40(int); };
+// TARGET: ?sub_1018bc40@CView@@QAEXH@Z
+void CView::sub_1018bc40(int a) { if (m58) m58->sub_1018afa0(a); }
+// END FUNCTION
+
 // FUNCTION: 0x1018bc50 size=0x11
 struct CUnknown1018bc50 { void sub_1018bc50(int); };
 void CUnknown1018bc50::sub_1018bc50(int a0)
