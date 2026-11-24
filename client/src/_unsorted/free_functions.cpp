@@ -44940,6 +44940,80 @@ void UtlMem::sub_100e1040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1180 size=0x10d
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+extern void (__cdecl *g_101e310c)(const char *, ...);
+
+struct CUtlLinkedList80Node
+{
+	char m_Data[0x4c];
+	unsigned short m_Previous;
+	unsigned short m_Next;
+};
+
+class CUtlLinkedList80
+{
+public:
+	CUtlLinkedList80Node *m_pMemory;	// 0x00
+	int m_allocationCount;	// 0x04
+	int m_growSize;	// 0x08
+	unsigned short m_Head;	// 0x0c
+	unsigned short m_Tail;	// 0x0e
+	unsigned short m_FirstFree;	// 0x10
+	unsigned short m_ElementCount;	// 0x12
+	unsigned short m_TotalElements;	// 0x14
+	unsigned short m_pad16;
+	CUtlLinkedList80Node *m_pElements;	// 0x18
+
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+	CUtlLinkedList80Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
+
+	unsigned short sub_100e1180(bool multilist);
+};
+
+// TARGET: CUtlLinkedList80::sub_100e1180
+unsigned short CUtlLinkedList80::sub_100e1180(bool multilist)
+{
+	unsigned short elem;
+	unsigned short first = m_FirstFree;
+	if (first == InvalidIndex()) {
+		if (m_TotalElements == m_allocationCount) {
+			if (m_growSize != -1) {
+				int req = m_allocationCount + 1;
+				while (m_allocationCount < req) {
+					if (m_allocationCount) {
+						if (m_growSize)
+							m_allocationCount += m_growSize;
+						else
+							m_allocationCount += m_allocationCount;
+					} else {
+						m_allocationCount = 1;
+					}
+				}
+				if (m_pMemory)
+					m_pMemory = (CUtlLinkedList80Node *)g_101e3104(m_pMemory, m_allocationCount * sizeof(CUtlLinkedList80Node));
+				else
+					m_pMemory = (CUtlLinkedList80Node *)g_101e3100(m_allocationCount * sizeof(CUtlLinkedList80Node));
+			}
+		}
+		elem = m_TotalElements;
+		++m_TotalElements;
+		if (elem == InvalidIndex())
+			g_101e310c("CUtlLinkedList overflow!\n");
+	} else {
+		elem = first;
+		m_FirstFree = InternalElement(first).m_Next;
+	}
+	if (!multilist)
+		InternalElement(elem).m_Next = InternalElement(elem).m_Previous = elem;
+	else
+		InternalElement(elem).m_Next = InternalElement(elem).m_Previous = InvalidIndex();
+	m_pElements = m_pMemory;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1290 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
