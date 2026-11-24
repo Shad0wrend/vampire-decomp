@@ -62735,6 +62735,40 @@ int __stdcall sub_1014d050(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d060 size=0x93
+#include "CVStatList_t.h"
+
+class CUnkInner_1014d060
+{
+public:
+	int sub_1014b3b0(int arg0);
+};
+
+class CUnkOuter_1014d060
+{
+public:
+	int pad0;
+	CUnkInner_1014d060 *m_pInner;
+};
+
+class CUnk_1014d060
+{
+public:
+	char pad0[0x1c];
+	CUnkOuter_1014d060 *m_pOuter;
+
+	int sub_1014d060(int arg0, void *pChar);
+};
+
+// TARGET: ?sub_1014d060@CUnk_1014d060@@QAEHHPAX@Z
+int CUnk_1014d060::sub_1014d060(int arg0, void *pChar)
+{
+	int val = m_pOuter->m_pInner->sub_1014b3b0(arg0);
+	int stat = ((CVStatListSet *)((char *)pChar + 0x1164))->Find(1)->sub_1015dbd0(11);
+	return (stat + (10 - val)) * 10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d100 size=0xd
 int __stdcall sub_1014d100(int a0, int a1, int a2, int a3)
 {
