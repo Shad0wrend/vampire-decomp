@@ -6,6 +6,11 @@
 class CPhysicsSystem : public CAutoGameSystem
 {
 public:
+	int m_unk08;
+	int m_unk0c;
+	int m_unk10;
+	int m_unk14;
 	virtual void vfunc1();
+	virtual void vfunc2();
 	virtual void vfunc7(int);
 };
