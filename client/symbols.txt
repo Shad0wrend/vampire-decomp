@@ -7235,6 +7235,7 @@
 0x101ac440 func   ?vfunc44@Panel@vgui2@@UAE_NHH@Z vgui2::Panel::vfunc44
 0x101ac640 func   ?vfunc82@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc82
 0x101ac660 func   ??3Panel@vgui2@@SAXPAX@Z ??3Panel@vgui2@@SAXPAX@Z
+0x101ac670 func   ?sub_101ac670@XH@@QAEPAXXZ XH::sub_101ac670
 0x101ac850 func   ?sub_101ac850@CUnknown101ac850@@QAEHXZ CUnknown101ac850::sub_101ac850
 0x101ac860 func   ?sub_101ac860@CUnknown101ac860@@QAEHXZ CUnknown101ac860::sub_101ac860
 0x101ac870 func   ?sub_101ac870@CUnknown101ac870@@QAEHXZ CUnknown101ac870::sub_101ac870
