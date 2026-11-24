@@ -91266,6 +91266,17 @@ void CUnknown101aff20::sub_101aff20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aff70 size=0x37
+#include "vgui2__TextEntry.h"
+struct PV { int sub_101ab130(); };
+bool vgui2::TextEntry::sub_101aff70(int n)
+{
+	int a, b;
+	vfunc159(n, &b, &a);
+	return b >= ((PV *)this)->sub_101ab130() - 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101affb0 size=0x27
 #define V10(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7(); virtual void a##n##8(); virtual void a##n##9();
 struct VBig { V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9) V10(10) V10(11) V10(12) V10(13) V10(14)
