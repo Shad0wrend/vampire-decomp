@@ -43088,6 +43088,21 @@ Vector *CGameMovement::sub_100e6f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7380 size=0x39
+struct T12 { int a, b, c; void sub_1004b5c0(int x, int y); };
+struct IV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void Slot4(int a, int b, T12 *t, int e);
+};
+extern IV *g_104a582c;
+void sub_100e7380(int a1, int a2, int a3, int a4, int a5)
+{
+	T12 t;
+	t.sub_1004b5c0(a3, a4);
+	g_104a582c->Slot4(a1, a2, &t, a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7850 size=0xf
 struct SP { char pad[0x1990]; int m1990; };
 struct CView { int m0; int m4; SP *m8; char sub_100e7850(); };
