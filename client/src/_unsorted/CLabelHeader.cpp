@@ -11,3 +11,9 @@ void CLabelHeader::vfunc118()
     ((lifted::V *)(*(int *)((char *)(*(int *)((char *)this + 0xb8)) + 0x1c)))->f30();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10171330 size=0x37
+#include "CLabelHeader.h"
+// TARGET: ??_GCLabelHeader@@UAEPAXI@Z
+CLabelHeader *pcd_emit_10171330() { return new CLabelHeader(0, 0, 0); }
+// END FUNCTION
