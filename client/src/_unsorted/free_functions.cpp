@@ -26431,6 +26431,15 @@ void bf_write::sub_100879b0(int val)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100879c0 size=0x14
+#include "bf_write.h"
+struct CUnknown100879c0 : public bf_write { bool sub_100879c0(const void *pBuf, int nBytes); };
+bool CUnknown100879c0::sub_100879c0(const void *pBuf, int nBytes)
+{
+	return sub_10086970(pBuf, nBytes << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100879e0 size=0x45
 struct CStrParser {
 	char m_pad[0x10];
