@@ -37891,6 +37891,14 @@ void CUnknown100d3f70::sub_100d3f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5130 size=0x7
+// TARGET: sub_100d5130
+void __fastcall sub_100d5130(char *self)
+{
+	(*(int *)(self + 0x8c))++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5140 size=0x3
 struct CUnknown100d5140 { int sub_100d5140(); };
 int CUnknown100d5140::sub_100d5140()
