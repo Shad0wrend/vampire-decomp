@@ -54464,6 +54464,88 @@ int CUnknown101316b0::sub_101316b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131ad0 size=0x383
+#include "utlrbtree.h"
+
+struct CRBTreeElem216_10131ad0
+{
+	char m_data[0xd8];
+};
+
+typedef CUtlRBTree<CRBTreeElem216_10131ad0, int> Tree_10131ad0;
+
+static inline int L_Parent( const Tree_10131ad0 *t, int i ) { return t->sub_10131a70( i ).m_Parent; }
+static inline int L_Left( const Tree_10131ad0 *t, int i ) { return t->sub_10131a70( i ).m_Left; }
+static inline int L_Right( const Tree_10131ad0 *t, int i ) { return t->sub_10131a70( i ).m_Right; }
+static inline bool L_IsLeft( const Tree_10131ad0 *t, int i ) { return L_Left( t, L_Parent( t, i ) ) == i; }
+static inline Tree_10131ad0::NodeColor_t L_Color( const Tree_10131ad0 *t, int i ) { return (Tree_10131ad0::NodeColor_t)t->sub_10131a70( i ).m_Tag; }
+
+template <>
+void CUtlRBTree<CRBTreeElem216_10131ad0, int>::sub_10131ad0( int elem )
+{
+	if ( elem != InvalidIndex() )
+	{
+		int x, y;
+
+		if ( ( L_Left( this, elem ) == InvalidIndex() ) || ( L_Right( this, elem ) == InvalidIndex() ) )
+		{
+			y = elem;
+		}
+		else
+		{
+			y = L_Right( this, elem );
+			while ( L_Left( this, y ) != InvalidIndex() )
+				y = L_Left( this, y );
+		}
+
+		if ( L_Left( this, y ) != InvalidIndex() )
+			x = L_Left( this, y );
+		else
+			x = L_Right( this, y );
+
+		if ( x != InvalidIndex() )
+			SetParent( x, L_Parent( this, y ) );
+		if ( !IsRoot( y ) )
+		{
+			if ( L_IsLeft( this, y ) )
+				SetLeftChild( L_Parent( this, y ), x );
+			else
+				SetRightChild( L_Parent( this, y ), x );
+		}
+		else
+			m_Root = x;
+
+		NodeColor_t ycolor = L_Color( this, y );
+		if ( y != elem )
+		{
+			SetParent( y, L_Parent( this, elem ) );
+			SetRightChild( y, L_Right( this, elem ) );
+			SetLeftChild( y, L_Left( this, elem ) );
+
+			if ( !IsRoot( elem ) )
+			{
+				if ( L_IsLeft( this, elem ) )
+					SetLeftChild( L_Parent( this, elem ), y );
+				else
+					SetRightChild( Parent( elem ), y );
+			}
+			else
+				m_Root = y;
+
+			if ( LeftChild( y ) != InvalidIndex() )
+				SetParent( LeftChild( y ), y );
+			if ( RightChild( y ) != InvalidIndex() )
+				SetParent( RightChild( y ), y );
+
+			SetColor( y, Color( elem ) );
+		}
+
+		if ( ( x != InvalidIndex() ) && ( ycolor == BLACK ) )
+			sub_10132460( x );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131e60 size=0xcf
 #include "CUnknown101b9140.h"
 
