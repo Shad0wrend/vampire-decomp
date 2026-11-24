@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10125110 size=0x36
+#include "CEntityRandomProxy.h"
+
+// TARGET: CEntityRandomProxy::vfunc1
+void CEntityRandomProxy::vfunc1(int pEntity)
+{
+	if ( !pEntity )
+		return;
+	float flValue = *(float *)((char *)pEntity + 0x178);
+	m_pResultVar->SetFloatValue(flValue * m_Input.sub_100e3270());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251b0 size=0x1e
 #include "CEntityRandomProxy.h"
 
