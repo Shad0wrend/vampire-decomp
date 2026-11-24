@@ -391,6 +391,24 @@ void CInput::vfunc54()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106240 size=0x48
+#include "CInput.h"
+extern int (__stdcall *g_101e30e4)(int, int, void *, int);
+// TARGET: ?vfunc16@CInput@@UAEXXZ
+void CInput::vfunc16()
+{
+	char *p = (char *)this;
+	if (*(int *)(p + 0x28) != 1 && *(int *)(p + 0x20) != 0) {
+		if (*(int *)(p + 0x78) != 0)
+			*(int *)(p + 0x5c) = g_101e30e4(4, 0, p + 0x6c, 0);
+		*(int *)(p + 0x28) = 1;
+		vfunc25();
+		*(int *)(p + 0x54) = 0;
+		*(int *)(p + 0x58) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106290 size=0x3f
 #include "CInput.h"
 extern void (__stdcall *g_101e30e4)(int, int, void *, int);
