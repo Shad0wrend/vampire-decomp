@@ -32770,6 +32770,33 @@ void C_BaseAnimating::sub_100966e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100967e0 size=0x42
+struct ModelView
+{
+    char m_pad00[0x18c];
+    int m_18c;      // +0x18c
+};
+
+struct AnimView
+{
+    char m_pad00[0x788];
+    unsigned int m_788;    // +0x788
+    int sub_1008f900(int index);
+};
+
+bool __fastcall sub_100967e0(AnimView *p, int, int index)
+{
+    ModelView *model = (ModelView *)p->sub_1008f900(-1);
+    if (model) {
+        if (index < 0)
+            return true;
+        if (index < model->m_18c)
+            return (p->m_788 & (1 << index)) == 0;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096c80 size=0x42
 extern void *(__cdecl *g_101e3100)(unsigned int);
 struct Elem60 { int d[15]; };
