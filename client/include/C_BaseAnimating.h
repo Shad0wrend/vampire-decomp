@@ -11,6 +11,7 @@ public:
 	void sub_100966e0();
 	bool sub_10094020();
 	void sub_10002680(int);
+	bool sub_10095ac0(int idx, int arg);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
