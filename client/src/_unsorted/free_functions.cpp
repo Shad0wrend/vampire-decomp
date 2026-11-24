@@ -32891,6 +32891,21 @@ float sub_10098720(float x, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098780 size=0x2f
+struct RView10098780 {
+	char pad[0x10c0];
+	float m_f10c0;
+	int sub_10098780();
+	bool sub_10095f90();
+};
+int RView10098780::sub_10098780()
+{
+	if (m_f10c0 < 255.0f || *(int *)((char *)this + 0x1070) > 0 || sub_10095f90())
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099870 size=0xe
 struct CView { char pad[0xfd0]; int mfd0; int sub_10099870(); };
 // TARGET: ?sub_10099870@CView@@QAEHXZ
