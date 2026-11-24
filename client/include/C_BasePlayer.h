@@ -29,7 +29,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc147();
 	// the slots C_BasePlayer adds to its base's vtable: 149-196, vfuncK at slot K
 	virtual void vfunc149();
-	virtual void vfunc150();
+	virtual Vector vfunc150(const Vector &v);
 	virtual void vfunc151(int, int, int, int, int, int, int, int, int, int, int);
 	virtual int vfunc152(int, int);
 	virtual void vfunc153();
