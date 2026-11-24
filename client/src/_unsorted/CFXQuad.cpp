@@ -24,3 +24,12 @@ void CFXQuad::vfunc4()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e6570 size=0xd
+struct V_100e6570 { int m_unk[0x38 / 4]; float m_f38; };
+// TARGET: sub_100e6570
+void __fastcall sub_100e6570(V_100e6570 *self, int edx, double dt)
+{
+	self->m_f38 += dt;
+}
+// END FUNCTION
