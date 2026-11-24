@@ -74447,6 +74447,12 @@ void CBitmapButton_10164350::sub_10164350(int type, const char *pFileName, color
 }
 // END FUNCTION
 
+// FUNCTION: 0x101643b0 size=0xe
+struct CByteView101643b0 { char pad[0x220]; char m_a[1]; char sub_101643b0(int i); };
+// TARGET: CByteView101643b0::sub_101643b0
+char CByteView101643b0::sub_101643b0(int i) { return m_a[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x10164690 size=0xa
 struct CUnknown10164690 { int sub_10164690(int); };
 int CUnknown10164690::sub_10164690(int a0)
