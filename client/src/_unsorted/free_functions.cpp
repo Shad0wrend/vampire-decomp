@@ -11842,6 +11842,36 @@ void sub_1002c400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c430 size=0x41
+#include "C_BaseTempEntity.h"
+extern C_BaseTempEntity *g_102ead70;
+C_BaseTempEntity *C_BaseTempEntity::sub_1002c3b0()
+{
+	return (C_BaseTempEntity *)m_unkC;
+}
+// TARGET: sub_1002c430
+void sub_1002c430()
+{
+	C_BaseTempEntity *pKeep = 0;
+	C_BaseTempEntity *p = g_102ead70;
+	while (p)
+	{
+		C_BaseTempEntity *pNext = p->sub_1002c3b0();
+		if (p->vfunc14())
+		{
+			delete p;
+		}
+		else
+		{
+			p->m_unkC = (int)pKeep;
+			pKeep = p;
+		}
+		p = pNext;
+	}
+	g_102ead70 = pKeep;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c4a0 size=0x1
 void sub_1002c4a0()
 {
