@@ -14,4 +14,7 @@ public:
 	int m_pad0004;
 	const char *m_pszName;	// 0x08
 	int m_nEntries;	// 0x0c
+	int m_pad10;
+	bool m_bClamp;	// 0x14
+	bool sub_1015ed50(int *pIndex);
 };
