@@ -55723,6 +55723,15 @@ int CUnknown101355d0::sub_101355d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101355e0 size=0xf
+struct V_101355e0 { int m_unk[8]; int m_a20[1]; };
+// TARGET: sub_101355e0
+void __fastcall sub_101355e0(V_101355e0 *self, int edx, int i, int v)
+{
+	self->m_a20[i] = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135720 size=0x1e9
 // TARGET: ?sub_10135720@CSplinePatch@@QAEXMM@Z
 #include "VMatrix.h"
