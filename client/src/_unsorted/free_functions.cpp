@@ -25072,6 +25072,13 @@ template <> int ClientClassInit<DT_BaseCombatWeapon::ignored>(DT_BaseCombatWeapo
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d430 size=0x11
+struct CWpnObj1007d430 { char pad[0x4fe98]; void *m_p; };
+CWpnObj1007d430 *sub_1007b160();
+// TARGET: sub_1007d430
+bool sub_1007d430() { void *p = sub_1007b160()->m_p; if (p) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
