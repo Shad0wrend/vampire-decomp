@@ -7,5 +7,6 @@
 class CMoveHelperClient : public IMoveHelper
 {
 public:
+	virtual void vfunc3();
 	virtual ~CMoveHelperClient();
 };
