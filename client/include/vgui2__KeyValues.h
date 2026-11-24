@@ -25,7 +25,7 @@ public:
     virtual int vfunc7();
     virtual int vfunc8();
     virtual int vfunc9(const char *keyName, int defaultValue);
-    virtual void vfunc10();
+    virtual float vfunc10(const char *keyName, float defaultValue);
     virtual void vfunc11();
     virtual int vfunc12(int, int);
     virtual bool vfunc13(int);
