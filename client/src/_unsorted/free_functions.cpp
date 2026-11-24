@@ -36662,6 +36662,53 @@ template <> int ClientClassInit<DT_EntityFlame::ignored>(DT_EntityFlame::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6670 size=0xc8
+#include "C_BaseEntity.h"
+#include "CParticleEffect.h"
+struct CEmberView { char sub_101180b0(const char *name); void sub_10118080(const Vector *v); };
+struct CEmberSmart {
+	CParticleEffect *m_p;
+	CEmberSmart() { m_p = 0; }
+	~CEmberSmart() { if (m_p) m_p->sub_10117fe0(); }
+	CEmberSmart &operator=(const CEmberSmart &o)
+	{
+		CParticleEffect *p = o.m_p;
+		if (p) p->sub_10117fd0();
+		if (m_p) m_p->sub_10117fe0();
+		m_p = p;
+		return *this;
+	}
+	bool IsValid() { return m_p != 0; }
+	CEmberView *operator->() { return (CEmberView *)m_p; }
+};
+CEmberSmart sub_10118820(const char *name);
+char *sub_100ccea0(const char *fmt, int i);
+struct CFlameNet : public IClientNetworkable
+{
+	char m_pad[0x40c - sizeof(IClientNetworkable)];
+	CEmberSmart m_pEmitter;
+	float m_tPeriod;
+	float m_flNext;
+	char m_hMat[8];
+	void sub_100b6670(int updateType);
+};
+void CFlameNet::sub_100b6670(int updateType)
+{
+	if (updateType == 0) {
+		C_BaseEntity *ent = (C_BaseEntity *)((char *)this - 8);
+		ent->sub_100a1a70(2);
+		m_tPeriod = 1.0f / 60.0f;
+		m_flNext = 0;
+		m_pEmitter = sub_10118820("C_EntityFlame::Create");
+		if (m_pEmitter.IsValid()) {
+			for (int i = 1; i < 6; i++)
+				m_hMat[i + 0x417 - 0x417 - 1 + 1 - 1] = m_pEmitter->sub_101180b0(sub_100ccea0("sprites/flamelet%d", i));
+			m_pEmitter->sub_10118080(&ent->GetAbsOrigin());
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b69e0 size=0x6
 namespace lifted {
 extern char g_104a2190;
