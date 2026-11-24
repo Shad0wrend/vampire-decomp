@@ -3326,6 +3326,7 @@
 0x100973e0 func   ?_C_BaseAnimatingOverlay_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BaseAnimatingOverlay_CreateObject
 0x10097480 func   ?ClientClassInit@@YAHPAUignored@DT_BaseAnimatingOverlay@@@Z ClientClassInit
 0x10097950 func   ?vfunc17@C_BaseAnimatingOverlay@@UAEHXZ C_BaseAnimatingOverlay::vfunc17
+0x10097960 func   ?vfunc70@C_BaseAnimatingOverlay@@UAEHXZ C_BaseAnimatingOverlay::vfunc70
 0x10097df0 func   ??0C_BaseCombatCharacter@@QAE@XZ C_BaseCombatCharacter::C_BaseCombatCharacter
 0x10097ec0 func   ??_GC_BaseCombatCharacter@@UAEPAXI@Z ??_GC_BaseCombatCharacter@@UAEPAXI@Z
 0x10097ee0 func   ??1C_BaseCombatCharacter@@UAE@XZ C_BaseCombatCharacter::~C_BaseCombatCharacter

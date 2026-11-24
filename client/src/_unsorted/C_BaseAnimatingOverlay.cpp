@@ -40,3 +40,30 @@ int C_BaseAnimatingOverlay::vfunc17()
     return (int)&lifted::g_102ae31c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10097960 size=0x41
+#include "C_BaseAnimatingOverlay.h"
+
+struct Blob4C { int d[0x13]; };
+struct Elem { Blob4C a; Blob4C b; Blob4C c; };
+
+struct OverlayView
+{
+	char m_pad[0x790];
+	Elem m_elems[4];
+};
+
+int C_BaseAnimatingOverlay::vfunc70()
+{
+	OverlayView *v = (OverlayView *)this;
+	Elem *e = v->m_elems;
+	for ( int i = 4; i--; )
+	{
+		Blob4C *p = &e->b;
+		p[-1] = p[0];
+		p[0] = p[1];
+		e++;
+	}
+	return C_BaseAnimating::vfunc70();
+}
+// END FUNCTION
