@@ -11,7 +11,7 @@ public:
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CHudManager adds to its base's vtable: 112-116, vfuncK at slot K
 	virtual void vfunc112();
-	virtual void vfunc113();
+	virtual void vfunc113(int);
 	virtual void vfunc114();
 	virtual void vfunc115();
 	virtual void vfunc116();
