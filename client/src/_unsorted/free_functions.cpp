@@ -38824,6 +38824,22 @@ void *CUnknown100b7a90::sub_100d15b0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d15e0 size=0x2b
+#include "IGameSystem.h"
+struct XBase { virtual void f0(); };
+struct YSys : public IGameSystem {
+	void *sub_100d15e0(unsigned int flags);
+};
+struct XSys : public XBase, public YSys { };
+void *YSys::sub_100d15e0(unsigned int flags)
+{
+	((IGameSystem *)(XSys *)((char *)this - 4))->sub_100f3f80();
+	if (flags & 1)
+		operator delete((char *)this - 4);
+	return (char *)this - 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1960 size=0x1
 void sub_100d1960()
 {
