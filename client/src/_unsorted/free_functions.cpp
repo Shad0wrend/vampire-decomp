@@ -33508,6 +33508,112 @@ void __cdecl sub_100b13d0(Vector &outPos, Vector &outRight, Vector &outUp, Parti
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1b40 size=0x152
+#include "Vector.h"
+#include "utlvector.h"
+
+extern float (*g_101e31a0)( float fMin, float fMax );
+
+class IRenderable_100b1b40
+{
+public:
+	virtual void v0();
+	virtual const Vector &GetRenderOrigin() = 0;
+};
+
+struct Segment_100b1b40
+{
+	char m_pad0[0x0c];
+	float m_flLength;
+	Vector m_vecStart;
+	Vector m_vecDelta;
+	Vector m_vec28;
+	char m_pad34[0x64 - 0x34];
+};
+
+struct Emitter_100b1b40
+{
+	int m_vptr0;
+	IRenderable_100b1b40 *m_pRenderableVtbl; // actually embedded base at +4
+};
+
+class CEmitter_100b1b40
+{
+public:
+	int m_unk0;
+	IRenderable_100b1b40 *m_vptr4;
+};
+
+struct CEmitterBase_100b1b40
+{
+	virtual void v0();
+};
+
+struct CEmitterReal_100b1b40 : public CEmitterBase_100b1b40, public IRenderable_100b1b40
+{
+	char m_pad8[0x428 - 0x8];
+	float m_fl428;
+	Vector m_vec42c;
+	float m_fl438;
+	int m_43c;
+	char m_pad440[0x470 - 0x440];
+	CUtlVector<Segment_100b1b40> m_vecSegments;
+	int m_484;
+	int m_nTotalWeight;
+};
+
+struct Particle_100b1b40
+{
+	Vector m_vec0;
+	float m_fl0c;
+	float m_fl10;
+	char m_pad14[0xc];
+	int m_20;
+	int m_24;
+	float m_fl28;
+	float m_fl2c;
+};
+
+void sub_100b1b40( Vector *pOut, int a2, int a3, Particle_100b1b40 *pParticle, bool bInit, int a6, CEmitterReal_100b1b40 *pEmitter )
+{
+	if ( pEmitter->m_vecSegments.Count() < 1 )
+	{
+		*pOut = pEmitter->GetRenderOrigin();
+		return;
+	}
+
+	if ( bInit )
+	{
+		pParticle->m_fl2c = g_101e31a0( 0.0f, (float)pEmitter->m_nTotalWeight );
+		pParticle->m_vec0.x *= pEmitter->m_vec42c.x;
+		pParticle->m_vec0.y *= pEmitter->m_vec42c.y;
+		pParticle->m_vec0.z *= pEmitter->m_vec42c.z;
+		pParticle->m_fl10 *= pEmitter->m_fl438;
+		pParticle->m_fl28 *= pEmitter->m_fl428;
+		pParticle->m_20 = pEmitter->m_43c;
+	}
+
+	float t = pParticle->m_fl2c;
+	int i;
+	for ( i = 0; i < pEmitter->m_vecSegments.Count() - 1; ++i )
+	{
+		if ( t < pEmitter->m_vecSegments[i].m_flLength )
+			break;
+		t -= pEmitter->m_vecSegments[i].m_flLength;
+	}
+
+	t /= pEmitter->m_vecSegments[i].m_flLength;
+	*pOut = pEmitter->m_vecSegments[i].m_vecStart + pEmitter->m_vecSegments[i].m_vecDelta * t;
+
+	if ( bInit )
+	{
+		pParticle->m_vec0.x *= pEmitter->m_vecSegments[i].m_vec28.x;
+		pParticle->m_vec0.y *= pEmitter->m_vecSegments[i].m_vec28.y;
+		pParticle->m_vec0.z *= pEmitter->m_vecSegments[i].m_vec28.z;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a40 size=0x6
 namespace lifted {
 extern char g_104a1c00;

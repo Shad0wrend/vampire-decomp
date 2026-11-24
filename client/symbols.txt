@@ -3423,6 +3423,7 @@
 0x100af130 func   ?sub_100af130@CUnknown100af130@@QAEHXZ CUnknown100af130::sub_100af130
 0x100af140 func   ?sub_100af140@CUnknown100af140@@QAEHH@Z CUnknown100af140::sub_100af140
 0x100b13d0 func   ?sub_100b13d0@@YAXAAVVector@@00PAUParticleOut@@HHPAUParticleEntity2@@@Z sub_100b13d0
+0x100b1b40 func   ?sub_100b1b40@@YAXPAVVector@@HHPAUParticle_100b1b40@@_NHPAUCEmitterReal_100b1b40@@@Z sub_100b1b40
 0x100b2a20 func   ?vfunc16@C_ThaumaturgyParticle@@UAEHXZ C_ThaumaturgyParticle::vfunc16
 0x100b2a30 func   ?vfunc15@C_ThaumaturgyParticle@@UAEHXZ C_ThaumaturgyParticle::vfunc15
 0x100b2a40 func   ?sub_100b2a40@@YAHXZ sub_100b2a40
