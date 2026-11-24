@@ -151,6 +151,26 @@ void CHudSprite::vfunc12(int a1, int x, int y, int a4, int a5, int a6)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3c80 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc14
+void CHudSprite::vfunc14(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(true);
+	m_pSprite->sub_10137850(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3d10 size=0x3d
 #include "IHudSprite.h"
 struct SpriteRect4
