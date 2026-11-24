@@ -278,6 +278,36 @@ void vgui2::TextEntry::vfunc95()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afa60 size=0x53
+#include "vgui2__TextEntry.h"
+
+extern int sub_101ac8b0();
+
+class IInputView_101afa60
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual bool vfunc12(int keyCode);
+};
+
+// TARGET: vgui2::TextEntry::vfunc165
+void vgui2::TextEntry::vfunc165()
+{
+	if ( vfunc56() )
+	{
+		if ( ((IInputView_101afa60 *)sub_101ac8b0())->vfunc12(0x4f)
+			|| ((IInputView_101afa60 *)sub_101ac8b0())->vfunc12(0x50) )
+		{
+			if ( *(int *)((char *)this + 0x9c) == -1 )
+				*(int *)((char *)this + 0x9c) = *(int *)((char *)this + 0x70);
+			return;
+		}
+	}
+	*(int *)((char *)this + 0x9c) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afac0 size=0xd
 #include "vgui2__TextEntry.h"
 int vgui2::TextEntry::vfunc143(int a0)
