@@ -9,6 +9,7 @@ class CCollisionProperty : public ICollideable
 public:
     virtual void *vfunc0();
     virtual void *vfunc2();
+    virtual const Vector &vfunc8();
     virtual Vector &vfunc1();
     virtual void vfunc17();
     Vector m_vecMins;	// +0x4
