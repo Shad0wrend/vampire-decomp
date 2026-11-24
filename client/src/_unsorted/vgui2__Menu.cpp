@@ -107,6 +107,24 @@ int vgui2::Menu::vfunc112(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf6e0 size=0x5f
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+extern void *sub_101ac650(int);
+
+int vgui2::Menu::vfunc109(int a, int b, int c, int d)
+{
+	void *mem = sub_101ac650(0x104);
+	vgui2::MenuItem *item = mem ? ::new(mem) vgui2::MenuItem((int)this, a, b, 0, 0) : 0;
+	item->vfunc161(c);
+	item->vfunc41(d);
+	return this->vfunc107(item);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf740 size=0x1b
 #include "vgui2__Menu.h"
 namespace lifted {
