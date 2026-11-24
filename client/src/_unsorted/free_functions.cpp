@@ -42056,6 +42056,13 @@ void sub_100f4200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4230 size=0xc
+void sub_100f4320();
+void sub_100f4270(void (*)());
+// TARGET: sub_100f4230
+void sub_100f4230() { sub_100f4270(sub_100f4320); }
+// END FUNCTION
+
 // FUNCTION: 0x100f4270 size=0x28
 typedef void (__fastcall *PFN_ForEach)(void *pThis);
 extern void **g_104d1038;

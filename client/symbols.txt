@@ -4337,6 +4337,7 @@
 0x100f4190 func   ?sub_100f4190@@YAXPBD@Z sub_100f4190
 0x100f41e0 func   ?sub_100f41e0@@YAXXZ sub_100f41e0
 0x100f4200 func   ?sub_100f4200@@YAXXZ sub_100f4200
+0x100f4230 func   ?sub_100f4230@@YAXXZ sub_100f4230
 0x100f4270 func   ?sub_100f4270@@YAXP6IXPAX@Z@Z sub_100f4270
 0x100f42a0 func   ?sub_100f42a0@@YAXP6IXPAX@Z@Z sub_100f42a0
 0x100f42d0 func   ?sub_100f42d0@CUnknown100f42d0@@QAEHXZ CUnknown100f42d0::sub_100f42d0
