@@ -3545,6 +3545,7 @@
 0x100a6760 func   ?sub_100a6760@CUnknown100a6760@@QAEHH@Z CUnknown100a6760::sub_100a6760
 0x100a6920 func   ?sub_100a6920@CUnknown100a6920@@QAE_NXZ CUnknown100a6920::sub_100a6920
 0x100a6b00 func   ?sub_100a6b00@@YAHXZ sub_100a6b00
+0x100a6b90 func   ?sub_100a6b90@HV100a@@QAEHXZ HV100a::sub_100a6b90
 0x100a6e50 func   ?vfunc154@C_BasePlayer@@UAEXH@Z C_BasePlayer::vfunc154
 0x100a7ab0 func   ?vfunc174@C_BasePlayer@@UAE_NXZ C_BasePlayer::vfunc174
 0x100a7b80 func   ?vfunc158@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc158

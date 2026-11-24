@@ -34187,6 +34187,35 @@ int sub_100a6b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6b90 size=0x3c
+struct EntView { int m0; };
+struct EntInfo { EntView *ent; int serial; int pad; };
+struct EntList { int hdr; EntInfo e[8192]; };
+extern EntList *g_102b8e98;
+struct Handle {
+	unsigned long m_Index;
+	EntView *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			EntInfo *i = &g_102b8e98->e[m_Index & 0x1fff];
+			if (i->serial == (int)(m_Index >> 13))
+				return i->ent;
+		}
+		return 0;
+	}
+};
+struct HV100a {
+	char pad[0x19f4];
+	Handle h;
+	int sub_100a6b90();
+};
+// TARGET: HV100a::sub_100a6b90
+int HV100a::sub_100a6b90()
+{
+	return h.Get() != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8ba0 size=0x1b
 int __stdcall sub_100a8ba0(int a)
 {
