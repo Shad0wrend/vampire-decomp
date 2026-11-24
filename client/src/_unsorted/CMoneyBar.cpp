@@ -19,6 +19,17 @@ CMoneyBar::~CMoneyBar()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f2f0 size=0x23
+#include "CMoneyBar.h"
+bool sub_10163bf0();
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CMoneyBar::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f320 size=0x12
 #include "CMoneyBar.h"
 struct CMoneyBarSub
