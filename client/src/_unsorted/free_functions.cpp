@@ -35989,6 +35989,18 @@ template <> int ClientClassInit<DT_HudEntity::ignored>(DT_HudEntity::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc620 size=0x32
+extern "C" void *calloc(unsigned, unsigned);
+struct CUnknown100bc2c0 { void *sub_100bc2c0(void *owner, const char *name); };
+struct CHudView { char pad[0x42c]; void *m_p42c; void sub_100bc620(); };
+// TARGET: CHudView::sub_100bc620
+void CHudView::sub_100bc620()
+{
+    CUnknown100bc2c0 *p = (CUnknown100bc2c0 *)calloc(1, 0x18);
+    m_p42c = p ? p->sub_100bc2c0(this, "hud_entity") : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc660 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
