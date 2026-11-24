@@ -42357,6 +42357,19 @@ void UtlMem::sub_100d8830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d88c0 size=0x3d
+struct E { char pad[0xec]; unsigned short a; unsigned short b; };
+struct M { E *arr; int u4, u8, uc, u10; unsigned short count; };
+int __fastcall sub_100d88c0(M *self, int edx, unsigned short idx)
+{
+	if (idx < self->count) {
+		if (self->arr[idx].a != idx || self->arr[idx].b == idx)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d89a0 size=0x33
 struct LLNode { int pad0; short pad4; unsigned short a; unsigned short b; };
 struct LLView {
