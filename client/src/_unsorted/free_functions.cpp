@@ -53385,6 +53385,49 @@ trace21 *sub_1011c140(trace21 *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c7f0 size=0x1ab
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+#define D1(n) virtual void n(){}
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+#define D16(p) D4(p##1) D4(p##2) D4(p##3) D4(p##4)
+__declspec(dllimport) void Msg(const char *, ...);
+struct V3 { float v[3]; };
+struct SCV { virtual void v0(); virtual char v1(); char pad[0x24]; float m_fValue; };
+extern SCV *g_104df8f4;
+extern unsigned int g_10235410;
+struct EntV {
+	D16(a) D16(b) D4(c) D4(c0) D1(c1) D1(c2) D1(c3) virtual V3 *GetAbsOrigin(); virtual void SetAbsOrigin(V3 *);
+	D16(d) D16(e) D16(f) D16(g) D4(h) D1(i1) virtual const char *GetClassname();
+	char pad[0xa8 - 4]; float vel[3];
+};
+// TARGET: C_BaseEntity::sub_1011c7f0
+void C_BaseEntity::sub_1011c7f0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsCheckVelocity", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	EntV *e = (EntV *)this;
+	V3 origin = *e->GetAbsOrigin();
+	for (int i = 0; i < 3; i++)
+	{
+		if ((*(unsigned int *)&e->vel[i] & g_10235410) == g_10235410)
+		{
+			Msg("Got a NaN velocity on %s\n", e->GetClassname());
+			e->vel[i] = 0;
+		}
+		if ((*(unsigned int *)&origin.v[i] & g_10235410) == g_10235410)
+		{
+			Msg("Got a NaN origin on %s\n", e->GetClassname());
+			origin.v[i] = 0;
+			e->SetAbsOrigin(&origin);
+		}
+		if (e->vel[i] > (g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue))
+			e->vel[i] = (g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue);
+		else if (e->vel[i] < -(g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue))
+			e->vel[i] = -(g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d590 size=0x1
 void sub_1011d590()
 {
