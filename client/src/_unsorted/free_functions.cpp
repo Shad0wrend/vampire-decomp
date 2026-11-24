@@ -10758,6 +10758,30 @@ template <> int ClientClassInit<DT_WeaponRanged_FlameThrower::ignored>(DT_Weapon
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027bf0 size=0x39
+struct V5910 { bool sub_100a5910(); int sub_100a9af0(int); };
+struct Owner { char pad[0x3f8]; V5910 *m_p3f8; };
+struct YY {
+	char pad[0x914];
+	int m_i914;
+	int sub_1007bab0();
+	YY *sub_10027bf0();
+};
+YY *YY::sub_10027bf0()
+{
+	Owner *o = (Owner *)sub_1007bab0();
+	if (o) {
+		V5910 *p = o->m_p3f8;
+		if (p && !p->sub_100a5910()) {
+			int r = p->sub_100a9af0(m_i914);
+			if (r)
+				return (YY *)r;
+		}
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
