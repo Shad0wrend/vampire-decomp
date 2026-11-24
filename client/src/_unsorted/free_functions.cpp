@@ -91665,6 +91665,38 @@ void vgui2::TextEntry::sub_101af9e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afbf0 size=0x3f
+#include "vgui2__TextEntry.h"
+struct VecView
+{
+	char pad[0x58];
+	int m_n58;
+	char pad2[0x64 - 0x5c];
+	int m_Size;
+	int pad3;
+	int *m_pData;
+	int m_nCursor;
+	char pad4;
+	char m_bFlag;
+	int Get(int i) const { return (i >= 0 && i < *(volatile int *)&m_Size) ? m_pData[i] : 0; }
+};
+int vgui2::TextEntry::sub_101afbf0()
+{
+	VecView *v = (VecView *)this;
+	int n = v->m_Size;
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		int cur = v->m_nCursor;
+		if (cur < v->Get(i))
+			break;
+	}
+	if (v->m_bFlag && v->m_nCursor != v->m_n58)
+		i--;
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afed0 size=0xd
 struct CUnknown101afed0 { char sub_101afed0(char); };
 char CUnknown101afed0::sub_101afed0(char a0)
