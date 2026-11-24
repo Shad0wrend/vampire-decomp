@@ -14,6 +14,30 @@ void vgui2::AnimatingImagePanel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5740 size=0x48
+#include "vgui2__AnimatingImagePanel.h"
+struct ImgView { virtual void Paint(); };
+struct AIPView {
+    char pad[0x58]; int m_iCur; char pad2[0x64 - 0x5c]; ImgView **m_pFrames; int m_u68; int m_u6c; int m_nFrames;
+};
+struct SurfView11 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10();
+    virtual void Slot11(int, int, int, int);
+};
+SurfView11 *sub_101ac8d0();
+// TARGET: vgui2::AnimatingImagePanel::vfunc97
+void vgui2::AnimatingImagePanel::vfunc97()
+{
+    AIPView *v = (AIPView *)this;
+    if (v->m_iCur >= 0 && v->m_iCur < v->m_nFrames && v->m_pFrames[v->m_iCur]) {
+        sub_101ac8d0()->Slot11(255, 255, 255, 255);
+        v->m_pFrames[v->m_iCur]->Paint();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c57e0 size=0x27
 #include "vgui2__AnimatingImagePanel.h"
 namespace lifted {
