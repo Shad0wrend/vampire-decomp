@@ -9,11 +9,11 @@ function with the game's own compiler, compares it with the original byte for by
 identical. The functions were written by AI agents working through pcdecomp, by hand, and by pcdecomp's own
 automatic passes (machine drafts, copies of already matched twin functions).
 
-## Status (2026-11-23)
+## Status (2026-11-24)
 
 ![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
 
-The picture is drawn by `tools/make_progress_svg.py` from `docs/progress.json` (numbers of 2026-11-23). To redraw
+The picture is drawn by `tools/make_progress_svg.py` from `docs/progress.json` (numbers of 2026-11-24). To redraw
 it: `python tools/make_progress_svg.py`; with `--collect --client <client project> --game <game folder>` it first
 reads the numbers again from pcdecomp's databases and the game's files.
 

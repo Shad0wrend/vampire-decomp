@@ -15182,6 +15182,24 @@ int CUnknown10040d60::sub_10040d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040d80 size=0x44
+extern "C" void sub_10044e10(int a, int b, int c, int d);
+extern "C" void sub_100d9da0(int a, int b, int c, int d);
+
+void sub_10040d80(int a0, int a1, int a2, int a3, int a4, int mode, int a6)
+{
+    switch (mode)
+    {
+    case 1:
+        sub_100d9da0(a2, a3, a4, a6);
+        break;
+    case 2:
+        sub_10044e10(a2, a3, a4, a6);
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040e90 size=0x6
 namespace lifted {
 extern char g_103ec604;
