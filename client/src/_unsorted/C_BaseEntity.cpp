@@ -418,6 +418,21 @@ unsigned int * C_BaseEntity::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f070 size=0x25
+#include "C_BaseEntity.h"
+
+struct V_100a2ed0;
+bool __fastcall sub_100a2ed0(V_100a2ed0 *);
+
+void C_BaseEntity::Release()
+{
+	C_BaseEntity *pEntity = (C_BaseEntity *)this;
+	if (sub_100a2ed0((V_100a2ed0 *)pEntity))
+		pEntity->sub_100a2f50();
+	delete pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f210 size=0x48
 #include "C_BaseEntity.h"
 struct IClientMode11 {
