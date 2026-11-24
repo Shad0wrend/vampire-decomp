@@ -64727,6 +64727,28 @@ char *CClanInfoView::sub_1013f320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f370 size=0x2b
+struct CUnknown1013f370 {
+	int m_unk[32]; unsigned char m_flags80;
+	bool sub_1013f370(int n);
+};
+// TARGET: ?sub_1013f370@CUnknown1013f370@@QAE_NH@Z
+bool CUnknown1013f370::sub_1013f370(int n)
+{
+	switch (n) {
+	case 0:
+		if (m_flags80 & 1)
+			return true;
+		break;
+	case 1:
+		if (m_flags80 & 2)
+			return true;
+		break;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f3a0 size=0x2e
 struct V4_1013f3a0 { int v; };
 struct S_1013f3a0 {
