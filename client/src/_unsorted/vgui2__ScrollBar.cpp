@@ -11,6 +11,22 @@ vgui2::ScrollBar *pcd_emit_101beee0(const vgui2::ScrollBar &other) { return new 
 // TARGET: ??_GScrollBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bef00 size=0x31
+#include "vgui2__ScrollBar.h"
+struct KVView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual int *v6(int *, const char *);
+};
+// TARGET: ?vfunc74@ScrollBar@vgui2@@UAEHH@Z
+int vgui2::ScrollBar::vfunc74(int a)
+{
+	Panel::vfunc74(a);
+	KVView *kv = (KVView *)a;
+	int c;
+	return vfunc50(*kv->v6(&c, "ScrollBar/BgColor"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bef40 size=0x1a
 #include "vgui2__ScrollBar.h"
 struct SBView_101bef40 { char pad[0x60]; vgui2::Panel *m_p; };
