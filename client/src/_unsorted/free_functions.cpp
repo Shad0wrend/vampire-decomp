@@ -84811,6 +84811,26 @@ void sub_10175e80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175f00 size=0x3f
+extern unsigned char g_105fb1fe;
+struct CUnkEntry { void *m_p; int m_n4; unsigned char m_b8; char m_p9[3]; int m_nC; int m_n10; };
+struct CUnkPanelX {
+	char m_pad[0x360];
+	CUnkEntry m_e[1];
+	void sub_10175b90(int);
+	int sub_10175f00(int i);
+};
+int CUnkPanelX::sub_10175f00(int i)
+{
+	if (g_105fb1fe && m_e[i].m_p) {
+		if (!m_e[i].m_b8)
+			sub_10175b90(i);
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10176360 size=0x20
 namespace lifted {
 extern char g_1024baec;
