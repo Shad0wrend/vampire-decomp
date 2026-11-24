@@ -43717,6 +43717,14 @@ float __cdecl sub_101075e0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107610 size=0x14
+float sub_101075e0(int a);
+float sub_10107610(int a)
+{
+	return 1.0f / sub_101075e0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107630 size=0x8a
 // TARGET: sub_10107630
 #include "Vector.h"
