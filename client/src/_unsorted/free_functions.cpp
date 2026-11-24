@@ -41180,6 +41180,153 @@ void sub_100d9740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9ba0 size=0x1fc
+#include "Vector.h"
+#include "utlvector.h"
+
+struct CGlobalVarsBase_100d9ba0
+{
+	float realtime;
+	int framecount;
+	float absoluteframetime;
+	float curtime;
+};
+
+struct IRandom_100d9ba0
+{
+	virtual void v0();
+	virtual float RandomFloat(float flMin, float flMax);
+};
+
+struct IEngineSound_100d9ba0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void EmitSound(void *filter, int iEntIndex, int iChannel, const char *pSample, float flVolume, float flAttenuation, int iFlags, int iPitch, const Vector *pOrigin, const Vector *pDirection, bool bUpdatePositions, float soundtime = 0.0f);
+};
+
+struct CUnknown100be160
+{
+	int vtbl;
+	int flags;
+	CUtlMemory<int> m_Memory;
+	int m_Size;
+	int *m_pElements;
+	char pad[0x2c - 0x1c];
+
+	void *sub_100be160();
+};
+
+struct CUnknown100be160Buf
+{
+	int vtbl;
+	int flags;
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	int *m_pElements;
+	char pad[0x2c - 0x1c];
+
+	CUnknown100be160Buf()
+	{
+		((CUnknown100be160 *)this)->sub_100be160();
+	}
+	~CUnknown100be160Buf()
+	{
+		((CUtlVector<int> *)&m_pMemory)->~CUtlVector<int>();
+	}
+};
+
+struct CSoundParameters_100d9ba0
+{
+	CSoundParameters_100d9ba0()
+	{
+		channel = 0;
+		volume = 1.0f;
+		pitch = 100;
+		pitchlow = 100;
+		pitchhigh = 100;
+		soundlevel = 75;
+		soundname[0] = 0;
+		play_to_owner_only = false;
+		count = 0;
+	}
+
+	int channel;
+	float volume;
+	int pitch;
+	int pitchlow;
+	int pitchhigh;
+	int soundlevel;
+	bool play_to_owner_only;
+	int count;
+	char soundname[128];
+};
+
+extern CGlobalVarsBase_100d9ba0 *g_102b8494;
+extern float g_104cf3d0;
+extern IEngineSound_100d9ba0 *g_104a5818;
+extern IRandom_100d9ba0 *g_104a5738;
+
+extern const Vector &sub_1018f340();
+extern float sub_100d9750(const Vector &start, const Vector &end, const Vector &pt, Vector &nearest);
+extern bool sub_1012d7f0(const char *pszSoundName, CSoundParameters_100d9ba0 &params);
+
+#define SNDLVL_TO_ATTN(a) ((a) > 50 ? (20 / ((a) - 50)) : 4.0)
+
+void sub_100d9ba0(const Vector &start, const Vector &end, int iTracerType)
+{
+	const char *pszSoundName = 0;
+
+	switch (iTracerType)
+	{
+	case 1:
+		pszSoundName = "Bullets.DefaultNearmiss";
+		break;
+	case 2:
+		pszSoundName = "Bullets.GunshipNearmiss";
+		break;
+	case 4:
+		pszSoundName = "Bullets.StriderNearmiss";
+		break;
+	case 16:
+		pszSoundName = "Underwater.BulletImpact";
+		break;
+	default:
+		return;
+	}
+
+	if (pszSoundName)
+	{
+		Vector shotDir;
+		VectorSubtract(end, start, shotDir);
+		VectorNormalize(shotDir);
+
+		float dt = g_104cf3d0 - g_102b8494->curtime;
+		if (dt <= 0.0f)
+		{
+			Vector vNear;
+			float vDist = sub_100d9750(start, end, sub_1018f340(), vNear);
+
+			if (vDist <= 72.0f)
+			{
+				CUnknown100be160Buf filter;
+				CSoundParameters_100d9ba0 params;
+
+				if (sub_1012d7f0(pszSoundName, params))
+				{
+					g_104a5818->EmitSound(&filter, 0, 6, params.soundname, params.volume, (float)SNDLVL_TO_ATTN(params.soundlevel), 0, params.pitch, &start, &shotDir, false);
+				}
+
+				g_104cf3d0 = g_102b8494->curtime + g_104a5738->RandomFloat(0.1f, 0.1f);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100da050 size=0x5a
 struct SVec3
 {
