@@ -27,6 +27,20 @@ CBaseStaticModel::~CBaseStaticModel()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dff30 size=0x23
+#include "CBaseStaticModel.h"
+struct IModelInfo_ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual bool v9(int);
+};
+extern IModelInfo_ *g_104a57f8;
+bool CBaseStaticModel::IsTransparent()
+{
+	return m_unk3e < 255 || g_104a57f8->v9(m_unk38);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dff60 size=0xb
 #include "CBaseStaticModel.h"
 namespace lifted {
