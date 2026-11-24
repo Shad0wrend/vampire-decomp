@@ -60520,6 +60520,25 @@ void CPC::sub_10123c90(int type, char *outstr, const char *instr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123cd0 size=0x5f
+#include "CPredictionCopy.h"
+
+// TARGET: CPredictionCopy::sub_10123cd0
+extern "C" int strcmp(const char *, const char *);
+
+int CPredictionCopy::sub_10123cd0(const char *a0, const char *a1)
+{
+	if (!m_u0[0x14])
+		return 0;
+	if (sub_10123470())
+	{
+		if (strcmp(a0, a1) != 0)
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123d30 size=0x19
 namespace lifted {
 struct C10123e30 { int sub_10123e30(int, int, int, int); };
