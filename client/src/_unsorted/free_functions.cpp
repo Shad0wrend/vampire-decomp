@@ -51600,6 +51600,11 @@ CLinkNode1c *CLinkList::sub_10128270(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128340 size=0x9
+struct S { int a[5]; void *m14; bool sub_10128340(); };
+bool S::sub_10128340() { if (m14) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x101283a0 size=0x4
 struct CUnknown101283a0 { int sub_101283a0(); };
 int CUnknown101283a0::sub_101283a0()
