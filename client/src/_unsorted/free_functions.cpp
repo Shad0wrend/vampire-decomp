@@ -37498,6 +37498,24 @@ int sub_100cbee0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc040 size=0x24
+struct E100cc040 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(int);
+};
+struct S100cc040 {
+	int m_unk0; E100cc040 **m_p; int m_unk8; int m_unkc; int m_n;
+	void sub_100cc040();
+};
+void S100cc040::sub_100cc040()
+{
+	for (int i = m_n - 1; i >= 0; i--)
+		m_p[i]->v13(0);
+	m_n = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc070 size=0x33
 namespace lifted {
 extern int g_102b8490;
