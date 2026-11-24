@@ -34419,6 +34419,24 @@ void sub_100aa490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa4a0 size=0x3b
+struct Pair { int a; int b; };
+struct CUnk100aa4a0
+{
+	char pad[0x1614];
+	Pair arr[1];
+	char pad2[0x1624 - 0x1614 - 8];
+	int idx;
+	void sub_100aa4a0(Pair *p);
+};
+struct CUnknown100a5280 { void sub_100a5280(int); };
+void CUnk100aa4a0::sub_100aa4a0(Pair *p)
+{
+	arr[idx] = *p;
+	((CUnknown100a5280 *)((char *)this - idx * 8 + 0x161c))->sub_100a5280(p->a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aacb0 size=0x59
 struct CUnknown101a5290 {
     void *m_pMemory;
