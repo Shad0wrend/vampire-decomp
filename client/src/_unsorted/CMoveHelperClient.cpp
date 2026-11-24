@@ -42,3 +42,10 @@ void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, in
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010f810 size=0x3
+// TARGET: sub_1010f810
+void __stdcall sub_1010f810(int)
+{
+}
+// END FUNCTION
