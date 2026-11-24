@@ -51288,6 +51288,48 @@ void *__stdcall sub_10100b40(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100f10 size=0x62
+#include <string.h>
+#include "CInput.h"
+#include "ConVar.h"
+
+struct JoyInfo
+{
+	unsigned int dwSize;		// 0x00
+	unsigned int dwFlags;		// 0x04
+	unsigned int dwXpos;		// 0x08
+	unsigned int dwYpos;		// 0x0c
+	unsigned int dwZpos;		// 0x10
+	unsigned int dwRpos;		// 0x14
+	unsigned int dw18;			// 0x18
+	unsigned int dwVpos;		// 0x1c
+	unsigned int dwButtons;		// 0x20
+	unsigned int dwButtonNumber;	// 0x24
+	unsigned int dwPOV;			// 0x28
+	unsigned int dwReserved1;	// 0x2c
+	unsigned int dwReserved2;	// 0x30
+};
+
+extern JoyInfo g_104d2cdc;
+extern ConVar *g_104d2aa4;
+extern int (__stdcall *g_101e30ec)(int, JoyInfo *);
+
+// TARGET: CInput::sub_10100f10
+int CInput::sub_10100f10()
+{
+	memset(&g_104d2cdc, 0, sizeof(g_104d2cdc));
+	g_104d2cdc.dwSize = sizeof(g_104d2cdc);
+	g_104d2cdc.dwFlags = m_unk2c[(0x40 - 0x2c) / 4];
+	if (g_101e30ec(m_unk2c[(0x3c - 0x2c) / 4], &g_104d2cdc) == 0)
+	{
+		if (!g_104d2aa4->vfunc1() && g_104d2aa4->m_nValue)
+			g_104d2cdc.dw18 += 0x64;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101b20 size=0x47
 struct QA { float x, y, z; };
 struct IG45 {

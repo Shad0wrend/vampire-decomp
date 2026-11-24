@@ -5069,6 +5069,7 @@
 0x100ffb60 func   ?vfunc32@CInput@@UAEHH@Z CInput::vfunc32
 0x100ffd10 func   ?vfunc45@CInput@@UAEHXZ CInput::vfunc45
 0x10100b40 func   ?sub_10100b40@@YGPAXH@Z sub_10100b40
+0x10100f10 func   ?sub_10100f10@CInput@@QAEHXZ CInput::sub_10100f10
 0x10101b20 func   ?sub_10101b20@@YAXXZ sub_10101b20
 0x10101b70 func   ?sub_10101b70@@YAHXZ sub_10101b70
 0x10101b80 func   ?sub_10101b80@@YADXZ sub_10101b80
