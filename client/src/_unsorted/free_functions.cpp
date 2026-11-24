@@ -64717,6 +64717,22 @@ bool sub_1013a4d0(CreateInterfaceFn factory)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a730 size=0x4d
+#include "CUnknown1006c1c0.h"
+
+void sub_1013a730(CUnknown1006c1c0 *reader, CUnknownImgInfo *info, unsigned char *pOut)
+{
+	for ( int i = 0; i < info->m_nCount; i++, pOut += 3 )
+	{
+		unsigned char *p = reader->m_pData + reader->m_nC;
+		pOut[0] = p[0];
+		pOut[1] = p[1];
+		pOut[2] = p[2];
+		reader->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a7d0 size=0x1
 void sub_1013a7d0()
 {
