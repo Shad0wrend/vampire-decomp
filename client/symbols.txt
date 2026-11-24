@@ -4296,6 +4296,7 @@
 0x100d6510 func   ?sub_100d6510@Mgr_100d6510@@QAEXG@Z Mgr_100d6510::sub_100d6510
 0x100d7130 func   ?sub_100d7130@CClientShadowMgr@@QAEXHGPAH@Z CClientShadowMgr::sub_100d7130
 0x100d7180 func   ?sub_100d7180@CClientShadowMgr@@QAEXHGPAH@Z CClientShadowMgr::sub_100d7180
+0x100d7e50 func   ?vfunc16@CClientShadowMgr@@QAEPAXG@Z CClientShadowMgr::vfunc16
 0x100d8230 func   ?vfunc2@CShadowProxy@@UAEXXZ CShadowProxy::vfunc2
 0x100d8260 func   ?sub_100d8260@CUnknown100d8260@@QAEXXZ CUnknown100d8260::sub_100d8260
 0x100d8270 func   ?vfunc0@CShadowProxy@@UAE_NPAX0@Z CShadowProxy::vfunc0

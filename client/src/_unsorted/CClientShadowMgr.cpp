@@ -119,3 +119,11 @@ bool SM_100d5830::sub_100d5830()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d7e50 size=0x1c
+#include "CClientShadowMgr.h"
+void *CClientShadowMgr::vfunc16(unsigned short h)
+{
+	return &m_Shadows.m_pMemory[h].m_Data[0x54];
+}
+// END FUNCTION
