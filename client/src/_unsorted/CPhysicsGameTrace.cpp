@@ -14,3 +14,13 @@ void __stdcall sub_10120540(int, int, int)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10120550 size=0x5
+#include "CPhysicsGameTrace.h"
+
+// TARGET: CPhysicsGameTrace::vfunc2
+bool CPhysicsGameTrace::vfunc2(int)
+{
+	return false;
+}
+// END FUNCTION

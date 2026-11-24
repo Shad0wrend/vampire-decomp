@@ -4760,6 +4760,7 @@
 0x10120230 func   ?sub_10120230@@YAPAVCPhysObjectIface@@PAXPAUWorldCollide@@ABUWorldObjParams@@@Z sub_10120230
 0x10120530 func   ?sub_10120530@@YGXHHH@Z sub_10120530
 0x10120540 func   ?sub_10120540@@YGXHHH@Z sub_10120540
+0x10120550 func   ?vfunc2@CPhysicsGameTrace@@UAE_NH@Z CPhysicsGameTrace::vfunc2
 0x101205d0 func   ?sub_101205d0@@YAXPAX0@Z sub_101205d0
 0x10120610 func   ?sub_10120610@@YAHHH@Z sub_10120610
 0x10120630 func   ?sub_10120630@@YAXHH@Z sub_10120630
