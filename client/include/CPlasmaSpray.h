@@ -6,4 +6,6 @@
 class CPlasmaSpray : public CSimpleEmitter
 {
 	char m_pad0004[0xf0 - 0x4];
+public:
+	void vfunc11(void *pVec, int arg1);
 };
