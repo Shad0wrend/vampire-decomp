@@ -51735,6 +51735,19 @@ void CUnknown10123710::sub_10123710(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123a60 size=0x23
+#include <string.h>
+struct S10123a60 {
+	char pad[0x2c]; bool m_b;
+	void sub_10123a60(int a, int *dst, int *src, int n);
+};
+void S10123a60::sub_10123a60(int a, int *dst, int *src, int n)
+{
+	if (m_b && a != 1)
+		memcpy(dst, src, n * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123d30 size=0x19
 namespace lifted {
 struct C10123e30 { int sub_10123e30(int, int, int, int); };
