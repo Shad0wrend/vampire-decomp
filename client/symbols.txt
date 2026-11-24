@@ -3457,6 +3457,7 @@
 0x100a9af0 func   ?sub_100a9af0@@YGHH@Z sub_100a9af0
 0x100a9bd0 func   ?vfunc151@C_BasePlayer@@UAEXHHHHHHHHHHH@Z C_BasePlayer::vfunc151
 0x100a9be0 func   ?sub_100a9be0@@YGXHHH@Z sub_100a9be0
+0x100a9bf0 func   ?sub_100a9bf0@Player_100a9bf0@@QAEXPBD@Z Player_100a9bf0::sub_100a9bf0
 0x100a9c10 func   ?vfunc185@C_BasePlayer@@UAEXH@Z C_BasePlayer::vfunc185
 0x100a9c90 func   ?sub_100a9c90@CUnknown100a9c90@@QAEXXZ CUnknown100a9c90::sub_100a9c90
 0x100a9de0 func   ?sub_100a9de0@CUnknown100a9de0@@QAEMXZ CUnknown100a9de0::sub_100a9de0

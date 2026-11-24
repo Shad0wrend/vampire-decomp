@@ -33226,6 +33226,21 @@ void __stdcall sub_100a9be0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9bf0 size=0x1a
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+struct Player_100a9bf0
+{
+	char m_unk0[0x1895];
+	char m_szName[0x20];
+	void sub_100a9bf0(const char *s);
+};
+// TARGET: Player_100a9bf0::sub_100a9bf0
+void Player_100a9bf0::sub_100a9bf0(const char *s)
+{
+	Q_strncpy(m_szName, s, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9c90 size=0x8
 struct CUnknown100a9c90 { void sub_100a9c90(); };
 void CUnknown100a9c90::sub_100a9c90()
