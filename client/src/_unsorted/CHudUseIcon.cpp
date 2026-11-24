@@ -56,3 +56,21 @@ CHudUseIcon::~CHudUseIcon()
 	delete m_pChild5;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005e3d0 size=0x30
+#include "CHudUseIcon.h"
+bool sub_1018c770();
+bool sub_10170bf0();
+extern int g_104a0d50;
+bool CHudUseIcon::vfunc107()
+{
+	if (!m_b1ac)
+		return false;
+	if (sub_1018c770())
+		return false;
+	if (sub_10170bf0())
+		return false;
+	bool b = g_104a0d50 != 0;
+	return b;
+}
+// END FUNCTION

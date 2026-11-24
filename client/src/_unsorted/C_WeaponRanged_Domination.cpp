@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10006730 size=0x6
+#include "C_WeaponRanged_Domination.h"
+
+// TARGET: C_WeaponRanged_Domination::vfunc16
+int C_WeaponRanged_Domination::vfunc16()
+{
+	return (int)"C_WeaponRanged_Domination";
+}
+// END FUNCTION
+
 // FUNCTION: 0x100070b0 size=0x1e
 #include "C_WeaponRanged_Domination.h"
 

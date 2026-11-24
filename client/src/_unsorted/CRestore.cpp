@@ -36,6 +36,16 @@ int CRestore::vfunc2(CBaseEntity * a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a240 size=0x16
+#include "CRestore.h"
+int CRestore::vfunc10()
+{
+	unsigned short v;
+	vfunc9(&v);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a260 size=0x4
 #include "CRestore.h"
 bool CRestore::vfunc32()
@@ -49,6 +59,16 @@ bool CRestore::vfunc32()
 int CRestore::vfunc33()
 {
     return *(int *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1012a2f0 size=0x7
+#include "CRestore.h"
+
+// TARGET: CRestore::sub_1012a2f0
+int CRestore::sub_1012a2f0()
+{
+	return *(int *)((char *)m_pData + 8);
 }
 // END FUNCTION
 
@@ -227,6 +247,12 @@ void CRestore::vfunc6(void *pData)
 	vfunc7(value);
 	Q_strncpy((char *)pData, vfunc11(value[1]), 0x20);
 }
+// END FUNCTION
+
+// FUNCTION: 0x1012a7d0 size=0x11
+#include "CRestore.h"
+// TARGET: CRestore::vfunc5
+void CRestore::vfunc5() { char buf[32]; vfunc6(buf); }
 // END FUNCTION
 
 // FUNCTION: 0x1012a7f0 size=0x42

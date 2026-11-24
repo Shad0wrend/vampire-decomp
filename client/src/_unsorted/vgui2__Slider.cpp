@@ -94,6 +94,21 @@ int vgui2::Slider::vfunc116(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc0d0 size=0x1b
+#include "vgui2__Slider.h"
+struct SliderView_101bc0d0 { char pad[0x78]; int m_lo; int m_hi; };
+// TARGET: vgui2::Slider::vfunc109
+void vgui2::Slider::vfunc109(int a, int b)
+{
+	SliderView_101bc0d0 *v = (SliderView_101bc0d0 *)this;
+	int hi = b;
+	v->m_lo = a;
+	if (hi < a)
+		hi = a;
+	v->m_hi = hi;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc0f0 size=0x15
 #include "vgui2__Slider.h"
 int vgui2::Slider::vfunc110(int a0, int a1)
@@ -104,6 +119,11 @@ int vgui2::Slider::vfunc110(int a0, int a1)
     *(int *)((char *)a1) = t1;
     return t1;
 }
+// END FUNCTION
+
+// FUNCTION: 0x101bc2a0 size=0x8
+#include "vgui2__Slider.h"
+void vgui2::Slider::vfunc88(int a) { vfunc87(a); }
 // END FUNCTION
 
 // FUNCTION: 0x101bc2b0 size=0x18

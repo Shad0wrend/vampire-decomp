@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101b57a0 size=0x3b
+#include "vgui2__KeyValues.h"
+#include <stdlib.h>
+int sub_101b6860(int);
+vgui2::KeyValues::~KeyValues()
+{
+	vgui2::KeyValues *p = m_pSub;
+	if (p) {
+		do {
+			vgui2::KeyValues *next = p->m_pPeer;
+			p->~KeyValues();
+			sub_101b6860((int)p);
+			p = next;
+		} while (p);
+	}
+	free(m_pName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b57e0 size=0x15
 #include "vgui2__KeyValues.h"
 namespace lifted {

@@ -11,6 +11,16 @@ CFXStaticLine *pcd_emit_100e6610() { return new CFXStaticLine; }
 // TARGET: ??_GCFXStaticLine@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100e6bf0 size=0x18
+#include "CFXStaticLine.h"
+bool CFXStaticLine::vfunc3()
+{
+	if (*(float *)((char *)this + 0x2c) > 0.0)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6c10 size=0x1a
 #include "CFXStaticLine.h"
 namespace lifted {

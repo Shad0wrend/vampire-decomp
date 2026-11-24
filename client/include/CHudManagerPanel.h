@@ -4,14 +4,22 @@
 #pragma once
 #include "IHudManagerPanel.h"
 
+struct HudChild_t
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(bool);
+};
 class CHudManagerPanel : public IHudManagerPanel
 {
 public:
+	HudChild_t *m_pChild;
+	int m_nCount;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CHudManagerPanel adds to its base's vtable: 0-38, vfuncK at slot K
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual bool vfunc2(int);
 	virtual int vfunc3();
 	virtual int vfunc4();
 	virtual int vfunc5();

@@ -155,6 +155,22 @@ bool C_BaseEntity::vfunc94()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001700 size=0x11
+struct B1 { int a; };
+struct B2 { int b; };
+struct T_10001700 : B1, B2 { void f(); };
+struct V_10001700 : T_10001700 {
+	int m_unk[(0x20 - 12) / 4];
+	void (T_10001700::*m_pfn)();
+};
+// TARGET: sub_10001700
+void __fastcall sub_10001700(V_10001700 *self)
+{
+	if (self->m_pfn)
+		(self->*self->m_pfn)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001720 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc106()
@@ -175,6 +191,16 @@ void C_BaseEntity::vfunc112()
 bool C_BaseEntity::vfunc117(int a0)
 {
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100018d0 size=0xf
+struct I_100018d0 { virtual void v0(); virtual void v1(); };
+struct V_100018d0 { int m_unk[0x190 / 4]; I_100018d0 m_obj; };
+// TARGET: sub_100018d0
+void __fastcall sub_100018d0(V_100018d0 *self)
+{
+	self->m_obj.v1();
 }
 // END FUNCTION
 
@@ -212,6 +238,15 @@ int C_BaseEntity::vfunc110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dd90 size=0xe
+struct V_1007dd90 { int m_unk[0x88 / 4]; int m_n88; };
+// TARGET: sub_1007dd90
+int __fastcall sub_1007dd90(V_1007dd90 *self)
+{
+	return self->m_n88 == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007de10 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc92(int a0, int a1)
@@ -223,6 +258,22 @@ void C_BaseEntity::vfunc92(int a0, int a1)
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc93(int a0, int a1, int a2)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007de30 size=0x3c
+#include "C_BaseEntity.h"
+struct IGlobal104a5738 { virtual void v0(); virtual void v1(); virtual int v2(int, int); };
+extern IGlobal104a5738 *g_104a5738;
+// TARGET: C_BaseEntity::vfunc91
+int C_BaseEntity::vfunc91(int a, int b)
+{
+	int v = *(int *)((char *)this + 0x48);
+	if (v == 4)
+		return -1;
+	if (v && b == 0x47)
+		return 0x34;
+	return g_104a5738->v2(0, 4);
 }
 // END FUNCTION
 
@@ -670,6 +721,22 @@ void C_BaseEntity::vfunc103(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2d70 size=0x2d
+#include "C_BaseEntity.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+void *C_BaseEntity::sub_100a2d70()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x98);
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e10 size=0xd
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc49(int a0)
@@ -783,9 +850,34 @@ void C_BaseEntity::vfunc99(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ac30 size=0x13
+struct B1 { int a; };
+struct B2 { int b; };
+struct T_1011ac30 : B1, B2 { void f(int); };
+struct V_1011ac30 : T_1011ac30 {
+	int m_unk[(0x30 - 12) / 4];
+	void (T_1011ac30::*m_pfn)(int);
+};
+void __fastcall sub_1011ac30(V_1011ac30 *self, int edx, int a)
+{
+	if (self->m_pfn)
+		(self->*self->m_pfn)(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ac50 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc101(int a0)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1011ac60 size=0x17
+struct S_1011ac60 { char pad[0xd4]; int cnt; bool f; };
+void __fastcall sub_1011ac60(S_1011ac60 *self, int edx, bool b)
+{
+	self->f = b;
+	if (b)
+		self->cnt++;
 }
 // END FUNCTION

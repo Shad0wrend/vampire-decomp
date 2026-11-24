@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101342e0 size=0x48
+#include "utlvector.h"
+
+struct SoundPatch_101342e0
+{
+	void sub_10133a20();
+};
+
+struct SoundCtl_101342e0
+{
+	char pad_0[0x0c];
+	CUtlVector<SoundPatch_101342e0 *> m_soundList; // 0x0c..0x1f
+	char pad_20[0x0c];
+	int m_nField2c;                                // 0x2c
+
+	void sub_101342e0();
+};
+
+void SoundCtl_101342e0::sub_101342e0()
+{
+	for (int i = m_soundList.Count() - 1; i >= 0; i--)
+	{
+		m_soundList[i]->sub_10133a20();
+	}
+	m_soundList.Purge();
+	m_nField2c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101349e0 size=0xc2
 #include "Pool.h"
 #include "CBaseHandle.h"
@@ -87,4 +116,41 @@ CSoundPatch *CUnknown101349e0::sub_101349e0(void *filter, int nEntIndex, const c
 	pSound->sub_101337a0(filter, hEnt.Get(), 0, pSoundName, 75);
 	return pSound;
 }
+// END FUNCTION
+
+// FUNCTION: 0x10134d30 size=0xc
+struct CSndView101339f0 { void sub_101339f0(); };
+// TARGET: sub_10134d30
+void __stdcall sub_10134d30(CSndView101339f0 *p) { p->sub_101339f0(); }
+// END FUNCTION
+
+// FUNCTION: 0x10134d40 size=0xc
+void __fastcall sub_10133a00(void *self);
+// TARGET: sub_10134d40
+void __stdcall sub_10134d40(void *p)
+{
+	sub_10133a00(p);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10134e80 size=0x1f
+struct Pair_10134e80 { int a, b; };
+struct SC_10134e80
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(int, int, Pair_10134e80);
+	void sub_10134e80(int, int, Pair_10134e80 *);
+};
+void SC_10134e80::sub_10134e80(int a, int b, Pair_10134e80 *c)
+{
+	v16(a, b, *c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10134ea0 size=0x24
+struct SndItem { void sub_10133e50(int a); };
+struct VSndCtl { int m0, m4, m8; SndItem **m_pData; int m10, m14; int m_n; void sub_10134ea0(int a); };
+// TARGET: ?sub_10134ea0@VSndCtl@@QAEXH@Z
+void VSndCtl::sub_10134ea0(int a) { for (int i = m_n - 1; i >= 0; i--) m_pData[i]->sub_10133e50(a); }
 // END FUNCTION

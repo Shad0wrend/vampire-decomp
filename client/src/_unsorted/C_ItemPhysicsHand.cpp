@@ -52,3 +52,10 @@ int C_ItemPhysicsHand::vfunc15()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100034d0 size=0x25
+#include "C_ItemPhysicsHand.h"
+void sub_1005fa40(int);
+// TARGET: ?vfunc189@C_ItemPhysicsHand@@UAE_NH@Z
+bool C_ItemPhysicsHand::vfunc189(int a) { int r = C_BaseCombatWeapon::vfunc189(a); sub_1005fa40(0); return r ? true : false; }
+// END FUNCTION

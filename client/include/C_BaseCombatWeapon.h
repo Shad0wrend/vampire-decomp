@@ -9,6 +9,10 @@ class C_BaseCombatWeapon : public C_BaseAnimating
 public:
 	C_BaseCombatWeapon();
 	void *sub_1007b160();
+	void *sub_10003060();
+	void *sub_1007bab0();
+	char *sub_1007b180();
+	bool sub_1007d950();
 	virtual ~C_BaseCombatWeapon();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseCombatWeapon's own function
@@ -28,12 +32,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc145();
 	virtual int vfunc146();
 	virtual int vfunc147();
-	virtual void vfunc148();
+	virtual int vfunc148(int);
 	virtual void vfunc149();
 	virtual bool vfunc150(int);
 	virtual float vfunc151();
 	virtual void vfunc152();
-	virtual void vfunc153();
+	virtual bool vfunc153(int);
 	virtual bool vfunc154();
 	virtual bool vfunc155();
 	virtual bool vfunc156(int);
@@ -57,15 +61,15 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc174(int);
 	virtual bool vfunc175();
 	virtual bool vfunc176();
-	virtual void vfunc177();
+	virtual bool vfunc177();
 	virtual void vfunc178();
 	virtual int vfunc179(int);
 	virtual void vfunc180(int);
 	virtual void vfunc181();
-	virtual void vfunc182();
+	virtual bool vfunc182();
 	virtual int vfunc183(int);
 	virtual float vfunc184();
-	virtual void vfunc185();
+	virtual bool vfunc185();
 	virtual bool vfunc186();
 	virtual bool vfunc187();
 	virtual bool vfunc188();
@@ -120,7 +124,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc237();
 	virtual void vfunc238(int);
 	virtual void vfunc239();
-	virtual void vfunc240();
+	virtual bool vfunc240();
 	virtual bool vfunc241();
 	virtual bool vfunc242();
 	virtual void vfunc243();
@@ -130,5 +134,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc247();
 	virtual void vfunc248(int, int, int);
 	virtual void vfunc249(int, int, int, int, int, int, int, int);
-	virtual void vfunc250();
+	virtual bool vfunc250();
 };

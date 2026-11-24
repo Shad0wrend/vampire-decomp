@@ -1,5 +1,6 @@
 """Configure the build: writes build.ninja; then `ninja` builds build/<target> and `ninja verify` checks it
-(`ninja ownership` tells which bytes of the original no source makes yet).
+(`ninja ownership` tells which bytes of the original no source makes yet; `ninja identical` lays the objects
+out as the game's own link did and writes build/identical/<target>, exit 0 only on an equal SHA-1).
 
     python configure.py [--vc6 DIR] [--orig FILE]
 
@@ -148,6 +149,10 @@ def main(argv: list[str] | None = None) -> int:
         "  command = $python -m tools.ownership --orig \"$orig\" --vc6 \"$vc6\" --build build",
         "  description = ownership",
         "  pool = console",
+        "rule identical",
+        "  command = $python -m tools.layout --orig \"$orig\" --vc6 \"$vc6\" --build build",
+        "  description = identical",
+        "  pool = console",
         "rule configure",
         "  command = $python configure.py --vc6 \"$vc6\" --orig \"$orig\"",
         "  description = configure",
@@ -217,10 +222,19 @@ def main(argv: list[str] | None = None) -> int:
     lines.append(f"build {_esc(final)}: patch {_esc(unpatched)} | $map config\\vtable_patches.txt")
     lines.append(f"build verify: verify {_esc(final)}")
     lines.append(f"build ownership: ownership {_esc(final)}")
+    identical = Path("build") / "identical" / target
+    config_files = sorted(p.relative_to(root) for p in config.rglob("*") if p.is_file())
+    tool_files = sorted(p.relative_to(root) for p in (root / "tools").glob("*.py"))
+    # its output is a real file (verify's and ownership's are not): every input layout.py reads is listed, or a passing
+    # run would stand after a change ninja cannot see (a block taken out of blocks.txt, a vtable patch, an alias, the
+    # code of tools/): each file of config/ (addresses.txt even before it exists) and tools/*.py
+    deps = dict.fromkeys([Path("config") / "addresses.txt", *config_files, *tool_files])
+    lines.append(f"build {_esc(identical)}: identical {' '.join(_esc(i) for i in inputs + libs)} | "
+                 f"$orig {' '.join(_esc(d) for d in deps)}")
+    lines.append(f"build identical: phony {_esc(identical)}")
     lines.append(f"default {_esc(final)}")
 
-    regen = [Path("configure.py"), *sorted(p.relative_to(root) for p in (root / "tools").glob("*.py")),
-             *sorted(p.relative_to(root) for p in config.rglob("*") if p.is_file()),
+    regen = [Path("configure.py"), *tool_files, *config_files,
              *sorted({q.relative_to(root) for q in (root / "src").rglob("*") if q.is_dir()} | {Path("src")}),
              *sorted(p.relative_to(root) for p in (root / "src").rglob("*.cpp"))]
     lines.append(f"build {NINJA}: configure | {' '.join(_esc(r) for r in regen)}")

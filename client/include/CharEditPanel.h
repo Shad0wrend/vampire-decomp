@@ -10,6 +10,7 @@ class CharEditPanel : public CHudElement, public vgui2::PropertyDialog
 public:
 	virtual ~CharEditPanel();
 	void sub_101740e0(int a);
+	void sub_10172ae0();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 	void vfunc3();	// as in VHCheckButton (transplant)
 	void vfunc7();	// as in VHCheckButton (transplant)

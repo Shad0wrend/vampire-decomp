@@ -5,6 +5,8 @@
 
 class CAlphaMaterialProxy : public IMaterialProxy
 {
+public:
+    int m_unk4;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CAlphaMaterialProxy's own function
     virtual bool vfunc0(void*, void*);

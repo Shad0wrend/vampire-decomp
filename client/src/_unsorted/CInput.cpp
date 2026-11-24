@@ -177,6 +177,20 @@ int CInput::vfunc45()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101cd0 size=0x34
+#include "CInput.h"
+#include <string.h>
+// TARGET: CInput::vfunc11
+int CInput::vfunc11(const char *name)
+{
+	for (CInputKey *p = m_pKeys; p; p = p->next) {
+		if (!_strcmpi(name, p->name))
+			return p->value;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101da0 size=0x7
 #include "CInput.h"
 int CInput::vfunc56()
@@ -185,10 +199,36 @@ int CInput::vfunc56()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102500 size=0x17
+#include "CInput.h"
+struct IGlobal_105f99d8 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual int v16(int a, int b, int c);
+};
+extern IGlobal_105f99d8 *g_105f99d8;
+int CInput::vfunc10(int a, int b, int c)
+{
+	if (g_105f99d8)
+		return g_105f99d8->v16(a, b, c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103310 size=0x3
 #include "CInput.h"
 void CInput::vfunc8(int a0)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x10104440 size=0x15
+#include "CInput.h"
+char *CInput::vfunc7(int i)
+{
+	return *(char **)((char *)this + 0x1c0) + i * 96;
 }
 // END FUNCTION
 
@@ -201,6 +241,128 @@ int CInput::vfunc55(int a0)
 {
     lifted::g_104d3e38 = lifted::g_104d3e38 | a0;
     return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10104750 size=0x31
+#include "CInput.h"
+struct XG2 { virtual void v0(); virtual char v1(); char u[0x2c - 4]; int m_i2c; };
+extern XG2 *g_104d31f4;
+// TARGET: CInput::vfunc20
+float CInput::vfunc20()
+{
+	int p;
+	if (g_104d31f4->v1())
+		p = 0;
+	else
+		p = g_104d31f4->m_i2c;
+	return (float)p;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10104790 size=0x1d
+#include "CInput.h"
+struct SubObj_10104790
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual int v8();
+};
+struct Player_10104790
+{
+	int m_unk0, m_unk4, m_unk8;
+	SubObj_10104790 m_sub;
+};
+extern Player_10104790 *g_104a0d50;
+// TARGET: CInput::vfunc26
+bool CInput::vfunc26()
+{
+	if (g_104a0d50 && g_104a0d50->m_sub.v8() == 9)
+		return true;
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10105d50 size=0x13e
+#include "CInput.h"
+#include "CUserCmd.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+struct ICvar_10105d50
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void *FindVar(const char *var_name);
+};
+extern ICvar_10105d50 *g_104a57e0;
+
+struct CInputFields_10105d50
+{
+	char pad0[0x20];
+	int m_fMouseInitialized;       // 0x20
+	int m_fRestoreSPI;             // 0x24
+	int m_n28;                     // 0x28
+	int m_fJoystickAvailable;      // 0x2c
+	int m_fJoystickAdvancedInit;   // 0x30
+	int m_fJoystickHasPOVControl;  // 0x34
+	char pad38[0x5c - 0x38];
+	int m_fMouseActive;            // 0x5c
+	int m_rgOrigMouseParms[3];     // 0x60
+	int m_rgNewMouseParms[3];      // 0x6c
+	int m_fMouseParmsValid;        // 0x78
+	char pad7c[0xe0 - 0x7c];
+	int m_ne0;                     // 0xe0
+	bool m_be4;                    // 0xe4
+	int m_ne8;                     // 0xe8
+	char padec[0x138 - 0xec];
+	int m_n138;                    // 0x138
+	int m_n13c;                    // 0x13c
+	char pad140[0x1bc - 0x140];
+	float m_flLastForwardMove;     // 0x1bc
+	CUserCmd *m_pCommands;         // 0x1c0
+	int m_n1c4;                    // 0x1c4
+	void *m_pCmdRate;              // 0x1c8
+	void *m_pUpdateRate;           // 0x1cc
+
+	void sub_101062e0();
+	void sub_101009f0();
+	void sub_10101db0();
+	void sub_101003b0();
+};
+
+// TARGET: CInput::vfunc0
+void CInput::vfunc0()
+{
+	CInputFields_10105d50 *f = (CInputFields_10105d50 *)this;
+	f->m_pCommands = new CUserCmd[64];
+
+	f->m_fMouseInitialized = 0;
+	f->m_fRestoreSPI = 0;
+	f->m_fMouseActive = 0;
+	f->m_n28 = 0;
+	memset(f->m_rgOrigMouseParms, 0, sizeof(f->m_rgOrigMouseParms));
+	memset(f->m_rgNewMouseParms, 0, sizeof(f->m_rgNewMouseParms));
+
+	f->m_rgNewMouseParms[2] = 1;
+
+	f->m_fMouseParmsValid = 0;
+	f->m_fJoystickAvailable = 0;
+	f->m_fJoystickAdvancedInit = 0;
+	f->m_fJoystickHasPOVControl = 0;
+	f->m_flLastForwardMove = 0.0f;
+	f->m_n13c = 0;
+	f->m_n138 = 0;
+	f->m_be4 = false;
+	f->m_ne8 = 0;
+	f->m_ne0 = 0;
+
+	f->sub_101062e0();
+	f->sub_101009f0();
+	f->sub_10101db0();
+	f->sub_101003b0();
+
+	f->m_pCmdRate = g_104a57e0->FindVar("cl_cmdrate");
+	f->m_pUpdateRate = g_104a57e0->FindVar("cl_updaterate");
 }
 // END FUNCTION
 
@@ -227,4 +389,40 @@ void CInput::vfunc54()
 {
     *(char *)((char *)this + 0xe4) = 1;
 }
+// END FUNCTION
+
+// FUNCTION: 0x101062d0 size=0x9
+#include "CInput.h"
+bool CInput::vfunc18() { if (m_unk28) return true; return false; }
+// END FUNCTION
+
+// FUNCTION: 0x10106310 size=0x2a
+#include "CInput.h"
+struct IEngA {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45();
+	virtual int v46(int); virtual int v47();
+};
+extern IEngA *g_104a57d4;
+void CInput::vfunc25()
+{
+	int a = g_104a57d4->v47();
+	int b = g_104a57d4->v46(a);
+	sub_10106880(b);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101069a0 size=0x11
+#include "CInput.h"
+// TARGET: CInput::vfunc21
+void CInput::vfunc21(char b) { m_unk24 = b != 0; }
+// END FUNCTION
+
+// FUNCTION: 0x101069c0 size=0x9
+#include "CInput.h"
+bool CInput::vfunc24() { if (m_unk24) return true; return false; }
 // END FUNCTION

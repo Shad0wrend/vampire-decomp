@@ -5,5 +5,6 @@
 class C_OccultRegen : public C_BaseCombatWeapon
 {
 public:
+	virtual int vfunc16();
 	virtual ~C_OccultRegen() {}
 };

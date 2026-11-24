@@ -19,6 +19,23 @@ CMoneyBar::~CMoneyBar()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f320 size=0x12
+#include "CMoneyBar.h"
+struct CMoneyBarSub
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5(int a);
+};
+void CMoneyBar::vfunc112()
+{
+	((CMoneyBarSub *)((char *)this + 0x170))->v5(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f540 size=0x1
 #include "CMoneyBar.h"
 void CMoneyBar::vfunc97()

@@ -39,6 +39,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual ~C_BaseNetworkable();
 	C_BaseNetworkable();
 	void sub_100a3950();
+	void sub_100a3910(int, int);
 	int m_unkc;
 	unsigned char m_unk10;
 	unsigned short m_unk12;

@@ -25,6 +25,15 @@ void vgui2::Label::vfunc117(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2370 size=0x17
+#include "vgui2__Label.h"
+// TARGET: vgui2::Label::vfunc72
+int vgui2::Label::vfunc72(int a)
+{
+	return (*(short *)((char *)this + 0xac) == (short)a) ? (int)this : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2390 size=0xf
 #include "vgui2__Label.h"
 short vgui2::Label::vfunc120(short a0)
@@ -47,6 +56,12 @@ void vgui2::Label::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b23c0 size=0x1a
+#include "vgui2__Label.h"
+struct Sub23c0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(int a); };
+void vgui2::Label::vfunc87(int a) { Sub23c0 *p = *(Sub23c0 **)((char *)this + 0xa4); if (p) p->v15(0); }
+// END FUNCTION
+
 // FUNCTION: 0x101b23e0 size=0x8
 #include "vgui2__Label.h"
 namespace lifted {
@@ -55,6 +70,26 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Label::vfunc109()
 {
     return ((lifted::V *)(*(int *)((char *)this + 0x5c)))->f28();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b23f0 size=0x35
+#include "vgui2__Label.h"
+struct TextView {
+ virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+ virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+ virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+ virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+ virtual void s24(); virtual void s25(); virtual void s26();
+ virtual void Slot27(const char *text);
+};
+// TARGET: vgui2::Label::vfunc108
+void vgui2::Label::vfunc108(const char *text)
+{
+    if (!text)
+        text = "";
+    ((TextView *)m_unk5c[0])->Slot27(text);
+    vfunc120(vfunc130(text));
 }
 // END FUNCTION
 
@@ -82,6 +117,17 @@ int vgui2::Label::vfunc111(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2960 size=0x30
+#include "vgui2__Label.h"
+// TARGET: vgui2::Label::vfunc129
+void vgui2::Label::vfunc129()
+{
+	int w, h;
+	vfunc110(&w, &h);
+	((Panel *)this)->sub_101a98f0(w, h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b29b0 size=0x24
 #include "vgui2__Label.h"
 namespace lifted {
@@ -104,6 +150,11 @@ int vgui2::Label::vfunc119()
 {
     return ((lifted::V *)(*(int *)((char *)this + 0x5c)))->f31();
 }
+// END FUNCTION
+
+// FUNCTION: 0x101b2a50 size=0x19
+#include "vgui2__Label.h"
+int vgui2::Label::vfunc53(int p) { int t; Panel::vfunc53((int)&t); *(int *)p = t; return p; }
 // END FUNCTION
 
 // FUNCTION: 0x101b2a70 size=0xd
@@ -161,6 +212,12 @@ int vgui2::Label::vfunc132()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2c70 size=0xd
+struct CView { char pad[0x60]; int *m60; int sub_101b2c70(int); };
+// TARGET: ?sub_101b2c70@CView@@QAEHH@Z
+int CView::sub_101b2c70(int i) { return m60[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x101b2c80 size=0x4
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc126()
@@ -179,6 +236,19 @@ int vgui2::Label::vfunc121(int a0)
     }
     *(int *)((char *)this + 0xa4) = 0;
     return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b2e30 size=0x2a
+#include "vgui2__Label.h"
+struct V_101b2e30 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(void *); };
+void vgui2::Label::vfunc105(vgui2::Panel *p)
+{
+	V_101b2e30 *w = *(V_101b2e30 **)((char *)this + 0xa4);
+	if (w && p == this)
+		w->v15(0);
+	else
+		Panel::vfunc105(p);
 }
 // END FUNCTION
 

@@ -4,6 +4,7 @@
 #pragma once
 #include "vgui2__Panel.h"
 
+struct IImg { virtual void v0(); virtual void v1(); virtual void v2(int *, int *); };
 namespace vgui2
 {
 class ImagePanel : public vgui2::Panel
@@ -18,7 +19,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc97();
 	virtual int vfunc102();
 	// the slots ImagePanel adds to its base's vtable: 107-108, vfuncK at slot K
-	virtual void vfunc107();
+	virtual void vfunc107(IImg *);
 	virtual int vfunc108();
 };
 }

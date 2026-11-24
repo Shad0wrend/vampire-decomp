@@ -11,6 +11,42 @@ vgui2::ScrollBar *pcd_emit_101beee0(const vgui2::ScrollBar &other) { return new 
 // TARGET: ??_GScrollBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bef40 size=0x1a
+#include "vgui2__ScrollBar.h"
+struct SBView_101bef40 { char pad[0x60]; vgui2::Panel *m_p; };
+// TARGET: vgui2::ScrollBar::vfunc62
+bool vgui2::ScrollBar::vfunc62(char c)
+{
+	vgui2::Panel *p = ((SBView_101bef40 *)this)->m_p;
+	if (p)
+		return p->vfunc62(c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bef60 size=0x1a
+#include "vgui2__ScrollBar.h"
+struct SBView_101bef60 { char pad[0x60]; vgui2::Panel *m_p; };
+// TARGET: vgui2::ScrollBar::vfunc63
+bool vgui2::ScrollBar::vfunc63(char c)
+{
+	vgui2::Panel *p = ((SBView_101bef60 *)this)->m_p;
+	if (p)
+		return p->vfunc63(c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bef80 size=0x1a
+#include "vgui2__ScrollBar.h"
+struct SBView_101bef80 { char pad[0x60]; vgui2::Panel *m_p; };
+// TARGET: vgui2::ScrollBar::vfunc64
+bool vgui2::ScrollBar::vfunc64(char c)
+{
+	vgui2::Panel *p = ((SBView_101bef80 *)this)->m_p;
+	if (p)
+		return p->vfunc64(c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf080 size=0xb
 #include "vgui2__ScrollBar.h"
 namespace lifted {
@@ -75,6 +111,12 @@ int vgui2::ScrollBar::vfunc113()
 {
     return ((lifted::V *)(*(int *)((char *)this + 0x60)))->f116();
 }
+// END FUNCTION
+
+// FUNCTION: 0x101bf1b0 size=0xb
+#include "vgui2__ScrollBar.h"
+// TARGET: vgui2::ScrollBar::vfunc115
+int vgui2::ScrollBar::vfunc115(int i) { return ((int *)this)[0x16 + i]; }
 // END FUNCTION
 
 // FUNCTION: 0x101bf1c0 size=0x3e

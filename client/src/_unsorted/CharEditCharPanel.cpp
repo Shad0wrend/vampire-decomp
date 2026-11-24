@@ -96,6 +96,17 @@ void CharEditCharPanel::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177aa0 size=0x21
+#include "CharEditCharPanel.h"
+int sub_1016a6b0();
+void CharEditCharPanel::vfunc123()
+{
+	int n = sub_1016a6b0();
+	vfunc33(n);
+	sub_101aa0a0(1000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177ad0 size=0x28
 #include "CharEditCharPanel.h"
 namespace lifted {
@@ -123,5 +134,21 @@ void CharEditCharPanel::vfunc101()
 {
     ((lifted::C101ab2f0 *)this)->sub_101ab2f0();
     ((lifted::C10176f80 *)this)->sub_10176f80();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10177ef0 size=0x16
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct O_10177ef0 {
+V8(a) V8(b) V8(c) V8(d) V8(e) V8(f) V8(g) V8(h) V8(i) V8(j)
+virtual void E0(); virtual void E1(); virtual void E2(); virtual void E3(); virtual void E4(); virtual void E5(); virtual void E6();
+virtual void v87(int); };
+O_10177ef0 *sub_10170f70();
+struct S_10177ef0 { void sub_10177ef0(int a); };
+void S_10177ef0::sub_10177ef0(int a)
+{
+	O_10177ef0 *p = sub_10170f70();
+	if (p)
+		p->v87(a);
 }
 // END FUNCTION

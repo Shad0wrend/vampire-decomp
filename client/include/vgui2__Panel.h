@@ -12,16 +12,35 @@ public:
 	static void operator delete(void *pMem);
 	Panel(Panel *parent, const char *name);
 	void sub_101ab300(int, int);
+	int sub_101aa220();
+	void sub_101a9af0();
+	void sub_101aa590();
 	void sub_101a9ff0(int);
+	void sub_101aa0a0(int);
 	int sub_101a99f0(int);
-	int m_unk4[(0x170 - 4) / 4];
+	int m_unk4[(0x18 - 4) / 4];
+	bool m_b18;
+	char m_c19; char m_c1a; char m_c1b;
+	int m_unk1c[(0x58 - 0x1c) / 4];
+	void *m_p58;
+	int m_unk5c[(0x70 - 0x5c) / 4];
+	int m_i70;
+	int m_i74;
+	int m_unk78;
+	void sub_101a9920(int *, int *);
+	void sub_101ab4e0(int);
+	int m_w7c;
+	int m_h80;
+	int m_unk84[(0x170 - 0x84) / 4];
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Panel adds to its base's vtable: 0-106, vfuncK at slot K
 	virtual int vfunc0();
 	virtual void * vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual int vfunc4();
+	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual int vfunc6();
 	virtual int vfunc7(int, int, int);
@@ -50,7 +69,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc30();
 	virtual void vfunc31();
 	virtual int vfunc32(int);
-	virtual void vfunc33();
+	virtual void vfunc33(int);
 	virtual bool vfunc34(int);
 	virtual void vfunc35();
 	virtual int vfunc36();
@@ -73,11 +92,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc53(int);
 	virtual int vfunc54(int);
 	virtual int vfunc55();
-	virtual void vfunc56();
-	virtual void vfunc57();
+	virtual bool vfunc56();
+	virtual void vfunc57(int, int);
 	virtual void vfunc58(int);
 	virtual void vfunc59(int);
-	virtual void vfunc60();
+	virtual void vfunc60(void *);
 	virtual int vfunc61();
 	virtual bool vfunc62(char);
 	virtual bool vfunc63(char);
@@ -86,7 +105,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc66(int);
 	virtual bool vfunc67();
 	virtual int vfunc68();
-	virtual void vfunc69();
+	virtual bool vfunc69();
 	virtual void vfunc70();
 	virtual void vfunc71();
 	virtual int vfunc72(int);
@@ -122,7 +141,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc102();
 	virtual void vfunc103();
 	virtual bool vfunc104(char);
-	virtual void vfunc105();
+	virtual void vfunc105(Panel *);
 	virtual void vfunc106(bool repaint);
 };
 }

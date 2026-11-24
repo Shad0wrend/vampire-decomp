@@ -2,7 +2,10 @@
 // declared: its bases; nothing else yet
 #pragma once
 #include "CSimpleEmitter.h"
+#include "CDustParticle.h"
 
 class CExplosionParticle : public CSimpleEmitter
 {
+public:
+	float vfunc8(PartT *p, float dt);
 };

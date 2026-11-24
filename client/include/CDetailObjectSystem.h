@@ -18,9 +18,14 @@ public:
             m_unk34 = 0; m_unk38 = 0; m_unk3c = 0; m_unk40 = 0; m_unk44 = 0; m_unk48 = 0;
         }
     } m_data;
+public:
+    virtual void vfunc1();
+    virtual void vfunc3();
+    virtual void vfunc5();
+    virtual void vfunc6();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CDetailObjectSystem adds to its base's vtable: 9-11, vfuncK at slot K
     virtual void vfunc9();
     virtual void vfunc10();
-    virtual void vfunc11();
+    virtual char *vfunc11(unsigned int);
 };

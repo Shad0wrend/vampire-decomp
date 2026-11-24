@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100f00e0 size=0x2d
+#include "CHudHistoryResource.h"
+CHudHistoryResource::CHudHistoryResource(int a) : CHudElement(a)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0110 size=0x1e
 #include "CHudHistoryResource.h"
 
@@ -25,6 +32,16 @@ void CHudHistoryResource::vfunc1()
     int t1 = *(int *)this;
     *(int *)((char *)this + 0x130) = 0;
     ((lifted::V *)this)->f7();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f0160 size=0x17
+struct S_100f0160 { char pad[0x10]; int a[0x48]; int c; int b; };
+void __fastcall sub_100f0160(S_100f0160 *self)
+{
+	for (int i = 0; i < 0x48; i++)
+		self->a[i] = 0;
+	self->b = 0;
 }
 // END FUNCTION
 

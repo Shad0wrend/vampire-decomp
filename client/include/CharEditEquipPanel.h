@@ -8,6 +8,7 @@ class CharEditEquipPanel : public vgui2::PropertyPage
 {
 public:
 	virtual ~CharEditEquipPanel();
+	void sub_10179850();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CharEditEquipPanel's own function
 	virtual void vfunc3();
@@ -17,7 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc102();
 	virtual void vfunc119();
 	// the slots CharEditEquipPanel adds to its base's vtable: 123-124, vfuncK at slot K
-	virtual int vfunc123();
+	virtual void vfunc123();
 	virtual void vfunc124(int);
 	char m_pad0004[0xec - 0x4];
 };

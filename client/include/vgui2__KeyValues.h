@@ -6,7 +6,14 @@ namespace vgui2
 {
 class KeyValues
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+    ~KeyValues();
+    int m_unk4;
+    void *m_pName;
+    int m_unkc;
+    int m_unk10;
+    KeyValues *m_pPeer;
+    KeyValues *m_pSub;	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots KeyValues adds to its base's vtable: 0-21, vfuncK at slot K
     virtual int vfunc0();
     virtual int vfunc1();

@@ -11,6 +11,22 @@ VRButton *pcd_emit_1017b160(const VRButton &other) { return new VRButton(other);
 // TARGET: ??_GVRButton@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1017b280 size=0x4e
+#include "VRButton.h"
+
+extern void sub_1017c680(const char *);
+
+void VRButton::vfunc143(char state)
+{
+	bool bWasArmed = vfunc144();
+	Button::vfunc143(state);
+	if (vfunc144() != bWasArmed)
+	{
+		sub_1017c680(vfunc144() ? "interface/bubble_click_on.wav" : "interface/bubble_click_off.wav");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017b2d0 size=0x25
 #include "VRButton.h"
 namespace lifted {

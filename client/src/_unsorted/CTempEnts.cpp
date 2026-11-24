@@ -125,6 +125,146 @@ void CTempEnts::vfunc4(const void *pos, int r, int g, int b, int a, int modelInd
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ca30 size=0x260
+#include "CTempEnts.h"
+#include "ConVar.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct model_t;
+
+struct IUniformRandomStream_1003ca30
+{
+	virtual void SetSeed(int iSeed);
+	virtual float RandomFloat(float flMinVal, float flMaxVal);
+	virtual int RandomInt(int iMinVal, int iMaxVal);
+};
+
+struct IVEngineClient_1003ca30
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual double Time(int);
+};
+
+struct LocalTempEnt_1003ca30
+{
+	char pad_0[0x48];
+	int m_nRenderMode;      // 0x48
+	char pad_4c[0x514];
+	int m_nBody;            // 0x560
+	char pad_564[0x248];
+	int flags;              // 0x7ac
+	float die;              // 0x7b0
+	char pad_7b4[0x14];
+	int hitSound;           // 0x7c8
+	char pad_7cc[0x14];
+	float tempent_angles[3];// 0x7e0
+	int m_nRenderAmt;       // 0x7ec
+
+	void sub_100a2100(const QAngle &angles);
+	void sub_1003a840(float x, float y, float z);
+};
+
+struct CTempEnts_Helper_1003ca30
+{
+	char pad_0[0xfbf78];
+	const model_t *m_pShells[6];
+
+	LocalTempEnt_1003ca30 *sub_1003cdd0(const Vector &org, model_t *model);
+};
+
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+extern ConVar *g_102eec5c;
+extern ConVar *g_105fb29c;
+extern IUniformRandomStream_1003ca30 *g_104a5738;
+extern IVEngineClient_1003ca30 *g_104a57d4;
+
+void CTempEnts::vfunc19(const Vector &pos1, const QAngle &angles, const QAngle &gunAngles, int type, const Vector &vel)
+{
+	if (g_102eec5c->vfunc1() || !g_102eec5c->m_nValue)
+		return;
+
+	if (g_105fb29c->vfunc1() || !g_105fb29c->m_nValue)
+		return;
+
+	if (type < 0 || type > 5)
+		return;
+
+	if (type == -1)
+		return;
+
+	const model_t *pModel = ((CTempEnts_Helper_1003ca30 *)this)->m_pShells[type];
+	if (pModel == 0)
+		return;
+
+	LocalTempEnt_1003ca30 *pTemp = ((CTempEnts_Helper_1003ca30 *)this)->sub_1003cdd0(pos1, (model_t *)pModel);
+	if (pTemp == 0)
+		return;
+
+	if (type == 2)
+	{
+		pTemp->hitSound = 0x80;
+	}
+	else if (type >= 3)
+	{
+		pTemp->hitSound = 0x1000;
+	}
+	else
+	{
+		pTemp->hitSound = 0x20;
+	}
+
+	pTemp->m_nBody = 0;
+	pTemp->flags |= 0xa6;
+
+	pTemp->tempent_angles[0] = g_104a5738->RandomFloat(-256.0f, 255.0f);
+	pTemp->tempent_angles[1] = g_104a5738->RandomFloat(-256.0f, 255.0f);
+	pTemp->tempent_angles[2] = g_104a5738->RandomFloat(-256.0f, 255.0f);
+
+	if (type >= 3)
+	{
+		pTemp->sub_100a2100(angles);
+	}
+	else
+	{
+		pTemp->sub_100a2100(gunAngles);
+	}
+
+	pTemp->m_nRenderMode = 0;
+	pTemp->m_nRenderAmt = 255;
+
+	Vector dir;
+	sub_101090a0(angles, &dir, 0, 0);
+
+	dir *= g_104a5738->RandomFloat(150.0f, 200.0f);
+	dir += vel;
+
+	if (type >= 3)
+	{
+		pTemp->sub_1003a840(vel.x, vel.y, vel.z);
+	}
+	else
+	{
+		pTemp->sub_1003a840(
+			dir[0] + g_104a5738->RandomFloat(-64.0f, 64.0f),
+			dir[1] + g_104a5738->RandomFloat(-64.0f, 64.0f),
+			dir[2] + g_104a5738->RandomFloat(0.0f, 64.0f));
+	}
+
+	pTemp->die = g_104a5738->RandomFloat(0.0f, 1.0f) + g_104a57d4->Time(0) + 5.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003cc90 size=0x39
 #include "CTempEnts.h"
 namespace lifted {
@@ -137,6 +277,12 @@ int CTempEnts::vfunc6(int a0, int a1, int a2, int a3, char a4, int a5, int a6, i
     }
     return ((lifted::V *)this)->f26(a0, a1, a3, a5, a6, a7, a8);
 }
+// END FUNCTION
+
+// FUNCTION: 0x1003d5e0 size=0x23
+#include "CTempEnts.h"
+// TARGET: ?vfunc1@CTempEnts@@UAEXXZ
+void CTempEnts::vfunc1() { while (m_pHead) sub_1003ce90(m_pHead, 0); }
 // END FUNCTION
 
 // FUNCTION: 0x1003d610 size=0x21
@@ -158,5 +304,183 @@ int sub_10044870(int, int, int, int, int);
 int CTempEnts::vfunc24(int a0, int a1, int a2)
 {
     return lifted::sub_10044870(a0, a1, 0x3f800000, a2, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1003d770 size=0x1d1
+#include "CTempEnts.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct model_t;
+
+struct color32
+{
+	unsigned char r, g, b, a;
+};
+
+struct IUniformRandomStream_1003d770
+{
+	virtual void SetSeed(int iSeed);
+	virtual float RandomFloat(float flMinVal, float flMaxVal);
+	virtual int RandomInt(int iMinVal, int iMaxVal);
+};
+
+struct IVEngineClient_1003d770
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual double Time(int);
+};
+
+struct IViewRender_1003d770
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9();
+	virtual void AddVisibleEntity(void *pEnt);
+};
+
+struct LocalTempEnt_1003d770
+{
+	char pad_0[0x48];
+	int m_nRenderMode;      // 0x48
+	int m_nRenderFX;        // 0x4c
+	color32 m_clrRender;    // 0x50
+	char pad_54[0x758];
+	int flags;              // 0x7ac
+	float die;              // 0x7b0
+	float m_flFrameMax;     // 0x7b4
+	char pad_7b8[0x30];
+	float m_flRoll;         // 0x7e8
+	char pad_7ec[0x04];
+	float m_flSpriteScale;  // 0x7f0
+	char pad_7f4[0x08];
+	float m_flFrame;        // 0x7fc
+
+	void sub_100a2030(const Vector &origin);
+	void sub_100a2100(const QAngle &angles);
+	void sub_1009f6c0(int axis, float val);
+};
+
+struct CTempEnts_Helper_1003d770
+{
+	char pad_0[0xfbf54];
+	const model_t *m_pSpriteMuzzleFlash[2];
+
+	LocalTempEnt_1003d770 *sub_1003cdd0(const Vector &org, model_t *model);
+};
+
+struct SimpleParticle_1003d770
+{
+	char pad_0[0x18];
+	Vector m_vecVelocity;      // 0x18
+	float m_flRoll;            // 0x24
+	float m_flDieTime;         // 0x28
+	float m_flLifetime;        // 0x2c
+	unsigned char m_uchColor[3]; // 0x30
+	unsigned char m_uchStartAlpha; // 0x33
+	unsigned char m_uchEndAlpha;   // 0x34
+	unsigned char m_uchStartSize;  // 0x35
+	unsigned char m_uchEndSize;    // 0x36
+	unsigned char pad_37;          // 0x37
+	float m_flRollDelta;           // 0x38
+};
+
+struct CSimpleEmitter_1003d770
+{
+	void sub_10117fe0();
+	void sub_10118080(const Vector &origin);
+	int sub_101180b0(const char *pMaterialName);
+	SimpleParticle_1003d770 *sub_101180c0(int particleSize, int hMaterial, const Vector &pos);
+};
+
+template <class T>
+class CSmartPtr_1003d770
+{
+public:
+	~CSmartPtr_1003d770()
+	{
+		if (m_pObj)
+			m_pObj->sub_10117fe0();
+	}
+
+	T *operator->() { return m_pObj; }
+
+	T *m_pObj;
+};
+
+extern CSmartPtr_1003d770<CSimpleEmitter_1003d770> sub_10118160(const char *pDebugName);
+
+extern IUniformRandomStream_1003d770 *g_104a5738;
+extern IVEngineClient_1003d770 *g_104a57d4;
+extern IViewRender_1003d770 *g_102d43d8;
+extern QAngle g_104d5190;
+
+// TARGET: ?vfunc21@CTempEnts@@UAEXABVVector@@ABVQAngle@@H@Z
+void CTempEnts::vfunc21(const Vector &origin, const QAngle &angles, int entityIndex)
+{
+	LocalTempEnt_1003d770 *pTemp = ((CTempEnts_Helper_1003d770 *)this)->sub_1003cdd0(
+		origin, (model_t *)((CTempEnts_Helper_1003d770 *)this)->m_pSpriteMuzzleFlash[1]);
+
+	if (pTemp == 0)
+		return;
+
+	pTemp->m_nRenderMode = 5;
+	pTemp->m_clrRender.r = 255;
+	pTemp->m_clrRender.g = 255;
+	pTemp->m_clrRender.b = 255;
+	pTemp->m_clrRender.a = 255;
+	pTemp->m_nRenderFX = 0;
+
+	pTemp->die = g_104a57d4->Time(0) + 0.01f;
+	pTemp->m_flFrame = 0.0f;
+	pTemp->m_flFrameMax = 1.0f;
+
+	pTemp->sub_100a2030(origin);
+	pTemp->sub_100a2100(g_104d5190);
+	pTemp->sub_100a2100(angles);
+
+	pTemp->m_flSpriteScale = g_104a5738->RandomFloat(0.2f, 0.3f) * 0.3f;
+	pTemp->sub_1009f6c0(2, (float)g_104a5738->RandomInt(0, 360));
+	pTemp->flags = 4;
+	pTemp->m_flRoll = g_104a5738->RandomFloat(0.0f, 360.0f);
+
+	g_102d43d8->AddVisibleEntity(pTemp);
+
+	CSmartPtr_1003d770<CSimpleEmitter_1003d770> pSimple = sub_10118160("MuzzleFlash_Pistol_Player");
+	pSimple->sub_10118080(origin);
+
+	SimpleParticle_1003d770 *pParticle = pSimple->sub_101180c0(
+		sizeof(SimpleParticle_1003d770), pSimple->sub_101180b0("particle/particle_noisesphere"), origin);
+
+	if (pParticle == 0)
+		return;
+
+	int alpha = g_104a5738->RandomInt(64, 128);
+
+	pParticle->m_flLifetime = 0.0f;
+	pParticle->m_flDieTime = 0.25f;
+
+	pParticle->m_vecVelocity.Init();
+
+	pParticle->m_uchColor[0] = alpha;
+	pParticle->m_uchColor[1] = alpha;
+	pParticle->m_uchColor[2] = alpha;
+	pParticle->m_uchStartAlpha = alpha;
+	pParticle->m_uchEndAlpha = 0;
+	pParticle->m_uchStartSize = g_104a5738->RandomInt(4, 8);
+	pParticle->m_uchEndSize = pParticle->m_uchStartSize * 2;
+	pParticle->m_flRoll = (float)g_104a5738->RandomInt(0, 360);
+	pParticle->m_flRollDelta = g_104a5738->RandomFloat(-4.0f, 4.0f);
+	pParticle->m_vecVelocity.z = 16.0f;
 }
 // END FUNCTION

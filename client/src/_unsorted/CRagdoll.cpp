@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10125200 size=0xe
+struct SE { int a; int b[5]; };
+struct CView { SE e[1]; int sub_10125200(int); };
+// TARGET: ?sub_10125200@CView@@QAEHH@Z
+int CView::sub_10125200(int i) { return e[i + 1].a; }
+// END FUNCTION
+
 // FUNCTION: 0x10125420 size=0x1d
 #include "CRagdoll.h"
 void sub_101271e0(int *p);
@@ -9,5 +16,69 @@ void sub_101271e0(int *p);
 CRagdoll::~CRagdoll()
 {
 	sub_101271e0((int *)((char *)this + 4));
+}
+// END FUNCTION
+
+// FUNCTION: 0x101254b0 size=0x1b
+#include "CRagdoll.h"
+struct Ent54b0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+ virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(void *, int); };
+struct Rag54b0 { int pad0; int pad4; int pad8; int padc; int pad10; int pad14; Ent54b0 *m18; char pad2[0x36c - 0x1c]; char m36c; void *sub_101254b0(); };
+void *Rag54b0::sub_101254b0() { m18->v37(&m36c, 0); return &m36c; }
+// END FUNCTION
+
+// FUNCTION: 0x10125510 size=0x107
+#include "Vector.h"
+
+struct CGlobals_10125510
+{
+	char pad_0[0x0c];
+	float curtime;
+};
+
+extern CGlobals_10125510 *g_102b8494;
+extern bool sub_101274d0(void *pRagdoll);
+extern void sub_101273b0(void *pRagdoll, const Vector &origin, Vector &mins, Vector &maxs);
+
+struct Ragdoll_10125510
+{
+	virtual ~Ragdoll_10125510() {}
+	virtual void v1();
+	virtual const Vector &GetRagdollOrigin();
+
+	char m_ragdoll[0x350]; // 0x04..0x353
+	Vector m_mins;         // 0x354
+	Vector m_maxs;         // 0x360
+	char pad_36c[0x0c];
+	float m_radius;        // 0x378
+	float m_lastUpdate;    // 0x37c
+	bool m_allAsleep;      // 0x380
+
+	void sub_10125510(int pEnt);
+};
+
+// TARGET: Ragdoll_10125510::sub_10125510
+void Ragdoll_10125510::sub_10125510(int pEnt)
+{
+	if (m_lastUpdate == g_102b8494->curtime)
+		return;
+
+	m_lastUpdate = g_102b8494->curtime;
+	m_allAsleep = sub_101274d0(&m_ragdoll);
+
+	if (m_allAsleep)
+	{
+		Vector origin = GetRagdollOrigin();
+		sub_101273b0(&m_ragdoll, origin, m_mins, m_maxs);
+		m_mins -= origin;
+		m_maxs -= origin;
+	}
+	else
+	{
+		m_mins.Init(-m_radius, -m_radius, -m_radius);
+		m_maxs.Init(m_radius, m_radius, m_radius);
+	}
 }
 // END FUNCTION

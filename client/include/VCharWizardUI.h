@@ -12,5 +12,6 @@ class VCharWizardUI : public CHudElement, public CBasePanel
 public:
 	virtual ~VCharWizardUI();
 	void sub_10174b20();
+	int sub_10174c60();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

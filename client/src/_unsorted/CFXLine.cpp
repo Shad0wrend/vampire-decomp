@@ -11,6 +11,16 @@ CFXLine *pcd_emit_10045740() { return new CFXLine; }
 // TARGET: ??_GCFXLine@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10045c50 size=0x18
+#include "CFXLine.h"
+bool CFXLine::vfunc3()
+{
+	if (m_flUnk2c > 0.0)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045c70 size=0x1a
 #include "CFXLine.h"
 namespace lifted {

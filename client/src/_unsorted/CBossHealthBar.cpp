@@ -45,6 +45,17 @@ CBossHealthBar::~CBossHealthBar()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d850 size=0x2a
+#include "CBossHealthBar.h"
+struct CSub170 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };
+void CBossHealthBar::vfunc112()
+{
+	m_unk1bc = 0;
+	((CSub170 *)((char *)this + 0x170))->v5(0);
+	m_unk1a0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d880 size=0x8
 #include "CBossHealthBar.h"
 namespace lifted {

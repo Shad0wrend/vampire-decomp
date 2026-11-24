@@ -7,6 +7,7 @@
 class CFunctionProxy : public CResultProxy
 {
 public:
+	CFunctionProxy();
 	virtual ~CFunctionProxy();
 	bool sub_100e34b0(void *pMaterial, void *pKeyValues);
 	int m_unk04;

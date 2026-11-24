@@ -24,3 +24,14 @@ VItemInfoUI::~VItemInfoUI()
 	((TLabel *)((char *)this + 0x188))->TLabel::~TLabel();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10186860 size=0x25
+#include "VItemInfoUI.h"
+int sub_1016a6b0();
+void VItemInfoUI::sub_10186860()
+{
+	int n = sub_1016a6b0();
+	((CBasePanel *)((char *)this + 0x10))->vfunc33(n);
+	((CBasePanel *)((char *)this + 0x10))->sub_101aa0a0(0x76c);
+}
+// END FUNCTION

@@ -21,7 +21,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots Slider adds to its base's vtable: 107-121, vfuncK at slot K
     virtual int vfunc107(int);
     virtual int vfunc108();
-    virtual int vfunc109(int, int);
+    virtual void vfunc109(int, int);
     virtual int vfunc110(int, int);
     virtual int vfunc111(int, int);
     virtual int vfunc112(int, int);

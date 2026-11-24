@@ -3,6 +3,7 @@
 #pragma once
 #include "CBaseEntityList.h"
 #include "IClientEntityList.h"
+#include "CBaseHandle.h"
 
 class CClientEntityList : public CBaseEntityList, public IClientEntityList
 {
@@ -10,6 +11,8 @@ public:
 	CClientEntityList();
 	void sub_100d0b40();
 	~CClientEntityList();
+	void sub_100d0dc0(CBaseHandle h);
+	int sub_100d0d90(CBaseHandle h);
 	class C_BaseEntity *sub_100d0cf0(int entnum);
 	int m_i18040; int m_i18044; int m_i18048;
 	char m_pad1804c[0x2804c - 0x1804c];

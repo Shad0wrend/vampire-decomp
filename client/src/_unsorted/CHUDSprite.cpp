@@ -11,6 +11,32 @@ CHUDSprite *pcd_emit_10059330(const CHUDSprite &other) { return new CHUDSprite(o
 // TARGET: ??_GCHUDSprite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100f3950 size=0x26
+#include "IHudSprite.h"
+struct V3d50 { El3d50 *sub_100f3d50(int); };
+// TARGET: ?vfunc4@CHudSprite@@UAEHHH@Z
+int CHudSprite::vfunc4(int a, int b)
+{
+	El3d50 *e = ((V3d50 *)this)->sub_100f3d50(a);
+	if (e)
+		return sub_100f3e20(e)[1];
+	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3980 size=0x25
+#include "IHudSprite.h"
+struct El3d50;
+struct V3d50 { El3d50 *sub_100f3d50(int); };
+int CHudSprite::vfunc5(int a, int b)
+{
+	El3d50 *e = ((V3d50 *)this)->sub_100f3d50(a);
+	if (e)
+		return *sub_100f3e20(e);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3bd0 size=0x4a
 #include "IHudSprite.h"
 
@@ -28,5 +54,23 @@ void CHudSprite::vfunc13(int frame, int x, int y, int a3)
 		return;
 	m_pSprite->sub_10136f60(true);
 	m_pSprite->sub_10136ff0(frame, x, y, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3d70 size=0x3a
+#include "IHudSprite.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+void *__cdecl operator new(unsigned int);
+// TARGET: CHudSprite::vfunc0
+void CHudSprite::vfunc0()
+{
+    if (!m_unk30) {
+        m_unk04 = 0;
+        m_unk34 = 0x80;
+        m_unk30 = (int)operator new(0x4800);
+        memset((void *)m_unk30, 0, 0x600);
+        m_pSprite = 0;
+    }
 }
 // END FUNCTION

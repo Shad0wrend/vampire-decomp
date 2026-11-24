@@ -36,3 +36,9 @@ void CNetGraphPanel::vfunc2()
     ((lifted::V *)this)->f21(((lifted::V *)this)->f107());
 }
 // END FUNCTION
+
+// FUNCTION: 0x10169d30 size=0xb
+#include "CNetGraphPanel.h"
+// TARGET: CNetGraphPanel::vfunc107
+bool CNetGraphPanel::vfunc107() { bool b = (sub_101698d0() != 0); return b; }
+// END FUNCTION

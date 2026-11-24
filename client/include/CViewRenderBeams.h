@@ -3,9 +3,16 @@
 // the destructor is slot 23 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "IViewRenderBeams.h"
+#include "Beam_t.h"
 
 class CViewRenderBeams : public IViewRenderBeams
 {
+public:
+	CViewRenderBeams();
+	Beam_t m_Beams[128];
+	int m_unk1bc04;
+	int m_unk1bc08;
+	int m_pFirst;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CViewRenderBeams's own function
 	virtual void vfunc0();

@@ -47,3 +47,14 @@ VMapScreenUI::~VMapScreenUI()
 	((VMapFrameLabel *)((char *)this + 0x188))->VMapFrameLabel::~VMapFrameLabel();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10187980 size=0x25
+#include "VMapScreenUI.h"
+int sub_1016a6b0();
+void VMapScreenUI::sub_10187980()
+{
+	int n = sub_1016a6b0();
+	((CBasePanel *)((char *)this + 0x10))->vfunc33(n);
+	((CBasePanel *)((char *)this + 0x10))->sub_101aa0a0(0x76c);
+}
+// END FUNCTION

@@ -45,6 +45,16 @@ CPhysicsHand::~CPhysicsHand()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f7f0 size=0xd
+extern char g_103eedf8;
+extern char g_103eedf9;
+// TARGET: sub_1005f7f0
+void sub_1005f7f0()
+{
+	g_103eedf9 = g_103eedf8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f8a0 size=0x183
 #include "CPhysicsHand.h"
 #include "Vector.h"

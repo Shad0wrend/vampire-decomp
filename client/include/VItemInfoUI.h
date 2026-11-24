@@ -12,5 +12,6 @@ class VItemInfoUI : public CHudElement, public CBasePanel
 public:
 	virtual ~VItemInfoUI();
 	void sub_10184ba0();
+	void sub_10186860();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

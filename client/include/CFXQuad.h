@@ -15,5 +15,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc4();
 	// the slots CFXQuad adds to its base's vtable: 5-5, vfuncK at slot K
 	virtual void vfunc5();
-	char m_pad0004[0x60 - 0x4];
+	char m_pad0004[0x34 - 0x4];
+	float m_flA;
+	float m_flB;
+	char m_pad003c[0x60 - 0x3c];
 };

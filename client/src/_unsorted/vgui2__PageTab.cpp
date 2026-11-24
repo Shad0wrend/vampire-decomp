@@ -63,3 +63,9 @@ void vgui2::PageTab::vfunc89(int a0)
     ((lifted::V *)this)->f6();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c9530 size=0x24
+#include "vgui2__PageTab.h"
+vgui2::PageTab *pcd_emit_101c9530(const vgui2::PageTab &o) { return new vgui2::PageTab(o); }
+// TARGET: ??_GPageTab@vgui2@@UAEPAXI@Z
+// END FUNCTION

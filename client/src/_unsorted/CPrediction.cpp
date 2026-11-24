@@ -11,6 +11,17 @@ CPrediction *pcd_emit_10120e40() { return new CPrediction; }
 // TARGET: ??_GCPrediction@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10120e90 size=0x31
+#include "CPrediction.h"
+struct CV_10120e90 { virtual void v0(); virtual bool v1(); char pad[0x2c - 4]; void *m_p2c; };
+extern CV_10120e90 *g_104e170c;
+struct View_10120e90 { char pad[0x34]; bool m_b34; };
+void CPrediction::vfunc1()
+{
+	((View_10120e90 *)this)->m_b34 = (g_104e170c->v1() ? 0 : g_104e170c->m_p2c) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120ed0 size=0x1
 #include "CPrediction.h"
 void CPrediction::vfunc2()
@@ -56,6 +67,24 @@ int CPrediction::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123110 size=0x37
+#include "CPrediction.h"
+#include "C_BasePlayer.h"
+#include "Vector.h"
+extern C_BasePlayer *g_104a0d50;
+// TARGET: CPrediction::vfunc8
+void CPrediction::vfunc8(Vector *v)
+{
+    if (g_104a0d50 == 0) {
+        v->x = 0;
+        v->y = 0;
+        v->z = 0;
+    } else {
+        *v = g_104a0d50->GetAbsOrigin();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123150 size=0x28
 #include "CPrediction.h"
 namespace lifted {
@@ -70,6 +99,47 @@ void CPrediction::vfunc9(int a0)
         ((lifted::C100a2030 *)t0)->sub_100a2030(a0);
         ((lifted::V *)t0)->f44(a0);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10123180 size=0x3a
+#include "CPrediction.h"
+#include "C_BasePlayer.h"
+#include "Vector.h"
+extern C_BasePlayer *g_104a0d50;
+// TARGET: CPrediction::vfunc10
+void CPrediction::vfunc10(Vector *v)
+{
+    if (g_104a0d50 == 0) {
+        v->x = 0;
+        v->y = 0;
+        v->z = 0;
+    } else {
+        *v = *(Vector *)g_104a0d50->vfunc195();
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101231c0 size=0x32
+#include "CPrediction.h"
+#include "Vector.h"
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct PlayerView {
+ V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+ V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6)
+ virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+ virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9(); virtual void d0(); virtual void d1();
+ virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+ virtual void d8(); virtual void d9(); virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+ virtual void e4(); virtual void e5();
+ virtual void vfunc196(Vector v);
+};
+extern PlayerView *g_104a0d50;
+// TARGET: CPrediction::vfunc11
+void CPrediction::vfunc11(const Vector *v)
+{
+    if (g_104a0d50)
+        g_104a0d50->vfunc196(*v);
 }
 // END FUNCTION
 

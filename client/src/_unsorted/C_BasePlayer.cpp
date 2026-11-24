@@ -1,11 +1,55 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002af0 size=0xe
+struct V_10002af0 { int m_unk[0x19cc / 4]; int m_n19cc; };
+// TARGET: sub_10002af0
+int __fastcall sub_10002af0(V_10002af0 *self)
+{
+	return self->m_n19cc != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002b00 size=0x7
 #include "C_BasePlayer.h"
 int C_BasePlayer::vfunc84()
 {
     return *(int *)((char *)this + 0x1990);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10002b10 size=0x2d
+#include "C_BasePlayer.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+C_BaseCombatWeapon *C_BasePlayer::vfunc167()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x1a08);
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return (C_BaseCombatWeapon *)e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10002b40 size=0x2d
+#include "C_BasePlayer.h"
+struct EntInfo_10002b40 { void *m_pEntity; int m_SerialNumber; EntInfo_10002b40 *m_pPrev; };
+struct EntList_10002b40 { int m_unk0; EntInfo_10002b40 m_Info[0x2000]; };
+extern EntList_10002b40 *g_102b8e98;
+struct View_10002b40 { char pad[0x1a0c]; unsigned long m_hHandle; void *sub_10002b40(); };
+void *View_10002b40::sub_10002b40()
+{
+	unsigned long h = m_hHandle;
+	if (h != 0xffffffff)
+	{
+		EntInfo_10002b40 *pInfo = &g_102b8e98->m_Info[h & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(h >> 13))
+			return pInfo->m_pEntity;
+	}
+	return 0;
 }
 // END FUNCTION
 
@@ -88,6 +132,16 @@ C_BasePlayer *pcd_emit_100a54a0() { return new C_BasePlayer; }
 // TARGET: ??_GC_BasePlayer@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100a58a0 size=0x9
+#include "C_BasePlayer.h"
+void C_BasePlayer::vfunc177() { IsTransparent(); }
+// END FUNCTION
+
+// FUNCTION: 0x100a5900 size=0x9
+struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); };
+void __fastcall sub_100a5900(char *self, int edx) { ((V *)(self + 4))->v11(); }
+// END FUNCTION
+
 // FUNCTION: 0x100a6e50 size=0x3
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc154(int a0)
@@ -148,6 +202,13 @@ void C_BasePlayer::vfunc158()
 		g_104a57d4->ServerCmd((const char *)vfunc167()->vfunc223(), true);
 	}
 }
+// END FUNCTION
+
+// FUNCTION: 0x100a7c30 size=0xb
+#include "C_BasePlayer.h"
+bool sub_10050f60();
+// TARGET: C_BasePlayer::vfunc163
+bool C_BasePlayer::vfunc163() { if (sub_10050f60()) return false; return true; }
 // END FUNCTION
 
 // FUNCTION: 0x100a8030 size=0x8
@@ -289,6 +350,19 @@ void C_BasePlayer::vfunc189(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9a00 size=0x2f
+#include "C_BasePlayer.h"
+struct CUnknown100a2450 { int sub_100a2450(); };
+struct Fields_100a9a00 { char p0[0x88]; int m_i88; char p1[0xb0 - 0x8c]; float m_fb0; char p2[0x1704 - 0xb4]; float m_f1704; };
+void C_BasePlayer::vfunc179()
+{
+	vfunc181();
+	Fields_100a9a00 *f = (Fields_100a9a00 *)this;
+	if (f->m_i88 < 1 && !(((CUnknown100a2450 *)this)->sub_100a2450() & 1))
+		f->m_f1704 = -f->m_fb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ac0 size=0x23
 #include "C_BasePlayer.h"
 namespace lifted {
@@ -327,6 +401,16 @@ void C_BasePlayer::vfunc185(int a0)
         return;
     }
     *(int *)((char *)this + 0x1a10) = -1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a9ca0 size=0xb
+#include "C_BasePlayer.h"
+struct Obj_100a99d0 { char sub_100a99d0(); };
+// TARGET: C_BasePlayer::vfunc94
+bool C_BasePlayer::vfunc94()
+{
+	return ((Obj_100a99d0 *)this)->sub_100a99d0() ? true : false;
 }
 // END FUNCTION
 

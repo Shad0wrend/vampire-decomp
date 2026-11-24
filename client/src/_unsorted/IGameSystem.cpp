@@ -16,3 +16,10 @@ IGameSystem * IGameSystem::vfunc8(unsigned int a0)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f3f80 size=0xe
+#include "IGameSystem.h"
+void sub_100f4060(IGameSystem *);
+// TARGET: ??1IGameSystem@@UAE@XZ
+IGameSystem::~IGameSystem() { sub_100f4060(this); }
+// END FUNCTION

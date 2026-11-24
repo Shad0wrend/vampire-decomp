@@ -13,3 +13,10 @@ void CShadowProxy::vfunc2()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d8270 size=0x23
+#include "CShadowProxy.h"
+struct IMatV { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual int FindVar(const char *, void *, bool); };
+// TARGET: CShadowProxy::vfunc0
+bool CShadowProxy::vfunc0(void *a, void *b) { IMatV *m = (IMatV *)a; m_unk4 = m->FindVar("$basetexture", &a, false); return *(bool *)&a; }
+// END FUNCTION

@@ -57,3 +57,11 @@ void CUtlVectorDataOps<CUtlVector<int, CUtlMemory<int> >, 4>::vfunc1(SaveRestore
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x101352c0 size=0x13
+struct S_101352c0 { int a, b, c, d; };
+bool __stdcall sub_101352c0(S_101352c0 **p)
+{
+	return (*p)->d == 0;
+}
+// END FUNCTION

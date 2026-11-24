@@ -307,3 +307,11 @@ int CHLClient::vfunc36()
     return ((lifted::V *)lifted::g_102c37a0)->f1();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100cca70 size=0x27
+#include "CHLClient.h"
+struct VX { void sub_10056bc0(int, int, int); };
+int sub_100561f0();
+// TARGET: ?vfunc43@CHLClient@@UAEXHHH@Z
+void CHLClient::vfunc43(int a, int b, int c) { if (sub_100561f0()) ((VX *)sub_100561f0())->sub_10056bc0(a, b, c); }
+// END FUNCTION

@@ -51,6 +51,7 @@ from .cfg import (Block, read_addresses, read_aliases, read_blocks, read_build, 
 from .coff import SYM_CLASS_EXTERNAL, SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
 from .mapfile import read_map
 from .pe import PE
+from .symbols import Addresses, scoped_key
 
 DIR32, DIR32NB, REL32 = 0x6, 0x7, 0x14
 CODE = 0x00000020 | 0x20000000  # IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_EXECUTE
@@ -241,7 +242,8 @@ class Verifier:
         self.fixed = {f.obj for f in fixups} | {r.obj for r in layout if r.op == "rename"}  # as configure.py links
         self.stubs = 0
         self.ilt = ilt_stubs(self.orig)
-        self.game_xcu = self._game_xcu()
+        self._record_init()
+        self.game_xcu, self.game_xcu_slots = self._game_xcu()
         self.claims: list[tuple[int, int, str, str]] = []
 
     @classmethod
@@ -255,9 +257,24 @@ class Verifier:
         v.addresses, v.aliases, v.blocks = addresses, aliases, blocks
         v.block_addresses = {b.addr for b in blocks}
         v.patched, v.known, v.fixed, v.stubs, v.ilt = {}, [], set(), 0, ilt
-        v.game_xcu = v._game_xcu()
+        v._record_init()
+        v.game_xcu, v.game_xcu_slots = v._game_xcu()
         v.claims = []
         return v
+
+    def _record_init(self) -> None:
+        """The addresses verify takes from the game's own words, for config to hold (see `record`): `derived` (key ->
+        address), `stub_names` (stub -> names of the targets whose game word reached it), `game_xcu_slots`."""
+        self.derived: dict[str, int] = {}
+        self.stub_names: dict[int, set[str]] = {}
+        self.game_xcu_slots: list[tuple[int, int]] | None = None
+
+    def record(self, key: str, addr: int) -> None:
+        self.derived.setdefault(key, addr)  # the first word to place a key wins
+
+    def _stubbed(self, reached: int, target: Symbol) -> None:
+        if reached in self.ilt:
+            self.stub_names.setdefault(reached, set()).add(target.name)
 
     def claim(self, addr: int, size: int, kind: str, owner: str) -> None:
         """Record that the game's bytes [addr, addr + size) were compared with `owner`'s (tools.ownership reads the
@@ -266,25 +283,20 @@ class Verifier:
             self.claims.append((addr, size, kind, owner))
 
     # --- addresses ---------------------------------------------------------------------------------------------
+    @property
+    def names(self) -> Addresses:
+        """The shared address rules over the current `addresses` and `aliases` (rebuilt if either was replaced)."""
+        cached = self.__dict__.get("_names")
+        if cached is None or cached.addresses is not self.addresses or cached.aliases is not self.aliases:
+            cached = self._names = Addresses(self.addresses, self.aliases)
+        return cached
+
     def lookup(self, name: str) -> int | None:
-        found = self.addresses.get(name)
-        if found is None and name in self.aliases:
-            found = self.addresses.get(self.aliases[name])
-        return found
+        return self.names.lookup(name)
 
     def resolve(self, obj: _Object, sym: Symbol) -> int | None:
         """The game address of a symbol an object's relocation names, or None."""
-        if sym.storage_class == SYM_CLASS_STATIC:
-            if sym.aux and sym.value == 0 and sym.name.startswith("."):  # a section's own symbol
-                return self.addresses.get(f"{obj.name}/#{sym.section_number}")
-            return self.addresses.get(f"{obj.name}/{sym.name}")
-        found = self.addresses.get(f"{obj.name}/{sym.name}")  # this object's copy of a constant the game has several of
-        if found is None:
-            found = self.lookup(sym.name)
-        if found is None and sym.storage_class == SYM_CLASS_WEAK_EXTERNAL and len(sym.aux) >= 4:
-            default = obj.symbols.get(struct.unpack_from("<I", sym.aux)[0])  # `??_E` -> its `??_G`
-            found = self.lookup(default.name) if default is not None else None
-        return found
+        return self.names.resolve(obj, sym)
 
     def follow(self, addr: int) -> int:
         """Where a game address ends up through the game's incremental-link stubs."""
@@ -399,12 +411,15 @@ class Verifier:
                 home = obj.sections.get(target.section_number)
                 if target.storage_class == SYM_CLASS_STATIC and home is not None and home.characteristics & CODE:
                     placed[target.index] = where_ = (self.follow(reached) - addend) & MASK
+                    self.record(scoped_key(obj.name, target), where_)
+                    self._stubbed(reached, target)
                     todo.append((target, where_, None))
                     return None
                 return f"{target.name} has no game address (config/addresses.txt)"
             expected = (expected + addend) & MASK
         if not self.reaches(reached, expected):
             return f"{target.name}: the game's word reaches 0x{reached:08x}, not 0x{expected:08x}"
+        self._stubbed(reached, target)
         return None
 
     def roots(self, block: Block, obj: _Object) -> tuple[list, str | None]:
@@ -422,6 +437,13 @@ class Verifier:
         games = self.game_xcu[start:start + len(entries)]
         if len(games) < len(entries):
             return [], f"{len(entries)} initializers, the game's table has {len(games)} from here"
+        for e, a in zip(entries, games):
+            self.record(scoped_key(obj.name, e), a)
+        k = 0
+        for section in sorted(obj.coff.sections, key=lambda s: s.number):
+            if section.name.startswith(XCU) and section.relocations:
+                self.record(f"{obj.name}/#{section.number}", self.game_xcu_slots[start + k][0])
+                k += len(section.relocations)
         return [(e, a, block.size if k == 0 else None) for k, (e, a) in enumerate(zip(entries, games))], None
 
     def check_block(self, block: Block, obj: _Object | None) -> tuple[str, list[str]]:
@@ -510,6 +532,25 @@ class Verifier:
         return problems
 
     # --- vtables -----------------------------------------------------------------------------------------------
+    def _slot_code(self, obj: _Object, r, out: list[Difference]) -> None:
+        """A slot's target that is code of this object at a game address no block covers (an adjustor `W<n>` thunk, a
+        vtordisp `$4` thunk, a `??_G` the slot names or that its weak `??_E` stands for) is checked here, once per
+        address: only the slot reaches it, so no block does. Its bytes are claimed as code."""
+        target = obj.symbols[r.symbol_index]
+        if target.storage_class == SYM_CLASS_WEAK_EXTERNAL and not target.is_defined and len(target.aux) >= 4:
+            default = obj.symbols.get(struct.unpack_from("<I", target.aux)[0])  # `??_E` -> its `??_G`, an extern:
+            target = (obj.defined(default.name) if default is not None else None) or target  # the object defines it
+        home = obj.sections.get(target.section_number) if target.is_defined else None
+        if home is None or not home.characteristics & CODE:
+            return
+        addr = self.resolve(obj, target)
+        checked = self.__dict__.setdefault("_slot_code_seen", set())
+        if addr is None or addr in checked or self.follow(addr) in self.block_addresses:
+            return
+        checked.add(addr)
+        for a, offset, why in self.check_code(obj, [(target, addr, None)]):
+            out.append(Difference("function", f"0x{a:08x}", f"{why} (at +0x{offset:x}, code a vtable slot runs)"))
+
     def check_vtables(self, obj: _Object, seen: set[str], report: Report, out: list[Difference]) -> None:
         for sym in obj.coff.symbols:
             if not (sym.is_defined and sym.name.startswith("??_7")) or sym.name in seen:
@@ -533,6 +574,7 @@ class Verifier:
                     continue
                 slot = (r.offset - sym.value) // 4
                 place = f"{sym.name}:{slot}"
+                self._slot_code(obj, r, out)
                 word = self._word(self.built, built_vt + 4 * slot)
                 names = self.map.names.get(word, [])
                 expected = {a for a in map(self.lookup, names) if a is not None}
@@ -559,35 +601,43 @@ class Verifier:
                 report.data[stem] = "missing"
                 out.append(Difference("data", stem, f"{stem}.obj not built"))
                 continue
-            first = None
-            text = template.read_text(encoding="latin-1")
-            prefixed = prefixed_items(text)
-            for section in obj.coff.sections:
-                if section.characteristics & (NOT_LOADED | CODE) or not section.relocations:
-                    continue
-                labels = sorted(((s.value, a) for s in obj.coff.symbols if s.section_number == section.number
-                                 and (a := self.resolve(obj, s)) is not None), key=lambda p: p[0])
-                offsets = [o for o, _ in labels]
-                for r in sorted(section.relocations, key=lambda r: r.offset):
-                    site = data_site(labels, prefixed, r.offset, offsets)
-                    if site is None:
-                        why, place = "no label with a game address before this word", f"{stem}+0x{r.offset:x}"
-                    else:
-                        place = f"0x{site:08x}"
-                        why = self._data_word(obj, section, r, site)
-                    if why:
-                        out.append(Difference("data", place, why))
-                        first = first or place
-            for addr, extent, prefix, label in data_items(text):
-                why = self._item_bytes(obj, addr, extent, prefix, label)
-                if why:
-                    out.append(Difference("data", f"0x{addr:08x}", why))
-                    first = first or f"0x{addr:08x}"
-                for site in self._raw_words(obj, addr, extent, prefix, label):
-                    out.append(Difference("data", f"0x{site:08x}", "the game relocates this word, the build holds "
-                                          "it as a number: it points elsewhere in the build"))
-                    first = first or f"0x{site:08x}"
+            first = self.check_data_object(obj, template.read_text(encoding="latin-1"), out)
             report.data[stem] = "identical" if first is None else f"differs@{first}"
+
+    def check_data_object(self, obj: _Object, text: str, out: list[Difference]) -> str | None:
+        """Add to `out` the differences of the data object `obj`, `text` its template (src/_data/<name>.asm.in, whose
+        head comments give the items): each relocated word (_data_word, which records the incremental-link stub the
+        game's word reaches), each item's bytes (claimed as data), each word the game relocates and the object holds
+        as a number. The place of the first one, or None (pcdecomp standalone runs this pass too, for the stubs and the
+        claims)."""
+        stem, first = obj.name, None
+        prefixed = prefixed_items(text)
+        for section in obj.coff.sections:
+            if section.characteristics & (NOT_LOADED | CODE) or not section.relocations:
+                continue
+            labels = sorted(((s.value, a) for s in obj.coff.symbols if s.section_number == section.number
+                             and (a := self.resolve(obj, s)) is not None), key=lambda p: p[0])
+            offsets = [o for o, _ in labels]
+            for r in sorted(section.relocations, key=lambda r: r.offset):
+                site = data_site(labels, prefixed, r.offset, offsets)
+                if site is None:
+                    why, place = "no label with a game address before this word", f"{stem}+0x{r.offset:x}"
+                else:
+                    place = f"0x{site:08x}"
+                    why = self._data_word(obj, section, r, site)
+                if why:
+                    out.append(Difference("data", place, why))
+                    first = first or place
+        for addr, extent, prefix, label in data_items(text):
+            why = self._item_bytes(obj, addr, extent, prefix, label)
+            if why:
+                out.append(Difference("data", f"0x{addr:08x}", why))
+                first = first or f"0x{addr:08x}"
+            for site in self._raw_words(obj, addr, extent, prefix, label):
+                out.append(Difference("data", f"0x{site:08x}", "the game relocates this word, the build holds "
+                                      "it as a number: it points elsewhere in the build"))
+                first = first or f"0x{site:08x}"
+        return first
 
     def _raw_words(self, obj: _Object, addr: int, extent: int, prefix: int, label: str) -> list[int]:
         """The game addresses of the words of a data item that the game's base relocations name and the object does
@@ -659,6 +709,7 @@ class Verifier:
             game = b""
         if game != ours:
             return f"{target.name}: the game's word points at 0x{at:08x}, which does not hold its bytes"
+        self.record(scoped_key(obj.name, target), at)
         return None
 
     def _data_word(self, obj: _Object, section: Section, r, site: int,
@@ -680,6 +731,7 @@ class Verifier:
         reached = (word + self.orig.image_base) & MASK if r.type == DIR32NB else word
         if not self.reaches(reached, expected):
             return f"{target.name}: the game's word is 0x{word:08x}, not 0x{expected:08x}"
+        self._stubbed(reached, target)
         return None
 
     # --- tables ------------------------------------------------------------------------------------------------
@@ -687,12 +739,14 @@ class Verifier:
         words = [self._word(image, a) for a in range(lo + 4, hi, 4)]
         return [w for w in words if w]
 
-    def _game_xcu(self) -> list[int] | None:
+    def _game_xcu(self) -> tuple[list[int] | None, list[tuple[int, int]] | None]:
+        """The game's initializer functions, and (slot address, function) of each non-zero table word."""
         values = self.values.get("verify", {})
         lo, hi = values.get("xc_a", self.lookup("___xc_a")), values.get("xc_z", self.lookup("___xc_z"))
         if lo is None or hi is None:
-            return None
-        return [self.follow(w) for w in self._table(self.orig, lo, hi)]
+            return None, None
+        slots = [(a, self.follow(w)) for a in range(lo + 4, hi, 4) if (w := self._word(self.orig, a))]
+        return [f for _, f in slots], slots
 
     def check_tables(self, report: Report, out: list[Difference]) -> None:
         values = self.values.get("verify", {})

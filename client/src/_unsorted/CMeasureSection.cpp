@@ -36,3 +36,13 @@ CMeasureSection * CMeasureSection::vfunc0(unsigned int a0)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010dee0 size=0x14
+#include "CMeasureSection.h"
+extern int g_104df700;
+CMeasureSection::~CMeasureSection()
+{
+	m_pNext24 = 0;
+	g_104df700--;
+}
+// END FUNCTION

@@ -7,6 +7,8 @@ namespace vgui2
 {
 class PageTab : public vgui2::Button
 {
+public:
+    virtual ~PageTab() {}
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with PageTab's own function
     virtual int vfunc74(int);

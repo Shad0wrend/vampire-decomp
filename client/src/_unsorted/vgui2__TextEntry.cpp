@@ -69,6 +69,14 @@ int vgui2::TextEntry::vfunc137(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad500 size=0x24
+struct IFont { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); };
+IFont *sub_101ac8e0();
+struct VTE { char pad[0x88]; char m_b88; char pad2[0x94 - 0x89]; int m_i94; int m_i98; void sub_101ad500(); };
+// TARGET: ?sub_101ad500@VTE@@QAEXXZ
+void VTE::sub_101ad500() { m_b88 = 0; m_i94 = sub_101ac8e0()->v4() + m_i98; }
+// END FUNCTION
+
 // FUNCTION: 0x101ad530 size=0x12
 #include "vgui2__TextEntry.h"
 namespace lifted {
@@ -120,6 +128,23 @@ int vgui2::TextEntry::vfunc148()
 {
     ((lifted::V *)this)->f120(1);
     return ((lifted::V *)this)->f120(4);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ae610 size=0x35
+#include "vgui2__TextEntry.h"
+#define P8(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d(); virtual void n##e(); virtual void n##f(); virtual void n##g(); virtual void n##h();
+struct ISurfaceView {
+	P8(a) P8(b) P8(c) P8(d) P8(e) P8(f) P8(g)
+	virtual void s56(); virtual void s57(); virtual void s58(); virtual void s59(); virtual void s60(); virtual void s61(); virtual void s62();
+	virtual int GetFontTall(int font);
+};
+ISurfaceView *sub_101ac8d0();
+// TARGET: vgui2::TextEntry::vfunc161
+void vgui2::TextEntry::vfunc161(int *x, int *y)
+{
+	*x = *(int *)((char *)this + 0xa4) + 3;
+	*y += sub_101ac8d0()->GetFontTall(*(int *)((char *)this + 0x124)) + 1;
 }
 // END FUNCTION
 

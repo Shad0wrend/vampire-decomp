@@ -24,6 +24,19 @@ void CHudManagerPanel::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058dd0 size=0x1b
+#include "CHudManagerPanel.h"
+extern int g_104a0d50;
+bool sub_1018c770();
+// TARGET: CHudManagerPanel::vfunc2
+bool CHudManagerPanel::vfunc2(int)
+{
+	if (!g_104a0d50)
+		return true;
+	return sub_1018c770() ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058df0 size=0xb
 #include "CHudManagerPanel.h"
 namespace lifted {
@@ -54,6 +67,28 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int CHudManagerPanel::vfunc5()
 {
     return ((lifted::V *)(*(int *)((char *)this + 4)))->f115();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10058e20 size=0x1a
+#include "CHudManagerPanel.h"
+// TARGET: CHudManagerPanel::vfunc6
+void CHudManagerPanel::vfunc6()
+{
+	m_nCount++;
+	if (m_pChild)
+		m_pChild->v21(m_nCount <= 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10058e40 size=0x1a
+#include "CHudManagerPanel.h"
+// TARGET: CHudManagerPanel::vfunc7
+void CHudManagerPanel::vfunc7()
+{
+	m_nCount--;
+	if (m_pChild)
+		m_pChild->v21(m_nCount <= 0);
 }
 // END FUNCTION
 

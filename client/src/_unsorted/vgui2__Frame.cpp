@@ -302,6 +302,25 @@ int vgui2::Frame::vfunc131()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9510 size=0x2a
+#include "vgui2__Frame.h"
+struct IV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int v6(); };
+struct FView {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24(); virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29(); virtual void a30();
+	virtual IV *v31();
+};
+int vgui2::Frame::vfunc21(int a)
+{
+	sub_101a99f0(a);
+	int r = (int)((FView *)this)->v31();
+	if (r)
+		r = ((FView *)this)->v31()->v6();
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9540 size=0x13
 #include "vgui2__Frame.h"
 namespace lifted {
@@ -377,6 +396,45 @@ int vgui2::Frame::vfunc132()
     *(char *)((char *)this + 0xc8) = 1;
     *(char *)((char *)this + 0xc9) = 1;
     return ((lifted::V *)this)->f143();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b96d0 size=0x2a
+#include "vgui2__Frame.h"
+struct XSurf { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(int); };
+struct XPanel { virtual int g0(int); };
+XSurf *sub_101ac8d0();
+// TARGET: vgui2::Frame::vfunc133
+void vgui2::Frame::vfunc133()
+{
+	XSurf *s = sub_101ac8d0();
+	s->v45(((XPanel *)this)->g0(0));
+	*((char *)this + 0xc8) = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b9700 size=0x34
+#include "vgui2__Frame.h"
+struct ChildView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void SetVisibleLike(int a);
+};
+struct HolderView {
+	virtual ChildView *Get();
+};
+// TARGET: vgui2::Frame::vfunc107
+void vgui2::Frame::vfunc107(int a)
+{
+	sub_101b4d70(a);
+	ChildView *p = ((HolderView *)vfunc116())->Get();
+	if (p)
+		p->SetVisibleLike(0);
 }
 // END FUNCTION
 

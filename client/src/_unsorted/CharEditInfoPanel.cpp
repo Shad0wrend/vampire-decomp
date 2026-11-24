@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1017b510 size=0x16
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct O_1017b510 {
+V8(a) V8(b) V8(c) V8(d) V8(e) V8(f) V8(g) V8(h) V8(i) V8(j)
+virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5(); virtual void k6();
+virtual void v87(int); };
+O_1017b510 *sub_10170f70();
+struct CUnknown1017b510 { void sub_1017b510(int a); };
+void CUnknown1017b510::sub_1017b510(int a)
+{
+	O_1017b510 *p = sub_10170f70();
+	if (p)
+		p->v87(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017b530 size=0x1e
 #include "CharEditInfoPanel.h"
 
@@ -33,6 +49,17 @@ int CharEditInfoPanel::vfunc102()
 #include "CharEditInfoPanel.h"
 void CharEditInfoPanel::vfunc119()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1017c5d0 size=0x21
+#include "CharEditInfoPanel.h"
+int sub_1016a6b0();
+void CharEditInfoPanel::vfunc123()
+{
+	int n = sub_1016a6b0();
+	vfunc33(n);
+	sub_101aa0a0(1000);
 }
 // END FUNCTION
 

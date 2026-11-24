@@ -25,6 +25,17 @@ int C_GameRules::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbc00 size=0x27
+#include "C_GameRules.h"
+struct CUnknown100792b0 { char pad[0x484]; CUnknown100792b0 *sub_100792b0(); };
+struct R100bbc00 { void *vt; CUnknown100792b0 *m_p; };
+int C_GameRules::vfunc7()
+{
+	CUnknown100792b0 *p = new CUnknown100792b0;
+	return (int)(((R100bbc00 *)this)->m_p = p ? p->sub_100792b0() : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbc30 size=0xb
 #include "C_GameRules.h"
 namespace lifted {

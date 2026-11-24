@@ -10,7 +10,8 @@ struct CTraitStatBlock;
 class CVTraitEffectGroup_t
 {
 public:
-	CVTraitEffectGroup_t(int nUnk);	// constructor (0x101f7310): stores nUnk at +4, vptr, +0xc = -1, +0x10 / +0x14 = 0
+	CVTraitEffectGroup_t(int nUnk);
+	~CVTraitEffectGroup_t();	// constructor (0x101f7310): stores nUnk at +4, vptr, +0xc = -1, +0x10 / +0x14 = 0
 	int m_n0004;	// 0x04
 	const char *m_pszName;	// 0x08
 	int m_nId;	// 0x0c: -1 for an empty group

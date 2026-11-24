@@ -1,12 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101932d0 size=0x39
+#include "CViewRenderBeams.h"
+#include "Beam_t.h"
+// TARGET: CViewRenderBeams::CViewRenderBeams
+CViewRenderBeams::CViewRenderBeams() : m_pFirst(0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193320 size=0x1e
 #include "CViewRenderBeams.h"
 
 // VC6 writes CViewRenderBeams's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CViewRenderBeams *pcd_emit_10193320() { return new CViewRenderBeams; }
+CViewRenderBeams *pcd_emit_10193320(const CViewRenderBeams &other) { return new CViewRenderBeams(other); }
 
 // TARGET: ??_GCViewRenderBeams@@UAEPAXI@Z
 // END FUNCTION

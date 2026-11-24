@@ -75,6 +75,20 @@ int vgui2::Image::vfunc9(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b69b0 size=0x3b
+#include "vgui2__Image.h"
+struct CSurface_101ac8d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(int, int, int, int);
+};
+CSurface_101ac8d0 *sub_101ac8d0();
+void vgui2::Image::vfunc11(Color4b c)
+{
+    sub_101ac8d0()->v11(c.r, c.g, c.b, c.a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b69f0 size=0xc
 #include "vgui2__Image.h"
 namespace lifted {
@@ -87,6 +101,67 @@ int vgui2::Image::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6a00 size=0x39
+#include "vgui2__Image.h"
+struct SurfView12 {
+ virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+ virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+ virtual void Slot12(int a, int b, int c, int d);
+};
+SurfView12 *sub_101ac8d0();
+static inline void DrawIt(int a, int b, int c, int d)
+{
+    sub_101ac8d0()->Slot12(a, b, c, d);
+}
+// TARGET: vgui2::Image::vfunc12
+void vgui2::Image::vfunc12(int a, int b, int c, int d)
+{
+    a += m_unk04;
+    b += m_unk08;
+    c += m_unk04;
+    d += m_unk08;
+    DrawIt(a, b, c, d);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b6a40 size=0x39
+#include "vgui2__Image.h"
+struct ISurf13 {
+  virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+  virtual void v10(); virtual void v11(); virtual void v12();
+  virtual int v13(int, int, int, int);
+};
+ISurf13 *sub_101ac8d0();
+// TARGET: vgui2::Image::vfunc13
+int vgui2::Image::vfunc13(int a, int b, int c, int d)
+{
+  a += m_unk04;
+  b += m_unk08;
+  c += m_unk04;
+  d += m_unk08;
+  return sub_101ac8d0()->v13(a, b, c, d);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b6a80 size=0x39
+#include "vgui2__Image.h"
+struct ISurf15 {
+  virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+  virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+  virtual int v15(int, int, int, int);
+};
+ISurf15 *sub_101ac8d0();
+// TARGET: vgui2::Image::vfunc14
+int vgui2::Image::vfunc14(int a, int b, int c, int d)
+{
+  a += m_unk04;
+  b += m_unk08;
+  c += m_unk04;
+  d += m_unk08;
+  return sub_101ac8d0()->v15(a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6b10 size=0xc
 #include "vgui2__Image.h"
 namespace lifted {
@@ -96,6 +171,21 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Image::vfunc16()
 {
     return ((lifted::V *)(lifted::sub_101ac8d0()))->f17();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b6b20 size=0x3b
+#include "vgui2__Image.h"
+struct CSurface_101ac8d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(int, int, int, int);
+};
+CSurface_101ac8d0 *sub_101ac8d0();
+void vgui2::Image::vfunc18(Color4b c)
+{
+    sub_101ac8d0()->v19(c.r, c.g, c.b, c.a);
 }
 // END FUNCTION
 
@@ -132,6 +222,27 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Image::vfunc23(float a0)
 {
     return ((lifted::V *)(lifted::sub_101ac8d0()))->f22(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b6c10 size=0x38
+#include "vgui2__Image.h"
+#define P8(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d(); virtual void n##e(); virtual void n##f(); virtual void n##g(); virtual void n##h();
+struct ISurfaceView {
+	P8(a) P8(b)
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual int Slot20(int x, int y);
+	virtual void s21();
+	virtual int Slot22(int a);
+};
+ISurfaceView *sub_101ac8d0();
+// TARGET: vgui2::Image::vfunc22
+int vgui2::Image::vfunc22(int x, int y, int c)
+{
+	x += m_unk04;
+	y += m_unk08;
+	sub_101ac8d0()->Slot20(x, y);
+	return sub_101ac8d0()->Slot22(c);
 }
 // END FUNCTION
 

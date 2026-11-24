@@ -5,7 +5,23 @@
 
 class CInput : public IInput
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+    void sub_10106880(int);
+    void sub_10101df0();
+    int m_unk04;
+    int m_unk08;
+    int m_unk0c;
+    int m_unk10;
+    int m_unk14;
+    int m_unk18;
+    int m_unk1c;
+    int m_unk20;
+    int m_unk24;
+    void *m_unk28;
+    int m_unk2c[(0xdc - 0x2c) / 4];
+    struct CInputKey { char name[0x20]; int value; CInputKey *next; };
+    CInputKey *m_pKeys;
+    // vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CInput adds to its base's vtable: 0-56, vfuncK at slot K
     virtual void vfunc0();
     virtual void vfunc1();
@@ -14,26 +30,26 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc4();
     virtual void vfunc5();
     virtual void vfunc6();
-    virtual void vfunc7();
+    virtual char *vfunc7(int i);
     virtual void vfunc8(int);
     virtual void vfunc9();
-    virtual void vfunc10();
-    virtual void vfunc11();
+    virtual int vfunc10(int, int, int);
+    virtual int vfunc11(const char *name);
     virtual void vfunc12();
     virtual void vfunc13();
     virtual void vfunc14();
     virtual void vfunc15();
     virtual void vfunc16();
     virtual void vfunc17();
-    virtual void vfunc18();
+    virtual bool vfunc18();
     virtual int vfunc19();
-    virtual void vfunc20();
-    virtual void vfunc21();
+    virtual float vfunc20();
+    virtual void vfunc21(char);
     virtual void vfunc22();
     virtual void vfunc23();
-    virtual void vfunc24();
+    virtual bool vfunc24();
     virtual void vfunc25();
-    virtual void vfunc26();
+    virtual bool vfunc26();
     virtual void vfunc27();
     virtual void vfunc28();
     virtual void vfunc29();

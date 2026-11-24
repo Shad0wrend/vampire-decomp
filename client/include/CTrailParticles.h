@@ -3,7 +3,18 @@
 #pragma once
 #include "CSimpleEmitter.h"
 
+#include "CParticleCollision.h"
+
+struct TrailParticle;
+struct ParticleDraw;
+
 class CTrailParticles : public CSimpleEmitter
 {
-	char m_pad0004[0xf4 - 0x4];
+public:
+	char m_pad0070[0x78 - 0x70];
+	CParticleCollision m_ParticleCollision;
+	int m_fFlags;
+	float m_flVelocityDampen;
+
+	bool vfunc3(TrailParticle *pParticle, ParticleDraw *pDraw, float &sortKey);
 };

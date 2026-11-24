@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101c2df0 size=0x31
+#include "vgui2__FocusNavGroup.h"
+// TARGET: vgui2::FocusNavGroup::FocusNavGroup
+vgui2::FocusNavGroup::FocusNavGroup(vgui2::Panel *panel) : m_unk4(-1), m_pPanel(panel)
+{
+	m_hCurrent.sub_101ac6b0(0);
+	m_bFlag = false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c3100 size=0xa
 #include "vgui2__FocusNavGroup.h"
 bool vgui2::FocusNavGroup::vfunc8(char a0)

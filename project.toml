@@ -22,3 +22,6 @@ vector_calls = [0x10579660, 0x1057966c]
 [cache]
 prune_every_hours = 1
 keep_hours = 2
+
+[data]
+keep = ["10536bc0"]

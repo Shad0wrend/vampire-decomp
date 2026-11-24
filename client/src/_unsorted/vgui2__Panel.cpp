@@ -27,6 +27,12 @@ vgui2::Panel *pcd_emit_101a9460(const vgui2::Panel &other) { return new vgui2::P
 // TARGET: ??_GPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101a9860 size=0xd
+#include "vgui2__Panel.h"
+// TARGET: vgui2::Panel::vfunc18
+const char *vgui2::Panel::vfunc18() { const char *s = *(const char **)((char *)this + 0x2c); return s ? s : ""; }
+// END FUNCTION
+
 // FUNCTION: 0x101a9870 size=0x16
 #include "vgui2__Panel.h"
 namespace lifted {
@@ -97,6 +103,15 @@ void vgui2::Panel::vfunc3()
             ((lifted::V *)this)->f101(); return;
         }
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a9b70 size=0xd
+#include "vgui2__Panel.h"
+// TARGET: vgui2::Panel::vfunc4
+void vgui2::Panel::vfunc4()
+{
+	vfunc106(m_b18);
 }
 // END FUNCTION
 
@@ -335,6 +350,11 @@ void vgui2::Panel::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9fc0 size=0x21
+#include "vgui2__Panel.h"
+bool vgui2::Panel::vfunc73() { if ((char)vfunc22() && *((char *)this + 0x29) && *((unsigned char *)this + 0x27) == 0xff) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x101aa080 size=0x3
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc10(int a0)
@@ -496,6 +516,21 @@ int vgui2::Panel::vfunc55()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aabb0 size=0x34
+#include "vgui2__Panel.h"
+struct IPanelView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int Slot10(int vpanel, int a, int b, int c, int d);
+};
+IPanelView *sub_101ac900();
+// TARGET: vgui2::Panel::vfunc9
+int vgui2::Panel::vfunc9(int a, int b, int c, int d)
+{
+	return sub_101ac900()->Slot10(vfunc0(), a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aabf0 size=0x1e
 #include "vgui2__Panel.h"
 namespace lifted {
@@ -554,6 +589,14 @@ int vgui2::Panel::vfunc17()
 {
     return 0;
 }
+// END FUNCTION
+
+// FUNCTION: 0x101aad10 size=0x22
+#include "vgui2__Panel.h"
+struct ISurf { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); };
+ISurf *sub_101ac8b0();
+// TARGET: ?vfunc56@Panel@vgui2@@UAE_NXZ
+bool vgui2::Panel::vfunc56() { ISurf *s = sub_101ac8b0(); int a = vfunc0(); return s->v3() == a ? true : false; }
 // END FUNCTION
 
 // FUNCTION: 0x101aad40 size=0xa
@@ -631,6 +674,22 @@ bool vgui2::Panel::vfunc104(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab090 size=0x34
+#include "vgui2__Panel.h"
+struct IPanelView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11();
+	virtual int Slot12(int vpanel, int a, int b, int c, int d);
+};
+IPanelView *sub_101ac900();
+// TARGET: vgui2::Panel::vfunc8
+int vgui2::Panel::vfunc8(int a, int b, int c, int d)
+{
+	return sub_101ac900()->Slot12(vfunc0(), a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab210 size=0x4
 #include "vgui2__Panel.h"
 bool vgui2::Panel::vfunc47()
@@ -693,6 +752,32 @@ int vgui2::Panel::vfunc53(int a0)
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc101()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ab380 size=0xe
+#include "vgui2__Panel.h"
+// TARGET: vgui2::Panel::vfunc69
+bool vgui2::Panel::vfunc69() { if (vfunc55()) return false; return true; }
+// END FUNCTION
+
+// FUNCTION: 0x101ab390 size=0x32
+#include "vgui2__Panel.h"
+struct SurfView {
+ virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+ virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+ virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+ virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+ virtual void s24(); virtual void s25(); virtual void s26();
+ virtual void GetScreenSize(int &wide, int &tall);
+};
+SurfView *sub_101ac8b0();
+// TARGET: vgui2::Panel::vfunc70
+void vgui2::Panel::vfunc70()
+{
+    int wide, tall;
+    sub_101ac8b0()->GetScreenSize(wide, tall);
+    vfunc25(wide, tall);
 }
 // END FUNCTION
 

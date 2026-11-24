@@ -50,6 +50,22 @@ bool C_BaseCombatWeapon::vfunc156(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003060 size=0x2d
+#include "C_BaseCombatWeapon.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+void *C_BaseCombatWeapon::sub_10003060()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x8f8);
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003090 size=0x3
 #include "C_BaseCombatWeapon.h"
 bool C_BaseCombatWeapon::vfunc158()
@@ -281,6 +297,206 @@ void C_BaseCombatWeapon::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ad90 size=0x3b5
+#include "C_BaseCombatWeapon.h"
+#include "StatOwner2.h"
+#include "CUnknown102029c0.h"
+
+char __cdecl sub_101a48b0(void *fs, const char *name, void *p);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_101e3108)(const char *fmt, ...);
+extern char g_102de300[];
+extern void *g_104a580c;
+
+struct EngineSoundV
+{
+	virtual void vfunc0(const char *, int);
+};
+extern EngineSoundV *g_104a5818;
+
+struct AmmoV
+{
+	int sub_10078f40(const char *);
+};
+struct AmmoGet
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual AmmoV *v6();
+};
+extern AmmoGet *g_104a56fc;
+
+struct XRes
+{
+	void sub_101a8d30(void *p);
+};
+extern XRes g_10678dd4;
+
+struct NLV
+{
+	int sub_10157b30(void *);
+};
+extern NLV g_105f8b98;
+
+extern StatOwner2 g_105f93c0;
+
+struct DmgV
+{
+	void sub_10158ef0(void *);
+};
+
+struct WeapHelper
+{
+	void sub_1007cc30(void *);
+	void sub_100a2910(const char *);
+};
+
+struct WeaponSoundSet
+{
+	char m_Sounds[25][16][0x94];
+	int m_nCounts[25];
+};
+struct WeaponAmmoRec
+{
+	char m_pad0[0x14];
+	char m_szAmmo[0x100];
+	int m_iAmmoType;
+	char m_pad118[0x2198 - 0x118];
+	WeaponSoundSet m_Sounds;
+};
+struct WeaponAttackRec
+{
+	int m_n0;
+	char m_szName[0x80];
+	char m_szTag[0x80];
+	int m_nTag104;
+	int m_nKey108;
+	int m_n10c[3];
+	char m_Dmg118[0x1dc - 0x118];
+	char m_szBotch[0x80];
+	int m_nBotch25c;
+	char m_pad260[0x490 - 0x260];
+	WeaponSoundSet m_Sounds;
+	char m_padec34[0xec84 - 0xec34];
+};
+struct WeaponInfoView
+{
+	char m_pad0[0x242c];
+	int m_nFlags242c;
+	char m_pad2430[0x2450 - 0x2430];
+	char m_Keys2450[0x2560 - 0x2450];
+	char m_sz2560[0x80];
+	int m_n25e0;
+	char m_pad25e4[0x2668 - 0x25e4];
+	WeaponAmmoRec m_Ammo[2];
+	WeaponAttackRec m_Attacks[3];
+	char m_pad4fe6c[0x50378 - 0x4fe6c];
+	WeaponSoundSet m_Sounds;
+};
+
+struct WeaponNamedRec
+{
+	int m_nId;
+	const char *m_pszName;
+};
+extern int g_105e8630;
+extern WeaponNamedRec **g_105e8634;
+extern int g_105e85a4;
+extern WeaponNamedRec **g_105e85a8;
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_102de300;
+}
+
+inline int LookupKeyA(const char *name)
+{
+	for (int i = 0; i < g_105e8630; i++)
+		if (!_strcmpi(STRINGR(g_105e8634[i]->m_pszName), name))
+			return g_105e8634[i]->m_nId;
+	return -1;
+}
+
+inline int LookupKeyB(const char *name)
+{
+	for (int i = 0; i < g_105e85a4; i++)
+		if (!_strcmpi(STRINGR(g_105e85a8[i]->m_pszName), name))
+			return g_105e85a8[i]->m_nId;
+	return -1;
+}
+
+struct WeapFields
+{
+	char m_pad0[0x7a4];
+	int m_iAmmoType[2];
+};
+
+#define INFO() ((WeaponInfoView *)sub_1007b160())
+#define F ((WeapFields *)this)
+
+// TARGET: C_BaseCombatWeapon::vfunc21
+void C_BaseCombatWeapon::vfunc21()
+{
+	if (sub_101a48b0(g_104a580c, vfunc114(), (char *)this + 0x95e)) {
+		int i, j, k;
+		{
+			WeaponSoundSet &set = INFO()->m_Sounds;
+			for (k = 0; k < 25; k++)
+				for (j = 0; j < set.m_nCounts[k]; j++)
+					g_104a5818->vfunc0(set.m_Sounds[k][j], 0);
+		}
+		for (i = 0; i < 2; i++) {
+			WeaponAmmoRec *r = &INFO()->m_Ammo[i];
+			if (r->m_szAmmo[0]) {
+				r->m_iAmmoType = F->m_iAmmoType[i] = g_104a56fc->v6()->sub_10078f40(r->m_szAmmo);
+				F->m_iAmmoType[i] = g_104a56fc->v6()->sub_10078f40(r->m_szAmmo);
+			} else
+				F->m_iAmmoType[i] = -1;
+			*(int *)((char *)&F->m_iAmmoType[i] + 0x118) = r->m_iAmmoType;
+			{
+				WeaponSoundSet &set = r->m_Sounds;
+				for (k = 0; k < 25; k++)
+					for (j = 0; j < set.m_nCounts[k]; j++)
+						g_104a5818->vfunc0(set.m_Sounds[k][j], 0);
+			}
+		}
+		g_10678dd4.sub_101a8d30(this);
+		((WeapHelper *)this)->sub_1007cc30(INFO()->m_Keys2450);
+		INFO()->m_n25e0 = g_105f8b98.sub_10157b30(INFO()->m_sz2560);
+		int tmp = g_105f93c0.sub_1015f160("TagStrings");
+		if (tmp == -1)
+			g_101e3108("Unable to find String List!\n");
+		for (i = 0; i < 3; i++) {
+			WeaponAttackRec *r = &INFO()->m_Attacks[i];
+			if (r->m_szName[0]) {
+				r->m_nTag104 = 0;
+				if (tmp != -1)
+					r->m_nTag104 = g_105f93c0.sub_1015f270(tmp)->sub_1015ed00(r->m_szName);
+				r->m_nKey108 = LookupKeyA(r->m_szTag);
+				((DmgV *)((char *)this + 0x7dc + i * 0x44))->sub_10158ef0(r->m_Dmg118);
+				r->m_nBotch25c = LookupKeyB(r->m_szBotch);
+				{
+					WeaponSoundSet &set = r->m_Sounds;
+					for (k = 0; k < 25; k++)
+						for (j = 0; j < set.m_nCounts[k]; j++)
+							((WeapHelper *)this)->sub_100a2910(set.m_Sounds[k][j]);
+				}
+			}
+		}
+		{
+			const char *s = (const char *)vfunc215(0);
+			if (s && *s)
+				sub_100a0710(s);
+		}
+	}
+	*((char *)this + 0x94c) = (INFO()->m_nFlags242c & 8) == 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b5f0 size=0xd
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
@@ -355,6 +571,15 @@ CWeaponOwner *sub_1007b160();
 int __stdcall sub_1007b650(int nIndex)
 {
 	return *(int *)((char *)sub_1007b160() + 0x2668 + nIndex * 0x1093c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007b6b0 size=0x1a
+#include "C_BaseCombatWeapon.h"
+// TARGET: C_BaseCombatWeapon::vfunc150
+bool C_BaseCombatWeapon::vfunc150(int a)
+{
+	return vfunc148(a) != -1;
 }
 // END FUNCTION
 
@@ -487,6 +712,19 @@ bool C_BaseCombatWeapon::vfunc175()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bdd0 size=0x1d
+#include "C_BaseCombatWeapon.h"
+struct CGlobals_102b8494 { float realtime, framecount, absoluteframetime, curtime; };
+extern CGlobals_102b8494 *g_102b8494;
+// TARGET: C_BaseCombatWeapon::vfunc182
+bool C_BaseCombatWeapon::vfunc182()
+{
+	if (g_102b8494->curtime > *(float *)((char *)this + 0x918))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bdf0 size=0xd
 #include "C_BaseCombatWeapon.h"
 int C_BaseCombatWeapon::vfunc183(int a0)
@@ -561,6 +799,12 @@ int C_BaseCombatWeapon::vfunc179(int a0)
 void C_BaseCombatWeapon::vfunc180(int a0)
 {
 }
+// END FUNCTION
+
+// FUNCTION: 0x1007c100 size=0x23
+#include "C_BaseCombatWeapon.h"
+// TARGET: ?vfunc185@C_BaseCombatWeapon@@UAE_NXZ
+bool C_BaseCombatWeapon::vfunc185() { for (int i = 0; i < 2; i++) { if (vfunc153(i)) return true; } return false; }
 // END FUNCTION
 
 // FUNCTION: 0x1007c1d0 size=0xd
@@ -701,6 +945,18 @@ void C_BaseCombatWeapon::vfunc200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cc00 size=0x29
+#include "C_BaseCombatWeapon.h"
+struct CWeaponInfo_1007b160 { char pad[0x4fea0]; int m_n4fea0; };
+bool C_BaseCombatWeapon::vfunc250()
+{
+	bool r = false;
+	if (sub_1007b160())
+		r = ((CWeaponInfo_1007b160 *)sub_1007b160())->m_n4fea0 != 0;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cde0 size=0x6
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
@@ -729,6 +985,58 @@ int C_BaseCombatWeapon::vfunc15()
 {
     return 0;
 }
+// END FUNCTION
+
+// FUNCTION: 0x1007d450 size=0xe
+struct V_1007d450 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109();
+	virtual void v110(); virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114();
+	virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void v120(); virtual void v121(); virtual void v122(); virtual void v123(); virtual void v124();
+	virtual void v125(); virtual void v126(); virtual void v127(); virtual void v128(); virtual void v129();
+	virtual void v130(); virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134();
+	virtual void v135(); virtual void v136(); virtual void v137(); virtual void v138(); virtual void v139();
+	virtual void v140(); virtual void v141(); virtual void v142(); virtual void v143(); virtual void v144();
+	virtual void v145(); virtual void v146(); virtual void v147(); virtual void v148(); virtual void v149();
+	virtual void v150(); virtual void v151(); virtual void v152(); virtual void v153(); virtual void v154();
+	virtual void v155(); virtual void v156(); virtual void v157(); virtual void v158(); virtual void v159();
+	virtual void v160(); virtual void v161(); virtual void v162(); virtual void v163(); virtual void v164();
+	virtual void v165(); virtual void v166(); virtual void v167(); virtual void v168(); virtual void v169();
+	virtual void v170(); virtual void v171(); virtual void v172(); virtual void v173(); virtual void v174();
+	virtual void v175(); virtual void v176(); virtual char v177();
+};
+// TARGET: sub_1007d450
+bool __fastcall sub_1007d450(V_1007d450 *self)
+{
+	return self->v177() ? true : false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007d460 size=0x11
+#include "C_BaseCombatWeapon.h"
+// TARGET: C_BaseCombatWeapon::vfunc177
+bool C_BaseCombatWeapon::vfunc177() { void *p = *(void **)((char *)sub_1007b160() + 0x2444); if (p) return true; return false; }
 // END FUNCTION
 
 // FUNCTION: 0x1007d4d0 size=0x4c
@@ -854,6 +1162,18 @@ void C_BaseCombatWeapon::vfunc238(int a0)
 #include "C_BaseCombatWeapon.h"
 void C_BaseCombatWeapon::vfunc236(int a0)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009bda0 size=0x2a
+#include "C_BaseCombatWeapon.h"
+extern void *g_104a0d50;
+bool C_BaseCombatWeapon::vfunc240()
+{
+	if (!sub_1007bab0())
+		return false;
+	void *pPlayer = g_104a0d50;
+	return sub_1007bab0() == pPlayer;
 }
 // END FUNCTION
 

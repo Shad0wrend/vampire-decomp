@@ -16,3 +16,11 @@ CVTraitEffectGroup_t* CVTraitEffectGroup_t::vfunc0(unsigned int a0)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10156f20 size=0x11
+#include "CVTraitEffectGroup_t.h"
+CVTraitEffectGroup_t::~CVTraitEffectGroup_t()
+{
+	delete m_pEffects;
+}
+// END FUNCTION

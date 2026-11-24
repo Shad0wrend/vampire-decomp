@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10002680 size=0x3
+#include "C_BaseAnimating.h"
+
+// TARGET: C_BaseAnimating::sub_10002680
+void C_BaseAnimating::sub_10002680(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002690 size=0x1
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc141()
@@ -125,6 +134,21 @@ bool C_BaseAnimating::vfunc142()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093f00 size=0x34
+#include "C_BaseAnimating.h"
+#include "IClientCollideable.h"
+// TARGET: C_BaseAnimating::vfunc67
+bool C_BaseAnimating::vfunc67()
+{
+  if (*((bool *)this + 0x6a8))
+    return true;
+  int solid = ((IClientCollideable *)((char *)this + 0xc))->GetSolid();
+  if (solid == 4 || solid == 0 || solid == 3 || solid == 5 || solid == 6)
+    return false;
+  return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094e90 size=0x22
 #include "C_BaseAnimating.h"
 namespace lifted {
@@ -139,6 +163,98 @@ void C_BaseAnimating::vfunc37()
         ((lifted::V *)this)->f132(0);
     }
     ((lifted::C100a0de0 *)this)->sub_100a0de0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10095030 size=0x39
+#include "C_BaseAnimating.h"
+struct IEng41 {
+  virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+  virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+  virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+  virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+  virtual void v40(); virtual float v41(int);
+};
+extern IEng41 *g_104a57d4;
+// TARGET: C_BaseAnimating::vfunc61
+void C_BaseAnimating::vfunc61()
+{
+  if (*((char *)this + 0x6a8)) {
+    vfunc70();
+    vfunc137(g_104a57d4->v41(0));
+  }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10095070 size=0x14
+#include "C_BaseAnimating.h"
+int C_BaseAnimating::vfunc62()
+{
+	DoAnimationEvents();
+	return C_BaseEntity::vfunc62();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100954d0 size=0x117
+#include "C_BaseAnimating.h"
+
+struct CGlobalVars_100954d0
+{
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVars_100954d0 *g_102b8494;
+
+struct C_BaseAnimating_Fields
+{
+	char pad0[0x70];
+	float m_flAnimTime;
+	char pad74[0x508 - 0x74];
+	float m_flGroundSpeed;
+	char pad50c[0x510 - 0x50c];
+	bool m_bSequenceFinished;
+	bool m_bSequenceLoops;
+	char pad512[0x63c - 0x512];
+	int m_nSequence;
+	float m_flPlaybackRate;
+	float m_flUnk644;
+	float m_flCycle;
+	float sub_100955f0(int iSequence);
+};
+
+// TARGET: C_BaseAnimating::vfunc136
+float C_BaseAnimating::vfunc136(float flInterval)
+{
+	C_BaseAnimating_Fields *f = (C_BaseAnimating_Fields *)this;
+	if (flInterval == 0.0)
+	{
+		flInterval = 0.1f;
+	}
+
+	flInterval = (flInterval + g_102b8494->curtime) - f->m_flAnimTime;
+	if (flInterval <= 0.001)
+	{
+		return 0.0f;
+	}
+
+	f->m_flCycle += vfunc138(f->m_nSequence) * f->m_flPlaybackRate * flInterval;
+	f->m_flAnimTime += flInterval;
+
+	if (f->m_flCycle < 0.0 || f->m_flCycle >= 1.0)
+	{
+		if (f->m_bSequenceLoops)
+		{
+			f->m_flCycle -= (int)(f->m_flCycle);
+		}
+		else
+		{
+			f->m_flCycle = (f->m_flCycle < 0.0f) ? 0.0f : 1.0f;
+		}
+		f->m_bSequenceFinished = true;
+	}
+
+	f->m_flGroundSpeed = f->sub_100955f0(f->m_nSequence);
+	return flInterval;
 }
 // END FUNCTION
 

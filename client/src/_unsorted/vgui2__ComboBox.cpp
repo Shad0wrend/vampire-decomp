@@ -114,6 +114,11 @@ void vgui2::ComboBox::vfunc87(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7c00 size=0x8
+#include "vgui2__ComboBox.h"
+void vgui2::ComboBox::vfunc88(int a) { vfunc87(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101c7c10 size=0x31
 #include "vgui2__ComboBox.h"
 namespace lifted {

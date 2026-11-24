@@ -46,6 +46,18 @@ int CCenterStringPanel::vfunc108(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164eb0 size=0x3b
+#include "CCenterStringPanel.h"
+#include <stdarg.h>
+void CCenterStringPanel::vfunc110(int a, int b, int c, int d, const char *fmt, ...)
+{
+	va_list args;
+	va_start(args, fmt);
+	vfunc108(a, b, c, d);
+	vfunc109(fmt, args);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164ef0 size=0xc
 #include "CCenterStringPanel.h"
 int CCenterStringPanel::vfunc111()

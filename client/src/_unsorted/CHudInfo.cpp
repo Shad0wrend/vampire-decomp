@@ -35,3 +35,12 @@ CHudInfo::~CHudInfo()
 	sub_101a9ff0(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10055d20 size=0xe
+struct V_10055d20 { int m_unk[0x198 / 4]; char m_b198; };
+// TARGET: sub_10055d20
+int __fastcall sub_10055d20(V_10055d20 *self)
+{
+	return self->m_b198 != 0;
+}
+// END FUNCTION

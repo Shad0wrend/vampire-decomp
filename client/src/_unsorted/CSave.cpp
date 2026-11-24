@@ -54,6 +54,28 @@ void CSave::vfunc1(int pos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128fd0 size=0x10
+#include "CSave.h"
+// TARGET: CSave::vfunc8
+bool CSave::vfunc8(const void *pData, int nBytes) { return sub_101299c0(pData, nBytes * 2); }
+// END FUNCTION
+
+// FUNCTION: 0x10128fe0 size=0x14
+#include "CSave.h"
+bool CSave::vfunc10(const void *pData, int nBytes) { return sub_101299c0(pData, nBytes * 4); }
+// END FUNCTION
+
+// FUNCTION: 0x10129010 size=0x14
+#include "CSave.h"
+bool CSave::vfunc14(const void *pData, int nBytes) { return sub_101299c0(pData, nBytes * 4); }
+// END FUNCTION
+
+// FUNCTION: 0x10129040 size=0x21
+#include "CSave.h"
+#include <string.h>
+void CSave::vfunc20(const char *pString) { sub_101299c0(pString, strlen(pString) + 1); }
+// END FUNCTION
+
 // FUNCTION: 0x10129070 size=0x40
 #include "CSave.h"
 #include <string.h>
@@ -70,6 +92,23 @@ void CSave::vfunc19(const char **ppStrings, int count)
 		}
 		sub_101299c0(pString, strlen(pString) + 1);
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101290b0 size=0xf
+#include "CSave.h"
+// TARGET: CSave::vfunc24
+void CSave::vfunc24(const Vector &value)
+{
+	sub_101299c0(&value, 12);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101290c0 size=0x13
+#include "CSave.h"
+void CSave::vfunc23(const void *pData, int count)
+{
+	sub_101299c0(pData, count * 12);
 }
 // END FUNCTION
 

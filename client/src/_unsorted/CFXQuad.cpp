@@ -11,6 +11,16 @@ CFXQuad *pcd_emit_100e5d20() { return new CFXQuad; }
 // TARGET: ??_GCFXQuad@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100e6530 size=0x13
+#include "CFXQuad.h"
+bool CFXQuad::vfunc3()
+{
+	if (m_flB < m_flA)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6550 size=0x1a
 #include "CFXQuad.h"
 namespace lifted {
@@ -22,5 +32,14 @@ void CFXQuad::vfunc4()
         int t0 = ((lifted::V *)(*(int *)((char *)this + 0x10)))->f13(0);
         *(int *)((char *)this + 0x10) = 0;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e6570 size=0xd
+struct V_100e6570 { int m_unk[0x38 / 4]; float m_f38; };
+// TARGET: sub_100e6570
+void __fastcall sub_100e6570(V_100e6570 *self, int edx, double dt)
+{
+	self->m_f38 += dt;
 }
 // END FUNCTION

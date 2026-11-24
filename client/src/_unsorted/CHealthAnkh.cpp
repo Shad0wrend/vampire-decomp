@@ -53,6 +53,11 @@ CHealthAnkh::~CHealthAnkh()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100510e0 size=0x1e
+struct V10e0 { char pad[0x190]; int a, b, c, d; void sub_100510e0(); };
+void V10e0::sub_100510e0() { c = -1; d = -1; a = 0; b = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100511b0 size=0x20
 #include "CHealthAnkh.h"
 namespace lifted {
@@ -64,6 +69,18 @@ void CHealthAnkh::vfunc114(int a0)
         lifted::sub_10167af0();
     }
     *(int *)((char *)this + 0x190) = a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100511d0 size=0x36
+#include "CHealthAnkh.h"
+#include "CVStatInfoList_t.h"
+extern CVStatInfoList_t g_105f9220;
+// TARGET: CHealthAnkh::vfunc115
+void CHealthAnkh::vfunc115(int a)
+{
+	int d = g_105f9220.sub_1015cfe0(0x11)->DefaultValue();
+	m_unk194 = a * 100 / d;
 }
 // END FUNCTION
 

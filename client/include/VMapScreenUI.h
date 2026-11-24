@@ -12,6 +12,7 @@ class VMapScreenUI : public CHudElement, public CBasePanel
 public:
 	VMapScreenUI(int a);
 	void sub_10187860();
+	void sub_10187980();
 	char m_b180;
 	int m_n184;
 	VMapBkg m_bkg;

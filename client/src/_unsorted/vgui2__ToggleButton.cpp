@@ -29,6 +29,11 @@ void vgui2::ToggleButton::vfunc87(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc3b0 size=0x8
+#include "vgui2__ToggleButton.h"
+void vgui2::ToggleButton::vfunc88(int a) { vfunc87(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101bc3c0 size=0x3
 #include "vgui2__ToggleButton.h"
 void vgui2::ToggleButton::vfunc89(int a0)
@@ -51,5 +56,18 @@ int vgui2::ToggleButton::vfunc156(int a0)
     }
     ((lifted::C101b3a60 *)this)->sub_101b3a60(a0);
     return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bc4c0 size=0x2c
+#include "vgui2__ToggleButton.h"
+struct ISch { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int *v6(int *out, const char *name); };
+int vgui2::ToggleButton::vfunc74(int a)
+{
+	Button::vfunc74(a);
+	int tmp;
+	int *p = ((ISch *)a)->v6(&tmp, "BrightControlText");
+	*(int *)((char *)this + 0xf0) = *p;
+	return (int)p;
 }
 // END FUNCTION

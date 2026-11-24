@@ -88,6 +88,38 @@ C_PlayerResource *pcd_emit_100bd330(const C_PlayerResource &other) { return new 
 // TARGET: ??_GC_PlayerResource@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100bd390 size=0x28
+#include "C_PlayerResource.h"
+// TARGET: ?vfunc120@C_PlayerResource@@UAEHH@Z
+int C_PlayerResource::vfunc120(int i) { if (!vfunc133(i)) return 0; return m_a410[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd3c0 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc121(int i)
+{
+	if (!vfunc133(i))
+		return 0;
+	return m_a494[i];
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bd3f0 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc122(int i) { if (!vfunc133(i)) return 0; return m_a518[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd420 size=0x28
+#include "C_PlayerResource.h"
+// TARGET: ?vfunc123@C_PlayerResource@@UAEHH@Z
+int C_PlayerResource::vfunc123(int i) { if (!vfunc133(i)) return 0; return m_a59c[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd450 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc124(int i) { if (!vfunc133(i)) return 0; return m_a620[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100bd4c0 size=0x28
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 class PRView {
@@ -105,4 +137,31 @@ int PRView::sub_100bd4c0(int i)
 		return 0;
 	return m6a4[i];
 }
+// END FUNCTION
+
+// FUNCTION: 0x100bd620 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc129(int i) { if (!vfunc133(i)) return 0; return m_ab48[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd650 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc130(int i) { if (!vfunc133(i)) return 0; return m_abcc[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd680 size=0x28
+#include "C_PlayerResource.h"
+// TARGET: ?vfunc131@C_PlayerResource@@UAEHH@Z
+int C_PlayerResource::vfunc131(int i) { if (!vfunc133(i)) return 0; return m_ac50[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd6b0 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc132(int i) { if (!vfunc133(i)) return 0; return m_acd4[i]; }
+// END FUNCTION
+
+// FUNCTION: 0x100bd6f0 size=0xe
+#include "C_PlayerResource.h"
+// TARGET: C_PlayerResource::vfunc134
+char C_PlayerResource::vfunc134(int i) { return m_ad79[i]; }
 // END FUNCTION

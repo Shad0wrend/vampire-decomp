@@ -100,6 +100,72 @@ char * vgui2::EditablePanel::vfunc116()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4e90 size=0x9
+#include "vgui2__EditablePanel.h"
+struct SubObj59 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };
+// TARGET: vgui2::EditablePanel::vfunc59
+void vgui2::EditablePanel::vfunc59(int a)
+{
+	((SubObj59 *)((char *)this + 0x5c))->v5(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b4ea0 size=0x9
+#include "vgui2__EditablePanel.h"
+struct EPView { virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(int); };
+void vgui2::EditablePanel::vfunc58(int a) { ((EPView *)((char *)this + 0x5c))->f4(a); }
+// END FUNCTION
+
+// FUNCTION: 0x101b4eb0 size=0x2b
+#include "vgui2__EditablePanel.h"
+struct V_101b4eb0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57();
+	virtual int v58(int); virtual int v59(int);
+};
+int vgui2::EditablePanel::vfunc15(int a)
+{
+	if (a == 1)
+		return ((V_101b4eb0 *)this)->v59(0);
+	if (a == -1)
+		return ((V_101b4eb0 *)this)->v58(0);
+	return Panel::vfunc15(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b4f40 size=0x2b
+#include "vgui2__EditablePanel.h"
+struct XObj5 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };
+// TARGET: vgui2::EditablePanel::vfunc75
+void vgui2::EditablePanel::vfunc75(int a)
+{
+	sub_101ab4e0(a);
+	((XObj5 *)m_p58)->v5(a);
+	sub_101a9920(&m_i70, &m_i74);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b4f70 size=0x2d
+#include "vgui2__EditablePanel.h"
+struct Sub_101b4f70 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(vgui2::Panel *); };
+struct Obj_101b4f70 { char pad[0x5c]; Sub_101b4f70 m_sub; };
+struct P48_101b4f70 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual bool v48(); };
+void vgui2::EditablePanel::vfunc105(vgui2::Panel *p)
+{
+	if (!((P48_101b4f70 *)p)->v48())
+		((Obj_101b4f70 *)this)->m_sub.v7(p);
+	Panel::vfunc105(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5170 size=0x24
 #include "vgui2__EditablePanel.h"
 namespace lifted {

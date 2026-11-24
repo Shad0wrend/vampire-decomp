@@ -53,6 +53,19 @@ void vgui2::ScrollBarSlider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca400 size=0x1b
+#include "vgui2__ScrollBarSlider.h"
+// TARGET: vgui2::ScrollBarSlider::vfunc110
+void vgui2::ScrollBarSlider::vfunc110(int min, int max)
+{
+	int *range = (int *)((char *)this + 0x74);
+	if (max < min)
+		max = min;
+	range[0] = min;
+	range[1] = max;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca420 size=0x15
 #include "vgui2__ScrollBarSlider.h"
 int vgui2::ScrollBarSlider::vfunc111(int a0, int a1)
@@ -63,6 +76,11 @@ int vgui2::ScrollBarSlider::vfunc111(int a0, int a1)
     *(int *)((char *)a1) = t1;
     return t1;
 }
+// END FUNCTION
+
+// FUNCTION: 0x101ca620 size=0x8
+#include "vgui2__ScrollBarSlider.h"
+void vgui2::ScrollBarSlider::vfunc88(int a) { vfunc87(a); }
 // END FUNCTION
 
 // FUNCTION: 0x101ca630 size=0x18

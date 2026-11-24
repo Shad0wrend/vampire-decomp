@@ -14,5 +14,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc74(int);
 	virtual void vfunc98();
 	// the slots CNetGraphPanel adds to its base's vtable: 107-107, vfuncK at slot K
-	virtual void vfunc107();
+	virtual bool vfunc107();
+	unsigned int sub_101698d0();
 };

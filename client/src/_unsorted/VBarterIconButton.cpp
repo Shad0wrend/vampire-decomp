@@ -23,6 +23,11 @@ void VBarterIconButton::vfunc85()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016afd0 size=0x1e
+#include "VBarterIconButton.h"
+void VBarterIconButton::vfunc86() { Panel::vfunc86(); *((char *)this + 0xb8) = 0; *((char *)this + 0xb9) = 0; *(int *)((char *)this + 0xbc) = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1016aff0 size=0xa
 #include "VBarterIconButton.h"
 void VBarterIconButton::vfunc87(int a0)
