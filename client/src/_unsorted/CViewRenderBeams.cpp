@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101932d0 size=0x39
+#include "CViewRenderBeams.h"
+#include "Beam_t.h"
+// TARGET: CViewRenderBeams::CViewRenderBeams
+CViewRenderBeams::CViewRenderBeams() : m_pFirst(0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193320 size=0x1e
 #include "CViewRenderBeams.h"
 
