@@ -30,3 +30,34 @@ void CBaseAnimatedTextureProxy::vfunc2()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1007a740 size=0xbd
+#include "CBaseAnimatedTextureProxy.h"
+#include "CKeyValuesX.h"
+struct IMaterial_ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void *FindVar(const char *name, bool *found, bool complain);
+};
+bool CBaseAnimatedTextureProxy::vfunc0(void *a, void *b)
+{
+	IMaterial_ *pMaterial = (IMaterial_ *)a;
+	CKeyValuesX *pKeyValues = (CKeyValuesX *)b;
+	const char *pName = pKeyValues->sub_10128590("animatedTextureVar", "");
+	if (!pName)
+		return false;
+	bool foundVar;
+	m_AnimatedTextureVar = pMaterial->FindVar(pName, &foundVar, false);
+	if (!foundVar)
+		return false;
+	const char *pFrameName = pKeyValues->sub_10128590("animatedTextureFrameNumVar", "");
+	if (!pFrameName)
+		return false;
+	m_AnimatedTextureFrameNumVar = pMaterial->FindVar(pFrameName, &foundVar, false);
+	if (!foundVar)
+		return false;
+	m_FrameRate = pKeyValues->sub_10128540("animatedTextureFrameRate", 15.0f);
+	m_WrapAnimation = !pKeyValues->sub_101284c0("animationNoWrap", 0);
+	return true;
+}
+// END FUNCTION
