@@ -87360,6 +87360,41 @@ float CUnk102a9640::sub_1019c230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d8f0 size=0x96
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+struct IRenderView_t
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void ViewSetupVis(bool bNoVis, int nOrigins, const float *pOrigins);
+};
+struct CViewRenderFields
+{
+	char m_pad[0xa4];
+	bool m_bForceNoVis;	// 0xa4
+	bool m_bOverrideVisOrigin;	// 0xa5
+	int m_nNumVisOrigins;	// 0xa8
+	float m_rgVisOrigins[1];	// 0xac
+};
+extern IRenderView_t *g_104a57e4;
+void CViewRender::sub_1019d8f0( const char *view )
+{
+	ScopeTrace scope( "CViewRender::SetupVis", g_102de300, g_102de300 );
+	CViewRenderFields *p = (CViewRenderFields *)this;
+	if ( p->m_bOverrideVisOrigin )
+	{
+		g_104a57e4->ViewSetupVis( p->m_bForceNoVis, p->m_nNumVisOrigins, p->m_rgVisOrigins );
+	}
+	else
+	{
+		g_104a57e4->ViewSetupVis( p->m_bForceNoVis, 1, (const float *)( view + 0x38 ) );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f940 size=0xee
 #include "ScopeTrace.h"
 #include "CViewRender.h"
