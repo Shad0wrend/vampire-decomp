@@ -212,6 +212,15 @@ int C_BaseEntity::vfunc110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dd90 size=0xe
+struct V_1007dd90 { int m_unk[0x88 / 4]; int m_n88; };
+// TARGET: sub_1007dd90
+int __fastcall sub_1007dd90(V_1007dd90 *self)
+{
+	return self->m_n88 == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007de10 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc92(int a0, int a1)
