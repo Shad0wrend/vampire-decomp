@@ -88244,6 +88244,77 @@ void LHold::sub_1018ae50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b2a0 size=0x7f
+#include "Vector.h"
+
+struct IVModelInfo_1018b2a0
+{
+    virtual void *v0(void *);
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void v9();
+    virtual void v10();
+    virtual void v11();
+    virtual void v12();
+    virtual void v13();
+    virtual void v14();
+    virtual void v15(unsigned short);
+};
+
+extern IVModelInfo_1018b2a0 *g_104a57d8;
+
+struct SRenderable_1018b2a0
+{
+    int pad00[4];
+    unsigned short m_hInstance;
+    unsigned short pad12;
+    int pad14[3];
+    Vector m_vec20;
+    void *m_pModel;
+    int pad30[14];
+    void *m_pStudioHdr;
+    int pad6c;
+    void *m_pPrevModel;
+
+    void sub_1018adb0();
+    void *GetStudioHdr()
+    {
+        if (!m_pModel)
+            return 0;
+        return g_104a57d8->v0(m_pModel);
+    }
+};
+
+class CUnknown1018b2a0
+{
+public:
+    int pad00[0x16];
+    SRenderable_1018b2a0 *m_pRenderable;
+
+    void sub_1018b2a0();
+};
+
+// TARGET: ?sub_1018b2a0@CUnknown1018b2a0@@QAEXXZ
+void CUnknown1018b2a0::sub_1018b2a0()
+{
+    m_pRenderable->m_vec20.Init();
+    if (m_pRenderable->m_hInstance != 0xffff)
+    {
+        g_104a57d8->v15(m_pRenderable->m_hInstance);
+        m_pRenderable->m_hInstance = 0xffff;
+    }
+    m_pRenderable->sub_1018adb0();
+    m_pRenderable->m_pStudioHdr = m_pRenderable->GetStudioHdr();
+    m_pRenderable->m_pPrevModel = m_pRenderable->m_pModel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b320 size=0x27
 namespace lifted {
 extern int g_104a57d4;
