@@ -118,6 +118,57 @@ float CGameMovement::vfunc23()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7ec0 size=0x2ac
+#include "CGameMovement.h"
+
+struct CGlobals_100e7ec0
+{
+	char pad_0[0x10];
+	float frametime;
+};
+
+struct CMovePlayer_100e7ec0
+{
+	char pad_0[0x1078];
+	float m_fl1078;             // 0x1078
+	char pad_107c[0x69c];
+	Vector m_vecPunchAngle;     // 0x1718
+	Vector m_vecPunchAngleVel;  // 0x1724
+};
+
+extern CGlobals_100e7ec0 *g_102b8494;
+
+#define MV ((CMovePlayer_100e7ec0 *)m_pMove)
+#define CLAMP(v, lo, hi) ((v) > (hi) ? (hi) : ((v) < (lo) ? (lo) : (v)))
+
+void CGameMovement::vfunc7()
+{
+	if (MV->m_vecPunchAngle.LengthSqr() > 0.001 ||
+		MV->m_vecPunchAngleVel.LengthSqr() > 0.001)
+	{
+		*(QAngle *)&MV->m_vecPunchAngle += *(QAngle *)&MV->m_vecPunchAngleVel * g_102b8494->frametime * MV->m_fl1078;
+
+		float flDecay = 1.0f - MV->m_fl1078 * g_102b8494->frametime * 9.0f;
+		if (flDecay < 0.0f)
+			flDecay = 0.0f;
+		MV->m_vecPunchAngleVel *= flDecay;
+
+		float flAngleDecay = MV->m_fl1078 * g_102b8494->frametime * 65.0f;
+		if (flAngleDecay > 2.0f)
+			flAngleDecay = 2.0f;
+		if (flAngleDecay < 0.0f)
+			flAngleDecay = 0.0f;
+
+		MV->m_vecPunchAngleVel -= MV->m_vecPunchAngle * flAngleDecay;
+
+		MV->m_vecPunchAngle = Vector(
+			CLAMP(MV->m_vecPunchAngle.x, -89.0f, 89.0f),
+			CLAMP(MV->m_vecPunchAngle.y, -179.0f, 179.0f),
+			CLAMP(MV->m_vecPunchAngle.z, -89.0f, 89.0f));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e9640 size=0x29
 #include "CGameMovement.h"
 struct V100e9640 { char pad[0x1884]; int m_a; char pad2[0x199c - 0x1888]; float m_f; };
