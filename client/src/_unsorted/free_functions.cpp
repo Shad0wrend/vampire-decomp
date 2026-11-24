@@ -42001,6 +42001,13 @@ bool sub_100f40e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4180 size=0xc
+void sub_100f42d0();
+void sub_100f42a0(void (*)());
+// TARGET: sub_100f4180
+void sub_100f4180() { sub_100f42a0(sub_100f42d0); }
+// END FUNCTION
+
 // FUNCTION: 0x100f4190 size=0x4e
 #include <string.h>
 extern char *g_104d104c;
