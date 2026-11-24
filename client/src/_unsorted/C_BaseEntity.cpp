@@ -493,6 +493,20 @@ CMouthInfo * C_BaseEntity::GetMouth()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fcf0 size=0x3d
+#include "C_BaseEntity.h"
+bool C_BaseEntity::vfunc57(int a1, int a2, int a3)
+{
+	float *pos = (float *)a2;
+	float *ang = (float *)a3;
+	const float *o = (const float *)&GetAbsOrigin();
+	pos[0] = o[0]; pos[1] = o[1]; pos[2] = o[2];
+	const float *a = (const float *)&GetAbsAngles();
+	ang[0] = a[0]; ang[1] = a[1]; ang[2] = a[2];
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fe30 size=0x7a
 #include "C_BaseEntity.h"
 
