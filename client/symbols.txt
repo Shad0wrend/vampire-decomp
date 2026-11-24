@@ -1817,6 +1817,7 @@
 0x10030ff0 func   ??1C_SteamJet@@UAE@XZ C_SteamJet::~C_SteamJet
 0x100310b0 func   ?sub_100310b0@@YADXZ sub_100310b0
 0x10031140 func   ?sub_10031140@CUnknown10031140@@QAEDHH@Z CUnknown10031140::sub_10031140
+0x100319d0 func   ?sub_100319d0@Obj_100319d0@@QAEXHHH@Z Obj_100319d0::sub_100319d0
 0x10032190 func   ??0C_TEMetalSparks@@QAE@XZ C_TEMetalSparks::C_TEMetalSparks
 0x100321c0 func   ??_GC_TEMetalSparks@@UAEPAXI@Z ??_GC_TEMetalSparks@@UAEPAXI@Z
 0x100321e0 func   ??1C_TEMetalSparks@@UAE@XZ C_TEMetalSparks::~C_TEMetalSparks

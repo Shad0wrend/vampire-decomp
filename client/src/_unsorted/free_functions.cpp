@@ -11992,6 +11992,25 @@ char CUnknown10031140::sub_10031140(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100319d0 size=0x1f
+struct Vec_100319d0 { int x, y, z; };
+struct Obj_100319d0
+{
+	char m_unk[0xa8];
+	Vec_100319d0 *m_pVec;
+	void sub_100319d0(int x, int y, int z);
+};
+// TARGET: Obj_100319d0::sub_100319d0
+void Obj_100319d0::sub_100319d0(int x, int y, int z)
+{
+	int *p = &m_pVec->x;
+	*p = x;
+	p++;
+	*p = y;
+	p[1] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100321e0 size=0x12
 namespace lifted {
 extern char g_10225c30;
