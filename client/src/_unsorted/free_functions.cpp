@@ -91914,6 +91914,20 @@ int sub_101be320(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be720 size=0x18
+struct ISys_ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual int Slot4();
+};
+int sub_101ac8e0();
+extern int g_1067b408;
+extern int g_1067b40c;
+void sub_101be720()
+{
+	g_1067b408 = ((ISys_ *)sub_101ac8e0())->Slot4() + g_1067b40c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be740 size=0xc
 namespace lifted {
 extern int g_1067b40c;
