@@ -48701,6 +48701,11 @@ void CMem8b_t::sub_10117d70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117fa0 size=0x1b
+struct V7fa0 { char pad[0x68]; int m68; void sub_10117fa0(bool b); };
+void V7fa0::sub_10117fa0(bool b) { if (b) m68 |= 2; else m68 &= ~2; }
+// END FUNCTION
+
 // FUNCTION: 0x10117fc0 size=0xb
 struct CView { char pad[0x6c]; int m6c; int sub_10117fc0(); };
 // TARGET: ?sub_10117fc0@CView@@QAEHXZ
