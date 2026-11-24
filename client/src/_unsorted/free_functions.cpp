@@ -47678,6 +47678,16 @@ void CUnknown10116010::sub_10116010(char a0, char a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116710 size=0x7
+#include "CParticleEffectBinding.h"
+
+// TARGET: CParticleEffectBinding::sub_10116710
+int CParticleEffectBinding::sub_10116710()
+{
+	return m_unk24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116b90 size=0x17
 struct CUnknown10116b90 { int sub_10116b90(int, int, int); };
 int CUnknown10116b90::sub_10116b90(int a0, int a1, int a2)
