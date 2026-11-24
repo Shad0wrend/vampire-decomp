@@ -18,7 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc98();
     virtual void vfunc101();
     // the slots ScrollBarSlider adds to its base's vtable: 107-120, vfuncK at slot K
-    virtual int vfunc107(int);
+    virtual void vfunc107(int);
     virtual int vfunc108();
     virtual bool vfunc109();
     virtual void vfunc110(int, int);
