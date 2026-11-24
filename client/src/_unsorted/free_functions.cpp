@@ -36082,6 +36082,49 @@ bool C_BreakableSurface::sub_100b7450(int x, int y) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b75c0 size=0x59
+struct MH_100b75c0
+{
+	void *m_pMaterial;
+	void sub_100cd1f0(const char *pName);
+};
+
+struct CHolder_100b75c0
+{
+	void *m_pData;
+	void sub_100cd2b0(void *pVal);
+};
+
+extern void *sub_100b7620(void *pMat);
+
+struct Elem_100b75c0
+{
+	int m_nFlags;
+	int m_nIndex;
+	MH_100b75c0 m_Mat;
+	CHolder_100b75c0 m_Other;
+};
+
+struct Self_100b75c0
+{
+	char pad[0x878];
+	Elem_100b75c0 m_Arr[4][3];
+
+	void sub_100b75c0(int i, int j, const char *pName);
+};
+
+// TARGET: ?sub_100b75c0@Self_100b75c0@@QAEXHHPBD@Z
+void Self_100b75c0::sub_100b75c0(int i, int j, const char *pName)
+{
+	m_Arr[i][j].m_nFlags = 0xffff;
+	m_Arr[i][j].m_nIndex = j;
+	m_Arr[i][j].m_Mat.sub_100cd1f0(pName);
+	void *pMat = m_Arr[i][j].m_Mat.m_pMaterial;
+	void *pOther = sub_100b7620(pMat);
+	m_Arr[i][j].m_Other.sub_100cd2b0(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7620 size=0x27
 struct IMatVar { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual int v11(); virtual int v12(); virtual int v13(); virtual int v14(); virtual int v15(); virtual int v16(); virtual int v17(); virtual void *v18(); };
 struct IMatX { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual IMatVar *FindVar(const char *, void *, bool); };
