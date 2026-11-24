@@ -64743,6 +64743,33 @@ int sub_10136350(int a0, int a1, int a2, int a3, char a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101363c0 size=0x3c
+struct CGlobalsView
+{
+    char m_pad00[0xc];
+    float curtime;
+};
+extern CGlobalsView *g_102b8494;
+
+struct CSpriteView
+{
+    char m_pad00[0x78];
+    float m_fl78;       // +0x78
+    char m_pad7c[0x430 - 0x7c];
+    float m_fl430;      // +0x430
+    char m_pad434[0x44c - 0x434];
+    float m_fl44c;      // +0x44c
+    void sub_10136520(float dt);
+};
+
+void __fastcall sub_101363c0(CSpriteView *p, int)
+{
+    p->sub_10136520((g_102b8494->curtime - p->m_fl44c) * p->m_fl430);
+    p->m_fl78 = g_102b8494->curtime;
+    p->m_fl44c = g_102b8494->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136520 size=0x54
 extern "C" double __cdecl fmod(double, double);
 
