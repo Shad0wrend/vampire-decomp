@@ -350,6 +350,19 @@ void C_BasePlayer::vfunc189(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9a00 size=0x2f
+#include "C_BasePlayer.h"
+struct CUnknown100a2450 { int sub_100a2450(); };
+struct Fields_100a9a00 { char p0[0x88]; int m_i88; char p1[0xb0 - 0x8c]; float m_fb0; char p2[0x1704 - 0xb4]; float m_f1704; };
+void C_BasePlayer::vfunc179()
+{
+	vfunc181();
+	Fields_100a9a00 *f = (Fields_100a9a00 *)this;
+	if (f->m_i88 < 1 && !(((CUnknown100a2450 *)this)->sub_100a2450() & 1))
+		f->m_f1704 = -f->m_fb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ac0 size=0x23
 #include "C_BasePlayer.h"
 namespace lifted {
