@@ -32095,6 +32095,51 @@ bool S1008f6f0::sub_1008f6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f900 size=0x56
+#include "C_BaseAnimating.h"
+
+struct AnimTailView
+{
+    char m_pad00[0x420];
+    int m_420[2];              // +0x420
+    char m_pad428[0x6ac - 0x428];
+    int m_6ac;                 // +0x6ac
+};
+
+struct ModelInfoIface
+{
+    virtual void mi0() = 0;
+    virtual void mi1() = 0;
+    virtual void *vfunc2(int handle) = 0;
+};
+struct ModelRenderIface
+{
+    virtual int vfunc0(void *model) = 0;
+};
+
+extern ModelInfoIface *g_104a57f8;
+extern ModelRenderIface *g_104a57d8;
+
+int C_BaseAnimating::sub_1008f900(int index)
+{
+    AnimTailView *v = (AnimTailView *)this;
+    if (index < 0) {
+        if (!vfunc71())
+            return 0;
+        return v->m_6ac;
+    }
+    if (index >= 2)
+        return 0;
+    int h = v->m_420[index];
+    if (h <= 0)
+        return 0;
+    void *model = g_104a57f8->vfunc2(h);
+    if (!model)
+        return 0;
+    return g_104a57d8->vfunc0(model);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fcd0 size=0x23
 struct S48_10108430 { int m_a0, m_a4, m_a8, m_ac, m_a10, m_a14, m_a18, m_a1c, m_a20, m_a24, m_a28, m_a2c; };
 void sub_10108430(const S48_10108430 *, S48_10108430 *);
