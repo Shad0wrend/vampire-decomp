@@ -35123,6 +35123,17 @@ bool CUnknown100a6920::sub_100a6920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6ac0 size=0x31
+// TARGET: sub_100a6ac0
+void sub_100a6ac0(float *p)
+{
+	if (*p < 0.0)
+		*p = 0;
+	if (*p > 1.0)
+		*p = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6b00 size=0x5
 namespace lifted {
 int sub_10098800();
