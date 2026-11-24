@@ -25,3 +25,9 @@ VCharWizardUI::~VCharWizardUI()
 	((LB *)((char *)this + 0x180))->LB::~LB();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10174c60 size=0x1b
+#include "VCharWizardUI.h"
+extern bool g_105fb201;
+int VCharWizardUI::sub_10174c60() { if (sub_100f05b0() && g_105fb201) return 1; return 0; }
+// END FUNCTION
