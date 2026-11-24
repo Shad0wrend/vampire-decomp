@@ -65639,6 +65639,12 @@ void sub_1014dfc0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e000 size=0x26
+struct VFlt { char pad[0x24]; int m_flags; bool sub_1014e000(int a, int b); };
+// TARGET: ?sub_1014e000@VFlt@@QAE_NHH@Z
+bool VFlt::sub_1014e000(int a, int b) { if (m_flags) { if (b == 0) { if (m_flags & 1) return false; } else { if (m_flags & 2) return false; } } return true; }
+// END FUNCTION
+
 // FUNCTION: 0x1014e070 size=0xd
 struct CUnknown1014e070 { void * sub_1014e070(); };
 void * CUnknown1014e070::sub_1014e070()
