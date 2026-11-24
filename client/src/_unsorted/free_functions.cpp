@@ -30007,6 +30007,16 @@ char sub_100923c0(char a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092530 size=0x7
+extern int g_1049c4d4;
+
+// TARGET: sub_10092530
+void sub_10092530()
+{
+	++g_1049c4d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093e20 size=0x1c
 namespace lifted {
 int sub_100681e0(int);
