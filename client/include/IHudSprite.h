@@ -12,6 +12,7 @@ public:
 	void sub_10136f60(bool bAdditive);
 	int sub_10136ff0(int frame, int x, int y, int a3);
 	void sub_10137020(int a1, int x, int y, int a4, int a5, int a6);
+	void sub_10137850(int a1, int x, int y, int a4, int a5, int a6);
 };
 
 struct El3d50;
@@ -27,7 +28,7 @@ public:
 	virtual void vfunc6();
 	virtual void vfunc7(int a1, int x, int y, int a4, int a5, int a6);
 	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual void vfunc9(int a1, int x, int y, int a4, int a5, int a6);
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void vfunc12();
