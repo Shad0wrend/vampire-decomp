@@ -14373,6 +14373,44 @@ int CUnknown10038a20::sub_10038a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038f20 size=0x15b
+#include "C_TEGunshotDecal.h"
+#include "CRagdollBulletEnumerator.h"
+
+struct ISpatialPartition
+{
+	virtual void vfunc0() = 0;
+	virtual void vfunc1() = 0;
+	virtual void vfunc2() = 0;
+	virtual void vfunc3() = 0;
+	virtual void vfunc4() = 0;
+	virtual void vfunc5() = 0;
+	virtual void vfunc6() = 0;
+	virtual void vfunc7() = 0;
+	virtual void vfunc8() = 0;
+	virtual void vfunc9() = 0;
+	virtual void vfunc10() = 0;
+	virtual void vfunc11() = 0;
+	virtual void vfunc12() = 0;
+	virtual void vfunc13() = 0;
+	virtual void EnumerateElementsAlongRay(int listMask, const Ray_t &ray, bool coarseTest, void *pIterator) = 0;
+};
+
+extern ISpatialPartition *g_104a5808;
+
+// TARGET: C_TEGunshotDecal::sub_10038f20
+bool C_TEGunshotDecal::sub_10038f20()
+{
+	Ray_t shotRay;
+	shotRay.Init(m_v2, m_v1);
+
+	CRagdollBulletEnumerator ragdollEnum(shotRay, 4000.0f, *(int *)&m_v3.z);
+	g_104a5808->EnumerateElementsAlongRay(8, shotRay, false, &ragdollEnum);
+
+	return ragdollEnum.Hit();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039080 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_10039080(const Vector &v)
