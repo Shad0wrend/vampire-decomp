@@ -20,6 +20,16 @@ public:
 	};
 };
 
+class PrecacheEffectMuzzleFlash
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
 class PrecacheMuzzleFlash
 {
 public:
