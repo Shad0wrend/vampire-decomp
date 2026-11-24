@@ -60857,6 +60857,19 @@ void sub_10147200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147210 size=0x7
+struct CSelf10147210
+{
+	int m_unk00;
+};
+
+// TARGET: sub_10147210
+bool __fastcall sub_10147210(CSelf10147210 *self)
+{
+	return self->m_unk00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147290 size=0x4a
 #include "CUnknown101dbe30.h"
 
