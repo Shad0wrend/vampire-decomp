@@ -46588,6 +46588,18 @@ float __cdecl sub_1010c230(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c280 size=0x13
+float sub_1010c280(float x)
+{
+	float r;
+	__asm {
+		rsqrtss xmm0, dword ptr [x]
+		movss dword ptr [r], xmm0
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c2a0 size=0x6
 namespace lifted {
 extern char g_104df5b8;

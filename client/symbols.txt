@@ -4602,6 +4602,7 @@
 0x1010c040 func   ?sub_1010c040@@YAMABUVector2D@@00PAM@Z sub_1010c040
 0x1010c0a0 func   ?sub_1010c0a0@@YAXMMMH_N000@Z sub_1010c0a0
 0x1010c230 func   ?sub_1010c230@@YAMM@Z sub_1010c230
+0x1010c280 func   ?sub_1010c280@@YAMM@Z sub_1010c280
 0x1010c2a0 func   ?sub_1010c2a0@@YADXZ sub_1010c2a0
 0x1010c2b0 func   ?sub_1010c2b0@@YADXZ sub_1010c2b0
 0x1010c2c0 func   ?sub_1010c2c0@@YADXZ sub_1010c2c0
