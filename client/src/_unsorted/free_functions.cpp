@@ -53239,6 +53239,23 @@ int __stdcall sub_10122430(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123480 size=0x37
+#include <string.h>
+struct PCW {
+  char pad[0x14]; bool m_b14;
+  bool sub_10123470();
+  int sub_10123480(int size, const void *a, const void *b);
+};
+// TARGET: PCW::sub_10123480
+int PCW::sub_10123480(int size, const void *a, const void *b)
+{
+  if (!m_b14) return 0;
+  if (sub_10123470())
+    return memcmp(a, b, size) == 0;
+  return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101234c0 size=0x3d
 namespace lifted {
 extern char g_102c25c0;
