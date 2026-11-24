@@ -27009,6 +27009,43 @@ CWpnObj1007d430 *sub_1007b160();
 bool sub_1007d430() { void *p = sub_1007b160()->m_p; if (p) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1007d790 size=0x5a
+#include "C_BaseCombatWeapon.h"
+
+struct CEntityView
+{
+	char m_pad00[0x4fe9c];
+	int m_i4fe9c;
+	char m_pad4fea0[0xc];
+	int m_i4feac;
+};
+
+struct XHOwnerView
+{
+	void *sub_10099bd0();
+};
+
+struct COtherView
+{
+	char m_pad[0x106c];
+	int m_i106c;
+};
+
+// TARGET: C_BaseCombatWeapon::sub_1007d790
+bool C_BaseCombatWeapon::sub_1007d790(void *arg0, void *arg1, int arg2)
+{
+	if (((CEntityView *)sub_1007b160())->m_i4feac)
+	{
+		if (!(((COtherView *)arg1)->m_i106c & ((CEntityView *)sub_1007b160())->m_i4feac))
+			return false;
+	}
+	if (((XHOwnerView *)arg0)->sub_10099bd0() == (void *)this)
+		return false;
+	bool b = ((CEntityView *)sub_1007b160())->m_i4fe9c != 0;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
