@@ -80027,6 +80027,30 @@ void QuestJournal::sub_10162840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162870 size=0xd0
+#include "QuestJournal.h"
+#include "CUnknown10248a50.h"
+#include "ScopeTrace.h"
+extern IFileSys *g_104a580c;
+// TARGET: QuestJournal::sub_10162870
+void QuestJournal::sub_10162870(const char *pszFile, int index)
+{
+	ScopeTrace trace("QuestJournal::LoadQuestFile", g_102de300, g_102de300);
+	CUnknown10248a50 *pKV = new CUnknown10248a50("QuestTable");
+	if (pKV)
+	{
+		IFileSys *pFileSys = g_104a580c;
+		if (pKV->sub_10127c90(pszFile, pFileSys, 0, true))
+		{
+			for (CUnknown10248a50 *pSub = pKV->sub_101283a0(); pSub; pSub = pSub->sub_101283b0())
+				sub_10162940(pSub, index);
+		}
+		pKV->sub_10127c60();
+		::operator delete(pKV);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162f00 size=0x9e
 #include "QuestJournal.h"
 
