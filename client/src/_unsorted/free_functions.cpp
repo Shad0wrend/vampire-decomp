@@ -32025,6 +32025,15 @@ int CUnknown100a2e90::sub_100a2e90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2ed0 size=0xc
+struct V_100a2ed0 { int m_unk[0x3d8 / 4]; int m_p3d8; };
+// TARGET: sub_100a2ed0
+bool __fastcall sub_100a2ed0(V_100a2ed0 *self)
+{
+	return self->m_p3d8 ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2fc0 size=0x7
 struct CUnknown100a2fc0 { int sub_100a2fc0(); };
 int CUnknown100a2fc0::sub_100a2fc0()
