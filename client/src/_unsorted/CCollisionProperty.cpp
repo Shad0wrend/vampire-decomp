@@ -11,6 +11,16 @@ void *CCollisionProperty::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043450 size=0x4
+#include "CCollisionProperty.h"
+
+// TARGET: CCollisionProperty::vfunc2
+void *CCollisionProperty::vfunc2()
+{
+	return &m_unk10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044630 size=0x1
 #include "CCollisionProperty.h"
 
