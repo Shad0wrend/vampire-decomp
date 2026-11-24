@@ -188,6 +188,37 @@ float CInput::vfunc53()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffb00 size=0x5c
+#include "CInput.h"
+#include "Vector.h"
+
+struct CmdView
+{
+	char m_pad28[0x28];
+	Vector m_vec28;
+	char m_pad34[0x38 - 0x34];
+	Vector m_vec38;
+	char m_pad44[0x50 - 0x44];
+	Vector m_vec50;
+};
+
+struct CInputView
+{
+	char m_pad164[0x164];
+	Vector m_vec164;
+	Vector m_vec170;
+};
+
+void CInput::vfunc31(void *pCmd)
+{
+	CmdView *cmd = (CmdView *)pCmd;
+	CInputView *v = (CInputView *)this;
+	VectorAdd(cmd->m_vec38, v->m_vec164, cmd->m_vec38);
+	cmd->m_vec50 = v->m_vec170;
+	vfunc33(&cmd->m_vec38, &cmd->m_vec50, &cmd->m_vec28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffb60 size=0x21
 #include "CInput.h"
 int CInput::vfunc32(int a0)
