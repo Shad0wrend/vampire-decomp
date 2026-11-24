@@ -35868,6 +35868,26 @@ void * CUnknown100bc060::sub_100bc060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc110 size=0x32
+#include "CUnknown100bbd50.h"
+#include <stdlib.h>
+struct XHE
+{
+	char u[0x424]; CUnknown100bbd50 *m_pEnt;
+	void sub_100bc110();
+};
+void XHE::sub_100bc110()
+{
+	CUnknown100bbd50 *p = (CUnknown100bbd50 *)calloc(1, 0x18);
+	CUnknown100bbd50 *q;
+	if (p)
+		q = p->sub_100bbd50(this, "hud_entity");
+	else
+		q = 0;
+	m_pEnt = q;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc150 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
