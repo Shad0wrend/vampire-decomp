@@ -36956,6 +36956,90 @@ void * CUnknown100bc8b0::sub_100bc8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc930 size=0xf4
+#include "Vector.h"
+
+struct color32_100bc930
+{
+	unsigned char r, g, b, a;
+};
+
+struct CGlowSprite_100bc930
+{
+	Vector m_vColor;    // 0x00
+	float m_flHorzSize; // 0x0c
+	float m_flVertSize; // 0x10
+	void *m_pMaterial;  // 0x14
+};
+
+struct CGlowOverlay_100bc930
+{
+	void *vtable;                       // 0x00 (esi+0x40c)
+	Vector m_vPos;                      // 0x04 (esi+0x410)
+	char pad_10[0x14];                  // 0x10
+	CGlowSprite_100bc930 m_Sprites[4];  // 0x24 (esi+0x430)
+	int m_nSprites;                     // 0x84 (esi+0x490)
+
+	void sub_100efd40();
+};
+
+struct Base0_100bc930
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	virtual const Vector &GetAbsOrigin(); // slot 9 (+0x24)
+};
+
+struct Base4_100bc930
+{
+	virtual void r0();
+};
+
+struct Base8_100bc930
+{
+	virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3();
+	virtual void n4();
+	virtual void sub_100bc930(int updateType);
+
+	void sub_100a1340(int updateType);
+};
+
+struct Self_100bc930 : public Base0_100bc930, public Base4_100bc930, public Base8_100bc930
+{
+	char pad_c[0x44];
+	color32_100bc930 m_clrRender; // 0x50 (esi+0x48)
+	char pad_54[0x3bc];
+	int m_nSize;                  // 0x410 (esi+0x408)
+	CGlowOverlay_100bc930 m_Glow; // 0x414 (esi+0x40c)
+
+	virtual void sub_100bc930(int updateType);
+};
+
+// TARGET: ?sub_100bc930@Self_100bc930@@UAEXH@Z
+void Self_100bc930::sub_100bc930(int updateType)
+{
+	Base8_100bc930::sub_100a1340(updateType);
+
+	m_Glow.m_vPos = GetAbsOrigin();
+
+	if (updateType == 0)
+	{
+		Vector vColor(m_clrRender.r / 255.0f, m_clrRender.g / 255.0f, m_clrRender.b / 255.0f);
+
+		m_Glow.m_nSprites = 2;
+
+		m_Glow.m_Sprites[0].m_flHorzSize = m_Glow.m_Sprites[0].m_flVertSize = m_nSize * 0.01f;
+		m_Glow.m_Sprites[0].m_vColor = vColor;
+
+		m_Glow.m_Sprites[1].m_flHorzSize = m_Glow.m_Sprites[1].m_flVertSize = m_nSize * 0.005f;
+		m_Glow.m_Sprites[1].m_vColor = vColor;
+
+		m_Glow.sub_100efd40();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bca50 size=0x6
 namespace lifted {
 extern char g_104a31ec;
