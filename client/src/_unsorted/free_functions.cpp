@@ -79444,6 +79444,24 @@ int CUnknown1017f290::sub_1017f290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f610 size=0x2d
+struct V1017 { int sub_1017dc00(); };
+struct ScoreV { void sub_1017f1d0(); };
+struct ZPanel {
+	char pad[0x438]; int m_n438;
+	void sub_1017f610();
+};
+void ZPanel::sub_1017f610()
+{
+	int n = ((V1017 *)this)->sub_1017dc00();
+	if (m_n438 != n) {
+		if (!n || !m_n438)
+			((ScoreV *)this)->sub_1017f1d0();
+		m_n438 = n;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f850 size=0xb
 struct CUnknown1017f850 { void * sub_1017f850(); };
 void * CUnknown1017f850::sub_1017f850()
