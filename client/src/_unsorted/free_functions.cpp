@@ -39507,6 +39507,26 @@ char CUnknown100d27e0::sub_100d27e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3330 size=0x38
+struct LLNode2 { char pad[0x30]; unsigned short a; unsigned short b; };
+struct LLView2 {
+    LLNode2 *m_p;
+    char pad[0x10];
+    unsigned short m_n;
+    int sub_100d3330(unsigned short i);
+};
+// TARGET: LLView2::sub_100d3330
+int LLView2::sub_100d3330(unsigned short i)
+{
+    if (i < m_n) {
+        LLNode2 *n = &m_p[i];
+        if (n->a != i || n->b == i)
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3370 size=0x8
 struct CUnknown100d3370 { void sub_100d3370(); };
 void CUnknown100d3370::sub_100d3370()
