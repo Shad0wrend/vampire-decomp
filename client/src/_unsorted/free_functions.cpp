@@ -78235,6 +78235,19 @@ void CUnknown101764f0::sub_101764f0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10176f30 size=0x2a
+#include "CStatDefault3List.h"
+struct VPlayer_1008ebb0 { int sub_1008ebb0(); };
+extern VPlayer_1008ebb0 *g_104a0d50;
+extern CStatDefault3List g_105e74fc;
+char sub_10176f30(int a)
+{
+	if (g_104a0d50)
+		return g_105e74fc.sub_10140000(g_104a0d50->sub_1008ebb0())->sub_1013f370(a);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10176f60 size=0x1c
 struct CUnk102036e0Target { void sub_1015ecd0(int a); };
 struct CUnk102036e0Table { CUnk102036e0Target *sub_1015f2f0(const char *name); };
