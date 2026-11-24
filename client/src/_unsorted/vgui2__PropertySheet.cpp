@@ -11,6 +11,24 @@ vgui2::PropertySheet *pcd_emit_101c84a0(const vgui2::PropertySheet &other) { ret
 // TARGET: ??_GPropertySheet@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c8780 size=0x35
+#include "vgui2__PropertySheet.h"
+struct PSView { char pad[0x58]; int m_n; int m_unk5c; int *m_data; };
+// TARGET: vgui2::PropertySheet::vfunc108
+void vgui2::PropertySheet::vfunc108(int panel)
+{
+    PSView *v = (PSView *)this;
+    int i;
+    for (i = 0; i < v->m_n; i++) {
+        if (v->m_data[i] == panel) {
+            if (i >= 0)
+                vfunc127(i);
+            return;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c87c0 size=0x16
 #include "vgui2__PropertySheet.h"
 namespace lifted {
