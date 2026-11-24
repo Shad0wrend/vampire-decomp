@@ -19618,6 +19618,31 @@ char sub_10063970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064ac0 size=0x4c
+extern char g_103eef44;
+extern int g_103eef48;
+extern char g_103eef68;
+extern char g_103eef04;
+void __stdcall sub_10064ac0(char v)
+{
+	if (g_103eef44 == 0) {
+		g_103eef44 = v;
+		if (v) {
+			g_103eef48 = 0;
+			g_103eef68 = 1;
+			g_103eef04 = 0;
+		}
+	} else {
+		g_103eef44 = v;
+		if (!v) {
+			g_103eef48 = 0xff;
+			g_103eef04 = 1;
+			g_103eef68 = 0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064b10 size=0x48
 extern char g_103eef44;
 extern int g_103eef48;
