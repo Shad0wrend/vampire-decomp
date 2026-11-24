@@ -24,6 +24,7 @@ public:
 	void sub_1011c7f0();
 	bool sub_1009f140(int mask);
 	bool sub_100a1140();
+	C_BaseEntity *sub_100a11a0();
 	void sub_1011ac90(void (C_BaseEntity::*thinkFunc)(), int a, int b);	// PhysicsDispatchThink: the two trailing ints are the rest of the 16-byte member pointer
 	void sub_100a2030(const void *);
 	bool sub_100a0710(const char *name);
