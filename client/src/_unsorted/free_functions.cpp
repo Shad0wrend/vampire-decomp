@@ -38492,6 +38492,24 @@ int CUnknown100bf170::sub_100bf170(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf1a0 size=0x36
+struct Obj10128ae0 { void sub_10128ae0(float f); };
+struct CSlider100bf {
+	char pad0[0x458];
+	Obj10128ae0 m_obj458;
+	char pad[0x464 - 0x458 - 1];
+	int m_nDivs;
+	char pad2[0x6cc - 0x468];
+	int m_n6cc;
+	int m_n6d0;
+	void sub_100bf1a0();
+};
+void CSlider100bf::sub_100bf1a0()
+{
+	m_obj458.sub_10128ae0((float)((m_n6d0 + m_n6cc - 100) / (m_nDivs - 1)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf1e0 size=0x171
 #include "Vector.h"
 
