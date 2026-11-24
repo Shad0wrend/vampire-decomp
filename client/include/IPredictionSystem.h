@@ -7,4 +7,14 @@ class IPredictionSystem
 {
 public:
 	virtual ~IPredictionSystem();
+	int m_pNextSystem;
+	char m_bSuppressEvent;
+	int m_pSuppressHost;
+	int m_nStatusPushed;
+	bool CanSend() const
+	{
+		if (m_nStatusPushed > 0)
+			return false;
+		return !m_bSuppressEvent;
+	}
 };
