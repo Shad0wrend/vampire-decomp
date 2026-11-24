@@ -6,6 +6,7 @@
 class C_WeaponRanged_Thaumaturgy : public C_WeaponRanged_Targeted
 {
 public:
+	virtual int vfunc16();
 	C_WeaponRanged_Thaumaturgy();
 private:
 	char m_pad0014[0x9a8 - 0x14];
