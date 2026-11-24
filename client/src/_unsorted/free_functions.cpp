@@ -78941,6 +78941,13 @@ int CUnknown10186a00::sub_10186a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186a50 size=0x22
+struct SubPanel { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void SetVisible(bool b); virtual bool IsVisible(); };
+struct CView { int m_unk0[4]; SubPanel m_p; char pad[0x420-0x14]; char m_f; void sub_10186a50(); };
+// TARGET: ?sub_10186a50@CView@@QAEXXZ
+void CView::sub_10186a50() { m_f = 0; if (m_p.IsVisible()) m_p.SetVisible(false); }
+// END FUNCTION
+
 // FUNCTION: 0x10186a80 size=0x7
 struct CUnknown10186a80 { char sub_10186a80(); };
 char CUnknown10186a80::sub_10186a80()
