@@ -34747,6 +34747,30 @@ bool __fastcall sub_100a2ed0(V_100a2ed0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2f50 size=0x4e
+#include "C_BaseEntity.h"
+
+void operator delete(void *);
+
+void C_BaseEntity::sub_100a2f50()
+{
+	if (*(int *)((char *)this + 0x3d8))
+	{
+		int *p = (int *)((char *)this + 0x2d8);
+		int n = 0x40;
+		do
+		{
+			::operator delete((void *)*p);
+			*p = 0;
+			p++;
+		} while (--n);
+
+		::operator delete(*(void **)((char *)this + 0x3d8));
+		*(int *)((char *)this + 0x3d8) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2fa0 size=0x20
 struct V2fa0 { char pad[0x2d8]; int arr[64]; int flag; int sub_100a2fa0(int i); };
 int V2fa0::sub_100a2fa0(int i) { if (!flag) return 0; return arr[i & 0x3f]; }
