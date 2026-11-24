@@ -9,6 +9,7 @@ class CParticleEffect : public IParticleEffect
 public:
 	virtual ~CParticleEffect();
 	void sub_10117fd0();
+	void sub_10117fe0();
 	int m_unk04;
 	int m_unk08;
 	int m_unk0c;
