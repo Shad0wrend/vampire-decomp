@@ -132,6 +132,13 @@ void ClientModeShared::vfunc23(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4480 size=0xe
+#include "ClientModeShared.h"
+extern void *g_104cef94;
+// TARGET: ClientModeShared::vfunc19
+bool ClientModeShared::vfunc19() { return g_104cef94 != 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100d4490 size=0x31
 #include "ClientModeShared.h"
 namespace lifted {
