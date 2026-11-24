@@ -777,6 +777,12 @@ bool __fastcall sub_1007d450(V_1007d450 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d460 size=0x11
+#include "C_BaseCombatWeapon.h"
+// TARGET: C_BaseCombatWeapon::vfunc177
+bool C_BaseCombatWeapon::vfunc177() { void *p = *(void **)((char *)sub_1007b160() + 0x2444); if (p) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1007d4d0 size=0x4c
 #include "C_BaseCombatWeapon.h"
 
