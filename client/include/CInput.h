@@ -60,9 +60,9 @@ public:
     virtual void vfunc28();
     virtual int vfunc29();
     virtual float vfunc30();
-    virtual void vfunc31();
+    virtual void vfunc31(void *cmd);
     virtual int vfunc32(int);
-    virtual void vfunc33();
+    virtual void vfunc33(void *, void *, void *);
     virtual int vfunc34();
     virtual int vfunc35();
     virtual void vfunc36();
