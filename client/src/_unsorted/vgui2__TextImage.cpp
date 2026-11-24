@@ -23,6 +23,19 @@ int vgui2::TextImage::vfunc28(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9e80 size=0x39
+#include "vgui2__TextImage.h"
+struct TIView { char pad[0x1c]; int m1c; int m20; int m24; };
+// TARGET: vgui2::TextImage::vfunc30
+void vgui2::TextImage::vfunc30(int v)
+{
+    int local;
+    ((TIView *)this)->m24 = v;
+    vfunc33(&local, &v, ((TIView *)this)->m1c);
+    vfunc9(local, v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9ec0 size=0x4
 #include "vgui2__TextImage.h"
 int vgui2::TextImage::vfunc31()

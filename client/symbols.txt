@@ -7611,6 +7611,7 @@
 0x101b9d50 func   ?sub_101b9d50@CUnknown101b9d50@@QAEHH@Z CUnknown101b9d50::sub_101b9d50
 0x101b9d60 func   ?sub_101b9d60@CUnknown101b9d60@@QAEHH@Z CUnknown101b9d60::sub_101b9d60
 0x101b9df0 func   ?vfunc28@TextImage@vgui2@@UAEHHH@Z vgui2::TextImage::vfunc28
+0x101b9e80 func   ?vfunc30@TextImage@vgui2@@UAEXH@Z vgui2::TextImage::vfunc30
 0x101b9ec0 func   ?vfunc31@TextImage@vgui2@@UAEHXZ vgui2::TextImage::vfunc31
 0x101b9ed0 func   ?vfunc9@TextImage@vgui2@@UAEHHH@Z vgui2::TextImage::vfunc9
 0x101ba7f0 func   ?vfunc32@TextImage@vgui2@@UAEHHH@Z vgui2::TextImage::vfunc32
