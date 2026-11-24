@@ -85925,6 +85925,22 @@ void sub_10170c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170c30 size=0x2f
+// TARGET: sub_10170c30
+#include "CHud.h"
+#include "VBarterUI.h"
+
+extern CHud g_104cfe38;
+
+void sub_10170c30(int nArg)
+{
+	if ( g_104cfe38.sub_100f0ed0("VBarterUI") )
+	{
+		((VBarterUI *)g_104cfe38.sub_100f0ed0("VBarterUI"))->sub_101703e0(nArg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170cf0 size=0x16
 namespace lifted {
 extern char g_1027b3ec;
