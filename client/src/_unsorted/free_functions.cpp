@@ -39332,6 +39332,20 @@ void * CUnknown100d8dc0::sub_100d8dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8dd0 size=0x29
+struct E100d8dd0 { char pad[0xe]; unsigned short m_next; };
+struct S100d8dd0 {
+	E100d8dd0 *m_p; char pad[0x28]; unsigned short m_head; unsigned short m_n;
+	void sub_100d8dd0(unsigned short i);
+};
+void S100d8dd0::sub_100d8dd0(unsigned short i)
+{
+	m_p[i].m_next = m_head;
+	m_n--;
+	m_head = i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d90b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
