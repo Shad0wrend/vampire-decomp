@@ -45152,6 +45152,20 @@ void * CUnknown10104380::sub_10104380(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101046f0 size=0x34
+struct S104 { int a0; int a4; int flags; };
+void sub_101046f0(int *p, int bits, int mask, S104 *s, char clear)
+{
+    if (s->flags & 3)
+        *p |= bits;
+    int m = -3;
+    if (bits & mask)
+        m = -4;
+    if (clear)
+        s->flags &= m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101062e0 size=0x2f
 namespace lifted {
 extern char g_102bdfd8;
