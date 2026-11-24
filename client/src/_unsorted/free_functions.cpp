@@ -83972,6 +83972,18 @@ int CUnknown10174d70::sub_10174d70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174d90 size=0x25
+#include "CHud.h"
+extern char g_105fb1fe;
+extern CHud g_104cfe38;
+struct CScorePanelTemp { void sub_10174c80(int a); };
+void sub_10174d90(int a)
+{
+	if (g_105fb1fe)
+		((CScorePanelTemp *)g_104cfe38.sub_100f0ed0("VCharWizardUI"))->sub_10174c80(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174dc0 size=0x20
 namespace lifted {
 extern char g_1027b3dc;
