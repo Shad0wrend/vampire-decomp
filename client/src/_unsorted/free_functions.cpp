@@ -33425,6 +33425,20 @@ template <> int ClientClassInit<DT_BaseNetworkable::ignored>(DT_BaseNetworkable:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3910 size=0x36
+#include "C_BaseNetworkable.h"
+struct EListView { int *sub_100e2340(int *out, int a, int b, int c); };
+extern EListView *g_102b8e9c;
+// TARGET: C_BaseNetworkable::sub_100a3910
+void C_BaseNetworkable::sub_100a3910(int a, int b)
+{
+	int tmp;
+	m_unk12 = (unsigned short)a;
+	EListView *list = g_102b8e9c;
+	m_unk14.v = *list->sub_100e2340(&tmp, (int)GetIClientUnknown(), a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3990 size=0x1
 void sub_100a3990()
 {
