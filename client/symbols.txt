@@ -7915,6 +7915,7 @@
 0x101c8780 func   ?vfunc108@PropertySheet@vgui2@@UAEXH@Z vgui2::PropertySheet::vfunc108
 0x101c87c0 func   ?vfunc109@PropertySheet@vgui2@@UAEHH@Z vgui2::PropertySheet::vfunc109
 0x101c87e0 func   ?vfunc110@PropertySheet@vgui2@@UAEHH@Z vgui2::PropertySheet::vfunc110
+0x101c8800 func   ?vfunc111@PropertySheet@vgui2@@UAEXPBDHD@Z vgui2::PropertySheet::vfunc111
 0x101c89f0 func   ?vfunc112@PropertySheet@vgui2@@UAEHXZ vgui2::PropertySheet::vfunc112
 0x101c8a00 func   ?vfunc119@PropertySheet@vgui2@@UAEHXZ vgui2::PropertySheet::vfunc119
 0x101c8a10 func   ?vfunc123@PropertySheet@vgui2@@UAEHXZ vgui2::PropertySheet::vfunc123

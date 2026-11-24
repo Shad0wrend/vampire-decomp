@@ -53,6 +53,22 @@ int vgui2::PropertySheet::vfunc110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8800 size=0x3b
+#include "vgui2__PropertySheet.h"
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+struct SheetView { char pad[0x84]; int m84; char m88[0x20]; char ma8; };
+// TARGET: vgui2::PropertySheet::vfunc111
+void vgui2::PropertySheet::vfunc111(const char *s, int a, char flag)
+{
+	SheetView *v = (SheetView *)this;
+	v->m84 = a;
+	strcpy(v->m88, s);
+	v->ma8 = flag;
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c89f0 size=0x4
 #include "vgui2__PropertySheet.h"
 int vgui2::PropertySheet::vfunc112()
