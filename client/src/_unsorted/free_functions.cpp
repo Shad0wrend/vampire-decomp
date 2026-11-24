@@ -44460,6 +44460,21 @@ int CUnknown10101db0::sub_10101db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101df0 size=0x2d
+#include "CInput.h"
+struct KNode { char pad[0x24]; KNode *m_pNext; };
+void CInput::sub_10101df0()
+{
+	KNode *p = *(KNode **)((char *)this + 0xdc);
+	while (p) {
+		KNode *n = p->m_pNext;
+		delete p;
+		p = n;
+	}
+	*(KNode **)((char *)this + 0xdc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
