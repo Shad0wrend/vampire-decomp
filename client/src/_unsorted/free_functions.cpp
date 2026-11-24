@@ -25221,6 +25221,21 @@ int HV::sub_1007bb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bb70 size=0x2c
+struct CGlobals_102b8494 { float a; float b; float c; float curtime; };
+extern CGlobals_102b8494 *g_102b8494;
+struct WV {
+	char pad[0x790]; float m_t[3];
+	bool sub_1007bb70(int i);
+};
+bool WV::sub_1007bb70(int i)
+{
+	if (i <= 2 && g_102b8494->curtime >= m_t[i])
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bba0 size=0xe
 struct V_1007bba0 { int m_unk[0x790 / 4]; float m_f790[1]; };
 // TARGET: sub_1007bba0
