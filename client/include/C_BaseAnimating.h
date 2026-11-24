@@ -10,6 +10,7 @@ public:
 	C_BaseAnimating();
 	void sub_100966e0();
 	bool sub_10094020();
+	bool sub_10091910(int idx, int arg);
 	bool sub_10093e40();
 	void sub_10002680(int);
 	bool sub_10095ac0(int idx, int arg);
@@ -53,7 +54,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual float vfunc137(float);
 	virtual float vfunc138(int iSequence);
 	virtual int vfunc139(int);
-	virtual void vfunc140();
+	virtual bool vfunc140();
 	virtual void vfunc141();
 	virtual bool vfunc142();
 };
