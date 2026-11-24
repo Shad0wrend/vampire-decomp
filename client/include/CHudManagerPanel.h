@@ -19,7 +19,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CHudManagerPanel adds to its base's vtable: 0-38, vfuncK at slot K
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual bool vfunc2(int);
 	virtual int vfunc3();
 	virtual int vfunc4();
 	virtual int vfunc5();
