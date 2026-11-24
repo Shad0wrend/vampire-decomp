@@ -45400,6 +45400,38 @@ void sub_100f2c00(int *r, int *g, int *b, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f35a0 size=0x4c
+struct CHudDigit_100f35a0 {
+	int sub_100f35a0(int iNumber, char iFlags);
+};
+
+// TARGET: CHudDigit_100f35a0::sub_100f35a0
+int CHudDigit_100f35a0::sub_100f35a0(int iNumber, char iFlags)
+{
+	if (iFlags & 4)
+		return 3;
+
+	if (iFlags & 2)
+		return 2;
+
+	if (iNumber <= 0)
+	{
+		if (iFlags & 1)
+			return 1;
+		else
+			return 0;
+	}
+
+	if (iNumber < 10)
+		return 1;
+
+	if (iNumber < 100)
+		return 2;
+
+	return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3640 size=0x35
 namespace lifted {
 extern char g_102351cc;
