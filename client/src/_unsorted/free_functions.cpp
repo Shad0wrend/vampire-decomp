@@ -15527,6 +15527,59 @@ int CUnknown1003dfa0::sub_1003dfa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003dfb0 size=0x62
+#include <stddef.h>
+
+void *operator new(size_t size);
+
+struct Vector { float x, y, z; };
+
+template <class T>
+class CSmartPtr
+{
+public:
+	CSmartPtr(T *pObj)
+	{
+		m_pObj = 0;
+		*this = pObj;
+	}
+
+	void operator=(T *pObj)
+	{
+		if (pObj)
+			pObj->sub_10117fd0();
+		if (m_pObj)
+			m_pObj->sub_10117fe0();
+		m_pObj = pObj;
+	}
+
+	T *m_pObj;
+};
+
+class CUnknown1003df50
+{
+public:
+	void *sub_1003df50(int pName);
+	void sub_10117fa0(bool bDynamic);
+	void sub_10118080(Vector *pVec);
+	void sub_10117fd0();
+	void sub_10117fe0();
+};
+
+// TARGET: sub_1003dfb0
+CSmartPtr<CUnknown1003df50> sub_1003dfb0(int pName, Vector *pVec)
+{
+	CUnknown1003df50 *pMem = (CUnknown1003df50 *)::operator new(0x7c);
+	CUnknown1003df50 *pRet = pMem ? (CUnknown1003df50 *)pMem->sub_1003df50(pName) : 0;
+	if (pRet)
+	{
+		pRet->sub_10117fa0(true);
+		pRet->sub_10118080(pVec);
+	}
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e7c0 size=0x12
 namespace lifted {
 extern char g_1022711c;
