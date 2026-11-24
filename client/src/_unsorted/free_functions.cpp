@@ -76780,6 +76780,12 @@ int sub_10170f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101713c0 size=0x20
+struct G13c0 { char pad[0x274]; int m; };
+extern G13c0 *g_105fb14c;
+void sub_101713c0(bool b) { if (g_105fb14c) { int v = 0; if (b) v = 1; g_105fb14c->m = v; } }
+// END FUNCTION
+
 // FUNCTION: 0x101713e0 size=0x18
 struct CHost_101713e0 { char m_pad[0x274]; void *m274; };
 extern CHost_101713e0 *g_105fb14c;
