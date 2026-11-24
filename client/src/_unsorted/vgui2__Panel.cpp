@@ -711,6 +711,12 @@ void vgui2::Panel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab380 size=0xe
+#include "vgui2__Panel.h"
+// TARGET: vgui2::Panel::vfunc69
+bool vgui2::Panel::vfunc69() { if (vfunc55()) return false; return true; }
+// END FUNCTION
+
 // FUNCTION: 0x101ab3d0 size=0x3
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc78(int a0)
