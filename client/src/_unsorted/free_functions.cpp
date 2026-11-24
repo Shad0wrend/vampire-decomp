@@ -30736,6 +30736,15 @@ template <> int ClientClassInit<DT_BaseAnimatingOverlay::ignored>(DT_BaseAnimati
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097f40 size=0x12
+struct S_10097f40 { char pad[0xfdc]; int m[32]; };
+void __fastcall sub_10097f40(S_10097f40 *self)
+{
+	for (int i = 0; i < 32; i++)
+		self->m[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100981f0 size=0x6
 namespace lifted {
 extern char g_1049d79c;
