@@ -46012,6 +46012,22 @@ void HistoryResource::sub_100f0310(int iType, const char *szName, int iCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f03e0 size=0x2a
+void sub_10114660(int, int);
+int sub_101146e0();
+struct HistoryResource {
+	void sub_100f0310(int, int, int);
+	void sub_100f03e0(int a, int b, int c);
+};
+// TARGET: ?sub_100f03e0@HistoryResource@@QAEXHHH@Z
+void HistoryResource::sub_100f03e0(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	int r = sub_101146e0();
+	sub_100f0310(3, r, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0410 size=0x1e
 struct HE_100f0410 { int a, b, c, d, e, f; };
 struct Hist_100f0410
