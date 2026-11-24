@@ -80731,6 +80731,25 @@ void CUnknown1018a6f0::sub_1018a6f0(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ae50 size=0x2f
+struct CUnknown100ac740 { CUnknown100ac740 *m_pNext; void sub_100ac740(); };
+struct LHold {
+	char pad[0x40]; CUnknown100ac740 *m_pHead;
+	void sub_1018ae50();
+};
+void LHold::sub_1018ae50()
+{
+	CUnknown100ac740 *p = m_pHead;
+	while (p) {
+		CUnknown100ac740 *n = p->m_pNext;
+		p->sub_100ac740();
+		delete p;
+		p = n;
+	}
+	m_pHead = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b320 size=0x27
 namespace lifted {
 extern int g_104a57d4;
