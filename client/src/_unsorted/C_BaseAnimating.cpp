@@ -339,3 +339,31 @@ int C_BaseAnimating::vfunc17()
     return (int)&lifted::g_102ad9d8;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10095a60 size=0x57
+#include "C_BaseAnimating.h"
+
+void __cdecl sub_10107eb0(void *entry, int a);
+void __cdecl sub_10108510(void *entry, int a, int b);
+
+struct AnimAttView
+{
+    char m_pad00[0x770];
+    char *m_pBase;              // +0x770
+    char m_pad774[0x77c - 0x774];
+    int m_nCount;               // +0x77c
+};
+
+bool C_BaseAnimating::vfunc57(int index, int arg2, int arg3)
+{
+    AnimAttView *v = (AnimAttView *)this;
+    if (index < 1 || index > v->m_nCount)
+        return false;
+    if (!vfunc140())
+        return false;
+    char *entry = v->m_pBase + index * 72 - 0x48;
+    sub_10107eb0(entry, arg3);
+    sub_10108510(entry, 3, arg2);
+    return true;
+}
+// END FUNCTION
