@@ -62365,6 +62365,83 @@ void sub_10136d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136da0 size=0x153
+struct IMatVarView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual int GetIntValue();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void GetVecValue(float *pVal, int numComps);
+	virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22();
+	virtual int GetType();
+};
+struct IMatView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual int GetMappingWidth();
+	virtual int GetMappingHeight();
+	virtual int GetNumAnimationFrames();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual IMatVarView *FindVar(const char *pName, bool *pFound, bool bComplain);
+};
+struct CEngineSpriteView
+{
+	int m_width;	// 0
+	int m_height;	// 4
+	int m_numFrames;	// 8
+	IMatView *m_material;	// 0xc
+	IMatVarView *m_frameVar;	// 0x10
+	IMatVarView *m_renderModeVar;	// 0x14
+	int m_orientation;	// 0x18
+	int m_unk1c, m_unk20, m_unk24;
+	float up;	// 0x28
+	float down;	// 0x2c
+	float left;	// 0x30
+	float right;	// 0x34
+	bool sub_10136da0( const char *name );
+};
+IMatView *sub_10136f00( const char *name );
+bool CEngineSpriteView::sub_10136da0( const char *name )
+{
+	m_material = sub_10136f00( name );
+	if ( m_material )
+	{
+		m_width = m_material->GetMappingWidth();
+		m_height = m_material->GetMappingHeight();
+		m_numFrames = m_material->GetNumAnimationFrames();
+		bool found;
+		IMatVarView *orientationVar = m_material->FindVar( "$spriteorientation", &found, false );
+		if ( found )
+			m_orientation = orientationVar->GetIntValue();
+		else
+			m_orientation = 0;
+		IMatVarView *originVar = m_material->FindVar( "$spriteorigin", &found, false );
+		float origin[3], originVarValue[3];
+		if ( !found || ( originVar->GetType() != 2 ) )
+		{
+			origin[0] = -m_width * 0.5f;
+			origin[1] = m_height * 0.5f;
+		}
+		else
+		{
+			originVar->GetVecValue( &originVarValue[0], 3 );
+			origin[0] = -m_width * originVarValue[0];
+			origin[1] = m_height * originVarValue[1];
+		}
+		m_frameVar = m_material->FindVar( "$frame", &found, false );
+		m_renderModeVar = m_material->FindVar( "$spriteRenderMode", &found, false );
+		if ( !found )
+			m_renderModeVar = 0;
+		up = origin[1];
+		down = origin[1] - m_height;
+		left = origin[0];
+		right = m_width + origin[0];
+	}
+	return m_material ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136f00 size=0x18
 struct IFace_104a57ec {
 virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
