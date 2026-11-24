@@ -52786,6 +52786,21 @@ void CUnknown10123710::sub_10123710(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101239d0 size=0x32
+#include <string.h>
+struct CPC {
+	char pad[0x2c];
+	bool m_b2c;
+	void sub_101239d0(int type, void *outvalue, const void *invalue, int count);
+};
+void CPC::sub_101239d0(int type, void *outvalue, const void *invalue, int count)
+{
+	if (!m_b2c || type == 1)
+		return;
+	memcpy(outvalue, invalue, sizeof(short) * count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123a60 size=0x23
 #include <string.h>
 struct S10123a60 {
