@@ -39286,6 +39286,21 @@ int CUnknown100d5d30::sub_100d5d30(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5d40 size=0x2d
+struct IMR_100d5d40 { virtual void v0(); virtual void v1(); virtual void v2(); virtual int v3(unsigned short h); };
+extern IMR_100d5d40 *g_104a5810;
+struct Shadow_100d5d40 { unsigned char m_unk0[4]; unsigned short m_h; unsigned char m_rest[0xf0 - 6]; };
+struct Mgr_100d5d40 {
+	int m_unk[11];
+	Shadow_100d5d40 *m_pShadows;
+	int sub_100d5d40(unsigned short idx);
+};
+int Mgr_100d5d40::sub_100d5d40(unsigned short idx)
+{
+	return g_104a5810->v3(m_pShadows[idx].m_h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6320 size=0x6f
 namespace lifted {
 struct C100d9100 { int sub_100d9100(int); };
