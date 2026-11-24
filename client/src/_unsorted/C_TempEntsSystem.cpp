@@ -121,6 +121,46 @@ void C_TempEntsSystem::vfunc22(int filter, int delay, int pos, int dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5bf0 size=0x52
+#include "C_TempEntsSystem.h"
+
+extern int g_104a0d50;
+extern void sub_1003a430(int filter, int delay, int pos);
+
+struct CTempEntRecipientFilter
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int v2();
+	bool sub_100be140();
+	void sub_100bdf90(int);
+};
+
+static inline bool CanRunTempEnt(const C_TempEntsSystem *p)
+{
+	if (p->m_nSuppressCount > 0)
+		return false;
+	return !p->m_bSuppressEvent;
+}
+
+// TARGET: C_TempEntsSystem::vfunc29
+void C_TempEntsSystem::vfunc29(int filter, int delay, int pos)
+{
+	if (!CanRunTempEnt(this))
+		return;
+
+	CTempEntRecipientFilter *pFilter = (CTempEntRecipientFilter *)filter;
+	if (!pFilter->sub_100be140())
+	{
+		pFilter->sub_100bdf90(g_104a0d50);
+	}
+	if (!pFilter->v2())
+		return;
+
+	sub_1003a430(filter, delay, pos);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5c50 size=0x57
 #include "C_TempEntsSystem.h"
 
