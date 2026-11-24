@@ -38491,6 +38491,20 @@ int sub_100d8530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8620 size=0x19
+struct Shadow240 { char b[240]; };
+struct ShadowArray_100d8620
+{
+	Shadow240 *m_pData;
+	Shadow240 *sub_100d8620(unsigned int i);
+};
+// TARGET: ShadowArray_100d8620::sub_100d8620
+Shadow240 *ShadowArray_100d8620::sub_100d8620(unsigned int i)
+{
+	return &m_pData[i & 0xffff];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8690 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
