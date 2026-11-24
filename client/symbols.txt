@@ -7870,6 +7870,7 @@
 0x101b5800 func   ?vfunc1@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc1
 0x101b5f60 func   ?sub_101b5f60@KeyValues_101b5f60@@QAEXPAUIFileSystem_101b5f60@@PAXH@Z KeyValues_101b5f60::sub_101b5f60
 0x101b6250 func   ?sub_101b6250@@YAXPAUIWriter_101b6250@@HH@Z sub_101b6250
+0x101b63e0 func   ?vfunc6@KeyValues@vgui2@@UAEXPAV12@@Z vgui2::KeyValues::vfunc6
 0x101b6430 func   ?vfunc7@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc7
 0x101b6440 func   ?vfunc8@KeyValues@vgui2@@UAEHXZ vgui2::KeyValues::vfunc8
 0x101b6450 func   ?vfunc9@KeyValues@vgui2@@UAEHPBDH@Z vgui2::KeyValues::vfunc9

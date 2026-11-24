@@ -40,6 +40,29 @@ int vgui2::KeyValues::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b63e0 size=0x4b
+#include "vgui2__KeyValues.h"
+void vgui2::KeyValues::vfunc6(KeyValues *sub)
+{
+	if (!sub)
+		return;
+	if (m_pSub == sub) {
+		m_pSub = sub->m_pPeer;
+		sub->m_pPeer = 0;
+		return;
+	}
+	KeyValues *p = m_pSub;
+	while (p->m_pPeer) {
+		if (p->m_pPeer == sub) {
+			p->m_pPeer = sub->m_pPeer;
+			break;
+		}
+		p = p->m_pPeer;
+	}
+	sub->m_pPeer = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6430 size=0x4
 #include "vgui2__KeyValues.h"
 int vgui2::KeyValues::vfunc7()
