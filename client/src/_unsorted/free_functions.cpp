@@ -32478,6 +32478,11 @@ bool __fastcall sub_100a2ed0(V_100a2ed0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2fa0 size=0x20
+struct V2fa0 { char pad[0x2d8]; int arr[64]; int flag; int sub_100a2fa0(int i); };
+int V2fa0::sub_100a2fa0(int i) { if (!flag) return 0; return arr[i & 0x3f]; }
+// END FUNCTION
+
 // FUNCTION: 0x100a2fc0 size=0x7
 struct CUnknown100a2fc0 { int sub_100a2fc0(); };
 int CUnknown100a2fc0::sub_100a2fc0()
