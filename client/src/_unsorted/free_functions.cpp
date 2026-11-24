@@ -66658,6 +66658,14 @@ void VKeyValues::sub_10153ba0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153c10 size=0x4
+// TARGET: sub_10153c10
+void __fastcall sub_10153c10(char *self)
+{
+	(*(int *)(self - 0x24))++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153c20 size=0x23
 struct VB101f2140 { virtual void f0(); virtual void f1(); virtual ~VB101f2140(); };
 struct D101f2140 : virtual VB101f2140 { int m_ref; char pad[0x28 - 8]; D101f2140(); };
