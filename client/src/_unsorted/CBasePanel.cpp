@@ -170,6 +170,38 @@ void CBasePanel::vfunc110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163dc0 size=0x5d
+#include "CBasePanel.h"
+
+struct VGuiView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void v27(int, const char *, int);
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33();
+	virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37();
+	virtual int v38(int);
+};
+
+extern "C" char *(*g_101e3188)(char *, const char *, int);
+VGuiView *sub_101ac8d0();
+
+// TARGET: CBasePanel::vfunc108
+void CBasePanel::vfunc108(const char *name, char b)
+{
+	vfunc110();
+	*(char *)((char *)this + 0x58) = 1;
+	*(char *)((char *)this + 0x160) = b;
+	g_101e3188((char *)this + 0x60, name, 0x100);
+	*(int *)((char *)this + 0x5c) = sub_101ac8d0()->v38(0);
+	VGuiView *v = sub_101ac8d0();
+	v->v27(*(int *)((char *)this + 0x5c), (char *)this + 0x60, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163ea0 size=0xa
 #include "CBasePanel.h"
 void CBasePanel::vfunc111(int a0)
