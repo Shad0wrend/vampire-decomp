@@ -6787,6 +6787,7 @@
 0x1015a7e0 func   ?sub_1015a7e0@@YAXH@Z sub_1015a7e0
 0x1015a840 func   ?sub_1015a840@@YAXH@Z sub_1015a840
 0x1015ab20 func   ?sub_1015ab20@TList@@QAEPAU1@XZ TList::sub_1015ab20
+0x1015ab90 func   ?sub_1015ab90@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_1015ab90
 0x1015abf0 func   ?sub_1015abf0@VList@@QAEXXZ VList::sub_1015abf0
 0x1015aeb0 func   ?sub_1015aeb0@@YAXH@Z sub_1015aeb0
 0x1015b050 func   ??0CVStatInfo_t@@QAE@XZ CVStatInfo_t::CVStatInfo_t

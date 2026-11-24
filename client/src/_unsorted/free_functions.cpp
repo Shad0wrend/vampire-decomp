@@ -82197,6 +82197,24 @@ TList *TList::sub_1015ab20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ab90 size=0x5a
+#include "ScopeTrace.h"
+
+class CVStatActionList_t
+{
+public:
+	void sub_1015ab90();
+	void sub_1015abf0();
+};
+
+// TARGET: CVStatActionList_t::sub_1015ab90
+void CVStatActionList_t::sub_1015ab90()
+{
+	ScopeTrace trace("CVStatActionList_t::~CVStatActionList_t", g_102de300);
+	sub_1015abf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015abf0 size=0xbb
 #include "ScopeTrace.h"
 struct VElem { void sub_1015a1b0(); };
