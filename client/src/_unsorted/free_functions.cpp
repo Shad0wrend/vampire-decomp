@@ -78806,6 +78806,18 @@ int sub_1018dd90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e260 size=0x16
+extern void (*g_105fbc28)();
+void sub_1018e260()
+{
+	if (g_105fbc28)
+	{
+		g_105fbc28();
+		g_105fbc28 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e280 size=0xb
 namespace lifted {
 extern int g_1027ba58;
