@@ -11,6 +11,16 @@ CFXDiscreetLine *pcd_emit_10044f50(const CFXDiscreetLine &other) { return new CF
 // TARGET: ??_GCFXDiscreetLine@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10045670 size=0x18
+#include "CFXDiscreetLine.h"
+bool CFXDiscreetLine::vfunc3()
+{
+	if (m_flUnk10 > 0.0)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045690 size=0x1a
 #include "CFXDiscreetLine.h"
 namespace lifted {
