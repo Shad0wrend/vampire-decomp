@@ -10,7 +10,7 @@ public:
     ~KeyValues();
     int m_unk4;
     void *m_pName;
-    int m_unkc;
+    union { int m_unkc; float m_flValue; };
     int m_unk10;
     KeyValues *m_pPeer;
     KeyValues *m_pSub;	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -19,12 +19,12 @@ public:
     virtual int vfunc1();
     virtual void vfunc2();
     virtual void vfunc3();
-    virtual void vfunc4();
+    virtual KeyValues *vfunc4(const char *keyName, int bCreate);
     virtual void vfunc5();
     virtual void vfunc6();
     virtual int vfunc7();
     virtual int vfunc8();
-    virtual void vfunc9();
+    virtual int vfunc9(const char *keyName, int defaultValue);
     virtual void vfunc10();
     virtual void vfunc11();
     virtual int vfunc12(int, int);
