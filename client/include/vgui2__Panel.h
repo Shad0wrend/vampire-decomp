@@ -31,6 +31,7 @@ public:
 	int m_h80;
 	int m_unk84[(0x170 - 0x84) / 4];
 	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots Panel adds to its base's vtable: 0-106, vfuncK at slot K
 	virtual int vfunc0();
