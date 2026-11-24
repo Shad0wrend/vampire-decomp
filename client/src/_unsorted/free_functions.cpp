@@ -94959,6 +94959,47 @@ int CUnknown101c0a80::sub_101c0a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0a90 size=0x43
+#include "vgui2__MenuItem.h"
+
+struct Item;
+
+struct IPanelSlot1
+{
+	virtual void vfunc0();
+	virtual vgui2::MenuItem *vfunc1();
+};
+
+struct IVGuiSlot1
+{
+	virtual void vfunc0();
+	virtual IPanelSlot1 *vfunc1(void *arg);
+};
+
+class MV
+{
+public:
+	char m_pad[0x84];
+	int m_84;
+	void sub_101c0940(Item *p);
+	void sub_101c0a90(void *arg);
+};
+
+void *sub_101ac900();
+
+void MV::sub_101c0a90(void *arg)
+{
+	if (m_84)
+		return;
+	IVGuiSlot1 *pApp = (IVGuiSlot1 *)sub_101ac900();
+	IPanelSlot1 *pPanel = pApp->vfunc1(arg);
+	vgui2::MenuItem *p = pPanel->vfunc1();
+	p->sub_101c7080();
+	p->sub_101c71b0();
+	sub_101c0940((Item *)p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0ae0 size=0x2c
 #include "CUnknown101c70b0.h"
 struct XO2 { virtual void v0(); virtual CUnknown101c70b0 *v1(); };
