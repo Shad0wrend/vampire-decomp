@@ -11,6 +11,7 @@ public:
     void sub_1019d8f0(const char *view);
     void sub_1019a950(int, void *, void *, int, int);
     void sub_10191710();
+    int sub_1018fab0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CViewRender's own function
     virtual void vfunc0();
