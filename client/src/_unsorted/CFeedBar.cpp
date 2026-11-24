@@ -41,6 +41,12 @@ CFeedBar::~CFeedBar()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050530 size=0x1c
+struct S0530 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int a); };
+struct V0530 { char pad[0x170]; S0530 sub; char pad2[0x1b4 - 0x174]; int flag; void sub_10050530(); };
+void V0530::sub_10050530() { flag = 0; sub.v5(0); }
+// END FUNCTION
+
 // FUNCTION: 0x10050550 size=0x8
 #include "CFeedBar.h"
 namespace lifted {
