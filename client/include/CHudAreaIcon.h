@@ -10,6 +10,8 @@ class CHudAreaIcon : public CManagedHudElement
 public:
 	CHudAreaIcon(int a);
 	void sub_100527c0();
+	int sub_100ca9c0();
+	bool sub_10163bf0();
 	virtual ~CHudAreaIcon();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CHudAreaIcon's own function
