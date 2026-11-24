@@ -1682,6 +1682,7 @@
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
 0x10028020 func   ?sub_10028020@CUnknown10028020@@QAEXXZ CUnknown10028020::sub_10028020
 0x10028280 func   ?vfunc17@C_WeaponGravityGun@@UAEHXZ C_WeaponGravityGun::vfunc17
+0x10028310 func   ?vfunc246@C_WeaponGravityGun@@UAEHHHH@Z C_WeaponGravityGun::vfunc246
 0x10028360 func   ?vfunc188@C_WeaponGravityGun@@UAE_NXZ C_WeaponGravityGun::vfunc188
 0x10028370 func   ?sub_10028370@V8370@@QAEXH@Z V8370::sub_10028370
 0x10028390 func   ??_GC_WeaponGravityGun@@UAEPAXI@Z ??_GC_WeaponGravityGun@@UAEPAXI@Z
