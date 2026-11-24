@@ -155,6 +155,22 @@ bool C_BaseEntity::vfunc94()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001700 size=0x11
+struct B1 { int a; };
+struct B2 { int b; };
+struct T_10001700 : B1, B2 { void f(); };
+struct V_10001700 : T_10001700 {
+	int m_unk[(0x20 - 12) / 4];
+	void (T_10001700::*m_pfn)();
+};
+// TARGET: sub_10001700
+void __fastcall sub_10001700(V_10001700 *self)
+{
+	if (self->m_pfn)
+		(self->*self->m_pfn)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001720 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc106()
