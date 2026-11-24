@@ -55444,6 +55444,28 @@ void SList::sub_101289b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128a90 size=0x3c
+struct Node { char d[0x24]; };
+struct Spring { Node *a; Node *b; };
+struct CRopeView
+{
+	int m0, m4;
+	Node *m8;
+	int mc;
+	Spring *m10;
+	void sub_10128a90(int n);
+};
+void CRopeView::sub_10128a90(int n)
+{
+	mc = n;
+	for (int i = 0; i < mc - 1; i++)
+	{
+		m10[i].a = &m8[i];
+		m10[i].b = &m8[i + 1];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128ad0 size=0xe
 namespace lifted {
 struct C1012c740 { int sub_1012c740(int); };
