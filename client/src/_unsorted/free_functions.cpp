@@ -62112,6 +62112,25 @@ void CPartListUnit3::sub_101431a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143360 size=0x34
+struct XVec { int sub_10143150(int a); };
+struct XOwner {
+	int m_unk0, m_unk4;
+	int m_count;
+	XVec **m_items;
+	int sub_10143360(int a);
+};
+int XOwner::sub_10143360(int a)
+{
+	for (int i = 0; i < m_count; i++) {
+		int r = m_items[i]->sub_10143150(a);
+		if (r != -1)
+			return r;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101433a0 size=0xe
 struct CUnknown101433a0 { void * sub_101433a0(); };
 void * CUnknown101433a0::sub_101433a0()
