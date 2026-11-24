@@ -70176,6 +70176,39 @@ int CUnknown10146140::sub_10146140(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146160 size=0x52
+extern "C" int _strcmpi(const char *, const char *);
+
+struct CEntry19c
+{
+	int m_unk00;		// 0x00
+	char *m_pName;		// 0x04
+	char m_pad08[0x19c - 0x08];
+};
+
+class CUnknown10146160
+{
+public:
+	int m_count;		// 0x00
+	char m_pad04[8];
+	char *m_pItems;		// 0x0c
+	int sub_10146160(const char *pName);
+};
+
+// TARGET: CUnknown10146160::sub_10146160
+int CUnknown10146160::sub_10146160(const char *pName)
+{
+	for ( int i = 0; i < m_count; i++ )
+	{
+		char **ppName = &((CEntry19c *)m_pItems)[i].m_pName;
+		char *pStr = *ppName ? *ppName : "";
+		if ( _strcmpi(pStr, pName) == 0 )
+			return i;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146220 size=0x27
 #include "CUnknown10739194.h"
 
