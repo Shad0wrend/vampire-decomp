@@ -78437,6 +78437,21 @@ int CUnknown10166d70::sub_10166d70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166d90 size=0x39
+struct GridCell { int m[5]; };
+struct GridV {
+  char pad[0x5c]; int m_w; int m_h; char pad64[0x7c - 0x64]; GridCell *m_cells;
+  GridCell *sub_10166d90(int x, int y);
+};
+// TARGET: GridV::sub_10166d90
+GridCell *GridV::sub_10166d90(int x, int y)
+{
+  if (x < 0 || x >= m_w || y < 0 || y >= m_h)
+    return 0;
+  return &m_cells[y * m_w + x];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166ee0 size=0x1a
 namespace lifted {
 int sub_101ac8d0();
