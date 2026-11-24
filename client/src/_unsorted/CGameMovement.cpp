@@ -107,6 +107,27 @@ float * CGameMovement::vfunc4(char a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6f70 size=0x4f
+#include "CGameMovement.h"
+
+struct CGlobalVars_ { char pad[0x14]; int maxClients; };
+extern int g_102b8494;
+
+struct Vel { float x; float y; };
+
+char CGameMovement::vfunc15(void *pSurface, float volume)
+{
+	if ( ((CGlobalVars_ *)(void *)g_102b8494)->maxClients > 1 && m_field10 == 0 )
+	{
+		Vel *vel = (Vel *)((char *)m_pPlayer + 0x40);
+		float len = (*g_102be4dc)(vel->x * vel->x + vel->y * vel->y);
+		if ( len <= 195.0f )
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7860 size=0x7
 #include "CGameMovement.h"
 namespace lifted {
