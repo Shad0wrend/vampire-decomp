@@ -16,6 +16,7 @@ class CSimpleEmitter : public CParticleEffect
 {
 public:
 	virtual ~CSimpleEmitter();
+	float vfunc8(struct SimpleParticle8 *p, int unused);
 	float vfunc9(struct XSP *p, int unused);
 	virtual float vfunc10(SimpleParticleAux_t *p, float dt);
 };
