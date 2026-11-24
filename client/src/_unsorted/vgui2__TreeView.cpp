@@ -201,6 +201,16 @@ int vgui2::TreeView::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd950 size=0x27
+#define V10(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7(); virtual void a##n##8(); virtual void a##n##9();
+struct VBar { V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+ virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6();
+ virtual int s107(int); virtual int s108(); };
+struct VTree { char pad[0x5c]; VBar *m_pBar; int sub_101bd950(int a); };
+// TARGET: ?sub_101bd950@VTree@@QAEHH@Z
+int VTree::sub_101bd950(int a) { a = m_pBar->s108() - a * 3; return m_pBar->s107(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101bd980 size=0x2d
 #include "vgui2__TreeView.h"
 namespace lifted {
