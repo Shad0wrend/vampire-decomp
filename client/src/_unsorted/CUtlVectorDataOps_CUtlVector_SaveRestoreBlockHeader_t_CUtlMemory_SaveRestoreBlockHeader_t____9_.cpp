@@ -53,3 +53,14 @@ void CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestor
 		pSave->vfunc2(pUtlVector->Base() + i, (const char *)&dm);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c3b0 size=0x13
+#include "CUtlVectorDataOps.h"
+struct SaveRestoreBlockHeader_t;
+struct CUnknownVecView { int m_unk0; int m_unk4; int m_unk8; int m_nSize; };
+bool CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc2(SaveRestoreFieldInfo_t *fieldInfo)
+{
+	CUnknownVecView *pVec = *(CUnknownVecView **)fieldInfo;
+	return pVec->m_nSize == 0;
+}
+// END FUNCTION
