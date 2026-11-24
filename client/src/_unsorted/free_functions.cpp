@@ -14427,6 +14427,82 @@ int CUnknown10038a20::sub_10038a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038a60 size=0x1d5
+__declspec(dllimport) void DevMsg(const char *, ...);
+struct SurfDataView
+{
+	char m_pad[0x2c];
+	unsigned short stepleft;	// 0x2c
+	unsigned short stepright;	// 0x2e
+	unsigned short impact;	// 0x30
+	unsigned short m_u32;
+	unsigned short m_u34;
+	unsigned short scrape;	// 0x36
+	unsigned short m_u38;
+	unsigned short m_u3a;
+	unsigned short m_u3c;
+	unsigned short bulletImpact;	// 0x3e
+	unsigned short m_u40;
+	unsigned short impactSnds[6][3];	// 0x42
+	char m_pad2[0x68 - 0x66];
+	float maxSpeedFactor;	// 0x68
+	float jumpFactor;	// 0x6c
+	char gameMaterial;	// 0x70
+	char m_u71, m_u72;
+	unsigned char pad;	// 0x73
+};
+struct SurfPropsView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual SurfDataView *GetSurfaceData(int index);
+};
+extern SurfPropsView *g_104e0c94;
+extern bool g_1027fda8;
+void sub_10038a60()
+{
+	if ( !g_1027fda8 )
+		return;
+	g_1027fda8 = false;
+	SurfDataView *pDefault = g_104e0c94->GetSurfaceData( 0 );
+	int i = 1;
+	SurfDataView *pData = g_104e0c94->GetSurfaceData( 1 );
+	while ( pData && pData != pDefault )
+	{
+		DevMsg( "///////////////////////\n" );
+		DevMsg( "// Begin Surface Prop #%d\n", i );
+		DevMsg( "\n" );
+		DevMsg( "  %-30s - %d\n", "stepleft", pData->stepleft );
+		DevMsg( "  %-30s - %d\n", "stepright", pData->stepright );
+		DevMsg( "  %-30s - %d\n", "impact", pData->impact );
+		DevMsg( "  %-30s - %d\n", "scrape", pData->scrape );
+		DevMsg( "  %-30s - %d\n", "bulletImpact", pData->bulletImpact );
+		DevMsg( "  %-30s\n", "impactSnds" );
+		for ( int j = 0; j < 6; j++ )
+		{
+			for ( int k = 0; k < 3; k++ )
+			{
+				unsigned short s = pData->impactSnds[j][k];
+				DevMsg( "    [%d][%d]\n", j, k );
+				if ( s > 0 )
+					DevMsg( "      %-30s - %d\n", "impact", s );
+				else
+					DevMsg( "      **EMPTY**\n" );
+			}
+		}
+		DevMsg( "  %-30s - %c\n", "gameMaterial", pData->gameMaterial );
+		DevMsg( "  %-30s - %d\n", "pad", pData->pad );
+		DevMsg( "  %-30s - %d\n", "maxSpeedFactor", pData->maxSpeedFactor );
+		DevMsg( "  %-30s - %d\n", "jumpFactor", pData->jumpFactor );
+		i++;
+		pData = g_104e0c94->GetSurfaceData( i );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038f20 size=0x15b
 #include "C_TEGunshotDecal.h"
 #include "CRagdollBulletEnumerator.h"
