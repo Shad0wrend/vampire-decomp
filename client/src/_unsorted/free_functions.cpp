@@ -34418,6 +34418,31 @@ bool C_BaseEntity::sub_100a1140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a11a0 size=0x3b
+#include "C_BaseEntity.h"
+#include "CBaseEntityList.h"
+#include "CBaseHandle.h"
+
+extern CBaseEntityList *g_102b8e98;
+
+// TARGET: C_BaseEntity::sub_100a11a0
+C_BaseEntity *C_BaseEntity::sub_100a11a0()
+{
+	if ( !sub_100a1140() )
+		return 0;
+
+	CBaseHandle h;
+	h.m_Index = *(unsigned long *)((char *)this + 0x208);
+	if ( h.IsValid() )
+	{
+		CBaseEntityListEntry *pEnt = &g_102b8e98->m_EntPtrArray[h.GetEntryIndex()];
+		if ( pEnt->m_SerialNumber == h.GetSerialNumber() )
+			return (C_BaseEntity *)pEnt->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1200 size=0x1
 void sub_100a1200()
 {
