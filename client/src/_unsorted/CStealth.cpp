@@ -37,6 +37,17 @@ CStealth::~CStealth()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062660 size=0x23
+#include "CStealth.h"
+bool sub_10163bf0();
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CStealth::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063580 size=0x1
 #include "CStealth.h"
 void CStealth::vfunc97()
