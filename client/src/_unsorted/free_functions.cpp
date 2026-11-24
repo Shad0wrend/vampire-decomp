@@ -31537,6 +31537,22 @@ float CObfEntity::sub_10099880()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099bd0 size=0x2d
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+struct XHOwner { char u[0x10d8]; unsigned int m_h10d8; void *sub_10099bd0(); };
+void *XHOwner::sub_10099bd0()
+{
+	unsigned int h = m_h10d8;
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e->m_SerialNumber == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b210 size=0x15
 namespace lifted {
 extern int g_104a0d50;
