@@ -28,6 +28,16 @@ void CHudHistoryResource::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0160 size=0x17
+struct S_100f0160 { char pad[0x10]; int a[0x48]; int c; int b; };
+void __fastcall sub_100f0160(S_100f0160 *self)
+{
+	for (int i = 0; i < 0x48; i++)
+		self->a[i] = 0;
+	self->b = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0430 size=0x21
 #include "CHudHistoryResource.h"
 // TARGET: CHudHistoryResource::sub_100f0430
