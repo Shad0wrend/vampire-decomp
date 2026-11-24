@@ -37,6 +37,18 @@ void CBloodBar::vfunc112()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004c9c0 size=0x23
+#include "CBloodBar.h"
+struct CUnkIface10286860 { virtual void v0(); virtual void v1(); virtual bool v2(int); };
+extern CUnkIface10286860 *g_10286860;
+bool sub_10163bf0();
+// TARGET: CBloodBar::vfunc107
+bool CBloodBar::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->v2(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d2f0 size=0x1
 #include "CBloodBar.h"
 void CBloodBar::vfunc97()
