@@ -33182,6 +33182,15 @@ int sub_100a6b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8ba0 size=0x1b
+int __stdcall sub_100a8ba0(int a)
+{
+	if (a == 4 || a == 5)
+		return 0x18;
+	return 7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8db0 size=0x10
 struct CView { int a, b; char sub_100a8db0(); };
 // TARGET: ?sub_100a8db0@CView@@QAEDXZ
