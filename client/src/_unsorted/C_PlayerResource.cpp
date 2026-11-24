@@ -104,6 +104,11 @@ int C_PlayerResource::vfunc121(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd450 size=0x28
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc124(int i) { if (!vfunc133(i)) return 0; return m_a620[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100bd4c0 size=0x28
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 class PRView {
