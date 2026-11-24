@@ -17256,6 +17256,25 @@ int sub_10050a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051ae0 size=0x32
+struct XKey1c
+{
+	char u[0x1c]; char m_down; char m_pressed; char m_released;
+	void sub_10051ae0(char down);
+};
+void XKey1c::sub_10051ae0(char down)
+{
+	if (!m_down && down) {
+		m_pressed = 1;
+		m_released = 0;
+	} else if (m_down && !down) {
+		m_released = 1;
+		m_pressed = down;
+	}
+	m_down = down;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051b20 size=0x3
 void __stdcall sub_10051b20(int a0)
 {
