@@ -45223,6 +45223,31 @@ void CUnknown100efe70::sub_100efe70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efe80 size=0x53
+struct ObjX { virtual void *s0(int); virtual char s1(); virtual void s2(); virtual void s3(); virtual void s4(); char pad[0x88]; char flag; };
+struct NodeX { ObjX *p; short prev; unsigned short next; };
+extern NodeX *g_104cfdc0;
+extern unsigned int g_104cfdcc;
+// TARGET: sub_100efe80
+void sub_100efe80()
+{
+	unsigned short i = (unsigned short)g_104cfdcc;
+	while (i != 0xffff)
+	{
+		ObjX *p = g_104cfdc0[i].p;
+		unsigned short next = g_104cfdc0[i].next;
+		if (p->flag)
+		{
+			if (p->s1())
+				p->s4();
+			else
+				p->s0(1);
+		}
+		i = next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
