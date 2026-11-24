@@ -813,6 +813,20 @@ Vector Vector::sub_10004d80(float fl) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005330 size=0x24
+struct S10005330 {
+	char pad[0xb0]; int *m_p[1];
+	void sub_10005330(int i, int a, int b, int c);
+};
+void S10005330::sub_10005330(int i, int a, int b, int c)
+{
+	int *p = m_p[i];
+	*p++ = a;
+	*p++ = b;
+	*p = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100058e0 size=0x3
 char sub_100058e0()
 {
