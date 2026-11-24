@@ -55396,6 +55396,22 @@ int CUnknown10128ad0::sub_10128ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128ae0 size=0x3b
+struct Obj10128ae0 {
+    char m_unk[0x14];
+    float m_a;
+    float m_b;
+    void sub_10128ae0(float v);
+};
+// TARGET: Obj10128ae0::sub_10128ae0
+void Obj10128ae0::sub_10128ae0(float v)
+{
+    float t = (v > 0.0f) ? v : 0.0f;
+    m_a = t;
+    m_b = t * t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b20 size=0x4
 struct CUnknown10128b20 { float sub_10128b20(); };
 float CUnknown10128b20::sub_10128b20()
