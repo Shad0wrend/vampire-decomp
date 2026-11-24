@@ -43562,6 +43562,17 @@ void sub_100f4270(void (*)());
 void sub_100f4230() { sub_100f4270(sub_100f4320); }
 // END FUNCTION
 
+// FUNCTION: 0x100f4240 size=0x2c
+struct IAutoSys_100f4240 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(int); };
+struct Vec_100f4240 { IAutoSys_100f4240 **pMemory; int allocationCount; int growSize; int size; };
+extern Vec_100f4240 g_104d1038;
+void sub_100f4240(int a)
+{
+	for (int i = 0; i < g_104d1038.size; i++)
+		g_104d1038.pMemory[i]->v7(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4270 size=0x28
 typedef void (__fastcall *PFN_ForEach)(void *pThis);
 extern void **g_104d1038;
