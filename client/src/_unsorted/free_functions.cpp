@@ -24876,6 +24876,12 @@ void __stdcall sub_1007c8e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cd70 size=0xb
+struct CWpnView7d8 { char pad[0x7d8]; unsigned char m_a : 1; unsigned char m_b : 1; bool sub_1007cd70(); };
+// TARGET: CWpnView7d8::sub_1007cd70
+bool CWpnView7d8::sub_1007cd70() { return m_b; }
+// END FUNCTION
+
 // FUNCTION: 0x1007cdc0 size=0x1c
 namespace block_10256200 {
 unsigned char __fastcall sub_1007cd70(unsigned char *self)
