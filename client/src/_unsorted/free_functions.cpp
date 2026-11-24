@@ -17756,6 +17756,30 @@ int sub_10050a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050f20 size=0x40
+struct CUnkFade {
+	char m_pad[0x20];
+	int m_n20;
+	bool m_bOn;
+	bool m_b25;
+	bool m_b26;
+	void sub_10050f20(bool on);
+};
+void CUnkFade::sub_10050f20(bool on)
+{
+	if (!m_bOn && on) {
+		m_n20 = 0;
+		m_b25 = true;
+		m_b26 = false;
+	} else if (m_bOn && !on) {
+		m_n20 = 255;
+		m_b26 = true;
+		m_b25 = on;
+	}
+	m_bOn = on;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051ae0 size=0x32
 struct XKey1c
 {
