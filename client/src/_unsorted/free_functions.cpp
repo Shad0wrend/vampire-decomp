@@ -16750,6 +16750,22 @@ void sub_1004a9c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004afc0 size=0x89
+#include "CMeshBuilder.h"
+
+static inline unsigned char FastFToC(float c)
+{
+	float dc = c * 255.0f + (float)(1 << 23);
+	return (unsigned char)((*(unsigned int *)&dc) & 0xff);
+}
+
+void CMeshBuilder::sub_1004afc0(float r, float g, float b, float a)
+{
+	int col = FastFToC(b) | (FastFToC(g) << 8) | (FastFToC(r) << 16) | (FastFToC(a) << 24);
+	*(int *)m_pCurrColor = col;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b050 size=0x17
 namespace lifted {
 extern char g_10227c48;
