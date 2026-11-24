@@ -4052,6 +4052,7 @@
 0x100bde70 func   ?vfunc2@C_RecipientFilter@@UAEHXZ C_RecipientFilter::vfunc2
 0x100bde80 func   ?vfunc3@C_RecipientFilter@@UAEHH@Z C_RecipientFilter::vfunc3
 0x100bdeb0 func   ?sub_100bdeb0@CUnknown100bdeb0@@QAEXXZ CUnknown100bdeb0::sub_100bdeb0
+0x100bdf90 func   ?sub_100bdf90@C_RecipientFilter@@QAEXPAX@Z C_RecipientFilter::sub_100bdf90
 0x100bdff0 func   ?sub_100bdff0@CUnknown100bdff0@@QAEXH@Z CUnknown100bdff0::sub_100bdff0
 0x100be030 func   ?sub_100be030@@YGHH@Z sub_100be030
 0x100be040 func   ?sub_100be040@@YGHH@Z sub_100be040

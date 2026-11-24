@@ -39571,6 +39571,25 @@ void CUnknown100bdeb0::sub_100bdeb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdf90 size=0x5a
+#include "C_RecipientFilter.h"
+
+struct CEntityArg
+{
+	char m_pad[0x44];
+	int m_i44;
+};
+
+// TARGET: C_RecipientFilter::sub_100bdf90
+void C_RecipientFilter::sub_100bdf90(void *pPlayer)
+{
+	if (!pPlayer)
+		return;
+	int key = ((CEntityArg *)pPlayer)->m_i44;
+	m_Recipients.FindAndRemove(key);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdff0 size=0x37
 namespace lifted {
 extern int g_104a0d50;
