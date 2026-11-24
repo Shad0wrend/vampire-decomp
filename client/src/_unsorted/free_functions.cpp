@@ -50139,6 +50139,25 @@ int CL::sub_10116580(unsigned char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101165c0 size=0x2d
+struct Obj { char pad[0x18]; int m_v; };
+struct Elem { Obj *p; unsigned short a; unsigned short b; };
+struct CL {
+	char pad[0x38];
+	Elem *m_p;
+	int m_unk3c[4];
+	unsigned short m_n;
+	bool sub_10116580(unsigned char c);
+	int sub_101165c0(unsigned char c);
+};
+int CL::sub_101165c0(unsigned char c)
+{
+	if (!sub_10116580(c))
+		return 0;
+	return m_p[c].p->m_v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116710 size=0x7
 #include "CParticleEffectBinding.h"
 
