@@ -88,6 +88,14 @@ void CSave::vfunc24(const Vector &value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101290c0 size=0x13
+#include "CSave.h"
+void CSave::vfunc23(const void *pData, int count)
+{
+	sub_101299c0(pData, count * 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101290f0 size=0x1a
 #include "CSave.h"
 

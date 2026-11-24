@@ -5037,6 +5037,7 @@
 0x10128fd0 func   ?vfunc8@CSave@@UAE_NPBXH@Z CSave::vfunc8
 0x10129070 func   ?vfunc19@CSave@@UAEXPAPBDH@Z CSave::vfunc19
 0x101290b0 func   ?vfunc24@CSave@@UAEXABVVector@@@Z CSave::vfunc24
+0x101290c0 func   ?vfunc23@CSave@@UAEXPBXH@Z CSave::vfunc23
 0x101290f0 func   ?vfunc7@CSave@@UAEXHHH@Z CSave::vfunc7
 0x10129110 func   ?vfunc9@CSave@@UAEXPBDPAXH@Z CSave::vfunc9
 0x10129130 func   ?vfunc11@CSave@@UAEHHHH@Z CSave::vfunc11
