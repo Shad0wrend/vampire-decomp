@@ -135,6 +135,27 @@ int vgui2::Image::vfunc23(float a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6c10 size=0x38
+#include "vgui2__Image.h"
+#define P8(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d(); virtual void n##e(); virtual void n##f(); virtual void n##g(); virtual void n##h();
+struct ISurfaceView {
+	P8(a) P8(b)
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual int Slot20(int x, int y);
+	virtual void s21();
+	virtual int Slot22(int a);
+};
+ISurfaceView *sub_101ac8d0();
+// TARGET: vgui2::Image::vfunc22
+int vgui2::Image::vfunc22(int x, int y, int c)
+{
+	x += m_unk04;
+	y += m_unk08;
+	sub_101ac8d0()->Slot20(x, y);
+	return sub_101ac8d0()->Slot22(c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6c50 size=0xc
 #include "vgui2__Image.h"
 namespace lifted {
