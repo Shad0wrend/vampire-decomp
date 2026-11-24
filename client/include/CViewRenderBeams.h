@@ -12,6 +12,7 @@ public:
 	Beam_t m_Beams[128];
 	int m_unk1bc04;
 	int m_unk1bc08;
+	Beam_t *sub_10193470(bool bInit);
 	void *m_pFirst;
 	int m_unk1bc10;
 	int m_unk1bc14;
