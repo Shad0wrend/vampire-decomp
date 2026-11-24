@@ -40623,6 +40623,20 @@ int sub_100cce00(PV *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cce50 size=0x41
+struct SUnk100cce50 { char pad[0x90]; int m_n90; int m_n94; };
+int sub_100cd0f0();
+int sub_100cce50(SUnk100cce50 *p)
+{
+	if (!p)
+		return 10;
+	int w = p->m_n94 - p->m_n90;
+	int n = sub_100cd0f0();
+	double f = n * 0.0020833333333333333;
+	return (int)(f * w);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccea0 size=0x23
 #include <stdarg.h>
 extern char g_104a6840[0x400];
