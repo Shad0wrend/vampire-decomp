@@ -5,7 +5,8 @@
 
 class CThermalMaterialProxy : public IMaterialProxy
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+    void *m_ThermalVar; void *m_ThermalPeriod; void *m_ThermalMax; void *m_ThermalMin;
     // the base slots the game's vtable fills with CThermalMaterialProxy's own function
     virtual bool vfunc0(void*, void*);
     virtual void vfunc1(int);
