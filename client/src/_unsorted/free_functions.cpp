@@ -95625,6 +95625,40 @@ struct VBig { V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10
 bool VBig::sub_101affb0(int a) { int local; s159(a, &a, &local); return a <= 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b0650 size=0x58
+#include "vgui2__TextEntry.h"
+
+struct TEView
+{
+	char m_pad0[0x58];
+	int m_58;
+	char m_pad5c[0x8];
+	int m_64;
+	char m_pad68[0x4];
+	int *m_6c;
+	int m_70;
+	char m_pad74[0xa0];
+	int m_114;
+};
+
+void vgui2::TextEntry::sub_101b0650()
+{
+	TEView *v = (TEView *)this;
+	if ( v->m_70 == v->m_58 )
+	{
+		v->m_114 = v->m_64 - 2;
+		return;
+	}
+
+	v->m_114 = 0;
+	while ( v->m_70 > ((v->m_114 >= 0 && v->m_114 < v->m_64) ? v->m_6c[v->m_114] : 0) )
+	{
+		v->m_114++;
+	}
+	v->m_114--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b16e0 size=0x4
 struct CUnknown101b16e0 { int sub_101b16e0(); };
 int CUnknown101b16e0::sub_101b16e0()
