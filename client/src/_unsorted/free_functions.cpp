@@ -16420,6 +16420,20 @@ void CUnknown1004bdd0::sub_1004bdd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004c500 size=0x17
+#define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
+struct IEngine_104a57d4 {
+V8(a) V8(b) V8(c) V8(d)
+virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6();
+virtual float v39(int); };
+extern IEngine_104a57d4 *g_104a57d4;
+extern float g_103edde0;
+void sub_1004c500()
+{
+	g_103edde0 = g_104a57d4->v39(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004c520 size=0xb
 namespace lifted {
 extern int g_103edde0;
