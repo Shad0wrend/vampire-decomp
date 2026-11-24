@@ -49419,6 +49419,19 @@ void CParticleEffect::sub_10117fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117fe0 size=0x28
+#include "CParticleEffect.h"
+#include "CParticleEffectBinding.h"
+void CParticleEffect::sub_10117fe0()
+{
+	if (--m_unk6c == 0 && (m_unk68 & 2)) {
+		CParticleEffectBinding *b = (CParticleEffectBinding *)&m_unk08;
+		if (!b->sub_10116710())
+			b->m_unk34 |= 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118080 size=0x24
 namespace lifted {
 struct C101166d0 { int sub_101166d0(int, int, int); };

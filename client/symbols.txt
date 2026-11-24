@@ -4935,6 +4935,7 @@
 0x10117fa0 func   ?sub_10117fa0@V7fa0@@QAEX_N@Z V7fa0::sub_10117fa0
 0x10117fc0 func   ?sub_10117fc0@CView@@QAEHXZ CView::sub_10117fc0
 0x10117fd0 func   ?sub_10117fd0@CParticleEffect@@QAEXXZ CParticleEffect::sub_10117fd0
+0x10117fe0 func   ?sub_10117fe0@CParticleEffect@@QAEXXZ CParticleEffect::sub_10117fe0
 0x10118060 func   ?sub_10118060@@YGXH@Z sub_10118060
 0x10118070 func   ?sub_10118070@@YIXPAUV_10118070@@@Z sub_10118070
 0x10118080 func   ?sub_10118080@CUnknown10118080@@QAEHH@Z CUnknown10118080::sub_10118080
