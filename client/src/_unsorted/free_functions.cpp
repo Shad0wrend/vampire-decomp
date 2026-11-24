@@ -79985,6 +79985,20 @@ int CUnknown10178720::sub_10178720(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178750 size=0x37
+#include "vgui2__Label.h"
+extern "C" int sprintf(char *, const char *, ...);
+struct XPView { int m0; int m4; int m8; vgui2::Label *m_pLabel; int m10; int m14; int m18; int m_xp; void sub_10178750(int xp); };
+// TARGET: XPView::sub_10178750
+void XPView::sub_10178750(int xp)
+{
+    char buf[16];
+    m_xp = xp;
+    sprintf(buf, "%d xp", xp);
+    m_pLabel->vfunc108(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178790 size=0x87
 extern int g_105fb5e4;
 
