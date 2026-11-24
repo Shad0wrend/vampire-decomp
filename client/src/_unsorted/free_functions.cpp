@@ -63541,6 +63541,14 @@ float CUnknown1014d970::sub_1014d970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d980 size=0x7
+// TARGET: sub_1014d980
+float __fastcall sub_1014d980(void *self)
+{
+	return (float)*(int *)((char *)self + 0x358);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d990 size=0x7
 struct CUnknown1014d990 { int sub_1014d990(); };
 int CUnknown1014d990::sub_1014d990()
