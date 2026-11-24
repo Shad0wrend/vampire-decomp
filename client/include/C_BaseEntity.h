@@ -9,6 +9,7 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a0450();
+	void sub_100a1a70(int a);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
 	virtual ICollideable *GetClientCollideable();	// IClientUnknown slot 2
