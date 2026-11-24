@@ -78377,6 +78377,16 @@ int CUnknown1018e290::sub_1018e290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e2a0 size=0x11
+#include "vgui2__Panel.h"
+extern int g_104cfe64;
+void __fastcall sub_1018e2a0(vgui2::Panel *self, int edx, int a)
+{
+	if (!g_104cfe64)
+		self->Panel::vfunc87(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
