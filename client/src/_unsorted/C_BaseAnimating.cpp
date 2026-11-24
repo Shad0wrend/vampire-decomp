@@ -195,6 +195,24 @@ int C_BaseAnimating::vfunc62()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095090 size=0x21
+#include "C_BaseAnimating.h"
+struct CRagView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int v4(int a); };
+bool C_BaseAnimating::sub_10094020()
+{
+	return *(int *)((char *)this + 0x6b0) && *(int *)((char *)this + 0x4c) == 0x17;
+}
+// TARGET: C_BaseAnimating::vfunc133
+int C_BaseAnimating::vfunc133()
+{
+	if (sub_10094020()) {
+		CRagView *p = *(CRagView **)((char *)this + 0x6b0);
+		return p->v4(*(int *)((char *)this + 0x6b4));
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100954d0 size=0x117
 #include "C_BaseAnimating.h"
 
