@@ -18962,6 +18962,23 @@ void XSnd::sub_10066380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100663c0 size=0x32
+struct XEng4 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(const char *); };
+extern XEng4 *g_104a57d4;
+struct XSnd2
+{
+	char u0[0x194]; char m_name[0x2b0]; char m_bDone;
+	void sub_100663c0();
+};
+void XSnd2::sub_100663c0()
+{
+	if (m_bDone && m_name[0]) {
+		g_104a57d4->v4(m_name);
+		m_bDone = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066400 size=0x34
 namespace lifted {
 extern int g_104a5828;
