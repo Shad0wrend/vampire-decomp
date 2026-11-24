@@ -5,7 +5,7 @@ class CUnknown101439f0
 {
 public:
 	CUnknown101439f0(int);
-	~CUnknown101439f0();
+	~CUnknown101439f0() {}
 	int m_0;
 	int m_4;
 	int m_8;
