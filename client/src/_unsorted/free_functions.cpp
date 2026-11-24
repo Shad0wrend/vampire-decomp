@@ -76354,6 +76354,19 @@ struct V69a0 { char pad[0x60]; int n; char pad2[0x70 - 0x64]; int *arr; int sub_
 int V69a0::sub_101669c0(int i) { if (i < 0 || i >= n) return 0; return arr[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10166c00 size=0x24
+struct S10166c00 {
+	char pad[0x60]; int m_n; int m_unk64; int m_c; int m_unk6c; int *m_b; int m_unk74; int *m_a;
+	int sub_10166c00();
+};
+int S10166c00::sub_10166c00()
+{
+	if (m_n > 0)
+		return m_a[m_n - 1] + m_b[m_n - 1] + m_c;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166d70 size=0x18
 struct CUnknown10166d70 { int sub_10166d70(); };
 int CUnknown10166d70::sub_10166d70()
