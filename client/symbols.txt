@@ -5567,6 +5567,7 @@
 0x101299c0 func   ?sub_101299c0@CSave@@QAE_NPBXH@Z CSave::sub_101299c0
 0x10129a20 func   ?sub_10129a20@@YGHH@Z sub_10129a20
 0x10129b00 func   ?vfunc26@CSave@@UAEXPBDPAXH@Z CSave::vfunc26
+0x10129b60 func   ?vfunc25@CSave@@UAEXPBMH@Z CSave::vfunc25
 0x10129ba0 func   ?vfunc30@CSave@@UAEXPBDABVVector@@@Z CSave::vfunc30
 0x10129c30 func   ?vfunc28@CSave@@UAEXABVVector@@@Z CSave::vfunc28
 0x10129cb0 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29

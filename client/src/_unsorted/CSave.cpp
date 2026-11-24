@@ -297,6 +297,19 @@ void CSave::vfunc26(const char *pszName, void *pData, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129b60 size=0x3f
+#include "CSave.h"
+struct CSaveBlk { char pad[0x12e8]; float m_flOffset; };
+void CSave::vfunc25(const float *pValues, int count)
+{
+	for (int i = 0; i < count; i++) {
+		float f = ((CSaveBlk *)m_pEntityBlock)->m_flOffset;
+		f = pValues[i] - f;
+		vfunc16(&f, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129ba0 size=0x81
 #include "CSave.h"
 
