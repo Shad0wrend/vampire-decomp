@@ -46,6 +46,23 @@ void CHudManager::vfunc114(int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057fb0 size=0x44
+#include "CHudManager.h"
+void CHudManager::vfunc115(int flags)
+{
+	for (SHudNode *p = m_pHead; p; p = p->m_pNext)
+	{
+		if (flags & p->m_pElem->GetFlags())
+		{
+			if (p->m_pElem->IsHidden())
+				p->m_pElem->Show(0);
+			else
+				p->m_pElem->Show(1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058000 size=0x3b
 #include "CHudManager.h"
 struct IHudFlagObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int GetFlags(); virtual void v5(); virtual bool Test(); };
