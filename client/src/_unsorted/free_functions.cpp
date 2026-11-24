@@ -87686,6 +87686,19 @@ int GridV::sub_10166a50(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166ac0 size=0x29
+#include "vgui2__CGrid.h"
+
+struct GridInner2 { char m_pad0[0x60]; int m_nRows; };
+
+void vgui2::CGrid::sub_10166ac0()
+{
+	GridInner2 *g = (GridInner2 *)this;
+	for (int i = 0; i < g->m_nRows; i++)
+		sub_10166960(i, sub_10166a50(i));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166af0 size=0x59
 struct CUnknown10166af0
 {
