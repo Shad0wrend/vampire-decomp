@@ -11,7 +11,7 @@ class Image : public vgui2::IImage
 {
 public:
 	Image();
-struct ImageColor { unsigned char r, g, b, a; ImageColor() { r = 0; g = 0; b = 0; a = 0; } };
+struct ImageColor { unsigned char r, g, b, a; ImageColor() { r = 0; g = 0; b = 0; a = 0; } void Init(int x) { r = x; g = x; b = x; a = x; } };
 	int m_unk04; int m_unk08; int m_unk0C; int m_unk10;
 	ImageColor m_Color;
 	bool m_b18;
