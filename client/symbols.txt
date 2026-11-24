@@ -3633,6 +3633,7 @@
 0x100b6e90 func   ?sub_100b6e90@@YAHXZ sub_100b6e90
 0x100b6ef0 func   ?_C_BreakableSurface_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_BreakableSurface_CreateObject
 0x100b6f90 func   ?ClientClassInit@@YAHPAUignored@DT_BreakableSurface@@@Z ClientClassInit
+0x100b7620 func   ?sub_100b7620@@YAPAXPAUIMatX@@@Z sub_100b7620
 0x100b7650 func   ??0C_BreakableSurface@@QAE@XZ C_BreakableSurface::C_BreakableSurface
 0x100b7760 func   ??_GC_BreakableSurface@@UAEPAXI@Z ??_GC_BreakableSurface@@UAEPAXI@Z
 0x100b7780 func   ??1C_BreakableSurface@@UAE@XZ C_BreakableSurface::~C_BreakableSurface

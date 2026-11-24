@@ -34900,6 +34900,12 @@ template <> int ClientClassInit<DT_BreakableSurface::ignored>(DT_BreakableSurfac
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7620 size=0x27
+struct IMatVar { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual int v11(); virtual int v12(); virtual int v13(); virtual int v14(); virtual int v15(); virtual int v16(); virtual int v17(); virtual void *v18(); };
+struct IMatX { virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4(); virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8(); virtual int v9(); virtual int v10(); virtual IMatVar *FindVar(const char *, void *, bool); };
+void *sub_100b7620(IMatX *m) { IMatVar *v = m->FindVar("$basetexture", &m, false); if (!*(bool *)&m) return 0; return v->v18(); }
+// END FUNCTION
+
 // FUNCTION: 0x100b7bb0 size=0x37
 namespace lifted {
 struct C100b7bf0 { int sub_100b7bf0(int); };
