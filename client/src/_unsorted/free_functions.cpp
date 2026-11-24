@@ -44315,6 +44315,19 @@ void sub_100f7330(unsigned char *src, unsigned char *dst, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f76d0 size=0x34
+void sub_100f76d0(unsigned char *src, unsigned char *dst, int n)
+{
+    unsigned char *end = src + n * 2;
+    for (; src < end; src += 2, dst += 4) {
+        dst[0] = src[0];
+        dst[1] = src[1];
+        dst[2] = 0;
+        dst[3] = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7710 size=0x5
 namespace lifted {
 int sub_100f6ce0();
