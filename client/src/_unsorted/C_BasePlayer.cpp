@@ -88,6 +88,11 @@ C_BasePlayer *pcd_emit_100a54a0() { return new C_BasePlayer; }
 // TARGET: ??_GC_BasePlayer@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100a58a0 size=0x9
+#include "C_BasePlayer.h"
+void C_BasePlayer::vfunc177() { IsTransparent(); }
+// END FUNCTION
+
 // FUNCTION: 0x100a5900 size=0x9
 struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); };
 void __fastcall sub_100a5900(char *self, int edx) { ((V *)(self + 4))->v11(); }
