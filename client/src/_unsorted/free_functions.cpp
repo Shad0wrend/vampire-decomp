@@ -42541,6 +42541,50 @@ void CUtlLinkedList8::sub_100d3500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d35b0 size=0x50
+// TARGET: CUtlLinkedList12u::sub_100d35b0
+
+struct CUtlLinkedList12uNode
+{
+	char m_Data[8];
+	unsigned short m_Previous;
+	unsigned short m_Next;
+};
+
+class CUtlLinkedList12u
+{
+public:
+	CUtlLinkedList12uNode *m_pMemory;	// 0x00
+	int m_allocationCount;	// 0x04
+	int m_growSize;	// 0x08
+	unsigned short m_Head;	// 0x0c
+	unsigned short m_Tail;	// 0x0e
+	unsigned short m_FirstFree;	// 0x10
+	unsigned short m_ElementCount;	// 0x12
+	unsigned short m_NumAlloced;	// 0x14
+
+	void sub_100d35b0();
+};
+
+void CUtlLinkedList12u::sub_100d35b0()
+{
+	if ( m_NumAlloced != 0 )
+	{
+		unsigned short next = 0xffff;
+		for ( int i = (int)m_NumAlloced - 1; i >= 0; --i )
+		{
+			m_pMemory[(unsigned short)i].m_Next = next;
+			m_pMemory[(unsigned short)i].m_Previous = (unsigned short)i;
+			next = (unsigned short)i;
+		}
+		m_FirstFree = 0;
+		m_Head = 0xffff;
+		m_Tail = 0xffff;
+		m_ElementCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3930 size=0x33
 struct LLNode { int pad0; int pad4; unsigned short a; unsigned short b; };
 struct LLView {
