@@ -47235,6 +47235,23 @@ char CUnknown100f25e0::sub_100f25e0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2600 size=0x4b
+struct Eng { virtual void v0(){} virtual void v1(){} virtual void v2(){} virtual void v3(){} virtual void v4(){} virtual void v5(){} virtual void v6(){} virtual void v7(){} virtual void v8(){} virtual void v9(){}
+virtual void v10(){} virtual void v11(){} virtual void v12(){} virtual void v13(){} virtual void v14(){} virtual void v15(){} virtual void v16(){} virtual void v17(){} virtual void Call18(){} };
+struct CUnknown100f1860 { void sub_100f1860(); virtual void v0(){} virtual void v1(){} virtual void v2(){} virtual void v3(){} virtual void v4(){} virtual void v5(){} virtual void v6(){} virtual void v7(){} virtual void v8(){} virtual void v9(){}
+virtual void v10(){} virtual void v11(){} virtual void v12(){} virtual void v13(){} virtual void v14(){} virtual void v15(){} virtual void v16(){} virtual void v17(){} virtual void v18(){} virtual void v19(){} virtual void v20(){} virtual void v21(){} virtual bool v22(){return 0;} };
+extern Eng *g_105f99d8;
+struct View { char pad[0x68]; CUnknown100f1860 *p[6]; char pad2[0x81-0x80]; char m81; };
+void __fastcall sub_100f2600(View *self) {
+ g_105f99d8->Call18();
+ for (int i = 0; i < 6; i++) {
+  CUnknown100f1860 *q = self->p[i];
+  if (q && q->v22()) q->sub_100f1860();
+ }
+ self->m81 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2650 size=0x8
 namespace lifted {
 int sub_100f2600();
