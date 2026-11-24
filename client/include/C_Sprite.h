@@ -2,8 +2,14 @@
 // declared: its base, slot 16
 #pragma once
 #include "C_BaseEntity.h"
+#include "C_SpriteRenderer.h"
 
-class C_Sprite : public C_BaseEntity
+struct C_SpriteMembers14
+{
+	int m_unk14[(0x410 - 0x14) / 4];
+};
+
+class C_Sprite : public C_BaseEntity, public C_SpriteMembers14, public C_SpriteRenderer
 {
 public:
 	virtual int vfunc16();
