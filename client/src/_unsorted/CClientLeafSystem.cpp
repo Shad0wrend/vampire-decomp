@@ -98,6 +98,18 @@ void CClientLeafSystem::vfunc6(int idx, unsigned short a, unsigned short b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1ee0 size=0x2f
+#include "CClientLeafSystem.h"
+struct Ent_100d1ee0 { int m_u0; unsigned short m_w4; unsigned short m_w6; int m_u8; };
+struct View_100d1ee0 { char pad[0xc]; Ent_100d1ee0 *m_pEnts; };
+void CClientLeafSystem::vfunc7(int idx, unsigned int *a, unsigned int *b)
+{
+	Ent_100d1ee0 *p = ((View_100d1ee0 *)this)->m_pEnts;
+	*a = p[idx].m_w4;
+	*b = ((View_100d1ee0 *)this)->m_pEnts[idx].m_w6;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2a10 size=0x25
 #include "CClientLeafSystem.h"
 namespace lifted {

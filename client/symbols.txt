@@ -4113,6 +4113,7 @@
 0x100d1c70 func   ?sub_100d1c70@V1c70@@QAEXID@Z V1c70::sub_100d1c70
 0x100d1de0 func   ?vfunc5@CClientLeafSystem@@UAE_NG@Z CClientLeafSystem::vfunc5
 0x100d1eb0 func   ?vfunc6@CClientLeafSystem@@QAEXHGG@Z CClientLeafSystem::vfunc6
+0x100d1ee0 func   ?vfunc7@CClientLeafSystem@@QAEXHPAI0@Z CClientLeafSystem::vfunc7
 0x100d2470 func   ?vfunc0@CShadowLeafEnum@@UAE_NHH@Z CShadowLeafEnum::vfunc0
 0x100d27e0 func   ?sub_100d27e0@CUnknown100d27e0@@QAEDHH@Z CUnknown100d27e0::sub_100d27e0
 0x100d2a10 func   ?vfunc10@CClientLeafSystem@@QAEHHHH@Z CClientLeafSystem::vfunc10
