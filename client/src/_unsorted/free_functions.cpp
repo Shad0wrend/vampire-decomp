@@ -76947,6 +76947,21 @@ int CUnknown10164980::sub_10164980(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101649a0 size=0x2f
+struct Img_101649a0 {
+	char m_unk[0x20];
+	unsigned char m_r, m_g, m_b, m_a;
+	void sub_101649a0(int *r, int *g, int *b, int *a);
+};
+void Img_101649a0::sub_101649a0(int *r, int *g, int *b, int *a)
+{
+	*r = m_r;
+	*g = m_g;
+	*b = m_b;
+	*a = m_a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164a80 size=0x26
 struct CUnknown10164a80 { int sub_10164a80(char, int, int, int, int); };
 int CUnknown10164a80::sub_10164a80(char a0, int a1, int a2, int a3, int a4)
