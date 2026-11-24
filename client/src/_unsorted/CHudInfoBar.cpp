@@ -26,6 +26,49 @@ CHudInfoBar *pcd_emit_100561d0(const CHudInfoBar &other) { return new CHudInfoBa
 // TARGET: ??_GCHudInfoBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100568b0 size=0x5d
+#include "CHudInfoBar.h"
+
+struct SubView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual bool v6();
+};
+
+struct CreditsView
+{
+	char m_pad170[0x170];
+	SubView m_sub;
+};
+
+struct InfoBarView
+{
+	char m_pad1b8[0x1b8];
+	int m_n1b8;
+	bool sub_10163bf0();
+};
+
+struct IUnkG286860
+{
+	virtual void v0();
+	virtual void v1();
+	virtual bool Check(int);
+};
+
+extern int sub_1004dc30();
+extern IUnkG286860 *g_10286860;
+
+bool CHudInfoBar::vfunc107()
+{
+	InfoBarView *v = (InfoBarView *)this;
+	if (!v->m_n1b8)
+		return false;
+	if (sub_1004dc30() && ((CreditsView *)sub_1004dc30())->m_sub.v6())
+		return false;
+	return v->sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056b20 size=0x14
 #include "CHudInfoBar.h"
 namespace lifted {
