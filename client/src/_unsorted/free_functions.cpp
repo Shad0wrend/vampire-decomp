@@ -76549,6 +76549,22 @@ void * CUnknown10154ae0::sub_10154ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154af0 size=0x4c
+struct TNode { int p0; int p4; int p8; int pc; int p10; void *m14; int p18; int m1c; TNode **m20; void sub_10154af0(); };
+void TNode::sub_10154af0()
+{
+	delete m14;
+	for (int i = 0; i < m1c; i++) {
+		TNode *c = m20[i];
+		if (c) {
+			c->sub_10154af0();
+			delete c;
+		}
+	}
+	delete m20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154b40 size=0x21
 // TARGET: sub_10154b40
 void __fastcall sub_10154b40(int *p)
