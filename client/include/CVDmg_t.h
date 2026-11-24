@@ -25,7 +25,7 @@ struct CVDmgBlock16_t
 	bool sub_101613e0(const CVDmgBlock16_t *pOther);	// whether kind, number and multiplier (not m_c) equal pOther's
 	bool sub_10160710(const CVDmgBlock16_t *pOther);
 		// a copy of sub_10204360 in another unit
-	bool sub_10160660();	// whether the block is empty (stub 0x100051f0)
+	char sub_10160660();	// whether the block is empty (stub 0x100051f0)
 	int sub_10160b40(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
 		// the part of sub_10204900 for a feat block (kind 4), without the null character test: the feat record of the id (m_b) answers for the character; 0 for other kinds or an empty block
 	const char *sub_10160740();	// the block's name text (stub 0x10001af0)
