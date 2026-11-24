@@ -13416,6 +13416,25 @@ int sub_100359d0(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035a00 size=0x2a
+struct ITempEnts_1028073c {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(float *mins, float *maxs, int a, int b, int c, int d);
+};
+extern ITempEnts_1028073c *g_1028073c;
+struct VNet_bubbletrail {
+	int m_unk0; int m_unk4; int m_unk8;
+	float m_vMins[3]; float m_vMaxs[3];
+	int m_a; int m_b; int m_c; int m_d;
+	void sub_10035a00(int unused);
+};
+void VNet_bubbletrail::sub_10035a00(int unused)
+{
+	g_1028073c->v9(m_vMins, m_vMaxs, m_a, m_b, m_c, m_d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035a50 size=0x6
 namespace lifted {
 extern char g_102ed238;
