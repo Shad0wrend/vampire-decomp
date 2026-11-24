@@ -25,6 +25,27 @@ void vgui2::Label::vfunc117(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2320 size=0x4a
+extern "C" int isalnum(int);
+extern "C" int tolower(int);
+unsigned short __stdcall sub_101b2320(const char *text) {
+ const char *p = text;
+ const char *&r = p;
+ if (*r) {
+  do {
+   if (*r == '&') {
+    char c = *++r;
+    if (c != '&') {
+     if (!c) return 0;
+     if (isalnum(c)) return tolower(*r);
+    }
+   }
+  } while (*++r);
+ }
+ return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2370 size=0x17
 #include "vgui2__Label.h"
 // TARGET: vgui2::Label::vfunc72
