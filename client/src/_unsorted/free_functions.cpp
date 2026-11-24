@@ -37760,6 +37760,22 @@ bool C_BreakableSurface::sub_100b7450(int x, int y) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7490 size=0x54
+#include "C_BreakableSurface.h"
+
+void C_BreakableSurface::sub_100b7490(int x, int y, bool bSet)
+{
+    if (x >= m_nWidth || y >= m_nHeight)
+        return;
+    if (x < 0 || y < 0)
+        return;
+    if (bSet)
+        m_nPanelFlags[x * 16 + y] |= 2;
+    else
+        m_nPanelFlags[x * 16 + y] &= ~2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b74f0 size=0xd0
 #include "C_BreakableSurface.h"
 __declspec(dllimport) void Warning(const char *, ...);
