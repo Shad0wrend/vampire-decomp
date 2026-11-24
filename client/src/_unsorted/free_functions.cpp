@@ -84891,6 +84891,25 @@ void CUnknown101aab90::sub_101aab90(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab130 size=0x32
+#include "vgui2__Panel.h"
+struct IPanelView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void GetSize(int vpanel, int &wide, int &tall);
+};
+IPanelView *sub_101ac900();
+struct PV : vgui2::Panel {
+	int sub_101ab130();
+};
+// TARGET: PV::sub_101ab130
+int PV::sub_101ab130()
+{
+	int wide, tall;
+	sub_101ac900()->GetSize(vfunc0(), wide, tall);
+	return wide;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab2d0 size=0x1e
 namespace lifted {
 int sub_101a9af0();
