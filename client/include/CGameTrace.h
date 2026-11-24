@@ -25,4 +25,6 @@ struct CGameTrace
 	short m_physicsbone;	// 0x48
 	CBaseEntity *m_pEnt;	// 0x4c
 	int m_hitbox;	// 0x50
+
+	bool sub_100ee8e0() const;
 };
