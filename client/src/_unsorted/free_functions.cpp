@@ -62558,6 +62558,22 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144af0 size=0x35
+struct FItem { int m_0; int m_key; };
+struct FList {
+  int pad0; int pad4; int m_n; FItem **m_p;
+  FItem *sub_10144af0(int key);
+};
+// TARGET: FList::sub_10144af0
+FItem *FList::sub_10144af0(int key)
+{
+  for (int i = 0; i < m_n; i++)
+    if (m_p[i]->m_key == key)
+      return m_p[i];
+  return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144b30 size=0x11
 struct CUnknown10144b30 { int sub_10144b30(int, int); };
 int CUnknown10144b30::sub_10144b30(int a0, int a1)
