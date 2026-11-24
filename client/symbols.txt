@@ -2539,6 +2539,7 @@
 0x10057dc0 func   ?sub_10057dc0@@YGXHHH@Z sub_10057dc0
 0x10057e10 func   ?sub_10057e10@@YGXHHH@Z sub_10057e10
 0x10057f40 func   ?sub_10057f40@@YGXHHHHH@Z sub_10057f40
+0x10057f50 func   ?vfunc113@CHudManager@@UAEXH@Z CHudManager::vfunc113
 0x10058080 func   ?sub_10058080@@YAHXZ sub_10058080
 0x10058090 func   ?sub_10058090@@YAHHHH@Z sub_10058090
 0x100580b0 func   ?sub_100580b0@@YAHHHH@Z sub_100580b0
