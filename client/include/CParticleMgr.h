@@ -8,4 +8,6 @@ class CParticleMgr
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CParticleMgr adds to its base's vtable: 0-0, vfuncK at slot K
 	virtual ~CParticleMgr();
+
+	void sub_10117a80();
 };
