@@ -5,7 +5,13 @@
 
 class CClientEffectPrecacheSystem : public IGameSystem
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+	int m_unk4;
+	int m_unk8;
+	int m_unkc;
+	int m_unk10;
+	int m_unk14;
+	CClientEffectPrecacheSystem() : m_unk4(0), m_unk8(0), m_unkc(0), m_unk10(0), m_unk14(0) {}	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CClientEffectPrecacheSystem's own function
     virtual bool vfunc0();
     virtual void vfunc1();
