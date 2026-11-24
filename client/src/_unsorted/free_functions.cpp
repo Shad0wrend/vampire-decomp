@@ -65556,6 +65556,24 @@ void sub_1013a940(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013aa80 size=0x53
+#include "CUnknown1006c1c0.h"
+
+// TARGET: sub_1013aa80
+void sub_1013aa80(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char *pOut)
+{
+	for ( int i = 0; i < pInfo->m_nCount; i++, pOut += 4 )
+	{
+		unsigned char *p = pBuf->m_pData + pBuf->m_nC;
+		pOut[0] = p[3];
+		pOut[1] = p[0];
+		pOut[2] = p[1];
+		pOut[3] = p[2];
+		pBuf->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ab40 size=0x51
 #include "CUnknown1006c1c0.h"
 
