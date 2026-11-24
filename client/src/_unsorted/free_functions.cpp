@@ -55404,6 +55404,13 @@ void * CUnknown101bcef0::sub_101347f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134f80 size=0xc
+struct IV { virtual void v0(); virtual void v1(); };
+struct CView { void sub_10134f80(int); };
+// TARGET: ?sub_10134f80@CView@@QAEXH@Z
+void CView::sub_10134f80(int) { IV *p = (IV *)((char *)this - 4); p->v1(); }
+// END FUNCTION
+
 // FUNCTION: 0x10134f90 size=0x8
 struct V { virtual void v0(); };
 void __fastcall sub_10134f90(char *self, int edx) { ((V *)(self - 4))->v0(); }
