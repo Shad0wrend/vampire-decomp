@@ -44629,6 +44629,14 @@ QAngleView sub_101083d0(const QAngleView &a, const QAngleView &b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108430 size=0x14
+struct S48_10108430 { int a[12]; };
+void sub_10108430(const S48_10108430 *src, S48_10108430 *dst)
+{
+	*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108450 size=0xb2
 #include "matrix3x4_t.h"
 
