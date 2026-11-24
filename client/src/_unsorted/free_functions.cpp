@@ -83040,6 +83040,32 @@ int sub_10168260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168270 size=0x3d
+struct MsgView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(int);
+	char m_pad04[0x5c - 4];
+	struct Node { Node *next; char m_pad[0x418]; } m_nodes[0x400];
+	int m_n10705c;
+	Node *m_pFree;
+	void sub_10168270();
+};
+void MsgView::sub_10168270()
+{
+	m_n10705c = 0;
+	int i;
+	for (i = 0; i < 0x3ff; i++)
+		m_nodes[i].next = &m_nodes[i + 1];
+	m_nodes[i].next = 0;
+	m_pFree = m_nodes;
+	v21(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101682b0 size=0x37
 struct CUnknown101682b0 { int sub_101682b0(); };
 int CUnknown101682b0::sub_101682b0()
