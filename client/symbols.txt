@@ -7022,6 +7022,7 @@
 0x10165b20 func   ??1CDownloadSliderPanel@@UAE@XZ CDownloadSliderPanel::~CDownloadSliderPanel
 0x10165b20 func   ?sub_10165b20@CUnknown10165b20@@QAEHXZ CUnknown10165b20::sub_10165b20
 0x10165b30 func   ?vfunc2@CDownloadSliderPanel@@UAEXXZ CDownloadSliderPanel::vfunc2
+0x10165b50 func   ?vfunc107@CDownloadSliderPanel@@UAE_NXZ CDownloadSliderPanel::vfunc107
 0x10165bb0 func   ?vfunc108@CDownloadSliderPanel@@UAEXXZ CDownloadSliderPanel::vfunc108
 0x10165de0 func   ?vfunc0@CDownloadSlider@@UAEHH@Z CDownloadSlider::vfunc0
 0x10165e10 func   ?vfunc1@CDownloadSlider@@UAEXXZ CDownloadSlider::vfunc1
