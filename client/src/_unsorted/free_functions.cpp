@@ -33326,6 +33326,21 @@ int CUnknown100a33a0::sub_100a33a0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a33d0 size=0x39
+#include "CUtlMemory28.h"
+extern void *(__cdecl *g_101e3100)(unsigned int);
+// TARGET: CUtlMemory28::sub_100a33d0
+CUtlMemory28 *CUtlMemory28::sub_100a33d0(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_101e3100(allocationCount * 28);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3440 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
