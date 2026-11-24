@@ -51894,6 +51894,18 @@ int sub_101260d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126230 size=0x22
+int sub_10126230(int v)
+{
+	for (int i = 31; i >= 0; i--)
+	{
+		if (v & (1 << i))
+			return 1 << i;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126670 size=0xea
 #include "RecvTable.h"
 extern RecvTable g_104e196c;
