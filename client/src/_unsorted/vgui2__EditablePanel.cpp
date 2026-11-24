@@ -237,6 +237,19 @@ int vgui2::EditablePanel::vfunc72(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5040 size=0x60
+#include "vgui2__EditablePanel.h"
+#include "vgui2__KeyValues.h"
+
+void vgui2::EditablePanel::vfunc111(int a, int b)
+{
+	vgui2::Panel *p = vfunc38(a, 0);
+	if (!p)
+		return;
+	vfunc23(p, new vgui2::KeyValues("SetText", "text", (const char *)b), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5170 size=0x24
 #include "vgui2__EditablePanel.h"
 namespace lifted {
