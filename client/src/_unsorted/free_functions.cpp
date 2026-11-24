@@ -61338,6 +61338,21 @@ int CUnknown10147e60::sub_10147e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147e80 size=0x7
+struct CSelf10147e80
+{
+	int m_unk00;
+};
+
+// TARGET: sub_10147e80
+bool __fastcall sub_10147e80(CSelf10147e80 *self)
+{
+	if (self->m_unk00 != -1)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148040 size=0x52
 #include <stdlib.h>
 #include <string.h>
