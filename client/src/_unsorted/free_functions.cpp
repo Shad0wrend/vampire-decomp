@@ -12000,6 +12000,60 @@ int CUnknown1002d710::sub_1002d710(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d7b0 size=0x132
+#include "Vector.h"
+struct IRnd_1002d7b0 {
+	virtual void v0();
+	virtual float RandomFloat(float a, float b);
+	virtual int RandomInt(int a, int b);
+};
+extern IRnd_1002d7b0 *g_104a5738;
+struct SP_1002d7b0 {
+	char pad[0x28];
+	float m_flDieTime;
+	float m_flLifetime;
+	unsigned char m_uchColor[3];
+	unsigned char m_uchStartAlpha;
+	unsigned char m_uchEndAlpha;
+	unsigned char m_uchStartSize;
+	unsigned char m_uchEndSize;
+};
+struct Emit_1002d7b0 {
+	void sub_10118080(const Vector &origin);
+	void *sub_101180b0(const char *name);
+	SP_1002d7b0 *sub_101180c0(int size, void *mat, const Vector &offset);
+	void sub_10117fe0();
+};
+struct Ptr_1002d7b0 {
+	Emit_1002d7b0 *m_p;
+	Emit_1002d7b0 *operator->() const { return m_p; }
+};
+extern void sub_10118160(Ptr_1002d7b0 *out, const char *name);
+// TARGET: sub_1002d7b0
+void sub_1002d7b0(Vector &origin, Vector &normal)
+{
+	Vector offset = origin + (normal * 4.0f);
+	float totalScale = g_104a5738->RandomFloat(0.5f, 1.25f);
+	float scale = g_104a5738->RandomFloat(3.0f, 4.0f) * totalScale;
+	Ptr_1002d7b0 p;
+	sub_10118160(&p, "FX_CreateImpactDust");
+	p->sub_10118080(origin);
+	SP_1002d7b0 *pParticle = p->sub_101180c0(0x3c, p->sub_101180b0("particle/particle_sphere"), offset);
+	if (pParticle)
+	{
+		pParticle->m_flLifetime = 0.0f;
+		pParticle->m_flDieTime = 0.1f;
+		pParticle->m_uchColor[0] = pParticle->m_uchColor[1] = pParticle->m_uchColor[2] = 255;
+		pParticle->m_uchStartAlpha = g_104a5738->RandomInt(32, 64);
+		pParticle->m_uchEndAlpha = 0;
+		pParticle->m_uchStartSize = (unsigned char)scale;
+		pParticle->m_uchEndSize = (unsigned char)(scale * 4.0f);
+	}
+	if (p.m_p)
+		p.m_p->sub_10117fe0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e6e0 size=0x21
 namespace lifted {
 extern char g_1022555c;
