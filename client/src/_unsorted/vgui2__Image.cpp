@@ -87,6 +87,29 @@ int vgui2::Image::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6a00 size=0x39
+#include "vgui2__Image.h"
+struct SurfView12 {
+ virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+ virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+ virtual void Slot12(int a, int b, int c, int d);
+};
+SurfView12 *sub_101ac8d0();
+static inline void DrawIt(int a, int b, int c, int d)
+{
+    sub_101ac8d0()->Slot12(a, b, c, d);
+}
+// TARGET: vgui2::Image::vfunc12
+void vgui2::Image::vfunc12(int a, int b, int c, int d)
+{
+    a += m_unk04;
+    b += m_unk08;
+    c += m_unk04;
+    d += m_unk08;
+    DrawIt(a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6a40 size=0x39
 #include "vgui2__Image.h"
 struct ISurf13 {
