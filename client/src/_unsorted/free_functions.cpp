@@ -47727,6 +47727,13 @@ bool sub_10110f90(const unsigned short *a, const unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101111f0 size=0x13
+bool sub_101111f0(const unsigned short *a, const unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10111ac0 size=0x1f
 int sub_10111ac0(int a0, int a1)
 {
