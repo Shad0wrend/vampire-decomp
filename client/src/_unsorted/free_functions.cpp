@@ -49086,6 +49086,23 @@ char CUnknown100f8aa0::sub_100f8aa0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8ec0 size=0x52
+struct Pix565 {
+	unsigned short b : 5;
+	unsigned short g : 6;
+	unsigned short r : 5;
+	void sub_100f8ec0(unsigned char *c);
+};
+
+// TARGET: Pix565::sub_100f8ec0
+void Pix565::sub_100f8ec0(unsigned char *c)
+{
+	r = c[2] >> 3;
+	g = c[1] >> 2;
+	b = c[0] >> 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9920 size=0xe0
 struct DXTColBlock
 {
