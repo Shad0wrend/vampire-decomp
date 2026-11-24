@@ -174,6 +174,7 @@
 0x100052f0 func   ?sub_100052f0@PixW@@QAEXPAE@Z PixW::sub_100052f0
 0x10005330 func   ?sub_10005330@S10005330@@QAEXHHHH@Z S10005330::sub_10005330
 0x100054f0 func   ??_GCPlasmaSpray@@UAEPAXI@Z ??_GCPlasmaSpray@@UAEPAXI@Z
+0x10005510 func   ?vfunc11@CPlasmaSpray@@QAEXPAXH@Z CPlasmaSpray::vfunc11
 0x10005710 func   ??0C_PlasmaBeamNode@@QAE@XZ C_PlasmaBeamNode::C_PlasmaBeamNode
 0x100057a0 func   ??_GC_PlasmaBeamNode@@UAEPAXI@Z ??_GC_PlasmaBeamNode@@UAEPAXI@Z
 0x100057c0 func   ??1C_PlasmaBeamNode@@UAE@XZ C_PlasmaBeamNode::~C_PlasmaBeamNode
