@@ -74507,6 +74507,21 @@ void __fastcall sub_101517c0(CSelf101517c0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101517d0 size=0x4c
+struct Req { int a0; int a4; int a8; int ac; int a10; };
+struct Cand { int pad0; int pad4; int m8; int mc; int m10; int m14; int m18; bool sub_101517d0(Req *r); };
+bool Cand::sub_101517d0(Req *r)
+{
+	if ((r->a0 == 0 || m8 == r->a0)
+	 && (r->a4 == 0 || mc == r->a4)
+	 && m10 == r->a8
+	 && (m14 == -1 || m14 == r->ac)
+	 && (r->a10 == -1 || m18 < r->a10))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151820 size=0x1e
 struct CUnknown10151820 { void * sub_10151820(); };
 void * CUnknown10151820::sub_10151820()
