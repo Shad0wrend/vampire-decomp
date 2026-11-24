@@ -38348,6 +38348,17 @@ int sub_100d58f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5bb0 size=0x19
+struct V5bb0 {
+  virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+  virtual void v15(unsigned char a, unsigned char b, unsigned char c);
+  char pad[0x14-4]; unsigned char m14, m15, m16; char pad2[0xd9-0x17]; unsigned char md9;
+  void sub_100d5bb0();
+};
+// TARGET: V5bb0::sub_100d5bb0
+void V5bb0::sub_100d5bb0() { md9 = 1; v15(m14, m15, m16); }
+// END FUNCTION
+
 // FUNCTION: 0x100d5d30 size=0xb
 namespace lifted {
 struct C100d5140 { int sub_100d5140(); };

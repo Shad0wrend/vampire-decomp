@@ -4037,6 +4037,7 @@
 0x100d5670 func   ?vfunc8@IClientShadowMgr@@QAEPAV1@I@Z IClientShadowMgr::vfunc8
 0x100d5790 func   ?sub_100d5790@@YAXXZ sub_100d5790
 0x100d58f0 func   ?sub_100d58f0@@YAHXZ sub_100d58f0
+0x100d5bb0 func   ?sub_100d5bb0@V5bb0@@QAEXXZ V5bb0::sub_100d5bb0
 0x100d5d30 func   ?sub_100d5d30@CUnknown100d5d30@@QAEHH@Z CUnknown100d5d30::sub_100d5d30
 0x100d6320 func   ?sub_100d6320@CUnknown100d6320@@QAEHHHHHH@Z CUnknown100d6320::sub_100d6320
 0x100d7130 func   ?sub_100d7130@CClientShadowMgr@@QAEXHGPAH@Z CClientShadowMgr::sub_100d7130
