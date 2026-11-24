@@ -29,3 +29,13 @@ public:
 		virtual void vfunc0(bool on);
 	};
 };
+
+class PrecacheEffectSparks
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
