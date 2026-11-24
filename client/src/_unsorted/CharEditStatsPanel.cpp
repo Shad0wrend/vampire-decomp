@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1017d6e0 size=0x4c
+#include "CharEditStatsPanel.h"
+extern int g_105fb6e4;
+CharEditStatsPanel::~CharEditStatsPanel()
+{
+	sub_1017f640();
+	g_105fb6e4 = 0;
+	((CStatsSub1017f860 *)((char *)this + 0x1a4))->sub_1017f860();
+	((CStatsSub1017f860 *)((char *)this + 0x158))->sub_1017f860();
+	((CStatsSub1017f860 *)((char *)this + 0x10c))->sub_1017f860();
+	((CStatsSub1017f860 *)((char *)this + 0xc0))->sub_1017f860();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017d730 size=0x1e
 #include "CharEditStatsPanel.h"
 
