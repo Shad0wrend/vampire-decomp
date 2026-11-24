@@ -31982,6 +31982,12 @@ int CUnknown1009f100::sub_1009f100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f110 size=0x24
+struct VEnt { char pad[0xf8]; int m_flags; void sub_1009f110(bool b); };
+// TARGET: ?sub_1009f110@VEnt@@QAEX_N@Z
+void VEnt::sub_1009f110(bool b) { if (b) m_flags |= 1; else m_flags &= ~1; }
+// END FUNCTION
+
 // FUNCTION: 0x1009f140 size=0x12
 struct S_1009f140 { char pad[0x74]; int m_fl; };
 bool __fastcall sub_1009f140(S_1009f140 *self, int edx, int mask)
