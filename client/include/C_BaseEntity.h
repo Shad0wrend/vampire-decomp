@@ -9,11 +9,18 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a0450();
+	void sub_1009e2d0(int bForce);	// UpdateShadows
 	void sub_100a02e0(bool force);
 	char *sub_1009f760();
 	char *sub_1009f770();
 	void *sub_100a2d70();
 	void sub_100a1a70(int a);
+	void sub_1009f8a0();
+	void sub_1009f780();
+	void *sub_1009f7f0(void *);
+	void sub_1011c7f0();
+	void sub_1011ac90(void (C_BaseEntity::*thinkFunc)(), int a, int b);	// PhysicsDispatchThink: the two trailing ints are the rest of the 16-byte member pointer
+	void sub_100a2030(const void *);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
 	virtual ICollideable *GetClientCollideable();	// IClientUnknown slot 2
@@ -86,7 +93,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc15();
 	virtual int vfunc16();
 	virtual int vfunc17();
-	virtual void vfunc18();
+	virtual bool vfunc18();
 	virtual void vfunc19();
 	virtual void vfunc20();
 	virtual void vfunc21();
@@ -120,8 +127,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc49(int);
 	virtual int vfunc50(int);
 	virtual int vfunc51();
-	virtual void vfunc52();
-	virtual void vfunc53();
+	virtual const Vector &vfunc52();
+	virtual const Vector &vfunc53();
 	virtual char * vfunc54();
 	virtual int vfunc55(int);
 	virtual void vfunc56();
@@ -133,7 +140,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc62();
 	virtual int vfunc63();
 	virtual int vfunc64(int, int, int);
-	virtual void vfunc65(int, int);
+	virtual bool vfunc65(int, int);
 	virtual int vfunc66();
 	virtual bool vfunc67();
 	virtual void vfunc68();

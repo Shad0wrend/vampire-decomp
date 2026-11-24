@@ -65,6 +65,23 @@ CPhysSurfacePropsIface *sub_1010f680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f700 size=0x4c
+#include "CMoveHelperClient.h"
+#include <stdarg.h>
+extern "C" __declspec(dllimport) int __cdecl Q_vsnprintf(char *, unsigned int, const char *, va_list);
+struct EngV { void **vt; };
+extern EngV *g_104a57d4;
+void CMoveHelperClient::vfunc4(int idx, const char *fmt, ...)
+{
+	char msg[8192];
+	va_list args;
+	va_start(args, fmt);
+	Q_vsnprintf(msg, sizeof(msg), fmt, args);
+	va_end(args);
+	((void (__cdecl *)(EngV *, int, char *))g_104a57d4->vt[60])(g_104a57d4, idx, msg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f750 size=0xe
 struct IV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
  virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
@@ -128,5 +145,27 @@ void __stdcall sub_1010f810(int)
 double __stdcall sub_1010f820(int x)
 {
 	return x;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010f830 size=0x3d
+struct G { int u0; void *p; int idx; };
+extern G *g_102b8e9c;
+struct H {
+	unsigned long m;
+	bool operator==(const H &o) const { return m == o.m; }
+};
+static inline H Cur()
+{
+	H r;
+	if (g_102b8e9c->p)
+		r.m = g_102b8e9c->idx << 13;
+	else
+		r.m = 0xFFFFFFFF;
+	return r;
+}
+bool __stdcall sub_1010f830(const H *h)
+{
+	return *h == Cur();
 }
 // END FUNCTION

@@ -34,3 +34,17 @@ CHudTimerUI::~CHudTimerUI()
 	sub_101a9ff0(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005df20 size=0x43
+#include "CHudTimerUI.h"
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool sub_10163bf0();
+// TARGET: ?vfunc107@CHudTimerUI@@UAE_NXZ
+bool CHudTimerUI::vfunc107()
+{
+	if (*(float *)&m_unk188 < 1.0 && !m_unk18c)
+		return false;
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION

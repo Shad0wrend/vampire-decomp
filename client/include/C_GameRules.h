@@ -5,7 +5,8 @@
 
 class C_GameRules
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+	struct CX484 *m_pX;	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_GameRules adds to its base's vtable: 0-7, vfuncK at slot K
 	virtual ~C_GameRules();
 	virtual void vfunc1();

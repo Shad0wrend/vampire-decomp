@@ -9,6 +9,7 @@ namespace vgui2
 class Button : public vgui2::Label
 {
 public:
+	Button(int, int, int);
 	virtual ~Button();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Button's own function
@@ -30,6 +31,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc101();
 	virtual int vfunc102();
 	virtual void vfunc129();
+	void sub_101a98f0(int, int);
 	// the slots Button adds to its base's vtable: 138-165, vfuncK at slot K
 	virtual void vfunc138(char);
 	virtual bool vfunc139();
@@ -55,7 +57,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc159(int);
 	virtual int vfunc160(int);
 	virtual void vfunc161(int);
-	virtual int vfunc162(int);
+	virtual void vfunc162(int);
 	virtual void vfunc163(int, int, int, int);
 	virtual int vfunc164(int, int, int, int);
 	virtual void vfunc165(int);

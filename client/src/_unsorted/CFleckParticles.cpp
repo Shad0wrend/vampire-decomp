@@ -6,7 +6,7 @@
 
 // VC6 writes CFleckParticles's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFleckParticles *pcd_emit_1002e710() { return new CFleckParticles; }
+CFleckParticles *pcd_emit_1002e710(const CFleckParticles &other) { return new CFleckParticles(other); }
 
 // TARGET: ??_GCFleckParticles@@UAEPAXI@Z
 // END FUNCTION

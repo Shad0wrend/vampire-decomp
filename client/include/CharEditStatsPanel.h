@@ -5,9 +5,11 @@
 #include <stdlib.h>
 #include "vgui2__PropertyPage.h"
 
+struct CStatsSub1017f860 { void sub_1017f860(); };
 class CharEditStatsPanel : public vgui2::PropertyPage
 {
 public:
+	void sub_1017f640();
 	virtual ~CharEditStatsPanel();
 	static void operator delete(void *pMem) { free(pMem); }
 public:	// vtable-slot layer (2026-11-22), from the game's vtables

@@ -12,6 +12,26 @@ int C_ItemPhysicsHand::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100031d0 size=0x47
+#include "C_ItemPhysicsHand.h"
+extern unsigned int g_104cfe50;
+// TARGET: ?vfunc246@C_ItemPhysicsHand@@UAEHHHH@Z
+int C_ItemPhysicsHand::vfunc246(int a, int b, int c)
+{
+	if (g_104cfe50 & 1) {
+		switch (b) {
+		case 0xef:
+			g_104cfe50 |= 0x100000;
+			return 0;
+		case 0xf0:
+			g_104cfe50 |= 0x80000;
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003220 size=0xd
 #include "C_ItemPhysicsHand.h"
 namespace lifted {

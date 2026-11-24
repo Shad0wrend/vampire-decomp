@@ -10,3 +10,14 @@ VAnarchyLabel *pcd_emit_10170eb0(const VAnarchyLabel &other) { return new VAnarc
 
 // TARGET: ??_GVAnarchyLabel@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10170f10 size=0x43
+#include "VAnarchyLabel.h"
+void VAnarchyLabel::vfunc98()
+{
+	int w, h;
+	sub_101a98c0(&w, &h);
+	if (m_pSprite)
+		m_pSprite->sub_10059620(w, h, m_n0b8, m_n0bc);
+}
+// END FUNCTION

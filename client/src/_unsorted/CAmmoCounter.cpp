@@ -55,6 +55,17 @@ void CAmmoCounter::vfunc112()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bda0 size=0x23
+#include "CAmmoCounter.h"
+bool sub_10163bf0();
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CAmmoCounter::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004c2a0 size=0x1
 #include "CAmmoCounter.h"
 void CAmmoCounter::vfunc97()

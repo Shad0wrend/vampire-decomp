@@ -12,6 +12,25 @@ int C_WeaponGravityGun::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028310 size=0x47
+#include "C_WeaponGravityGun.h"
+extern unsigned int g_104cfe50;
+int C_WeaponGravityGun::vfunc246(int a, int b, int c)
+{
+	if (g_104cfe50 & 1) {
+		switch (b) {
+		case 0xef:
+			g_104cfe50 |= 0x100000;
+			return 0;
+		case 0xf0:
+			g_104cfe50 |= 0x80000;
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028360 size=0xd
 #include "C_WeaponGravityGun.h"
 namespace lifted {

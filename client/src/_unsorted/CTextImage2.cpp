@@ -23,3 +23,9 @@ void CTextImage2::vfunc3()
     ((lifted::V *)(*(int *)((char *)this + 0x1c)))->f3();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101722d0 size=0x42
+#include "CTextImage2.h"
+CTextImage2 *pcd_emit_101722d0() { return new CTextImage2; }
+// TARGET: ??_GCTextImage2@@UAEPAXI@Z
+// END FUNCTION

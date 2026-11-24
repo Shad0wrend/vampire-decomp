@@ -31,6 +31,22 @@ int C_BaseParticleEntity::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f4f0 size=0x3f
+#include "C_BaseEntity.h"
+#include "CParticleEffectBinding.h"
+extern int vt_101e5584[];
+C_BaseEntity *__fastcall sub_1007f4f0(C_BaseEntity *self, int edx, unsigned flags)
+{
+	((CParticleEffectBinding *)((char *)self + 0x414))->~CParticleEffectBinding();
+	int **ip = self ? (int **)((char *)self + 0x410) : 0;
+	*ip = vt_101e5584;
+	self->C_BaseEntity::~C_BaseEntity();
+	if (flags & 1)
+		C_BaseEntity::operator delete(self);
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f530 size=0x1
 #include "C_BaseParticleEntity.h"
 void C_BaseParticleEntity::vfunc120()

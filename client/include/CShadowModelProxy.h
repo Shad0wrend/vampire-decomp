@@ -5,6 +5,8 @@
 
 class CShadowModelProxy : public IMaterialProxy
 {
+public:
+    void *m_v4; void *m_v8; void *m_vc; void *m_v10; void *m_v14; void *m_v18; void *m_v1c;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CShadowModelProxy's own function
     virtual bool vfunc0(void*, void*);

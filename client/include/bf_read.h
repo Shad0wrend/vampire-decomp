@@ -72,6 +72,7 @@ public:
 
 	bool sub_10087bb0(void *pOutData, int nBits);	// \"ReadBits\": whole bytes up to a dword boundary of the output, then dwords, then the remaining bytes and bits; true unless the reader overflowed
 	float sub_10087df0(int numbits);	// "ReadBitAngle": ReadUBitLong(numbits) scaled to 360 degrees
+	float sub_10088760();	// "ReadFloat": ReadBits of 32 into a float
 	float sub_10088410();	// "ReadBitNormal": sign bit, then 11 fractional bits scaled by 1/2047
 	int sub_10087f50(int numbits);	// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
 	unsigned int sub_10088030(int numbits, bool bSigned);	// "ReadBitLong": ReadSBitLong(numbits) when bSigned, else ReadUBitLong(numbits)

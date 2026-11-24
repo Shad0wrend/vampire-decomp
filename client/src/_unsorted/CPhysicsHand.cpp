@@ -45,6 +45,17 @@ CPhysicsHand::~CPhysicsHand()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f7c0 size=0x23
+#include "CPhysicsHand.h"
+bool sub_10163bf0();
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CPhysicsHand::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f7f0 size=0xd
 extern char g_103eedf8;
 extern char g_103eedf9;

@@ -10,7 +10,9 @@ public:
 	int m_unk0c;
 	int m_unk10;
 	int m_unk14;
+	void sub_10119140();
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc7(int);
+	CAutoGameSystem *vfunc8(unsigned int flags);	// as in CDirtySpatialPartitionEntityList (transplant)
 };

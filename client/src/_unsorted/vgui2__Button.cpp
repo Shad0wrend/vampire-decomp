@@ -238,6 +238,18 @@ void vgui2::Button::vfunc148(int bit, bool on)
 bool vgui2::Button::vfunc149(int n) { return (*(int *)((char *)this + 0xc0) & (1 << (n + 1))) ? true : false; }
 // END FUNCTION
 
+// FUNCTION: 0x101b3fa0 size=0x47
+#include "vgui2__Button.h"
+struct KV101b5690 { KV101b5690 *sub_101b5690(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc162@Button@vgui2@@UAEXH@Z
+void vgui2::Button::vfunc162(int a)
+{
+	KV101b5690 *kv = (KV101b5690 *)sub_101b6840(0x1c);
+	vfunc161(kv ? (int)kv->sub_101b5690("Command", "command", a) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3ff0 size=0x2e
 #include "vgui2__Button.h"
 namespace lifted {
@@ -396,6 +408,28 @@ void vgui2::Button::vfunc91(int a0)
     int t0 = ((lifted::V *)this)->f138(1);
     *(char *)((char *)this + 0xbe) = 1;
     ((lifted::V *)this)->f87(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b43a0 size=0x4a
+#include "vgui2__Button.h"
+void vgui2::Button::vfunc94(int code) {
+ if (*((char *)this + 0xbe) && (code == 0x41 || code == 0x40)) {
+  vfunc138(1);
+  vfunc89(0);
+ }
+ *((char *)this + 0xbe) = 0;
+ vfunc138(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b4480 size=0x36
+#include "vgui2__Button.h"
+void vgui2::Button::vfunc129()
+{
+	int wide, tall;
+	vfunc110(&wide, &tall);
+	sub_101a98f0(wide + 8, tall + 8);
 }
 // END FUNCTION
 

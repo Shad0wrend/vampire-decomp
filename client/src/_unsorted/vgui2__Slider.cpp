@@ -24,6 +24,25 @@ int vgui2::Slider::vfunc111(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb7d0 size=0x47
+#include "vgui2__Slider.h"
+struct SliderView { char pad[0x78]; int m_lo; int m_hi; int m_val; };
+// TARGET: ?vfunc107@Slider@vgui2@@UAEXH@Z
+void vgui2::Slider::vfunc107(int value)
+{
+	SliderView *s = (SliderView *)this;
+	int old = s->m_val;
+	if (value < s->m_lo)
+		value = s->m_lo;
+	if (value > s->m_hi)
+		value = s->m_hi;
+	s->m_val = value;
+	vfunc118();
+	if (s->m_val != old)
+		vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb820 size=0x7
 #include "vgui2__Slider.h"
 int vgui2::Slider::vfunc108()
@@ -67,6 +86,18 @@ void vgui2::Slider::vfunc119()
 	float fwide = (float)wide;
 	float fvalue = (float)self->_nobPos[0] / (fwide - self->_nobSize);
 	self->_value = (int)(fvalue * (double)(self->_range[1] - self->_range[0]) + self->_range[0] + 0.5);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bb940 size=0x45
+#include "vgui2__Slider.h"
+struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: vgui2::Slider::vfunc120
+int vgui2::Slider::vfunc120()
+{
+	KV101b56c0 *kv = (KV101b56c0 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b56c0("SliderMoved", "position", m_h80) : 0);
 }
 // END FUNCTION
 

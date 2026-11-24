@@ -3,9 +3,10 @@
 
 #include "CVDmg_t.h"
 
-struct StatDefault
+struct StatDefaultHead { int a[6]; };
+struct StatDefault : public StatDefaultHead
 {
-	int a[10];
+	CVDmgBlock16_t m_block18;
 	StatDefault(int);
 	~StatDefault();
 	int sub_10160250(int arg);	// stub 0x10015500: returns a value (a table id) for arg

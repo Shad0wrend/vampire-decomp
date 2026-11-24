@@ -35,4 +35,5 @@ public:
 	void vfunc3();
 	void vfunc4();
 	void vfunc7(int);
+	void *vfunc16(unsigned short);
 };

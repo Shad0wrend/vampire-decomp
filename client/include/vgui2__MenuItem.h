@@ -9,6 +9,7 @@ namespace vgui2
 class MenuItem : public vgui2::Button
 {
 public:
+	MenuItem(int, int, int, int, char);
 	virtual ~MenuItem();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with MenuItem's own function

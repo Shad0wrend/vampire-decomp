@@ -14,4 +14,5 @@ public:
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 	void vfunc3();	// as in VHCheckButton (transplant)
 	void vfunc7();	// as in VHCheckButton (transplant)
+	void vfunc4();	// as in CharEditPanel (transplant)
 };

@@ -4,10 +4,13 @@
 #include "C_BaseEntity.h"
 
 struct Vector3;
+struct EntV;
+struct CUnknown100a2de0 { void sub_100a2de0(int); };
 class C_Beam : public C_BaseEntity
 {
 public:
 	C_Beam();
+	void sub_10080450(EntV *pEnt);
 	Vector3 *sub_100806f0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_Beam's own function
@@ -19,7 +22,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc56();
 	virtual int vfunc113(int, int);
 	// the slots C_Beam adds to its base's vtable: 120-121, vfuncK at slot K
-	virtual void vfunc120();
+	virtual void vfunc120(const char *szModelName);
 	virtual int vfunc121();
 	char m_pad0014[0x4b8 - 0x14];
 };

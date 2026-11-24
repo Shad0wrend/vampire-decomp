@@ -4,6 +4,7 @@
 #pragma once
 #include "vgui2__IClientPanel.h"
 
+struct CHUDSprite10059620 { void sub_10059620(int, int, int, int); };
 namespace vgui2
 {
 class Panel : public vgui2::IClientPanel
@@ -12,12 +13,14 @@ public:
 	static void operator delete(void *pMem);
 	Panel(Panel *parent, const char *name);
 	void sub_101ab300(int, int);
+	int sub_101ab490(int);
 	int sub_101aa220();
 	void sub_101a9af0();
 	void sub_101aa590();
 	void sub_101a9ff0(int);
 	void sub_101aa0a0(int);
 	int sub_101a99f0(int);
+	void sub_101aa6f0(int);
 	int m_unk4[(0x18 - 4) / 4];
 	bool m_b18;
 	char m_c19; char m_c1a; char m_c1b;
@@ -31,7 +34,18 @@ public:
 	void sub_101ab4e0(int);
 	int m_w7c;
 	int m_h80;
-	int m_unk84[(0x170 - 0x84) / 4];
+	int m_unk84;
+	bool m_b88;
+	char m_c89; char m_c8a; char m_c8b;
+	int m_unk8c; int m_unk90;
+	int m_i94;
+	int m_i98;
+	int m_unk9c[(0xb8 - 0x9c) / 4];
+	int m_n0b8;
+	int m_n0bc;
+	CHUDSprite10059620 *m_pSprite;
+	int m_unk0c4[(0x170 - 0xc4) / 4];
+	void sub_101a98c0(int *, int *);
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -67,19 +81,19 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc28(int);
 	virtual int vfunc29(int);
 	virtual int vfunc30();
-	virtual void vfunc31();
+	virtual int vfunc31();
 	virtual int vfunc32(int);
 	virtual void vfunc33(int);
 	virtual bool vfunc34(int);
 	virtual void vfunc35();
 	virtual int vfunc36();
-	virtual void vfunc37();
+	virtual Panel *vfunc37(int);
 	virtual void vfunc38();
 	virtual bool vfunc39(char);
 	virtual bool vfunc40();
 	virtual void vfunc41();
 	virtual void vfunc42();
-	virtual void vfunc43();
+	virtual int vfunc43(void *);
 	virtual bool vfunc44(int, int);
 	virtual void vfunc45();
 	virtual int vfunc46(int);
@@ -93,7 +107,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc54(int);
 	virtual int vfunc55();
 	virtual bool vfunc56();
-	virtual void vfunc57(int, int);
+	virtual int vfunc57(int, int);
 	virtual void vfunc58(int);
 	virtual void vfunc59(int);
 	virtual void vfunc60(void *);

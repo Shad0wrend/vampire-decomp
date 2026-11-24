@@ -11,6 +11,22 @@ vgui2::ScrollBar *pcd_emit_101beee0(const vgui2::ScrollBar &other) { return new 
 // TARGET: ??_GScrollBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bef00 size=0x31
+#include "vgui2__ScrollBar.h"
+struct KVView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual int *v6(int *, const char *);
+};
+// TARGET: ?vfunc74@ScrollBar@vgui2@@UAEHH@Z
+int vgui2::ScrollBar::vfunc74(int a)
+{
+	Panel::vfunc74(a);
+	KVView *kv = (KVView *)a;
+	int c;
+	return vfunc50(*kv->v6(&c, "ScrollBar/BgColor"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bef40 size=0x1a
 #include "vgui2__ScrollBar.h"
 struct SBView_101bef40 { char pad[0x60]; vgui2::Panel *m_p; };
@@ -80,6 +96,18 @@ int vgui2::ScrollBar::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf0b0 size=0x47
+#include "vgui2__ScrollBar.h"
+struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc120@ScrollBar@vgui2@@UAEHH@Z
+int vgui2::ScrollBar::vfunc120(int a)
+{
+	KV101b56c0 *kv = (KV101b56c0 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b56c0("ScrollBarSliderMoved", "position", a) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf100 size=0x8
 #include "vgui2__ScrollBar.h"
 namespace lifted {
@@ -141,6 +169,34 @@ int vgui2::ScrollBar::vfunc116(int a0)
 int vgui2::ScrollBar::vfunc117()
 {
     return *(int *)((char *)this + 0x60);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bf290 size=0x3e
+#include "vgui2__ScrollBar.h"
+struct ISliderV {
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4(); virtual void p5(); virtual void p6(); virtual void p7(); virtual void p8(); virtual void p9();
+	virtual void p10(); virtual void p11(); virtual void p12(); virtual void p13(); virtual void p14(); virtual void p15(); virtual void p16(); virtual void p17(); virtual void p18(); virtual void p19();
+	virtual void p20(); virtual void p21(); virtual void p22(); virtual void p23(); virtual void p24(); virtual void p25(); virtual void p26(); virtual void p27(); virtual void p28(); virtual void p29();
+	virtual void p30(); virtual void p31(); virtual void p32(); virtual void p33(); virtual void p34(); virtual void p35(); virtual void p36(); virtual void p37(); virtual void p38(); virtual void p39();
+	virtual void p40(); virtual void p41(); virtual void p42(); virtual void p43(); virtual void p44(); virtual void p45(); virtual void p46(); virtual void p47(); virtual void p48(); virtual void p49();
+	virtual void p50(); virtual void p51(); virtual void p52(); virtual void p53(); virtual void p54(); virtual void p55(); virtual void p56(); virtual void p57(); virtual void p58(); virtual void p59();
+	virtual void p60(); virtual void p61(); virtual void p62(); virtual void p63(); virtual void p64(); virtual void p65(); virtual void p66(); virtual void p67(); virtual void p68(); virtual void p69();
+	virtual void p70(); virtual void p71(); virtual void p72(); virtual void p73(); virtual void p74(); virtual void p75(); virtual void p76(); virtual void p77(); virtual void p78(); virtual void p79();
+	virtual void p80(); virtual void p81(); virtual void p82(); virtual void p83(); virtual void p84(); virtual void p85(); virtual void p86(); virtual void p87(); virtual void p88(); virtual void p89();
+	virtual void p90(); virtual void p91(); virtual void p92(); virtual void p93(); virtual void p94(); virtual void p95(); virtual void p96(); virtual void p97(); virtual void p98(); virtual void p99();
+	virtual void p100(); virtual void p101(); virtual void p102(); virtual void p103(); virtual void p104(); virtual void p105(); virtual void p106();
+	virtual void SetValue(int v);
+	virtual int GetValue();
+};
+void vgui2::ScrollBar::vfunc122(int a)
+{
+	if (*(char *)((char *)this + 0x6c)) {
+		ISliderV *s = *(ISliderV **)((char *)this + 0x60);
+		int v = s->GetValue() + *(int *)((char *)this + 0x64) * a;
+		(*(ISliderV **)((char *)this + 0x60))->SetValue(v);
+		vfunc120(v);
+	}
 }
 // END FUNCTION
 

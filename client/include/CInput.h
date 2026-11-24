@@ -8,6 +8,7 @@ class CInput : public IInput
 public:
     void sub_10106880(int);
     void sub_10101df0();
+    void sub_10101d10(const char *, int);
     int m_unk04;
     int m_unk08;
     int m_unk0c;
@@ -18,7 +19,12 @@ public:
     int m_unk20;
     int m_unk24;
     void *m_unk28;
-    int m_unk2c[(0xdc - 0x2c) / 4];
+    int m_unk2c[(0x54 - 0x2c) / 4];
+    int m_unk54;
+    int m_unk58;
+    int m_unk5c;
+    int m_unk60;
+    int m_unk64[(0xdc - 0x64) / 4];
     struct CInputKey { char name[0x20]; int value; CInputKey *next; };
     CInputKey *m_pKeys;
     // vtable-slot layer (2026-11-22), from the game's vtables
@@ -42,7 +48,7 @@ public:
     virtual void vfunc16();
     virtual void vfunc17();
     virtual bool vfunc18();
-    virtual int vfunc19();
+    virtual void vfunc19();
     virtual float vfunc20();
     virtual void vfunc21(char);
     virtual void vfunc22();
@@ -52,8 +58,8 @@ public:
     virtual bool vfunc26();
     virtual void vfunc27();
     virtual void vfunc28();
-    virtual void vfunc29();
-    virtual void vfunc30();
+    virtual int vfunc29();
+    virtual float vfunc30();
     virtual void vfunc31();
     virtual int vfunc32(int);
     virtual void vfunc33();

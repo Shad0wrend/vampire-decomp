@@ -48,3 +48,39 @@ void C_WeaponRanged_FlameThrower::vfunc143()
     *(int *)((char *)this + 0x156c) = -1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10027cd0 size=0x4c
+#include "C_WeaponRanged_FlameThrower.h"
+struct FlameSlot { int m_state; int m_4; int m_x; int m_y; int m_z; int pad[10]; };
+struct FlameView { char pad[0x978]; FlameSlot m_slots[50]; };
+bool C_WeaponRanged_FlameThrower::vfunc116(int idx, int pOut)
+{
+	FlameView *v = (FlameView *)this;
+	if (idx > -1 && idx < 50 && v->m_slots[idx].m_state == 1) {
+		int *out = (int *)pOut;
+		if (out) {
+			out[0] = v->m_slots[idx].m_x;
+			out[1] = v->m_slots[idx].m_y;
+			out[2] = v->m_slots[idx].m_z;
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10028230 size=0x48
+#include "C_WeaponRanged_FlameThrower.h"
+// TARGET: C_WeaponRanged_FlameThrower::vfunc118
+void C_WeaponRanged_FlameThrower::vfunc118(int a)
+{
+    if (m_i166c == a)
+        m_i166c = 0;
+    if (m_i1668 == a)
+        m_i1668 = 0;
+    for (int i = 0; i < 50; i++) {
+        if (m_iList[i] == a)
+            m_iList[i] = 0;
+    }
+}
+// END FUNCTION

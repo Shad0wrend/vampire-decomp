@@ -19,6 +19,19 @@ int vgui2::CheckButton::vfunc164(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101baba0 size=0x4c
+#include "vgui2__CheckButton.h"
+struct CUnknown101b56c0 { CUnknown101b56c0 *sub_101b56c0(const char *a, const char *b, int c); };
+void *sub_101b6840(int n);
+void vgui2::CheckButton::vfunc143(char state)
+{
+	CUnknown101b56c0 *kv = (CUnknown101b56c0 *)sub_101b6840(0x1c);
+	CUnknown101b56c0 *r = kv ? kv->sub_101b56c0("CheckButtonChecked", "state", (unsigned char)state) : 0;
+	this->vfunc43((void *)r);
+	Button::vfunc143(state);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101babf0 size=0x33
 #include "vgui2__CheckButton.h"
 namespace lifted {

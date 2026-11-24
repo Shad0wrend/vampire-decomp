@@ -9,7 +9,11 @@ class C_BaseAnimating : public C_BaseEntity
 public:
 	C_BaseAnimating();
 	void sub_100966e0();
+	bool sub_10094020();
+	bool sub_10091910(int idx, int arg);
+	bool sub_10093e40();
 	void sub_10002680(int);
+	bool sub_10095ac0(int idx, int arg);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
@@ -43,14 +47,14 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc130();
 	virtual void vfunc131(int, int, int, int, int, int);
 	virtual void vfunc132();
-	virtual void vfunc133();
+	virtual int vfunc133();
 	virtual void vfunc134();
 	virtual void vfunc135();
 	virtual float vfunc136(float flInterval);
 	virtual float vfunc137(float);
 	virtual float vfunc138(int iSequence);
 	virtual int vfunc139(int);
-	virtual void vfunc140();
+	virtual bool vfunc140();
 	virtual void vfunc141();
 	virtual bool vfunc142();
 };

@@ -150,6 +150,15 @@ int CInput::vfunc44()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffaa0 size=0x4b
+#include "Vector.h"
+#include "CInput.h"
+float CInput::vfunc30() {
+ if (!vfunc29()) return 0.0f;
+ return ((Vector *)((char *)this + 0x164))->Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffaf0 size=0x7
 #include "CInput.h"
 float CInput::vfunc53()
@@ -391,6 +400,39 @@ void CInput::vfunc54()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106240 size=0x48
+#include "CInput.h"
+extern int (__stdcall *g_101e30e4)(int, int, void *, int);
+// TARGET: ?vfunc16@CInput@@UAEXXZ
+void CInput::vfunc16()
+{
+	char *p = (char *)this;
+	if (*(int *)(p + 0x28) != 1 && *(int *)(p + 0x20) != 0) {
+		if (*(int *)(p + 0x78) != 0)
+			*(int *)(p + 0x5c) = g_101e30e4(4, 0, p + 0x6c, 0);
+		*(int *)(p + 0x28) = 1;
+		vfunc25();
+		*(int *)(p + 0x54) = 0;
+		*(int *)(p + 0x58) = 0;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10106290 size=0x3f
+#include "CInput.h"
+extern void (__stdcall *g_101e30e4)(int, int, void *, int);
+void CInput::vfunc17()
+{
+	if (m_unk28 && m_unk20) {
+		if (m_unk5c)
+			g_101e30e4(4, 0, &m_unk60, 0);
+		m_unk28 = 0;
+		m_unk54 = 0;
+		m_unk58 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101062d0 size=0x9
 #include "CInput.h"
 bool CInput::vfunc18() { if (m_unk28) return true; return false; }
@@ -425,4 +467,17 @@ void CInput::vfunc21(char b) { m_unk24 = b != 0; }
 // FUNCTION: 0x101069c0 size=0x9
 #include "CInput.h"
 bool CInput::vfunc24() { if (m_unk24) return true; return false; }
+// END FUNCTION
+
+// FUNCTION: 0x10106b20 size=0x13
+#include "CInput.h"
+void CInput::vfunc19()
+{
+	if ( m_unk28 != 0 )
+	{
+		m_unk2c[(0x54 - 0x2c) / 4] = 0;
+		m_unk2c[(0x58 - 0x2c) / 4] = 0;
+		m_unk2c[(0x50 - 0x2c) / 4] = 0;
+	}
+}
 // END FUNCTION

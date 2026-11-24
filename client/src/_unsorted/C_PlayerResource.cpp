@@ -88,6 +88,16 @@ C_PlayerResource *pcd_emit_100bd330(const C_PlayerResource &other) { return new 
 // TARGET: ??_GC_PlayerResource@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100bd350 size=0x31
+#include "C_PlayerResource.h"
+extern C_PlayerResource *g_104a38f8;
+// TARGET: ??1C_PlayerResource@@UAE@XZ
+C_PlayerResource::~C_PlayerResource()
+{
+	g_104a38f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd390 size=0x28
 #include "C_PlayerResource.h"
 // TARGET: ?vfunc120@C_PlayerResource@@UAEHH@Z
@@ -120,6 +130,21 @@ int C_PlayerResource::vfunc123(int i) { if (!vfunc133(i)) return 0; return m_a59
 int C_PlayerResource::vfunc124(int i) { if (!vfunc133(i)) return 0; return m_a620[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x100bd480 size=0x3e
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc125(int idx)
+{
+	if (!vfunc133(idx))
+		return 0;
+	int v = m_a620[idx];
+	int n = 0;
+	for (int i = 0; i < 2; i++)
+		if (v & (1 << i))
+			n++;
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd4c0 size=0x28
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 class PRView {
@@ -136,6 +161,21 @@ int PRView::sub_100bd4c0(int i)
 	if (!IsConnected(i))
 		return 0;
 	return m6a4[i];
+}
+// END FUNCTION
+
+// FUNCTION: 0x100bd4f0 size=0x3e
+#include "C_PlayerResource.h"
+int C_PlayerResource::vfunc127(int idx)
+{
+	if (!vfunc133(idx))
+		return 0;
+	int v = m_a6a4[idx];
+	int n = 0;
+	for (int i = 0; i < 8; i++)
+		if (v & (1 << i))
+			n++;
+	return n;
 }
 // END FUNCTION
 

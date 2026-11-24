@@ -16,6 +16,7 @@ struct CUnknown101d82d0_Elem
 class CUnknown101d82d0
 {
 public:
+	void *sub_101451c0();	// zeroes count and data (the constructor body, called directly)
 	int m_count;	// 0x00
 	CUnknown101d82d0_Elem *m_pData;	// 0x04
 

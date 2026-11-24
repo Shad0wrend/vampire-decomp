@@ -24,12 +24,28 @@ void CLitSmokeEmitter::sub_10030790(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100307e0 size=0x49
+#include "CLitSmokeEmitter.h"
+struct LitView { char pad[0xb0]; int m_b0, m_b4, m_b8, m_bc, m_c0, m_c4, m_c8; };
+void CLitSmokeEmitter::vfunc14(int a, int b, int c, int d, int e, int f, int g)
+{
+	LitView *v = (LitView *)this;
+	v->m_c8 = g;
+	v->m_bc = d;
+	v->m_c0 = e;
+	v->m_c4 = f;
+	v->m_b0 = a;
+	v->m_b4 = b;
+	v->m_b8 = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5470 size=0x1e
 #include "CLitSmokeEmitter.h"
 
 // VC6 writes CLitSmokeEmitter's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CLitSmokeEmitter *pcd_emit_100b5470() { return new CLitSmokeEmitter; }
+CLitSmokeEmitter *pcd_emit_100b5470(const CLitSmokeEmitter &other) { return new CLitSmokeEmitter(other); }
 
 // TARGET: ??_GCLitSmokeEmitter@@UAEPAXI@Z
 // END FUNCTION

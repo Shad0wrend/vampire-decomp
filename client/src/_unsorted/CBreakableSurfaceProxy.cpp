@@ -1,6 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100b9c00 size=0x4c
+#include "CBreakableSurfaceProxy.h"
+struct IMaterialVarX;
+struct IMaterialX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10();
+	virtual IMaterialVarX *FindVar(const char *name, bool *found, bool complain);
+};
+bool CBreakableSurfaceProxy::vfunc0(void *pMaterial, void *pKeyValues)
+{
+	IMaterialX *m = (IMaterialX *)pMaterial;
+	bool foundVar;
+	m_EnvMapMaskVar = m->FindVar("$envmapmask", &foundVar, false);
+	if (!foundVar)
+		return false;
+	m_BaseTextureVar = m->FindVar("$basetexture", &foundVar, false);
+	return foundVar;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9c50 size=0x4d
 #include "CBreakableSurfaceProxy.h"
 #include "C_BreakableSurface.h"

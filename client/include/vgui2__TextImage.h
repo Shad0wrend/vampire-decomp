@@ -10,6 +10,8 @@ class TextImage : public vgui2::Image
 {
 public:
 	virtual ~TextImage();
+	int m_unk0c; int m_unk10; int m_unk14; int m_unk18;
+	char *m_pText;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextImage's own function
 	virtual int vfunc0();

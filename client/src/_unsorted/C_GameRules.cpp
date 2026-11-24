@@ -11,6 +11,20 @@ C_GameRules *pcd_emit_100bbba0() { return new C_GameRules; }
 // TARGET: ??_GC_GameRules@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100bbbc0 size=0x20
+#include "C_GameRules.h"
+struct CX484 { void sub_100792d0(); };
+C_GameRules::~C_GameRules()
+{
+	CX484 *p = m_pX;
+	if (p)
+	{
+		p->sub_100792d0();
+		operator delete(p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbbe0 size=0x14
 #include "C_GameRules.h"
 namespace lifted {

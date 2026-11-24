@@ -6,12 +6,11 @@
 
 class CVModInfo_t;
 
+#include "CVDmg_t.h"
 class CVTraitEffect_t
 {
 public:
-	int m_nType;	// 0x00
-	const char *m_psz04;	// 0x04
-	char m_pad0008[8];	// 0x08: the rest of the dependency record
+	CVDmgBlock16_t m_rec;	// 0x00
 	int m_nKind;	// 0x10: 7 once the cost was loaded
 #define m_n10 m_nKind
 	int m_n14;	// 0x14: the modifier value

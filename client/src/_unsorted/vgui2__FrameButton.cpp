@@ -1,6 +1,38 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101b8150 size=0xbe
+#include "vgui2__FrameButton.h"
+
+struct SchemeView {
+    virtual void v0(); virtual void v1(); virtual void v2();
+    virtual void *GetBorder(const char *name);
+    virtual void v4(); virtual void v5();
+    virtual int *GetColor(int *out, const char *name);
+};
+
+#define FB_INT(off) (*(int *)((char *)this + (off)))
+
+// TARGET: vgui2::FrameButton::vfunc74
+int vgui2::FrameButton::vfunc74(int pSchemeArg)
+{
+    SchemeView *pScheme = (SchemeView *)pSchemeArg;
+    int tmp;
+    Button::vfunc74(pSchemeArg);
+
+    FB_INT(0x100) = *pScheme->GetColor(&tmp, "TitleButtonBgColor");
+    FB_INT(0xfc) = *pScheme->GetColor(&tmp, "TitleButtonFgColor");
+    FB_INT(0x108) = *pScheme->GetColor(&tmp, "TitleButtonDisabledBgColor");
+    FB_INT(0x104) = *pScheme->GetColor(&tmp, "TitleButtonDisabledFgColor");
+
+    FB_INT(0xf0) = (int)pScheme->GetBorder("TitleButtonBorder");
+    FB_INT(0xf4) = (int)pScheme->GetBorder("TitleButtonDepressedBorder");
+    FB_INT(0xf8) = (int)pScheme->GetBorder("TitleButtonDisabledBorder");
+
+    return vfunc166(*((char *)this + 0x10c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b8210 size=0x2d
 #include "vgui2__FrameButton.h"
 int vgui2::FrameButton::vfunc164(int a0, int a1, int a2, int a3)

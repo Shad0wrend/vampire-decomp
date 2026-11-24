@@ -5,4 +5,6 @@
 
 class CEffectsClient : public IEffects
 {
+public:
+	virtual void vfunc7(const class Vector &origin, int a, int b);
 };

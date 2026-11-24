@@ -247,6 +247,17 @@ int __fastcall sub_1007dd90(V_1007dd90 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dda0 size=0x1e
+#include "C_BaseEntity.h"
+bool C_BaseEntity::vfunc65(int a, int flags)
+{
+	bool r = true;
+	if (*(int *)((char *)this + 0x2d0) == 1 && !(flags & 0x4000000))
+		r = false;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007de10 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc92(int a0, int a1)
@@ -374,6 +385,22 @@ void C_BaseEntity::vfunc21()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e070 size=0x3c
+#include "C_BaseEntity.h"
+struct CUnknown100e2340 { int sub_100e2340(int a, int b, int c, int d); };
+struct CUnknown10044400 { short sub_10044400(); };
+extern CUnknown100e2340 *g_102b8e9c;
+struct EntHandleView { virtual int v0(); };
+// TARGET: ?Init@C_BaseEntity@@UAE_NHH@Z
+bool C_BaseEntity::Init(int entnum, int iSerialNum)
+{
+	g_102b8e9c->sub_100e2340((int)&iSerialNum, ((EntHandleView *)((char *)this + 4))->v0(), entnum, iSerialNum);
+	((CUnknown10044400 *)((char *)this + 0x190))->sub_10044400();
+	*(int *)((char *)this + 0x44) = entnum;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f050 size=0xf
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc0(int a0)
@@ -391,6 +418,24 @@ unsigned int * C_BaseEntity::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f210 size=0x48
+#include "C_BaseEntity.h"
+struct IClientMode11 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10();
+    virtual bool ShouldDrawEntity(C_BaseEntity *);
+};
+extern IClientMode11 *g_105f99d8;
+// TARGET: ?ShouldDraw@C_BaseEntity@@UAE_NXZ
+bool C_BaseEntity::ShouldDraw()
+{
+    if (g_105f99d8 && !g_105f99d8->ShouldDrawEntity(this))
+        return false;
+    return !IsDormant() && ((int *)this)[0x40 / 4] && !(((char *)this)[0x74] & 0x40) && ((int *)this)[0x44 / 4];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f2c0 size=0x5
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc27(int a0, int a1, int a2)
@@ -403,6 +448,18 @@ bool C_BaseEntity::vfunc27(int a0, int a1, int a2)
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc38(int a0, int a1)
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009f300 size=0x26
+#include "C_BaseEntity.h"
+struct ModelInfoView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int GetModelType(int idx); };
+extern ModelInfoView *g_104a57f8;
+int C_BaseEntity::vfunc86()
+{
+	if (*(int *)((char *)this + 0x74) & 0x60)
+		return 0;
+	return g_104a57f8->GetModelType(*(int *)((char *)this + 0x40)) == 3 ? 2 : 0;
 }
 // END FUNCTION
 
@@ -428,6 +485,16 @@ void C_BaseEntity::vfunc119(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fb50 size=0x45
+#include "Vector.h"
+#include "C_BaseEntity.h"
+void C_BaseEntity::Collideable_vfunc1(int a0, int a1)
+{
+	*(Vector *)a0 = vfunc52();
+	*(Vector *)a1 = vfunc53();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fba0 size=0x7
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc51()
@@ -436,11 +503,35 @@ int C_BaseEntity::vfunc51()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fca0 size=0x28
+#include "C_BaseEntity.h"
+struct ModelInfoView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual bool IsTranslucent(int idx); };
+extern ModelInfoView *g_104a57f8;
+bool C_BaseEntity::IsTransparent()
+{
+	return g_104a57f8->IsTranslucent(*(int *)((char *)this + 0x40)) || *(int *)((char *)this + 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fce0 size=0x7
 #include "C_BaseEntity.h"
 CMouthInfo * C_BaseEntity::GetMouth()
 {
     return (CMouthInfo *)((char *)this + 0xfc);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009fcf0 size=0x3d
+#include "C_BaseEntity.h"
+bool C_BaseEntity::vfunc57(int a1, int a2, int a3)
+{
+	float *pos = (float *)a2;
+	float *ang = (float *)a3;
+	const float *o = (const float *)&GetAbsOrigin();
+	pos[0] = o[0]; pos[1] = o[1]; pos[2] = o[2];
+	const float *a = (const float *)&GetAbsAngles();
+	ang[0] = a[0]; ang[1] = a[1]; ang[2] = a[2];
+	return true;
 }
 // END FUNCTION
 
@@ -497,11 +588,82 @@ int C_BaseEntity::vfunc80(int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009feb0 size=0xb8
+#include "C_BaseEntity.h"
+#include "Tier1.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct EntBrushView {
+    V4(a) V4(b) V4(c) V4(d) V4(e) V4(f) V4(g) V4(h) V4(i) V4(j)
+    V4(k) V4(l) V4(m) V4(n) V4(o) V4(p) V4(q) V4(r) V4(s) V4(t)
+    virtual int DrawBrushModel(bool bTransparent);
+};
+struct ModelInfoView {
+    virtual void v0();
+    virtual const char *GetModelName(int model);
+    virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+    virtual int GetModelType(int model);
+};
+extern ModelInfoView *g_104a57f8;
+extern void (*g_101e3114)(const char *, ...);
+struct ClientClassView { void *a; void *b; const char *m_pNetworkName; };
+
+// TARGET: C_BaseEntity::DrawModel
+int C_BaseEntity::DrawModel(int flags, int a1)
+{
+    if (!*((char *)this + 0xe0))
+        return 0;
+
+    int drawn = 0;
+    if (!*(int *)((char *)this + 0x40))
+        return drawn;
+
+    int modelType = g_104a57f8->GetModelType(*(int *)((char *)this + 0x40));
+    switch (modelType) {
+    case 1:
+        drawn = ((EntBrushView *)this)->DrawBrushModel(flags & 0x80000000 ? true : false);
+        break;
+    case 3:
+        g_101e3114("ERROR:  Can't draw studio model %s because %s is not derived from C_BaseAnimating\n",
+            g_104a57f8->GetModelName(*(int *)((char *)this + 0x40)),
+            ((ClientClassView *)GetClientClass())->m_pNetworkName ? ((ClientClassView *)GetClientClass())->m_pNetworkName : "unknown");
+        break;
+    case 2:
+        g_101e3114("ERROR:  Sprite model's not supported any more except in legacy temp ents\n");
+        break;
+    default:
+        break;
+    }
+    return drawn;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a06e0 size=0x3
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc67()
 {
     return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a08a0 size=0x3d
+#include "C_BaseEntity.h"
+#include "Vector.h"
+struct EntView {
+	char pad[0x54];
+	Vector v0, v1;
+	int a6;
+	int c70;
+	char pad3[0x29c - 0x74];
+	Vector w0, w1;
+};
+// TARGET: C_BaseEntity::vfunc70
+int C_BaseEntity::vfunc70()
+{
+	EntView *p = (EntView *)this;
+	p->v0 = p->w0;
+	p->v1 = p->w1;
+	return p->a6 = p->c70;
 }
 // END FUNCTION
 
@@ -564,6 +726,17 @@ void C_BaseEntity::vfunc37()
     if ((*(int *)((char *)this + 0x44)) != 0) {
         ((lifted::V *)this)->f76(); return;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a0df0 size=0x3f
+#include "C_BaseEntity.h"
+void __stdcall sub_100a0df0(C_BaseEntity *ent, float *pos, float *ang)
+{
+	const float *o = (const float *)&ent->GetAbsOrigin();
+	pos[0] = o[0]; pos[1] = o[1]; pos[2] = o[2];
+	const float *a = (const float *)&ent->GetAbsAngles();
+	ang[0] = a[0]; ang[1] = a[1]; ang[2] = a[2];
 }
 // END FUNCTION
 
@@ -833,6 +1006,153 @@ int C_BaseEntity::vfunc36(int a0)
 int C_BaseEntity::vfunc34()
 {
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1011a430 size=0x1b4
+#include "C_BaseEntity.h"
+
+__declspec(dllimport) void vtune( bool resume );
+
+class CCycleCount
+{
+public:
+	__int64 m_Int64;
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+	void operator+=( const CCycleCount &other )
+	{
+		m_Int64 += other.m_Int64;
+	}
+};
+
+class CFastTimer
+{
+public:
+	CCycleCount m_Duration;
+	void Start()
+	{
+		m_Duration.Sample();
+	}
+	void End()
+	{
+		CCycleCount cnt;
+		cnt.m_Int64 = 0;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const
+	{
+		return m_Duration;
+	}
+};
+
+class CVProfNode;
+
+class CVProfile
+{
+public:
+	bool m_bVTuneGroupEnabled;	// 0x0
+	int m_nVTuneGroupID;	// 0x4
+	int m_BudgetGroupStack[1024];	// 0x8
+	int m_nBudgetGroupStackPtr;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+
+	inline void EnterScope( const char *pszName, int detailLevel, const char *pBudgetGroupName );
+	inline void ExitScope();
+	inline void PushBudgetGroup( int id )
+	{
+		m_BudgetGroupStack[m_nBudgetGroupStackPtr] = id;
+		m_nBudgetGroupStackPtr++;
+		if ( m_BudgetGroupStack[m_nBudgetGroupStackPtr - 2] != id && m_bVTuneGroupEnabled && id == m_nVTuneGroupID )
+			vtune( true );
+	}
+	inline void PopBudgetGroup()
+	{
+		m_nBudgetGroupStackPtr--;
+		int id = m_BudgetGroupStack[m_nBudgetGroupStackPtr + 1];
+		if ( m_BudgetGroupStack[m_nBudgetGroupStackPtr] != id && m_bVTuneGroupEnabled && id == m_nVTuneGroupID )
+			vtune( false );
+	}
+};
+
+extern "C" __declspec(dllimport) CVProfile g_VProfCurrentProfile;
+
+class CVProfNode
+{
+public:
+	const char *m_pszName;	// 0x00
+	int m_unk04;
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	char m_pad[0x48 - 0x20];
+	CVProfNode *m_pParent;	// 0x48
+	char m_pad2[0x54 - 0x4c];
+	int m_BudgetGroupID;	// 0x54
+
+	__declspec(dllimport) CVProfNode *GetSubNode( const char *pszName, int detailLevel, const char *pBudgetGroupName );
+
+	inline void EnterScope()
+	{
+		m_nCalls++;
+		if ( m_nRecursions++ == 0 )
+		{
+			m_Timer.Start();
+			g_VProfCurrentProfile.PushBudgetGroup( m_BudgetGroupID );
+		}
+	}
+	inline bool ExitScope()
+	{
+		if ( --m_nRecursions == 0 && m_nCalls != 0 )
+		{
+			m_Timer.End();
+			m_CurFrameTime += m_Timer.GetDuration();
+			g_VProfCurrentProfile.PopBudgetGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+
+inline void CVProfile::EnterScope( const char *pszName, int detailLevel, const char *pBudgetGroupName )
+{
+	if ( m_enabled || !m_fAtRoot )
+	{
+		if ( m_pCurNode->m_pszName != pszName )
+			m_pCurNode = m_pCurNode->GetSubNode( pszName, detailLevel, pBudgetGroupName );
+		m_pCurNode->EnterScope();
+		m_fAtRoot = false;
+	}
+}
+
+inline void CVProfile::ExitScope()
+{
+	if ( !m_fAtRoot || m_enabled )
+	{
+		if ( m_pCurNode->ExitScope() )
+			m_pCurNode = m_pCurNode->m_pParent;
+		m_fAtRoot = ( m_pCurNode == m_pRoot );
+	}
+}
+
+void C_BaseEntity::vfunc111()
+{
+	g_VProfCurrentProfile.EnterScope( "C_BaseEntity::Relink", 0, "Unaccounted" );
+	sub_1009e2d0( 0 );
+	g_VProfCurrentProfile.ExitScope();
 }
 // END FUNCTION
 

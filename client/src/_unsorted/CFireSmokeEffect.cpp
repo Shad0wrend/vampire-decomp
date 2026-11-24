@@ -6,7 +6,7 @@
 
 // VC6 writes CFireSmokeEffect's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFireSmokeEffect *pcd_emit_101189d0() { return new CFireSmokeEffect; }
+CFireSmokeEffect *pcd_emit_101189d0(const CFireSmokeEffect &other) { return new CFireSmokeEffect(other); }
 
 // TARGET: ??_GCFireSmokeEffect@@UAEPAXI@Z
 // END FUNCTION

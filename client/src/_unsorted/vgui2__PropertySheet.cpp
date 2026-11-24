@@ -110,6 +110,32 @@ int vgui2::PropertySheet::vfunc120()
 int vgui2::PropertySheet::vfunc15(int x) { vgui2::Panel *p = *(vgui2::Panel **)((char *)this + 0x70); if (p) return p->vfunc15(x); }
 // END FUNCTION
 
+// FUNCTION: 0x101c8d00 size=0x3e
+#include "vgui2__PropertySheet.h"
+struct VecView
+{
+	char pad[0x64];
+	int m_Size;
+	int pad2;
+	int *m_pData;
+	int Count() const { return m_Size; }
+	int Get(int i) const { return (i >= 0 && i < *(volatile int *)&m_Size) ? m_pData[i] : 0; }
+};
+void vgui2::PropertySheet::vfunc126(int panel)
+{
+	VecView *v = (VecView *)this;
+	int n = v->Count();
+	for (int i = 0; i < n; i++)
+	{
+		if (v->Get(i) == panel)
+		{
+			vfunc127(i);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8d70 size=0x12
 #include "vgui2__PropertySheet.h"
 namespace lifted {
@@ -150,6 +176,24 @@ int vgui2::PropertySheet::vfunc128()
   KV23 *kv = (KV23 *)sub_101b6840(0x1c);
   KV23 *msg = kv ? kv->sub_101b5670("OpenContextMenu") : 0;
   return ((PSV *)this)->v43(msg);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c9430 size=0x39
+#include "vgui2__PropertySheet.h"
+void vgui2::PropertySheet::vfunc92(int code)
+{
+	switch (code) {
+	case 0x59:
+		vfunc127(m_w7c - 1);
+		break;
+	case 0x5b:
+		vfunc127(m_w7c + 1);
+		break;
+	default:
+		Panel::sub_101aa6f0(code);
+		break;
+	}
 }
 // END FUNCTION
 

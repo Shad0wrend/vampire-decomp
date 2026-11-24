@@ -856,6 +856,17 @@ int C_BaseCombatWeapon::vfunc203()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c230 size=0x47
+#include "C_BaseCombatWeapon.h"
+struct VecD { float x, y, z; VecD(float a, float b, float c) { x = a; y = b; z = c; } ~VecD() {} };
+// TARGET: C_BaseCombatWeapon::vfunc204
+int C_BaseCombatWeapon::vfunc204()
+{
+    static VecD v(0.02618f, 0.02618f, 0.02618f);
+    return (int)&v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c290 size=0xc
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
@@ -1148,6 +1159,19 @@ int C_BaseCombatWeapon::vfunc235(int a0)
         ((lifted::V *)this)->f237(a0);
     }
     return ((lifted::V *)this)->f238(a0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009bd30 size=0x4a
+struct View { char pad[0x7ac]; int m7ac; char pad2[0x968-0x7b0]; int m968; int m96c; float m970; float m974; };
+void __fastcall sub_1009bd30(View *self) {
+ if (self->m968 != self->m7ac) {
+  self->m970 = 255.0f;
+  self->m974 = 127.5f;
+  self->m96c = self->m968;
+ }
+ self->m968 = self->m7ac;
+ if (self->m970 <= 0.0f) self->m96c = self->m7ac;
 }
 // END FUNCTION
 

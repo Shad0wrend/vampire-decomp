@@ -3,9 +3,16 @@
 #pragma once
 #include "IPartitionEnumerator.h"
 
+#include "Vector.h"
+class IClientEntity;
+
 class CWaterEnum : public IPartitionEnumerator
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CWaterEnum adds to its base's vtable: 0-0, vfuncK at slot K
-    virtual void vfunc0();
+    virtual int vfunc0(IClientEntity *pEntity);
+
+    int m_nContents;
+    int *m_pEntIndex;
+    Vector m_vecPoint;
 };

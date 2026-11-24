@@ -2,6 +2,7 @@
 // declared: its bases, its destructor, the client entity interfaces' slots it fills (client entity layer, 2026-11-22); nothing else yet
 // the destructor is slot 8 of its vtable; the virtual functions before it are not declared yet
 #pragma once
+#include "Vector.h"
 #include "IClientUnknown.h"
 #include "IClientRenderable.h"
 
@@ -36,7 +37,10 @@ public:
 	virtual bool Renderable_vfunc20();	// IClientRenderable slot 20
 	virtual ~CBaseStaticModel();
 	CBaseStaticModel();
-	char m_unk8[0x38 - 0x8];
+	Vector m_vecOrigin;	// 0x8
+	int m_unk14; int m_unk18; int m_unk1c;
+	Vector m_vecMins;	// 0x20
+	Vector m_vecMaxs;	// 0x2c
 	int m_unk38;
 	unsigned short m_unk3c;
 	unsigned char m_unk3e;

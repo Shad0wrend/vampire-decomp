@@ -137,6 +137,25 @@ C_BasePlayer *pcd_emit_100a54a0() { return new C_BasePlayer; }
 void C_BasePlayer::vfunc177() { IsTransparent(); }
 // END FUNCTION
 
+// FUNCTION: 0x100a58b0 size=0x45
+#include "C_BasePlayer.h"
+#include "CBaseEntityList.h"
+extern CBaseEntityList *g_102b8e98;
+// TARGET: C_BasePlayer::vfunc119
+void C_BasePlayer::vfunc119(int ent) {
+	unsigned int *ph = (unsigned int *)((char *)this + 0x14e8);
+	void *p;
+	if (*ph == 0xffffffff)
+		p = 0;
+	else {
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[*ph & 0x1fff];
+		p = (e->m_SerialNumber == (int)(*ph >> 13)) ? e->m_pEntity : 0;
+	}
+	if ((void *)ent == p)
+		*ph = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5900 size=0x9
 struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); };
 void __fastcall sub_100a5900(char *self, int edx) { ((V *)(self + 4))->v11(); }
@@ -363,6 +382,25 @@ void C_BasePlayer::vfunc179()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9a30 size=0x4d
+#include "C_BasePlayer.h"
+struct PlayerView { char p0[0x63c]; int m63c; char p1[0x1704 - 0x640]; int m1704; };
+void C_BasePlayer::vfunc180()
+{
+	if (vfunc18()) {
+		vfunc182();
+		int f = sub_100a2450();
+		PlayerView *v = (PlayerView *)this;
+		if (f & 1)
+			v->m1704 = 0;
+		if (v->m63c == -1)
+			v->m63c = 0;
+		vfunc136(0);
+	}
+	sub_100aa040();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ac0 size=0x23
 #include "C_BasePlayer.h"
 namespace lifted {
@@ -379,6 +417,14 @@ int C_BasePlayer::vfunc62()
     }
     lifted::sub_100aaab0();
     return ((lifted::C10095070 *)this)->sub_10095070();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a9b00 size=0x4d
+#include "Vector.h"
+#include "C_BasePlayer.h"
+Vector C_BasePlayer::vfunc150(const Vector &v) {
+ return *(Vector *)((char *)this + 0x148) + v;
 }
 // END FUNCTION
 

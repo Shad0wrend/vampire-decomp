@@ -45,6 +45,17 @@ CBossHealthBar::~CBossHealthBar()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d820 size=0x23
+#include "CBossHealthBar.h"
+bool sub_10163bf0();
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CBossHealthBar::vfunc107()
+{
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d850 size=0x2a
 #include "CBossHealthBar.h"
 struct CSub170 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(int); };

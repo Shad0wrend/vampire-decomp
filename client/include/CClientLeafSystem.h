@@ -19,6 +19,7 @@ public:
     void vfunc23();
 public:
     int vfunc10(int, int, int);
+    void vfunc12(int, int *, int *, int);
     void vfunc8(int, int, unsigned int *, unsigned int *);
     void vfunc7(int, unsigned int *, unsigned int *);
     void vfunc6(int, unsigned short, unsigned short);

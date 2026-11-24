@@ -14,4 +14,10 @@ public:
 	bool CanPredict() const { return !m_bSuppressEvent; }
 	void * vfunc0(char);
 	void vfunc30(int filter, int delay, int pos, int dir);
+	void vfunc5(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
+	void vfunc12(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
+	void vfunc22(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
+	void vfunc33(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
+	void vfunc38(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
+	void vfunc41(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 };

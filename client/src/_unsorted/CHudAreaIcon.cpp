@@ -51,3 +51,15 @@ CHudAreaIcon::~CHudAreaIcon()
 		delete m_p1a4;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10052760 size=0x37
+#include "CHudAreaIcon.h"
+struct IUnkG286860 { virtual void v0(); virtual void v1(); virtual bool Check(int); };
+extern IUnkG286860 *g_10286860;
+bool CHudAreaIcon::vfunc107()
+{
+	if (!sub_100ca9c0())
+		return false;
+	return sub_10163bf0() && !g_10286860->Check(0);
+}
+// END FUNCTION

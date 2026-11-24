@@ -297,6 +297,19 @@ void CSave::vfunc26(const char *pszName, void *pData, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129b60 size=0x3f
+#include "CSave.h"
+struct CSaveBlk { char pad[0x12e8]; float m_flOffset; };
+void CSave::vfunc25(const float *pValues, int count)
+{
+	for (int i = 0; i < count; i++) {
+		float f = ((CSaveBlk *)m_pEntityBlock)->m_flOffset;
+		f = pValues[i] - f;
+		vfunc16(&f, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129ba0 size=0x81
 #include "CSave.h"
 
@@ -418,5 +431,36 @@ void CSave::vfunc32(const int *pHandles, int count)
 	for (int i = 0; i < count; i++)
 		indices[i] = sub_10129a30((void *)pHandles[i]);
 	vfunc10(indices, count);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10129f40 size=0x89
+#include "CSave.h"
+
+struct EntInfo_t { void *m_pEntity; int m_SerialNumber; EntInfo_t *m_pPrev; };
+struct EntList_t { int m_unk0; EntInfo_t m_EntPtrArray[8192]; };
+extern EntList_t *g_102b8e98;
+
+struct EHandleT {
+    unsigned long m_Index;
+    void *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        EntInfo_t *pInfo = &g_102b8e98->m_EntPtrArray[m_Index & 0x1fff];
+        if (pInfo->m_SerialNumber == (int)(m_Index >> 13))
+            return pInfo->m_pEntity;
+        return 0;
+    }
+};
+
+// TARGET: CSave::vfunc37
+void CSave::vfunc37(const char *pszName, void *pData, int count)
+{
+    int entityArray[256];
+    const EHandleT *pHandles = (const EHandleT *)pData;
+    for (int i = 0; i < count; i++)
+        entityArray[i] = sub_10129a30(pHandles[i].Get());
+    vfunc9(pszName, entityArray, count);
 }
 // END FUNCTION

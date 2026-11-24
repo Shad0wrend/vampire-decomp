@@ -11,6 +11,141 @@ CTempEnts *pcd_emit_1003b570() { return new CTempEnts; }
 // TARGET: ??_GCTempEnts@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1003b590 size=0x37
+#include "CTempEnts.h"
+CTempEnts::~CTempEnts()
+{
+}
+// END FUNCTION
+
+// FUNCTION: 0x1003c3e0 size=0x1e3
+#include "CTempEnts.h"
+#define D1(n) virtual void n(){}
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+#define D16(p) D4(p##1) D4(p##2) D4(p##3) D4(p##4)
+__declspec(dllimport) void Warning(const char *, ...);
+struct V3 { float x, y, z; V3() {} V3(const V3 &o) { x = o.x; y = o.y; z = o.z; } };
+struct IEngC { D16(a) D16(b) D4(c) D1(c1) D1(c2) D1(c3) virtual float Time(int); D4(d) D4(e) D1(e1) D1(e2) D1(e3) virtual int GetMaxClients(); };
+extern IEngC *g_104a57d4;
+struct IMdl { D1(a) D1(b) virtual const void *GetModel(int); D1(c) D1(d) virtual int GetModelFrameCount(const void *); virtual int GetModelType(const void *); };
+extern IMdl *g_104a57f8;
+struct EntList { D1(a) D1(b) D1(c) virtual char *GetEntry(int); };
+extern char *g_102b8e9c;
+struct IUnk { D4(a) D1(b) virtual void *GetIClientEntity(); };
+struct INet { virtual IUnk *GetUnk(); };
+struct IEnt { D4(a) D4(b) D1(c) virtual const V3 &GetAbsOrigin(); };
+struct TEv {
+	char pad0[0x40]; const void *model; char pad44[4]; int renderMode; int renderFx; char pad50[3]; unsigned char colorA;
+	char pad54[0x568 - 0x54]; float modelScale;
+	char pad56c[0x7ac - 0x56c]; int flags; float die; float frameMax; char pad7b8[0x7d0 - 0x7b8];
+	unsigned short clientIndex; char pad7d2[2]; float tentOffset[3]; char pad7e0[0x7ec - 0x7e0]; int renderamt;
+	char pad7f0[0x7f8 - 0x7f0]; float frameRate; float frame;
+};
+// TARGET: CTempEnts::vfunc15
+void CTempEnts::vfunc15(int client, int modelIndex, float zoffset, float life)
+{
+	if (client < 0 || client > g_104a57d4->GetMaxClients())
+	{
+		Warning("Bad client in AttachTentToPlayer()!\n");
+		return;
+	}
+	char *pEntry = ((EntList *)(g_102b8e9c + 0x1803c))->GetEntry(client);
+	INet *pNet = pEntry ? (INet *)(pEntry + 8) : 0;
+	IEnt *clientClass = 0;
+	if (pEntry && pNet)
+		clientClass = (IEnt *)pNet->GetUnk()->GetIClientEntity();
+	if (!clientClass)
+	{
+		Warning("Couldn't get IClientEntity for %i\n", client);
+		return;
+	}
+	const void *pModel = g_104a57f8->GetModel(modelIndex);
+	if (!pModel)
+	{
+		Warning("No model %d!\n", modelIndex);
+		return;
+	}
+	V3 position(clientClass->GetAbsOrigin());
+	position.z += zoffset;
+	TEv *pTemp = (TEv *)sub_1003cf20(&position, pModel);
+	if (!pTemp)
+	{
+		Warning("No temp ent.\n");
+		return;
+	}
+	pTemp->renderMode = 0;
+	pTemp->colorA = 255;
+	pTemp->renderamt = 255;
+	pTemp->renderFx = 0xe;
+	pTemp->modelScale = 1;
+	pTemp->clientIndex = client;
+	pTemp->tentOffset[0] = 0;
+	pTemp->tentOffset[1] = 0;
+	pTemp->tentOffset[2] = zoffset;
+	pTemp->die = g_104a57d4->Time(0) + life;
+	pTemp->flags |= 0xa000;
+	if (g_104a57f8->GetModelType(pTemp->model) == 2)
+	{
+		int frameCount = g_104a57f8->GetModelFrameCount(pModel);
+		pTemp->frameMax = frameCount;
+		pTemp->flags |= 0x10100;
+		pTemp->frameRate = 10;
+	}
+	else
+	{
+		pTemp->frameMax = 0;
+	}
+	pTemp->frame = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1003c5d0 size=0x75
+#include "CTempEnts.h"
+struct IEng_1003c5d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual double Time(int);
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50();
+	virtual int GetMaxClients();
+};
+extern IEng_1003c5d0 *g_104a57d4;
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+struct Tent_1003c5d0 {
+	char pad[0x7a8];
+	Tent_1003c5d0 *next;
+	int flags;
+	float die;
+	char pad2[0x1c];
+	short clientIndex;
+};
+void CTempEnts::vfunc16(int client)
+{
+	if (client < 0 || client > g_104a57d4->GetMaxClients())
+	{
+		Warning("Bad client in KillAttachedTents()!\n");
+		return;
+	}
+	Tent_1003c5d0 *pTemp = (Tent_1003c5d0 *)m_pHead;
+	while (pTemp)
+	{
+		if (pTemp->flags & 0x8000)
+		{
+			if (pTemp->clientIndex == client)
+				pTemp->die = (float)g_104a57d4->Time(0);
+		}
+		pTemp = pTemp->next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c710 size=0x162
 #include "CTempEnts.h"
 

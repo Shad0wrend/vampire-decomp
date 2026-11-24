@@ -6,7 +6,7 @@
 
 // VC6 writes CPlasmaSpray's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CPlasmaSpray *pcd_emit_100054f0() { return new CPlasmaSpray; }
+CPlasmaSpray *pcd_emit_100054f0(const CPlasmaSpray &other) { return new CPlasmaSpray(other); }
 
 // TARGET: ??_GCPlasmaSpray@@UAEPAXI@Z
 // END FUNCTION

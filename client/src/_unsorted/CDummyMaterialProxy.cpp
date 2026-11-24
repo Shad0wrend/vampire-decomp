@@ -48,3 +48,14 @@ bool CDummyMaterialProxy::vfunc0(void *pMaterial, void *pKeyValues)
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e19b0 size=0x23
+#include "CDummyMaterialProxy.h"
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+void CDummyMaterialProxy::vfunc1(int pRenderable)
+{
+	char *pEnt = pRenderable ? (char *)pRenderable - 4 : 0;
+	if (pEnt)
+		DevMsg(1, "CDummyMaterialProxy::OnBind( %p )\n", pEnt);
+}
+// END FUNCTION

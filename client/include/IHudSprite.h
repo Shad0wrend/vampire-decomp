@@ -47,4 +47,6 @@ public:
 	int m_unk30;
 	int m_unk34;
 	CHudSpriteInner *m_pSprite;	// 0x38
+	void vfunc18(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
+	int vfunc17(int);	// as in C_BaseEntity (transplant)
 };

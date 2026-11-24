@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10165950 size=0x2d
+#include "CDebugOverlayPanel.h"
+void *sub_101ac650(unsigned int);
+struct LDPanel { LDPanel *sub_101656a0(int a); };
+int CDebugOverlayPanel::vfunc0(int a)
+{
+	LDPanel *p = (LDPanel *)sub_101ac650(0x5c);
+	LDPanel *r;
+	if (p)
+		r = p->sub_101656a0(a);
+	else
+		r = 0;
+	return (int)(*(LDPanel **)((char *)this + 4) = r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165980 size=0x24
 #include "CDebugOverlayPanel.h"
 namespace lifted {

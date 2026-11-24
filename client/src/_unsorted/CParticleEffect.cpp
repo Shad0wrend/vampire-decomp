@@ -11,6 +11,19 @@ CParticleEffect *pcd_emit_10117f60() { return new CParticleEffect; }
 // TARGET: ??_GCParticleEffect@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10117f80 size=0x20
+#include "CParticleEffect.h"
+#include "CParticleEffectBinding.h"
+extern void *vt_101e5584[];
+CParticleEffect::~CParticleEffect()
+{
+	m_unk68 = 0;
+	CParticleEffectBinding *b = (CParticleEffectBinding *)&m_unk08;
+	b->~CParticleEffectBinding();
+	*(void ***)this = vt_101e5584;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118030 size=0x2a
 #include "CParticleEffect.h"
 #include "CParticleEffectBinding.h"

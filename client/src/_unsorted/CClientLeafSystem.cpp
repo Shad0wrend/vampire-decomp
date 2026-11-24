@@ -147,6 +147,101 @@ bool CClientLeafSystem::vfunc9(int i, int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2b50 size=0x1f4
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CClientLeafSystem.h"
+struct CCycleCount_ {
+	unsigned long m_lo, m_hi;
+	void Sample() { __asm { mov ecx, this
+		rdtsc
+		mov [ecx], eax
+		mov [ecx+4], edx } }
+};
+struct Cyc {
+	unsigned __int64 m;
+	void SubFrom(Cyc &o) { m = o.m - m; }
+	void Accum(Cyc &o) { m += o.m; }
+};
+struct VNode {
+	const char *m_pszName;
+	int m_u4;
+	Cyc m_CurTime;
+	int m_nRecursions;
+	int m_nCurFrameCalls;
+	Cyc m_TotalTime;
+	char m_pad[0x28];
+	VNode *m_pParent;
+	VNode *GetSubNode(const char *, int, const char *);
+	void EnterScope();
+};
+struct VProfG {
+	bool m_bVTune; int m_TargetGroup;
+	int m_Stack[1024];
+	int m_nStack; int m_enabled; bool m_fAtRoot; VNode *m_pCurNode; VNode *m_pRoot;
+};
+extern "C" __declspec(dllimport) void vtune(bool);
+extern VProfG *g_101e3138;
+extern VNode *(VNode::*g_101e314c)(const char *, int, const char *);
+extern void (VNode::*g_101e3148)();
+struct Info { int a0; int m_RenderFrame; int a8; int ac; short a10; short m_RenderLeaf; unsigned char m_Flags; unsigned char m_RenderGroup; short a16; int a18; int a1c; int a20; int a24; int a28; int a2c; int a30; };
+struct Node8 { unsigned short elem; unsigned short a2; unsigned short a4; unsigned short next; };
+struct LeafView {
+	char pad0[0x20]; Info *m_Renderables;
+	char pad1[0x34]; Node8 *m_InLeaf;
+	char pad2[0x38]; unsigned short *(*pfn94)(int);
+};
+void CClientLeafSystem::vfunc12(int count, int *pLeafList, int *pLeafFogVolumeList, int frameNumber)
+{
+	LeafView *v = (LeafView *)this;
+	VProfG *g = g_101e3138;
+	if (g->m_enabled || !g->m_fAtRoot) {
+		if (g->m_pCurNode->m_pszName != "CDetailObjectSystem::BuildDetailObjectRenderLists")
+			g->m_pCurNode = (g->m_pCurNode->*g_101e314c)("CDetailObjectSystem::BuildDetailObjectRenderLists", 0, "Unaccounted");
+		(g->m_pCurNode->*g_101e3148)();
+		g->m_fAtRoot = false;
+	}
+	for (int i = 0; i < count; ++i) {
+		int leaf = pLeafList[i];
+		unsigned short idx = *v->pfn94(leaf);
+		while (idx != 0xffff) {
+			Node8 &n8 = v->m_InLeaf[idx];
+			Info &info = v->m_Renderables[n8.elem];
+			if (info.m_RenderFrame != frameNumber) {
+				if (info.m_RenderGroup == 2)
+					info.m_RenderLeaf = (short)leaf;
+				info.m_RenderFrame = frameNumber;
+				info.m_Flags &= ~0x18;
+			}
+			if (pLeafFogVolumeList[i] == -1)
+				info.m_Flags |= 0x10;
+			else
+				info.m_Flags |= 8;
+			idx = v->m_InLeaf[idx].next;
+		}
+	}
+	g = g_101e3138;
+	if (!g->m_fAtRoot || g->m_enabled) {
+		VNode *n = g->m_pCurNode;
+		if (--pcd_stage(n)->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleCount_ t;
+			t.m_lo = 0; t.m_hi = 0;
+			t.Sample();
+			n->m_CurTime.SubFrom(*(Cyc *)&t);
+			n->m_TotalTime.Accum(n->m_CurTime);
+			VProfG *g2 = g_101e3138;
+			int cur = --g2->m_nStack;
+			int to = g2->m_Stack[cur + 1];
+			int from = g2->m_Stack[cur];
+			if (from != to && g2->m_bVTune && to == g2->m_TargetGroup)
+				vtune(false);
+		}
+		if (n->m_nRecursions == 0)
+			g->m_pCurNode = g->m_pCurNode->m_pParent;
+		g->m_fAtRoot = (g->m_pCurNode == g->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3310 size=0x19
 #include "CClientLeafSystem.h"
 // TARGET: CClientLeafSystem::vfunc21

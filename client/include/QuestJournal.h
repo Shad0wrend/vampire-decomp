@@ -2,6 +2,7 @@
 #pragma once
 
 class CKeyValuesX;
+class CUnknown10248a50;
 
 class QuestJournal
 {
@@ -21,6 +22,7 @@ public:
 	char *sub_101630c0(int quest, int index);	// "QuestJournal::GetCompletionState": scope trace, GetCompletionState(dword `index` (0 <= index < 20) at +0x14 of quest record `quest`), or a warning and the base when invalid
 	char *sub_10163180(int index);	// "QuestJournal::GetCompletionState": scope trace, record `index` (0x18 bytes each) of the array whose base is m_field[0], or a warning and the base when invalid
 	void sub_10162710();	// "QuestJournal::PurgeQuestData": scope trace, clears the flag, frees the strings of every completion (0x18 byte records at m_field[0]) and quest (0x68 byte records at m_field[5]) record, then empties and releases both vectors
+	void sub_10162940(CUnknown10248a50 *, int);
 	void sub_10162840();	// resets every quest record (0x68 bytes each at m_field[5], count m_field[8]): the dword at +0x10 = -1, the dword at +0xc = 0
 	void sub_10162650();	// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0
 	void sub_10162870(const char *pszFile, int index);	// "QuestJournal::LoadQuestFile": scope trace, loads the script file into a key/value tree ("QuestTable") and hands each of its top level keys to sub_102213c0 (called through the stub at 0x100125b7)

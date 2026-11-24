@@ -50,3 +50,64 @@ bool CDebugOverlay::vfunc107()
 	return g_104a57e8->v11() ? true : false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101657d0 size=0x14c
+#include "CDebugOverlay.h"
+#define D1(n) virtual void n(){}
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+struct OvNode
+{
+	int pad0[3];
+	char m_bFlag;
+	char pad0d[3];
+	int m_iLine;
+	int m_x;
+	int m_y;
+	char m_text[1];
+};
+struct OvNodeFull
+{
+	char pad[0x220];
+	int m_r, m_g, m_b, m_a;
+};
+struct IOverlayEng
+{
+	D4(a) D4(b) D1(c) virtual int ScreenPos(int, int, float *); virtual int ScreenPos3D(OvNode *, float *); virtual OvNode *GetFirst(); virtual OvNode *GetNext(OvNode *); virtual void Clear();
+};
+struct GTab { char pad[0x30]; void (__cdecl *pfnDraw)(void *self, int font, int x, int y, int r, int g, int b, int a, const char *text); };
+struct GObj { GTab *tab; };
+extern IOverlayEng *g_104a57e8;
+extern GObj *g_104a5820;
+struct ThisView { char pad[0x58]; int m_hFont; };
+// TARGET: CDebugOverlay::vfunc98
+void CDebugOverlay::vfunc98()
+{
+	for (OvNode *pNode = g_104a57e8->GetFirst(); pNode; pNode = g_104a57e8->GetNext(pNode))
+	{
+		if (&pNode->m_text[0] == 0)
+			continue;
+		OvNodeFull *pFull = (OvNodeFull *)pNode;
+		int r = pFull->m_r, g = pFull->m_g, b = pFull->m_b, a = pFull->m_a;
+		float pos[3];
+		if (pNode->m_bFlag)
+		{
+			if (g_104a57e8->ScreenPos3D(pNode, pos))
+				continue;
+			GTab *tab = g_104a5820->tab;
+			int x = (int)pos[0];
+			int y = (int)((float)(pNode->m_iLine * 13) + pos[1]);
+			tab->pfnDraw(g_104a5820, ((ThisView *)this)->m_hFont, x, y, r, g, b, a, pNode->m_text);
+		}
+		else
+		{
+			if (g_104a57e8->ScreenPos(pNode->m_x, pNode->m_y, pos))
+				continue;
+			GTab *tab = g_104a5820->tab;
+			int x = (int)pos[0];
+			int y = (int)((float)(pNode->m_iLine * 13) + pos[1]);
+			tab->pfnDraw(g_104a5820, ((ThisView *)this)->m_hFont, x, y, r, g, b, a, pNode->m_text);
+		}
+	}
+	g_104a57e8->Clear();
+}
+// END FUNCTION

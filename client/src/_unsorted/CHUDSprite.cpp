@@ -11,6 +11,20 @@ CHUDSprite *pcd_emit_10059330(const CHUDSprite &other) { return new CHUDSprite(o
 // TARGET: ??_GCHUDSprite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100f3690 size=0x18
+#include "IHudSprite.h"
+int CHudSprite::vfunc17(int a0)
+{
+    int t0 = *(int *)((char *)a0);
+    *(int *)((char *)this + 0x24) = t0;
+    int t1 = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 0x28) = t1;
+    int t2 = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0x2c) = t2;
+    return t2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3950 size=0x26
 #include "IHudSprite.h"
 struct V3d50 { El3d50 *sub_100f3d50(int); };
@@ -54,6 +68,22 @@ void CHudSprite::vfunc13(int frame, int x, int y, int a3)
 		return;
 	m_pSprite->sub_10136f60(true);
 	m_pSprite->sub_10136ff0(frame, x, y, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3d10 size=0x3d
+#include "IHudSprite.h"
+struct SpriteRect4
+{
+	int l, t, r, b;
+};
+void CHudSprite::vfunc18(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+	m_unk04 = a1;
+	*(SpriteRect4 *)&m_unk08 = *(SpriteRect4 *)&a2;
+	m_unk18 = a6;
+	m_unk1c = a7;
+	m_unk20 = a8;
 }
 // END FUNCTION
 

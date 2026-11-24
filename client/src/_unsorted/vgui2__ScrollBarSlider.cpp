@@ -32,6 +32,23 @@ bool vgui2::ScrollBarSlider::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9eb0 size=0x46
+#include "vgui2__ScrollBarSlider.h"
+// TARGET: ?vfunc107@ScrollBarSlider@vgui2@@UAEXH@Z
+void vgui2::ScrollBarSlider::vfunc107(int v)
+{
+	int old = m_w7c;
+	if (v < m_i74)
+		v = m_i74;
+	if (v > m_unk78 - m_h80)
+		v = m_unk78 - m_h80;
+	m_w7c = v;
+	vfunc118();
+	if (m_w7c != old)
+		vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9f00 size=0x4
 #include "vgui2__ScrollBarSlider.h"
 int vgui2::ScrollBarSlider::vfunc108()
@@ -50,6 +67,41 @@ void vgui2::ScrollBarSlider::vfunc101()
 {
     ((lifted::V *)this)->f118();
     ((lifted::C101ab2f0 *)this)->sub_101ab2f0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ca200 size=0x42
+#include "vgui2__ScrollBarSlider.h"
+struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc120@ScrollBarSlider@vgui2@@UAEHXZ
+int vgui2::ScrollBarSlider::vfunc120()
+{
+	KV101b56c0 *kv = (KV101b56c0 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b56c0("ScrollBarSliderMoved", "position", m_w7c) : 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ca250 size=0x61
+#include "vgui2__ScrollBarSlider.h"
+#define D1(n) virtual void n(){}
+#define D4(p) virtual void p##a(){} virtual void p##b(){} virtual void p##c(){} virtual void p##d(){}
+#define D16(p) D4(p##1) D4(p##2) D4(p##3) D4(p##4)
+struct Col { unsigned v; };
+struct Sch { D1(a1) D1(a2) D1(a3) virtual int GetBorder(const char *); D1(b1) D1(b2) virtual Col GetColor(const char *); };
+struct SV {
+	D16(a) D16(b) D16(c) D1(d1) D1(d2) virtual void SetBg(Col); virtual void SetFg(Col);
+	char pad[0x84]; int border;
+};
+// TARGET: vgui2::ScrollBarSlider::vfunc74
+int vgui2::ScrollBarSlider::vfunc74(int pS)
+{
+	Sch *s = (Sch *)pS;
+	SV *t = (SV *)this;
+	sub_101ab490(pS);
+	t->SetFg(s->GetColor("ScrollBarSlider/ScrollBarSliderFgColor"));
+	t->SetBg(s->GetColor("ScrollBarSlider/ScrollBarSliderBgColor"));
+	return t->border = s->GetBorder("ButtonBorder");
 }
 // END FUNCTION
 

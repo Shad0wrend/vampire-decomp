@@ -25,6 +25,27 @@ void vgui2::Label::vfunc117(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2320 size=0x4a
+extern "C" int isalnum(int);
+extern "C" int tolower(int);
+unsigned short __stdcall sub_101b2320(const char *text) {
+ const char *p = text;
+ const char *&r = p;
+ if (*r) {
+  do {
+   if (*r == '&') {
+    char c = *++r;
+    if (c != '&') {
+     if (!c) return 0;
+     if (isalnum(c)) return tolower(*r);
+    }
+   }
+  } while (*++r);
+ }
+ return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2370 size=0x17
 #include "vgui2__Label.h"
 // TARGET: vgui2::Label::vfunc72
@@ -102,6 +123,27 @@ int vgui2::Label::vfunc107(int a0)
 {
     ((lifted::V *)(*(int *)((char *)this + 0x5c)))->f26(a0);
     return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b2450 size=0x41
+#include "vgui2__Label.h"
+struct CUnknown101b9d50 { void sub_101b9d50(int); };
+struct LabelView2 {
+	char pad[0x5c];
+	CUnknown101b9d50 *m5c;
+	char pad2[0x88 - 0x60];
+	int m88;
+	int m8c;
+};
+// TARGET: ?vfunc112@Label@vgui2@@UAEXHH@Z
+void vgui2::Label::vfunc112(int w, int h)
+{
+	LabelView2 *v = (LabelView2 *)this;
+	v->m88 = w;
+	v->m8c = h;
+	sub_101a9920(&w, &h);
+	v->m5c->sub_101b9d50(w - v->m88);
 }
 // END FUNCTION
 
@@ -223,6 +265,20 @@ int CView::sub_101b2c70(int i) { return m60[i]; }
 int vgui2::Label::vfunc126()
 {
     return *(int *)((char *)this + 0x6c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b2dc0 size=0x42
+#include "vgui2__Label.h"
+// TARGET: vgui2::Label::vfunc124
+void vgui2::Label::vfunc124(int idx, int val) {
+	if (idx >= 0 && idx < m_h80) {
+		short *p = &((short *)m_i74)[idx];
+		if (*p != val) {
+			*p = val;
+			vfunc57(0, 0);
+		}
+	}
 }
 // END FUNCTION
 

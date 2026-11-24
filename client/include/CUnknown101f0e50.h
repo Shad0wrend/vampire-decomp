@@ -48,4 +48,5 @@ public:
 		// walks the effects of the entry for index: kind 5 effects are removed from the owner's applied list (+0x1460, sub_101f1c70), kind 6 effects are handed to sub_101f9af0 with their name ("" when none)
 		// the same walk written with ascending loops over each effect's count (+0x14)
 		// stub 0x100112b1: the counterpart of sub_101f8e20 for the effects of the other kinds
+	bool sub_1014e590(int index);	// provisional, like sub_10153640 (transplant)
 };

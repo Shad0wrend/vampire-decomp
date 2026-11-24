@@ -11,6 +11,9 @@ class TextEntry : public vgui2::Panel
 public:
 	virtual ~TextEntry();
 	void sub_101af9e0(int a);
+	bool sub_101aff70(int n);
+	int sub_101afbf0();
+	char sub_101ae650(int a, int b);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextEntry's own function
 	virtual void vfunc11(int, int);
@@ -52,7 +55,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc118();
 	virtual int vfunc119();
 	virtual void vfunc120(char);
-	virtual void vfunc121();
+	virtual void vfunc121(const char *);
 	virtual void vfunc122();
 	virtual void vfunc123();
 	virtual int vfunc124();
@@ -90,10 +93,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc156();
 	virtual int vfunc157();
 	virtual bool vfunc158(int, int);
-	virtual void vfunc159();
+	virtual void vfunc159(int, int *, int *);
 	virtual void vfunc160();
 	virtual void vfunc161(int *, int *);
-	virtual void vfunc162();
+	virtual int vfunc162();
 	virtual void vfunc163();
 	virtual bool vfunc164(int, int, int, int);
 	virtual bool vfunc165();
@@ -102,7 +105,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc168();
 	virtual int vfunc169();
 	virtual void vfunc170();
-	virtual void vfunc171();
+	virtual int vfunc171(void *, int, int, int);
 	virtual void vfunc172();
 };
 }

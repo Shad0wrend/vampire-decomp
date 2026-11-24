@@ -40,6 +40,29 @@ int vgui2::KeyValues::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b63e0 size=0x4b
+#include "vgui2__KeyValues.h"
+void vgui2::KeyValues::vfunc6(KeyValues *sub)
+{
+	if (!sub)
+		return;
+	if (m_pSub == sub) {
+		m_pSub = sub->m_pPeer;
+		sub->m_pPeer = 0;
+		return;
+	}
+	KeyValues *p = m_pSub;
+	while (p->m_pPeer) {
+		if (p->m_pPeer == sub) {
+			p->m_pPeer = sub->m_pPeer;
+			break;
+		}
+		p = p->m_pPeer;
+	}
+	sub->m_pPeer = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6430 size=0x4
 #include "vgui2__KeyValues.h"
 int vgui2::KeyValues::vfunc7()
@@ -53,6 +76,28 @@ int vgui2::KeyValues::vfunc7()
 int vgui2::KeyValues::vfunc8()
 {
     return *(int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b6450 size=0x42
+#include "vgui2__KeyValues.h"
+extern "C" int __cdecl atoi(const char *);
+int vgui2::KeyValues::vfunc9(const char *keyName, int defaultValue)
+{
+	KeyValues *dat = vfunc4(keyName, 0);
+	if (dat)
+	{
+		switch (dat->m_unk10)
+		{
+		case 1:
+			return atoi((const char *)dat->m_pName);
+		case 3:
+			return (int)dat->m_flValue;
+		default:
+			return dat->m_unkc;
+		}
+	}
+	return defaultValue;
 }
 // END FUNCTION
 
@@ -71,6 +116,29 @@ int vgui2::KeyValues::vfunc12(int a0, int a1)
         return *(int *)((char *)t0 + 0xc);
     }
     return a1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b64d0 size=0x47
+#include "vgui2__KeyValues.h"
+extern "C" double atof(const char *);
+// TARGET: vgui2::KeyValues::vfunc10
+float vgui2::KeyValues::vfunc10(const char *keyName, float defaultValue)
+{
+    KeyValues *dat = vfunc4(keyName, 0);
+    if (dat) {
+        switch (dat->m_unk10) {
+        case 1:
+            return (float)atof((const char *)dat->m_pName);
+        case 2:
+            return (float)dat->m_unkc;
+        case 3:
+            return dat->m_flValue;
+        default:
+            return 0.0f;
+        }
+    }
+    return defaultValue;
 }
 // END FUNCTION
 
