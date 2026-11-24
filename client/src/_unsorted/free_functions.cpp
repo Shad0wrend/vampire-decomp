@@ -88916,6 +88916,23 @@ void CUnknown10173100::sub_10173100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10173210 size=0x60
+extern "C" void *memcpy(void *, const void *, unsigned int);
+#pragma intrinsic(memcpy)
+
+struct CStatList { int m_field0; int m_nStats; int m_field8; };
+
+void __fastcall sub_10173210(void *self, void *edx, int *dst, int *src, void *flag, CStatList *list)
+{
+	memcpy(dst, src, list->m_nStats * 4);
+	if (*(int *)((char *)self + 0x274) && flag)
+	{
+		for (int i = 0; i < list->m_nStats; i++)
+			dst[i] = src[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101733b0 size=0x12
 namespace lifted {
 int __stdcall sub_101733d0(int);
