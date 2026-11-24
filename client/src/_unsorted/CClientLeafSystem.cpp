@@ -86,6 +86,18 @@ struct LeafRec { int a0, a4, a8, ac; unsigned short w10; short w12; int a14, a18
 bool CClientLeafSystem::vfunc5(unsigned short h) { return ((LeafRec *)m_pData)[h].w10 != 0xffff; }
 // END FUNCTION
 
+// FUNCTION: 0x100d1eb0 size=0x29
+#include "CClientLeafSystem.h"
+struct CLeafEnt_12 { int m_n0; unsigned short m_s4; unsigned short m_s6; int m_n8; };
+void CClientLeafSystem::vfunc6(int idx, unsigned short a, unsigned short b)
+{
+	CLeafEnt_12 *e = &((CLeafEnt_12 *)m_unkc)[idx];
+	e->m_s4 = a;
+	e = &((CLeafEnt_12 *)m_unkc)[idx];
+	e->m_s6 = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2a10 size=0x25
 #include "CClientLeafSystem.h"
 namespace lifted {
