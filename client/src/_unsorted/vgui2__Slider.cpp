@@ -101,6 +101,34 @@ int vgui2::Slider::vfunc120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bba00 size=0x55
+#include "vgui2__Slider.h"
+
+struct Color101bba00 { int m_dw; };
+
+class ISchemeView101bba00
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int GetBorder(const char *pName);
+	virtual void v4();
+	virtual void v5();
+	virtual Color101bba00 &GetSchemeColor(Color101bba00 &col, const char *pName);
+};
+
+// TARGET: vgui2::Slider::vfunc74
+int vgui2::Slider::vfunc74(int pScheme)
+{
+	Panel::vfunc74(pScheme);
+	Color101bba00 col;
+	vfunc51(((ISchemeView101bba00 *)pScheme)->GetSchemeColor(col, "Slider/SliderFgColor").m_dw);
+	*(int *)((char *)this + 0x88) = ((ISchemeView101bba00 *)pScheme)->GetBorder("ButtonBorder");
+	return (*(int *)((char *)this + 0x8c) = ((ISchemeView101bba00 *)pScheme)->GetBorder("ButtonDepressedBorder"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbaf0 size=0x17
 #include "vgui2__Slider.h"
 namespace lifted {
