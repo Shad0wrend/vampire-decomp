@@ -29,3 +29,11 @@ C_PhysBox *pcd_emit_100bcc30(const C_PhysBox &other) { return new C_PhysBox(othe
 
 // TARGET: ??_GC_PhysBox@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100bcc50 size=0x11
+#include "C_PhysBox.h"
+int C_PhysBox::vfunc86()
+{
+	return sub_1009f140(0x60) ? 0 : 2;
+}
+// END FUNCTION
