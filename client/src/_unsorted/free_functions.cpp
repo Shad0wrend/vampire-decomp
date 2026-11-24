@@ -50265,6 +50265,27 @@ int CUnknown10116df0::sub_10116df0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116f00 size=0x35
+struct PNode { int m_0; PNode *m_pPrev; PNode *m_pNext; };
+struct IPObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(PNode *); };
+struct CUnknown101175a0 { void sub_101175a0(PNode *); };
+struct PMgr {
+  char pad[0x24]; short m_n; short pad26; int pad28;
+  IPObj *m_pObj;
+  CUnknown101175a0 *m_pPool;
+  void sub_10116f00(PNode *p);
+};
+// TARGET: PMgr::sub_10116f00
+void PMgr::sub_10116f00(PNode *p)
+{
+  p->m_pPrev->m_pNext = p->m_pNext;
+  p->m_pNext->m_pPrev = p->m_pPrev;
+  m_n--;
+  m_pObj->v5(p);
+  m_pPool->sub_101175a0(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101175a0 size=0xb
 namespace lifted {
 struct C1010e440 { int sub_1010e440(); };
