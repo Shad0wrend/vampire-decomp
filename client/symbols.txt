@@ -5443,6 +5443,7 @@
 0x10125420 func   ??1CRagdoll@@UAE@XZ CRagdoll::~CRagdoll
 0x10125440 func   ?vfunc0@IRagdoll@@QAEPAXD@Z IRagdoll::vfunc0
 0x101254b0 func   ?sub_101254b0@Rag54b0@@QAEPAXXZ Rag54b0::sub_101254b0
+0x101254d0 func   ?vfunc3@CRagdoll@@UAEXAAVVector@@0@Z CRagdoll::vfunc3
 0x10125510 func   ?sub_10125510@Ragdoll_10125510@@QAEXH@Z Ragdoll_10125510::sub_10125510
 0x10125690 func   ?sub_10125690@@YAPAURag_10125690@@PAXPAUHdr_10125690@@0H00M@Z sub_10125690
 0x10125710 func   ??0C_ServerRagdoll@@QAE@XZ C_ServerRagdoll::C_ServerRagdoll

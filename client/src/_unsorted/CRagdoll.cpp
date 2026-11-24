@@ -29,6 +29,15 @@ struct Rag54b0 { int pad0; int pad4; int pad8; int padc; int pad10; int pad14; E
 void *Rag54b0::sub_101254b0() { m18->v37(&m36c, 0); return &m36c; }
 // END FUNCTION
 
+// FUNCTION: 0x101254d0 size=0x3f
+#include "CRagdoll.h"
+void CRagdoll::vfunc3(Vector &mins, Vector &maxs)
+{
+	mins = m_vecMins;
+	maxs = m_vecMaxs;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125510 size=0x107
 #include "Vector.h"
 
