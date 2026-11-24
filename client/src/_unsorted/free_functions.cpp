@@ -32903,6 +32903,12 @@ int sub_100a6b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8db0 size=0x10
+struct CView { int a, b; char sub_100a8db0(); };
+// TARGET: ?sub_100a8db0@CView@@QAEDXZ
+char CView::sub_100a8db0() { if (a == -1) return 1; return b == -1; }
+// END FUNCTION
+
 // FUNCTION: 0x100a8dc0 size=0x11
 struct CUnknown100a8dc0 { char sub_100a8dc0(); };
 char CUnknown100a8dc0::sub_100a8dc0()
