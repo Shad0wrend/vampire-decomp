@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10165de0 size=0x2d
+#include "CDownloadSlider.h"
+void *sub_101ac650(unsigned int);
+struct LDPanel { LDPanel *sub_10165a50(int a); };
+int CDownloadSlider::vfunc0(int a)
+{
+	LDPanel *p = (LDPanel *)sub_101ac650(0x5c);
+	LDPanel *r;
+	if (p)
+		r = p->sub_10165a50(a);
+	else
+		r = 0;
+	return (int)(*(LDPanel **)((char *)this + 4) = r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165e10 size=0x24
 #include "CDownloadSlider.h"
 namespace lifted {
