@@ -52596,6 +52596,20 @@ int CUnknown10123d30::sub_10123d30(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123f90 size=0x30
+struct PC {
+	char pad[0x2c]; char m_b;
+	void sub_10123f90(int mode, int *dst, const int *src, int n);
+};
+void PC::sub_10123f90(int mode, int *dst, const int *src, int n)
+{
+	if (m_b && mode != 1) {
+		for (int i = 0; i < n; i++)
+			dst[i] = src[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124440 size=0x48
 namespace lifted {
 extern int g_102c2468;
