@@ -218,6 +218,7 @@
 0x10006d20 func   ?vfunc167@C_WeaponRanged_Animalism@@UAEXXZ C_WeaponRanged_Animalism::vfunc167
 0x10006d60 func   ??0CBaseHandle@@QAE@ABV0@@Z CBaseHandle::CBaseHandle
 0x10006d60 func   ?sub_10006d60@CUnknown10006d60@@QAEPAXH@Z CUnknown10006d60::sub_10006d60
+0x10006d70 func   ?vfunc246@C_WeaponRanged_Animalism@@UAEHHHH@Z C_WeaponRanged_Animalism::vfunc246
 0x10006dc0 func   ??0C_WeaponRanged_Animalism@@QAE@XZ C_WeaponRanged_Animalism::C_WeaponRanged_Animalism
 0x10006f90 func   ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z
 0x10006fb0 func   ??0C_WeaponRanged_Dementation@@QAE@XZ C_WeaponRanged_Dementation::C_WeaponRanged_Dementation
