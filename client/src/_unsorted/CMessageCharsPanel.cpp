@@ -68,3 +68,9 @@ void CMessageCharsPanel::sub_10168480()
 	p->v21(p->v109());
 }
 // END FUNCTION
+
+// FUNCTION: 0x101684a0 size=0xc
+#include "CMessageCharsPanel.h"
+// TARGET: CMessageCharsPanel::vfunc109
+bool CMessageCharsPanel::vfunc109() { int *p = *(int **)((char *)this + 0x10705c); if (p) return true; return false; }
+// END FUNCTION
