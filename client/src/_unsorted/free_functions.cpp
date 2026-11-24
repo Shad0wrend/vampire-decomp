@@ -83922,6 +83922,16 @@ void CUnknown101aff20::sub_101aff20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101affb0 size=0x27
+#define V10(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7(); virtual void a##n##8(); virtual void a##n##9();
+struct VBig { V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9) V10(10) V10(11) V10(12) V10(13) V10(14)
+ virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8();
+ virtual void s159(int, int *, int *);
+ bool sub_101affb0(int a); };
+// TARGET: ?sub_101affb0@VBig@@QAE_NH@Z
+bool VBig::sub_101affb0(int a) { int local; s159(a, &a, &local); return a <= 0; }
+// END FUNCTION
+
 // FUNCTION: 0x101b16e0 size=0x4
 struct CUnknown101b16e0 { int sub_101b16e0(); };
 int CUnknown101b16e0::sub_101b16e0()
