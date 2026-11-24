@@ -78581,6 +78581,24 @@ void __fastcall sub_1018e2a0(vgui2::Panel *self, int edx, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e2c0 size=0x13
+class CUnknown1018e2c0Sub
+{
+public:
+	virtual void vfunc0();virtual void vfunc1();virtual void vfunc2();virtual void vfunc3();virtual void vfunc4();
+	virtual void vfunc5();virtual void vfunc6();virtual void vfunc7();virtual void vfunc8();virtual void vfunc9();
+	virtual void vfunc10();virtual void vfunc11();virtual void vfunc12();virtual void vfunc13();virtual void vfunc14();
+	virtual void vfunc15();virtual void vfunc16();virtual void vfunc17();virtual void vfunc18();virtual void vfunc19();
+	virtual void vfunc20();virtual void vfunc21(int a);
+};
+struct CUnknown1018e2c0 { int m_unk0; int m_unk4; int m_unk8; int m_unkc; CUnknown1018e2c0Sub m_Sub; int pad[21]; int m_nFlag; void sub_1018e2c0(); };
+void CUnknown1018e2c0::sub_1018e2c0()
+{
+	m_nFlag = 1;
+	m_Sub.vfunc21(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
