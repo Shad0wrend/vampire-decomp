@@ -3315,6 +3315,7 @@
 0x10092970 func   ?vfunc125@C_BaseAnimating@@UAEHHH@Z C_BaseAnimating::vfunc125
 0x10093e20 func   ?sub_10093e20@CUnknown10093e20@@QAEHH@Z CUnknown10093e20::sub_10093e20
 0x10093e40 func   ?sub_10093e40@C_BaseAnimating@@QAE_NXZ C_BaseAnimating::sub_10093e40
+0x10093e90 func   ?sub_10093e90@AnimV_10093e90@@QAEN_N@Z AnimV_10093e90::sub_10093e90
 0x10093ef0 func   ?sub_10093ef0@CUnknown10093ef0@@QAEHH@Z CUnknown10093ef0::sub_10093ef0
 0x10093f00 func   ?vfunc67@C_BaseAnimating@@UAE_NXZ C_BaseAnimating::vfunc67
 0x10093fd0 func   ?vfunc70@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc70

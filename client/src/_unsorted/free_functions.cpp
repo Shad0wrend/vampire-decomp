@@ -32875,6 +32875,40 @@ bool C_BaseAnimating::sub_10093e40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093e90 size=0x5f
+struct IEngV_10093e90 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float Time(int n);
+};
+extern IEngV_10093e90 *g_104a57d4;
+
+struct AnimV_10093e90 {
+	char m_pad[0x418];
+	float m_fl418;
+	float m_fl41c;
+	double sub_10093e90(bool invert);
+};
+
+double AnimV_10093e90::sub_10093e90(bool invert)
+{
+	double flBlend = (g_104a57d4->Time(0) - m_fl41c) / m_fl418;
+	if (flBlend > 1.0)
+		flBlend = 1.0;
+	else if (flBlend < 0.0)
+		flBlend = 0.0;
+	if (invert)
+		flBlend = 1.0 - flBlend;
+	return flBlend;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093ef0 size=0xd
 struct CUnknown10093ef0 { int sub_10093ef0(int); };
 int CUnknown10093ef0::sub_10093ef0(int a0)
