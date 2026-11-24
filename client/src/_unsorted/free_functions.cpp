@@ -71115,6 +71115,59 @@ int CVStatList_t::sub_1015e100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015e190 size=0x18e
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include <stdio.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern char g_105f9110[];
+
+struct TInfo
+{
+	void *p;
+	bool sub_1015b3b0();
+};
+
+struct StatNameHolder
+{
+	const char *m_psz;
+	const char *Get() { return m_psz ? m_psz : g_102de300; }
+};
+
+static inline const char *StatName(CVStatInfo_t *pInfo)
+{
+	return ((StatNameHolder *)((char *)pInfo + 0x14))->Get();
+}
+
+// TARGET: ?sub_1015e190@CVStatList_t@@QAEPBDHD@Z
+const char *CVStatList_t::sub_1015e190(int stat, char bTimed)
+{
+	g_101e3124[g_ScopeTraceStackDepth].a = "CVStatList_t::ToDetailedStr";
+	g_101e3124[g_ScopeTraceStackDepth].b = g_102de300;
+	g_101e3124[g_ScopeTraceStackDepth].c = g_102de300;
+	g_ScopeTraceStackDepth++;
+	int nValue = sub_1015dbd0(stat);
+	int nBase = sub_1015d6e0(stat);
+	if (nValue != nBase) {
+		if (((TInfo *)((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat))->sub_1015b3b0())
+			sprintf(g_105f9110, "%s: %s (%s)\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)), sub_1015dd20(stat), sub_1015dc80(stat));
+		else
+			sprintf(g_105f9110, "%s: %d-%s (%d-%s)\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)), nValue, sub_1015dd20(stat), nBase, sub_1015dc80(stat));
+	} else {
+		if (((TInfo *)((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat))->sub_1015b3b0())
+			sprintf(g_105f9110, "%s: %s\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)), sub_1015dd20(stat));
+		else
+			sprintf(g_105f9110, "%s: %d-%s\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)), nValue, sub_1015dd20(stat));
+	}
+	g_ScopeTraceStackDepth--;
+	return g_105f9110;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e320 size=0x162
 #include "CUnknown10201ca0.h"
 #include "CVStatList_t.h"
