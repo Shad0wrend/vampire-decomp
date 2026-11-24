@@ -62176,6 +62176,158 @@ int StatDefault3::sub_1013f440(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f490 size=0x409
+#include "CVStatInfoList_t.h"
+#include "CUnknown101f0e50.h"
+#include "CUnknown10203240.h"
+#include "CUnknown10202ba0.h"
+#include "CUnknown101ed170.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+
+extern CVStatInfoList_t g_105f9220;
+extern CVStatInfoList_t g_105f90b8;
+extern CVStatInfoList_t g_105f8c60;
+extern CUnknown101f0e50 g_105f8b98;
+extern CUnknown10203240 g_105f93c0;
+
+struct CUnknown10150b90
+{
+	void *sub_10150b90(int);
+};
+
+struct EquipPkg_1013f490
+{
+	int m_type;
+	int m_iInternalName4;
+	const char *m_psz8;
+	int m_pad[8];
+
+	EquipPkg_1013f490(int t)
+	{
+		((CUnknown10150b90 *)this)->sub_10150b90(t);
+	}
+	~EquipPkg_1013f490()
+	{
+		((CUnknown101ed170 *)this)->sub_10150bc0();
+	}
+};
+
+extern int g_105e85f8;
+extern EquipPkg_1013f490 **g_105e85fc;
+
+inline EquipPkg_1013f490 *EquipPkg_Default()
+{
+	static EquipPkg_1013f490 s_default(-1);
+	return &s_default;
+}
+
+inline EquipPkg_1013f490 *FindEquipPkg(int type)
+{
+	for (int i = 0; i < g_105e85f8; i++)
+	{
+		if (g_105e85fc[i]->m_type == type)
+			return g_105e85fc[i];
+	}
+	return EquipPkg_Default();
+}
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+struct CRec_1013f490 { char pad[0x14]; const char *m_psz14; };
+struct CEff_1013f490 { char pad[8]; const char *m_psz8; };
+
+struct CClanInfoView
+{
+	int m_n0;
+	int m_p4;
+	const char *m_psz8;
+	int m_pad0c;
+	const char *m_psz10;
+	const char *m_psz14;
+	const char *m_psz18;
+	const char *m_psz1c;
+	char m_pad20[0x20];
+	const char *m_psz40;
+	char m_pad44[0x14];
+	const char *m_psz58;
+	char m_pad5c[0x24];
+	int m_n80;
+	int m_n84;
+	int m_n88;
+	unsigned char m_b8c;
+	char m_pad8d[0x23];
+	int m_nb0;
+	char m_padb4[0x1c];
+	int *m_pd0;
+	int *m_pd4;
+	int *m_pd8;
+
+	char *sub_1013f320();
+	void sub_1013f490();
+};
+
+// TARGET: CClanInfoView::sub_1013f490
+void CClanInfoView::sub_1013f490()
+{
+	char buf[0x200];
+	int i, j, k;
+	Q_snprintf(buf, 0x200, "\n\n(%d): %s\n", m_n0, m_psz8 ? m_psz8 : "");
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "%s\n", m_psz10 ? m_psz10 : "");
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "%s\n", m_psz14 ? m_psz14 : "");
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "%s\n", m_psz18 ? m_psz18 : "");
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "Clan Icon: %s\n", sub_1013f320());
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "Male Model0: %s\n", m_psz40 ? m_psz40 : "");
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "Female Model0: %s\n", m_psz58 ? m_psz58 : "");
+	Msg("%s", buf);
+	unsigned char aff = m_b8c;
+	Q_snprintf(buf, 0x200, "Affiliation: %s\n", ((CUnknown10202ba0 *)g_105f93c0.sub_1015f2f0("KineKindred"))->sub_1015ecd0(aff));
+	Msg("%s", buf);
+	for (i = 0; i < g_105f9220.m_nStats; i++)
+	{
+		CRec_1013f490 *r = (CRec_1013f490 *)g_105f9220.sub_1015cfe0(i);
+		Q_snprintf(buf, 0x200, "%s: %d\n", STRINGR(r->m_psz14), m_pd0[i]);
+		Msg("%s", buf);
+	}
+	Msg("%s", "\n");
+	for (j = 0; j < g_105f90b8.m_nStats; j++)
+	{
+		CRec_1013f490 *r = (CRec_1013f490 *)g_105f90b8.sub_1015cfe0(j);
+		Q_snprintf(buf, 0x200, "%s: %d\n", STRINGR(r->m_psz14), m_pd4[j]);
+		Msg("%s", buf);
+	}
+	Msg("%s", "\n");
+	for (k = 0; k < g_105f8c60.m_nStats; k++)
+	{
+		CRec_1013f490 *r = (CRec_1013f490 *)g_105f8c60.sub_1015cfe0(k);
+		Q_snprintf(buf, 0x200, "%s: %d\n", STRINGR(r->m_psz14), m_pd8[k]);
+		Msg("%s", buf);
+	}
+	Msg("%s", "\n");
+	{
+		CEff_1013f490 *e = (CEff_1013f490 *)g_105f8b98.sub_10157c20(m_n84);
+		Q_snprintf(buf, 0x200, "Clan Effect: %s ( %d )\n", STRINGR(e->m_psz8), m_n84);
+		Msg("%s", buf);
+	}
+	if (m_n88 != -1)
+	{
+		CEff_1013f490 *e = (CEff_1013f490 *)g_105f8b98.sub_10157c20(m_n88);
+		Q_snprintf(buf, 0x200, "Frenzy Effect: %s ( %d )\n", STRINGR(e->m_psz8), m_n88);
+		Msg("%s", buf);
+	}
+	CEff_1013f490 *p = (CEff_1013f490 *)FindEquipPkg(m_nb0);
+	Q_snprintf(buf, 0x200, "Clan MP Equip Pkg: %s ( %d )\n", STRINGR(p->m_psz8), m_nb0);
+	Msg("%s", buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f8a0 size=0xd
 struct CUnknown1013f8a0 { void * sub_1013f8a0(); };
 void * CUnknown1013f8a0::sub_1013f8a0()
