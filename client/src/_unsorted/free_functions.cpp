@@ -57811,6 +57811,16 @@ int __stdcall sub_10139e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139ec0 size=0x24
+#include <string.h>
+void sub_10139ec0(char *s)
+{
+	int n = strlen(s) - 1;
+	if (s[n] == '\n' || s[n] == '\r')
+		s[n] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139ef0 size=0x1c
 char *sub_10139ef0(char *s) { char *p = s; if (*p) { do { if (*p == 13) *p = 10; } while (*++p); } return s; }
 // END FUNCTION
