@@ -5289,6 +5289,7 @@
 0x101190e0 func   ?sub_101190e0@@YA_NXZ sub_101190e0
 0x101190f0 func   ?vfunc1@CPhysicsSystem@@UAEXXZ CPhysicsSystem::vfunc1
 0x10119100 func   ?vfunc2@CPhysicsSystem@@UAEXXZ CPhysicsSystem::vfunc2
+0x10119140 func   ?sub_10119140@CPhysicsSystem@@QAEXXZ CPhysicsSystem::sub_10119140
 0x10119190 func   ?sub_10119190@@YAXXZ sub_10119190
 0x101191a0 func   ?sub_101191a0@CUnknown101191a0@@QAEHHHHHH@Z CUnknown101191a0::sub_101191a0
 0x101191d0 func   ?vfunc7@CPhysicsSystem@@UAEXH@Z CPhysicsSystem::vfunc7
