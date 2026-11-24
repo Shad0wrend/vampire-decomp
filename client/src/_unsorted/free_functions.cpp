@@ -81160,6 +81160,20 @@ void sub_10189130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189340 size=0x34
+#include "QuestJournal.h"
+extern QuestJournal g_105f99e0;
+struct QuestRec { char pad8[8]; int m_id; char pad0c[0x58]; char m_flag64; };
+void __stdcall sub_10189340(int id)
+{
+	for (int i = 0; i < g_105f99e0.m_field[8]; i++) {
+		QuestRec *q = (QuestRec *)g_105f99e0.sub_10162f00(i);
+		if (q->m_id == id)
+			q->m_flag64 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101895d0 size=0x3
 void __stdcall sub_101895d0(int a0)
 {
