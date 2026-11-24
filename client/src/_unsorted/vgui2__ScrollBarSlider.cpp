@@ -32,6 +32,23 @@ bool vgui2::ScrollBarSlider::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9eb0 size=0x46
+#include "vgui2__ScrollBarSlider.h"
+// TARGET: ?vfunc107@ScrollBarSlider@vgui2@@UAEXH@Z
+void vgui2::ScrollBarSlider::vfunc107(int v)
+{
+	int old = m_w7c;
+	if (v < m_i74)
+		v = m_i74;
+	if (v > m_unk78 - m_h80)
+		v = m_unk78 - m_h80;
+	m_w7c = v;
+	vfunc118();
+	if (m_w7c != old)
+		vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9f00 size=0x4
 #include "vgui2__ScrollBarSlider.h"
 int vgui2::ScrollBarSlider::vfunc108()
