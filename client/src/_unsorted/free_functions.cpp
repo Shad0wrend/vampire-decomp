@@ -43501,6 +43501,19 @@ void sub_100f6ce0(const int *src, int *dst, int n)
 void sub_100f6e90(unsigned char *src, unsigned char *dst, int n) { unsigned char *end = src + n * 4; while (src < end) { *dst = src[3]; src += 4; dst++; } }
 // END FUNCTION
 
+// FUNCTION: 0x100f71a0 size=0x2a
+void sub_100f71a0(unsigned char *src, unsigned char *dst, int n)
+{
+	unsigned char *end = src + n * 4;
+	while (src < end) {
+		dst[0] = src[0];
+		dst[1] = src[1];
+		src += 4;
+		dst += 2;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71d0 size=0x5
 namespace lifted {
 int sub_100f6ce0();
