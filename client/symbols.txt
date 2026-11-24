@@ -3591,6 +3591,7 @@
 0x100bc660 func   ?sub_100bc660@CUnknown100bc660@@QAEXXZ CUnknown100bc660::sub_100bc660
 0x100bc680 func   ?sub_100bc680@@YGHHH@Z sub_100bc680
 0x100bc690 func   ?sub_100bc690@CUnknown100bc690@@QAEHH@Z CUnknown100bc690::sub_100bc690
+0x100bc6d0 func   ?sub_100bc6d0@@YAPBDXZ sub_100bc6d0
 0x100bc6f0 func   ?sub_100bc6f0@@YAHXZ sub_100bc6f0
 0x100bc750 func   ?_C_LightGlow_CreateObject@@YAPAVIClientNetworkable@@HH@Z _C_LightGlow_CreateObject
 0x100bc7f0 func   ?ClientClassInit@@YAHPAUignored@DT_LightGlow@@@Z ClientClassInit
