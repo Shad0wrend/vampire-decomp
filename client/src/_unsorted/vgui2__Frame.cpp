@@ -399,6 +399,24 @@ int vgui2::Frame::vfunc132()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b96d0 size=0x2a
+#include "vgui2__Frame.h"
+struct XSurf { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(int); };
+struct XPanel { virtual int g0(int); };
+XSurf *sub_101ac8d0();
+// TARGET: vgui2::Frame::vfunc133
+void vgui2::Frame::vfunc133()
+{
+	XSurf *s = sub_101ac8d0();
+	s->v45(((XPanel *)this)->g0(0));
+	*((char *)this + 0xc8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9970 size=0x3
 #include "vgui2__Frame.h"
 void vgui2::Frame::vfunc93(int a0)
