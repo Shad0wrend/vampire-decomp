@@ -3763,6 +3763,7 @@
 0x100bd450 func   ?vfunc124@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc124
 0x100bd4c0 func   ?sub_100bd4c0@PRView@@QAEHH@Z PRView::sub_100bd4c0
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
+0x100bd620 func   ?vfunc129@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc129
 0x100bd650 func   ?vfunc130@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc130
 0x100bd680 func   ?vfunc131@C_PlayerResource@@UAEHH@Z C_PlayerResource::vfunc131
 0x100bd6f0 func   ?vfunc134@C_PlayerResource@@UAEDH@Z C_PlayerResource::vfunc134
