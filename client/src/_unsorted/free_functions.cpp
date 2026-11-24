@@ -40348,6 +40348,19 @@ void CMem16_t::sub_100ccb30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccbd0 size=0x3b
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+struct IStrView100cc { virtual void v0(); virtual void v1(); virtual int v2(const char *s); };
+extern IStrView100cc *g_102bc800;
+extern int g_104cfe58;
+int sub_100ccbd0(const char *pFormat)
+{
+	char buf[256];
+	Q_snprintf(buf, sizeof(buf), pFormat, g_104cfe58);
+	return g_102bc800->v2(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccc10 size=0x4a
 namespace lifted {
 extern int g_102bc800;
