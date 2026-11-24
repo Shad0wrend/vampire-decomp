@@ -53,6 +53,7 @@ struct StatDefault3
 	const char **sub_1013f3d0(const char **pOut, int n);
 		// the hands model: +0x70 (bMale 0) / +0x74 (1), stored to *pOut and returned	// like sub_101d4e70 for the array at +0x58
 	int sub_1013f440(int n);	// stub 0x1000295a: index of the n-th used slot
+	char sub_1013f370(int which);
 	int sub_1013f2f0();	// stub 0x100054ca
 	void sub_1013e3a0();	// stub 0x10012a12: resets the item before it is loaded from a data node
 	void sub_1013e530(StatDefault3 *pParent);	// stub 0x1000a245: fills every unset field (the zero ints, the lists, the flag bytes and floats) from the parent item
