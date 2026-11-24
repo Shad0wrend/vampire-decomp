@@ -17,5 +17,8 @@ public:
 	int m_nCurrentIndex;
 	int m_i98;
 	int m_nIndexCount;
+	int m_unka0[(0xc0 - 0xa0) / 4];
+	unsigned char *m_pCurrColor;
 	void sub_10049f90(unsigned short idx);
+	void sub_10059af0(const float *rgb);
 };
