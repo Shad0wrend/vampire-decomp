@@ -16861,6 +16861,28 @@ int sub_1004a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004a860 size=0x47
+#include "CParticleSphereRenderer.h"
+struct IMaterialVar_ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual int GetIntValue();
+};
+struct IMaterial {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual IMaterialVar_ *FindVar(const char *name, bool *found, bool complain);
+};
+void CParticleSphereRenderer::sub_1004a860(IMaterial *pMaterial)
+{
+	bool bFound = false;
+	IMaterialVar_ *pVar = pMaterial->FindVar("$USINGPIXELSHADER", &bFound, true);
+	if (bFound && pVar && pVar->GetIntValue())
+		m_bUsingPixelShaders = true;
+	else
+		m_bUsingPixelShaders = false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004a950 size=0xa
 struct CUnknown1004a950 { int sub_1004a950(int, int); };
 int CUnknown1004a950::sub_1004a950(int a0, int a1)
