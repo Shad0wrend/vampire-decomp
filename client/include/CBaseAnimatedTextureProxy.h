@@ -7,6 +7,10 @@
 class CBaseAnimatedTextureProxy : public IMaterialProxy
 {
 public:
+	void *m_AnimatedTextureVar;
+	void *m_AnimatedTextureFrameNumVar;
+	float m_FrameRate;
+	bool m_WrapAnimation;
 	virtual ~CBaseAnimatedTextureProxy();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CBaseAnimatedTextureProxy's own function
