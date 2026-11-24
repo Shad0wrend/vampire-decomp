@@ -53,6 +53,15 @@ bool CBaseStaticModel::ShouldDraw()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dff70 size=0x43
+#include "CBaseStaticModel.h"
+void CBaseStaticModel::GetRenderBounds(Vector &mins, Vector &maxs)
+{
+	mins = m_vecMins - m_vecOrigin;
+	maxs = m_vecMaxs - m_vecOrigin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dffc0 size=0x2d
 #include "CBaseStaticModel.h"
 // TARGET: ?GetRenderBoundsWorldspace@CBaseStaticModel@@UAEXAAVVector@@0@Z
