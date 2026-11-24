@@ -465,6 +465,20 @@ bool vgui2::TextEntry::vfunc164(int a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1390 size=0x43
+#include "vgui2__TextEntry.h"
+struct KV101b5670 { KV101b5670 *sub_101b5670(const char *); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc157@TextEntry@vgui2@@UAEHXZ
+int vgui2::TextEntry::vfunc157()
+{
+	KV101b5670 *kv = (KV101b5670 *)sub_101b6840(0x1c);
+	vfunc43(kv ? kv->sub_101b5670("TextChanged") : 0);
+	*((char *)this + 0xb0) = 0;
+	return vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b13e0 size=0x24
 #include "vgui2__TextEntry.h"
 namespace lifted {
