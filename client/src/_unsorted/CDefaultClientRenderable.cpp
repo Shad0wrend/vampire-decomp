@@ -37,3 +37,11 @@ int sub_10028710()
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10028720 size=0x3
+// TARGET: sub_10028720
+int sub_10028720()
+{
+	return 0;
+}
+// END FUNCTION
