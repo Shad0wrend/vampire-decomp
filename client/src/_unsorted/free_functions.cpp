@@ -37769,6 +37769,13 @@ void * CUnknown100cd290::sub_100cd290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd2b0 size=0x23
+struct IObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(int); };
+struct CHolder { IObj *m_p; void sub_100cd310(); void sub_100cd2b0(IObj *p); };
+// TARGET: ?sub_100cd2b0@CHolder@@QAEXPAUIObj@@@Z
+void CHolder::sub_100cd2b0(IObj *p) { sub_100cd310(); m_p = p; if (p) p->v9(0); }
+// END FUNCTION
+
 // FUNCTION: 0x100cd2e0 size=0x30
 namespace lifted {
 extern int g_104a57ec;
