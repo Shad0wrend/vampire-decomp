@@ -1,11 +1,12 @@
+// CVFeatList_t: list of feats (RTTI class, 6 vtable slots; base VSupportList_t<CVFeat> at +4). Only what the getters touch.
 #pragma once
 
-struct CVFeatEntry_t
+struct VFeatEntry_t
 {
-	int m_unk0;
-	int m_unk4;
-	int m_unk8;
-	int m_unkC;
+	int m_nValue;	// 0x0
+	int m_unk04;
+	int m_unk08;
+	int m_unk0c;
 	int m_unk10;
 	int m_unk14;
 };
@@ -13,8 +14,9 @@ struct CVFeatEntry_t
 class CVFeatList_t
 {
 public:
-	virtual int vfunc0();
-	virtual float vfunc1(int index);
-	int m_unk4[89];
-	CVFeatEntry_t m_Feats[1];
+	int m_unk04;
+	char m_unk08[0x158];
+	VFeatEntry_t m_aEntries[1];	// 0x160, 24 bytes each
+
+	virtual float vfunc0(int i);
 };
