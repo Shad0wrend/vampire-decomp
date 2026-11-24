@@ -29,6 +29,11 @@ void vgui2::ToggleButton::vfunc87(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc3b0 size=0x8
+#include "vgui2__ToggleButton.h"
+void vgui2::ToggleButton::vfunc88(int a) { vfunc87(a); }
+// END FUNCTION
+
 // FUNCTION: 0x101bc3c0 size=0x3
 #include "vgui2__ToggleButton.h"
 void vgui2::ToggleButton::vfunc89(int a0)
