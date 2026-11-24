@@ -210,6 +210,11 @@ void CViewRender::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192850 size=0x1e
+struct V2850 { char pad[0x450]; float m; int sub_10192850(); };
+int V2850::sub_10192850() { return m > 0.0f; }
+// END FUNCTION
+
 // FUNCTION: 0x10192870 size=0x7
 #include "CViewRender.h"
 float CViewRender::vfunc45()
