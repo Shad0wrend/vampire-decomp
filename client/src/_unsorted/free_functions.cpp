@@ -57216,6 +57216,14 @@ void CUtlBuffer::sub_1013ce90(const char *pFmt, char *list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cee0 size=0x14
+#include "CUtlBuffer.h"
+void sub_1013cee0(CUtlBuffer *buf, const char *pFmt, ...)
+{
+	buf->sub_1013ce90(pFmt, (char *)(&pFmt + 1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cfe0 size=0x43
 #include "CUnknown1024b2d0.h"
 extern CUnknown1024b2d0 *g_105e74d8;
