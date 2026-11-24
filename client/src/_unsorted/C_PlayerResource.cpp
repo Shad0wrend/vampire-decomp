@@ -88,6 +88,12 @@ C_PlayerResource *pcd_emit_100bd330(const C_PlayerResource &other) { return new 
 // TARGET: ??_GC_PlayerResource@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100bd390 size=0x28
+#include "C_PlayerResource.h"
+// TARGET: ?vfunc120@C_PlayerResource@@UAEHH@Z
+int C_PlayerResource::vfunc120(int i) { if (!vfunc133(i)) return 0; return m_a410[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x100bd4c0 size=0x28
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 class PRView {
