@@ -44924,6 +44924,25 @@ void * CUnknown10106b40::sub_10106b40(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106b70 size=0x31
+struct XNode { void **m_ppTarget; void *(*m_pFn)(); int m_u8; XNode *m_pNext; };
+extern XNode *g_104d404c;
+void sub_10106bb0();
+bool sub_10106b70()
+{
+	for (XNode *n = g_104d404c; n; n = n->m_pNext) {
+		void *p = n->m_pFn();
+		if (p)
+			*n->m_ppTarget = p;
+		else if (n->m_ppTarget) {
+			sub_10106bb0();
+			return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106bb0 size=0x2b
 struct Reg_10106bb0 {
 	void ***m_pp;
