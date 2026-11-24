@@ -21,6 +21,22 @@ bool vgui2::Image::vfunc4(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6880 size=0x51
+#include "vgui2__Image.h"
+
+struct ImageV3 { void sub_101b6c80(Color4b c); };
+
+// TARGET: vgui2::Image::Image
+vgui2::Image::Image()
+{
+	vfunc1(0, 0);
+	vfunc9(0, 0);
+	Color4b c = {255, 255, 255, 255};
+	((ImageV3 *)this)->sub_101b6c80(c);
+	m_b18 = true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b68e0 size=0x1e
 #include "vgui2__Image.h"
 
