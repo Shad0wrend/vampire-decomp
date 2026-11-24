@@ -37460,6 +37460,27 @@ void * CUnknown100cd1c0::sub_100cd1c0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd220 size=0x1c
+struct IThing_100cd220
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(int);
+};
+struct Holder_100cd220
+{
+	IThing_100cd220 *m_p;
+	void sub_100cd220(IThing_100cd220 *p);
+};
+// TARGET: Holder_100cd220::sub_100cd220
+void Holder_100cd220::sub_100cd220(IThing_100cd220 *p)
+{
+	m_p = p;
+	if (p)
+		p->v12(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd260 size=0x29
 namespace lifted {
 extern int g_104a57ec;
