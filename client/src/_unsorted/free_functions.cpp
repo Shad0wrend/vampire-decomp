@@ -18929,6 +18929,30 @@ void __stdcall sub_10057e10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057e70 size=0x5b
+#include "CCredits.h"
+#include "CHudManagerPanel.h"
+
+struct HudNode { IManagedHudElement *elem; HudNode *next; };
+struct PanelView {
+	char pad[0x170];
+	HudNode *m170;
+	void sub_10057e70(int a, int b, int c);
+};
+void sub_10114660(int a, int b);
+int sub_101146e0();
+void PanelView::sub_10057e70(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	const char *v = (const char *)sub_101146e0();
+	for (HudNode *n = m170; n; n = n->next) {
+		CCredits *f = dynamic_cast<CCredits *>(n->elem);
+		if (f)
+			f->vfunc114(v);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057f40 size=0x3
 void __stdcall sub_10057f40(int a0, int a1, int a2, int a3, int a4)
 {
