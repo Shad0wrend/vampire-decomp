@@ -9,6 +9,8 @@ class C_BaseCombatWeapon : public C_BaseAnimating
 public:
 	C_BaseCombatWeapon();
 	void *sub_1007b160();
+	char *sub_1007b180();
+	bool sub_1007d950();
 	virtual ~C_BaseCombatWeapon();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseCombatWeapon's own function
