@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1018e860 size=0xe
+struct CView { char pad[0x390]; int m390[1]; int sub_1018e860(int); };
+// TARGET: ?sub_1018e860@CView@@QAEHH@Z
+int CView::sub_1018e860(int i) { return m390[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x1018e870 size=0x7
 #include "CViewRender.h"
 int CViewRender::vfunc20()

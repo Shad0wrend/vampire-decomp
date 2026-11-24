@@ -6576,6 +6576,7 @@
 0x1018e280 func   ?sub_1018e280@@YAHXZ sub_1018e280
 0x1018e290 func   ?sub_1018e290@CUnknown1018e290@@QAEHXZ CUnknown1018e290::sub_1018e290
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
+0x1018e860 func   ?sub_1018e860@CView@@QAEHH@Z CView::sub_1018e860
 0x1018e870 func   ?vfunc20@CViewRender@@UAEHXZ CViewRender::vfunc20
 0x1018e880 func   ?vfunc21@CViewRender@@UAEHXZ CViewRender::vfunc21
 0x1018e890 func   ?vfunc22@CViewRender@@UAEHXZ CViewRender::vfunc22
