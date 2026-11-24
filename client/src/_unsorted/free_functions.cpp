@@ -54081,6 +54081,19 @@ void UtlMem::sub_1011f230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011f260 size=0x8b
+#include "utlvector.h"
+
+template <>
+void CUtlVector< CUtlVector<int> >::sub_1011f260()
+{
+	for (int i = m_Size; --i >= 0; )
+		Destruct(&Element(i));
+
+	m_Size = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f2f0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
