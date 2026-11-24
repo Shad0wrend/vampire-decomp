@@ -42,6 +42,14 @@ int CMessageChars::vfunc3(int a1, int a2, int a3, int a4, int a5, int a6, int a7
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168820 size=0x2e
+struct IMsg_10168820 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void __cdecl v4(int, int, int, int, int, int, int *); };
+void sub_10168820(IMsg_10168820 *p, int a1, int a2, int a3, int a4, int a5)
+{
+	p->v4(0, a1, a2, a3, a4, a5, &a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101688c0 size=0xd
 #include "CMessageChars.h"
 namespace lifted {
