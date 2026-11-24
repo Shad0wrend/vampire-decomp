@@ -68007,6 +68007,14 @@ char *sub_101546c0(const char *pszSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154720 size=0x14
+extern "C" void *malloc(unsigned int n);
+void *sub_10154720(int n)
+{
+	return malloc(n * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101547d0 size=0x8
 namespace lifted {
 struct C10153ef0 { int sub_10153ef0(); };
