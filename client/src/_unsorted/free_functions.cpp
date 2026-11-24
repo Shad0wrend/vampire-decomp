@@ -80913,6 +80913,37 @@ int sub_10166f00(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167000 size=0x95
+struct IFaceView {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9();
+};
+extern IFaceView *g_10286860, *g_10288318, *g_102ce050, *g_102cf150, *g_102cecd8, *g_102ce3e8;
+extern IFaceView *g_102cef78, *g_102ce210, *g_102cdcd0, *g_102cea98, *g_102cdad8, *g_102cf598;
+void sub_1016a6a0();
+IFaceView *sub_101ac8f0();
+
+// TARGET: sub_10167000
+void sub_10167000()
+{
+    g_10286860->v1();
+    g_10288318->v4();
+    sub_1016a6a0();
+    g_102ce050->v1();
+    g_102cf150->v1();
+    g_102cecd8->v1();
+    g_102ce3e8->v1();
+    g_102cef78->v1();
+    g_102ce210->v1();
+    g_102cdcd0->v1();
+    g_102cea98->v1();
+    g_102cdad8->v5();
+    g_102cf598->v1();
+    sub_101ac8f0()->v9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101670a0 size=0x27
 struct A101670a0 { virtual void v0(); virtual void v1(); virtual void v2(bool); };
 struct B101670a0 {

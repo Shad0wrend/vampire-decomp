@@ -6701,6 +6701,7 @@
 0x10166d90 func   ?sub_10166d90@GridV@@QAEPAUGridCell@@HH@Z GridV::sub_10166d90
 0x10166ee0 func   ?sub_10166ee0@@YAHHH@Z sub_10166ee0
 0x10166f00 func   ?sub_10166f00@@YAHHH@Z sub_10166f00
+0x10167000 func   ?sub_10167000@@YAXXZ sub_10167000
 0x101670a0 func   ?sub_101670a0@@YAXXZ sub_101670a0
 0x10167430 func   ??_GCLoadingDiscPanel@@UAEPAXI@Z ??_GCLoadingDiscPanel@@UAEPAXI@Z
 0x10167450 func   ??1CLoadingDiscPanel@@UAE@XZ CLoadingDiscPanel::~CLoadingDiscPanel
