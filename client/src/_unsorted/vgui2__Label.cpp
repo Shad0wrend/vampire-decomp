@@ -161,6 +161,12 @@ int vgui2::Label::vfunc132()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2c70 size=0xd
+struct CView { char pad[0x60]; int *m60; int sub_101b2c70(int); };
+// TARGET: ?sub_101b2c70@CView@@QAEHH@Z
+int CView::sub_101b2c70(int i) { return m60[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x101b2c80 size=0x4
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc126()
