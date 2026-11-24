@@ -6,7 +6,7 @@
 
 // VC6 writes CFunctionProxy's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFunctionProxy *pcd_emit_100e3480() { return new CFunctionProxy; }
+CFunctionProxy *pcd_emit_100e3480(const CFunctionProxy &other) { return new CFunctionProxy(other); }
 
 // TARGET: ??_GCFunctionProxy@@UAEPAXI@Z
 // END FUNCTION

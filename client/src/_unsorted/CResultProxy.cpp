@@ -19,7 +19,7 @@ void CResultProxy::vfunc2()
 
 // VC6 writes CResultProxy's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CResultProxy *pcd_emit_100e32e0() { return new CResultProxy; }
+CResultProxy *pcd_emit_100e32e0(const CResultProxy &other) { return new CResultProxy(other); }
 
 // TARGET: ??_GCResultProxy@@UAEPAXI@Z
 // END FUNCTION
