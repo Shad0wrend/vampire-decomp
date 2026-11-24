@@ -4445,6 +4445,7 @@
 0x100e4d80 func   ?vfunc8@CExplosionParticle@@QAEMPAUPartT@@M@Z CExplosionParticle::vfunc8
 0x100e4e30 func   ??_GCExplosionParticle@@UAEPAXI@Z ??_GCExplosionParticle@@UAEPAXI@Z
 0x100e53a0 func   ?vfunc4@C_BaseExplosionEffect@@UAEXXZ C_BaseExplosionEffect::vfunc4
+0x100e5880 func   ?vfunc13@CFleckParticles@@AAEXHHHHHHHH@Z CFleckParticles::vfunc13
 0x100e5d20 func   ??_GCFXQuad@@UAEPAXI@Z ??_GCFXQuad@@UAEPAXI@Z
 0x100e5d40 func   ??1CFXQuad@@UAE@XZ CFXQuad::~CFXQuad
 0x100e6530 func   ?vfunc3@CFXQuad@@UAE_NXZ CFXQuad::vfunc3
