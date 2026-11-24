@@ -839,3 +839,13 @@ void C_BaseEntity::vfunc101(int a0)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011ac60 size=0x17
+struct S_1011ac60 { char pad[0xd4]; int cnt; bool f; };
+void __fastcall sub_1011ac60(S_1011ac60 *self, int edx, bool b)
+{
+	self->f = b;
+	if (b)
+		self->cnt++;
+}
+// END FUNCTION

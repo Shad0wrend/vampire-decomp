@@ -4850,6 +4850,7 @@
 0x1011ac20 func   ?vfunc99@C_BaseEntity@@UAEXH@Z C_BaseEntity::vfunc99
 0x1011ac30 func   ?sub_1011ac30@@YIXPAUV_1011ac30@@HH@Z sub_1011ac30
 0x1011ac50 func   ?vfunc101@C_BaseEntity@@UAEXH@Z C_BaseEntity::vfunc101
+0x1011ac60 func   ?sub_1011ac60@@YIXPAUS_1011ac60@@H_N@Z sub_1011ac60
 0x1011ac80 func   ?sub_1011ac80@CUnknown1011ac80@@QAEDXZ CUnknown1011ac80::sub_1011ac80
 0x1011b0d0 func   ??0ScopeTrace@@QAE@PBD00@Z ScopeTrace::ScopeTrace
 0x1011b130 func   ?vfunc0@IEntityDataInstantiator@@QAEPAXD@Z IEntityDataInstantiator::vfunc0
