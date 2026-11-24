@@ -7,3 +7,10 @@ void __stdcall sub_10120530(int, int, int)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10120540 size=0x3
+// TARGET: sub_10120540
+void __stdcall sub_10120540(int, int, int)
+{
+}
+// END FUNCTION
