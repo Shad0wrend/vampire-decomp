@@ -11,6 +11,23 @@ vgui2::ImagePanel *pcd_emit_101c5950(const vgui2::ImagePanel &other) { return ne
 // TARGET: ??_GImagePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c5990 size=0x3b
+#include "vgui2__ImagePanel.h"
+struct ImageView { void sub_101a98f0(int, int); };
+// TARGET: vgui2::ImagePanel::vfunc107
+void vgui2::ImagePanel::vfunc107(IImg *img)
+{
+	*(IImg **)((char *)this + 0x58) = img;
+	if (img)
+	{
+		int wide, tall;
+		img->v2(&wide, &tall);
+		((ImageView *)this)->sub_101a98f0(wide, tall);
+	}
+	vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c59d0 size=0x4
 #include "vgui2__ImagePanel.h"
 int vgui2::ImagePanel::vfunc108()
