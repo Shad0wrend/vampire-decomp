@@ -82315,6 +82315,65 @@ int CUnknown101820f0::sub_101820f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182230 size=0xfc
+struct CUnknown1017d310
+{
+	void sub_1017d310(int val);
+};
+
+struct Entry_10182230
+{
+	CUnknown1017d310 *p;
+	char pad[0x24 - 4];
+};
+
+struct CharEditStats_10182230
+{
+	char pad0[0xe8];
+	CUnknown1017d310 **m_pAttr;
+	char padec[0x134 - 0xec];
+	CUnknown1017d310 **m_pAbil;
+	char pad138[0x18c - 0x138];
+	int m_nCount;
+	int m_n190;
+	Entry_10182230 *m_pEntries;
+
+	void sub_10182230(int type, int val);
+};
+
+// TARGET: CharEditStats_10182230::sub_10182230
+void CharEditStats_10182230::sub_10182230(int type, int val)
+{
+	switch (type)
+	{
+	case 0:
+		m_pAttr[0]->sub_1017d310(val);
+		break;
+	case 1:
+		m_pAttr[1]->sub_1017d310(val);
+		break;
+	case 2:
+		m_pAttr[2]->sub_1017d310(val);
+		break;
+	case 3:
+		m_pAbil[0]->sub_1017d310(val);
+		break;
+	case 4:
+		m_pAbil[1]->sub_1017d310(val);
+		break;
+	case 5:
+		m_pAbil[2]->sub_1017d310(val);
+		break;
+	case 6:
+		for (int i = 0; i < m_nCount; i++)
+		{
+			m_pEntries[i].p->sub_1017d310(val);
+		}
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182450 size=0x1
 void sub_10182450()
 {
