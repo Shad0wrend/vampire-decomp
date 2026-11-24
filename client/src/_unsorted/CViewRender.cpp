@@ -239,6 +239,23 @@ char * CViewRender::vfunc12()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101995b0 size=0x29
+struct CInner_q { virtual int v0(); virtual char v1(); char pad[0x2c - 4]; int m_n2c; };
+struct COuter_p { int m_n0; CInner_q *m_pq; };
+struct VView384 {
+	char pad[0x384];
+	COuter_p *m_p384;
+	char sub_101995b0();
+};
+char VView384::sub_101995b0()
+{
+	COuter_p *p = m_p384;
+	if (p && (p->m_pq->v1() || !p->m_pq->m_n2c))
+		return 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e1f0 size=0x22
 #include "CViewRender.h"
 struct E1019e1f0 { int d[11]; };
