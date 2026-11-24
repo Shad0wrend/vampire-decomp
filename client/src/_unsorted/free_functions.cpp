@@ -17756,6 +17756,101 @@ const char * __stdcall sub_10056510(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100565b0 size=0x14c
+#include "CHudInfoBar.h"
+
+struct IScheme_100565b0
+{
+	virtual int v0();
+	virtual int v1();
+	virtual int v2();
+	virtual int v3();
+	virtual int GetFont(const char *);
+};
+
+struct IMatSystemSurface_100565b0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual int DrawTextLen(int font, const char *fmt, ...);
+};
+
+struct IDeletable_100565b0
+{
+	virtual ~IDeletable_100565b0();
+};
+
+struct PanelHelper_100565b0
+{
+	IScheme_100565b0 *sub_101ac830();
+	int sub_10056460(int);
+};
+
+struct InfoBarEntry_100565b0
+{
+	int m_nType;
+	int m_nUnk4;
+	char m_szText[1];
+};
+
+extern IMatSystemSurface_100565b0 *g_104a5820;
+extern const char *sub_1018c870(const char *);
+extern int sub_100cd0f0();
+extern int sub_100cd100();
+
+#define YRES(y) ((int)((y) * ((float)sub_100cd0f0() / 768.0)))
+
+void CHudInfoBar::sub_100565b0()
+{
+	IScheme_100565b0 *pScheme = ((PanelHelper_100565b0 *)this)->sub_101ac830();
+	m_unk1a8 = pScheme->GetFont(sub_1018c870("PercolatorMedium"));
+
+	if (m_unk1a4)
+	{
+		delete (IDeletable_100565b0 *)m_unk1a4;
+	}
+
+	if (m_unk1b8.v > 0)
+	{
+		m_unk194 = 32;
+		m_unk198 = 32;
+		InfoBarEntry_100565b0 *pEntry = (InfoBarEntry_100565b0 *)m_unk1ac.v;
+		m_unk18c = g_104a5820->DrawTextLen(m_unk1a8, pEntry->m_szText);
+		m_unk190 = YRES(35);
+		m_unk184 = (sub_100cd100() - m_unk18c) / 2;
+		m_unk188 = YRES(20);
+		pEntry = (InfoBarEntry_100565b0 *)m_unk1ac.v;
+		m_unk1a4 = ((PanelHelper_100565b0 *)this)->sub_10056460(pEntry->m_nType);
+	}
+	else
+	{
+		m_unk19c = 0;
+		m_unk1a0 = 0;
+		m_unk184 = 0;
+		m_unk188 = 0;
+		m_unk190 = 0;
+		m_unk18c = 0;
+		m_unk1a4 = 0;
+	}
+
+	sub_101a9890(m_unk184, m_unk188);
+	sub_101a98f0(m_unk18c, m_unk190);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056f00 size=0x28
 namespace lifted {
 extern char g_102864ec;
