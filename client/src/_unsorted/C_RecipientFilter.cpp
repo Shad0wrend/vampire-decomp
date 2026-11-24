@@ -41,3 +41,21 @@ int C_RecipientFilter::vfunc5()
 	return m_unk20;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100be090 size=0x11
+#include "C_RecipientFilter.h"
+struct CUnknown100bde40 { int pad[9]; int m_unk24; void sub_100bde40(); };
+void CUnknown100bde40::sub_100bde40()
+{
+	if (m_unk24 == -1)
+		m_unk24 = 1;
+}
+// TARGET: ?vfunc6@C_RecipientFilter@@UAE_NXZ
+bool C_RecipientFilter::vfunc6()
+{
+	((CUnknown100bde40 *)this)->sub_100bde40();
+	if (m_unk24 == m_Recipients.Count())
+		return true;
+	return false;
+}
+// END FUNCTION
