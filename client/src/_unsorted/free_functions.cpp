@@ -15763,6 +15763,15 @@ int CUnknown1003f850::sub_1003f850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f8c0 size=0x46
+#include "ITempEnts.h"
+extern ITempEnts *g_1028073c;
+void sub_1003f8c0(int a0, int a1, int a2, int a3, int a4, int a5, float a6, int a7)
+{
+    g_1028073c->vfunc17(a2, a3, a4, a7, (int)(a5 * 0.2), (int)(a6 * 100.0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f930 size=0x6
 namespace lifted {
 extern char g_103eb768;
