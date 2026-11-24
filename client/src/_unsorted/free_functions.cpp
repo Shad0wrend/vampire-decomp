@@ -93237,6 +93237,18 @@ void sub_10198890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101989a0 size=0x60
+#include "ScopeTrace.h"
+
+extern int g_10619918;
+
+void sub_101989a0()
+{
+	ScopeTrace scope("::WaterRefractionTextureRestoreFunc", g_102de300);
+	g_10619918 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198d30 size=0x6
 namespace lifted {
 extern char g_10618f7c;
