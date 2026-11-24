@@ -150,6 +150,15 @@ int CInput::vfunc44()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffaa0 size=0x4b
+#include "Vector.h"
+#include "CInput.h"
+float CInput::vfunc30() {
+ if (!vfunc29()) return 0.0f;
+ return ((Vector *)((char *)this + 0x164))->Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffaf0 size=0x7
 #include "CInput.h"
 float CInput::vfunc53()
