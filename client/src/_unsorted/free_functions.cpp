@@ -34541,6 +34541,22 @@ void CUnknown100a2460::sub_100a2460()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2580 size=0x2a
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+
+struct V_1009d260 { void sub_1009d260(CBaseHandle h); };
+struct V_100a25f0 { void sub_100a25f0(char); };
+extern char g_1049e33c;
+
+void C_BaseEntity::sub_100a2580()
+{
+	((V_1009d260 *)&g_1049e33c)->sub_1009d260(*(CBaseHandle *)((char *)this + 0xe4));
+	sub_100a2f50();
+	((V_100a25f0 *)this)->sub_100a25f0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a25f0 size=0xd
 struct CUnknown100a25f0 { char sub_100a25f0(char); };
 char CUnknown100a25f0::sub_100a25f0(char a0)
