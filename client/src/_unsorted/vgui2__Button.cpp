@@ -399,6 +399,16 @@ void vgui2::Button::vfunc91(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4480 size=0x36
+#include "vgui2__Button.h"
+void vgui2::Button::vfunc129()
+{
+	int wide, tall;
+	vfunc110(&wide, &tall);
+	sub_101a98f0(wide + 8, tall + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4620 size=0x6
 #include "vgui2__Button.h"
 namespace lifted {
