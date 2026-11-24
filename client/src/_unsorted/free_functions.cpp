@@ -57068,6 +57068,18 @@ int CUnknown10124780::sub_10124780(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101247a0 size=0x26
+void sub_101245d0(void *self, const char *fmt, ...);
+struct CUnknown101247a0 {
+	void sub_101247a0(const bool *p, int n);
+};
+// TARGET: ?sub_101247a0@CUnknown101247a0@@QAEXPB_NH@Z
+void CUnknown101247a0::sub_101247a0(const bool *p, int n)
+{
+	sub_101245d0(this, "bool (%s)\n", *p ? "true" : "false");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101247d0 size=0x1d
 struct CPredDescData;
 void sub_101245d0( CPredDescData *pData, const char *fmt, ... );
