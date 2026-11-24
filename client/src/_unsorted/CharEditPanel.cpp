@@ -41,6 +41,20 @@ CharEditPanel *pcd_emit_10171370(const CharEditPanel &other) { return new CharEd
 // TARGET: ??_GCharEditPanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10172ae0 size=0x2d
+#include "CharEditPanel.h"
+#include "vgui2__Panel.h"
+int sub_1016a6b0();
+struct CUnknown10172ad0 { void sub_10172ad0(); };
+void CharEditPanel::sub_10172ae0()
+{
+	int n = sub_1016a6b0();
+	((vgui2::Panel *)((char *)this + 0x10))->vfunc33(n);
+	((vgui2::Panel *)((char *)this + 0x10))->sub_101aa0a0(0x3e8);
+	((CUnknown10172ad0 *)this)->sub_10172ad0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174650 size=0x12
 #include "CharEditPanel.h"
 namespace lifted {

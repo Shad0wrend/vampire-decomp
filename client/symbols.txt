@@ -6626,6 +6626,7 @@
 0x101722c0 func   ?vfunc3@CTextImage2@@UAEXXZ CTextImage2::vfunc3
 0x10172ac0 func   ?sub_10172ac0@@YADXZ sub_10172ac0
 0x10172ad0 func   ?sub_10172ad0@CUnknown10172ad0@@QAEXXZ CUnknown10172ad0::sub_10172ad0
+0x10172ae0 func   ?sub_10172ae0@CharEditPanel@@QAEXXZ CharEditPanel::sub_10172ae0
 0x10172b10 func   ?sub_10172b10@CUnknown10172b10@@QAEHH@Z CUnknown10172b10::sub_10172b10
 0x10172b50 func   ?sub_10172b50@CUnknown10172b50@@QAEHXZ CUnknown10172b50::sub_10172b50
 0x10172bc0 func   ?sub_10172bc0@@YAXXZ sub_10172bc0
