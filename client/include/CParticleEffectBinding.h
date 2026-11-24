@@ -19,6 +19,7 @@ class CParticleEffectBinding : public CDefaultClientRenderable
 public:
 	CParticleEffectBinding();
 	~CParticleEffectBinding();
+	int sub_10116710();
 	void sub_10116e10();
 	unsigned short m_unk08; unsigned short m_unk0a;
 	Vector m_Min; Vector m_Max;
