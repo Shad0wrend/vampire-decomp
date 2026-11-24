@@ -96864,6 +96864,74 @@ int CUnknown101c4dd0::sub_101c4dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4e00 size=0x54
+struct PanelCoordView
+{
+    void sub_101a98c0(int *a, int *b);
+};
+struct Obj9View
+{
+    virtual void p0() = 0;
+    virtual void p1() = 0;
+    virtual void p2() = 0;
+    virtual void p3() = 0;
+    virtual void p4() = 0;
+    virtual void p5() = 0;
+    virtual void p6() = 0;
+    virtual void p7() = 0;
+    virtual void p8() = 0;
+    virtual void *vfunc9() = 0;
+};
+struct Obj27View
+{
+    virtual void q0() = 0;
+    virtual void q1() = 0;
+    virtual void q2() = 0;
+    virtual void q3() = 0;
+    virtual void q4() = 0;
+    virtual void q5() = 0;
+    virtual void q6() = 0;
+    virtual void q7() = 0;
+    virtual void q8() = 0;
+    virtual void q9() = 0;
+    virtual void q10() = 0;
+    virtual void q11() = 0;
+    virtual void q12() = 0;
+    virtual void q13() = 0;
+    virtual void q14() = 0;
+    virtual void q15() = 0;
+    virtual void q16() = 0;
+    virtual void q17() = 0;
+    virtual void q18() = 0;
+    virtual void q19() = 0;
+    virtual void q20() = 0;
+    virtual void q21() = 0;
+    virtual void q22() = 0;
+    virtual void q23() = 0;
+    virtual void q24() = 0;
+    virtual void q25() = 0;
+    virtual void q26() = 0;
+    virtual void vfunc27(int *a, int *b) = 0;
+};
+struct BuildModeView
+{
+    char m_pad00[0x120];
+    Obj9View *m_120;                    // +0x120
+    char m_pad124[0x128 - 0x124];
+    PanelCoordView *m_128;              // +0x128
+    int sub_101c4e60(int arg, int b, int a);
+};
+
+int __fastcall sub_101c4e00(BuildModeView *self, int, int arg)
+{
+    int a, b;
+    self->m_128->sub_101a98c0(&b, &a);
+    Obj27View *p = (Obj27View *)self->m_120->vfunc9();
+    p->vfunc27(&b, &a);
+    return self->sub_101c4e60(arg, b, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4e60 size=0x57
 namespace lifted {
 struct C101c26d0 { int sub_101c26d0(int, int, int); };
