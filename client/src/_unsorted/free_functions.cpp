@@ -64310,6 +64310,16 @@ int CUnknown101316b0::sub_101316b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131a70 size=0x58
+#include "CUtlRBTree232.h"
+
+CUtlRBTree232::Links_t &CUtlRBTree232::sub_10131a70(int i)
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131ad0 size=0x383
 #include "utlrbtree.h"
 
