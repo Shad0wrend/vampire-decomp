@@ -2778,6 +2778,7 @@
 0x1005fcb0 func   ?sub_1005fcb0@CUnknown1005fcb0@@QAEXXZ CUnknown1005fcb0::sub_1005fcb0
 0x1005fdd0 func   ?sub_1005fdd0@XKey0c@@QAEXD@Z XKey0c::sub_1005fdd0
 0x1005fe10 func   ?vfunc112@CProgBar@@UAEXXZ CProgBar::vfunc112
+0x1005fe40 func   ?sub_1005fe40@CProgBar@@QAEXHHH@Z CProgBar::sub_1005fe40
 0x10060400 func   ??_GCSignTextBlock@@UAEPAXI@Z ??_GCSignTextBlock@@UAEPAXI@Z
 0x10060530 func   ??1CSignTextBlock@@UAE@XZ CSignTextBlock::~CSignTextBlock
 0x10060730 func   ??_GCSignLabel@@UAEPAXI@Z ??_GCSignLabel@@UAEPAXI@Z

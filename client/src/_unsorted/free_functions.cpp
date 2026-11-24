@@ -19905,6 +19905,24 @@ void XKey0c::sub_1005fdd0(char down)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fe40 size=0x5d
+#include "CProgBar.h"
+
+void sub_10114660(int a, int b);
+int sub_10114690();
+
+// TARGET: CProgBar::sub_1005fe40
+void CProgBar::sub_1005fe40(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	m_b1b4 = sub_10114690();
+	m_n1a8 = sub_10114690();
+	m_n1b0 = sub_10114690();
+	m_n1ac = sub_10114690();
+	vfunc5_hud(m_b1b4 & 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060d60 size=0xd
 struct CView { char pad[0x18c]; float m18c; float sub_10060d60(); };
 // TARGET: ?sub_10060d60@CView@@QAEMXZ
