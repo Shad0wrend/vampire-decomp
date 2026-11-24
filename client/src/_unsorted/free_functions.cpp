@@ -41512,6 +41512,23 @@ int CUnk10129770::sub_100ee900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee920 size=0x14
+class CUnknown100ee920Iface
+{
+public:
+	virtual void vfunc0();virtual void vfunc1();virtual void vfunc2();virtual void vfunc3();virtual void vfunc4();
+	virtual void vfunc5();virtual void vfunc6();virtual void vfunc7();virtual void vfunc8();virtual int vfunc9();
+};
+struct CUnknown100ee920Obj { int m_unk0; int m_unk4; CUnknown100ee920Iface m_Iface; };
+struct CUnknown100ee920 { int m_unk[19]; CUnknown100ee920Obj *m_pObj; int sub_100ee920(); };
+int CUnknown100ee920::sub_100ee920()
+{
+	if (m_pObj)
+		return m_pObj->m_Iface.vfunc9();
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eea30 size=0x26
 namespace lifted {
 extern char g_10234ce4;
