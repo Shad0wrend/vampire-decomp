@@ -34284,6 +34284,25 @@ int CUnknown100aef00::sub_100aef00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aef10 size=0x2b
+struct IPS { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(void *); };
+extern IPS *g_104a581c;
+struct EV {
+	char pad[0x70]; int m_flags;
+	char pad2[0x468 - 0x74]; void *m_p;
+	int sub_100aef10(int, int);
+};
+int EV::sub_100aef10(int, int)
+{
+	if (m_p && (m_flags & 0x400)) {
+		g_104a581c->v17(m_p);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeff0 size=0x8
 namespace lifted {
 struct C100af150 { int sub_100af150(); };
