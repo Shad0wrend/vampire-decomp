@@ -48,3 +48,19 @@ void C_WeaponRanged_FlameThrower::vfunc143()
     *(int *)((char *)this + 0x156c) = -1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10028230 size=0x48
+#include "C_WeaponRanged_FlameThrower.h"
+// TARGET: C_WeaponRanged_FlameThrower::vfunc118
+void C_WeaponRanged_FlameThrower::vfunc118(int a)
+{
+    if (m_i166c == a)
+        m_i166c = 0;
+    if (m_i1668 == a)
+        m_i1668 = 0;
+    for (int i = 0; i < 50; i++) {
+        if (m_iList[i] == a)
+            m_iList[i] = 0;
+    }
+}
+// END FUNCTION
