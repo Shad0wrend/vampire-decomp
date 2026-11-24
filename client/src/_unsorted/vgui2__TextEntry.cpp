@@ -244,6 +244,22 @@ void vgui2::TextEntry::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afa20 size=0x40
+#include "vgui2__TextEntry.h"
+struct IUnk101ac8e0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int Get(); };
+IUnk101ac8e0 *sub_101ac8e0();
+void vgui2::TextEntry::vfunc95()
+{
+	int n = sub_101ac8e0()->Get();
+	if (n > m_i94)
+	{
+		m_b88 = !m_b88;
+		m_i94 = m_i98 + n;
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afac0 size=0xd
 #include "vgui2__TextEntry.h"
 int vgui2::TextEntry::vfunc143(int a0)
