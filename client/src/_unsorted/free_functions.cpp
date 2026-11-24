@@ -81802,6 +81802,67 @@ void vgui2::TreeNode::sub_101bddb0(int &nStart, int &nCount, int x, int &y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bdfd0 size=0xa7
+#include "utlvector.h"
+
+class CTreeNode_101bdfd0
+{
+public:
+	char m_pad00[0x60];
+	CTreeNode_101bdfd0 *m_pParent;
+	char m_pad64[0x0c];
+	bool m_bExpand;
+	char m_pad71[3];
+	CUtlVector<CTreeNode_101bdfd0 *> m_Children;
+
+	int GetChildrenCount()
+	{
+		return m_Children.Count();
+	}
+
+	int sub_101bdcf0()
+	{
+		int count = 1;
+		if (m_bExpand)
+		{
+			int i;
+			for (i = 0; i < m_Children.Count(); i++)
+			{
+				count += m_Children[i]->sub_101bdcf0();
+			}
+		}
+		return count;
+	}
+
+	int sub_101bdfd0();
+};
+
+int pcd_emit_101bdcf0(CTreeNode_101bdfd0 *n)
+{
+	return n->sub_101bdcf0();
+}
+
+// TARGET: ?sub_101bdfd0@CTreeNode_101bdfd0@@QAEHXZ
+int CTreeNode_101bdfd0::sub_101bdfd0()
+{
+	int nCount = 1;
+	if (m_pParent)
+	{
+		int i;
+		for (i = 0; i < m_pParent->GetChildrenCount(); i++)
+		{
+			if (m_pParent->m_Children[i] == this)
+				break;
+
+			nCount += m_pParent->m_Children[i]->sub_101bdcf0();
+		}
+		return nCount + m_pParent->sub_101bdfd0();
+	}
+	else
+		return nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be160 size=0xaa
 #include "CUtlVector4.h"
 
