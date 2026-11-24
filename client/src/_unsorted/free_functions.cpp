@@ -26089,6 +26089,22 @@ char sub_10080ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100817f0 size=0x2b
+struct VStore {
+	char pad0[0x28]; int m_stride;
+	char pad2c[0x6c - 0x2c]; char *m_base;
+	char pad70[0x98 - 0x70]; int m_idx;
+	void sub_100817f0(const float *v);
+};
+void VStore::sub_100817f0(const float *v)
+{
+	float *p = (float *)(m_base + m_idx * m_stride);
+	*p++ = *v++;
+	*p++ = *v++;
+	*p = *v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084560 size=0x35
 struct CUnknown10084560 { void * sub_10084560(); };
 void * CUnknown10084560::sub_10084560()
