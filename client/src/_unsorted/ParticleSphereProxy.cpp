@@ -11,3 +11,15 @@ bool ParticleSphereProxy::vfunc0(void *pMaterial, void *pKeyValues)
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10115470 size=0x2e
+#include "ParticleSphereProxy.h"
+#pragma optimize("", off)
+void *ParticleSphereProxy::sub_10115470(unsigned int flags)
+{
+	sub_101154a0();
+	if (flags & 1)
+		::operator delete(this);
+	return this;
+}
+// END FUNCTION
