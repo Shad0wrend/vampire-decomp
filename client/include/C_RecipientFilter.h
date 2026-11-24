@@ -11,6 +11,7 @@ public:
 	virtual bool vfunc1();
 	virtual int vfunc2();
 	void sub_100bdeb0();
+	virtual bool vfunc6();
 	bool m_bReliable;
 	bool m_bInitMessage;
 	CUtlVector<int> m_Recipients;
