@@ -47949,6 +47949,12 @@ void CMem8b_t::sub_10117d70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117fc0 size=0xb
+struct CView { char pad[0x6c]; int m6c; int sub_10117fc0(); };
+// TARGET: ?sub_10117fc0@CView@@QAEHXZ
+int CView::sub_10117fc0() { return m6c == 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10117fd0 size=0x4
 #include "CParticleEffect.h"
 // TARGET: CParticleEffect::sub_10117fd0

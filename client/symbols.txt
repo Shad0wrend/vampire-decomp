@@ -4694,6 +4694,7 @@
 0x10117d70 func   ?sub_10117d70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d70
 0x10117f60 func   ??_GCParticleEffect@@UAEPAXI@Z ??_GCParticleEffect@@UAEPAXI@Z
 0x10117f80 func   ??1CParticleEffect@@UAE@XZ CParticleEffect::~CParticleEffect
+0x10117fc0 func   ?sub_10117fc0@CView@@QAEHXZ CView::sub_10117fc0
 0x10117fd0 func   ?sub_10117fd0@CParticleEffect@@QAEXXZ CParticleEffect::sub_10117fd0
 0x10118060 func   ?sub_10118060@@YGXH@Z sub_10118060
 0x10118080 func   ?sub_10118080@CUnknown10118080@@QAEHH@Z CUnknown10118080::sub_10118080
