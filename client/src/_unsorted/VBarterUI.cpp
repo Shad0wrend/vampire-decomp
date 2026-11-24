@@ -26,3 +26,34 @@ VBarterUI::~VBarterUI()
         delete b;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1016edf0 size=0xae
+#include "VBarterUI.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+namespace lifted {
+struct C101a9950 { void sub_101a9950(int x, int y, int w, int h); };
+struct C101aa0a0 { void sub_101aa0a0(int z); };
+}
+
+#define XRES(x) (x * ((float)sub_100cd100() / 1024.0))
+#define YRES(y) (y * ((float)sub_100cd0f0() / 768.0))
+
+// TARGET: VBarterUI::sub_1016edf0
+void VBarterUI::sub_1016edf0()
+{
+	sub_1016cdc0();
+	CBasePanel *pPanel = (CBasePanel *)((char *)this + 0x10);
+	((lifted::C101a9950 *)pPanel)->sub_101a9950(
+		(int)(sub_100cd100() - XRES(1024)),
+		0,
+		(int)XRES(1024),
+		(int)YRES(768)
+	);
+	pPanel->vfunc54(2);
+	((lifted::C101aa0a0 *)pPanel)->sub_101aa0a0(0x76c);
+	sub_1016b790();
+}
+// END FUNCTION

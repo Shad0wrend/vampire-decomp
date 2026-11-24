@@ -2,9 +2,41 @@
 // declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22) (its vtable has no deleting destructor: no virtual destructor)
 #pragma once
 #include "IViewEffects.h"
+#include "Vector.h"
+#include "QAngle.h"
 
 class CViewEffects : public IViewEffects
 {
+public:
+    int m_unk04;
+    int m_unk08;
+    int m_unk0c;
+    int m_unk10;
+    int m_unk14;
+    int m_unk18;
+    int m_unk1c;
+    int m_unk20;
+    int m_unk24;
+    int m_unk28;
+    int m_unk2c;
+    int m_unk30;
+    int m_unk34;
+    int m_unk38;
+    int m_unk3c;
+    int m_unk40;
+    int m_unk44;
+    int m_unk48;
+    int m_unk4c;
+    int m_nState;
+    int m_unk54;
+    int m_unk58;
+    int m_unk5c;
+    int m_unk60;
+    int m_unk64;
+    Vector m_vecAppliedOffset;
+    float m_flAppliedAngle;
+    Vector m_vecShakeOffset;
+    float m_flShakeAngle;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CViewEffects adds to its base's vtable: 0-17, vfuncK at slot K
     virtual void vfunc0();
@@ -15,7 +47,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc5();
     virtual void vfunc6();
     virtual void vfunc7();
-    virtual void vfunc8();
+    virtual void vfunc8(Vector &origin, QAngle &angles, float factor);
     virtual void vfunc9();
     virtual void vfunc10();
     virtual void vfunc11();

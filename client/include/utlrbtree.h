@@ -164,13 +164,13 @@ inline CUtlRBTree<T, I>::~CUtlRBTree()
 template <class T, class I>
 inline T &CUtlRBTree<T, I>::Element(I i)
 {
-	return m_Elements[i].m_Data;
+	return m_Elements.m_pMemory[i].m_Data;
 }
 
 template <class T, class I>
 inline T const &CUtlRBTree<T, I>::Element(I i) const
 {
-	return m_Elements[i].m_Data;
+	return m_Elements.m_pMemory[i].m_Data;
 }
 
 template <class T, class I>

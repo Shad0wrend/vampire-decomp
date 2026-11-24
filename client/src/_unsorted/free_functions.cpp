@@ -24414,6 +24414,79 @@ void CUnknown1007bbb0::sub_1007bbb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bc70 size=0xb1
+#include "CGameRulesSlotTable.h"
+
+struct IGameRulesAmmo
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual CGameRulesSlotTable *v6();
+};
+
+extern IGameRulesAmmo *g_104a56fc;
+
+struct WpnDataInfo
+{
+	char pad[0x2668];
+	int m_nBonusAmmo;
+};
+
+struct CAmmoOwner
+{
+	int sub_10097f80(int ammoType);
+};
+
+struct CWeaponAmmoCheck
+{
+	char pad0[0x7a4];
+	int m_iPrimaryAmmoType;
+	char pad1[4];
+	int m_iClip1;
+
+	WpnDataInfo *sub_1007b160();
+	CAmmoOwner *sub_1007bab0();
+	bool sub_1007bc70(CAmmoOwner *pOwner);
+};
+
+// TARGET: CWeaponAmmoCheck::sub_1007bc70
+bool CWeaponAmmoCheck::sub_1007bc70(CAmmoOwner *pOwner)
+{
+	int iAmmoType = m_iPrimaryAmmoType;
+	if (iAmmoType < 0)
+		return false;
+
+	if (!sub_1007b160())
+		return false;
+
+	if (!&sub_1007b160()->m_nBonusAmmo)
+		return false;
+
+	if (!g_104a56fc->v6())
+		return false;
+
+	int nMax = g_104a56fc->v6()->sub_10079050(iAmmoType) + sub_1007b160()->m_nBonusAmmo;
+
+	if (!pOwner)
+	{
+		pOwner = sub_1007bab0();
+		if (!pOwner)
+			return false;
+	}
+
+	int nAmmo = pOwner->sub_10097f80(iAmmoType);
+	int nTotal = m_iClip1;
+	nTotal += nAmmo;
+	if (nMax == nTotal)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bf10 size=0x3
 void __stdcall sub_1007bf10(int a0)
 {
@@ -29756,6 +29829,99 @@ int __stdcall sub_10095bb0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095f30 size=0x58
+struct CGlobalVarsBase_10095f30
+{
+    char pad[0x0c];
+    float curtime;
+};
+
+extern CGlobalVarsBase_10095f30 *g_102b8494;
+
+struct IBasePrimary_10095f30
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+    virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+    virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+    virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+    virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+    virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+    virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+    virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+    virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+    virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+    virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+    virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+    virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+    virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75();
+    virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+    virtual void v80(); virtual void v81(); virtual void v82();
+    virtual void SetNextClientThink(float nextThinkTime); // slot 83 (+0x14c)
+    virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87();
+    virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91();
+    virtual void v92(); virtual void v93(); virtual void v94();
+    virtual void StudioFrameAdvance(); // slot 95 (+0x17c)
+};
+
+struct IRenderable_10095f30
+{
+    virtual void r0(); virtual void r1(); virtual void r2(); virtual void r3();
+    virtual void r4(); virtual void r5(); virtual void r6(); virtual void r7();
+    virtual void r8(); virtual void r9(); virtual void r10(); virtual void r11();
+    virtual void r12(); virtual void r13(); virtual void r14();
+    virtual bool SetupBones(void *pBoneToWorldOut, int nMaxBones, int boneMask, float currentTime, int extra); // slot 15 (+0x3c)
+};
+
+struct INetworkable_10095f30
+{
+    virtual void n0();
+};
+
+struct ICollideable_10095f30
+{
+    virtual void c0();
+};
+
+struct IThinkable_10095f30
+{
+    virtual void sub_10095f30();
+};
+
+struct LocalBaseAnimating_10095f30
+    : public IBasePrimary_10095f30
+    , public IRenderable_10095f30
+    , public INetworkable_10095f30
+    , public ICollideable_10095f30
+    , public IThinkable_10095f30
+{
+    char pad_14[0x69c];
+    int m_pRagdoll;     // 0x6b0 (0x6a0 from IThinkable)
+    char pad_6b4[0x28];
+    int m_nField6dc;    // 0x6dc (0x6cc from IThinkable)
+
+    virtual void sub_10095f30();
+};
+
+void LocalBaseAnimating_10095f30::sub_10095f30()
+{
+    StudioFrameAdvance();
+    if (m_pRagdoll)
+    {
+        SetupBones(0, 0, 0xfffc, g_102b8494->curtime, 0);
+        m_nField6dc = 0;
+    }
+    else
+    {
+        SetNextClientThink(-1.0f);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095fb0 size=0xa
 struct CUnknown10095fb0 { int sub_10095fb0(); };
 int CUnknown10095fb0::sub_10095fb0()
@@ -30188,6 +30354,145 @@ float sub_10098720(float x, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099880 size=0x233
+#include "CVStatList_t.h"
+#include <stdlib.h>
+
+// TARGET: ?sub_10099880@CObfEntity@@QAEMXZ
+
+struct IEngine_104a57d4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual int v44();
+};
+
+struct CGlobals_102b8494
+{
+	char m_pad00[0x10];
+	float frametime;
+};
+
+struct INet_10099880
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	virtual int entindex();
+};
+
+struct CStatOwner_10099880
+{
+	char m_pad0000[0x1178];
+	int m_nLists;
+	CVStatList_t **m_pLists;
+
+	CVStatList_t *FindStatList(int type)
+	{
+		for (int i = 0; i < m_nLists; i++)
+		{
+			if (m_pLists[i]->m_field10 == type)
+				return m_pLists[i];
+		}
+		static CVStatList_t s_default(-1);
+		return &s_default;
+	}
+};
+
+struct IBase0_10099880 { virtual void b0(); };
+struct IBase4_10099880 { virtual void b4(); };
+
+struct CObfEntity : public IBase0_10099880, public IBase4_10099880, public INet_10099880
+{
+	char m_pad000c[0x3f8 - 0x0c];
+	CStatOwner_10099880 *m_pOwnerA;
+	CStatOwner_10099880 *m_pOwnerB;
+	char m_pad0400[0xfd4 - 0x400];
+	bool m_bObfuscated;
+	char m_pad0fd5[0x10bc - 0xfd5];
+	int m_nLastFrame;
+	int m_nLastCheckFrame;
+	float m_flCurrentAlpha;
+	float m_flTargetAlpha;
+
+	float sub_10099880();
+};
+
+extern IEngine_104a57d4 *g_104a57d4;
+extern CGlobals_102b8494 *g_102b8494;
+extern CObfEntity *g_104a0d50;
+extern "C" float sub_100cd9e0(float cur, float target, float dt, float rate);
+
+float CObfEntity::sub_10099880()
+{
+	int frame = g_104a57d4->v44();
+	int level;
+	CStatOwner_10099880 *pOwnerA = m_pOwnerA;
+	if (frame == m_nLastFrame)
+		return m_flCurrentAlpha;
+
+	m_nLastFrame = frame;
+	float dt = (float)(g_102b8494->frametime < 0.1 ? 0.1 : g_102b8494->frametime);
+
+	int interval;
+	if (pOwnerA)
+		interval = 5;
+	else
+		interval = 10;
+	if (m_nLastCheckFrame == -100 || abs(frame - m_nLastCheckFrame) > interval)
+	{
+		if (pOwnerA)
+		{
+			level = pOwnerA->FindStatList(3)->sub_1015dbd0(8);
+		}
+		else if (m_pOwnerB)
+		{
+			level = m_pOwnerB->FindStatList(3)->sub_1015dbd0(8);
+		}
+		else
+		{
+			return 255.0f;
+		}
+
+		if (level > 0 && m_bObfuscated)
+		{
+			if (g_104a0d50->entindex() == entindex())
+			{
+				m_flTargetAlpha = (float)((12 - level) * 16);
+			}
+			else if (!m_pOwnerA)
+			{
+				m_flTargetAlpha = (float)((6 - level) * 32);
+			}
+			else
+			{
+				m_flTargetAlpha = 0.0f;
+			}
+		}
+		else
+		{
+			m_flTargetAlpha = 255.0f;
+		}
+		m_nLastCheckFrame = frame;
+	}
+
+	if (m_flCurrentAlpha != m_flTargetAlpha)
+	{
+		m_flCurrentAlpha = sub_100cd9e0(m_flCurrentAlpha, m_flTargetAlpha, dt, 170.0f);
+	}
+	return m_flCurrentAlpha;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b210 size=0x15
 namespace lifted {
 extern int g_104a0d50;
@@ -30213,6 +30518,129 @@ int CUnknown1009b2a0::sub_1009b2a0(int a0)
     int t1 = *(int *)((char *)this + 0x92c);
     *(int *)((char *)this + 0x95c) = t1;
     return t0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009c070 size=0x108
+#include "Vector.h"
+#include "C_BaseCombatWeapon.h"
+
+struct WpnData_1009c070
+{
+	char pad0[0x50170];
+	char m_sz50170[0x80];
+	char m_sz501f0[0x80];
+};
+
+struct CWeaponBody_1009c070;
+
+struct IParticleMgr_1009c070
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6(const Vector &v1, const Vector &v2, int a3, int a4, bool a5, const char *s1, const char *s2, CWeaponBody_1009c070 *pEnt, int a9);
+};
+
+extern IParticleMgr_1009c070 *g_1028073c;
+
+struct CCharInner_1009c070
+{
+	char pad0[0xfd0];
+	int m_iGender;
+};
+
+struct COwner_1009c070
+{
+	char pad0[0x3f0];
+	CCharInner_1009c070 *m_pChar;
+};
+
+struct CWeaponBody_1009c070
+{
+	char pad0[0x79c];
+	int m_n79c;
+
+	WpnData_1009c070 *sub_1007b160();
+	COwner_1009c070 *sub_1007bab0();
+	bool sub_1009b8f0();
+	void sub_100a06f0(int idx);
+};
+
+bool CWeaponBody_1009c070::sub_1009b8f0()
+{
+	return m_n79c != 0xff;
+}
+
+struct CWeaponRenderable_1009c070
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual bool ShouldDraw();
+
+	char pad0[0xd8];
+	bool m_bReadyToDraw;        // +0xdc
+	char pad1[0x7c8 - 0xdd];
+	int m_iModelMale;           // +0x7c8
+	int m_iModelFemale;         // +0x7cc
+	char pad2[0x8cf - 0x7d0];
+	bool m_b8cf;                // +0x8cf
+	Vector m_vec8d0;            // +0x8d0
+	Vector m_vec8dc;            // +0x8dc
+	int m_n8e8;                 // +0x8e8
+	bool m_b8ec;                // +0x8ec
+	char pad3[3];
+	int m_n8f0;                 // +0x8f0
+	char pad4[0x920 - 0x8f4];
+	int m_iModelDefault;        // +0x920
+
+	int sub_10092540(int flags, int a1);
+	int sub_1009c070(int flags, int a1);
+};
+
+// TARGET: CWeaponRenderable_1009c070::sub_1009c070
+int CWeaponRenderable_1009c070::sub_1009c070(int flags, int a1)
+{
+	if (m_b8cf)
+	{
+		CWeaponBody_1009c070 *pWpn = (CWeaponBody_1009c070 *)((char *)this - 4);
+		g_1028073c->v6(m_vec8d0, m_vec8dc, 0, m_n8e8, m_b8ec, pWpn->sub_1007b160()->m_sz50170, pWpn->sub_1007b160()->m_sz501f0, pWpn, m_n8f0);
+		m_b8cf = false;
+	}
+
+	if (!m_bReadyToDraw)
+		return 0;
+
+	if (!ShouldDraw())
+		return 0;
+
+	CWeaponBody_1009c070 *pWpn = (CWeaponBody_1009c070 *)((char *)this - 4);
+	COwner_1009c070 *pOwner = pWpn->sub_1007bab0();
+	if (pWpn->sub_1009b8f0())
+	{
+		((C_BaseCombatWeapon *)pWpn)->vfunc240();
+		if (pOwner && pOwner->m_pChar)
+		{
+			if (pOwner->m_pChar->m_iGender == 0)
+				pWpn->sub_100a06f0(m_iModelMale);
+			else
+				pWpn->sub_100a06f0(m_iModelFemale);
+		}
+		else
+		{
+			pWpn->sub_100a06f0(m_iModelDefault);
+		}
+	}
+	else
+	{
+		pWpn->sub_100a06f0(m_iModelDefault);
+	}
+
+	return sub_10092540(flags, a1);
 }
 // END FUNCTION
 
@@ -35452,6 +35880,34 @@ int CUnknown100c93a0::sub_100c93a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9790 size=0x83
+#include "C_BaseEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+class CVGuiScreen_100c9790 : public C_BaseEntity
+{
+public:
+	int sub_100c9790(const Vector &origin);
+};
+
+// TARGET: CVGuiScreen_100c9790::sub_100c9790
+int CVGuiScreen_100c9790::sub_100c9790(const Vector &origin)
+{
+	Vector delta;
+	VectorSubtract(GetAbsOrigin(), origin, delta);
+
+	Vector normal;
+	sub_101090a0(GetAbsAngles(), 0, 0, &normal);
+
+	if (DotProduct(normal, delta) > 0.0f)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9d40 size=0x4
 struct CUnknown100c9d40 { int sub_100c9d40(); };
 int CUnknown100c9d40::sub_100c9d40()
@@ -38468,6 +38924,110 @@ int CUnknown100e02c0::sub_100e02c0(int a0, int a1, int a2, int a3, int a4, int a
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0300 size=0x1af
+#include "Vector.h"
+#include "ConVar.h"
+
+struct ColorRGBExp32_100e0300
+{
+	unsigned char r, g, b;
+	signed char exponent;
+};
+
+struct DetailPropLightstyle_100e0300
+{
+	ColorRGBExp32_100e0300 m_Lighting;
+	unsigned char m_Style;
+};
+
+struct IVEngineClient_100e0300
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75();
+	virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83();
+	virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87();
+	virtual void v88(); virtual void v89(); virtual void v90();
+	virtual void LinearToGamma(float *linear, float *gamma);
+	virtual float LightStyleValue(int style);
+	virtual void v93();
+	virtual void ComputeDynamicLighting(const Vector &pt, const Vector *pNormal, Vector &color);
+};
+
+extern ConVar *g_104cf3e4;
+extern IVEngineClient_100e0300 *g_104a57d4;
+extern float g_104d4f90[];
+extern DetailPropLightstyle_100e0300 *g_104cf4a8;
+
+static inline float TexLightToLinear_100e0300(int c, int exponent)
+{
+	return (float)c * g_104d4f90[exponent];
+}
+
+struct CDetailModel_100e0300
+{
+	void *vptr;
+	Vector m_Origin;
+	char pad10[0x2c];
+	unsigned char m_LightStyleCount;
+	ColorRGBExp32_100e0300 m_Color;
+	char pad41[3];
+	unsigned int m_LightStyle;
+
+	void sub_100e0300(float *color);
+};
+
+// TARGET: CDetailModel_100e0300::sub_100e0300
+void CDetailModel_100e0300::sub_100e0300(float *color)
+{
+	if ((g_104cf3e4->vfunc1() ? 0 : g_104cf3e4->m_nValue) == 1)
+	{
+		color[0] = color[1] = color[2] = 1.0f;
+		return;
+	}
+
+	Vector tmp;
+	Vector normal(1, 0, 0);
+	g_104a57d4->ComputeDynamicLighting(m_Origin, &normal, tmp);
+
+	float val = g_104a57d4->LightStyleValue(0);
+	color[0] = tmp[0] + val * TexLightToLinear_100e0300(m_Color.r, m_Color.exponent);
+	color[1] = tmp[1] + val * TexLightToLinear_100e0300(m_Color.g, m_Color.exponent);
+	color[2] = tmp[2] + val * TexLightToLinear_100e0300(m_Color.b, m_Color.exponent);
+
+	for (int i = 0; i < m_LightStyleCount; ++i)
+	{
+		DetailPropLightstyle_100e0300 &lighting = g_104cf4a8[m_LightStyle + i];
+		val = g_104a57d4->LightStyleValue(lighting.m_Style);
+		if (val != 0)
+		{
+			color[0] += val * TexLightToLinear_100e0300(lighting.m_Lighting.r, lighting.m_Lighting.exponent);
+			color[1] += val * TexLightToLinear_100e0300(lighting.m_Lighting.g, lighting.m_Lighting.exponent);
+			color[2] += val * TexLightToLinear_100e0300(lighting.m_Lighting.b, lighting.m_Lighting.exponent);
+		}
+	}
+
+	g_104a57d4->LinearToGamma(color, color);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
@@ -38914,6 +39474,75 @@ int CUnknown100e2340::sub_100e2340(int a0, int a1, int a2, int a3)
 {
     ((lifted::C100e24a0 *)this)->sub_100e24a0(a0, a1, a2, a3);
     return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e24a0 size=0xe2
+#include "CBaseEntityList.h"
+#include "CUtlLinkedList6.h"
+#include "CBaseHandle.h"
+
+extern void __cdecl sub_100e2950(CUtlLinkedList6Node *pNode, const unsigned short *pValue);
+
+struct IHandleEnt_100e24a0
+{
+	virtual void SetRefEHandle(const CBaseHandle &handle);
+};
+
+struct IEntityListCb_100e24a0
+{
+	virtual void OnAddEntity(IHandleEnt_100e24a0 *pEnt, CBaseHandle handle);
+};
+
+struct LL6Add_100e24a0 : CUtlLinkedList6
+{
+	void LinkToTail(unsigned short elem)
+	{
+		sub_100e27a0(elem);
+		CUtlLinkedList6Node &newElem = InternalElement(elem);
+		newElem.m_Next = InvalidIndex();
+		newElem.m_Previous = m_Tail;
+		m_Tail = elem;
+		if (newElem.m_Previous == InvalidIndex())
+			m_Head = elem;
+		else
+			InternalElement(newElem.m_Previous).m_Next = elem;
+		++m_ElementCount;
+	}
+
+	unsigned short AddToTail(const unsigned short &src)
+	{
+		unsigned short elem = sub_100e2840(false);
+		LinkToTail(elem);
+		sub_100e2950(&InternalElement(elem), &src);
+		return elem;
+	}
+};
+
+struct CEntityListAdd_100e24a0 : CBaseEntityList
+{
+	CBaseHandle sub_100e24a0(IHandleEnt_100e24a0 *pEnt, int iSlot, int iForcedSerialNum);
+};
+
+// TARGET: CEntityListAdd_100e24a0::sub_100e24a0
+CBaseHandle CEntityListAdd_100e24a0::sub_100e24a0(IHandleEnt_100e24a0 *pEnt, int iSlot, int iForcedSerialNum)
+{
+	CBaseEntityListEntry *pSlot = &m_EntPtrArray[iSlot];
+	pSlot->m_pEntity = pEnt;
+
+	if (iForcedSerialNum != -1)
+	{
+		pSlot->m_SerialNumber = iForcedSerialNum;
+	}
+
+	unsigned short idx = (unsigned short)iSlot;
+	*(unsigned short *)&pSlot->m_pad = ((LL6Add_100e24a0 *)&m_Live)->AddToTail(idx);
+
+	CBaseHandle retVal(iSlot, pSlot->m_SerialNumber);
+	pEnt->SetRefEHandle(retVal);
+	((IEntityListCb_100e24a0 *)this)->OnAddEntity(pEnt, retVal);
+
+	return retVal;
 }
 // END FUNCTION
 
@@ -44173,6 +44802,43 @@ void __cdecl sub_1010b1d0(float p1, float p2, float p3, int p4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b7e0 size=0x1e7
+#include "matrix3x4_t.h"
+
+void sub_101082f0(const float *in1, const float in2[3][4], float *out);
+
+static inline float FloatMakePositive(float f)
+{
+	unsigned long bits = (*(unsigned long *)&f) & 0x7FFFFFFF;
+	return *(float *)&bits;
+}
+
+void sub_1010b7e0(const matrix3x4_t &transform, const Vector &vecMinsIn, const Vector &vecMaxsIn, Vector &vecMinsOut, Vector &vecMaxsOut)
+{
+	Vector localCenter = (vecMinsIn + vecMaxsIn) * 0.5f;
+
+	Vector localExtents;
+	VectorSubtract(vecMaxsIn, localCenter, localExtents);
+
+	Vector newCenter;
+	sub_101082f0(localCenter.Base(), transform.m_flMatVal, newCenter.Base());
+
+	Vector newExtents;
+	newExtents.x = FloatMakePositive(localExtents.x * transform.m_flMatVal[0][0]) +
+		FloatMakePositive(localExtents.y * transform.m_flMatVal[1][0]) +
+		FloatMakePositive(localExtents.z * transform.m_flMatVal[2][0]);
+	newExtents.y = FloatMakePositive(localExtents.x * transform.m_flMatVal[0][1]) +
+		FloatMakePositive(localExtents.y * transform.m_flMatVal[1][1]) +
+		FloatMakePositive(localExtents.z * transform.m_flMatVal[2][1]);
+	newExtents.z = FloatMakePositive(localExtents.x * transform.m_flMatVal[0][2]) +
+		FloatMakePositive(localExtents.y * transform.m_flMatVal[1][2]) +
+		FloatMakePositive(localExtents.z * transform.m_flMatVal[2][2]);
+
+	vecMinsOut = newCenter - newExtents;
+	vecMaxsOut = newCenter + newExtents;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b9d0 size=0xab
 #include "Vector.h"
 // TARGET: sub_1010b9d0
@@ -45470,6 +46136,35 @@ void * CUnknown1010e520::sub_1010e520(int a0)
     int t0 = lifted::sub_100f0510(a0);
     *(int *)this = (int)&lifted::g_10235678;
     return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010e600 size=0x95
+#include "CHudMessage.h"
+
+float CHudMessage::sub_1010e600(float fadein, float fadeout, float hold, float localTime)
+{
+	float fadeTime = fadein + hold;
+	float fadeBlend;
+
+	if (localTime < 0.0f)
+		return 0.0f;
+
+	if (localTime < fadein)
+	{
+		fadeBlend = 1.0f - ((fadein - localTime) / fadein);
+	}
+	else if (localTime > fadeTime)
+	{
+		if (fadeout > 0.0f)
+			fadeBlend = 1.0f - ((localTime - fadeTime) / fadeout);
+		else
+			fadeBlend = 0.0f;
+	}
+	else
+		fadeBlend = 1.0f;
+
+	return fadeBlend;
 }
 // END FUNCTION
 
@@ -49700,6 +50395,68 @@ bool CUnknown10248a50::sub_10127f20(int unused, const char *pszBuffer, int a)
 		pNode = 0;
 	}
 	return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10127fd0 size=0x12c
+#include "CUnknown10248a50.h"
+#include <stdlib.h>
+#include <string.h>
+
+char *sub_10127df0(const char **ppBuffer, bool *pbWasQuoted);
+
+// TARGET: CUnknown10248a50::sub_10127fd0
+void CUnknown10248a50::sub_10127fd0(const char **ppBuffer, int a)
+{
+	while (1)
+	{
+		bool bWasQuoted;
+		const char *pszToken = sub_10127df0(ppBuffer, 0);
+		if (!pszToken || !*pszToken || !strcmp(pszToken, "}"))
+			break;
+
+		CUnknown10248a50 *pSub = sub_10128270(pszToken);
+		const char *pszValue = sub_10127df0(ppBuffer, &bWasQuoted);
+		if (!strcmp(pszValue, "{"))
+		{
+			pSub->sub_10127fd0(ppBuffer, a);
+		}
+		else
+		{
+			if (pSub->m_pszString)
+				delete [] pSub->m_pszString;
+
+			int len = strlen(pszValue);
+			pSub->m_pszString = new char[len + 1];
+			memcpy(pSub->m_pszString, pszValue, len + 1);
+
+			if (bWasQuoted)
+			{
+				pSub->m_iDataType = 0;
+			}
+			else
+			{
+				char *pIntEnd;
+				char *pFloatEnd;
+				int iVal = strtol(pszValue, &pIntEnd, 10);
+				float flVal = (float)strtod(pszValue, &pFloatEnd);
+				if (pFloatEnd > pIntEnd)
+				{
+					pSub->m_flValue = flVal;
+					pSub->m_iDataType = 2;
+				}
+				else if (pIntEnd > pszValue)
+				{
+					pSub->m_iValue = iVal;
+					pSub->m_iDataType = 1;
+				}
+				else
+				{
+					pSub->m_iDataType = 0;
+				}
+			}
+		}
+	}
 }
 // END FUNCTION
 
@@ -53949,6 +54706,32 @@ int CUtlRBTree12::sub_10137dd0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137f30 size=0x20a
+#include "CGameStringPool.h"
+#include "utlrbtree.h"
+
+extern "C" char *__cdecl _mbsdup(const char *);
+
+// TARGET: ?sub_10137f30@CStringPool@@QAEPADPBD@Z
+char *CStringPool::sub_10137f30(const char *pszValue)
+{
+	CUtlRBTree<const char *, unsigned short> &strings = *(CUtlRBTree<const char *, unsigned short> *)m_pad0000;
+	char *pszNew;
+	unsigned short i = strings.Find(pszValue);
+	bool bNew = (i == strings.InvalidIndex());
+
+	if (!bNew)
+		return (char *)strings[i];
+
+	pszNew = _mbsdup(pszValue);
+
+	if (bNew)
+		strings.Insert(pszNew);
+
+	return pszNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
@@ -57856,6 +58639,110 @@ int sub_10145650(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145660 size=0x13c
+#include "C_BaseEntity.h"
+#include "CVDmg_t.h"
+
+__declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_1007db20();
+
+struct CVFeat_10145660
+{
+	int m_id;
+	char pad[0x34];
+	void *sub_1014ada0(int id);
+	int sub_1014b6b0(C_BaseEntity *pSrc);
+};
+
+extern int g_105e8138;
+extern CVFeat_10145660 **g_105e813c;
+extern unsigned char g_10680f34;
+extern CVFeat_10145660 g_10680f40;
+
+struct CRoll_10145660;
+extern void (*g_105e7b24)(CRoll_10145660 *);
+
+inline CVFeat_10145660 *FindFeat_10145660(int id)
+{
+	for (int i = 0; i < g_105e8138; i++)
+	{
+		if (g_105e813c[i]->m_id == id)
+			return g_105e813c[i];
+	}
+	if (!(g_10680f34 & 1))
+	{
+		g_10680f34 |= 1;
+		g_10680f40.sub_1014ada0(-1);
+		atexit(sub_1007db20);
+	}
+	return &g_10680f40;
+}
+
+struct CRoll_10145660
+{
+	int m_n00;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	CVDmgBlock16_t m_block1c;
+	int m_n2c;
+	int m_n30;
+	int m_n34;
+	int m_n38;
+
+	void sub_10145660(C_BaseEntity *pSrc, C_BaseEntity *pDst, CVDmgBlock16_t *pBlock, int nDice, int nDifficulty, int nExtra);
+};
+
+// TARGET: CRoll_10145660::sub_10145660
+void CRoll_10145660::sub_10145660(C_BaseEntity *pSrc, C_BaseEntity *pDst, CVDmgBlock16_t *pBlock, int nDice, int nDifficulty, int nExtra)
+{
+	if (nDice > 250)
+	{
+		DevMsg(1, "Warning: Dice roll count out of bounds: %d, capped at %d\n", nDice, 250);
+		nDice = 250;
+	}
+
+	m_n00 = nDice;
+	m_n34 = nDice;
+	m_n04 = nExtra;
+	m_n38 = 0;
+	m_n08 = 0;
+	m_n0c = 0;
+
+	if (pSrc)
+		m_n14 = pSrc->entindex();
+	else
+		m_n14 = 0;
+
+	if (pDst)
+		m_n18 = pDst->entindex();
+	else
+		m_n18 = 0;
+
+	if (pBlock)
+		m_block1c = *pBlock;
+
+	m_n2c = nDifficulty - 1;
+
+	if (g_105e7b24)
+		g_105e7b24(this);
+
+	if (pBlock && m_block1c.m_a == 4 && pSrc)
+	{
+		m_n10 = FindFeat_10145660(m_block1c.m_b)->sub_1014b6b0(pSrc);
+	}
+	else
+	{
+		m_n10 = 0;
+	}
+	m_n30 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101457a0 size=0x95
 #include "CUnknown101d8a70.h"
 #include "ConVar.h"
@@ -61397,6 +62284,45 @@ struct CUnknown1014d9b0 { int sub_1014d9b0(); };
 int CUnknown1014d9b0::sub_1014d9b0()
 {
     return *(int *)((char *)this + 0x364);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1014da00 size=0x86
+#include "CVStatList_t.h"
+
+struct CStatOwner_1014da00
+{
+	char m_pad0000[0x1178];
+	int m_nLists;
+	CVStatList_t **m_pLists;
+
+	CVStatList_t *FindStatList(int type)
+	{
+		for (int i = 0; i < m_nLists; i++)
+		{
+			if (m_pLists[i]->m_field10 == type)
+				return m_pLists[i];
+		}
+		static CVStatList_t s_default(-1);
+		return &s_default;
+	}
+};
+
+struct CUnknown1014da00
+{
+	char m_pad0000[0x374];
+	int m_arr374[1];
+
+	int sub_1014da00(CStatOwner_1014da00 *pOwner);
+};
+
+// TARGET: CUnknown1014da00::sub_1014da00
+int CUnknown1014da00::sub_1014da00(CStatOwner_1014da00 *pOwner)
+{
+	int val = pOwner->FindStatList(3)->sub_1015dbd0(8);
+	if (val > 0)
+		return m_arr374[val];
+	return 0;
 }
 // END FUNCTION
 
@@ -71817,6 +72743,53 @@ char __stdcall sub_101642d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164350 size=0x59
+struct color32_10164350
+{
+	unsigned char r, g, b, a;
+};
+
+class Color_10164350
+{
+public:
+	Color_10164350(int r, int g, int b, int a)
+	{
+		_color[0] = (unsigned char)r;
+		_color[1] = (unsigned char)g;
+		_color[2] = (unsigned char)b;
+		_color[3] = (unsigned char)a;
+	}
+	unsigned char _color[4];
+};
+
+struct BitmapImg_10164350
+{
+	char pad[0x4c];
+	bool sub_10164520(void *pPanel, const char *pFileName);
+	void sub_10164980(const Color_10164350 &clr);
+};
+
+struct CBitmapButton_10164350
+{
+	char pad0[0xf0];
+	BitmapImg_10164350 m_pImage[4];   // 0xf0 .. 0x220 (4 * 0x4c = 0x130)
+	bool m_bImageLoaded[4];           // 0x220
+
+	void sub_10164350(int type, const char *pFileName, color32_10164350 color);
+};
+
+// TARGET: CBitmapButton_10164350::sub_10164350
+void CBitmapButton_10164350::sub_10164350(int type, const char *pFileName, color32_10164350 color)
+{
+	m_bImageLoaded[type] = m_pImage[type].sub_10164520(this, pFileName);
+	if (m_bImageLoaded[type])
+	{
+		Color_10164350 c(color.r, color.g, color.b, color.a);
+		m_pImage[type].sub_10164980(c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164690 size=0xa
 struct CUnknown10164690 { int sub_10164690(int); };
 int CUnknown10164690::sub_10164690(int a0)
@@ -75799,6 +76772,164 @@ void sub_10198e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b030 size=0x33c
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+// TARGET: ?sub_1019b030@CViewRender_1019b030@@QAEXMABUCViewSetup_1019b030@@@Z
+
+struct CViewSetup_1019b030
+{
+	int m_00[5];
+	bool clearColor; // 0x14
+	bool clearDepth; // 0x15
+	char m_pad16[0x94 - 0x16];
+};
+
+struct IHWConfig_104a57f0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9();
+	virtual bool v10();
+};
+
+struct IMaterialVar_1019b030
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void SetVecValue(float x, float y, float z);
+};
+
+struct IMaterial_1019b030
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual IMaterialVar_1019b030 *FindVar(const char *pName, bool *pFound, bool bComplain);
+};
+
+struct IRenderView_104a57e4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13();
+	virtual void v14(const Vector &origin, float intensity);
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22();
+	virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void v27();
+	virtual void v28(int a, int b, const Vector &origin);
+	virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(unsigned char *color, void *pMat);
+};
+
+struct CPlayer_104a0d50
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual const Vector &v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52();
+	virtual const Vector &v53();
+};
+
+struct CViewRender_1019b030
+{
+	char m_pad000[0x388];
+	void *m_p388;
+	char m_pad38c[0x3f0 - 0x38c];
+	IMaterial_1019b030 *m_pFeedMats[8];
+	char m_pad410[0x448 - 0x410];
+	bool m_b448;
+	bool m_b449;
+	bool m_b44a;
+	char m_pad44b;
+	float m_fl44c;
+
+	void sub_1019aed0(bool drawSkybox, const CViewSetup_1019b030 &view);
+	void sub_1019b030(float intensity, const CViewSetup_1019b030 &view);
+};
+
+extern CPlayer_104a0d50 *g_104a0d50;
+extern IHWConfig_104a57f0 *g_104a57f0;
+extern IRenderView_104a57e4 *g_104a57e4;
+extern Vector g_104d4970;
+
+void CViewRender_1019b030::sub_1019b030(float intensity, const CViewSetup_1019b030 &view)
+{
+	ScopeTrace trace("CViewRender::DrawFeedingView", g_102de300);
+
+	m_fl44c = 0.0f;
+	if (!(intensity > 0.0f)) return; CPlayer_104a0d50 *pPlayer = g_104a0d50;
+		if (!(pPlayer)) return; m_b448 = true;
+			m_b449 = g_104a57f0->v10();
+
+			CViewSetup_1019b030 feedView = view;
+			if (intensity < 1.0f)
+			{
+				feedView.clearColor = false;
+				feedView.clearDepth = false;
+				m_b44a = false;
+
+				unsigned char color[4];
+				color[0] = 0;
+				color[1] = 0;
+				color[2] = 0;
+				color[3] = (intensity * 255.0f);
+				g_104a57e4->v32(color, m_p388);
+			}
+			else
+			{
+				intensity = 1.0f;
+				feedView.clearColor = true;
+				feedView.clearDepth = true;
+				m_b44a = true;
+			}
+			m_fl44c = intensity;
+
+			Vector origin = pPlayer->v43();
+			const Vector &offset = pPlayer->v53();
+			origin.z += offset.z;
+			g_104a57e4->v14(origin, intensity);
+			g_104a57e4->v28(0, 1, origin);
+
+			if (m_b449)
+			{
+				Vector lightOrigin = origin;
+				lightOrigin.z = (intensity * 100.0f + origin.z) + 30.0f;
+				bool bFound;
+				m_pFeedMats[0]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[1]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[2]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[3]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[4]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[5]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[6]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+				m_pFeedMats[7]->FindVar("$lightorigin", &bFound, true)->SetVecValue(lightOrigin.x, lightOrigin.y, lightOrigin.z);
+			}
+
+			sub_1019aed0(false, feedView);
+			g_104a57e4->v14(g_104d4970, 0.0f);
+			m_b448 = false;
+			m_b449 = false;
+			m_b44a = false;
+			m_fl44c = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c230 size=0x1f
 struct CUnk102a9640Obj
 {
@@ -76744,6 +77875,56 @@ void sub_101a2b60(VMatrix &dst, const Vector &v, float angleDegrees)
 	dst[1][3] = 0;
 	dst[2][3] = 0;
 	dst[3][3] = 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a2c80 size=0x1b0
+#include "VMatrix.h"
+#include <math.h>
+
+void sub_101a23f0(float *m);
+void sub_10108fd0(const float *start, float scale, const float *direction, float *dest);
+void sub_101a2b60(VMatrix &dst, const Vector &vAxisOfRotation, float angleDegrees);
+
+static inline float FloatMakePositive(float f)
+{
+	unsigned long bits = (*(unsigned long *)&f) & 0x7FFFFFFF;
+	return *(float *)&bits;
+}
+
+void sub_101a2c80(VMatrix &dst, const Vector &initialDirection, const Vector &finalDirection)
+{
+	float angle = DotProduct(initialDirection, finalDirection);
+	Vector axis;
+
+	if (angle - 1.0 > -1e-3)
+	{
+		sub_101a23f0(&dst.m[0][0]);
+		return;
+	}
+
+	if (angle + 1.0 < 1e-3)
+	{
+		int iAxis = 0;
+		if (FloatMakePositive(finalDirection[1]) < FloatMakePositive(finalDirection[0]))
+			iAxis = 1;
+		if (FloatMakePositive(finalDirection[2]) < FloatMakePositive(finalDirection[iAxis]))
+			iAxis = 2;
+
+		axis.Init(0.0f, 0.0f, 0.0f);
+		axis[iAxis] = 1.0f;
+		sub_10108fd0(axis.Base(), -DotProduct(axis, finalDirection), finalDirection.Base(), axis.Base());
+		VectorNormalize(axis);
+		angle = 180.0f;
+	}
+	else
+	{
+		CrossProduct(initialDirection, finalDirection, axis);
+		VectorNormalize(axis);
+		angle = (float)(acos(angle) * (180.0 / 3.14159265358979323846));
+	}
+
+	sub_101a2b60(dst, axis, angle);
 }
 // END FUNCTION
 
@@ -77755,6 +78936,38 @@ void CUnknown101a7a60::sub_101a7a60(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7f20 size=0x7f
+#include "CHudWeaponSelection.h"
+
+extern int g_10678d44;
+extern char g_104cfe38;
+extern int sub_100cd100();
+
+namespace lifted {
+struct C100f2c40 {
+	void sub_100f2c40(int x, int y, int maxX, const char *str, int r, int g, int b, int font);
+};
+}
+
+#define XRES(x) ((int)(x * ((float)sub_100cd100() / 1024.0)))
+
+void CHudWeaponSelection::sub_101a7f20(const char *str, int x, int y, int w, int h)
+{
+	int ox, oy;
+	sub_101a7e90(g_10678d44, str, ox, oy, w, h);
+	((lifted::C100f2c40 *)&g_104cfe38)->sub_100f2c40(
+		x + ox,
+		y + oy,
+		XRES(50),
+		str,
+		255,
+		255,
+		255,
+		g_10678d44
+	);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8c60 size=0x9
 struct CUnknown101a8c60 { void * sub_101a8c60(); };
 void * CUnknown101a8c60::sub_101a8c60()
@@ -78679,6 +79892,53 @@ struct CUnknown101b3570 { int sub_101b3570(); };
 int CUnknown101b3570::sub_101b3570()
 {
     return ((lifted::V *)this)->f134();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b3630 size=0xbe
+extern void *g_102506b4[];
+
+struct Color_101b3630
+{
+	unsigned char c[4];
+	void Zero()
+	{
+		c[0] = 0;
+		c[1] = 0;
+		c[2] = 0;
+		c[3] = 0;
+	}
+};
+
+struct Button_101b3630
+{
+	void *vtable;
+	char pad4[0xd0];
+	Color_101b3630 m_c0;
+	Color_101b3630 m_c1;
+	Color_101b3630 m_c2;
+	Color_101b3630 m_c3;
+	Color_101b3630 m_c4;
+	Color_101b3630 m_c5;
+
+	void sub_101b1fc0(void *parent, const char *panelName, const char *text);
+	void sub_101b3580();
+	Button_101b3630 *sub_101b3630(void *parent, const char *panelName, const char *text);
+};
+
+// TARGET: Button_101b3630::sub_101b3630
+Button_101b3630 *Button_101b3630::sub_101b3630(void *parent, const char *panelName, const char *text)
+{
+	sub_101b1fc0(parent, panelName, text);
+	m_c0.Zero();
+	m_c1.Zero();
+	m_c2.Zero();
+	m_c3.Zero();
+	m_c4.Zero();
+	m_c5.Zero();
+	vtable = g_102506b4;
+	sub_101b3580();
+	return this;
 }
 // END FUNCTION
 
@@ -79643,6 +80903,121 @@ int CUnknown101c4a80::sub_101c4a80()
         *(int *)((char *)this + 0x12c) = 0;
     }
     return ((lifted::V *)(*(int *)((char *)this + 0xf0)))->f46(1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c4cf0 size=0x88
+#include <string.h>
+
+class IComboBox_101c4cf0
+{
+public:
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+	virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+	virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+	virtual void v36() = 0; virtual void v37() = 0; virtual void v38() = 0; virtual void v39() = 0;
+	virtual void v40() = 0; virtual void v41() = 0; virtual void v42() = 0; virtual void v43() = 0;
+	virtual void v44() = 0; virtual void v45() = 0; virtual void v46() = 0; virtual void v47() = 0;
+	virtual void v48() = 0; virtual void v49() = 0; virtual void v50() = 0; virtual void v51() = 0;
+	virtual void v52() = 0; virtual void v53() = 0; virtual void v54() = 0; virtual void v55() = 0;
+	virtual void v56() = 0; virtual void v57() = 0; virtual void v58() = 0; virtual void v59() = 0;
+	virtual void v60() = 0; virtual void v61() = 0; virtual void v62() = 0; virtual void v63() = 0;
+	virtual void v64() = 0; virtual void v65() = 0; virtual void v66() = 0; virtual void v67() = 0;
+	virtual void v68() = 0; virtual void v69() = 0; virtual void v70() = 0; virtual void v71() = 0;
+	virtual void v72() = 0; virtual void v73() = 0; virtual void v74() = 0; virtual void v75() = 0;
+	virtual void v76() = 0; virtual void v77() = 0; virtual void v78() = 0; virtual void v79() = 0;
+	virtual void v80() = 0; virtual void v81() = 0; virtual void v82() = 0; virtual void v83() = 0;
+	virtual void v84() = 0; virtual void v85() = 0; virtual void v86() = 0; virtual void v87() = 0;
+	virtual void v88() = 0; virtual void v89() = 0; virtual void v90() = 0; virtual void v91() = 0;
+	virtual void v92() = 0; virtual void v93() = 0; virtual void v94() = 0; virtual void v95() = 0;
+	virtual void v96() = 0; virtual void v97() = 0; virtual void v98() = 0; virtual void v99() = 0;
+	virtual void v100() = 0; virtual void v101() = 0; virtual void v102() = 0; virtual void v103() = 0;
+	virtual void v104() = 0; virtual void v105() = 0; virtual void v106() = 0; virtual void v107() = 0;
+	virtual void GetText(int offset, char *buf, int bufLen) = 0; // slot 108 (+0x1b0)
+	virtual void v109() = 0; virtual void v110() = 0; virtual void v111() = 0; virtual void v112() = 0;
+	virtual void v113() = 0; virtual void v114() = 0; virtual void v115() = 0; virtual void v116() = 0;
+	virtual void v117() = 0; virtual void v118() = 0; virtual void v119() = 0; virtual void v120() = 0;
+	virtual void v121() = 0; virtual void v122() = 0; virtual void v123() = 0; virtual void v124() = 0;
+	virtual void v125() = 0; virtual void v126() = 0; virtual void v127() = 0; virtual void v128() = 0;
+	virtual void v129() = 0; virtual void v130() = 0; virtual void v131() = 0; virtual void v132() = 0;
+	virtual void v133() = 0; virtual void v134() = 0; virtual void v135() = 0; virtual void v136() = 0;
+	virtual void v137() = 0; virtual void v138() = 0; virtual void v139() = 0; virtual void v140() = 0;
+	virtual void v141() = 0; virtual void v142() = 0; virtual void v143() = 0; virtual void v144() = 0;
+	virtual void v145() = 0; virtual void v146() = 0; virtual void v147() = 0; virtual void v148() = 0;
+	virtual void v149() = 0; virtual void v150() = 0; virtual void v151() = 0; virtual void v152() = 0;
+	virtual void v153() = 0; virtual void v154() = 0; virtual void v155() = 0; virtual void v156() = 0;
+	virtual void v157() = 0; virtual void v158() = 0; virtual void v159() = 0; virtual void v160() = 0;
+	virtual void v161() = 0; virtual void v162() = 0; virtual void v163() = 0; virtual void v164() = 0;
+	virtual void v165() = 0; virtual void v166() = 0; virtual void v167() = 0; virtual void v168() = 0;
+	virtual void v169() = 0; virtual void v170() = 0; virtual void v171() = 0; virtual void v172() = 0;
+	virtual void v173() = 0; virtual void v174() = 0; virtual void v175() = 0; virtual void v176() = 0;
+	virtual void v177() = 0; virtual void v178() = 0; virtual void v179() = 0; virtual void v180() = 0;
+	virtual void ActivateItem(int itemID) = 0; // slot 181 (+0x2d4)
+};
+
+class IButton_101c4cf0
+{
+public:
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+	virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+	virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+	virtual void v36() = 0; virtual void v37() = 0; virtual void v38() = 0; virtual void v39() = 0;
+	virtual void v40() = 0; virtual void v41() = 0; virtual void v42() = 0; virtual void v43() = 0;
+	virtual void v44() = 0; virtual void v45() = 0;
+	virtual void SetEnabled(bool state) = 0; // slot 46 (+0xb8)
+};
+
+struct IPanel_101c4cf0
+{
+	bool sub_101aab50();
+};
+
+struct BuildModeDialog_101c4cf0
+{
+	char pad0[0xe4];
+	IPanel_101c4cf0 *m_pCurrentPanel; // 0xe4
+	char pad_e8[0xc];
+	IButton_101c4cf0 *m_pApplyButton; // 0xf4
+	char pad_f8[0x18];
+	bool m_bAutoUpdate; // 0x110
+	char pad_111[0xb];
+	IComboBox_101c4cf0 *m_pAddNewControlCombo; // 0x11c
+
+	void sub_101c4e60(const char *text, int a, int b);
+	void sub_101c4810();
+	void sub_101c4cf0();
+};
+
+// TARGET: BuildModeDialog_101c4cf0::sub_101c4cf0
+void BuildModeDialog_101c4cf0::sub_101c4cf0()
+{
+	char text[40];
+	m_pAddNewControlCombo->GetText(0, text, sizeof(text));
+	if (strcmp(text, "None") != 0)
+	{
+		sub_101c4e60(text, 0, 0);
+		m_pAddNewControlCombo->ActivateItem(0);
+	}
+	if (m_pCurrentPanel->sub_101aab50())
+	{
+		m_pApplyButton->SetEnabled(true);
+	}
+	if (m_bAutoUpdate)
+	{
+		sub_101c4810();
+	}
 }
 // END FUNCTION
 

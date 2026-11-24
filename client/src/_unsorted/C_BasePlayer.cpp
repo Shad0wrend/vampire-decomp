@@ -114,6 +114,42 @@ bool C_BasePlayer::vfunc174()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7b80 size=0xaf
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+struct IVEngineClient_100a7b80
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void ServerCmd(const char *szCmdString, bool bReliable);
+};
+
+extern IVEngineClient_100a7b80 *g_104a57d4;
+
+// TARGET: C_BasePlayer::vfunc158
+void C_BasePlayer::vfunc158()
+{
+	if (vfunc167()->vfunc169())
+	{
+		char szBuf[128];
+		Q_snprintf(szBuf, sizeof(szBuf), "%s %i", (const char *)vfunc167()->vfunc223(), vfunc167()->vfunc169());
+		g_104a57d4->ServerCmd(szBuf, true);
+	}
+	else
+	{
+		g_104a57d4->ServerCmd((const char *)vfunc167()->vfunc223(), true);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8030 size=0x8
 #include "C_BasePlayer.h"
 namespace lifted {

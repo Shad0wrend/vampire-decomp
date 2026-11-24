@@ -5,5 +5,6 @@
 class IRecipientFilter
 {
 public:
+	virtual ~IRecipientFilter() {}
 	void * vfunc0(char);
 };
