@@ -17,3 +17,13 @@ void __stdcall sub_10118060(int)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10118070 size=0xd
+struct V_10118070 { virtual void v0(char); int m_unk[0x68 / 4 - 1]; unsigned char m_f68; };
+// TARGET: sub_10118070
+void __fastcall sub_10118070(V_10118070 *self)
+{
+	if (self->m_f68 & 2)
+		self->v0(1);
+}
+// END FUNCTION
