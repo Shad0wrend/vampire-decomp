@@ -886,6 +886,153 @@ int C_BaseEntity::vfunc34()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a430 size=0x1b4
+#include "C_BaseEntity.h"
+
+__declspec(dllimport) void vtune( bool resume );
+
+class CCycleCount
+{
+public:
+	__int64 m_Int64;
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+	void operator+=( const CCycleCount &other )
+	{
+		m_Int64 += other.m_Int64;
+	}
+};
+
+class CFastTimer
+{
+public:
+	CCycleCount m_Duration;
+	void Start()
+	{
+		m_Duration.Sample();
+	}
+	void End()
+	{
+		CCycleCount cnt;
+		cnt.m_Int64 = 0;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const
+	{
+		return m_Duration;
+	}
+};
+
+class CVProfNode;
+
+class CVProfile
+{
+public:
+	bool m_bVTuneGroupEnabled;	// 0x0
+	int m_nVTuneGroupID;	// 0x4
+	int m_BudgetGroupStack[1024];	// 0x8
+	int m_nBudgetGroupStackPtr;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+
+	inline void EnterScope( const char *pszName, int detailLevel, const char *pBudgetGroupName );
+	inline void ExitScope();
+	inline void PushBudgetGroup( int id )
+	{
+		m_BudgetGroupStack[m_nBudgetGroupStackPtr] = id;
+		m_nBudgetGroupStackPtr++;
+		if ( m_BudgetGroupStack[m_nBudgetGroupStackPtr - 2] != id && m_bVTuneGroupEnabled && id == m_nVTuneGroupID )
+			vtune( true );
+	}
+	inline void PopBudgetGroup()
+	{
+		m_nBudgetGroupStackPtr--;
+		int id = m_BudgetGroupStack[m_nBudgetGroupStackPtr + 1];
+		if ( m_BudgetGroupStack[m_nBudgetGroupStackPtr] != id && m_bVTuneGroupEnabled && id == m_nVTuneGroupID )
+			vtune( false );
+	}
+};
+
+extern "C" __declspec(dllimport) CVProfile g_VProfCurrentProfile;
+
+class CVProfNode
+{
+public:
+	const char *m_pszName;	// 0x00
+	int m_unk04;
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	char m_pad[0x48 - 0x20];
+	CVProfNode *m_pParent;	// 0x48
+	char m_pad2[0x54 - 0x4c];
+	int m_BudgetGroupID;	// 0x54
+
+	__declspec(dllimport) CVProfNode *GetSubNode( const char *pszName, int detailLevel, const char *pBudgetGroupName );
+
+	inline void EnterScope()
+	{
+		m_nCalls++;
+		if ( m_nRecursions++ == 0 )
+		{
+			m_Timer.Start();
+			g_VProfCurrentProfile.PushBudgetGroup( m_BudgetGroupID );
+		}
+	}
+	inline bool ExitScope()
+	{
+		if ( --m_nRecursions == 0 && m_nCalls != 0 )
+		{
+			m_Timer.End();
+			m_CurFrameTime += m_Timer.GetDuration();
+			g_VProfCurrentProfile.PopBudgetGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+
+inline void CVProfile::EnterScope( const char *pszName, int detailLevel, const char *pBudgetGroupName )
+{
+	if ( m_enabled || !m_fAtRoot )
+	{
+		if ( m_pCurNode->m_pszName != pszName )
+			m_pCurNode = m_pCurNode->GetSubNode( pszName, detailLevel, pBudgetGroupName );
+		m_pCurNode->EnterScope();
+		m_fAtRoot = false;
+	}
+}
+
+inline void CVProfile::ExitScope()
+{
+	if ( !m_fAtRoot || m_enabled )
+	{
+		if ( m_pCurNode->ExitScope() )
+			m_pCurNode = m_pCurNode->m_pParent;
+		m_fAtRoot = ( m_pCurNode == m_pRoot );
+	}
+}
+
+void C_BaseEntity::vfunc111()
+{
+	g_VProfCurrentProfile.EnterScope( "C_BaseEntity::Relink", 0, "Unaccounted" );
+	sub_1009e2d0( 0 );
+	g_VProfCurrentProfile.ExitScope();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a940 size=0x3
 #include "C_BaseEntity.h"
 void C_BaseEntity::vfunc96(int a0, int a1, int a2, int a3)
