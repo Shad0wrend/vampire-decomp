@@ -48015,6 +48015,14 @@ int sub_10114700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114710 size=0x16
+int sub_10114680();
+float sub_10114710()
+{
+	return sub_10114680() * 1.40625;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114770 size=0x12
 namespace lifted {
 extern char g_1023579c;
