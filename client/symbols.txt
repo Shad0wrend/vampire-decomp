@@ -4342,6 +4342,7 @@
 0x100dfc90 func   ?sub_100dfc90@@YAHHHHHHHHHH@Z sub_100dfc90
 0x100dfcd0 func   ?sub_100dfcd0@@YAHHHH@Z sub_100dfcd0
 0x100dfcf0 func   ?sub_100dfcf0@@YAHHHHH@Z sub_100dfcf0
+0x100dfd20 func   ?sub_100dfd20@@YAXHHHHHHHH@Z sub_100dfd20
 0x100dfdf0 func   ?sub_100dfdf0@@YAHXZ sub_100dfdf0
 0x100dfe00 func   ??0CBaseStaticModel@@QAE@XZ CBaseStaticModel::CBaseStaticModel
 0x100dfe50 func   ??1CBaseStaticModel@@UAE@XZ CBaseStaticModel::~CBaseStaticModel
