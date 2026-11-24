@@ -16877,6 +16877,25 @@ void CUnknown1004bdd0::sub_1004bdd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004c2b0 size=0x32
+struct XKey
+{
+	char u[0x2c]; char m_down; char m_pressed; char m_released;
+	void sub_1004c2b0(char down);
+};
+void XKey::sub_1004c2b0(char down)
+{
+	if (!m_down && down) {
+		m_pressed = 1;
+		m_released = 0;
+	} else if (m_down && !down) {
+		m_pressed = down;
+		m_released = 1;
+	}
+	m_down = down;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004c500 size=0x17
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 struct IEngine_104a57d4 {
