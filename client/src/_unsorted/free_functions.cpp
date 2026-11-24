@@ -56993,6 +56993,40 @@ int CUnknown10116b90::sub_10116b90(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116ca0 size=0x60
+struct Emitter {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(int);
+	virtual void v71(); virtual void v72(); virtual void v73();
+	virtual void v74(int);
+};
+struct Mgr {
+	char pad[0x168];
+	Emitter *m168;
+};
+struct Obj {
+	char pad30[0x30];
+	Mgr *m30;
+	char m34;
+	void sub_10116ca0(int a, int b);
+};
+void Obj::sub_10116ca0(int a, int b)
+{
+	if (m34 & 0x80) {
+		m30->m168->v70(10);
+		m30->m168->v74(a);
+		m30->m168->v70(0);
+		m30->m168->v74(b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116df0 size=0x11
 struct CUnknown10116df0 { int sub_10116df0(int, int); };
 int CUnknown10116df0::sub_10116df0(int a0, int a1)
