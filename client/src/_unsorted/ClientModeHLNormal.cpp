@@ -20,6 +20,24 @@ void ClientModeHLNormal::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100296c0 size=0x3b
+#include "ClientModeHLNormal.h"
+struct PanelView { void sub_101a9920(int *, int *); };
+struct SubView { void sub_101a9950(int, int, int, int); };
+int sub_1016a6b0();
+// TARGET: ClientModeHLNormal::vfunc5
+void ClientModeHLNormal::vfunc5()
+{
+	PanelView *p = (PanelView *)sub_1016a6b0();
+	if (p)
+	{
+		int wide, tall;
+		p->sub_101a9920(&wide, &tall);
+		((SubView *)&m_sub)->sub_101a9950(0, 0, wide, tall);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029770 size=0x3
 #include "ClientModeHLNormal.h"
 void ClientModeHLNormal::vfunc22(int a0, int a1)
