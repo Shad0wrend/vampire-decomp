@@ -12035,6 +12035,27 @@ int sub_10032250(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032270 size=0x1a
+struct IGlobal_102ba388
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(void *, void *);
+};
+extern IGlobal_102ba388 *g_102ba388;
+struct Obj_10032270
+{
+	int m_unk0, m_unk4, m_unk8;
+	int m_unkc, m_unk10, m_unk14;
+	int m_unk18;
+	void sub_10032270(int);
+};
+// TARGET: Obj_10032270::sub_10032270
+void Obj_10032270::sub_10032270(int)
+{
+	g_102ba388->v8(&m_unkc, &m_unk18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100322b0 size=0x6
 namespace lifted {
 extern char g_102eb5e0;
