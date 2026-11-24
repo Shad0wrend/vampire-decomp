@@ -9,6 +9,8 @@ class C_BasePlayer : public C_BaseVCombatCharacter
 {
 public:
 	virtual ~C_BasePlayer();
+	int sub_100a2450();
+	void sub_100aa040();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BasePlayer's own function
 	virtual int vfunc15();
