@@ -77520,6 +77520,21 @@ int CUnknown10168ca0::sub_10168ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168ce0 size=0x31
+struct Net_10168ce0 {
+	char m_unk[0x98bc];
+	unsigned char m_colors[1][4];
+	void sub_10168ce0(int idx, unsigned char *rgb, unsigned char *a);
+};
+void Net_10168ce0::sub_10168ce0(int idx, unsigned char *rgb, unsigned char *a)
+{
+	unsigned char *c = m_colors[idx];
+	for (int i = 0; i < 3; i++)
+		rgb[i] = c[i];
+	*a = c[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10169900 size=0x1a4
 #include "ConVar.h"
 
