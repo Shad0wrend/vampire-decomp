@@ -55128,6 +55128,15 @@ float CUnknown10133a00::sub_10133a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133a10 size=0x7
+// TARGET: sub_10133a10
+float __fastcall sub_10133a10(void *self)
+{
+	float x = *(float *)((char *)self + 0x10);
+	return x * *(float *)((char *)self + 0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133c80 size=0x8
 struct CUnknown10133c80 { void sub_10133c80(); };
 void CUnknown10133c80::sub_10133c80()
