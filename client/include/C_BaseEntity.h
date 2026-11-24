@@ -14,6 +14,9 @@ public:
 	char *sub_1009f770();
 	void *sub_100a2d70();
 	void sub_100a1a70(int a);
+	void sub_1009f8a0();
+	void sub_1009f780();
+	void *sub_1009f7f0(void *);
 	void sub_1011c7f0();
 	void sub_100a2030(const void *);
 	bool sub_100a0710(const char *name);
