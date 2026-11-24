@@ -28287,6 +28287,16 @@ int sub_10088750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088760 size=0x13
+#include "bf_read.h"
+float bf_read::sub_10088760()
+{
+	float value;
+	sub_10087bb0( &value, 32 );
+	return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088780 size=0x14
 #include "bf_read.h"
 struct CUnknown10088780 : public bf_read { bool sub_10088780(void *pBuf, int nBytes); };

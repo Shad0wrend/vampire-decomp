@@ -3104,6 +3104,7 @@
 0x100886d0 func   ?sub_100886d0@@YAHXZ sub_100886d0
 0x100886e0 func   ?sub_100886e0@bf_readX@@QAEHXZ bf_readX::sub_100886e0
 0x10088750 func   ?sub_10088750@@YAHXZ sub_10088750
+0x10088760 func   ?sub_10088760@bf_read@@QAEMXZ bf_read::sub_10088760
 0x10088780 func   ?sub_10088780@CUnknown10088780@@QAE_NPAXH@Z CUnknown10088780::sub_10088780
 0x10088880 func   ?sub_10088880@bf_read@@QAE_NH@Z bf_read::sub_10088880
 0x100888b0 func   ?sub_100888b0@bf_read@@QAEXHH@Z bf_read::sub_100888b0
