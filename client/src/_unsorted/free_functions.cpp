@@ -44328,6 +44328,31 @@ void Mgr_100d6510::sub_100d6510(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6540 size=0x5e
+#include "CClientShadowMgr.h"
+#include "CUtlLinkedList240.h"
+#include "Vector.h"
+
+// TARGET: CClientShadowMgr::sub_100d6540
+struct ShadowData
+{
+	char m_pad[0xa8];
+	unsigned short m_Count;
+	unsigned short m_padAA;
+	Vector m_Vecs[4];
+	float m_Floats[4];
+};
+
+void CClientShadowMgr::sub_100d6540(int index, const Vector *v, float f)
+{
+	CUtlLinkedList240Node &node = m_Shadows.InternalElement((unsigned short)index);
+	ShadowData *s = (ShadowData *)&node;
+	s->m_Vecs[s->m_Count] = *v;
+	s->m_Floats[s->m_Count] = f;
+	s->m_Count++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6c40 size=0x59
 #include "VMatrix.h"
 
