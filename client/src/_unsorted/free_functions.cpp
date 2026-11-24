@@ -33900,6 +33900,29 @@ void * CUnknown1009dd60::sub_1009dd60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e0f0 size=0x51
+#include "C_BaseEntity.h"
+
+struct CUnknown1009fbb0 { void sub_100a06f0(int); };
+struct CUnknown10044400 { void sub_10044400(); };
+struct CUnk100e2360 { void sub_100e2360(void *out, void *ent); };
+extern CUnk100e2360 *g_102b8e9c;
+
+// TARGET: C_BaseEntity::sub_1009e0f0
+bool C_BaseEntity::sub_1009e0f0(int a, int b)
+{
+	((CUnknown1009fbb0 *)this)->sub_100a06f0(a);
+	void *ent = ((IClientRenderable *)((char *)this + 4))->GetIClientUnknown();
+	int tmp;
+	g_102b8e9c->sub_100e2360(&tmp, ent);
+	sub_100a1a70(b);
+	((CUnknown10044400 *)((char *)this + 0x190))->sub_10044400();
+	*(int *)((char *)this + 0x44) = -1;
+	vfunc20();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e230 size=0x6
 namespace lifted {
 extern int g_102b8e9c;
