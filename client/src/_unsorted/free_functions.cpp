@@ -38829,6 +38829,24 @@ void sub_100cd530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd9a0 size=0x39
+#include "C_BaseEntity.h"
+#include "IClientNetworkable.h"
+C_BaseEntity *sub_100a2ab0(const char *name);
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+// TARGET: sub_100cd9a0
+void sub_100cd9a0(const char *name)
+{
+  C_BaseEntity *e = sub_100a2ab0(name);
+  if (!e) {
+    Warning("NULL Ent in UTIL_PrecacheOther: %s\n", name);
+    return;
+  }
+  e->vfunc21();
+  ((IClientNetworkable *)((char *)e + 8))->Release();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdad0 size=0x23
 #include <math.h>
 struct Vec { float x, y, z; };
