@@ -5018,6 +5018,7 @@
 0x10120e70 func   ?vfunc0@IPrediction@@QAEPAXD@Z IPrediction::vfunc0
 0x10120ed0 func   ?vfunc2@CPrediction@@UAEXXZ CPrediction::vfunc2
 0x10120ee0 func   ?sub_10120ee0@CPrediction@@QAEXH@Z CPrediction::sub_10120ee0
+0x10122380 func   ?sub_10122380@@YGXPAUPlayer_10122380@@@Z sub_10122380
 0x101223b0 func   ?sub_101223b0@@YGHH@Z sub_101223b0
 0x10122430 func   ?sub_10122430@@YGHH@Z sub_10122430
 0x101230c0 func   ?vfunc12@CPrediction@@UAE_NXZ CPrediction::vfunc12
