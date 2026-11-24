@@ -1,6 +1,11 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10134820 size=0x9
+#include "CCopyRecipientFilter.h"
+int CCopyRecipientFilter::vfunc1() { return ((unsigned)m_unk04 >> 1) & 1; }
+// END FUNCTION
+
 // FUNCTION: 0x10134830 size=0x4
 #include "CCopyRecipientFilter.h"
 
