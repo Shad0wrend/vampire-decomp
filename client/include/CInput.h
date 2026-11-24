@@ -78,7 +78,7 @@ public:
     virtual int vfunc46(int, int);
     virtual int vfunc47();
     virtual bool vfunc48();
-    virtual bool vfunc49(int, int);
+    virtual void vfunc49(float *, float *);
     virtual float vfunc50();
     virtual float vfunc51();
     virtual float vfunc52();
