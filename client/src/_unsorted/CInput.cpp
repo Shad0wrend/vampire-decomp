@@ -230,6 +230,22 @@ int CInput::vfunc55(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104750 size=0x31
+#include "CInput.h"
+struct XG2 { virtual void v0(); virtual char v1(); char u[0x2c - 4]; int m_i2c; };
+extern XG2 *g_104d31f4;
+// TARGET: CInput::vfunc20
+float CInput::vfunc20()
+{
+	int p;
+	if (g_104d31f4->v1())
+		p = 0;
+	else
+		p = g_104d31f4->m_i2c;
+	return (float)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104790 size=0x1d
 #include "CInput.h"
 struct SubObj_10104790
