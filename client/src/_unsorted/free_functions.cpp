@@ -15036,6 +15036,15 @@ int CUnknown1003ee60::sub_1003ee60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003eeb0 size=0x2e
+struct ITE_1003eeb0 { virtual void v0(); virtual void v1(); virtual void v2(int, int, float, float); };
+extern ITE_1003eeb0 *g_102ba388;
+void sub_1003eeb0(int a0, int a1, int a2, int a3, float a4, int a5)
+{
+	g_102ba388->v2(a2, a3, a4 * 10.0f, (float)a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ef00 size=0x6
 namespace lifted {
 extern char g_103eb360;
