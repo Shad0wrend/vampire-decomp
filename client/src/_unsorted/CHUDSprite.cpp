@@ -56,3 +56,21 @@ void CHudSprite::vfunc13(int frame, int x, int y, int a3)
 	m_pSprite->sub_10136ff0(frame, x, y, a3);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f3d70 size=0x3a
+#include "IHudSprite.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+void *__cdecl operator new(unsigned int);
+// TARGET: CHudSprite::vfunc0
+void CHudSprite::vfunc0()
+{
+    if (!m_unk30) {
+        m_unk04 = 0;
+        m_unk34 = 0x80;
+        m_unk30 = (int)operator new(0x4800);
+        memset((void *)m_unk30, 0, 0x600);
+        m_pSprite = 0;
+    }
+}
+// END FUNCTION
