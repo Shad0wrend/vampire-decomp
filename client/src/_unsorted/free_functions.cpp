@@ -62873,6 +62873,14 @@ int CUtlBuffer::sub_1013cc20(const char *pFmt, char *list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ce00 size=0x14
+#include "CUtlBuffer.h"
+void sub_1013ce00(CUtlBuffer *buf, const char *pFmt, ...)
+{
+	buf->sub_1013cc20(pFmt, (char *)(&pFmt + 1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ce60 size=0x2a
 #include "CUtlBuffer.h"
 #include <string.h>
