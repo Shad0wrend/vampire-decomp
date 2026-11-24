@@ -76614,6 +76614,18 @@ int CUnknown1017c660::sub_1017c660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c7b0 size=0xe
+struct E_1017c7b0 { int m_n; int m_unk; };
+struct V_1017c7b0 { E_1017c7b0 m_e[7]; };
+// TARGET: sub_1017c7b0
+V_1017c7b0 * __fastcall sub_1017c7b0(V_1017c7b0 *self)
+{
+	for (int i = 0; i < 7; i++)
+		self->m_e[i].m_n = i;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c900 size=0x43
 namespace lifted {
 extern char g_1024cb4c;
