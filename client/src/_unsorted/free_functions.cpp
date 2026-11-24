@@ -15923,6 +15923,12 @@ void sub_10044450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100445d0 size=0xc
+struct CIdxView100445d0 { int *m_pData; int *sub_100445d0(int i); };
+// TARGET: CIdxView100445d0::sub_100445d0
+int *CIdxView100445d0::sub_100445d0(int i) { return &m_pData[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x10045630 size=0x3b
 #include "Vector.h"
 
