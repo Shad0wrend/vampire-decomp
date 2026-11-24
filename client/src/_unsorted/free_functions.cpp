@@ -69197,6 +69197,12 @@ int CUnk101f42d0::sub_101554d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101554f0 size=0x20
+struct O54f0 { char pad[0x14]; int n; };
+struct V54f0 { int a, b; O54f0 *o; int *p; int sub_101554f0(); };
+int V54f0::sub_101554f0() { int s = 0; if (o) { for (int i = 0; i < o->n; i++) s += p[i]; } return s; }
+// END FUNCTION
+
 // FUNCTION: 0x10155510 size=0x2c
 struct CUnkSub101f4330
 {
