@@ -31956,6 +31956,20 @@ int __stdcall sub_100958f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095ac0 size=0x36
+#include "C_BaseAnimating.h"
+void sub_10108430(int, void *);
+// TARGET: ?sub_10095ac0@C_BaseAnimating@@QAE_NHH@Z
+bool C_BaseAnimating::sub_10095ac0(int idx, int arg)
+{
+	if (idx >= 1 && idx <= *(int *)((char *)this + 0x77c)) {
+		sub_10108430(arg, *(char **)((char *)this + 0x770) + (idx - 1) * 72);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095b00 size=0xd
 struct CUnknown10095b00 { int sub_10095b00(int); };
 int CUnknown10095b00::sub_10095b00(int a0)
