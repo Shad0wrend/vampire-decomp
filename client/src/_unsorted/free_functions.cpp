@@ -37401,6 +37401,13 @@ JustAfew:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce3d0 size=0x13
+bool sub_100ce3d0(const unsigned short *a, const unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0140 size=0x16e
 #include "CBaseHandle.h"
 #include "CClientThinkList.h"
