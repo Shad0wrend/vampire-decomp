@@ -9,7 +9,7 @@
   {
    "name": "client.dll",
    "code": 1973229,
-   "done": 0.3068139605864942
+   "done": 0.32894218495467287
   },
   {
    "name": "GameUI.dll",
@@ -236,30 +236,30 @@
  "client": [
   {
    "name": "no file yet",
-   "cpp": 376571,
-   "asm": 4812,
-   "open": 683401,
-   "n_cpp": 5168,
-   "n_asm": 28,
-   "n_open": 2733
+   "cpp": 397686,
+   "asm": 4850,
+   "open": 662258,
+   "n_cpp": 5638,
+   "n_asm": 30,
+   "n_open": 2262
   },
   {
    "name": "cl_dll",
-   "cpp": 57532,
+   "cpp": 71569,
    "asm": 0,
-   "open": 414044,
-   "n_cpp": 1596,
+   "open": 400007,
+   "n_cpp": 1911,
    "n_asm": 0,
-   "n_open": 1606
+   "n_open": 1291
   },
   {
    "name": "game_shared",
-   "cpp": 21340,
+   "cpp": 23416,
    "asm": 0,
-   "open": 58774,
-   "n_cpp": 248,
+   "open": 56698,
+   "n_cpp": 306,
    "n_asm": 0,
-   "n_open": 244
+   "n_open": 186
   },
   {
    "name": "_init",
@@ -281,12 +281,12 @@
   },
   {
    "name": "cl_dll/hl2_hud",
-   "cpp": 1360,
+   "cpp": 1487,
    "asm": 0,
-   "open": 3102,
-   "n_cpp": 39,
+   "open": 2975,
+   "n_cpp": 42,
    "n_asm": 0,
-   "n_open": 19
+   "n_open": 16
   },
   {
    "name": "dlls",
@@ -299,12 +299,12 @@
   },
   {
    "name": "public",
-   "cpp": 783,
+   "cpp": 803,
    "asm": 108,
-   "open": 34,
-   "n_cpp": 17,
+   "open": 14,
+   "n_cpp": 18,
    "n_asm": 1,
-   "n_open": 2
+   "n_open": 1
   },
   {
    "name": "vphysics",
