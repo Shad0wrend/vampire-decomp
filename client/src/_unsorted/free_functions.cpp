@@ -16251,6 +16251,21 @@ int CUnknown10041790::sub_10041790(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041e00 size=0x22
+struct S10041e00 {
+	char pad[0xa8];
+	float *m_pVec;
+	void sub_10041e00(const float *s);
+};
+void S10041e00::sub_10041e00(const float *s)
+{
+	float *d = m_pVec;
+	*d++ = *s++;
+	*d++ = *s++;
+	*d = *s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100421e0 size=0x3
 struct CUnknown100421e0 { void * sub_100421e0(); };
 void * CUnknown100421e0::sub_100421e0()
