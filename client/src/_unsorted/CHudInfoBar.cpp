@@ -47,3 +47,26 @@ int CHudInfoBar::vfunc115(int a0, int a1)
     return ((lifted::C10056bc0 *)this)->sub_10056bc0(a0, 0, a1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10056b60 size=0x54
+#include "CHudInfoBar.h"
+
+int sub_10114660(int, int);
+int sub_10114690();
+int sub_101146c0();
+char *sub_101146e0();
+
+// TARGET: CHudInfoBar::vfunc114
+int CHudInfoBar::vfunc114(int a, int b, int c)
+{
+	sub_10114660(c, b);
+	int x = sub_10114690();
+	int y = sub_10114690();
+	if (!x)
+	{
+		int id = sub_101146c0();
+		return sub_10056bc0(y, id, 0);
+	}
+	return sub_10056bc0(y, 0, sub_101146e0());
+}
+// END FUNCTION
