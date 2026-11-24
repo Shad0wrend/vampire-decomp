@@ -134,6 +134,21 @@ bool C_BaseAnimating::vfunc142()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093f00 size=0x34
+#include "C_BaseAnimating.h"
+#include "IClientCollideable.h"
+// TARGET: C_BaseAnimating::vfunc67
+bool C_BaseAnimating::vfunc67()
+{
+  if (*((bool *)this + 0x6a8))
+    return true;
+  int solid = ((IClientCollideable *)((char *)this + 0xc))->GetSolid();
+  if (solid == 4 || solid == 0 || solid == 3 || solid == 5 || solid == 6)
+    return false;
+  return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094e90 size=0x22
 #include "C_BaseAnimating.h"
 namespace lifted {
