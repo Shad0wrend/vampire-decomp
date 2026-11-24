@@ -63212,6 +63212,22 @@ int CUnknown101b9140::sub_10131e60(int num, const CUnknown101b9140Elem *pToCopy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131f30 size=0x4f
+struct CUnknown10131f30 {
+	struct Links_t { int m_Left; int m_Right; int m_Parent; int m_Tag; };
+	struct Node_t : public Links_t { int m_pad10; int m_pad14; };
+	static int InvalidIndex() { return (int)~0; }
+	Links_t const &sub_10131f30(int i) const;
+};
+
+CUnknown10131f30::Links_t const &CUnknown10131f30::sub_10131f30(int i) const
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	Node_t *pElements = (Node_t *)*(int *)((char *)this + 4);
+	return (i != InvalidIndex()) ? *(Links_t *)&pElements[i] : *(Links_t *)&s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132d30 size=0x7c
 #include "CUnknown101b90a0.h"
 
