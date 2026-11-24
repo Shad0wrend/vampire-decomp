@@ -459,6 +459,16 @@ int C_BaseEntity::vfunc51()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fca0 size=0x28
+#include "C_BaseEntity.h"
+struct ModelInfoView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual bool IsTranslucent(int idx); };
+extern ModelInfoView *g_104a57f8;
+bool C_BaseEntity::IsTransparent()
+{
+	return g_104a57f8->IsTranslucent(*(int *)((char *)this + 0x40)) || *(int *)((char *)this + 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fce0 size=0x7
 #include "C_BaseEntity.h"
 CMouthInfo * C_BaseEntity::GetMouth()
