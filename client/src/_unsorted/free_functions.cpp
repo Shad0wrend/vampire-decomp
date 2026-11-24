@@ -18050,6 +18050,12 @@ void CUnknown1005fcb0::sub_1005fcb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060d60 size=0xd
+struct CView { char pad[0x18c]; float m18c; float sub_10060d60(); };
+// TARGET: ?sub_10060d60@CView@@QAEMXZ
+float CView::sub_10060d60() { return 255.0f / m18c; }
+// END FUNCTION
+
 // FUNCTION: 0x10061370 size=0x26
 namespace lifted {
 extern char g_102879dc;
