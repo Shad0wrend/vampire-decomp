@@ -60765,6 +60765,12 @@ void * CUnknown10142e50::sub_10142e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143120 size=0x24
+struct VObj { int m0, m4; int m_n; int mc; int *m_pData; void sub_10142ff0(); int sub_10143120(int i); };
+// TARGET: ?sub_10143120@VObj@@QAEHH@Z
+int VObj::sub_10143120(int i) { sub_10142ff0(); if (m_n > 0) return m_pData[i]; return -1; }
+// END FUNCTION
+
 // FUNCTION: 0x10143180 size=0x14
 struct CUnknown10143180 { void * sub_10143180(); };
 void * CUnknown10143180::sub_10143180()
