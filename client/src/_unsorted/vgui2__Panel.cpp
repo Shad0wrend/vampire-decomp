@@ -110,6 +110,68 @@ int vgui2::Panel::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9a90 size=0x55
+#include "vgui2__Panel.h"
+
+extern void *sub_101ac8d0();
+extern void *sub_101ac900();
+
+struct IFontView101a9a90
+{
+	virtual void f0();
+	virtual void f1();
+	virtual void f2();
+	virtual void f3();
+	virtual void f4();
+	virtual void f5();
+	virtual void f6();
+};
+
+struct ISurfView101a9a90
+{
+	virtual void s0();
+	virtual IFontView101a9a90 *s1(int h);
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void s5();
+	virtual void s6();
+	virtual void s7();
+	virtual void s8();
+	virtual void s9();
+	virtual void s10();
+	virtual void s11();
+	virtual void s12();
+	virtual void s13();
+	virtual void s14();
+	virtual void s15();
+	virtual int s16(int x);
+	virtual int s17(int a, int b);
+};
+
+struct IOtherView101a9a90
+{
+	virtual void o0();
+	virtual void o1();
+	virtual void o2();
+	virtual void o3();
+	virtual void o4();
+	virtual void o5();
+	virtual int o6();
+};
+
+void vgui2::Panel::vfunc5()
+{
+	int b = ((IOtherView101a9a90 *)sub_101ac8d0())->o6();
+	int n = ((ISurfView101a9a90 *)sub_101ac900())->s16(b);
+	for (int i = 0; i < n; i++)
+	{
+		int h = ((ISurfView101a9a90 *)sub_101ac900())->s17(b, i);
+		((ISurfView101a9a90 *)sub_101ac900())->s1(h)->f6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9b30 size=0x35
 #include "vgui2__Panel.h"
 namespace lifted {
