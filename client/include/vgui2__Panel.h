@@ -19,6 +19,7 @@ public:
 	void sub_101a9ff0(int);
 	void sub_101aa0a0(int);
 	int sub_101a99f0(int);
+	void sub_101aa6f0(int);
 	int m_unk4[(0x18 - 4) / 4];
 	bool m_b18;
 	char m_c19; char m_c1a; char m_c1b;
