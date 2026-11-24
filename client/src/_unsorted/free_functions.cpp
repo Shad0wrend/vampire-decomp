@@ -32186,6 +32186,28 @@ void Anim_1008fcd0::sub_1008fcd0(int i, S48_10108430 *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090790 size=0x57
+int __cdecl sub_101e28e0(const char *a, const char *b);
+
+struct NameStruct
+{
+    char m_pad00[0xf0];
+    int m_nCount;   // +0xf0
+    int m_nBase;    // +0xf4
+};
+
+int __cdecl sub_10090790(const char *name, NameStruct *pStruct)
+{
+    for (int i = 0; i < pStruct->m_nCount; i++) {
+        char *entry = (char *)pStruct + pStruct->m_nBase + i * 0xa0;
+        const char *str = entry + *(int *)entry;
+        if (sub_101e28e0(name, str) == 0)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091910 size=0x4a
 #include "C_BaseAnimating.h"
 void sub_10108430(void *dst, int arg);
