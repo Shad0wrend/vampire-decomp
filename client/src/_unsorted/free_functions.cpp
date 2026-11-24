@@ -72673,6 +72673,16 @@ void __fastcall sub_10160610(CDumpTable1006d0a0 *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160660 size=0x7
+#include "CVDmg_t.h"
+
+// TARGET: CVDmgBlock16_t::sub_10160660
+char CVDmgBlock16_t::sub_10160660()
+{
+	return m_a == -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160670 size=0x15
 struct CUnknown10160670 { void sub_10160670(); };
 void CUnknown10160670::sub_10160670()
