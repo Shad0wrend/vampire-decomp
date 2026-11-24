@@ -71566,6 +71566,51 @@ void * CUnknown10151630::sub_10151630(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151660 size=0xbe
+#include "string_t.h"
+struct CObj10203950
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *key, int def);
+	virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *key, const char *def);
+};
+class CNamedListX { public: int sub_1013fdf0(const char *); };
+extern CNamedListX g_105e74fc;
+extern char *g_102c9ef8[3];
+extern char *g_102c9f08[3];
+string_t sub_1015f830(CObj10203950 *, int);
+int sub_10151720(int, int);
+int sub_10151740(char **, int, const char *);
+class CEntryTplX
+{
+public:
+	int m_pad0;
+	const char *m_pszText;
+	int m_iType;
+	int m_iSize;
+	int m_iStoryState;
+	int m_iTemplate;
+	int m_i18;
+	bool sub_10151660(CObj10203950 *kv);
+};
+// TARGET: CEntryTplX::sub_10151660
+bool CEntryTplX::sub_10151660(CObj10203950 *kv)
+{
+	if (kv)
+	{
+		sub_10151720((int)&m_pszText, (int)sub_1015f830(kv, (int)"Text").pszValue);
+		m_iType = sub_10151740(g_102c9ef8, 3, kv->GetString("Type", ""));
+		m_iSize = sub_10151740(g_102c9f08, 3, kv->GetString("Size", ""));
+		m_iStoryState = kv->GetInt("StoryState", m_iStoryState);
+		m_iTemplate = g_105e74fc.sub_1013fdf0(kv->GetString("CharTemplate", ""));
+		m_i18 = 0;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151720 size=0x14
 int sub_10151720(int a0, int a1)
 {
