@@ -93213,6 +93213,18 @@ void UtlMem::sub_10197a20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198320 size=0x60
+#include "ScopeTrace.h"
+
+extern int g_106198f8;
+
+void sub_10198320()
+{
+	ScopeTrace scope("::PowerOfTwoFrameBufferTextureRestoreFunc", g_102de300);
+	g_106198f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198d30 size=0x6
 namespace lifted {
 extern char g_10618f7c;
