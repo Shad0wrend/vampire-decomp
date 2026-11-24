@@ -42783,6 +42783,20 @@ const char *sub_100edcf0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee720 size=0x2f
+#include "CGameMovement.h"
+struct XGlobals { char u[0xc]; float curtime; };
+extern XGlobals *g_102b8494;
+struct XPl { char u[0xb4]; float m_fb4; float m_fb8; };
+float CGameMovement::sub_100ee720()
+{
+	XPl *p = (XPl *)m_pPlayer;
+	if (g_102b8494->curtime - p->m_fb8 >= p->m_fb4)
+		return 0.0f;
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee880 size=0x6
 namespace lifted {
 extern char g_104cfd4c;
