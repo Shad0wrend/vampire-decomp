@@ -71,3 +71,11 @@ void __stdcall sub_1010f810(int)
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010f820 size=0x7
+// TARGET: sub_1010f820
+double __stdcall sub_1010f820(int x)
+{
+	return x;
+}
+// END FUNCTION
