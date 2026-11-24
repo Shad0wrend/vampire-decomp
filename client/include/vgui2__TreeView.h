@@ -29,7 +29,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc115(int, char);
 	virtual void vfunc116();
 	virtual int vfunc117();
-	virtual void vfunc118();
+	virtual int vfunc118(int);
 	virtual int vfunc119();
 	virtual void vfunc120();
 	virtual void vfunc121();
