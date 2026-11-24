@@ -11,6 +11,8 @@ struct ClientShadow_t
 	int m_unk0c;
 };
 
+class Vector;
+
 class CClientShadowMgr
 {
 public:
@@ -36,4 +38,5 @@ public:
 	void vfunc4();
 	void vfunc7(int);
 	void *vfunc16(unsigned short);
+	void vfunc14(const void *pDirection);
 };
