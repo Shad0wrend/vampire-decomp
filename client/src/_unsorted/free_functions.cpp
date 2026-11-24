@@ -63044,6 +63044,57 @@ int __stdcall sub_1012abd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ae60 size=0x5e
+#include "CRestore.h"
+#include "CBaseEntityList.h"
+
+// TARGET: CRestore::sub_1012ae60
+struct SaveEntX
+{
+	int m_key;
+	char m_pad04[0xc];
+	unsigned int m_h;
+	char m_pad14[0x1c];
+};
+
+struct SaveData2X
+{
+	char m_pad0[0x1318];
+	int m_Count;
+	SaveEntX *m_pArray;
+};
+
+extern CBaseEntityList *g_102b8e98;
+
+CBaseEntity *CRestore::sub_1012ae60(int index)
+{
+	SaveData2X *p = (SaveData2X *)m_pData2;
+	if (!p)
+		return 0;
+	if (index >= 0)
+	{
+		int count = p->m_Count;
+		for (int i = 0; i < count; i++)
+		{
+			SaveEntX *ent = &p->m_pArray[i];
+			if (ent->m_key == index)
+			{
+				unsigned int h = ent->m_h;
+				if (h == 0xffffffff)
+					return 0;
+				CBaseEntityList *list = g_102b8e98;
+				int slot = h & 0x1fff;
+				CBaseEntityListEntry *e = &list->m_EntPtrArray[slot];
+				if (e->m_SerialNumber != (int)(h >> 13))
+					return 0;
+				return (CBaseEntity *)e->m_pEntity;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aec0 size=0x34
 #include "CRestore.h"
 struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };
