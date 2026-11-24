@@ -35501,6 +35501,26 @@ int CUnknown100a5b30::sub_100a5b30(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a63d0 size=0x49
+#include "CUnknown101e0f00.h"
+extern CUnknown101e0f00 g_105e80d0;
+struct PlrView14d8 {
+    char pad[0x14d8]; int m_iType; int m_u14dc; int m_iRef;
+    int sub_100a63d0();
+};
+int PlrView14d8::sub_100a63d0()
+{
+    switch (m_iType) {
+    case 0:
+    case 5:
+    case 6:
+    case 12:
+        return g_105e80d0.sub_10149d40(m_iType, m_iRef);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6740 size=0x13
 namespace lifted {
 extern char g_105f8b98;
