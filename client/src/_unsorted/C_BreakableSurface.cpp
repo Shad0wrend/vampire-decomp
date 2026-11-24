@@ -43,3 +43,13 @@ bool C_BreakableSurface::vfunc79()
     return lifted::sub_1009fd30();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b7b20 size=0x12
+#include "C_BreakableSurface.h"
+bool C_BreakableSurface::IsTransparent()
+{
+	if (m_bUnk438)
+		return true;
+	return C_BaseEntity::IsTransparent();
+}
+// END FUNCTION
