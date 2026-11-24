@@ -24,3 +24,12 @@ void sub_10119190()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101191d0 size=0x3
+#include "CPhysicsSystem.h"
+
+// TARGET: CPhysicsSystem::vfunc7
+void CPhysicsSystem::vfunc7(int)
+{
+}
+// END FUNCTION
