@@ -40037,6 +40037,27 @@ template <> int ClientClassInit<DT_BaseFlex::ignored>(DT_BaseFlex::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4210 size=0x53
+#include "Tier1.h"
+
+struct AnimHolder
+{
+    int sub_1008f900(int index);
+};
+
+void sub_100c4270(const char *src, char *dst);
+
+void __fastcall sub_100c4210(AnimHolder *p, int, const char *name, char *out, int outSize)
+{
+    char buf[0x80];
+    char *model = (char *)p->sub_1008f900(-1);
+    if (model) {
+        sub_100c4270(model + 0xc, buf);
+        g_101e3190(out, outSize, "expressions/%s_%s.vfe", buf, name);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4270 size=0x7f
 extern "C" unsigned strlen(const char *);
 extern void (*g_101e3188)(char *dest, const char *src, int count);
