@@ -4200,6 +4200,7 @@
 0x100d4480 func   ?vfunc19@ClientModeShared@@UAE_NXZ ClientModeShared::vfunc19
 0x100d4490 func   ?vfunc24@ClientModeShared@@UAEXH@Z ClientModeShared::vfunc24
 0x100d44d0 func   ?vfunc25@ClientModeShared@@UAEXXZ ClientModeShared::vfunc25
+0x100d4510 func   ?vfunc33@ClientModeShared@@UAEHH@Z ClientModeShared::vfunc33
 0x100d4550 func   ?vfunc34@ClientModeShared@@UAEHXZ ClientModeShared::vfunc34
 0x100d5010 func   ?sub_100d5010@MV@@QAEXG@Z MV::sub_100d5010
 0x100d5130 func   ?sub_100d5130@@YIXPAD@Z sub_100d5130

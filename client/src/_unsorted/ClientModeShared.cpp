@@ -210,6 +210,23 @@ void ClientModeShared::vfunc25()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4510 size=0x38
+#include "ClientModeShared.h"
+struct IObjA { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+  virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+  virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(int, int); virtual int v24(int); };
+struct IGet { virtual int get(); };
+IObjA *sub_101ac8f0();
+extern int g_102b9318;
+// TARGET: ClientModeShared::vfunc33
+int ClientModeShared::vfunc33(int a)
+{
+  IObjA *o = sub_101ac8f0();
+  o->v23(g_102b9318, ((IGet *)a)->get());
+  return sub_101ac8f0()->v24(g_102b9318);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4550 size=0xf
 #include "ClientModeShared.h"
 namespace lifted {
