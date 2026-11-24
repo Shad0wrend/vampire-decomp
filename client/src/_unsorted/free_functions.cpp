@@ -42218,6 +42218,24 @@ char __stdcall sub_100e6ea0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6f20 size=0x2c
+#include "CGameMovement.h"
+#define V(n) virtual void h##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+struct XMove153 { V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9) V10(10) V10(11) V10(12) V10(13) V10(14)
+	V(150) V(151) V(152) virtual char h153(); };
+// TARGET: CGameMovement::sub_100e6f20
+Vector *CGameMovement::sub_100e6f20()
+{
+	XMove153 *m = (XMove153 *)m_pMove;
+	if (m->h153())
+		return &m_vecObsHullMax;
+	if (((char *)m_pMove)[0x16f9])
+		return &m_vecDuckHullMax;
+	return &m_vecHullMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7850 size=0xf
 struct SP { char pad[0x1990]; int m1990; };
 struct CView { int m0; int m4; SP *m8; char sub_100e7850(); };
