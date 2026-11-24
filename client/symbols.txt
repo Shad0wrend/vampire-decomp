@@ -4325,6 +4325,7 @@
 0x10101db0 func   ?sub_10101db0@CUnknown10101db0@@QAEHXZ CUnknown10101db0::sub_10101db0
 0x10102fd0 func   ?sub_10102fd0@@YGXH@Z sub_10102fd0
 0x10102fe0 func   ?sub_10102fe0@CUnknown10102fe0@@QAEHHH@Z CUnknown10102fe0::sub_10102fe0
+0x101030c0 func   ?sub_101030c0@CInput_101030c0@@QAEXHPAUFrameData_101030c0@@@Z CInput_101030c0::sub_101030c0
 0x10103310 func   ?vfunc8@CInput@@UAEXH@Z CInput::vfunc8
 0x10104360 func   ?sub_10104360@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_10104360
 0x10104380 func   ?sub_10104380@CUnknown10104380@@QAEPAXH@Z CUnknown10104380::sub_10104380

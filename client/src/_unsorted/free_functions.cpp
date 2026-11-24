@@ -42484,6 +42484,154 @@ int CUnknown10102fe0::sub_10102fe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101030c0 size=0x24b
+#include "Vector.h"
+#include "QAngle.h"
+
+extern "C" double __cdecl atan2( double y, double x );
+
+static inline float anglemod( float a )
+{
+	a = (360.0f / 65536.0f) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+	return a;
+}
+
+class IEntBase_101030c0
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	virtual const Vector &GetAbsOrigin() const;
+};
+
+class CPlayer_101030c0 : public IEntBase_101030c0
+{
+public:
+	char m_pad4[0x16c8 - 0x4];
+	int m_nTargetEnt;
+};
+
+class CEnt_101030c0
+{
+public:
+	char m_pad0[0x3f0];
+	IEntBase_101030c0 *m_pTarget;
+};
+
+class CEntityList_101030c0
+{
+public:
+	CEnt_101030c0 *sub_100d0cf0( int entnum );
+};
+
+class IEngineClient_101030c0
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48();
+	virtual void GetViewAngles( QAngle &va );
+	virtual void SetViewAngles( QAngle &va );
+};
+
+struct FrameData_101030c0
+{
+	char m_pad0[0x10];
+	float m_flFrameTime;
+};
+
+extern CPlayer_101030c0 *g_104a0d50;
+extern CEntityList_101030c0 *g_102b8e9c;
+extern IEngineClient_101030c0 *g_104a57d4;
+
+class CInput_101030c0
+{
+public:
+	char m_pad0[0xe0];
+	float m_flYawDelta;
+	bool m_bTurning;
+	char m_pad_e5[3];
+	int m_nLastTarget;
+
+	void sub_101030c0( int a1, FrameData_101030c0 *pFrame );
+};
+
+void CInput_101030c0::sub_101030c0( int a1, FrameData_101030c0 *pFrame )
+{
+	CPlayer_101030c0 *pPlayer = g_104a0d50;
+	CEnt_101030c0 *pEnt = 0;
+	IEntBase_101030c0 *pTarget = 0;
+	if ( pPlayer && pPlayer->m_nTargetEnt )
+		pEnt = g_102b8e9c->sub_100d0cf0( pPlayer->m_nTargetEnt );
+	if ( pEnt )
+		pTarget = pEnt->m_pTarget;
+	if ( !pTarget )
+	{
+		m_flYawDelta = 0.0f;
+		m_bTurning = false;
+		m_nLastTarget = 0;
+		return;
+	}
+
+	Vector vecPlayer = pPlayer->GetAbsOrigin();
+	Vector vecTarget = pTarget->GetAbsOrigin();
+	Vector vecDelta;
+	vecDelta.x = vecTarget.x - vecPlayer.x;
+	vecDelta.y = vecTarget.y - vecPlayer.y;
+	if ( vecDelta.x == 0.0f && vecDelta.y == 0.0f )
+		return;
+
+	if ( pPlayer->m_nTargetEnt != m_nLastTarget )
+	{
+		m_nLastTarget = pPlayer->m_nTargetEnt;
+		QAngle viewangles;
+		g_104a57d4->GetViewAngles( viewangles );
+		float flTargetYaw = (float)atan2( vecDelta.y, vecDelta.x ) * 57.29578f;
+		m_flYawDelta = anglemod( flTargetYaw - viewangles.y + 180.0f ) - 180.0f;
+		m_bTurning = true;
+	}
+
+	if ( m_bTurning && m_flYawDelta != 0.0f )
+	{
+		float flOld = m_flYawDelta;
+		if ( m_flYawDelta > 0.0f )
+		{
+			m_flYawDelta -= pFrame->m_flFrameTime * 360.0f;
+			if ( m_flYawDelta <= 0.0f )
+			{
+				m_flYawDelta = 0.0f;
+				m_bTurning = false;
+			}
+		}
+		else if ( m_flYawDelta < 0.0f )
+		{
+			m_flYawDelta += pFrame->m_flFrameTime * 360.0f;
+			if ( m_flYawDelta >= 0.0f )
+			{
+				m_flYawDelta = 0.0f;
+				m_bTurning = false;
+			}
+		}
+
+		QAngle viewangles;
+		g_104a57d4->GetViewAngles( viewangles );
+		viewangles.y = anglemod( viewangles.y + flOld - m_flYawDelta );
+		g_104a57d4->SetViewAngles( viewangles );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
