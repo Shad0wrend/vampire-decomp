@@ -67806,6 +67806,18 @@ char CBitSet_10146660::sub_10146660(int bit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146680 size=0x12
+struct CBitFlagsView
+{
+	unsigned int m_bits;
+	void sub_10146680( int bit );
+};
+void CBitFlagsView::sub_10146680( int bit )
+{
+	m_bits |= 1 << bit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466a0 size=0x18
 struct CUnknown101da9e0 { void * sub_101466a0(int); };
 void * CUnknown101da9e0::sub_101466a0(int a0)
