@@ -80687,6 +80687,16 @@ void __cdecl sub_101a2ee0(void *m, const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2f00 size=0x16
+unsigned char sub_101a2f00(const unsigned char *p)
+{
+	unsigned char sum = 0;
+	for (int i = 0; i < 16; i++)
+		sum += p[i];
+	return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2f20 size=0xc
 namespace lifted {
 int sub_101a3170();
