@@ -10,6 +10,16 @@ bool C_RecipientFilter::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde70 size=0x4
+#include "C_RecipientFilter.h"
+
+// TARGET: C_RecipientFilter::vfunc2
+int C_RecipientFilter::vfunc2()
+{
+	return m_Recipients.Count();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be080 size=0x4
 #include "C_RecipientFilter.h"
 
