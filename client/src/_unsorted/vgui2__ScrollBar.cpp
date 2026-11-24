@@ -80,6 +80,18 @@ int vgui2::ScrollBar::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf0b0 size=0x47
+#include "vgui2__ScrollBar.h"
+struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
+void *sub_101b6840(int);
+// TARGET: ?vfunc120@ScrollBar@vgui2@@UAEHH@Z
+int vgui2::ScrollBar::vfunc120(int a)
+{
+	KV101b56c0 *kv = (KV101b56c0 *)sub_101b6840(0x1c);
+	return vfunc43(kv ? kv->sub_101b56c0("ScrollBarSliderMoved", "position", a) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf100 size=0x8
 #include "vgui2__ScrollBar.h"
 namespace lifted {
