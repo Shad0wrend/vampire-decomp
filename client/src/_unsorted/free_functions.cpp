@@ -59206,6 +59206,41 @@ template <> int ClientClassInit<DT_Ragdoll_Attached::ignored>(DT_Ragdoll_Attache
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126770 size=0x49
+#include "C_BaseEntity.h"
+
+struct CGlobals_102b8494
+{
+	char m_pad0[0xc];
+	float curtime;	// 0x0c
+};
+
+extern CGlobals_102b8494 *g_102b8494;
+
+class CUnknown10126770
+{
+public:
+	void sub_10094b20(int updateType);
+	void sub_10126770(int updateType);
+};
+
+// TARGET: CUnknown10126770::sub_10126770
+void CUnknown10126770::sub_10126770(int updateType)
+{
+	sub_10094b20(updateType);
+
+	C_BaseEntity *pEntity = (C_BaseEntity *)((char *)this - 8);
+	bool following = *((bool *)((char *)this + 0xb18));
+	if ( following != pEntity->sub_100a1140() )
+	{
+		if ( following )
+			*((float *)((char *)this + 0xb14)) = g_102b8494->curtime;
+
+		*((bool *)((char *)this + 0xb18)) = pEntity->sub_100a1140();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126a30 size=0x39
 void sub_10120660(int a, int b);
 
