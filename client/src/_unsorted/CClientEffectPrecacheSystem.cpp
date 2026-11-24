@@ -23,6 +23,13 @@ void CClientEffectPrecacheSystem::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d08b0 size=0x3
+// TARGET: sub_100d08b0
+void __stdcall sub_100d08b0(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d08c0 size=0x1
 #include "CClientEffectPrecacheSystem.h"
 void CClientEffectPrecacheSystem::vfunc6()
