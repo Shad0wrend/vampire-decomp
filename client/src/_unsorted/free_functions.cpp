@@ -50115,6 +50115,27 @@ float CHudMessage::sub_1010e600(float fadein, float fadeout, float hold, float l
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010eff0 size=0x3a
+int sub_100cd0b0(int);
+struct CView1010eff0 {
+    int m_unk0[4];
+    int m_a[16];
+    float m_b[16];
+    void sub_1010eff0(int a, float b);
+};
+// TARGET: CView1010eff0::sub_1010eff0
+void CView1010eff0::sub_1010eff0(int a, float b)
+{
+    for (int i = 0; i < 16; i++) {
+        if (!m_a[i]) {
+            m_a[i] = sub_100cd0b0(a);
+            m_b[i] = b;
+            return;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f070 size=0x30
 namespace lifted {
 extern char g_102bec80;
