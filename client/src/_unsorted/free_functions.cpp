@@ -91514,6 +91514,46 @@ void CUnknown10193340::sub_10193340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193470 size=0x58
+#include "CViewRenderBeams.h"
+
+struct BeamNode
+{
+	char m_pad[0x20];
+	unsigned short m_index;
+	void *m_next;
+};
+
+struct ILeafSys
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual unsigned short v4(void *, int);
+};
+
+extern ILeafSys *g_102b9060;
+
+Beam_t *CViewRenderBeams::sub_10193470(bool bInit)
+{
+	BeamNode *pBeam = (BeamNode *)m_unk1bc08;
+	if ( pBeam == 0 )
+		return 0;
+
+	m_unk1bc08 = (int)pBeam->m_next;
+	pBeam->m_next = (void *)m_unk1bc04;
+	m_unk1bc04 = (int)pBeam;
+
+	if ( bInit )
+		pBeam->m_index = g_102b9060->v4((char *)pBeam + 4, 2);
+	else
+		pBeam->m_index = 0xffff;
+
+	return (Beam_t *)pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101935e0 size=0x1a9
 #include "Vector.h"
 
