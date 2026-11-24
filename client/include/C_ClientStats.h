@@ -11,6 +11,7 @@ public:
 	int vfunc16(int);
 	virtual int vfunc17(int);
 	virtual int vfunc14(int);
+	virtual double vfunc18(int);
 	int m_Stats[0xc1];
 	int m_unk308;
 };
