@@ -39354,6 +39354,22 @@ void UtlMem::sub_100d8690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8740 size=0x2b
+struct Elem_100d8740 { int m_unk0; int m_unk4; int m_unk8; unsigned short m_id; unsigned short m_unkE; };
+struct Pool_100d8740 {
+	Elem_100d8740 *m_pElems;
+	int m_unk4[11];
+	unsigned short m_nCount;
+	int sub_100d8740(unsigned short h);
+};
+int Pool_100d8740::sub_100d8740(unsigned short h)
+{
+	if (h < m_nCount && m_pElems[h].m_id != h)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8770 size=0x16
 struct CUnknown100d8770 { int sub_100d8770(); };
 int CUnknown100d8770::sub_100d8770()

@@ -4162,6 +4162,7 @@
 0x100d8530 func   ?sub_100d8530@@YAHXZ sub_100d8530
 0x100d8620 func   ?sub_100d8620@ShadowArray_100d8620@@QAEPAUShadow240@@I@Z ShadowArray_100d8620::sub_100d8620
 0x100d8690 func   ?sub_100d8690@UtlMem@@QAEXXZ UtlMem::sub_100d8690
+0x100d8740 func   ?sub_100d8740@Pool_100d8740@@QAEHG@Z Pool_100d8740::sub_100d8740
 0x100d8770 func   ?sub_100d8770@CUnknown100d8770@@QAEHXZ CUnknown100d8770::sub_100d8770
 0x100d8790 func   ?sub_100d8790@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_100d8790
 0x100d87c0 func   ?sub_100d87c0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d87c0
