@@ -96017,6 +96017,45 @@ void CUnknown101c2e30::sub_101c2e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3bb0 size=0x52
+#include "vgui2__BuildModeDialog.h"
+#include "vgui2__Panel.h"
+
+struct Elem50 {
+	vgui2::Panel *p0;
+	vgui2::Panel *p1;
+	char pad[0x50 - 8];
+};
+
+struct Q { void sub_101cac70(); };
+
+struct Cont {
+	Elem50 *m_pMemory;
+	int m_nAllocation;
+	int m_nGrowSize;
+	int m_nCount;
+	int m_unk10;
+	int m_unk14;
+	Q *m_p18;
+};
+
+// TARGET: vgui2::BuildModeDialog::sub_101c3bb0
+void vgui2::BuildModeDialog::sub_101c3bb0()
+{
+	Cont *c = *(Cont **)((char *)this + 0xe8);
+	for (int i = 0; i < c->m_nCount; i++) {
+		Elem50 *e = (Elem50 *)((char *)c->m_pMemory + i * 0x50);
+		if (e->p0)
+			delete e->p0;
+		if (e->p1)
+			delete e->p1;
+	}
+	Q *q = c->m_p18;
+	c->m_nCount = 0;
+	q->sub_101cac70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c45b0 size=0x43
 #include "vgui2__TextEntry.h"
 extern "C" int __cdecl atoi(const char *);
