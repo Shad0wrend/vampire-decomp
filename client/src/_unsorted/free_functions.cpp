@@ -92603,6 +92603,26 @@ void XRes::sub_101a8d60(XInfo *info)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9810 size=0x4f
+#include "vgui2__Panel.h"
+#include <string.h>
+
+void vgui2::Panel::sub_101a9810(const char *pszName)
+{
+	char *&pName = *(char **)((char *)this + 0x2c);
+	if (pName)
+	{
+		::operator delete(pName);
+		pName = 0;
+	}
+	if (pszName)
+	{
+		pName = (char *)::operator new(strlen(pszName) + 1);
+		strcpy(pName, pszName);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9950 size=0x29
 namespace lifted {
 struct C101a9890 { int sub_101a9890(int, int); };
