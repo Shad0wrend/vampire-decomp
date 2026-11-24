@@ -42106,6 +42106,57 @@ void CClientThinkList_100d02b0::sub_100d02b0( CBaseHandle hEnt )
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d03b0 size=0x55
+#include "CBaseHandle.h"
+#include "utlvector.h"
+
+extern int sub_1009e230();
+
+class CUnknown1009f100
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int v3();
+	void sub_1009f110(bool bMark);
+};
+
+class CEntityList_100d02b0
+{
+public:
+	CUnknown1009f100 *sub_100d0dc0(CBaseHandle hEnt);
+};
+
+class CClientThinkList_100d02b0
+{
+public:
+	char m_pad0[0x40];
+	CUtlVector<CBaseHandle> m_DeleteList;
+
+	void sub_100d03b0(CBaseHandle hEnt);
+};
+
+// TARGET: CClientThinkList_100d02b0::sub_100d03b0
+void CClientThinkList_100d02b0::sub_100d03b0(CBaseHandle hEnt)
+{
+	if ( !hEnt.IsValid() )
+		return;
+
+	int nCount = m_DeleteList.Count();
+	for ( int i = 0; i < nCount; i++ )
+	{
+		if ( m_DeleteList[i] == hEnt )
+		{
+			m_DeleteList[i] = CBaseHandle();
+			CUnknown1009f100 *pEnt = ((CEntityList_100d02b0 *)sub_1009e230())->sub_100d0dc0(hEnt);
+			if ( pEnt )
+				pEnt->sub_1009f110(false);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0480 size=0x15
 struct SItem_100d0480 { int a; unsigned int key; };
 bool sub_100d0480(const SItem_100d0480 *a, const SItem_100d0480 *b)
