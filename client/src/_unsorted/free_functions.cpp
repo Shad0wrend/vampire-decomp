@@ -17054,6 +17054,19 @@ int sub_1004e330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e3d0 size=0x35
+#include <string.h>
+extern "C" unsigned char *__cdecl _mbsdup(const unsigned char *);
+// TARGET: sub_1004e3d0
+char *sub_1004e3d0(const char *s)
+{
+  char *p = (char *)_mbsdup((const unsigned char *)s);
+  for (int i = strlen(p) - 1; i >= 0 && (p[i] == '\r' || p[i] == '\n'); i--)
+    p[i] = 0;
+  return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e800 size=0x2c
 extern "C" int isspace(int);
 void sub_1004e800(const char **pp)
