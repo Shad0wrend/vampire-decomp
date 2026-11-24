@@ -1826,6 +1826,7 @@
 0x1002d690 func   ?sub_1002d690@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_1002d690
 0x1002d700 func   ?sub_1002d700@@YAHXZ sub_1002d700
 0x1002d710 func   ?sub_1002d710@CUnknown1002d710@@QAEHH@Z CUnknown1002d710::sub_1002d710
+0x1002d720 func   ?vfunc0@ClientEffectRegister@PrecacheEffectImpacts@@UAEX_N@Z PrecacheEffectImpacts::ClientEffectRegister::vfunc0
 0x1002d7b0 func   ?sub_1002d7b0@@YAXAAVVector@@0@Z sub_1002d7b0
 0x1002e6e0 func   ?sub_1002e6e0@CUnknown1002e6e0@@QAEPAXH@Z CUnknown1002e6e0::sub_1002e6e0
 0x1002e710 func   ??_GCFleckParticles@@UAEPAXI@Z ??_GCFleckParticles@@UAEPAXI@Z
