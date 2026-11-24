@@ -43363,6 +43363,27 @@ void sub_100f24a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f24e0 size=0x2e
+struct Line_100f24e0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual bool v22(); };
+struct Chat_100f24e0 {
+	char m_unk[0x68];
+	Line_100f24e0 *m_pLines[6];
+	Line_100f24e0 *sub_100f24e0();
+};
+Line_100f24e0 *Chat_100f24e0::sub_100f24e0()
+{
+	for (int i = 0; i < 6; i++)
+	{
+		Line_100f24e0 *p = m_pLines[i];
+		if (p && !p->v22())
+			return p;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f25a0 size=0x1
 void sub_100f25a0()
 {
