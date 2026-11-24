@@ -3835,6 +3835,7 @@
 0x100b3110 func   ??_GC_FuncParticle@@UAEPAXI@Z ??_GC_FuncParticle@@UAEPAXI@Z
 0x100b3190 func   ?ClientClassInit@@YAHPAUignored@DT_FuncParticle@@@Z ClientClassInit
 0x100b3560 func   ?sub_100b3560@@YAPAVC_EnvParticle@@XZ sub_100b3560
+0x100b3640 func   ?sub_100b3640@@YA_NVVector@@H@Z sub_100b3640
 0x100b4560 func   ?sub_100b4560@@YAXXZ sub_100b4560
 0x100b4750 func   ?sub_100b4750@@YAXXZ sub_100b4750
 0x100b4780 func   ?sub_100b4780@@YAXXZ sub_100b4780

@@ -37776,6 +37776,26 @@ C_EnvParticle *sub_100b3560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3640 size=0x38
+#include "Vector.h"
+#include "C_EnvParticle.h"
+#include "IClientNetworkable.h"
+
+// TARGET: sub_100b3640
+C_EnvParticle *sub_100b3560();
+
+bool sub_100b3640(Vector vec, int type)
+{
+	C_EnvParticle *p = sub_100b3560();
+	if (!p)
+		return false;
+	*(int *)((char *)p + 0x410) = type;
+	p->vfunc122((int)&vec);
+	((IClientNetworkable *)((char *)p + 8))->PostDataUpdate(0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4560 size=0x18
 #include <string.h>
 extern char g_104a1d10[0x200];
