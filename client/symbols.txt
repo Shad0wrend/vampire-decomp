@@ -7375,6 +7375,7 @@
 0x101b23a0 func   ?vfunc134@Label@vgui2@@UAEXXZ vgui2::Label::vfunc134
 0x101b23c0 func   ?vfunc87@Label@vgui2@@UAEXH@Z vgui2::Label::vfunc87
 0x101b23e0 func   ?vfunc109@Label@vgui2@@UAEHXZ vgui2::Label::vfunc109
+0x101b23f0 func   ?vfunc108@Label@vgui2@@UAEXPBD@Z vgui2::Label::vfunc108
 0x101b2430 func   ?vfunc107@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc107
 0x101b2950 func   ?vfunc111@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc111
 0x101b2960 func   ?vfunc129@Label@vgui2@@UAEXXZ vgui2::Label::vfunc129

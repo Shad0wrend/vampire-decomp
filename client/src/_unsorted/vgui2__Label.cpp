@@ -73,6 +73,26 @@ int vgui2::Label::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b23f0 size=0x35
+#include "vgui2__Label.h"
+struct TextView {
+ virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+ virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+ virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+ virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+ virtual void s24(); virtual void s25(); virtual void s26();
+ virtual void Slot27(const char *text);
+};
+// TARGET: vgui2::Label::vfunc108
+void vgui2::Label::vfunc108(const char *text)
+{
+    if (!text)
+        text = "";
+    ((TextView *)m_unk5c[0])->Slot27(text);
+    vfunc120(vfunc130(text));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2430 size=0x1b
 #include "vgui2__Label.h"
 namespace lifted {
