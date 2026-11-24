@@ -220,6 +220,19 @@ void CViewRender::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101911a0 size=0x5a
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+#include "CUnknown101d7520.h"
+
+// TARGET: CViewRender::vfunc3
+void CViewRender::vfunc3()
+{
+	ScopeTrace trace("CViewRender::OnRenderStart", g_102de300);
+	sub_10191710();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191700 size=0x8
 #include "CViewRender.h"
 void CViewRender::vfunc16()
