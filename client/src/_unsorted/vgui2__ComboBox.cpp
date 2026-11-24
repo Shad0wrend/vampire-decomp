@@ -22,6 +22,40 @@ int vgui2::ComboBox::vfunc175()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7960 size=0x7e
+#include "vgui2__ComboBox.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##a) V4(n##b) V4(n##c) V4(n##d)
+struct KVView {
+    void *sub_101b5690(const char *name, const char *key, int value);
+};
+struct ItemListView {
+    V16(a) V16(b) V16(c) V16(d) V16(e)
+    V4(g) V4(h) V4(i) V4(j) V4(k) V4(l) V4(m)
+    virtual void x108(); virtual void x109();
+    virtual int AddItem(int text, void *kv, void *panel);
+    virtual void x111(); virtual void x112(); virtual void x113(); virtual void x114(); virtual void x115();
+    virtual void x116(); virtual void x117(); virtual void x118(); virtual void x119(); virtual void x120();
+    virtual void x121(); virtual void x122();
+    virtual int InsertItem(int index, int text, void *kv);
+};
+int sub_101b6840(int size);
+
+// TARGET: vgui2::ComboBox::vfunc176
+int vgui2::ComboBox::vfunc176(int text, int index)
+{
+    if (index == -1) {
+        KVView *p = (KVView *)sub_101b6840(0x1c);
+        void *kv = p ? p->sub_101b5690("SetText", "text", text) : 0;
+        return (*(ItemListView **)((char *)this + 0x12c))->AddItem(text, kv, this);
+    }
+    KVView *p = (KVView *)sub_101b6840(0x1c);
+    void *kv = p ? p->sub_101b5690("SetText", "text", text) : 0;
+    return (*(ItemListView **)((char *)this + 0x12c))->InsertItem(index, text, kv);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c79e0 size=0xe
 #include "vgui2__ComboBox.h"
 namespace lifted {
