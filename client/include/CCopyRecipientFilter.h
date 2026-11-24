@@ -6,8 +6,9 @@
 class CCopyRecipientFilter : public IRecipientFilter
 {
 public:
-	int m_unk04; int m_unk08; int m_unk0c; int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; bool m_unk24;
+	int m_unk04; int m_unk08; int m_unk0c; int m_unk10; int m_unk14; int m_unk18; bool m_unk1c; int m_unk20; bool m_unk24;
 	virtual int vfunc2();
+	virtual bool vfunc4();
 	virtual int vfunc5();
 	virtual bool vfunc6();
 };
