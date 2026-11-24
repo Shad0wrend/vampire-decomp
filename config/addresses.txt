@@ -34670,6 +34670,7 @@
 1043d28f ?_inconsistency@@YAXXZ
 1043dcd1 ___crtCompareStringA
 1043e327 __mbsdup
+1043e327 __strdup
 1043e780 ?_strcmpi@@YAHPBD0@Z
 1043e780 ?sub_1043e780@@YAHPBD0@Z
 1043e780 __strcmpi

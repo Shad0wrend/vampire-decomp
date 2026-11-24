@@ -2,8 +2,11 @@
 
 Every address comes from config/ (written by `pcdecomp standalone`), never from the original's words:
 - a block's root section at its block address (config/blocks.txt): all of the section's bytes, the object's own
-  alignment fill included; an initializer block's root is its object's first `.CRT$XCU` entry, the other entries go
-  to their `<obj>/<name>` addresses;
+  alignment fill past the block's recorded size the weakest owner (written by place_libraries, after the libraries
+  and thunks, byte by byte where no other contribution wrote: _write_fill); a block config/layout/unpadded.txt lists
+  (its original contribution ended at its recorded size: a vcall thunk's twin) has no fill: it is written up to its
+  recorded size, and the bytes after it stay the code fill (CODE_FILL); an initializer block's root is its object's
+  first `.CRT$XCU` entry, the other entries go to their `<obj>/<name>` addresses;
 - every function of the object that the placed code reaches and that has an address no block has (a static: an
   initializer step, a local static's destroy, a same-unit copy; an inline function's static destroy), and the code a
   vtable slot runs that no block covers (a compiler thunk, a deleting destructor), as tools.verify checks them (a
@@ -18,6 +21,7 @@ then place_libraries():
   uninitialized one is virtual space: no bytes, only the address the relocations into it take; so is a COMMON
   symbol, whose address is config/addresses.txt's, as derive recorded it);
 - each import thunk of config/layout/thunks.txt: `jmp [slot]`, the slot its import's (imports.txt);
+- the blocks' alignment fill, where no one wrote;
 then generate() (tools/peparts.py builds the bytes):
 - each incremental-link stub of config/layout/stubs.txt;
 - the import directory at imports.txt's addresses (an import library's section of equal bytes keeps them: the DLL
@@ -48,8 +52,9 @@ address.
 Every problem is collected, and LayoutError carries them all at the end of each stage: a target without an address,
 a library member's section a relocation names that libraries.txt does not place, a `.CRT$XCU` section without an
 address, a block longer than its room (up to the next contribution, a library section or thunk of config/layout
-included: changed source belongs in the normal build), two contributions that write different bytes (or relocate
-other words) at one address.
+included: changed source belongs in the normal build; alignment fill past its recorded size does not count), two
+contributions that write different bytes (or relocate other words) at one address, a stale entry of
+config/layout/unpadded.txt (no block of blocks.txt, or a block with no alignment fill past its recorded size).
 
     python -m tools.layout --orig ORIG [--vc6 DIR] [--lib DIR]... [--build build] [--config DIR]
 
@@ -72,7 +77,7 @@ from pathlib import Path
 
 from .cfg import (LAYOUT, Block, Export, Imports, LibrarySection, SectionRecord, Stub, Thunk, read_addresses,
                   read_aliases, read_blocks, read_build, read_exports, read_fixups, read_imports, read_layout,
-                  read_library_sections, read_patches, read_sections, read_stubs, read_thunks)
+                  read_library_sections, read_patches, read_sections, read_stubs, read_thunks, read_unpadded)
 from .coff import SYM_CLASS_EXTERNAL, SYM_CLASS_STATIC, SYM_CLASS_WEAK_EXTERNAL, Coff, CoffError, Section, Symbol
 from . import peparts
 from .libraries import IMPORT_RECORD, import_symbols, read_archive, symbol_addresses
@@ -82,6 +87,7 @@ from .verify import (CODE, DIR32, DIR32NB, MASK, NOT_DATA, NOT_LOADED, REL32, UN
 
 ABSOLUTE = -1  # IMAGE_SYM_ABSOLUTE: the symbol's value is its address
 CODE_FILL = 0xCC  # unset bytes of a code section (the incremental link's padding); zeros elsewhere
+ALIGNMENT_FILL = b"\x90\xcc"  # the bytes an object pads a function's section with to its alignment
 STUBS_OWNER = "stubs"  # the owner of every incremental-link stub
 EXPORTS_OWNER = "exports"  # the owner of the export directory
 DEBUG_OWNER = "debug"  # the owner of the debug directory
@@ -184,8 +190,8 @@ class Image:
         if not n:
             return True
         off = va - self._starts[k]
-        buf, marks, owners = self._bytes[k], self._flags[k], self._owner[k]
-        taken = owners[off:off + n]
+        buf, marks = self._bytes[k], self._flags[k]
+        taken = self._owner[k][off:off + n]
         free = taken.count(0)
         if free == n:
             spans = [(0, n)]
@@ -197,13 +203,27 @@ class Image:
                     what = "bytes" if buf[off + i] != data[i] else "relocated words"
                     self.conflicts.append(Conflict(va + i, owner, self._names[taken[i]], what))
                     return False
-            spans, start = [], None  # a partial overlap that agrees: the bytes no one wrote yet are this owner's
-            for i in range(n + 1):
-                if i < n and not taken[i]:
-                    start = i if start is None else start
-                elif start is not None:
-                    spans.append((start, i))
-                    start = None
+            spans = _free(taken)  # a partial overlap that agrees: the bytes no one wrote yet are this owner's
+        self._take(k, va, data, flags, owner, spans)
+        self.relocated.update(va + o for o in relocated)  # a word in a span already taken is there already
+        return True
+
+    def fill(self, va: int, data: bytes, owner: str) -> None:
+        """Write `data` at `va` for `owner` byte by byte, only where no owner wrote yet: the weakest owner, never a
+        conflict, with no relocated word; what runs past its section's end (or starts outside the sections) is
+        dropped."""
+        end = self.section_end(va)
+        if end is None or not data:
+            return
+        data = data[:end - va]
+        k = self._section(va, len(data))
+        off = va - self._starts[k]
+        self._take(k, va, data, bytes(len(data)), owner, _free(self._owner[k][off:off + len(data)]))
+
+    def _take(self, k: int, va: int, data: bytes, flags: bytes, owner: str, spans: list[tuple[int, int]]) -> None:
+        """Give `owner` the (start, end) `spans` of `data` (offsets) written at `va` in section `k`."""
+        off = va - self._starts[k]
+        buf, marks, owners = self._bytes[k], self._flags[k], self._owner[k]
         oid = self._ids.get(owner)
         if oid is None:
             oid = self._ids[owner] = len(self._names)
@@ -213,8 +233,18 @@ class Image:
             marks[off + a:off + b] = flags[a:b]
             owners[off + a:off + b] = array("I", [oid]) * (b - a)
             self._runs.append((va + a, va + b, oid))
-        self.relocated.update(va + o for o in relocated)  # a word in a span already taken is there already
-        return True
+
+
+def _free(taken: Sequence[int]) -> list[tuple[int, int]]:
+    """(start, end) of each run of the bytes no owner wrote (owner id 0) in `taken`."""
+    spans, start = [], None
+    for i in range(len(taken) + 1):
+        if i < len(taken) and not taken[i]:
+            start = i if start is None else start
+        elif start is not None:
+            spans.append((start, i))
+            start = None
+    return spans
 
 
 class _Obj(_Object):
@@ -255,6 +285,17 @@ class _Obj(_Object):
         return ordered[bisect.bisect_left(offsets, lo):bisect.bisect_left(offsets, hi)]
 
 
+def fill_from(section: Section, root: Symbol, size: int) -> int | None:
+    """The offset in a block's root section (`root` its root symbol) where its alignment fill starts: the block's
+    recorded size (config/blocks.txt) past its root, when every byte of the section from there is 0x90 or 0xCC and no
+    relocated word lies there; else None (no recorded size, nothing past it, or bytes that are not fill). derive
+    (pcdecomp standalone) judges the same fill against the original (config/layout/unpadded.txt)."""
+    keep = root.value + size
+    if size <= 0 or keep >= len(section.data) or section.data[keep:].lstrip(ALIGNMENT_FILL):
+        return None
+    return None if any(r.offset >= keep - 3 for r in section.relocations) else keep
+
+
 def _optional(reader: Callable, path: Path, empty):
     return reader(path) if path.exists() else empty
 
@@ -275,7 +316,7 @@ class Layout:
         c = self.config
         required = [c / "build.toml", c / "addresses.txt", c / "blocks.txt",
                     *(c / LAYOUT / name for name in ("sections.txt", "stubs.txt", "libraries.txt", "thunks.txt",
-                                                     "imports.txt", "exports.txt"))]
+                                                     "imports.txt", "exports.txt", "unpadded.txt"))]
         missing = [p for p in required if not p.exists()]
         if missing:
             raise LayoutError([f"{p} not found: run pcdecomp standalone" for p in missing])
@@ -289,6 +330,8 @@ class Layout:
         self.names = Addresses(self.addresses, self.aliases)
         self.blocks: list[Block] = read_blocks(c / "blocks.txt")
         self.block_addresses = {b.addr for b in self.blocks}
+        # (address, symbol) of each block whose contribution to the original ended at its recorded size
+        self.unpadded = {(u.addr, u.target) for u in read_unpadded(c / LAYOUT / "unpadded.txt")}
         self.patches: dict[str, dict[int, str]] = {}  # vtable -> slot -> replacement
         for p in _optional(read_patches, c / "vtable_patches.txt", []):
             self.patches.setdefault(p.vtable, {})[p.slot] = p.replacement
@@ -316,7 +359,9 @@ class Layout:
         self._said: set[str] = set()
         self._told = (0, 0, 0)  # how many problems, image problems and conflicts a stage has reported
         self._missing: dict[str, list[str]] = {}  # a key with no address -> the objects whose relocations name it
-        self._root_spans: list[tuple[int, int, str, str]] = []  # (start, end, object, owner): each block's root
+        # (start, end, object, owner, fill) of each block's root section; fill: (address, bytes) of its alignment fill
+        # past the block's recorded size, not written yet (_write_fill writes it after the libraries), or None
+        self._root_spans: list[tuple[int, int, str, str, tuple[int, bytes] | None]] = []
         self._overruns: list[tuple[int, int, str]] = []  # (start, end, owner) of what a block runs past its room
         self._first_at: dict[int, str] = {}  # each contribution's start -> its first owner
         self._vtables: set[str] = set()
@@ -726,9 +771,22 @@ class Layout:
         data = self._data(obj)
         for k, (section, sym) in enumerate(plan):
             base, owner = obj.bases[section.number], f"{obj.name}:{sym.name}"
-            if k == 0:  # the block's root section: it must fit its room
-                self._root_spans.append((base, base + len(section.data), obj.name, owner))
-            self._write(obj, section, 0, len(section.data), base, owner)
+            end = len(section.data)
+            if k == 0:  # the block's root section: it must fit its room; its fill waits for the libraries (_write_fill)
+                fill = fill_from(section, sym, block.size)
+                if (block.addr, block.target) in self.unpadded:  # no fill: the link's code fill stays after it
+                    if fill is None:
+                        self._problem(f"config/layout/unpadded.txt: {block.addr:08x} {block.target or '-'}: "
+                                      f"{obj.name}'s root section has no alignment fill past the block's recorded size "
+                                      f"(0x{block.size:x}): run pcdecomp standalone")
+                    else:
+                        end = fill
+                    self._root_spans.append((base, base + end, obj.name, owner, None))
+                else:
+                    self._root_spans.append((base, base + end, obj.name, owner,
+                                             None if fill is None else (base + fill, section.data[fill:])))
+                    end = end if fill is None else fill
+            self._write(obj, section, 0, end, base, owner)
         for section, lo, hi, addr, owner in data:
             self._write(obj, section, lo, hi, addr, owner)
         for sym, addr in vtables:
@@ -772,13 +830,22 @@ class Layout:
     def _rooms(self) -> tuple[list[str], list[tuple[int, int, str]]]:
         """A problem for each block's root section that runs past the next contribution's start (or its section's
         end; a library section or thunk of config/layout counts before it is written), and the (start, end, owner)
-        of what runs past."""
+        of what runs past.
+        The one exception: a root section whose every byte past the block's recorded size (config/blocks.txt) is
+        alignment fill (0x90 or 0xCC), with no relocation among them, was written up to that size only (_place_block),
+        and its fill is the weakest owner (_write_fill, after the libraries and thunks). That is no room problem, even
+        where the recorded size itself runs past the room (vtmb's LIBC functions matched as blocks, at unaligned
+        addresses in LIBC's packed code: one ends in the `ret` the next LIBC section starts with, one lies inside a
+        LIBC section that starts before it): the Image judges those bytes when the other contribution is written there,
+        equal bytes fine (the first owner keeps them), differing ones a conflict naming both owners. A section with no
+        recorded size, or with anything but fill past it, keeps the room rule; so does an unpadded block's
+        (config/layout/unpadded.txt), up to its recorded size: it has no fill."""
         starts = sorted(self._first_at)
         problems, overruns = [], []
-        for start, end, name, owner in self._root_spans:
+        for start, end, name, owner, fill in self._root_spans:
             limit = self.image.section_end(start)
-            if limit is None:
-                continue  # outside the sections: Image reported it
+            if fill is not None or limit is None:
+                continue  # fill yields to everything; outside the sections: Image reported it
             section = self.image.section_at(start)
             nxt = f"the end of {section.name}"
             k = bisect.bisect_right(starts, start)
@@ -788,6 +855,15 @@ class Layout:
                 problems.append(f"{name}: {end - start} bytes, room {limit - start} before {nxt}: use the normal build")
                 overruns.append((limit, end, owner))
         return problems, overruns
+
+    def _write_fill(self) -> None:
+        """Each block's alignment fill past its recorded size (_fill_from), as its object holds it: the weakest owner,
+        written byte by byte where no other contribution wrote (Image.fill), after every block, data item, library
+        section and thunk. A partly free fill is written where it is free (up to a library section that starts inside
+        it, or around one that covers its first bytes), never past its section's end."""
+        for _, _, _, owner, fill in self._root_spans:
+            if fill is not None:
+                self.image.fill(*fill, owner)
 
     def _finish(self, rooms: Sequence[str] = ()) -> None:
         """A stage's end: LayoutError with every problem not reported yet (the targets without an address, the
@@ -807,7 +883,11 @@ class Layout:
 
     def place_objects(self) -> None:
         """Place every block's object, then the data objects; LayoutError lists every problem not reported yet (the
-        libraries' among them)."""
+        libraries' among them, and the entries of config/layout/unpadded.txt that are no block's)."""
+        blocks = {(b.addr, b.target) for b in self.blocks}
+        for addr, target in sorted(self.unpadded - blocks, key=lambda u: u[0]):
+            self._problem(f"config/layout/unpadded.txt: {addr:08x} {target or '-'} is no block of config/blocks.txt: "
+                          f"run pcdecomp standalone")
         for block in self.blocks:
             self._place_block(block)
         self._place_data()
@@ -816,8 +896,9 @@ class Layout:
 
     def place_libraries(self) -> None:
         """Place every library section config/layout/libraries.txt names, with its relocations, and every import
-        thunk of thunks.txt (`jmp [slot]`, the slot base-relocated); LayoutError lists every problem not reported
-        yet. Run after place_objects(): what a block that outgrew its room runs over is that block's room problem."""
+        thunk of thunks.txt (`jmp [slot]`, the slot base-relocated), then the blocks' alignment fill where it is free
+        (_write_fill); LayoutError lists every problem not reported yet. Run after place_objects(): what a block that
+        outgrew its room runs over is that block's room problem."""
         for obj, section, addr, owner in self._library_sections:
             self._write(obj, section, 0, len(section.data), addr, owner)
         for t in self.thunks:
@@ -829,6 +910,7 @@ class Layout:
                 continue
             self._first_at.setdefault(t.addr, owner)
             self.image.write(t.addr, JMP_INDIRECT + struct.pack("<I", slot), owner, (len(JMP_INDIRECT),))
+        self._write_fill()
         self._finish()
 
     def generate(self) -> None:

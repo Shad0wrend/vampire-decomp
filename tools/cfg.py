@@ -15,12 +15,12 @@ from pathlib import Path
 
 __all__ = [
     "HEADER", "LAYOUT", "Block", "Export", "Fixup", "ImportDll", "ImportEntry", "Imports", "KnownDifference",
-    "LayoutRecord", "LibrarySection", "SectionRecord", "Stub", "Thunk", "VtPatch",
+    "LayoutRecord", "LibrarySection", "SectionRecord", "Stub", "Thunk", "Unpadded", "VtPatch",
     "read_addresses", "read_aliases", "read_blocks", "read_build", "read_exports", "read_fixups", "read_imports",
     "read_known", "read_layout", "read_library_sections", "read_patches", "read_sections", "read_stubs",
-    "read_thunks", "write_addresses", "write_aliases", "write_blocks", "write_build", "write_exports",
-    "write_fixups", "write_imports", "write_known", "write_layout", "write_library_sections", "write_patches",
-    "write_sections", "write_stubs", "write_thunks",
+    "read_thunks", "read_unpadded", "write_addresses", "write_aliases", "write_blocks", "write_build",
+    "write_exports", "write_fixups", "write_imports", "write_known", "write_layout", "write_library_sections",
+    "write_patches", "write_sections", "write_stubs", "write_thunks", "write_unpadded",
 ]
 
 LAYOUT = "layout"  # the subfolder of config/ that holds the layout tables
@@ -304,6 +304,14 @@ class Thunk:
 
 
 @dataclass(frozen=True)
+class Unpadded:
+    """A block whose contribution to the original ended at its recorded size (config/layout/unpadded.txt): the
+    bytes after it are the link's code fill, not the object's alignment fill."""
+    addr: int
+    target: str | None  # the block's symbol as config/blocks.txt names it; None for an initializer (blocks.txt's -)
+
+
+@dataclass(frozen=True)
 class ImportDll:
     dll: str
     lookup: int
@@ -383,6 +391,19 @@ def write_thunks(path: Path, thunks: Iterable[Thunk], header: str) -> None:
     for t in thunks:
         _names("Thunk", t.dll, t.name)
     _write(path, header, (f"{t.addr:08x} {t.dll} {t.name}" for t in thunks))
+
+
+def read_unpadded(path: Path) -> list[Unpadded]:
+    return [Unpadded(_int(path, n, addr, 16), None if target == "-" else target)
+            for n, (addr, target) in _fields(path, 2, 2)]
+
+
+def write_unpadded(path: Path, blocks: Iterable[Unpadded], header: str) -> None:
+    blocks = list(blocks)
+    for b in blocks:
+        if b.target is not None:
+            _names("Unpadded", b.target)
+    _write(path, header, (f"{b.addr:08x} {b.target or '-'}" for b in blocks))
 
 
 def read_imports(path: Path) -> Imports:

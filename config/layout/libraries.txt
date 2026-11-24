@@ -572,6 +572,7 @@
 106b36b8 LIBC.LIB 39 build\intel\st_obj\dosmap.obj 1
 106b3820 LIBC.LIB 580 ..\build\intel\st_obj\constpow.obj 1
 106b8540 LIBC.LIB 75 build\intel\st_obj\undname.obj 77
+106eae3c LIBC.LIB 264 build\intel\st_obj\a_map.obj 3
 109f039c LIBC.LIB 582 ..\build\intel\st_obj\fpinit.obj 2
 109f03a4 LIBC.LIB 485 build\intel\st_obj\strtok.obj 2
 109f03a8 LIBC.LIB 568 build\intel\st_obj\time.obj 2
