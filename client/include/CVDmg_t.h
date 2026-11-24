@@ -14,8 +14,6 @@ struct CVDmgBlock16_t
 				// atexit destroys jump to, and the constructor from the text form 0x10310b40
 	~CVDmgBlock16_t();
 	CVDmgBlock16_t(const char *pszText);
-#else
-	~CVDmgBlock16_t() {}
 #endif
 	CVDmgBlock16_t();	// calls sub_10204270 (stub 0x10004b7e, body at 0x10205380)
 	CVDmgBlock16_t(int a, int b);	// calls sub_102042a0(a, b) (0x102053a0, stub 0x10004561)

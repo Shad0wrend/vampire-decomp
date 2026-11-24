@@ -33,6 +33,7 @@ class CVStatCost_t
 public:
 	CVStatSubCost_t m_first;
 	CVStatSubCost_t m_second;
+	CVStatCost_t() { m_first.sub_101594e0(); m_second.sub_101594e0(); }
 
 	bool sub_10159c80();	// "CVStatCost_t::IsNull"
 	void sub_10159c10();	// "CVStatCost_t::Null": scope trace, nulls both sub costs
