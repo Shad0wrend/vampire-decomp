@@ -57413,6 +57413,23 @@ void PC::sub_10123f90(int mode, int *dst, const int *src, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101243f0 size=0x42
+struct SUnk101243f0 { int m_n0; int m_n4; int m_n8; SUnk101243f0 *m_pNext; };
+struct CUnk101243f0
+{
+	int sub_10124070(int a, SUnk101243f0 *p, int b, int c);
+	int sub_101243f0(int a, SUnk101243f0 *p, int b, int c);
+};
+// TARGET: CUnk101243f0::sub_101243f0
+int CUnk101243f0::sub_101243f0(int a, SUnk101243f0 *p, int b, int c)
+{
+	int n = sub_10124070(a, p, p->m_n0, p->m_n4);
+	if (p->m_pNext)
+		n += sub_101243f0(a, p->m_pNext, p->m_pNext->m_n0, p->m_pNext->m_n4);
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124440 size=0x48
 namespace lifted {
 extern int g_102c2468;
