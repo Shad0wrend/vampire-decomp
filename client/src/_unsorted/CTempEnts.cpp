@@ -11,6 +11,13 @@ CTempEnts *pcd_emit_1003b570() { return new CTempEnts; }
 // TARGET: ??_GCTempEnts@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1003b590 size=0x37
+#include "CTempEnts.h"
+CTempEnts::~CTempEnts()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c3e0 size=0x1e3
 #include "CTempEnts.h"
 #define D1(n) virtual void n(){}
