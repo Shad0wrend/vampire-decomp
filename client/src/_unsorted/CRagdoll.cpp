@@ -28,3 +28,57 @@ struct Ent54b0 { virtual void v0(); virtual void v1(); virtual void v2(); virtua
 struct Rag54b0 { int pad0; int pad4; int pad8; int padc; int pad10; int pad14; Ent54b0 *m18; char pad2[0x36c - 0x1c]; char m36c; void *sub_101254b0(); };
 void *Rag54b0::sub_101254b0() { m18->v37(&m36c, 0); return &m36c; }
 // END FUNCTION
+
+// FUNCTION: 0x10125510 size=0x107
+#include "Vector.h"
+
+struct CGlobals_10125510
+{
+	char pad_0[0x0c];
+	float curtime;
+};
+
+extern CGlobals_10125510 *g_102b8494;
+extern bool sub_101274d0(void *pRagdoll);
+extern void sub_101273b0(void *pRagdoll, const Vector &origin, Vector &mins, Vector &maxs);
+
+struct Ragdoll_10125510
+{
+	virtual ~Ragdoll_10125510() {}
+	virtual void v1();
+	virtual const Vector &GetRagdollOrigin();
+
+	char m_ragdoll[0x350]; // 0x04..0x353
+	Vector m_mins;         // 0x354
+	Vector m_maxs;         // 0x360
+	char pad_36c[0x0c];
+	float m_radius;        // 0x378
+	float m_lastUpdate;    // 0x37c
+	bool m_allAsleep;      // 0x380
+
+	void sub_10125510(int pEnt);
+};
+
+// TARGET: Ragdoll_10125510::sub_10125510
+void Ragdoll_10125510::sub_10125510(int pEnt)
+{
+	if (m_lastUpdate == g_102b8494->curtime)
+		return;
+
+	m_lastUpdate = g_102b8494->curtime;
+	m_allAsleep = sub_101274d0(&m_ragdoll);
+
+	if (m_allAsleep)
+	{
+		Vector origin = GetRagdollOrigin();
+		sub_101273b0(&m_ragdoll, origin, m_mins, m_maxs);
+		m_mins -= origin;
+		m_maxs -= origin;
+	}
+	else
+	{
+		m_mins.Init(-m_radius, -m_radius, -m_radius);
+		m_maxs.Init(m_radius, m_radius, m_radius);
+	}
+}
+// END FUNCTION
