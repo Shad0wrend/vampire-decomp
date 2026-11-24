@@ -23815,6 +23815,17 @@ void CUnknown10427700::sub_10079260(const char *name, int a, int b, int plrDmg, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100792b0 size=0x19
+extern "C" void *memset(void *, int, unsigned int);
+struct CUnknown100792b0 { int m_n0; int m_rest[0x120]; CUnknown100792b0 *sub_100792b0(); };
+CUnknown100792b0 *CUnknown100792b0::sub_100792b0()
+{
+	m_n0 = 1;
+	memset(m_rest, 0, sizeof(m_rest));
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100792d0 size=0x1e
 struct CUnk10427970Entry {
 	void *m_p0;
