@@ -41864,6 +41864,15 @@ int CUnknown100e34a0::sub_100e34a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3b10 size=0x28
+void __stdcall sub_100e3b10(float *p, int i, int j, int k, float a, float b, float c)
+{
+	p[i] = a;
+	p[j] = b;
+	p[k] = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e40f0 size=0x6
 namespace lifted {
 extern char g_104cf75c;
