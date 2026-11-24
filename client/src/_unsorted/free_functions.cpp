@@ -42218,6 +42218,36 @@ char __stdcall sub_100e6ea0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6ef0 size=0x2c
+#include "CGameMovement.h"
+struct MV {
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8(); virtual void g9();
+	virtual void g10(); virtual void g11(); virtual void g12(); virtual void g13(); virtual void g14(); virtual void g15(); virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20(); virtual void g21(); virtual void g22(); virtual void g23(); virtual void g24(); virtual void g25(); virtual void g26(); virtual void g27(); virtual void g28(); virtual void g29();
+	virtual void g30(); virtual void g31(); virtual void g32(); virtual void g33(); virtual void g34(); virtual void g35(); virtual void g36(); virtual void g37(); virtual void g38(); virtual void g39();
+	virtual void g40(); virtual void g41(); virtual void g42(); virtual void g43(); virtual void g44(); virtual void g45(); virtual void g46(); virtual void g47(); virtual void g48(); virtual void g49();
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4(); virtual void h5(); virtual void h6(); virtual void h7(); virtual void h8(); virtual void h9();
+	virtual void i0(); virtual void i1(); virtual void i2(); virtual void i3(); virtual void i4(); virtual void i5(); virtual void i6(); virtual void i7(); virtual void i8(); virtual void i9();
+	virtual void j0(); virtual void j1(); virtual void j2(); virtual void j3(); virtual void j4(); virtual void j5(); virtual void j6(); virtual void j7(); virtual void j8(); virtual void j9();
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5(); virtual void k6(); virtual void k7(); virtual void k8(); virtual void k9();
+	virtual void l0(); virtual void l1(); virtual void l2(); virtual void l3(); virtual void l4(); virtual void l5(); virtual void l6(); virtual void l7(); virtual void l8(); virtual void l9();
+	virtual void m0(); virtual void m1(); virtual void m2(); virtual void m3(); virtual void m4(); virtual void m5(); virtual void m6(); virtual void m7(); virtual void m8(); virtual void m9();
+	virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual void n5(); virtual void n6(); virtual void n7(); virtual void n8(); virtual void n9();
+	virtual void o0(); virtual void o1(); virtual void o2(); virtual void o3(); virtual void o4(); virtual void o5(); virtual void o6(); virtual void o7(); virtual void o8(); virtual void o9();
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4(); virtual void p5(); virtual void p6(); virtual void p7(); virtual void p8(); virtual void p9();
+	virtual void q0(); virtual void q1(); virtual void q2(); virtual void q3(); virtual void q4(); virtual void q5(); virtual void q6(); virtual void q7(); virtual void q8(); virtual void q9();
+	virtual void r0(); virtual void r1(); virtual void r2();
+	virtual char v153();
+	char pad[0x16f9 - 4]; char m_b;
+};
+float *CGameMovement::sub_100e6ef0()
+{
+	if (((MV *)m_pMove)->v153())
+		return (float *)&m_vecObsHullMin;
+	return ((MV *)m_pMove)->m_b ? (float *)&m_vecDuckHullMin : (float *)&m_vecHullMin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6f20 size=0x2c
 #include "CGameMovement.h"
 #define V(n) virtual void h##n();
