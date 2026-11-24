@@ -70718,6 +70718,28 @@ int __stdcall sub_1014b580(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014b6b0 size=0x31
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+struct CFeatChar1014b { char pad[0x3f8]; int m_p3f8; };
+struct CFeatWeight1014b {
+	char pad[0x34];
+	int m_nWeightA;
+	int m_nWeightB;
+	int sub_1014b6b0(CFeatChar1014b *pChar);
+};
+int CFeatWeight1014b::sub_1014b6b0(CFeatChar1014b *pChar)
+{
+	if (pChar)
+	{
+		if (pChar->m_p3f8)
+			return m_nWeightA;
+	}
+	else
+		Msg("Invalid Character pointer for: Feats::Weight\n");
+	return m_nWeightB;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cee0 size=0x8e
 #include "CUnknown101e7c50.h"
 

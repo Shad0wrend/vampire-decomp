@@ -6137,6 +6137,7 @@
 0x1014ada0 func   ?sub_1014ada0@CUnknown1014ada0@@QAEPAXH@Z CUnknown1014ada0::sub_1014ada0
 0x1014add0 func   ?sub_1014add0@CUnknown1014add0@@QAEXXZ CUnknown1014add0::sub_1014add0
 0x1014b580 func   ?sub_1014b580@@YGHH@Z sub_1014b580
+0x1014b6b0 func   ?sub_1014b6b0@CFeatWeight1014b@@QAEHPAUCFeatChar1014b@@@Z CFeatWeight1014b::sub_1014b6b0
 0x1014cee0 func   ?sub_1014cee0@CUnknown101e7c50@@QAEPAUCVDmgBlock16_t@@PBD@Z CUnknown101e7c50::sub_1014cee0
 0x1014cf80 func   ?sub_1014cf80@CUnknown1014cf80@@QAEMXZ CUnknown1014cf80::sub_1014cf80
 0x1014cf90 func   ?sub_1014cf90@CUnknown1014cf90@@QAEMXZ CUnknown1014cf90::sub_1014cf90
