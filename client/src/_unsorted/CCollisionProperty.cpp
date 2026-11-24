@@ -11,6 +11,12 @@ void *CCollisionProperty::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100431e0 size=0xb
+#include "CCollisionProperty.h"
+struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); };
+void __fastcall sub_100431e0(CCollisionProperty *self, int edx) { ((V *)((char *)self->m_unk3c + 0xc))->v12(); }
+// END FUNCTION
+
 // FUNCTION: 0x10043290 size=0x4
 #include "CCollisionProperty.h"
 // TARGET: CCollisionProperty::vfunc11
