@@ -7,6 +7,9 @@
 class CTempEnts : public ITempEnts
 {
 public:
+	void sub_1003ce90(void *, int);
+	int m_unk4[(0xfbf4c - 4) / 4];
+	void *m_pHead;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CTempEnts's own function
 	virtual void vfunc0();
