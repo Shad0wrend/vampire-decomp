@@ -34401,6 +34401,23 @@ bool C_BaseEntity::sub_100a0710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1140 size=0x51
+#include "C_BaseEntity.h"
+#include "CBaseEntityList.h"
+
+extern CBaseEntityList *g_102b8e98;
+
+bool C_BaseEntity::sub_100a1140()
+{
+	CBaseEntityListEntry *e;
+	return sub_1009f140(1)
+		&& GetSolid() == 0
+		&& *(int *)((char *)this + 0x208) != -1
+		&& (e = &g_102b8e98->m_EntPtrArray[*(int *)((char *)this + 0x208) & 0x1fff], e->m_SerialNumber == (*(unsigned int *)((char *)this + 0x208) >> 13))
+		&& e->m_pEntity != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1200 size=0x1
 void sub_100a1200()
 {
