@@ -3463,6 +3463,7 @@
 0x100adc10 func   ?vfunc16@C_ClientStats@@QAEHH@Z C_ClientStats::vfunc16
 0x100adc20 func   ?vfunc17@C_ClientStats@@UAEHH@Z C_ClientStats::vfunc17
 0x100adc30 func   ?vfunc18@C_ClientStats@@UAENH@Z C_ClientStats::vfunc18
+0x100adc40 func   ?vfunc19@C_ClientStats@@UAENH@Z C_ClientStats::vfunc19
 0x100adc50 func   ?vfunc0@C_ClientStats@@UAEXH@Z C_ClientStats::vfunc0
 0x100adca0 func   ?vfunc2@C_ClientStats@@UAEXXZ C_ClientStats::vfunc2
 0x100add30 func   ?vfunc16@C_DynamicLight@@UAEHXZ C_DynamicLight::vfunc16
