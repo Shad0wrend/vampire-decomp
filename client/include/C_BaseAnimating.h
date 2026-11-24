@@ -9,6 +9,7 @@ class C_BaseAnimating : public C_BaseEntity
 public:
 	C_BaseAnimating();
 	void sub_100966e0();
+	bool sub_10094020();
 	void sub_10002680(int);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -43,7 +44,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc130();
 	virtual void vfunc131(int, int, int, int, int, int);
 	virtual void vfunc132();
-	virtual void vfunc133();
+	virtual int vfunc133();
 	virtual void vfunc134();
 	virtual void vfunc135();
 	virtual float vfunc136(float flInterval);
