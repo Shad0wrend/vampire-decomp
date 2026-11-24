@@ -69134,6 +69134,29 @@ void * CUnknown10142e50::sub_10142e50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142e80 size=0x55
+extern "C" void *__cdecl memcpy(void *, const void *, unsigned int);
+
+struct GrowView
+{
+    int m_unk0;
+    int m_unk4;
+    int m_nCount;   // +8
+    int *m_pData;   // +0xc
+};
+
+int *__fastcall sub_10142e80(GrowView *p, int)
+{
+    int *pNew = new int[++p->m_nCount];
+    if (p->m_pData) {
+        memcpy(pNew, p->m_pData, p->m_nCount * 4);
+        delete p->m_pData;
+    }
+    p->m_pData = pNew;
+    return &pNew[p->m_nCount - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142ee0 size=0x2f
 struct Buf_10142ee0 {
 	int m_unk0; int m_unk4; int m_n8; void *m_pc; void *m_p10;
