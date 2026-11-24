@@ -13254,6 +13254,23 @@ int CUnknown10034f00::sub_10034f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10034f60 size=0x37
+struct IFx_1028073c {
+  virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+  virtual void v7(const void *a, const void *b, const void *c, float f, int d, int e, int g, unsigned char h);
+};
+extern IFx_1028073c *g_1028073c;
+struct BrkV {
+  char pad[0xc]; int m_c[3]; int m_18[3]; int m_24[3]; int m_30; int m_34; int m_38; int m_3c; unsigned char m_40;
+  void sub_10034f60(int a);
+};
+// TARGET: BrkV::sub_10034f60
+void BrkV::sub_10034f60(int a)
+{
+  g_1028073c->v7(m_c, m_18, m_24, (float)m_30, m_3c, m_38, m_34, m_40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034fc0 size=0x6
 namespace lifted {
 extern char g_102ecc50;
