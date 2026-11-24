@@ -6659,6 +6659,7 @@
 0x1017a7d0 func   ?vfunc119@CharEditEquipPanel@@UAEXXZ CharEditEquipPanel::vfunc119
 0x1017a7e0 func   ?sub_1017a7e0@@YAXXZ sub_1017a7e0
 0x1017abc0 func   ?vfunc21@CharEditEquipPanel@@UAEHH@Z CharEditEquipPanel::vfunc21
+0x1017ac00 func   ?vfunc3@CharEditEquipPanel@@UAEXXZ CharEditEquipPanel::vfunc3
 0x1017ac30 func   ?sub_1017ac30@@YAXXZ sub_1017ac30
 0x1017ac40 func   ?sub_1017ac40@CUnknown1017ac40@@QAEHXZ CUnknown1017ac40::sub_1017ac40
 0x1017b130 func   ?sub_1017b130@CUnknown1017b130@@QAEPAXHHH@Z CUnknown1017b130::sub_1017b130
