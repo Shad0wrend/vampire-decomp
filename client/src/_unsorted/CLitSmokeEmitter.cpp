@@ -40,6 +40,26 @@ void CLitSmokeEmitter::vfunc14(int a, int b, int c, int d, int e, int f, int g)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030830 size=0x53
+// TARGET: SmokeView::sub_10030830
+struct SmokeView
+{
+	void sub_10030830(int index, int a, int b, int c, int d, int e, int f, int g);
+};
+
+void SmokeView::sub_10030830(int index, int a, int b, int c, int d, int e, int f, int g)
+{
+	char *p = (char *)this + index * 28;
+	*(int *)(p + 0x78) = a;
+	*(int *)(p + 0x7c) = b;
+	*(int *)(p + 0x80) = c;
+	*(int *)(p + 0x84) = d;
+	*(int *)(p + 0x88) = e;
+	*(int *)(p + 0x8c) = f;
+	*(int *)(p + 0x90) = g;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5470 size=0x1e
 #include "CLitSmokeEmitter.h"
 
