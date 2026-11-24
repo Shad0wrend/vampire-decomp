@@ -42949,6 +42949,14 @@ void __stdcall sub_100f27a0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f27b0 size=0x26
+void sub_10114660(int, int);
+int sub_10114690();
+struct VHud2 { char pad[0x1c]; bool m_b1c; void sub_100f27b0(int a, int b, int c); };
+// TARGET: ?sub_100f27b0@VHud2@@QAEXHHH@Z
+void VHud2::sub_100f27b0(int a, int b, int c) { sub_10114660(c, b); m_b1c = sub_10114690() != 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100f27e0 size=0x2d
 namespace lifted {
 extern int g_104a0d50;
