@@ -118,6 +118,20 @@ float CGameMovement::vfunc23()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9640 size=0x29
+#include "CGameMovement.h"
+struct V100e9640 { char pad[0x1884]; int m_a; char pad2[0x199c - 0x1888]; float m_f; };
+char CGameMovement::vfunc9()
+{
+	V100e9640 *p = (V100e9640 *)m_pMove;
+	if (p->m_a)
+		return 0;
+	if (p->m_f != 0.0f)
+		return 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb1f0 size=0x46
 #include "CGameMovement.h"
 struct CSurfProp { char pad[0x72]; char m_bFlag; };
