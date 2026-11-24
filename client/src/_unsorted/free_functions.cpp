@@ -32797,6 +32797,65 @@ bool __fastcall sub_100967e0(AnimView *p, int, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096c30 size=0x4c
+#include "C_BaseAnimating.h"
+
+class CUnknown100ac780
+{
+public:
+	CUnknown100ac780 *m_pNext;
+	void sub_100ac780();
+};
+
+class IModelRender10096c30
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24(unsigned short idx);
+};
+
+extern IModelRender10096c30 *g_104a57d8;
+
+// TARGET: C_BaseAnimating::sub_10096c30
+void C_BaseAnimating::sub_10096c30()
+{
+	int hdr = sub_1008f900(-1);
+	if ( !hdr )
+		return;
+	unsigned short idx = *(unsigned short *)((char *)this + 0x164);
+	if ( idx != 0xffff )
+	{
+		if ( *(int *)((char *)hdr + 0xe4) & 0x400 )
+			g_104a57d8->v24(idx);
+	}
+	for ( CUnknown100ac780 *p = *(CUnknown100ac780 **)((char *)this + 0x724); p; p = p->m_pNext )
+		p->sub_100ac780();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096c80 size=0x42
 extern void *(__cdecl *g_101e3100)(unsigned int);
 struct Elem60 { int d[15]; };
