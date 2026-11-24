@@ -238,3 +238,14 @@ char * CViewRender::vfunc12()
     return (char *)this + 0x310;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019e1f0 size=0x22
+#include "CViewRender.h"
+struct E1019e1f0 { int d[11]; };
+void *CViewRender::vfunc6(int i)
+{
+	if (i >= 0 && i < 2)
+		return &((E1019e1f0 *)((char *)this + 0x2b8))[i];
+	return 0;
+}
+// END FUNCTION
