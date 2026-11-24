@@ -85738,6 +85738,29 @@ void sub_10186c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186cb0 size=0x26
+#include "CHud.h"
+struct VItemSub {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual bool v22();
+};
+struct VItemElem { int m0; int m4; int m8; int mc; VItemSub sub; };
+extern CHud g_104cfe38;
+void sub_10186c40();
+void sub_10186bd0();
+void sub_10186cb0()
+{
+	VItemElem *p = (VItemElem *)g_104cfe38.sub_100f0ed0("VItemInfoUI");
+	if (p->sub.v22())
+		sub_10186c40();
+	else
+		sub_10186bd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10186ce0 size=0x16
 namespace lifted {
 extern char g_102bbe88;
