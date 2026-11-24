@@ -44645,6 +44645,20 @@ void sub_100f7420(unsigned char *src, unsigned char *dst, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7460 size=0x37
+// TARGET: sub_100f7460
+void sub_100f7460(unsigned char *src, unsigned char *dst, int n)
+{
+    unsigned char *end = src + n * 4;
+    for (; src < end; src += 4, dst += 4) {
+        dst[0] = src[2];
+        dst[1] = src[1];
+        dst[2] = src[0];
+        dst[3] = src[3];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f76d0 size=0x34
 void sub_100f76d0(unsigned char *src, unsigned char *dst, int n)
 {
