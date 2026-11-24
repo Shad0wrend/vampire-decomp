@@ -34211,6 +34211,31 @@ void *XHOwner::sub_10099bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a2b0 size=0x61
+#include "C_BaseCombatCharacter.h"
+
+void sub_10114660(int, int);
+char sub_10114690();
+int sub_101146c0();
+
+void __fastcall sub_1009a2b0(void *self, void *edx, int classID, void *msg)
+{
+	sub_10114660((int)msg, classID);
+	if (sub_10114690() == 0x16)
+	{
+		int r1 = sub_101146c0();
+		int r2 = sub_101146c0();
+		int r3 = sub_101146c0();
+		int r4 = sub_101146c0();
+		((C_BaseCombatCharacter *)((char *)self - 8))->vfunc146(r1, r2, r3, r4);
+	}
+	else
+	{
+		((C_BaseEntity *)self)->sub_1009f2e0(classID, (int)msg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b210 size=0x15
 namespace lifted {
 extern int g_104a0d50;
