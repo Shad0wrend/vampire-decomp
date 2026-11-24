@@ -16926,6 +16926,25 @@ void __stdcall sub_1004d410(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d420 size=0x32
+struct XKey30
+{
+	char u[0x30]; char m_down; char m_pressed; char m_released;
+	void sub_1004d420(char down);
+};
+void XKey30::sub_1004d420(char down)
+{
+	if (!m_down && down) {
+		m_pressed = 1;
+		m_released = 0;
+	} else if (m_down && !down) {
+		m_released = 1;
+		m_pressed = down;
+	}
+	m_down = down;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d490 size=0x4
 struct CUnknown1004d490 { char sub_1004d490(); };
 char CUnknown1004d490::sub_1004d490()
