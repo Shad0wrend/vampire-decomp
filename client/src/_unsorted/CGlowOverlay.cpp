@@ -1,6 +1,29 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100eed10 size=0x58
+#include "CGlowOverlay.h"
+
+CGlowOverlay::CGlowOverlay()
+{
+	m_ListIndex = 0xffff;
+	m_nSprites = 0;
+	m_flProxyRadius = -1.0f;
+
+	m_bDirectional = false;
+	m_bInSky = false;
+	m_bActivated = false;
+
+	for ( int i = 0; i < 4; i++ )
+	{
+		m_Sprites[i].m_vColor.Init( 0.0f, 0.0f, 0.0f );
+		m_Sprites[i].m_flHorzSize = 1.0f;
+		m_Sprites[i].m_flVertSize = 1.0f;
+		m_Sprites[i].m_Material = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eed70 size=0x1e
 #include "CGlowOverlay.h"
 
