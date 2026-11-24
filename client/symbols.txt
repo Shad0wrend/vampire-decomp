@@ -6779,6 +6779,7 @@
 0x10167450 func   ?sub_10167450@CUnknown10167450@@QAEHXZ CUnknown10167450::sub_10167450
 0x10167960 func   ?vfunc0@CLoadingDisc@@UAEHH@Z CLoadingDisc::vfunc0
 0x10167990 func   ?vfunc1@CLoadingDisc@@UAEXXZ CLoadingDisc::vfunc1
+0x10167af0 func   ?sub_10167af0@@YAXXZ sub_10167af0
 0x10167ca0 func   ?sub_10167ca0@@YAHXZ sub_10167ca0
 0x10167cb0 func   ?sub_10167cb0@@YAXHPB_JPAD@Z sub_10167cb0
 0x10167e70 func   ??_GCMeasureTimePanel@@UAEPAXI@Z ??_GCMeasureTimePanel@@UAEPAXI@Z

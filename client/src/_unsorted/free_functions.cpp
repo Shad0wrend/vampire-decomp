@@ -82462,6 +82462,25 @@ int CUnknown10167450::sub_10167450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167af0 size=0x1f
+struct LoadPanel_ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(int);
+};
+struct LoadState_ {
+	LoadPanel_ *m_pPanel; int m_unk4; bool m_bActive; float m_flValue;
+};
+extern LoadState_ g_105fad00;
+void sub_10167af0()
+{
+	LoadPanel_ *p = g_105fad00.m_pPanel;
+	g_105fad00.m_bActive = false;
+	g_105fad00.m_flValue = 0.0f;
+	p->v21(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167ca0 size=0xe
 namespace lifted {
 extern int g_104a57d4;
