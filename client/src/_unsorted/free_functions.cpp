@@ -55559,6 +55559,43 @@ const CUtlRBTree16::Links_t &CUtlRBTree16::sub_10112720(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112840 size=0x58
+struct CUtlRBTree20
+{
+	struct Links_t
+	{
+		unsigned short m_Left;
+		unsigned short m_Right;
+		unsigned short m_Parent;
+		unsigned short m_Tag;
+	};
+	struct Node_t
+	{
+		Links_t m_Links;
+		char m_Data[12];
+	};
+
+	void *m_LessFunc;
+	Node_t *m_pElements;
+	int m_unk8;
+	int m_unkC;
+	unsigned short m_Root;
+	unsigned short m_NumElements;
+	unsigned short m_FirstFree;
+	unsigned short m_TotalElements;
+
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+
+	const Links_t &sub_10112840(unsigned short i) const;
+};
+
+const CUtlRBTree20::Links_t &CUtlRBTree20::sub_10112840(unsigned short i) const
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113190 size=0x57
 #include "CUtlRBTree16.h"
 
