@@ -27437,6 +27437,36 @@ void C_Beam::sub_10080450(EntV *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080490 size=0x56
+#include "C_Beam.h"
+
+class IHandleEntityView10080490
+{
+public:
+	virtual void v0();
+	virtual unsigned int *GetRefEHandle();
+};
+
+struct CBaseHandleView10080490 { unsigned int m_Index; };
+
+static __forceinline CBaseHandleView10080490 &SetHandle(CBaseHandleView10080490 &h, void *pEntity)
+{
+	if ( pEntity )
+		h.m_Index = *(unsigned int *)((IHandleEntityView10080490 *)pEntity)->GetRefEHandle();
+	else
+		h.m_Index = 0xffffffff;
+	return h;
+}
+
+// TARGET: C_Beam::sub_10080490
+void C_Beam::sub_10080490(void *pEntity)
+{
+	int *pSlot = (int *)((char *)this + 0x424) + *(int *)((char *)this + 0x41c);
+	SetHandle(*(CBaseHandleView10080490 *)pSlot, pEntity);
+	SetHandle(*(CBaseHandleView10080490 *)((char *)this + 0x4a4), pEntity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100806f0 size=0xe7
 #include "C_Beam.h"
 struct EntInfo { void *m_pEntity; unsigned int m_Serial; int m_unk8; };
