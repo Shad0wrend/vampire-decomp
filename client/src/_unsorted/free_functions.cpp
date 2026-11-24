@@ -53884,6 +53884,101 @@ int sub_1011e880(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e890 size=0x80
+struct E8
+{
+	int a;
+	int b;
+};
+
+class CMem8c_t
+{
+public:
+	E8 *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	E8 *m_pElements;
+
+	int sub_1011f490(int elem, int num, const E8 *pToCopy);
+
+	void SetSize(int size)
+	{
+		m_Size = 0;
+		sub_1011f490(0, size, 0);
+	}
+
+	void SetGrowSize(int size)
+	{
+		m_nGrowSize = size;
+	}
+};
+
+class CUtlVector20
+{
+public:
+	CMem8c_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	CMem8c_t *m_pElements;
+
+	int sub_1011f350(int elem, int num, const void *pToCopy);
+
+	void Init()
+	{
+		m_pMemory = 0;
+		m_nAllocationCount = 0;
+		m_nGrowSize = 0;
+		m_Size = 0;
+		m_pElements = 0;
+	}
+
+	void SetSize(int size)
+	{
+		m_Size = 0;
+		sub_1011f350(0, size, 0);
+	}
+
+	CMem8c_t &operator[](int i)
+	{
+		return m_pMemory[i];
+	}
+};
+
+class CUtlHash_1011e890
+{
+public:
+	CUtlVector20 m_Buckets;
+	void *m_CompareFunc;
+	void *m_KeyFunc;
+	bool m_bPowerOfTwo;
+	unsigned int m_ModMask;
+
+	CUtlHash_1011e890 *sub_1011e890(int bucketCount, int growCount, int initCount, void *compareFunc, void *keyFunc);
+};
+
+// TARGET: CUtlHash_1011e890::sub_1011e890
+CUtlHash_1011e890 *CUtlHash_1011e890::sub_1011e890(int bucketCount, int growCount, int initCount, void *compareFunc, void *keyFunc)
+{
+	m_Buckets.Init();
+	m_CompareFunc = compareFunc;
+	m_KeyFunc = keyFunc;
+
+	m_Buckets.SetSize(bucketCount);
+	for (int ndxBucket = 0; ndxBucket < bucketCount; ndxBucket++)
+	{
+		m_Buckets[ndxBucket].SetSize(initCount);
+		m_Buckets[ndxBucket].SetGrowSize(growCount);
+	}
+
+	m_bPowerOfTwo = ((bucketCount & (bucketCount - 1)) == 0);
+	m_ModMask = m_bPowerOfTwo ? (bucketCount - 1) : 0;
+
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ebc0 size=0x80
 struct E8
 {
