@@ -17500,6 +17500,79 @@ char CUnknown1005e3c0::sub_1005e3c0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e4a0 size=0x276
+#include "CHudUseIcon.h"
+#include "CHUDSprite.h"
+
+extern "C" unsigned int __cdecl strlen( const char * );
+
+struct Player_1005e4a0
+{
+	char m_pad0[0x16ac];
+	int m_16ac;
+	char m_pad1[0x16c0 - 0x16b0];
+	int m_16c0;
+};
+
+extern Player_1005e4a0 *g_104a0d50;
+extern const char *g_10286ff8[];
+
+void CHudUseIcon::sub_1005e4a0( bool bShow )
+{
+	Player_1005e4a0 *pPlayer = g_104a0d50;
+	if ( bShow )
+	{
+		if ( m_unk1c0 != pPlayer->m_16c0 || ( m_unk1c4 != pPlayer->m_16ac && pPlayer->m_16ac != 0 ) )
+		{
+			m_pad1c8 = 0;
+			if ( m_pChild1 )
+				delete m_pChild1;
+
+			const char *pszIcon = "";
+			int nIcon = pPlayer->m_16c0;
+			if ( nIcon == 0x49 )
+			{
+				pszIcon = sub_1005e400( pPlayer->m_16ac );
+			}
+			else if ( nIcon < 0x4a )
+			{
+				pszIcon = g_10286ff8[nIcon];
+			}
+
+			int nHeight = m_pad1c8 ? 64 : 128;
+			if ( pszIcon && strlen( pszIcon ) )
+			{
+				m_pChild1 = (CHudUseIconOwned *)new CHUDSprite( pszIcon, 0, 0, 128, nHeight, 128, nHeight );
+			}
+			else
+			{
+				m_pChild1 = 0;
+			}
+
+			m_unk1c0 = pPlayer->m_16c0;
+			m_unk1c4 = pPlayer->m_16ac;
+		}
+	}
+	else if ( *(float *)&m_unk1a4 == 0.0 )
+	{
+		if ( m_pChild1 )
+			delete m_pChild1;
+		m_pChild1 = 0;
+		m_unk1c0 = 0;
+		m_unk1c4 = 0;
+	}
+
+	if ( !m_pChild2 )
+		m_pChild2 = (CHudUseIconOwned *)new CHUDSprite( "hud/Context_Icons/Context_Icon_Back", 0, 0, 128, 128, 128, 128 );
+	if ( !m_pChild3 )
+		m_pChild3 = (CHudUseIconOwned *)new CHUDSprite( "hud/Context_Icons/Context_Icon_Ring", 0, 0, 128, 128, 128, 128 );
+	if ( !m_pChild4 )
+		m_pChild4 = (CHudUseIconOwned *)new CHUDSprite( "hud/new_ui/healthbarfillbg", 0, 0, 64, 512, 64, 512 );
+	if ( !m_pChild5 )
+		m_pChild5 = (CHudUseIconOwned *)new CHUDSprite( "hud/new_ui/useicon", 0, 0, 128, 128, 128, 128 );
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e720 size=0x1c1
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "Vector.h"
