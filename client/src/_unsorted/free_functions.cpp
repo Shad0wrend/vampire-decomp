@@ -42793,6 +42793,14 @@ void CHud::sub_100f0cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0ea0 size=0x26
+void sub_10114660(int, int);
+int sub_10114690();
+struct VHud { char pad[0x5c]; bool m_b5c; void sub_100f0ea0(int a, int b, int c); };
+// TARGET: ?sub_100f0ea0@VHud@@QAEXHHH@Z
+void VHud::sub_100f0ea0(int a, int b, int c) { sub_10114660(c, b); m_b5c = sub_10114690() != 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100f10c0 size=0x4
 struct CUnknown100f10c0 { float sub_100f10c0(); };
 float CUnknown100f10c0::sub_100f10c0()
