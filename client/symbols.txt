@@ -3975,6 +3975,7 @@
 0x100c4eb0 func   ?sub_100c4eb0@CUnknown100c4eb0@@QAEPAXXZ CUnknown100c4eb0::sub_100c4eb0
 0x100c4f00 func   ??_GC_Sun@@UAEPAXI@Z ??_GC_Sun@@UAEPAXI@Z
 0x100c4f20 func   ??1C_Sun@@UAE@XZ C_Sun::~C_Sun
+0x100c50d0 func   ?vfunc5@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc5
 0x100c5c50 func   ?vfunc30@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc30
 0x100c6420 func   ?vfunc0@C_TempEntsSystem@@QAEPAXD@Z C_TempEntsSystem::vfunc0
 0x100c6580 func   ?sub_100c6580@@YAHXZ sub_100c6580
