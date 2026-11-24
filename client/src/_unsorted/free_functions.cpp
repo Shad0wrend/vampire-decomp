@@ -34533,6 +34533,12 @@ extern char g_104a1d08;
 void sub_100b4750() { for (int i = (int)g_104a1d10; i < (int)(g_104a1d10 + 128); i += 4) { if (*(int *)i != 0) *(int *)i = 0; } g_104a1f10 = 0; g_104a1d08 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4780 size=0x25
+extern int g_104a1d10[128];
+extern int g_104a1f10;
+void sub_100b4780() { for (int i = (int)g_104a1d10; i < (int)(g_104a1d10 + 128); i += 4) { if (*(int *)i != 0) *(int *)i = 0; } g_104a1f10 = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100b4a60 size=0x35
 namespace lifted {
 extern int g_102b2c1c;
