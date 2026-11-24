@@ -19,7 +19,7 @@ void CDummyMaterialProxy::vfunc2()
 
 // VC6 writes CDummyMaterialProxy's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CDummyMaterialProxy *pcd_emit_100e1930() { return new CDummyMaterialProxy; }
+CDummyMaterialProxy *pcd_emit_100e1930(const CDummyMaterialProxy &other) { return new CDummyMaterialProxy(other); }
 
 // TARGET: ??_GCDummyMaterialProxy@@UAEPAXI@Z
 // END FUNCTION
