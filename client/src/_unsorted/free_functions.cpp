@@ -55385,6 +55385,56 @@ void CUnknown10123710::sub_10123710(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101238a0 size=0x126
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+#include "type_info.h"
+struct CEntInfoX { void *m_pEntity; int m_SerialNumber; int m_pPrev; };
+struct CEntListX { int m_pad; CEntInfoX m_Ents[1]; };
+extern CEntListX *g_102b8e98;
+inline void *GetHandleEnt(const CBaseHandle &h)
+{
+	if (h.m_Index == 0xffffffff)
+		return 0;
+	CEntInfoX *p = &g_102b8e98->m_Ents[h.m_Index & 0x1fff];
+	if (p->m_SerialNumber == (int)(h.m_Index >> 13))
+		return p->m_pEntity;
+	return 0;
+}
+class CPredCopyX
+{
+public:
+	char m_pad[0x14];
+	bool m_bErrorCheck;
+	void sub_10123300(const char *fmt, ...);
+	void sub_101233b0(int dt, const char *fmt, ...);
+	void sub_101238a0(int dt, CBaseHandle *outvalue, const CBaseHandle *invalue, int count);
+};
+// TARGET: CPredCopyX::sub_101238a0
+void CPredCopyX::sub_101238a0(int dt, CBaseHandle *outvalue, const CBaseHandle *invalue, int count)
+{
+	if (!m_bErrorCheck)
+		return;
+	if (dt == 0)
+	{
+		int i = 0;
+		sub_10123300("EHandles differ (net) 0x%p (pred) 0x%p\n", GetHandleEnt(invalue[i]), GetHandleEnt(outvalue[i]));
+	}
+	C_BaseEntity *ent = (C_BaseEntity *)GetHandleEnt(outvalue[0]);
+	if (ent)
+	{
+		const char *classname = ent->vfunc114();
+		if (!classname[0])
+			classname = typeid(*ent).name();
+		sub_101233b0(dt, "EHandle (0x%p->%s)", GetHandleEnt(outvalue[0]), classname);
+	}
+	else
+	{
+		sub_101233b0(dt, "EHandle (NULL)");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101239d0 size=0x32
 #include <string.h>
 struct CPC {
