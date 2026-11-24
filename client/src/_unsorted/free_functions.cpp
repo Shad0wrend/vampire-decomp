@@ -19617,6 +19617,21 @@ char CUnknown100624d0::sub_100624d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062610 size=0x4f
+#include "CStealth.h"
+
+int sub_100cd100();
+int sub_100cd0f0();
+
+void CStealth::sub_10062610()
+{
+	double w = sub_100cd100() * 0.0009765625;
+	m_n178 = (int)(w * 10.0);
+	double h = sub_100cd0f0() * 0.0013020833333333333;
+	m_n17c = (int)(h * 10.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063590 size=0x32
 struct XKey14
 {

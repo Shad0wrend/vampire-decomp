@@ -2775,6 +2775,7 @@
 0x100624d0 func   ?sub_100624d0@CUnknown100624d0@@QAEDXZ CUnknown100624d0::sub_100624d0
 0x100624e0 func   ??_GCStealth@@UAEPAXI@Z ??_GCStealth@@UAEPAXI@Z
 0x10062500 func   ??1CStealth@@UAE@XZ CStealth::~CStealth
+0x10062610 func   ?sub_10062610@CStealth@@QAEXXZ CStealth::sub_10062610
 0x10062660 func   ?vfunc107@CStealth@@UAE_NXZ CStealth::vfunc107
 0x10063580 func   ?vfunc97@CStealth@@UAEXXZ CStealth::vfunc97
 0x10063590 func   ?sub_10063590@XKey14@@QAEXD@Z XKey14::sub_10063590
