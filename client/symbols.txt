@@ -3259,6 +3259,7 @@
 0x100922c0 func   ?sub_100922c0@CUnknown100922c0@@QAEHXZ CUnknown100922c0::sub_100922c0
 0x100923a0 func   ?sub_100923a0@CUnknown100923a0@@QAEDXZ CUnknown100923a0::sub_100923a0
 0x100923c0 func   ?sub_100923c0@@YADDD@Z sub_100923c0
+0x100924e0 func   ?sub_100924e0@@YAXXZ sub_100924e0
 0x10092530 func   ?sub_10092530@@YAXXZ sub_10092530
 0x10092970 func   ?vfunc125@C_BaseAnimating@@UAEHHH@Z C_BaseAnimating::vfunc125
 0x10093e20 func   ?sub_10093e20@CUnknown10093e20@@QAEHH@Z CUnknown10093e20::sub_10093e20

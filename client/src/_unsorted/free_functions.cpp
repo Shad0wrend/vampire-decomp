@@ -32067,6 +32067,24 @@ char sub_100923c0(char a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100924e0 size=0x48
+extern "C" void *memmove(void *, const void *, unsigned int);
+struct SVec { short *m_pMemory; int m_a; int m_b; int m_Size; };
+extern SVec g_1049bfcc;
+extern short g_1049c48c;
+void sub_100924e0()
+{
+    int i = g_1049bfcc.m_Size - 1;
+    if (i >= 0) {
+        g_1049c48c = g_1049bfcc.m_pMemory[i];
+        int n = g_1049bfcc.m_Size - i - 1;
+        if (n > 0)
+            memmove(&g_1049bfcc.m_pMemory[i], &g_1049bfcc.m_pMemory[i + 1], n * 2);
+        --g_1049bfcc.m_Size;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092530 size=0x7
 extern int g_1049c4d4;
 
