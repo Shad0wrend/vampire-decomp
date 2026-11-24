@@ -6858,6 +6858,7 @@
 0x1018e2a0 func   ?sub_1018e2a0@@YIXPAVPanel@vgui2@@HH@Z sub_1018e2a0
 0x1018e2c0 func   ?sub_1018e2c0@CUnknown1018e2c0@@QAEXXZ CUnknown1018e2c0::sub_1018e2c0
 0x1018e2e0 func   ?sub_1018e2e0@CUnknown1018e2e0@@QAEXXZ CUnknown1018e2e0::sub_1018e2e0
+0x1018e300 func   ?sub_1018e300@@YAXPADPBDZZ sub_1018e300
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
 0x1018e860 func   ?sub_1018e860@CView@@QAEHH@Z CView::sub_1018e860
 0x1018e870 func   ?vfunc20@CViewRender@@UAEHXZ CViewRender::vfunc20

@@ -80245,6 +80245,19 @@ void CUnknown1018e2e0::sub_1018e2e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e300 size=0x26
+#include <stdarg.h>
+#include <stdio.h>
+void sub_1018e300(char *buf, const char *fmt, ...)
+{
+	va_list args;
+	va_start(args, fmt);
+	_vsnprintf(buf, 1023, fmt, args);
+	va_end(args);
+	buf[1023] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
