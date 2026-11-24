@@ -30,6 +30,14 @@ void __stdcall sub_10001030(char *ptr, unsigned size, int count, PMF_1004ddc0 pm
 }
 // END FUNCTION
 
+// FUNCTION: 0x100010b0 size=0x11
+// TARGET: sub_100010b0
+float sub_100010b0(float a, float b)
+{
+	return a * a / (b * 2.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100010d0 size=0xf
 float __cdecl fabsf(float);
 extern "C" double fabs(double);
