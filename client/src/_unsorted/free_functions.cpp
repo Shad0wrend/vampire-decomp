@@ -55345,6 +55345,70 @@ int CUnknown10124440::sub_10124440(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101245d0 size=0x164
+#include <string.h>
+#include <stdarg.h>
+#include "Tier1.h"
+
+struct PDField { int fieldType; const char *fieldName; int unk8; short unkc; short unke; short unk10; short flags; };
+struct CPredDescData {
+    int m_unk0;
+    int m_unk4;
+    PDField *m_pCurrentField;
+    const char *m_pCurrentClassName;
+    int m_unk10;
+    char m_bShouldReport;
+    void (*m_FieldDescFunc)(const char *, const char *, const char *, bool, const char *);
+};
+extern const char *g_102c2418[];
+extern int (*g_101e31a8)(char *, int, const char *, va_list);
+
+// TARGET: sub_101245d0
+void sub_101245d0(CPredDescData *self, const char *fmt, ...)
+{
+    if (!self->m_bShouldReport)
+        return;
+
+    const char *fieldname = "empty";
+    int flags = 0;
+
+    if (self->m_pCurrentField) {
+        flags = self->m_pCurrentField->flags;
+        fieldname = self->m_pCurrentField->fieldName ? self->m_pCurrentField->fieldName : "NULL";
+    }
+
+    va_list argptr;
+    char data[4096];
+    int len;
+    va_start(argptr, fmt);
+    len = g_101e31a8(data, sizeof(data), fmt, argptr);
+    va_end(argptr);
+
+    bool isprivate = (flags & 0x200) ? true : false;
+    bool isnetworked = (flags & 0x100) ? true : false;
+
+    if (self->m_FieldDescFunc) {
+        (*self->m_FieldDescFunc)(self->m_pCurrentClassName, self->m_pCurrentField->fieldName,
+            g_102c2418[self->m_pCurrentField->fieldType], isnetworked, data);
+    } else {
+        char suffix[128];
+        suffix[0] = 0;
+        if (isprivate)
+            strcat(suffix, "private");
+        if (isnetworked) {
+            if (suffix[0])
+                strcat(suffix, " - ");
+            strcat(suffix, "net");
+        }
+        if (suffix[0])
+            g_101e3108("%s::%s(%s) - %s", self->m_pCurrentClassName, fieldname, suffix, data);
+        else
+            g_101e3108("%s::%s - %s", self->m_pCurrentClassName, fieldname, data);
+    }
+    self->m_bShouldReport = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124740 size=0x1e
 namespace lifted {
 extern char g_102c25c0;
