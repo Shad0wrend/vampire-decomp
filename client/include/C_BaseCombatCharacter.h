@@ -7,6 +7,7 @@
 class C_BaseCombatCharacter : public C_BaseFlex
 {
 public:
+	C_BaseCombatCharacter();
 	virtual ~C_BaseCombatCharacter();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseCombatCharacter's own function

@@ -226,6 +226,61 @@ C_BaseCombatWeapon *pcd_emit_1007ab20(const C_BaseCombatWeapon &other) { return 
 // TARGET: ??_GC_BaseCombatWeapon@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1007acd0 size=0xb7
+#include "C_BaseCombatWeapon.h"
+
+class CCollisionUnk_10043230
+{
+public:
+	void sub_10043230(int solid);
+};
+
+class CEntityUnk_100a0710
+{
+public:
+	void sub_100a0710(int modelName);
+};
+
+void C_BaseCombatWeapon::vfunc19()
+{
+	vfunc21();
+
+	((CCollisionUnk_10043230 *)((char *)this + 0x190))->sub_10043230(2);
+
+	*(int *)((char *)this + 0x928) = 0;
+	*(int *)((char *)this + 0x934) = 0;
+	*(int *)((char *)this + 0x914) = 0;
+
+	int *pClip = (int *)((char *)this + 0x7ac);
+	for (int i = 0; i < 2; i++, pClip++)
+	{
+		if (vfunc150(i))
+		{
+			if (sub_1007b160())
+			{
+				if (*pClip < *(int *)((char *)sub_1007b160() + 0x2668))
+				{
+					*pClip = *(int *)((char *)sub_1007b160() + 0x2668);
+				}
+			}
+			else
+			{
+				*pClip = 0;
+			}
+		}
+		else
+		{
+			*pClip = -1;
+		}
+	}
+
+	((CEntityUnk_100a0710 *)this)->sub_100a0710(vfunc216());
+
+	*(int *)((char *)this + 0x8b4) = -1;
+	*(int *)((char *)this + 0x184) &= ~0x40000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b5f0 size=0xd
 #include "C_BaseCombatWeapon.h"
 namespace lifted {

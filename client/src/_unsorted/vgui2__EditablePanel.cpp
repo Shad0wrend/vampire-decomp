@@ -11,6 +11,57 @@ vgui2::EditablePanel *pcd_emit_101b46c0(const vgui2::EditablePanel &other) { ret
 // TARGET: ??_GEditablePanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101b4930 size=0x61
+#include "vgui2__KeyValues.h"
+
+extern int sub_101b6840( int size );
+
+class CUnknown101b5670
+{
+public:
+	void *sub_101b5670( int name );
+};
+
+class CFocusNavGroup_101b4930
+{
+public:
+	virtual void v0();
+	virtual void SetDefaultButton( int panel );
+};
+
+class CEditablePanel_101b4930
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22();
+	virtual void PostMessage( int target, vgui2::KeyValues *msg, float delay = 0.0f );
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30();
+	virtual int GetVParent();
+
+	char m_pad4[0x5c - 0x4];
+	CFocusNavGroup_101b4930 m_NavGroup;
+
+	void sub_101b4930( int panel );
+};
+
+void CEditablePanel_101b4930::sub_101b4930( int panel )
+{
+	m_NavGroup.SetDefaultButton( panel );
+	if ( GetVParent() )
+	{
+		CUnknown101b5670 *raw = (CUnknown101b5670 *)sub_101b6840( 0x1c );
+		vgui2::KeyValues *msg = raw ? (vgui2::KeyValues *)raw->sub_101b5670( (int)"DefaultButtonSet" ) : 0;
+		msg->vfunc17( (int)"panel", panel );
+		PostMessage( GetVParent(), msg, 0.0f );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4d60 size=0xa
 #include "vgui2__EditablePanel.h"
 namespace lifted {

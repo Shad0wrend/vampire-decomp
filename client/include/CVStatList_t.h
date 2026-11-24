@@ -13,6 +13,9 @@ public:
 	CVStatList_t(int a);
 	~CVStatList_t();
 	int sub_1015dbd0(int a);
+	const char *sub_1015dc80(int stat);
+	const char *sub_1015dd20(int stat);
+	const char *sub_1015e190(int stat, char bTimed);
 	char sub_1015d950(int stat, int amount);	// "CVStatList_t::AddBase" (called through the stub at 0x1000e66a)
 	char sub_1015da50(int stat, int amount);	// "CVStatList_t::SubBase": scope trace, returns AddBase(stat, -amount)
 	char sub_1015d3e0(int stat);	// "CVStatList_t::IsValidStat": 0 <= stat < m_field04

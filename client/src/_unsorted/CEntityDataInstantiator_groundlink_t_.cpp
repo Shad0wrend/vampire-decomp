@@ -32,6 +32,91 @@ int CEntityDataInstantiator<groundlink_t>::vfunc1(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011dcc0 size=0x145
+#include <string.h>
+#include "CEntityDataInstantiator.h"
+#include "utlvector.h"
+#include "UtlVec8.h"
+
+typedef unsigned int UtlHashHandle_t;
+
+struct CUtlHashGroundLink
+{
+	typedef bool (*CompareFunc_t)(UtlVec8Elem const &, UtlVec8Elem const &);
+	typedef unsigned int (*KeyFunc_t)(UtlVec8Elem const &);
+
+	static UtlHashHandle_t InvalidHandle() { return (UtlHashHandle_t)~0; }
+	int GetBucketIndex(UtlHashHandle_t handle) const { return (((handle >> 16) & 0x0000ffff)); }
+	int GetKeyDataIndex(UtlHashHandle_t handle) const { return (handle & 0x0000ffff); }
+	UtlHashHandle_t BuildHandle(int ndxBucket, int ndxKeyData) const { return (UtlHashHandle_t)((ndxBucket << 16) | ndxKeyData); }
+
+	UtlVec8Elem &Element(UtlHashHandle_t handle)
+	{
+		unsigned int ndxBucket = handle >> 16;
+		unsigned int ndxKey = handle & 0xffff;
+		UtlVec8Elem *pBase = (UtlVec8Elem *)m_Buckets[ndxBucket].m_pMemory;
+		return pBase[ndxKey];
+	}
+
+	unsigned int sub_1011ea20(UtlVec8Elem const &src);
+
+	__forceinline UtlHashHandle_t Find(UtlVec8Elem const &src)
+	{
+		unsigned int key = m_KeyFunc(src);
+		unsigned int ndxBucket = m_bPowerOfTwo ? (key & m_ModMask) : (key % (unsigned int)m_Buckets.Count());
+		int keyDataCount = m_Buckets[ndxBucket].m_Size;
+		int ndxKeyData;
+		for (ndxKeyData = 0; ndxKeyData < keyDataCount; ndxKeyData++)
+		{
+			UtlVec8Elem *pBase = (UtlVec8Elem *)m_Buckets[ndxBucket].m_pMemory;
+			if (m_CompareFunc(pBase[ndxKeyData], src))
+				break;
+		}
+		if (ndxKeyData == keyDataCount)
+			return InvalidHandle();
+		return BuildHandle(ndxBucket, ndxKeyData);
+	}
+
+	__forceinline UtlHashHandle_t Insert(UtlVec8Elem const &src)
+	{
+		UtlHashHandle_t handle = sub_1011ea20(src);
+		if (handle != InvalidHandle())
+			return handle;
+
+		unsigned int key = m_KeyFunc(src);
+		unsigned int ndxBucket = m_bPowerOfTwo ? (key & m_ModMask) : (key % (unsigned int)m_Buckets.Count());
+		UtlVec8 &bucket = m_Buckets[ndxBucket];
+		int ndxKeyData = bucket.sub_1011ed80(bucket.m_Size, &src);
+		return BuildHandle(ndxBucket, ndxKeyData);
+	}
+
+	CUtlVector<UtlVec8> m_Buckets;
+	CompareFunc_t m_CompareFunc;
+	KeyFunc_t m_KeyFunc;
+	bool m_bPowerOfTwo;
+	unsigned int m_ModMask;
+};
+
+// TARGET: ?vfunc2@?$CEntityDataInstantiator@Ugroundlink_t@@@@UAEPAXI@Z
+void *CEntityDataInstantiator<groundlink_t>::vfunc2(unsigned int instance)
+{
+	CUtlHashGroundLink &table = *(CUtlHashGroundLink *)&m_pBuckets;
+	UtlVec8Elem entry;
+	entry.b = 0;
+	entry.a = instance;
+
+	UtlHashHandle_t handle = table.Find(entry);
+	if (handle == table.InvalidHandle())
+	{
+		handle = table.Insert(entry);
+		table.Element(handle).b = (int)(new groundlink_t);
+		memset((void *)table.Element(handle).b, 0, sizeof(groundlink_t));
+	}
+
+	return (void *)table.Element(handle).b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011de10 size=0xf5
 #include "utlrbtree.h"
 #include "utlsortvector.h"

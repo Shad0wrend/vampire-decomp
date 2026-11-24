@@ -28,6 +28,20 @@ int CMessageChars::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101687d0 size=0x42
+#include <stdarg.h>
+#include "CMessageChars.h"
+
+int CMessageChars::vfunc3(int a1, int a2, int a3, int a4, int a5, int a6, int a7, const char *fmt, int messageID, ...)
+{
+	va_list argptr;
+	va_start(argptr, fmt);
+	int ret = vfunc5(0.0f, a1, a2, a3, a4, a5, a6, a7, fmt, messageID, argptr);
+	va_end(argptr);
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101688c0 size=0xd
 #include "CMessageChars.h"
 namespace lifted {
