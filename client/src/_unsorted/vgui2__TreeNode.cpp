@@ -1,6 +1,51 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101bce10 size=0x51
+// TARGET: sub_101bce10
+struct PanelBase
+{
+	void sub_101a99f0(bool);
+};
+
+struct PanelVtbl
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21(bool);
+};
+
+void __fastcall sub_101bce10(void *self, int edx, bool b)
+{
+	((PanelBase *)self)->sub_101a99f0(b);
+	bool state = b && ((char *)self)[0x70];
+	for ( int i = 0; i < *(int *)((char *)self + 0x80); i++ )
+	{
+		void *pChild = *(void **)(*(char **)((char *)self + 0x74) + i * 4);
+		((PanelVtbl *)pChild)->v21(state);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bcf80 size=0xb
 #include "vgui2__TreeNode.h"
 namespace lifted {
