@@ -61,6 +61,15 @@ int C_ClientStats::vfunc11()
 int C_ClientStats::vfunc14(int i) { return m_Stats[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x100adc10 size=0xb
+#include "C_ClientStats.h"
+// TARGET: C_ClientStats::vfunc16
+int C_ClientStats::vfunc16(int i)
+{
+	return ((int *)this)[0x14 + i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adca0 size=0x1
 #include "C_ClientStats.h"
 
