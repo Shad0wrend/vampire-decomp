@@ -9,6 +9,7 @@ namespace vgui2
 class BuildModeDialog : public vgui2::Frame
 {
 public:
+	void sub_101c3bb0();
 	virtual ~BuildModeDialog();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with BuildModeDialog's own function
