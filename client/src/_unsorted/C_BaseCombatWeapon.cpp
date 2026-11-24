@@ -585,6 +585,12 @@ void C_BaseCombatWeapon::vfunc180(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c100 size=0x23
+#include "C_BaseCombatWeapon.h"
+// TARGET: ?vfunc185@C_BaseCombatWeapon@@UAE_NXZ
+bool C_BaseCombatWeapon::vfunc185() { for (int i = 0; i < 2; i++) { if (vfunc153(i)) return true; } return false; }
+// END FUNCTION
+
 // FUNCTION: 0x1007c1d0 size=0xd
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
