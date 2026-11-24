@@ -26865,6 +26865,15 @@ int sub_10088750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088780 size=0x14
+#include "bf_read.h"
+struct CUnknown10088780 : public bf_read { bool sub_10088780(void *pBuf, int nBytes); };
+bool CUnknown10088780::sub_10088780(void *pBuf, int nBytes)
+{
+	return sub_10087bb0(pBuf, nBytes << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088880 size=0x2f
 // TARGET: bf_read::sub_10088880
 #include "bf_read.h"
