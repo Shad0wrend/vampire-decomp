@@ -20,6 +20,7 @@ public:
     } m_data;
 public:
     virtual void vfunc1();
+    virtual void vfunc3();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CDetailObjectSystem adds to its base's vtable: 9-11, vfuncK at slot K
     virtual void vfunc9();
