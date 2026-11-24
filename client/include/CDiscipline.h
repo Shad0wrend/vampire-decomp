@@ -8,7 +8,8 @@ struct CDisciplineEntry
 {
 	int m_nId;
 	int m_unk4;
-	int m_unk8;
+	bool m_b8;
+	char m_pad9[3];
 };
 
 class CDiscipline : public CManagedHudElement
