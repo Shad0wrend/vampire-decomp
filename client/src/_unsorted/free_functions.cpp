@@ -67436,6 +67436,13 @@ char VKeyValuesInterface::sub_10154230(const char *pszName, int nMax, const char
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154360 size=0xe
+void sub_10154740(void *);
+struct CView { void sub_10154360(void *); };
+// TARGET: ?sub_10154360@CView@@QAEXPAX@Z
+void CView::sub_10154360(void *p) { sub_10154740(p); }
+// END FUNCTION
+
 // FUNCTION: 0x10154370 size=0x10b
 #include "VKeyValues.h"
 #include <stdio.h>
