@@ -14557,6 +14557,48 @@ int CUnknown10038670::sub_10038670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038690 size=0x61
+struct ITempEnts_GlowView {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void *v14(void *origin, void *model, int a, int b, int c, int d, float e, int f, int g, int h, int i, int j);
+};
+
+extern ITempEnts_GlowView *g_1028073c;
+extern char g_104d4970[];
+
+struct Self_10038690 {
+	char m_pad0[0xC];
+	int m_unkC;
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+	int m_unk1C;
+	int m_unk20;
+	int m_unk24;
+};
+
+void __fastcall sub_10038690(Self_10038690 *self, void *edx, int updateType)
+{
+	float f = self->m_unk24 * 0.00392156862745098;
+	void *e = g_1028073c->v14(&self->m_unkC, g_104d4970, self->m_unk1C, self->m_unk18, 5, 0, f, self->m_unk20, 0x10100, 0xff, 0xff, 0xff);
+	if (e)
+		*(float *)((char *)e + 0x7c4) = 0.2f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038700 size=0x59
 extern char g_104d4970[];
 
