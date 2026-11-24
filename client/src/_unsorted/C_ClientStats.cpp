@@ -9,6 +9,13 @@ int sub_100adbb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adbc0 size=0x3
+// TARGET: sub_100adbc0
+void __stdcall sub_100adbc0(int)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adca0 size=0x1
 #include "C_ClientStats.h"
 
