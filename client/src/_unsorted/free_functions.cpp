@@ -20119,6 +20119,30 @@ char CUnknown1005f6d0::sub_1005f6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f750 size=0x6e
+#include "CPhysicsHand.h"
+
+int sub_100cd100();
+int sub_100cd0f0();
+
+void CPhysicsHand::sub_1005f750()
+{
+	m_unk178 = 0x80;
+	m_unk17c = 0x80;
+
+	double d1 = sub_100cd100() * 0.0015625;
+	d1 *= 16.0;
+	m_unk180 = (int)d1;
+
+	double d2 = sub_100cd0f0() * 0.0020833333333333333;
+	d2 *= 5.0;
+	m_unk184 = (int)d2;
+
+	m_unk188 = 0;
+	m_unk18c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f800 size=0xf
 struct CUnknown1005f800 { int sub_1005f800(); };
 int CUnknown1005f800::sub_1005f800()
