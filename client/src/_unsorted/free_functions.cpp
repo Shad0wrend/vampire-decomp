@@ -55341,6 +55341,37 @@ int CUnknown100f0180::sub_100f0180(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0250 size=0xb5
+#include "CHudHistoryResource.h"
+struct CGlobalsView100f0250 { virtual void v0(); virtual bool v1(); char pad[0x28 - 4]; float curtime; };
+extern CGlobalsView100f0250 *g_10678d4c;
+extern float g_104cfe3c;
+int sub_100cd0f0();
+struct HistItemView100f0250 { int type; float time; int count; int id; int unk10; int unk14; };
+struct HistView100f0250 { char pad[0x10]; HistItemView100f0250 items[12]; int gap; int slot; };
+static inline float Now100f0250()
+{
+	if (g_10678d4c->v1())
+		return 0.0f;
+	return g_10678d4c->curtime;
+}
+void CHudHistoryResource::sub_100f0250(int iType, int iId, int iCount)
+{
+	HistView100f0250 *h = (HistView100f0250 *)this;
+	if (iType != 1 || iCount)
+	{
+		if (h->gap * (h->slot + 2) + 32 > sub_100cd0f0() - 64 || h->slot >= 12)
+			h->slot = 0;
+		HistItemView100f0250 *p = &h->items[h->slot++];
+		p->type = iType;
+		p->id = iId;
+		p->unk10 = -1;
+		p->count = iCount;
+		p->time = Now100f0250() + g_104cfe3c;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0310 size=0xc5
 #include "ConVar.h"
 
