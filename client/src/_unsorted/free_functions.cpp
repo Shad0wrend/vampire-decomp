@@ -60185,6 +60185,56 @@ int sub_100f45b0(int w, int h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f55b0 size=0xf4
+void sub_100f6ce0();
+void sub_100f71f0();
+void sub_100f7230();
+void sub_100f7270();
+void sub_100f72b0();
+void sub_100f72f0();
+void sub_100f7330();
+void sub_100f7360();
+void sub_100f73c0();
+void sub_100f7420();
+void sub_100f7460();
+void sub_100f74a0();
+void sub_100f74e0();
+void sub_100f7550();
+void sub_100f75c0();
+void sub_100f7650();
+void sub_100f76d0();
+void sub_100f7710();
+void sub_100f7720();
+
+// TARGET: sub_100f55b0
+int sub_100f55b0(int idx)
+{
+	switch ( idx )
+	{
+	case 0: return (int)sub_100f6ce0;
+	case 1: return (int)sub_100f71f0;
+	case 2: return (int)sub_100f7230;
+	case 3: return (int)sub_100f7270;
+	case 5: return (int)sub_100f72b0;
+	case 6: return (int)sub_100f72f0;
+	case 8: return (int)sub_100f7330;
+	case 9: return (int)sub_100f7360;
+	case 10: return (int)sub_100f73c0;
+	case 11: return (int)sub_100f7420;
+	case 12: return (int)sub_100f7460;
+	case 16: return (int)sub_100f74a0;
+	case 17: return (int)sub_100f74e0;
+	case 18: return (int)sub_100f7550;
+	case 21: return (int)sub_100f75c0;
+	case 19: return (int)sub_100f7650;
+	case 22: return (int)sub_100f76d0;
+	case 23: return (int)sub_100f7710;
+	case 26: return (int)sub_100f7720;
+	default: return 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f57b0 size=0x48
 int sub_100f57b0(int n)
 {
