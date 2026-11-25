@@ -5013,6 +5013,7 @@
 0x100f3d10 func   ?vfunc18@CHudSprite@@QAEXHHHHHHHH@Z CHudSprite::vfunc18
 0x100f3d50 func   ?sub_100f3d50@V3d50@@QAEPAUEl3d50@@H@Z V3d50::sub_100f3d50
 0x100f3d70 func   ?vfunc0@CHudSprite@@UAEXXZ CHudSprite::vfunc0
+0x100f3db0 func   ?vfunc1@CHudSprite@@UAEXXZ CHudSprite::vfunc1
 0x100f3f40 func   ?sub_100f3f40@CUnknown100f3f40@@QAEPAXXZ CUnknown100f3f40::sub_100f3f40
 0x100f3f60 func   ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z CAutoGameSystem::vfunc8
 0x100f3f80 func   ??1IGameSystem@@UAE@XZ IGameSystem::~IGameSystem
