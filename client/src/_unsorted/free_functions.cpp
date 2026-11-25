@@ -51652,6 +51652,31 @@ int sub_100f07a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f07f0 size=0x67
+#include "CHud.h"
+#include <stdlib.h>
+extern void (*g_101e30fc)(void *);
+// TARGET: CHud::sub_100f07f0
+void CHud::sub_100f07f0()
+{
+	for (int i = m_HudListSize; --i >= 0; ) {
+		if (m_HudListMem[i])
+			delete (IDel *)m_HudListMem[i];
+	}
+	m_HudListSize = 0;
+	if (m_HudListGrow != -1) {
+		if (m_HudListMem) {
+			g_101e30fc(m_HudListMem);
+			m_HudListMem = 0;
+		}
+		m_HudListAlloc = 0;
+	}
+	m_unk50 = (int)m_HudListMem;
+	sub_100f0860();
+	free((void *)m_unk60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0860 size=0x6b
 #include "CHud.h"
 void sub_10064d50(int, int, int);
