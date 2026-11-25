@@ -23,4 +23,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int m_unk34;
 
 	bool sub_10164520(int arg0, int arg1);
+	bool sub_10164570(int arg0, class CKeyValuesX *pKV);
 };
