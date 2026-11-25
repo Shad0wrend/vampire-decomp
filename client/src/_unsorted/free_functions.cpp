@@ -96280,6 +96280,52 @@ Beam_t *CViewRenderBeams::sub_101938a0(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101947b0 size=0x75
+#include "CViewRenderBeams.h"
+
+struct BeamNodeV
+{
+	BeamNodeV *next;	// 0x00
+	float m_flDie;		// 0x04
+};
+struct GlobalsV
+{
+	char m_pad00[0xc];
+	float m_flCurtime;	// 0x0c
+};
+extern GlobalsV *g_102b8494;
+
+struct BeamsView
+{
+	char m_pad00[0x1bc14];
+	BeamNodeV *m_pFree;	// 0x1bc14
+};
+
+// TARGET: CViewRenderBeams::sub_101947b0
+void CViewRenderBeams::sub_101947b0(void **ppList)
+{
+	BeamsView *v = (BeamsView *)this;
+	BeamNodeV **pp = (BeamNodeV **)ppList;
+	while (*pp && (*pp)->m_flDie < g_102b8494->m_flCurtime)
+	{
+		BeamNodeV *p = *pp;
+		*pp = p->next;
+		p->next = v->m_pFree;
+		v->m_pFree = p;
+	}
+	for (BeamNodeV *prev = *pp; prev != 0; prev = prev->next)
+	{
+		while (prev->next != 0 && prev->next->m_flDie < g_102b8494->m_flCurtime)
+		{
+			BeamNodeV *q = prev->next;
+			prev->next = q->next;
+			q->next = v->m_pFree;
+			v->m_pFree = q;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194d30 size=0x38
 #include <math.h>
 void sub_10194d30(float *table, int n)
