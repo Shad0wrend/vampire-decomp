@@ -19292,6 +19292,25 @@ int sub_10050a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050af0 size=0xa5
+#include "CFrenzyBar.h"
+
+int sub_100cd100();
+int sub_100cd0f0();
+
+// TARGET: CFrenzyBar::sub_10050af0
+void CFrenzyBar::sub_10050af0()
+{
+	long w = sub_100cd100();
+	m_unk180 = 0x200;
+	m_unk184 = 0x40;
+	m_unk188 = (int)(m_unk180 * (sub_100cd100() * 0.0009765625));
+	m_unk18c = (int)(m_unk184 * (sub_100cd0f0() * 0.0013020833333333333));
+	m_unk178 = ((int)w - (int)m_unk188) / 2;
+	m_unk17c = ((sub_100cd0f0() * 0.0013020833333333333) * 564.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050f20 size=0x40
 struct CUnkFade {
 	char m_pad[0x20];
