@@ -62147,6 +62147,28 @@ CUtlHash_1011ebc0 *CUtlHash_1011ebc0::sub_1011ebc0(int bucketCount, int growCoun
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ec40 size=0x85
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUtlHashView.h"
+// TARGET: CUtlHashView::sub_1011ec40
+int CUtlHashView::sub_1011ec40(const void *pKey)
+{
+	int i;
+	int h; h = m_pfnHash(pKey);
+	if (m_bPowerOfTwo)
+		i = h & m_nMask;
+	else
+		i = h % m_nBuckets;
+	int j; j = 0;
+	int n = m_pBuckets[i].m_Size;
+	while ((int)j < n) { if (m_pfnCompare(&*(pcd_stage(m_pBuckets[i].m_pElements) + j), pKey))
+			break; j = 1 + j; }
+	if (j == n)
+		return -1;
+	return j | (i << 16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ecd0 size=0xb0
 #include "UtlVec8.h"
 
