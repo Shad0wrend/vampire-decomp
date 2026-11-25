@@ -99483,6 +99483,56 @@ void sub_1018d3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d3c0 size=0x97
+struct CCycleCountX {
+    unsigned long m_lo; unsigned long m_hi;
+    void Sample(CCycleCountX *pc) { __asm { mov ecx, pc
+        rdtsc
+        mov [ecx], eax
+        mov [ecx+4], edx } }
+};
+struct VNode {
+    int m0, m4;
+    CCycleCountX m_Start;
+    int m10, m14;
+    char pad[0x54 - 0x18];
+    int m54;
+};
+struct VProfX {
+    char m0; char pad1[3];
+    int m4;
+    int stack[0x400];
+    int m1008;
+    int m100c;
+    int pad2[2];
+    VNode *m1018;
+};
+extern VProfX *g_101e3138;
+extern unsigned char g_105fbcfc;
+__declspec(dllimport) void __cdecl vtune(bool);
+// TARGET: sub_1018d3c0
+void sub_1018d3c0()
+{
+    if (!g_105fbcfc) {
+        VProfX *g = g_101e3138;
+        if (++g->m100c == 1) {
+            VNode *n = g->m1018;
+            n->m14++;
+            if (n->m10++ == 0) {
+                n->m_Start.Sample(&n->m_Start);
+                g = g_101e3138;
+                int v = n->m54;
+                g->stack[g->m1008] = v;
+                g->m1008++;
+                if (g->stack[g->m1008 - 2] != v && g->m0 && v == g->m4)
+                    vtune(true);
+            }
+        }
+        g_105fbcfc = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d4b0 size=0xb
 namespace lifted {
 extern char g_1018d4c0;
