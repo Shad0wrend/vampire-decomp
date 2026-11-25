@@ -41369,6 +41369,35 @@ int EV::sub_100aef10(int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aef40 size=0xad
+#include "ehandle.h"
+struct Obj_100a99d0 { bool sub_100a99d0(); };
+struct CEnt100 { char pad[0x3f8]; Obj_100a99d0 *m_p3f8; void *m_p3fc; void *m_p400; };
+struct ISub { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual int v8(); };
+struct IGlobal { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+ virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+ virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+ virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual int v29(); };
+extern IGlobal *g_1027ba58;
+struct CObj100aef40 {
+    int m_unk0; int m_unk4; ISub m_sub; char pad[0x184 - 0xc]; CBaseHandle m_hEnt;
+    bool sub_100aef40();
+};
+bool CObj100aef40::sub_100aef40()
+{
+    if (m_hEnt.Get() && m_sub.v8() == 11) {
+        CEnt100 *e = (CEnt100 *)m_hEnt.Get();
+        if (!e)
+            return false;
+        if (e->m_p400)
+            return false;
+        if (e->m_p3f8 && e->m_p3f8->sub_100a99d0())
+            return g_1027ba58->v29() != 0;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeff0 size=0x8
 namespace lifted {
 struct C100af150 { int sub_100af150(); };

@@ -3997,6 +3997,7 @@
 0x100aeed0 func   ?sub_100aeed0@CUnknown100aeed0@@QAEXXZ CUnknown100aeed0::sub_100aeed0
 0x100aef00 func   ?sub_100aef00@CUnknown100aef00@@QAEHXZ CUnknown100aef00::sub_100aef00
 0x100aef10 func   ?sub_100aef10@EV@@QAEHHH@Z EV::sub_100aef10
+0x100aef40 func   ?sub_100aef40@CObj100aef40@@QAE_NXZ CObj100aef40::sub_100aef40
 0x100aeff0 func   ?sub_100aeff0@CUnknown100aeff0@@QAEHXZ CUnknown100aeff0::sub_100aeff0
 0x100af000 func   ?sub_100af000@CUnknown100af000@@QAEXXZ CUnknown100af000::sub_100af000
 0x100af0b0 func   ?sub_100af0b0@CUnknown100af0b0@@QAEDXZ CUnknown100af0b0::sub_100af0b0
