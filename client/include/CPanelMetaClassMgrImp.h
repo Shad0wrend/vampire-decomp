@@ -7,6 +7,10 @@
 class CPanelMetaClassMgrImp : public IPanelMetaClassMgr
 {
 public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
 	virtual ~CPanelMetaClassMgrImp();
 	bool sub_101107c0(const char *pFileName, const char *pName, class CKeyValuesX *pKeyValues, int keyValueIdx);
 	bool sub_10110ab0(const char *pFileName, class CKeyValuesX *pKeyValues, int keyValueIdx);
