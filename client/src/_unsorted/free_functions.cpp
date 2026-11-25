@@ -53285,6 +53285,24 @@ void sub_100d9740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9750 size=0xd7
+#include "Vector.h"
+
+// TARGET: sub_100d9750
+float sub_100d9750(const Vector &vLineA, const Vector &vLineB, const Vector &P, Vector &vClosest)
+{
+	Vector vDir;
+	VectorSubtract(vLineB, vLineA, vDir);
+	VectorNormalize(vDir);
+
+	const Vector &vDiff = P - vLineA;
+	float t = DotProduct(vDiff, vDir);
+	VectorMultiply(vDir, t, vClosest);
+	VectorAdd(vClosest, vLineA, vClosest);
+	return (vClosest - P).Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9ba0 size=0x1fc
 #include "Vector.h"
 #include "utlvector.h"
