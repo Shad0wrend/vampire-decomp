@@ -113081,6 +113081,31 @@ int CUnknown101b1fb0::sub_101b1fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2160 size=0xc3
+#include "vgui2__Label.h"
+#include "vgui2__TextImage.h"
+void vgui2::Label::sub_101b2160(const char *text)
+{
+	int *p = (int *)this;
+	vgui2::TextImage *&img = *(vgui2::TextImage **)&p[0x5c / 4];
+	p[0x58 / 4] = 3;
+	p[0xa0 / 4] = 0;
+	img = new vgui2::TextImage(text, sub_101aa220());
+	Color4b c; c.r = 0; c.g = 0; c.b = 0; c.a = 0;
+	img->vfunc3(c);
+	p[0x88 / 4] = 0;
+	p[0x8c / 4] = 0;
+	*(short *)((char *)this + 0xac) = 0;
+	p[0xa4 / 4] = 0;
+	p[0xa8 / 4] = 0;
+	p[0xb4 / 4] = 0;
+	vfunc108(text);
+	p[0x9c / 4] = vfunc122(img, 0);
+	Color4b d; d.r = 0; d.g = 0; d.b = 0; d.a = 255;
+	*(Color4b *)((char *)this + 0xae) = d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3480 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
