@@ -37460,6 +37460,43 @@ char sub_100abf90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100abff0 size=0x64
+#include "Tier1.h"
+
+struct Obj100abff0 { virtual const char *v0() = 0; };
+
+struct VR100abff0
+{
+    virtual void v0() = 0;  virtual void v1() = 0;  virtual void v2() = 0;  virtual void v3() = 0;
+    virtual void v4() = 0;  virtual void v5() = 0;  virtual void v6() = 0;  virtual void v7() = 0;
+    virtual void v8() = 0;  virtual void v9() = 0;  virtual void v10() = 0; virtual void v11() = 0;
+    virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+    virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+    virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+    virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+    virtual void *v28() = 0;
+    virtual void *v29() = 0;
+};
+
+extern VR100abff0 *g_102d43d8;
+extern char g_102b1e50[];
+
+// TARGET: sub_100abff0
+void *sub_100abff0(Obj100abff0 *obj)
+{
+    const char *name = obj->v0();
+    char *(*pfn)(const char *, const char *) = g_101e31ac;
+    if (pfn(name, g_102b1e50))
+    {
+        if (pfn(name, "Top"))
+            return g_102d43d8->v28();
+        if (pfn(name, "Bottom"))
+            return g_102d43d8->v29();
+    }
+    return obj;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac060 size=0x5
 namespace lifted {
 int sub_1009fc40();
