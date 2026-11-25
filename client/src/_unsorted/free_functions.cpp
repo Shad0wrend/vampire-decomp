@@ -100529,6 +100529,63 @@ int CUnkPanelX::sub_10175f00(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175f40 size=0xac
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+struct SubItemV
+{
+	char m_pad0[0x10];
+	int m_nId;
+	char m_pad1[0x48 - 0x14];
+	bool sub_10141ac0();
+};
+struct BigV
+{
+	char m_pad0[0x54];
+	SubItemV m_subs[4];
+	BigV *sub_10142340(int a);
+	void sub_101423a0();
+	BigV() { sub_10142340(-1); }
+	~BigV() { sub_101423a0(); }
+};
+extern int g_105e77d8;
+extern BigV **g_105e77dc;
+struct WizV
+{
+	char m_pad0[0x3b0];
+	int m_nIdx;
+	void sub_10174d10();
+	int sub_10175f40(int id);
+};
+// TARGET: WizV::sub_10175f40
+int WizV::sub_10175f40(int id)
+{
+	BigV *pBig;
+	if (m_nIdx >= 0 && m_nIdx < g_105e77d8)
+	{
+		pBig = g_105e77dc[m_nIdx];
+		if (!pBig)
+		{
+			DevMsg(1, "ERROR: CharGenWizard: KeyToIdx: Couldn't Match PopUp: %d!\n", m_nIdx);
+			sub_10174d10();
+			return id;
+		}
+	}
+	else
+	{
+		static BigV s_Default;
+		pBig = &s_Default;
+	}
+	int i = 0;
+	SubItemV *ps = pBig->m_subs;
+	for (; i < 4; i++, ps++)
+	{
+		if (ps->sub_10141ac0() && ps->m_nId == id)
+			return i;
+	}
+	return id;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10176360 size=0x20
 namespace lifted {
 extern char g_1024baec;
