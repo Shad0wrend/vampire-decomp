@@ -16,6 +16,7 @@ public:
 	int sub_1015d5b0(int stat);
 	void sub_1015d4a0(int stat);
 	void sub_1015d400(int stat, int value);
+	void sub_1015d530(int stat, int source);
 	void sub_1015d650(int stat, int value);
 	const char *sub_1015dc80(int stat);
 	const char *sub_1015dd20(int stat);
