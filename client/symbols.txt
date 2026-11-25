@@ -5209,6 +5209,7 @@
 0x100f0570 func   ?sub_100f0570@CUnknown100f0570@@QAEHXZ CUnknown100f0570::sub_100f0570
 0x100f0590 func   ?vfunc11@CHudElement@@UAE_ND@Z CHudElement::vfunc11
 0x100f05a0 func   ?vfunc12@CHudElement@@UAEHH@Z CHudElement::vfunc12
+0x100f05b0 func   ?sub_100f05b0@CHudElement@@QAE_NXZ CHudElement::sub_100f05b0
 0x100f0610 func   ?sub_100f0610@@YAHHHH@Z sub_100f0610
 0x100f0630 func   ?sub_100f0630@@YAHHHH@Z sub_100f0630
 0x100f0650 func   ?sub_100f0650@@YAHHHH@Z sub_100f0650
