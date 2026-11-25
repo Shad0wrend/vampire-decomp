@@ -2506,6 +2506,7 @@
 0x10049fc0 func   ?sub_10049fc0@CUnknown10049fc0@@QAEPAXXZ CUnknown10049fc0::sub_10049fc0
 0x1004a000 func   ??_GCGodLight@@UAEPAXI@Z ??_GCGodLight@@UAEPAXI@Z
 0x1004a020 func   ?vfunc1@CGodLight@@UAEXXZ CGodLight::vfunc1
+0x1004a0a0 func   ?vfunc3@CGodLight@@UAEXXZ CGodLight::vfunc3
 0x1004a140 func   ??0?$CUtlMemory@ULightRay_t@@@@QAE@HH@Z CUtlMemory<LightRay_t>::CUtlMemory
 0x1004a180 func   ?InsertMultipleBefore@?$CUtlVector@ULightRay_t@@V?$CUtlMemory@ULightRay_t@@@@@@QAEHHHPBULightRay_t@@@Z CUtlVector<LightRay_t,CUtlMemory<LightRay_t> >::InsertMultipleBefore
 0x1004a330 func   ?sub_1004a330@@YAXPAUS44_1004a330@@PBU1@@Z sub_1004a330
