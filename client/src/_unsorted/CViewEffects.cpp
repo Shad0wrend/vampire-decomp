@@ -39,6 +39,42 @@ void CViewEffects::vfunc8(Vector &origin, QAngle &angles, float factor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197580 size=0xa5
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+struct CUtlVectorPtrView
+{
+	void **m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_size;
+	void **m_pElements;
+};
+extern void (__cdecl *g_101e30fc)(void *);
+
+// TARGET: CViewEffects::vfunc17
+void CViewEffects::vfunc17()
+{
+	ScopeTrace trace("CViewEffects::ClearAllFades", g_102de300);
+	CUtlVectorPtrView *v = (CUtlVectorPtrView *)((char *)this + 4);
+	for (int i = v->m_size - 1; i >= 0; i--)
+		::operator delete(v->m_pMemory[i]);
+	v->m_size = 0;
+	if (v->m_nGrowSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			g_101e30fc(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_nAllocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	vfunc11();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197630 size=0x9f
 #include "CViewEffects.h"
 #include "ScopeTrace.h"
