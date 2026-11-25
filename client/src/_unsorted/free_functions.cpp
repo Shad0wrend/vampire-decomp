@@ -97514,6 +97514,33 @@ int CUnknown10180de0::sub_10180de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181a30 size=0x9a
+#include "CVStatInfoList_t.h"
+#define D8(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7();
+struct Lbl10181a30 {
+	D8(a) D8(b) D8(c) D8(d) D8(e) D8(f) D8(g) D8(h) D8(i) D8(j) D8(k) D8(l) D8(m)
+	virtual void n0(); virtual void n1(); virtual void n2();
+	virtual void s107(const char *);
+	virtual void s108(const char *);
+};
+extern CVStatInfoList_t g_105f9220;
+struct Score10181a30 {
+	char pad[0x1fc]; int m1fc; char pad2[0x2a0 - 0x200]; Lbl10181a30 *m2a0; Lbl10181a30 *m2a4; Lbl10181a30 *m2a8; Lbl10181a30 *m2ac; Lbl10181a30 *m2b0;
+	void sub_10181a30();
+};
+void Score10181a30::sub_10181a30()
+{
+	const char *const &t = g_105f9220.sub_1015cfe0(0x1c)->m_pszTitle;
+	m2ac->s108(t ? t : "");
+	const char *const &h = g_105f9220.sub_1015cfe0(0x1c)->m_apszHelpText[0];
+	m2b0->s107(h ? h : "");
+	m2a0->s108("");
+	m2a8->s107("");
+	m2a4->s108("");
+	m1fc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181ad0 size=0x97
 #include "CUnknown10203240.h"
 #include "CUnknown10202ba0.h"
