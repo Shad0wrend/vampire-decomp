@@ -93537,6 +93537,50 @@ void sub_10189130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101892d0 size=0x6b
+#include "QuestLogPanel.h"
+
+extern void *g_104a0d50;
+void __stdcall sub_10189340(int);
+void __fastcall sub_10189600(void *self);
+
+#define PD(n) virtual void d##n() = 0;
+class CPageView : public vgui2::Panel
+{
+public:
+	PD(107) PD(108) PD(109) PD(110) PD(111) PD(112) PD(113) PD(114) PD(115) PD(116)
+	PD(117) PD(118) PD(119) PD(120) PD(121) PD(122) PD(123) PD(124) PD(125) PD(126)
+	PD(127) PD(128) PD(129) PD(130) PD(131) PD(132) PD(133) PD(134) PD(135) PD(136)
+	PD(137) PD(138) PD(139) PD(140) PD(141) PD(142) PD(143) PD(144) PD(145) PD(146)
+	PD(147) PD(148) PD(149) PD(150) PD(151) PD(152) PD(153) PD(154) PD(155) PD(156)
+	PD(157) PD(158) PD(159) PD(160) PD(161) PD(162) PD(163) PD(164) PD(165)
+	virtual void SetSelected(int) = 0;
+};
+
+void QuestLogPanel::sub_101892d0(int index)
+{
+	unsigned char *pGlobal = (unsigned char *)g_104a0d50;
+	if (!pGlobal)
+		return;
+	int old = *(int *)(pGlobal + 0x15ec);
+	if (old != index)
+		sub_10189340(old);
+	*(int *)(pGlobal + 0x15ec) = index;
+	CPageView *pPage = *(CPageView **)((char *)this + 0x7c + index * 4);
+	pPage->SetSelected(1);
+	for (int i = 0; i < 4; i++)
+	{
+		if (i != index)
+		{
+			CPageView *p = *(CPageView **)((char *)this + 0x7c + i * 4);
+			p->SetSelected(0);
+		}
+	}
+	*(char *)((char *)this + 0xc0d8) = 1;
+	sub_10189600(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189340 size=0x34
 #include "QuestJournal.h"
 extern QuestJournal g_105f99e0;
