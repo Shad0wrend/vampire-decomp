@@ -44249,6 +44249,73 @@ void __cdecl sub_100b13d0(Vector &outPos, Vector &outRight, Vector &outUp, Parti
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b19a0 size=0xf9
+#include "ehandle.h"
+#include "CBaseHandle.h"
+#include "CBaseEntityList.h"
+
+struct V4a
+{
+    virtual void v0();
+    virtual void *v1();
+};
+
+struct V8a
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7();
+    virtual int v8();
+};
+
+struct EntV52
+{
+    virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+    virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+    virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+    virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+    virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24();
+    virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
+    virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
+    virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38(); virtual void a39();
+    virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43(); virtual void a44();
+    virtual void a45(); virtual void a46(); virtual void a47(); virtual void a48(); virtual void a49();
+    virtual void a50(); virtual void a51();
+    virtual void *a52();
+};
+
+void sub_100b19a0(void *pOut, int, int, void *pVec, unsigned char bScale, int, void *pEnt)
+{
+    void *origin = ((V4a *)((char *)pEnt + 4))->v1();
+    *(float *)pOut = *(float *)origin;
+    *(float *)((char *)pOut + 4) = *(float *)((char *)origin + 4);
+    *(float *)((char *)pOut + 8) = *(float *)((char *)origin + 8);
+
+    CBaseHandle *ph = (CBaseHandle *)((char *)pEnt + 0x188);
+    if ( (unsigned int)ph->Get() > 0 && ((V8a *)((char *)pEnt + 0xc))->v8() == 11 )
+    {
+        void *pOther = ph->Get();
+        if ( pOther )
+        {
+            if ( *(void **)((char *)pOther + 0x3f8) )
+            {
+                void *pv = ((EntV52 *)pOther)->a52();
+                *(float *)((char *)pOut + 8) += *(float *)((char *)pv + 8);
+            }
+        }
+    }
+
+    if ( bScale )
+    {
+        *(float *)pVec *= *(float *)((char *)pEnt + 0x42c);
+        *(float *)((char *)pVec + 4) *= *(float *)((char *)pEnt + 0x430);
+        *(float *)((char *)pVec + 8) *= *(float *)((char *)pEnt + 0x434);
+        *(float *)((char *)pVec + 0x10) *= *(float *)((char *)pEnt + 0x438);
+        *(float *)((char *)pVec + 0x28) *= *(float *)((char *)pEnt + 0x428);
+        *(int *)((char *)pVec + 0x20) = *(int *)((char *)pEnt + 0x43c);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b1aa0 size=0x9a
 #include "Vector.h"
 struct Sub100b1aa0 { virtual void s0(); virtual Vector *s1(); };
