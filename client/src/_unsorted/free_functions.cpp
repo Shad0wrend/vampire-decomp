@@ -61582,6 +61582,16 @@ void C_BaseEntity::sub_1011b320(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b3b0 size=0x85
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+void C_BaseEntity::sub_1011b3b0(int type)
+{
+	ScopeTrace trace("CBaseEntity::RemoveDataObjectType", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	*(unsigned int *)((char *)this + 0x3e8) &= ~(1 << type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011c140 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };
