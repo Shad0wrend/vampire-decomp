@@ -8314,6 +8314,7 @@
 0x1018aef0 func   ?sub_1018aef0@VRend@@QAEXAAVVector@@0@Z VRend::sub_1018aef0
 0x1018b010 func   ?sub_1018b010@CAnimState@@QAEXPBD@Z CAnimState::sub_1018b010
 0x1018b060 func   ?sub_1018b060@CAnimState@@QAEXXZ CAnimState::sub_1018b060
+0x1018b110 func   ?sub_1018b110@CAnimState@@QAEXXZ CAnimState::sub_1018b110
 0x1018b240 func   ?vfunc88@CStudiomodelPanel@@UAEXXZ CStudiomodelPanel::vfunc88
 0x1018b250 func   ??_GCStudiomodelPanel@@UAEPAXI@Z ??_GCStudiomodelPanel@@UAEPAXI@Z
 0x1018b270 func   ??1CStudiomodelPanel@@UAE@XZ CStudiomodelPanel::~CStudiomodelPanel

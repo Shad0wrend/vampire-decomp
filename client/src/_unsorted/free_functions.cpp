@@ -108576,6 +108576,84 @@ void CAnimState::sub_1018b060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b110 size=0xd6
+#include <string.h>
+
+int sub_1008d9d0(int, int);
+float sub_1008c2d0(int, int, void *);
+int sub_1007a030(int, int);
+
+struct IModelInfoView
+{
+	virtual int v0(int);
+};
+
+struct IEngineView
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
+	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
+	virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11();
+	virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15();
+	virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23();
+	virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27();
+	virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31();
+	virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35();
+	virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39();
+	virtual void u40();
+	virtual float v41(int);
+};
+
+extern IModelInfoView *g_104a57d8;
+extern IEngineView *g_104a57d4;
+
+class CAnimState
+{
+public:
+	void sub_1018b060();
+	void sub_1018b110();
+};
+
+// TARGET: CAnimState::sub_1018b110
+void CAnimState::sub_1018b110()
+{
+	if (!*(int *)((char *)this + 0x2c))
+		return;
+
+	int model = g_104a57d8->v0(*(int *)((char *)this + 0x2c));
+	if (!model)
+		return;
+
+	if (!sub_1008d9d0(model, *(int *)((char *)this + 0xc)))
+		*(int *)((char *)this + 0xc) = 0;
+
+	float f;
+	int buf[0x18];
+	memset(buf, 0, sizeof(buf));
+	f = sub_1008c2d0(model, *(int *)((char *)this + 0xc), buf);
+	if (!(f > 0.0f))
+		return;
+
+	float dt = g_104a57d4->v41(1);
+	dt = dt / f;
+	*(float *)((char *)this + 0x30) += dt;
+
+	if (!(*(float *)((char *)this + 0x30) >= 1.0f))
+		return;
+
+	int m2 = *(int *)((char *)this + 0x2c);
+	int seq = *(int *)((char *)this + 0xc);
+	if (m2)
+		m2 = g_104a57d8->v0(m2);
+	if (sub_1007a030(m2, seq) & 1)
+	{
+		sub_1018b060();
+		return;
+	}
+	*(float *)((char *)this + 0x30) = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b2a0 size=0x7f
 #include "Vector.h"
 
