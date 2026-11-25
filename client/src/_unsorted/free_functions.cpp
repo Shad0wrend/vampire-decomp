@@ -96710,6 +96710,35 @@ void CViewRenderBeams::sub_101947b0(void **ppList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194cb0 size=0x78
+struct IRandomView
+{
+	virtual void v0();
+	virtual float RandomFloat(float, float);
+};
+
+extern IRandomView *g_104a5738;
+
+void sub_10194cb0(float *pData, int n, float scale);
+
+void sub_10194cb0(float *pData, int n, float scale)
+{
+	int half = n >> 1;
+	while (n >= 2)
+	{
+		float *pMid = pData + half;
+		*pMid = (pData[n] + pData[0]) * 0.5 + scale * g_104a5738->RandomFloat(-1.0f, 1.0f);
+		if (half <= 1)
+			break;
+		float hs = scale * 0.5;
+		sub_10194cb0(pMid, half, hs);
+		scale = hs;
+		n = half;
+		half = n >> 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194d30 size=0x38
 #include <math.h>
 void sub_10194d30(float *table, int n)
