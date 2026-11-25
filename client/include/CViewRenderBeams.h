@@ -40,7 +40,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc13();
 	virtual void vfunc14();
 	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual Beam_t *vfunc16(BeamInfoV *);
 	virtual void vfunc17(int type, Vector &start, Vector &end, int modelIndex, int haloIndex, float haloScale, float life, float width, float endWidth, float fadeLength, float amplitude, float brightness, float speed, int startFrame, float framerate, float r, float g, float b);
 	virtual void vfunc18(BeamInfo_t &beamInfo);
 	virtual void vfunc19();
