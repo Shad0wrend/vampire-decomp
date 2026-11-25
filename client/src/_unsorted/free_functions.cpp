@@ -99220,6 +99220,34 @@ int sub_10189890(S10189890 **a, S10189890 **b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101898c0 size=0x9b
+#include "QuestJournal.h"
+#include <stdio.h>
+#include <string.h>
+extern QuestJournal g_105f99e0;
+struct QuestRecY {
+    int m0, m4, m8, mc;
+    int m10;
+    int m14[18];
+    char m5c[8];
+    char m64;
+};
+// TARGET: sub_101898c0
+void __stdcall sub_101898c0(QuestRecY *quest, char *buf, int *pos)
+{
+    char tmp[0x800];
+    char *rec = g_105f99e0.sub_10163180(quest->m14[quest->m10]);
+    if (!quest->m64)
+        sprintf(tmp, "\x01\x05\x02%s\n\x01\x05\x01%s\n\n", quest->m4, *(int *)(rec + 4));
+    else
+        sprintf(tmp, "\x01\x01_\xff_\xff\x01\x05\x02%s\n\x01\x01\x0f\xff\x0f\xff\x01\x05\x01%s\n\x01\x01\xff\xff\xff\xff\n", quest->m4, *(int *)(rec + 4));
+    int len = strlen(tmp);
+    memcpy(buf + *pos, tmp, len + 1);
+    *pos += len;
+    buf[*pos] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189a20 size=0x1
 void sub_10189a20()
 {
