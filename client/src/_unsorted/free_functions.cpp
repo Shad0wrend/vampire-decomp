@@ -103628,6 +103628,24 @@ int sub_10180cd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180ce0 size=0x3e
+struct StatOrder10180ce0 { char pad[0x30]; int count; char pad2[4]; int start; };
+extern void *g_104a0d50;
+struct ScoreV10180ce0
+{
+    void sub_10180d20(StatOrder10180ce0 *, int, char);
+    void sub_10180ce0(StatOrder10180ce0 *p, char c);
+};
+void ScoreV10180ce0::sub_10180ce0(StatOrder10180ce0 *p, char c)
+{
+    if (g_104a0d50)
+    {
+        for (int i = 0; i < p->count; i++)
+            sub_10180d20(p, p->start + i, c);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180d20 size=0xbe
 #include "CVStatInfoList_t.h"
 extern "C" int __cdecl sprintf(char *, const char *, ...);
