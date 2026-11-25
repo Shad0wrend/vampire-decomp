@@ -1,6 +1,54 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10059250 size=0xd1
+#include "CHUDSprite.h"
+#include "ScopeTrace.h"
+
+struct MatSysV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24();
+	virtual void *v25(const char *name, bool *b, int complain);
+};
+
+struct MatV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(int);
+};
+
+extern MatSysV *g_104a57ec;
+
+CHUDSprite::CHUDSprite(const char *pMaterial, int a1, int a2, int a3, int a4, int a5, int a6)
+{
+	ScopeTrace trace("CHUDSprite::CHUDSprite", g_102de300);
+	m_unk08 = a1;
+	m_unk0c = a2;
+	m_unk10 = a3;
+	m_unk14 = a4;
+	bool b;
+	m_unk04 = (int)g_104a57ec->v25(pMaterial, &b, 1);
+	((MatV *)m_unk04)->v12(0);
+	if (b)
+	{
+		m_unk18 = -1;
+		m_unk1c = -1;
+	}
+	else
+	{
+		m_unk04 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10059330 size=0x1e
 #include "CHUDSprite.h"
 
