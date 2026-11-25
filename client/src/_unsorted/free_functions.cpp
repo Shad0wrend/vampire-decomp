@@ -92481,6 +92481,45 @@ int sub_10173750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174370 size=0x7a
+#include <string.h>
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+
+struct ConV;
+struct ICvar {
+	virtual void a0();
+	virtual void a1();
+	virtual ConV *FindVar(const char *name);
+};
+extern ICvar *g_104a57e0;
+
+struct INamePanel {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103();
+	virtual void s104(); virtual void s105(); virtual void s106(); virtual void s107();
+	virtual void GetName(int, char *, int);
+};
+extern INamePanel *g_105fb120;
+
+// TARGET: sub_10174370
+bool sub_10174370()
+{
+	static ConV *pName = g_104a57e0->FindVar("name");
+	if (pName)
+	{
+		if (g_105fb120)
+		{
+			char buf[0x80];
+			g_105fb120->GetName(0, buf, 0x80);
+			if (_strcmpi(buf, "Unnamed") == 0)
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174450 size=0x1c
 struct CUnk102036e0Target { void sub_10174470(int a); };
 struct CUnk102036e0Table { CUnk102036e0Target *sub_100f0ed0(const char *name); };
