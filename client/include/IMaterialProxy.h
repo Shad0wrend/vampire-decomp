@@ -10,6 +10,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc0(void*, void*);
 	virtual void vfunc1(int);
 	virtual void vfunc2();
+#ifdef PCDECOMP_CTEXTCONSOLE_PROXY
+	virtual ~IMaterialProxy() {}
+#else
 	virtual ~IMaterialProxy();
+#endif
 	void * vfunc3(char);	// as in IParticleEffect (transplant)
 };
