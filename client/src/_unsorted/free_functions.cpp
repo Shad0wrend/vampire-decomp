@@ -43657,6 +43657,62 @@ int CUnknown100c9160::sub_100c9160(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9270 size=0x79
+#include "C_VGuiScreen.h"
+
+class CUnknown100c92f0
+{
+public:
+	void sub_100c92f0();
+};
+
+class CUnknown10110450
+{
+public:
+	void sub_10110450(int, int, int, void *);
+};
+
+class CUnknown101104a0
+{
+public:
+	void *sub_101104a0();
+};
+
+class CUnknown101a9980
+{
+public:
+	void sub_101a9980(void *, void *, void *, void *);
+};
+
+struct Pair
+{
+	void *a;
+	void *b;
+};
+
+void C_VGuiScreen::sub_100c9270(int a)
+{
+	((CUnknown100c92f0 *)this)->sub_100c92f0();
+
+	Pair local;
+	local.a = this;
+
+	((CUnknown10110450 *)((char *)this + 0x498))->sub_10110450(a, 0, 0, &local);
+
+	void *p = ((CUnknown101104a0 *)((char *)this + 0x498))->sub_101104a0();
+	if (p)
+	{
+		((CUnknown101a9980 *)p)->sub_101a9980(&local.b, &a,
+			(char *)this + 0x410, (char *)this + 0x414);
+	}
+	else
+	{
+		*(int *)((char *)this + 0x414) = 0;
+		*(int *)((char *)this + 0x410) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c92f0 size=0xb
 namespace lifted {
 struct C10110480 { int sub_10110480(); };
