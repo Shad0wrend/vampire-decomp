@@ -49666,6 +49666,24 @@ void sub_100dd6f0(const Vector &origin, const Vector &angles, const Vector &mins
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd790 size=0x9c
+#include "Vector.h"
+void sub_10109660(const Vector *a, float *m);
+void sub_101080e0(const Vector *v, float *m, Vector *out);
+void sub_10108540(const Vector *v, int col, float *m);
+void sub_100dd790(const Vector *a1, const Vector *a2, const Vector *a3, const Vector *a4, float *m)
+{
+	Vector center;
+	VectorAdd(*a3, *a4, center);
+	VectorScale(center, -0.5f, center);
+	sub_10109660(a2, m);
+	Vector rot;
+	sub_101080e0(a1, m, &rot);
+	VectorSubtract(center, rot, center);
+	sub_10108540(&center, 3, m);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df0f0 size=0x9b
 #include "Vector.h"
 
