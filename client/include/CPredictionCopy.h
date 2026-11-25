@@ -10,7 +10,8 @@ public:
 	const char *m_pCurrentClassName;
 	char m_u20[4];
 	bool m_bShouldReport;
-	char m_u25[3];
+	bool m_bReport;
+	char m_u26[2];
 	int m_nErrorCount;
 	char m_u2c[4];
 	void *m_FieldCompareFunc;
