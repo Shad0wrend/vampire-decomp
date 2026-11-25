@@ -93015,6 +93015,21 @@ int CVStatInfo_t::sub_1015c120(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c1d0 size=0xa7
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+#include "ScopeTrace.h"
+// TARGET: CVStatInfo_t::sub_1015c1d0
+int CVStatInfo_t::sub_1015c1d0(int arg)
+{
+	ScopeTrace trace("CVStatInfo_t::MaxBuy", g_102de300, g_102de300);
+	CVStatValue_t *pMaxBuy = (CVStatValue_t *)((char *)this + 0x88);
+	if (pMaxBuy->sub_10161440(arg) < sub_1015c0e0(arg))
+		return pMaxBuy->sub_10161440(arg);
+	return sub_1015c0e0(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c280 size=0x6b
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
