@@ -1314,3 +1314,18 @@ bool C_BaseEntity::vfunc98()
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011c520 size=0x9d
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+// TARGET: C_BaseEntity::vfunc102
+int C_BaseEntity::vfunc102()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsSolidMaskForEntity", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	if (sub_100a2450() & 0x2000)
+		return 0x202400b;
+	if (*(int *)((char *)this + 0x3f8))
+		return 0x201400b;
+	return 0x200400b;
+}
+// END FUNCTION
