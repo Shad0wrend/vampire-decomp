@@ -83870,6 +83870,45 @@ void StatCallback::sub_1014d390(char *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d410 size=0x78
+#include "CVStatList_t.h"
+
+struct CharView {
+    char m_pad[0x1178];
+    int m_nSize;
+    CVStatList_t **m_pElements;
+};
+
+struct StatNotifier {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2(int);
+    virtual void v3(int);
+    virtual void v4(int);
+    void sub_1014d410(CharView *cv);
+};
+
+// TARGET: StatNotifier::sub_1014d410
+void StatNotifier::sub_1014d410(CharView *cv)
+{
+    CVStatList_t *pList;
+    for (int i = 0; i < cv->m_nSize; i++)
+    {
+        if (cv->m_pElements[i]->m_field10 == 0)
+        {
+            pList = cv->m_pElements[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    v2(pList->sub_1015dbd0(1) - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d760 size=0x7
 struct CUnknown1014d760 { float sub_1014d760(); };
 float CUnknown1014d760::sub_1014d760()
