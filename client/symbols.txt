@@ -5424,6 +5424,7 @@
 0x100f6780 func   ?sub_100f6780@@YAXPAEH@Z sub_100f6780
 0x100f6a40 func   ?sub_100f6a40@@YADHHHH@Z sub_100f6a40
 0x100f6a80 func   ?sub_100f6a80@@YA_NPAE0HH@Z sub_100f6a80
+0x100f6ca0 func   ?sub_100f6ca0@@YA_NHHIHHHH@Z sub_100f6ca0
 0x100f6ce0 func   ?sub_100f6ce0@@YAXPBHPAHH@Z sub_100f6ce0
 0x100f6d00 func   ?sub_100f6d00@@YAXPAE0H@Z sub_100f6d00
 0x100f6db0 func   ?sub_100f6db0@@YAXPAE0H@Z sub_100f6db0

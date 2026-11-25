@@ -59929,6 +59929,22 @@ bool sub_100f6a80(unsigned char *src, unsigned char *dst, int widthHeight, int i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6ca0 size=0x3a
+extern "C" void *sub_100f4330(unsigned int);
+
+typedef void (*fn_t)(int, int, int, int, int, int);
+
+// TARGET: sub_100f6ca0
+bool sub_100f6ca0(int a0, int a1, unsigned int a2, int a3, int a4, int a5, int a6)
+{
+    fn_t f = (fn_t)sub_100f4330(a2);
+    if (!f)
+        return false;
+    f(a0, a1, a3, a4, a5, a6);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6ce0 size=0x13
 extern "C" void *memcpy(void *, const void *, unsigned int);
 #pragma intrinsic(memcpy)
