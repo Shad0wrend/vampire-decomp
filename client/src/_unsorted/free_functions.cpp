@@ -37129,6 +37129,23 @@ char sub_100923c0(char a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100923e0 size=0xf2
+#include "utlvector.h"
+
+extern CUtlVector<unsigned short> g_1049bfcc;
+extern char g_1049c48c;
+extern char g_1049c48d;
+
+// TARGET: sub_100923e0
+void sub_100923e0(char a, char b)
+{
+    short w = *(short *)&g_1049c48c;
+    g_1049bfcc.AddToTail((unsigned short)w);
+    g_1049c48c = a;
+    g_1049c48d = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100924e0 size=0x48
 extern "C" void *memmove(void *, const void *, unsigned int);
 struct SVec { short *m_pMemory; int m_a; int m_b; int m_Size; };
