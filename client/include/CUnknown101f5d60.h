@@ -21,5 +21,6 @@ public:
 
 	bool sub_10155d50();	// reloads the scheme from vdata\system\<name>.txt: frees the record array, parses the file (warns when it cannot be loaded or opened), then runs sub_101f41b0 over the children
 	bool sub_10155e80(void *pKV);
+	void sub_10156060();
 	const char *sub_10155740(int, int);	// parses the "SoundScheme" key: InternalName, then one record per "Sound" key of "SoundList"; false without a key or a scheme
 };
