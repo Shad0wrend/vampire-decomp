@@ -12367,6 +12367,40 @@ void UtlMem::sub_1002d470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d570 size=0xab
+#include "CUtlMemory12.h"
+#include "Vector.h"
+#include <string.h>
+
+struct CUtlVector12_1002d570
+{
+	CUtlMemory12 m_Memory;
+	int m_Size;
+	Vector *m_pElements;
+
+	Vector &Element(int i) { return ((Vector *)m_Memory.m_pMemory)[i]; }
+	int sub_1002d570(int elem, int num, const Vector *pToCopy);
+};
+
+int CUtlVector12_1002d570::sub_1002d570(int elem, int num, const Vector *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	if (m_Size + num > m_Memory.m_allocationCount)
+		m_Memory.sub_1002d690(m_Size + num - m_Memory.m_allocationCount);
+	m_Size += num;
+	m_pElements = (Vector *)m_Memory.m_pMemory;
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(Vector));
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			Element(elem + i) = pToInsert[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d620 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
