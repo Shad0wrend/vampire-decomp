@@ -23199,6 +23199,75 @@ void CUnknown10066400::sub_10066400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066440 size=0x94
+#include "CVMainMenu.h"
+
+struct EngineV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void ClientCmd(const char *cmd);
+};
+
+struct IUnkView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual bool Check();
+};
+
+struct XSnd2
+{
+	void sub_100663c0();
+};
+
+struct CUnknown10067520
+{
+	void sub_10067520();
+};
+
+struct MMObject
+{
+	void sub_100665d0(bool bPurge);
+};
+
+struct CUnknown100666a0
+{
+	void sub_100666a0(int a, int b);
+};
+
+struct CUnknown10066700
+{
+	void sub_10066700(const char *name);
+};
+
+extern EngineV *g_104a57d4;
+extern IUnkView *g_10286860;
+
+void CVMainMenu::sub_10066440()
+{
+	g_104a57d4->ClientCmd("hidegameuiwindows");
+	g_104a57d4->ClientCmd("clear_io_states");
+	vfunc21(0);
+	vfunc64(0);
+	vfunc63(0);
+	if (g_10286860)
+		g_10286860->Check();
+	((XSnd2 *)this)->sub_100663c0();
+	sub_10066250();
+	((CUnknown10067520 *)this)->sub_10067520();
+	((MMObject *)this)->sub_100665d0(false);
+	*(int *)((char *)this + 0x2d8) = 0;
+	((CUnknown100666a0 *)this)->sub_100666a0(0, 4);
+	((CUnknown10066700 *)this)->sub_10066700("Interface/mm_cursor_loop.wav");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100664e0 size=0xe1
 #include "utlvector.h"
 
