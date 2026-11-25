@@ -57,3 +57,27 @@ float C_Sprite::vfunc121()
 	return f[0x444 / 4];
 }
 // END FUNCTION
+
+// FUNCTION: 0x101366f0 size=0x99
+#include "C_Sprite.h"
+#define D8(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7();
+struct IEng136 {
+	D8(a) D8(b) D8(c) D8(d)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6();
+	virtual double Time(int unused);
+};
+extern IEng136 *g_104a57d4;
+struct SprV136 { char pad[0x43c]; int m43c; float m440; char pad2[0x460 - 0x444]; int m460; int m464; float m468; };
+int C_Sprite::vfunc122()
+{
+	SprV136 *s = (SprV136 *)this;
+	if (s->m440 != 0.0f) {
+		double end = s->m468 + s->m440;
+		if (!(g_104a57d4->Time(0) > end)) {
+			double frac = (g_104a57d4->Time(0) - s->m468) / s->m440;
+			return (int)((s->m464 - s->m460) * frac + s->m460);
+		}
+	}
+	return s->m43c;
+}
+// END FUNCTION
