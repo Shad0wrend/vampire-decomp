@@ -42707,6 +42707,36 @@ float CUnknown100a9de0::sub_100a9de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9f40 size=0xf1
+#include "C_BasePlayer.h"
+#include "utlvector.h"
+#include "ehandle.h"
+
+void C_BasePlayer::sub_100a9f40(C_BaseEntity *pEntity)
+{
+    CBaseHandle hEntity;
+    if (pEntity)
+        hEntity.m_Index = *pEntity->vfunc1();
+    else
+        hEntity.m_Index = 0xffffffff;
+
+    CUtlVector<CBaseHandle> &vec = *(CUtlVector<CBaseHandle> *)((char *)this + 0x1a14);
+
+    int iIndex = -1;
+    for (int i = 0; i < vec.m_Size; i++)
+    {
+        IHandleEntity *pTarget = hEntity.Get();
+        if (vec[i].Get() == pTarget)
+        {
+            iIndex = i;
+            break;
+        }
+    }
+    if (iIndex != -1)
+        vec.Remove(iIndex);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa040 size=0x1f8
 #include <string.h>
 #include "CBaseEntityList.h"
