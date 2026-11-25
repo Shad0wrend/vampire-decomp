@@ -30,10 +30,10 @@ public:
     virtual int vfunc8();
     virtual int vfunc9(const char *keyName, int defaultValue);
     virtual float vfunc10(const char *keyName, float defaultValue);
-    virtual void vfunc11();
+    virtual const char *vfunc11(const char *keyName, const char *defaultValue);
     virtual int vfunc12(int, int);
     virtual bool vfunc13(int);
-    virtual void vfunc14();
+    virtual void vfunc14(const char *keyName, const char *value);
     virtual int vfunc15(int, int);
     virtual int vfunc16(int, int);
     virtual int vfunc17(int, int);
