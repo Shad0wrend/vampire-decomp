@@ -10,6 +10,8 @@ class CGrid : public vgui2::Panel
 {
 public:
 	virtual ~CGrid();
+	bool sub_10166730(int xx, int yy);
+	void sub_10166820();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CGrid's own function
 	virtual void vfunc97();
