@@ -18464,6 +18464,22 @@ int CDiscipline::sub_1004ecb0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ed00 size=0x7e
+#include "CDiscipline.h"
+// TARGET: ?sub_1004ed00@CDiscipline@@QAEXH@Z
+void CDiscipline::sub_1004ed00(int id)
+{
+	int i = sub_1004ec90(id);
+	if (i == -1)
+		return;
+	for (; i < 5; i++)
+		m_Entries[i] = m_Entries[i + 1];
+	m_Entries[i].m_nId = -1;
+	if (--m_nEntries <= 0)
+		vfunc5_hud(false);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f0c0 size=0xe1
 #include "CVStatInfoList_t.h"
 #include "utlvector.h"
