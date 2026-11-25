@@ -70641,6 +70641,22 @@ void sub_1013a980(CUnknown1006c1c0 *rd, CUnknownImgInfo *info, unsigned char *ds
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013aa00 size=0x7d
+#include "CUnknown1006c1c0.h"
+// TARGET: ?sub_1013aa00@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z
+void sub_1013aa00(CUnknown1006c1c0 *rd, CUnknownImgInfo *info, unsigned char *out)
+{
+	for (int i = 0; i < info->m_nCount; i++, out += 3)
+	{
+		unsigned char *p = rd->m_pData + rd->m_nC;
+		out[2] = (p[3] * p[0]) >> 8;
+		out[1] = (p[1] * p[3]) >> 8;
+		out[0] = ((p[2] * p[3]) >> 8) - p[3] - 1;
+		rd->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013aa80 size=0x53
 #include "CUnknown1006c1c0.h"
 
