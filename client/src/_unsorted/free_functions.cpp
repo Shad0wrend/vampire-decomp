@@ -18191,6 +18191,43 @@ float *CUnknown100dc9f0::sub_10043580(const float *pPoint, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043680 size=0xb5
+#include "vector.h"
+struct matrix3x4_t;
+struct CCollView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual const Vector &v8();
+	virtual const Vector &v9(int);
+	virtual const matrix3x4_t &v10();
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	int m_unk1c[(0x40 - 0x1c) / 4];
+	int m_nSolid;
+	unsigned char m_flags;
+	Vector *sub_10043540(const Vector &in, Vector *out);
+	Vector *sub_10043680(const Vector &in, Vector *out);
+};
+extern Vector g_104d5190;
+void sub_10107f80(const Vector &in, const matrix3x4_t &m, Vector &out);
+typedef const Vector &(__stdcall *PFNANG)(int);
+Vector *CCollView::sub_10043680(const Vector &in, Vector *out)
+{
+	Vector tmp;
+	sub_10043540(in, &tmp);
+	if (!(m_flags & 0x80) && m_nSolid != 2 && m_nSolid != 0 && (*(PFNANG *)(*(int *)this + 0x24))(0) != g_104d5190) {
+		const matrix3x4_t &m = v10();
+		sub_10107f80(tmp, m, *out);
+		return out;
+	}
+	const Vector &o = v8();
+	out->x = tmp.x + o.x;
+	out->y = tmp.y + o.y;
+	out->z = tmp.z + o.z;
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043740 size=0xb0
 #include "CUnknown100dc9f0.h"
 
