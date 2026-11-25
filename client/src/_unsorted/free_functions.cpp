@@ -98574,6 +98574,49 @@ float CGUIClientRenderable::sub_1018a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018adb0 size=0x92
+struct Model_1018adb0 {
+	char pad[0x18c];
+	int m_count;
+	int m_off;
+};
+struct Node_1018adb0 {
+	Node_1018adb0 *m_next;
+	char pad[0x4c];
+	Node_1018adb0 *sub_100ac0f0(Model_1018adb0 *, int, int, int, int, int, int, int, int);
+};
+struct IModelInfo_1018adb0 {
+	virtual Model_1018adb0 *GetModel(int h);
+};
+extern IModelInfo_1018adb0 *g_104a57d8;
+
+struct LHold {
+	char pad[0x2c];
+	int m2c;
+	char pad2[0x10];
+	Node_1018adb0 *m40;
+	void sub_1018ae50();
+	void sub_1018adb0();
+};
+
+void LHold::sub_1018adb0()
+{
+	sub_1018ae50();
+	if (m2c) {
+		Model_1018adb0 *model = g_104a57d8->GetModel(m2c);
+		if (model) {
+			for (int i = 0; i < model->m_count; i++) {
+				int *s = (int *)((char *)model + model->m_off + i * 0x1c);
+				Node_1018adb0 *n = new Node_1018adb0;
+				n = n ? n->sub_100ac0f0(model, i, s[0], s[1], s[6], s[5], s[4], s[3], 1) : 0;
+				n->m_next = m40;
+				m40 = n;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ae50 size=0x2f
 struct CUnknown100ac740 { CUnknown100ac740 *m_pNext; void sub_100ac740(); };
 struct LHold {
