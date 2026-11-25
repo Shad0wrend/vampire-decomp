@@ -25,6 +25,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int sub_100b8460(int x, int y);
 	void sub_100b7490(int x, int y, bool bSet);
 	void sub_100b74f0();
+	void sub_100b75c0(int i, int j, const char *pName);
 	bool m_bUnk438;
 	char m_pad043d[0x448 - 0x43d];
 	void *m_pArray;
