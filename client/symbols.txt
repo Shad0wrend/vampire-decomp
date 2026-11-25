@@ -7192,6 +7192,7 @@
 0x10163c30 func   ?vfunc97@CBasePanel@@UAEXXZ CBasePanel::vfunc97
 0x10163d90 func   ?vfunc110@CBasePanel@@UAEXXZ CBasePanel::vfunc110
 0x10163dc0 func   ?vfunc108@CBasePanel@@UAEXPBDD@Z CBasePanel::vfunc108
+0x10163e20 func   ?vfunc109@CBasePanel@@UAEXM@Z CBasePanel::vfunc109
 0x10163ea0 func   ?vfunc111@CBasePanel@@UAEXH@Z CBasePanel::vfunc111
 0x10163f50 func   ?vfunc87@CBasePanel@@UAEXH@Z CBasePanel::vfunc87
 0x10163fd0 func   ?vfunc88@CBasePanel@@UAEXH@Z CBasePanel::vfunc88

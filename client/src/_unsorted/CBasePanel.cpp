@@ -202,6 +202,24 @@ void CBasePanel::vfunc108(const char *name, char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163e20 size=0x7c
+#include "CBasePanel.h"
+struct ISurf { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void Set(int h, float f); };
+ISurf *sub_101ac8d0();
+void CBasePanel::vfunc109(float f)
+{
+	if (*(char *)((char *)this + 0x58)) {
+		double d;
+		if (f > 1.0) d = 1.0;
+		else if (f < 0.0) d = 0.0;
+		else d = f;
+		sub_101ac8d0()->Set(*(int *)((char *)this + 0x5c), (float)d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163ea0 size=0xa
 #include "CBasePanel.h"
 void CBasePanel::vfunc111(int a0)
