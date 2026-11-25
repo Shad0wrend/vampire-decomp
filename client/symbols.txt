@@ -4017,6 +4017,7 @@
 0x100aa480 func   ?sub_100aa480@CUnknown100aa480@@QAEHH@Z CUnknown100aa480::sub_100aa480
 0x100aa490 func   ?sub_100aa490@@YAXXZ sub_100aa490
 0x100aa4a0 func   ?sub_100aa4a0@CUnk100aa4a0@@QAEXPAUPair@@@Z CUnk100aa4a0::sub_100aa4a0
+0x100aa4e0 func   ?sub_100aa4e0@@YIXPAX0HH@Z sub_100aa4e0
 0x100aa5d0 func   ?vfunc186@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc186
 0x100aa6d0 func   ?sub_100aa6d0@@YIMPAVC_BasePlayer@@@Z sub_100aa6d0
 0x100aabb0 func   ?sub_100aabb0@@YAXPAUCVDmgEntry@@HPAD@Z sub_100aabb0

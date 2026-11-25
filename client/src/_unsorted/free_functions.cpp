@@ -42798,6 +42798,43 @@ void CUnk100aa4a0::sub_100aa4a0(Pair *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa4e0 size=0xe5
+#include "QuestJournal.h"
+
+void sub_10114660(int, int);
+int sub_10114690();
+int sub_101146c0();
+extern QuestJournal g_105f99e0;
+
+// TARGET: sub_100aa4e0
+void __fastcall sub_100aa4e0(void *self, void *edx, int a1, int a2)
+{
+	sub_10114660(a2, a1);
+	char type = (char)sub_10114690();
+	if (type == 0x4d) {
+		for (int count = (a1 - 1) / 16; count > 0; count--) {
+			int r1 = sub_101146c0();
+			int r2 = sub_101146c0();
+			int r3 = sub_101146c0();
+			int b = sub_10114690();
+			int r5 = sub_101146c0();
+			char *q = g_105f99e0.sub_10162f00(r1);
+			*(unsigned char *)(q + 0x64) = (b != 0);
+			*(int *)(q + 0x10) = r3;
+			*(int *)(q + 0x0c) = r2;
+			if (r5)
+				*(int *)((char *)self + 0x16d4) = *(int *)(q + 8) + 1;
+			else
+				*(int *)((char *)self + 0x16d4) = 0xffff;
+		}
+	} else if (type == 0x4e) {
+		*(int *)((char *)self + 0x15e4) = sub_10114690();
+		g_105f99e0.sub_10162840();
+		*(int *)((char *)self + 0x16d4) = *(int *)((char *)self + 0x15e4) + 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa6d0 size=0x48
 #include "C_BasePlayer.h"
 
