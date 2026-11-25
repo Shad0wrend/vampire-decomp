@@ -15,6 +15,7 @@ public:
 	int m_HudListSize;
 	CHudElement *sub_100f0ed0(const char *pName);
 	void sub_100f0860();
+	void sub_100f08d0();
 	bool sub_100f10d0(int mask);
 	void sub_100f2e80(int, int, int, int, int, int, int, int, int);
 	void sub_100f07f0();
