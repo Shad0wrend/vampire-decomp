@@ -16544,6 +16544,51 @@ int CUnknown1003f430::sub_1003f430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f450 size=0x8c
+struct TEMgrView
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+    virtual void v14(void *org, void *vecB, int a1c, int a18, int c5, int c0, float scale, int a24, int flags, int r, int g, int b);
+};
+struct ModelInfoView
+{
+    virtual void v0(); virtual void v1();
+    virtual void *v2(int);
+    virtual void v3(); virtual void v4();
+    virtual int v5(void *);
+};
+extern ModelInfoView *g_104a57f8;
+extern TEMgrView *g_1028073c;
+struct TESpriteNetView
+{
+    char pad0[0xc];
+    float org[3];
+    int m18; int m1c; int m20; int m24;
+    float vecB[3];
+    char b34;
+    void sub_1003f450(int updateType);
+};
+// TARGET: TESpriteNetView::sub_1003f450
+void TESpriteNetView::sub_1003f450(int updateType)
+{
+    int flags = 0;
+    float scale = m20 * 0.00392156862745098;
+    if (m18)
+    {
+        void *model = g_104a57f8->v2(m18);
+        if (model)
+        {
+            if (g_104a57f8->v5(model) > 1)
+                flags = 0x100;
+        }
+    }
+    if (b34)
+        flags |= 0x80;
+    g_1028073c->v14(org, vecB, m1c, m18, 5, 0, scale, m24, flags, 255, 255, 255);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f5a0 size=0x6
 namespace lifted {
 extern char g_103eb74c;
