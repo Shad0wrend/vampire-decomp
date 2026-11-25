@@ -8878,6 +8878,7 @@
 0x101b9ec0 func   ?vfunc31@TextImage@vgui2@@UAEHXZ vgui2::TextImage::vfunc31
 0x101b9ed0 func   ?vfunc9@TextImage@vgui2@@UAEHHH@Z vgui2::TextImage::vfunc9
 0x101ba7f0 func   ?vfunc32@TextImage@vgui2@@UAEHHH@Z vgui2::TextImage::vfunc32
+0x101ba940 func   ?vfunc0@CheckImage@@UAEHXZ CheckImage::vfunc0
 0x101ba9f0 func   ??_GCheckImage@@UAEPAXI@Z ??_GCheckImage@@UAEPAXI@Z
 0x101baa10 func   ??_GCheckButton@vgui2@@UAEPAXI@Z ??_GCheckButton@vgui2@@UAEPAXI@Z
 0x101baa30 func   ??1CheckButton@vgui2@@UAE@XZ vgui2::CheckButton::~CheckButton
