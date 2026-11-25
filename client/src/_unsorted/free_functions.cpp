@@ -82784,6 +82784,51 @@ bool __fastcall sub_10147e80(CSelf10147e80 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147e90 size=0xac
+#include "VKeyValues.h"
+#include "string_t.h"
+
+string_t sub_1015f830(VKeyValuesInterface *kv, const char *name);
+struct CSub101dc5a0 { void sub_101475e0(VKeyValuesInterface *kv); };
+struct CSub101dce30 { void sub_10147be0(VKeyValuesInterface *kv, const char *name); };
+
+struct CProj10147e90
+{
+	int m_nSpeed;
+	string_t m_Model;
+	string_t m_Particle;
+	char m_bDiesOnHit;
+	char m_bSyncs;
+	char m_pad[2];
+	CSub101dc5a0 m_Sub10;
+	char m_pad2[0x20 - 0x11];
+	CSub101dce30 m_Sub20;
+
+	bool sub_10147e90(VKeyValuesInterface *kv);
+};
+
+bool CProj10147e90::sub_10147e90(VKeyValuesInterface *kv)
+{
+	if (kv)
+	{
+		VKeyValuesInterface *p = kv->vfunc2("Projectile");
+		if (p)
+		{
+			m_nSpeed = p->vfunc10("Speed", 0);
+			m_Model = sub_1015f830(p, "Model");
+			m_Particle = sub_1015f830(p, "Particle");
+			m_bDiesOnHit = p->vfunc12("ParticleDiesOnHit", 0);
+			if (*p->vfunc13("Syncs", ""))
+				m_bSyncs = 1;
+			m_Sub10.sub_101475e0(p);
+			m_Sub20.sub_10147be0(p, "Effect_Src_Proj_Interrupt");
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148040 size=0x52
 #include <stdlib.h>
 #include <string.h>
