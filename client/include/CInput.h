@@ -28,6 +28,12 @@ public:
     int m_unk64[(0xdc - 0x64) / 4];
     struct CInputKey { char name[0x20]; int value; CInputKey *next; };
     CInputKey *m_pKeys;
+    int m_unke0[(0xfc - 0xe0) / 4];
+    float m_f0fc;
+    float m_f100;
+    int m_unk104[(0x138 - 0x104) / 4];
+    float m_f138;
+    char sub_100ff0a0(struct CUnkPlayer *);
     // vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CInput adds to its base's vtable: 0-56, vfuncK at slot K
     virtual void vfunc0();
