@@ -4565,6 +4565,7 @@
 0x100cbc40 func   ?vfunc21@CHLClient@@UAEHHHHM@Z CHLClient::vfunc21
 0x100cbc60 func   ?sub_100cbc60@@YGXH@Z sub_100cbc60
 0x100cbce0 func   ?vfunc25@CHLClient@@UAEHH@Z CHLClient::vfunc25
+0x100cbd00 func   ?vfunc2@CHLClient@@UAEXH@Z CHLClient::vfunc2
 0x100cbe50 func   ?vfunc23@CHLClient@@UAEHHH@Z CHLClient::vfunc23
 0x100cbe80 func   ?vfunc26@CHLClient@@UAEHXZ CHLClient::vfunc26
 0x100cbe90 func   ?vfunc27@CHLClient@@UAEXHH@Z CHLClient::vfunc27

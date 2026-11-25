@@ -370,6 +370,61 @@ int CHLClient::vfunc25(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbd00 size=0xbb
+#include "CHLClient.h"
+#include "CHud.h"
+#include "ConVar.h"
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct O5808 { V4(a) V4(b) V4(c) V4(d) virtual void s16(int a, int b); };
+struct O5238 { virtual void s0(); virtual void s1(); };
+struct Occd98 { virtual void s0(); virtual void s1(); virtual void s2(int a); };
+struct O9850 { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); };
+struct O43d8 { virtual void s0(); virtual void s1(); };
+struct OEng
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41();
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual int v51();
+};
+extern bool g_104a579c;
+extern O5808 *g_104a5808;
+extern O5238 *g_102d5238;
+extern Occd98 *g_102ccd98;
+extern O9850 *g_102b9850;
+extern O43d8 *g_102d43d8;
+extern OEng *g_104a57d4;
+extern CHud g_104cfe38;
+extern ConVar g_104e1708;
+extern void sub_1002c400();
+extern void sub_100f4190(int);
+extern void sub_100e2fa0();
+extern void sub_10057650();
+void CHLClient::vfunc2(int a)
+{
+	if (g_104a579c)
+		return;
+	g_104a579c = true;
+	g_104a5808->s16(0xac, 0);
+	g_102d5238->s1();
+	g_102ccd98->s2(a);
+	sub_1002c400();
+	g_102b9850->s4();
+	g_102d43d8->s1();
+	sub_100f4190(a);
+	sub_100e2fa0();
+	g_104e1708.sub_100dfa90(g_104a57d4->v51() > 1);
+	g_104cfe38.sub_100f08d0();
+	sub_10057650();
+	g_104a57d4->v0();
+	g_104a5808->s16(0xac, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbe50 size=0x1a
 #include "CHLClient.h"
 namespace lifted {
