@@ -39418,6 +39418,91 @@ void sub_100a1200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1270 size=0xcc
+#include "C_BaseEntity.h"
+#include "CClientEntityList.h"
+
+struct EntListSub
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5();
+	virtual int v6();
+};
+
+struct IPredictablesView
+{
+	virtual void *GetPredictable(int i);
+	virtual int GetPredictableCount();
+};
+
+struct IViewRenderV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9();
+	virtual void AddVisibleEntity(C_BaseEntity *pEntity);
+};
+
+struct CUnknown101209e0
+{
+	char sub_101209e0();
+};
+
+struct CUnknown100a2e80
+{
+	char sub_100a2e80();
+};
+
+struct CBaseEntFc
+{
+	void sub_100a1fc0();
+};
+
+struct CBaseEntBa
+{
+	bool sub_100a2ba0();
+};
+
+extern CClientEntityList *g_102b8e9c;
+extern IPredictablesView *g_102af678;
+extern IViewRenderV *g_102d43d8;
+
+void sub_100a1270(void)
+{
+	int i;
+	int nCount = ((EntListSub *)((char *)g_102b8e9c + 0x1803c))->v6();
+	C_BaseEntity *pEntity;
+	for (i = 0; i <= nCount; i++)
+	{
+		pEntity = g_102b8e9c->sub_100d0cf0(i);
+		if (!pEntity)
+			continue;
+		if (pEntity->ShouldDraw())
+			g_102d43d8->AddVisibleEntity(pEntity);
+		else
+			((CBaseEntFc *)pEntity)->sub_100a1fc0();
+	}
+
+	nCount = g_102af678->GetPredictableCount();
+	for (i = 0; i < nCount; i++)
+	{
+		pEntity = (C_BaseEntity *)g_102af678->GetPredictable(i);
+		if (!pEntity)
+			continue;
+		if (!((CBaseEntBa *)pEntity)->sub_100a2ba0())
+			continue;
+		if (((CUnknown101209e0 *)((char *)pEntity + 0xcc))->sub_101209e0())
+			continue;
+		if (((CUnknown100a2e80 *)pEntity)->sub_100a2e80())
+			continue;
+		if (pEntity->ShouldDraw())
+			g_102d43d8->AddVisibleEntity(pEntity);
+		else
+			((CBaseEntFc *)pEntity)->sub_100a1fc0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a13d0 size=0x3
 void __stdcall sub_100a13d0(int a0)
 {

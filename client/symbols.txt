@@ -3758,6 +3758,7 @@
 0x100a1200 func   ?sub_100a1200@@YAXXZ sub_100a1200
 0x100a1210 func   ?vfunc61@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc61
 0x100a1220 func   ?vfunc62@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc62
+0x100a1270 func   ?sub_100a1270@@YAXXZ sub_100a1270
 0x100a1340 func   ?OnDataChanged@C_BaseEntity@@UAEXH@Z C_BaseEntity::OnDataChanged
 0x100a13d0 func   ?OnPreDataChanged@C_BaseEntity@@UAEXH@Z C_BaseEntity::OnPreDataChanged
 0x100a13d0 func   ?sub_100a13d0@@YGXH@Z sub_100a13d0
