@@ -30567,6 +30567,24 @@ template <> int ClientClassInit<DT_BaseGrenade::ignored>(DT_BaseGrenade::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007eb60 size=0x7b
+#include "C_BaseEntity.h"
+#include "Vector.h"
+struct GlobalsV { float a; float b; float c; float curtime; };
+extern GlobalsV *g_102b8494;
+// TARGET: ?sub_1007eb60@C_BaseEntity@@QAEXXZ
+void C_BaseEntity::sub_1007eb60()
+{
+	*(float *)((char *)this + 0x78) = g_102b8494->curtime + 0.2;
+	if (*(void **)((char *)this + 0x90))
+	{
+		sub_1009fa70();
+		float *s = (float *)((char *)this + 0xb4);
+		sub_100a2220(Vector(s[0] * 0.5f, s[1] * 0.5f, s[2] * 0.5f));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f0f0 size=0x38
 struct EntView { char pad[0x3f0]; int m3f0; };
 struct EntInfo { EntView *ent; int serial; int pad; };
