@@ -75471,6 +75471,37 @@ void __fastcall sub_10142620(void *self, int edx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142680 size=0x8d
+#include "CSlotChecker10142680.h"
+#include "CUnknown101439f0.h"
+struct XOwner { int sub_10143360(int); };
+extern XOwner g_105e77e4;
+extern int g_105e775c;
+extern CUnknown101439f0 **g_105e7760;
+bool CSlotChecker10142680::sub_10142680()
+{
+	if (m_bEnabled) {
+		for (int i = 0; i < 4; i++) {
+			int idx = m_slots[i].sub_10141b00();
+			if (idx != -1) {
+				if (g_105e77e4.sub_10143360(idx) > 1)
+					return false;
+				CUnknown101439f0 *p;
+				if (idx >= 0 && idx < g_105e775c) {
+					p = g_105e7760[idx];
+				} else {
+					static CUnknown101439f0 s_default(-1);
+					p = &s_default;
+				}
+				if (!p->m_c)
+					return false;
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101427d0 size=0x1b
 struct CUnknown101427d0 { void * sub_101427d0(); };
 void * CUnknown101427d0::sub_101427d0()
