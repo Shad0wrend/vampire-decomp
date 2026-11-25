@@ -29491,6 +29491,21 @@ WpnSlot_t *C_BaseCombatWeapon::sub_1007b5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ba10 size=0x97
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::sub_1007ba10(int n, int m)
+{
+	switch (n) {
+	case 21: case 22: case 23: case 24:
+		return (int)((char *)sub_1007b160() + (n * 16 + m) * 0x94 + 0x50378);
+	case 10: case 11:
+		return (int)((char *)sub_1007b5b0() + (n * 16 + m) * 0x94 + 0x2198);
+	default:
+		return (int)(sub_1007b180() + (n * 16 + m) * 0x94 + 0x490);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bab0 size=0x38
 struct EntView { char pad[0x3f0]; int m3f0; };
 struct EntInfo { EntView *ent; int serial; int pad; };
