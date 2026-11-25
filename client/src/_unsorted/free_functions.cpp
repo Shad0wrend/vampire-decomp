@@ -103639,6 +103639,40 @@ void *sub_10180c00(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180c40 size=0x8b
+struct Sub10180c40 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual bool IsX(); };
+struct Obj10180c40 { char pad[0x10]; };
+struct Holder10180c40 { char pad[0x10]; Sub10180c40 m10; };
+Holder10180c40 *sub_10170f60();
+struct Panel10180c40
+{
+    char pad[0xc0];
+    char m_c0[0x4c]; char m_10c[0x4c]; char m_158[0x4c]; char m_1a4[0x4c];
+    void sub_1017d930(int);
+    void sub_10180ce0(void *, char);
+    void sub_10180d20(void *, int, char);
+    void sub_1017f1d0();
+    void sub_1017f290();
+    void sub_10180c40(int, char);
+};
+void Panel10180c40::sub_10180c40(int a, char c)
+{
+    if (sub_10170f60() && sub_10170f60()->m10.IsX())
+    {
+        sub_1017d930(a);
+        sub_10180ce0(m_c0, c);
+        sub_10180d20(m_c0, 0x1b, c);
+        sub_10180ce0(m_10c, c);
+        sub_10180ce0(m_158, c);
+        sub_10180ce0(m_1a4, c);
+        sub_1017f1d0();
+        sub_1017f290();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180cd0 size=0xd
 int sub_10180cd0(int a0)
 {

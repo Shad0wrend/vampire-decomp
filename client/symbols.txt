@@ -8059,6 +8059,7 @@
 0x10180840 func   ?sub_10180840@CStatRowGroupView@@QAEX_N@Z CStatRowGroupView::sub_10180840
 0x101808d0 func   ?sub_101808d0@CharEditStatsPanel@@QAEPAXPBDPAH@Z CharEditStatsPanel::sub_101808d0
 0x10180c00 func   ?sub_10180c00@@YAPAXH@Z sub_10180c00
+0x10180c40 func   ?sub_10180c40@Panel10180c40@@QAEXHD@Z Panel10180c40::sub_10180c40
 0x10180cd0 func   ?sub_10180cd0@@YAHH@Z sub_10180cd0
 0x10180ce0 func   ?sub_10180ce0@ScoreV10180ce0@@QAEXPAUStatOrder10180ce0@@D@Z ScoreV10180ce0::sub_10180ce0
 0x10180d20 func   ?sub_10180d20@@YGXPAUStatOrder@@HD@Z sub_10180d20
