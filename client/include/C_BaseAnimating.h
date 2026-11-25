@@ -20,6 +20,7 @@ public:
 	void sub_10095680(int, Vector *);
 	float sub_10095910(int, void *);
 	bool sub_10094020();
+	int sub_10092810();
 	bool sub_10091910(int idx, int arg);
 	bool sub_10093e40();
 	void sub_10002680(int);
