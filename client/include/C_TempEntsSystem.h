@@ -33,6 +33,7 @@ public:
 	void vfunc28(int filter, int delay, int pos, int dir, int extra);
 	void vfunc29(int filter, int delay, int pos);
 	void vfunc2(int filter, int delay, int pos, int dir, int extra);
+	void vfunc36(int filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
 	void vfunc30(int filter, int delay, int pos, int dir);
 	void vfunc5(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc12(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
