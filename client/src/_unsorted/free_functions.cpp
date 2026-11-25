@@ -45644,6 +45644,25 @@ template <> int ClientClassInit<DT_World::ignored>(DT_World::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca750 size=0x9d
+#include "C_World.h"
+float sub_100cd9e0(float, float, float, float);
+#define T10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct VE0 { T10(a) T10(b) T10(c) };
+struct VEng : VE0 { virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual float Time(int); };
+extern VEng *g_104a57d4;
+void C_World::sub_100ca750()
+{
+	float now = g_104a57d4->Time(0);
+	if (m_fCur != m_fTarget) {
+		float dt = now - m_fTime;
+		float d = m_fCur < m_fTarget ? m_fUp : m_fDown;
+		m_fCur = sub_100cd9e0(m_fCur, m_fTarget, dt, 1.0 / d);
+	}
+	m_fTime = now;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca7f0 size=0x5
 namespace lifted {
 int sub_100a0240();
