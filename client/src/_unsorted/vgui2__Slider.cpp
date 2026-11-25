@@ -258,6 +258,33 @@ int vgui2::Slider::vfunc116(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc020 size=0xa1
+#include "vgui2__Slider.h"
+struct ColX { unsigned char r, g, b, a; ColX() {} ColX(int R, int G, int B, int A) { r = R; g = G; b = B; a = A; } };
+struct ISurfY {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void SetColor(ColX);
+	virtual void v11();
+	virtual void FillRect(int, int, int, int);
+};
+struct IChildX { virtual void v0(); virtual void SetBounds(int, int, int, int); };
+ISurfY *sub_101ac8d0();
+// TARGET: vgui2::Slider::vfunc97
+void vgui2::Slider::vfunc97()
+{
+	Panel::vfunc97();
+	int x, y, w, h;
+	vfunc121(x, y, w, h);
+	ColX c(31, 31, 31, 255);
+	sub_101ac8d0()->SetColor(c);
+	sub_101ac8d0()->FillRect(x, y, x + w, y + h);
+	IChildX *child = *(IChildX **)&m_unk8c;
+	if (child)
+		child->SetBounds(x, y, x + w, y + h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc0d0 size=0x1b
 #include "vgui2__Slider.h"
 struct SliderView_101bc0d0 { char pad[0x78]; int m_lo; int m_hi; };
