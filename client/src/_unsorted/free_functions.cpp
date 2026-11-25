@@ -73541,6 +73541,29 @@ void CPartListUnit3::sub_101437d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101439a0 size=0x2f
+struct ElemV;
+
+struct ListV
+{
+	char pad0[8];
+	int m_count;	// 0x08
+	ElemV **m_array;	// 0x0c
+};
+
+bool __fastcall sub_101436c0(ElemV *);
+
+int __fastcall sub_101439a0(ListV *self)
+{
+	for ( int i = 0; i < self->m_count; i++ )
+	{
+		if ( sub_101436c0(self->m_array[i]) )
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101439f0 size=0x16
 struct CUnknown101439f0 { void * sub_101439f0(int); };
 void * CUnknown101439f0::sub_101439f0(int a0)
