@@ -55613,6 +55613,43 @@ void sub_10105f30(int *pMask, int a2, int a3, int a4, FlagsView *pFlags, char bC
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105fb0 size=0x9b
+#include "CHud.h"
+extern CHud g_104cfe38;
+char sub_10186d50();
+void sub_10186d60(int);
+struct kbutton_t { int down[2]; int state; };
+// TARGET: sub_10105fb0
+void sub_10105fb0(int &bits, int in_button, int in_button2, int in_ignore, kbutton_t *button, bool reset)
+{
+	if (button->state & 3)
+	{
+		char *p = (char *)g_104cfe38.sub_100f0ed0("CHudWeaponSelection");
+		if (p && !p[0x1c])
+			bits |= in_button;
+	}
+	int clearmask = ~2;
+	if (button->state & 4)
+	{
+		bits |= in_button2;
+		button->state &= ~4;
+		if (sub_10186d50())
+		{
+			if (in_button == 8)
+				sub_10186d60(1);
+			else
+				sub_10186d60(-1);
+		}
+	}
+	if (in_ignore & in_button)
+		clearmask = ~3;
+	if (in_ignore & in_button2)
+		clearmask &= ~4;
+	if (reset)
+		button->state &= clearmask;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101062e0 size=0x2f
 namespace lifted {
 extern char g_102bdfd8;
