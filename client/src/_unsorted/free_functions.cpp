@@ -17081,6 +17081,44 @@ void * CUnknown10040340::sub_10040340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040390 size=0x72
+struct CEntList100d0cf0 { void *sub_100d0cf0(int idx); };
+extern CEntList100d0cf0 *g_102b8e9c;
+struct CPart100af150 { void sub_100af150(); };
+struct CEntView40390
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual int v43();
+	virtual void v44();
+	virtual int v45();
+	char pad[0x404 - 4];
+	int m_p404;
+};
+CPart100af150 *sub_100b4820(int, int, int, void *, int, int, float, float, float, float);
+
+struct CFx40390
+{
+	int unk0, unk4, unk8;
+	int m_idx, m_a, m_b, m_c;
+	void sub_10040390(int);
+};
+
+void CFx40390::sub_10040390(int)
+{
+	CEntView40390 *e = (CEntView40390 *)g_102b8e9c->sub_100d0cf0(m_idx);
+	if (e && e->m_p404)
+	{
+		CPart100af150 *p = sub_100b4820(m_a, e->v43(), e->v45(), e, m_b, m_c, 1.0f, 1.0f, 1.0f, 1.0f);
+		if (p)
+			p->sub_100af150();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040430 size=0x6
 namespace lifted {
 extern char g_103ec290;
