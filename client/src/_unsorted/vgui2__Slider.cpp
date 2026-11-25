@@ -62,6 +62,41 @@ void vgui2::Slider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb840 size=0xa0
+#include "vgui2__Slider.h"
+struct SliderV {
+	char pad0[0x58];
+	int m_nob;
+	char pad1[0x60 - 0x5c];
+	int m_nobPos0;
+	int m_nobPos1;
+	char pad2[0x78 - 0x68];
+	int m_rangeMin;
+	int m_rangeMax;
+	int m_value;
+};
+// TARGET: vgui2::Slider::vfunc118
+void vgui2::Slider::vfunc118()
+{
+	SliderV *s = (SliderV *)this;
+	int wide, tall;
+	vfunc65(wide, tall);
+	float fnob = (float)s->m_nob;
+	float fvalue = (float)(s->m_value - s->m_rangeMin);
+	float frange = (float)(s->m_rangeMax - s->m_rangeMin);
+	float fper = fvalue / frange;
+	float freepixels = (float)wide - fnob;
+	float firstpixel = freepixels * fper + fnob * 0.5f;
+	s->m_nobPos0 = (int)(firstpixel - (float)(s->m_nob / 2));
+	s->m_nobPos1 = (int)((float)(s->m_nob / 2) + firstpixel);
+	if (s->m_nobPos1 > wide) {
+		s->m_nobPos0 = wide - s->m_nob;
+		s->m_nobPos1 = wide;
+	}
+	vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb8e0 size=0x56
 #include "vgui2__Slider.h"
 
