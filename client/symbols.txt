@@ -4339,6 +4339,7 @@
 0x100c4f00 func   ??_GC_Sun@@UAEPAXI@Z ??_GC_Sun@@UAEPAXI@Z
 0x100c4f20 func   ??1C_Sun@@UAE@XZ C_Sun::~C_Sun
 0x100c50d0 func   ?vfunc5@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc5
+0x100c5290 func   ?vfunc8@C_TempEntsSystem@@QAEXHHHHHHHHHHHHHHHHHH@Z C_TempEntsSystem::vfunc8
 0x100c53f0 func   ?vfunc10@C_TempEntsSystem@@QAEXHHHHHHHHHHHHHHHHH@Z C_TempEntsSystem::vfunc10
 0x100c5540 func   ?vfunc12@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc12
 0x100c55a0 func   ?vfunc13@C_TempEntsSystem@@QAEXHHHHHHHHH@Z C_TempEntsSystem::vfunc13
