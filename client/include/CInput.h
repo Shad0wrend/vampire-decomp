@@ -9,6 +9,7 @@ public:
     void sub_10106880(int);
     void sub_10106860(int *, int *);
     void sub_10101df0();
+    void sub_101025f0(float, struct Vector &);
     void sub_101003b0();
     void sub_10101d10(const char *, int);
     int m_unk04;
@@ -47,7 +48,7 @@ public:
     virtual void vfunc6(int, int, int);
     virtual char *vfunc7(int i);
     virtual void vfunc8(int);
-    virtual void vfunc9();
+    virtual float vfunc9(struct kbutton_t *);
     virtual int vfunc10(int, int, int);
     virtual int vfunc11(const char *name);
     virtual void vfunc12();
