@@ -8636,6 +8636,7 @@
 0x101a9460 func   ??_GPanel@vgui2@@UAEPAXI@Z ??_GPanel@vgui2@@UAEPAXI@Z
 0x101a9480 func   ?sub_101a9480@Panel@vgui2@@QAEPAXPAX@Z vgui2::Panel::sub_101a9480
 0x101a9530 func   ??0Panel@vgui2@@QAE@PAV01@PBD@Z vgui2::Panel::Panel
+0x101a95f0 func   ?sub_101a95f0@Panel@vgui2@@QAEPAXPAXPBDH@Z vgui2::Panel::sub_101a95f0
 0x101a96a0 func   ?sub_101a96a0@Panel@vgui2@@QAEXHHHH@Z vgui2::Panel::sub_101a96a0
 0x101a9780 func   ??1Panel@vgui2@@UAE@XZ vgui2::Panel::~Panel
 0x101a9810 func   ?sub_101a9810@Panel@vgui2@@QAEXPBD@Z vgui2::Panel::sub_101a9810
