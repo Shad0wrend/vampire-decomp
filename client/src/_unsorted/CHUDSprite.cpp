@@ -226,3 +226,35 @@ void CHudSprite::vfunc0()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f3db0 size=0x70
+#include "IHudSprite.h"
+#include "CBCCSlotViews.h"
+
+struct SpriteElem { int m_iTexture; char *m_pData; int m_unk8; };
+
+struct Eng37 {
+	VIEW_SLOT10(0) VIEW_SLOT10(1) VIEW_SLOT10(2)
+	VIEW_SLOT(30) VIEW_SLOT(31) VIEW_SLOT(32) VIEW_SLOT(33) VIEW_SLOT(34) VIEW_SLOT(35) VIEW_SLOT(36)
+	virtual void vfunc37(int);
+};
+extern Eng37 *g_104a57d4;
+
+// TARGET: vfunc1
+void CHudSprite::vfunc1()
+{
+	if ( m_unk30 )
+	{
+		for ( int i = 0; i < m_unk34; i++ )
+		{
+			if ( ((SpriteElem *)m_unk30)[i].m_iTexture )
+				g_104a57d4->vfunc37( ((SpriteElem *)m_unk30)[i].m_iTexture );
+			delete ((SpriteElem *)m_unk30)[i].m_pData;
+		}
+		delete [] (SpriteElem *)m_unk30;
+	}
+	m_unk30 = 0;
+	m_unk34 = 0;
+	m_pSprite = 0;
+}
+// END FUNCTION
