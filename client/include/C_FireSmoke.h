@@ -19,6 +19,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc37();
 
 	void sub_100b55b0();
+	void sub_100b5d00();
 	char m_pad0014[0x410 - 0x14];
 	float m_flStartScale;
 	float m_flScale;
