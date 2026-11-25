@@ -93160,6 +93160,53 @@ void LHold::sub_1018ae50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ae80 size=0x65
+#include "Vector.h"
+
+struct IV1
+{
+	virtual void *v0(void *model);
+};
+
+struct IV2
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(void *model, int a, Vector *mins, Vector *maxs);
+};
+
+extern IV1 *g_104a57d8;
+extern IV2 *g_104a57f8;
+int sub_10079c20(void *, int);
+
+class CFoo
+{
+public:
+	int m_unk0;
+	int m_seq;
+	int m_unk8;
+	char m_padc[0x28 - 0xc];
+	void *m_pModel;
+	void sub_1018ae80(Vector *mins, Vector *maxs);
+};
+
+// TARGET: CFoo::sub_1018ae80
+void CFoo::sub_1018ae80(Vector *mins, Vector *maxs)
+{
+	mins->x = -1.0f;
+	mins->y = -1.0f;
+	mins->z = -1.0f;
+	maxs->x = 1.0f;
+	maxs->y = 1.0f;
+	maxs->z = 1.0f;
+	if (m_pModel)
+	{
+		if (m_seq)
+			sub_10079c20(g_104a57d8->v0(m_pModel), m_seq);
+		g_104a57f8->v4(m_pModel, m_unk8, mins, maxs);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b2a0 size=0x7f
 #include "Vector.h"
 
