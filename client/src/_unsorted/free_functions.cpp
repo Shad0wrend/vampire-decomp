@@ -19099,6 +19099,41 @@ void sub_1004f840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fe20 size=0x167
+#include "CHUDSprite.h"
+
+struct S10284ba0 {
+    int pad00[2];
+    int w0;
+    int h0;
+    int pad10[6];
+    int w1;
+    int h1;
+    int pad30[2];
+    const char *names[7];
+    CHUDSprite *sprites[7];
+};
+
+extern S10284ba0 g_10284ba0[4];
+
+// TARGET: sub_1004fe20
+void sub_1004fe20()
+{
+    if (g_10284ba0[0].sprites[0])
+        return;
+
+    for (int i = 0; i < 4; i++) {
+        g_10284ba0[i].sprites[0] = new CHUDSprite(g_10284ba0[i].names[0], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[1] = new CHUDSprite(g_10284ba0[i].names[1], 0, 0, g_10284ba0[i].w1, g_10284ba0[i].h1, g_10284ba0[i].w1, g_10284ba0[i].h1);
+        g_10284ba0[i].sprites[2] = new CHUDSprite(g_10284ba0[i].names[2], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[3] = new CHUDSprite(g_10284ba0[i].names[3], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[4] = new CHUDSprite(g_10284ba0[i].names[4], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[5] = new CHUDSprite(g_10284ba0[i].names[5], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[6] = new CHUDSprite(g_10284ba0[i].names[6], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
