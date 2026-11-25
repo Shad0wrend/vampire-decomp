@@ -4853,6 +4853,7 @@
 0x100d8380 func   ?sub_100d8380@CUnknown100d8380@@QAEXXZ CUnknown100d8380::sub_100d8380
 0x100d8390 func   ?vfunc0@CShadowModelProxy@@UAE_NPAX0@Z CShadowModelProxy::vfunc0
 0x100d8530 func   ?sub_100d8530@@YAHXZ sub_100d8530
+0x100d8550 func   ?sub_100d8550@CUtlMultiList16@@QAEXHH@Z CUtlMultiList16::sub_100d8550
 0x100d8620 func   ?sub_100d8620@ShadowArray_100d8620@@QAEPAUShadow240@@I@Z ShadowArray_100d8620::sub_100d8620
 0x100d8640 func   ?sub_100d8640@CUtlLinkedList10@@QAEXXZ CUtlLinkedList10::sub_100d8640
 0x100d8690 func   ?sub_100d8690@UtlMem@@QAEXXZ UtlMem::sub_100d8690

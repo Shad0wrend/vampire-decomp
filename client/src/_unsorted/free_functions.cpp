@@ -51978,6 +51978,35 @@ int sub_100d8530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8550 size=0xcc
+#include "CUtlMultiList16.h"
+
+void CUtlMultiList16::sub_100d8550(int nList, int nIndex)
+{
+	if ((unsigned short)nIndex >= m_nCount)
+		return;
+	CUtlMultiList16Node *pNode = &m_pNodes[(unsigned short)nIndex];
+	if (m_pNodes[(unsigned short)nIndex].m_Index == (unsigned short)nIndex)
+		return;
+
+	if (pNode->m_Index != 0xffff)
+		m_pNodes[pNode->m_Index].m_Prev = pNode->m_Prev;
+	else
+		m_pLists[(unsigned short)nList].m_n0 = pNode->m_Prev;
+
+	if (pNode->m_Prev != 0xffff)
+		m_pNodes[pNode->m_Prev].m_Index = pNode->m_Index;
+	else
+		m_pLists[(unsigned short)nList].m_n2 = pNode->m_Index;
+
+	pNode->m_Prev = (unsigned short)nIndex;
+	pNode->m_Index = (unsigned short)nIndex;
+	m_pLists[(unsigned short)nList].m_n4--;
+	if (m_pXXX)
+		m_pXXX[(unsigned short)nIndex] = 0xffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8620 size=0x19
 struct Shadow240 { char b[240]; };
 struct ShadowArray_100d8620
