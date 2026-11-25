@@ -9,6 +9,9 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	void sub_100a2480(const Vector &origin);
+	void sub_1007e180(int a, int b);
+	void sub_1007e100();
 	void sub_100a2850(const Vector *mins, const Vector *maxs);
 	void sub_100a10b0(int a);
 	void sub_100a2930();
