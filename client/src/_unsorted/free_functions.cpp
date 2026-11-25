@@ -22025,6 +22025,53 @@ void sub_10064b60(const char *s, int a, int b, char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064bb0 size=0xa8
+#include "Tier1.h"
+
+extern char g_103eef9d;
+extern char g_103eee68[];
+extern int g_103eee54;
+extern char g_103eef30;
+extern int g_103eee64;
+
+struct PlrView_10064bb0
+{
+	char *sub_1007b160();
+	bool sub_1007cd80();
+	char pad[0x8cc];
+	int m_n8cc;
+	char pad2[0x91e - 0x8d0];
+	char m_b91e;
+};
+
+extern PlrView_10064bb0 *sub_1009b210();
+extern void sub_10064b10(char);
+
+// TARGET: sub_10064bb0
+void sub_10064bb0()
+{
+	g_103eef9d = 0;
+	PlrView_10064bb0 *p = sub_1009b210();
+	if (p)
+	{
+		if (p->sub_1007cd80())
+		{
+			char *info = p->sub_1007b160();
+			if (p->m_b91e)
+				g_101e3188(g_103eee68, info + 0x2148 + (sub_1009b210()->m_n8cc << 5), 0x40);
+			else
+				g_101e3188(g_103eee68, info + 0x2108 + (sub_1009b210()->m_n8cc << 5), 0x40);
+			g_103eee54 = p->m_n8cc;
+			g_103eef30 = p->m_b91e;
+		}
+	}
+	else
+		g_103eee68[0] = 0;
+	g_103eee64 = 0;
+	sub_10064b10(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {

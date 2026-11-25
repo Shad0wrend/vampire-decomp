@@ -2904,6 +2904,7 @@
 0x10064ac0 func   ?sub_10064ac0@@YGXD@Z sub_10064ac0
 0x10064b10 func   ?sub_10064b10@@YAXD@Z sub_10064b10
 0x10064b60 func   ?sub_10064b60@@YAXPBDHHD@Z sub_10064b60
+0x10064bb0 func   ?sub_10064bb0@@YAXXZ sub_10064bb0
 0x10064c60 func   ?sub_10064c60@@YAXXZ sub_10064c60
 0x10064c70 func   ?sub_10064c70@@YGXHHPAH@Z sub_10064c70
 0x10064dd0 func   ?sub_10064dd0@@YAHHD@Z sub_10064dd0
