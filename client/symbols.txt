@@ -5565,6 +5565,7 @@
 0x10107240 func   ?vfunc2@CLampHaloProxy@@UAEXXZ CLampHaloProxy::vfunc2
 0x10107270 func   ?sub_10107270@CUnknown10107270@@QAEXXZ CUnknown10107270::sub_10107270
 0x10107280 func   ?vfunc0@CLampHaloProxy@@UAE_NPAX0@Z CLampHaloProxy::vfunc0
+0x101072b0 func   ?vfunc1@CLampHaloProxy@@UAEXH@Z CLampHaloProxy::vfunc1
 0x101073c0 func   ?sub_101073c0@@YAHXZ sub_101073c0
 0x101073e0 func   ?sub_101073e0@@YAMM@Z sub_101073e0
 0x101073f0 func   ?sub_101073f0@@YAXMPAM0@Z sub_101073f0
