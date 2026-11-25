@@ -381,6 +381,36 @@ void CViewRender::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192780 size=0xcc
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+struct ViewRenderV
+{
+	char pad0[0x478];
+	bool m_b478;	// 0x478
+	char pad479[3];
+	Vector m_vec47c;	// 0x47c
+	Vector m_vec488;	// 0x488
+	float m_fl494;		// 0x494
+};
+
+bool CViewRender::vfunc40(Vector *pOut1, Vector *pOut2, float *pOut3)
+{
+	ScopeTrace trace("CViewRender::IsDrawingCrossfade", g_102de300);
+	ViewRenderV *pView = (ViewRenderV *)this;
+	if (!pView->m_b478)
+		return false;
+	if (pOut1)
+		*pOut1 = pView->m_vec47c;
+	if (pOut2)
+		*pOut2 = pView->m_vec488;
+	if (pOut3)
+		*pOut3 = pView->m_fl494;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192850 size=0x1e
 struct V2850 { char pad[0x450]; float m; int sub_10192850(); };
 int V2850::sub_10192850() { return m > 0.0f; }
