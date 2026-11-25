@@ -7951,6 +7951,7 @@
 0x10172250 func   ?vfunc1@CTextImage2@@UAEHHH@Z CTextImage2::vfunc1
 0x101722c0 func   ?vfunc3@CTextImage2@@UAEXXZ CTextImage2::vfunc3
 0x101722d0 func   ??_GCTextImage2@@UAEPAXI@Z ??_GCTextImage2@@UAEPAXI@Z
+0x10172320 func   ?sub_10172320@ScoreVt_10172320@@QAEHH@Z ScoreVt_10172320::sub_10172320
 0x10172850 func   ?sub_10172850@CVSPanelX@@QAEXXZ CVSPanelX::sub_10172850
 0x10172ac0 func   ?sub_10172ac0@@YADXZ sub_10172ac0
 0x10172ad0 func   ?sub_10172ad0@CUnknown10172ad0@@QAEXXZ CUnknown10172ad0::sub_10172ad0

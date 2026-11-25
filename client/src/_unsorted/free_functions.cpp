@@ -103475,6 +103475,58 @@ void sub_10171400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172320 size=0x5f
+#include "vgui2__Frame.h"
+#include "vgui2__Panel.h"
+
+class FrameColor_10172320
+{
+public:
+	union { int m_rgba; unsigned char m_b[4]; };
+	FrameColor_10172320(int r, int g, int b, int a)
+	{
+		m_b[0] = (unsigned char)r;
+		m_b[1] = (unsigned char)g;
+		m_b[2] = (unsigned char)b;
+		m_b[3] = (unsigned char)a;
+	}
+};
+
+class ScoreVt_10172320 : public vgui2::Frame
+{
+public:
+	int sub_10172320(int pScheme);
+};
+
+class PanelVt145_10172320 : public vgui2::Panel
+{
+public:
+	virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110();
+	virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114();
+	virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118();
+	virtual void v119(); virtual void v120(); virtual void v121(); virtual void v122();
+	virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126();
+	virtual void v127(); virtual void v128(); virtual void v129(); virtual void v130();
+	virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134();
+	virtual void v135(); virtual void v136(); virtual void v137(); virtual void v138();
+	virtual void v139(); virtual void v140(); virtual void v141(); virtual void v142();
+	virtual void v143(); virtual void v144();
+	virtual vgui2::Panel *v145();	// slot 145
+};
+
+// TARGET: ScoreVt_10172320::sub_10172320
+int ScoreVt_10172320::sub_10172320(int pScheme)
+{
+	Frame::vfunc74(pScheme);
+
+	FrameColor_10172320 clr(0, 0, 0, 255);
+	((vgui2::Panel *)this)->vfunc50(clr.m_rgba);
+
+	FrameColor_10172320 clr2(0, 0, 0, 255);
+	return ((vgui2::Panel *)((PanelVt145_10172320 *)this)->v145())->vfunc50(clr2.m_rgba);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172850 size=0x29
 #define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
 #define V16(n) V4(n##0) V4(n##1) V4(n##2) V4(n##3)
