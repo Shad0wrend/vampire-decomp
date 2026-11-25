@@ -72,6 +72,36 @@ float C_BasePlayer::vfunc176()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a2f0 size=0xaf
+#include "C_BasePlayer.h"
+#include "ehandle.h"
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+void sub_10108a50(const matrix3x4_t &a, const matrix3x4_t &b, matrix3x4_t &out);
+void sub_10107eb0(const matrix3x4_t &m, QAngle &out);
+struct CVehicleView { char pad[0x26c]; matrix3x4_t m_mat; void sub_1009f8a0(); };
+struct QAngleD : QAngle { ~QAngleD() {} };
+int C_BasePlayer::vfunc108()
+{
+	unsigned long h = *(unsigned long *)((char *)this + 0x208);
+	CVehicleView *pVehicle = 0;
+	if (h != 0xffffffff) {
+		CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e.m_SerialNumber == (int)(h >> 13))
+			pVehicle = (CVehicleView *)e.m_pEntity;
+	}
+	if (!pVehicle)
+		return (int)((char *)this + 0x1888);
+	matrix3x4_t m0, m1;
+	sub_101094e0(*(QAngle *)((char *)this + 0x1888), m0);
+	pVehicle->sub_1009f8a0();
+	sub_10108a50(pVehicle->m_mat, m0, m1);
+	static QAngleD s_angles;
+	sub_10107eb0(m1, s_angles);
+	return (int)&s_angles;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002a3b0 size=0x7
 #include "C_BasePlayer.h"
 char * C_BasePlayer::vfunc109()
