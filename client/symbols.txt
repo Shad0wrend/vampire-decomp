@@ -6056,6 +6056,7 @@
 0x10123200 func   ?vfunc15@CPrediction@@UAEHXZ CPrediction::vfunc15
 0x10123290 func   ?sub_10123290@CData_10123290@@QAEPAU1@HH_NH0DDDH@Z CData_10123290::sub_10123290
 0x10123300 func   ?ReportFieldsDiffer@CPredictionCopy@@QAAXPBDZZ CPredictionCopy::ReportFieldsDiffer
+0x101233b0 func   ?sub_101233b0@@YAXPAVCPredictionCopy@@HPBDZZ sub_101233b0
 0x10123480 func   ?sub_10123480@PCW@@QAEHHPBX0@Z PCW::sub_10123480
 0x101234c0 func   ?sub_101234c0@CUnknown101234c0@@QAEXHHHH@Z CUnknown101234c0::sub_101234c0
 0x10123500 func   ?sub_10123500@CUnknown10123500@@QAEXHHHH@Z CUnknown10123500::sub_10123500

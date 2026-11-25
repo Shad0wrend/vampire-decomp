@@ -69030,6 +69030,34 @@ CData_10123290 *CData_10123290::sub_10123290(int a1, int a2, bool a3, int a4, bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x101233b0 size=0xbb
+#include "CPredictionCopy.h"
+#include <stdarg.h>
+extern const char *g_102c2418[];
+extern int (__cdecl *g_101e31a8)(char *, int, const char *, va_list);
+typedef void (*CompareFn_101233b0)(const char *cls, const char *name, const char *type, bool a, bool b, bool c, bool d, const char *buf);
+void sub_101233b0(CPredictionCopy *self, int dt, const char *fmt, ...)
+{
+	if (!self->m_bReport || !self->m_FieldCompareFunc)
+		return;
+	const char *fieldname = "empty";
+	unsigned int flags = 0;
+	if (self->m_pCurrentField)
+	{
+		flags = (short)self->m_pCurrentField->m_Flags;
+		const char *const &name = self->m_pCurrentField->fieldName;
+		fieldname = name ? name : "NULL";
+	}
+	char data[0x1000];
+	va_list argptr;
+	va_start(argptr, fmt);
+	g_101e31a8(data, sizeof(data), fmt, argptr);
+	va_end(argptr);
+	((CompareFn_101233b0)self->m_FieldCompareFunc)(self->m_pCurrentClassName, fieldname, g_102c2418[self->m_pCurrentField->a], (flags >> 8) & 1, (flags >> 10) & 1, dt != 1, dt == 2, data);
+	self->m_bReport = false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123480 size=0x37
 #include <string.h>
 struct PCW {
