@@ -105468,6 +105468,45 @@ void CViewRender::sub_10190850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192bf0 size=0xb2
+struct MatVarView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void *GetTextureValue();
+	virtual void SetTextureValue(void *tex);
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual bool IsTexture();
+	virtual void v25();
+	virtual void SetMatrixValue(void *m);
+	virtual void *GetMatrixValue();
+};
+struct MatView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual MatVarView *FindVar(const char *name, bool *found, bool complain);
+};
+static MatView *g_105fc318;
+// TARGET: sub_10192bf0
+MatView *sub_10192bf0(MatView *pSrc)
+{
+	MatView *pDstMat = g_105fc318;
+	bool found = false;
+	MatVarView *pSrcVar = pSrc->FindVar("$basetexture", &found, false);
+	if (found && pSrcVar->IsTexture()) {
+		MatVarView *pDstVar = pDstMat->FindVar("$basetexture", &found, true);
+		pDstVar->SetTextureValue(pSrcVar->GetTextureValue());
+		pSrcVar = pSrc->FindVar("$basetexturetransform", &found, false);
+		pDstVar = pDstMat->FindVar("$basetexturetransform", &found, true);
+		pDstVar->SetMatrixValue(pSrcVar->GetMatrixValue());
+		return pDstMat;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192cb0 size=0x8
 struct CUnknown10192cb0 { void sub_10192cb0(); };
 void CUnknown10192cb0::sub_10192cb0()
