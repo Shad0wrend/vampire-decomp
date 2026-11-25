@@ -17191,6 +17191,64 @@ int CUnknown1003fbe0::sub_1003fbe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003fc00 size=0xd7
+#include "C_TETextMessage.h"
+#include "Tier1.h"
+#include <string.h>
+
+int sub_100cd0b0(int);
+int sub_1010f0a0(int, int, int);
+
+extern char *g_10281ce0[];
+
+struct CTextMsgData
+{
+	int type;
+	char b4, b5, b6, b7, b8, b9, b10, b11;
+	int f_c;
+	int f_10;
+	int f_14;
+	int f_18;
+	int f_1c;
+	int f_20;
+	char *name24;
+	char *text28;
+};
+
+// TARGET: C_TETextMessage::sub_1003fc00
+void C_TETextMessage::sub_1003fc00(int arg)
+{
+	int idx = *(int *)((char *)this + 0xc) % 4;
+	CTextMsgData *msg = (CTextMsgData *)sub_100cd0b0((int)g_10281ce0[idx]);
+	if (!msg)
+		return;
+	if (!msg->text28)
+		return;
+
+	msg->f_c = *(int *)((char *)this + 0x10);
+	msg->f_10 = *(int *)((char *)this + 0x14);
+	msg->type = *(int *)((char *)this + 0x18);
+	msg->b4 = *(char *)((char *)this + 0x1c);
+	msg->b5 = *(char *)((char *)this + 0x20);
+	msg->b6 = *(char *)((char *)this + 0x24);
+	msg->b7 = *(char *)((char *)this + 0x28);
+	msg->b8 = *(char *)((char *)this + 0x2c);
+	msg->b9 = *(char *)((char *)this + 0x30);
+	msg->b10 = *(char *)((char *)this + 0x34);
+	msg->b11 = *(char *)((char *)this + 0x38);
+	msg->f_14 = *(int *)((char *)this + 0x3c);
+	msg->f_18 = *(int *)((char *)this + 0x40);
+	msg->f_1c = *(int *)((char *)this + 0x44);
+	if (msg->type == 2)
+		msg->f_20 = *(int *)((char *)this + 0x48);
+
+	msg->name24 = g_10281ce0[idx];
+	g_101e3188(msg->text28, (char *)this + 0x4c, 0x80);
+	int len = strlen(msg->name24) + 1;
+	sub_1010f0a0((int)"HudText", len, (int)msg->name24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003fd00 size=0x6
 namespace lifted {
 extern char g_103eba60;

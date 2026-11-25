@@ -2341,6 +2341,7 @@
 0x1003fbc0 func   ??_GC_TETextMessage@@UAEPAXI@Z ??_GC_TETextMessage@@UAEPAXI@Z
 0x1003fbe0 func   ??1C_TETextMessage@@UAE@XZ C_TETextMessage::~C_TETextMessage
 0x1003fbe0 func   ?sub_1003fbe0@CUnknown1003fbe0@@QAEHXZ CUnknown1003fbe0::sub_1003fbe0
+0x1003fc00 func   ?sub_1003fc00@C_TETextMessage@@QAEXH@Z C_TETextMessage::sub_1003fc00
 0x1003fce0 func   ?vfunc9@C_TETextMessage@@UAEHXZ C_TETextMessage::vfunc9
 0x1003fcf0 func   ?vfunc8@C_TETextMessage@@UAEHXZ C_TETextMessage::vfunc8
 0x1003fd00 func   ?sub_1003fd00@@YAHXZ sub_1003fd00
