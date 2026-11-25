@@ -47382,6 +47382,29 @@ void sub_100cd530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd540 size=0xa6
+#include "CPVSFilter.h"
+class Vector;
+struct IFx { virtual void v0(); };
+struct CTEIface
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33();
+	virtual void v34(IRecipientFilter &f, int delay, const Vector *org, int model, int a, int b);
+};
+extern CTEIface *g_102b6980;
+extern short g_104a5472;
+
+// TARGET: sub_100cd540
+void sub_100cd540(const Vector *origin, int a, float b)
+{
+	CPVSFilter filter(*origin);
+	g_102b6980->v34(filter, 0, origin, g_104a5472, a, (int)b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd760 size=0x93
 #include "Vector.h"
 #include "QAngle.h"
