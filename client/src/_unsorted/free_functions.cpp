@@ -34852,6 +34852,25 @@ float C_BaseAnimating::sub_10095640(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095880 size=0x66
+#include "Vector.h"
+#include "C_BaseAnimating.h"
+#define F(T, off) (*(T *)((char *)this + off))
+// TARGET: C_BaseAnimating::sub_10095880
+void C_BaseAnimating::sub_10095880()
+{
+	if (F(int, 0x63c) == -1)
+		F(int, 0x63c) = 0;
+	F(float, 0x508) = sub_100955f0(F(int, 0x63c));
+	F(bool, 0x511) = sub_100958f0(F(int, 0x63c)) & 1;
+	F(float, 0x640) = 1.0f;
+	int fl = F(int, 0x74) | 0x300;
+	F(bool, 0x510) = 0;
+	F(int, 0x50c) = 0;
+	F(int, 0x74) = fl;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100958f0 size=0x19
 namespace lifted {
 int __stdcall sub_10096830(int);
