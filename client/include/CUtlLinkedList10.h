@@ -29,4 +29,19 @@ public:
 
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
 	CUtlLinkedList10Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
+
+	__forceinline unsigned short AddToTail()
+	{
+		unsigned short elem = sub_100d89e0(false);
+		sub_100d8900(elem);
+		InternalElement(elem).m_Next = InvalidIndex();
+		InternalElement(elem).m_Previous = m_Tail;
+		m_Tail = elem;
+		if (InternalElement(elem).m_Previous == InvalidIndex())
+			m_Head = elem;
+		else
+			InternalElement(InternalElement(elem).m_Previous).m_Next = elem;
+		++m_ElementCount;
+		return elem;
+	}
 };
