@@ -391,6 +391,87 @@ void vgui2::Slider::vfunc84(int wide, int tall)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc1d0 size=0xcf
+#include "vgui2__Slider.h"
+
+struct InputView
+{
+	virtual void v0();
+	virtual void SetMouseCapture(int vpanel);
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void GetCursorPos(int &x, int &y);
+};
+
+struct SliderView
+{
+	char m_pad[0x5c];
+	bool m_bDrag;
+	int m_n60;
+	int m_n64;
+	int m_n68;
+	int m_n6c;
+	int m_n70;
+	int m_n74;
+};
+
+struct PV
+{
+	int sub_101ab130();
+};
+
+extern int sub_101ac8b0();
+
+// TARGET: vgui2::Slider::vfunc87
+void vgui2::Slider::vfunc87(int code)
+{
+	int x, y;
+	((InputView *)sub_101ac8b0())->GetCursorPos(x, y);
+	vfunc27(&x, &y);
+
+	SliderView *s = (SliderView *)this;
+	if ( x >= s->m_n60 && x < s->m_n64 )
+	{
+		s->m_bDrag = true;
+		((InputView *)sub_101ac8b0())->SetMouseCapture(vfunc0());
+		s->m_n68 = s->m_n60;
+		s->m_n6c = s->m_n64;
+		s->m_n70 = x;
+		s->m_n74 = y;
+	}
+	else
+	{
+		int nMin, nMax;
+		vfunc110((int)&nMin, (int)&nMax);
+		int wide = ((PV *)this)->sub_101ab130();
+		vfunc107((int)((float)(nMax - nMin) / wide * x) + nMin);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc2a0 size=0x8
 #include "vgui2__Slider.h"
 void vgui2::Slider::vfunc88(int a) { vfunc87(a); }
