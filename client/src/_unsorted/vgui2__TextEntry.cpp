@@ -89,6 +89,55 @@ int vgui2::TextEntry::vfunc133(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ada50 size=0x7d
+#include "vgui2__TextEntry.h"
+struct TE154Child {
+	void sub_101a98c0(int *a, int *b);
+	void sub_101a98f0(int a, int b);
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+	virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(int);
+};
+struct TE154Surf {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+	virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32();
+	virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40();
+	virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61(); virtual void v62(); virtual int v63(int);
+};
+TE154Surf *sub_101ac8d0();
+struct TE154View {
+	char pad[0xe0];
+	int m_nSize;
+	int m_pad4;
+	TE154Child **m_pData;
+	int m_nCur;
+	char pad2[0x124 - 0xf0];
+	int m_nFont;
+};
+// TARGET: ?vfunc154@TextEntry@vgui2@@UAEXHH@Z
+void vgui2::TextEntry::vfunc154(int a, int b)
+{
+	TE154View *v = (TE154View *)this;
+	int idx = v->m_nCur;
+	if (idx >= 0 && idx < v->m_nSize)
+	{
+		TE154Child *c = v->m_pData[idx];
+		if (c)
+		{
+			int x, y;
+			c->sub_101a98c0(&x, &y);
+			int tall = sub_101ac8d0()->v63(v->m_nFont);
+			c->sub_101a98f0(a - x, tall - y + b);
+			c->v21(1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae2b0 size=0x35
 #include "vgui2__TextEntry.h"
 namespace lifted {
