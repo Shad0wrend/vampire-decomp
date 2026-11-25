@@ -4,7 +4,8 @@
 #pragma once
 #include "CClientSideEffect.h"
 
-class Vector;
+#include "Vector.h"
+struct IMatInst_10044eb0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(int a); };
 
 class CFXDiscreetLine : public CClientSideEffect
 {
@@ -18,9 +19,14 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc4();
 	// the slots CFXDiscreetLine adds to its base's vtable: 5-5, vfuncK at slot K
 	virtual void vfunc5(double);
-	char m_pad0004[0x10 - 0x4];
+	char m_pad0004[0xc - 0x4];
+	IMatInst_10044eb0 *m_pMaterial;
 	float m_flUnk10;
-	char m_pad0014[0x30 - 0x14];
+	Vector m_vStart;
+	Vector m_vDir;
+	float m_flVelocity;
 	float m_flUnk30;
-	char m_pad0034[0x40 - 0x34];
+	float m_flClip;
+	float m_flScale;
+	float m_flLength;
 };
