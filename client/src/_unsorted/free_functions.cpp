@@ -13969,6 +13969,18 @@ void sub_100346b0(int filter, float delay,
 }
 // END FUNCTION
 
+// FUNCTION: 0x10034ae0 size=0x9c
+#include "C_RecipientFilter.h"
+struct CTEBlood { void sub_10034ae0(int); int m_u0[3]; int m_c[3]; int m_18[3]; int m_24, m_28, m_2c, m_30, m_34; };
+void sub_100346b0(IRecipientFilter *, int, void *, void *, int, int, int, int, int);
+// TARGET: CTEBlood::sub_10034ae0
+void CTEBlood::sub_10034ae0(int)
+{
+	CBroadcastRecipientFilter filter;
+	sub_100346b0(&filter, 0, m_c, m_18, m_24, m_28, m_2c, m_30, m_34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034c30 size=0x6
 namespace lifted {
 extern char g_102ec9d8;
