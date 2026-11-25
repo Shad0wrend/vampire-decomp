@@ -18033,6 +18033,24 @@ struct CIdxView100445d0 { int *m_pData; int *sub_100445d0(int i); };
 int *CIdxView100445d0::sub_100445d0(int i) { return &m_pData[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10044e10 size=0xa0
+#include "Vector.h"
+struct IRandX { virtual void v0(); virtual float RandomFloat(float, float); };
+extern IRandX *g_104a5738;
+void sub_100d95a0(const Vector *, const Vector *, float, float, float, float, float, const char *);
+// TARGET: sub_10044e10
+void sub_10044e10(const Vector *a, const Vector *b, int n)
+{
+	Vector d;
+	VectorSubtract(*b, *a, d);
+	float len = VectorNormalize(d);
+	if (!(len <= 256.0f)) {
+		float r = g_104a5738->RandomFloat(64.0f, 128.0f);
+		sub_100d95a0(a, &d, (float)n, r, len, 5.0f, (r + len) / (float)n, "effects/spark");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045630 size=0x3b
 #include "Vector.h"
 
