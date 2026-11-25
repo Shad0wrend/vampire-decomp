@@ -18124,6 +18124,32 @@ void CParticleSphereRenderer::sub_1004a860(IMaterial *pMaterial)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004a8b0 size=0x96
+#include "CParticleMgr.h"
+#include "CParticleSource.h"
+// TARGET: CParticleSource::sub_1004a8b0
+void CParticleSource::sub_1004a8b0(CParticleMgr *mgr)
+{
+	int idx = m_idx;
+	if (idx == -1)
+	{
+		m_f60 = (float)mgr->sub_10117920(&m_pos, m_t);
+	}
+	else
+	{
+		m_f60 = (float)idx;
+		CParticleMgrEntry &e = mgr->m_entries[idx / 2];
+		m_pos.x = e.m_v.x;
+		m_pos.y = e.m_v.y;
+		m_pos.z = e.m_v.z;
+		m_t = e.m_t;
+	}
+	m_r = (unsigned char)(int)(m_cr * 255.4f);
+	m_g = (unsigned char)(int)(m_cg * 255.4f);
+	m_b = (unsigned char)(int)(m_cb * 255.4f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004a950 size=0xa
 struct CUnknown1004a950 { int sub_1004a950(int, int); };
 int CUnknown1004a950::sub_1004a950(int a0, int a1)
