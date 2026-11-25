@@ -51428,6 +51428,27 @@ void CColor16V::sub_100f9310(const unsigned char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9770 size=0x68
+struct CColor16_4V
+{
+	unsigned short r : 4;
+	unsigned short g : 4;
+	unsigned short b : 4;
+	unsigned short a : 4;
+
+	void sub_100f9770(const unsigned char *p);
+};
+
+// TARGET: CColor16_4V::sub_100f9770
+void CColor16_4V::sub_100f9770(const unsigned char *p)
+{
+	b = p[2] >> 4;
+	g = p[1] >> 4;
+	r = p[0] >> 4;
+	a = p[3] >> 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9920 size=0xe0
 struct DXTColBlock
 {
