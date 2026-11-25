@@ -2193,6 +2193,7 @@
 0x1003a740 func   ??0C_LocalTempEntity@@QAE@XZ C_LocalTempEntity::C_LocalTempEntity
 0x1003a740 func   ?sub_1003a740@CUnknown1003a740@@QAEPAXXZ CUnknown1003a740::sub_1003a740
 0x1003a780 func   ??_GC_LocalTempEntity@@UAEPAXI@Z ??_GC_LocalTempEntity@@UAEPAXI@Z
+0x1003a7c0 func   ?vfunc143@C_LocalTempEntity@@QAEXHM@Z C_LocalTempEntity::vfunc143
 0x1003a840 func   ?sub_1003a840@CUnknown1003a840@@QAEHHHH@Z CUnknown1003a840::sub_1003a840
 0x1003b530 func   ??0CTempEnts@@QAE@XZ CTempEnts::CTempEnts
 0x1003b570 func   ??_GCTempEnts@@UAEPAXI@Z ??_GCTempEnts@@UAEPAXI@Z
