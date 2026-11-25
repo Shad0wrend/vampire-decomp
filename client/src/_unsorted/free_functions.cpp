@@ -99361,6 +99361,39 @@ void sub_10177a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177a20 size=0x71
+#include "CharEditCharPanel.h"
+#include "C_BaseVCombatCharacter.h"
+
+static int g_102d093c;
+static int g_102d0940;
+
+extern C_BaseVCombatCharacter *g_104a0d50;
+
+// TARGET: CharEditCharPanel::sub_10177a20
+void CharEditCharPanel::sub_10177a20()
+{
+	C_BaseVCombatCharacter *pPlayer = g_104a0d50;
+	if (!pPlayer)
+		return;
+
+	if (g_102d093c != pPlayer->sub_1008ebb0())
+	{
+		sub_10177000();
+		sub_101766e0();
+		g_102d093c = pPlayer->sub_1008ebb0();
+	}
+	else if (g_102d0940 != pPlayer->m_unkfd0)
+	{
+		sub_10177000();
+		sub_101766e0();
+		g_102d0940 = pPlayer->m_unkfd0;
+	}
+
+	vfunc101();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177ea0 size=0x1
 void sub_10177ea0()
 {
