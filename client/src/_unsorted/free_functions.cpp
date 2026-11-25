@@ -17162,6 +17162,17 @@ void sub_10040d80(int a0, int a1, int a2, int a3, int a4, int mode, int a6)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040dd0 size=0x94
+#include "CTE10040dd0.h"
+#include "C_RecipientFilter.h"
+void sub_10040d80(IRecipientFilter *, int, void *, void *, int, int, char);
+void CTE10040dd0::sub_10040dd0(int)
+{
+	CBroadcastRecipientFilter filter;
+	sub_10040d80(&filter, 0, m_unkc, m_unk18, m_n24, m_n2c, m_b28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040e90 size=0x6
 namespace lifted {
 extern char g_103ec604;
