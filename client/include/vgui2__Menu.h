@@ -11,6 +11,7 @@ class Menu : public vgui2::Panel
 {
 public:
 	void sub_101c0080(void *pExcept);
+	void sub_101bfc60();
 	virtual ~Menu();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Menu's own function
