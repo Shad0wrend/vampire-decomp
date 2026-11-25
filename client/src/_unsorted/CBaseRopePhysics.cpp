@@ -1,6 +1,38 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10128a10 size=0x7b
+#include "CBaseRopePhysics.h"
+
+struct RopeHelperView
+{
+	int sub_10128ad0();
+	void sub_10128a90(int nNodes);
+};
+
+CBaseRopePhysics::CBaseRopePhysics(void *pNodes, int nNodes, void *pSprings)
+{
+	m_pLinks = (CRopeLink *)pSprings;
+	m_pNodes = (CRopeNode *)pNodes;
+	m_flMinDistSq = 1.0f;
+	m_flRestLength = 1.0f;
+
+	((RopeHelperView *)this)->sub_10128ad0();
+
+	CRopeNode *pNode = (CRopeNode *)pNodes;
+	for (int i = 0; i < nNodes; i++)
+	{
+		pNode[i].m_vPos.Init();
+		pNode[i].m_vPrevPos.Init();
+		pNode[i].m_vPredicted.Init();
+	}
+
+	((RopeHelperView *)this)->sub_10128a90(nNodes);
+
+	m_pNext = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b80 size=0x1c
 #include "CBaseRopePhysics.h"
 
