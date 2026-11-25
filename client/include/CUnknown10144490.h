@@ -16,4 +16,5 @@ public:
 
 	void *sub_10144490(int index);
 	bool sub_101444c0(void *pNode);
+	void sub_10144540(void *pNode, const char *name, int *pOut);
 };
