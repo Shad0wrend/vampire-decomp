@@ -9157,6 +9157,7 @@
 0x101bb110 func   ??1LabelComboBox@vgui2@@UAE@XZ vgui2::LabelComboBox::~LabelComboBox
 0x101bb180 func   ?vfunc166@LabelComboBox@vgui2@@UAEHXZ vgui2::LabelComboBox::vfunc166
 0x101bb190 func   ?sub_101bb190@CUnknown101bb190@@QAEHXZ CUnknown101bb190::sub_101bb190
+0x101bb1a0 func   ?vfunc101@LabelComboBox@vgui2@@UAEXXZ vgui2::LabelComboBox::vfunc101
 0x101bb280 func   ?vfunc87@LabelComboBox@vgui2@@UAEXH@Z vgui2::LabelComboBox::vfunc87
 0x101bb2a0 func   ?vfunc167@LabelComboBox@vgui2@@UAEHXZ vgui2::LabelComboBox::vfunc167
 0x101bb2b0 func   ?vfunc118@LabelComboBox@vgui2@@UAEXH@Z vgui2::LabelComboBox::vfunc118
