@@ -9364,6 +9364,7 @@
 0x101c64f0 func   ?vfunc102@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc102
 0x101c6500 func   ?sub_101c6500@CUnknown101c6500@@QAEPAXHH@Z CUnknown101c6500::sub_101c6500
 0x101c6530 func   ??_GProgressBar@vgui2@@UAEPAXI@Z ??_GProgressBar@vgui2@@UAEPAXI@Z
+0x101c6550 func   ?vfunc97@ProgressBar@vgui2@@UAEXXZ vgui2::ProgressBar::vfunc97
 0x101c6620 func   ?vfunc107@ProgressBar@vgui2@@UAEXM@Z vgui2::ProgressBar::vfunc107
 0x101c6680 func   ?sub_101c6680@ProgressBar@vgui2@@QAEXH@Z vgui2::ProgressBar::sub_101c6680
 0x101c6760 func   ?vfunc102@ProgressBar@vgui2@@UAEHXZ vgui2::ProgressBar::vfunc102

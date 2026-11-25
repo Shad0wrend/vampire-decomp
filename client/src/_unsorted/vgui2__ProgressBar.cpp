@@ -11,6 +11,47 @@ vgui2::ProgressBar *pcd_emit_101c6530(const vgui2::ProgressBar &other) { return 
 // TARGET: ??_GProgressBar@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101c6550 size=0xc9
+#include "vgui2__ProgressBar.h"
+
+struct ISurfaceV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void DrawSetColor(int color);
+	virtual void v11();
+	virtual void DrawFilledRect(int x0, int y0, int x1, int y1);
+};
+extern int sub_101ac8d0();
+
+// TARGET: vgui2::ProgressBar::vfunc97
+void vgui2::ProgressBar::vfunc97()
+{
+	int wide, tall;
+	sub_101a9920(&wide, &tall);
+
+	{
+		int clr;
+		((ISurfaceV *)sub_101ac8d0())->DrawSetColor(*(int *)vfunc52((int)&clr));
+	}
+	((ISurfaceV *)sub_101ac8d0())->DrawFilledRect(0, 0, wide, tall);
+
+	int segments = (int)((wide / 12) * *(float *)((char *)this + 0x5c));
+
+	{
+		int clr;
+		((ISurfaceV *)sub_101ac8d0())->DrawSetColor(*(int *)vfunc53((int)&clr));
+	}
+
+	int x = 0;
+	for (int i = 0; i < segments; i++)
+	{
+		x += 4;
+		((ISurfaceV *)sub_101ac8d0())->DrawFilledRect(x, 4, x + 8, tall - 4);
+		x += 8;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6620 size=0x55
 #include "vgui2__ProgressBar.h"
 
