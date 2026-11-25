@@ -112544,6 +112544,109 @@ void CViewRender::sub_1019ab90(bool a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ac50 size=0x180
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+void sub_1019ca60(float *p);
+float sub_1019cca0();
+float sub_1019cd90();
+bool sub_1019ce80();
+
+class CVarView
+{
+public:
+	virtual void v0();
+	virtual bool vfunc1();
+	virtual void v2();
+	int m_unk04, m_unk08, m_unk0c, m_unk10, m_unk14, m_unk18, m_unk1c, m_unk20, m_unk24;
+	float m_fValue;	// 0x28
+	int m_nValue;	// 0x2c
+};
+
+class RenderView
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual void v43(int volume, bool b);	// 43: SetFogVolumeState
+	virtual float v44(int volume);		// 44: water height
+};
+
+class MatView
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64();
+	virtual void v65(bool b);		// 65: Flush
+};
+
+extern RenderView *g_104a57e4;
+extern MatView *g_104a57ec;
+extern CVarView *g_106194ec;
+extern CVarView *g_10618d44;
+extern unsigned char g_106198ed;
+extern float g_106198f0;
+extern float g_101e34f0;	// 0.0f
+
+static __inline float GetWaterCullHeight()
+{
+	if ( g_10618d44->vfunc1() )
+		return g_101e34f0;
+	return g_10618d44->m_fValue;
+}
+
+struct WaterLocals { char B[0x10]; char A[0x48018]; };
+// TARGET: CViewRender::sub_1019ac50
+void CViewRender::sub_1019ac50(bool drawSkybox, int arg1, int fogVolume)
+{
+	ScopeTrace trace("CViewRender::ViewDrawScene_EyeAboveWater", g_102de300, g_102de300);
+	WaterLocals l;
+	float waterHeight = g_104a57e4->v44(fogVolume);
+	if ( !g_106194ec->vfunc1() && g_106194ec->m_nValue )
+	{
+		g_106198ed = 1;
+		g_106198f0 = GetWaterCullHeight();
+	}
+	sub_1019c970();
+	sub_1019a950(arg1, l.B, l.A, *(int *)&waterHeight, 0xd2e);
+	g_106198ed = 0;
+	g_104a57ec->v65(0);
+	g_104a57e4->v43(fogVolume, true);
+	sub_1019a950(arg1, l.B, l.A, *(int *)&waterHeight, 0x1515);
+	g_104a57ec->v65(0);
+	sub_1019c970();
+	int flags = 0x560;
+	if ( drawSkybox )
+		flags = 0xd60;
+	sub_1019a950(arg1, l.B, l.A, *(int *)&waterHeight, flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019add0 size=0xf2
 #include "CViewRender.h"
 #include "ScopeTrace.h"
