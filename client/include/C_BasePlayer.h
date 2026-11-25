@@ -6,6 +6,8 @@
 
 class C_BaseCombatWeapon;
 class C_BaseEntity;
+class Vector;
+class QAngle;
 class C_BasePlayer : public C_BaseVCombatCharacter
 {
 public:
@@ -17,6 +19,7 @@ public:
 	void sub_100aa040();
 	int sub_100a6850(int b, int h);
 	int sub_100a6780(int b, int h);
+	bool sub_100a6b10();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BasePlayer's own function
 	virtual int vfunc15();
@@ -36,7 +39,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc119(int);
 	virtual bool vfunc147(class C_BaseCombatWeapon *pWeapon, int);
 	// the slots C_BasePlayer adds to its base's vtable: 149-196, vfuncK at slot K
-	virtual void vfunc149();
+	virtual void vfunc149(float dt, Vector *pOrigin, QAngle *pAngles);
 	virtual Vector vfunc150(const Vector &v);
 	virtual void vfunc151(int, int, int, int, int, int, int, int, int, int, int);
 	virtual int vfunc152(int, int);
