@@ -3531,6 +3531,7 @@
 0x10094090 func   ?sub_10094090@CollView@@QAEXHH@Z CollView::sub_10094090
 0x100940d0 func   ?sub_100940d0@C_BaseAnimating@@QAEHHPAH@Z C_BaseAnimating::sub_100940d0
 0x10094150 func   ?LookupBone@C_BaseAnimating@@QAEHPBD@Z C_BaseAnimating::LookupBone
+0x10094250 func   ?sub_10094250@C_BaseAnimating@@QAEXHHH@Z C_BaseAnimating::sub_10094250
 0x100947b0 func   ?sub_100947b0@VRend@@QAEXAAVVector@@0@Z VRend::sub_100947b0
 0x10094860 func   ?sub_10094860@CUnknown10094860@@QAEDH@Z CUnknown10094860::sub_10094860
 0x10094890 func   ?sub_10094890@CUnknown10094890@@QAEXH@Z CUnknown10094890::sub_10094890

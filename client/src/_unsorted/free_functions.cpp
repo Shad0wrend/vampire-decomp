@@ -37417,6 +37417,50 @@ int C_BaseAnimating::sub_100940d0(int index, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094250 size=0xf9
+#include "C_BaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+
+extern char g_102de300[];
+extern void *g_102b8494;
+
+struct V4View
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(int, int, int, int, int);
+};
+
+void sub_10107eb0(void *, int);
+void sub_10108510(void *, int, int);
+
+void C_BaseAnimating::sub_10094250(int iBone, int arg2, int arg3)
+{
+    ScopeTrace trace("C_BaseAnimating::GetBonePosition02", g_102de300);
+    StudioHdr *pModel = (StudioHdr *)sub_1008f900(-1);
+    if ( pModel && iBone >= 0 && iBone < pModel->m_nBones )
+    {
+        unsigned int flags = *(unsigned int *)((char *)pModel->Bone(iBone) + 0x88);
+        if ( !(flags & *(int *)((char *)this + 0x6ec)) )
+        {
+            flags &= 0xfffc;
+            unsigned int next = flags & (flags - 1);
+            while ( next )
+            {
+                flags = next;
+                next = flags & (flags - 1);
+            }
+            ((V4View *)((char *)this + 4))->v15(0, -1, flags, *(int *)((char *)g_102b8494 + 0xc), 0);
+        }
+        char *pElem = (char *)(*(int *)((char *)this + 0x6e8)) + iBone * 0x30;
+        sub_10107eb0(pElem, arg3);
+        sub_10108510(pElem, 3, arg2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100947b0 size=0xa1
 #include "Vector.h"
 struct IntVec { int x, y, z; };
