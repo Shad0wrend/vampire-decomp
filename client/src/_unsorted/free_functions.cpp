@@ -76569,6 +76569,43 @@ S6 *CUnknown101db210::sub_10146a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146b90 size=0x81
+struct S1006cd00 {
+	void sub_10146e00();
+	void sub_10146ca0();
+};
+struct ListV {
+	int m_unk0[11];
+	int m_n2c;
+	int m_nCount;
+	int **m_pArr;
+	S1006cd00 *m_pSub;
+	void sub_10146b90();
+};
+void ListV::sub_10146b90()
+{
+	if (m_pArr) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_pArr[i])
+				delete m_pArr[i];
+			m_pArr[i] = 0;
+		}
+		delete m_pArr;
+		m_pArr = 0;
+	}
+	m_nCount = 0;
+	m_n2c = 0;
+	if (m_pSub) {
+		m_pSub->sub_10146e00();
+		S1006cd00 *p = m_pSub;
+		if (p) {
+			p->sub_10146ca0();
+			delete p;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146c20 size=0x6a
 #include "CUnknown101db210.h"
 extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
