@@ -394,6 +394,89 @@ float CViewRender::vfunc45()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101994c0 size=0xc9
+#include "CViewRender.h"
+#include "C_BaseEntity.h"
+
+struct IModelInfoView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual bool IsTranslucent(const void *model);
+	virtual void v9();
+	virtual bool v10(const void *model);
+	virtual void v11(const void *model);
+};
+
+struct IClientLeafSystemView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11(unsigned short handle, int flags);
+};
+
+struct CBaseEntV
+{
+	char pad40[0x40];
+	void *m_pModel;		// 0x40
+	int m_unk44;
+	int m_n48;		// 0x48
+	char pad4c[0xe8 - 0x4c];
+	unsigned short m_hE8;	// 0xe8
+};
+
+extern IModelInfoView *g_104a57f8;
+extern IClientLeafSystemView *g_102b9060;
+
+int CViewRender::vfunc10(C_BaseEntity *pEntity)
+{
+	CBaseEntV *pView = (CBaseEntV *)pEntity;
+
+	if (g_104a57f8->IsTranslucent(pEntity->GetModel()))
+	{
+		g_104a57f8->v11(pEntity->GetModel());
+	}
+
+	int nRenderMode = 5;
+	IClientLeafSystemView *pLeaf = g_102b9060;
+	if (pView->m_n48 == 0 && !pEntity->IsTransparent())
+	{
+		nRenderMode = !pEntity->vfunc79();
+	}
+	else if (pView->m_n48 != 6)
+	{
+		nRenderMode = 2;
+	}
+
+	if (pView->m_hE8 == 0xffff)
+	{
+		if (nRenderMode == 2 && g_104a57f8->v10(pView->m_pModel))
+			nRenderMode = 3;
+		pEntity->sub_100a1a70(nRenderMode);
+	}
+	else
+	{
+		pLeaf->v11(pView->m_hE8, nRenderMode);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199590 size=0x7
 #include "CViewRender.h"
 char * CViewRender::vfunc11()

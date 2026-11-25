@@ -8437,6 +8437,7 @@
 0x10198da0 func   ?sub_10198da0@@YAXABVVector@@ABVQAngle@@@Z sub_10198da0
 0x10198e60 func   ?sub_10198e60@@YAXXZ sub_10198e60
 0x10198e70 func   ?sub_10198e70@VView380@@QAEDXZ VView380::sub_10198e70
+0x101994c0 func   ?vfunc10@CViewRender@@UAEHPAVC_BaseEntity@@@Z CViewRender::vfunc10
 0x10199590 func   ?vfunc11@CViewRender@@UAEPADXZ CViewRender::vfunc11
 0x101995a0 func   ?vfunc12@CViewRender@@UAEPADXZ CViewRender::vfunc12
 0x101995b0 func   ?sub_101995b0@VView384@@QAEDXZ VView384::sub_101995b0
