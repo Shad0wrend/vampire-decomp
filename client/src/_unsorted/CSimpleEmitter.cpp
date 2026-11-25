@@ -49,3 +49,21 @@ float CSimpleEmitter::vfunc10(SimpleParticleAux_t *p, float dt)
 	return p->m_fl24 += dt * p->m_fl38;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10118380 size=0x95
+#include "CSimpleEmitter.h"
+#include "Vector.h"
+
+struct VD_10118380 : public Vector {
+	~VD_10118380() {}
+};
+
+Vector CSimpleEmitter::vfunc12(const SimpleParticleC_t *p, float unused)
+{
+	static VD_10118380 cColor;
+	cColor.x = p->m_uchColor[0] / 255.0f;
+	cColor.y = p->m_uchColor[1] / 255.0f;
+	cColor.z = p->m_uchColor[2] / 255.0f;
+	return cColor;
+}
+// END FUNCTION

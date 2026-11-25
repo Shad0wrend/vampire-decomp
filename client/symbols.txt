@@ -5693,6 +5693,7 @@
 0x10118240 func   ?vfunc8@CSimpleEmitter@@QAEMPAUSimpleParticle8@@H@Z CSimpleEmitter::vfunc8
 0x10118280 func   ?vfunc9@CSimpleEmitter@@QAEMPAUXSP@@H@Z CSimpleEmitter::vfunc9
 0x10118360 func   ?vfunc10@CSimpleEmitter@@UAEMPAUSimpleParticleAux_t@@M@Z CSimpleEmitter::vfunc10
+0x10118380 func   ?vfunc12@CSimpleEmitter@@QAE?AVVector@@PBUSimpleParticleC_t@@M@Z CSimpleEmitter::vfunc12
 0x101187e0 func   ?sub_101187e0@CUnknown101187e0@@QAEPAXH@Z CUnknown101187e0::sub_101187e0
 0x10118800 func   ??_GCEmberEffect@@UAEPAXI@Z ??_GCEmberEffect@@UAEPAXI@Z
 0x10118820 func   ?sub_10118820@@YA?AV?$CSmartPtr@VCUnknown101187e0@@@@H@Z sub_10118820
