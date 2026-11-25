@@ -3182,6 +3182,7 @@
 0x1007d970 func   ?sub_1007d970@CUnk1007d970@@QAEXH@Z CUnk1007d970::sub_1007d970
 0x1007dae0 func   ?sub_1007dae0@@YAHXZ sub_1007dae0
 0x1007db30 func   ?sub_1007db30@IntVec@@QAEXHH@Z IntVec::sub_1007db30
+0x1007db70 func   ?Base@?$CUtlMemory@H@@QAEPAHXZ CUtlMemory<int>::Base
 0x1007db70 func   ?sub_1007db70@CUnknown1007db70@@QAEHXZ CUnknown1007db70::sub_1007db70
 0x1007db80 func   ?sub_1007db80@CUnknown1007db80@@QAEHH@Z CUnknown1007db80::sub_1007db80
 0x1007dba0 func   ?sub_1007dba0@CUnknown1007dba0@@QAEDXZ CUnknown1007dba0::sub_1007dba0
