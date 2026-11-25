@@ -99190,6 +99190,30 @@ void CTable18::sub_101a3000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3040 size=0x7c
+#include "FileSystemViews.h"
+extern const char *g_102d64c0;
+struct VBNode { char m_data[0x14]; VBNode *m_pNext; };
+struct VBMgr {
+	VBNode m_Buckets[256];
+	void sub_101a3040(int unused);
+};
+void VBMgr::sub_101a3040(int unused)
+{
+	int h = g_104a580c->vfunc0(g_102d64c0, "wb", 0);
+	if (h) {
+		int version = 1;
+		g_104a580c->vfunc3((const char *)&version, 4, h);
+		VBNode *b = m_Buckets;
+		for (int i = 256; i; i--, b++) {
+			for (VBNode *n = b->m_pNext; n != b; n = n->m_pNext)
+				g_104a580c->vfunc3((const char *)n, 16, h);
+		}
+		g_104a580c->vfunc1(h);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a30c0 size=0x13
 struct V {
 	int sub_101a3190(int);
