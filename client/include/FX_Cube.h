@@ -3,13 +3,27 @@
 #pragma once
 #include "CClientSideEffect.h"
 
+struct FXMatView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void vfunc12(int a);
+};
+
 class FX_Cube : public CClientSideEffect
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
-    // the base slots the game's vtable fills with FX_Cube's own function
-    virtual void vfunc1();
-    virtual bool vfunc3();
-    int m_unk4; int m_unk8; int m_unkc; int m_unk10; int m_unk14; int m_unk18; int m_unk1c;
-    int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
-    float m_flUnk30;
+public:
+	FX_Cube(void *pMat) : CClientSideEffect((int)"FX_Cube")
+	{
+		m_pMaterial = pMat;
+		if (pMat)
+			((FXMatView *)pMat)->vfunc12(0);
+	}
+	virtual void vfunc1();
+	virtual bool vfunc3();
+	int m_unk4; int m_unk8; int m_unkc; int m_unk10; int m_unk14; int m_unk18; int m_unk1c;
+	int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
+	float m_flUnk30;
+	void *m_pMaterial;
 };
