@@ -112713,6 +112713,50 @@ void sub_1019c260(const char *pMaterialName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ce80 size=0xe0
+#include "ScopeTrace.h"
+
+struct V14
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13();
+	virtual bool vfunc14();
+};
+
+struct V1
+{
+	virtual void v0();
+	virtual bool vfunc1();
+};
+
+extern void *g_104a0d50;
+extern V14 *g_105f99d8;
+extern V1 *g_106193cc;
+extern V1 *g_10618abc;
+
+bool sub_1019ce80()
+{
+	ScopeTrace trace("::GetFogEnable", g_102de300);
+
+	void *pFog = g_104a0d50;
+
+	if ( !pFog )
+		return false; else { if ( !g_105f99d8->vfunc14() )
+		return false;
+
+	if ( !(g_106193cc->vfunc1() || *(int *)((char *)g_106193cc + 0x2c) == 0) )
+	{
+		if ( g_10618abc->vfunc1() || *(int *)((char *)g_10618abc + 0x2c) == 0 )
+			return false;
+		return true;
+	}
+
+	return *(char *)((char *)pFog + 0x17d8) != 0; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d4c0 size=0xc4
 #include "ScopeTrace.h"
 struct FogCvarView

@@ -8538,6 +8538,7 @@
 0x1019b8b0 func   ?sub_1019b8b0@@YAXMM@Z sub_1019b8b0
 0x1019c230 func   ?sub_1019c230@CUnk102a9640@@QAEMXZ CUnk102a9640::sub_1019c230
 0x1019c260 func   ?sub_1019c260@@YAXPBD@Z sub_1019c260
+0x1019ce80 func   ?sub_1019ce80@@YA_NXZ sub_1019ce80
 0x1019d4c0 func   ?sub_1019d4c0@@YADXZ sub_1019d4c0
 0x1019d590 func   ?sub_1019d590@@YAXXZ sub_1019d590
 0x1019d8f0 func   ?sub_1019d8f0@CViewRender@@QAEXPBD@Z CViewRender::sub_1019d8f0
