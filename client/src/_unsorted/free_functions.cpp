@@ -46119,6 +46119,20 @@ int CVGuiScreen_100c9790::sub_100c9790(const Vector &origin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9820 size=0x39
+#include "C_VGuiScreen.h"
+
+// TARGET: C_VGuiScreen::sub_100c9820
+void C_VGuiScreen::sub_100c9820()
+{
+	Vector a;
+	Vector b;
+	Vector c;
+	sub_100c9680(a, c, b);
+	m_matrix.sub_101a2290(a, GetAbsAngles());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9d40 size=0x4
 struct CUnknown100c9d40 { int sub_100c9d40(); };
 int CUnknown100c9d40::sub_100c9d40()
