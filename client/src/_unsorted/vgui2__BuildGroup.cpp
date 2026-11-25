@@ -366,6 +366,49 @@ void vgui2::BuildGroup::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2640 size=0x88
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct KVV
+{
+	virtual const char *vfunc0();
+	virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6();
+	virtual void *vfunc7();
+	virtual void *vfunc8();
+	virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual int vfunc20(int);
+};
+
+struct XHView { int m_handle; vgui2::Panel *sub_101ac670(); };
+
+void vgui2::BuildGroup::vfunc5(void *arg)
+{
+	KVV *p = (KVV *)((KVV *)arg)->vfunc7();
+	if (!p)
+		return;
+
+	for (; p; p = (KVV *)p->vfunc8())
+	{
+		if (p->vfunc20(0))
+			continue;
+		for (int i = 0; i < m_Panels.Count(); i++)
+		{
+			vgui2::Panel *e = ((XHView *)&m_Panels[i])->sub_101ac670();
+			if (_strcmpi(e->vfunc18(), p->vfunc0()) == 0)
+			{
+				e->vfunc75((int)p);
+				goto next;
+			}
+		}
+		sub_101c2770((vgui2::KeyValues *)p, 0, 0);
+	next: ;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2970 size=0xb0
 #include "vgui2__BuildGroup.h"
 #include "vgui2__Panel.h"
