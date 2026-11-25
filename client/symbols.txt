@@ -5552,6 +5552,7 @@
 0x1010d870 func   ??_GCGaussianNoiseProxy@@UAEPAXI@Z ??_GCGaussianNoiseProxy@@UAEPAXI@Z
 0x1010da30 func   ?sub_1010da30@@YAHXZ sub_1010da30
 0x1010da60 func   ??_GCExponentialProxy@@UAEPAXI@Z ??_GCExponentialProxy@@UAEPAXI@Z
+0x1010da80 func   ?vfunc1@CAbsProxy@@UAEXH@Z CAbsProxy::vfunc1
 0x1010dad0 func   ?sub_1010dad0@@YAHXZ sub_1010dad0
 0x1010db00 func   ??_GCAbsProxy@@UAEPAXI@Z ??_GCAbsProxy@@UAEPAXI@Z
 0x1010db50 func   ?sub_1010db50@@YAHXZ sub_1010db50
