@@ -499,6 +499,22 @@ int CRestore::vfunc22(Vector *pValues, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012af00 size=0x96
+#include "CRestore.h"
+#include <string.h>
+// TARGET: CRestore::vfunc28
+int CRestore::vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable)
+{
+	int entityIndex[256];
+	int nRead = vfunc15(entityIndex, count, nBytesAvailable);
+	for (int i = 0; i < nRead; i++)
+		pValues[i] = sub_1012ae60(entityIndex[i]);
+	if (nRead < count)
+		memset(&pValues[nRead], 0, (count - nRead) * sizeof(pValues[0]));
+	return nRead;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012afa0 size=0x5
 #include "CRestore.h"
 int CRestore::vfunc29(int * a0, int a1, int a2)
