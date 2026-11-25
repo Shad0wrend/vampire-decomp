@@ -102503,6 +102503,30 @@ void sub_101a8c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8ca0 size=0x8c
+#include "ehandle.h"
+struct XInfo;
+struct XRes { void sub_101a8d30(XInfo *); void sub_101a8ca0(); };
+struct HandleVec { CBaseHandle *m_pMemory; int m_a; int m_b; int m_Size; };
+extern HandleVec g_1049d8f8;
+static inline IHandleEntity *GetEnt(const CBaseHandle &h)
+{
+	if (h.m_Index != 0xffffffff) {
+		CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h.m_Index & 0x1fff];
+		if (e.m_SerialNumber == (int)(h.m_Index >> 13))
+			return (IHandleEntity *)e.m_pEntity;
+	}
+	return 0;
+}
+void XRes::sub_101a8ca0()
+{
+	for (int i = 0; i < g_1049d8f8.m_Size; i++) {
+		if (g_1049d8f8.m_pMemory[i].Get())
+			sub_101a8d30((XInfo *)GetEnt(g_1049d8f8.m_pMemory[i]));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8d30 size=0x27
 struct XInfo { char pad[0x95e]; unsigned short m_w95e; };
 struct XRes { void sub_101a8d60(XInfo *p); void sub_101a8d30(XInfo *p); };
