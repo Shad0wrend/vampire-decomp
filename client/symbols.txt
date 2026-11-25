@@ -1838,6 +1838,7 @@
 0x1002e6e0 func   ?sub_1002e6e0@CUnknown1002e6e0@@QAEPAXH@Z CUnknown1002e6e0::sub_1002e6e0
 0x1002e710 func   ??_GCFleckParticles@@UAEPAXI@Z ??_GCFleckParticles@@UAEPAXI@Z
 0x1002ebc0 func   ?sub_1002ebc0@@YAXXZ sub_1002ebc0
+0x1002f2c0 func   ?vfunc10@CDustParticle@@UAEMPAUSimpleParticleAux_t@@M@Z CDustParticle::vfunc10
 0x1002f430 func   ?vfunc8@CDustParticle@@QAEMPAUPartT@@M@Z CDustParticle::vfunc8
 0x1002f460 func   ??_GCDustParticle@@UAEPAXI@Z ??_GCDustParticle@@UAEPAXI@Z
 0x1002f630 func   ?sub_1002f630@CUnknown1002f630@@QAEXH@Z CUnknown1002f630::sub_1002f630

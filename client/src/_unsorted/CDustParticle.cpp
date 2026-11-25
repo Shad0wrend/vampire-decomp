@@ -1,6 +1,29 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1002f2c0 size=0x6d
+#include "CDustParticle.h"
+
+extern "C" double fabs(double);
+#pragma intrinsic(fabs)
+
+float CDustParticle::vfunc10(SimpleParticleAux_t *p, float dt)
+{
+	p->m_fl24 += dt * p->m_fl38;
+
+	float flFactor = dt * -8.0f;
+	flFactor = flFactor + 1.0f;
+	p->m_fl38 = flFactor * p->m_fl38;
+
+	if ( fabs(p->m_fl38) < 0.5 )
+	{
+		p->m_fl38 = ( p->m_fl38 > 0.0f ) ? 0.5f : -0.5f;
+	}
+
+	return p->m_fl24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f430 size=0x24
 #include "CDustParticle.h"
 // TARGET: ?vfunc8@CDustParticle@@QAEMPAUPartT@@M@Z
