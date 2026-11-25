@@ -258,6 +258,50 @@ int vgui2::Slider::vfunc116(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbe90 size=0x82
+#include "vgui2__Slider.h"
+#include "vgui2__TextImage.h"
+
+struct SchemeMgrView
+{
+	virtual void m0();
+	virtual void m1();
+	virtual void m2();
+	virtual void m3();
+	virtual void *GetFont(void *scheme);
+};
+
+struct FontObjView
+{
+	virtual void m0();
+	virtual void m1();
+	virtual void m2();
+	virtual void m3();
+	virtual void *GetFont(const char *name);
+};
+
+struct SliderView
+{
+	char pad[0x98];
+	vgui2::TextImage *m_pTextImage;
+};
+
+void *sub_101ac8c0();
+
+// TARGET: vgui2::Slider::vfunc117
+void vgui2::Slider::vfunc117(const char *text)
+{
+	if (!text)
+		return;
+	SliderView *s = (SliderView *)this;
+	if (s->m_pTextImage)
+		delete s->m_pTextImage;
+	s->m_pTextImage = new vgui2::TextImage(text, sub_101aa220());
+	void *obj = ((SchemeMgrView *)sub_101ac8c0())->GetFont((void *)sub_101aa220());
+	s->m_pTextImage->vfunc30((int)((FontObjView *)obj)->GetFont("Copperplate"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc020 size=0xa1
 #include "vgui2__Slider.h"
 struct ColX { unsigned char r, g, b, a; ColX() {} ColX(int R, int G, int B, int A) { r = R; g = G; b = B; a = A; } };
