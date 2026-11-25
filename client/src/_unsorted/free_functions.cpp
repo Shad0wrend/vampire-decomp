@@ -51283,6 +51283,26 @@ void sub_100f74e0(const unsigned short *pSrc, unsigned char *pDest, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7550 size=0x69
+void sub_100f7550(const unsigned short *pSrc, unsigned char *pDst, int count)
+{
+	const unsigned short *pEnd = pSrc + count;
+	while (pSrc < pEnd)
+	{
+		unsigned int c = *pSrc;
+		pDst[3] = 0xff;
+		int r = c & 0x1f;
+		int g = (c >> 5) & 0x1f;
+		int b = (c >> 10) & 0x1f;
+		pDst[0] = (b << 3) | (b >> 2);
+		pDst[1] = (g << 3) | (g >> 2);
+		pDst[2] = (r << 3) | (r >> 2);
+		pSrc++;
+		pDst += 4;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f76d0 size=0x34
 void sub_100f76d0(unsigned char *src, unsigned char *dst, int n)
 {
