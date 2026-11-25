@@ -68387,6 +68387,46 @@ CUnknown101b45b0 *CUnknown101b45b0::sub_1012f490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f530 size=0x8a
+#include "CSoundEmitterUnit_1012e300.h"
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+void CSoundEmitterUnit_1012e300::sub_1012f530()
+{
+	m_b.m_Size = 0;
+	if (m_b.m_nGrowSize != -1) {
+		if (m_b.m_pMemory) {
+			Plat_Free(m_b.m_pMemory);
+			m_b.m_pMemory = 0;
+		}
+		m_b.m_nAllocationCount = 0;
+	}
+	m_b.m_pElements = m_b.m_pMemory;
+	if (m_b.m_nGrowSize != -1) {
+		if (m_b.m_pMemory) {
+			Plat_Free(m_b.m_pMemory);
+			m_b.m_pMemory = 0;
+		}
+		m_b.m_nAllocationCount = 0;
+	}
+	m_a.m_Size = 0;
+	if (m_a.m_nGrowSize != -1) {
+		if (m_a.m_pMemory) {
+			Plat_Free(m_a.m_pMemory);
+			m_a.m_pMemory = 0;
+		}
+		m_a.m_nAllocationCount = 0;
+	}
+	m_a.m_pElements = m_a.m_pMemory;
+	if (m_a.m_nGrowSize != -1) {
+		if (m_a.m_pMemory) {
+			Plat_Free(m_a.m_pMemory);
+			m_a.m_pMemory = 0;
+		}
+		m_a.m_nAllocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f5c0 size=0x160
 #include "CSoundEmitterSystemBase.h"
 
