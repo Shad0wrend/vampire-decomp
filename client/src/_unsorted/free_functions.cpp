@@ -69115,6 +69115,21 @@ void CUnknown10123500::sub_10123500(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123630 size=0x71
+#include "CPredictionCopy.h"
+void CPredictionCopy::sub_10123630(int dt, bool *outvalue, const bool *invalue, int count)
+{
+    if (!m_bErrorCheck)
+        return;
+    if (dt == 0)
+    {
+        int i = 0;
+        ReportFieldsDiffer("bool differs (net %s pred %s)\n", (invalue[i]) ? "true" : "false", (outvalue[i]) ? "true" : "false");
+    }
+    sub_101233b0(dt, "bool (%s)\n", (outvalue[0]) ? "true" : "false");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101236b0 size=0x5d
 class CPredictionCopy_101236b0
 {
