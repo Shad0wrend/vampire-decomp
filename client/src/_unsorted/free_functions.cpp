@@ -13174,6 +13174,55 @@ int CUnknown10033160::sub_10033160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033210 size=0x7b
+#include "C_TEBeamLaser.h"
+
+struct TEBeamLaserView
+{
+	char m_pad0[0xc];
+	int m_0c;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	int m_20;
+	int m_24;
+	int m_28;
+	int m_2c;
+	int m_30;
+	int m_34;
+	int m_38;
+	int m_3c;
+	int m_40;
+	int m_44;
+	int m_48;
+};
+
+struct EffectsView
+{
+	virtual void e0();
+	virtual void e1();
+	virtual void e2();
+	virtual void e3();
+	virtual void e4();
+	virtual void e5();
+	virtual void e6();
+	virtual void e7(int, int, int, int, int, int, int, int, float, int, float, float, int, float, float, float, float, int);
+};
+
+extern EffectsView *g_102d5050;
+
+void C_TEBeamLaser::sub_10033210(int updateType)
+{
+	TEBeamLaserView *p = (TEBeamLaserView *)this;
+
+	g_102d5050->e7(p->m_44, p->m_48, p->m_0c, p->m_10, 0, p->m_1c, p->m_20, p->m_24,
+		(float)p->m_28, p->m_2c, (float)p->m_3c, (float)(p->m_40 * 0.1),
+		p->m_14, (float)(p->m_18 * 0.1), (float)p->m_30, (float)p->m_34,
+		(float)p->m_38, 0x1b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100332b0 size=0x6
 namespace lifted {
 extern char g_102ebdbc;
