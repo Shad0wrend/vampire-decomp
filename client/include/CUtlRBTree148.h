@@ -28,5 +28,6 @@ public:
 		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
 	}
 
+	bool sub_100cfc00(unsigned short i) const;	// "CUtlRBTree::IsRightChild"
 	bool sub_100cf230(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 };
