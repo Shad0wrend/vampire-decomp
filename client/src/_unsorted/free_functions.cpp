@@ -76147,6 +76147,43 @@ void __stdcall sub_10144b50(int clan)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144be0 size=0x8b
+#include "CStatDefault3List.h"
+#include <stdio.h>
+struct EngCmd {
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void f8(); virtual void f9(); virtual void f10(); virtual void f11(); virtual void f12(); virtual void f13(); virtual void f14(); virtual void f15();
+	virtual void f16(); virtual void f17(); virtual void f18(); virtual void f19(); virtual void f20(); virtual void f21(); virtual void f22(); virtual void f23();
+	virtual void f24(); virtual void f25(); virtual void f26();
+	virtual void ClientCmd(const char *cmd, int flag);
+};
+struct Obj101416b0 { int sub_101416b0(); };
+struct CUnknown10174640 { void sub_10174640(); };
+extern EngCmd *g_104a57d4;
+extern void *g_104a0d50;
+extern CStatDefault3List g_105e74fc;
+extern Obj101416b0 g_105e7780;
+extern CUnknown10174640 *sub_10170f60();
+extern "C" __declspec(dllimport) void DevMsg(int, const char *, ...);
+void sub_10144be0()
+{
+	char buf[32];
+	DevMsg(3, "[CharGenWiz]: Spending Player Stat Points:\n\n");
+	if (g_104a0d50) {
+		int idx = g_105e7780.sub_101416b0();
+		g_104a57d4->ClientCmd("giftxp 9000", 1);
+		int v = *(int *)((char *)g_105e74fc.sub_10140000(idx) + 0xb4);
+		if (v != -1) {
+			sprintf(buf, "vautolvl %d -1", v);
+			g_104a57d4->ClientCmd(buf, 1);
+		}
+		CUnknown10174640 *p = sub_10170f60();
+		if (p)
+			p->sub_10174640();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144d10 size=0x17
 struct CUnknown10144d10 { void * sub_10144d10(); };
 void * CUnknown10144d10::sub_10144d10()
