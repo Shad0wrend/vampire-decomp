@@ -6457,6 +6457,7 @@
 0x101366f0 func   ?vfunc122@C_Sprite@@UAEHXZ C_Sprite::vfunc122
 0x101367e0 func   ?sub_101367e0@ThingV@@QAEXXZ ThingV::sub_101367e0
 0x10136c50 func   ?sub_10136c50@@YIXPAUVtblObj@@HPAVVector@@1@Z sub_10136c50
+0x10136cb0 func   ?sub_10136cb0@@YAXHHHH@Z sub_10136cb0
 0x10136d70 func   ?sub_10136d70@@YAHXZ sub_10136d70
 0x10136d90 func   ?sub_10136d90@@YAXXZ sub_10136d90
 0x10136da0 func   ?sub_10136da0@CEngineSpriteView@@QAE_NPBD@Z CEngineSpriteView::sub_10136da0

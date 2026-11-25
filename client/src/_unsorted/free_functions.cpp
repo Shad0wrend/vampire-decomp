@@ -74997,6 +74997,29 @@ void __fastcall sub_10136c50(VtblObj *self, int edx, Vector *a, Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136cb0 size=0xb1
+int sub_100cd100();
+int sub_100cd0f0();
+extern int g_105e5d70;
+extern int g_105e5d74;
+extern int g_105e5d78;
+extern int g_105e5d7c;
+extern bool g_105e5d80;
+#define CLAMPV(v, lo, hi) ((v) > (hi) ? (hi) : ((v) < (lo) ? (lo) : (v)))
+void sub_10136cb0(int x, int y, int w, int h)
+{
+	x = (x > sub_100cd100()) ? sub_100cd100() : ((x < 0) ? 0 : x);
+	y = (y > sub_100cd0f0()) ? sub_100cd0f0() : ((y < 0) ? 0 : y);
+	w = (w > sub_100cd100() - x) ? sub_100cd100() - x : ((w < 0) ? 0 : w);
+	h = (h > sub_100cd0f0() - y) ? sub_100cd0f0() - y : ((h < 0) ? 0 : h);
+	g_105e5d70 = x;
+	g_105e5d74 = y;
+	g_105e5d78 = w;
+	g_105e5d7c = h;
+	g_105e5d80 = true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136d70 size=0x1c
 namespace lifted {
 extern int g_105e5d70;
