@@ -4610,6 +4610,7 @@
 0x100d6c40 func   ?sub_100d6c40@@YAXAAVVMatrix@@PAM0@Z sub_100d6c40
 0x100d7130 func   ?sub_100d7130@CClientShadowMgr@@QAEXHGPAH@Z CClientShadowMgr::sub_100d7130
 0x100d7180 func   ?sub_100d7180@CClientShadowMgr@@QAEXHGPAH@Z CClientShadowMgr::sub_100d7180
+0x100d7910 func   ?sub_100d7910@@YA_NPAVIClientRenderable@@0ABVVector@@@Z sub_100d7910
 0x100d7e50 func   ?vfunc16@CClientShadowMgr@@QAEPAXG@Z CClientShadowMgr::vfunc16
 0x100d8230 func   ?vfunc2@CShadowProxy@@UAEXXZ CShadowProxy::vfunc2
 0x100d8260 func   ?sub_100d8260@CUnknown100d8260@@QAEXXZ CUnknown100d8260::sub_100d8260

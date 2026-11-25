@@ -46857,6 +46857,26 @@ void CClientShadowMgr::sub_100d7180(int a0, unsigned short h, int *a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7910 size=0x7b
+#include "IClientRenderable.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+extern bool sub_100dd5e0(const Vector &, const QAngle &, const Vector &, const Vector &,
+                         const Vector &, const QAngle &, const Vector &, const Vector &,
+                         float, const Vector &);
+
+bool sub_100d7910(IClientRenderable *p1, IClientRenderable *p2, const Vector &out)
+{
+	Vector mins1, maxs1, mins2, maxs2;
+	p1->GetRenderBounds(mins1, maxs1);
+	p2->GetRenderBounds(mins2, maxs2);
+	return sub_100dd5e0(p1->GetRenderOrigin(), p1->GetRenderAngles(), mins1, maxs1,
+		p2->GetRenderOrigin(), p2->GetRenderAngles(), mins2, maxs2,
+		3.0f, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8260 size=0x7
 namespace lifted {
 extern char g_10227c5c;
