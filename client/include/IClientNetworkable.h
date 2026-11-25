@@ -20,6 +20,7 @@ public:
 	virtual void OnDataChanged(int updateType) = 0;	// slot 5: ret 4
 	virtual void PreDataUpdate(int updateType) = 0;	// slot 6: ret 4
 	virtual void PostDataUpdate(int updateType) = 0;	// slot 7: ret 4
+	void sub_100071e0(int updateType);
 	virtual bool IsDormant() = 0;	// slot 8: C_BaseTempEntity: false
 	virtual int entindex() = 0;	// slot 9: C_BaseEntity: mov eax,[ecx+0x3c] (the index at +0x44)
 	virtual void ReceiveMessage(int classID, bf_read &msg) = 0;	// slot 10: ret 8: Source 2004's form
