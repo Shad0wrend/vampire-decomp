@@ -7746,6 +7746,7 @@
 0x10165620 func   ?vfunc1@CConnectMsg@@UAEXXZ CConnectMsg::vfunc1
 0x10165680 func   ?vfunc0@CConsole@@UAEXH@Z CConsole::vfunc0
 0x10165690 func   ?vfunc1@CConsole@@UAEXXZ CConsole::vfunc1
+0x101656a0 func   ??0CDebugOverlay@@QAE@PAVPanel@vgui2@@@Z CDebugOverlay::CDebugOverlay
 0x10165730 func   ??_GCDebugOverlay@@UAEPAXI@Z ??_GCDebugOverlay@@UAEPAXI@Z
 0x10165750 func   ??1CDebugOverlay@@UAE@XZ CDebugOverlay::~CDebugOverlay
 0x10165750 func   ?sub_10165750@CUnknown10165750@@QAEHXZ CUnknown10165750::sub_10165750
