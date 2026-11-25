@@ -107349,6 +107349,26 @@ int sub_1018f3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f3c0 size=0xc4
+#include "VMatrix.h"
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+// TARGET: sub_1018f3c0
+void sub_1018f3c0(const Vector &origin, const QAngle &angles, Vector *forward, Vector *right, Vector *up, VMatrix &m)
+{
+	sub_101090a0(angles, forward, right, up);
+	for (int i = 0; i < 3; i++) {
+		m[0][i] = (*right)[i];
+		m[1][i] = (*up)[i];
+		m[2][i] = -(*forward)[i];
+		m[3][i] = 0.0f;
+	}
+	m[0][3] = -DotProduct(*right, origin);
+	m[1][3] = -DotProduct(*up, origin);
+	m[2][3] = DotProduct(*forward, origin);
+	m[3][3] = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f570 size=0x55
 #include "Vector.h"
 
