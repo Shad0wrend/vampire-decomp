@@ -70589,6 +70589,28 @@ void __stdcall sub_10134060(CUnknown101bc540Rec *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101340a0 size=0x61
+#include "CSoundList101340a0.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+void CSoundList101340a0::sub_101340a0(SoundV_10133a20 *pSound)
+{
+	int elem = -1;
+	for (int i = 0; i < m_size; i++) {
+		if (m_pMemory[i] == pSound) {
+			elem = i;
+			break;
+		}
+	}
+	if (elem != -1) {
+		int nShift = m_size - elem - 1;
+		if (nShift > 0)
+			memmove(&m_pMemory[elem], &m_pMemory[elem + 1], nShift * 4);
+		--m_size;
+	}
+	pSound->sub_10133a20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134200 size=0x7e
 #include "CUnknown101bc750.h"
 struct Mem4;
