@@ -21,6 +21,7 @@ public:
 	bool sub_1009e0f0(int a, int b);
 	void sub_1009f8a0();
 	void sub_1009f780();
+	float sub_1009f190();
 	void *sub_1009f7f0(void *);
 	void sub_1011c7f0();
 	bool sub_1009f140(int mask);
