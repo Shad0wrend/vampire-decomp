@@ -50550,6 +50550,27 @@ int sub_100f57b0(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f59b0 size=0x65
+#include <math.h>
+
+// TARGET: sub_100f59b0
+void sub_100f59b0(unsigned char *pBuf, float a, float b)
+{
+	int i = 0;
+	float ratio = a / b;
+	while (i < 256)
+	{
+		int v = (int)(pow(i / 255.0f, ratio) * 255.0 + 0.5);
+		if (v < 0)
+			v = 0;
+		else if (v > 255)
+			v = 255;
+		pBuf[i] = (unsigned char)v;
+		i++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5ad0 size=0xba
 #include <string.h>
 
