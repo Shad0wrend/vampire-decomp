@@ -50764,6 +50764,17 @@ void sub_100d95a0(const Vector &start, const Vector &direction, float velocity, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9600 size=0x36
+#include "CFXQuad.h"
+struct IFoo { virtual void v0(); virtual void v1(void *p); };
+extern IFoo *g_102b9850;
+void sub_100d9600(const int *a)
+{
+    CFXQuad *p = (CFXQuad *)operator new(0x60);
+    g_102b9850->v1(p ? p->sub_100e5c70(a) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9740 size=0x1
 void sub_100d9740()
 {
