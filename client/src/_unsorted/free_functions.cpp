@@ -114103,6 +114103,43 @@ int sub_101be320(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be340 size=0xc2
+#include "CUtlLinkedList12.h"
+// TARGET: CUtlLinkedList12::sub_101be340
+void CUtlLinkedList12::sub_101be340(int before, int elem)
+{
+    if (IsInList(elem)) {
+        CUtlLinkedList12Node *pBase = m_pMemory;
+        CUtlLinkedList12Node *pOldElem = &pBase[elem];
+        if (pOldElem->m_Previous != -1)
+            pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+        else
+            m_Head = pOldElem->m_Next;
+        if (pOldElem->m_Next != -1)
+            pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+        else
+            m_Tail = pOldElem->m_Previous;
+        pOldElem->m_Previous = pOldElem->m_Next = elem;
+        --m_ElementCount;
+    }
+    CUtlLinkedList12Node *pNewElem = &m_pMemory[elem];
+    pNewElem->m_Next = before;
+    if (before == -1) {
+        pNewElem->m_Previous = m_Tail;
+        m_Tail = elem;
+    } else {
+        CUtlLinkedList12Node *pBefore = &m_pMemory[before];
+        pNewElem->m_Previous = pBefore->m_Previous;
+        pBefore->m_Previous = elem;
+    }
+    if (pNewElem->m_Previous == -1)
+        m_Head = elem;
+    else
+        m_pMemory[pNewElem->m_Previous].m_Next = elem;
+    ++m_ElementCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be720 size=0x18
 struct ISys_ {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
