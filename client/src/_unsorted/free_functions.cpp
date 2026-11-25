@@ -68334,6 +68334,32 @@ void __fastcall sub_10136400(CSpriteView *p, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101364b0 size=0x70
+#include "C_BaseAnimating.h"
+
+struct CGlobalVars101364b0 { char pad[0xc]; float frametime; };
+extern CGlobalVars101364b0 *g_102b8494;
+
+// TARGET: sub_101364b0
+void C_BaseAnimating::sub_101364b0()
+{
+	float delta = g_102b8494->frametime - *(float *)((char *)this + 0x44c);
+	*(float *)((char *)this + 0x444) += delta * *(float *)((char *)this + 0xa0);
+	int n = (int)((float)*(int *)((char *)this + 0x8c) * delta);
+	if ( n > (int)*(unsigned char *)((char *)this + 0x53) )
+	{
+		*(unsigned char *)((char *)this + 0x53) = 0;
+		sub_100a2930();
+	}
+	else
+	{
+		*(unsigned char *)((char *)this + 0x53) -= n;
+		*(float *)((char *)this + 0x78) = g_102b8494->frametime;
+		*(float *)((char *)this + 0x44c) = g_102b8494->frametime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136520 size=0x54
 extern "C" double __cdecl fmod(double, double);
 
