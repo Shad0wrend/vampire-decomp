@@ -1476,6 +1476,22 @@ void __fastcall sub_10007160(EntView *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100071e0 size=0x1f
+#include "IClientNetworkable.h"
+#include "Vector.h"
+
+struct EntView;
+void __fastcall sub_10007160(EntView *self);
+void sub_10048760(Vector &origin, Vector &normal);
+
+// TARGET: ?sub_100071e0@IClientNetworkable@@QAEXH@Z
+void IClientNetworkable::sub_100071e0(int updateType)
+{
+	sub_10007160((EntView *)((char *)this - 4));
+	sub_10048760(*(Vector *)((char *)this + 0xc), *(Vector *)((char *)this + 0x18));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007220 size=0x6
 namespace lifted {
 extern char g_102dfd28;
