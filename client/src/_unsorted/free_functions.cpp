@@ -40918,6 +40918,33 @@ int CUnknown100a6760::sub_100a6760(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6850 size=0xc3
+#include "C_BasePlayer.h"
+#include "CVStatList_t.h"
+#include "CStatDefault3List.h"
+struct SDv { int sub_10160230(int); };
+struct StatOwnerV {
+	int m0; int m4; int m8;
+	int sub_10160500(const char *);
+	SDv *sub_10160590(int);
+};
+extern StatOwnerV g_105f985c;
+extern CStatDefault3List g_105e74fc;
+struct SD3v { char pad[0xd4]; int *m_pd4; };
+int C_BasePlayer::sub_100a6850(int b, int h)
+{
+	int v;
+	if (h == -1 || h == sub_1008ebb0()) {
+		CVStatListSet *set = (CVStatListSet *)((char *)this + 0x1164);
+		v = set->Find(1)->sub_1015dbd0(0);
+	} else {
+		v = *((SD3v *)g_105e74fc.sub_10140000(h))->m_pd4;
+	}
+	int id = g_105f985c.sub_10160500("Ability_Order_Lookups");
+	return g_105f985c.sub_10160590(id)->sub_10160230(v * 3 + b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6920 size=0x46
 struct CEntInfo
 {
