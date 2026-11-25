@@ -24,6 +24,38 @@ void QuestLogPanel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189380 size=0x9e
+#include "QuestLogPanel.h"
+#include "CHud.h"
+#include "CharEditPanel.h"
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" char *strstr(const char *, const char *);
+extern "C" int atoi(const char *);
+extern void *g_104a0d50;
+extern CHud g_104cfe38;
+struct QLView { void sub_10189600(); };
+void QuestLogPanel::vfunc78(int command)
+{
+	if (g_104a0d50) {
+		const char *pszCommand = (const char *)command;
+		if (!_strcmpi(pszCommand, "refresh")) {
+			((QLView *)this)->sub_10189600();
+			return;
+		}
+		if (strstr(pszCommand, "QB") == pszCommand) {
+			sub_101892d0(atoi(pszCommand + 2) - 1);
+			return;
+		}
+		if (!_strcmpi(pszCommand, "accept")) {
+			CharEditPanel *pPanel = (CharEditPanel *)g_104cfe38.sub_100f0ed0("CharEditPanel");
+			pPanel->sub_101733d0(false);
+			return;
+		}
+		PropertyPage::vfunc78(command);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189420 size=0x3
 #include "QuestLogPanel.h"
 void QuestLogPanel::vfunc124(int a0)
