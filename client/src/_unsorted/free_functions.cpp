@@ -10973,6 +10973,40 @@ YY *YY::sub_10027bf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027c30 size=0x9d
+struct V3 { float x, y, z; };
+struct IEngX { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual int v44(); };
+extern IEngX *g_104a57d4;
+struct IAttach { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(int idx, V3 *a, V3 *b); };
+struct YYV { char pad[0x1584]; int m_n1584; V3 m_a; V3 m_b; };
+struct YYX { void *sub_10027bf0(); };
+struct MZ { int sub_10094ec0(const char *); };
+// TARGET: sub_10027c30
+void __fastcall sub_10027c30(YYV *self, int edx, V3 *a, V3 *b)
+{
+	int n = g_104a57d4->v44();
+	if (n != self->m_n1584)
+	{
+		IAttach *p = (IAttach *)((YYX *)self)->sub_10027bf0();
+		int idx = ((MZ *)p)->sub_10094ec0("muzzle");
+		p->v57(idx, &self->m_a, &self->m_b);
+	}
+	self->m_n1584 = n;
+	if (a)
+	{
+		a->x = self->m_a.x;
+		a->y = self->m_a.y;
+		a->z = self->m_a.z;
+	}
+	if (b)
+	{
+		b->x = self->m_b.x;
+		b->y = self->m_b.y;
+		b->z = self->m_b.z;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
