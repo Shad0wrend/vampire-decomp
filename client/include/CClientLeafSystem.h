@@ -16,6 +16,8 @@ public:
     bool vfunc15(char);
     bool vfunc16(char);
     void vfunc22();
+    virtual void vfunc2(unsigned short, int, unsigned short *);
+    void sub_100d2560(unsigned int, unsigned short);
     void vfunc23();
 public:
     int vfunc10(int, int, int);
