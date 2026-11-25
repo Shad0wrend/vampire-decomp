@@ -34,6 +34,38 @@ void vgui2::ProgressBar::vfunc107(float val)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6680 size=0x68
+#include "vgui2__ProgressBar.h"
+
+using vgui2::Panel;
+
+struct SchemeColor
+{
+	unsigned char r, g, b, a;
+	operator int() const { return *(const int *)this; }
+};
+
+struct ISchemeView
+{
+	virtual void d0();
+	virtual void d1();
+	virtual void d2();
+	virtual void *GetBorder(const char *name);
+	virtual void d4();
+	virtual void d5();
+	virtual SchemeColor GetColor(const char *name);
+};
+
+void vgui2::ProgressBar::sub_101c6680(int pScheme)
+{
+	Panel::vfunc74(pScheme);
+	ISchemeView *scheme = (ISchemeView *)pScheme;
+	vfunc51(scheme->GetColor("BrightControlText"));
+	vfunc50(scheme->GetColor("WindowBgColor"));
+	vfunc60(scheme->GetBorder("ButtonDepressedBorder"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6760 size=0x6
 #include "vgui2__ProgressBar.h"
 namespace lifted {
