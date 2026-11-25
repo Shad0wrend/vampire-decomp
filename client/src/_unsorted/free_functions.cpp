@@ -72628,6 +72628,22 @@ void sub_1013a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a7e0 size=0x9b
+#include "CUnknown1006c1c0.h"
+// TARGET: sub_1013a7e0
+void sub_1013a7e0(CUnknown1006c1c0 *buf, CUnknownImgInfo *info, unsigned char *dst)
+{
+    for (int i = 0; i < info->m_nCount; i++, dst++) {
+        unsigned char *p = buf->m_pData + buf->m_nC;
+        if (p[0] == p[1] && p[1] == p[2])
+            *dst = p[0];
+        else
+            *dst = (unsigned char)(int)(p[2] * 0.114f + p[1] * 0.587f + p[0] * 0.299f);
+        buf->sub_1013cbe0(1, 4);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a940 size=0x3f
 #include "CUnknown1006c1c0.h"
 void sub_1013a940(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char *pDst)
