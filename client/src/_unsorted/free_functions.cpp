@@ -83683,6 +83683,44 @@ int CUnknown10156050::sub_10156050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156060 size=0x77
+#include "CUnknown101f5d60.h"
+#include "CUnknown101f4b20.h"
+#include <stdio.h>
+
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int, const char *, ...);
+
+class CFirstElem
+{
+public:
+	void sub_10155ac0();
+};
+
+void CUnknown101f5d60::sub_10156060()
+{
+	char buf[0x80];
+	const char *pName = *(const char **)((char *)this + 0xc);
+	if (!pName)
+		pName = g_102de300;
+	sprintf(buf, "\n   %s:\n\n", pName);
+	DevMsg(0, buf);
+
+	int i;
+	for (i = 0; i < *(int *)((char *)this + 0x14); i++)
+	{
+		CFirstElem *e = (*(CFirstElem ***)((char *)this + 0x18))[i];
+		e->sub_10155ac0();
+	}
+
+	int j;
+	for (j = 0; j < *(int *)((char *)this + 0x1c); j++)
+	{
+		CUnknown101f4b20 *e = (*(CUnknown101f4b20 ***)((char *)this + 0x20))[j];
+		e->sub_10155840();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101560e0 size=0xc
 namespace lifted {
 int sub_10156160();
