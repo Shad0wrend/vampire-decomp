@@ -237,6 +237,23 @@ void vgui2::TreeView::vfunc111(int itemIndex, bool bPromoteChildren)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd710 size=0x5f
+#include "vgui2__TreeView.h"
+namespace vgui2 {
+// TARGET: vgui2::TreeView::vfunc115
+void TreeView::vfunc115(int p, char b)
+{
+	if (m_pTree68)
+	{
+		if (m_bTree64)
+			delete m_pTree68;
+	}
+	m_pTree68 = (CUtlVectorDel4 *)p;
+	m_bTree64 = b;
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd810 size=0x12
 #include "vgui2__TreeView.h"
 int vgui2::TreeView::vfunc117()

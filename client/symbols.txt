@@ -8625,6 +8625,7 @@
 0x101bd3d0 func   ?vfunc108@TreeView@vgui2@@UAEHXZ vgui2::TreeView::vfunc108
 0x101bd420 func   ?vfunc110@TreeView@vgui2@@UAEHXZ vgui2::TreeView::vfunc110
 0x101bd430 func   ?vfunc111@TreeView@vgui2@@UAEXH_N@Z vgui2::TreeView::vfunc111
+0x101bd710 func   ?vfunc115@TreeView@vgui2@@UAEXHD@Z vgui2::TreeView::vfunc115
 0x101bd770 func   ?sub_101bd770@CUnknown101bd770@@QAEHXZ CUnknown101bd770::sub_101bd770
 0x101bd810 func   ?vfunc117@TreeView@vgui2@@UAEHXZ vgui2::TreeView::vfunc117
 0x101bd830 func   ?vfunc118@TreeView@vgui2@@UAEHH@Z vgui2::TreeView::vfunc118
