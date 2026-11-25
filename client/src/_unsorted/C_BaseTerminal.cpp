@@ -58,3 +58,39 @@ C_BaseTerminal::~C_BaseTerminal()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c7620 size=0x5e
+#include "C_BaseTerminal.h"
+#include "C_BaseEntity.h"
+#include "IClientNetworkable.h"
+
+struct TerminalEngineView
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+	virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18(); virtual void e19();
+	virtual void e20(); virtual void e21(); virtual void e22(); virtual void e23(); virtual void e24();
+	virtual void e25(); virtual void e26(); virtual void e27(); virtual void e28(); virtual void e29();
+	virtual void e30(); virtual void e31(); virtual void e32(); virtual void e33(); virtual void e34();
+	virtual void e35(); virtual void e36(); virtual void e37(); virtual void e38();
+	virtual float v39(int);
+};
+
+extern TerminalEngineView *g_104a57d4;
+
+void C_BaseTerminal::vfunc29(char b)
+{
+	C_BaseEntity::vfunc29(b);
+
+	if (IsDormant())
+	{
+		sub_100c7550();
+		vfunc83(-1.0f);
+	}
+	else
+	{
+		vfunc83(g_104a57d4->v39(0) + 0.25);
+	}
+}
+// END FUNCTION
