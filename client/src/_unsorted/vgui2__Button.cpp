@@ -184,6 +184,24 @@ void vgui2::Button::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3d40 size=0x7e
+#include "vgui2__Button.h"
+struct Color4 { unsigned char r, g, b, a; };
+void vgui2::Button::vfunc155(unsigned int a, unsigned int b)
+{
+	Color4 &ca = *(Color4 *)&a;
+	Color4 &cb = *(Color4 *)&b;
+	Color4 &c1 = *(Color4 *)((char *)this + 0xe4);
+	Color4 &c2 = *(Color4 *)((char *)this + 0xe8);
+	if (c1.r == ca.r && c1.g == ca.g && c1.b == ca.b && c1.a == ca.a &&
+	    c2.r == cb.r && c2.g == cb.g && c2.b == cb.b && c2.a == cb.a)
+		return;
+	*(unsigned int *)((char *)this + 0xe4) = a;
+	*(unsigned int *)((char *)this + 0xe8) = b;
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3dc0 size=0x19
 #include "vgui2__Button.h"
 namespace lifted {
