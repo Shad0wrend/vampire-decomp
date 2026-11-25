@@ -93241,6 +93241,27 @@ int sub_10183b60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10184360 size=0x70
+#include "CHud.h"
+#include "VHotkeysUI.h"
+
+extern char g_105fb760;
+extern CHud g_104cfe38;
+
+// TARGET: sub_10184360
+void sub_10184360()
+{
+	if ( g_105fb760 )
+	{
+		VHotkeysUI *ui = (VHotkeysUI *)g_104cfe38.sub_100f0ed0("VHotkeysUI");
+		if ( (unsigned char)ui->vfunc22() )
+			((VHotkeysUI *)g_104cfe38.sub_100f0ed0("VHotkeysUI"))->sub_10183aa0();
+		else
+			((VHotkeysUI *)g_104cfe38.sub_100f0ed0("VHotkeysUI"))->sub_10183a20();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184420 size=0x2f
 namespace lifted {
 extern char g_1027b3a8;
