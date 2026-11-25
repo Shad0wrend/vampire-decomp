@@ -94153,6 +94153,52 @@ void sub_1018d6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d700 size=0x6b
+class VProfMethodView { public: int m_nOffset; };
+
+typedef void (VProfMethodView::*VProfVoidFn)();
+typedef void (VProfMethodView::*VProfMarkFn)(int, int, int);
+
+struct VProfObj
+{
+	char m_pad1008[0x1008];
+	int m_nFrameCount;	// 0x1008
+	int m_pCurRoot;		// 0x100c
+	bool m_bVTune;		// 0x1010
+	char m_pad1011[0x1018 - 0x1011];
+	void *m_pVTune;		// 0x1018
+	char m_pad101c[0x1024 - 0x101c];
+	int m_pSaved;		// 0x1024
+};
+
+extern int g_101e3138;
+extern VProfVoidFn g_101e3154;
+extern VProfMarkFn g_101e3158;
+extern VProfVoidFn g_101e315c;
+
+void sub_1018d700()
+{
+	VProfObj *p = (VProfObj *)g_101e3138;
+
+	int saved = p->m_pCurRoot;
+	p->m_pCurRoot = 0;
+	p->m_pSaved = saved;
+
+	if ( !p->m_bVTune )
+		( ((VProfMethodView *)p->m_pVTune) ->* g_101e3154 )();
+
+	( ((VProfMethodView *)g_101e3138) ->* g_101e3158 )(-5, 0, -1);
+
+	p = (VProfObj *)g_101e3138;
+	if ( p->m_bVTune )
+		p->m_pCurRoot = p->m_pSaved;
+	else
+		p->m_pCurRoot = p->m_pSaved;
+	if ( !p->m_bVTune )
+		( ((VProfMethodView *)p->m_pVTune) ->* g_101e315c )();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018db60 size=0x34
 namespace lifted {
 extern char g_102d41c4;
