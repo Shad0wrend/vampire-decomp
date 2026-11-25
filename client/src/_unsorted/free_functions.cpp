@@ -99702,6 +99702,61 @@ struct V5e610 { char pad[0x1c]; int h; E3f4 *Look() { return (E3f4 *)sub_100a2a9
 int V5e610::sub_1015e610() { E3f4 *e = Look(); int r = 0; if (e != 0) r = e->Get(); return r; }
 // END FUNCTION
 
+// FUNCTION: 0x1015e630 size=0xee
+#include "ScopeTrace.h"
+#include "CVStatInfoList_t.h"
+
+extern CVStatInfoList_t g_105f8c60;
+extern int g_105f8e70[17];
+
+// TARGET: sub_1015e630
+void sub_1015e630()
+{
+	ScopeTrace trace("vamp_BuildSubSlotDisciplineInfo", g_102de300);
+	int orders[17];
+	int max = -1;
+	for ( int i = 0; i < 17; i++ )
+	{
+		if ( g_105f8c60.sub_1015cfe0(i)->m_nForceOrdering != 0 )
+		{
+			orders[i] = g_105f8c60.sub_1015cfe0(i)->m_nForceOrdering;
+			if ( orders[i] > max )
+				max = orders[i];
+		}
+		else
+			orders[i] = -1;
+	}
+	int next = 1;
+	for ( int k = 0; k < 17; k++ )
+	{
+		if ( orders[k] == -1 )
+		{
+			int j = 0;
+			do
+			{
+				if ( orders[j] == next )
+				{
+					next++;
+					j = 0;
+				}
+				j++;
+			} while ( j < 17 );
+			orders[k] = next;
+			next++;
+		}
+	}
+	int out = 0;
+	for ( int order = 0; order < 17; order++ )
+	{
+		for ( int m = 0; m < 17; m++ )
+		{
+			if ( orders[m] == order )
+				g_105f8e70[out++] = m;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015eb00 size=0xc
 extern int g_102cb108[];
 // TARGET: sub_1015eb00
