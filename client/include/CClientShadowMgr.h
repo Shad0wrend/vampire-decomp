@@ -40,4 +40,5 @@ public:
 	void vfunc7(int);
 	void *vfunc16(unsigned short);
 	void vfunc14(const void *pDirection);
+	void vfunc15(int, int, int);
 };
