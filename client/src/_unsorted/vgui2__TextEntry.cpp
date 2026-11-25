@@ -863,6 +863,96 @@ void vgui2::TextEntry::vfunc121(const char *text)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0700 size=0xd1
+#include "vgui2__TextEntry.h"
+
+struct TEView
+{
+	char pad0[0x58];
+	int m_nLength;		// 0x58
+	int m_nCapacity;	// 0x5c
+	char *m_pText;		// 0x60
+	int m_n64;		// 0x64
+	char pad68[0x6c - 0x68];
+	int *m_p6c;		// 0x6c
+	int m_nCursor;		// 0x70
+	char pad74[0x8a - 0x74];
+	char m_bFlag;		// 0x8a
+	char pad8b[0xb0 - 0x8b];
+	char m_bB0;		// 0xb0
+	char padB1[0xd0 - 0xb1];
+	int m_nD0;		// 0xd0
+	char padD4[0x114 - 0xd4];
+	int m_n114;		// 0x114
+};
+
+struct TEBuf
+{
+	int m_nCount;
+	int m_nCapacity;
+	char *m_pData;
+};
+
+inline char TEGetChar(TEBuf *b, int i)
+{
+	if (i >= 0 && i < b->m_nCount)
+		return b->m_pData[i];
+	return 0;
+}
+
+void __fastcall sub_101b0650(void *self)
+{
+	TEView *v = (TEView *)self;
+	int n = v->m_nLength;
+	int cur = v->m_nCursor;
+	if (cur == n)
+	{
+		v->m_n114 = v->m_n64 - 2;
+		return;
+	}
+	v->m_n114 = 0;
+	int a;
+	for (;;)
+	{
+		a = v->m_n114;
+		int d = (a >= 0 && a < v->m_n64) ? v->m_p6c[a] : 0;
+		if (cur <= d)
+			break;
+		v->m_n114 = a + 1;
+	}
+	v->m_n114 = a - 1;
+}
+
+// TARGET: ?vfunc122@TextEntry@vgui2@@UAEXXZ
+void vgui2::TextEntry::vfunc122()
+{
+	TEView *v = (TEView *)this;
+	TEBuf *b = (TEBuf *)((char *)this + 0x58);
+	if (!v->m_bFlag || v->m_nCursor == 0 || v->m_nLength == 0)
+		return;
+	vfunc131();
+	for (int i = v->m_nCursor; i < v->m_nLength; i++)
+	{
+		char c = TEGetChar(b, i);
+		vfunc156(c, i - 1);
+	}
+	int n = v->m_nLength - 1;
+	if (n >= 0 && n <= v->m_nCapacity)
+		v->m_nLength = n;
+	if (v->m_nCursor == v->m_nD0)
+	{
+		int t = v->m_nD0 - 6;
+		v->m_nD0 = t < 0 ? 0 : t;
+	}
+	v->m_nCursor--;
+	v->m_bB0 = 1;
+	::sub_101b0650(this);
+	vfunc150();
+	vfunc109();
+	vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b09c0 size=0xf
 #include "vgui2__TextEntry.h"
 namespace lifted {
