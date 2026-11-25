@@ -9463,6 +9463,7 @@
 0x101c6c70 func   ??1MenuItem@vgui2@@UAE@XZ vgui2::MenuItem::~MenuItem
 0x101c6cb0 func   ?vfunc166@MenuItem@vgui2@@UAEXXZ vgui2::MenuItem::vfunc166
 0x101c6ea0 func   ??_GMenuItemCheckImage@@UAEPAXI@Z ??_GMenuItemCheckImage@@UAEPAXI@Z
+0x101c6ec0 func   ?vfunc101@MenuItem@vgui2@@UAEXXZ vgui2::MenuItem::vfunc101
 0x101c6f00 func   ?sub_101c6f00@CUnknown101c6f00@@QAEXXZ CUnknown101c6f00::sub_101c6f00
 0x101c6f70 func   ?vfunc85@MenuItem@vgui2@@UAEXXZ vgui2::MenuItem::vfunc85
 0x101c6fe0 func   ?vfunc86@MenuItem@vgui2@@UAEXXZ vgui2::MenuItem::vfunc86
