@@ -52,3 +52,19 @@ void CHudWeaponSelection::vfunc7()
     *(char *)((char *)this + 0x1c) = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a7bc0 size=0x3e
+#include "CHudWeaponSelection.h"
+#include "C_BasePlayer.h"
+extern C_BasePlayer *g_104a0d50;
+bool sub_1018c770();
+// TARGET: CHudWeaponSelection::vfunc5
+void CHudWeaponSelection::vfunc5(int a)
+{
+    C_BasePlayer *p = g_104a0d50;
+    if (p && !sub_1018c770()) {
+        C_BaseCombatWeapon *w = p->vfunc167();
+        this->sub_101a7fa0(a, p, w, 0, 0, 0, 0, 0);
+    }
+}
+// END FUNCTION
