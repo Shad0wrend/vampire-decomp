@@ -42526,6 +42526,36 @@ void CUnknown100a8dc0::sub_100a8fd0(C_BasePlayer *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a93e0 size=0xee
+#include "C_BasePlayer.h"
+#include "CVStatList_t.h"
+
+static __inline CVStatList_t *FindStatList(C_BasePlayer *pThis, int type)
+{
+	CVStatListSet *pSet = (CVStatListSet *)((char *)pThis + 0x1164);
+	for ( int i = 0; i < pSet->m_nLists; i++ )
+	{
+		if ( pSet->m_pLists[i]->m_field10 == type )
+			return pSet->m_pLists[i];
+	}
+	static CVStatList_t s_default(-1);
+	return &s_default;
+}
+
+// TARGET: C_BasePlayer::sub_100a93e0
+int C_BasePlayer::sub_100a93e0()
+{
+	int count = 0;
+	for ( int i = 0; i < 0x11; i++ )
+	{
+		if ( FindStatList(this, 2)->sub_1015dbd0(i) >= 0 &&
+			FindStatList(this, 2)->sub_1015dbd0(i) < 15 )
+			count++;
+	}
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9910 size=0x5
 char __stdcall sub_100a9910(int a0)
 {
