@@ -501,6 +501,68 @@ int vgui2::Label::vfunc126()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2cd0 size=0xe4
+#include "vgui2__Label.h"
+#include "UtlMem.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+class Mem2 {
+public:
+	void sub_101b34f0(int num);
+};
+
+struct VecInt5 {
+	int *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int *m_pElems;
+};
+
+struct VecShort5 {
+	short *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	short *m_pElems;
+};
+
+// TARGET: vgui2::Label::vfunc135
+void vgui2::Label::vfunc135(int index)
+{
+	while (*(int *)((char *)this + 0x6c) <= index) {
+		VecInt5 *v = (VecInt5 *)((char *)this + 0x60);
+		int elem = v->m_size;
+		if (v->m_size + 1 > v->m_alloc)
+			((UtlMem *)v)->sub_101b3480(v->m_size + 1 - v->m_alloc);
+		v->m_size += 1;
+		v->m_pElems = v->m_pMemory;
+		int numToMove = v->m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&v->m_pMemory[elem + 1], &v->m_pMemory[elem], numToMove * 4);
+		int *p = v->m_pMemory + elem;
+		if (p)
+			*p = 0;
+	}
+
+	while (*(int *)((char *)this + 0x80) <= index) {
+		VecShort5 *w = (VecShort5 *)((char *)this + 0x74);
+		int elem = w->m_size;
+		if (w->m_size + 1 > w->m_alloc)
+			((Mem2 *)w)->sub_101b34f0(w->m_size + 1 - w->m_alloc);
+		w->m_size += 1;
+		w->m_pElems = w->m_pMemory;
+		int numToMove = w->m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&w->m_pMemory[elem + 1], &w->m_pMemory[elem], numToMove * 2);
+		short *p = w->m_pMemory + elem;
+		if (p)
+			*p = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2dc0 size=0x42
 #include "vgui2__Label.h"
 // TARGET: vgui2::Label::vfunc124
