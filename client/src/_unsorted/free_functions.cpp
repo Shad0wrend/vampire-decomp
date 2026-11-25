@@ -76803,6 +76803,19 @@ void CUnknown101d82d0::sub_101452d0(const char *pszList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145370 size=0x46
+#include "CUnknown101d7ec0.h"
+
+bool CUnknown101d7ec0_CheckList::sub_10145370(int a1, int a2)
+{
+	for (int i = 0; i < m_nCount; i++) {
+		if (g_105e7910.sub_10145000(a1, a2, &m_pChecks[i]))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101453c0 size=0x77
 #include <stdio.h>
 #include <string.h>
