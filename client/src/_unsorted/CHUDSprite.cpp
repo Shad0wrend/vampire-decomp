@@ -11,6 +11,20 @@ CHUDSprite *pcd_emit_10059330(const CHUDSprite &other) { return new CHUDSprite(o
 // TARGET: ??_GCHUDSprite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1005d7d0 size=0x74
+#include "CHUDSprite.h"
+#include "ScopeTrace.h"
+
+void CHUDSprite::getSize(int *wide, int *tall)
+{
+    ScopeTrace trace("CHUDSprite::getSize", "", "");
+    if (wide)
+        *wide = m_unk10;
+    if (tall)
+        *tall = m_unk14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3690 size=0x18
 #include "IHudSprite.h"
 int CHudSprite::vfunc17(int a0)
