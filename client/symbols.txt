@@ -4867,6 +4867,7 @@
 0x100d5d30 func   ?sub_100d5d30@CUnknown100d5d30@@QAEHH@Z CUnknown100d5d30::sub_100d5d30
 0x100d5d40 func   ?sub_100d5d40@Mgr_100d5d40@@QAEHG@Z Mgr_100d5d40::sub_100d5d40
 0x100d6320 func   ?sub_100d6320@CUnknown100d6320@@QAEHHHHHH@Z CUnknown100d6320::sub_100d6320
+0x100d6430 func   ?sub_100d6430@@YGMHPBVVector@@00MPAV1@@Z sub_100d6430
 0x100d6510 func   ?sub_100d6510@Mgr_100d6510@@QAEXG@Z Mgr_100d6510::sub_100d6510
 0x100d6540 func   ?sub_100d6540@CClientShadowMgr@@QAEXHPBVVector@@M@Z CClientShadowMgr::sub_100d6540
 0x100d6c40 func   ?sub_100d6c40@@YAXAAVVMatrix@@PAM0@Z sub_100d6c40

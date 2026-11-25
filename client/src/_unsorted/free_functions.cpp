@@ -52584,6 +52584,44 @@ int CUnknown100d6320::sub_100d6320(int a0, int a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6430 size=0xdc
+#include "Vector.h"
+
+void sub_10108fd0(const float *, float, const float *, float *);
+
+float __stdcall sub_100d6430(int unused, const Vector *vA, const Vector *vB, const Vector *n, float scale, Vector *pOut)
+{
+	Vector mid;
+	mid.x = vA->x + vB->x;
+	mid.y = vA->y + vB->y;
+	mid.z = vA->z + vB->z;
+	mid.x *= 0.5f;
+	mid.y *= 0.5f;
+	mid.z *= 0.5f;
+
+	float fDist = -DotProduct(mid, *n);
+	float acc1 = fDist;
+	float acc0 = fDist;
+	for ( int i = 0; i < 3; i++ )
+	{
+		if ( (*n)[i] > 0.0f )
+		{
+			acc1 += (*vA)[i] * (*n)[i];
+			acc0 += (*vB)[i] * (*n)[i];
+		}
+		else
+		{
+			acc1 += (*vB)[i] * (*n)[i];
+			acc0 += (*vA)[i] * (*n)[i];
+		}
+	}
+
+	sub_10108fd0(&mid.x, acc1 * scale, &n->x, &pOut->x);
+
+	return acc0 - acc1 * scale;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6510 size=0x22
 struct Elem_100d6510
 {
