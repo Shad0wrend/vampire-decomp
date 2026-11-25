@@ -102049,6 +102049,79 @@ void sub_101659b0(const Vector &origin, const Vector &dest, int r, int g, int b,
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165a50 size=0xa1
+#include "CDownloadSliderPanel.h"
+
+struct PanelCtorViewD
+{
+	void sub_101a9530(void *parent, const char *name);
+};
+
+struct PanelXD
+{
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	void sub_101a99f0(int);
+	void sub_101aaad0(int);
+	void sub_101ab2a0(int);
+	void sub_101ab060(int);
+};
+
+struct CvarView
+{
+	virtual void v0(); virtual void v1();
+	virtual void *v2(const char *);
+};
+
+struct MgrViewD
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17();
+	virtual void v18(int, int);
+};
+
+struct Color4D
+{
+	unsigned char r, g, b, a;
+	Color4D() {}
+	Color4D(unsigned char R, unsigned char G, unsigned char B, unsigned char A) { r = R; g = G; b = B; a = A; }
+};
+
+int sub_100cd0f0();
+int sub_100cd100();
+int sub_101ac8f0();
+extern CvarView *g_104a57e0;
+extern void *vt_10249124;
+
+void *CDownloadSliderPanel::sub_10165a50(void *parent)
+{
+	((PanelCtorViewD *)this)->sub_101a9530(parent, "CDownloadSliderPanel");
+	*(void **)this = &vt_10249124;
+
+	((PanelXD *)this)->sub_101a98f0(sub_100cd100(), sub_100cd0f0());
+	((PanelXD *)this)->sub_101a9890(0, 0);
+	((PanelXD *)this)->sub_101a99f0(0);
+	((PanelXD *)this)->sub_101aaad0(0);
+
+	Color4D c(0, 0, 0, 0xff);
+	((PanelXD *)this)->sub_101ab2a0(*(int *)&c);
+
+	((PanelXD *)this)->sub_101ab060(0);
+
+	void *pCvar = g_104a57e0->v2("scr_downloading");
+	*(void **)((char *)this + 0x58) = pCvar;
+
+	int nParent = *(int *)((char *)this + 4);
+	MgrViewD *pMgr = (MgrViewD *)sub_101ac8f0();
+	pMgr->v18(nParent, 0xfa);
+
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165b20 size=0xb
 namespace lifted {
 extern char g_10249124;
