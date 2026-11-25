@@ -8323,6 +8323,7 @@
 0x10197950 func   ?vfunc15@CViewEffects@@UAEXXZ CViewEffects::vfunc15
 0x101979e0 func   ?sub_101979e0@IntVec@@QAEXHH@Z IntVec::sub_101979e0
 0x10197a20 func   ?sub_10197a20@UtlMem@@QAEXH@Z UtlMem::sub_10197a20
+0x10198260 func   ?sub_10198260@@YAPAXXZ sub_10198260
 0x10198320 func   ?sub_10198320@@YAXXZ sub_10198320
 0x10198460 func   ?sub_10198460@@YAXXZ sub_10198460
 0x101987e0 func   ?sub_101987e0@@YAPAXXZ sub_101987e0
