@@ -177,6 +177,28 @@ void C_TempEntsSystem::vfunc18(int filter, int a1, int a2, int a3, int a4, int a
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5930 size=0x7a
+#include "C_TempEntsSystem.h"
+#include "C_RecipientFilter.h"
+
+extern void *g_104a0d50;
+
+void sub_10036fa0(void *filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
+
+void C_TempEntsSystem::vfunc21(void *arg0, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
+{
+	bool bOk = CanPredict();
+	if (bOk == false)
+		return;
+
+	C_RecipientFilter *filter = (C_RecipientFilter *)arg0;
+	if (!filter->sub_100be140())
+		filter->sub_100bdf90(g_104a0d50);
+	if (filter->vfunc2())
+		sub_10036fa0(filter, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c59b0 size=0x57
 #include "C_TempEntsSystem.h"
 
