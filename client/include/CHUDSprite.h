@@ -10,6 +10,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	CHUDSprite(const char *pMaterial, int a1, int a2, int a3, int a4, int a5, int a6);
 	virtual ~CHUDSprite();
 	void getSize(int *wide, int *tall);
+	void sub_1005c3b0(int, int, int, int, int);
+	void sub_1005c430(int, int, int, int, int, int);
 	int m_unk04;
 	int m_unk08;
 	int m_unk0c;
