@@ -35,6 +35,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc21();
     virtual int vfunc22(Panel *);
 	Panel *sub_101c2900(const char *name);
+	void *sub_101c20d0();
+	void sub_101c2180();
 	Panel *sub_101c26d0(int, int, int);
 	void sub_101c2860(char *, Panel *);
 	int m_unk4; int m_unk8; int m_unkc;
