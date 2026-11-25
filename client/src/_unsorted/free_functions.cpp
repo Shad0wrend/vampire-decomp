@@ -46069,6 +46069,45 @@ bool C_RopeKeyframe::sub_100c0630(AttV *pEnt, int iAttachment, Vector &vPos, QAn
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0700 size=0xa4
+#include "C_RopeKeyframe.h"
+#include "QAngle.h"
+#include "ehandle.h"
+// TARGET: ?sub_100c0700@C_RopeKeyframe@@QAE_NHAAVVector@@@Z
+bool C_RopeKeyframe::sub_100c0700(int iPt, Vector &vPos)
+{
+	QAngle angles;
+	IHandleEntity *p;
+	if (iPt == 0)
+	{
+		unsigned int h = m_hStartPoint.m_Index;
+		if (h != 0xffffffff)
+		{
+			CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+			if (e.m_SerialNumber == (int)(h >> 13))
+				p = (IHandleEntity *)e.m_pEntity;
+			else
+				p = 0;
+		}
+		else
+			p = 0;
+		return sub_100c0630((AttV *)p, m_iStartAttachment, vPos, angles);
+	}
+	unsigned int h = m_hEndPoint.m_Index;
+	if (h != 0xffffffff)
+	{
+		CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e.m_SerialNumber == (int)(h >> 13))
+			p = (IHandleEntity *)e.m_pEntity;
+		else
+			p = 0;
+	}
+	else
+		p = 0;
+	return sub_100c0630((AttV *)p, m_iEndAttachment, vPos, angles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c07b0 size=0x9b
 #include "C_RopeKeyframe.h"
 #include "ehandle.h"
