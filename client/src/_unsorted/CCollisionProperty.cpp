@@ -97,6 +97,22 @@ void *CCollisionProperty::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043460 size=0x5f
+#include "CCollisionProperty.h"
+// TARGET: CCollisionProperty::vfunc3
+void CCollisionProperty::vfunc3(Vector *pWorldMins, Vector *pWorldMaxs)
+{
+	sub_10043860(m_vecMins, *(Vector *)&m_unk10, pWorldMins, pWorldMaxs);
+	if (vfunc12x() & 0x100) {
+		pWorldMins->x -= m_flBloat;
+		pWorldMins->y -= m_flBloat;
+		pWorldMaxs->x = m_flBloat + pWorldMaxs->x;
+		pWorldMaxs->y += m_flBloat;
+		pWorldMaxs->z += m_flBloat * 0.5f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043500 size=0xb
 #include "CCollisionProperty.h"
 struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
