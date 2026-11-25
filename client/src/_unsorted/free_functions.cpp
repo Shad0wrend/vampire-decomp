@@ -92566,6 +92566,53 @@ void sub_10176f60(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10176f80 size=0x76
+#include "CharEditCharPanel.h"
+#include "VLabelComboBox.h"
+
+struct ISchemeV
+{
+	virtual void vf0();
+	virtual void vf1();
+	virtual void vf2();
+	virtual void *GetBorder(const char *name);
+};
+
+struct Obj_101ac830 { int sub_101ac830(); };
+
+struct CUnknown101764f0 { void sub_101764f0(char); };
+
+struct Slot16 { int a; int b; int c; VLabelComboBox *p; };
+struct CharEditView
+{
+	char pad[0x8c];
+	Slot16 slots[3];
+	unsigned char m_bBC;
+	unsigned char padBD[3];
+	int m_iC0;
+	unsigned char m_bC4;
+};
+
+void CharEditCharPanel::sub_10176f80()
+{
+	CharEditView *v = (CharEditView *)this;
+	ISchemeV *pScheme = (ISchemeV *)((Obj_101ac830 *)this)->sub_101ac830();
+	void *border = pScheme->GetBorder("DropDownHighlightBorder");
+	Slot16 *s = v->slots;
+	for (int i = 0; i < 3; i++, s++)
+	{
+		if (s->p)
+		{
+			s->p->vfunc60(border);
+			s->p->vfunc158((int)border);
+			s->p->vfunc159((int)border);
+			s->p->vfunc160((int)border);
+		}
+	}
+	((CUnknown101764f0 *)v->slots[v->m_iC0].p)->sub_101764f0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177320 size=0x4f
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual int f20(int); };
