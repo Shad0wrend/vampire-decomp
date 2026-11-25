@@ -6035,6 +6035,7 @@
 0x1012c640 func   ?sub_1012c640@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_1012c640
 0x1012c6d0 func   ?sub_1012c6d0@@YAHXZ sub_1012c6d0
 0x1012c6e0 func   ?sub_1012c6e0@@YG_NHH@Z sub_1012c6e0
+0x1012c720 func   ??0CUnknown102496a0@@QAE@XZ CUnknown102496a0::CUnknown102496a0
 0x1012c720 func   ?sub_1012c720@CUnknown1012c720@@QAEPAXXZ CUnknown1012c720::sub_1012c720
 0x1012c740 func   ?sub_1012c740@CUnknown102496d0@@QAEXM@Z CUnknown102496d0::sub_1012c740
 0x1012c770 func   ?sub_1012c770@CUnknown102496a0@@QAEXPAUCRopeNode@@HPAVCBaseRopePhysics@@MM@Z CUnknown102496a0::sub_1012c770
