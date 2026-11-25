@@ -21,7 +21,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int m_grow;
 	int m_size;
 	void *m_pElements;
-	char m_pad07a4[0x7a8 - 0x7a4];
+	void *m_pTexture;
 	bool m_b7a8;
 	char m_pad07a9[0x7ac - 0x7a9];
 	int m_nStride;
@@ -35,6 +35,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int m_nE84;
 	bool m_bE88;
 	char m_pad0e89[0xf20 - 0xe89];
+	void sub_100c75b0();
 	void sub_100c7f50();
 	void sub_100c7550();
 };

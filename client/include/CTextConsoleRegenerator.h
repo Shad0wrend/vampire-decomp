@@ -3,9 +3,14 @@
 #pragma once
 #include "ITextureRegenerator.h"
 
+class C_BaseTerminal;
+
 class CTextConsoleRegenerator : public ITextureRegenerator
 {
-public:	// vtable-slot layer (2026-11-22), from the game's vtables
+public:
+	CTextConsoleRegenerator(C_BaseTerminal *pTerminal);
+	C_BaseTerminal *m_pTerminal;
+	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CTextConsoleRegenerator adds to its base's vtable: 0-1, vfuncK at slot K
     virtual void vfunc0();
     virtual int vfunc1();
