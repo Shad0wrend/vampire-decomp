@@ -77040,6 +77040,38 @@ void * CUnknown101da9e0::sub_101466a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101466c0 size=0x89
+#include "CUnknown101da960.h"
+#include "VKeyValues.h"
+struct CBitFlagsView { void sub_10146680(int); };
+struct CNamedListX { int sub_1013fdf0(const char *); };
+extern CNamedListX g_105e74fc;
+extern const char g_102de300[];
+extern const char *g_102c7bc0[];
+const char *CUnknown101da960::sub_10146650(int index) { return g_102c7bc0[index]; }
+bool CUnknown101da960::sub_101466c0(VKeyValuesInterface *pKV)
+{
+	if (pKV)
+	{
+		VKeyValuesInterface *pFilters = pKV->vfunc2("Affects_Filters");
+		if (pFilters)
+		{
+			for (int i = 0; i < 15; i++)
+			{
+				if (pFilters->vfunc12(sub_10146650(i), 0))
+					((CBitFlagsView *)this)->sub_10146680(i);
+			}
+			const char *pszClan = pFilters->vfunc13("CharTemplate", g_102de300);
+			if (*pszClan)
+				m_nClan = g_105e74fc.sub_1013fdf0(pszClan);
+			m_nStrata = pFilters->vfunc10("DisciplineStrata", m_nStrata);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146750 size=0x80
 #include "CUnknown101da960.h"
 
