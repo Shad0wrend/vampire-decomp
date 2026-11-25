@@ -168,6 +168,86 @@ Beam_t *CViewRenderBeams::sub_10194160(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194d70 size=0xa2
+#include "CViewRenderBeams.h"
+
+struct CGlobalVarsV { char pad[0xc]; float curtime; float frametime; };
+extern CGlobalVarsV *g_102b8494;
+
+struct ILeafSystemV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void vfunc11(unsigned short, int);
+};
+extern ILeafSystemV *g_102b9060;
+
+struct BeamTrailV
+{
+	char pad0[0x20];
+	unsigned short m_hRender;   // +0x20
+	char pad22[0x24 - 0x22];
+	BeamTrailV *m_pNext;        // +0x24
+	char pad28[0x2c - 0x28];
+	int m_nFlags;               // +0x2c
+	char pad30[0xcc - 0x30];
+	float m_flDie;              // +0xcc
+	void sub_10192f20();
+};
+
+struct CViewRenderBeamsView
+{
+	char pad[0x1bc04];
+	BeamTrailV *m_pFirst;
+};
+
+struct CBeamsHelper
+{
+	void sub_10194830(void *p, float f);
+};
+
+// TARGET: CViewRenderBeams::vfunc3
+void CViewRenderBeams::vfunc3()
+{
+	CViewRenderBeamsView *v = (CViewRenderBeamsView *)this;
+	if (!v->m_pFirst)
+		return;
+	float frametime = g_102b8494->frametime;
+	BeamTrailV *prev = 0;
+	BeamTrailV *p = v->m_pFirst;
+	while (p)
+	{
+		BeamTrailV *next = p->m_pNext;
+		if ((p->m_nFlags & 0x80000000) == 0 && p->m_flDie <= g_102b8494->curtime)
+		{
+			if (prev)
+				prev->m_pNext = next;
+			else
+				v->m_pFirst = next;
+			sub_101934d0(p);
+		}
+		else
+		{
+			((CBeamsHelper *)this)->sub_10194830(p, frametime);
+			p->sub_10192f20();
+			if (p->m_hRender != 0xffff)
+				g_102b9060->vfunc11(p->m_hRender, 2);
+			prev = p;
+		}
+		p = next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10195c90 size=0x6f
 #include "CViewRenderBeams.h"
 #include "Vector.h"
