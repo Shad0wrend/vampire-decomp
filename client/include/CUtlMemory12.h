@@ -8,5 +8,6 @@ struct CUtlMemory12
 	int m_growSize;
 
 	void sub_10119fe0(int num);
+	void sub_1002d690(int num);
 	CUtlMemory12 *sub_1002d430(int growSize, int allocationCount);	// constructor: allocates allocationCount * 12 bytes
 };
