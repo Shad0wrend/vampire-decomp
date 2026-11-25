@@ -53229,6 +53229,41 @@ void sub_101046f0(int *p, int bits, int mask, S104 *s, char clear)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105f30 size=0x73
+#include "CHud.h"
+
+struct FlagsView
+{
+    int m_unk0;
+    int m_unk4;
+    int m_flags8;
+};
+
+extern CHud g_104cfe38;
+
+void sub_10105f30(int *pMask, int a2, int a3, int a4, FlagsView *pFlags, char bClear)
+{
+    if (pFlags->m_flags8 & 3)
+    {
+        CHudElement *pElem = g_104cfe38.sub_100f0ed0("CHudWeaponSelection");
+        if (pElem && !*(char *)((char *)pElem + 0x1c))
+            *pMask |= a2;
+    }
+    int mask = 0xfffffffd;
+    if (pFlags->m_flags8 & 4)
+    {
+        *pMask |= a3;
+        pFlags->m_flags8 &= ~4;
+    }
+    if (a4 & a2)
+        mask = 0xfffffffc;
+    if (a4 & a3)
+        mask &= 0xfffffffb;
+    if (bClear)
+        pFlags->m_flags8 &= mask;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101062e0 size=0x2f
 namespace lifted {
 extern char g_102bdfd8;

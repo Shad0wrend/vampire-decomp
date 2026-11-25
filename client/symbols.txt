@@ -5175,6 +5175,7 @@
 0x10105e90 func   ?vfunc0@CUserCmd@@QAEPAXD@Z CUserCmd::vfunc0
 0x10105ef0 func   ?vfunc1@CInput@@UAEXXZ CInput::vfunc1
 0x10105f20 func   ?vfunc54@CInput@@UAEXXZ CInput::vfunc54
+0x10105f30 func   ?sub_10105f30@@YAXPAHHHHPAUFlagsView@@D@Z sub_10105f30
 0x10106240 func   ?vfunc16@CInput@@UAEXXZ CInput::vfunc16
 0x10106290 func   ?vfunc17@CInput@@UAEXXZ CInput::vfunc17
 0x101062d0 func   ?vfunc18@CInput@@UAE_NXZ CInput::vfunc18
