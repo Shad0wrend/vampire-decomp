@@ -47,6 +47,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc20();
 	virtual void vfunc21();
 	void sub_10193790(BeamV *, BeamInfoV *);
+	void sub_101947b0(void **ppList);
 	virtual void vfunc22(BeamV *, BeamInfoV *);
 	// the slots CViewRenderBeams adds to its base's vtable: 23-23, vfuncK at slot K
 	virtual ~CViewRenderBeams();
