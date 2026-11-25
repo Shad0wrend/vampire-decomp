@@ -335,6 +335,17 @@ int C_BaseAnimating::vfunc133()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095490 size=0x34
+#include "C_BaseAnimating.h"
+float C_BaseAnimating::vfunc138(int iSequence)
+{
+	float f = sub_10095910(iSequence, (void *)((char *)this + 0x5d4));
+	if (f > 0.0f)
+		return 1.0 / f;
+	return 10.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100954d0 size=0x117
 #include "C_BaseAnimating.h"
 
