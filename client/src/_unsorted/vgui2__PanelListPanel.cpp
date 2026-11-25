@@ -84,6 +84,33 @@ int vgui2::PanelListPanel::vfunc114(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101caf40 size=0x75
+#include "vgui2__PanelListPanel.h"
+
+struct ISchemeV
+{
+	virtual void vf0();
+	virtual void vf1();
+	virtual void vf2();
+	virtual void *GetBorder(const char *name);
+	virtual void vf4();
+	virtual int *GetColor(int *out, const char *name);
+	virtual int *GetColor(int *out, const char *name, int def);
+};
+
+#pragma warning(disable:4716)
+int vgui2::PanelListPanel::vfunc74(int hScheme)
+{
+	ISchemeV *pScheme = (ISchemeV *)hScheme;
+	Panel::vfunc74(hScheme);
+	vfunc60(pScheme->GetBorder("ButtonDepressedBorder"));
+	int c1, c2;
+	vfunc50(*pScheme->GetColor(&c2, "ListBgColor",
+		*pScheme->GetColor(&c1, "WindowDisabledBgColor")));
+	vfunc60(pScheme->GetBorder("DepressedButtonBorder"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cafc0 size=0x1a
 #include "vgui2__PanelListPanel.h"
 namespace lifted {
