@@ -51067,6 +51067,35 @@ struct V5bb0 {
 void V5bb0::sub_100d5bb0() { md9 = 1; v15(m14, m15, m16); }
 // END FUNCTION
 
+// FUNCTION: 0x100d5bd0 size=0xc4
+#include "CClientShadowMgr.h"
+#include "TexAlloc_100d5050.h"
+#include "IClientRenderable.h"
+#include "CBaseHandle.h"
+#include "Vector.h"
+struct EntListSubA { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual char *vGet(CBaseHandle handle); };
+char *sub_1009e230();
+struct TexAllocA { unsigned short sub_100d4e90(int, int); };
+void CClientShadowMgr::sub_100d5bd0(unsigned short h)
+{
+	char *shadow = (char *)m_Shadows.m_pMemory + h * 240;
+	char *ent = ((EntListSubA *)(sub_1009e230() + 0x1803c))->vGet(*(CBaseHandle *)shadow);
+	if (ent) {
+		Vector mins, maxs, size;
+		((IClientRenderable *)(ent + 4))->GetRenderBounds(mins, maxs);
+		float m = maxs.x - mins.x;
+		size.y = maxs.y - mins.y;
+		size.z = maxs.z - mins.z;
+		if (!(m > size.y)) m = size.y;
+		if (!(m > size.z)) m = size.z;
+		int texSize = (int)(m * 2);
+		int p = 1;
+		while (p < texSize) p *= 2;
+		*(unsigned short *)(shadow + 0x84) = ((TexAllocA *)((char *)this + 0x48))->sub_100d4e90(p, p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5d30 size=0xb
 namespace lifted {
 struct C100d5140 { int sub_100d5140(); };
