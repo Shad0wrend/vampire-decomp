@@ -64,6 +64,7 @@
 0x100026a0 func   ?sub_100026a0@CUnknown100026a0@@QAEDXZ CUnknown100026a0::sub_100026a0
 0x100026b0 func   ??_GC_CameraAnimated@@UAEPAXI@Z ??_GC_CameraAnimated@@UAEPAXI@Z
 0x10002730 func   ?ClientClassInit@@YAHPAUignored@DT_CCameraAnimated@@@Z ClientClassInit
+0x100027f0 func   ?sub_100027f0@C_BaseAnimating@@QAEXHPAVVector@@PAVQAngle@@@Z C_BaseAnimating::sub_100027f0
 0x100028e0 func   ?vfunc16@C_BaseHLPlayer@@UAEHXZ C_BaseHLPlayer::vfunc16
 0x100028f0 func   ?vfunc15@C_BaseHLPlayer@@UAEHXZ C_BaseHLPlayer::vfunc15
 0x10002900 func   ?sub_10002900@@YAHXZ sub_10002900

@@ -333,6 +333,34 @@ template <> int ClientClassInit<DT_CCameraAnimated::ignored>(DT_CCameraAnimated:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100027f0 size=0xcd
+#include "C_BaseAnimating.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+
+struct GlobalsV02 { int p0, p4, p8; float curtime; };
+extern GlobalsV02 *g_102b8494;
+void sub_10108a50(const matrix3x4_t &, const matrix3x4_t &, matrix3x4_t &);
+void sub_10107eb0(const matrix3x4_t &, QAngle &);
+void sub_10108510(int *, int, int *);
+
+// TARGET: C_BaseAnimating::sub_100027f0
+void C_BaseAnimating::sub_100027f0(int iBone, Vector *pOrigin, QAngle *pAngles)
+{
+	matrix3x4_t boneMatrix, rotMat, result;
+	matrix3x4_t boneToWorld[350];
+
+	SetupBones(boneToWorld, 350, 0xFFFC, g_102b8494->curtime, 0);
+	GetAbsOrigin();
+
+	boneMatrix = boneToWorld[iBone];
+	sub_101094e0(QAngle(0, 90, 0), rotMat);
+	sub_10108a50(boneMatrix, rotMat, result);
+	sub_10107eb0(result, *pAngles);
+	sub_10108510((int *)&boneMatrix, 3, (int *)pOrigin);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002900 size=0x6
 namespace lifted {
 extern char g_102de74c;
