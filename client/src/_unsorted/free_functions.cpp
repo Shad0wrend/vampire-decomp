@@ -53823,6 +53823,49 @@ void CGameMovement::sub_100e8170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e85b0 size=0xa9
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+
+struct Globals_100e85b0
+{
+	char pad[0x10];
+	float frametime;
+};
+extern Globals_100e85b0 *g_102b8494;
+
+struct Mv_100e85b0
+{
+	char pad[0x90];
+	int m_nWaterLevel;
+	char pad2[0x199c - 0x94];
+	float m_flWaterJump;
+	float m_flVelX;
+	float m_flVelY;
+	int sub_100a2410(int);
+};
+
+#define MV ((Mv_100e85b0 *)m_pMove)
+#define PL ((CMovePlayerView *)m_pPlayer)
+
+void CGameMovement::sub_100e85b0()
+{
+	if (MV->m_flWaterJump > 10000.0f)
+		MV->m_flWaterJump = 10000.0f;
+	if (MV->m_flWaterJump != 0)
+	{
+		MV->m_flWaterJump -= g_102b8494->frametime * 1000.0f;
+		if (MV->m_flWaterJump <= 0 || !MV->m_nWaterLevel)
+		{
+			MV->m_flWaterJump = 0;
+			MV->sub_100a2410(4);
+		}
+		PL->m_vecVelocity.x = MV->m_flVelX;
+		PL->m_vecVelocity.y = MV->m_flVelY;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e91e0 size=0x1a4
 #include "Ray_t.h"
 #include <math.h>
