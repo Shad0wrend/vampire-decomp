@@ -16,4 +16,5 @@ public:
 	void sub_10136310(const char *name, int a);
 	virtual int vfunc16();
 	virtual int vfunc17();
+	float vfunc121();
 };
