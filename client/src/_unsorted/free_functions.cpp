@@ -36258,6 +36258,46 @@ bool __fastcall sub_100a2ed0(V_100a2ed0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2ee0 size=0x6f
+#include "C_BaseEntity.h"
+
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+class CUnknown100a2ff0
+{
+public:
+	int sub_100a2ff0();
+};
+
+struct CBaseEntityView
+{
+	char m_pad[0x2d8];
+	char *m_ppArray[0x40];	// 0x2d8
+	char *m_p3d8;		// 0x3d8
+};
+
+void C_BaseEntity::sub_100a2ee0()
+{
+	CBaseEntityView *v = (CBaseEntityView *)this;
+	if ( v->m_p3d8 )
+		return;
+
+	int nSize = ((CUnknown100a2ff0 *)this)->sub_100a2ff0();
+
+	v->m_p3d8 = new char[nSize];
+	memset(v->m_p3d8, 0, nSize);
+
+	char **pp = v->m_ppArray;
+	for ( int i = 0; i < 0x40; i++ )
+	{
+		*pp = new char[nSize];
+		memset(*pp, 0, nSize);
+		pp++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2f50 size=0x4e
 #include "C_BaseEntity.h"
 
