@@ -13560,6 +13560,18 @@ int CUnknown10033bb0::sub_10033bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033bd0 size=0x8b
+struct CBeamRingView {
+virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+virtual void vfunc15(int, int, int, int, int, int, int, int, float, int, int, float, float, int, float, float, float, float);
+};
+extern CBeamRingView *g_102d5050;
+void sub_10033bd0(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17)
+{
+	g_102d5050->vfunc15(a2, a3, a4, a5, a6, 0, a9, a10, a11 * 0.1, 0, a12, a16, a17 * 0.1, a7, a8 * 0.1, a13, a14, a15);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033c60 size=0x7d
 #include "Vector.h"
 struct BeamsV15 {
