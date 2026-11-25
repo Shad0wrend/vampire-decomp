@@ -34760,6 +34760,38 @@ int sub_1008eb90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ebb0 size=0x79
+#include "C_BaseVCombatCharacter.h"
+#include "CVStatList_t.h"
+
+struct CharView2 {
+    char m_pad[0x1178];
+    int m_nSize;
+    CVStatList_t **m_pElements;
+};
+
+// TARGET: C_BaseVCombatCharacter::sub_1008ebb0
+int C_BaseVCombatCharacter::sub_1008ebb0()
+{
+    CVStatList_t *pList;
+    CharView2 *cv = (CharView2 *)this;
+    for (int i = 0; i < cv->m_nSize; i++)
+    {
+        if (cv->m_pElements[i]->m_field10 == 0)
+        {
+            pList = cv->m_pElements[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    return pList->sub_1015dbd0(10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ed30 size=0x71
 #include "RecvTable.h"
 extern RecvTable g_1049bfb8;
