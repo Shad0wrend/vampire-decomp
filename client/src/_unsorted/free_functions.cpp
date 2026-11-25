@@ -65057,6 +65057,41 @@ void sub_101275e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101275f0 size=0x82
+#include "ehandle.h"
+struct HEnt { int m_a; CBaseHandle m_h; int *m_pOut; int m_idx; };
+struct IEnt { virtual void v0(); virtual int *v1(); };
+struct EList { IEnt *sub_100d0cf0(int); };
+extern HEnt *g_104e1be4;
+extern int g_104e1bf0;
+extern EList *g_102b8e9c;
+void sub_101275e0();
+// TARGET: sub_101275f0
+void sub_101275f0()
+{
+	int n = g_104e1bf0;
+	for (int i = 0; i < n; i++) {
+		HEnt *p = &g_104e1be4[i];
+		if (p->m_h.Get()) {
+			IEnt *e;
+			int *o;
+			if (p->m_idx == -1) {
+				e = 0;
+				o = p->m_pOut;
+			} else {
+				e = g_102b8e9c->sub_100d0cf0(p->m_idx);
+				o = p->m_pOut;
+			}
+			if (e)
+				*o = *e->v1();
+			else
+				*o = -1;
+		}
+	}
+	sub_101275e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127770 size=0x28
 #include "RecvTable.h"
 
