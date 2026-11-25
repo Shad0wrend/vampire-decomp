@@ -155,6 +155,29 @@ void CMoveHelperClient::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f780 size=0x6a
+#include "CMoveHelperClient.h"
+#include "FileSystemViews.h"
+
+extern "C" void *__cdecl malloc(unsigned int);
+
+void *CMoveHelperClient::vfunc20(const char *name, int *pSize)
+{
+	int h = g_104a580c->vfunc0(name, "rb", 0);
+	if ( h )
+	{
+		int size = g_104a580c->vfunc6(h);
+		if ( pSize )
+			*pSize = size;
+		void *buf = malloc(size);
+		g_104a580c->vfunc2(buf, size, h);
+		g_104a580c->vfunc1(h);
+		return buf;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f7f0 size=0xe
 extern "C" void free(void *);
 struct CView { void sub_1010f7f0(void *); };
