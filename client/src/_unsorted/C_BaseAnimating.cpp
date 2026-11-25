@@ -214,6 +214,42 @@ bool C_BaseAnimating::vfunc142()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092810 size=0xbb
+#include "C_BaseAnimating.h"
+#include "Vector.h"
+struct CollView92810 {
+    virtual void v0();
+    virtual void v1();
+    virtual Vector *GetOrigin();
+    virtual void GetBounds(Vector &mins, Vector &maxs);
+};
+struct AnimView92810 {
+    char pad[0x6b0];
+    CollView92810 *m_pColl;
+};
+struct IEngBase92810 {
+#define V8(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7();
+    V8(0) V8(1) V8(2) V8(3) V8(4) V8(5) V8(6) V8(7) V8(8)
+    virtual bool IsBox(Vector &a, Vector &b);
+};
+extern IEngBase92810 *g_104a57d4;
+
+// TARGET: C_BaseAnimating::sub_10092810
+int C_BaseAnimating::sub_10092810()
+{
+    if (sub_10094020())
+    {
+        Vector org = *((AnimView92810 *)this)->m_pColl->GetOrigin();
+        Vector mins, maxs;
+        ((AnimView92810 *)this)->m_pColl->GetBounds(mins, maxs);
+        mins += org;
+        maxs += org;
+        return !g_104a57d4->IsBox(mins, maxs);
+    }
+    return 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093f00 size=0x34
 #include "C_BaseAnimating.h"
 #include "IClientCollideable.h"
