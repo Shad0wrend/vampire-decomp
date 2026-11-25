@@ -99191,6 +99191,33 @@ void CUnknown101764f0::sub_101764f0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10176e90 size=0x97
+#include "CVStatList_t.h"
+
+extern void *g_104a0d50;
+extern int g_102d0820;
+
+struct CHudPanel
+{
+	void sub_1014e600(void *, int, int, int);
+};
+extern CHudPanel g_105e8544;
+
+// TARGET: sub_10176e90
+bool sub_10176e90(int index)
+{
+	if (index == -1)
+		return true;
+
+	void *pPlayer = g_104a0d50;
+	int bounded = 0;
+	if (pPlayer)
+		bounded = ((CVStatListSet *)((char *)pPlayer + 0x1164))->Find(0)->sub_1015dbd0(11);
+
+	g_105e8544.sub_1014e600(pPlayer, g_102d0820, bounded, index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10176f30 size=0x2a
 #include "CStatDefault3List.h"
 struct VPlayer_1008ebb0 { int sub_1008ebb0(); };
