@@ -7,6 +7,7 @@ class CInput : public IInput
 {
 public:
     void sub_10106880(int);
+    void sub_10106860(int *, int *);
     void sub_10101df0();
     void sub_10101d10(const char *, int);
     int m_unk04;
@@ -28,7 +29,7 @@ public:
     int m_unk64[(0xdc - 0x64) / 4];
     struct CInputKey { char name[0x20]; int value; CInputKey *next; };
     CInputKey *m_pKeys;
-    int m_unke0[(0xfc - 0xe0) / 4];
+    int m_unke0; int m_unke4; int m_unke8; int m_unkec; int m_unkf0; int m_unkf4; int m_unkf8;
     float m_f0fc;
     float m_f100;
     int m_unk104[(0x138 - 0x104) / 4];
