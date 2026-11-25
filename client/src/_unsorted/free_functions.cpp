@@ -43796,6 +43796,29 @@ void sub_100b4a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4aa0 size=0xcd
+#include "utlvector.h"
+
+struct Element100
+{
+	int m_data[25];
+};
+
+class CUtlVector100 : public CUtlVector<Element100>
+{
+public:
+	int sub_100b4aa0(int elem, const Element100 &src);
+};
+
+int CUtlVector100::sub_100b4aa0(int elem, const Element100 &src)
+{
+	GrowVector();
+	ShiftElementsRight(elem);
+	CopyConstruct(&Element(elem), src);
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4b70 size=0xa1
 #include "CUtlVector12.h"
 int CUtlVector12::sub_100b4b70(int elem)
