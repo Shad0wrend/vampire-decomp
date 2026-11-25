@@ -19484,6 +19484,20 @@ void CUnkFade::sub_10050f20(bool on)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051100 size=0xb0
+#include "CHealthAnkh.h"
+int sub_100cd0f0();
+int sub_100cd100();
+void CHealthAnkh::sub_10051100()
+{
+	int w = sub_100cd0f0();
+	m_unk178 = (int)(160.0 * (sub_100cd100() * 0.0009765625));
+	m_unk17c = (int)(w - 139.0 * (sub_100cd0f0() * 0.0013020833333333333));
+	m_unk180 = (int)(128.0 * (sub_100cd100() * 0.0009765625));
+	m_unk184 = (int)(768.0 * (sub_100cd0f0() * 0.0013020833333333333));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051ae0 size=0x32
 struct XKey1c
 {
