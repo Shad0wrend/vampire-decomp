@@ -81092,6 +81092,27 @@ void __fastcall sub_10142ff0(VObjView *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143060 size=0xbf
+#include "CUnknown101439f0.h"
+extern int g_105e775c;
+extern CUnknown101439f0 **g_105e7760;
+static inline CUnknown101439f0 &GetEntry(int i)
+{
+	if (i >= 0 && i < g_105e775c)
+		return *g_105e7760[i];
+	static CUnknown101439f0 s_def(-1);
+	return s_def;
+}
+int sub_10143060(const int *a, const int *b)
+{
+	int ia = *a;
+	int ib = *b;
+	int va = GetEntry(ia).m_c;
+	int vb = GetEntry(ib).m_c;
+	return va < vb ? 1 : -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143120 size=0x24
 struct VObj { int m0, m4; int m_n; int mc; int *m_pData; void sub_10142ff0(); int sub_10143120(int i); };
 // TARGET: ?sub_10143120@VObj@@QAEHH@Z
