@@ -23046,6 +23046,41 @@ void CUnknown10067950::sub_10067950(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067990 size=0xb4
+#include "CUnknown10067990.h"
+#define D4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct IA {
+	D4(a) D4(b) D4(c) D4(d) D4(e) D4(f)
+	virtual bool v24();
+	virtual bool v25();
+	virtual bool v26();
+};
+struct CPnl10067990 {
+	virtual void vfunc0();
+	D4(a) D4(b) D4(c) D4(d) D4(e) D4(f) D4(g) D4(h) D4(i) D4(j) D4(k) D4(l) D4(m) D4(n) D4(o) D4(p) D4(q) D4(r) D4(s) D4(t) D4(u) D4(v) D4(w) D4(x) D4(y) D4(z)
+	virtual void pad5(); virtual void pad6(); virtual void pad7(); virtual void pad8(); virtual void pad9();
+	virtual void vfunc110(int *, int *);
+	void sub_101a98c0(int, int);
+	void sub_101a9920(int *, int *);
+};
+extern IA *g_104a5828;
+bool CUnknown10067990::sub_10067990(int *a, int b, int *c, int *d)
+{
+	if (!m_pPanel)
+		return false;
+	if (g_104a5828->v24() || g_104a5828->v25() || g_104a5828->v26())
+		return false;
+	m_pPanel->sub_101a98c0((int)a, b);
+	int x, y;
+	m_pPanel->sub_101a9920(&x, &y);
+	m_pPanel->vfunc110(c, d);
+	int diff = x - *c;
+	if (diff >= 0 && diff != 0)
+		*a += diff / 2;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
