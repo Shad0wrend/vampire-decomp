@@ -21415,6 +21415,35 @@ int sub_100650b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065230 size=0x81
+#include "CClientEntityList.h"
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" void *memset(void *, int, unsigned int);
+struct InfoV { char m_pad[0x88]; char m_szName[0x40]; };
+struct WeaponV { char m_pad[0x95e]; unsigned short m_nId; InfoV *sub_1007b160(); };
+struct EntV { char m_pad[0x3ec]; WeaponV *m_pWeapon; };
+struct TargetedV {
+	char m_pad[0x1e0];
+	char m_szName[0x40];
+	int sub_10065230(int index);
+};
+extern CClientEntityList *g_102b8e9c;
+int TargetedV::sub_10065230(int index)
+{
+	int result = 0;
+	EntV *ent = (EntV *)g_102b8e9c->sub_100d0cf0(index);
+	if (ent && ent->m_pWeapon) {
+		WeaponV *w = ent->m_pWeapon;
+		if (*(int *)((char *)w->sub_1007b160() + 0x5ebc8))
+			result = *(int *)((char *)w->sub_1007b160() + 0x5ebc8);
+		Q_strncpy(m_szName, w->sub_1007b160()->m_szName, 0x40);
+	} else {
+		memset(m_szName, 0, 0x40);
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100652c0 size=0x17
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
 struct O_100652c0 {
