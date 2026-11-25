@@ -9,17 +9,24 @@ namespace vgui2
 class TextImage : public vgui2::Image
 {
 public:
+	TextImage(const char *text, unsigned long scheme);
 	virtual ~TextImage();
 	char *m_pText;
 	short m_unk20;
 	short m_unk22;
+	int m_font;
+	int m_unk28;
+	int m_unk2c;
+	bool m_unk30;
+	ImageColor m_unk31;
+	bool m_unk35;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextImage's own function
 	virtual int vfunc0();
 	virtual int vfunc9(int, int);
 	// the slots TextImage adds to its base's vtable: 26-34, vfuncK at slot K
 	virtual void vfunc26(const unsigned short *);
-	virtual void vfunc27();
+	virtual void vfunc27(const char *);
 	virtual int vfunc28(int, int);
 	virtual void vfunc29(char *buf, int size);
 	virtual void vfunc30(int);

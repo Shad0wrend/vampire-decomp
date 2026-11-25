@@ -6,7 +6,7 @@
 
 // VC6 writes vgui2::TextImage's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::TextImage *pcd_emit_101b9c30() { return new vgui2::TextImage; }
+vgui2::TextImage *pcd_emit_101b9c30(const vgui2::TextImage &other) { return new vgui2::TextImage(other); }
 
 // TARGET: ??_GTextImage@vgui2@@UAEPAXI@Z
 // END FUNCTION
