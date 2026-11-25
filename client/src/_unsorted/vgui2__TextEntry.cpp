@@ -374,6 +374,35 @@ void vgui2::TextEntry::vfunc86()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af170 size=0x9d
+#include "vgui2__TextEntry.h"
+struct VInput101 { virtual void v0(); };
+struct CUnknown101afee0 { void sub_101afee0(); };
+#define T10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct VI0 { T10(a) T10(b) T10(c) T10(d) T10(e) T10(f) T10(g) };
+struct VIn : VI0 { virtual void h0(); virtual void h1(); virtual void GetCursorPos(int &x, int &y); };
+int sub_101ac8d0();
+void vgui2::TextEntry::vfunc84(int, int)
+{
+	if (!*(char *)((char *)this + 0x8c)) return;
+	int x, y;
+	((VIn *)sub_101ac8d0())->GetCursorPos(x, y);
+	vfunc27(&x, &y);
+	int r = vfunc160(x, y);
+	m_i70 = r;
+	if (!r) *((char *)this + 0x75) = 0;
+	if (r == *(int *)((char *)this + 0xd0)) {
+		if (r > 0) m_i70 = r - 1;
+		((CUnknown101afee0 *)this)->sub_101afee0();
+		m_i70 = *(int *)((char *)this + 0xd0);
+	}
+	if (m_i70 != *(int *)((char *)this + 0xa0)) {
+		*(int *)((char *)this + 0xa0) = m_i70;
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af2f0 size=0x50
 #include "vgui2__TextEntry.h"
 int sub_101ac8b0();
