@@ -8424,6 +8424,7 @@
 0x1019b030 func   ?sub_1019b030@CViewRender_1019b030@@QAEXMABUCViewSetup_1019b030@@@Z CViewRender_1019b030::sub_1019b030
 0x1019c230 func   ?sub_1019c230@CUnk102a9640@@QAEMXZ CUnk102a9640::sub_1019c230
 0x1019c260 func   ?sub_1019c260@@YAXPBD@Z sub_1019c260
+0x1019d4c0 func   ?sub_1019d4c0@@YADXZ sub_1019d4c0
 0x1019d590 func   ?sub_1019d590@@YAXXZ sub_1019d590
 0x1019d8f0 func   ?sub_1019d8f0@CViewRender@@QAEXPBD@Z CViewRender::sub_1019d8f0
 0x1019e1f0 func   ?vfunc6@CViewRender@@UAEPAXH@Z CViewRender::vfunc6

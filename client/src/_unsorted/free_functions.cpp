@@ -109051,6 +109051,39 @@ void sub_1019c260(const char *pMaterialName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d4c0 size=0xc4
+#include "ScopeTrace.h"
+struct FogCvarView
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x2c - 4];
+	int m_n2c;
+};
+struct FogPlayerView
+{
+	char m_pad[0x17b8];
+	char m_b17b8;
+};
+extern FogPlayerView *g_104a0d50;
+extern FogCvarView *g_106193cc;
+extern FogCvarView *g_1061957c;
+// TARGET: sub_1019d4c0
+char sub_1019d4c0()
+{
+	ScopeTrace st("::GetSkyboxFogEnable", g_102de300, g_102de300);
+	FogPlayerView *pPlayer = g_104a0d50;
+	if (!pPlayer)
+		return 0;
+	if (!g_106193cc->v1() && g_106193cc->m_n2c) {
+		if (!g_1061957c->v1() && g_1061957c->m_n2c)
+			return 1;
+		return 0;
+	}
+	return pPlayer->m_b17b8 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d590 size=0x66
 #include "ScopeTrace.h"
 
