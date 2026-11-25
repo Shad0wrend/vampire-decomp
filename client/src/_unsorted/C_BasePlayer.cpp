@@ -362,6 +362,30 @@ C_BaseCombatWeapon *C_BasePlayer::vfunc165(int slot, int pos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8bc0 size=0x87
+#include "C_BasePlayer.h"
+struct CEntInfo8bc0 { void *m_pEntity; int m_Serial; int m_unk; };
+struct CEntList8bc0 { int m_unk; CEntInfo8bc0 m_Ent[0x2000]; };
+extern CEntList8bc0 *g_102b8e98;
+static inline void *HandleToEnt(unsigned long h)
+{
+	if (h != 0xffffffff)
+	{
+		CEntInfo8bc0 *e = &g_102b8e98->m_Ent[h & 0x1fff];
+		if (e->m_Serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+void C_BasePlayer::vfunc172(C_BaseCombatWeapon *pWeapon)
+{
+	if (HandleToEnt(*(unsigned long *)((char *)this + 0x1a08)) == pWeapon)
+		vfunc168(0);
+	if (HandleToEnt(*(unsigned long *)((char *)this + 0x1a0c)) == pWeapon)
+		*(unsigned long *)((char *)this + 0x1a0c) = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9920 size=0x86
 #include "C_BasePlayer.h"
 #include "ehandle.h"
