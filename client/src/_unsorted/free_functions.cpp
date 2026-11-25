@@ -82767,6 +82767,65 @@ int __stdcall sub_1014b580(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014b590 size=0x11a
+#include "CVStatList_t.h"
+
+class CUnk10204c20 {
+public:
+    int m_type;
+    int m_stat;
+    int m_unk08;
+    int m_unk0c;
+    int sub_10160db0(int val);
+};
+
+struct CharStatView {
+    char pad[0x1178];
+    int m_nLists;
+    CVStatList_t **m_pLists;
+
+    CVStatList_t *Find(int type) {
+        for (int i = 0; i < m_nLists; i++) {
+            if (m_pLists[i]->m_field10 == type)
+                return m_pLists[i];
+        }
+        static CVStatList_t s_default(-1);
+        return &s_default;
+    }
+};
+
+struct S1014b590 {
+    char pad[0x2c];
+    int m_nCount;
+    CUnk10204c20 *m_pEntries;
+    int sub_1014b590(CharStatView *pEnt);
+};
+
+// TARGET: S1014b590::sub_1014b590
+int S1014b590::sub_1014b590(CharStatView *pEnt)
+{
+    int sum = 0;
+    if (pEnt) {
+        CUnk10204c20 *pEffects = m_pEntries;
+        for (int i = 0; i < m_nCount; i++) {
+            switch (pEffects[i].m_type) {
+            case 0: {
+                int nStat = pEffects[i].m_stat;
+                sum += pEffects[i].sub_10160db0(pEnt->Find(0)->sub_1015dbd0(nStat));
+                break;
+            }
+            case 1: {
+                int nStat = pEffects[i].m_stat;
+                sum += pEffects[i].sub_10160db0(pEnt->Find(1)->sub_1015dbd0(nStat));
+                break;
+            }
+            }
+        }
+    }
+    return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b6b0 size=0x31
 __declspec(dllimport) void Msg(const char *pMsg, ...);
 struct CFeatChar1014b { char pad[0x3f8]; int m_p3f8; };
