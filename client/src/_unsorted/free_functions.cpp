@@ -13211,6 +13211,45 @@ int CUnknown100334d0::sub_100334d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033580 size=0x79
+#include "C_TEBeamPoints.h"
+#include "Vector.h"
+
+extern void *g_102d5050;
+
+struct IViewEffectsView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void Beam(const Vector &start, const Vector &end, int a, int b, int c,
+		int d, int e, int f, float g, int h, float i, float j, int k,
+		float l, float m, float n, float o);
+};
+
+void C_TEBeamPoints::sub_10033580(int updateType)
+{
+	((IViewEffectsView *)g_102d5050)->Beam(
+		*(Vector *)((char *)this + 0x44),
+		*(Vector *)((char *)this + 0x50),
+		*(int *)((char *)this + 0xc),
+		*(int *)((char *)this + 0x10),
+		0,
+		*(int *)((char *)this + 0x1c),
+		*(int *)((char *)this + 0x20),
+		*(int *)((char *)this + 0x24),
+		(float)*(int *)((char *)this + 0x28),
+		*(int *)((char *)this + 0x2c),
+		(float)*(int *)((char *)this + 0x3c),
+		(float)*(int *)((char *)this + 0x40) * 0.1,
+		*(int *)((char *)this + 0x14),
+		(float)*(int *)((char *)this + 0x18) * 0.1,
+		(float)*(int *)((char *)this + 0x30),
+		(float)*(int *)((char *)this + 0x34),
+		(float)*(int *)((char *)this + 0x38));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033620 size=0x6
 namespace lifted {
 extern char g_102ec060;
