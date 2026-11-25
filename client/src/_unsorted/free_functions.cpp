@@ -11856,6 +11856,43 @@ int LLView2::sub_1002b4f0(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b530 size=0x74
+#include "utlmemory.h"
+
+struct BigT { char m_pad[776]; };
+
+struct BigMem
+{
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_1002b530(int num);
+};
+
+void BigMem::sub_1002b530(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int nRequested = m_nAllocationCount + num;
+    while (m_nAllocationCount < nRequested)
+    {
+        if (m_nAllocationCount != 0)
+        {
+            if (m_nGrowSize)
+                m_nAllocationCount += m_nGrowSize;
+            else
+                m_nAllocationCount += m_nAllocationCount;
+        }
+        else
+            m_nAllocationCount = (31 + sizeof(BigT)) / sizeof(BigT);
+    }
+    if (m_pMemory)
+        m_pMemory = (BigT *)_imp__Plat_Realloc(m_pMemory, m_nAllocationCount * sizeof(BigT));
+    else
+        m_pMemory = (BigT *)_imp__Plat_Alloc(m_nAllocationCount * sizeof(BigT));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b6a0 size=0x70
 #include "FileSystemViews.h"
 
