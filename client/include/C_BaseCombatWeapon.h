@@ -14,6 +14,7 @@ public:
 	char *sub_1007b180();
 	bool sub_1007d950();
 	bool sub_1007d790(void *arg0, void *arg1, int arg2);
+	int sub_1009cd10();
 	virtual ~C_BaseCombatWeapon();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseCombatWeapon's own function
