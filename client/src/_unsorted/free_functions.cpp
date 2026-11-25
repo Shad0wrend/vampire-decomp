@@ -51745,6 +51745,22 @@ bool sub_100dac00(const Vector &boxMin1, const Vector &boxMax1, const Vector &bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dac80 size=0xb8
+#include "vector.h"
+static inline float FloatMakePositive(float f)
+{
+	unsigned long bits = *(unsigned long *)&f;
+	bits &= 0x7fffffff;
+	return *(float *)&bits;
+}
+bool sub_100dac80(const Vector &center1, const Vector &extents1, const Vector &center2, const Vector &extents2)
+{
+	Vector delta = center1 - center2;
+	Vector sum = extents1 + extents2;
+	return FloatMakePositive(delta.x) <= sum.x && FloatMakePositive(delta.y) <= sum.y && FloatMakePositive(delta.z) <= sum.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dad40 size=0xed
 #include "Vector.h"
 bool sub_100dac00(const Vector &a, const Vector &b, const Vector &c, const Vector &d);
