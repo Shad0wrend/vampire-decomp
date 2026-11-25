@@ -9435,6 +9435,7 @@
 0x101c5ed0 func   ?vfunc167@RadioButton@vgui2@@UAEHH@Z vgui2::RadioButton::vfunc167
 0x101c5ee0 func   ?vfunc168@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc168
 0x101c5ef0 func   ?vfunc143@RadioButton@vgui2@@UAEXD@Z vgui2::RadioButton::vfunc143
+0x101c6080 func   ?vfunc101@RadioButton@vgui2@@UAEXXZ vgui2::RadioButton::vfunc101
 0x101c60e0 func   ?vfunc75@RadioButton@vgui2@@UAEXH@Z vgui2::RadioButton::vfunc75
 0x101c6180 func   ?vfunc76@RadioButton@vgui2@@UAEHH@Z vgui2::RadioButton::vfunc76
 0x101c61b0 func   ?vfunc77@RadioButton@vgui2@@UAEHXZ vgui2::RadioButton::vfunc77
