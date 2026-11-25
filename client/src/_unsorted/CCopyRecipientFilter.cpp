@@ -59,3 +59,17 @@ bool CCopyRecipientFilter::vfunc6()
 	return m_unk24;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10134940 size=0x68
+#include "CCopyRecipientFilter.h"
+#include "utlvector.h"
+
+void *CCopyRecipientFilter::vfunc0(unsigned char bFree)
+{
+	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
+	this->IRecipientFilter::~IRecipientFilter();
+	if ( bFree & 1 )
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
