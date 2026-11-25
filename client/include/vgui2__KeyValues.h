@@ -37,7 +37,7 @@ public:
     virtual int vfunc15(int, int);
     virtual int vfunc16(int, int);
     virtual int vfunc17(int, int);
-    virtual void vfunc18();
+    virtual KeyValues *vfunc18();
     virtual void vfunc19();
     virtual int vfunc20(int);
     virtual void vfunc21();
