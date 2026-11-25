@@ -21415,6 +21415,39 @@ void sub_100656a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065d30 size=0x80
+#include "CVMainMenu.h"
+struct MM_Obj {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual bool v24(); virtual bool v25(); virtual bool v26();
+};
+extern MM_Obj *g_104a5828;
+extern int g_103ef0b8;
+extern int g_103ef0bc;
+extern int g_103ef0c0;
+// TARGET: ?sub_10065d30@CVMainMenu@@QAE_NXZ
+bool CVMainMenu::sub_10065d30()
+{
+	if (g_104a5828->v24())
+		return false;
+	if (g_104a5828->v25())
+		return false;
+	if (g_104a5828->v26())
+		return false;
+	if (g_103ef0b8 == -1)
+		return false;
+	if (g_103ef0bc == -1)
+		return false;
+	if (g_103ef0c0 == -1)
+		return false;
+	int m = *(int *)((char *)this + 0x190);
+	return m == 1 || m == 2 ? 1 : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066250 size=0x77
 #include "CVMainMenu.h"
 #include "utlvector.h"
