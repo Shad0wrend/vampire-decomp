@@ -19281,6 +19281,39 @@ void PanelView::sub_10057e70(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057ed0 size=0x65
+extern "C"
+{
+    char *_mbsdup(const char *);
+    char *strchr(const char *, int);
+    int atoi(const char *);
+    void free(void *);
+}
+
+// TARGET: sub_10057ed0
+bool __stdcall sub_10057ed0(const char *str, int *p1, int *p2)
+{
+    bool ok = false;
+    char *dup = _mbsdup(str);
+    char *x = strchr(dup, 'x');
+    if (x)
+    {
+        *x = 0;
+        ++x;
+        if (*x)
+        {
+            if (p1)
+                *p1 = atoi(dup);
+            if (p2)
+                *p2 = atoi(x);
+            ok = true;
+        }
+    }
+    free(dup);
+    return ok;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057f40 size=0x3
 void __stdcall sub_10057f40(int a0, int a1, int a2, int a3, int a4)
 {
