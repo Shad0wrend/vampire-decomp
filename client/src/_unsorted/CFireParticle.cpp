@@ -10,3 +10,13 @@ CFireParticle *pcd_emit_10118ab0(const CFireParticle &other) { return new CFireP
 
 // TARGET: ??_GCFireParticle@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x10118b20 size=0x1b
+#include "CFireParticle.h"
+#include "Vector.h"
+
+Vector CFireParticle::vfunc12(const SimpleParticleC_t *p, float unused)
+{
+	return CSimpleEmitter::vfunc12(p, unused);
+}
+// END FUNCTION
