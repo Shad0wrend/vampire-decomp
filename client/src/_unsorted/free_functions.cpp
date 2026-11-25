@@ -115401,6 +115401,76 @@ void *vgui2::Panel::sub_101a93d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9480 size=0xa9
+#include "vgui2__Panel.h"
+
+struct SurfaceSizeView2
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *, int *);
+};
+
+struct ParentView
+{
+	int sub_101aa220();
+};
+
+struct PanelSelfView2
+{
+	void sub_101aa230(int);
+	void sub_101a9ff0(int);
+};
+
+int sub_101ac8d0();
+extern void *vt_1024fd5c;
+
+void *vgui2::Panel::sub_101a9480(void *parent)
+{
+	*(char *)((char *)this + 0x20) = 0;
+	*(char *)((char *)this + 0x21) = 0;
+	*(char *)((char *)this + 0x22) = 0;
+	*(char *)((char *)this + 0x23) = 0;
+	*(char *)((char *)this + 0x24) = 0;
+	*(char *)((char *)this + 0x25) = 0;
+	*(char *)((char *)this + 0x26) = 0;
+	*(char *)((char *)this + 0x27) = 0;
+	*(int *)((char *)this + 0x38) = 0;
+	*(int *)((char *)this + 0x3c) = 0;
+	*(int *)((char *)this + 0x40) = 0;
+
+	*(void **)this = &vt_1024fd5c;
+
+	SurfaceSizeView2 *pSurface = (SurfaceSizeView2 *)sub_101ac8d0();
+	int nWide, nTall;
+	pSurface->v39(&nTall, &nWide);
+
+	double flW = nWide * 0.0013020833333333333;
+	int nW = (int)(flW * 24.0);
+	double flH = nTall * 0.0009765625;
+	int nH = (int)(flH * 64.0);
+
+	sub_101a96a0(0, 0, nH, nW);
+
+	((PanelSelfView2 *)this)->sub_101a9ff0((int)parent);
+	if (parent != 0)
+	{
+		int nValue = ((ParentView *)parent)->sub_101aa220();
+		((PanelSelfView2 *)this)->sub_101aa230(nValue);
+	}
+
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a96a0 size=0xdf
 #include "vgui2__Panel.h"
 
