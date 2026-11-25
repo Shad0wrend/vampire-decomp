@@ -625,6 +625,45 @@ void C_TempEntsSystem::vfunc35(int filter, int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5ec0 size=0x7f
+#include "C_TempEntsSystem.h"
+
+extern int g_104a0d50;
+extern void sub_1003f4e0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, const char *a8, char a9, int a10, int a11, int a12);
+
+struct CTempEntRecipientFilter
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int v2();
+	bool sub_100be140();
+	void sub_100bdf90(int);
+};
+
+static inline bool CanRunTempEnt(const C_TempEntsSystem *p)
+{
+	if (p->m_nSuppressCount > 0)
+		return false;
+	return !p->m_bSuppressEvent;
+}
+
+void C_TempEntsSystem::vfunc36(int filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+{
+	if (!CanRunTempEnt(this))
+		return;
+
+	CTempEntRecipientFilter *pFilter = (CTempEntRecipientFilter *)filter;
+	if (!pFilter->sub_100be140())
+	{
+		pFilter->sub_100bdf90(g_104a0d50);
+	}
+	if (!pFilter->v2())
+		return;
+
+	sub_1003f4e0(filter, a2, a3, a4, a5, a6, a7, (const char *)a8, (char)a9, 0xff, 0xff, 0xff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5f40 size=0x6b
 #include "C_TempEntsSystem.h"
 #include "C_RecipientFilter.h"
