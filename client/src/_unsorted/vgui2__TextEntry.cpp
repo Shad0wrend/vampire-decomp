@@ -842,6 +842,69 @@ void vgui2::TextEntry::vfunc128()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0ec0 size=0xc6
+#include "vgui2__TextEntry.h"
+#include <stdlib.h>
+#include <string.h>
+
+struct TextEntryDar
+{
+	int m_nCount;
+	int m_nCapacity;
+	char *m_pData;
+
+	void EnsureCapacity(int wanted)
+	{
+		if (wanted > m_nCapacity)
+		{
+			int newCap = m_nCapacity;
+			if (newCap == 0)
+				newCap = 1;
+			while (newCap < wanted)
+				newCap += newCap;
+			char *newData = (char *)operator new(newCap);
+			if (!newData)
+				exit(0);
+			memset(newData, 0, newCap);
+			m_nCapacity = newCap;
+			for (int i = 0; i < m_nCount; i++)
+				newData[i] = m_pData[i];
+			operator delete(m_pData);
+			m_pData = newData;
+		}
+	}
+
+	void CopyFrom(const TextEntryDar &other)
+	{
+		EnsureCapacity(other.m_nCount);
+		memcpy(m_pData, other.m_pData, other.m_nCount);
+		m_nCount = other.m_nCount;
+	}
+};
+
+struct TextEntryView_101b0ec0
+{
+	char pad00[0x58];
+	TextEntryDar m_TextStream;     // 0x58
+	char pad64[0x0c];
+	int m_nCursorPos;              // 0x70
+	int m_n74;
+	TextEntryDar m_UndoTextStream; // 0x78
+	int m_nUndoCursorPos;          // 0x84
+};
+
+// TARGET: ?vfunc130@TextEntry@vgui2@@UAEXXZ
+void vgui2::TextEntry::vfunc130()
+{
+	TextEntryView_101b0ec0 *v = (TextEntryView_101b0ec0 *)this;
+	v->m_nCursorPos = v->m_nUndoCursorPos;
+	v->m_TextStream.CopyFrom(v->m_UndoTextStream);
+	vfunc57(0, 0);
+	vfunc6();
+	vfunc124();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1050 size=0x3c
 #include "vgui2__TextEntry.h"
 bool vgui2::TextEntry::vfunc164(int a1, int a2, int a3, int a4)
