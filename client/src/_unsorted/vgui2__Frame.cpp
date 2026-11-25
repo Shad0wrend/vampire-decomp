@@ -196,6 +196,59 @@ bool vgui2::Frame::vfunc140(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9150 size=0xd6
+#include "vgui2__Frame.h"
+#include "vgui2__Label.h"
+#pragma warning(disable: 4716)
+
+class FrameColor_101b9150
+{
+public:
+	unsigned int m_rgba;
+	FrameColor_101b9150() {}
+	FrameColor_101b9150(const FrameColor_101b9150 &c) { m_rgba = c.m_rgba; }
+};
+
+class SchemeV_101b9150
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual int GetFont(const char *pName);	// slot 4
+	virtual void v5();
+	virtual FrameColor_101b9150 GetSchemeColor(const char *pName);	// slot 6
+};
+
+struct FrameView_101b9150
+{
+	char m_pad0[0x78];
+	FrameColor_101b9150 m_bgColor;			// 0x78
+	FrameColor_101b9150 m_disabledBgColor;	// 0x7c
+	FrameColor_101b9150 m_fgColor;			// 0x80
+	FrameColor_101b9150 m_disabledFgColor;	// 0x84
+	char m_pad2[0xb4 - 0x88];
+	vgui2::Label *m_pMinimizeButton;	// 0xb4
+	vgui2::Label *m_pMaximizeButton;	// 0xb8
+	vgui2::Label *m_pSysTrayButton;		// 0xbc
+};
+
+// TARGET: vgui2::Frame::vfunc74
+int vgui2::Frame::vfunc74(int pSchemeArg)
+{
+	SchemeV_101b9150 *pScheme = (SchemeV_101b9150 *)pSchemeArg;
+	Panel::vfunc74(pSchemeArg);
+
+	FrameView_101b9150 *v = (FrameView_101b9150 *)this;
+	v->m_pMinimizeButton->vfunc118(pScheme->GetFont("Marlett"));
+	v->m_pMaximizeButton->vfunc118(pScheme->GetFont("Marlett"));
+	v->m_pSysTrayButton->vfunc118(pScheme->GetFont("Marlett"));
+
+	v->m_fgColor = pScheme->GetSchemeColor("TitleBarFgColor");
+	v->m_bgColor = pScheme->GetSchemeColor("TitleBarBgColor");
+	v->m_disabledFgColor = pScheme->GetSchemeColor("TitleBarDisabledFgColor");
+	v->m_disabledBgColor = pScheme->GetSchemeColor("TitleBarDisabledBgColor");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9230 size=0x23
 #include "vgui2__Frame.h"
 namespace lifted {
