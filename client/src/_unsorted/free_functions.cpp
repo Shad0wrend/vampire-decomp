@@ -29426,6 +29426,35 @@ void C_Beam::sub_10080490(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080650 size=0x8b
+#include "C_Beam.h"
+#include "ehandle.h"
+struct StaticBeamVec { float x, y, z; StaticBeamVec() {} ~StaticBeamVec() {} };
+bool sub_10192d00(void *ent, int attach, void *out);
+static inline void *BeamLookup(unsigned long h)
+{
+    if (h != 0xffffffff)
+    {
+        CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+        if (e.m_SerialNumber == (int)(h >> 13))
+            return e.m_pEntity;
+    }
+    return 0;
+}
+// TARGET: C_Beam::sub_10080650
+const Vector &C_Beam::sub_10080650()
+{
+    static StaticBeamVec vecStart;
+    int type = m_nBeamType & 0xf;
+    if (type != 0 && type != 3)
+    {
+        if (sub_10192d00(BeamLookup(m_hStart.m_Index), m_nAttach, &vecStart))
+            return *(Vector *)&vecStart;
+    }
+    return GetAbsOrigin();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100806f0 size=0xe7
 #include "C_Beam.h"
 struct EntInfo { void *m_pEntity; unsigned int m_Serial; int m_unk8; };
