@@ -16,7 +16,9 @@ struct CUnknown1024b370Symbol
 	unsigned short m_Id;
 
 	CUnknown1024b370Symbol() {}
+	CUnknown1024b370Symbol(unsigned short id) : m_Id(id) {}
 	CUnknown1024b370Symbol(const CUnknown1024b370Symbol &o) : m_Id(o.m_Id) {}
+	bool IsValid() const { return m_Id != 0xffff; }
 };
 
 #include "CUnknown1024b2d0.h"
