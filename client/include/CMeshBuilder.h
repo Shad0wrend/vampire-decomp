@@ -4,7 +4,8 @@ class CMeshBuilder
 {
 public:
 	void sub_10081820(const float *v);
-	int m_unk0[0x2c / 4];
+	int m_i0; int m_unk4; int m_unk8; int m_ic; int m_i10; int m_unk14; int m_i18; int m_i1c; int m_i20; int m_i24; int m_unk28;
+	void sub_10005230();
 	int m_i2c;
 	int m_unk30[(0x3c - 0x30) / 4];
 	unsigned short m_wIndexOffset;
@@ -13,12 +14,14 @@ public:
 	char *m_p70;
 	int m_unk74[(0x7c - 0x74) / 4];
 	unsigned short *m_pIndices;
-	int m_unk80[(0x94 - 0x80) / 4];
+	int m_unk80[(0x90 - 0x80) / 4];
+	int m_n90;
 	int m_nCurrentIndex;
 	int m_i98;
 	int m_nIndexCount;
-	int m_unka0[(0xc0 - 0xa0) / 4];
-	unsigned char *m_pCurrColor;
+	int m_unka0[(0xa8 - 0xa0) / 4];
+	int m_a8; int m_ac; int m_b0; int m_b4; int m_b8; int m_bc;
+	union { unsigned char *m_pCurrColor; int m_c0; };
 	void sub_10049f90(unsigned short idx);
 	void sub_10059af0(const float *rgb);
 	void sub_100428d0(const float *rgba);
