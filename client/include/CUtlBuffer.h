@@ -27,5 +27,6 @@ public:
 	int sub_1013cc20(const char *pFmt, char *list);	// \"CUtlBuffer::VaScanf\": text buffers only; matches pFmt (space = skip white space, %c %d %i %x %u %f %s) against the data and stores through the va_list, returns the number of conversions
 		// CheckPut (stub 0x10005583)	// makes room for nSize more bytes at the write cursor (stub 0x10005583), false when the buffer cannot take them
 	void sub_1013ce90(const char *pFmt, char *list);
+	bool sub_1013cf00(int nSize);	// CheckPut
 	void sub_1013ce20(const void *pMem, int nSize);	// copies nSize bytes to the write cursor and moves the cursor past them, when sub_10005583(nSize) holds
 };
