@@ -22109,6 +22109,29 @@ void CProgBar::sub_1005fe40(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fea0 size=0xc6
+#include "CUnknown10203240.h"
+#include "CUnknown10202ba0.h"
+#include "Tier1.h"
+#include <string.h>
+extern CUnknown10203240 g_105f93c0;
+extern char g_103eee00[64];
+// TARGET: sub_1005fea0
+const char * __stdcall sub_1005fea0(int n)
+{
+	g_101e3190(g_103eee00, 64, "%s", ((CUnknown10202ba0 *)g_105f93c0.sub_1015f2f0("UI_Progress_Bar"))->sub_1015ecd0(n));
+	if (strlen(g_103eee00) > 0)
+		return g_103eee00;
+	const char *strings[10] = {
+		"STRING_ATTEMPT", "STRING_DIFFICULTY", "STRING_SUCCESS", "STRING_FAILED", "STRING_NOT_ATTEMPTED",
+		"STRING_ARMING_EXPLOSIVE", "STRING_EXPLOSIVE_ARMED", "STRING_ZOMBIE_ACTIVE", "STRING_ZOMBIE_END", "STRING_INTRUSION"
+	};
+	if (n >= 0 && n < 10)
+		return strings[n];
+	return "STRING NOT FOUND";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060420 size=0x10b
 #include <string.h>
 #include "CSignTextBlock.h"
