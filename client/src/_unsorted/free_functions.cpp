@@ -50671,6 +50671,16 @@ void sub_100f6d00(unsigned char *src, unsigned char *dst, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6db0 size=0x65
+// TARGET: sub_100f6db0
+void sub_100f6db0(unsigned char *src, unsigned char *dst, int count)
+{
+    unsigned char *end = src + count * 4;
+    for (; src < end; src += 4, dst++)
+        *dst = (unsigned char)(src[0] * 0.299f + src[1] * 0.587f + src[2] * 0.114f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6e90 size=0x23
 void sub_100f6e90(unsigned char *src, unsigned char *dst, int n) { unsigned char *end = src + n * 4; while (src < end) { *dst = src[3]; src += 4; dst++; } }
 // END FUNCTION
