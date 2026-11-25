@@ -1863,6 +1863,7 @@
 0x10030790 func   ?sub_10030790@CLitSmokeEmitter@@QAEXHHHH@Z CLitSmokeEmitter::sub_10030790
 0x100307e0 func   ?vfunc14@CLitSmokeEmitter@@UAEXHHHHHHH@Z CLitSmokeEmitter::vfunc14
 0x10030830 func   ?sub_10030830@SmokeView@@QAEXHHHHHHHH@Z SmokeView::sub_10030830
+0x10030890 func   ?vfunc1@CLitSmokeEmitter@@UAEXH@Z CLitSmokeEmitter::vfunc1
 0x10030c30 func   ?vfunc16@C_SteamJet@@UAEHXZ C_SteamJet::vfunc16
 0x10030c40 func   ?vfunc15@C_SteamJet@@UAEHXZ C_SteamJet::vfunc15
 0x10030c50 func   ?sub_10030c50@@YAHXZ sub_10030c50
