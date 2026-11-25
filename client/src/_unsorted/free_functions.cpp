@@ -88849,6 +88849,26 @@ CVStatInfo_t *CVStatInfo_t::sub_1015b050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015b270 size=0x90
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+
+struct CTableList_1015b270 {
+	const char *sub_1015f1c0(int id, int arg);
+};
+extern CTableList_1015b270 g_105f93c0;
+
+const char *CVStatInfo_t::sub_1015b270(int arg)
+{
+	ScopeTrace trace("CVStatInfo_t::GetValueName", g_102de300);
+	if (m_field0008 != -1)
+		return g_105f93c0.sub_1015f1c0(m_field0008, arg);
+	if (m_field0000)
+		return ((const char *(*)(int))m_field0000)(arg);
+	return g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015b300 size=0xae
 #include "CVStatInfo_t.h"
 extern "C" int __cdecl atoi(const char *);
