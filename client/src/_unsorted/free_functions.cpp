@@ -80969,6 +80969,63 @@ char CClanFilter::sub_10141bf0(const char **ppName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141c90 size=0xc2
+#include "CUnknown10141c90.h"
+#include "CVStatList_t.h"
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+struct IEngV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void ClientCmd(const char *cmd, int a);
+};
+struct PlayerV
+{
+	char m_pad[0x1178];
+	int m_nLists;
+	CVStatList_t **m_pLists;
+};
+extern PlayerV *g_104a0d50;
+extern IEngV *g_104a57d4;
+// TARGET: ?sub_10141c90@CUnknown10141c90@@QAEXXZ
+void CUnknown10141c90::sub_10141c90()
+{
+	PlayerV *p = g_104a0d50;
+	if (!p)
+	{
+		DevMsg(1, "ERROR: CharGenWizard: ProcessGenderChoices: Couldn't Find Player!\n");
+		return;
+	}
+	CVStatList_t *list;
+	for (int i = 0; i < p->m_nLists; i++)
+	{
+		if (p->m_pLists[i]->m_field10 == 0)
+		{
+			list = p->m_pLists[i];
+			goto found;
+		}
+	}
+	{
+		static CVStatList_t s_default(-1);
+		list = &s_default;
+	}
+found:
+	int gender = list->sub_1015dbd0(0xb);
+	if (m_bMale)
+	{
+		if (gender != 1)
+			g_104a57d4->ClientCmd("vgender_int male", 1);
+	}
+	else if (m_bFemale && gender != 0)
+		g_104a57d4->ClientCmd("vgender_int female", 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141eb0 size=0x1b
 struct CUnknown10141eb0 { void * sub_10141eb0(int); };
 void * CUnknown10141eb0::sub_10141eb0(int a0)
