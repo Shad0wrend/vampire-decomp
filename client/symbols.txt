@@ -7661,6 +7661,7 @@
 0x101694c0 func   ?sub_101694c0@@YGXPAUNetEntryV@@@Z sub_101694c0
 0x10169900 func   ?sub_10169900@CNetGraphPanel_10169900@@QAEXPAUvrect_t@@HPAH1@Z CNetGraphPanel_10169900::sub_10169900
 0x10169c20 func   ?sub_10169c20@CNetGraphPanel@@QAEXHH@Z CNetGraphPanel::sub_10169c20
+0x10169c80 func   ?sub_10169c80@CNetGraphPanel@@QAEHPAUNGState@@HEEEH@Z CNetGraphPanel::sub_10169c80
 0x10169d10 func   ?vfunc2@CNetGraphPanel@@UAEXXZ CNetGraphPanel::vfunc2
 0x10169d30 func   ?vfunc107@CNetGraphPanel@@UAE_NXZ CNetGraphPanel::vfunc107
 0x1016a630 func   ?vfunc0@CNetGraphPanelInterface@@UAEHH@Z CNetGraphPanelInterface::vfunc0

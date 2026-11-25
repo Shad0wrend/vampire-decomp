@@ -98507,6 +98507,31 @@ void CNetGraphPanel::sub_10169c20(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10169c80 size=0x82
+#include "CNetGraphPanel.h"
+struct NGGlobals { virtual void v0(); virtual bool v1(); int m_4; int m_8; int m_c; int m_10; int m_14; int m_18; int m_1c; int m_20; int m_24; float m_f28; };
+extern NGGlobals *g_105fadb4;
+int CNetGraphPanel::sub_10169c80(NGState *s, int a1, unsigned char r, unsigned char g, unsigned char b, int a5)
+{
+	unsigned char col[3];
+	float f;
+	if (g_105fadb4->v1())
+		f = 0.0f;
+	else
+		f = g_105fadb4->m_f28;
+	int n = (int)(a1 / f);
+	col[0] = r;
+	col[1] = g;
+	col[2] = b;
+	s->m_c = n;
+	s->m_4 -= n;
+	if (s->m_4 < 2)
+		return 0;
+	sub_1016a550(s, col, a5);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a690 size=0x1
 void sub_1016a690()
 {
