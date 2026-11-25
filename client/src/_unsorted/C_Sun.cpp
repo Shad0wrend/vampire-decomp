@@ -29,3 +29,11 @@ C_Sun *pcd_emit_100c4f00(const C_Sun &other) { return new C_Sun(other); }
 
 // TARGET: ??_GC_Sun@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100c4f20 size=0x38
+#include "C_Sun.h"
+// TARGET: ??1C_Sun@@UAE@XZ
+C_Sun::~C_Sun()
+{
+}
+// END FUNCTION
