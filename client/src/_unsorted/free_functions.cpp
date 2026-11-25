@@ -94457,6 +94457,26 @@ bool CVStatList_t::sub_1015dfa0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015e030 size=0xb1
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatInfo_t.h"
+char CVStatList_t::sub_1015d3e0(int stat)
+{
+	return stat >= 0 && stat < m_field04;
+}
+// TARGET: CVStatList_t::sub_1015e030
+CVStatInfo_t *CVStatList_t::sub_1015e030(int stat)
+{
+	ScopeTrace trace("CVStatList_t::GetStatInfo", g_102de300);
+	if (sub_1015d3e0(stat))
+		return ((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat);
+	static CVStatInfo_t s_default;
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e100 size=0x8c
 #include "CVStatList_t.h"
 
