@@ -534,6 +534,24 @@ void vgui2::Button::vfunc94(int code) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b43f0 size=0x8c
+#include "vgui2__Button.h"
+struct SurfV11 {
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void f8(); virtual void f9(); virtual void f10();
+	virtual void SetColor(int r, int g, int b, int a);
+};
+extern SurfV11 *sub_101ac8d0();
+void vgui2::Button::vfunc163(int x0, int y0, int x1, int y1)
+{
+	sub_101ac8d0()->SetColor(0, 0, 0, 255);
+	vfunc133(x0, y0, x1, y0 + 1, 1, 1);
+	vfunc133(x0, y0, x0 + 1, y1, 1, 1);
+	vfunc133(x0, y1 - 1, x1, y1, 1, 1);
+	vfunc133(x1 - 1, y0, x1, y1, 1, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4480 size=0x36
 #include "vgui2__Button.h"
 void vgui2::Button::vfunc129()
