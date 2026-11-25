@@ -51652,6 +51652,27 @@ int sub_100f07a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0860 size=0x6b
+#include "CHud.h"
+void sub_10064d50(int, int, int);
+// TARGET: CHud::sub_100f0860
+void CHud::sub_100f0860()
+{
+	if (m_pSubs) {
+		for (int i = 0; i < m_nSubs; i++) {
+			CHudSub *p = &m_pSubs[i];
+			if (p->m_pObj) {
+				delete p->m_pObj;
+				p->m_pObj = 0;
+			}
+		}
+		delete m_pSubs;
+		m_pSubs = 0;
+	}
+	sub_10064d50(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0930 size=0x4d
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
 
