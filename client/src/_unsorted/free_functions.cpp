@@ -18053,6 +18053,36 @@ void sub_10043220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100432a0 size=0x3b
+#define D4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct COuter10044460 {
+	virtual void v0();
+	D4(a) D4(b) D4(c) D4(d) D4(e) D4(f) D4(g) D4(h) D4(i) D4(j) D4(k) D4(l) D4(m) D4(n) D4(o) D4(p) D4(q) D4(r) D4(s) D4(t) D4(u) D4(v) D4(w) D4(x) D4(y) D4(z)
+	D4(A) 
+	virtual void pad1(); virtual void pad2();
+	virtual void v111();
+};
+struct CUnknown10044460 {
+	char m_pad0000[0x3c];
+	COuter10044460 *m_pOuter;
+	int m_n40;
+	unsigned short m_w44;
+	void sub_100442b0();
+	void sub_100432a0(unsigned int v);
+};
+void CUnknown10044460::sub_100432a0(unsigned int v)
+{
+	unsigned int old = m_w44;
+	m_w44 = (unsigned short)v;
+	unsigned short n = v;
+	if (old != n) {
+		if ((n ^ old) & 0x180)
+			sub_100442b0();
+		m_pOuter->v111();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043540 size=0x36
 #include "Vector.h"
 struct CCollView {
