@@ -237,6 +237,35 @@ void vgui2::TreeView::vfunc111(int itemIndex, bool bPromoteChildren)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd5d0 size=0x9e
+#include "vgui2__TreeView.h"
+#include "CUtlLinkedList12.h"
+struct TVView112 { char pad0[0x6c]; int m6c; char pad1[0x78 - 0x70]; CUtlLinkedList12 m_list; };
+void vgui2::TreeView::vfunc112()
+{
+	TVView112 *v = (TVView112 *)this;
+	for (int i = 0; i < v->m_list.m_NumAlloced; i++) {
+		if (v->m_list.IsValidIndex(i)) {
+			vgui2::Panel *p = (vgui2::Panel *)v->m_list.m_pMemory[i].m_pData;
+			if (p) delete p;
+		}
+	}
+	if (v->m_list.m_NumAlloced) {
+		int prev = -1;
+		for (int i = v->m_list.m_NumAlloced - 1; i >= 0; i--) {
+			v->m_list.m_pMemory[i].m_Next = prev;
+			v->m_list.m_pMemory[i].m_Previous = i;
+			prev = i;
+		}
+		v->m_list.m_FirstFree = 0;
+		v->m_list.m_Head = -1;
+		v->m_list.m_Tail = -1;
+		v->m_list.m_ElementCount = 0;
+	}
+	v->m6c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd670 size=0x9a
 #include "vgui2__TreeView.h"
 #include "CUtlLinkedList12.h"
