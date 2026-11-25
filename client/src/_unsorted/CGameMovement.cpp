@@ -139,6 +139,49 @@ float CGameMovement::vfunc23()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7d30 size=0xe6
+#include "CGameMovement.h"
+
+struct MoveDataView {
+    char m_pad16fc[0x16fc];
+    float m_fl16fc;
+    char m_pad1700[0x1994 - 0x1700];
+    float m_fl1994;
+    float m_fl1998;
+};
+
+struct GlobalsView {
+    char m_pad10[0x10];
+    float m_frametime;
+};
+
+extern GlobalsView *g_102b8494;
+
+// TARGET: CGameMovement::vfunc24
+void CGameMovement::vfunc24()
+{
+    float fDecay = g_102b8494->m_frametime * 1000.0f;
+    if (((MoveDataView *)m_pMove)->m_fl1994 > 0.0f)
+    {
+        ((MoveDataView *)m_pMove)->m_fl1994 -= fDecay;
+        if (((MoveDataView *)m_pMove)->m_fl1994 < 0.0f)
+            ((MoveDataView *)m_pMove)->m_fl1994 = 0.0f;
+    }
+    if (((MoveDataView *)m_pMove)->m_fl16fc > 0.0f)
+    {
+        ((MoveDataView *)m_pMove)->m_fl16fc -= fDecay;
+        if (((MoveDataView *)m_pMove)->m_fl16fc < 0.0f)
+            ((MoveDataView *)m_pMove)->m_fl16fc = 0.0f;
+    }
+    if (((MoveDataView *)m_pMove)->m_fl1998 > 0.0f)
+    {
+        ((MoveDataView *)m_pMove)->m_fl1998 -= fDecay;
+        if (((MoveDataView *)m_pMove)->m_fl1998 < 0.0f)
+            ((MoveDataView *)m_pMove)->m_fl1998 = 0.0f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7e20 size=0x70
 #include "CGameMovement.h"
 
