@@ -662,6 +662,36 @@ int vgui2::TextEntry::vfunc162()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b00b0 size=0xac
+#include "vgui2__TextEntry.h"
+extern "C" int __cdecl isspace(int);
+struct TECharVec { int m0; int m4; int size; int m0c; char *data; char Get(int i) const { if (i < 0 || i >= size) return 0; return data[i]; } };
+// TARGET: vgui2::TextEntry::vfunc115
+void vgui2::TextEntry::vfunc115()
+{
+	vfunc165();
+	int &cur = *(int *)((char *)this + 0x70);
+	TECharVec *v = (TECharVec *)((char *)this + 0x50);
+	if (cur >= 1) {
+		cur--;
+		while (cur >= 0) {
+			if (!isspace(v->Get(cur))) break;
+			cur--;
+		}
+		cur--;
+		while (cur >= 0) {
+			if (isspace(v->Get(cur))) break;
+			cur--;
+		}
+		cur++;
+		sub_101afee0();
+		vfunc150();
+		vfunc109();
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0160 size=0x35
 #include "vgui2__TextEntry.h"
 namespace lifted {
