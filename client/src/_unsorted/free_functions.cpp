@@ -11738,6 +11738,29 @@ Elem_1002b290 *Inner_1002b290::sub_1002b290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b2c0 size=0x71
+#include "Vector.h"
+#include "CBCCSlotViews.h"
+
+struct Owner {
+	VIEW_SLOT(0) VIEW_SLOT(1) VIEW_SLOT(2) VIEW_SLOT(3) VIEW_SLOT(4)
+	VIEW_SLOT(5) VIEW_SLOT(6) VIEW_SLOT(7) VIEW_SLOT(8)
+	virtual void *vfunc9();
+	void sub_1002aa30();
+};
+
+struct Self { void sub_1002b2c0(Vector &mins, Vector &maxs); };
+
+// TARGET: sub_1002b2c0
+void Self::sub_1002b2c0(Vector &mins, Vector &maxs)
+{
+	Owner *o = (Owner *)((char *)this - 4);
+	o->sub_1002aa30();
+	mins = *(Vector *)((char *)this + 0xdb8) - *(Vector *)o->vfunc9();
+	maxs = *(Vector *)((char *)this + 0xdc4) - *(Vector *)o->vfunc9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b340 size=0x4b
 namespace lifted {
 struct C1002aa30 { int sub_1002aa30(); };
