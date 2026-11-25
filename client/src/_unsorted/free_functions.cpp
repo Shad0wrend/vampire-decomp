@@ -73736,6 +73736,46 @@ bool __fastcall sub_10147210(CSelf10147210 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147220 size=0x64
+#include "string_t.h"
+
+struct KV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual bool v12(const char *, int);
+	virtual const char *v13(const char *, const char *);
+};
+
+string_t sub_1015f830(void *, const char *);
+int sub_101307f0(const char *);
+
+class CFoo
+{
+public:
+	string_t m_sound;
+	int m_channel;
+	bool m_looping;
+	bool sub_10147220(KV *pKeys);
+};
+
+// TARGET: CFoo::sub_10147220
+bool CFoo::sub_10147220(KV *pKeys)
+{
+	if (pKeys)
+	{
+		m_sound = sub_1015f830(pKeys, "Sound");
+		const char *channel = pKeys->v13("Channel", "");
+		if (*channel)
+			m_channel = sub_101307f0(channel);
+		m_looping = pKeys->v12("IsLooping", 0);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147290 size=0x4a
 #include "CUnknown101dbe30.h"
 
