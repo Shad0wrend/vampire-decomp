@@ -619,6 +619,49 @@ void CInput::vfunc21(char b) { m_unk24 = b != 0; }
 bool CInput::vfunc24() { if (m_unk24) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101069d0 size=0xe9
+#include "CInput.h"
+
+struct EngV
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29();
+	virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39();
+	virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45();
+	virtual int f46();
+	virtual int f47();
+};
+extern EngV *g_104a57d4;
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+void CInput::vfunc22(int *a1, int *a2, int *a3, int *a4)
+{
+	if (!m_unk24)
+		return;
+	int x, y;
+	sub_10106860(&x, &y);
+	x -= g_104a57d4->f46();
+	y -= g_104a57d4->f47();
+	x += sub_100cd100() / 2;
+	y += sub_100cd0f0() / 2;
+	if (a3)
+		*a3 = x;
+	if (a4)
+		*a4 = y;
+	x = x < 0 ? 0 : x;
+	if (sub_100cd100() < x)
+		x = sub_100cd100();
+	y = y < 0 ? 0 : y;
+	if (sub_100cd0f0() < y)
+		y = sub_100cd0f0();
+	*a1 = x;
+	*a2 = y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106ac0 size=0x52
 #include "CInput.h"
 
