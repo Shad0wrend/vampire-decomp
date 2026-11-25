@@ -12,6 +12,47 @@ int CHLClient::vfunc41(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb990 size=0x88
+#include "CHLClient.h"
+struct SaveMgrV1 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(int a); };
+struct ObjA1 { virtual void v0(); virtual void v1(); };
+struct ObjB1 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); };
+struct ObjC1 { virtual void v0(); virtual void v1(); virtual void v2(); };
+extern SaveMgrV1 *g_102c37a0;
+extern ObjA1 *g_102bc800;
+extern ObjB1 *g_105f99d8;
+extern ObjA1 *g_1027ba58;
+extern ObjC1 *g_102d43d8;
+extern int g_104a5820;
+int sub_1012b820();
+void sub_10106bb0();
+void sub_1002c400();
+void sub_1004a9c0();
+void sub_100f4180();
+void sub_10167000();
+struct S100cc040 { void sub_100cc040(); };
+struct CHud { void sub_100f07f0(); };
+extern CHud g_104cfe38;
+// TARGET: CHLClient::vfunc1
+void CHLClient::vfunc1()
+{
+	g_102c37a0->v10(sub_1012b820());
+	g_102bc800->v1();
+	sub_10106bb0();
+	g_105f99d8->v4();
+	g_105f99d8->v2();
+	g_1027ba58->v1();
+	sub_1002c400();
+	sub_1004a9c0();
+	g_102d43d8->v2();
+	((S100cc040 *)this)->sub_100cc040();
+	sub_100f4180();
+	g_104cfe38.sub_100f07f0();
+	sub_10167000();
+	g_104a5820 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cba20 size=0x1a
 #include "CHLClient.h"
 namespace lifted {
