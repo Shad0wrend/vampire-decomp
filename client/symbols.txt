@@ -9216,6 +9216,7 @@
 0x101c2300 func   ?vfunc10@BuildGroup@vgui2@@UAEHXZ vgui2::BuildGroup::vfunc10
 0x101c2310 func   ?sub_101c2310@CBuildGroup_101c2310@@QAEXPAUCPanel@@@Z CBuildGroup_101c2310::sub_101c2310
 0x101c23b0 func   ?vfunc2@BuildGroup@vgui2@@UAEHXZ vgui2::BuildGroup::vfunc2
+0x101c23c0 func   ?vfunc11@BuildGroup@vgui2@@UAEXPAVPanel@2@@Z vgui2::BuildGroup::vfunc11
 0x101c2480 func   ?vfunc3@BuildGroup@vgui2@@UAEXPBD@Z vgui2::BuildGroup::vfunc3
 0x101c25e0 func   ?vfunc4@BuildGroup@vgui2@@UAEXXZ vgui2::BuildGroup::vfunc4
 0x101c26d0 func   ?sub_101c26d0@BuildGroup@vgui2@@QAEPAVPanel@2@HHH@Z vgui2::BuildGroup::sub_101c26d0
