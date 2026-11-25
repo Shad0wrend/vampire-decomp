@@ -42390,6 +42390,31 @@ void CClampX::sub_100c7e60(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7ec0 size=0x6d
+#include "C_BaseTerminal.h"
+
+class IEngineView
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void vfunc12(void *p);
+};
+
+extern IEngineView *g_104a57d4;
+
+#define CLAMP(val, lo, hi) ( (val) > (hi) ? (hi) : ( (val) < (lo) ? (lo) : (val) ) )
+
+void C_BaseTerminal::sub_100c7ec0(int dx, int dy)
+{
+	m_bE88 = false;
+	g_104a57d4->vfunc12(this);
+
+	m_nE78 = CLAMP(m_nE80 + dx, 0, m_nStride - 1);
+	m_nE7c = CLAMP(dy, 0, m_nMax - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c7f30 size=0x8
 struct CUnknown100c7f30 { void sub_100c7f30(); };
 void CUnknown100c7f30::sub_100c7f30()
