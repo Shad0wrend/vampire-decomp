@@ -48,7 +48,10 @@ public:
 	int m_n0b8;
 	int m_n0bc;
 	CHUDSprite10059620 *m_pSprite;
-	int m_unk0c4[(0x170 - 0xc4) / 4];
+	int m_unk0c4[(0xdc - 0xc4) / 4];
+	unsigned int m_nFgColor;
+	unsigned int m_nBgColor;
+	int m_unk0e4[(0x170 - 0xe4) / 4];
 	void sub_101a98c0(int *, int *);
 	int sub_101ab1a0();
 	void sub_101a9890(int, int);
