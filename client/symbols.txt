@@ -3099,6 +3099,7 @@
 0x1007c290 func   ?vfunc205@C_BaseCombatWeapon@@UAEMXZ C_BaseCombatWeapon::vfunc205
 0x1007c650 func   ??_GCSingleUserRecipientFilter@@UAEPAXI@Z ??_GCSingleUserRecipientFilter@@UAEPAXI@Z
 0x1007c6c0 func   ??_GCPASFilter@@UAEPAXI@Z ??_GCPASFilter@@UAEPAXI@Z
+0x1007c730 func   ?vfunc0@CPASAttenuationFilter@@QAEPAXH@Z CPASAttenuationFilter::vfunc0
 0x1007c8d0 func   ?sub_1007c8d0@@YGDH@Z sub_1007c8d0
 0x1007c8e0 func   ?sub_1007c8e0@@YGXH@Z sub_1007c8e0
 0x1007c8f0 func   ?vfunc198@C_BaseCombatWeapon@@UAEHXZ C_BaseCombatWeapon::vfunc198
