@@ -94753,6 +94753,19 @@ int CVStatInfoList_t::sub_1015cb90(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015cf10 size=0xb5
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+int sub_1015eb00(int);
+CVDmgBlock16_t *CVStatInfoList_t::sub_1015cf10(const char *name)
+{
+	ScopeTrace st("CVStatInfoList_t::LookupDependency", g_102de300);
+	static CVDmgBlock16_t s_block;
+	s_block.sub_10160690(sub_1015eb00(m_field2c), sub_1015c9b0(name));
+	return &s_block;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015cfe0 size=0x53
 #include "CVStatInfoList_t.h"
 CVStatInfo_t *CVStatInfoList_t::sub_1015cfe0(int idx)
