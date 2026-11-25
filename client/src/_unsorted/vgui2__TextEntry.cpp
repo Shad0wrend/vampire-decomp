@@ -1086,6 +1086,37 @@ void vgui2::TextEntry::vfunc167()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b14d0 size=0xbd
+#include "vgui2__TextEntry.h"
+#include "vgui2__KeyValues.h"
+struct TextEntryCharVec
+{
+	int size; int m4; char *data;
+	char Get(int i) const { if (i < 0 || i >= size) return 0; return data[i]; }
+};
+// TARGET: vgui2::TextEntry::vfunc170
+void vgui2::TextEntry::vfunc170(int startpos)
+{
+	char text[0x200];
+	int a, b;
+	int n = 0;
+	TextEntryCharVec *v = (TextEntryCharVec *)((char *)this + 0x58);
+	int i;
+	int sz = v->size;
+	*((char *)this + 0xd9) = 1;
+	i = startpos;
+	while (i < sz && *((char *)this + 0xd9)) {
+		char c = v->Get(i);
+		if (!vfunc164(c, (int)&i, (int)&a, (int)&b))
+			text[n++] = c;
+		i++;
+		sz = v->size;
+	}
+	text[n] = 0;
+	vfunc43(new vgui2::KeyValues("TextClicked", "text", text));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1590 size=0xb1
 #include "vgui2__TextEntry.h"
 #include "vgui2__Image.h"
