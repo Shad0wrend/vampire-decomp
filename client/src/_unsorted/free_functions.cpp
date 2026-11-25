@@ -53491,6 +53491,76 @@ void CDetailObjectSystem::sub_100e0900(Buf_100e0900 &buf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0bc0 size=0xc2
+#include "CDetailObjectSystem.h"
+#include <string.h>
+struct Buf_100e0900 {
+	char *m_pBuffer;
+	int m_nSize;
+	int m_nGrow;
+	int m_nGet;
+	int m_nPut;
+	unsigned char m_nError;
+	unsigned char m_nFlags;
+	bool sub_1013cbb0(int n);
+	void sub_1013c970(void *p, int n);
+	int GetInt()
+	{
+		int i;
+		if (!(m_nFlags & 1))
+		{
+			if (sub_1013cbb0(4))
+			{
+				i = *(int *)(m_pBuffer + m_nGet);
+				m_nGet += 4;
+			}
+			else
+				i = 0;
+		}
+		else
+			sub_1013ce00(this, "%d", &i);
+		return i;
+	}
+	static void sub_1013ce00(Buf_100e0900 *b, const char *fmt, ...);
+};
+struct Elem5 { char a[5]; };
+struct Mem5 {
+	Elem5 *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	void sub_100e1330(int num);
+};
+struct Vec5 : public Mem5 {
+	int m_Size;
+	Elem5 *m_pElements;
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_allocationCount)
+			sub_100e1330(m_Size + num - m_allocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(Elem5));
+	}
+};
+// TARGET: CDetailObjectSystem::sub_100e0bc0
+void CDetailObjectSystem::sub_100e0bc0(Buf_100e0900 &buf)
+{
+	for (int i = buf.GetInt(); --i >= 0; )
+	{
+		Vec5 *v = (Vec5 *)((char *)this + 0x38);
+		int elem = v->m_Size;
+		v->GrowVector(1);
+		v->ShiftElementsRight(elem, 1);
+		buf.sub_1013c970(&v->m_pMemory[elem], 5);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1000 size=0x34
 struct Elem { char pad[0x4c]; unsigned short a; unsigned short b; };
 struct CL {
