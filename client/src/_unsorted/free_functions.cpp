@@ -61506,6 +61506,17 @@ void CDataObjectAccessSystem::sub_1011b1d0(int index, void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b290 size=0x84
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+// TARGET: C_BaseEntity::sub_1011b290
+bool C_BaseEntity::sub_1011b290(int type)
+{
+	ScopeTrace t("CBaseEntity::HasDataObjectType", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	return (*(unsigned int *)((char *)this + 0x3e8) & (1 << type)) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b320 size=0x83
 #include "C_BaseEntity.h"
 #include "ScopeTrace.h"
