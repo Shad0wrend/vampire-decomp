@@ -7847,6 +7847,7 @@
 0x101684a0 func   ?vfunc109@CMessageCharsPanel@@UAE_NXZ CMessageCharsPanel::vfunc109
 0x101684b0 func   ?vfunc98@CMessageCharsPanel@@UAEXXZ CMessageCharsPanel::vfunc98
 0x10168570 func   ?sub_10168570@CUnkTimed@@QAEXH@Z CUnkTimed::sub_10168570
+0x101685e0 func   ?vfunc0@CMessageChars@@UAEHH@Z CMessageChars::vfunc0
 0x10168630 func   ?vfunc1@CMessageChars@@UAEXXZ CMessageChars::vfunc1
 0x10168660 func   ?vfunc5@CMessageChars@@UAAHMHHHHHHHPBDHZZ CMessageChars::vfunc5
 0x101687c0 func   ?vfunc6@CMessageChars@@UAEHXZ CMessageChars::vfunc6
