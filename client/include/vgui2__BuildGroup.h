@@ -41,5 +41,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int m_n10; int m_n14; int m_n18; int m_unk1c; int m_n20;
 	int m_unk24; int m_unk28; int m_unk2c; int m_unk30; int m_unk34; int m_unk38; int m_unk3c;
 	CUtlVector<Panel *> m_Panels;
+	int m_unk54; int m_unk58; int m_unk5c; int m_unk60;
+	CUtlVector<Panel *> m_Controls;
 };
 }
