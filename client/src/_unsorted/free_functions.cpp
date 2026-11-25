@@ -21425,6 +21425,27 @@ void CUnknown10058700::sub_10058700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100593e0 size=0xc6
+#include "ScopeTrace.h"
+#include "CHUDSprite.h"
+struct wrect_100593e0 { int m0, m1, m2, m3; };
+// TARGET: CHUDSprite::sub_100593e0
+int CHUDSprite::sub_100593e0(const wrect_100593e0 *a, const wrect_100593e0 *b, wrect_100593e0 *out)
+{
+	ScopeTrace trace("CHUDSprite::IntersectWRect", g_102de300);
+	wrect_100593e0 tmp;
+	if (!out)
+		out = &tmp;
+	out->m0 = (a->m0 > b->m0) ? a->m0 : b->m0;
+	out->m1 = (a->m1 < b->m1) ? a->m1 : b->m1;
+	out->m2 = (a->m2 > b->m2) ? a->m2 : b->m2;
+	out->m3 = (a->m3 < b->m3) ? a->m3 : b->m3;
+	if (out->m2 < out->m3)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10059af0 size=0x79
 #include "CMeshBuilder.h"
 
