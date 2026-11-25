@@ -92765,6 +92765,18 @@ void CVStatList_t::sub_1015d4a0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d530 size=0x75
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+
+// TARGET: CVStatList_t::sub_1015d530
+void CVStatList_t::sub_1015d530(int stat, int source)
+{
+    ScopeTrace trace("CVStatList_t::SetBaseToStatValue", g_102de300);
+    sub_1015d400(stat, sub_1015dbd0(source));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d5b0 size=0x99
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
