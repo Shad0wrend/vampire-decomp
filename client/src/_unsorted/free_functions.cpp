@@ -63066,6 +63066,19 @@ void C_BaseEntity::sub_1011bd60(C_BaseEntity *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011bdf0 size=0x9d
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+void C_BaseEntity::sub_1011bdf0(C_BaseEntity *other)
+{
+	ScopeTrace st("CBaseEntity::PhysicsStartTouch", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	if (other && !(*(unsigned char *)((char *)this + 0x184) & 1) && !(*(unsigned char *)((char *)other + 0x184) & 1)) {
+		vfunc99((int)other);
+		vfunc100((int)other);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011c140 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };
