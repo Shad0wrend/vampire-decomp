@@ -8704,6 +8704,7 @@
 0x101aad50 func   ?vfunc30@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc30
 0x101aad60 func   ?vfunc13@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc13
 0x101aad70 func   ?vfunc79@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc79
+0x101aad80 func   ?vfunc41@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc41
 0x101aae60 func   ?sub_101aae60@PanelV42@@QAEXPAUP42Target@@@Z PanelV42::sub_101aae60
 0x101ab040 func   ?vfunc61@Panel@vgui2@@UAEHXZ vgui2::Panel::vfunc61
 0x101ab050 func   ?vfunc62@Panel@vgui2@@UAE_ND@Z vgui2::Panel::vfunc62

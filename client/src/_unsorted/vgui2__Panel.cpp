@@ -874,6 +874,90 @@ void vgui2::Panel::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aad80 size=0xda
+#include "vgui2__Panel.h"
+
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+int sub_101ac8f0();
+void *sub_101d12a1(unsigned int);
+void sub_101d1296(void *);
+__declspec(noreturn) void sub_101d309f(int);
+
+struct IPanelV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual int v15(int id);
+};
+
+struct CIntList
+{
+	int m_nCount;
+	int m_nCapacity;
+	int *m_pData;
+};
+
+void vgui2::Panel::vfunc41(int arg)
+{
+	Panel *pTarget = (Panel *)arg;
+	int value = ((IPanelV *)sub_101ac8f0())->v15(pTarget->vfunc0());
+
+	CIntList &list = *(CIntList *)((char *)this + 0x38);
+
+	int i = 0;
+	if ( list.m_nCount > 0 )
+	{
+		int size = list.m_nCount;
+		int *p = list.m_pData;
+		do
+		{
+			if ( *p == value )
+				goto found;
+			i++;
+			p++;
+		}
+		while ( i < size );
+	}
+	goto grow;
+
+found:
+	if ( i >= 0 )
+		return;
+
+grow:
+	int newSize = *(volatile int *)&list.m_nCount + 1;
+	int cap = list.m_nCapacity;
+	if ( newSize > cap )
+	{
+		if ( cap == 0 )
+			cap = 1;
+		while ( cap < newSize )
+			cap += cap;
+
+		int nBytes = cap * 4;
+		int *pNew = (int *)sub_101d12a1(nBytes);
+		if ( !pNew )
+			sub_101d309f(0);
+
+		memset(pNew, 0, nBytes);
+		list.m_nCapacity = cap;
+
+		for ( int j = 0; j < list.m_nCount; j++ )
+			pNew[j] = list.m_pData[j];
+
+		sub_101d1296(list.m_pData);
+		list.m_pData = pNew;
+	}
+
+	list.m_pData[list.m_nCount] = value;
+	list.m_nCount = list.m_nCount + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aae60 size=0x65
 struct P42Target
 {
