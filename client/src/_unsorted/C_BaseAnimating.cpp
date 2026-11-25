@@ -176,6 +176,31 @@ float C_BaseAnimating::vfunc122()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008fa70 size=0xbd
+#include "C_BaseAnimating.h"
+extern "C" double floor(double);
+struct PoseDesc1008fa70 { int a, b; int flags; };
+struct AnimView1008fa70 { char pad[0x5d4]; float m5d4; };
+
+float C_BaseAnimating::sub_1008fa70(float a1, int idx, float a3, float a4, float a5)
+{
+    float r = sub_10095910(idx, &((AnimView1008fa70 *)this)->m5d4);
+    if (r == 0.0f)
+        return 0.0f;
+    PoseDesc1008fa70 *p = sub_10096830(idx);
+    if (!p)
+        return 0.0f;
+    float x = a5 / r * a4 + a1;
+    if (p->flags & 1)
+        return x - floor(x);
+    if (x >= 0.999)
+        x = 0.999f;
+    if (x < 0.0)
+        x = 0.0f;
+    return x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b60 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc124(int a0, int a1)
