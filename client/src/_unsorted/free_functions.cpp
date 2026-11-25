@@ -58491,6 +58491,31 @@ CSmartPtr<CUnknown10118a90> sub_10118ad0(int pDebugName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118c80 size=0x66
+#include "FileSystemViews.h"
+
+typedef void *(*CreateInterfaceFn)(const char *pName, int *pReturnCode);
+
+extern void *g_104e0c84;
+extern void *g_104e0c94;
+extern void *g_104e0c8c;
+
+void sub_101201c0(const char *pFileName, void *pSink, void *pFileSystem);
+
+// TARGET: sub_10118c80
+bool sub_10118c80(CreateInterfaceFn factory)
+{
+	if ((g_104e0c84 = factory("VPhysics030", 0)) != 0 &&
+		(g_104e0c94 = factory("VPhysicsSurfaceProps001", 0)) != 0 &&
+		(g_104e0c8c = factory("VPhysicsCollision007", 0)) != 0)
+	{
+		sub_101201c0("scripts/surfaceproperties.txt", g_104e0c94, g_104a580c);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118dd0 size=0x10
 namespace lifted {
 extern int g_104e0c90;
