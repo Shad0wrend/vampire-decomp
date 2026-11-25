@@ -2905,6 +2905,7 @@
 0x100639a0 func   ??1CTargeted@@UAE@XZ CTargeted::~CTargeted
 0x100648c0 func   ?sub_100648c0@@YGXPAVCHUDSprite@@@Z sub_100648c0
 0x10064960 func   ?sub_10064960@@YGXPAVCHUDSprite@@H@Z sub_10064960
+0x10064a00 func   ?sub_10064a00@@YGXPAVCHUDSprite@@HHHH@Z sub_10064a00
 0x10064ab0 func   ?vfunc97@CTargeted@@UAEXXZ CTargeted::vfunc97
 0x10064ac0 func   ?sub_10064ac0@@YGXD@Z sub_10064ac0
 0x10064b10 func   ?sub_10064b10@@YAXD@Z sub_10064b10
