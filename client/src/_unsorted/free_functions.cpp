@@ -13075,6 +13075,28 @@ int CUnknown10032df0::sub_10032df0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032ea0 size=0x7b
+#include "C_TEBeamEnts.h"
+
+struct CVEff {
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+	virtual void e4(); virtual void e5(); virtual void e6();
+	virtual void DrawBeamEnts(int, int, int, int, int, int, int, int,
+		float, int, float, float, int, float, float, float, float, int);
+};
+extern CVEff *g_102d5050;
+
+// TARGET: C_TEBeamEnts::sub_10032ea0
+void C_TEBeamEnts::sub_10032ea0(int updateType)
+{
+	g_102d5050->DrawBeamEnts(
+		m_unk44, m_unk48, m_unkC, m_unk10, 0, m_unk1c, m_unk20, m_unk24,
+		(float)m_unk28, m_unk2c, (float)m_unk3c, (float)(m_unk40 * 0.1),
+		m_unk14, (float)(m_unk18 * 0.1), (float)m_unk30, (float)m_unk34,
+		(float)m_unk38, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032f40 size=0x6
 namespace lifted {
 extern char g_102ebc64;
