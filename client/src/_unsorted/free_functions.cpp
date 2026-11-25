@@ -13488,6 +13488,38 @@ int CUnknown10033bb0::sub_10033bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033c60 size=0x7d
+#include "Vector.h"
+struct BeamsV15 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void CreateBeamRingPoint(const Vector &center, float startRadius, float endRadius,
+		int modelIndex, int haloIndex, float haloScale, float life, float width, float amplitude,
+		float brightness, float speed, float a12, float a13, int startFrame, float a15, float r, float g, float b);
+};
+struct TERingNet {
+	int m_unk00, m_unk04, m_unk08;
+	int m_unk0c, m_unk10, m_unk14;
+	int m_unk18;
+	float m_unk1c, m_unk20, m_unk24;
+	int m_unk28;
+	float m_unk2c;
+	int m_unk30, m_unk34, m_unk38, m_unk3c, m_unk40;
+	Vector m_vecCenter;
+	float m_flStartRadius, m_flEndRadius;
+	void sub_10033c60(int updateType);
+};
+extern BeamsV15 *g_102d5050;
+void TERingNet::sub_10033c60(int updateType)
+{
+	g_102d5050->CreateBeamRingPoint(m_vecCenter, m_flStartRadius, m_flEndRadius, m_unk0c, m_unk10, 0,
+		m_unk1c, m_unk20, m_unk24, m_unk28, m_unk2c, m_unk3c, m_unk40 * 0.1, m_unk14, m_unk18 * 0.1,
+		m_unk30, m_unk34, m_unk38);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033d00 size=0x6
 namespace lifted {
 extern char g_102ec2ec;
