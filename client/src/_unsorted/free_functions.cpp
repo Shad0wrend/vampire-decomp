@@ -58241,6 +58241,26 @@ void __stdcall sub_10106410(int x, int y, int *px, int *py, int *outx, int *outy
 }
 // END FUNCTION
 
+// FUNCTION: 0x101064b0 size=0xaf
+struct CUnknown100f10c0 { float sub_100f10c0(); };
+struct ScaleCvarView { virtual void v0(); virtual bool IsDisabled(); int m_unk04[9]; float m_flValue; };
+extern ScaleCvarView *g_104d3fc4;
+extern CUnknown100f10c0 g_104cfe38;
+// TARGET: sub_101064b0
+void __stdcall sub_101064b0(int *pX, int *pY)
+{
+	if (g_104cfe38.sub_100f10c0() != 0.0f) {
+		*pX = (int)(*pX * g_104cfe38.sub_100f10c0());
+		*pY = (int)(*pY * g_104cfe38.sub_100f10c0());
+	} else {
+		float f = g_104d3fc4->IsDisabled() ? 0.0f : g_104d3fc4->m_flValue;
+		*pX = (int)(*pX * f);
+		f = g_104d3fc4->IsDisabled() ? 0.0f : g_104d3fc4->m_flValue;
+		*pY = (int)(*pY * f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106860 size=0x15
 namespace lifted {
 int sub_10166ee0(int, int);
