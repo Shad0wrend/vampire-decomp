@@ -35839,6 +35839,40 @@ int __cdecl sub_10090790(const char *name, NameStruct *pStruct)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091020 size=0xc1
+#include <math.h>
+
+float __stdcall sub_10091020(float a, float b, float t, bool wrap)
+{
+	if (wrap)
+	{
+		if (fabs(b - a) >= 0.5)
+		{
+			if (a < b)
+				a += 1.0f;
+			else
+				b += 1.0f;
+		}
+	}
+
+	float r = (1.0f - t) * a + b * t;
+	if (wrap)
+	{
+		r -= (int)r;
+		if (r < 0.0f)
+			r += 1.0f;
+	}
+	else
+	{
+		if (r > 1.0f)
+			return 1.0f;
+		if (r < 0.0f)
+			return 0.0f;
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091860 size=0xad
 #include "C_BaseAnimating.h"
 #include "matrix3x4_t.h"

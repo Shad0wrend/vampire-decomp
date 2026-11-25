@@ -3465,6 +3465,7 @@
 0x1008fcd0 func   ?sub_1008fcd0@Anim_1008fcd0@@QAEXHPAUS48_10108430@@@Z Anim_1008fcd0::sub_1008fcd0
 0x10090790 func   ?sub_10090790@@YAHPBDPAUNameStruct@@@Z sub_10090790
 0x10090b60 func   ?vfunc124@C_BaseAnimating@@UAEXHH@Z C_BaseAnimating::vfunc124
+0x10091020 func   ?sub_10091020@@YGMMMM_N@Z sub_10091020
 0x100910f0 func   ?vfunc66@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc66
 0x10091640 func   ?vfunc131@C_BaseAnimating@@UAEXHHHHHH@Z C_BaseAnimating::vfunc131
 0x10091860 func   ?sub_10091860@C_BaseAnimating@@QAE_NHAAVVector@@AAVQAngle@@AAUmatrix3x4_t@@@Z C_BaseAnimating::sub_10091860
