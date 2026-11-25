@@ -72530,6 +72530,34 @@ void Buf_10142ee0::sub_10142ee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142ff0 size=0x6d
+struct VObjView {
+    int m_unk0;
+    int m_unk4;
+    int m_nCount;   // +8
+    int *m_pData;   // +0xc
+    int *m_pSorted; // +0x10
+};
+
+int __cdecl sub_10143060(const void *a, const void *b);
+extern "C" void qsort(void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+extern void (*g_101e3118)(int level, const char *pMsg, ...);
+
+// TARGET: sub_10142ff0
+void __fastcall sub_10142ff0(VObjView *self)
+{
+    if (self->m_nCount > 0) {
+        delete [] self->m_pSorted;
+        self->m_pSorted = new int[self->m_nCount];
+        for (int i = 0; i < self->m_nCount; i++)
+            self->m_pSorted[i] = self->m_pData[i];
+        qsort(self->m_pSorted, self->m_nCount, 4, sub_10143060);
+    } else {
+        g_101e3118(1, "ERROR: CharGenWizard: OrderTraits: No TraitCombos found!\n");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143120 size=0x24
 struct VObj { int m0, m4; int m_n; int mc; int *m_pData; void sub_10142ff0(); int sub_10143120(int i); };
 // TARGET: ?sub_10143120@VObj@@QAEHH@Z
