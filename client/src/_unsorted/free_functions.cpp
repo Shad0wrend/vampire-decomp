@@ -19073,6 +19073,38 @@ void CUnknown10049000::sub_10049000(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100491c0 size=0xef
+#include "CLightRays.h"
+#include <string.h>
+
+// TARGET: CLightRays::sub_100491c0
+void CLightRays::sub_100491c0()
+{
+	for ( int i = 1; i < m_Rays.m_Size; i++ )
+	{
+		if ( m_Rays[i].f00 > m_Rays[i-1].f00 )
+			continue;
+		int j = i;
+		do
+		{
+			j--;
+			if ( j <= 0 )
+				break;
+		} while ( m_Rays[j-1].f00 > m_Rays[i].f00 );
+		LightRay_t temp = m_Rays[i];
+		memmove(&m_Rays[j+1], &m_Rays[j], (i - j) * sizeof(LightRay_t));
+		m_Rays[j] = temp;
+		int k = j;
+		do
+		{
+			m_Rays[k].n28 = m_Rays[k+1].n28;
+			k++;
+		} while ( k < i );
+		m_Rays[i].n28 = temp.n28;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049f20 size=0x19
 struct CUnknown100f2f90 { void * sub_10049f20(int, int, int); };
 void * CUnknown100f2f90::sub_10049f20(int a0, int a1, int a2)

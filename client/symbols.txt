@@ -2514,6 +2514,7 @@
 0x10049030 func   ??0CLightRays@@QAE@HMMMMMM@Z CLightRays::CLightRays
 0x10049140 func   ??_GCLightRays@@UAEPAXI@Z ??_GCLightRays@@UAEPAXI@Z
 0x10049160 func   ??1CLightRays@@UAE@XZ CLightRays::~CLightRays
+0x100491c0 func   ?sub_100491c0@CLightRays@@QAEXXZ CLightRays::sub_100491c0
 0x100492b0 func   ?vfunc1@CLightRays@@UAEXXZ CLightRays::vfunc1
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
