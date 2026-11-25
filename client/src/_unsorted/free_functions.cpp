@@ -61682,6 +61682,17 @@ const CUtlRBTree16::Links_t &CUtlRBTree16::sub_10113190(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114120 size=0xb9
+#include "CUtlRBTree16.h"
+
+// TARGET: CUtlRBTree16::sub_10114120
+bool CUtlRBTree16::sub_10114120(unsigned short i) const
+{
+	const CUtlRBTree16At<0x104dff1c> *tree = (const CUtlRBTree16At<0x104dff1c> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114660 size=0x19
 namespace lifted {
 extern char g_104dff38;
