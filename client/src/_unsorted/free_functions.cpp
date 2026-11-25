@@ -38999,6 +38999,45 @@ char sub_100b56b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5b40 size=0x6b
+struct CFlameElement {
+	int m_nModelIndex;
+	char m_pad004[0x3f0 - 4];
+	float m_flRate;
+	float m_flFrame;
+	char m_pad3f8[0x470 - 0x3f8];
+};
+
+struct C_FireSmokeView {
+	char m_pad0000[0x498];
+	CFlameElement m_Flames[8];
+};
+
+struct IModelInfoView {
+	virtual void d0();
+	virtual void d1();
+	virtual void d2();
+	virtual void d3();
+	virtual void d4();
+	virtual int GetModelFrameCount(int modelIndex);
+};
+extern IModelInfoView *g_104a57f8;
+
+extern float sub_10117b40();
+
+void __fastcall sub_100b5b40(C_FireSmokeView *self, int edx)
+{
+	float flFrameTime = sub_10117b40();
+	for (int i = 0; i < 8; i++)
+	{
+		self->m_Flames[i].m_flFrame += flFrameTime * self->m_Flames[i].m_flRate;
+		int nFrames = g_104a57f8->GetModelFrameCount(self->m_Flames[i].m_nModelIndex);
+		if (self->m_Flames[i].m_flFrame > nFrames)
+			self->m_Flames[i].m_flFrame -= (float)(int)self->m_Flames[i].m_flFrame;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b63f0 size=0x6
 namespace lifted {
 extern char g_104a1f4c;

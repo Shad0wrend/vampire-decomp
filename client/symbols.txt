@@ -3901,6 +3901,7 @@
 0x100b5640 func   ?sub_100b5640@FireView@@QAEXXZ FireView::sub_100b5640
 0x100b56b0 func   ?sub_100b56b0@@YADXZ sub_100b56b0
 0x100b5b20 func   ??_GCFireOverlay@@UAEPAXI@Z ??_GCFireOverlay@@UAEPAXI@Z
+0x100b5b40 func   ?sub_100b5b40@@YIXPAUC_FireSmokeView@@H@Z sub_100b5b40
 0x100b63d0 func   ?vfunc16@C_EntityFlame@@UAEHXZ C_EntityFlame::vfunc16
 0x100b63e0 func   ?vfunc15@C_EntityFlame@@UAEHXZ C_EntityFlame::vfunc15
 0x100b63f0 func   ?sub_100b63f0@@YAHXZ sub_100b63f0
