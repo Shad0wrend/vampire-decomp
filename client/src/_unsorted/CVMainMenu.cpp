@@ -11,6 +11,20 @@ CVMainMenu *pcd_emit_10065840(const CVMainMenu &other) { return new CVMainMenu(o
 // TARGET: ??_GCVMainMenu@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10065860 size=0xe7
+#include "CVMainMenu.h"
+
+struct V665d0 { void sub_100665d0(int); };
+struct V67520 { void sub_10067520(); };
+
+CVMainMenu::~CVMainMenu()
+{
+	sub_10066250();
+	((V665d0 *)this)->sub_100665d0(1);
+	((V67520 *)this)->sub_10067520();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065c40 size=0x4f
 #include "CVMainMenu.h"
 
