@@ -5542,6 +5542,7 @@
 0x1010cff0 func   ??_GCClampProxy@@UAEPAXI@Z ??_GCClampProxy@@UAEPAXI@Z
 0x1010d180 func   ?sub_1010d180@@YAHXZ sub_1010d180
 0x1010d1b0 func   ??_GCSineProxy@@UAEPAXI@Z ??_GCSineProxy@@UAEPAXI@Z
+0x1010d1d0 func   ?vfunc1@CEqualsProxy@@UAEXH@Z CEqualsProxy::vfunc1
 0x1010d290 func   ?sub_1010d290@@YAHXZ sub_1010d290
 0x1010d2c0 func   ??_GCEqualsProxy@@UAEPAXI@Z ??_GCEqualsProxy@@UAEPAXI@Z
 0x1010d410 func   ?sub_1010d410@@YAHXZ sub_1010d410
