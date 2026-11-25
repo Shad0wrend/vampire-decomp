@@ -84258,6 +84258,91 @@ void sub_1014f1f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f200 size=0xff
+#include <string.h>
+
+extern char g_102de300[];
+
+static inline const char *STRINGR_F(const char *const &s)
+{
+	return s ? s : g_102de300;
+}
+
+#define SV(n) virtual void s##n();
+struct CInvKV
+{
+	SV(0) SV(1) SV(2) SV(3) SV(4) SV(5) SV(6) SV(7) SV(8) SV(9)
+	virtual int GetInt(const char *pszKey, int nDefault);
+	SV(11) SV(12)
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+struct CPooledStringX
+{
+	int m_iString;
+	CPooledStringX() {}
+};
+
+CPooledStringX sub_1015f7e0(CInvKV *pKV, const char *pszKey);
+CPooledStringX sub_1015f810(CInvKV *pKV);
+
+struct CInvSectionName
+{
+	int m_nId;
+	const char *m_psz;
+};
+
+extern int g_105e8588;
+extern CInvSectionName **g_105e858c;
+
+static inline const char *NameOf(int *pBase)
+{
+	const char *const *pp = (const char *const *)(pBase + 1);
+	return STRINGR_F(*pp);
+}
+
+static inline int FindSection(const char *pszWanted)
+{
+	for (int i = 0; i < g_105e8588; i++)
+	{
+		if (!_strcmpi(NameOf((int *)g_105e858c[i]), pszWanted))
+			return g_105e858c[i]->m_nId;
+	}
+	return -1;
+}
+
+class CInvItem_1014f200
+{
+public:
+	void *m_pVtbl;
+	int m_iInternalName;
+	int m_i08;
+	int m_nFlags;
+	int m_nSection;
+
+	bool sub_1014f200(CInvKV *pKV);
+};
+
+// TARGET: CInvItem_1014f200::sub_1014f200
+bool CInvItem_1014f200::sub_1014f200(CInvKV *pKV)
+{
+	if (pKV)
+	{
+		m_iInternalName = sub_1015f7e0(pKV, "InternalName").m_iString;
+		m_i08 = sub_1015f810(pKV).m_iString;
+		if (pKV->GetInt("IsWielded", 0))
+			m_nFlags |= 1;
+		if (pKV->GetInt("IsWorn", 0))
+			m_nFlags |= 2;
+		if (pKV->GetInt("IsWeapon", 0))
+			m_nFlags |= 4;
+		m_nSection = FindSection(pKV->GetString("InventorySection", g_102de300));
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f300 size=0x2a
 #include "utlrbtree.h"
 #include "utlsortvector.h"
