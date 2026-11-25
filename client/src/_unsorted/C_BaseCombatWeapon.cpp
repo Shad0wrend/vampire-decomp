@@ -807,6 +807,45 @@ void C_BaseCombatWeapon::vfunc180(int a0)
 bool C_BaseCombatWeapon::vfunc185() { for (int i = 0; i < 2; i++) { if (vfunc153(i)) return true; } return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1007c130 size=0x6d
+#include "C_BaseCombatWeapon.h"
+
+class CWeaponAmmoView
+{
+public:
+	char sub_1007c1a0(int idx);
+};
+
+class CHost_10097f80
+{
+public:
+	int sub_10097f80(int idx);
+};
+
+struct WeaponAmmoFields
+{
+	char m_pad0000[0x7a4];
+	int m_iClip[2];		// 0x7a4
+	int m_iAmmo[2];		// 0x7ac
+};
+
+bool C_BaseCombatWeapon::vfunc153(int i)
+{
+	WeaponAmmoFields *w = (WeaponAmmoFields *)this;
+
+	if ( !((CWeaponAmmoView *)this)->sub_1007c1a0(i) )
+		return true;
+
+	if ( vfunc150(i) && w->m_iAmmo[i] > 0 )
+		return true;
+
+	if ( sub_1007bab0() && ((CHost_10097f80 *)sub_1007bab0())->sub_10097f80( w->m_iClip[i] ) > 0 )
+		return true;
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1d0 size=0xd
 #include "C_BaseCombatWeapon.h"
 namespace lifted {
