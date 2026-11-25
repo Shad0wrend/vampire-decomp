@@ -56242,6 +56242,77 @@ void CDetailObjectSystem::sub_100e0bc0(Buf_100e0900 &buf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0c90 size=0xf6
+#include "CDetailObjectSystem.h"
+
+struct V3 { float x, y, z; };
+V3 *sub_10198d30();
+
+class LeafSlot
+{
+public:
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(int a, int b, int *c, int *d);
+};
+extern LeafSlot *g_102b9060;
+
+class ModelV
+{
+public:
+	virtual void v0();
+	virtual V3 *GetOrigin();
+};
+
+struct DetailObj
+{
+	int m_pad0;			// 0x00
+	ModelV m_model;			// 0x04
+	char m_pad8[0x3e - 0x08];
+	unsigned char m_alpha;		// 0x3e
+	char m_pad3f[0x50 - 0x3f];
+};
+
+struct Info
+{
+	float m_flMaxDist2;		// 0x00
+	float m_flFadeStart2;		// 0x04
+	float m_flFadeScale;		// 0x08
+	int m_nSomething;		// 0x0c
+};
+
+bool CDetailObjectSystem::sub_100e0c90(int a1, void *pInfoV)
+{
+	Info *pInfo = (Info *)pInfoV;
+	int iStart;
+	int i;
+	g_102b9060->s8(a1, pInfo->m_nSomething, &iStart, &a1);
+	i = 0;
+	if ( a1 <= 0 )
+		return true;
+	for ( ; i < a1; i++ )
+	{
+		DetailObj *p = &((DetailObj *)*(void **)((char *)this + 0x18))[(unsigned short)(iStart + i)];
+		V3 *pView = sub_10198d30();
+		V3 *pOrigin = p->m_model.GetOrigin();
+		float dx = pOrigin->x - pView->x;
+		float dy = pOrigin->y - pView->y;
+		float dz = pOrigin->z - pView->z;
+		float dist2 = dz * dz + dy * dy + dx * dx;
+		if ( dist2 < pInfo->m_flMaxDist2 )
+		{
+			if ( pInfo->m_flFadeStart2 > 0.0f && dist2 > pInfo->m_flFadeStart2 )
+				p->m_alpha = (unsigned char)(int)((pInfo->m_flMaxDist2 - dist2) * pInfo->m_flFadeScale);
+			else
+				p->m_alpha = 0xff;
+		}
+		else
+			p->m_alpha = 0;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1000 size=0x34
 struct Elem { char pad[0x4c]; unsigned short a; unsigned short b; };
 struct CL {
