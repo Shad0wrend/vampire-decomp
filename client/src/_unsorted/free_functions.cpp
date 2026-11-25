@@ -17827,6 +17827,53 @@ int sub_100429f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042d00 size=0xb3
+#include "CUtlVector4.h"
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+struct HandleEntV { virtual int v0(); virtual const int *v1(); };
+struct HandleList
+{
+	int m_unk0, m_unk4, m_unk8;
+	CUtlVector4 m_List;
+	void sub_10042d00(HandleEntV *pEnt);
+};
+void HandleList::sub_10042d00(HandleEntV *pEnt)
+{
+	const int *src = pEnt->v1();
+	int elem = m_List.m_size;
+	int num = 1;
+	int req = m_List.m_size + num;
+	if (req > m_List.m_allocationCount && m_List.m_growSize != -1) {
+		int alloc = m_List.m_allocationCount;
+		if (alloc < req) {
+			do {
+				if (alloc) {
+					if (m_List.m_growSize)
+						alloc += m_List.m_growSize;
+					else
+						alloc += alloc;
+				} else
+					alloc = 8;
+			} while (alloc < req);
+			m_List.m_allocationCount = alloc;
+		}
+		if (m_List.m_pMemory)
+			m_List.m_pMemory = (int *)g_101e3104(m_List.m_pMemory, m_List.m_allocationCount * 4);
+		else
+			m_List.m_pMemory = (int *)g_101e3100(m_List.m_allocationCount * 4);
+	}
+	m_List.m_size += num;
+	m_List.m_pElements = m_List.m_pMemory;
+	int n = m_List.m_size - elem - num;
+	if (n > 0)
+		memmove(&m_List.m_pMemory[elem + num], &m_List.m_pMemory[elem], n * 4);
+	int *p = &m_List.m_pMemory[elem];
+	if (p)
+		*p = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042e80 size=0x131
 #include "RecvTable.h"
 extern RecvTable g_103ecc30;

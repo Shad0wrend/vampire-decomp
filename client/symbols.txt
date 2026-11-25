@@ -2421,6 +2421,7 @@
 0x10042c30 func   ?vfunc8@CDirtySpatialPartitionEntityList@@UAEPAVCAutoGameSystem@@I@Z CDirtySpatialPartitionEntityList::vfunc8
 0x10042ca0 func   ?sub_10042ca0@@YI_NPAD@Z sub_10042ca0
 0x10042cd0 func   ?vfunc1@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc1
+0x10042d00 func   ?sub_10042d00@HandleList@@QAEXPAUHandleEntV@@@Z HandleList::sub_10042d00
 0x10042dc0 func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
 0x10042e80 func   ?ClientClassInit@@YAHPAUignored@DT_CollisionProperty@@@Z ClientClassInit
 0x10042fc0 func   ?sub_10042fc0@@YAHHH@Z sub_10042fc0
