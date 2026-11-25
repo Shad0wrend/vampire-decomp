@@ -74981,6 +74981,30 @@ void sub_101467f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146800 size=0x73
+#include "CUnknown101daec0.h"
+#include "CUnknown101e0940.h"
+
+extern CUnknown101e0940 *g_105e80f4;
+
+// TARGET: ?sub_10146800@CUnknown101daec0@@QAEDPAVIKVNodeView@@PBD@Z
+char CUnknown101daec0::sub_10146800(IKVNodeView *pKV, const char *pszName)
+{
+	if (pKV)
+	{
+		IKVNodeView *pNode = pszName ? pKV->vfunc2(pszName) : pKV;
+		if (pNode)
+		{
+			m_nHitTable = g_105e80f4->sub_10149650(pNode->vfunc13("HitTable", g_102de300));
+			m_nChance = pNode->vfunc10("Chance", 100);
+			m_nCount = pNode->vfunc10("Count", 0);
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146890 size=0xb6
 #include "CUnknown101daf60.h"
 #include "CUnknown101e09c0.h"
