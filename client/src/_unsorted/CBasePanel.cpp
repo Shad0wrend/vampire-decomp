@@ -228,6 +228,37 @@ void CBasePanel::vfunc111(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163eb0 size=0x9b
+#include "CBasePanel.h"
+#define V10(p) virtual int p##0(); virtual int p##1(); virtual int p##2(); virtual int p##3(); virtual int p##4(); virtual int p##5(); virtual int p##6(); virtual int p##7(); virtual int p##8(); virtual int p##9();
+struct KVX { KVX *sub_101b5730(const char *, const char *, int, const char *, int); };
+struct IVGuiX { V10(a) V10(b) virtual int vfunc20(int, KVX *, int, int); };
+struct PanelX {
+    virtual int vfunc0();
+    V10(b) V10(c) virtual int c10(); virtual int c11(); virtual int c12(); virtual int c13(); virtual int c14();
+    virtual void vfunc26(int *, int *);
+    virtual int c27(); virtual int c28(); virtual int c29(); virtual int c30();
+    virtual PanelX *vfunc31();
+};
+void *sub_101b6840(int);
+IVGuiX *sub_101ac8f0();
+// TARGET: CBasePanel::vfunc84
+void CBasePanel::vfunc84(int x, int y)
+{
+    if (*((char *)this + 0x16c)) {
+        PanelX *target = ((PanelX *)this)->vfunc31();
+        if (target) {
+            ((PanelX *)this)->vfunc26(&x, &y);
+            KVX *p = (KVX *)sub_101b6840(0x1c);
+            KVX *kv = p ? p->sub_101b5730("CursorMoved", "xpos", x, "ypos", y) : 0;
+            PanelX *t2 = ((PanelX *)this)->vfunc31();
+            IVGuiX *vgui = sub_101ac8f0();
+            vgui->vfunc20(t2->vfunc0(), kv, ((PanelX *)this)->vfunc0(), 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163f50 size=0x7a
 #include "CBasePanel.h"
 
