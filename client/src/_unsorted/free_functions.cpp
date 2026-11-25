@@ -29854,6 +29854,19 @@ void * CUnknown10084560::sub_10084560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100845a0 size=0x3c
+#include "CSpriteHandle.h"
+CSpriteHandle *sub_10081cd0(const char *, int, int);
+void sub_10081d70(void *, int, int, int);
+// TARGET: sub_100845a0
+void sub_100845a0(const char *name, float a, int b, int c, int d, int e)
+{
+	CSpriteHandle *spr = sub_10081cd0(name, (int)a, b);
+	if (spr)
+		sub_10081d70(spr->m_pMaterial, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086500 size=0x3
 struct CUnknown10086500 { void * sub_10086500(); };
 void * CUnknown10086500::sub_10086500()
