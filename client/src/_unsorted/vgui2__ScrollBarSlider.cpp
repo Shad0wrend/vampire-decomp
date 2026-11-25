@@ -70,6 +70,24 @@ void vgui2::ScrollBarSlider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca190 size=0x6b
+#include "vgui2__ScrollBarSlider.h"
+
+bool vgui2::ScrollBarSlider::vfunc116()
+{
+	int wide, tall;
+	vfunc65(wide, tall);
+	float flPos = (float)*(int *)((char *)this + 0x80);
+	float flExtent = *(char *)((char *)this + 0x58) ? (float)tall : (float)wide;
+	if (flPos > 0.0f)
+	{
+		if (flPos <= (float)*(int *)((char *)this + 0x84) + flExtent)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca200 size=0x42
 #include "vgui2__ScrollBarSlider.h"
 struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
