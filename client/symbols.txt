@@ -8415,6 +8415,7 @@
 0x101a2f00 func   ?sub_101a2f00@@YAEPBE@Z sub_101a2f00
 0x101a2f20 func   ?sub_101a2f20@CUnknown101a2f20@@QAEPAXXZ CUnknown101a2f20::sub_101a2f20
 0x101a2f30 func   ?sub_101a2f30@@YAHXZ sub_101a2f30
+0x101a2f40 func   ?sub_101a2f40@CTable18@@QAE_NH@Z CTable18::sub_101a2f40
 0x101a3000 func   ?sub_101a3000@CTable18@@QAEXXZ CTable18::sub_101a3000
 0x101a3040 func   ?sub_101a3040@VBMgr@@QAEXH@Z VBMgr::sub_101a3040
 0x101a30c0 func   ?sub_101a30c0@V@@QAE_NH@Z V::sub_101a30c0

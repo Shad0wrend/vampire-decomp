@@ -108986,6 +108986,44 @@ int sub_101a2f30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2f40 size=0xba
+#include "CTable18.h"
+struct IFS101a2f40 {
+	virtual int Open(const char *name, const char *mode, const char *path);
+	virtual void Close(int h);
+	virtual int Read(void *dest, int size, int h);
+	virtual int v3();
+	virtual void Seek(int h, int pos, int type);
+	virtual unsigned int Tell(int h);
+};
+extern IFS101a2f40 *g_104a580c;
+extern const char *g_102d64c0;
+bool CTable18::sub_101a2f40(int unused)
+{
+	sub_101a3000();
+	int h = g_104a580c->Open(g_102d64c0, "rb", 0);
+	if (h)
+	{
+		int version;
+		char buf[16];
+		g_104a580c->Read(&version, 4, h);
+		if (version == 1)
+		{
+			g_104a580c->Seek(h, 0, 2);
+			int n = (g_104a580c->Tell(h) - 4) >> 4;
+			g_104a580c->Seek(h, 4, 1);
+			for (; n > 0; n--)
+			{
+				g_104a580c->Read(buf, 16, h);
+				sub_101a31e0(buf);
+			}
+		}
+		g_104a580c->Close(h);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3000 size=0x37
 struct CTable18Node { char pad[0x14]; CTable18Node *m_pNext; };
 struct CTable18Bucket { char pad[0x14]; CTable18Node *m_pFirst; };
