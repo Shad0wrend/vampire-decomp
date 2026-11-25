@@ -420,6 +420,50 @@ int vgui2::Label::vfunc132()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2b50 size=0xcf
+#include "utlvector.h"
+#include "vgui2__Label.h"
+
+struct CUtlMemoryInt
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_101b3480(int num);
+	void Grow(int num) { sub_101b3480(num); }
+	int NumAllocated() const { return m_nAllocationCount; }
+	int *Base() { return m_pMemory; }
+	int &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct CUtlMemoryShort
+{
+	short *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_101b34f0(int num);
+	void Grow(int num) { sub_101b34f0(num); }
+	int NumAllocated() const { return m_nAllocationCount; }
+	short *Base() { return m_pMemory; }
+	short &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct LabelVecView
+{
+	char m_pad00[0x60];
+	CUtlVector<int, CUtlMemoryInt> m_vecA;		// 0x60
+	CUtlVector<short, CUtlMemoryShort> m_vecB;	// 0x74
+};
+
+int vgui2::Label::vfunc122(void *a, int b)
+{
+	LabelVecView *v = (LabelVecView *)this;
+	v->m_vecB.AddToTail((short)b);
+	vfunc57(0, 0);
+	return v->m_vecA.AddToTail((int)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2c20 size=0x4f
 #include "vgui2__Label.h"
 
