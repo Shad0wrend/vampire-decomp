@@ -4,12 +4,15 @@
 #pragma once
 
 #include "Vector.h"
+#include "CUtlLinkedList8.h"
 
 struct CParticleMgrEntry
 {
 	Vector m_v;
 	float m_t;
 };
+
+class CParticleEffectBinding;
 
 class CParticleMgr
 {
@@ -21,7 +24,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	CParticleMgr *sub_101172d0();
 	int sub_10117920(Vector *p, float t);
 
+	void sub_101177a0();
+	void sub_101176b0(CParticleEffectBinding *p);
+
 	int m_unk04;
 	CParticleMgrEntry m_entries[20];
 	int m_nCount;
+	CUtlLinkedList8 m_list;
 };
