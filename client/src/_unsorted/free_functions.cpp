@@ -42651,6 +42651,59 @@ float __fastcall sub_100aa6d0(C_BasePlayer *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aabb0 size=0xdb
+#include "CVDmg_t.h"
+#include "Tier1.h"
+
+struct GlobalsV
+{
+	char pad[0xc];
+	float curtime;
+};
+
+struct CVDmgEntry
+{
+	CVDmgBlock16_t block;
+	int m_unk10;
+	int m_value;
+};
+
+extern int g_104a0d60;
+extern CVDmgBlock16_t g_1049e3f0[];
+extern int g_1049fdc8[];
+extern int g_104a0bd0[];
+extern char g_1049fb50[];
+extern float g_104a0d5c;
+extern GlobalsV *g_102b8494;
+
+// TARGET: sub_100aabb0
+void sub_100aabb0(CVDmgEntry *entry, int id, char *name)
+{
+	for (int i = 0; (int)i < g_104a0d60; i += 1)
+	{
+		if (g_1049e3f0[i].sub_101613e0(&entry->block) && *(g_1049fdc8 + i) == (int)id)
+		{
+			g_104a0bd0[i] += entry->m_value;
+			return;
+		}
+	}
+
+	int n = g_104a0d60;
+	CVDmgEntry *dst = (CVDmgEntry *)&g_1049e3f0[n];
+	dst->block = entry->block;
+	g_104a0bd0[n] = entry->m_value;
+	g_1049fdc8[n] = id;
+
+	if (!name)
+		g_1049fb50[n * 0x20] = 0;
+	else
+		g_101e3188(&g_1049fb50[n * 0x20], name, 0x20);
+
+	g_104a0d60++;
+	g_104a0d5c = g_102b8494->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aacb0 size=0x59
 struct CUnknown101a5290 {
     void *m_pMemory;
