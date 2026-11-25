@@ -578,6 +578,43 @@ int vgui2::Menu::vfunc129()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0770 size=0xaa
+#include <string.h>
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+#pragma intrinsic(strcmp)
+
+struct ItemVec_101c0770
+{
+	int m_n0;
+	int m_nCount;
+	int m_n8;
+	vgui2::MenuItem **m_pItems;
+};
+
+static inline vgui2::MenuItem *GetItem(vgui2::Menu *menu, int i)
+{
+	ItemVec_101c0770 *v = (ItemVec_101c0770 *)((char *)menu + 0x60);
+	if (i >= 0 && i < v->m_nCount)
+		return v->m_pItems[i];
+	return 0;
+}
+
+void vgui2::Menu::vfunc124(const char *name, int arg)
+{
+	for (int i = 0; i < ((ItemVec_101c0770 *)((char *)this + 0x60))->m_nCount; i++)
+	{
+		vgui2::MenuItem *item = GetItem(this, i);
+		if (strcmp(name, (const char *)item->vfunc18()) == 0)
+		{
+			vgui2::MenuItem *mi = dynamic_cast<vgui2::MenuItem *>(GetItem(this, i));
+			mi->vfunc46(arg);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0820 size=0x13
 #include "vgui2__Menu.h"
 namespace lifted {
