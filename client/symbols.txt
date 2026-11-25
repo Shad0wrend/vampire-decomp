@@ -6964,6 +6964,7 @@
 0x1014ef90 func   ?sub_1014ef90@CUnknown101ead30@@QAE_NXZ CUnknown101ead30::sub_1014ef90
 0x1014f1d0 func   ??0CUnknown1014f1d0@@QAE@H@Z CUnknown1014f1d0::CUnknown1014f1d0
 0x1014f1d0 func   ?sub_1014f1d0@CUnknown1014f1d0@@QAEPAXH@Z CUnknown1014f1d0::sub_1014f1d0
+0x1014f1f0 func   ??1CUnknown1014f1d0@@QAE@XZ CUnknown1014f1d0::~CUnknown1014f1d0
 0x1014f1f0 func   ?sub_1014f1f0@@YAXXZ sub_1014f1f0
 0x1014f200 func   ?sub_1014f200@CInvItem_1014f200@@QAE_NPAUCInvKV@@@Z CInvItem_1014f200::sub_1014f200
 0x1014f300 func   ?sub_1014f300@CKey101eb190@@QAEHXZ CKey101eb190::sub_1014f300
