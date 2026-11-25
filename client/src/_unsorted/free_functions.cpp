@@ -15514,6 +15514,63 @@ template <> int ClientClassInit<DT_TEShatterSurface::ignored>(DT_TEShatterSurfac
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038530 size=0xe2
+extern char g_102edf24;
+extern int g_102edf30;
+extern int g_102edf34;
+extern int g_102edf38;
+extern int g_102edf3c;
+extern int g_102edf40;
+extern int g_102edf44;
+extern int g_102edf48;
+extern int g_102edf4c;
+extern int g_102edf50;
+extern int g_102edf54;
+extern int g_102edf58;
+extern int g_102edf5c;
+extern int g_102edf60;
+extern int g_102edf64;
+extern int g_102edf68;
+extern int g_102edf70;
+extern char g_102edf74;
+extern char g_102edf75;
+extern char g_102edf76;
+extern char g_102edf77;
+extern char g_102edf78;
+extern char g_102edf79;
+
+struct C10037d60 { void sub_10037d60(int); };
+
+void sub_10038530(int a0, int a1, int a2, int a3, int a4, int a5,
+                  int a6, int a7, int a8, int a9,
+                  char a10, char a11, char a12, char a13, char a14, char a15)
+{
+    g_102edf30 = *(int *)((char *)a2);
+    g_102edf34 = *(int *)((char *)a2 + 4);
+    g_102edf38 = *(int *)((char *)a2 + 8);
+    g_102edf3c = *(int *)((char *)a3);
+    g_102edf40 = *(int *)((char *)a3 + 4);
+    g_102edf44 = *(int *)((char *)a3 + 8);
+    g_102edf48 = *(int *)((char *)a4);
+    g_102edf4c = *(int *)((char *)a4 + 4);
+    g_102edf50 = *(int *)((char *)a4 + 8);
+    g_102edf54 = *(int *)((char *)a5);
+    g_102edf58 = *(int *)((char *)a5 + 4);
+    g_102edf5c = *(int *)((char *)a5 + 8);
+    g_102edf60 = a6;
+    g_102edf64 = a7;
+    g_102edf68 = a8;
+    g_102edf70 = a9;
+    g_102edf74 = a10;
+    g_102edf75 = a11;
+    g_102edf76 = a12;
+    g_102edf77 = a13;
+    g_102edf78 = a14;
+    g_102edf79 = a15;
+    ((C10037d60 *)((int)&g_102edf24))->sub_10037d60(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10038670 size=0x12
 namespace lifted {
 extern char g_1022683c;

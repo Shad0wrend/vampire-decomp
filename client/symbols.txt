@@ -2147,6 +2147,7 @@
 0x10038230 func   ?sub_10038230@@YAHXZ sub_10038230
 0x100382d0 func   ?sub_100382d0@@YAHXZ sub_100382d0
 0x10038340 func   ?ClientClassInit@@YAHPAUignored@DT_TEShatterSurface@@@Z ClientClassInit
+0x10038530 func   ?sub_10038530@@YAXHHHHHHHHHHDDDDDD@Z sub_10038530
 0x10038620 func   ??0C_TEGlowSprite@@QAE@XZ C_TEGlowSprite::C_TEGlowSprite
 0x10038650 func   ??_GC_TEGlowSprite@@UAEPAXI@Z ??_GC_TEGlowSprite@@UAEPAXI@Z
 0x10038670 func   ??1C_TEGlowSprite@@UAE@XZ C_TEGlowSprite::~C_TEGlowSprite
