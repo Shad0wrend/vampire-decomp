@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1010d5f0 size=0x3c
+#include "CUniformNoiseProxy.h"
+
+struct IUniformRandomStream
+{
+	virtual void SetSeed(int);
+	virtual float RandomFloat(float, float);
+};
+extern IUniformRandomStream *g_104a5738;
+
+// TARGET: CUniformNoiseProxy::vfunc1
+void CUniformNoiseProxy::vfunc1(int)
+{
+	sub_100e33c0(g_104a5738->RandomFloat(m_InputMin.sub_100e3270(), m_InputMax.sub_100e3270()));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d690 size=0x1e
 #include "CUniformNoiseProxy.h"
 
