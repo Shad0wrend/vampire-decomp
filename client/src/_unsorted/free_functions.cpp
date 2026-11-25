@@ -19407,6 +19407,19 @@ void CUnknown1004bdd0::sub_1004bdd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bde0 size=0x51
+#include "CAmmoCounter.h"
+#include "CHUDSprite.h"
+
+void CAmmoCounter::sub_1004bde0()
+{
+	if (m_pUnk1a4 == 0)
+	{
+		m_pUnk1a4 = (CAmmoCounterChild *)new CHUDSprite("hud/new_ui/rightselecthighlight", 0, 0, 0x80, 0x100, 0x80, 0x100);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004c2b0 size=0x32
 struct XKey
 {

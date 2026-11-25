@@ -2564,6 +2564,7 @@
 0x1004bc30 func   ?vfunc112@CAmmoCounter@@UAEXXZ CAmmoCounter::vfunc112
 0x1004bda0 func   ?vfunc107@CAmmoCounter@@UAE_NXZ CAmmoCounter::vfunc107
 0x1004bdd0 func   ?sub_1004bdd0@CUnknown1004bdd0@@QAEXXZ CUnknown1004bdd0::sub_1004bdd0
+0x1004bde0 func   ?sub_1004bde0@CAmmoCounter@@QAEXXZ CAmmoCounter::sub_1004bde0
 0x1004c2a0 func   ?vfunc97@CAmmoCounter@@UAEXXZ CAmmoCounter::vfunc97
 0x1004c2b0 func   ?sub_1004c2b0@XKey@@QAEXD@Z XKey::sub_1004c2b0
 0x1004c500 func   ?sub_1004c500@@YAXXZ sub_1004c500
