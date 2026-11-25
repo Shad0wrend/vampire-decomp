@@ -18103,6 +18103,27 @@ void CUnknown10044460::sub_100432a0(unsigned int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100434c0 size=0x33
+struct CUnknown10044460
+{
+	int m_unk0[8];
+	int m_n20;
+	int m_unk24[8];
+	unsigned short m_usSolidFlags;
+	void sub_100432a0(int flags);
+	void sub_100434c0(bool bSet, int n);
+};
+// TARGET: CUnknown10044460::sub_100434c0
+void CUnknown10044460::sub_100434c0(bool bSet, int n)
+{
+	m_n20 = n;
+	if (bSet)
+		sub_100432a0(m_usSolidFlags | 0x100);
+	else
+		sub_100432a0(m_usSolidFlags & ~0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043540 size=0x36
 #include "Vector.h"
 struct CCollView {
