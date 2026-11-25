@@ -43485,6 +43485,51 @@ void CUnknown100af000::sub_100af000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af040 size=0x64
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+
+struct ThinkListV
+{
+	void sub_100d0000(CBaseHandle h);
+};
+struct EntityListV
+{
+	void sub_100e2480(CBaseHandle h);
+};
+struct LeafSysV
+{
+	virtual void vfunc0();
+	virtual void vfunc1(unsigned short h);
+};
+struct Sub190V
+{
+	void sub_10044420();
+};
+
+int sub_1002d700();
+int sub_1009e230();
+extern LeafSysV *g_102b9060;
+
+void C_BaseEntity::sub_100af040()
+{
+	CBaseHandle *h = (CBaseHandle *)((char *)this + 0xe4);
+	unsigned short *hLeaf = (unsigned short *)((char *)this + 0xe8);
+	if ( h->m_Index != 0xffffffff )
+	{
+		((ThinkListV *)(void *)sub_1002d700())->sub_100d0000(*h);
+		((EntityListV *)(void *)sub_1009e230())->sub_100e2480(*h);
+	}
+	unsigned short leaf = *hLeaf;
+	if ( leaf != 0xffff )
+	{
+		g_102b9060->vfunc1(leaf);
+		*hLeaf = 0xffff;
+	}
+	((Sub190V *)((char *)this + 0x190))->sub_10044420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100af0b0 size=0x20
 struct CUnknown100af0b0 { char sub_100af0b0(); };
 char CUnknown100af0b0::sub_100af0b0()

@@ -4091,6 +4091,7 @@
 0x100aef40 func   ?sub_100aef40@CObj100aef40@@QAE_NXZ CObj100aef40::sub_100aef40
 0x100aeff0 func   ?sub_100aeff0@CUnknown100aeff0@@QAEHXZ CUnknown100aeff0::sub_100aeff0
 0x100af000 func   ?sub_100af000@CUnknown100af000@@QAEXXZ CUnknown100af000::sub_100af000
+0x100af040 func   ?sub_100af040@C_BaseEntity@@QAEXXZ C_BaseEntity::sub_100af040
 0x100af0b0 func   ?sub_100af0b0@CUnknown100af0b0@@QAEDXZ CUnknown100af0b0::sub_100af0b0
 0x100af0d0 func   ?sub_100af0d0@CUnknown100af0d0@@QAEDH@Z CUnknown100af0d0::sub_100af0d0
 0x100af100 func   ?sub_100af100@CUnknown100af100@@QAEDH@Z CUnknown100af100::sub_100af100
