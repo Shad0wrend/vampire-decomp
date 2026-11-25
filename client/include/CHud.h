@@ -14,5 +14,6 @@ public:
 	int m_HudListSize;
 	CHudElement *sub_100f0ed0(const char *pName);
 	void sub_100f0860();
+	void sub_100f07f0();
 	int m_unk50; struct CHudSub *m_pSubs; int m_unk58; int m_unk5c; int m_unk60; int m_nSubs;
 };
