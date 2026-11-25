@@ -32,6 +32,19 @@ int CSave::vfunc38()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128f30 size=0x68
+#include "CSave.h"
+
+void *CSave::vfunc39(unsigned char bFree)
+{
+	((CUtlVector<int> *)((char *)this + 4))->~CUtlVector<int>();
+	this->ISave::~ISave();
+	if ( bFree & 1 )
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128fa0 size=0x7
 #include "CSave.h"
 int CSave::vfunc0()
