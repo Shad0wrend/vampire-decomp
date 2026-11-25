@@ -39171,6 +39171,51 @@ void sub_1009c470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c5b0 size=0xf2
+#include "utlvector.h"
+#include "ehandle.h"
+#include "CBaseHandle.h"
+#include "UtlMem.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+extern CUtlVector<CBaseHandle> g_1049d964;
+
+struct WeaponVec
+{
+    UtlMem m_Memory;
+    int m_Size;
+    CBaseHandle *m_pElements;
+
+    void AddToTail(const CBaseHandle &src)
+    {
+        int elem = m_Size;
+        if (m_Size + 1 > m_Memory.m_allocationCount)
+            m_Memory.sub_1009cf00(m_Size + 1 - m_Memory.m_allocationCount);
+        m_Size += 1;
+        m_pElements = (CBaseHandle *)m_Memory.m_pMemory;
+        int numToMove = m_Size - elem - 1;
+        if (numToMove > 0)
+            memmove(&((CBaseHandle *)m_Memory.m_pMemory)[elem + 1],
+                    &((CBaseHandle *)m_Memory.m_pMemory)[elem], numToMove * 4);
+        CBaseHandle *p = &((CBaseHandle *)m_Memory.m_pMemory)[elem];
+        if (p)
+            *p = src;
+    }
+};
+extern WeaponVec g_1049d978;
+
+// TARGET: sub_1009c5b0
+void sub_1009c5b0(IHandleEntity *pEntity)
+{
+    for (int i = 0; i < g_1049d964.m_Size; i++)
+    {
+        if (pEntity == g_1049d964[i].Get())
+            g_1049d978.AddToTail(g_1049d964[i]);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c7e0 size=0xb
 namespace lifted {
 extern int g_1049d984;
