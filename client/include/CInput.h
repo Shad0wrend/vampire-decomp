@@ -13,6 +13,7 @@ public:
     void sub_101025f0(float, struct Vector &);
     void sub_101003b0();
     void sub_10101d10(const char *, int);
+    void sub_101068a0(int);
     int m_unk04;
     int m_unk08;
     int m_unk0c;
