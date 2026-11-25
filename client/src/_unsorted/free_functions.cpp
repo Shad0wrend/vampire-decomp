@@ -71781,6 +71781,99 @@ int __stdcall sub_10122430(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10122840 size=0xe5
+extern void *g_1027ba58;
+extern void *g_102af678;
+extern char *g_102b8e98;
+
+struct IGameMove {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void *v7(void *arg);
+};
+
+struct IPredictables {
+	virtual void *GetPredictable(int index);
+	virtual int GetPredictableCount();
+};
+
+struct IEntX {
+	virtual void v0();
+	char sub_100a2600();
+	char sub_100a2ba0();
+	char sub_100a2e80();
+	char sub_100a2eb0();
+};
+
+struct IHandleX {
+	char sub_101209e0();
+};
+
+struct ISub8 {
+	virtual void v0();
+	virtual void v1();
+};
+
+struct IEnt113 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109();
+	virtual void v110(); virtual void v111(); virtual void v112();
+	virtual void v113(int, void *);
+};
+
+// TARGET: sub_10122840
+void __stdcall sub_10122840(void *arg)
+{
+	void *p = ((IGameMove *)g_1027ba58)->v7(arg);
+	int threshold = *(int *)((char *)p + 4);
+
+	int n = ((IPredictables *)g_102af678)->GetPredictableCount() - 1;
+	for (; n >= 0; n--) {
+		void *ent = ((IPredictables *)g_102af678)->GetPredictable(n);
+		if (!ent)
+			continue;
+		if (((IEntX *)ent)->sub_100a2600())
+			continue;
+		if (!((IEntX *)ent)->sub_100a2ba0())
+			continue;
+		char *edi = *(char **)((char *)ent + 0xd0);
+		if (!edi)
+			continue;
+		if (((IHandleX *)((char *)ent + 0xcc))->sub_101209e0()) {
+			if (!((IEntX *)ent)->sub_100a2e80())
+				continue;
+			if (((IEntX *)ent)->sub_100a2eb0())
+				continue;
+			int h = *(int *)(edi + 0x10);
+			if (h != -1) {
+				int idx = h & 0x1fff;
+				unsigned int gen = (unsigned int)h >> 13;
+				char *base = g_102b8e98;
+				int *entry = (int *)(base + idx * 12 + 4);
+				if ((unsigned int)entry[1] == gen) {
+					void *e = (void *)entry[0];
+					if (e)
+						((IEnt113 *)e)->v113(1, ent);
+				}
+			}
+		} else {
+			if (*(int *)(edi + 4) > threshold)
+				continue;
+		}
+		((ISub8 *)((char *)ent + 8))->v1();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122930 size=0x8d
 struct Ent_10122930 {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
