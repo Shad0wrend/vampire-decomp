@@ -13,6 +13,7 @@ public:
 	virtual void vfunc4(int idx, const char *fmt, ...);
 	virtual bool vfunc7();
 	virtual void vfunc12();
+	virtual void vfunc15(bool bDevMsg, const char *fmt, ...);
 	virtual ~CMoveHelperClient();
 	void vfunc19();
 };
