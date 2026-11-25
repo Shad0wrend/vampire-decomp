@@ -356,6 +356,41 @@ int vgui2::Slider::vfunc110(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc110 size=0xb4
+#include "vgui2__Slider.h"
+struct CSurf101bc110 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(int *a, int *b); };
+CSurf101bc110 *sub_101ac8b0();
+struct SliderView101bc110 { char pad[0x5c]; char m_bOn; int m_unk60; int m_n64; int m_n68; int m_n6c; int m_n70; };
+void vgui2::Slider::vfunc84(int wide, int tall)
+{
+	SliderView101bc110 *s = (SliderView101bc110 *)this;
+	if (s->m_bOn)
+	{
+		int w, h;
+		sub_101ac8b0()->v27(&wide, &tall);
+		vfunc27(&wide, &tall);
+		vfunc65(w, h);
+		s->m_unk60 = s->m_n68 - s->m_n70 + wide;
+		s->m_n64 = s->m_n6c - s->m_n70 + wide;
+		if (s->m_n64 > w)
+		{
+			s->m_unk60 -= s->m_n64 - w;
+			s->m_n64 = w;
+		}
+		if (s->m_unk60 < 0)
+		{
+			s->m_n64 -= s->m_unk60;
+			s->m_unk60 = 0;
+		}
+		vfunc119();
+		vfunc6();
+		vfunc120();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc2a0 size=0x8
 #include "vgui2__Slider.h"
 void vgui2::Slider::vfunc88(int a) { vfunc87(a); }
