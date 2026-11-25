@@ -62613,6 +62613,27 @@ int __stdcall sub_1010e6a0(float pos, int size, int extra)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e740 size=0xae
+int sub_100cd0f0();
+int __stdcall sub_1010e740(float x, int width)
+{
+    int xPos;
+    if (x == -1) {
+        xPos = (int)((sub_100cd0f0() - width) * 0.5);
+    } else {
+        if (x < 0)
+            xPos = (int)((1.0 + x) * sub_100cd0f0() - width);
+        else
+            xPos = (int)(sub_100cd0f0() * x);
+    }
+    if (xPos + width > sub_100cd0f0())
+        xPos = sub_100cd0f0() - width;
+    else if (xPos < 0)
+        xPos = 0;
+    return xPos;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010eb20 size=0x1e6
 #include "CHudMessage.h"
 
