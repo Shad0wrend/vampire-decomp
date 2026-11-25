@@ -39270,6 +39270,21 @@ char CUnknown100a2600::sub_100a2600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2850 size=0x51
+#include "C_BaseEntity.h"
+#include "vector.h"
+struct CUnknown10044460 { void sub_100433c0(const Vector *a, const Vector *b); };
+void C_BaseEntity::sub_100a2850(const Vector *mins, const Vector *maxs)
+{
+	((CUnknown10044460 *)((char *)this + 0x190))->sub_100433c0(mins, maxs);
+	Vector size;
+	size.x = maxs->x - mins->x;
+	size.y = maxs->y - mins->y;
+	size.z = maxs->z - mins->z;
+	vfunc55((int)&size);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2900 size=0xb
 namespace lifted {
 extern int g_104a57f8;
