@@ -60235,6 +60235,57 @@ int sub_100f55b0(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f56b0 size=0xf4
+typedef void (*CopyFunc)();
+
+void sub_100f6ce0();
+void sub_100f6d00();
+void sub_100f6d40();
+void sub_100f6d70();
+void sub_100f6db0();
+void sub_100f6e20();
+void sub_100f6e90();
+void sub_100f6ec0();
+void sub_100f6f10();
+void sub_100f6f60();
+void sub_100f6fa0();
+void sub_100f6fe0();
+void sub_100f7020();
+void sub_100f7080();
+void sub_100f70e0();
+void sub_100f7140();
+void sub_100f71a0();
+void sub_100f71d0();
+void sub_100f71e0();
+
+CopyFunc sub_100f56b0(int fmt)
+{
+    switch (fmt)
+    {
+    case 0: return sub_100f6ce0;
+    case 1: return sub_100f6d00;
+    case 2: return sub_100f6d40;
+    case 3: return sub_100f6d70;
+    case 5: return sub_100f6db0;
+    case 6: return sub_100f6e20;
+    case 8: return sub_100f6e90;
+    case 9: return sub_100f6ec0;
+    case 10: return sub_100f6f10;
+    case 11: return sub_100f6f60;
+    case 12: return sub_100f6fa0;
+    case 16: return sub_100f6fe0;
+    case 17: return sub_100f7020;
+    case 18: return sub_100f7080;
+    case 21: return sub_100f70e0;
+    case 19: return sub_100f7140;
+    case 22: return sub_100f71a0;
+    case 23: return sub_100f71d0;
+    case 26: return sub_100f71e0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f57b0 size=0x48
 int sub_100f57b0(int n)
 {
