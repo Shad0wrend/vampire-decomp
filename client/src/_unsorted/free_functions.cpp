@@ -66387,6 +66387,24 @@ void C_BaseEntity::sub_1011c7f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d190 size=0xba
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+struct EntView_1011d190 { char pad[0xc0]; Vector m_vel; };
+void C_BaseEntity::sub_1011d190(float frametime)
+{
+	ScopeTrace trace("CBaseEntity::SimulateAngles", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	const Vector *cur = (const Vector *)vfunc41();
+	const Vector &vel = ((EntView_1011d190 *)this)->m_vel;
+	Vector n;
+	n.x = cur->x + frametime * vel.x;
+	n.y = cur->y + frametime * vel.y;
+	n.z = cur->z + frametime * vel.z;
+	vfunc42((char *)&n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d590 size=0x1
 void sub_1011d590()
 {
