@@ -38098,6 +38098,65 @@ char CUnknown100a1ff0::sub_100a1ff0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2100 size=0x111
+#include "C_BaseEntity.h"
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+#include "ehandle.h"
+
+void sub_10108540(const Vector &in, int column, matrix3x4_t &out);
+void sub_10108450(const matrix3x4_t &in, matrix3x4_t &out);
+void sub_10108a50(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+void sub_10107eb0(const matrix3x4_t &matrix, QAngle &angles);
+
+struct CBaseEntityView
+{
+	void sub_1007e180(int a, int b);
+	void sub_1007e040();
+	void sub_1007e100();
+
+	char pad0[0x184];
+	int m_iEFlags;
+	char pad1[0x208 - 0x188];
+	CBaseHandle m_hMoveParent;
+	char pad2[0x23c - 0x20c];
+	Vector m_vecAbsOrigin;
+	QAngle m_angAbsRotation;
+	Vector m_vecOrigin;
+	QAngle m_angRotation;
+	matrix3x4_t m_rgflCoordinateFrame;
+};
+
+// TARGET: C_BaseEntity::sub_100a2100
+void C_BaseEntity::sub_100a2100(const QAngle &absAngles)
+{
+	CBaseEntityView *self = (CBaseEntityView *)this;
+	sub_1009f8a0();
+	self->sub_1007e180(0x800, 0x3000);
+	self->sub_1007e040();
+	self->sub_1007e100();
+
+	self->m_iEFlags &= ~0x800;
+	self->m_angAbsRotation = absAngles;
+	sub_101094e0(absAngles, self->m_rgflCoordinateFrame);
+	sub_10108540(self->m_vecAbsOrigin, 3, self->m_rgflCoordinateFrame);
+
+	C_BaseEntity *pMoveParent = (C_BaseEntity *)self->m_hMoveParent.Get();
+	if (!pMoveParent)
+	{
+		self->m_angRotation = absAngles;
+	}
+	else
+	{
+		pMoveParent->sub_1009f8a0();
+		matrix3x4_t localMatrix, parentToWorldInv;
+		sub_10108450(((CBaseEntityView *)pMoveParent)->m_rgflCoordinateFrame, parentToWorldInv);
+		sub_10108a50(parentToWorldInv, self->m_rgflCoordinateFrame, localMatrix);
+		sub_10107eb0(localMatrix, self->m_angRotation);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2220 size=0x31
 namespace lifted {
 int __stdcall sub_1007e180(int, int);
