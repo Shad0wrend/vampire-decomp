@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101bcda0 size=0x6e
+#include "vgui2__TreeNode.h"
+
+namespace vgui2
+{
+class ISchemeView
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual int vfunc9(const char *name, int a);
+};
+
+void TreeNode::vfunc101()
+{
+	Panel::vfunc101();
+
+	int inset = ( ((ISchemeView *)m_p58)->vfunc9("SelectedImage", 0) || ((ISchemeView *)m_p58)->vfunc9("Image", 0) ) ? 0x28 : 0x14;
+
+	((Panel *)*(void **)((char *)this + 0x64))->sub_101a9890(inset, 0);
+
+	int a, b;
+	((Panel *)*(void **)((char *)this + 0x64))->sub_101a9920(&a, &b);
+
+	sub_101a98f0(a + inset, 0x14);
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bce10 size=0x51
 // TARGET: sub_101bce10
 struct PanelBase
