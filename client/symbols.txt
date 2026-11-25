@@ -8421,6 +8421,7 @@
 0x101bf880 func   ?vfunc113@Menu@vgui2@@UAEHHH@Z vgui2::Menu::vfunc113
 0x101bf8a0 func   ?vfunc121@Menu@vgui2@@UAEHHHHHH@Z vgui2::Menu::vfunc121
 0x101bf910 func   ?vfunc122@Menu@vgui2@@UAEHHHHH@Z vgui2::Menu::vfunc122
+0x101bf930 func   ?vfunc119@Menu@vgui2@@UAEHHHHHH@Z vgui2::Menu::vfunc119
 0x101bf9a0 func   ?vfunc120@Menu@vgui2@@UAEHHHHH@Z vgui2::Menu::vfunc120
 0x101bf9c0 func   ?vfunc118@Menu@vgui2@@UAEHHHH@Z vgui2::Menu::vfunc118
 0x101bfa40 func   ?vfunc126@Menu@vgui2@@UAEHH@Z vgui2::Menu::vfunc126
