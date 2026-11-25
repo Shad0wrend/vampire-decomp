@@ -99749,6 +99749,34 @@ int CUnknown1016b1a0::sub_1016b1a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016cf30 size=0x90
+#include "vgui2__Panel.h"
+// TARGET: sub_1016cf30
+struct CInvView {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual bool v10();
+    void sub_1016f2c0();
+    void sub_10170580();
+    void sub_10170440();
+    void sub_10170470();
+};
+struct CInvSec : public vgui2::Panel {
+    void sub_1016cf30(const char *cmd);
+    typedef vgui2::Panel BaseClass;
+};
+extern "C" int _strcmpi(const char *, const char *);
+void CInvSec::sub_1016cf30(const char *cmd)
+{
+    CInvView *p = (CInvView *)((char *)this - 0x10);
+    if (!p->v10()) { p->sub_1016f2c0(); return; }
+    if (!_strcmpi(cmd, "ActionClicked")) { p->sub_10170580(); return; }
+    if (!_strcmpi(cmd, "DropClicked")) { p->sub_10170470(); return; }
+    if (!_strcmpi(cmd, "ExitClicked")) { p->sub_10170440(); return; }
+    BaseClass::vfunc78((int)cmd);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016d110 size=0x3e
 namespace lifted {
 struct C1007b160 { int sub_1007b160(); };
