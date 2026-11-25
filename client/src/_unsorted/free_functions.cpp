@@ -61283,6 +61283,53 @@ int __stdcall sub_10122430(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123290 size=0x67
+struct CData_10123290
+{
+	int m_0;
+	int m_4;
+	int m_8;
+	int m_c;
+	int m_10;
+	char m_14;
+	char m_15;
+	char m_pad16[2];
+	int m_18;
+	int m_1c;
+	int m_20;
+	char m_24;
+	char m_25;
+	char m_pad26[2];
+	int m_28;
+	char m_2c;
+	char m_pad2d[3];
+	int m_30;
+
+	CData_10123290 *sub_10123290(int a1, int a2, bool a3, int a4, bool a5, char a6, char a7, char a8, int a9);
+};
+
+// TARGET: CData_10123290::sub_10123290
+CData_10123290 *CData_10123290::sub_10123290(int a1, int a2, bool a3, int a4, bool a5, char a6, char a7, char a8, int a9)
+{
+	m_0 = a1;
+	m_4 = a2;
+	m_8 = a4;
+	m_c = a3 != 0;
+	m_10 = a5 != 0;
+	m_14 = a6;
+	m_2c = a7;
+	m_15 = a8;
+	m_18 = 0;
+	m_20 = 0;
+	m_1c = 0;
+	m_24 = 0;
+	m_25 = 0;
+	m_28 = 0;
+	m_30 = a9;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123480 size=0x37
 #include <string.h>
 struct PCW {
