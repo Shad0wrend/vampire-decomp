@@ -6547,6 +6547,7 @@
 0x1013a780 func   ?sub_1013a780@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013a780
 0x1013a7d0 func   ?sub_1013a7d0@@YAXXZ sub_1013a7d0
 0x1013a7e0 func   ?sub_1013a7e0@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013a7e0
+0x1013a880 func   ?sub_1013a880@@YAXPAUCSrc1013a880@@PAUCHdr1013a880@@PAE@Z sub_1013a880
 0x1013a940 func   ?sub_1013a940@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013a940
 0x1013a980 func   ?sub_1013a980@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013a980
 0x1013aa00 func   ?sub_1013aa00@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013aa00

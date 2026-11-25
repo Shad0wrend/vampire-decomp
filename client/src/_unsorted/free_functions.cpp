@@ -76533,6 +76533,24 @@ void sub_1013a7e0(CUnknown1006c1c0 *buf, CUnknownImgInfo *info, unsigned char *d
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a880 size=0xb6
+struct CSrc1013a880 { unsigned char *m_pData; int m_unk4; int m_unk8; int m_nOffset; void sub_1013cbe0(int a, int b); };
+struct CHdr1013a880 { char m_pad[0xc]; unsigned short m_nCount; };
+void sub_1013a880(CSrc1013a880 *src, CHdr1013a880 *hdr, unsigned char *dst)
+{
+	for (int i = 0; i < hdr->m_nCount; i++, dst += 2)
+	{
+		unsigned char *p = src->m_pData + src->m_nOffset;
+		if (p[0] == p[1] && p[1] == p[2])
+			dst[0] = p[0];
+		else
+			dst[0] = (unsigned char)(p[2] * 0.114f + p[1] * 0.587f + p[0] * 0.299f);
+		dst[1] = p[3];
+		src->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a940 size=0x3f
 #include "CUnknown1006c1c0.h"
 void sub_1013a940(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char *pDst)
