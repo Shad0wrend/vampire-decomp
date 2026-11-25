@@ -22,6 +22,7 @@ public:
 	vgui2::Panel *m_p2d8;
 	char m_pad2dc[0x434 - 0x2dc];
 	bool m_bAutoLevel;
+	void sub_10181ba0();
 	void sub_10181bf0();
 	void *sub_101808d0(const char *, int *);
 	virtual ~CharEditStatsPanel();
