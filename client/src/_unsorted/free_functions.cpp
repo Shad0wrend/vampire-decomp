@@ -21924,6 +21924,36 @@ void sub_100656a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065c90 size=0x9d
+#include "CVMainMenu.h"
+struct IA { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual bool v24(); virtual bool v25(); virtual bool v26(); };
+struct IB { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual bool v6(); };
+extern IA *g_104a5828;
+extern IB *g_104a57d4;
+extern int g_103ef0b8, g_103ef0bc, g_103ef0c0;
+// TARGET: CVMainMenu::sub_10065c90
+bool CVMainMenu::sub_10065c90()
+{
+	if (!(char)vfunc22())
+		return true;
+	if (g_104a5828->v24())
+		return true;
+	if (g_104a5828->v25())
+		return true;
+	if (g_104a5828->v26())
+		return true;
+	if (g_103ef0b8 == -1)
+		return true;
+	if (g_103ef0bc == -1)
+		return true;
+	if (g_103ef0c0 == -1)
+		return true;
+	if (g_104a57d4->v6())
+		return true;
+	return *(int *)((char *)this + 0x2e8) != -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065d30 size=0x80
 #include "CVMainMenu.h"
 struct MM_Obj {
