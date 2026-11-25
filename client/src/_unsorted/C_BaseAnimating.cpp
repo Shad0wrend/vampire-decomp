@@ -223,6 +223,19 @@ int C_BaseAnimating::vfunc70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094150 size=0x73
+#include "C_BaseAnimating.h"
+#include "ScopeTrace.h"
+
+int sub_1008cdc0(int, const char *);
+
+int C_BaseAnimating::LookupBone(const char *pszName)
+{
+    ScopeTrace trace("C_BaseAnimating::LookupBone", "", "");
+    return sub_1008cdc0(sub_1008f900(-1), pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094e90 size=0x22
 #include "C_BaseAnimating.h"
 namespace lifted {
