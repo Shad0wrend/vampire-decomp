@@ -34574,6 +34574,49 @@ void sub_1009c1a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c2e0 size=0x66
+struct WeaponData1009c2e0
+{
+    char m_pad[0x2440];
+    int m_flags;
+};
+
+struct Iface1009c2e0
+{
+    virtual void vfunc0();
+    virtual bool vfunc1();
+    char m_pad4[0x28];
+    int m_2c;
+};
+extern Iface1009c2e0 *g_1049d994;
+
+struct ConVar1009c2e0
+{
+    void sub_100dfa90(int);
+};
+extern ConVar1009c2e0 g_1049d990;
+
+struct Class1009c2e0
+{
+    WeaponData1009c2e0 *sub_1007b160();
+    void sub_1009c2e0(bool bEnable);
+};
+
+// TARGET: Class1009c2e0::sub_1009c2e0
+void Class1009c2e0::sub_1009c2e0(bool bEnable)
+{
+    int flags = sub_1007b160()->m_flags;
+    if (flags == 8 || flags == 0x10 || flags == 0)
+        return;
+    int cur = g_1049d994->vfunc1() ? 0 : g_1049d994->m_2c;
+    if (bEnable)
+        cur &= ~flags;
+    else
+        cur |= flags;
+    g_1049d990.sub_100dfa90(cur);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c7e0 size=0xb
 namespace lifted {
 extern int g_1049d984;
