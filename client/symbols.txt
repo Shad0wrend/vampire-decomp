@@ -4216,6 +4216,7 @@
 0x100b7650 func   ??0C_BreakableSurface@@QAE@XZ C_BreakableSurface::C_BreakableSurface
 0x100b7760 func   ??_GC_BreakableSurface@@UAEPAXI@Z ??_GC_BreakableSurface@@UAEPAXI@Z
 0x100b7780 func   ??1C_BreakableSurface@@UAE@XZ C_BreakableSurface::~C_BreakableSurface
+0x100b78a0 func   ?sub_100b78a0@Net_100b78a0@@QAEXH@Z Net_100b78a0::sub_100b78a0
 0x100b7b00 func   ?vfunc79@C_BreakableSurface@@UAE_NXZ C_BreakableSurface::vfunc79
 0x100b7b20 func   ?IsTransparent@C_BreakableSurface@@UAE_NXZ C_BreakableSurface::IsTransparent
 0x100b7b40 func   ?sub_100b7b40@C_BreakableSurface@@QAEHHH@Z C_BreakableSurface::sub_100b7b40

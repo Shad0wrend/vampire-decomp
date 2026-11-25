@@ -46308,6 +46308,87 @@ struct IMatX { virtual int v0(); virtual int v1(); virtual int v2(); virtual int
 void *sub_100b7620(IMatX *m) { IMatVar *v = m->FindVar("$basetexture", &m, false); if (!*(bool *)&m) return 0; return v->v18(); }
 // END FUNCTION
 
+// FUNCTION: 0x100b78a0 size=0x257
+#include "C_BreakableSurface.h"
+struct MH_100b78a0
+{
+	void *m_pMaterial;
+	void sub_100cd1f0(const char *pName);
+};
+
+struct CHolder_100b78a0
+{
+	void *m_pData;
+	void sub_100cd2b0(void *pVal);
+};
+
+extern void *sub_100b7620(void *pMat);
+
+struct Net_100b78a0
+{
+	void sub_100a1340(int updateType);
+	void sub_100b78a0(int updateType);
+};
+
+// TARGET: ?sub_100b78a0@Net_100b78a0@@QAEXH@Z
+void Net_100b78a0::sub_100b78a0(int updateType)
+{
+	sub_100a1340(updateType);
+	if (updateType == 0)
+	{
+		C_BreakableSurface *p = (C_BreakableSurface *)((char *)this - 8);
+		p->sub_100b74f0();
+		MH_100b78a0 *mat = (MH_100b78a0 *)((char *)this + 0x85c);
+		mat->sub_100cd1f0("models/brokenglass/glassbroken_solid");
+		void *pMat = mat->m_pMaterial;
+		CHolder_100b78a0 *tex = (CHolder_100b78a0 *)((char *)this + 0x934);
+		tex->sub_100cd2b0(sub_100b7620(pMat));
+		if (*(int *)((char *)this + 0x438) == 1)
+		{
+			p->sub_100b75c0(0, 0, "models/brokentile/tilebroken_03a");
+			p->sub_100b75c0(1, 0, "models/brokentile/tilebroken_03b");
+			p->sub_100b75c0(2, 0, "models/brokentile/tilebroken_03c");
+			p->sub_100b75c0(3, 0, "models/brokentile/tilebroken_03d");
+			p->sub_100b75c0(0, 1, "models/brokentile/tilebroken_02a");
+			p->sub_100b75c0(1, 1, "models/brokentile/tilebroken_02b");
+			p->sub_100b75c0(2, 1, "models/brokentile/tilebroken_02c");
+			p->sub_100b75c0(3, 1, "models/brokentile/tilebroken_02d");
+			p->sub_100b75c0(0, 2, "models/brokentile/tilebroken_01a");
+			p->sub_100b75c0(1, 2, "models/brokentile/tilebroken_01b");
+			p->sub_100b75c0(2, 2, "models/brokentile/tilebroken_01c");
+			p->sub_100b75c0(3, 2, "models/brokentile/tilebroken_01d");
+		}
+		else
+		{
+			p->sub_100b75c0(0, 0, "models/brokenglass/glassbroken_03a");
+			p->sub_100b75c0(1, 0, "models/brokenglass/glassbroken_03b");
+			p->sub_100b75c0(2, 0, "models/brokenglass/glassbroken_03c");
+			p->sub_100b75c0(3, 0, "models/brokenglass/glassbroken_03d");
+			p->sub_100b75c0(0, 1, "models/brokenglass/glassbroken_02a");
+			p->sub_100b75c0(1, 1, "models/brokenglass/glassbroken_02b");
+			p->sub_100b75c0(2, 1, "models/brokenglass/glassbroken_02c");
+			p->sub_100b75c0(3, 1, "models/brokenglass/glassbroken_02d");
+			p->sub_100b75c0(0, 2, "models/brokenglass/glassbroken_01a");
+			p->sub_100b75c0(1, 2, "models/brokenglass/glassbroken_01b");
+			p->sub_100b75c0(2, 2, "models/brokenglass/glassbroken_01c");
+			p->sub_100b75c0(3, 2, "models/brokenglass/glassbroken_01d");
+		}
+		*(int *)((char *)this + 0x40c) = 16;
+		*(int *)((char *)this + 0x410) = 16;
+		for (int w = 0; w < 16; w++)
+		{
+			for (int h = 0; h < 16; h++)
+			{
+				if (w < p->m_nWidth && h < p->m_nHeight && w >= 0 && h >= 0)
+					p->m_nPanelFlags[w * 16 + h] |= 1;
+				if (w < p->m_nWidth && h < p->m_nHeight && w >= 0 && h >= 0)
+					p->m_nPanelFlags[w * 16 + h] &= ~2;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7b40 size=0x66
 #include "C_BreakableSurface.h"
 
