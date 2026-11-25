@@ -78982,6 +78982,149 @@ int CFindList_1024b590::sub_1013d4e0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d520 size=0x1c3
+#include <string.h>
+#include "CUnknown1024b370.h"
+#include "utlmemory.h"
+
+extern "C" void *__cdecl malloc(unsigned int);
+
+struct StringPool_t
+{
+	int m_TotalLen;
+	int m_SpaceUsed;
+	char m_Data[1];
+};
+
+struct CStringPoolIndex
+{
+	unsigned short m_iPool;
+	unsigned short m_iOffset;
+};
+
+struct PoolVec_t
+{
+	StringPool_t **m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	StringPool_t **m_pElements;
+
+	void sub_1013dd50(int num);
+	void sub_1013dd10(int elem, int num);
+
+	inline int AddToTail(StringPool_t *const &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAllocationCount)
+			sub_1013dd50(m_Size + 1 - m_nAllocationCount);
+		m_Size += 1;
+		m_pElements = m_pMemory;
+		sub_1013dd10(elem, 1);
+		CopyConstruct(&m_pMemory[elem], src);
+		return elem;
+	}
+};
+
+struct SymRBTree_t
+{
+	typedef bool (*LessFunc_t)(CStringPoolIndex const &, CStringPoolIndex const &);
+
+	struct Links_t
+	{
+		unsigned short m_Left;
+		unsigned short m_Right;
+		unsigned short m_Parent;
+		unsigned short m_Tag;
+	};
+
+	struct Node_t : public Links_t
+	{
+		CStringPoolIndex m_Data;
+	};
+
+	LessFunc_t m_LessFunc;
+	Node_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	unsigned short m_Root;
+	unsigned short m_NumElements;
+	unsigned short m_FirstFree;
+	unsigned short m_TotalElements;
+
+	Links_t const &sub_1013dcb0(unsigned short i) const;
+	unsigned short sub_1013d830();
+	void sub_1013d930(unsigned short i, unsigned short parent, bool isLeft);
+
+	inline unsigned short Insert(CStringPoolIndex const &insert)
+	{
+		unsigned short current = m_Root;
+		unsigned short parent = 0xffff;
+		bool leftchild = false;
+		while (current != 0xffff)
+		{
+			parent = current;
+			if (m_LessFunc(insert, m_pMemory[current].m_Data))
+			{
+				leftchild = true;
+				current = sub_1013dcb0(current).m_Left;
+			}
+			else
+			{
+				leftchild = false;
+				current = sub_1013dcb0(current).m_Right;
+			}
+		}
+		unsigned short newNode = sub_1013d830();
+		sub_1013d930(newNode, parent, leftchild);
+		++m_NumElements;
+		CopyConstruct(&m_pMemory[newNode].m_Data, insert);
+		return newNode;
+	}
+};
+
+struct FindPoolHelper
+{
+	int sub_1013d4e0(int len);
+};
+
+// TARGET: CUnknown1024b370::sub_1013d520
+CUnknown1024b370Symbol CUnknown1024b370::sub_1013d520(const char *pString)
+{
+	if (!pString)
+		return CUnknown1024b370Symbol(0xffff);
+
+	CUnknown1024b370Symbol id = sub_1013d3a0(pString);
+	if (id.IsValid())
+		return id;
+
+	int len = strlen(pString) + 1;
+
+	int iPool = ((FindPoolHelper *)this)->sub_1013d4e0(len);
+	if (iPool == -1)
+	{
+		int newPoolSize = (len > 2048) ? len : 2048;
+		StringPool_t *pPool = (StringPool_t *)malloc(sizeof(StringPool_t) + newPoolSize - 1);
+		pPool->m_TotalLen = newPoolSize;
+		pPool->m_SpaceUsed = 0;
+		iPool = ((PoolVec_t *)&m_mem1)->AddToTail(pPool);
+	}
+
+	StringPool_t *pPool = ((StringPool_t **)m_mem1.m_pMemory)[iPool];
+	unsigned short iStringOffset = (unsigned short)pPool->m_SpaceUsed;
+
+	memcpy(&pPool->m_Data[pPool->m_SpaceUsed], pString, len);
+	pPool->m_SpaceUsed += len;
+
+	CStringPoolIndex index;
+	index.m_iPool = (unsigned short)iPool;
+	index.m_iOffset = iStringOffset;
+
+	unsigned short idx = ((SymRBTree_t *)this)->Insert(index);
+	return CUnknown1024b370Symbol(idx);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d6f0 size=0x3c
 #include "CUnknown1024b2d0.h"
 extern char g_102de300[];
