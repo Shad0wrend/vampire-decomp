@@ -12,6 +12,7 @@ class VHotkeysUI : public CBasePanel, public CHudElement
 public:
 	virtual ~VHotkeysUI();
 	void sub_10183aa0();
+	void sub_10183a20();
 	char m_pad0000[0x1c88 - 0x170 - sizeof(CHudElement)];
 	vgui2::Label m_Label;
 	VHotkeysUI(int a);
