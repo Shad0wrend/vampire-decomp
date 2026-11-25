@@ -28623,6 +28623,18 @@ void CMeshBuilder::sub_10081820(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100835e0 size=0x71
+#include "Vector.h"
+
+void __cdecl sub_100835e0(Vector *a, Vector *b, Vector *out)
+{
+	Vector n = *a;
+	VectorNormalize(n);
+	CrossProduct(*b, n, *out);
+	VectorNormalize(*out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084560 size=0x35
 struct CUnknown10084560 { void * sub_10084560(); };
 void * CUnknown10084560::sub_10084560()
