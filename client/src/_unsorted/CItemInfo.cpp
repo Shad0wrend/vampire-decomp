@@ -49,6 +49,47 @@ bool CItemInfo::vfunc107()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ef50 size=0xd8
+#include "CItemInfo.h"
+
+struct COwnedV
+{
+	void sub_10059b70(int, int, int, int, int);
+};
+
+// TARGET: CItemInfo::vfunc98
+void CItemInfo::vfunc98()
+{
+	if (!vfunc107())
+		return;
+
+	sub_1005eef0();
+
+	int w, h;
+	sub_101a98c0(&h, &w);
+
+	if (m_unk18d && m_unk188 < 0xff)
+	{
+		int a = m_unk188 + 0x14;
+		if (a > 0xff)
+			a = 0xff;
+		m_unk188 = a;
+	}
+	else if (m_unk18e && m_unk188 > 0)
+	{
+		m_unk188 = m_unk188 - 0x14 < 0 ? 0 : m_unk188 - 0x14;
+	}
+	else
+	{
+		m_unk18d = 0;
+		m_unk18e = 0;
+	}
+
+	if (m_unk18c || m_unk18d || m_unk18e)
+		((COwnedV *)m_unk190)->sub_10059b70(h, w, m_unk178, m_unk17c, m_unk188);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f030 size=0x1
 #include "CItemInfo.h"
 void CItemInfo::vfunc97()
