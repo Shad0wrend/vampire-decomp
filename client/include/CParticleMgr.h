@@ -18,6 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual ~CParticleMgr();
 
 	void sub_10117a80();
+	CParticleMgr *sub_101172d0();
 	int sub_10117920(Vector *p, float t);
 
 	int m_unk04;
