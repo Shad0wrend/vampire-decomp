@@ -118924,6 +118924,71 @@ void CUtlLinkedList12::sub_101be340(int before, int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be410 size=0xe3
+#include "CUtlLinkedList12.h"
+#include "utlmemory.h"
+#include "CSaveRestoreBlockSet.h"
+
+extern void (__cdecl *g_101e310c)(const char *, ...);
+
+// TARGET: CUtlLinkedList12::sub_101be410
+int CUtlLinkedList12::sub_101be410(bool bInList)
+{
+    int element = m_FirstFree;
+    if (element == -1)
+    {
+        if (m_NumAlloced == m_allocationCount)
+        {
+            if (m_growSize != -1)
+            {
+                int nAllocationRequested = m_allocationCount + 1;
+                while (m_allocationCount < nAllocationRequested)
+                {
+                    if (m_allocationCount != 0)
+                    {
+                        if (m_growSize)
+                            m_allocationCount += m_growSize;
+                        else
+                            m_allocationCount += m_allocationCount;
+                    }
+                    else
+                    {
+                        m_allocationCount = (31 + sizeof(CUtlLinkedList12Node)) / sizeof(CUtlLinkedList12Node);
+                    }
+                }
+                if (m_pMemory)
+                    m_pMemory = (CUtlLinkedList12Node *)g_101e3104(m_pMemory, m_allocationCount * sizeof(CUtlLinkedList12Node));
+                else
+                    m_pMemory = (CUtlLinkedList12Node *)g_101e3100(m_allocationCount * sizeof(CUtlLinkedList12Node));
+            }
+        }
+        element = m_NumAlloced;
+        m_NumAlloced = element + 1;
+        if (element == -1)
+            g_101e310c("CUtlLinkedList overflow!\n");
+    }
+    else
+    {
+        m_FirstFree = m_pMemory[element].m_Next;
+    }
+
+    if (!bInList)
+    {
+        m_pMemory[element].m_Previous = element;
+        m_pMemory[element].m_Next = element;
+    }
+    else
+    {
+        volatile int *pPrev = (volatile int *)&m_pMemory[element].m_Previous;
+        *pPrev = -1;
+        CUtlLinkedList12Node *base = m_pMemory;
+        base[element].m_Next = *pPrev;
+    }
+    m_pElements = m_pMemory;
+    return element;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be500 size=0xb4
 struct TooltipPanelView
 {
