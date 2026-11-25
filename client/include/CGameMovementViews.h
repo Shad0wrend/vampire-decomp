@@ -7,6 +7,7 @@
 #include "Vector.h"
 #include "QAngle.h"
 #include "CGameTrace.h"
+class C_BaseEntity;
 
 struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) record
 {
@@ -85,7 +86,7 @@ struct CMoveDataView	// the entity at CGameMovement::m_pMove: vtable only; the d
 	GMV(90) GMV(91) GMV(92) virtual void vfunc93(int a, int b); virtual int g94();	// slot 94 (+0x178): the move type (2 / 9 are tested by CheckVelocity)
 	virtual int g95();	// slot 95 (+0x17c): the move type
 	GMV(96) GMV(97) GMV(98) GMV(99)
-	GMV10(10) GMV10(11) GMV10(12) GMV10(13) GMV10(14) GMV10(15) GMV10(16) GMV10(17) GMV10(18) GMV10(19)
+	GMV(100) GMV(101) GMV(102) virtual void g103(C_BaseEntity *p); virtual C_BaseEntity *g104(); GMV(105) GMV(106) GMV(107) GMV(108) GMV(109) GMV10(11) GMV10(12) GMV10(13) GMV10(14) GMV10(15) GMV10(16) GMV10(17) GMV10(18) GMV10(19)
 	GMV(200) GMV(201) GMV(202) GMV(203) GMV(204) GMV(205) GMV(206) GMV(207) GMV(208)
 	virtual void *vfunc209();	// slot 209 (+0x344): the ground entity (0 when none; 0x10126cb0 tests it)
 	virtual void g210();
