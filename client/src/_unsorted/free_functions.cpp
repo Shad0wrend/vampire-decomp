@@ -14536,6 +14536,19 @@ void sub_10036140(int filter, int delay, const Vector *org, unsigned char r, uns
 }
 // END FUNCTION
 
+// FUNCTION: 0x100361d0 size=0xa0
+#include "Vector.h"
+#include "C_RecipientFilter.h"
+void sub_10036140(int filter, int a, const Vector *origin, int r, int g, int b, int e, float radius, float die, float decay);
+struct DLV { char pad[0xc]; Vector m_vecOrigin; float m_flRadius; int m_r; int m_g; int m_b; int m_e; float m_flDie; float m_flDecay; };
+// TARGET: sub_100361d0
+void __fastcall sub_100361d0(DLV *self, int edx, int unused)
+{
+	CBroadcastRecipientFilter filter;
+	sub_10036140((int)&filter, 0, &self->m_vecOrigin, self->m_r, self->m_g, self->m_b, self->m_e, self->m_flRadius, self->m_flDie, self->m_flDecay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036290 size=0x6
 namespace lifted {
 extern char g_102ed4a0;
