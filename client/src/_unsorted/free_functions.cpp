@@ -31440,6 +31440,23 @@ Vector3 *C_Beam::sub_100806f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100807f0 size=0x4e
+#include "C_Beam.h"
+
+extern void *sub_100a2ab0(const char *);
+extern void (*g_101e3114)(const char *, ...);
+
+// TARGET: sub_100807f0
+C_Beam *sub_100807f0(int a1, int a2)
+{
+	C_Beam *pBeam = dynamic_cast<C_Beam *>((C_BaseEntity *)sub_100a2ab0("beam"));
+	if (!pBeam)
+		g_101e3114("classname %s used to create wrong class type\n");
+	pBeam->sub_10080890(a1, a2);
+	return pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080840 size=0x49
 namespace lifted {
 extern char g_102acf84;

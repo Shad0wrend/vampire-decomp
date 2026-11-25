@@ -3297,6 +3297,7 @@
 0x100805a0 func   ?sub_100805a0@C_Beam@@QAEXPAD@Z C_Beam::sub_100805a0
 0x10080650 func   ?sub_10080650@C_Beam@@QAEABVVector@@XZ C_Beam::sub_10080650
 0x100806f0 func   ?sub_100806f0@C_Beam@@QAEPAUVector3@@XZ C_Beam::sub_100806f0
+0x100807f0 func   ?sub_100807f0@@YAPAVC_Beam@@HH@Z sub_100807f0
 0x10080840 func   ?sub_10080840@@YAHHHHHHH@Z sub_10080840
 0x10080e00 func   ?sub_10080e00@@YGHH@Z sub_10080e00
 0x10080e10 func   ?sub_10080e10@@YGXHH@Z sub_10080e10
