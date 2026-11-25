@@ -20162,6 +20162,45 @@ int sub_10052ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10053f10 size=0xd3
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct HDView
+{
+	char pad[0x9d0];
+	int m_9d0;
+	int m_9d4;
+	int m_9d8;
+	int m_9dc;
+	int m_9e0;
+	int m_9e4;
+};
+
+int CHudDialog::sub_10053f10(int flags, int n)
+{
+	ScopeTrace trace("CHudDialog::GetFontForFlagsDependency", g_102de300);
+	HDView *v = (HDView *)this;
+	int font = v->m_9d0;
+	if (flags & 2)
+	{
+		if (n == 7)
+			return v->m_9d4;
+		if (n == 6)
+			return v->m_9e4;
+		if (n == 8)
+			return v->m_9d8;
+	}
+	else if (flags & 1)
+	{
+		if (n == 6)
+			return v->m_9dc;
+		return v->m_9e0;
+	}
+	return font;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054450 size=0x7a
 #include "CHudDialog.h"
 #include "ScopeTrace.h"
