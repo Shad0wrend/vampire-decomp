@@ -8697,6 +8697,7 @@
 0x101c5740 func   ?vfunc97@AnimatingImagePanel@vgui2@@UAEXXZ vgui2::AnimatingImagePanel::vfunc97
 0x101c5790 func   ?sub_101c5790@@YIXPAUView@@@Z sub_101c5790
 0x101c57e0 func   ?vfunc76@AnimatingImagePanel@vgui2@@UAEHH@Z vgui2::AnimatingImagePanel::vfunc76
+0x101c5810 func   ?vfunc75@AnimatingImagePanel@vgui2@@UAEXH@Z vgui2::AnimatingImagePanel::vfunc75
 0x101c5890 func   ?vfunc77@AnimatingImagePanel@vgui2@@UAEHXZ vgui2::AnimatingImagePanel::vfunc77
 0x101c5910 func   ?vfunc102@AnimatingImagePanel@vgui2@@UAEHXZ vgui2::AnimatingImagePanel::vfunc102
 0x101c5920 func   ?sub_101c5920@CUnknown101c5920@@QAEPAXHH@Z CUnknown101c5920::sub_101c5920
