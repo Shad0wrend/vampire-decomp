@@ -15,6 +15,7 @@ public:
 	void sub_100a9c90();
 	bool sub_100a54c0(int, int);
 	void sub_100aa040();
+	int sub_100a6850(int b, int h);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BasePlayer's own function
 	virtual int vfunc15();
