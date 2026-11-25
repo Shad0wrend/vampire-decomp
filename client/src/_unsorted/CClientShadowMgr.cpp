@@ -369,3 +369,48 @@ void *CClientShadowMgr::vfunc16(unsigned short h)
 	return &m_Shadows.m_pMemory[h].m_Data[0x54];
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d7ec0 size=0xfb
+#include "ConVar.h"
+#include "CClientEntityList.h"
+#include "C_BaseEntity.h"
+#include "CClientShadowMgr.h"
+
+extern CClientEntityList *g_102b8e9c;
+extern ConVar g_104cf010;
+extern ConVar g_1049dbd8;
+extern ConVar g_105fb370;
+extern ConVar g_104cefc0;
+extern bool g_104cf1b8;
+extern bool g_104cf008;
+extern int g_104cf1b4;
+extern int g_104cf004;
+void sub_100d7fc0();
+
+// TARGET: CClientShadowMgr::vfunc6
+void CClientShadowMgr::vfunc6()
+{
+	sub_100d7fc0();
+
+	bool bA = g_104cf010.GetInt() != 0;
+	bool bB = g_1049dbd8.GetInt() != 0;
+	int nC = g_105fb370.GetInt();
+	int nD = g_104cefc0.GetInt();
+
+	if (g_104cf1b8 == bA && g_104cf008 == bB && g_104cf1b4 == nC && g_104cf004 == nD)
+		return;
+
+	g_104cf1b8 = bA;
+	g_104cf008 = bB;
+	g_104cf1b4 = nC;
+	g_104cf004 = nD;
+
+	int nHighest = g_102b8e9c->vfunc6();
+	for (int i = 0; i <= nHighest; i++)
+	{
+		C_BaseEntity *pEnt = g_102b8e9c->sub_100d0cf0(i);
+		if (pEnt)
+			pEnt->sub_1009e2d0(1);
+	}
+}
+// END FUNCTION
