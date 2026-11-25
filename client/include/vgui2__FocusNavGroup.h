@@ -23,7 +23,7 @@ public:
     bool m_bFlag;	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots FocusNavGroup adds to its base's vtable: 0-8, vfuncK at slot K
     virtual Panel *vfunc0();
-    virtual void vfunc1();
+    virtual void vfunc1(vgui2::Panel *p);
     virtual int vfunc2();
     virtual int vfunc3(int);
     virtual void vfunc4();
