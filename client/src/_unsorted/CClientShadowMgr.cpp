@@ -120,6 +120,36 @@ bool SM_100d5830::sub_100d5830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d59b0 size=0x7a
+#include "CClientShadowMgr.h"
+
+struct ColorView
+{
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual void c8(); virtual void c9(); virtual void c10(); virtual void c11();
+	virtual void c12(); virtual void c13(); virtual void c14(); virtual void c15();
+	virtual void c16(); virtual void c17(); virtual void c18(); virtual void c19();
+	virtual void c20(); virtual void c21(); virtual void c22(); virtual void c23();
+	virtual void c24(); virtual void c25(); virtual void c26(); virtual void c27();
+	virtual void c28(); virtual void c29();
+	virtual void c30(float, float, float);
+};
+
+void CClientShadowMgr::vfunc15(int r, int g, int b)
+{
+	ColorView *p = *(ColorView **)((char *)this + 0x18);
+	float fb = (float)(b & 0xff) * 0.003921569f;
+	float fg = (float)(g & 0xff) * 0.003921569f;
+	float fr = (float)(r & 0xff) * 0.003921569f;
+	p->c30(fr, fg, fb);
+
+	((unsigned char *)this)[0x14] = (unsigned char)r;
+	((unsigned char *)this)[0x15] = (unsigned char)g;
+	((unsigned char *)this)[0x16] = (unsigned char)b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5ce0 size=0x4f
 #include "CClientShadowMgr.h"
 #include "Vector.h"
