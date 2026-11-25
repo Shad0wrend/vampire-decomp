@@ -36606,6 +36606,42 @@ void UtlMem::sub_10096f90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096fc0 size=0xb2
+#include <string.h>
+struct T48 { int m_d[12]; };
+struct CUtlVector48
+{
+	T48 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; T48 *m_pElements;
+	void sub_100970f0(int num);
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_nAllocationCount)
+			sub_100970f0(m_Size + num - m_nAllocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0 && num > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(T48));
+	}
+	int sub_10096fc0(int elem, int num, const T48 *pToInsert);
+};
+int CUtlVector48::sub_10096fc0(int elem, int num, const T48 *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	GrowVector(num);
+	ShiftElementsRight(elem, num);
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToInsert[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097080 size=0x70
 struct Elem { char data[0x34]; };
 struct Mem {

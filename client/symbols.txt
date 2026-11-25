@@ -3509,6 +3509,7 @@
 0x10096e70 func   ?sub_10096e70@UtlMem@@QAEXXZ UtlMem::sub_10096e70
 0x10096f60 func   ?sub_10096f60@UtlMem@@QAEXXZ UtlMem::sub_10096f60
 0x10096f90 func   ?sub_10096f90@UtlMem@@QAEXXZ UtlMem::sub_10096f90
+0x10096fc0 func   ?sub_10096fc0@CUtlVector48@@QAEHHHPBUT48@@@Z CUtlVector48::sub_10096fc0
 0x10097080 func   ?sub_10097080@@YIXPAUMem@@HH@Z sub_10097080
 0x10097160 func   ?sub_10097160@S101859a0@@QAEXH@Z S101859a0::sub_10097160
 0x100971d0 func   ??0C_BaseAnimatingOverlay@@QAE@XZ C_BaseAnimatingOverlay::C_BaseAnimatingOverlay
