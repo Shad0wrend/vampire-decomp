@@ -41,3 +41,25 @@ bool CGlowOverlay::vfunc1()
     return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ef0c0 size=0xcb
+#include "CGlowOverlay.h"
+
+extern float g_102bba88;
+extern float g_102bba8c;
+extern float g_102bba90;
+extern float g_104cfddc;
+extern float g_104cfde4;
+
+// TARGET: CGlowOverlay::vfunc2
+void CGlowOverlay::vfunc2(float flDot, CGlowSprite *pSprite, float *pflHorzSize, float *pflVertSize, Vector *pColor)
+{
+	*pflHorzSize = g_102bba88 * pSprite->m_flHorzSize +
+		(g_102bba8c * pSprite->m_flHorzSize - g_102bba88 * pSprite->m_flHorzSize) * (flDot - g_104cfddc) / (1.0f - g_104cfddc);
+	*pflVertSize = g_102bba88 * pSprite->m_flVertSize +
+		(g_102bba8c * pSprite->m_flVertSize - g_102bba88 * pSprite->m_flVertSize) * (flDot - g_104cfddc) / (1.0f - g_104cfddc);
+
+	float flScale = ((g_102bba90 - g_104cfde4) * (flDot - g_104cfddc) / (1.0f - g_104cfddc) + g_104cfde4) * m_flProxyRadius;
+	*pColor = pSprite->m_vColor * flScale;
+}
+// END FUNCTION

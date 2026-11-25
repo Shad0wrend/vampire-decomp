@@ -9,6 +9,8 @@ class CharEditPanel : public CHudElement, public vgui2::PropertyDialog
 {
 public:
 	virtual ~CharEditPanel();
+	void sub_10173110();
+	void sub_10173210(void *dst, void *src, void *flag, void *defs);
 	void sub_101740e0(int a);
 	void sub_101733d0(bool bDisconnect);
 	void sub_101735a0();

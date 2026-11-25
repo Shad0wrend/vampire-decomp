@@ -128,6 +128,81 @@ char CGameMovement::vfunc15(void *pSurface, float volume)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6fc0 size=0xee
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "ConVar.h"
+
+struct GlobalsView
+{
+	char m_pad0000[0x14];
+	int maxClients;	// 0x14
+};
+
+class ISoundEmitter
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5();
+	virtual int vfunc6(short index);	// slot 6
+};
+
+class ISoundSystem
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void vfunc5(void *origin, int channel, int name, float volume, int level, int flags, int pitch);	// slot 5
+	virtual void v6(); virtual void v7(); virtual void v8();
+	virtual ISoundEmitter *GetEmitter();	// slot 9
+};
+
+class IRandomView
+{
+public:
+	virtual void v0(); virtual void v1();
+	virtual int RandomInt(int nMin, int nMax);	// slot 2
+};
+
+extern GlobalsView *g_102b8494;
+extern ConVar *g_104dfaa4;
+extern ISoundSystem *g_104df784;
+extern IRandomView *g_104a5738;
+
+// TARGET: CGameMovement::vfunc16
+void CGameMovement::vfunc16(void *pSurface, float volume, char bForce)
+{
+	if ( g_102b8494->maxClients > 1 )
+	{
+		if ( g_104dfaa4->vfunc1() )
+			return;
+		if ( g_104dfaa4->m_fValue == 0.0f )
+			return;
+	}
+	if ( !pSurface )
+		return;
+	ISoundEmitter *pEmitter = g_104df784->GetEmitter();
+	if ( !bForce )
+	{
+		if ( !vfunc15(pSurface, volume) )
+			return;
+	}
+	int bAlt = *(int *)((char *)m_pMove + 0x1700);
+	unsigned short snd;
+	if ( bAlt )
+		snd = *(unsigned short *)((char *)pSurface + 0x2c);
+	else
+		snd = *(unsigned short *)((char *)pSurface + 0x2e);
+	*(int *)((char *)m_pMove + 0x1700) = (bAlt == 0);
+	if ( snd == 0 )
+		return;
+	if ( *(char *)m_pPlayer == 0 )
+		return;
+	int name = pEmitter->vfunc6(snd);
+	ISoundSystem *pSys = g_104df784;
+	pSys->vfunc5((char *)m_pPlayer + 0x70, 4, name, volume, 0x4b, 0, g_104a5738->RandomInt(0, 10) + 0x5f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7860 size=0x7
 #include "CGameMovement.h"
 namespace lifted {
@@ -136,6 +211,49 @@ extern float g_101e34ec;
 float CGameMovement::vfunc23()
 {
     return lifted::g_101e34ec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e7d30 size=0xe6
+#include "CGameMovement.h"
+
+struct MoveDataView {
+    char m_pad16fc[0x16fc];
+    float m_fl16fc;
+    char m_pad1700[0x1994 - 0x1700];
+    float m_fl1994;
+    float m_fl1998;
+};
+
+struct GlobalsView {
+    char m_pad10[0x10];
+    float m_frametime;
+};
+
+extern GlobalsView *g_102b8494;
+
+// TARGET: CGameMovement::vfunc24
+void CGameMovement::vfunc24()
+{
+    float fDecay = g_102b8494->m_frametime * 1000.0f;
+    if (((MoveDataView *)m_pMove)->m_fl1994 > 0.0f)
+    {
+        ((MoveDataView *)m_pMove)->m_fl1994 -= fDecay;
+        if (((MoveDataView *)m_pMove)->m_fl1994 < 0.0f)
+            ((MoveDataView *)m_pMove)->m_fl1994 = 0.0f;
+    }
+    if (((MoveDataView *)m_pMove)->m_fl16fc > 0.0f)
+    {
+        ((MoveDataView *)m_pMove)->m_fl16fc -= fDecay;
+        if (((MoveDataView *)m_pMove)->m_fl16fc < 0.0f)
+            ((MoveDataView *)m_pMove)->m_fl16fc = 0.0f;
+    }
+    if (((MoveDataView *)m_pMove)->m_fl1998 > 0.0f)
+    {
+        ((MoveDataView *)m_pMove)->m_fl1998 -= fDecay;
+        if (((MoveDataView *)m_pMove)->m_fl1998 < 0.0f)
+            ((MoveDataView *)m_pMove)->m_fl1998 = 0.0f;
+    }
 }
 // END FUNCTION
 

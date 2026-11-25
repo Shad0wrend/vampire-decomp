@@ -44,4 +44,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	void sub_100c7f50();
 	void sub_100c7550();
 	void sub_100c82e0();
+	void *sub_100c7720();
+	void sub_100c8210(int n);
 };

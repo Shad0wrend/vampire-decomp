@@ -24,6 +24,31 @@ float CExplosionParticle::vfunc10(SimpleParticleAux_t *p, float dt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4c80 size=0xfa
+#include "CExplosionParticle.h"
+#include "Vector.h"
+#include <math.h>
+
+extern float g_10680ea0;
+extern float g_10680ea4;
+
+void CExplosionParticle::vfunc11(PartT *pPart, float dt)
+{
+    Vector vec = *(Vector *)((char *)pPart + 0x18);
+    if ( g_10680ea0 != dt )
+    {
+        g_10680ea0 = dt;
+        g_10680ea4 = exp(2.0f * dt * (float)log(0.0001f));
+    }
+    *(Vector *)((char *)pPart + 0x18) = *(Vector *)((char *)pPart + 0x18) * g_10680ea4;
+    if ( ((Vector *)((char *)pPart + 0x18))->LengthSqr() < 4096.0f )
+    {
+        VectorNormalize(vec);
+        *(Vector *)((char *)pPart + 0x18) = vec * 64.0f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4d80 size=0x24
 #include "CExplosionParticle.h"
 float CExplosionParticle::vfunc8(PartT *p, float dt) { float t = 1.0f - p->m_fl2c / p->m_fl28; if (t < 0.75f) t = t * t; return t; }

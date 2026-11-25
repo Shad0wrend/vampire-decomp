@@ -9,6 +9,9 @@ class C_BaseAnimating : public C_BaseEntity
 public:
 	C_BaseAnimating();
 	void sub_100966e0();
+	void sub_100941d0(const char *, int, int);
+	void sub_10094250(int, int, int);
+	void sub_100027f0(int iBone, Vector *pOrigin, QAngle *pAngles);
 	void sub_10096650();
 	void sub_10095c40();
 	bool sub_10091860(int, Vector &, QAngle &, matrix3x4_t &);
@@ -45,6 +48,7 @@ public:
 	void sub_100a2930();
 	void sub_100948d0(int);
 	bool sub_10095d00(Vector *pVecWorldMins, Vector *pVecWorldMaxs);
+	int sub_10095990(int a, int b, int *p);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
@@ -61,7 +65,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc70();
 	virtual bool vfunc71();
 	virtual int vfunc72();
-	virtual void vfunc73();
+	virtual bool vfunc73();
 	virtual int vfunc86();
 	virtual void vfunc112();
 	// the slots C_BaseAnimating adds to its base's vtable: 120-142, vfuncK at slot K
@@ -71,7 +75,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc123();
 	virtual void vfunc124(int, int);
 	virtual int vfunc125(int, int);
-	virtual void vfunc126();
+	virtual int vfunc126();
 	virtual void vfunc127();
 	virtual void vfunc128();
 	virtual float vfunc129(int, float, float, float);

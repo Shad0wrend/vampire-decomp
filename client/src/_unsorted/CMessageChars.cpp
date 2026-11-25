@@ -1,6 +1,40 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101685e0 size=0x43
+#include "CMessageChars.h"
+#include "CMessageCharsPanel.h"
+
+struct ICvarFind
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int FindVar(const char *name);
+};
+extern ICvarFind *g_104a57e0;
+
+void *sub_101ac650(unsigned int size);
+
+struct MsgPanel
+{
+	MsgPanel *sub_10168150(vgui2::Panel *parent);
+};
+
+int CMessageChars::vfunc0(int parent)
+{
+	*(int *)((char *)this + 8) = g_104a57e0->FindVar("con_color");
+
+	MsgPanel *p = (MsgPanel *)sub_101ac650(0x107064);
+	MsgPanel *r;
+	if ( p )
+		r = p->sub_10168150((vgui2::Panel *)(void *)parent);
+	else
+		r = 0;
+
+	return (int)(*(MsgPanel **)((char *)this + 4) = r);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168630 size=0x24
 #include "CMessageChars.h"
 namespace lifted {

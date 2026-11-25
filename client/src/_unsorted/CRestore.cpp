@@ -549,6 +549,43 @@ int CRestore::vfunc30(unsigned int *pValues, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b060 size=0xec
+#include "CRestore.h"
+#include "ehandle.h"
+
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+int CRestore::vfunc31(int *pValues, int nCount, int nBytesAvailable)
+{
+    int buf[256];
+    int nRead = vfunc15(buf, nCount, nBytesAvailable);
+    for (int i = 0; i < nRead; i++)
+    {
+        CRestoreSaveEnt *pRec = sub_1012aec0(buf[i]);
+        pValues[i] = -1;
+        if (!pRec)
+            continue;
+        unsigned int &h = pRec->m_hEntity;
+        if (h != 0xffffffff)
+        {
+            CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+            if (e.m_SerialNumber == (int)(h >> 13) && e.m_pEntity)
+            {
+                pValues[i] = pRec->m_hEntity;
+                continue;
+            }
+        }
+        int idx = pRec->m_nIndex;
+        if (idx > 0 && idx < 0xffff)
+            pValues[i] = -idx;
+    }
+    if (nRead < nCount)
+        memset(&pValues[nRead], 0, (nCount - nRead) * sizeof(int));
+    return nRead;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b280 size=0x3d
 #include "CRestore.h"
 

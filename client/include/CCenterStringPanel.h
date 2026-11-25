@@ -7,6 +7,7 @@
 class CCenterStringPanel : public vgui2::Panel
 {
 public:
+	CCenterStringPanel(vgui2::Panel *parent);
 	virtual ~CCenterStringPanel();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CCenterStringPanel's own function

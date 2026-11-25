@@ -40,6 +40,73 @@ int vgui2::KeyValues::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6280 size=0xf5
+#include <string.h>
+#include "vgui2__KeyValues.h"
+
+struct KVSystemView
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual int v3(const char *);
+};
+
+KVSystemView *sub_101ac930();
+
+vgui2::KeyValues *vgui2::KeyValues::vfunc4(const char *keyName, bool bCreate)
+{
+    if ( !keyName || !keyName[0] )
+        return this;
+
+    char szBuf[256];
+    const char *pName = keyName;
+    char *pSlash = (char *)strchr(keyName, '/');
+    if ( pSlash )
+    {
+        int len = pSlash - keyName;
+        memcpy(szBuf, keyName, len);
+        szBuf[len] = 0;
+        pName = szBuf;
+    }
+
+    int keySymbol = sub_101ac930()->v3(pName);
+
+    KeyValues *p = m_pSub;
+    KeyValues *pPrev = NULL;
+    while ( p )
+    {
+        pPrev = p;
+        if ( p->m_unk4 == keySymbol )
+            break;
+        p = p->m_pPeer;
+    }
+
+    if ( !p )
+    {
+        if ( bCreate )
+        {
+            p = new KeyValues(pName);
+            if ( pPrev )
+                pPrev->m_pPeer = p;
+            else
+                m_pSub = p;
+            p->m_pPeer = NULL;
+            m_unk10 = 0;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+    if ( pSlash )
+        return p->vfunc4(pSlash + 1, bCreate);
+
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6380 size=0x56
 #include "vgui2__KeyValues.h"
 
@@ -238,6 +305,55 @@ int vgui2::KeyValues::vfunc17(int a0, int a1)
         *(int *)((char *)t0 + 0xc) = a1;
     }
     return t0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b66d0 size=0xd0
+#include "vgui2__KeyValues.h"
+#include <string.h>
+#include <stdlib.h>
+
+namespace vgui2
+{
+
+KeyValues *KeyValues::vfunc18()
+{
+	KeyValues *dat = new KeyValues((const char *)vfunc0());
+	dat->m_unk10 = m_unk10;
+	switch (m_unk10)
+	{
+	case 1:
+		if (m_pName)
+		{
+			int len = strlen((char *)m_pName);
+			dat->m_pName = malloc(len + 1);
+			memcpy(dat->m_pName, m_pName, len + 1);
+		}
+		break;
+	case 2:
+		dat->m_unkc = m_unkc;
+		break;
+	case 3:
+		dat->m_flValue = m_flValue;
+		break;
+	case 4:
+		dat->m_unkc = m_unkc;
+		break;
+	}
+	KeyValues *prev = 0;
+	for (KeyValues *p = m_pSub; p != 0; p = p->m_pPeer)
+	{
+		KeyValues *c = p->vfunc18();
+		if (prev)
+			prev->m_pPeer = c;
+		else
+			dat->m_pSub = c;
+		c->m_pPeer = 0;
+		prev = c;
+	}
+	return dat;
+}
+
 }
 // END FUNCTION
 

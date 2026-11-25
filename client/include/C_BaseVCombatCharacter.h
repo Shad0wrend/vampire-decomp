@@ -46,4 +46,5 @@ public:
 	int m_mod3[17];
 	VStatBindPair_t m_pair3;
 	int sub_1008ebb0();
+	int sub_1014db90(class C_BaseVCombatCharacter *pTarget, int a, int b);
 };

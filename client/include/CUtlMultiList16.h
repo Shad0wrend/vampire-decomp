@@ -27,10 +27,12 @@ public:
 	int m_n10;
 	int m_n14;
 	unsigned short m_nHead;	// +0x18
-	char m_pad1a[0x2c - 0x1a];
+	char m_pad1a[0x28 - 0x1a];
+	unsigned short *m_pXXX;	// 0x28
 	unsigned short m_n2c;
 	unsigned short m_n2e;
 	unsigned short m_nCount;	// +0x30
 
 	void sub_100d86c0();
+	void sub_100d8550(int nList, int nIndex);
 };

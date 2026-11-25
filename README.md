@@ -36,7 +36,7 @@ a form people can read and work with: real names taken from the game's strings a
 definitions in place of the views, and cleaned-up functions. Every step of that work goes through the same checks as
 today (`ninja verify` and `ninja identical`), so the readable source will still build the original DLL byte for byte.
 
-## Status (2026-11-25)
+## Status (2026-11-26)
 
 ![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
 
@@ -83,7 +83,7 @@ rule: the jump-stub table, the padding, `.idata`, the exports, `.reloc` and the 
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in [`client/`](client/): 13,731 of 16,031 functions (85.7%), 734,865 of 1,690,677 code bytes (43.5%) as of 2026-11-25 |
+| `client.dll` (client game code) | In progress in [`client/`](client/): 13,940 of 16,031 functions (87.0%), 776,157 of 1,690,677 code bytes (45.9%) as of 2026-11-26 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |

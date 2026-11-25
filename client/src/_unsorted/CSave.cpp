@@ -516,3 +516,20 @@ void CSave::vfunc37(const char *pszName, void *pData, int count)
     vfunc9(pszName, entityArray, count);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129fd0 size=0x81
+#include "CSave.h"
+#include "ehandle.h"
+
+// TARGET: CSave::vfunc36
+void CSave::vfunc36(const void *pData, int count)
+{
+	int buffer[256];
+	const CBaseHandle *pHandles = (const CBaseHandle *)pData;
+
+	for (int i = 0; i < count; i++)
+		buffer[i] = sub_10129a30(pHandles[i].Get());
+
+	vfunc10(buffer, count);
+}
+// END FUNCTION

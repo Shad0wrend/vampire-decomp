@@ -302,6 +302,60 @@ void vgui2::Slider::vfunc117(const char *text)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbf20 size=0xf9
+#include "vgui2__Slider.h"
+#include "vgui2__TextImage.h"
+
+struct SchemeMgrView
+{
+    virtual void m0();
+    virtual void m1();
+    virtual void m2();
+    virtual void m3();
+    virtual void *GetFont(void *scheme);
+};
+
+struct FontObjView
+{
+    virtual void m0();
+    virtual void m1();
+    virtual void m2();
+    virtual void m3();
+    virtual void *GetFont(const char *name);
+};
+
+struct SliderView
+{
+    char pad[0x90];
+    vgui2::TextImage *m_pTextImage1;
+    vgui2::TextImage *m_pTextImage2;
+    unsigned long sub_101aa220();
+};
+
+void *sub_101ac8c0();
+
+void vgui2::Slider::vfunc114(const char *text1, const char *text2)
+{
+    SliderView *s = (SliderView *)this;
+    if ( text1 )
+    {
+        if ( s->m_pTextImage1 )
+            delete s->m_pTextImage1;
+        s->m_pTextImage1 = new vgui2::TextImage(text1, s->sub_101aa220());
+        void *obj = ((SchemeMgrView *)sub_101ac8c0())->GetFont((void *)s->sub_101aa220());
+        s->m_pTextImage1->vfunc30((int)((FontObjView *)obj)->GetFont("DefaultVerySmall"));
+    }
+    if ( text2 )
+    {
+        if ( s->m_pTextImage2 )
+            delete s->m_pTextImage2;
+        s->m_pTextImage2 = new vgui2::TextImage(text2, s->sub_101aa220());
+        void *obj = ((SchemeMgrView *)sub_101ac8c0())->GetFont((void *)s->sub_101aa220());
+        s->m_pTextImage2->vfunc30((int)((FontObjView *)obj)->GetFont("DefaultVerySmall"));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc020 size=0xa1
 #include "vgui2__Slider.h"
 struct ColX { unsigned char r, g, b, a; ColX() {} ColX(int R, int G, int B, int A) { r = R; g = G; b = B; a = A; } };
@@ -387,6 +441,87 @@ void vgui2::Slider::vfunc84(int wide, int tall)
 		vfunc119();
 		vfunc6();
 		vfunc120();
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bc1d0 size=0xcf
+#include "vgui2__Slider.h"
+
+struct InputView
+{
+	virtual void v0();
+	virtual void SetMouseCapture(int vpanel);
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void GetCursorPos(int &x, int &y);
+};
+
+struct SliderView
+{
+	char m_pad[0x5c];
+	bool m_bDrag;
+	int m_n60;
+	int m_n64;
+	int m_n68;
+	int m_n6c;
+	int m_n70;
+	int m_n74;
+};
+
+struct PV
+{
+	int sub_101ab130();
+};
+
+extern int sub_101ac8b0();
+
+// TARGET: vgui2::Slider::vfunc87
+void vgui2::Slider::vfunc87(int code)
+{
+	int x, y;
+	((InputView *)sub_101ac8b0())->GetCursorPos(x, y);
+	vfunc27(&x, &y);
+
+	SliderView *s = (SliderView *)this;
+	if ( x >= s->m_n60 && x < s->m_n64 )
+	{
+		s->m_bDrag = true;
+		((InputView *)sub_101ac8b0())->SetMouseCapture(vfunc0());
+		s->m_n68 = s->m_n60;
+		s->m_n6c = s->m_n64;
+		s->m_n70 = x;
+		s->m_n74 = y;
+	}
+	else
+	{
+		int nMin, nMax;
+		vfunc110((int)&nMin, (int)&nMax);
+		int wide = ((PV *)this)->sub_101ab130();
+		vfunc107((int)((float)(nMax - nMin) / wide * x) + nMin);
 	}
 }
 // END FUNCTION

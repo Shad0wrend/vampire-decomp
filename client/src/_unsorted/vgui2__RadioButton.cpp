@@ -140,6 +140,30 @@ void vgui2::RadioButton::vfunc143(char state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6080 size=0x51
+#include "vgui2__RadioButton.h"
+
+struct RBView_101c6080
+{
+	char m_pad0[0xfc];
+	int m_nColor;	// 0xfc
+};
+
+// TARGET: vgui2::RadioButton::vfunc101
+void vgui2::RadioButton::vfunc101()
+{
+	RBView_101c6080 *v = (RBView_101c6080 *)this;
+	if ( vfunc144() )
+		vfunc51(v->m_nColor);
+	else
+	{
+		int clr;
+		vfunc51(*(int *)vfunc156((int)&clr));
+	}
+	Button::vfunc101();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c60e0 size=0x92
 #include "vgui2__RadioButton.h"
 struct ColorX { int c; };

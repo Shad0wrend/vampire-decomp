@@ -206,3 +206,109 @@ void vgui2::TreeNode::vfunc80()
     ((lifted::V *)(*(int *)((char *)this + 0x64)))->f15(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101bd260 size=0xf6
+#include "vgui2__TreeNode.h"
+
+class V27_2
+{
+public:
+	virtual void d00(); virtual void d01(); virtual void d02(); virtual void d03(); virtual void d04();
+	virtual void d05(); virtual void d06(); virtual void d07(); virtual void d08(); virtual void d09();
+	virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13(); virtual void d14();
+	virtual void d15(); virtual void d16(); virtual void d17(); virtual void d18(); virtual void d19();
+	virtual void d20(); virtual void d21(); virtual void d22(); virtual void d23(); virtual void d24();
+	virtual void d25(); virtual void d26();
+	virtual void m27(int *a, int *b);
+};
+
+class V27_S
+{
+public:
+	virtual void d00(); virtual void d01(); virtual void d02(); virtual void d03(); virtual void d04();
+	virtual void d05(); virtual void d06(); virtual void d07(); virtual void d08(); virtual void d09();
+	virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13(); virtual void d14();
+	virtual void d15(); virtual void d16(); virtual void d17(); virtual void d18(); virtual void d19();
+	virtual void d20(); virtual void d21(); virtual void d22(); virtual void d23(); virtual void d24();
+	virtual void d25(); virtual void d26();
+	virtual void m27(const char *s);
+};
+
+class VTree
+{
+public:
+	virtual void d000(); virtual void d001(); virtual void d002(); virtual void d003(); virtual void d004();
+	virtual void d005(); virtual void d006(); virtual void d007(); virtual void d008(); virtual void d009();
+	virtual void d010(); virtual void d011(); virtual void d012(); virtual void d013(); virtual void d014();
+	virtual void d015(); virtual void d016(); virtual void d017(); virtual void d018(); virtual void d019();
+	virtual void d020(); virtual void d021(); virtual void d022(); virtual void d023(); virtual void d024();
+	virtual void d025(); virtual void d026(); virtual void d027(); virtual void d028(); virtual void d029();
+	virtual void d030(); virtual void d031(); virtual void d032(); virtual void d033(); virtual void d034();
+	virtual void d035(); virtual void d036(); virtual void d037(); virtual void d038(); virtual void d039();
+	virtual void d040(); virtual void d041(); virtual void d042(); virtual void d043(); virtual void d044();
+	virtual void d045(); virtual void d046(); virtual void d047(); virtual void d048(); virtual void d049();
+	virtual void d050(); virtual void d051(); virtual void d052(); virtual void d053(); virtual void d054();
+	virtual void d055(); virtual void d056();
+	virtual void t57(int a, int b);
+	virtual void d058(); virtual void d059(); virtual void d060(); virtual void d061(); virtual void d062();
+	virtual void d063(); virtual void d064(); virtual void d065(); virtual void d066(); virtual void d067();
+	virtual void d068(); virtual void d069(); virtual void d070(); virtual void d071(); virtual void d072();
+	virtual void d073(); virtual void d074(); virtual void d075(); virtual void d076(); virtual void d077();
+	virtual void d078(); virtual void d079(); virtual void d080(); virtual void d081(); virtual void d082();
+	virtual void d083(); virtual void d084(); virtual void d085(); virtual void d086(); virtual void d087();
+	virtual void d088(); virtual void d089(); virtual void d090(); virtual void d091(); virtual void d092();
+	virtual void d093(); virtual void d094(); virtual void d095(); virtual void d096(); virtual void d097();
+	virtual void d098(); virtual void d099(); virtual void d100(); virtual void d101(); virtual void d102();
+	virtual void d103(); virtual void d104(); virtual void d105(); virtual void d106(); virtual void d107();
+	virtual void d108(); virtual void d109(); virtual void d110(); virtual void d111(); virtual void d112();
+	virtual void d113(); virtual void d114(); virtual void d115();
+	virtual void t116(int a);
+	virtual int t117();
+};
+
+int sub_101ac8b0();
+
+// TARGET: vgui2::TreeNode::vfunc87
+void vgui2::TreeNode::vfunc87(int a)
+{
+	int w, h;
+	void *sc = (void *)sub_101ac8b0();
+	((V27_2 *)sc)->m27(&w, &h);
+	((V27_2 *)this)->m27(&w, &h);
+	if ( w < 0x14 )
+	{
+		char old = *(char *)((char *)this + 0x70);
+		char ne = (old == 0);
+		*(char *)((char *)this + 0x70) = ne;
+		if ( ne )
+			((V27_S *)*(void **)((char *)this + 0x68))->m27("-");
+		else
+		{
+			((V27_S *)*(void **)((char *)this + 0x68))->m27("+");
+			int sel = ((VTree *)*(void **)((char *)this + 0x88))->t117();
+			if ( sel != -1 )
+			{
+				int *item = (int *)((char *)*(void **)((char *)*(void **)((char *)this + 0x88) + 0x78) + sel * 12);
+				int *p = (int *)*(void **)((char *)item[0] + 0x60);
+				while ( p )
+				{
+					if ( p == (int *)this )
+					{
+						((VTree *)*(void **)((char *)this + 0x88))->t116(*(int *)((char *)this + 0x5c));
+						break;
+					}
+					p = (int *)*(void **)((char *)p + 0x60);
+				}
+			}
+		}
+		((VTree *)*(void **)((char *)this + 0x88))->t57(0, 0);
+	}
+	else
+	{
+		*(char *)((char *)this + 0x70) = 1;
+		((V27_S *)*(void **)((char *)this + 0x68))->m27("-");
+		((VTree *)*(void **)((char *)this + 0x88))->t57(0, 0);
+		((VTree *)*(void **)((char *)this + 0x88))->t116(*(int *)((char *)this + 0x5c));
+	}
+}
+// END FUNCTION

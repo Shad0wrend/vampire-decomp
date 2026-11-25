@@ -15,4 +15,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	// the slots CMeasureTimePanel adds to its base's vtable: 107-107, vfuncK at slot K
 	virtual bool vfunc107();
+	void *sub_10167de0(void *parent);
 };

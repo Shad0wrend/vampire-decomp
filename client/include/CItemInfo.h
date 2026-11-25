@@ -18,6 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	CItemInfo(int parent);
 	void sub_1005ee20();
 	void sub_1005eee0();
+	void sub_1005eef0();
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 	int m_unk174; int m_unk178; int m_unk17c; int m_unk180; int m_unk184; int m_unk188;

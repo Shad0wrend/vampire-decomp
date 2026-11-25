@@ -436,6 +436,31 @@ void vgui2::ComboBox::vfunc86()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8070 size=0x45
+#include "vgui2__ComboBox.h"
+
+class CUnknown101b1870
+{
+public:
+	int sub_101b1870(int);
+};
+
+struct CTextEntryView
+{
+	void sub_101ad050(int, int);
+};
+
+// TARGET: vgui2::ComboBox::vfunc11
+void vgui2::ComboBox::vfunc11(int wide, int tall)
+{
+	int w = wide;
+	((CTextEntryView *)this)->sub_101ad050(wide, tall);
+	vfunc101();
+	((vgui2::Panel *)*(int *)((char *)this + 0x130))->sub_101a9920(&tall, &wide);
+	((CUnknown101b1870 *)this)->sub_101b1870(w - tall);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c81b0 size=0x6
 #include "vgui2__ComboBox.h"
 namespace lifted {

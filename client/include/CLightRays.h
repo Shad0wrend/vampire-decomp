@@ -29,6 +29,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	CLightRays(int numRays, float a1, float a2, float a3, float a4, float a5, float a6);
 	virtual ~CLightRays();
 	virtual void vfunc1();
+	void sub_100491c0();
 	virtual void vfunc2();
 
 	CUtlVector<LightRay_t> m_Rays;

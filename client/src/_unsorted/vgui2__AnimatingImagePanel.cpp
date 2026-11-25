@@ -14,6 +14,40 @@ void vgui2::AnimatingImagePanel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c55e0 size=0xcd
+#include "vgui2__AnimatingImagePanel.h"
+#include "utlvector.h"
+
+struct AnimV
+{
+	char pad[0x64];
+	CUtlVector<void *> m_Images;
+};
+
+struct ImageView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2(int *w, int *h);
+};
+
+struct PanelHelper
+{
+	void sub_101a98f0(int w, int h);
+};
+
+void vgui2::AnimatingImagePanel::vfunc107(void *pImage)
+{
+	((AnimV *)this)->m_Images.AddToTail(pImage);
+	if (pImage)
+	{
+		int w, h;
+		((ImageView *)pImage)->v2(&w, &h);
+		((PanelHelper *)this)->sub_101a98f0(w, h);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c56b0 size=0x86
 #include "vgui2__AnimatingImagePanel.h"
 #include <stdio.h>

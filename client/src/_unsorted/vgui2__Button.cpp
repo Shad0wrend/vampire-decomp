@@ -124,6 +124,84 @@ bool vgui2::Button::vfunc140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3900 size=0xd2
+#include "vgui2__Button.h"
+
+struct SurfV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *, int *);
+};
+
+SurfV *sub_101ac8d0();
+
+void vgui2::Button::vfunc98()
+{
+	sub_101b2610();
+	if (!vfunc56())
+		return;
+	if (!vfunc47())
+		return;
+	if (!m_b0ed)
+		return;
+	int w, h;
+	sub_101ac8d0()->v39(&w, &h);
+	int x, y;
+	sub_101a9920(&x, &y);
+	double sh = h * (1.0 / 768.0);
+	double sw = w * (1.0 / 1024.0);
+	vfunc163((int)(3.0 * sw), (int)(3.0 * sh), (int)(x - 4.0 * sw), (int)(y - 2.0 * sh));
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b39e0 size=0x73
+#include "vgui2__Button.h"
+#include "vgui2__Panel.h"
+
+class BtnView_101b39e0 : public vgui2::Panel
+{
+public:
+	virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110();
+	virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114();
+	virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118();
+	virtual void v119(); virtual void v120(); virtual void v121(); virtual void v122();
+	virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126();
+	virtual void v127(); virtual void v128(); virtual void v129(); virtual void v130();
+	virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134();
+	virtual void v135(); virtual void v136(); virtual void v137(); virtual void v138();
+	virtual void v139(); virtual void v140(); virtual void v141(); virtual void v142();
+	virtual void v143(); virtual void v144(); virtual void v145(); virtual void v146();
+	virtual void v147(); virtual void v148(); virtual void v149(); virtual void v150();
+	virtual void v151(); virtual void v152(); virtual void v153(); virtual void v154();
+	virtual void v155();
+	virtual int v156(int);
+	virtual int v157(int);
+	virtual void v158(); virtual void v159(); virtual void v160(); virtual void v161();
+	virtual void v162(); virtual void v163();
+	virtual int v164(bool a, bool b, bool c, bool d);
+};
+
+// TARGET: vgui2::Button::vfunc101
+void vgui2::Button::vfunc101()
+{
+	BtnView_101b39e0 *v = (BtnView_101b39e0 *)this;
+	int clr;
+	v->vfunc60((void *)v->v164(*(bool *)((char *)this + 0xb9), *(bool *)((char *)this + 0xb8), *(bool *)((char *)this + 0xba), v->vfunc56()));
+	v->vfunc51(*(int *)v->v156((int)&clr));
+	v->vfunc50(*(int *)v->v157((int)&clr));
+	Label::vfunc101();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3a60 size=0x41
 #include "vgui2__Button.h"
 int vgui2::Button::vfunc156(int a0)

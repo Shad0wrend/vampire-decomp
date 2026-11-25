@@ -17,6 +17,7 @@ public:
 	void sub_100804f0(char *arg);
 	void sub_100805a0(char *arg);
 	Vector3 *sub_100806f0();
+	void sub_10080890(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_Beam's own function
 	virtual int vfunc15();

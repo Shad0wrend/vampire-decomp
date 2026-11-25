@@ -6,6 +6,7 @@
 namespace vgui2
 {
 class Panel;
+class KeyValues;
 
 class BuildGroup
 {
@@ -35,11 +36,17 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc21();
     virtual int vfunc22(Panel *);
 	Panel *sub_101c2900(const char *name);
+	void *sub_101c20d0();
+	void sub_101c2180();
+	void sub_101c2500();
 	Panel *sub_101c26d0(int, int, int);
+	Panel *sub_101c2770(KeyValues *, int, int);
 	void sub_101c2860(char *, Panel *);
 	int m_unk4; int m_unk8; int m_unkc;
 	int m_n10; int m_n14; int m_n18; int m_unk1c; int m_n20;
 	int m_unk24; int m_unk28; int m_unk2c; int m_unk30; int m_unk34; int m_unk38; int m_unk3c;
 	CUtlVector<Panel *> m_Panels;
+	int m_unk54; int m_unk58; int m_unk5c; int m_unk60;
+	CUtlVector<Panel *> m_Controls;
 };
 }

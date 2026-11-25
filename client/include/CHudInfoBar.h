@@ -5,6 +5,7 @@
 #include "CManagedHudElement.h"
 
 struct CZ { int v; CZ() { v = 0; } };
+class CHUDSprite;
 
 class CHudInfoBar : public CManagedHudElement
 {
@@ -22,6 +23,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc116(int, int);
 	CHudInfoBar(int parent);
 	void sub_100565b0();
+	CHUDSprite *sub_10056460(int);
 	void sub_10056860();
 	void sub_10056f30(int);
 	int sub_10056bc0(int, int, const char *);

@@ -20,6 +20,7 @@ public:
 	int m_n184;
 	VMapBkg m_bkg;
 	char m_b278;
+	virtual void vfunc2();
 	virtual ~VMapScreenUI();
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

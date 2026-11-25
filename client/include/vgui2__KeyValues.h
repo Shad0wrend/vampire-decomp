@@ -23,7 +23,7 @@ public:
     virtual int vfunc1();
     virtual void vfunc2();
     virtual void vfunc3();
-    virtual KeyValues *vfunc4(const char *keyName, int bCreate);
+    virtual KeyValues *vfunc4(const char *keyName, bool bCreate);
     virtual void vfunc5();
     virtual void vfunc6(KeyValues *);
     virtual int vfunc7();
@@ -37,7 +37,7 @@ public:
     virtual int vfunc15(int, int);
     virtual int vfunc16(int, int);
     virtual int vfunc17(int, int);
-    virtual void vfunc18();
+    virtual KeyValues *vfunc18();
     virtual void vfunc19();
     virtual int vfunc20(int);
     virtual void vfunc21();

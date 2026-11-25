@@ -191,6 +191,62 @@ struct V { virtual void v0(); virtual void v1(); virtual void v2(); virtual void
 void __fastcall sub_100a5900(char *self, int edx) { ((V *)(self + 4))->v11(); }
 // END FUNCTION
 
+// FUNCTION: 0x100a6b10 size=0x71
+#include "C_BasePlayer.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct EngV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual double v39(int);
+};
+
+struct RenV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41();
+	virtual double v42();
+};
+
+extern EngV *g_104a57d4;
+extern RenV *g_104a57e4;
+
+bool __fastcall sub_100a99d0(void *self);
+
+bool C_BasePlayer::sub_100a6b10()
+{
+	if (!sub_100a99d0(this))
+	{
+		float dt = g_104a57d4->v39(0) - g_104a57e4->v42();
+		Vector origin;
+		QAngle angles;
+		vfunc149(dt, &origin, &angles);
+		sub_100a2100(angles);
+		sub_100a2030(&origin);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6e50 size=0x3
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc154(int a0)
@@ -212,6 +268,52 @@ bool C_BasePlayer::vfunc74()
 		if (delta[i] > 128.0)
 			return true;
 	return C_BaseEntity::vfunc74();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a76a0 size=0xca
+#include "C_BasePlayer.h"
+#include "C_BaseEntity.h"
+#include "ehandle.h"
+#include "IClientRenderable.h"
+#include "CBaseEntityList.h"
+
+struct LeafView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual bool v12(void *pEntity);
+};
+struct CUnknown1009f6e0 { char *sub_1009f6e0(); };
+struct CUnknown1009f6f0 { char *sub_1009f6f0(); };
+
+extern LeafView *g_105f99d8;
+
+// TARGET: C_BasePlayer::vfunc37
+void C_BasePlayer::vfunc37()
+{
+	if ( !((IClientRenderable *)((char *)this + 4))->ShouldDraw() )
+		return;
+	if ( !((LeafView *)g_105f99d8)->v12(this) )
+		return;
+
+	CBaseHandle &h = *(CBaseHandle *)((char *)this + 0x188);
+	if ( h.Get() )
+		sub_1009fc60(0xb, 0);
+
+	if ( sub_1009f140(0x10) )
+		vfunc132(0);
+
+	if ( vfunc74() )
+	{
+		sub_100a2030(((CUnknown1009f6e0 *)this)->sub_1009f6e0());
+		sub_100a2100(*(QAngle *)((CUnknown1009f6f0 *)this)->sub_1009f6f0());
+		vfunc132(0);
+		vfunc68(0);
+	}
+
+	vfunc76();
 }
 // END FUNCTION
 
@@ -764,5 +866,43 @@ C_BaseCombatWeapon *C_BasePlayer::vfunc193()
 		}
 	}
 	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100aa5d0 size=0x1f
+#include "C_BasePlayer.h"
+
+struct EngineView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75();
+	virtual void v76();
+	virtual void v77(float f);
+};
+
+extern void *g_104a57d4;
+
+float __fastcall sub_100aa5f0(void *self);
+
+void C_BasePlayer::vfunc186()
+{
+	((EngineView *)g_104a57d4)->v77(sub_100aa5f0(this));
 }
 // END FUNCTION

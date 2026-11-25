@@ -610,6 +610,62 @@ void vgui2::Menu::vfunc90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0420 size=0xd7
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+#include "vgui2__KeyValues.h"
+
+int sub_101ac8b0();
+int sub_101ac900();
+
+class InputV_101c0420
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual int v3();	// slot 3
+};
+
+class PanelGlobalV_101c0420
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual bool v20(int a, int b);	// slot 20
+};
+
+// TARGET: vgui2::Menu::vfunc81
+void vgui2::Menu::vfunc81()
+{
+	if ( ((InputV_101c0420 *)sub_101ac8b0())->v3() )
+	{
+		if ( ((PanelGlobalV_101c0420 *)sub_101ac900())->v20(
+				((InputV_101c0420 *)sub_101ac8b0())->v3(), vfunc0() ) )
+			return;
+	}
+
+	vgui2::MenuItem *pMenu = dynamic_cast<vgui2::MenuItem *>(
+		(vgui2::Panel *)vfunc31() );
+	if ( pMenu )
+	{
+		InputV_101c0420 *pInput = (InputV_101c0420 *)sub_101ac8b0();
+		vgui2::Panel *pFocus = (vgui2::Panel *)(int)pMenu->vfunc31();
+		int nFocus = pInput->v3();
+		if ( nFocus == pFocus->vfunc0()
+				&& *(int *)((char *)this + 0x84) == 0 )
+		{
+			vfunc49();
+			return;
+		}
+	}
+
+	vfunc43(new vgui2::KeyValues("MenuClose"));
+	vfunc21(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0590 size=0x4f
 #include "vgui2__Menu.h"
 

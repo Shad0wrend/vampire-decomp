@@ -104,6 +104,85 @@ bool CBaseStaticModel::SetupBones(matrix3x4_t *pBoneToWorldOut, int nMaxBones, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0120 size=0xe3
+#include "CBaseStaticModel.h"
+
+extern void *g_102d43d8;
+extern void *g_104a0d50;
+extern void *g_104a57ec;
+extern void *g_104a57d8;
+
+struct ILeaf39 {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31();
+	virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35();
+	virtual void s36(); virtual void s37(); virtual void s38();
+	virtual bool s39(int, void *);
+};
+
+struct IMatSys30 {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual void s28();
+	virtual void s29(int);
+};
+
+struct IModelRender9 {
+	virtual void s0();
+	virtual void s1();
+	virtual int s2(int, void *, unsigned short, void *, void *, void *, int, int, int);
+	virtual void s3(int);
+};
+
+struct IColl16 {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void s15(Vector *, Vector *);
+};
+
+// TARGET: CBaseStaticModel::DrawModel
+int CBaseStaticModel::DrawModel(int flags, int a1)
+{
+	if (!m_unk3e || !m_unk38)
+		return 0;
+
+	int result = 0;
+	bool bSkip;
+	bool bCheck = ((ILeaf39 *)g_102d43d8)->s39(0, &bSkip);
+	if (bCheck) {
+		if (g_104a0d50) {
+			Vector vA, vB;
+			((IColl16 *)((char *)g_104a0d50 + 0x190))->s15(&vB, &vA);
+			if (vA.z + 10.0f < m_vecMaxs.z)
+				bSkip = true;
+		}
+	}
+	if (!bSkip) {
+		((IMatSys30 *)g_104a57ec)->s29(0);
+		void *pRend = this ? (void *)((char *)this + 4) : 0;
+		result = ((IModelRender9 *)g_104a57d8)->s2(flags, pRend, m_unk3c,
+			(void *)m_unk38, &m_vecOrigin, (void *)((char *)this + 0x14), 0, 0, a1);
+	}
+	if (bCheck) {
+		((IModelRender9 *)g_104a57d8)->s3(0);
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e13b0 size=0x3
 #include "CBaseStaticModel.h"
 ICollideable * CBaseStaticModel::GetClientCollideable()

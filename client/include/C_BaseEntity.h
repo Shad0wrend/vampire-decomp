@@ -3,17 +3,21 @@
 // the destructor is slot 8 of its vtable; its overrides are declared, the other virtual functions before it are not yet
 #pragma once
 #include "IClientEntity.h"
+class IPhysicsObject;
 
 class C_BaseEntity : public IClientEntity
 {
 public:
 	C_BaseEntity();
+	void sub_100af040();
 	void sub_100a2580();
 	void sub_100a2610(bool flag, int a);
 	void sub_1011d190(float frametime);
+	bool sub_100a0d10();
 	void sub_100a2850(Vector *mins, Vector *maxs);
 	void sub_100a2480(const Vector &origin);
 	void sub_1007e180(int a, int b);
+	void sub_100a2260(const Vector &origin);
 	void sub_1007e100();
 	void sub_100a2970(C_BaseEntity *p);
 	void sub_1007eb60();
@@ -33,6 +37,7 @@ public:
 	void sub_1011b3b0(int type);
 	void sub_100a2ee0();
 	void sub_100a2f50();
+	int sub_100a31e0(void *pDataMap);
 	void sub_100a0450();
 	void sub_1009e2d0(int bForce);	// UpdateShadows
 	void sub_100a02e0(bool force);
@@ -178,12 +183,12 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc65(int, int);
 	virtual int vfunc66();
 	virtual bool vfunc67();
-	virtual void vfunc68();
+	virtual void vfunc68(int);
 	virtual void vfunc69();
 	virtual int vfunc70();
 	virtual bool vfunc71();
 	virtual int vfunc72();
-	virtual void vfunc73();
+	virtual bool vfunc73();
 	virtual bool vfunc74();
 	virtual bool vfunc75();
 	virtual void vfunc76();
@@ -199,7 +204,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc86();
 	virtual bool vfunc87();
 	virtual void vfunc88();
-	virtual void vfunc89();
+	virtual void vfunc89(IPhysicsObject *pPhysics);
 	virtual void vfunc90();
 	virtual int vfunc91(int, int);
 	virtual void vfunc92(int, int);

@@ -7,6 +7,7 @@
 class CDebugOverlay : public vgui2::Panel
 {
 public:
+	CDebugOverlay(vgui2::Panel *parent);
 	virtual ~CDebugOverlay();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CDebugOverlay's own function

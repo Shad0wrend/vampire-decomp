@@ -8,13 +8,17 @@
 class CViewRender : public IViewRender
 {
 public:
+    void sub_1019ac50(bool, int, int);
     void sub_1019af80(bool, int);
     void sub_10190850();
     float sub_101907a0(const QAngle &, const Vector &, float, float);
     void sub_1019c970();
     void sub_1019d8f0(const char *view);
     void sub_1019a950(int, void *, void *, int, int);
+	void sub_1019add0(int, int, int);
+	void sub_1019ab90(bool, int, int, int);
     void sub_10191710();
+    void CopyViewModelInfoToEntities();
     int sub_1018fab0();
     int sub_1018fb10();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -29,7 +33,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc7();
     virtual void vfunc8();
     virtual void vfunc9();
-    virtual void vfunc10();
+    virtual int vfunc10(class C_BaseEntity *pEntity);
     virtual char * vfunc11();
     virtual char * vfunc12();
     virtual bool vfunc13();
@@ -59,7 +63,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual int vfunc37();
     virtual int vfunc38();
     virtual void vfunc39();
-    virtual void vfunc40();
+    virtual bool vfunc40(Vector *pOut1, Vector *pOut2, float *pOut3);
     virtual void vfunc41();
     virtual void vfunc42();
     virtual bool vfunc43();

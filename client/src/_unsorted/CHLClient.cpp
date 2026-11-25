@@ -425,6 +425,81 @@ void CHLClient::vfunc2(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbdd0 size=0x77
+#include "CHLClient.h"
+#include "CClientEntityList.h"
+
+extern char g_104a579c;
+extern void *g_102ccd98;
+extern CClientEntityList *g_102b8e9c;
+extern void *g_1028073c;
+extern void *g_102cdad8;
+extern void *g_102cef78;
+extern char g_104e0768;
+extern char g_104cfe38;
+
+struct IVt3
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+};
+struct IVt1
+{
+    virtual void v0();
+    virtual void v1();
+};
+struct IVt8
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+};
+struct CPMBView
+{
+    void sub_101177a0();
+};
+struct V104cfe38
+{
+    void sub_100f0900();
+};
+struct S100cc040
+{
+    void sub_100cc040();
+};
+
+void sub_100576b0();
+void sub_100f41f0();
+void sub_100f4200();
+
+// TARGET: CHLClient::vfunc4
+void CHLClient::vfunc4()
+{
+    if (!g_104a579c)
+        return;
+
+    g_104a579c = 0;
+    sub_100576b0();
+    sub_100f41f0();
+    ((IVt3 *)g_102ccd98)->v3();
+    g_102b8e9c->sub_100d0b40();
+    sub_100f4200();
+    ((IVt1 *)g_1028073c)->v1();
+    ((CPMBView *)&g_104e0768)->sub_101177a0();
+    ((V104cfe38 *)&g_104cfe38)->sub_100f0900();
+    ((IVt3 *)g_102cdad8)->v3();
+    ((IVt8 *)g_102cef78)->v8();
+    ((S100cc040 *)this)->sub_100cc040();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbe50 size=0x1a
 #include "CHLClient.h"
 namespace lifted {
@@ -523,6 +598,80 @@ void CHLClient::vfunc31(const char *name)
 		g_102b8490 = pMat;
 		g_104a5804->v6(0, pMat, sub_100cbee0);
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc660 size=0x98
+#include "CHLClient.h"
+#include "CHud.h"
+
+struct V5808
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void v9();
+    virtual void v10();
+    virtual void v11();
+    virtual void v12();
+    virtual void v13();
+    virtual void v14();
+    virtual void v15();
+    virtual void v16(int, int);
+};
+extern V5808 *g_104a5808;
+
+struct VProfPanel
+{
+    void sub_1018dfc0();
+};
+
+extern int g_102b8498;
+extern CHud g_104cfe38;
+
+void sub_100cc570();
+void sub_100cc620();
+void sub_100cc650();
+void sub_100cc630();
+void sub_100cc640();
+void sub_1009db80(int);
+void sub_1009db70(int);
+
+void CHLClient::vfunc32(int n)
+{
+    g_102b8498 = n;
+    switch (n)
+    {
+    case 5:
+        sub_100cc570();
+        break;
+    case 6:
+        sub_100cc620();
+        break;
+    case 1:
+        sub_1009db80(0);
+        sub_1009db70(0);
+        g_104a5808->v16(0xac, 1);
+        sub_100cc630();
+        break;
+    case 2:
+        sub_100cc640();
+        break;
+    case 3:
+        sub_100cc650();
+        break;
+    case 0:
+        ((VProfPanel *)g_104cfe38.sub_100f0ed0("CVProfPanel"))->sub_1018dfc0();
+        break;
+    case 4:
+        break;
+    }
 }
 // END FUNCTION
 

@@ -67,6 +67,45 @@ void vgui2::BuildModeDialog::sub_101c4a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4be0 size=0xe8
+#include "vgui2__BuildModeDialog.h"
+#include "vgui2__Panel.h"
+#include "vgui2__KeyValues.h"
+
+extern "C" int __cdecl atoi(const char *);
+
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+
+struct IA
+{
+	V10(u0) V10(u1) V10(u2) V10(u3) V10(u4) V10(u5) V10(u6) V10(u7) V10(u8) V10(u9)
+	virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107();
+	virtual void vfunc108(int, char *, int);
+};
+
+struct ElemView { int m_unk0; IA *m_pObj; int m_unk8; char m_name[0x40]; int m_nType; };
+struct SList { ElemView *m_pData; int m_unk4; int m_unk8; int m_nCount; int m_unk10; void *m_pA; };
+#define LST (*(SList **)((char *)this + 0xe8))
+
+vgui2::KeyValues *vgui2::BuildModeDialog::vfunc148()
+{
+	vgui2::KeyValues *kv = new vgui2::KeyValues((*(vgui2::Panel **)((char *)this + 0xe4))->vfunc18());
+	char buf[0x100];
+	for (int i = 0; i < LST->m_nCount; i++)
+	{
+		char *name = LST->m_pData[i].m_name;
+		IA *obj = LST->m_pData[i].m_pObj;
+		obj->vfunc108(0, buf, 0xff);
+		int type = LST->m_pData[i].m_nType;
+		if (type >= 4 && type <= 5)
+			kv->vfunc15((int)name, atoi(buf));
+		else
+			kv->vfunc14(name, buf);
+	}
+	return kv;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4cd0 size=0x1a
 #include "vgui2__BuildModeDialog.h"
 struct BMD_101c4cd0 {

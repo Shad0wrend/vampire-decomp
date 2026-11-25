@@ -381,6 +381,69 @@ void CViewRender::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191940 size=0x9f
+#include "CViewRender.h"
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+#include "CUnknown1007f870.h"
+
+struct ViewModelInfo
+{
+	char m_pad[8];
+	Vector m_vecOrigin;
+	QAngle m_angles;
+};
+
+extern CUnknown1007f870 *sub_100ab1e0(int);
+
+// TARGET: CViewRender::CopyViewModelInfoToEntities
+void CViewRender::CopyViewModelInfoToEntities()
+{
+	ScopeTrace st("CViewRender::CopyViewModelInfoToEntities", g_102de300);
+	for ( int i = 0; i < 2; i++ )
+	{
+		ViewModelInfo *pInfo = (ViewModelInfo *)vfunc6(i);
+		if ( !pInfo )
+			continue;
+		C_BaseEntity *pEntity = (C_BaseEntity *)(void *)sub_100ab1e0(i);
+		if ( !pEntity )
+			continue;
+		pEntity->sub_100a2030(&pInfo->m_vecOrigin);
+		pEntity->sub_100a2100(pInfo->m_angles);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10192780 size=0xcc
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+struct ViewRenderV
+{
+	char pad0[0x478];
+	bool m_b478;	// 0x478
+	char pad479[3];
+	Vector m_vec47c;	// 0x47c
+	Vector m_vec488;	// 0x488
+	float m_fl494;		// 0x494
+};
+
+bool CViewRender::vfunc40(Vector *pOut1, Vector *pOut2, float *pOut3)
+{
+	ScopeTrace trace("CViewRender::IsDrawingCrossfade", g_102de300);
+	ViewRenderV *pView = (ViewRenderV *)this;
+	if (!pView->m_b478)
+		return false;
+	if (pOut1)
+		*pOut1 = pView->m_vec47c;
+	if (pOut2)
+		*pOut2 = pView->m_vec488;
+	if (pOut3)
+		*pOut3 = pView->m_fl494;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192850 size=0x1e
 struct V2850 { char pad[0x450]; float m; int sub_10192850(); };
 int V2850::sub_10192850() { return m > 0.0f; }
@@ -391,6 +454,89 @@ int V2850::sub_10192850() { return m > 0.0f; }
 float CViewRender::vfunc45()
 {
     return *(float *)((char *)this + 0x450);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101994c0 size=0xc9
+#include "CViewRender.h"
+#include "C_BaseEntity.h"
+
+struct IModelInfoView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual bool IsTranslucent(const void *model);
+	virtual void v9();
+	virtual bool v10(const void *model);
+	virtual void v11(const void *model);
+};
+
+struct IClientLeafSystemView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11(unsigned short handle, int flags);
+};
+
+struct CBaseEntV
+{
+	char pad40[0x40];
+	void *m_pModel;		// 0x40
+	int m_unk44;
+	int m_n48;		// 0x48
+	char pad4c[0xe8 - 0x4c];
+	unsigned short m_hE8;	// 0xe8
+};
+
+extern IModelInfoView *g_104a57f8;
+extern IClientLeafSystemView *g_102b9060;
+
+int CViewRender::vfunc10(C_BaseEntity *pEntity)
+{
+	CBaseEntV *pView = (CBaseEntV *)pEntity;
+
+	if (g_104a57f8->IsTranslucent(pEntity->GetModel()))
+	{
+		g_104a57f8->v11(pEntity->GetModel());
+	}
+
+	int nRenderMode = 5;
+	IClientLeafSystemView *pLeaf = g_102b9060;
+	if (pView->m_n48 == 0 && !pEntity->IsTransparent())
+	{
+		nRenderMode = !pEntity->vfunc79();
+	}
+	else if (pView->m_n48 != 6)
+	{
+		nRenderMode = 2;
+	}
+
+	if (pView->m_hE8 == 0xffff)
+	{
+		if (nRenderMode == 2 && g_104a57f8->v10(pView->m_pModel))
+			nRenderMode = 3;
+		pEntity->sub_100a1a70(nRenderMode);
+	}
+	else
+	{
+		pLeaf->v11(pView->m_hE8, nRenderMode);
+	}
+	return 0;
 }
 // END FUNCTION
 

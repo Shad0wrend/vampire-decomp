@@ -27,6 +27,60 @@ vgui2::Panel *pcd_emit_101a9460(const vgui2::Panel &other) { return new vgui2::P
 // TARGET: ??_GPanel@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101a9530 size=0xb5
+#include "vgui2__Panel.h"
+
+struct SurfaceSizeView0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *, int *);
+};
+
+struct ParentView0
+{
+	int sub_101aa220();
+};
+
+struct PanelSelfView0
+{
+	void sub_101aa230(int);
+	void sub_101a9ff0(int);
+};
+
+int sub_101ac8d0();
+
+vgui2::Panel::Panel(Panel *parent, const char *name)
+{
+	SurfaceSizeView0 *pSurface = (SurfaceSizeView0 *)sub_101ac8d0();
+	int nWide, nTall;
+	pSurface->v39(&nTall, &nWide);
+
+	double flW = nWide * 0.0013020833333333333;
+	int nW = (int)(flW * 24.0);
+	double flH = nTall * 0.0009765625;
+	int nH = (int)(flH * 64.0);
+
+	sub_101a96a0(0, 0, nH, nW);
+
+	sub_101a9810(name);
+	((PanelSelfView0 *)this)->sub_101a9ff0((int)parent);
+	if (parent != 0)
+	{
+		int nValue = ((ParentView0 *)parent)->sub_101aa220();
+		((PanelSelfView0 *)this)->sub_101aa230(nValue);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9860 size=0xd
 #include "vgui2__Panel.h"
 // TARGET: vgui2::Panel::vfunc18
@@ -871,6 +925,90 @@ void vgui2::Panel::vfunc13(int a0)
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc79()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aad80 size=0xda
+#include "vgui2__Panel.h"
+
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+int sub_101ac8f0();
+void *sub_101d12a1(unsigned int);
+void sub_101d1296(void *);
+__declspec(noreturn) void sub_101d309f(int);
+
+struct IPanelV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual int v15(int id);
+};
+
+struct CIntList
+{
+	int m_nCount;
+	int m_nCapacity;
+	int *m_pData;
+};
+
+void vgui2::Panel::vfunc41(int arg)
+{
+	Panel *pTarget = (Panel *)arg;
+	int value = ((IPanelV *)sub_101ac8f0())->v15(pTarget->vfunc0());
+
+	CIntList &list = *(CIntList *)((char *)this + 0x38);
+
+	int i = 0;
+	if ( list.m_nCount > 0 )
+	{
+		int size = list.m_nCount;
+		int *p = list.m_pData;
+		do
+		{
+			if ( *p == value )
+				goto found;
+			i++;
+			p++;
+		}
+		while ( i < size );
+	}
+	goto grow;
+
+found:
+	if ( i >= 0 )
+		return;
+
+grow:
+	int newSize = *(volatile int *)&list.m_nCount + 1;
+	int cap = list.m_nCapacity;
+	if ( newSize > cap )
+	{
+		if ( cap == 0 )
+			cap = 1;
+		while ( cap < newSize )
+			cap += cap;
+
+		int nBytes = cap * 4;
+		int *pNew = (int *)sub_101d12a1(nBytes);
+		if ( !pNew )
+			sub_101d309f(0);
+
+		memset(pNew, 0, nBytes);
+		list.m_nCapacity = cap;
+
+		for ( int j = 0; j < list.m_nCount; j++ )
+			pNew[j] = list.m_pData[j];
+
+		sub_101d1296(list.m_pData);
+		list.m_pData = pNew;
+	}
+
+	list.m_pData[list.m_nCount] = value;
+	list.m_nCount = list.m_nCount + 1;
 }
 // END FUNCTION
 

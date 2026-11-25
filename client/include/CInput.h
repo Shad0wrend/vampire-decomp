@@ -13,6 +13,7 @@ public:
     void sub_101025f0(float, struct Vector &);
     void sub_101003b0();
     void sub_10101d10(const char *, int);
+    void sub_101068a0(int);
     int m_unk04;
     int m_unk08;
     int m_unk0c;
@@ -62,7 +63,7 @@ public:
     virtual void vfunc19();
     virtual float vfunc20();
     virtual void vfunc21(char);
-    virtual void vfunc22();
+    virtual void vfunc22(int *, int *, int *, int *);
     virtual void vfunc23(int, int);
     virtual bool vfunc24();
     virtual void vfunc25();

@@ -32,4 +32,11 @@ public:
 	virtual float vfunc16(void *pSound, int soundCommand, envelopePoint_t *points, int numPoints);	// SoundPlayEnvelope
 	virtual void vfunc17();
 	virtual void vfunc18();
+
+	int m_unk04;
+	int m_unk08;
+	void **m_ppSounds;	// 0x0c
+	int m_unk10;
+	int m_unk14;
+	int m_nSoundCount;	// 0x18
 };

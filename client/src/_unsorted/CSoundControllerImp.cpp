@@ -267,3 +267,27 @@ struct VSndCtl { int m0, m4, m8; SndItem **m_pData; int m10, m14; int m_n; void 
 // TARGET: ?sub_10134ea0@VSndCtl@@QAEXH@Z
 void VSndCtl::sub_10134ea0(int a) { for (int i = m_n - 1; i >= 0; i--) m_pData[i]->sub_10133e50(a); }
 // END FUNCTION
+
+// FUNCTION: 0x10134ed0 size=0x26
+#include "CSoundControllerImp.h"
+
+class SP_10133d70
+{
+public:
+	int m_unk00, m_unk04, m_unk08, m_unk0c, m_unk10, m_unk14, m_unk18, m_unk1c;
+	int m_unk20, m_unk24, m_unk28, m_unk2c, m_unk30, m_unk34, m_unk38;
+	int m_bIsPlaying;	// 0x3c
+	void sub_10133d70();
+};
+
+// TARGET: CSoundControllerImp::vfunc18
+void CSoundControllerImp::vfunc18()
+{
+	for ( int i = m_nSoundCount - 1; i >= 0; --i )
+	{
+		SP_10133d70 *pSound = (SP_10133d70 *)m_ppSounds[i];
+		if ( pSound && pSound->m_bIsPlaying )
+			pSound->sub_10133d70();
+	}
+}
+// END FUNCTION

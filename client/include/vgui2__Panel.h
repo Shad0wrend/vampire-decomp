@@ -21,6 +21,10 @@ public:
 	void sub_101ab2d0();
 	void sub_101aa260(int a, int b);
 	void sub_101a9810(const char *pszName);
+	void *sub_101a95f0(void *parent, const char *name, int value);
+	void *sub_101a9480(void *parent);
+	void *sub_101a93d0();
+	void sub_101a96a0(int x, int y, int wide, int tall);
 	int sub_101ab490(int);
 	int sub_101aa220();
 	void sub_101a9af0();
@@ -40,6 +44,7 @@ public:
 	int m_i74;
 	int m_unk78;
 	void sub_101a9920(int *, int *);
+	void sub_10173270();
 	void sub_101a9950(int, int, int, int);
 	void sub_101ab0d0(int *wide, int *tall);
 	void sub_101ab4e0(int);

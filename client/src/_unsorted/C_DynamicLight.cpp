@@ -29,3 +29,44 @@ C_DynamicLight *pcd_emit_100ae000(const C_DynamicLight &other) { return new C_Dy
 
 // TARGET: ??_GC_DynamicLight@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100ae510 size=0x9a
+#include "C_DynamicLight.h"
+#include "ehandle.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct DynLightView
+{
+	char m_pad000[0x188];
+	CBaseHandle m_hOwner;
+	char m_pad18c[0x428 - 0x18c];
+	int m_n428;
+};
+
+struct CBaseEntV77
+{
+	void sub_100a0e30();
+};
+
+void C_DynamicLight::vfunc77()
+{
+	DynLightView *v = (DynLightView *)this;
+	if (v->m_n428 > 0)
+	{
+		C_BaseEntity *pOwner = (C_BaseEntity *)v->m_hOwner.Get();
+		if (pOwner)
+		{
+			Vector origin;
+			QAngle angles;
+			pOwner->vfunc57(v->m_n428, (int)&origin, (int)&angles);
+			vfunc44((int)&origin);
+			vfunc46((int)&angles);
+			sub_100a2030(&origin);
+			sub_100a2100(angles);
+			return;
+		}
+	}
+	((CBaseEntV77 *)this)->sub_100a0e30();
+}
+// END FUNCTION

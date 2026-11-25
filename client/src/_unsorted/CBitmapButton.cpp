@@ -41,3 +41,35 @@ void CBitmapButton::vfunc75(int pInitData)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x101643c0 size=0x66
+#include "CBitmapButton.h"
+
+struct BImgV
+{
+	void sub_10164900(void *pPanel, int a, float b);
+};
+
+struct BBView
+{
+	char pad0[0x220];
+	char m_bImage[4];
+};
+
+void __fastcall sub_101b3900(void *self);
+
+void CBitmapButton::vfunc98()
+{
+	int idx = 0;
+	if (vfunc139())
+		idx = vfunc140() ? 2 : 1;
+	else if (!vfunc47())
+		idx = 3;
+	BBView *v = (BBView *)this;
+	if (v->m_bImage[idx])
+	{
+		((BImgV *)((char *)this + 0xf0 + 0x4c * idx))->sub_10164900(this, 0, 1.0f);
+	}
+	sub_101b3900(this);
+}
+// END FUNCTION

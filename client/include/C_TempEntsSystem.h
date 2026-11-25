@@ -21,6 +21,7 @@ public:
 	void vfunc8(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17);
 	void vfunc11(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17);
 	void vfunc10(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16);
+	void vfunc23(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15);
 	void vfunc24(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
 	void vfunc27(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
 	void vfunc40(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
@@ -31,6 +32,7 @@ public:
 	void vfunc35(int, int, int, int, int, int);
 	void vfunc42(int, int, int, int, int, int);
 	void vfunc13(int, int, int, int, int, int, int, int, int);
+	void vfunc14(int, int, class Vector *, class Vector *, int, int, int, int, int);
 	void vfunc21(void *filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
 	void * vfunc0(char);
 	void vfunc31(int filter, int delay, int pos, int dir, int extra);

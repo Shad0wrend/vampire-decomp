@@ -420,6 +420,50 @@ int vgui2::Label::vfunc132()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2b50 size=0xcf
+#include "utlvector.h"
+#include "vgui2__Label.h"
+
+struct CUtlMemoryInt
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_101b3480(int num);
+	void Grow(int num) { sub_101b3480(num); }
+	int NumAllocated() const { return m_nAllocationCount; }
+	int *Base() { return m_pMemory; }
+	int &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct CUtlMemoryShort
+{
+	short *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_101b34f0(int num);
+	void Grow(int num) { sub_101b34f0(num); }
+	int NumAllocated() const { return m_nAllocationCount; }
+	short *Base() { return m_pMemory; }
+	short &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct LabelVecView
+{
+	char m_pad00[0x60];
+	CUtlVector<int, CUtlMemoryInt> m_vecA;		// 0x60
+	CUtlVector<short, CUtlMemoryShort> m_vecB;	// 0x74
+};
+
+int vgui2::Label::vfunc122(void *a, int b)
+{
+	LabelVecView *v = (LabelVecView *)this;
+	v->m_vecB.AddToTail((short)b);
+	vfunc57(0, 0);
+	return v->m_vecA.AddToTail((int)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2c20 size=0x4f
 #include "vgui2__Label.h"
 
@@ -454,6 +498,68 @@ int CView::sub_101b2c70(int i) { return m60[i]; }
 int vgui2::Label::vfunc126()
 {
     return *(int *)((char *)this + 0x6c);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b2cd0 size=0xe4
+#include "vgui2__Label.h"
+#include "UtlMem.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+class Mem2 {
+public:
+	void sub_101b34f0(int num);
+};
+
+struct VecInt5 {
+	int *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int *m_pElems;
+};
+
+struct VecShort5 {
+	short *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	short *m_pElems;
+};
+
+// TARGET: vgui2::Label::vfunc135
+void vgui2::Label::vfunc135(int index)
+{
+	while (*(int *)((char *)this + 0x6c) <= index) {
+		VecInt5 *v = (VecInt5 *)((char *)this + 0x60);
+		int elem = v->m_size;
+		if (v->m_size + 1 > v->m_alloc)
+			((UtlMem *)v)->sub_101b3480(v->m_size + 1 - v->m_alloc);
+		v->m_size += 1;
+		v->m_pElems = v->m_pMemory;
+		int numToMove = v->m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&v->m_pMemory[elem + 1], &v->m_pMemory[elem], numToMove * 4);
+		int *p = v->m_pMemory + elem;
+		if (p)
+			*p = 0;
+	}
+
+	while (*(int *)((char *)this + 0x80) <= index) {
+		VecShort5 *w = (VecShort5 *)((char *)this + 0x74);
+		int elem = w->m_size;
+		if (w->m_size + 1 > w->m_alloc)
+			((Mem2 *)w)->sub_101b34f0(w->m_size + 1 - w->m_alloc);
+		w->m_size += 1;
+		w->m_pElems = w->m_pMemory;
+		int numToMove = w->m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&w->m_pMemory[elem + 1], &w->m_pMemory[elem], numToMove * 2);
+		short *p = w->m_pMemory + elem;
+		if (p)
+			*p = 0;
+	}
 }
 // END FUNCTION
 
@@ -509,6 +615,82 @@ int vgui2::Label::vfunc77()
 {
     lifted::sub_101d3192((int)&lifted::g_10679200, 0x400, (int)&lifted::g_102d89c8, lifted::sub_101ab860());
     return (int)&lifted::g_10679200;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b32c0 size=0xda
+#include "vgui2__Label.h"
+
+class TIV_101b32c0
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual int v2(int *a, int *b);	// slot 2
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8();
+	virtual int v9(int a, int b);	// slot 9
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21();
+	virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25();
+	virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31();
+	virtual int v32(int *a, int *b);	// slot 32
+};
+
+struct LabelView_101b32c0
+{
+	char m_pad0[0x5c];
+	TIV_101b32c0 *m_pImage;		// 0x5c
+	TIV_101b32c0 **m_pLines;	// 0x60
+	char m_pad64[0x6c - 0x64];
+	int m_nLines;				// 0x6c
+	char m_pad70[0x88 - 0x70];
+	int m_nInset;				// 0x88
+	char m_pad8c[0x9c - 0x8c];
+	int m_nSkip;				// 0x9c
+};
+
+// TARGET: vgui2::Label::vfunc101
+void vgui2::Label::vfunc101()
+{
+	LabelView_101b32c0 *v = (LabelView_101b32c0 *)this;
+	int wide, tall;
+	sub_101a9920(&wide, &tall);
+	wide = wide - v->m_nInset;
+
+	if ( v->m_nLines == 1 )
+	{
+		int imgW, imgH;
+		v->m_pImage->v32(&imgW, &imgH);
+		if ( wide < imgW )
+			v->m_pImage->v9(wide, imgH);
+		else
+			v->m_pImage->v9(imgW, imgH);
+		return;
+	}
+
+	int sum = 0;
+	for ( int i = 0; i < v->m_nLines; i++ )
+	{
+		TIV_101b32c0 *img = v->m_pLines[i];
+		if ( !img )
+			continue;
+		if ( i == v->m_nSkip )
+			continue;
+		int a, b;
+		img->v2(&a, &b);
+		sum += a;
+	}
+
+	int rem = wide - sum;
+	if ( rem < 0 )
+		return;
+
+	int a, b;
+	v->m_pImage->v2(&a, &b);
+	v->m_pImage->v9(rem, b);
 }
 // END FUNCTION
 

@@ -39,6 +39,39 @@ void CViewEffects::vfunc8(Vector &origin, QAngle &angles, float factor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196c80 size=0xe5
+#include "CViewEffects.h"
+
+void CViewEffects::vfunc9(Vector &origin, QAngle &angles, float factor)
+{
+	if (m_nState != 2)
+		return;
+
+	bool bFlip = false;
+	float a = angles[1] + m_flAppliedAngle;
+	int i = (int)(a * 182.04445f) & 0xffff;
+	a = (float)i * 0.005493164f;
+	if (a > 180.0f)
+	{
+		a -= 180.0f;
+		bFlip = true;
+		a = 180.0 - a;
+	}
+	a *= 0.011111111f;
+	if (a > 1.0)
+	{
+		a -= 1.0;
+		a = 1.0 - a;
+	}
+	if (bFlip)
+		a = -a;
+	m_flAppliedAngle = a * m_flShakeAngle * factor;
+	m_vecAppliedOffset = m_vecShakeOffset * factor;
+	angles.z = 0;
+	origin -= m_vecAppliedOffset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101974c0 size=0xbe
 #include "CViewEffects.h"
 #include "ScopeTrace.h"

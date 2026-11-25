@@ -58,3 +58,35 @@ void VMapScreenUI::sub_10187980()
 	((CBasePanel *)((char *)this + 0x10))->sub_101aa0a0(0x76c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101879b0 size=0xd1
+#include "VMapScreenUI.h"
+#include "vgui2__Panel.h"
+
+extern int sub_100cd0f0();
+extern int sub_100cd100();
+
+#define XRES(x) ((x) * ((float)sub_100cd100() / 1024.0))
+#define YRES(y) ((y) * ((float)sub_100cd0f0() / 768.0))
+
+struct PanelX
+{
+	void sub_101a9950(int, int, int, int);
+	void sub_101aa0a0(int);
+};
+
+// TARGET: VMapScreenUI::vfunc2
+void VMapScreenUI::vfunc2()
+{
+	sub_10187860();
+	vgui2::Panel *pPanel = (vgui2::Panel *)((char *)this + 0x10);
+	((PanelX *)pPanel)->sub_101a9950(
+		(int)((sub_100cd100() - XRES(1024)) * 0.5),
+		(int)YRES(0),
+		(int)XRES(1024),
+		(int)YRES(1024));
+	pPanel->vfunc54(2);
+	((PanelX *)pPanel)->sub_101aa0a0(0x76c);
+	sub_10187400();
+}
+// END FUNCTION

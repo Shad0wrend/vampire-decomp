@@ -87,6 +87,35 @@ void vgui2::MenuItem::vfunc166()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6ec0 size=0x35
+#include "vgui2__MenuItem.h"
+
+class F8View_101c6ec0
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual int v3(int color);
+};
+
+struct MenuItemView_101c6ec0
+{
+	char m_pad0[0xf8];
+	F8View_101c6ec0 *m_pF8;
+};
+
+// TARGET: vgui2::MenuItem::vfunc101
+void vgui2::MenuItem::vfunc101()
+{
+	Button::vfunc101();
+	MenuItemView_101c6ec0 *v = (MenuItemView_101c6ec0 *)this;
+	if ( v->m_pF8 )
+	{
+		int clr;
+		v->m_pF8->v3(*(int *)vfunc156((int)&clr));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6f70 size=0x61
 #include "vgui2__MenuItem.h"
 
