@@ -51772,6 +51772,32 @@ float sub_100fdb30(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff030 size=0x68
+#include "Vector.h"
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm
+	{
+		fld		radians
+		fsincos
+		mov		edx, dword ptr [cosine]
+		mov		eax, dword ptr [sine]
+		fstp	dword ptr [edx]
+		fstp	dword ptr [eax]
+	}
+}
+
+#define DEG2RAD(x) ((x) * (float)(3.14159265358979323846f / 180.0f))
+
+Vector sub_100ff030(const Vector &in, float flYaw)
+{
+	float sy, cy;
+	SinCos(DEG2RAD(flYaw), &sy, &cy);
+	return Vector(in.x * cy - in.y * sy, in.x * sy + in.y * cy, in.z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100b40 size=0x58
 extern char g_104d2ce4;
 extern char g_104d2ce8;
