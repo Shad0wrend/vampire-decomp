@@ -57058,6 +57058,61 @@ void CGameMovement::sub_100e9390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9430 size=0xe0
+#include "CGameMovement.h"
+
+struct GlobalsV
+{
+	char m_pad0[0x10];
+	float m_frametime;
+};
+extern GlobalsV *g_102b8494;
+
+struct MoveV
+{
+	char m_pad0[0x1884];
+	int m_field1884;
+	char m_pad1888[0x199c - 0x1888];
+	float m_field199c;
+};
+
+struct PlayerV
+{
+	char m_pad0[0x40];
+	Vector m_vecVelocity;
+	char m_pad4c[0x34];
+	Vector m_vecWishVel;
+};
+
+void CGameMovement::sub_100e9430(Vector &wishdir, float wishspeed, float accel)
+{
+	float wishspd = wishspeed;
+
+	MoveV *pMove = (MoveV *)m_pMove;
+	if ( pMove->m_field1884 )
+		return;
+	if ( pMove->m_field199c != 0.0f )
+		return;
+
+	if ( wishspeed > 30.0f )
+		wishspd = 30.0f;
+
+	float addspeed = wishspd - DotProduct(((PlayerV *)m_pPlayer)->m_vecVelocity, wishdir);
+	if ( addspeed <= 0.0f )
+		return;
+
+	float accelspeed = g_102b8494->m_frametime * m_fieldA0 * wishspeed * accel;
+	if ( accelspeed > addspeed )
+		accelspeed = addspeed;
+
+	for (int i = 0; i < 3; i++)
+	{
+		((PlayerV *)m_pPlayer)->m_vecVelocity[i] += accelspeed * wishdir[i];
+		((PlayerV *)m_pPlayer)->m_vecWishVel[i] += accelspeed * wishdir[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e9e40 size=0x26
 namespace lifted {
 struct V { virtual void u0(); virtual int f1(); };
