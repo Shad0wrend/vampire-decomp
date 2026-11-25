@@ -101,6 +101,26 @@ void C_TempEntsSystem::vfunc13(int f1, int f2, int f3, int f4, int f5, int f6, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5680 size=0x75
+#include "C_TempEntsSystem.h"
+#include "C_RecipientFilter.h"
+
+extern void *g_104a0d50;
+void __cdecl sub_10034f20(int, int, int, int, int, int, int, int, int, int);
+
+void C_TempEntsSystem::vfunc15(int filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+    if (CanPredict())
+    {
+        C_RecipientFilter *pFilter = (C_RecipientFilter *)filter;
+        if (!pFilter->sub_100be140())
+            pFilter->sub_100bdf90(g_104a0d50);
+        if (pFilter->vfunc2())
+            sub_10034f20(filter, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5760 size=0x6b
 #include "C_TempEntsSystem.h"
 #include "C_RecipientFilter.h"
