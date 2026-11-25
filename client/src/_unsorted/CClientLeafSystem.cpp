@@ -139,6 +139,38 @@ int CClientLeafSystem::vfunc10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2a40 size=0xbf
+#include "CClientLeafSystem.h"
+struct RendV {
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+    virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18();
+    virtual void GetRenderBounds(float *mins, float *maxs);
+};
+struct LeafV {
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+    virtual void Changed(int handle, float *mins, float *maxs);
+};
+// TARGET: CClientLeafSystem::sub_100d2a40
+void CClientLeafSystem::sub_100d2a40(int handle, int group)
+{
+    CClientLeafSystem::Item_t *p = &((CClientLeafSystem::Item_t *)m_pData)[handle & 0xffff];
+    unsigned char flags = *(unsigned char *)&p->m_a14;
+    if (group == 3) {
+        group = 2;
+        flags |= 1;
+    } else {
+        flags &= 0xfe;
+    }
+    *(unsigned char *)&p->m_a14 = flags;
+    float maxs[3], mins[3];
+    ((RendV *)p->m_a0)->GetRenderBounds(mins, maxs);
+    float *pf = (float *)&p->m_a18;
+    if (pf[0] != mins[0] || pf[1] != mins[1] || pf[2] != mins[2] || pf[3] != maxs[0] || pf[4] != maxs[1] || pf[5] != maxs[2])
+        ((LeafV *)this)->Changed(handle, mins, maxs);
+    ((unsigned char *)&p->m_a14)[1] = (unsigned char)group;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2b00 size=0x2f
 #include "CClientLeafSystem.h"
 struct Ent_100d2b00 { int m_u0; unsigned short m_w4; unsigned short m_w6; int m_u8; };

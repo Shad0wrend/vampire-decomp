@@ -4725,6 +4725,7 @@
 0x100d27e0 func   ?sub_100d27e0@CUnknown100d27e0@@QAEDHH@Z CUnknown100d27e0::sub_100d27e0
 0x100d2800 func   ?sub_100d2800@CClientLeafSystem@@QAEXGPAM0@Z CClientLeafSystem::sub_100d2800
 0x100d2a10 func   ?vfunc10@CClientLeafSystem@@QAEHHHH@Z CClientLeafSystem::vfunc10
+0x100d2a40 func   ?sub_100d2a40@CClientLeafSystem@@QAEXHH@Z CClientLeafSystem::sub_100d2a40
 0x100d2b00 func   ?vfunc8@CClientLeafSystem@@QAEXHHPAI0@Z CClientLeafSystem::vfunc8
 0x100d2b30 func   ?vfunc9@CClientLeafSystem@@QAE_NHH@Z CClientLeafSystem::vfunc9
 0x100d2b50 func   ?vfunc12@CClientLeafSystem@@QAEXHPAH0H@Z CClientLeafSystem::vfunc12
