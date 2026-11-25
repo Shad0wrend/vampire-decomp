@@ -2502,6 +2502,7 @@
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
 0x10049f90 func   ?sub_10049f90@CMeshBuilder@@QAEXG@Z CMeshBuilder::sub_10049f90
+0x10049fc0 func   ??0CGodLight@@QAE@XZ CGodLight::CGodLight
 0x10049fc0 func   ?sub_10049fc0@CUnknown10049fc0@@QAEPAXXZ CUnknown10049fc0::sub_10049fc0
 0x1004a000 func   ??_GCGodLight@@UAEPAXI@Z ??_GCGodLight@@UAEPAXI@Z
 0x1004a020 func   ?vfunc1@CGodLight@@UAEXXZ CGodLight::vfunc1
