@@ -254,6 +254,50 @@ void CBasePanel::vfunc87(int code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163fd0 size=0x7a
+#include "CBasePanel.h"
+
+extern void *sub_101b6840(int);
+extern void *sub_101ac8f0();
+
+class CUnknown101b56c0
+{
+public:
+	void *sub_101b56c0(const char *, const char *, int);
+};
+
+struct IVGuiView
+{
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3();
+	virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7();
+	virtual void g8(); virtual void g9(); virtual void g10(); virtual void g11();
+	virtual void g12(); virtual void g13(); virtual void g14(); virtual void g15();
+	virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20(int, void *, int, int);
+};
+
+void CBasePanel::vfunc88(int code)
+{
+	if (!((char *)this)[0x16c])
+		return;
+
+	vgui2::Panel *p = (vgui2::Panel *)vfunc31();
+	if (!p)
+		return;
+
+	void *kv;
+	void *k = sub_101b6840(0x1c);
+	if (k)
+		kv = ((CUnknown101b56c0 *)k)->sub_101b56c0("MouseDoublePressed", "code", code);
+	else
+		kv = 0;
+
+	vgui2::Panel *p2 = (vgui2::Panel *)vfunc31();
+	void *vgui = sub_101ac8f0();
+	((IVGuiView *)vgui)->g20(p2->vfunc0(), kv, vfunc0(), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164150 size=0x1
 #include "CBasePanel.h"
 void CBasePanel::vfunc2()
