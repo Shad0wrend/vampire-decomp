@@ -28544,6 +28544,34 @@ void __stdcall sub_1007c8e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cc30 size=0x8b
+#include "C_BaseCombatWeapon.h"
+#include <string.h>
+struct SNameEntryX { int m_id; const char *m_pszName; };
+struct WpnOwnerX { char pad[0x24d0]; int m_n24d0; };
+extern char *sub_1015fb60(const char *);
+extern int g_105e85dc;
+extern SNameEntryX **g_105e85e0;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+static inline int LookupId(const char *tok)
+{
+	for (int i = 0; i < g_105e85dc; i++) {
+		const char *const &name = g_105e85e0[i]->m_pszName;
+		if (!_strcmpi(name ? name : "", tok))
+			return g_105e85e0[i]->m_id;
+	}
+	return -1;
+}
+void C_BaseCombatWeapon::sub_1007cc30(const char *arg)
+{
+	char *tok = sub_1015fb60(arg);
+	strtok(tok, " ");
+	int idx = LookupId(tok);
+	((WpnOwnerX *)sub_1007b160())->m_n24d0 = idx;
+	strtok(0, " ");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cd70 size=0xb
 struct CWpnView7d8 { char pad[0x7d8]; unsigned char m_a : 1; unsigned char m_b : 1; bool sub_1007cd70(); };
 // TARGET: CWpnView7d8::sub_1007cd70
