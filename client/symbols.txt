@@ -9361,6 +9361,7 @@
 0x101c8260 func   ?vfunc164@PageTab@vgui2@@UAEHHHHH@Z vgui2::PageTab::vfunc164
 0x101c82b0 func   ?vfunc156@PageTab@vgui2@@UAEHH@Z vgui2::PageTab::vfunc156
 0x101c82e0 func   ?vfunc166@PageTab@vgui2@@UAEHD@Z vgui2::PageTab::vfunc166
+0x101c8310 func   ?vfunc87@PageTab@vgui2@@UAEXH@Z vgui2::PageTab::vfunc87
 0x101c83d0 func   ?vfunc89@PageTab@vgui2@@UAEXH@Z vgui2::PageTab::vfunc89
 0x101c84a0 func   ??_GPropertySheet@vgui2@@UAEPAXI@Z ??_GPropertySheet@vgui2@@UAEPAXI@Z
 0x101c84c0 func   ??1PropertySheet@vgui2@@UAE@XZ vgui2::PropertySheet::~PropertySheet
