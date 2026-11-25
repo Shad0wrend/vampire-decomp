@@ -91542,6 +91542,32 @@ void Net_10168ce0::sub_10168ce0(int idx, unsigned char *rgb, unsigned char *a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168d20 size=0x7c
+#include "CNetGraphPanel.h"
+// TARGET: ?sub_10168d20@CNetGraphPanel@@QAEXPAUNGEntry@@PAEPAH1@Z
+void CNetGraphPanel::sub_10168d20(NGEntry *e, unsigned char *a, int *flag, unsigned char *b)
+{
+	int t = e->m_type;
+	*flag = 0;
+	switch (t)
+	{
+	case 0x270d:
+		sub_10168ce0(2, a, b);
+		break;
+	case 0x270e:
+		sub_10168ce0(1, a, b);
+		break;
+	case 0x270f:
+		sub_10168ce0(0, a, b);
+		break;
+	default:
+		*flag = 1;
+		sub_10168ce0(e->m_val ? 3 : 4, a, b);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10169900 size=0x1a4
 #include "ConVar.h"
 
