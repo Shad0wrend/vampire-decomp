@@ -124,6 +124,45 @@ bool vgui2::Button::vfunc140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3900 size=0xd2
+#include "vgui2__Button.h"
+
+struct SurfV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *, int *);
+};
+
+SurfV *sub_101ac8d0();
+
+void vgui2::Button::vfunc98()
+{
+	sub_101b2610();
+	if (!vfunc56())
+		return;
+	if (!vfunc47())
+		return;
+	if (!m_b0ed)
+		return;
+	int w, h;
+	sub_101ac8d0()->v39(&w, &h);
+	int x, y;
+	sub_101a9920(&x, &y);
+	double sh = h * (1.0 / 768.0);
+	double sw = w * (1.0 / 1024.0);
+	vfunc163((int)(3.0 * sw), (int)(3.0 * sh), (int)(x - 4.0 * sw), (int)(y - 2.0 * sh));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3a60 size=0x41
 #include "vgui2__Button.h"
 int vgui2::Button::vfunc156(int a0)
