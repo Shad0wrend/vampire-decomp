@@ -12,6 +12,31 @@ int CEntitySaveRestoreBlockHandler::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b610 size=0xc1
+#include "CEntitySaveRestoreBlockHandler.h"
+#include "CSave.h"
+#include "ehandle.h"
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14(); virtual void b15(); };
+struct EntSV : EB { virtual void c0(); virtual void c1(); virtual int ObjectCaps(); virtual void Save(CSave *); };
+struct SaveRec { char pad[0x10]; CBaseHandle m_hEnt; int m_tick; int m_size; char pad2[0x30 - 0x1c]; };
+struct SaveBlock { char pad[0x1318]; int m_count; SaveRec *m_pRecs; };
+void CEntitySaveRestoreBlockHandler::vfunc2(CSave *pSave)
+{
+	SaveBlock *blk = (SaveBlock *)pSave->vfunc38();
+	for (int i = 0; i < blk->m_count; i++) {
+		SaveRec *rec = &blk->m_pRecs[i];
+		rec->m_tick = pSave->vfunc0();
+		rec->m_size = 0;
+		EntSV *ent = (EntSV *)rec->m_hEnt.Get();
+		if (ent && !(ent->ObjectCaps() & 0x80000000)) {
+			ent->Save(pSave);
+			rec->m_size = pSave->vfunc0() - rec->m_tick;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b6e0 size=0x73
 #include "CSave.h"
 #include "CEntitySaveRestoreBlockHandler.h"
