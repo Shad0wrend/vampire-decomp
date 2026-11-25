@@ -36,6 +36,37 @@ void CharEditStatsPanel::vfunc123()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182360 size=0xc4
+#include "CharEditStatsPanel.h"
+typedef vgui2::Panel PanelT;
+bool sub_101713e0();
+// TARGET: ?vfunc21@CharEditStatsPanel@@UAEHH@Z
+int CharEditStatsPanel::vfunc21(int bShow)
+{
+	((PanelT *)this)->sub_101a99f0(bShow);
+	if ((char)bShow)
+	{
+		sub_10182460();
+		if (sub_101713e0())
+		{
+			m_p2d8->vfunc21(1);
+			m_p2bc->vfunc21(0);
+			m_p2c0->vfunc21(0);
+			m_p2c4->vfunc21(0);
+			m_p2c8->vfunc21(0);
+			return sub_1017f290();
+		}
+		m_p2d8->vfunc21(0);
+		m_p2bc->vfunc21(1);
+		m_p2c0->vfunc21(1);
+		m_p2c4->vfunc21(1);
+		m_p2c8->vfunc21(1);
+		return sub_1017f290();
+	}
+	return sub_10182450();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182440 size=0x1
 #include "CharEditStatsPanel.h"
 void CharEditStatsPanel::vfunc3()
