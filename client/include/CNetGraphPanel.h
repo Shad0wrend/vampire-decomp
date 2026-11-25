@@ -4,6 +4,7 @@
 #pragma once
 #include "vgui2__Panel.h"
 
+struct NGEntry { int m_type; int m_val; };
 class CNetGraphPanel : public vgui2::Panel
 {
 public:
@@ -16,5 +17,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CNetGraphPanel adds to its base's vtable: 107-107, vfuncK at slot K
 	virtual bool vfunc107();
 	unsigned int sub_101698d0();
+	void sub_10168ce0(int, unsigned char *, unsigned char *);
+	void sub_10168d20(NGEntry *, unsigned char *, int *, unsigned char *);
 	void sub_10169c20(int, int);
 };
