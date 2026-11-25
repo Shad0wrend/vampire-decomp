@@ -99840,6 +99840,34 @@ void CUnknown101733b0::sub_101733b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101733d0 size=0xb0
+#include "CharEditPanel.h"
+struct IEngineCmd { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(const char *cmd, int bWait); virtual void v28(const char *cmd); };
+extern IEngineCmd *g_104a57d4;
+void CharEditPanel::sub_101733d0(bool bDisconnect)
+{
+	if (!m_bCf9) {
+		m_bCf9 = true;
+		if (!m_unk274)
+			return;
+	}
+	m_bEd8 = false;
+	if ((char)vfunc22()) {
+		vfunc21(0);
+		sub_101740e0(1);
+		if (sub_10172ac0())
+			g_104a57d4->v27("vclan teamchoose done", 1);
+		if (m_bEe8)
+			g_104a57d4->v27("vskip_intro", 1);
+		if (bDisconnect && m_unk274)
+			g_104a57d4->v28("disconnect");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173480 size=0x27
 namespace lifted {
 struct C10173350 { int sub_10173350(); };
