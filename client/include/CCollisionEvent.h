@@ -13,4 +13,5 @@ public:
  CCollisionEventData m_data;
  char m_flag;
  void sub_10119730(int, int);
+ void sub_101194c0(int index, struct CCollisionImpact *pImpact);
 };
