@@ -111598,6 +111598,35 @@ void sub_101a5a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5a90 size=0xc8
+#include <string.h>
+void sub_101a5b60(const char *flag, unsigned int *pFlags);
+extern char *(*g_101e3188)(char *, const char *, int);
+// TARGET: sub_101a5a90
+void sub_101a5a90(const char *name, unsigned int *pOut, const char *flagsStr)
+{
+	unsigned int flags = 0;
+	if (strstr(name, "item_w_"))
+		flags |= 0x50;
+	else if (strstr(name, "item_a_"))
+		flags |= 0x50;
+	else
+		flags |= 1;
+	if (flagsStr && *flagsStr) {
+		char buf[260];
+		g_101e3188(buf, flagsStr, 260);
+		_strlwr(buf);
+		char *tok = strtok(buf, " ");
+		while (tok) {
+			sub_101a5b60(tok, &flags);
+			tok = strtok(0, " ");
+		}
+	}
+	if (pOut)
+		*pOut = flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a5b60 size=0x89
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 extern const char *g_102d6908[];

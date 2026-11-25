@@ -8513,6 +8513,7 @@
 0x101a5a40 func   ?sub_101a5a40@@YAHXZ sub_101a5a40
 0x101a5a50 func   ?sub_101a5a50@@YAHI@Z sub_101a5a50
 0x101a5a80 func   ?sub_101a5a80@@YAXXZ sub_101a5a80
+0x101a5a90 func   ?sub_101a5a90@@YAXPBDPAI0@Z sub_101a5a90
 0x101a5b60 func   ?sub_101a5b60@@YAXPBDPAI@Z sub_101a5b60
 0x101a5bf0 func   ?sub_101a5bf0@@YAHXZ sub_101a5bf0
 0x101a5cd0 func   ??4CValRecord@@QAEAAU0@ABU0@@Z ??4CValRecord@@QAEAAU0@ABU0@@Z
