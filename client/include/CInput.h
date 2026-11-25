@@ -9,6 +9,7 @@ public:
     void sub_10106880(int);
     void sub_10106860(int *, int *);
     void sub_10101df0();
+    void sub_101003b0();
     void sub_10101d10(const char *, int);
     int m_unk04;
     int m_unk08;
