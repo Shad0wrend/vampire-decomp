@@ -5962,6 +5962,7 @@
 0x10118ad0 func   ?sub_10118ad0@@YA?AV?$CSmartPtr@VCUnknown10118a90@@@@H@Z sub_10118ad0
 0x10118b20 func   ?vfunc12@CFireParticle@@AAE?AVVector@@PBUSimpleParticleC_t@@M@Z CFireParticle::vfunc12
 0x10118c80 func   ?sub_10118c80@@YA_NP6APAXPBDPAH@Z@Z sub_10118c80
+0x10118cf0 func   ?sub_10118cf0@@YAXXZ sub_10118cf0
 0x10118dd0 func   ?sub_10118dd0@@YAXXZ sub_10118dd0
 0x10118f90 func   ?sub_10118f90@@YGHHHHHH@Z sub_10118f90
 0x10119060 func   ?vfunc8@CPhysicsSystem@@UAEPAVCAutoGameSystem@@I@Z CPhysicsSystem::vfunc8

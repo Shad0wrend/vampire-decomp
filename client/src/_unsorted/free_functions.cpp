@@ -68181,6 +68181,84 @@ bool sub_10118c80(CreateInterfaceFn factory)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118cf0 size=0xdc
+#include "ConVar.h"
+#include "Vector.h"
+
+struct IPhysObjV;
+
+struct IPhysV
+{
+	virtual IPhysObjV *v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int v3();
+};
+
+struct IPhysObjV
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void v3(void *);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24();
+	virtual void v25(void *);
+	virtual void v26(); virtual void v27(); virtual void v28();
+	virtual void v29(float);
+	virtual void v30(); virtual void v31();
+	virtual void v32(void *);
+};
+
+struct IModelInfoV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17();
+	virtual void *v18(int);
+};
+
+struct IEngineV
+{
+	virtual void v0(IPhysObjV *, void *, int);
+};
+
+extern IPhysV *g_104e0c84;
+extern IPhysObjV *g_104e0c90;
+extern int g_104e0c98;
+extern int g_104e0c88;
+extern IModelInfoV *g_104a57f8;
+extern IEngineV *g_104a5814;
+extern char g_104e09f8[];
+extern char g_104e09fc[];
+extern char g_104e0c30[];
+extern char g_10235b5c[];
+
+int sub_100ca9c0();
+void *sub_10120230(void *, void *, void *);
+
+// TARGET: sub_10118cf0
+void sub_10118cf0()
+{
+	g_104e0c90 = g_104e0c84->v0();
+	g_104e0c98 = g_104e0c84->v3();
+
+	float grav = g_104dfce4->vfunc1() ? 0.0f : g_104dfce4->m_fValue;
+	Vector v(0.0f, 0.0f, -grav);
+	g_104e0c90->v3(&v);
+	g_104e0c90->v29(0.015f);
+	g_104e0c90->v32(g_104e09f8);
+	g_104e0c90->v25(g_104e09fc);
+
+	g_104e0c88 = (int)sub_10120230((void *)sub_100ca9c0(), g_104a57f8->v18(1), g_10235b5c);
+	g_104a5814->v0(g_104e0c90, g_104e0c30, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10118dd0 size=0x10
 namespace lifted {
 extern int g_104e0c90;
