@@ -16,4 +16,5 @@ public:
 	virtual void vfunc15(bool bDevMsg, const char *fmt, ...);
 	virtual ~CMoveHelperClient();
 	void vfunc19();
+	virtual void *vfunc20(const char *name, int *pSize);
 };
