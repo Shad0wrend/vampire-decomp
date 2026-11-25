@@ -55332,6 +55332,31 @@ void sub_100f2c00(int *r, int *g, int *b, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f34f0 size=0xa8
+#include "CHud.h"
+extern CHud g_104cfe38;
+extern int sub_100ccdc0(void *);
+extern void sub_100ccd10(int, int, void *, int, int, int);
+// TARGET: sub_100f34f0
+void __stdcall sub_100f34f0(int x, int y, int count, int a4, int a5, int a6, bool bSmall)
+{
+	void *tex[2];
+	if (bSmall)
+		tex[0] = g_104cfe38.sub_100f11d0("number_burn1s");
+	else
+		tex[0] = g_104cfe38.sub_100f11d0("number_burn1");
+	if (bSmall)
+		tex[1] = g_104cfe38.sub_100f11d0("number_burn2s");
+	else
+		tex[1] = g_104cfe38.sub_100f11d0("number_burn2");
+	int w = sub_100ccdc0(tex[0]);
+	for (int i = 0; i < count; i++, x += w)
+	{
+		sub_100ccd10(x, y, tex[i % 2], a4, a5, a6);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f35a0 size=0x4c
 struct CHudDigit_100f35a0 {
 	int sub_100f35a0(int iNumber, char iFlags);

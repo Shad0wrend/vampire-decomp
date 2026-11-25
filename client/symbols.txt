@@ -5203,6 +5203,7 @@
 0x100f27e0 func   ?sub_100f27e0@@YGXHHH@Z sub_100f27e0
 0x100f2850 func   ?sub_100f2850@@YAXPAUFovVar@@@Z sub_100f2850
 0x100f2c00 func   ?sub_100f2c00@@YAXPAH00H@Z sub_100f2c00
+0x100f34f0 func   ?sub_100f34f0@@YGXHHHHHH_N@Z sub_100f34f0
 0x100f35a0 func   ?sub_100f35a0@CHudDigit_100f35a0@@QAEHHD@Z CHudDigit_100f35a0::sub_100f35a0
 0x100f3640 func   ?sub_100f3640@CUnknown100f3640@@QAEPAXXZ CUnknown100f3640::sub_100f3640
 0x100f3680 func   ?sub_100f3680@CUnknown100f3680@@QAEXXZ CUnknown100f3680::sub_100f3680
