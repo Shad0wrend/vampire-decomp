@@ -123,6 +123,79 @@ int CHudSprite::vfunc17(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3840 size=0xf0
+#include "IHudSprite.h"
+
+extern void *g_104a57d4;
+extern void *g_104a57f8;
+extern void (*g_101e3120)(int, const char *, const char *);
+
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+extern "C" int _strcmpi(const char *, const char *);
+
+struct CEngineView
+{
+    virtual void v0() = 0;  virtual void v1() = 0;  virtual void v2() = 0;  virtual void v3() = 0;
+    virtual void v4() = 0;  virtual void v5() = 0;  virtual void v6() = 0;  virtual void v7() = 0;
+    virtual void v8() = 0;  virtual void v9() = 0;  virtual void v10() = 0; virtual void v11() = 0;
+    virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+    virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+    virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+    virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+    virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+    virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+    virtual int v36(const char *) = 0;
+};
+
+struct CModelInfoView
+{
+    virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0;
+    virtual void v3() = 0; virtual void v4() = 0; virtual int v5(int) = 0;
+};
+
+struct HudSpriteEntry
+{
+    int m_hSprite;
+    char *m_pszName;
+    int m_pTexture;
+};
+
+// TARGET: CHudSprite::vfunc2
+int CHudSprite::vfunc2(const char *pszName)
+{
+    if (!pszName)
+        return 0;
+    if (m_unk30 == 0)
+        return 0;
+    if (m_unk34 <= 0)
+        return 0;
+
+    for (int i = 0; i < m_unk34; i++)
+    {
+        if (((HudSpriteEntry *)m_unk30)[i].m_hSprite == 0)
+        {
+            ((HudSpriteEntry *)m_unk30)[i].m_pszName = new char[strlen(pszName) + 1];
+            strcpy(((HudSpriteEntry *)m_unk30)[i].m_pszName, pszName);
+        }
+        if (_strcmpi(pszName, ((HudSpriteEntry *)m_unk30)[i].m_pszName) == 0)
+        {
+            ((HudSpriteEntry *)m_unk30)[i].m_hSprite = ((CEngineView *)g_104a57d4)->v36(pszName);
+            if (((HudSpriteEntry *)m_unk30)[i].m_hSprite == 0)
+            {
+                g_101e3120(1, "Can't load sprite %s\n", pszName);
+                return 0;
+            }
+            ((HudSpriteEntry *)m_unk30)[i].m_pTexture = ((CModelInfoView *)g_104a57f8)->v5(((HudSpriteEntry *)m_unk30)[i].m_hSprite);
+            return i + 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3950 size=0x26
 #include "IHudSprite.h"
 struct V3d50 { El3d50 *sub_100f3d50(int); };
