@@ -95733,6 +95733,57 @@ HNode *CHashX::sub_101a3190(const void *key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a31e0 size=0x64
+struct LElem101a31e0
+{
+    int m_0;
+    int m_4;
+    int m_8;
+    int m_c;
+};
+
+struct LNode101a31e0
+{
+    LElem101a31e0 m_elem;
+    LNode101a31e0 *m_next;
+    void *m_pList;
+};
+
+struct LList101a31e0
+{
+    int m_unk0;
+    int m_unk4;
+    int m_unk8;
+    int m_unkc;
+    LNode101a31e0 *m_head;
+    int m_unk14;
+};
+
+struct LOwner101a31e0
+{
+    LNode101a31e0 *sub_101a31e0(LElem101a31e0 *elem);
+};
+
+void *operator new(unsigned int);
+int sub_101a2f00(void *);
+
+// TARGET: LOwner101a31e0::sub_101a31e0
+LNode101a31e0 *LOwner101a31e0::sub_101a31e0(LElem101a31e0 *elem)
+{
+    LNode101a31e0 *node = (LNode101a31e0 *)operator new(0x18);
+    if (!node)
+        return 0;
+    int idx = sub_101a2f00(elem) & 0xff;
+    LList101a31e0 *list = &((LList101a31e0 *)this)[idx];
+    node->m_elem = *elem;
+    node->m_pList = list;
+    node->m_next = list->m_head;
+    list->m_head = node;
+    node->m_next->m_pList = node;
+    return node;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
