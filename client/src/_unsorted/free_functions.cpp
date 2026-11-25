@@ -22089,6 +22089,17 @@ void CUnknown1005eee0::sub_1005eee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005eef0 size=0x51
+#include "CItemInfo.h"
+#include "CHUDSprite.h"
+
+void CItemInfo::sub_1005eef0()
+{
+	if (m_unk190 == 0)
+		m_unk190 = (CItemInfoOwned *)new CHUDSprite("hud/InfoWindow", 0, 0, 0x200, 0x400, 0x200, 0x400);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f150 size=0xa
 struct CUnknown1005f150 { int sub_1005f150(int); };
 int CUnknown1005f150::sub_1005f150(int a0)
