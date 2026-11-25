@@ -3523,6 +3523,7 @@
 0x1009f110 func   ?sub_1009f110@VEnt@@QAEX_N@Z VEnt::sub_1009f110
 0x1009f140 func   ?sub_1009f140@@YI_NPAUS_1009f140@@HH@Z sub_1009f140
 0x1009f160 func   ?sub_1009f160@CUnknown1009f160@@QAEXHD@Z CUnknown1009f160::sub_1009f160
+0x1009f190 func   ?sub_1009f190@C_BaseEntity@@QAEMXZ C_BaseEntity::sub_1009f190
 0x1009f210 func   ?ShouldDraw@C_BaseEntity@@UAE_NXZ C_BaseEntity::ShouldDraw
 0x1009f260 func   ?Collideable_vfunc0@C_BaseEntity@@UAE_NHHH@Z C_BaseEntity::Collideable_vfunc0
 0x1009f260 func   ?sub_1009f260@@YGDHHH@Z sub_1009f260

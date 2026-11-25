@@ -36225,6 +36225,21 @@ void CUnknown1009f160::sub_1009f160(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f190 size=0x7f
+#include "C_BaseEntity.h"
+float C_BaseEntity::sub_1009f190()
+{
+	if (!vfunc85())
+		return 1.0f;
+	float f = (float)vfunc84() / (float)vfunc85();
+	if (f > 1.0f)
+		return 1.0f;
+	if (f < 0.0f)
+		return 0.0f;
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f260 size=0x5
 char __stdcall sub_1009f260(int a0, int a1, int a2)
 {
