@@ -15,6 +15,7 @@ public:
 	void *sub_1007bab0();
 	char *sub_1007b180();
 	bool sub_1007d950();
+	struct WpnSlot_t *sub_1007b5b0();
 	bool sub_1007d810();
 	bool sub_1007d790(void *arg0, void *arg1, int arg2);
 	int sub_1009cd10();
