@@ -18,5 +18,6 @@ public:
 	int vfunc16(Vector *p);
 	virtual ~CMoveHelperClient();
 	void vfunc19();
+	int vfunc22(const Vector &pt);
 	virtual void *vfunc20(const char *name, int *pSize);
 };
