@@ -129,3 +129,47 @@ void CCenterStringPanel::vfunc2()
     ((lifted::V *)this)->f21(((lifted::V *)this)->f107());
 }
 // END FUNCTION
+
+// FUNCTION: 0x10164f20 size=0xc3
+#include "CCenterStringPanel.h"
+#define F(n) virtual void f##n();
+#define F10(p) F(p##0) F(p##1) F(p##2) F(p##3) F(p##4) F(p##5) F(p##6) F(p##7) F(p##8) F(p##9)
+struct EngA {
+	F10(0) F10(1) F10(2) F(30) F(31) F(32) F(33) F(34) F(35) F(36)
+	virtual int v37();
+	virtual void f38();
+	virtual float v39(int a);
+	F10(4) F(50) F(51) F(52) F(53) F(54)
+	virtual char v55();
+	F(56) F(57) F(58)
+	virtual int v59();
+};
+struct RenV {
+	F10(0) F10(1) F10(2) F(30) F(31) F(32) F(33) F(34) F(35) F(36)
+	virtual int v37();
+};
+extern EngA *g_104a57d4;
+extern RenV *g_104a57e4;
+struct CenterView {
+	char m_pad[0x45c];
+	float m_f45c;
+	float m_f460;
+	int m_n464;
+	int m_n468;
+};
+char CCenterStringPanel::vfunc107()
+{
+	CenterView *v = (CenterView *)this;
+	if (g_104a57d4->v59())
+		return 0;
+	if (g_104a57e4->v37() == 1 && g_104a57d4->v55())
+		return 0;
+	if (v->m_n464 > v->m_n468)
+		v->m_n468 = v->m_n464;
+	double t = v->m_f460 + v->m_f45c;
+	float d = t - g_104a57d4->v39(0);
+	if (d <= 0.0f && !g_104a57e4->v37())
+		return 0;
+	return g_104a57d4->v55() != 0;
+}
+// END FUNCTION
