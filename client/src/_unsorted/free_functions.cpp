@@ -70155,6 +70155,57 @@ CUnknown101d61e0 *CUnknown101d61e0::sub_101401e0(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140210 size=0x64
+struct ElemBase10140210
+{
+    void sub_10161420();
+};
+
+struct Elem10140210
+{
+    char m_pad0[0x18];
+    ElemBase10140210 m_base18;
+};
+
+struct CPartList10140210
+{
+    int m_unk0[5];
+    int m_14;
+    int m_unk18[2];
+    int m_20;
+    int m_nCount;
+    Elem10140210 **m_pArray;
+    void sub_10140380();
+    void sub_10140210();
+};
+
+void operator delete(void *);
+
+// TARGET: CPartList10140210::sub_10140210
+void CPartList10140210::sub_10140210()
+{
+    sub_10140380();
+    if (m_pArray)
+    {
+        for (int i = 0; i < m_nCount; i++)
+        {
+            Elem10140210 *p = m_pArray[i];
+            if (p)
+            {
+                p->m_base18.sub_10161420();
+                operator delete(p);
+            }
+            m_pArray[i] = 0;
+        }
+        operator delete(m_pArray);
+        m_pArray = 0;
+    }
+    m_14 = 0;
+    m_nCount = 0;
+    m_20 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140280 size=0x1
 void sub_10140280()
 {
