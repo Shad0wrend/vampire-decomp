@@ -42917,6 +42917,40 @@ bool sub_100b42a0(Vector a, int a3, Vector b, Vector c, float f, int i1, int i2,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4330 size=0xc4
+#include "C_EnvParticle.h"
+#include "Vector.h"
+#include "QAngle.h"
+void sub_10109340(Vector *forward, QAngle *angles);
+// TARGET: sub_100b4330
+bool sub_100b4330(C_EnvParticle *eff, C_BaseEntity *parent, Vector origin, int attach, Vector fwd, Vector v3, int a, int b, int c, int d)
+{
+	if (parent && parent->vfunc71())
+	{
+		char *mdl = *(char **)((char *)parent + 0x6ac);
+		char *hdr = mdl + *(int *)(mdl + 0x104);
+		if (hdr)
+		{
+			char *att = hdr + *(int *)(hdr + 8) + (attach << 5);
+			if (att)
+			{
+				QAngle angles;
+				sub_10109340(&fwd, &angles);
+				eff->vfunc123((int)&angles);
+				*(int *)((char *)eff + 0x424) = *(int *)att;
+				*(int *)((char *)eff + 0x420) = 2;
+				eff->vfunc122((int)&origin);
+				eff->sub_100a2970(parent->GetBaseEntity());
+				eff->sub_1009fc60(0xb, 0);
+				eff->PostDataUpdate(0);
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4560 size=0x18
 #include <string.h>
 extern char g_104a1d10[0x200];
