@@ -4566,6 +4566,7 @@
 0x100cfd10 func   ??0CClientThinkList@@QAE@XZ CClientThinkList::CClientThinkList
 0x100cfd80 func   ?vfunc2@CClientThinkList@@UAEXXZ CClientThinkList::vfunc2
 0x100cfd90 func   ?vfunc3@CClientThinkList@@UAEXXZ CClientThinkList::vfunc3
+0x100cfdc0 func   ?sub_100cfdc0@CClientThinkList_100cfdc0@@QAEXXZ CClientThinkList_100cfdc0::sub_100cfdc0
 0x100d00e0 func   ?vfunc0@CClientThinkList@@UAE_NXZ CClientThinkList::vfunc0
 0x100d00f0 func   ?vfunc1@CClientThinkList@@UAEXXZ CClientThinkList::vfunc1
 0x100d0100 func   ?vfunc4@CClientThinkList@@UAEXXZ CClientThinkList::vfunc4

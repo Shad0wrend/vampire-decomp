@@ -47020,6 +47020,110 @@ ClassMapEntry *CClassMap::sub_100ce920(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cfdc0 size=0xd6
+#include "IGameSystem.h"
+#include "utlrbtree.h"
+
+extern void *vt_1023442c;
+
+struct ThinkEntry_100cfdc0
+{
+	int a, b, c;
+};
+
+template <class T, class I>
+class CUtlLinkedList_100cfdc0
+{
+public:
+	struct ListElem_t
+	{
+		T m_Element;
+		I m_Previous;
+		I m_Next;
+	};
+
+	static I InvalidIndex() { return (I)~0; }
+
+	void RemoveAll()
+	{
+		if (m_NumAlloced == 0)
+			return;
+
+		I prev = InvalidIndex();
+		for (int i = (int)m_NumAlloced; --i >= 0; )
+		{
+			m_Memory[(I)i].m_Next = prev;
+			m_Memory[(I)i].m_Previous = (I)i;
+			prev = (I)i;
+		}
+
+		m_Head = InvalidIndex();
+		m_Tail = InvalidIndex();
+		m_FirstFree = 0;
+		m_ElementCount = 0;
+	}
+
+	CUtlMemory<ListElem_t> m_Memory;
+	I m_Head;
+	I m_Tail;
+	I m_FirstFree;
+	I m_ElementCount;
+	I m_NumAlloced;
+	ListElem_t *m_pElements;
+};
+
+struct LocalVec_100cfdc0
+{
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	void *m_pElements;
+
+	__forceinline void Destroy()
+	{
+		m_Size = 0;
+		if (m_nGrowSize != -1) {
+			if (m_pMemory) {
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAllocationCount = 0;
+		}
+		m_pElements = m_pMemory;
+		if (m_nGrowSize != -1) {
+			if (m_pMemory) {
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAllocationCount = 0;
+		}
+	}
+};
+
+struct CClientThinkList_100cfdc0
+{
+	void **m_vtable;
+	CUtlLinkedList_100cfdc0<ThinkEntry_100cfdc0, unsigned short> m_list;
+	CUtlRBTree<int, int> m_tree;
+	LocalVec_100cfdc0 m_vec;
+
+	void sub_100cfdc0();
+};
+
+void CClientThinkList_100cfdc0::sub_100cfdc0()
+{
+	*(void ***)this = &vt_1023442c;
+	m_vec.Destroy();
+	m_tree.m_Elements.Purge();
+	m_list.RemoveAll();
+	m_list.m_Memory.Purge();
+	((IGameSystem *)this)->sub_100f3f80();
+}
+
+// TARGET: ?sub_100cfdc0@CClientThinkList_100cfdc0@@QAEXXZ
+// END FUNCTION
+
 // FUNCTION: 0x100d0140 size=0x16e
 #include "CBaseHandle.h"
 #include "CClientThinkList.h"
