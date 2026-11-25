@@ -48973,6 +48973,169 @@ void sub_100d6c40(VMatrix &mat1, float *pScale, VMatrix &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6ca0 size=0x488
+#include <math.h>
+#include "CClientShadowMgr.h"
+#include "IClientEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "VMatrix.h"
+
+struct Vector2D
+{
+	float x, y;
+	Vector2D() {}
+};
+
+inline void Vector2DCopy(const Vector2D &src, Vector2D &dst)
+{
+	dst.x = src.x;
+	dst.y = src.y;
+}
+
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10108fd0(const float *start, float scale, const float *dir, float *dest);
+void sub_100d6c40(VMatrix &worldToShadow, float *size, float *worldToTexture);
+
+struct IShadowMgrTmp
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void ProjectShadow(unsigned short handle, const Vector &origin, const Vector &dir, const VMatrix &worldToTexture, const Vector2D &size, float a5, float a6);
+};
+
+struct IClientLeafSystemTmp
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void ProjectShadow(unsigned short handle, const Vector &origin, const Vector &dir, const Vector2D &size, float maxHeight);
+};
+
+extern IShadowMgrTmp *g_104a5810;
+extern IClientLeafSystemTmp *g_102b9060;
+
+static inline void SortAbsVectorComponents(const Vector &src, int *pVecIdx)
+{
+	Vector absVec;
+	absVec.sub_10049f20((float)fabs(src[0]), (float)fabs(src[1]), (float)fabs(src[2]));
+
+	int maxIdx = (absVec[0] > absVec[1]) ? 0 : 1;
+	if (absVec[2] > absVec[maxIdx])
+	{
+		maxIdx = 2;
+	}
+
+	switch (maxIdx)
+	{
+	case 0:
+		pVecIdx[0] = 1;
+		pVecIdx[1] = 2;
+		pVecIdx[2] = 0;
+		break;
+	case 1:
+		pVecIdx[0] = 2;
+		pVecIdx[1] = 0;
+		pVecIdx[2] = 1;
+		break;
+	case 2:
+		pVecIdx[0] = 0;
+		pVecIdx[1] = 1;
+		pVecIdx[2] = 2;
+		break;
+	}
+}
+
+struct ClientShadowFull_t
+{
+	int m_Entity;
+	unsigned short m_ShadowHandle;
+	unsigned short m_ClientLeafShadowHandle;
+	unsigned short m_Flags;
+	unsigned short m_pad0a;
+	VMatrix m_WorldToShadow;
+	Vector2D m_WorldSize;
+	char m_pad54[0xa0 - 0x54];
+	float m_a0;
+	float m_a4;
+};
+
+void CClientShadowMgr::sub_100d6ca0(int a0, unsigned short handle, int *a2, int *a3)
+{
+	IClientEntity *pEnt = (IClientEntity *)a0;
+	const Vector &mins = *(const Vector *)a2;
+	const Vector &maxs = *(const Vector *)a3;
+
+	Vector vec[3];
+	sub_101090a0(pEnt->GetRenderAngles(), &vec[0], &vec[1], &vec[2]);
+	vec[1] *= -1.0f;
+
+	Vector localShadowDir;
+	localShadowDir[0] = DotProduct(vec[0], *(Vector *)&m_unk08);
+	localShadowDir[1] = DotProduct(vec[1], *(Vector *)&m_unk08);
+	localShadowDir[2] = DotProduct(vec[2], *(Vector *)&m_unk08);
+
+	int vecIdx[3];
+	SortAbsVectorComponents(localShadowDir, vecIdx);
+
+	Vector yvec = vec[vecIdx[0]];
+	yvec -= (*(Vector *)&m_unk08) * DotProduct(*(Vector *)&m_unk08, yvec);
+	VectorNormalize(yvec);
+
+	Vector worldOrigin;
+	Vector2D size;
+	{
+	Vector xvec;
+	CrossProduct(yvec, *(Vector *)&m_unk08, xvec);
+
+	Vector boxSize;
+	VectorSubtract(maxs, mins, boxSize);
+
+	size.x = boxSize.x * fabs(DotProduct(vec[0], xvec)) +
+		boxSize.y * fabs(DotProduct(vec[1], xvec)) +
+		boxSize.z * fabs(DotProduct(vec[2], xvec));
+	size.y = boxSize.x * fabs(DotProduct(vec[0], yvec)) +
+		(boxSize.y * fabs(DotProduct(vec[1], yvec)) +
+		boxSize.z * fabs(DotProduct(vec[2], yvec)));
+
+	size.x += 4.0f;
+	size.y += 4.0f;
+
+	Vector org;
+	sub_100d6430(pEnt, mins, maxs, localShadowDir, 1.0f, org);
+
+	worldOrigin = pEnt->GetRenderOrigin();
+	sub_10108fd0(worldOrigin.Base(), org.x, vec[0].Base(), worldOrigin.Base());
+	sub_10108fd0(worldOrigin.Base(), org.y, vec[1].Base(), worldOrigin.Base());
+	sub_10108fd0(worldOrigin.Base(), org.z, vec[2].Base(), worldOrigin.Base());
+
+	sub_100d6390(((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_WorldToShadow, worldOrigin, *(Vector *)&m_unk08, xvec, yvec);
+	}
+	VMatrix worldToTexture;
+	sub_100d6c40(((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_WorldToShadow, &size.x, (float *)&worldToTexture);
+	Vector2DCopy(size, ((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_WorldSize);
+
+	float maxHeight = 3.0f * sqrt(size.x * size.y);
+
+	g_104a5810->ProjectShadow(
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_ShadowHandle,
+		worldOrigin,
+		*(Vector *)&m_unk08,
+		worldToTexture,
+		size,
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_a4,
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_a0);
+
+	sub_100d65a0(pEnt, handle, vec, mins, maxs, localShadowDir);
+
+	g_102b9060->ProjectShadow(
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_ClientLeafShadowHandle,
+		worldOrigin, *(Vector *)&m_unk08, size, maxHeight);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7130 size=0x46
 #include "CClientShadowMgr.h"
 // TARGET: CClientShadowMgr::sub_100d7130
