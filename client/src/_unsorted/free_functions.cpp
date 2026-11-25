@@ -91774,6 +91774,26 @@ bool BitmapImage::sub_10164570(int arg0, CKeyValuesX *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164600 size=0x88
+#include "BitmapImage.h"
+struct IKV11 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual const char *GetString(const char *, const char *); };
+extern const char g_102de300[];
+bool sub_10110230(IKV11 *, const char *, unsigned char *);
+// TARGET: BitmapImage::sub_10164600
+bool BitmapImage::sub_10164600(int a, IKV11 *kv)
+{
+    const char *material = kv->GetString("material", g_102de300);
+    if (!material || !*material)
+        return false;
+    vgui2::Image::ImageColor c;
+    if (!sub_10110230(kv, "color", &c.r))
+        c.Init(255);
+    sub_10164520(a, (int)material);
+    sub_10164980((Color4b *)&c);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164690 size=0xa
 struct CUnknown10164690 { int sub_10164690(int); };
 int CUnknown10164690::sub_10164690(int a0)

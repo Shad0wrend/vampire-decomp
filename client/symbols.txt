@@ -7289,6 +7289,7 @@
 0x101644c0 func   ??0BitmapImage@@QAE@PBDH@Z BitmapImage::BitmapImage
 0x10164520 func   ?sub_10164520@BitmapImage@@QAE_NHH@Z BitmapImage::sub_10164520
 0x10164570 func   ?sub_10164570@BitmapImage@@QAE_NHPAVCKeyValuesX@@@Z BitmapImage::sub_10164570
+0x10164600 func   ?sub_10164600@BitmapImage@@QAE_NHPAUIKV11@@@Z BitmapImage::sub_10164600
 0x10164690 func   ?sub_10164690@CUnknown10164690@@QAEHH@Z CUnknown10164690::sub_10164690
 0x101646a0 func   ?sub_101646a0@CUnknown101646a0@@QAEHXZ CUnknown101646a0::sub_101646a0
 0x101646b0 func   ?sub_101646b0@CUnknown101646b0@@QAEHHH@Z CUnknown101646b0::sub_101646b0
