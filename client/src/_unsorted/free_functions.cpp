@@ -102186,6 +102186,38 @@ void CUnknown1018a6f0::sub_1018a6f0(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a730 size=0x94
+#include "CGUIClientRenderable.h"
+
+struct SHdrCtl {
+    char m_pad[0xf8];
+    int m_nControllers;      // 0xf8
+    int m_nControllerIndex;  // 0xfc
+};
+
+// TARGET: CGUIClientRenderable::sub_1018a730
+void CGUIClientRenderable::sub_1018a730(float *controllers, float curTime)
+{
+    if (!m_pStudioHdr)
+    {
+        for (int k = 0; k < 4; k++)
+            controllers[k] = 0.0f;
+        return;
+    }
+    int i;
+    for (i = 0; i < ((SHdrCtl *)m_pStudioHdr)->m_nControllers; i++)
+    {
+        controllers[i] = sub_1018a8c0(
+            *(float *)((char *)this + 0x16c + i * 4),
+            *(float *)((char *)this + 0x17c + i * 4),
+            curTime,
+            (*(unsigned char *)((char *)m_pStudioHdr + ((SHdrCtl *)m_pStudioHdr)->m_nControllerIndex + i * 0x18 + 4) & 0x38) != 0);
+    }
+    for (; i < 4; i++)
+        controllers[i] = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a7d0 size=0x8a
 #include "CGUIClientRenderable.h"
 struct EngTime {
