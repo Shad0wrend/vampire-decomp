@@ -17,5 +17,5 @@ public:
 	int m_unk10;
 	char m_bEnabled;	// 0x14
 
-	bool sub_10141bf0(const char **ppName);
+	char sub_10141bf0(const char **ppName);
 };
