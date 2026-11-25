@@ -18682,6 +18682,28 @@ int sub_10052ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054450 size=0x7a
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+extern void *g_102ccd98;
+
+struct HudMgrV
+{
+	virtual void m0();
+	virtual void vfunc1(bool, int);
+};
+
+void CHudDialog::sub_10054450(bool bEnabled)
+{
+	ScopeTrace trace("CHudDialog::setHudElementEnabled", g_102de300);
+	if (*(bool *)((char *)this + 0x40) != bEnabled)
+		*(bool *)((char *)this + 0x20) = true;
+	*(bool *)((char *)this + 0x40) = bEnabled;
+	((HudMgrV *)g_102ccd98)->vfunc1(bEnabled, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100544d0 size=0x75
 #include "CHudDialog.h"
 #include "ScopeTrace.h"
