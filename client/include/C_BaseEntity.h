@@ -9,6 +9,7 @@ class C_BaseEntity : public IClientEntity
 {
 public:
 	C_BaseEntity();
+	void sub_100af040();
 	void sub_100a2580();
 	void sub_100a2610(bool flag, int a);
 	void sub_1011d190(float frametime);
