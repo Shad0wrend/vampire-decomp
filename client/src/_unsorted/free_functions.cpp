@@ -69115,6 +69115,40 @@ void CUnknown10123500::sub_10123500(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123550 size=0xda
+#include "CPredictionCopy.h"
+struct IModelInfoV { virtual void v0(); virtual const char *GetModelName(const void *m); virtual const void *GetModel(int i); };
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14(); virtual void b15(); };
+struct EC : EB { virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9(); virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14(); virtual void c15(); };
+struct ED : EC { virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9(); virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13(); virtual void d14(); virtual void d15(); };
+struct IEngV : ED { virtual void e0(); virtual void COM_FileBase(const char *in, char *out); };
+extern IModelInfoV *g_104a57f8;
+extern IEngV *g_104a57d4;
+void CPredictionCopy::sub_10123550(int dt, int *outvalue, const int *invalue, int count)
+{
+	if (!m_bErrorCheck)
+		return;
+	if (dt == 0) {
+		int i = 0;
+		ReportFieldsDiffer("int differs (net %i pred %i) diff(%i)\n", invalue[i], outvalue[i], outvalue[i] - invalue[i]);
+	}
+	bool described = false;
+	if ((short)(m_pCurrentField->m_Flags & 0x2000)) {
+		const void *m = g_104a57f8->GetModel(outvalue[0]);
+		if (m) {
+			described = true;
+			char shortfile[512];
+			shortfile[0] = 0;
+			g_104a57d4->COM_FileBase(g_104a57f8->GetModelName(m), shortfile);
+			sub_101233b0(dt, "integer (%i->%s)\n", outvalue[0], shortfile);
+		}
+	}
+	if (!described)
+		sub_101233b0(dt, "integer (%i)\n", outvalue[0]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123630 size=0x71
 #include "CPredictionCopy.h"
 void CPredictionCopy::sub_10123630(int dt, bool *outvalue, const bool *invalue, int count)
