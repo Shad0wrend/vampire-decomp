@@ -1,6 +1,37 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10124e00 size=0x4f
+#include "CPlayerSpeedProxy.h"
+#include "Vector.h"
+
+struct SpeedEntView
+{
+	char pad[0xa8];
+	Vector m_vecVelocity;
+};
+
+struct SpeedProxyView
+{
+	void *vt;
+	int m_unk04;
+	int m_unk08;
+	float m_flScale;
+	void sub_100e33c0(float);
+};
+
+extern void *g_104a0d50;
+
+// TARGET: CPlayerSpeedProxy::vfunc1
+void CPlayerSpeedProxy::vfunc1(int)
+{
+	SpeedEntView *e = (SpeedEntView *)g_104a0d50;
+	SpeedProxyView *self = (SpeedProxyView *)this;
+	if (e)
+		self->sub_100e33c0(e->m_vecVelocity.Length() * self->m_flScale);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124eb0 size=0x1e
 #include "CPlayerSpeedProxy.h"
 
