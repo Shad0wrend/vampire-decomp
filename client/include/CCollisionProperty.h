@@ -8,12 +8,22 @@ class CCollisionProperty : public ICollideable
 {
 public:
     virtual void *vfunc0();
+    virtual Vector &vfunc1();
     virtual void *vfunc2();
     virtual void vfunc3();
     virtual void vfunc4();
     virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
     virtual const Vector &vfunc8();
-    virtual Vector &vfunc1();
+    virtual void vfunc9();
+    virtual const struct matrix3x4_t &vfunc10();
+    virtual void vfunc11x();
+    virtual void vfunc12x();
+    virtual void vfunc13();
+    virtual void vfunc14();
+    virtual void vfunc15();
+    virtual void vfunc16();
     virtual void vfunc17();
     Vector m_vecMins;	// +0x4
     int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; int m_unk24; int m_unk28; int m_unk2c; int m_unk30; int m_unk34; int m_unk38;
