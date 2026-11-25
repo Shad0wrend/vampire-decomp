@@ -15337,6 +15337,32 @@ template <> int ClientClassInit<DT_TEGunshotDecal::ignored>(DT_TEGunshotDecal::i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100399c0 size=0x81
+#include "Vector.h"
+struct TEDecalV {
+	int m_unk00, m_unk04, m_unk08;
+	Vector m_vecOrigin;
+	Vector m_vecStart;
+	int m_nEntity, m_nHitbox, m_nIndex, m_nPlayer;
+	unsigned char m_bFlag;
+	int m_unk38;
+	void sub_10039190(int);
+};
+extern TEDecalV g_102ee51c;
+void sub_100399c0(int a1, int a2, const Vector *org, const Vector *start, int a5, int a6, int a7, int a8, unsigned char a9, int a10)
+{
+	g_102ee51c.m_vecOrigin = *org;
+	g_102ee51c.m_vecStart = *start;
+	g_102ee51c.m_nEntity = a5;
+	g_102ee51c.m_nHitbox = a6;
+	g_102ee51c.m_nIndex = a7;
+	g_102ee51c.m_nPlayer = a8;
+	g_102ee51c.m_bFlag = a9;
+	g_102ee51c.m_unk38 = a10;
+	g_102ee51c.sub_10039190(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039a50 size=0x19
 namespace lifted {
 extern char g_10226954;
