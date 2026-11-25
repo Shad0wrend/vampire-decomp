@@ -16622,6 +16622,40 @@ void TESpriteNetView::sub_1003f450(int updateType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f4e0 size=0x95
+struct IModelInfo_1003f4e0 {
+	virtual void v0(); virtual void v1();
+	virtual void *GetModel(int index);
+	virtual void v3(); virtual void v4();
+	virtual int GetModelFrameCount(void *model);
+};
+struct ITempEnts_1003f4e0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(int a, const char *b, int c, int d, int e, int f, float g, int h, int i, int j, int k, int l);
+};
+extern IModelInfo_1003f4e0 *g_104a57f8;
+extern ITempEnts_1003f4e0 *g_1028073c;
+extern char g_104d4970[];
+
+void sub_1003f4e0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, const char *a8, char a9, int a10, int a11, int a12)
+{
+	float alpha = a6 * 0.00392156862745098;
+	int flags = 0;
+	if (a4) {
+		void *model = g_104a57f8->GetModel(a4);
+		if (model && g_104a57f8->GetModelFrameCount(model) > 1)
+			flags = 0x100;
+	}
+	if (a9)
+		flags |= 0x80;
+	if (!a8)
+		a8 = g_104d4970;
+	g_1028073c->v14(a3, a8, a5, a4, 5, 0, alpha, a7, flags, a10, a11, a12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f5a0 size=0x6
 namespace lifted {
 extern char g_103eb74c;
