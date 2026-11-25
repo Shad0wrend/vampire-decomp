@@ -94239,6 +94239,29 @@ int CUnknown10192e80::sub_10192e80(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192eb0 size=0x68
+#include "Vector.h"
+
+struct BeamRenderView
+{
+	virtual void vfunc0();
+	virtual Vector *vfunc1();
+	Vector m_vA;
+	Vector m_vB;
+};
+
+void __fastcall sub_10192eb0(BeamRenderView *self, int unused, Vector *out1, Vector *out2)
+{
+	Vector base = *self->vfunc1();
+	out1->x = base.x + self->m_vA.x;
+	out1->y = base.y + self->m_vA.y;
+	out1->z = base.z + self->m_vA.z;
+	out2->x = base.x + self->m_vB.x;
+	out2->y = base.y + self->m_vB.y;
+	out2->z = base.z + self->m_vB.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193270 size=0x3
 char sub_10193270()
 {
