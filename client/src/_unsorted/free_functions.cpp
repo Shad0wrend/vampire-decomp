@@ -96610,6 +96610,42 @@ int sub_10174ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174ef0 size=0x9d
+#include "CHud.h"
+#include "vgui2__Frame.h"
+extern CHud g_104cfe38;
+struct PRE { virtual void z(); int a, b, c; };
+struct P0 { virtual int v0(int); };
+struct SM { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(int); };
+bool sub_101746b0();
+char *sub_1016a6b0();
+SM *sub_101ac8d0();
+struct DER : PRE, vgui2::Frame { void sub_10174ef0(); };
+// TARGET: DER::sub_10174ef0
+void DER::sub_10174ef0()
+{
+	char *p;
+	if (sub_101746b0())
+	{
+		p = (char *)g_104cfe38.sub_100f0ed0("CharEditPanel");
+		if (p)
+			p += 0x10;
+	}
+	else
+		p = sub_1016a6b0();
+	if (p)
+		vfunc33((int)p);
+	sub_101aa0a0(0x4b0);
+	vfunc49();
+	vfunc15(0);
+	vfunc21(1);
+	vfunc46(1);
+	SM *sm = sub_101ac8d0();
+	sm->v44(((P0 *)(vgui2::Frame *)this)->v0(0));
+	vfunc54(2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174f90 size=0x1d
 namespace lifted {
 extern char g_1027b3ec;
