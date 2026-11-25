@@ -59205,6 +59205,27 @@ void sub_100f6740(unsigned char *src, int w, int h, unsigned char *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6780 size=0xd8
+#include "Vector.h"
+
+// TARGET: sub_100f6780
+void sub_100f6780(unsigned char *pData, int count)
+{
+	unsigned char *end = pData + count * 4;
+	for ( unsigned char *p = pData; p < end; p += 4 )
+	{
+		Vector v;
+		v.x = ((float)p[0] - 128.0f) * 0.007874016f;
+		v.y = ((float)p[1] - 128.0f) * 0.007874016f;
+		v.z = ((float)p[2] - 128.0f) * 0.007874016f;
+		VectorNormalize(v);
+		p[0] = (unsigned char)(v.x * 127.0f + 128.0f);
+		p[1] = (unsigned char)(v.y * 127.0f + 128.0f);
+		p[2] = (unsigned char)(v.z * 127.0f + 128.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6a40 size=0x39
 namespace lifted {
 bool sub_100f6860(int, int, int, int);
