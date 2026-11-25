@@ -21,6 +21,7 @@ public:
 	void vfunc27(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
 	void vfunc40(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
 	void vfunc17(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+	void vfunc18(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7);
 	void vfunc32(int, int, int, int, int, int);
 	void vfunc35(int, int, int, int, int, int);
 	void vfunc42(int, int, int, int, int, int);
