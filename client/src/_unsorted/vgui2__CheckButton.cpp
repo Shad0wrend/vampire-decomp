@@ -50,6 +50,43 @@ int vgui2::CheckButton::vfunc156(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bac30 size=0x9c
+#include "vgui2__CheckButton.h"
+struct ColorX { int c; };
+struct ISchemeX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4();
+	virtual ColorX *GetColor(ColorX *out, const char *name, ColorX def);
+	virtual ColorX *GetColor2(ColorX *out, const char *name);
+};
+struct ISchemeMgrX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual ISchemeX *GetIScheme(int h);
+};
+struct IKVX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual const char *GetStr(const char *name, int def);
+};
+ISchemeMgrX *sub_101ac8c0();
+struct CB { char pad[0xf4]; int m_nf4; ColorX m_cf8; };
+void vgui2::CheckButton::vfunc75(int a)
+{
+	Button::vfunc75(a);
+	ISchemeX *pScheme = sub_101ac8c0()->GetIScheme(sub_101aa220());
+	ColorX t1, t2;
+	CB *p = (CB *)this;
+	p->m_cf8 = *pScheme->GetColor(&t2, "BrightControlText", *pScheme->GetColor2(&t1, "ControlText"));
+	const char *s = ((IKVX *)a)->GetStr("labelText", 0);
+	if (s)
+	{
+		Label::vfunc108("");
+		((Label *)this)->vfunc108(s);
+	}
+	vfunc123(0, p->m_nf4, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bad20 size=0x30
 #include "vgui2__CheckButton.h"
 namespace lifted {
