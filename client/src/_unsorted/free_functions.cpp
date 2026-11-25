@@ -82359,6 +82359,44 @@ bool CUnknown101ebd30::sub_1014fc10(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fd00 size=0x91
+extern int g_105e856c;
+struct ItemV_1014fd00 {
+	int m_id;
+	int m_pad[0x14];
+	ItemV_1014fd00 *sub_1014f6c0(int);
+	void sub_1014f800(int);
+	ItemV_1014fd00(int id) { sub_1014f6c0(id); }
+	~ItemV_1014fd00() {}
+};
+extern ItemV_1014fd00 **g_105e8570;
+struct OwnerV_1014fd00 {
+	int m_pad[3];
+	int m_ids[3];
+	void sub_1014fd00(int arg, int type);
+};
+
+inline ItemV_1014fd00 *FindItem_1014fd00(int id)
+{
+	for (int i = 0; i < g_105e856c; i++) {
+		if (g_105e8570[i]->m_id == id)
+			return g_105e8570[i];
+	}
+	static ItemV_1014fd00 def(-1);
+	return &def;
+}
+
+void OwnerV_1014fd00::sub_1014fd00(int arg, int type)
+{
+	type--;
+	if (type < 0)
+		return;
+	if (type >= 3)
+		type = 2;
+	FindItem_1014fd00(m_ids[type])->sub_1014f800(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014fda0 size=0x81
 extern "C" int atexit(void (*)(void));
 struct ItemV14 {

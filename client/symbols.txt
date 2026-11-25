@@ -6841,6 +6841,7 @@
 0x1014fbe0 func   ?sub_1014fbe0@S_1014fbe0@@QAEPAU1@H@Z S_1014fbe0::sub_1014fbe0
 0x1014fc00 func   ?sub_1014fc00@@YAXXZ sub_1014fc00
 0x1014fc10 func   ?sub_1014fc10@CUnknown101ebd30@@QAE_NPAX@Z CUnknown101ebd30::sub_1014fc10
+0x1014fd00 func   ?sub_1014fd00@OwnerV_1014fd00@@QAEXHH@Z OwnerV_1014fd00::sub_1014fd00
 0x1014fda0 func   ?sub_1014fda0@OwnerV@@QAEPBDH@Z OwnerV::sub_1014fda0
 0x101501b0 func   ?sub_101501b0@CUnk101ec450@@QAEXHH@Z CUnk101ec450::sub_101501b0
 0x101501d0 func   ?sub_101501d0@CUnk101ec480@@QAEPADH@Z CUnk101ec480::sub_101501d0
