@@ -141,6 +141,23 @@ int vgui2::ScrollBar::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf130 size=0x78
+#include "vgui2__ScrollBar.h"
+#include "vgui2__Button.h"
+#include "vgui2__KeyValues.h"
+
+void vgui2::ScrollBar::vfunc114(vgui2::Button *pButton, int index)
+{
+	if (*(vgui2::Button **)((char *)this + index * 4 + 0x58))
+		(*(vgui2::Button **)((char *)this + index * 4 + 0x58))->vfunc32(0);
+	*(vgui2::Button **)((char *)this + index * 4 + 0x58) = pButton;
+	(*(vgui2::Button **)((char *)this + index * 4 + 0x58))->vfunc33((int)this);
+	(*(vgui2::Button **)((char *)this + index * 4 + 0x58))->vfunc41((int)this);
+	(*(vgui2::Button **)((char *)this + index * 4 + 0x58))->vfunc161((int)new vgui2::KeyValues("ScrollButtonPressed", "index", index));
+	vfunc119();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf1b0 size=0xb
 #include "vgui2__ScrollBar.h"
 // TARGET: vgui2::ScrollBar::vfunc115
