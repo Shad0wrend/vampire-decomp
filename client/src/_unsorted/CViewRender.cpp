@@ -381,6 +381,39 @@ void CViewRender::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191940 size=0x9f
+#include "CViewRender.h"
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+#include "CUnknown1007f870.h"
+
+struct ViewModelInfo
+{
+	char m_pad[8];
+	Vector m_vecOrigin;
+	QAngle m_angles;
+};
+
+extern CUnknown1007f870 *sub_100ab1e0(int);
+
+// TARGET: CViewRender::CopyViewModelInfoToEntities
+void CViewRender::CopyViewModelInfoToEntities()
+{
+	ScopeTrace st("CViewRender::CopyViewModelInfoToEntities", g_102de300);
+	for ( int i = 0; i < 2; i++ )
+	{
+		ViewModelInfo *pInfo = (ViewModelInfo *)vfunc6(i);
+		if ( !pInfo )
+			continue;
+		C_BaseEntity *pEntity = (C_BaseEntity *)(void *)sub_100ab1e0(i);
+		if ( !pEntity )
+			continue;
+		pEntity->sub_100a2030(&pInfo->m_vecOrigin);
+		pEntity->sub_100a2100(pInfo->m_angles);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192780 size=0xcc
 #include "CViewRender.h"
 #include "ScopeTrace.h"
