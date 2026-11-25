@@ -105126,6 +105126,36 @@ float __stdcall sub_101907a0(const QAngle &angles, const Vector &velocity, float
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190850 size=0xae
+#include "CViewRender.h"
+#include "C_BaseEntity.h"
+#include "QAngle.h"
+#include "Vector.h"
+struct VarV { virtual void v0(); virtual bool v1(); int p[9]; float m28; };
+struct GV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual bool v26(); };
+extern C_BaseEntity *g_104a0d50;
+extern VarV *g_105fc5b4;
+extern VarV *g_105fc554;
+extern GV *g_1027ba58;
+void CViewRender::sub_10190850()
+{
+	C_BaseEntity *pPlayer = g_104a0d50;
+	float f1, f2;
+	if (g_105fc5b4->v1())
+		f1 = 0;
+	else
+		f1 = g_105fc5b4->m28;
+	if (g_105fc554->v1())
+		f2 = 0;
+	else
+		f2 = g_105fc554->m28;
+	float r = sub_101907a0(pPlayer->GetAbsAngles(), *(Vector *)((char *)pPlayer + 0xa8), f2, f1);
+	if (g_1027ba58->v26())
+		r = 0;
+	*(float *)((char *)this + 0x68) += r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192cb0 size=0x8
 struct CUnknown10192cb0 { void sub_10192cb0(); };
 void CUnknown10192cb0::sub_10192cb0()
