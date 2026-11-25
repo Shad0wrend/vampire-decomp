@@ -39504,6 +39504,70 @@ C_EnvParticle *sub_100b3560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b35c0 size=0x7b
+#include <string.h>
+#include "C_EnvParticle.h"
+#include "Tier1.h"
+#include "Vector.h"
+
+struct EngineView
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+	virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18(); virtual void e19();
+	virtual void e20(); virtual void e21(); virtual void e22(); virtual void e23(); virtual void e24();
+	virtual void e25(); virtual void e26(); virtual void e27(); virtual void e28(); virtual void e29();
+	virtual void e30(); virtual void e31(); virtual void e32(); virtual void e33(); virtual void e34();
+	virtual void e35(); virtual void e36(); virtual void e37(); virtual void e38(); virtual void e39();
+	virtual void e40(); virtual void e41(); virtual void e42(); virtual void e43(); virtual void e44();
+	virtual void e45(); virtual void e46(); virtual void e47(); virtual void e48(); virtual void e49();
+	virtual void e50(); virtual void e51(); virtual void e52(); virtual void e53(); virtual void e54();
+	virtual void e55(); virtual void e56(); virtual void e57(); virtual void e58(); virtual void e59();
+	virtual void e60(); virtual void e61(); virtual void e62(); virtual void e63(); virtual void e64();
+	virtual void e65(); virtual void e66(); virtual void e67(); virtual void e68(); virtual void e69();
+	virtual void e70(); virtual void e71(); virtual void e72(); virtual void e73(); virtual void e74();
+	virtual void e75(); virtual void e76(); virtual void e77(); virtual void e78(); virtual void e79();
+	virtual void e80(); virtual void e81(); virtual void e82(); virtual void e83(); virtual void e84();
+	virtual void e85(); virtual void e86(); virtual void e87(); virtual void e88(); virtual void e89();
+	virtual void e90(); virtual void e91(); virtual void e92(); virtual void e93(); virtual void e94();
+	virtual void e95(); virtual void e96(); virtual void e97(); virtual void e98(); virtual void e99();
+	virtual void e100(); virtual void e101(); virtual void e102();
+	virtual int v103(const char *name);
+};
+
+extern EngineView *g_104a57d4;
+extern C_EnvParticle *sub_100b3560();
+
+struct EnvParticleView
+{
+	char m_pad0[0x410];
+	int m_410;
+};
+
+bool sub_100b35c0(Vector pos, const char *typeName)
+{
+	int index = g_104a57d4->v103(typeName);
+	if (index <= 0)
+	{
+		if (!typeName || strlen(typeName) == 0)
+			typeName = "(NULL)";
+
+		g_101e3140("Could not create particle of type '%s'.  Be sure to precache it.\n", typeName);
+		return false;
+	}
+
+	C_EnvParticle *obj = sub_100b3560();
+	if (!obj)
+		return false;
+
+	((EnvParticleView *)obj)->m_410 = index;
+	obj->vfunc122((int)&pos);
+	obj->PostDataUpdate(0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3640 size=0x38
 #include "Vector.h"
 #include "C_EnvParticle.h"
