@@ -77,3 +77,20 @@ void CCollisionEvent::vfunc3(IObj *a, IObj *b, int c)
 		((OwnerV12 *)this)->sub_10119660(ia, ib, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10119f00 size=0x4a
+#include "CCollisionEvent.h"
+struct IObjA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual int a6(); };
+void sub_101197d0(IObjA *, IObjA *, int);
+// TARGET: CCollisionEvent::vfunc5
+void CCollisionEvent::vfunc5(IObjA *p1, IObjA *p2)
+{
+	if (p1 && p2) {
+		int h = p1->a6();
+		if (h) {
+			if (!(sub_10119e60(h) < 0.5f))
+				sub_101197d0(p2, p1, h);
+		}
+	}
+}
+// END FUNCTION
