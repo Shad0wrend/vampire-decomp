@@ -51803,6 +51803,91 @@ void *CEntListView::sub_100d0a40(unsigned int hHandle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0b40 size=0xf2
+#include "CClientEntityList.h"
+#include "CBaseHandle.h"
+
+struct CListNode2
+{
+    unsigned short m_Element;
+    unsigned short m_Previous;
+    unsigned short m_Next;
+};
+
+struct IVListA
+{
+    virtual void *v0();
+    virtual void *v1(CBaseHandle);
+    virtual void *v2();
+    virtual void *v3();
+};
+
+struct IVListB
+{
+    virtual void *v0();
+    virtual void *v1();
+    virtual void *v2();
+    virtual void *v3();
+};
+
+struct CVList2
+{
+    void *sub_100d0e20(CBaseHandle);
+    void sub_100e2480(CBaseHandle);
+};
+
+// TARGET: CClientEntityList::sub_100d0b40
+void CClientEntityList::sub_100d0b40()
+{
+    CBaseHandle handle;
+    unsigned short h = m_Live.m_Head;
+    if (h == 0xffff)
+        goto end;
+
+    {
+        unsigned int elem = ((CListNode2 *)m_Live.m_pMemory)[h].m_Element;
+        handle.m_Index = ((unsigned int)m_EntPtrArray[elem].m_SerialNumber << 13) | elem;
+        if (handle.m_Index == 0xffffffff)
+            goto end;
+    }
+
+    {
+        IVListA *pList = (IVListA *)((char *)this + 0x1803c);
+        do
+        {
+            int next;
+            unsigned int idx = (handle.m_Index & 0x1fff) + 1;
+            int e2 = *(unsigned short *)((char *)this + idx * 12);
+            int nx = ((CListNode2 *)m_Live.m_pMemory)[e2].m_Next;
+            if (nx == 0xffff)
+                next = -1;
+            else
+            {
+                unsigned int elem2 = ((CListNode2 *)m_Live.m_pMemory)[(unsigned short)nx].m_Element;
+                next = (int)(((unsigned int)m_EntPtrArray[elem2].m_SerialNumber << 13) | elem2);
+            }
+
+            void *p = pList->v1(handle);
+            if (p)
+                ((IVListB *)p)->v1();
+            else
+            {
+                void *q = ((CVList2 *)this)->sub_100d0e20(handle);
+                if (q)
+                    ((IVListB *)q)->v3();
+            }
+            ((CVList2 *)this)->sub_100e2480(handle);
+            handle.m_Index = (unsigned int)next;
+        } while (handle.m_Index != 0xffffffff);
+    }
+
+end:
+    m_i18048 = -1;
+    m_i18040 = 0;
+    m_i18044 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0c40 size=0xb
 struct SEntry { int a; int b; };
 struct CView { int m0, m4, m8, mC; SEntry e[1]; int sub_100d0c40(int i); };

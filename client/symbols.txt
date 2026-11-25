@@ -4761,6 +4761,7 @@
 0x100d09c0 func   ??0CClientEntityList@@QAE@XZ CClientEntityList::CClientEntityList
 0x100d0a40 func   ?sub_100d0a40@CEntListView@@QAEPAXI@Z CEntListView::sub_100d0a40
 0x100d0a90 func   ??1CClientEntityList@@QAE@XZ CClientEntityList::~CClientEntityList
+0x100d0b40 func   ?sub_100d0b40@CClientEntityList@@QAEXXZ CClientEntityList::sub_100d0b40
 0x100d0c40 func   ?sub_100d0c40@CView@@QAEHH@Z CView::sub_100d0c40
 0x100d0c50 func   ?sub_100d0c50@List_100d0c50@@QAEHH@Z List_100d0c50::sub_100d0c50
 0x100d0c80 func   ?sub_100d0c80@CUnknown100d0c80@@QAEHXZ CUnknown100d0c80::sub_100d0c80
