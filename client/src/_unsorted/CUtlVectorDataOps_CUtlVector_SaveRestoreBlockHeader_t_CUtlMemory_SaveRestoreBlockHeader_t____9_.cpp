@@ -54,6 +54,66 @@ void CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestor
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c2d0 size=0xc4
+#include "CUtlVectorDataOps.h"
+#include "CUtlVector40.h"
+#include "UtlVec40.h"
+#include "SaveRestoreFieldInfo_t.h"
+struct SaveRestoreBlockHeader_t;
+extern char g_102c36d8[];
+extern char g_102c3b2c[];
+struct RestoreTD
+{
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	unsigned short fieldSize;
+	short flags;
+	const char *externalName;
+	void *pOps;
+	void *inputFunc;
+	void *td;
+	int sizeInBytes;
+	int unk;
+};
+struct RestoreDM
+{
+	RestoreTD *dataDesc;
+	int dataNumFields;
+	const char *dataClassName;
+	void *baseMap;
+	char b0;
+	char b1;
+	int n;
+};
+class IRestoreView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual int v2(void *pData, RestoreDM *pMap);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual int v14();
+};
+// TARGET: ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAEXPAUSaveRestoreFieldInfo_t@@PAVIRestore@@@Z
+void CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
+{
+	IRestoreView *r = (IRestoreView *)pRestore;
+	RestoreTD td = { 9, "elems", 0, 0, 1, 2, 0, 0, 0, g_102c36d8 };
+	RestoreDM dm = { &td, 1, g_102c3b2c, 0, 0, 0, 0 };
+	CUtlVector40 *pVec = (CUtlVector40 *)fieldInfo->pField;
+	int n = r->v14();
+	pVec->m_size = 0;
+	if (n != 0) {
+		pVec->sub_1012c570(n);
+		((UtlVec40 *)pVec)->sub_1012c600(0, n);
+		for (int i = 0; i < n; i++)
+			r->v2(pVec->m_pMemory + i * 0x28, &dm);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c3b0 size=0x13
 #include "CUtlVectorDataOps.h"
 struct SaveRestoreBlockHeader_t;
