@@ -106491,6 +106491,29 @@ void CUtlVectorDel4::sub_101c9bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9d10 size=0x8a
+#include "CUtlVector4.h"
+#include "UtlMem.h"
+void CUtlVector4::sub_101c9d10(int i, int val)
+{
+	while (m_size <= i) {
+		int elem = m_size;
+		const int num = 1;
+		if (m_size + num > m_allocationCount)
+			((UtlMem *)this)->sub_101b3480(m_size + num - m_allocationCount);
+		m_size += num;
+		m_pElements = m_pMemory;
+		int numToMove = m_size - elem - num;
+		if (numToMove > 0 && num > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(int));
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = 0;
+	}
+	m_pMemory[i] = val;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9da0 size=0x4
 struct CUnknown101c9da0 { int sub_101c9da0(); };
 int CUnknown101c9da0::sub_101c9da0()
