@@ -74,6 +74,7 @@ public:
 		// "CVStatInfo_t::IsRenewable": same shape, bit 3 of the flags, global at 0x1074e77c
 	int sub_1015c0a0(int arg);
 	int sub_1015c0e0(int arg);
+	int sub_1015c1d0(int arg);
 	int sub_1015c120(int arg);
 	int sub_1015c280(int arg);	// "CVStatInfo_t::Default": scope trace, then evaluates the fifth value record (+0x9c) for arg
 		// stub 0x10003152: evaluates a value record of the stat for arg (the caller picks the stat record by index)
