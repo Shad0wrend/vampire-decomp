@@ -60402,6 +60402,26 @@ float CHudMessage::sub_1010e600(float fadein, float fadeout, float hold, float l
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e6a0 size=0x9e
+int sub_100cd100();
+// TARGET: sub_1010e6a0
+int __stdcall sub_1010e6a0(float pos, int size, int extra)
+{
+	int x;
+	if (pos == -1.0f)
+		x = (sub_100cd100() - size) / 2;
+	else if (pos < 0.0f)
+		x = (int)(sub_100cd100() * (pos + 1.0) - extra);
+	else
+		x = (int)(sub_100cd100() * pos);
+	if (x + size > sub_100cd100())
+		x = sub_100cd100() - size;
+	else if (x < 0)
+		x = 0;
+	return x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010eff0 size=0x3a
 int sub_100cd0b0(int);
 struct CView1010eff0 {
