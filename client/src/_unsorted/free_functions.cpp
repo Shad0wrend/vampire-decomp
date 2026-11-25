@@ -51815,6 +51815,24 @@ void * CUnknown10104380::sub_10104380(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101043d0 size=0x63
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_101043d0
+void bf_write::sub_101043d0(int nValue)
+{
+    if ((m_iCurBit + 1) > m_nDataBits)
+        m_bOverflow = true;
+    if (!m_bOverflow) {
+        if (nValue)
+            ((unsigned char *)m_pData)[m_iCurBit >> 3] |= (1 << (m_iCurBit & 7));
+        else
+            ((unsigned char *)m_pData)[m_iCurBit >> 3] &= ~(1 << (m_iCurBit & 7));
+        ++m_iCurBit;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101046f0 size=0x34
 struct S104 { int a0; int a4; int flags; };
 void sub_101046f0(int *p, int bits, int mask, S104 *s, char clear)
