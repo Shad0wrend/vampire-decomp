@@ -306,6 +306,34 @@ void vgui2::TextEntry::vfunc89(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af340 size=0x7b
+#include "vgui2__TextEntry.h"
+extern "C" int isspace(int);
+void vgui2::TextEntry::vfunc88(int a)
+{
+	if (a == 0) {
+		vfunc87(0);
+		vfunc115();
+		int start = *(int *)((char *)this + 0x70);
+		vfunc114();
+		int end = *(int *)((char *)this + 0x70);
+		int prev = end - 1;
+		char c;
+		if (prev >= 0 && prev < *(int *)((char *)this + 0x58))
+			c = (*(char **)((char *)this + 0x60))[prev];
+		else
+			c = 0;
+		if (isspace(c)) {
+			end = prev;
+			(*(int *)((char *)this + 0x70))--;
+		}
+		*(int *)((char *)this + 0x9c) = start;
+		*(int *)((char *)this + 0xa0) = end;
+		*((char *)this + 0x8c) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af3c0 size=0x8
 #include "vgui2__TextEntry.h"
 void vgui2::TextEntry::vfunc79()
