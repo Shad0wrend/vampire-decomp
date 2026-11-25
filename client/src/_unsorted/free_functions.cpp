@@ -75104,6 +75104,43 @@ int CUnknown10141810::sub_10141810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141820 size=0x8e
+struct Q_10141820 { int a, b, c, d; };
+struct S_10141820 {
+	int m0;
+	int m4, m8, mc, m10;
+	char c14, c15, c16, c17, c18, c19, c1a, c1b, c1c, c1d, c1e;
+	char pad1f;
+	int m20, m24;
+	int m28, m2c, m30, m34;
+	Q_10141820 q38;
+	S_10141820 &sub_10141820(const S_10141820 &o);
+};
+
+S_10141820 &S_10141820::sub_10141820(const S_10141820 &o)
+{
+	m4 = o.m4;
+	m8 = o.m8;
+	mc = o.mc;
+	m24 = o.m24;
+	m20 = o.m20;
+	m10 = o.m10;
+	c14 = o.c14;
+	c15 = o.c15;
+	c16 = o.c16;
+	c17 = o.c17;
+	c18 = o.c18;
+	c19 = o.c19;
+	c1a = o.c1a;
+	c1b = o.c1b;
+	c1c = o.c1c;
+	c1d = o.c1d;
+	c1e = o.c1e;
+	q38 = o.q38;
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141aa0 size=0x14
 int sub_10141aa0(int a0, int a1)
 {
