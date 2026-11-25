@@ -106277,6 +106277,58 @@ void CUnknown10173100::sub_10173100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10173110 size=0xf7
+#include "CharEditPanel.h"
+#include "C_BasePlayer.h"
+#include "CStatDefault3List.h"
+#include "StatDefault3.h"
+#include "CVStatListManager_t.h"
+
+extern C_BasePlayer *g_104a0d50;
+extern CStatDefault3List g_105e74fc;
+extern char g_105f9220[];
+extern char g_105f90b8[];
+extern char g_105f8c60[];
+extern char g_105f91c8[];
+
+struct StatMgrTailV
+{
+    void sub_10144be0();
+};
+extern StatMgrTailV g_105e7794;
+
+struct PlayerSub8V
+{
+    virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4();
+    virtual void p5(); virtual void p6(); virtual void p7(); virtual void p8();
+    virtual int p9();
+};
+
+int sub_1017f0f0(int);
+
+void CharEditPanel::sub_10173110()
+{
+    C_BasePlayer *pPlayer = g_104a0d50;
+    if ( pPlayer )
+    {
+        int idx = ((PlayerSub8V *)((char *)pPlayer + 8))->p9();
+        ((CVStatListManager_t *)((char *)pPlayer + 0x1164))->sub_1015e580(idx);
+        StatDefault3 *pDef = g_105e74fc.sub_10140000(pPlayer->sub_1008ebb0());
+        sub_10173210((char *)this + 0xd84, (char *)pPlayer + 0x1214, pDef->m_d0[0], &g_105f9220);
+        sub_10173210((char *)this + 0xe10, (char *)pPlayer + 0x12dc, pDef->m_d0[1], &g_105f90b8);
+        sub_10173210((char *)this + 0xe44, (char *)pPlayer + 0x135c, pDef->m_pd8, &g_105f8c60);
+        sub_10173210((char *)this + 0xe88, (char *)pPlayer + 0x13ec, 0, &g_105f91c8);
+        *(int *)((char *)this + 0xecc) = *(int *)((char *)pPlayer + 0x14c0);
+        *(int *)((char *)this + 0xed0) = sub_1017f0f0(1);
+    }
+    if ( *(char *)((char *)this + 0xd80) )
+    {
+        *(char *)((char *)this + 0xd80) = 0;
+        g_105e7794.sub_10144be0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173210 size=0x60
 extern "C" void *memcpy(void *, const void *, unsigned int);
 #pragma intrinsic(memcpy)
