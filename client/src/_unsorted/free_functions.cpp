@@ -82661,6 +82661,36 @@ void TSeg::sub_101556d0(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155740 size=0x71
+#include "CUnknown101f5d60.h"
+
+struct OwnerV
+{
+	char pad0[8];
+	CUnknown101f5d60 *m_pTable;	// 0x08
+};
+
+const char *CUnknown101f5d60::sub_10155740(int unused, int id)
+{
+	OwnerV *o = (OwnerV *)this;
+	CUnknown101f4c80 *rec;
+	for (int i = 0; i < o->m_pTable->m_nCount; i++)
+	{
+		if (o->m_pTable->m_pRecords[i]->m_nId == id)
+		{
+			rec = o->m_pTable->m_pRecords[i];
+			goto have;
+		}
+	}
+	{
+		static CUnknown101f4c80 s_default(-1);
+		rec = &s_default;
+	}
+have:
+	return rec->m_folder.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101557c0 size=0x71
 #include "CUnknown101f4b20.h"
 
