@@ -29,3 +29,17 @@ C_EnvParticle *pcd_emit_100aeac0(const C_EnvParticle &other) { return new C_EnvP
 
 // TARGET: ??_GC_EnvParticle@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100aec70 size=0x69
+#include "C_EnvParticle.h"
+#include "Vector.h"
+
+void C_EnvParticle::vfunc122(int p)
+{
+	Vector *v = (Vector *)p;
+	Vector &a = *(Vector *)((char *)this + 0x2b4);
+	Vector &b = *(Vector *)((char *)this + 0x23c);
+	Vector &c = *(Vector *)((char *)this + 0x254);
+	c = b = a = *v;
+}
+// END FUNCTION
