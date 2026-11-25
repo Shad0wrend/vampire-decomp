@@ -958,6 +958,27 @@ int C_BaseEntity::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a28b0 size=0x4c
+#include "C_BaseEntity.h"
+#include "CClassMap.h"
+CClassMap *sub_100cde00();
+struct IClassMapView1 { virtual void v0(); virtual const char *Lookup(int id); };
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+struct SClientClass { int m_unk0; int m_unk4; int m_ClassID; };
+char *C_BaseEntity::vfunc114()
+{
+	static char outstring[256];
+	outstring[0] = 0;
+	SClientClass *pClass = (SClientClass *)vfunc17();
+	if (pClass) {
+		const char *p = ((IClassMapView1 *)sub_100cde00())->Lookup(pClass->m_ClassID);
+		if (p && p[0])
+			Q_snprintf(outstring, sizeof(outstring), "%s", p);
+	}
+	return outstring;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2d40 size=0x2a
 #include "C_BaseEntity.h"
 namespace lifted {
