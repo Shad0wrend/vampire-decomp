@@ -45472,6 +45472,15 @@ JustAfew:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cde00 size=0x83
+#include "CClassMap.h"
+CClassMap *sub_100cde00()
+{
+	static CClassMap s_ClassMap;
+	return &s_ClassMap;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce3d0 size=0x13
 bool sub_100ce3d0(const unsigned short *a, const unsigned short *b)
 {
