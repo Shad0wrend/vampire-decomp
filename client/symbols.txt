@@ -9199,6 +9199,7 @@
 0x101bb6b0 func   ?sub_101bb6b0@CUnknown101bb6b0@@QAEHXZ CUnknown101bb6b0::sub_101bb6b0
 0x101bb6c0 func   ?sub_101bb6c0@CUnknown101bb6c0@@QAEHXZ CUnknown101bb6c0::sub_101bb6c0
 0x101bb6d0 func   ?sub_101bb6d0@CUnknown101bb6d0@@QAEHXZ CUnknown101bb6d0::sub_101bb6d0
+0x101bb6e0 func   ?sub_101bb6e0@Slider@vgui2@@QAEPAXPAXPBD@Z vgui2::Slider::sub_101bb6e0
 0x101bb780 func   ??_GSlider@vgui2@@UAEPAXI@Z ??_GSlider@vgui2@@UAEPAXI@Z
 0x101bb7a0 func   ?vfunc111@Slider@vgui2@@UAEHHH@Z vgui2::Slider::vfunc111
 0x101bb7d0 func   ?vfunc107@Slider@vgui2@@UAEXH@Z vgui2::Slider::vfunc107

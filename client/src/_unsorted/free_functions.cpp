@@ -117974,6 +117974,69 @@ int CUnknown101bb6d0::sub_101bb6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb6e0 size=0xa0
+#include "vgui2__Slider.h"
+
+struct SurfaceSizeViewS
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *, int *);
+};
+
+struct PanelCtorViewS
+{
+	void sub_101a9530(void *parent, const char *name);
+};
+
+struct SliderView
+{
+	void sub_101bbb10(int);
+	void sub_101bb840();
+};
+
+int sub_101ac8d0();
+extern void *vt_10252484;
+
+void *vgui2::Slider::sub_101bb6e0(void *parent, const char *name)
+{
+	((PanelCtorViewS *)this)->sub_101a9530(parent, name);
+	*(void **)this = &vt_10252484;
+
+	*(char *)((char *)this + 0x5c) = 0;
+	*(int *)((char *)this + 0x80) = 0;
+	*(int *)((char *)this + 0x78) = 0;
+	*(int *)((char *)this + 0x7c) = 0x12b;
+	*(int *)((char *)this + 0x84) = 0;
+	*(int *)((char *)this + 0x88) = 0;
+	*(int *)((char *)this + 0x8c) = 0;
+	*(int *)((char *)this + 0x9c) = 0xa;
+	*(int *)((char *)this + 0x90) = 0;
+	*(int *)((char *)this + 0x94) = 0;
+	*(int *)((char *)this + 0x98) = 0;
+
+	SurfaceSizeViewS *pSurface = (SurfaceSizeViewS *)sub_101ac8d0();
+	int x, y;
+	pSurface->v39(&y, &x);
+
+	double fl = y * 0.0009765625;
+	int v = (int)(fl * 8.0);
+
+	((SliderView *)this)->sub_101bbb10(v);
+	((SliderView *)this)->sub_101bb840();
+
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc860 size=0x42
 #include "utlvector.h"
 
