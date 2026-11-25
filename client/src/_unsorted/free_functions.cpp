@@ -47254,6 +47254,37 @@ void List100d::sub_100d1b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1e10 size=0x9c
+#include "CClientLeafSystem.h"
+#define D8(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7();
+struct IEng100d1e10 {
+	D8(a) D8(b) D8(c) D8(d) D8(e) D8(f) D8(g) D8(h) D8(i) D8(j) D8(k) D8(l)
+	virtual void m0();
+	virtual unsigned short v97(int *p, int n);
+};
+extern IEng100d1e10 *g_104a57d4;
+struct Elem100d1e10 { int m0; int m4; unsigned short m8; unsigned short ma; };
+struct LS100d1e10 {
+	char pad[0x20]; char *m20; char pad2[0x74 - 0x24]; Elem100d1e10 *m74; char pad3[0x90 - 0x78]; unsigned short *(*fn90)(unsigned short);
+	unsigned short sub_100d1e10(unsigned short h);
+};
+unsigned short LS100d1e10::sub_100d1e10(unsigned short h)
+{
+	if (*(unsigned short *)(m20 + h * 52 + 0x10) == 0xffff)
+		return 0;
+	int buf[128];
+	int n = 0;
+	unsigned short *p = fn90(h);
+	for (int cur = *p; cur != 0xffff; ) {
+		Elem100d1e10 *e = &m74[(unsigned short)cur];
+		buf[n++] = e->m0;
+		if (n >= 128) break;
+		cur = e->ma;
+	}
+	return g_104a57d4->v97(buf, n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d27e0 size=0x17
 namespace lifted {
 struct C100d2560 { int sub_100d2560(int, int); };
