@@ -94757,6 +94757,19 @@ void sub_10198320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198460 size=0x69
+#include "ScopeTrace.h"
+
+extern int g_10619900;
+
+void sub_10198460()
+{
+	ScopeTrace trace("::FullFrameFrameBufferTextureRestoreFunc", g_102de300);
+	if (g_10619900)
+		g_10619900 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198890 size=0x60
 #include "ScopeTrace.h"
 
