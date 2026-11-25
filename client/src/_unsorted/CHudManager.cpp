@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10057530 size=0x7a
+#include "CHudManager.h"
+#include <string.h>
+
+int sub_100cd0f0();
+int sub_100cd100();
+
+struct PanelX
+{
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	void sub_101a99f0(int);
+};
+
+CHudManager::CHudManager(vgui2::Panel *parent)
+	: CBasePanel((int)parent, (int)"CHudManager")
+{
+	CBasePanel::vfunc33((int)parent);
+	((PanelX *)this)->sub_101a9890(0, 0);
+	((PanelX *)this)->sub_101a98f0(sub_100cd100(), sub_100cd0f0());
+	((PanelX *)this)->sub_101a99f0(1);
+	CBasePanel::vfunc54(0);
+	CBasePanel::vfunc63(0);
+	m_pHead = 0;
+	for (int i = 0; i < 8; i++)
+		m_pLists174[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100575b0 size=0x1e
 #include "CHudManager.h"
 
