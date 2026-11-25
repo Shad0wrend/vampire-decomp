@@ -954,6 +954,24 @@ void S10005330::sub_10005330(int i, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005410 size=0x70
+#include "Vector.h"
+
+#define MAXF(a, b) ((a) > (b) ? (a) : (b))
+
+void __stdcall sub_10005410(Vector *v)
+{
+	float maxVal = MAXF(v->x, MAXF(v->y, v->z));
+	if (maxVal > 255.4f)
+	{
+		float scale = 255.4f / maxVal;
+		v->x *= scale;
+		v->y *= scale;
+		v->z *= scale;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005480 size=0x61
 #include "CPlasmaSpray.h"
 
