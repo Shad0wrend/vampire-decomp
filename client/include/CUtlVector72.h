@@ -1,13 +1,14 @@
 // CUtlVector72: a CUtlVector whose elements are 72 bytes (memory, allocation count, grow size, size, element pointer).
 #pragma once
 
+#include "matrix3x4_t.h"
 #include "vector.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct Elem72
 {
-	float m_flMatrix[12];
+	matrix3x4_t m_matrix;
 	Vector m_v0;
 	Vector m_v1;
 };
