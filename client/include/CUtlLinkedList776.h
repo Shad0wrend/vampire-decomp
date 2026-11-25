@@ -32,13 +32,13 @@ public:
 			return;
 		unsigned short prev = InvalidIndex();
 		for (int i = (int)m_TotalElements; --i >= 0; ) {
-			InternalElement(i).m_Previous = i;
 			InternalElement(i).m_Next = prev;
+			InternalElement(i).m_Previous = i;
 			prev = i;
 		}
+		m_FirstFree = 0;
 		m_Head = InvalidIndex();
 		m_Tail = InvalidIndex();
-		m_FirstFree = 0;
 		m_ElementCount = 0;
 	}
 };
