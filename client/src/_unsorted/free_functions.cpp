@@ -35098,6 +35098,36 @@ int C_BaseAnimating::sub_100940d0(int index, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100947b0 size=0xa1
+#include "Vector.h"
+struct IntVec { int x, y, z; };
+void sub_101094b0(const void *angles, const void *origin, void *matrix);
+void sub_1010b210(void *matrix, Vector *mins, Vector *maxs, Vector *outMins, Vector *outMaxs);
+struct VRend {
+	virtual void v0();
+	virtual const Vector &GetRenderOrigin();
+	virtual const IntVec &GetRenderAngles();
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void GetRenderBounds(Vector &mins, Vector &maxs);
+	void sub_100947b0(Vector &absMins, Vector &absMaxs);
+};
+void VRend::sub_100947b0(Vector &absMins, Vector &absMaxs)
+{
+	const IntVec &angles = GetRenderAngles();
+	const Vector &origin = GetRenderOrigin();
+	GetRenderBounds(absMins, absMaxs);
+	if (angles.x | angles.y | angles.z) {
+		float matrix[12];
+		sub_101094b0(&angles, &origin, matrix);
+		sub_1010b210(matrix, &absMins, &absMaxs, &absMins, &absMaxs);
+	} else {
+		absMins += origin;
+		absMaxs += origin;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094860 size=0x27
 namespace lifted {
 int __stdcall sub_100a0240(int);
