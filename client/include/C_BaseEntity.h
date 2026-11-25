@@ -15,6 +15,8 @@ public:
 	void sub_100a2480(const Vector &origin);
 	void sub_1007e180(int a, int b);
 	void sub_1007e100();
+	void sub_1007eb60();
+	void sub_100a2220(Vector v);
 	void sub_1007e040();
 	void sub_100a2850(const Vector *mins, const Vector *maxs);
 	void sub_100a10b0(int a);
