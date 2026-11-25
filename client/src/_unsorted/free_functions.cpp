@@ -20715,6 +20715,24 @@ int sub_1005edb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ee20 size=0x89
+#include "CItemInfo.h"
+int sub_100cd100();
+int sub_100cd0f0();
+// TARGET: CItemInfo::sub_1005ee20
+void CItemInfo::sub_1005ee20()
+{
+    double f;
+    f = sub_100cd100() * 0.0015625;
+    m_unk178 = (int)(f * 314.0);
+    f = sub_100cd0f0() * 0.0020833333333333333;
+    m_unk17c = (int)(f * 406.0);
+    m_unk180 = (sub_100cd100() - m_unk178) / 2;
+    f = sub_100cd0f0() * 0.0020833333333333333;
+    m_unk184 = (int)(f * 30.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005eee0 size=0xb
 struct CUnknown1005eee0 { void sub_1005eee0(); };
 void CUnknown1005eee0::sub_1005eee0()
