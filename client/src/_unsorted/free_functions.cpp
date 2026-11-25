@@ -36933,6 +36933,27 @@ void UtlMem::sub_10096e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096ea0 size=0xbc
+#include "CUtlVector52.h"
+int CUtlVector52::sub_10096ea0(int elem, int num, const Elem52 *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	if (m_size + num > m_allocationCount)
+		sub_10097080(m_size + num - m_allocationCount);
+	m_size += num;
+	m_pElements = m_pMemory;
+	int n = m_size - elem - num;
+	if (n > 0 && num > 0)
+		memmove(&m_pMemory[elem + num], &m_pMemory[elem], n * sizeof(Elem52));
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToInsert[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096f60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
