@@ -19047,6 +19047,51 @@ void CHudStatSound::sub_1004f0c0(int stat, float volume, int pitch, int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f760 size=0xa3
+#include "CVStatList_t.h"
+
+extern char g_103ede7c;
+extern int g_103ede80;
+extern int g_10284b9c;
+extern void *g_104a0d50;
+
+struct CharView {
+    char m_pad[0x1178];
+    int m_nSize;
+    CVStatList_t **m_pElements;
+};
+
+// TARGET: sub_1004f760
+void sub_1004f760(int arg)
+{
+    if (g_103ede7c)
+        return;
+    CharView *p = (CharView *)g_104a0d50;
+    if (!p)
+        return;
+    CVStatList_t *pList;
+    for (int i = 0; i < p->m_nSize; i++)
+    {
+        if (p->m_pElements[i]->m_field10 == 0)
+        {
+            pList = p->m_pElements[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    if (pList->sub_1015dbd0(0xc) > 0)
+    {
+        g_103ede7c = 1;
+        g_103ede80 = 1;
+        g_10284b9c = arg;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f810 size=0x17
 namespace lifted {
 extern int g_10284b9c;
