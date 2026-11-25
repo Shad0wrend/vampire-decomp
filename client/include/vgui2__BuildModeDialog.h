@@ -19,7 +19,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc102();
 	// the slots BuildModeDialog adds to its base's vtable: 145-148, vfuncK at slot K
 	virtual void vfunc145();
-	virtual void vfunc146();
+	virtual void vfunc146(int);
 	virtual int vfunc147();
 	virtual void vfunc148();
 };
