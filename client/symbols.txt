@@ -7614,6 +7614,7 @@
 0x10166650 func   ?vfunc7@CViewportClientSystem@@UAEXH@Z CViewportClientSystem::vfunc7
 0x10166680 func   ?vfunc8@CViewportClientSystem@@QAEPAV1@I@Z CViewportClientSystem::vfunc8
 0x101666a0 func   ?sub_101666a0@@YAHXZ sub_101666a0
+0x101666b0 func   ??0CGridEntry@@QAE@XZ CGridEntry::CGridEntry
 0x101666b0 func   ?sub_101666b0@CUnknown101666b0@@QAEPAXXZ CUnknown101666b0::sub_101666b0
 0x101666c0 func   ?sub_101666c0@@YAXXZ sub_101666c0
 0x101666d0 func   ?sub_101666d0@CUnknown101666d0@@QAEPAXXZ CUnknown101666d0::sub_101666d0
