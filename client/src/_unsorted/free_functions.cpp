@@ -55532,6 +55532,26 @@ int CUnknown101063f0::sub_101063f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106410 size=0x98
+struct CVarY { virtual void v0(); virtual bool IsOff(); char pad[0x28]; int m2c; };
+extern CVarY *g_104d3ea4;
+// TARGET: sub_10106410
+void __stdcall sub_10106410(int x, int y, int *px, int *py, int *outx, int *outy)
+{
+    if (!g_104d3ea4->IsOff() && g_104d3ea4->m2c) {
+        *outx = (int)((*px + x) * 0.5);
+        *outy = (int)((*py + y) * 0.5);
+        *px = x;
+        *py = y;
+    } else {
+        *outx = x;
+        *outy = y;
+        *px = x;
+        *py = y;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106860 size=0x15
 namespace lifted {
 int sub_10166ee0(int, int);
