@@ -56,6 +56,25 @@ void CEffectsClient::vfunc4(const Vector &origin, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1d70 size=0xb5
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+void sub_10044870(const Vector &origin, int a, int b, int c, int d);
+
+// TARGET: CEffectsClient::vfunc5
+void CEffectsClient::vfunc5(const Vector &origin, int a, int b, int c)
+{
+    CPVSFilter filter(origin);
+    C_RecipientFilter *pFilter = &filter;
+    if (CanSend()) {
+        if (pFilter->vfunc2())
+            sub_10044870(origin, a, b, c, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1e30 size=0xa9
 #include "CEffectsClient.h"
 #include "CPVSFilter.h"
