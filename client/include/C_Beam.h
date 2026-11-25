@@ -13,6 +13,7 @@ public:
 	C_Beam();
 	void sub_10080450(EntV *pEnt);
 	void sub_10080490(void *pEntity);
+	void sub_100804f0(char *arg);
 	Vector3 *sub_100806f0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_Beam's own function
