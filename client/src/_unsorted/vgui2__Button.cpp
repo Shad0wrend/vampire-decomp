@@ -421,6 +421,44 @@ void vgui2::Button::vfunc150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4050 size=0xae
+#include "vgui2__Button.h"
+extern "C" int __cdecl strcmp(const char *, const char *);
+struct BtnKVView
+{
+	virtual const char *GetName();
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void SetString(const char *name, const char *value);
+	virtual void SetInt(const char *name, int value);
+};
+struct BtnTargetView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual const char *GetString(const char *name, const char *def);
+};
+// TARGET: vgui2::Button::vfunc14
+bool vgui2::Button::vfunc14(vgui2::KeyValues *data)
+{
+	BtnKVView *kv = (BtnKVView *)data;
+	if (!strcmp(kv->GetName(), "GetState")) {
+		kv->SetInt("state", vfunc144());
+		return true;
+	}
+	if (!strcmp(kv->GetName(), "GetCommand")) {
+		BtnTargetView *t = *(BtnTargetView **)((char *)this + 0xc4);
+		if (t)
+			kv->SetString("command", t->GetString("command", ""));
+		else
+			kv->SetString("command", "");
+		return true;
+	}
+	return this->Label::vfunc14(data);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4150 size=0x52
 #include "vgui2__Button.h"
 namespace lifted {
