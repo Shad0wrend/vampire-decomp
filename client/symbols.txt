@@ -7912,6 +7912,7 @@
 0x1016b0b0 func   ?vfunc98@VBarterFrameLabel@@UAEXXZ VBarterFrameLabel::vfunc98
 0x1016b120 func   ??0VBarterLabel@@QAE@PAVPanel@vgui2@@PBD1_N@Z VBarterLabel::VBarterLabel
 0x1016b120 func   ??0VBarterLabel@@QAE@PAVPanel@vgui2@@PBD_N@Z VBarterLabel::VBarterLabel
+0x1016b120 func   ?sub_1016b120@CUnknown1016b120@@QAEPAXHHHH@Z CUnknown1016b120::sub_1016b120
 0x1016b180 func   ??_GVBarterLabel@@UAEPAXI@Z ??_GVBarterLabel@@UAEPAXI@Z
 0x1016b1a0 func   ??1VBarterLabel@@UAE@XZ VBarterLabel::~VBarterLabel
 0x1016b1a0 func   ?sub_1016b1a0@CUnknown1016b1a0@@QAEHXZ CUnknown1016b1a0::sub_1016b1a0
