@@ -92742,6 +92742,21 @@ int CUnknown1015c0e0::sub_1015c0e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c120 size=0xa4
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatInfo_t::sub_1015c120
+int CVStatInfo_t::sub_1015c120(int arg)
+{
+	ScopeTrace t("CVStatInfo_t::MinSell", g_102de300);
+	if (((CVStatValue_t *)((char *)this + 0x74))->sub_10161440(arg) > sub_1015c0a0(arg))
+		return ((CVStatValue_t *)((char *)this + 0x74))->sub_10161440(arg);
+	return sub_1015c0a0(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c280 size=0x6b
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
