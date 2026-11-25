@@ -4935,6 +4935,7 @@
 0x100e6530 func   ?vfunc3@CFXQuad@@UAE_NXZ CFXQuad::vfunc3
 0x100e6550 func   ?vfunc4@CFXQuad@@UAEXXZ CFXQuad::vfunc4
 0x100e6570 func   ?sub_100e6570@@YIXPAUV_100e6570@@HN@Z sub_100e6570
+0x100e6580 func   ??0CFXStaticLine@@QAE@HPBVVector@@0MMPBDM@Z CFXStaticLine::CFXStaticLine
 0x100e6610 func   ??_GCFXStaticLine@@UAEPAXI@Z ??_GCFXStaticLine@@UAEPAXI@Z
 0x100e6630 func   ??1CFXStaticLine@@UAE@XZ CFXStaticLine::~CFXStaticLine
 0x100e6bf0 func   ?vfunc3@CFXStaticLine@@UAE_NXZ CFXStaticLine::vfunc3
