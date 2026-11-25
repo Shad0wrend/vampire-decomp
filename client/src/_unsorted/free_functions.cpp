@@ -38989,6 +38989,39 @@ void sub_100b1f80(V3 *a, V3 *b, int c, int d, int e, int f, EPView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b28d0 size=0x75
+#include "Vector.h"
+
+struct RenderView
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13();
+    virtual char *GetSetup();
+};
+
+extern RenderView *g_102d43d8;
+
+void __cdecl sub_100b28d0(Vector *pOut, int a2, int a3, char *pDst, char bScale, int a6, char *pSrc)
+{
+    if (bScale)
+    {
+        *(float *)(pDst + 0x00) *= *(float *)(pSrc + 0x42c);
+        *(float *)(pDst + 0x04) *= *(float *)(pSrc + 0x430);
+        *(float *)(pDst + 0x08) *= *(float *)(pSrc + 0x434);
+        *(float *)(pDst + 0x10) *= *(float *)(pSrc + 0x438);
+        *(int *)(pDst + 0x28) = *(int *)(pSrc + 0x428);
+        *(int *)(pDst + 0x20) = *(int *)(pSrc + 0x43c);
+    }
+    float f = *(float *)(g_102d43d8->GetSetup() + 0x64);
+    volatile float *p = (volatile float *)pOut;
+    p[0] = f + f;
+    p[1] = 0.0f;
+    p[2] = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a40 size=0x6
 namespace lifted {
 extern char g_104a1c00;
