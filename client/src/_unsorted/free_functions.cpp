@@ -42951,6 +42951,23 @@ bool sub_100b4330(C_EnvParticle *eff, C_BaseEntity *parent, Vector origin, int a
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b44c0 size=0x93
+#include "C_EnvParticle.h"
+#include "Vector.h"
+C_EnvParticle *sub_100b3560();
+bool sub_100b4330(C_EnvParticle *eff, C_BaseEntity *parent, Vector origin, int attach, Vector fwd, Vector v3, int a, int b, int c, int d);
+// TARGET: sub_100b44c0
+bool sub_100b44c0(C_BaseEntity *parent, Vector origin, int g5, int attach, Vector fwd, Vector v3, int a, int b, int c, int d)
+{
+	C_EnvParticle *eff = sub_100b3560();
+	if (!eff)
+		return false;
+	*(int *)((char *)eff + 0x414) = g5;
+	*(int *)((char *)eff + 0x410) = 0;
+	return sub_100b4330(eff, parent, origin, attach, fwd, v3, a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4560 size=0x18
 #include <string.h>
 extern char g_104a1d10[0x200];
