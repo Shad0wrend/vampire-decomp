@@ -54224,6 +54224,68 @@ void S100d8dd0::sub_100d8dd0(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8e00 size=0xf6
+struct Node10
+{
+	char m_Data[6];			// 0x00
+	unsigned short m_Previous;	// 0x06
+	unsigned short m_Next;		// 0x08
+};
+
+class List10
+{
+public:
+	Node10 *m_pMemory;		// 0x00
+	int m_allocationCount;		// 0x04
+	int m_growSize;			// 0x08
+	unsigned short m_Head;		// 0x0c
+	unsigned short m_Tail;		// 0x0e
+	unsigned short m_FirstFree;	// 0x10
+	unsigned short m_ElementCount;	// 0x12
+	unsigned short m_TotalElements;	// 0x14
+	void sub_100d8e00(unsigned short before, unsigned short elem);
+};
+
+// TARGET: List10::sub_100d8e00
+void List10::sub_100d8e00(unsigned short before, unsigned short elem)
+{
+	if ( elem < m_TotalElements && m_pMemory[elem].m_Previous != elem )
+	{
+		Node10 *pBase = m_pMemory;
+		Node10 *pOldElem = &pBase[elem];
+		if ( pOldElem->m_Previous != 0xffff )
+			pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+		else
+			m_Head = pOldElem->m_Next;
+		if ( pOldElem->m_Next != 0xffff )
+			pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+		else
+			m_Tail = pOldElem->m_Previous;
+		pOldElem->m_Next = elem;
+		pOldElem->m_Previous = elem;
+		m_ElementCount--;
+	}
+	Node10 *pNode = &m_pMemory[elem];
+	pNode->m_Next = before;
+	if ( before == 0xffff )
+	{
+		pNode->m_Previous = m_Tail;
+		m_Tail = elem;
+	}
+	else
+	{
+		Node10 *pBefore = &m_pMemory[before];
+		pNode->m_Previous = pBefore->m_Previous;
+		pBefore->m_Previous = elem;
+	}
+	if ( pNode->m_Previous == 0xffff )
+		m_Head = elem;
+	else
+		m_pMemory[pNode->m_Previous].m_Next = elem;
+	m_ElementCount++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d90b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);

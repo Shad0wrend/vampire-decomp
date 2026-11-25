@@ -4926,6 +4926,7 @@
 0x100d8c90 func   ?sub_100d8c90@CUtlLinkedList240@@QAEG_N@Z CUtlLinkedList240::sub_100d8c90
 0x100d8dc0 func   ?sub_100d8dc0@CUnknown100d8dc0@@QAEPAXXZ CUnknown100d8dc0::sub_100d8dc0
 0x100d8dd0 func   ?sub_100d8dd0@S100d8dd0@@QAEXG@Z S100d8dd0::sub_100d8dd0
+0x100d8e00 func   ?sub_100d8e00@List10@@QAEXGG@Z List10::sub_100d8e00
 0x100d90b0 func   ?sub_100d90b0@UtlMem@@QAEXXZ UtlMem::sub_100d90b0
 0x100d90e0 func   ?sub_100d90e0@CUnknown100d90e0@@QAEHH@Z CUnknown100d90e0::sub_100d90e0
 0x100d9100 func   ?sub_100d9100@CUnknown100d9100@@QAEHH@Z CUnknown100d9100::sub_100d9100
