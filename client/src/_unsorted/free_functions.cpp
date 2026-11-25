@@ -23280,6 +23280,67 @@ void MainMenu_100664e0::sub_100664e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100665d0 size=0xcf
+#include "utlvector.h"
+#include "Tier1.h"
+
+struct Effect
+{
+	char pad0[0x40];
+	int m_n40;		// 0x40
+	int m_h44;		// 0x44
+	char pad48[0x64 - 0x48];
+};
+
+struct MMObject
+{
+	char pad[0x2ec];
+	CUtlVector<Effect> m_Effects;
+	void sub_100665d0(bool bPurge);
+};
+
+struct PSView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13();
+	virtual void v14(int handle);
+};
+
+struct GView
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad4[0x2c - 4];
+	void *m_p2c;	// 0x2c
+};
+
+extern PSView *g_104a581c;
+extern GView *g_103eeff4;
+
+void MMObject::sub_100665d0(bool bPurge)
+{
+	if (!g_103eeff4->v1() && g_103eeff4->m_p2c)
+	{
+		if (bPurge)
+			g_101e3108("Purging particle effects\n");
+		else
+			g_101e3108("Removing particle effects\n");
+	}
+
+	for (int i = 0; i < m_Effects.Count(); i++)
+	{
+		g_104a581c->v14(m_Effects[i].m_h44);
+		m_Effects[i].m_n40 = 0;
+		m_Effects[i].m_h44 = 0;
+	}
+
+	if (bPurge)
+		m_Effects.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100666a0 size=0x2c
 namespace lifted {
 extern int g_104a5818;
