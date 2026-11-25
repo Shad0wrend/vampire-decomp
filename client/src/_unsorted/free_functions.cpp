@@ -54959,6 +54959,34 @@ char CInput::sub_100ff0a0(CUnkPlayer *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101003b0 size=0x9b
+#include "CInput.h"
+struct CvarV { virtual void v0(); virtual char IsNoValue(); char m_pad[0x28]; int m_nValue; };
+extern CvarV *g_104d205c;
+#define F(T, off) (*(T *)((char *)this + off))
+// TARGET: CInput::sub_101003b0
+void CInput::sub_101003b0()
+{
+	F(char, 0x1b8) = 0;
+	int v = g_104d205c->IsNoValue() ? 0 : g_104d205c->m_nValue;
+	F(float, 0x158) = -135.0f;
+	F(float, 0x15c) = 0.0f;
+	F(float, 0x160) = 135.0f;
+	F(int, 0xfc) = 0;
+	F(float, 0x154) = (float)v;
+	F(int, 0x100) = 0;
+	F(int, 0x138) = 0;
+	F(int, 0x108) = 0;
+	F(float, 0x130) = -1.0f;
+	F(char, 0xf0) = 0;
+	F(char, 0xf8) = 0;
+	F(char, 0xf9) = 0;
+	F(int, 0x1b0) = 0;
+	F(int, 0x1b4) = 0;
+	F(char, 4) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100b40 size=0x58
 extern char g_104d2ce4;
 extern char g_104d2ce8;
