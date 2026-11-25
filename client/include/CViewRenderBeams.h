@@ -36,7 +36,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc9();
 	virtual void vfunc10();
 	virtual void vfunc11();
-	virtual void vfunc12();
+	virtual Beam_t *vfunc12(BeamInfoV *);
+	int sub_101937e0(Vector *, Vector *, int);
 	virtual void vfunc13();
 	virtual void vfunc14();
 	virtual void vfunc15();
