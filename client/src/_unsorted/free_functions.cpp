@@ -20666,6 +20666,34 @@ char CUnknown1005e3c0::sub_1005e3c0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e400 size=0x91
+#include "CHudUseIcon.h"
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+struct CInfo1007b160 { char pad0[0x88]; char m_sz88[1]; };
+struct CWpn1007b160 { CInfo1007b160 *sub_1007b160(); };
+struct CWpnInfo { char pad[0x5ebc8]; int m_n5ebc8; };
+struct CEntX { char pad[0x3ec]; CWpn1007b160 *m_p3ec; };
+struct CEntList100d0cf0 { CEntX *sub_100d0cf0(int); };
+extern CEntList100d0cf0 *g_102b8e9c;
+const char *CHudUseIcon::sub_1005e400(int idx)
+{
+	int ret = 0;
+	CEntX *pEnt = g_102b8e9c->sub_100d0cf0(idx);
+	if (pEnt && pEnt->m_p3ec) {
+		CWpn1007b160 *p = pEnt->m_p3ec;
+		if (((CWpnInfo *)p->sub_1007b160())->m_n5ebc8)
+			ret = ((CWpnInfo *)p->sub_1007b160())->m_n5ebc8;
+		Q_strncpy(m_arr1c9, p->sub_1007b160()->m_sz88, 0x40);
+	} else {
+		memset(m_arr1c9, 0, 0x40);
+	}
+	m_pad1c8 = 1;
+	return (const char *)ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e4a0 size=0x276
 #include "CHudUseIcon.h"
 #include "CHUDSprite.h"
