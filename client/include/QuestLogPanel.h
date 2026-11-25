@@ -10,6 +10,7 @@ class QuestLogPanel : public vgui2::PropertyPage
 public:
 	virtual ~QuestLogPanel();
 	static void operator delete(void *pMem) { free(pMem); }
+	void sub_101892d0(int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with QuestLogPanel's own function
 	virtual void vfunc3();
