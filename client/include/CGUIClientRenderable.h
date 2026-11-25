@@ -38,6 +38,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     int m_unk194[(0x1ac - 0x194) / 4];
     float m_f1ac;
     float sub_1018a7d0();
+    float sub_1018a8c0(float cur, float prev, float curTime, bool b);
     float sub_1018a860(int i, float cur, float prev, float curTime);
     float sub_1018a990(float flCycle, int nSequence, float *poseParameter, float flPlaybackRate, float dt);
     void sub_1018a350(float cycle, float *poseParameter, class Vector *pos, class Quaternion *q);
