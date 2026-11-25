@@ -113223,6 +113223,51 @@ float sub_1019d2e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d3d0 size=0xe5
+#include "ScopeTrace.h"
+
+extern void *g_104a0d50;
+extern float g_101e34f0;
+extern float g_101e4408;
+
+struct FogCvarView
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	int m_unk04;
+	int m_unk08;
+	int m_unk0c;
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+	int m_unk1c;
+	int m_unk20;
+	int m_unk24;
+	float m_fl28;
+	int m_n2c;
+};
+
+extern FogCvarView *g_106193cc;
+extern FogCvarView *g_106189e4;
+
+float sub_1019d3d0()
+{
+	ScopeTrace scope("::GetSkyboxFogEnd", g_102de300);
+
+	void *pWorld = g_104a0d50;
+	if (!pWorld)
+		return g_101e34f0;
+
+	if (!g_106193cc->vfunc1() && g_106193cc->m_n2c)
+	{
+		if (!g_106189e4->vfunc1() && g_106189e4->m_fl28 == g_101e4408)
+			return *(float *)((char *)pWorld + 0x17d4);
+		return g_106189e4->vfunc1() ? g_101e34f0 : g_106189e4->m_fl28;
+	}
+	return *(float *)((char *)pWorld + 0x17d4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d4c0 size=0xc4
 #include "ScopeTrace.h"
 struct FogCvarView
