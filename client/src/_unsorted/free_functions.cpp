@@ -29321,6 +29321,29 @@ float sub_1007b150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b180 size=0xb4
+#include "C_BaseCombatWeapon.h"
+#include "CVDmg_t.h"
+#include "CWeaponCopy.h"
+extern CWeaponCopy g_10477358;
+char *C_BaseCombatWeapon::sub_1007b180()
+{
+	static CVDmg_t s_dmg;
+	char *p = (char *)sub_1007b160();
+	int *w = (int *)(*(int *)((char *)this + 0x8a8));
+	int i;
+	for (i = 0; i < 3; i++) {
+		if (*(int *)(p + 0x239e4 + i * 0xec84) == (int)w)
+			return p + 0x238e0 + i * 0xec84;
+	}
+	g_10477358.sub_1007b250((CWeaponCopy *)((char *)sub_1007b160() + 0x238e0));
+	g_10477358.sub_101a5a80();
+	g_10477358.m_n108 = 0;
+	g_10477358.m_n260 = *(int *)(p + 0x23b40);
+	return (char *)&g_10477358;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b250 size=0x351
 struct CWeaponStruct44 { int d[17]; };
 struct CWeaponStruct88 { int d[34]; };
