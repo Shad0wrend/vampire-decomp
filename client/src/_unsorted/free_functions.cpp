@@ -20589,6 +20589,23 @@ void CMeshBuilder::sub_10059af0(const float *rgb)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005b380 size=0x95
+#include "ScopeTrace.h"
+extern "C" double __cdecl sin(double);
+extern "C" double __cdecl cos(double);
+#pragma intrinsic(sin, cos)
+void __stdcall sub_1005b380(float *px, float *py, float flAngle, float a, float b)
+{
+	ScopeTrace trace("CHUDSprite::RotPoint", g_102de300, g_102de300);
+	float x = a + *px;
+	float y = b + *py;
+	float s = (float)sin(flAngle);
+	float c = (float)cos(flAngle);
+	*px = x * c - y * s;
+	*py = y * c + x * s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005c3b0 size=0x7d
 #include "CHUDSprite.h"
 #include "ScopeTrace.h"
