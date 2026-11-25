@@ -90037,6 +90037,34 @@ void VCharWizardUI::sub_10175b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175da0 size=0x63
+#include <string.h>
+#include <stdlib.h>
+#include "CBasePanel.h"
+#include "VCharWizardUI.h"
+
+struct WizardPanelTail
+{
+	char m_pad[0x358];
+	char m_flags[4 * 0x14];
+};
+
+// TARGET: CBasePanel::sub_10175da0
+void CBasePanel::sub_10175da0(const char *name)
+{
+	if (_strcmpi(name, "OK") == 0)
+		return;
+	if (strncmp(name, "CharWizBtn", 10) == 0)
+	{
+		int idx = atoi(name + 10);
+		if (!((WizardPanelTail *)this)->m_flags[idx * 0x14])
+			((VCharWizardUI *)((char *)this - 0x10))->sub_10175b90(idx);
+	}
+	else
+		sub_101ab3d0(name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175e80 size=0x2c
 #include "CHud.h"
 extern char g_105fb1fe;
