@@ -18,6 +18,82 @@ void __stdcall sub_100e1b10(int, int, int, int, int, int, int, int, int, int, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1bf0 size=0xb3
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+void sub_10046170(const Vector &origin, int a, int b, int c);
+
+// TARGET: CEffectsClient::vfunc3
+void CEffectsClient::vfunc3(const Vector &origin, int a, int b, int c)
+{
+    CPVSFilter filter(origin);
+    C_RecipientFilter *pFilter = &filter;
+    if (CanSend()) {
+        if (pFilter->vfunc2())
+            sub_10046170(origin, a, b, c);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e1cb0 size=0xb3
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+void sub_100bae90(const Vector &origin, int a, int b, int c);
+
+// TARGET: CEffectsClient::vfunc4
+void CEffectsClient::vfunc4(const Vector &origin, int a, int b, int c)
+{
+    CPVSFilter filter(origin);
+    C_RecipientFilter *pFilter = &filter;
+    if (CanSend()) {
+        if (pFilter->vfunc2())
+            sub_100bae90(origin, a, b, c);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e1d70 size=0xb5
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+void sub_10044870(const Vector &origin, int a, int b, int c, int d);
+
+// TARGET: CEffectsClient::vfunc5
+void CEffectsClient::vfunc5(const Vector &origin, int a, int b, int c)
+{
+    CPVSFilter filter(origin);
+    C_RecipientFilter *pFilter = &filter;
+    if (CanSend()) {
+        if (pFilter->vfunc2())
+            sub_10044870(origin, a, b, c, 0);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e1e30 size=0xa9
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+void sub_10046b50(const Vector &origin, int a);
+
+// TARGET: CEffectsClient::vfunc6
+void CEffectsClient::vfunc6(const Vector &origin, int a)
+{
+    CPVSFilter filter(origin);
+    C_RecipientFilter *pFilter = &filter;
+    if (CanSend()) {
+        if (pFilter->vfunc2())
+            sub_10046b50(origin, a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1ee0 size=0xae
 #include "CEffectsClient.h"
 #include "CPVSFilter.h"

@@ -176,6 +176,31 @@ float C_BaseAnimating::vfunc122()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008fa70 size=0xbd
+#include "C_BaseAnimating.h"
+extern "C" double floor(double);
+struct PoseDesc1008fa70 { int a, b; int flags; };
+struct AnimView1008fa70 { char pad[0x5d4]; float m5d4; };
+
+float C_BaseAnimating::sub_1008fa70(float a1, int idx, float a3, float a4, float a5)
+{
+    float r = sub_10095910(idx, &((AnimView1008fa70 *)this)->m5d4);
+    if (r == 0.0f)
+        return 0.0f;
+    PoseDesc1008fa70 *p = sub_10096830(idx);
+    if (!p)
+        return 0.0f;
+    float x = a5 / r * a4 + a1;
+    if (p->flags & 1)
+        return x - floor(x);
+    if (x >= 0.999)
+        x = 0.999f;
+    if (x < 0.0)
+        x = 0.0f;
+    return x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b60 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc124(int a0, int a1)
@@ -211,6 +236,42 @@ void C_BaseAnimating::vfunc131(int a0, int a1, int a2, int a3, int a4, int a5)
 bool C_BaseAnimating::vfunc142()
 {
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10092810 size=0xbb
+#include "C_BaseAnimating.h"
+#include "Vector.h"
+struct CollView92810 {
+    virtual void v0();
+    virtual void v1();
+    virtual Vector *GetOrigin();
+    virtual void GetBounds(Vector &mins, Vector &maxs);
+};
+struct AnimView92810 {
+    char pad[0x6b0];
+    CollView92810 *m_pColl;
+};
+struct IEngBase92810 {
+#define V8(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7();
+    V8(0) V8(1) V8(2) V8(3) V8(4) V8(5) V8(6) V8(7) V8(8)
+    virtual bool IsBox(Vector &a, Vector &b);
+};
+extern IEngBase92810 *g_104a57d4;
+
+// TARGET: C_BaseAnimating::sub_10092810
+int C_BaseAnimating::sub_10092810()
+{
+    if (sub_10094020())
+    {
+        Vector org = *((AnimView92810 *)this)->m_pColl->GetOrigin();
+        Vector mins, maxs;
+        ((AnimView92810 *)this)->m_pColl->GetBounds(mins, maxs);
+        mins += org;
+        maxs += org;
+        return !g_104a57d4->IsBox(mins, maxs);
+    }
+    return 2;
 }
 // END FUNCTION
 
@@ -510,5 +571,39 @@ int C_BaseAnimating::sub_100965d0(int arg1, int arg2)
 		return frame;
 	v->m_time = cur + (arg2 - frame) * unit;
 	return arg2;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10096720 size=0xb9
+#include "C_BaseAnimating.h"
+extern void (*g_101e30fc)(void *);
+struct DelView10096720 { virtual void Destroy(int bDelete); };
+struct VecView10096720 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; void *m_pElements; };
+struct AnimViewA10096720 { char pad[0x6b0]; DelView10096720 *m_p6b0; };
+void sub_1008df90(void *vec, int hdr, void *a, int b, void *c);
+void C_BaseAnimating::vfunc112()
+{
+	DelView10096720 *&p = ((AnimViewA10096720 *)this)->m_p6b0;
+	if (p)
+		p->Destroy(1);
+	p = 0;
+	sub_100966e0();
+	vfunc132(true);
+	sub_10096650();
+	VecView10096720 *v = (VecView10096720 *)((char *)this + 0x6f4);
+	v->m_Size = 0;
+	if (v->m_nGrowSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			g_101e30fc(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_nAllocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	for (int i = 0; i < 2; i++)
+		sub_1008df90((char *)this + 0x4d0 + i * 0x14, sub_1008f900(i), (char *)this + 0x428, sub_1008f900(-1), (char *)this + 0x450);
+	sub_10096c30();
 }
 // END FUNCTION

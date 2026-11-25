@@ -69,6 +69,20 @@ void C_BaseViewModel::vfunc21()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f7c0 size=0x6f
+#include "C_BaseViewModel.h"
+#include "CCollisionProperty.h"
+void C_BaseViewModel::vfunc19()
+{
+	vfunc21();
+	Vector maxs(8.0f, 4.0f, 2.0f);
+	Vector mins(-8.0f, -4.0f, -2.0f);
+	sub_100a2850(&mins, &maxs);
+	((CCollisionProperty *)((char *)this + 0x190))->sub_10043230(0);
+	*(unsigned int *)((char *)this + 0x184) &= ~0x40000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f890 size=0x53
 #include "Vector.h"
 #include "C_BaseViewModel.h"

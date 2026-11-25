@@ -11,6 +11,7 @@ public:
 	virtual ~CFunctionProxy();
 	bool sub_100e34b0(void *pMaterial, void *pKeyValues);
 	void sub_100e3560(int *pType, int *pVecSize);
+	void sub_100e33c0(float);
 	int m_unk04;
 	int m_unk08;
 	int m_unk0c;

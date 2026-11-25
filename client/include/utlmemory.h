@@ -76,6 +76,7 @@ public:
 
 	void Grow(int num = 1);
 	void sub_10132d30(int num = 1);
+	void sub_1004a350(int num = 1);
 	void sub_100be200(int num = 1);
 	void sub_10138700(int num = 1);
 	void sub_1008e670(int num = 1);

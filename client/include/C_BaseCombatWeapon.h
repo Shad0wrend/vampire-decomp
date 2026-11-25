@@ -9,11 +9,15 @@ class C_BaseCombatWeapon : public C_BaseAnimating
 public:
 	C_BaseCombatWeapon();
 	void *sub_1007b160();
+	int sub_1007ba10(int n, int m);
+	int sub_1007ccc0();
 	void sub_1007cc30(const char *arg);
 	void *sub_10003060();
 	void *sub_1007bab0();
 	char *sub_1007b180();
 	bool sub_1007d950();
+	struct WpnSlot_t *sub_1007b5b0();
+	bool sub_1007d810();
 	bool sub_1007d790(void *arg0, void *arg1, int arg2);
 	int sub_1009cd10();
 	virtual ~C_BaseCombatWeapon();
@@ -98,7 +102,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc208();
 	virtual bool vfunc209();
 	virtual float vfunc210(int, int);
-	virtual void vfunc211();
+	virtual void vfunc211(int, float);
 	virtual void vfunc212();
 	virtual int vfunc213();
 	virtual void vfunc214(int);
@@ -109,7 +113,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc219();
 	virtual int vfunc220();
 	virtual int vfunc221();
-	virtual void vfunc222();
+	virtual int vfunc222(int);
 	virtual int vfunc223();
 	virtual void vfunc224();
 	virtual void vfunc225();

@@ -9,6 +9,17 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	void sub_1011d190(float frametime);
+	void sub_100a2850(Vector *mins, Vector *maxs);
+	void sub_100a2480(const Vector &origin);
+	void sub_1007e180(int a, int b);
+	void sub_1007e100();
+	void sub_100a2850(const Vector *mins, const Vector *maxs);
+	void sub_100a10b0(int a);
+	void sub_100a2930();
+	bool sub_100a2600();
+	void sub_1009fc60(int a, int b);
+	void sub_100a1110();
 	int sub_100a2450();
 	void sub_1011bd60(C_BaseEntity *other);
 	void sub_1011bdf0(C_BaseEntity *other);
@@ -35,6 +46,8 @@ public:
 	C_BaseEntity *sub_100a11a0();
 	void sub_1011ac90(void (C_BaseEntity::*thinkFunc)(), int a, int b);	// PhysicsDispatchThink: the two trailing ints are the rest of the 16-byte member pointer
 	void sub_100a2030(const void *);
+	bool sub_100a29b0(int);
+	void sub_100a36e0();
 	void sub_100a2100(const QAngle &absAngles);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)

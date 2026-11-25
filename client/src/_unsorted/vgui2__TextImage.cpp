@@ -1,12 +1,51 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101b9bc0 size=0x70
+#include "vgui2__TextImage.h"
+
+int sub_101ac8c0();
+
+struct ISchemeTmp
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual int GetFont(const char *fontName);
+};
+
+struct ISchemeManagerTmp
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual ISchemeTmp *GetIScheme(unsigned long scheme);
+};
+
+vgui2::TextImage::TextImage(const char *text, unsigned long scheme)
+	: Image()
+{
+	m_pText = 0;
+	m_unk20 = 0;
+	m_font = ((ISchemeManagerTmp *)sub_101ac8c0())->GetIScheme(scheme)->GetFont("Default");
+	m_unk2c = 0xffff;
+	m_unk28 = 0;
+	m_unk20 = 0;
+	m_unk22 = 0;
+	m_unk30 = false;
+	m_unk35 = true;
+	vfunc27(text);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9c30 size=0x1e
 #include "vgui2__TextImage.h"
 
 // VC6 writes vgui2::TextImage's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-vgui2::TextImage *pcd_emit_101b9c30() { return new vgui2::TextImage; }
+vgui2::TextImage *pcd_emit_101b9c30(const vgui2::TextImage &other) { return new vgui2::TextImage(other); }
 
 // TARGET: ??_GTextImage@vgui2@@UAEPAXI@Z
 // END FUNCTION

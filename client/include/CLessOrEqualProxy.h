@@ -9,5 +9,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CLessOrEqualProxy's own function
     virtual bool vfunc0(void*, void*);
     virtual void vfunc1(int);
-    char m_pad0014[0x1c - 0x14];
+    void *m_pLessVar;
+    void *m_pGreaterVar;
 };

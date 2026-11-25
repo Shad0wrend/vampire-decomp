@@ -29,12 +29,16 @@ public:
 	int m_unk28;
 	CUtlLinkedList240 m_Shadows;	// 0x2c
 	void sub_100d6540(int index, const Vector *v, float f);
+	void sub_100d6390(class VMatrix &worldToShadow, const Vector &origin, const Vector &dir, const Vector &xvec, const Vector &yvec);
+	float sub_100d6430(class IClientEntity *pEnt, const Vector &mins, const Vector &maxs, const Vector &localShadowDir, float backupFactor, Vector &origin);
+	void sub_100d65a0(class IClientEntity *pEnt, unsigned short handle, const Vector *vec, const Vector &mins, const Vector &maxs, const Vector &localShadowDir);
 
 	void sub_100d66d0(int a0, unsigned short h);
 	void sub_100d6ca0(int a0, unsigned short h, int *a2, int *a3);
 	void sub_100d7130(int a0, unsigned short h, int *a2);
 	void sub_100d7180(int a0, unsigned short h, int *a2);	// provisional, like sub_100d7130 (transplant)
 public:
+	void vfunc1();
 	void vfunc3();
 	void vfunc4();
 	void vfunc7(int);

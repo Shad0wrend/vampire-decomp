@@ -2,6 +2,7 @@
 // declared: its base, slot 16
 #pragma once
 #include "C_BaseEntity.h"
+#include "VMatrix.h"
 
 struct CVGuiMemA { int m_unk0; void sub_100cd1e0(); ~CVGuiMemA() { sub_100cd1e0(); } };
 struct CVGuiMemB { int m_unk0; void sub_10110440(); ~CVGuiMemB() { sub_10110440(); } };
@@ -13,9 +14,11 @@ public:
 	char m_pad0440[0x450 - 0x440];
 	CVGuiMemA m_a;
 	CVGuiMemA m_b;
-	char m_pad0458[0x498 - 0x458];
+	VMatrix m_matrix;
 	CVGuiMemB m_c;
 	virtual int vfunc16();
 	void sub_100c9270(int);
+	void sub_100c9680(Vector &v1, Vector &v2, Vector &v3);
+	void sub_100c9820();
 	virtual int vfunc64(int, int, int);
 };

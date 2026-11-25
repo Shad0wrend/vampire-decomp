@@ -159,3 +159,22 @@ int C_Beam::vfunc121()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10081000 size=0x5b
+#include "C_Beam.h"
+#include "CCollisionProperty.h"
+void C_Beam::vfunc37()
+{
+	IClientRenderable *r = (IClientRenderable *)((char *)this + 4);
+	if (r->ShouldDraw())
+	{
+		if (m_nAttach || m_unk0454[0])
+		{
+			Vector a, b;
+			sub_10081060(&b, &a);
+			((CCollisionProperty *)((char *)this + 0x190))->sub_100433c0(&b, (char *)&a);
+		}
+		sub_100a02e0(false);
+	}
+}
+// END FUNCTION

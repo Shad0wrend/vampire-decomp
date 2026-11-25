@@ -18,7 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc9();
 	virtual void vfunc13();
 	// the slots C_TEGunshotDecal adds to its base's vtable: 16-18, vfuncK at slot K
-	virtual void vfunc16();
+	virtual void vfunc16(int a, int b);
 	virtual void vfunc17();
 	virtual void vfunc18();
 	bool sub_10038f20();

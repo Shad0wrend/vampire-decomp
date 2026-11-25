@@ -55,3 +55,40 @@ int VQTextEntry::vfunc174(int a0)
     return ((lifted::V *)this)->f120(a0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10188390 size=0x95
+#include "VQTextEntry.h"
+
+struct TextStreamBuf
+{
+	int size;
+	int unk4;
+	char *data;
+
+	char Get(int idx) const
+	{
+		if (idx < 0 || idx >= size)
+			return 0;
+		return data[idx];
+	}
+};
+
+int VQTextEntry::vfunc171(void *streamPtr, int index, int a3, int a4)
+{
+	TextStreamBuf *stream = (TextStreamBuf *)streamPtr;
+	if (stream->Get(index + 1) == 5)
+	{
+		index += 2;
+		int style = stream->Get(index++) - 1;
+		int *m_style = (int *)((char *)this + 0x130);
+		if (style != *m_style)
+		{
+			int font = style ? *(int *)((char *)this + 0x12c) : *(int *)((char *)this + 0x128);
+			*m_style = style;
+			*(int *)((char *)this + 0x124) = font;
+		}
+		return index - 1;
+	}
+	return TextEntry::vfunc171(streamPtr, index, a3, a4);
+}
+// END FUNCTION

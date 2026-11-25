@@ -41,6 +41,106 @@ void C_TempEntsSystem::vfunc5(int filter, int delay, int pos, int dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5130 size=0xaf
+#include "C_TempEntsSystem.h"
+
+extern void *g_104a0d50;
+void sub_10032a60(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+
+struct CTempEntRecipientFilter
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int v2();
+	bool sub_100be140();
+	void sub_100bdf90(void *);
+};
+
+static inline bool CanRunTempEnt(const C_TempEntsSystem *p)
+{
+	if (p->m_nSuppressCount > 0)
+		return false;
+	return !p->m_bSuppressEvent;
+}
+
+void C_TempEntsSystem::vfunc6(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19)
+{
+	if (!CanRunTempEnt(this))
+		return;
+
+	CTempEntRecipientFilter *pFilter = (CTempEntRecipientFilter *)filter;
+	if (!pFilter->sub_100be140())
+	{
+		pFilter->sub_100bdf90(g_104a0d50);
+	}
+	if (!pFilter->v2())
+		return;
+
+	sub_10032a60((int)pFilter, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c5290 size=0xa5
+#include "C_TempEntsSystem.h"
+
+extern void *g_104a0d50;
+void sub_100334f0(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+
+struct CTempEntRecipientFilter
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int v2();
+	bool sub_100be140();
+	void sub_100bdf90(void *);
+};
+
+static inline bool CanRunTempEnt(const C_TempEntsSystem *p)
+{
+	if (p->m_nSuppressCount > 0)
+		return false;
+	return !p->m_bSuppressEvent;
+}
+
+// TARGET: C_TempEntsSystem::vfunc8
+void C_TempEntsSystem::vfunc8(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17)
+{
+	if (!CanRunTempEnt(this))
+		return;
+
+	CTempEntRecipientFilter *pFilter = (CTempEntRecipientFilter *)filter;
+	if (!pFilter->sub_100be140())
+	{
+		pFilter->sub_100bdf90(g_104a0d50);
+	}
+	if (!pFilter->v2())
+		return;
+
+	sub_100334f0((int)pFilter, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c5340 size=0xa5
+#include "C_TempEntsSystem.h"
+#include "C_RecipientFilter.h"
+
+extern void *g_104a0d50;
+void sub_10033180(void *filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18);
+
+// TARGET: C_TempEntsSystem::vfunc9
+void C_TempEntsSystem::vfunc9(void *filter_, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18)
+{
+	if (CanPredict())
+	{
+		C_RecipientFilter *filter = (C_RecipientFilter *)filter_;
+		if (!filter->sub_100be140())
+			filter->sub_100bdf90(g_104a0d50);
+		if (filter->vfunc2())
+			sub_10033180(filter, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c53f0 size=0xa0
 #include "C_TempEntsSystem.h"
 #include "C_RecipientFilter.h"
@@ -55,6 +155,46 @@ void C_TempEntsSystem::vfunc10(int filter, int a1, int a2, int a3, int a4, int a
 		f->sub_100bdf90(g_104a0d50);
 	if (f->vfunc2())
 		sub_10033860(f, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c5490 size=0xa5
+#include "C_TempEntsSystem.h"
+
+extern void *g_104a0d50;
+void sub_10033bd0(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+
+struct CTempEntRecipientFilter
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int v2();
+	bool sub_100be140();
+	void sub_100bdf90(void *);
+};
+
+static inline bool CanRunTempEnt(const C_TempEntsSystem *p)
+{
+	if (p->m_nSuppressCount > 0)
+		return false;
+	return !p->m_bSuppressEvent;
+}
+
+// TARGET: C_TempEntsSystem::vfunc11
+void C_TempEntsSystem::vfunc11(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17)
+{
+	if (!CanRunTempEnt(this))
+		return;
+
+	CTempEntRecipientFilter *pFilter = (CTempEntRecipientFilter *)filter;
+	if (!pFilter->sub_100be140())
+	{
+		pFilter->sub_100bdf90(g_104a0d50);
+	}
+	if (!pFilter->v2())
+		return;
+
+	sub_10033bd0((int)pFilter, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
 }
 // END FUNCTION
 

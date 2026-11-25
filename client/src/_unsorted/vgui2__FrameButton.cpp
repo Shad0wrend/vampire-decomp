@@ -47,6 +47,35 @@ int vgui2::FrameButton::vfunc164(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b8240 size=0xa7
+#include "vgui2__FrameButton.h"
+#define FB_U(off) (*(unsigned int *)((char *)this + (off)))
+#define P10(n) virtual void p##n##0(); virtual void p##n##1(); virtual void p##n##2(); virtual void p##n##3(); virtual void p##n##4(); virtual void p##n##5(); virtual void p##n##6(); virtual void p##n##7(); virtual void p##n##8(); virtual void p##n##9();
+struct V155
+{
+	P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k) P10(l) P10(m) P10(n) P10(o)
+	virtual void q0(); virtual void q1(); virtual void q2(); virtual void q3(); virtual void q4();
+	virtual int s155(unsigned int, unsigned int);
+};
+// TARGET: vgui2::FrameButton::vfunc166
+int vgui2::FrameButton::vfunc166(char bFlag)
+{
+	*((char *)this + 0x10c) = bFlag;
+	if (!bFlag)
+	{
+		vfunc153(FB_U(0xfc), FB_U(0x100));
+		vfunc154(FB_U(0xfc), FB_U(0x100));
+		return ((V155 *)this)->s155(FB_U(0xfc), FB_U(0x100));
+	}
+	else
+	{
+		vfunc153(FB_U(0x104), FB_U(0x108));
+		vfunc154(FB_U(0x104), FB_U(0x108));
+		return ((V155 *)this)->s155(FB_U(0x104), FB_U(0x108));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b8300 size=0x60
 #include "vgui2__FrameButton.h"
 namespace lifted {

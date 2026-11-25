@@ -163,6 +163,36 @@ float vgui2::KeyValues::vfunc10(const char *keyName, float defaultValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6520 size=0xac
+#include <stdio.h>
+#include "vgui2__KeyValues.h"
+using namespace vgui2;
+const char *KeyValues::vfunc11(const char *keyName, const char *defaultValue)
+{
+    KeyValues *dat = vfunc4(keyName, 0);
+    if (dat) {
+        char buf[64];
+        switch (dat->m_unk10) {
+        case 3:
+            sprintf(buf, "%f", dat->m_flValue);
+            vfunc14(keyName, buf);
+            break;
+        case 2:
+        case 4:
+            sprintf(buf, "%d", dat->m_unkc);
+            vfunc14(keyName, buf);
+            break;
+        case 1:
+            break;
+        default:
+            return defaultValue;
+        }
+        return (const char *)dat->m_pName;
+    }
+    return defaultValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6640 size=0x21
 #include "vgui2__KeyValues.h"
 namespace lifted {

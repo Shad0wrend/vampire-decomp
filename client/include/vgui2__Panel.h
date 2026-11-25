@@ -5,6 +5,8 @@
 #include "vgui2__IClientPanel.h"
 #include "CUtlVectorDel4.h"
 
+struct ISubA8 { virtual void v0(); };
+struct ISubAC { virtual void v0(); virtual void v1(int, int); };
 struct CHUDSprite10059620 { void sub_10059620(int, int, int, int); };
 namespace vgui2
 {
@@ -49,7 +51,11 @@ public:
 	int m_unk8c; int m_unk90;
 	int m_i94;
 	int m_i98;
-	int m_unk9c[(0xb8 - 0x9c) / 4];
+	int m_unk9c[(0xa4 - 0x9c) / 4];
+	Panel *m_pA4;
+	struct ISubA8 *m_pA8;
+	struct ISubAC *m_pAC;
+	int m_unkb0[(0xb8 - 0xb0) / 4];
 	int m_n0b8;
 	int m_n0bc;
 	CHUDSprite10059620 *m_pSprite;

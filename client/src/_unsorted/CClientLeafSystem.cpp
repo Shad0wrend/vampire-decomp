@@ -258,6 +258,23 @@ void CClientLeafSystem::vfunc12(int count, int *pLeafList, int *pLeafFogVolumeLi
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2d50 size=0xae
+#include "CClientLeafSystem.h"
+#include "CUtlVector4.h"
+struct LeafItem { int m_a0; int m_a4; int m_a8; int m_ac; int m_a10; unsigned char m_a14; unsigned char m_type; unsigned char m_a16; unsigned char m_a17; int m_a18; int m_a1c; int m_a20; int m_a24; int m_a28; int m_a2c; unsigned short m_a30; unsigned short m_next; };
+// TARGET: CClientLeafSystem::vfunc14
+void CClientLeafSystem::vfunc14(CUtlVector4 *out)
+{
+	unsigned short i = *(unsigned short *)((char *)this + 0x2c);
+	while (i != 0xffff) {
+		LeafItem *it = &((LeafItem *)*(void **)((char *)this + 0x20))[i];
+		if (it->m_type == 4)
+			out->AddToTailNew(it->m_a0);
+		i = ((LeafItem *)*(void **)((char *)this + 0x20))[i].m_next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3310 size=0x19
 #include "CClientLeafSystem.h"
 // TARGET: CClientLeafSystem::vfunc21

@@ -31,7 +31,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc7();
 	virtual void vfunc8();
 	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual void vfunc10(C_LocalTempEntity *, int, int);
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13(C_LocalTempEntity *, int);
@@ -47,6 +47,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc22(int, int, int);
 	virtual void vfunc23();
 	virtual int vfunc24(int, int, int);
-	virtual void vfunc25();
-	virtual void vfunc26();
+	virtual void vfunc25(int, int, int, const char *, const char *, int, int);
+	virtual void vfunc26(int, int, int, const char *, const char *, int, int);
 };

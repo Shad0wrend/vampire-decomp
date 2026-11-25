@@ -28,6 +28,7 @@ public:
     void vfunc6(int, unsigned short, unsigned short);
     virtual bool vfunc5(unsigned short);
     bool vfunc9(int, int);
+    void vfunc14(class CUtlVector4 *out);
     void vfunc0(class IClientRenderable *pRenderable, bool bRenderWithViewModels);
     void sub_100d1b60(class IClientRenderable *pRenderable, int group, int flags);
 };

@@ -26,6 +26,44 @@ CHudInfoBar *pcd_emit_100561d0(const CHudInfoBar &other) { return new CHudInfoBa
 // TARGET: ??_GCHudInfoBar@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10056300 size=0xa3
+#include "CHudInfoBar.h"
+#include "utlvector.h"
+
+struct HudInfoBarEntry { char m_data[0x88]; };
+
+// TARGET: CHudInfoBar::vfunc112
+void CHudInfoBar::vfunc112()
+{
+    m_unk178 = 1;
+    CUtlVector<HudInfoBarEntry> *v1 = (CUtlVector<HudInfoBarEntry> *)((char *)this + 0x1ac);
+    while (m_unk1b8.v > 2)
+        v1->Remove(0);
+    CUtlVector<HudInfoBarEntry> *v2 = (CUtlVector<HudInfoBarEntry> *)((char *)this + 0x1c0);
+    while (m_unk1cc.v > 2)
+        v2->Remove(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100563b0 size=0xa3
+#include "CHudInfoBar.h"
+#include "utlvector.h"
+
+struct HudInfoBarEntry { char m_data[0x88]; };
+
+// TARGET: CHudInfoBar::vfunc113
+void CHudInfoBar::vfunc113()
+{
+    m_unk178 = 1;
+    CUtlVector<HudInfoBarEntry> *v1 = (CUtlVector<HudInfoBarEntry> *)((char *)this + 0x1ac);
+    while (m_unk1b8.v > 2)
+        v1->Remove(0);
+    CUtlVector<HudInfoBarEntry> *v2 = (CUtlVector<HudInfoBarEntry> *)((char *)this + 0x1c0);
+    while (m_unk1cc.v > 2)
+        v2->Remove(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100568b0 size=0x5d
 #include "CHudInfoBar.h"
 

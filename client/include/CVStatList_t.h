@@ -1,6 +1,7 @@
 // CVStatList_t: list of stats (no vtable). Only the members the constructor touches are declared.
 #pragma once
 
+class CVStatInfo_t;
 class CVStatList_t
 {
 public:
@@ -13,9 +14,11 @@ public:
 	CVStatList_t(int a);
 	~CVStatList_t();
 	int sub_1015dbd0(int a);
+	CVStatInfo_t *sub_1015e030(int stat);
 	int sub_1015d5b0(int stat);
 	void sub_1015d4a0(int stat);
 	void sub_1015d400(int stat, int value);
+	void sub_1015d530(int stat, int source);
 	void sub_1015d650(int stat, int value);
 	const char *sub_1015dc80(int stat);
 	const char *sub_1015dd20(int stat);

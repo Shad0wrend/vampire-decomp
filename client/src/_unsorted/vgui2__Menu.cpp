@@ -440,6 +440,67 @@ int vgui2::Menu::vfunc126(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bfea0 size=0xab
+#include "vgui2__Menu.h"
+#include "vgui2__Slider.h"
+
+struct ItemVec101bfea0
+{
+	char pad[0xc];
+	int m_Size;
+	int m_unk10;
+	vgui2::Panel **m_pElements;
+	vgui2::Panel *Get(int i)
+	{
+		if (i >= 0 && i < m_Size)
+			return m_pElements[i];
+		return 0;
+	}
+};
+
+void vgui2::Menu::vfunc137()
+{
+	ItemVec101bfea0 *items = (ItemVec101bfea0 *)((char *)this + 0x58);
+	int nShown = 0;
+	int first = (*(vgui2::Slider **)((char *)this + 0x70))->vfunc108();
+	do
+	{
+		int i;
+		for (i = 0; i < first; i++)
+		{
+			vgui2::Panel *p = items->Get(i);
+			if (p)
+				p->vfunc21(0);
+		}
+		i = first;
+		while (nShown < *(int *)((char *)this + 0x60))
+		{
+			if (i >= *(int *)((char *)this + 0x64))
+				goto done;
+			vgui2::Panel *p = items->Get(i);
+			if (p)
+			{
+				p->vfunc21(1);
+				nShown++;
+			}
+			i++;
+		}
+		for (; i < *(int *)((char *)this + 0x64); i++)
+		{
+			vgui2::Panel *p = items->Get(i);
+			if (p)
+				p->vfunc21(0);
+		}
+done:
+		if (nShown < *(int *)((char *)this + 0x60))
+		{
+			first--;
+			nShown = 0;
+		}
+	} while (nShown < *(int *)((char *)this + 0x60) - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bff50 size=0x3a
 #include "vgui2__Menu.h"
 namespace lifted {
@@ -575,6 +636,43 @@ int vgui2::Menu::vfunc74(int pScheme)
 int vgui2::Menu::vfunc129()
 {
     return *(int *)((char *)this + 0x64);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c0770 size=0xaa
+#include <string.h>
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+#pragma intrinsic(strcmp)
+
+struct ItemVec_101c0770
+{
+	int m_n0;
+	int m_nCount;
+	int m_n8;
+	vgui2::MenuItem **m_pItems;
+};
+
+static inline vgui2::MenuItem *GetItem(vgui2::Menu *menu, int i)
+{
+	ItemVec_101c0770 *v = (ItemVec_101c0770 *)((char *)menu + 0x60);
+	if (i >= 0 && i < v->m_nCount)
+		return v->m_pItems[i];
+	return 0;
+}
+
+void vgui2::Menu::vfunc124(const char *name, int arg)
+{
+	for (int i = 0; i < ((ItemVec_101c0770 *)((char *)this + 0x60))->m_nCount; i++)
+	{
+		vgui2::MenuItem *item = GetItem(this, i);
+		if (strcmp(name, (const char *)item->vfunc18()) == 0)
+		{
+			vgui2::MenuItem *mi = dynamic_cast<vgui2::MenuItem *>(GetItem(this, i));
+			mi->vfunc46(arg);
+		}
+	}
 }
 // END FUNCTION
 

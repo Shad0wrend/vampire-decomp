@@ -989,6 +989,22 @@ char * C_BaseEntity::vfunc39()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2480 size=0x6b
+#include "C_BaseEntity.h"
+#include "vector.h"
+struct EntView2480 { char pad[0x254]; Vector m_vecOrigin; };
+void C_BaseEntity::sub_100a2480(const Vector &origin)
+{
+	EntView2480 *v = (EntView2480 *)this;
+	if (v->m_vecOrigin != origin)
+	{
+		sub_1007e180(0x800, 0);
+		sub_1007e100();
+		v->m_vecOrigin = origin;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a24f0 size=0x7
 #include "C_BaseEntity.h"
 char * C_BaseEntity::vfunc41()

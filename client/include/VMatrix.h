@@ -52,6 +52,7 @@ public:
 	VMatrix sub_101a1be0() const;	// "VMatrix::InverseTR" by value: { VMatrix ret; InverseTR(ret); return ret; }	// "VMatrix::InverseTR": ret = the inverse of a rotation + translation matrix (transposed 3x3, the translation transformed by it and negated, bottom row 0 0 0 1)
 		// out = this with its columns 0..2 scaled by vScale (the fourth column of the first three rows is copied, the corner is 1.0f)
 	VMatrix *sub_101a1f60(VMatrix &out) const;	// ecx = this, dst on the stack (ret 4): out[c][r] = m[r][c] for a 4x4 float copy that reads all 16 floats before any store (8 via fld, 8 via integer moves, frame 0x20); 0x1024d630 calls it with this = its dst and out = a local, then copies the local back with CBlock64_t::sub_1024cef0
+	VMatrix *sub_101a2010(VMatrix &out) const;	// Transpose3x3 into out (fourth column and bottom row copied)
 	Vector sub_101a1c40() const;	// "VMatrix::GetScale": the lengths of the three columns (returned through a hidden pointer)
 	void sub_101a2290(const Vector &origin, const QAngle &angles);	// "SetupMatrixOrgAngles": the rotation matrix from the angles (degrees) with origin in the fourth column
 };

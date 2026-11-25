@@ -1,6 +1,7 @@
 #pragma once
 #include "IRecipientFilter.h"
 #include "utlvector.h"
+#include "vector.h"
 
 class C_RecipientFilter : public IRecipientFilter
 {
@@ -13,6 +14,7 @@ public:
 	virtual int vfunc5();
 	virtual bool vfunc6();
 	void sub_100bdeb0();
+	void sub_100be040(const Vector &origin);
 	void sub_100bdf90(void *pPlayer);
 	bool sub_100be140();
 	bool m_bReliable;
@@ -40,6 +42,17 @@ class CSingleUserRecipientFilter : public C_RecipientFilter
 
 class CPASFilter : public C_RecipientFilter
 {
+public:
+	CPASFilter() {}
+	CPASFilter(const Vector &origin) { sub_100be040(origin); }
+};
+
+class CPASAttenuationFilter : public CPASFilter
+{
+public:
+	CPASAttenuationFilter() {}
+	CPASAttenuationFilter(const Vector &origin) : CPASFilter(origin) {}
+	void *vfunc0(int flags);
 };
 
 class CLocalPlayerFilter : public C_RecipientFilter

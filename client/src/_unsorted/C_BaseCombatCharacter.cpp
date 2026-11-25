@@ -35,6 +35,35 @@ void *C_BaseCombatCharacter::vfunc148()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098120 size=0xa8
+#include "C_BaseCombatCharacter.h"
+#include "C_BaseCombatWeapon.h"
+#include "ehandle.h"
+
+inline C_BaseCombatWeapon *GetAW10098120(char *self)
+{
+	unsigned int h = *(unsigned int *)(self + 0x105c);
+	if (h != 0xffffffff)
+	{
+		CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+		if (e.m_SerialNumber == (int)(h >> 13))
+			return (C_BaseCombatWeapon *)e.m_pEntity;
+	}
+	return 0;
+}
+
+bool C_BaseCombatCharacter::vfunc147(C_BaseCombatWeapon *pWeapon, int)
+{
+	if (!pWeapon->vfunc185())
+		return false;
+	if (((CBaseHandle *)((char *)this + 0x105c))->Get() && !GetAW10098120((char *)this)->vfunc189((int)pWeapon))
+		return false;
+	((CBaseHandle *)((char *)this + 0x105c))->m_Index = *pWeapon->vfunc1();
+	pWeapon->vfunc188();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100981d0 size=0x6
 #include "C_BaseCombatCharacter.h"
 namespace lifted {

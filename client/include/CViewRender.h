@@ -2,11 +2,15 @@
 // declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22) (its vtable has no deleting destructor: no virtual destructor)
 #pragma once
 #include "IViewRender.h"
+#include "QAngle.h"
+#include "Vector.h"
 
 class CViewRender : public IViewRender
 {
 public:
     void sub_1019af80(bool, int);
+    void sub_10190850();
+    float sub_101907a0(const QAngle &, const Vector &, float, float);
     void sub_1019c970();
     void sub_1019d8f0(const char *view);
     void sub_1019a950(int, void *, void *, int, int);

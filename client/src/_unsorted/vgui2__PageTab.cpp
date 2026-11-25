@@ -47,6 +47,31 @@ int vgui2::PageTab::vfunc166(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8310 size=0xbd
+#include "vgui2__PageTab.h"
+#include "vgui2__KeyValues.h"
+struct IInput101c8310 { virtual void v0(); virtual void v1(int); };
+IInput101c8310 *sub_101ac8b0();
+
+void vgui2::PageTab::vfunc87(int code)
+{
+    if (code == 1)
+    {
+        vfunc43(new vgui2::KeyValues("OpenContextMenu", "row", -1));
+        return;
+    }
+    if (vfunc47() && vfunc149(code) && vfunc146())
+    {
+        vfunc15(0);
+        vfunc150();
+        vfunc143(1);
+        vfunc6();
+        IInput101c8310 *p = sub_101ac8b0();
+        p->v1(vfunc0());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c83d0 size=0x34
 #include "vgui2__PageTab.h"
 namespace lifted {

@@ -34,9 +34,14 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int m_nE80;
 	int m_nE84;
 	bool m_bE88;
-	char m_pad0e89[0xf20 - 0xe89];
+	char m_pad0e89[3];
+	int m_nE8c;
+	int m_aE90[0x12];
+	bool m_bEd8;
+	char m_pad0ed9[0xf20 - 0xed9];
 	void sub_100c75b0();
 	void sub_100c7ec0(int dx, int dy);
 	void sub_100c7f50();
 	void sub_100c7550();
+	void sub_100c82e0();
 };

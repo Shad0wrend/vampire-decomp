@@ -72,6 +72,14 @@ int VHotkeysUI::vfunc21(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101839f0 size=0x27
+#include "VHotkeysUI.h"
+bool VHotkeysUI::vfunc107()
+{
+	return sub_100f05b0() && Tail()->m_b1e14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183b10 size=0x4f
 #include "VHotkeysUI.h"
 #include "vgui2__Panel.h"

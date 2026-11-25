@@ -9,6 +9,12 @@ const char *sub_1002a410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a6a0 size=0xb9
+#include "C_BatSwarm.h"
+// TARGET: ??_GC_BatSwarm@@UAEPAXI@Z
+C_BatSwarm *pcd_emit_1002a6a0() { return new C_BatSwarm; }
+// END FUNCTION
+
 // FUNCTION: 0x1002b390 size=0x48
 #include "C_BatSwarm.h"
 struct BatView { char pad[0xdbc]; int a[3]; int b[3]; };

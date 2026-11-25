@@ -662,6 +662,36 @@ int vgui2::TextEntry::vfunc162()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b00b0 size=0xac
+#include "vgui2__TextEntry.h"
+extern "C" int __cdecl isspace(int);
+struct TECharVec { int m0; int m4; int size; int m0c; char *data; char Get(int i) const { if (i < 0 || i >= size) return 0; return data[i]; } };
+// TARGET: vgui2::TextEntry::vfunc115
+void vgui2::TextEntry::vfunc115()
+{
+	vfunc165();
+	int &cur = *(int *)((char *)this + 0x70);
+	TECharVec *v = (TECharVec *)((char *)this + 0x50);
+	if (cur >= 1) {
+		cur--;
+		while (cur >= 0) {
+			if (!isspace(v->Get(cur))) break;
+			cur--;
+		}
+		cur--;
+		while (cur >= 0) {
+			if (isspace(v->Get(cur))) break;
+			cur--;
+		}
+		cur++;
+		sub_101afee0();
+		vfunc150();
+		vfunc109();
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b0160 size=0x35
 #include "vgui2__TextEntry.h"
 namespace lifted {
@@ -905,6 +935,39 @@ void vgui2::TextEntry::vfunc130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0f90 size=0xb1
+#include "vgui2__TextEntry.h"
+extern "C" __declspec(noreturn) void __cdecl exit(int);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern "C" void *__cdecl memcpy(void *, const void *, unsigned int);
+struct TECharBuf { int size; int alloc; char *data; };
+// TARGET: vgui2::TextEntry::vfunc131
+void vgui2::TextEntry::vfunc131()
+{
+	*(int *)((char *)this + 0x84) = *(int *)((char *)this + 0x70);
+	TECharBuf *src = (TECharBuf *)((char *)this + 0x58);
+	TECharBuf *dst = (TECharBuf *)((char *)this + 0x78);
+	if (src->size > dst->alloc) {
+		int n = dst->alloc;
+		if (n == 0)
+			n = 1;
+		while (n < src->size)
+			n += n;
+		char *p = new char[n];
+		if (!p)
+			exit((int)p);
+		memset(p, 0, n);
+		dst->alloc = n;
+		for (int i = 0; i < dst->size; i++)
+			p[i] = dst->data[i];
+		delete[] dst->data;
+		dst->data = p;
+	}
+	memcpy(dst->data, src->data, src->size);
+	dst->size = src->size;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1050 size=0x3c
 #include "vgui2__TextEntry.h"
 bool vgui2::TextEntry::vfunc164(int a1, int a2, int a3, int a4)
@@ -1020,6 +1083,61 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 void vgui2::TextEntry::vfunc167()
 {
     ((lifted::V *)this)->f107();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b14d0 size=0xbd
+#include "vgui2__TextEntry.h"
+#include "vgui2__KeyValues.h"
+struct TextEntryCharVec
+{
+	int size; int m4; char *data;
+	char Get(int i) const { if (i < 0 || i >= size) return 0; return data[i]; }
+};
+// TARGET: vgui2::TextEntry::vfunc170
+void vgui2::TextEntry::vfunc170(int startpos)
+{
+	char text[0x200];
+	int a, b;
+	int n = 0;
+	TextEntryCharVec *v = (TextEntryCharVec *)((char *)this + 0x58);
+	int i;
+	int sz = v->size;
+	*((char *)this + 0xd9) = 1;
+	i = startpos;
+	while (i < sz && *((char *)this + 0xd9)) {
+		char c = v->Get(i);
+		if (!vfunc164(c, (int)&i, (int)&a, (int)&b))
+			text[n++] = c;
+		i++;
+		sz = v->size;
+	}
+	text[n] = 0;
+	vfunc43(new vgui2::KeyValues("TextClicked", "text", text));
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1590 size=0xb1
+#include "vgui2__TextEntry.h"
+#include "vgui2__Image.h"
+typedef vgui2::Image::ImageColor TEColor;
+struct TEKV9 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int GetInt(const char *key, int def); };
+struct TELoc { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual TEColor GetColor(const char *name, TEColor def); };
+struct TESch { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual TELoc *Get(int); };
+TESch *sub_101ac8c0();
+struct CUnknown101aa220 { int sub_101aa220(); };
+// TARGET: vgui2::TextEntry::vfunc75
+void vgui2::TextEntry::vfunc75(int p)
+{
+	Panel::vfunc75(p);
+	TEKV9 *kv = (TEKV9 *)p;
+	vfunc133(kv->GetInt("textHidden", 0) != 0);
+	vfunc134(kv->GetInt("editable", 1) != 0);
+	vfunc143(kv->GetInt("maxchars", -1));
+	TESch *s = sub_101ac8c0();
+	TELoc *loc = s->Get(((CUnknown101aa220 *)this)->sub_101aa220());
+	TEColor def;
+	*(TEColor *)((char *)this + 0xf0) = loc->GetColor("BorderSelection", def);
 }
 // END FUNCTION
 

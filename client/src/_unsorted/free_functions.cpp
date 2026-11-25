@@ -975,6 +975,29 @@ void S10005330::sub_10005330(int i, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005360 size=0xb0
+#include "Vector.h"
+void __stdcall sub_10005360(const Vector *a, const Vector *b, const Vector *color, float amount, Vector *out)
+{
+	if (amount != 0.0f) {
+		float dx = a->x - b->x;
+		float dy = a->y - b->y;
+		float dz = a->z - b->z;
+		float d = dz * dz + dy * dy + dx * dx;
+		float s;
+		if (d > 0.0001f) {
+			s = 255.0f / d * amount;
+			if (s > 255.4f)
+				s = 255.4f;
+		} else {
+			s = 255.4f;
+		}
+		Vector t = *color * s;
+		*out += t;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005410 size=0x70
 #include "Vector.h"
 
@@ -12367,6 +12390,40 @@ void UtlMem::sub_1002d470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d570 size=0xab
+#include "CUtlMemory12.h"
+#include "Vector.h"
+#include <string.h>
+
+struct CUtlVector12_1002d570
+{
+	CUtlMemory12 m_Memory;
+	int m_Size;
+	Vector *m_pElements;
+
+	Vector &Element(int i) { return ((Vector *)m_Memory.m_pMemory)[i]; }
+	int sub_1002d570(int elem, int num, const Vector *pToCopy);
+};
+
+int CUtlVector12_1002d570::sub_1002d570(int elem, int num, const Vector *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	if (m_Size + num > m_Memory.m_allocationCount)
+		m_Memory.sub_1002d690(m_Size + num - m_Memory.m_allocationCount);
+	m_Size += num;
+	m_pElements = (Vector *)m_Memory.m_pMemory;
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(Vector));
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			Element(elem + i) = pToInsert[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d620 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
@@ -13791,6 +13848,27 @@ int CUnknown10034200::sub_10034200()
     *(int *)this = (int)&lifted::g_10226114;
     *(int *)((char *)this + 4) = (int)&lifted::g_102260e0;
     return lifted::sub_1002c390();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100342f0 size=0xbf
+#include "Vector.h"
+struct ITempEntsV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void BloodSprite(const Vector &org, int r, int g, int b, int a, int m38, int m34, float size); };
+extern ITempEntsV *g_1028073c;
+void sub_1002ebc0(const Vector &, const Vector &, float, float, float, float);
+struct TEBloodView {
+	int m_vtbl;
+	int m_pad4; int m_pad8;
+	Vector m_vecOrigin;
+	Vector m_vecDirection;
+	int m_r; int m_g; int m_b; int m_a; int m_34; int m_38; int m_size;
+};
+// TARGET: sub_100342f0
+void __fastcall sub_100342f0(TEBloodView *self, int edx, int updateType)
+{
+	Vector vecPosition = self->m_vecOrigin + self->m_vecDirection * 4.0f;
+	g_1028073c->BloodSprite(vecPosition, self->m_r, self->m_g, self->m_b, self->m_a, self->m_38, self->m_34, (float)self->m_size);
+	sub_1002ebc0(vecPosition, self->m_vecDirection, (float)self->m_r, (float)self->m_g, (float)self->m_b, (float)self->m_a);
 }
 // END FUNCTION
 
@@ -17081,6 +17159,44 @@ void * CUnknown10040340::sub_10040340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040390 size=0x72
+struct CEntList100d0cf0 { void *sub_100d0cf0(int idx); };
+extern CEntList100d0cf0 *g_102b8e9c;
+struct CPart100af150 { void sub_100af150(); };
+struct CEntView40390
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual int v43();
+	virtual void v44();
+	virtual int v45();
+	char pad[0x404 - 4];
+	int m_p404;
+};
+CPart100af150 *sub_100b4820(int, int, int, void *, int, int, float, float, float, float);
+
+struct CFx40390
+{
+	int unk0, unk4, unk8;
+	int m_idx, m_a, m_b, m_c;
+	void sub_10040390(int);
+};
+
+void CFx40390::sub_10040390(int)
+{
+	CEntView40390 *e = (CEntView40390 *)g_102b8e9c->sub_100d0cf0(m_idx);
+	if (e && e->m_p404)
+	{
+		CPart100af150 *p = sub_100b4820(m_a, e->v43(), e->v45(), e, m_b, m_c, 1.0f, 1.0f, 1.0f, 1.0f);
+		if (p)
+			p->sub_100af150();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040430 size=0x6
 namespace lifted {
 extern char g_103ec290;
@@ -17144,6 +17260,60 @@ void * CUnknown10040630::sub_10040630()
     *(int *)((char *)this + 4) = (int)&lifted::g_10227568;
     *(int *)((char *)this + 0x18) = 1;
     return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10040680 size=0x79
+#include "CClientEntityList.h"
+#include "C_EnvParticle.h"
+
+extern CClientEntityList *g_102b8e9c;
+extern C_EnvParticle *sub_100b4820(int idx, int a1, int a2, int a3, int a4, int a5, float f1, float f2, float f3, float f4);
+
+struct Ent_10040680
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual int vfunc43();
+	virtual void v44();
+	virtual int vfunc45();
+	char pad[0x404 - 4];
+	int m_n404;
+};
+
+struct Fx_10040680
+{
+	int m_n0; int m_n4; int m_n8;
+	int m_nC; int m_n10; int m_n14; char m_b18;
+	void sub_10040680(int);
+};
+
+struct Part_10040680
+{
+	char pad[0x4b8];
+	char m_b4b8;
+	void sub_100af150();
+};
+
+void Fx_10040680::sub_10040680(int)
+{
+	Ent_10040680 *ent = (Ent_10040680 *)g_102b8e9c->sub_100d0cf0(m_nC);
+	if (ent && ent->m_n404)
+	{
+		Part_10040680 *p = (Part_10040680 *)sub_100b4820(m_n10, ent->vfunc43(), ent->vfunc45(), (int)ent, m_n14, 0, 1.0f, 1.0f, 1.0f, 1.0f);
+		if (p)
+		{
+			p->m_b4b8 = m_b18;
+			p->sub_100af150();
+		}
+	}
 }
 // END FUNCTION
 
@@ -17678,6 +17848,53 @@ int sub_100429f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042d00 size=0xb3
+#include "CUtlVector4.h"
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+struct HandleEntV { virtual int v0(); virtual const int *v1(); };
+struct HandleList
+{
+	int m_unk0, m_unk4, m_unk8;
+	CUtlVector4 m_List;
+	void sub_10042d00(HandleEntV *pEnt);
+};
+void HandleList::sub_10042d00(HandleEntV *pEnt)
+{
+	const int *src = pEnt->v1();
+	int elem = m_List.m_size;
+	int num = 1;
+	int req = m_List.m_size + num;
+	if (req > m_List.m_allocationCount && m_List.m_growSize != -1) {
+		int alloc = m_List.m_allocationCount;
+		if (alloc < req) {
+			do {
+				if (alloc) {
+					if (m_List.m_growSize)
+						alloc += m_List.m_growSize;
+					else
+						alloc += alloc;
+				} else
+					alloc = 8;
+			} while (alloc < req);
+			m_List.m_allocationCount = alloc;
+		}
+		if (m_List.m_pMemory)
+			m_List.m_pMemory = (int *)g_101e3104(m_List.m_pMemory, m_List.m_allocationCount * 4);
+		else
+			m_List.m_pMemory = (int *)g_101e3100(m_List.m_allocationCount * 4);
+	}
+	m_List.m_size += num;
+	m_List.m_pElements = m_List.m_pMemory;
+	int n = m_List.m_size - elem - num;
+	if (n > 0)
+		memmove(&m_List.m_pMemory[elem + num], &m_List.m_pMemory[elem], n * 4);
+	int *p = &m_List.m_pMemory[elem];
+	if (p)
+		*p = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042e80 size=0x131
 #include "RecvTable.h"
 extern RecvTable g_103ecc30;
@@ -17741,6 +17958,14 @@ struct V { virtual void u0(); virtual void u1(); virtual int f2(); };
 int sub_10043000(int a0, int a1)
 {
     return ((lifted::C100433c0 *)a1)->sub_100433c0(a0 + 4, ((lifted::V *)a1)->f2());
+}
+// END FUNCTION
+
+// FUNCTION: 0x10043020 size=0x1e
+#include "CCollisionProperty.h"
+void sub_10043020(char *a, CCollisionProperty *p)
+{
+	p->sub_100433c0(&p->vfunc1(), a + 4);
 }
 // END FUNCTION
 
@@ -17857,6 +18082,103 @@ void sub_10043220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043230 size=0x60
+#include "CCollisionProperty.h"
+#include "ehandle.h"
+#include "C_BaseEntity.h"
+void CCollisionProperty::sub_10043230(int state)
+{
+	if (m_unk40 == state)
+		return;
+	sub_100442b0();
+	if (state == 1)
+	{
+		CBaseHandle *h = (CBaseHandle *)((char *)m_unk3c + 0x208);
+		if (h->Get())
+			state = 6;
+	}
+	m_unk40 = state;
+	((C_BaseEntity *)m_unk3c)->vfunc111();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100432a0 size=0x3b
+#define D4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct COuter10044460 {
+	virtual void v0();
+	D4(a) D4(b) D4(c) D4(d) D4(e) D4(f) D4(g) D4(h) D4(i) D4(j) D4(k) D4(l) D4(m) D4(n) D4(o) D4(p) D4(q) D4(r) D4(s) D4(t) D4(u) D4(v) D4(w) D4(x) D4(y) D4(z)
+	D4(A) 
+	virtual void pad1(); virtual void pad2();
+	virtual void v111();
+};
+struct CUnknown10044460 {
+	char m_pad0000[0x3c];
+	COuter10044460 *m_pOuter;
+	int m_n40;
+	unsigned short m_w44;
+	void sub_100442b0();
+	void sub_100432a0(unsigned int v);
+};
+void CUnknown10044460::sub_100432a0(unsigned int v)
+{
+	unsigned int old = m_w44;
+	m_w44 = (unsigned short)v;
+	unsigned short n = v;
+	if (old != n) {
+		if ((n ^ old) & 0x180)
+			sub_100442b0();
+		m_pOuter->v111();
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x100433c0 size=0x74
+#include "Vector.h"
+struct CUnknown10044460
+{
+	int m_unk0;
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	int m_unk1c[11];
+	float m_flRadius;
+	void sub_100442b0();
+	void sub_100433c0(const Vector &mins, const Vector &maxs);
+};
+// TARGET: CUnknown10044460::sub_100433c0
+void CUnknown10044460::sub_100433c0(const Vector &mins, const Vector &maxs)
+{
+	m_vecMins = mins;
+	m_vecMaxs = maxs;
+	Vector d = maxs - mins;
+	float s = d.z * d.z;
+	s += d.x * d.x;
+	s += d.y * d.y;
+	m_flRadius = FastSqrt(s) * 0.5f;
+	sub_100442b0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100434c0 size=0x33
+struct CUnknown10044460
+{
+	int m_unk0[8];
+	int m_n20;
+	int m_unk24[8];
+	unsigned short m_usSolidFlags;
+	void sub_100432a0(int flags);
+	void sub_100434c0(bool bSet, int n);
+};
+// TARGET: CUnknown10044460::sub_100434c0
+void CUnknown10044460::sub_100434c0(bool bSet, int n)
+{
+	m_n20 = n;
+	if (bSet)
+		sub_100432a0(m_usSolidFlags | 0x100);
+	else
+		sub_100432a0(m_usSolidFlags & ~0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043540 size=0x36
 #include "Vector.h"
 struct CCollView {
@@ -17887,6 +18209,43 @@ float *CUnknown100dc9f0::sub_10043580(const float *pPoint, float *pOut)
 	pOut[1] = (vecSize.y != 0.0f) ? (pPoint[1] - m_mins.y) / vecSize.y : 0.5f;
 	pOut[2] = (vecSize.z != 0.0f) ? (pPoint[2] - m_mins.z) / vecSize.z : 0.5f;
 	return pOut;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10043680 size=0xb5
+#include "vector.h"
+struct matrix3x4_t;
+struct CCollView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual const Vector &v8();
+	virtual const Vector &v9(int);
+	virtual const matrix3x4_t &v10();
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	int m_unk1c[(0x40 - 0x1c) / 4];
+	int m_nSolid;
+	unsigned char m_flags;
+	Vector *sub_10043540(const Vector &in, Vector *out);
+	Vector *sub_10043680(const Vector &in, Vector *out);
+};
+extern Vector g_104d5190;
+void sub_10107f80(const Vector &in, const matrix3x4_t &m, Vector &out);
+typedef const Vector &(__stdcall *PFNANG)(int);
+Vector *CCollView::sub_10043680(const Vector &in, Vector *out)
+{
+	Vector tmp;
+	sub_10043540(in, &tmp);
+	if (!(m_flags & 0x80) && m_nSolid != 2 && m_nSolid != 0 && (*(PFNANG *)(*(int *)this + 0x24))(0) != g_104d5190) {
+		const matrix3x4_t &m = v10();
+		sub_10107f80(tmp, m, *out);
+		return out;
+	}
+	const Vector &o = v8();
+	out->x = tmp.x + o.x;
+	out->y = tmp.y + o.y;
+	out->z = tmp.z + o.z;
+	return out;
 }
 // END FUNCTION
 
@@ -17998,6 +18357,21 @@ int CUnknown10044070::sub_10044070(char a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100442b0 size=0x12
+struct CUnknown10044460_Outer { char m_pad[0x184]; unsigned int m_flags184; };
+struct CUnknown10044460 {
+	char m_pad0000[0x3c];
+	CUnknown10044460_Outer *m_pOuter;
+	void sub_10044460();
+	void sub_100442b0();
+};
+void CUnknown10044460::sub_100442b0()
+{
+	m_pOuter->m_flags184 |= 0x14000;
+	sub_10044460();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100442d0 size=0x70
 #include "CCollisionProperty.h"
 
@@ -18079,6 +18453,32 @@ void CUnk100ddc00::sub_10044420()
 // FUNCTION: 0x10044450 size=0x1
 void sub_10044450()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x10044460 size=0x43
+struct HandleList { void sub_10042d00(void *pEnt); };
+extern HandleList g_103eca30;
+struct SubObj8 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int v9(); };
+struct TraceEnt {
+	int m0, m4;
+	SubObj8 m_sub8;
+	char pad[0x184 - 0xc];
+	unsigned int m_flags;
+	bool IsFlagged() const { return ((m_flags >> 15) & 1) != 0; }
+	void SetFlag() { m_flags |= 0x8000; }
+};
+struct CUnknown10044460 {
+	char pad[0x3c];
+	TraceEnt *m_pEnt;
+	void sub_10044460();
+};
+void CUnknown10044460::sub_10044460()
+{
+	if (m_pEnt->m_sub8.v9() && !m_pEnt->IsFlagged()) {
+		m_pEnt->SetFlag();
+		g_103eca30.sub_10042d00(m_pEnt);
+	}
 }
 // END FUNCTION
 
@@ -18535,6 +18935,62 @@ char sub_1004b4b0(IEntry1004b4b0 *a1, IEntry1004b4b0 *a2)
 		}
 	}
 	return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1004b510 size=0xa5
+struct EntVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual void a3(); virtual void a4(); virtual void a5();
+	virtual void *vfunc6();
+};
+struct ColVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual void a3(); virtual void a4(); virtual void a5();
+	virtual int vfunc6();
+	virtual char vfunc7();
+	virtual int vfunc8();
+};
+struct RendVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual bool vfunc4();
+	virtual void a5(); virtual void a6(); virtual void a7();
+	virtual void *vfunc8();
+};
+struct ModelInfoVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual void a3(); virtual void a4(); virtual void a5();
+	virtual int vfunc6(void *model);
+};
+extern ModelInfoVt *g_104a57f8;
+
+// TARGET: sub_1004b510
+bool sub_1004b510(void *pHandleEntity, int contentsMask)
+{
+	char *pEnt = (char *)((EntVt *)pHandleEntity)->vfunc6();
+	if (!pEnt)
+		return true;
+	ColVt *pCol = (ColVt *)(pEnt + 0xc);
+	if (pCol->vfunc7() & 0x20)
+		return false;
+	int solid = pCol->vfunc6();
+	RendVt *pRend = (RendVt *)(pEnt + 4);
+	void *model = pRend->vfunc8();
+	int modelType = ((ModelInfoVt *)g_104a57f8)->vfunc6(model);
+	if (!(modelType == 1 && (solid == 1 || solid == 6)))
+	{
+		if (!(contentsMask & 0x2000000))
+			return false;
+	}
+	if (!(contentsMask & 2) && pRend->vfunc4())
+		return false;
+	if (!(contentsMask & 0x4000) && pCol->vfunc8() == 8)
+		return false;
+	return true;
 }
 // END FUNCTION
 
@@ -19047,6 +19503,51 @@ void CHudStatSound::sub_1004f0c0(int stat, float volume, int pitch, int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f760 size=0xa3
+#include "CVStatList_t.h"
+
+extern char g_103ede7c;
+extern int g_103ede80;
+extern int g_10284b9c;
+extern void *g_104a0d50;
+
+struct CharView {
+    char m_pad[0x1178];
+    int m_nSize;
+    CVStatList_t **m_pElements;
+};
+
+// TARGET: sub_1004f760
+void sub_1004f760(int arg)
+{
+    if (g_103ede7c)
+        return;
+    CharView *p = (CharView *)g_104a0d50;
+    if (!p)
+        return;
+    CVStatList_t *pList;
+    for (int i = 0; i < p->m_nSize; i++)
+    {
+        if (p->m_pElements[i]->m_field10 == 0)
+        {
+            pList = p->m_pElements[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    if (pList->sub_1015dbd0(0xc) > 0)
+    {
+        g_103ede7c = 1;
+        g_103ede80 = 1;
+        g_10284b9c = arg;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f810 size=0x17
 namespace lifted {
 extern int g_10284b9c;
@@ -19096,6 +19597,41 @@ void sub_1004f840()
         g_104a57d4->ServerCmd(buf, true);
     }
     sub_1004f810();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1004fe20 size=0x167
+#include "CHUDSprite.h"
+
+struct S10284ba0 {
+    int pad00[2];
+    int w0;
+    int h0;
+    int pad10[6];
+    int w1;
+    int h1;
+    int pad30[2];
+    const char *names[7];
+    CHUDSprite *sprites[7];
+};
+
+extern S10284ba0 g_10284ba0[4];
+
+// TARGET: sub_1004fe20
+void sub_1004fe20()
+{
+    if (g_10284ba0[0].sprites[0])
+        return;
+
+    for (int i = 0; i < 4; i++) {
+        g_10284ba0[i].sprites[0] = new CHUDSprite(g_10284ba0[i].names[0], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[1] = new CHUDSprite(g_10284ba0[i].names[1], 0, 0, g_10284ba0[i].w1, g_10284ba0[i].h1, g_10284ba0[i].w1, g_10284ba0[i].h1);
+        g_10284ba0[i].sprites[2] = new CHUDSprite(g_10284ba0[i].names[2], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[3] = new CHUDSprite(g_10284ba0[i].names[3], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[4] = new CHUDSprite(g_10284ba0[i].names[4], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[5] = new CHUDSprite(g_10284ba0[i].names[5], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+        g_10284ba0[i].sprites[6] = new CHUDSprite(g_10284ba0[i].names[6], 0, 0, g_10284ba0[i].w0, g_10284ba0[i].h0, g_10284ba0[i].w0, g_10284ba0[i].h0);
+    }
 }
 // END FUNCTION
 
@@ -19156,6 +19692,25 @@ int sub_10050a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050af0 size=0xa5
+#include "CFrenzyBar.h"
+
+int sub_100cd100();
+int sub_100cd0f0();
+
+// TARGET: CFrenzyBar::sub_10050af0
+void CFrenzyBar::sub_10050af0()
+{
+	long w = sub_100cd100();
+	m_unk180 = 0x200;
+	m_unk184 = 0x40;
+	m_unk188 = (int)(m_unk180 * (sub_100cd100() * 0.0009765625));
+	m_unk18c = (int)(m_unk184 * (sub_100cd0f0() * 0.0013020833333333333));
+	m_unk178 = ((int)w - (int)m_unk188) / 2;
+	m_unk17c = ((sub_100cd0f0() * 0.0013020833333333333) * 564.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050f20 size=0x40
 struct CUnkFade {
 	char m_pad[0x20];
@@ -19177,6 +19732,20 @@ void CUnkFade::sub_10050f20(bool on)
 		m_b25 = on;
 	}
 	m_bOn = on;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10051100 size=0xb0
+#include "CHealthAnkh.h"
+int sub_100cd0f0();
+int sub_100cd100();
+void CHealthAnkh::sub_10051100()
+{
+	int w = sub_100cd0f0();
+	m_unk178 = (int)(160.0 * (sub_100cd100() * 0.0009765625));
+	m_unk17c = (int)(w - 139.0 * (sub_100cd0f0() * 0.0013020833333333333));
+	m_unk180 = (int)(128.0 * (sub_100cd100() * 0.0009765625));
+	m_unk184 = (int)(768.0 * (sub_100cd0f0() * 0.0013020833333333333));
 }
 // END FUNCTION
 
@@ -21801,6 +22370,24 @@ void __stdcall sub_10064960(CHUDSprite *sprite, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064a00 size=0xad
+#include "CHUDSprite.h"
+int sub_100cd100();
+int sub_100cd0f0();
+void __stdcall sub_10064a00(CHUDSprite *spr, int a1, int a2, int a3, int a4)
+{
+	if (spr) {
+		int w, h;
+		spr->getSize(&w, &h);
+		w = (int)(w * (sub_100cd100() * 0.0009765625));
+		h = (int)(h * (sub_100cd0f0() * 0.0013020833333333333));
+		int x = (sub_100cd100() - w) / 2;
+		int y = (sub_100cd0f0() - h) / 2;
+		spr->sub_1005aeb0(x, y, w, h, a1, a2, a3, a4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ac0 size=0x4c
 extern char g_103eef44;
 extern int g_103eef48;
@@ -21866,6 +22453,53 @@ void sub_10064b60(const char *s, int a, int b, char c)
 	g_103eee64 = b;
 	g_103eef40 = a;
 	g_103eee59 = c;
+	sub_10064b10(1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10064bb0 size=0xa8
+#include "Tier1.h"
+
+extern char g_103eef9d;
+extern char g_103eee68[];
+extern int g_103eee54;
+extern char g_103eef30;
+extern int g_103eee64;
+
+struct PlrView_10064bb0
+{
+	char *sub_1007b160();
+	bool sub_1007cd80();
+	char pad[0x8cc];
+	int m_n8cc;
+	char pad2[0x91e - 0x8d0];
+	char m_b91e;
+};
+
+extern PlrView_10064bb0 *sub_1009b210();
+extern void sub_10064b10(char);
+
+// TARGET: sub_10064bb0
+void sub_10064bb0()
+{
+	g_103eef9d = 0;
+	PlrView_10064bb0 *p = sub_1009b210();
+	if (p)
+	{
+		if (p->sub_1007cd80())
+		{
+			char *info = p->sub_1007b160();
+			if (p->m_b91e)
+				g_101e3188(g_103eee68, info + 0x2148 + (sub_1009b210()->m_n8cc << 5), 0x40);
+			else
+				g_101e3188(g_103eee68, info + 0x2108 + (sub_1009b210()->m_n8cc << 5), 0x40);
+			g_103eee54 = p->m_n8cc;
+			g_103eef30 = p->m_b91e;
+		}
+	}
+	else
+		g_103eee68[0] = 0;
+	g_103eee64 = 0;
 	sub_10064b10(1);
 }
 // END FUNCTION
@@ -22450,6 +23084,41 @@ void sub_10066720(int a, int b, int c, OutView *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067450 size=0xcd
+#include "CHUDSprite.h"
+
+class CTitle_10067450
+{
+public:
+	char pad0[0x184];
+	int m_nWide;
+	int m_nTall;
+	char pad18c[0x300 - 0x18c];
+	CHUDSprite *m_pSprite;
+	int m_nSpriteW;
+	int m_nSpriteH;
+	int m_nSpriteX;
+	int m_nSpriteY;
+
+	void sub_10067450();
+};
+
+void CTitle_10067450::sub_10067450()
+{
+	if (m_pSprite)
+		delete m_pSprite;
+
+	float yScale = (float)m_nTall / 768.0f;
+	float xScale = (float)m_nWide / 1024.0f;
+	m_nSpriteW = (int)(xScale * 636.0f);
+	m_nSpriteH = (int)(yScale * 256.0f);
+	m_nSpriteX = m_nWide / 2 - m_nSpriteW / 2;
+	m_nSpriteY = (int)(yScale * 35.0f);
+
+	m_pSprite = new CHUDSprite("Interface/MainMenu/vtm_title", 0, 0, 512, 256, 512, 256);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067520 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
@@ -22578,6 +23247,41 @@ void CUnknown10067950::sub_10067950(int a0)
         int t0 = ((lifted::C100666d0 *)this)->sub_100666d0((int)&lifted::g_102888a4, 0x3f800000, 1);
         *(int *)((char *)this + 0x440) = 0;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10067990 size=0xb4
+#include "CUnknown10067990.h"
+#define D4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct IA {
+	D4(a) D4(b) D4(c) D4(d) D4(e) D4(f)
+	virtual bool v24();
+	virtual bool v25();
+	virtual bool v26();
+};
+struct CPnl10067990 {
+	virtual void vfunc0();
+	D4(a) D4(b) D4(c) D4(d) D4(e) D4(f) D4(g) D4(h) D4(i) D4(j) D4(k) D4(l) D4(m) D4(n) D4(o) D4(p) D4(q) D4(r) D4(s) D4(t) D4(u) D4(v) D4(w) D4(x) D4(y) D4(z)
+	virtual void pad5(); virtual void pad6(); virtual void pad7(); virtual void pad8(); virtual void pad9();
+	virtual void vfunc110(int *, int *);
+	void sub_101a98c0(int, int);
+	void sub_101a9920(int *, int *);
+};
+extern IA *g_104a5828;
+bool CUnknown10067990::sub_10067990(int *a, int b, int *c, int *d)
+{
+	if (!m_pPanel)
+		return false;
+	if (g_104a5828->v24() || g_104a5828->v25() || g_104a5828->v26())
+		return false;
+	m_pPanel->sub_101a98c0((int)a, b);
+	int x, y;
+	m_pPanel->sub_101a9920(&x, &y);
+	m_pPanel->vfunc110(c, d);
+	int diff = x - *c;
+	if (diff >= 0 && diff != 0)
+		*a += diff / 2;
+	return true;
 }
 // END FUNCTION
 
@@ -28795,6 +29499,29 @@ float sub_1007b150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b180 size=0xb4
+#include "C_BaseCombatWeapon.h"
+#include "CVDmg_t.h"
+#include "CWeaponCopy.h"
+extern CWeaponCopy g_10477358;
+char *C_BaseCombatWeapon::sub_1007b180()
+{
+	static CVDmg_t s_dmg;
+	char *p = (char *)sub_1007b160();
+	int *w = (int *)(*(int *)((char *)this + 0x8a8));
+	int i;
+	for (i = 0; i < 3; i++) {
+		if (*(int *)(p + 0x239e4 + i * 0xec84) == (int)w)
+			return p + 0x238e0 + i * 0xec84;
+	}
+	g_10477358.sub_1007b250((CWeaponCopy *)((char *)sub_1007b160() + 0x238e0));
+	g_10477358.sub_101a5a80();
+	g_10477358.m_n108 = 0;
+	g_10477358.m_n260 = *(int *)(p + 0x23b40);
+	return (char *)&g_10477358;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b250 size=0x351
 struct CWeaponStruct44 { int d[17]; };
 struct CWeaponStruct88 { int d[34]; };
@@ -28839,6 +29566,35 @@ CWeaponCopy *CWeaponCopy::sub_1007b250(const CWeaponCopy *p)
 	for (i10 = 0; i10 < 10; i10++) mec34[i10] = p->mec34[i10];
 	for (i11 = 0; i11 < 10; i11++) mec5c[i11] = p->mec5c[i11];
 	return this;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007b5b0 size=0x3f
+#include "C_BaseCombatWeapon.h"
+struct WpnSlot_t { char data[67900]; };
+struct WpnOwner_t { char pad[0x2668]; WpnSlot_t slots[1]; };
+WpnSlot_t *C_BaseCombatWeapon::sub_1007b5b0()
+{
+	int n = *(int *)(this->sub_1007b180() + 0x10c);
+	WpnOwner_t *o = (WpnOwner_t *)this->sub_1007b160();
+	if (n > -1)
+		return &o->slots[n];
+	return &o->slots[0];
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007ba10 size=0x97
+#include "C_BaseCombatWeapon.h"
+int C_BaseCombatWeapon::sub_1007ba10(int n, int m)
+{
+	switch (n) {
+	case 21: case 22: case 23: case 24:
+		return (int)((char *)sub_1007b160() + (n * 16 + m) * 0x94 + 0x50378);
+	case 10: case 11:
+		return (int)((char *)sub_1007b5b0() + (n * 16 + m) * 0x94 + 0x2198);
+	default:
+		return (int)(sub_1007b180() + (n * 16 + m) * 0x94 + 0x490);
+	}
 }
 // END FUNCTION
 
@@ -29180,6 +29936,44 @@ void C_BaseCombatWeapon::sub_1007cc30(const char *arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ccc0 size=0xa6
+#include "C_BaseCombatWeapon.h"
+#include "CUnknown1014f1d0.h"
+
+extern int g_105e85dc;
+extern CUnknown1014f1d0 **g_105e85e0;
+extern void (*g_101e3118)(int level, const char *fmt, ...);
+
+struct WpnInfo
+{
+	char pad[0x88];
+	char m_szName[0x24d0 - 0x88];
+	int m_nSection;
+};
+
+inline CUnknown1014f1d0 *FindSection(int section)
+{
+	for (int i = 0; i < g_105e85dc; i++)
+	{
+		if (g_105e85e0[i]->m_unk00 == section)
+			return g_105e85e0[i];
+	}
+	static CUnknown1014f1d0 s_default(-1);
+	return &s_default;
+}
+
+// TARGET: C_BaseCombatWeapon::sub_1007ccc0
+int C_BaseCombatWeapon::sub_1007ccc0()
+{
+	if (((WpnInfo *)sub_1007b160())->m_nSection == -1)
+	{
+		g_101e3118(2, "Bad inventory section for '%s'\n", ((WpnInfo *)sub_1007b160())->m_szName);
+		return 0;
+	}
+	return FindSection(((WpnInfo *)sub_1007b160())->m_nSection)->sub_1014f300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cd70 size=0xb
 struct CWpnView7d8 { char pad[0x7d8]; unsigned char m_a : 1; unsigned char m_b : 1; bool sub_1007cd70(); };
 // TARGET: CWpnView7d8::sub_1007cd70
@@ -29368,6 +30162,16 @@ bool C_BaseCombatWeapon::sub_1007d790(void *arg0, void *arg1, int arg2)
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1007d810 size=0x2a
+#include "C_BaseCombatWeapon.h"
+bool C_BaseCombatWeapon::sub_1007d810()
+{
+	if (!*(int *)((char *)this->sub_1007b160() + 0x2444))
+		return false;
+	return *(int *)(this->sub_1007b180() + 0x25c) ? true : false;
 }
 // END FUNCTION
 
@@ -29883,6 +30687,23 @@ template <> int ClientClassInit<DT_BaseViewModel::ignored>(DT_BaseViewModel::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fbc0 size=0xa7
+#include "ehandle.h"
+#include "C_BaseEntity.h"
+#include <string.h>
+// TARGET: sub_1007fbc0
+bool sub_1007fbc0(C_BaseEntity *pEnt)
+{
+	if (((CBaseHandle *)((char *)pEnt + 0x208))->Get())
+		return false;
+	if (!pEnt->vfunc51())
+		return true;
+	if (!strcmp(pEnt->vfunc114(), "info_target") || !strcmp(pEnt->vfunc114(), "info_landmark") || !strcmp(pEnt->vfunc114(), "path_corner"))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fc70 size=0x18
 struct SSrc_1007fc70 { int m0; float m4; };
 struct SDst_1007fc70 { char m_pad[0x490]; float m490; };
@@ -30031,6 +30852,79 @@ void C_Beam::sub_10080490(void *pEntity)
 	int *pSlot = (int *)((char *)this + 0x424) + *(int *)((char *)this + 0x41c);
 	SetHandle(*(CBaseHandleView10080490 *)pSlot, pEntity);
 	SetHandle(*(CBaseHandleView10080490 *)((char *)this + 0x4a4), pEntity);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100804f0 size=0xa3
+#include "C_Beam.h"
+#include "ehandle.h"
+#include "matrix3x4_t.h"
+
+struct EntityView {
+    char m_pad0[0x208];
+    CBaseHandle m_hParent;      // 0x208
+    char m_pad1[0x26c - 0x20c];
+    matrix3x4_t m_frame;        // 0x26c
+};
+
+struct SubOwner700 { void sub_1009f700(void *p); };
+
+void sub_10108450(const matrix3x4_t &src, matrix3x4_t &dst);
+void sub_10107f80(const float *in, const float *matrix, float *out);
+
+// TARGET: C_Beam::sub_100804f0
+void C_Beam::sub_100804f0(char *arg)
+{
+    EntityView *v = (EntityView *)this;
+    if (!v->m_hParent.Get())
+    {
+        ((SubOwner700 *)this)->sub_1009f700(arg);
+        vfunc40(arg);
+        return;
+    }
+    sub_1009f8a0();
+    matrix3x4_t m;
+    sub_10108450(v->m_frame, m);
+    Vector out;
+    sub_10107f80((const float *)arg, (const float *)&m, (float *)&out);
+    ((SubOwner700 *)this)->sub_1009f700(&out);
+    vfunc40((char *)&out);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100805a0 size=0xab
+#include "C_Beam.h"
+#include "ehandle.h"
+#include "matrix3x4_t.h"
+#include "Vector.h"
+
+struct EntityView2 {
+    char m_pad0[0x208];
+    CBaseHandle m_hParent;      // 0x208
+    char m_pad1[0x26c - 0x20c];
+    matrix3x4_t m_frame;        // 0x26c
+    char m_pad2[0x498 - 0x26c - sizeof(matrix3x4_t)];
+    Vector m_vecEnd;            // 0x498
+};
+
+void sub_10108450(const matrix3x4_t &src, matrix3x4_t &dst);
+void sub_10107f80(const float *in, const float *matrix, float *out);
+
+// TARGET: C_Beam::sub_100805a0
+void C_Beam::sub_100805a0(char *arg)
+{
+    EntityView2 *v = (EntityView2 *)this;
+    if (!v->m_hParent.Get())
+    {
+        v->m_vecEnd = *(Vector *)arg;
+        return;
+    }
+    sub_1009f8a0();
+    matrix3x4_t m;
+    sub_10108450(v->m_frame, m);
+    Vector out;
+    sub_10107f80((const float *)arg, (const float *)&m, (float *)&out);
+    v->m_vecEnd = out;
 }
 // END FUNCTION
 
@@ -34690,6 +35584,38 @@ int sub_1008eb90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ebb0 size=0x79
+#include "C_BaseVCombatCharacter.h"
+#include "CVStatList_t.h"
+
+struct CharView2 {
+    char m_pad[0x1178];
+    int m_nSize;
+    CVStatList_t **m_pElements;
+};
+
+// TARGET: C_BaseVCombatCharacter::sub_1008ebb0
+int C_BaseVCombatCharacter::sub_1008ebb0()
+{
+    CVStatList_t *pList;
+    CharView2 *cv = (CharView2 *)this;
+    for (int i = 0; i < cv->m_nSize; i++)
+    {
+        if (cv->m_pElements[i]->m_field10 == 0)
+        {
+            pList = cv->m_pElements[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    return pList->sub_1015dbd0(10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ed30 size=0x71
 #include "RecvTable.h"
 extern RecvTable g_1049bfb8;
@@ -34888,6 +35814,31 @@ int __cdecl sub_10090790(const char *name, NameStruct *pStruct)
             return i;
     }
     return -1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10091860 size=0xad
+#include "C_BaseAnimating.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+struct GlobalsV91860 { int p0, p4, p8; float curtime; };
+extern GlobalsV91860 *g_102b8494;
+void sub_10108a50(const matrix3x4_t &, const matrix3x4_t &, matrix3x4_t &);
+void sub_10107eb0(const matrix3x4_t &, QAngle &);
+void sub_10108510(int *, int, int *);
+bool C_BaseAnimating::sub_10091860(int idx, Vector &origin, QAngle &angles, matrix3x4_t &local)
+{
+	if (idx < 1 || idx > *(int *)((char *)this + 0x77c))
+		return false;
+	if (!SetupBones(0, -1, 8, g_102b8494->curtime, 0))
+		return false;
+	char *hdr = *(char **)((char *)this + 0x6ac);
+	int bone = *(int *)(hdr + *(int *)(hdr + 0x14c) + idx * 120 + 8);
+	matrix3x4_t m;
+	sub_10108a50(*(matrix3x4_t *)(*(char **)((char *)this + 0x6e8) + bone * 48), local, m);
+	sub_10107eb0(m, angles);
+	sub_10108510((int *)&m, 3, (int *)&origin);
+	return true;
 }
 // END FUNCTION
 
@@ -35481,6 +36432,38 @@ int __stdcall sub_10095bb0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095c40 size=0xb4
+#include "C_BaseAnimating.h"
+#include "vector.h"
+struct IDtor95c40 { virtual ~IDtor95c40(); };
+struct CUnknown10044460 { void sub_100433c0(const Vector *a, const Vector *b); };
+extern Vector g_104d4970;
+struct AnimView95c40 : public C_BaseAnimating
+{
+	char pad[0x6b0 - sizeof(C_BaseAnimating)];
+	IDtor95c40 *m_p6b0;
+	int m_6b4;
+	char m_6b8;
+	Vector m_6bc;
+	Vector m_6c8;
+};
+void C_BaseAnimating::sub_10095c40()
+{
+	AnimView95c40 *v = (AnimView95c40 *)this;
+	if (v->m_p6b0)
+	{
+		delete v->m_p6b0;
+		v->m_p6b0 = 0;
+		if (v->m_6bc != g_104d4970 || v->m_6c8 != g_104d4970)
+		{
+			((CUnknown10044460 *)((char *)this + 0x190))->sub_100433c0(&v->m_6bc, &v->m_6c8);
+			vfunc111();
+		}
+	}
+	v->m_6b8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095d00 size=0x222
 #include <float.h>
 #include "C_BaseAnimating.h"
@@ -35971,6 +36954,27 @@ void UtlMem::sub_10096e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096ea0 size=0xbc
+#include "CUtlVector52.h"
+int CUtlVector52::sub_10096ea0(int elem, int num, const Elem52 *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	if (m_size + num > m_allocationCount)
+		sub_10097080(m_size + num - m_allocationCount);
+	m_size += num;
+	m_pElements = m_pMemory;
+	int n = m_size - elem - num;
+	if (n > 0 && num > 0)
+		memmove(&m_pMemory[elem + num], &m_pMemory[elem], n * sizeof(Elem52));
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToInsert[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096f60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
@@ -36000,6 +37004,42 @@ void UtlMem::sub_10096f90()
 		}
 		m_allocationCount = 0;
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x10096fc0 size=0xb2
+#include <string.h>
+struct T48 { int m_d[12]; };
+struct CUtlVector48
+{
+	T48 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; T48 *m_pElements;
+	void sub_100970f0(int num);
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_nAllocationCount)
+			sub_100970f0(m_Size + num - m_nAllocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0 && num > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(T48));
+	}
+	int sub_10096fc0(int elem, int num, const T48 *pToInsert);
+};
+int CUtlVector48::sub_10096fc0(int elem, int num, const T48 *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	GrowVector(num);
+	ShiftElementsRight(elem, num);
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToInsert[i];
+	}
+	return elem;
 }
 // END FUNCTION
 
@@ -36615,6 +37655,47 @@ int CUnknown1009b2a0::sub_1009b2a0(int a0)
     int t1 = *(int *)((char *)this + 0x92c);
     *(int *)((char *)this + 0x95c) = t1;
     return t0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009bfa0 size=0xbd
+#include "C_BaseCombatWeapon.h"
+struct Q { char pad[0x160c]; char m_160c; };
+struct P { char pad[0x3f8]; Q *m_3f8; };
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void b11(); virtual void b12(); virtual int b13(); };
+extern EB *g_1027ba58;
+struct CWR {
+	char pad0[0x70];
+	int m_flags70;
+	char pad1[0x920 - 0x74];
+	int m_920;
+	char pad2[0x930 - 0x924];
+	int m_930;
+};
+// TARGET: sub_1009bfa0
+bool __fastcall sub_1009bfa0(CWR *self)
+{
+	if (!self->m_920)
+		return false;
+	C_BaseCombatWeapon *w = (C_BaseCombatWeapon *)((char *)self - 4);
+	if (w->sub_1007bab0()) {
+		Q *q = ((P *)w->sub_1007bab0())->m_3f8;
+		if (q && q->m_160c)
+			return false;
+	}
+	if (self->m_flags70 & 0x40)
+		return false;
+	if (w->vfunc240()) {
+		if (!w->vfunc241())
+			return false;
+		if (!g_1027ba58->b13() && w->vfunc240())
+			return false;
+	} else {
+		if (w->sub_1007bab0() && ((P *)w->sub_1007bab0())->m_3f8)
+			return self->m_930 == 2;
+	}
+	return true;
 }
 // END FUNCTION
 
@@ -37627,6 +38708,46 @@ char * CUnknown1009f770::sub_1009f770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f7f0 size=0xa3
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+#include "ehandle.h"
+#include "Vector.h"
+
+void sub_10109420(float *p);
+void sub_101094b0(int a, int b, int c);
+
+struct EntView
+{
+	char pad[0x208];
+	unsigned long m_h208;
+	unsigned char m_b20c;
+};
+
+// TARGET: C_BaseEntity::sub_1009f7f0
+void *C_BaseEntity::sub_1009f7f0(void *arg)
+{
+	EntView *v = (EntView *)this;
+	C_BaseEntity *pEnt = (C_BaseEntity *)((CBaseHandle *)&v->m_h208)->Get();
+	if (!pEnt)
+	{
+		sub_10109420((float *)arg);
+		return arg;
+	}
+	if (v->m_b20c)
+	{
+		Vector v1, v2;
+		if (pEnt->vfunc57(v->m_b20c, (int)&v1, (int)&v2))
+		{
+			sub_101094b0((int)&v2, (int)&v1, (int)arg);
+			return arg;
+		}
+	}
+	pEnt->sub_1009f8a0();
+	return (char *)pEnt + 0x26c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f8a0 size=0x1c3
 #include "C_BaseEntity.h"
 #include "CBaseHandle.h"
@@ -37912,6 +39033,67 @@ bool C_BaseEntity::sub_100a0710(const char *name)
 	int idx = g_104a57f8->v12(name);
 	((CUnknown1009fbb0 *)this)->sub_100a06f0(idx);
 	return idx != -1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a10b0 size=0x5f
+#include "C_BaseEntity.h"
+struct CUnknown10044460 {
+	char m_pad0000[0x44];
+	unsigned short m_w44;
+	void sub_100432a0(unsigned int v);
+	unsigned short GetFlags() { return m_w44; }
+	void SetFlags(unsigned int v) { sub_100432a0(v); }
+	void AddFlag(unsigned int f) { SetFlags(GetFlags() | f); }
+};
+struct EntView10b0 {
+	char m_pad0000[0x74];
+	unsigned int m_flags74;
+	char m_pad0078[0x190 - 0x78];
+	CUnknown10044460 m_coll;
+};
+extern char g_104d4970[];
+extern char g_104d5190[];
+void C_BaseEntity::sub_100a10b0(int a)
+{
+	if (a) {
+		EntView10b0 *e = (EntView10b0 *)this;
+		e->m_flags74 |= 1;
+		e->m_coll.AddFlag(4);
+		sub_1009fc60(0, 0);
+		vfunc40(g_104d4970);
+		vfunc42(g_104d5190);
+	} else {
+		sub_100a1110();
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a1110 size=0x2c
+#include "C_BaseEntity.h"
+struct CUnknown10044460 {
+	char m_pad0000[0x44];
+	unsigned short m_w44;
+	void sub_100432a0(unsigned int v);
+	unsigned short GetFlags() { return m_w44; }
+	void SetFlags(unsigned int v) { sub_100432a0(v); }
+	void ClearFlag(unsigned int f) { SetFlags(GetFlags() & ~f); }
+};
+struct CUnknown1009fc60 {
+	void sub_1009fc60(int a, int b);
+};
+struct EntView1110 {
+	char m_pad0000[0x74];
+	unsigned int m_flags74;
+	char m_pad0078[0x190 - 0x78];
+	CUnknown10044460 m_coll;
+};
+void C_BaseEntity::sub_100a1110()
+{
+	EntView1110 *e = (EntView1110 *)this;
+	e->m_flags74 &= ~1;
+	e->m_coll.ClearFlag(4);
+	((CUnknown1009fc60 *)this)->sub_1009fc60(0, 0);
 }
 // END FUNCTION
 
@@ -38248,6 +39430,21 @@ char CUnknown100a2600::sub_100a2600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2850 size=0x51
+#include "C_BaseEntity.h"
+#include "vector.h"
+struct CUnknown10044460 { void sub_100433c0(const Vector *a, const Vector *b); };
+void C_BaseEntity::sub_100a2850(const Vector *mins, const Vector *maxs)
+{
+	((CUnknown10044460 *)((char *)this + 0x190))->sub_100433c0(mins, maxs);
+	Vector size;
+	size.x = maxs->x - mins->x;
+	size.y = maxs->y - mins->y;
+	size.z = maxs->z - mins->z;
+	vfunc55((int)&size);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2900 size=0xb
 namespace lifted {
 extern int g_104a57f8;
@@ -38267,6 +39464,21 @@ struct V { virtual int f0(int, int); };
 int __stdcall sub_100a2910(int a0)
 {
     return ((lifted::V *)lifted::g_104a5818)->f0(a0, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a2930 size=0x36
+#include "C_BaseEntity.h"
+#include "CCollisionProperty.h"
+bool sub_100a2ba0();
+void C_BaseEntity::sub_100a2930()
+{
+	if (sub_100a2600() || sub_100a2ba0())
+	{
+		CCollisionProperty *p = (CCollisionProperty *)((char *)this + 0x190);
+		p->sub_100432a0(p->m_unk44 | 4);
+		sub_1009fc60(0, 0);
+	}
 }
 // END FUNCTION
 
@@ -38290,6 +39502,60 @@ struct CUnknown100a29a0 { char sub_100a29a0(); };
 char CUnknown100a29a0::sub_100a29a0()
 {
     return *(char *)((char *)this + 0xf0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a29b0 size=0xa2
+#include "C_BaseEntity.h"
+
+struct CGlobalVarsV
+{
+	char m_pad00;
+	float m_f004;
+	float m_f008;
+	float curtime;    // +0xc
+	float frametime;  // +0x10
+};
+extern CGlobalVarsV *g_102b8494;
+
+struct CBaseEntThinkView
+{
+	char m_pad0000[0x78];
+	float m_flNextThink;  // +0x78
+	float m_flThinkTime;  // +0x7c
+};
+
+struct CThinkFn
+{
+	void (C_BaseEntity::*pfn)();
+	int a;
+	int b;
+};
+struct CThinkHelper
+{
+	void sub_1011ac90(CThinkFn fn);
+};
+
+// TARGET: C_BaseEntity::sub_100a29b0
+bool C_BaseEntity::sub_100a29b0(int)
+{
+	CBaseEntThinkView *p = (CBaseEntThinkView *)this;
+	float flNextThink = p->m_flNextThink;
+	if (flNextThink <= 0.0f)
+		return true;
+	if (g_102b8494->curtime + g_102b8494->frametime < flNextThink)
+		return true;
+	if (flNextThink < g_102b8494->curtime)
+		flNextThink = g_102b8494->curtime;
+
+	p->m_flNextThink = 0;
+	float flSavedCurtime = g_102b8494->curtime;
+	g_102b8494->curtime = flNextThink;
+	CThinkFn tf = { &C_BaseEntity::sub_100a36e0, 0, 0 };
+	((CThinkHelper *)this)->sub_1011ac90(tf);
+	p->m_flThinkTime = flNextThink;
+	g_102b8494->curtime = flSavedCurtime;
+	return true;
 }
 // END FUNCTION
 
@@ -39745,6 +41011,174 @@ float CUnknown100a9de0::sub_100a9de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa040 size=0x1f8
+#include <string.h>
+#include "CBaseEntityList.h"
+#include "utlmemory.h"
+
+extern CBaseEntityList *g_102b8e98;
+
+struct EntView_100aa040 {
+    bool sub_1007dba0();
+    void sub_1011d5b0();
+    bool sub_1011ac80();
+    void sub_1011b9a0();
+};
+
+struct CBaseHandle_100aa040;
+
+struct EntListHelper_100aa040 : public CBaseEntityList
+{
+    inline void *sub_1007aca0(const CBaseHandle_100aa040 &h) const;
+};
+
+struct CBaseHandle_100aa040
+{
+    unsigned long m_Index;
+
+    inline CBaseHandle_100aa040() { m_Index = 0xffffffff; }
+    inline CBaseHandle_100aa040(const CBaseHandle_100aa040 &other) { m_Index = other.m_Index; }
+
+    inline bool IsValid() const { return m_Index != 0xffffffff; }
+    inline int GetEntryIndex() const { return m_Index & 0x1fff; }
+    inline int GetSerialNumber() const { return m_Index >> 13; }
+
+    inline void *Get() const
+    {
+        return ((EntListHelper_100aa040 *)g_102b8e98)->sub_1007aca0(*this);
+    }
+};
+
+inline void *EntListHelper_100aa040::sub_1007aca0(const CBaseHandle_100aa040 &h) const
+{
+    if (h.m_Index == 0xffffffff)
+        return 0;
+    const CBaseEntityListEntry *pInfo = &m_EntPtrArray[h.GetEntryIndex()];
+    if (pInfo->m_SerialNumber == h.GetSerialNumber())
+        return pInfo->m_pEntity;
+    else
+        return 0;
+}
+
+typedef void *(EntListHelper_100aa040::*LookupFn_t)(const CBaseHandle_100aa040 &) const;
+LookupFn_t g_force_emit = &EntListHelper_100aa040::sub_1007aca0;
+
+template <class T>
+struct CHandle_100aa040 : public CBaseHandle_100aa040
+{
+    inline CHandle_100aa040() {}
+    inline CHandle_100aa040(const CBaseHandle_100aa040 &h) : CBaseHandle_100aa040(h) {}
+
+    inline T *Get() const
+    {
+        return (T *)CBaseHandle_100aa040::Get();
+    }
+
+    inline operator T *() const
+    {
+        return Get();
+    }
+
+    inline bool operator==(T *val) const
+    {
+        return Get() == val;
+    }
+};
+
+template <class T>
+inline void Destruct_100aa040(T *pMemory)
+{
+    pMemory->~T();
+}
+
+struct IntVec
+{
+    CUtlMemory< CHandle_100aa040<EntView_100aa040> > m_Memory;
+    int m_Size;
+    CHandle_100aa040<EntView_100aa040> *m_pElements;
+
+    inline int Count() const { return m_Size; }
+    static inline int InvalidIndex() { return -1; }
+    inline CHandle_100aa040<EntView_100aa040> &operator[](int i) { return Element(i); }
+    inline const CHandle_100aa040<EntView_100aa040> &Element(int i) const { return m_Memory[i]; }
+    inline CHandle_100aa040<EntView_100aa040> &Element(int i) { return m_Memory[i]; }
+
+    inline void sub_100aad10(int elem, int num = 1)
+    {
+        int numToMove = m_Size - elem - num;
+        if ((numToMove > 0) && (num > 0))
+            memmove(&Element(elem), &Element(elem + num), numToMove * sizeof(CHandle_100aa040<EntView_100aa040>));
+    }
+
+    inline int Find(const CHandle_100aa040<EntView_100aa040> &src) const
+    {
+        for (int i = 0; i < Count(); ++i)
+        {
+            if (Element(i) == src)
+                return i;
+        }
+        return -1;
+    }
+
+    inline void Remove(int elem)
+    {
+        Destruct_100aa040(&Element(elem));
+        sub_100aad10(elem);
+        --m_Size;
+    }
+
+    inline void FindAndRemove(const CHandle_100aa040<EntView_100aa040> &src)
+    {
+        int elem = Find(src);
+        if (elem != -1)
+            Remove(elem);
+    }
+};
+
+typedef void (IntVec::*ShiftFn_t)(int, int);
+ShiftFn_t g_force_shift = &IntVec::sub_100aad10;
+
+struct S100aa040 {
+    char pad[0x1a14];
+    IntVec m_vec;
+    void sub_100aa040();
+};
+
+// TARGET: S100aa040::sub_100aa040
+void S100aa040::sub_100aa040()
+{
+    int i;
+    for (i = m_vec.Count() - 1; i >= 0; i--)
+    {
+        CHandle_100aa040<EntView_100aa040> h = m_vec[i];
+        EntView_100aa040 *p = h.Get();
+        if (p && p->sub_1007dba0())
+        {
+            p->sub_1011d5b0();
+        }
+        else
+        {
+            m_vec.FindAndRemove(h);
+        }
+    }
+
+    for (i = m_vec.Count() - 1; i >= 0; i--)
+    {
+        CHandle_100aa040<EntView_100aa040> h = m_vec[i];
+        EntView_100aa040 *p = h.Get();
+        if (p && p->sub_1007dba0())
+        {
+            if (p->sub_1011ac80())
+                p->sub_1011b9a0();
+        }
+        else
+        {
+            m_vec.FindAndRemove(h);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa320 size=0x2b
 extern int g_104a0d4c;
 struct PV {
@@ -40541,6 +41975,35 @@ int EV::sub_100aef10(int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aef40 size=0xad
+#include "ehandle.h"
+struct Obj_100a99d0 { bool sub_100a99d0(); };
+struct CEnt100 { char pad[0x3f8]; Obj_100a99d0 *m_p3f8; void *m_p3fc; void *m_p400; };
+struct ISub { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual int v8(); };
+struct IGlobal { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+ virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+ virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+ virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual int v29(); };
+extern IGlobal *g_1027ba58;
+struct CObj100aef40 {
+    int m_unk0; int m_unk4; ISub m_sub; char pad[0x184 - 0xc]; CBaseHandle m_hEnt;
+    bool sub_100aef40();
+};
+bool CObj100aef40::sub_100aef40()
+{
+    if (m_hEnt.Get() && m_sub.v8() == 11) {
+        CEnt100 *e = (CEnt100 *)m_hEnt.Get();
+        if (!e)
+            return false;
+        if (e->m_p400)
+            return false;
+        if (e->m_p3f8 && e->m_p3f8->sub_100a99d0())
+            return g_1027ba58->v29() != 0;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aeff0 size=0x8
 namespace lifted {
 struct C100af150 { int sub_100af150(); };
@@ -41262,6 +42725,121 @@ extern int g_104a1f10;
 void sub_100b4780() { for (int i = (int)g_104a1d10; i < (int)(g_104a1d10 + 128); i += 4) { if (*(int *)i != 0) *(int *)i = 0; } g_104a1f10 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b47b0 size=0x6e
+#include <string.h>
+
+struct IVEngineClient_100b47b0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75();
+	virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83();
+	virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87();
+	virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91();
+	virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95();
+	virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102();
+	virtual int v103(const char *pszName);
+};
+
+extern IVEngineClient_100b47b0 *g_104a57d4;
+extern void (__cdecl *g_101e3140)(const char *fmt, ...);
+extern int sub_100b4820(int idx, int a1, int a2, int a3, int a4, int a5, float f1, float f2, float f3, float f4);
+
+int sub_100b47b0(const char *pszName, int a1, int a2, int a3, int a4, int a5, float f1, float f2, float f3, float f4)
+{
+	int idx = g_104a57d4->v103(pszName);
+	if (idx <= 0)
+	{
+		if (!pszName || !strlen(pszName))
+			pszName = "(NULL)";
+		g_101e3140("could not create particle of type %s, make sure it is precached!\n", pszName);
+		return 0;
+	}
+	return sub_100b4820(idx, a1, a2, a3, a4, a5, f1, f2, f3, f4);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100b4820 size=0xa8
+#include "C_EnvParticle.h"
+
+extern void (__cdecl *g_101e3140)(const char *fmt, ...);
+extern C_EnvParticle *sub_100b3560();
+
+struct Helper_100b4820
+{
+	char pad_0[0x410];
+	int m_nParticleIndex;
+	char pad_414[0x0c];
+	int m_nAttachment;
+	int m_nField424;
+
+	void sub_100a2970(int pParent);
+	void sub_1009fc60(int moveType, int a2);
+};
+
+struct Sub_100b4820
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void vfunc7(int);
+};
+
+struct Ent_100b4820
+{
+	int m_n0;
+	int m_n4;
+	Sub_100b4820 m_sub;
+};
+
+C_EnvParticle *sub_100b4820(int idx, int origin, int vec, int pParent, int attachment, int arg6)
+{
+	if (idx <= 0)
+	{
+		g_101e3140("could not create particle, make sure it is precached!\n");
+		return 0;
+	}
+
+	C_EnvParticle *pParticle = sub_100b3560();
+	if (!pParticle)
+		return 0;
+
+	Helper_100b4820 *pHelper = (Helper_100b4820 *)pParticle;
+	pHelper->m_nParticleIndex = idx;
+	pParticle->vfunc123(vec);
+	pParticle->vfunc122(origin);
+
+	if (pParent)
+	{
+		pHelper->m_nAttachment = attachment;
+		pHelper->m_nField424 = arg6;
+		pHelper->sub_100a2970(pParent);
+		pHelper->sub_1009fc60(11, 0);
+	}
+	else
+		pHelper->m_nAttachment = 0;
+	((Sub_100b4820 *)((char *)pParticle + 8))->vfunc7(0);
+	return pParticle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b48d0 size=0xd1
 #include <string.h>
 #include "C_EnvParticle.h"
@@ -41349,6 +42927,62 @@ C_EnvParticle *sub_100b48d0(const char *pszName, int origin, int pParent, int at
 
 	pParticle->PostDataUpdate(0);
 	return pParticle;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100b49b0 size=0xab
+#include "C_EnvParticle.h"
+struct EngV2
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102();
+	virtual int v103(const char *s);
+};
+struct SubV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(int a); };
+struct EnvPV
+{
+	char m_pad0[8];
+	SubV m_sub;
+	char m_pad1[0x410 - 12];
+	int m_n410;
+	char m_pad2[0x420 - 0x414];
+	int m_n420;
+};
+extern int g_102b2c1c;
+extern EnvPV *g_104a1f10;
+extern EngV2 *g_104a57d4;
+void sub_100b4a60();
+struct Obj100af000 { void sub_100af000(); };
+
+// TARGET: sub_100b49b0
+EnvPV *sub_100b49b0(int type)
+{
+	if (type != g_102b2c1c)
+		sub_100b4a60();
+	if (!g_104a1f10)
+	{
+		g_104a1f10 = (EnvPV *)new C_EnvParticle;
+		((Obj100af000 *)g_104a1f10)->sub_100af000();
+		const char *pszName = "HUD_targeting_emitter";
+		if (type == 1)
+			pszName = "HUD_targeting_emitter_friend";
+		else if (type == 2)
+			pszName = "HUD_targeting_emitter_foe";
+		g_102b2c1c = type;
+		g_104a1f10->m_n410 = g_104a57d4->v103(pszName);
+		g_104a1f10->m_n420 = 0;
+		g_104a1f10->m_sub.v7(0);
+	}
+	return g_104a1f10;
 }
 // END FUNCTION
 
@@ -44417,6 +46051,52 @@ int __stdcall sub_100c1ad0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1bc0 size=0xb1
+#include <string.h>
+struct IEngTime { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual float Time(int a); };
+extern IEngTime *g_104a57d4;
+float sub_101070a0(const void *p);
+struct T64 { int m_unk0; int m_unk4; int m_unk8; float m_flTime; int m_d[12]; };
+struct CMem8b_t { T64 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; T64 *m_pElements; void sub_100c1f50(int num);
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_nAllocationCount)
+			sub_100c1f50(m_Size + num - m_nAllocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(T64));
+	}
+	int AddToTail(const T64 &src)
+	{
+		int idx = m_Size;
+		GrowVector(1);
+		ShiftElementsRight(idx, 1);
+		T64 *e = &m_pMemory[idx];
+		if (e)
+			*e = src;
+		return idx;
+	}
+};
+struct CSoundList { char m_unk[0x6c]; CMem8b_t m_List; int sub_100c1bc0(const T64 &src); };
+int CSoundList::sub_100c1bc0(const T64 &src)
+{
+	int idx = m_List.AddToTail(src);
+	T64 *base = m_List.m_pMemory;
+	double t = sub_101070a0(&src.m_d[0]) * 0.5;
+	base[idx].m_flTime = g_104a57d4->Time(0) + t;
+	return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
@@ -45485,6 +47165,37 @@ void C_BaseTerminal::sub_100c7f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c82e0 size=0xbb
+#include "C_BaseTerminal.h"
+struct IEng_100c82e0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void v11(void (*cb)(), void *arg);
+	virtual void v12(int a);
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual double Time(int a);
+};
+extern IEng_100c82e0 *g_104a57d4;
+extern void sub_100c6b10();
+struct Entry_100c82e0 { int d[18]; };
+void C_BaseTerminal::sub_100c82e0()
+{
+	if (m_nE78 >= 0 && m_nE78 < m_nStride - m_nE84 - 1 && m_nE7c >= 0 && m_nE7c < m_nMax && !m_bE88)
+	{
+		*(Entry_100c82e0 *)m_aE90 = ((Entry_100c82e0 *)m_rgData)[m_nE7c];
+		m_nE8c = m_nE78;
+		m_bEd8 = false;
+		m_bE88 = true;
+		g_104a57d4->v12(0);
+		g_104a57d4->v11(sub_100c6b10, this);
+		vfunc83(g_104a57d4->Time(0) + 0.25);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c84c0 size=0x12
 namespace lifted {
 extern char g_102336ec;
@@ -45832,6 +47543,27 @@ int CUnknown100c93a0::sub_100c93a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9680 size=0xb8
+#include "C_VGuiScreen.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10108fd0(const float *start, float scale, const float *dir, float *dest);
+
+void C_VGuiScreen::sub_100c9680(Vector &v1, Vector &v2, Vector &v3)
+{
+	Vector forward;
+	Vector origin = GetAbsOrigin();
+	Vector right;
+	sub_101090a0(GetAbsAngles(), &forward, &right, 0);
+	right *= -1.0f;
+	v3 = origin;
+	sub_10108fd0(origin.Base(), *(float *)((char *)this + 0x41c), right.Base(), v1.Base());
+	sub_10108fd0(v1.Base(), *(float *)((char *)this + 0x418), forward.Base(), v2.Base());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9790 size=0x83
 #include "C_BaseEntity.h"
 #include "Vector.h"
@@ -45857,6 +47589,20 @@ int CVGuiScreen_100c9790::sub_100c9790(const Vector &origin)
 	if (DotProduct(normal, delta) > 0.0f)
 		return 1;
 	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100c9820 size=0x39
+#include "C_VGuiScreen.h"
+
+// TARGET: C_VGuiScreen::sub_100c9820
+void C_VGuiScreen::sub_100c9820()
+{
+	Vector a;
+	Vector b;
+	Vector c;
+	sub_100c9680(a, c, b);
+	m_matrix.sub_101a2290(a, GetAbsAngles());
 }
 // END FUNCTION
 
@@ -46176,6 +47922,52 @@ void CUtlMemory12::sub_100caa80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb220 size=0xa2
+#include "Vector.h"
+
+struct RandomView
+{
+	virtual void v0();
+	virtual float RandomFloat(float a, float b);
+};
+
+extern RandomView *g_104a5738;
+
+struct RandArrayView
+{
+	char pad0[0xc];
+	int m_c;
+	int m_pad10;
+	Vector *m_pVec14;
+	int m_nCount18;
+	char pad1c[0x328 - 0x1c];
+	Vector m_vecMin;
+	Vector m_vecMax;
+	void sub_100cb220();
+};
+
+// TARGET: RandArrayView::sub_100cb220
+void RandArrayView::sub_100cb220()
+{
+	m_pVec14 = (Vector *)::operator new(m_nCount18 * sizeof(Vector));
+	if (!m_pVec14)
+	{
+		m_c = 0;
+		return;
+	}
+	for (int i = 0; i < m_nCount18; i++)
+	{
+		float *p;
+		p = &m_pVec14[i].x;
+		*p = g_104a5738->RandomFloat(m_vecMin.x, m_vecMax.x);
+		p = &m_pVec14[i].y;
+		*p = g_104a5738->RandomFloat(m_vecMin.y, m_vecMax.y);
+		p = &m_pVec14[i].z;
+		*p = g_104a5738->RandomFloat(m_vecMin.z, m_vecMax.z);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb300 size=0x1b
 namespace lifted {
 struct C100cab10 { int sub_100cab10(); };
@@ -46262,6 +48054,54 @@ int sub_100cc070(int a0)
         return ((lifted::V *)lifted::g_104a5804)->f4(lifted::g_102b8490, a0);
     }
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc2e0 size=0xba
+#include "CUtlLinkedList16.h"
+struct Node100cc2e0 { char m_data[12]; unsigned short m_Previous; unsigned short m_Next; };
+struct List100cc2e0 : public CUtlLinkedList16
+{
+	Node100cc2e0 *Nodes() { return (Node100cc2e0 *)m_pMemory; }
+	bool IsInList(unsigned short i)
+	{
+		return i < m_NumAlloced && Nodes()[i].m_Previous != i;
+	}
+	void Unlink(unsigned short elem)
+	{
+		if (IsInList(elem))
+		{
+			Node100cc2e0 *m = Nodes();
+			Node100cc2e0 *node = &m[elem];
+			if (node->m_Previous != 0xffff)
+				m[node->m_Previous].m_Next = node->m_Next;
+			else
+				m_Head = node->m_Next;
+			if (node->m_Next != 0xffff)
+				m[node->m_Next].m_Previous = node->m_Previous;
+			else
+				m_Tail = node->m_Previous;
+			node->m_Previous = elem;
+			node->m_Next = elem;
+			m_ElementCount--;
+		}
+	}
+	void Free(unsigned short elem)
+	{
+		Nodes()[elem].m_Next = m_FirstFree;
+		m_FirstFree = elem;
+	}
+	void Remove(unsigned short elem)
+	{
+		Unlink(elem);
+		Free(elem);
+	}
+};
+extern List100cc2e0 g_104a571c;
+void sub_100cc2e0(int elem)
+{
+	if (elem != -1)
+		g_104a571c.Remove(elem);
 }
 // END FUNCTION
 
@@ -46497,6 +48337,34 @@ void sub_100ccf00(float *a) {
 		else if (a[i] < -180.0)
 			a[i] += 360.0;
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x100ccf50 size=0xac
+#include "Vector.h"
+#include "Quaternion.h"
+void sub_1010a650(const Vector &angles, Quaternion &q);
+void sub_1010a140(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt);
+void sub_1010a690(const Quaternion &q, Vector &angles);
+
+// TARGET: sub_100ccf50
+void sub_100ccf50(const Vector &a, const Vector &b, Vector &out, float t)
+{
+	if (t < 0.001f)
+	{
+		out = a;
+		return;
+	}
+	if (t > 0.999f)
+	{
+		out = b;
+		return;
+	}
+	Quaternion qa, qb, q;
+	sub_1010a650(a, qa);
+	sub_1010a650(b, qb);
+	sub_1010a140(qa, qb, t, q);
+	sub_1010a690(q, out);
 }
 // END FUNCTION
 
@@ -46777,6 +48645,29 @@ float sub_100cd330(const Vector &position, float minz, float maxz)
 // FUNCTION: 0x100cd530 size=0x1
 void sub_100cd530()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cd540 size=0xa6
+#include "CPVSFilter.h"
+class Vector;
+struct IFx { virtual void v0(); };
+struct CTEIface
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33();
+	virtual void v34(IRecipientFilter &f, int delay, const Vector *org, int model, int a, int b);
+};
+extern CTEIface *g_102b6980;
+extern short g_104a5472;
+
+// TARGET: sub_100cd540
+void sub_100cd540(const Vector *origin, int a, float b)
+{
+	CPVSFilter filter(*origin);
+	g_102b6980->v34(filter, 0, origin, g_104a5472, a, (int)b);
 }
 // END FUNCTION
 
@@ -48521,6 +50412,35 @@ void CUnknown100d3f70::sub_100d3f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4e90 size=0xac
+#include "CUtlLinkedList10.h"
+
+struct TexAlloc_100d4e90
+{
+	int m_n0;
+	CUtlLinkedList10 m_List;
+	unsigned short sub_100d4e90(int size, int unused);
+};
+
+unsigned short TexAlloc_100d4e90::sub_100d4e90(int size, int unused)
+{
+	if (size < 16)
+		size = 16;
+	else if (size > 256)
+		size = 256;
+
+	unsigned short elem = m_List.AddToTail();
+
+	m_List.InternalElement(elem).m_Data0 = 0xffff;
+	m_List.InternalElement(elem).m_Data1 = (unsigned short)size;
+	int shift = 0;
+	for (int p = 1; p < size; p <<= 1)
+		++shift;
+	m_List.InternalElement(elem).m_Data2 = (unsigned short)shift;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5010 size=0x37
 struct E10 { unsigned short m_0; unsigned short pad[4]; };
 struct E16 { int m_0; unsigned short m_4; unsigned short pad[5]; };
@@ -48879,6 +50799,169 @@ void sub_100d6c40(VMatrix &mat1, float *pScale, VMatrix &out)
 	mat[1][3] = 0.5f;
 	mat[0][3] = 0.5f;
 	sub_101a2600(mat, mat1, out);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100d6ca0 size=0x488
+#include <math.h>
+#include "CClientShadowMgr.h"
+#include "IClientEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "VMatrix.h"
+
+struct Vector2D
+{
+	float x, y;
+	Vector2D() {}
+};
+
+inline void Vector2DCopy(const Vector2D &src, Vector2D &dst)
+{
+	dst.x = src.x;
+	dst.y = src.y;
+}
+
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10108fd0(const float *start, float scale, const float *dir, float *dest);
+void sub_100d6c40(VMatrix &worldToShadow, float *size, float *worldToTexture);
+
+struct IShadowMgrTmp
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void ProjectShadow(unsigned short handle, const Vector &origin, const Vector &dir, const VMatrix &worldToTexture, const Vector2D &size, float a5, float a6);
+};
+
+struct IClientLeafSystemTmp
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void ProjectShadow(unsigned short handle, const Vector &origin, const Vector &dir, const Vector2D &size, float maxHeight);
+};
+
+extern IShadowMgrTmp *g_104a5810;
+extern IClientLeafSystemTmp *g_102b9060;
+
+static inline void SortAbsVectorComponents(const Vector &src, int *pVecIdx)
+{
+	Vector absVec;
+	absVec.sub_10049f20((float)fabs(src[0]), (float)fabs(src[1]), (float)fabs(src[2]));
+
+	int maxIdx = (absVec[0] > absVec[1]) ? 0 : 1;
+	if (absVec[2] > absVec[maxIdx])
+	{
+		maxIdx = 2;
+	}
+
+	switch (maxIdx)
+	{
+	case 0:
+		pVecIdx[0] = 1;
+		pVecIdx[1] = 2;
+		pVecIdx[2] = 0;
+		break;
+	case 1:
+		pVecIdx[0] = 2;
+		pVecIdx[1] = 0;
+		pVecIdx[2] = 1;
+		break;
+	case 2:
+		pVecIdx[0] = 0;
+		pVecIdx[1] = 1;
+		pVecIdx[2] = 2;
+		break;
+	}
+}
+
+struct ClientShadowFull_t
+{
+	int m_Entity;
+	unsigned short m_ShadowHandle;
+	unsigned short m_ClientLeafShadowHandle;
+	unsigned short m_Flags;
+	unsigned short m_pad0a;
+	VMatrix m_WorldToShadow;
+	Vector2D m_WorldSize;
+	char m_pad54[0xa0 - 0x54];
+	float m_a0;
+	float m_a4;
+};
+
+void CClientShadowMgr::sub_100d6ca0(int a0, unsigned short handle, int *a2, int *a3)
+{
+	IClientEntity *pEnt = (IClientEntity *)a0;
+	const Vector &mins = *(const Vector *)a2;
+	const Vector &maxs = *(const Vector *)a3;
+
+	Vector vec[3];
+	sub_101090a0(pEnt->GetRenderAngles(), &vec[0], &vec[1], &vec[2]);
+	vec[1] *= -1.0f;
+
+	Vector localShadowDir;
+	localShadowDir[0] = DotProduct(vec[0], *(Vector *)&m_unk08);
+	localShadowDir[1] = DotProduct(vec[1], *(Vector *)&m_unk08);
+	localShadowDir[2] = DotProduct(vec[2], *(Vector *)&m_unk08);
+
+	int vecIdx[3];
+	SortAbsVectorComponents(localShadowDir, vecIdx);
+
+	Vector yvec = vec[vecIdx[0]];
+	yvec -= (*(Vector *)&m_unk08) * DotProduct(*(Vector *)&m_unk08, yvec);
+	VectorNormalize(yvec);
+
+	Vector worldOrigin;
+	Vector2D size;
+	{
+	Vector xvec;
+	CrossProduct(yvec, *(Vector *)&m_unk08, xvec);
+
+	Vector boxSize;
+	VectorSubtract(maxs, mins, boxSize);
+
+	size.x = boxSize.x * fabs(DotProduct(vec[0], xvec)) +
+		boxSize.y * fabs(DotProduct(vec[1], xvec)) +
+		boxSize.z * fabs(DotProduct(vec[2], xvec));
+	size.y = boxSize.x * fabs(DotProduct(vec[0], yvec)) +
+		(boxSize.y * fabs(DotProduct(vec[1], yvec)) +
+		boxSize.z * fabs(DotProduct(vec[2], yvec)));
+
+	size.x += 4.0f;
+	size.y += 4.0f;
+
+	Vector org;
+	sub_100d6430(pEnt, mins, maxs, localShadowDir, 1.0f, org);
+
+	worldOrigin = pEnt->GetRenderOrigin();
+	sub_10108fd0(worldOrigin.Base(), org.x, vec[0].Base(), worldOrigin.Base());
+	sub_10108fd0(worldOrigin.Base(), org.y, vec[1].Base(), worldOrigin.Base());
+	sub_10108fd0(worldOrigin.Base(), org.z, vec[2].Base(), worldOrigin.Base());
+
+	sub_100d6390(((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_WorldToShadow, worldOrigin, *(Vector *)&m_unk08, xvec, yvec);
+	}
+	VMatrix worldToTexture;
+	sub_100d6c40(((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_WorldToShadow, &size.x, (float *)&worldToTexture);
+	Vector2DCopy(size, ((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_WorldSize);
+
+	float maxHeight = 3.0f * sqrt(size.x * size.y);
+
+	g_104a5810->ProjectShadow(
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_ShadowHandle,
+		worldOrigin,
+		*(Vector *)&m_unk08,
+		worldToTexture,
+		size,
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_a4,
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_a0);
+
+	sub_100d65a0(pEnt, handle, vec, mins, maxs, localShadowDir);
+
+	g_102b9060->ProjectShadow(
+		((ClientShadowFull_t *)m_Shadows.InternalElement(handle).m_Data)->m_ClientLeafShadowHandle,
+		worldOrigin, *(Vector *)&m_unk08, size, maxHeight);
 }
 // END FUNCTION
 
@@ -49484,6 +51567,17 @@ void sub_100d95a0(const Vector &start, const Vector &direction, float velocity, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9600 size=0x36
+#include "CFXQuad.h"
+struct IFoo { virtual void v0(); virtual void v1(void *p); };
+extern IFoo *g_102b9850;
+void sub_100d9600(const int *a)
+{
+    CFXQuad *p = (CFXQuad *)operator new(0x60);
+    g_102b9850->v1(p ? p->sub_100e5c70(a) : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9740 size=0x1
 void sub_100d9740()
 {
@@ -49810,6 +51904,22 @@ bool sub_100dac00(const Vector &boxMin1, const Vector &boxMax1, const Vector &bo
 	if ((boxMin1[2] > boxMax2[2]) || (boxMax1[2] < boxMin2[2]))
 		return false;
 	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100dac80 size=0xb8
+#include "vector.h"
+static inline float FloatMakePositive(float f)
+{
+	unsigned long bits = *(unsigned long *)&f;
+	bits &= 0x7fffffff;
+	return *(float *)&bits;
+}
+bool sub_100dac80(const Vector &center1, const Vector &extents1, const Vector &center2, const Vector &extents2)
+{
+	Vector delta = center1 - center2;
+	Vector sum = extents1 + extents2;
+	return FloatMakePositive(delta.x) <= sum.x && FloatMakePositive(delta.y) <= sum.y && FloatMakePositive(delta.z) <= sum.z;
 }
 // END FUNCTION
 
@@ -52429,12 +54539,64 @@ void CFunctionProxy::sub_100e3560(int *pType, int *pVecSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e35f0 size=0xa5
+#include "FX_Cube.h"
+#include "Vector.h"
+
+extern void *g_104a57ec;
+extern void *g_102b9850;
+
+struct MatView25
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24();
+	virtual void *vfunc25(void *a, int b, int c);
+};
+
+struct EffectList
+{
+	virtual void v0();
+	virtual void AddEffect(void *p);
+};
+
+// TARGET: sub_100e35f0
+void sub_100e35f0(Vector *p1, Vector *p2, Vector *p3, int a4, void *a5)
+{
+	void *pMat = ((MatView25 *)g_104a57ec)->vfunc25(a5, 0, 1);
+	FX_Cube *pCube = new FX_Cube(pMat);
+	*(Vector *)((char *)pCube + 0xc) = *p1;
+	*(Vector *)((char *)pCube + 0x18) = *p2;
+	*(Vector *)((char *)pCube + 0x24) = *p3;
+	*(int *)((char *)pCube + 0x30) = a4;
+	((EffectList *)g_102b9850)->AddEffect(pCube);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3b10 size=0x28
 void __stdcall sub_100e3b10(float *p, int i, int j, int k, float a, float b, float c)
 {
 	p[i] = a;
 	p[j] = b;
 	p[k] = c;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e3f70 size=0x99
+#include "Vector.h"
+
+void sub_100e35f0(Vector *p1, Vector *p2, Vector *p3, int a4, void *a5);
+
+// TARGET: sub_100e3f70
+void sub_100e3f70(Vector *pos, float f, Vector *p3, int a4, void *a5)
+{
+	Vector vplus = *pos + Vector(f, f, f);
+	Vector vminus = *pos - Vector(f, f, f);
+	sub_100e35f0(&vminus, &vplus, p3, a4, a5);
 }
 // END FUNCTION
 
@@ -52671,6 +54833,49 @@ void CGameMovement::sub_100e8170()
 	*(float *)((char *)m_pPlayer + 0x48) += *(float *)((char *)m_pPlayer + 0x54) * g_102b8494->frametime;
 	*(float *)((char *)m_pPlayer + 0x54) = 0.0f;
 	sub_100eb7a0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e85b0 size=0xa9
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+
+struct Globals_100e85b0
+{
+	char pad[0x10];
+	float frametime;
+};
+extern Globals_100e85b0 *g_102b8494;
+
+struct Mv_100e85b0
+{
+	char pad[0x90];
+	int m_nWaterLevel;
+	char pad2[0x199c - 0x94];
+	float m_flWaterJump;
+	float m_flVelX;
+	float m_flVelY;
+	int sub_100a2410(int);
+};
+
+#define MV ((Mv_100e85b0 *)m_pMove)
+#define PL ((CMovePlayerView *)m_pPlayer)
+
+void CGameMovement::sub_100e85b0()
+{
+	if (MV->m_flWaterJump > 10000.0f)
+		MV->m_flWaterJump = 10000.0f;
+	if (MV->m_flWaterJump != 0)
+	{
+		MV->m_flWaterJump -= g_102b8494->frametime * 1000.0f;
+		if (MV->m_flWaterJump <= 0 || !MV->m_nWaterLevel)
+		{
+			MV->m_flWaterJump = 0;
+			MV->sub_100a2410(4);
+		}
+		PL->m_vecVelocity.x = MV->m_flVelX;
+		PL->m_vecVelocity.y = MV->m_flVelY;
+	}
 }
 // END FUNCTION
 
@@ -53314,6 +55519,37 @@ int CUnknown100f0180::sub_100f0180(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0250 size=0xb5
+#include "CHudHistoryResource.h"
+struct CGlobalsView100f0250 { virtual void v0(); virtual bool v1(); char pad[0x28 - 4]; float curtime; };
+extern CGlobalsView100f0250 *g_10678d4c;
+extern float g_104cfe3c;
+int sub_100cd0f0();
+struct HistItemView100f0250 { int type; float time; int count; int id; int unk10; int unk14; };
+struct HistView100f0250 { char pad[0x10]; HistItemView100f0250 items[12]; int gap; int slot; };
+static inline float Now100f0250()
+{
+	if (g_10678d4c->v1())
+		return 0.0f;
+	return g_10678d4c->curtime;
+}
+void CHudHistoryResource::sub_100f0250(int iType, int iId, int iCount)
+{
+	HistView100f0250 *h = (HistView100f0250 *)this;
+	if (iType != 1 || iCount)
+	{
+		if (h->gap * (h->slot + 2) + 32 > sub_100cd0f0() - 64 || h->slot >= 12)
+			h->slot = 0;
+		HistItemView100f0250 *p = &h->items[h->slot++];
+		p->type = iType;
+		p->id = iId;
+		p->unk10 = -1;
+		p->count = iCount;
+		p->time = Now100f0250() + g_104cfe3c;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0310 size=0xc5
 #include "ConVar.h"
 
@@ -53767,6 +56003,77 @@ float CUnknown100f10c0::sub_100f10c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f10d0 size=0xb7
+struct IEng_100f10d0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41();
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual int v57();
+};
+struct IObj_100f10d0
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x2c - 4];
+	int m_f2c;
+};
+struct IPlayer_100f10d0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41();
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61(); virtual void v62();
+	virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76();
+	virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83();
+	virtual int v84();
+	char pad[0x168c - 4];
+	int m_iHideHUD;
+	char pad2[0x173c - 0x168c - 4];
+	bool m_b173c;
+};
+extern IEng_100f10d0 *g_104a57d4;
+extern IPlayer_100f10d0 *g_104a0d50;
+extern IObj_100f10d0 *g_104cfebc;
+bool __stdcall sub_100f10d0(int mask)
+{
+	if (!g_104a57d4->v57())
+		return true;
+	IPlayer_100f10d0 *p = g_104a0d50;
+	if (!p)
+		return true;
+	int hidden = p->m_iHideHUD;
+	if (!g_104cfebc->v1() && g_104cfebc->m_f2c)
+	{
+		if (g_104cfebc->v1())
+			hidden = 0;
+		else
+			hidden = g_104cfebc->m_f2c;
+	}
+	if (hidden & 4)
+		return true;
+	if (mask & 0x10)
+	{
+		if (p->v84() <= 0)
+			return true;
+	}
+	if ((mask & 0x20) && !p->m_b173c)
+		return true;
+	return (hidden & mask) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f11d0 size=0x27
 #include "CHud.h"
 
@@ -53990,6 +56297,39 @@ void sub_100f1870(int a0, int a1, int a2)
     if (t0 != 0) {
         ((lifted::C100f24b0 *)t0)->sub_100f24b0(a0, a1, a2);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f1e20 size=0xbc
+#pragma auto_inline(off)
+struct CUnknown100f1850 { char pad[0xbc]; float m_bc; float sub_100f1850(); };
+float CUnknown100f1850::sub_100f1850() { return m_bc; }
+struct CUnknown100f17e0 { int sub_100f17e0(); };
+int CUnknown100f17e0::sub_100f17e0() { return *(int *)((char *)this + 0x10); }
+struct ChatItem {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21();
+    virtual bool vfunc22();
+    float F() { return ((CUnknown100f1850 *)this)->sub_100f1850(); }
+    int I() { return ((CUnknown100f17e0 *)this)->sub_100f17e0(); }
+};
+// TARGET: sub_100f1e20
+int __cdecl sub_100f1e20(ChatItem **pa, ChatItem **pb)
+{
+    ChatItem *a = *pa;
+    ChatItem *b = *pb;
+    if (a->vfunc22() && !b->vfunc22())
+        return -1;
+    if (!a->vfunc22() && b->vfunc22())
+        return 1;
+    if (a->F() < b->F())
+        return -1;
+    if (a->F() > b->F())
+        return 1;
+    if (a->I() < b->I())
+        return -1;
+    return a->I() > b->I();
 }
 // END FUNCTION
 
@@ -54218,6 +56558,42 @@ void sub_100f2c00(int *r, int *g, int *b, int a)
 	*r = (int)(*r * s);
 	*g = (int)(*g * s);
 	*b = (int)(*b * s);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f2d00 size=0x53
+extern int (*g_101e3190)(char *pDest, int nSize, const char *pFmt, ...);
+struct CUnknown100f2d00 { void sub_100f2d00(int a0, int a1, int a2, int a3, int a4, int a5, int a6); void sub_100f2d60(int a0, int a1, int a2, const char *s, int a4, int a5, int a6, int a7); };
+void CUnknown100f2d00::sub_100f2d00(int a0, int a1, int a2, int a3, int a4, int a5, int a6)
+{
+	char buf[32];
+	g_101e3190(buf, 32, "%d", a3);
+	sub_100f2d60(a0, a1, a2, buf, a4, a5, a6, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f34f0 size=0xa8
+#include "CHud.h"
+extern CHud g_104cfe38;
+extern int sub_100ccdc0(void *);
+extern void sub_100ccd10(int, int, void *, int, int, int);
+// TARGET: sub_100f34f0
+void __stdcall sub_100f34f0(int x, int y, int count, int a4, int a5, int a6, bool bSmall)
+{
+	void *tex[2];
+	if (bSmall)
+		tex[0] = g_104cfe38.sub_100f11d0("number_burn1s");
+	else
+		tex[0] = g_104cfe38.sub_100f11d0("number_burn1");
+	if (bSmall)
+		tex[1] = g_104cfe38.sub_100f11d0("number_burn2s");
+	else
+		tex[1] = g_104cfe38.sub_100f11d0("number_burn2");
+	int w = sub_100ccdc0(tex[0]);
+	for (int i = 0; i < count; i++, x += w)
+	{
+		sub_100ccd10(x, y, tex[i % 2], a4, a5, a6);
+	}
 }
 // END FUNCTION
 
@@ -54598,6 +56974,50 @@ CUnknown102bc9e0 *sub_100f4420(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4440 size=0xbe
+struct CUnknown102bc9e0 { int m_0; int m_NumBytes; };
+CUnknown102bc9e0 *sub_100f4420(int fmt);
+int sub_100f4440(int width, int height, int imageFormat, bool mipmap)
+{
+	if (!mipmap) {
+		if (imageFormat == 13 || imageFormat == 14 || imageFormat == 15) {
+			if (width < 4 && width > 0)
+				width = 4;
+			if (height < 4 && height > 0)
+				height = 4;
+			int numBlocks = (width * height) >> 4;
+			switch (imageFormat) {
+			case 13:
+				numBlocks *= 8;
+				break;
+			case 14:
+			case 15:
+				numBlocks *= 16;
+				break;
+			default:
+				numBlocks = 0;
+				break;
+			}
+			return numBlocks;
+		}
+		return width * height * sub_100f4420(imageFormat)->m_NumBytes;
+	}
+	int memSize = 0;
+	for (;;) {
+		memSize += sub_100f4440(width, height, imageFormat, false);
+		if (width == 1 && height == 1)
+			break;
+		width >>= 1;
+		height >>= 1;
+		if (width < 1)
+			width = 1;
+		if (height < 1)
+			height = 1;
+	}
+	return memSize;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4500 size=0x5b
 struct FmtInfo
 {
@@ -54706,6 +57126,22 @@ void sub_100f59b0(unsigned char *pBuf, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5a20 size=0xaa
+void sub_100f5a20(unsigned char *src, unsigned char *dst, int width, int height, unsigned char *table)
+{
+	for (int y = 0; y < height; y++)
+	{
+		for (int x = 0; x < width; x++)
+		{
+			int i = (y * width + x) * 4;
+			dst[i] = table[src[i]];
+			dst[i + 1] = table[src[i + 1]];
+			dst[i + 2] = table[src[i + 2]];
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5ad0 size=0xba
 #include <string.h>
 
@@ -54802,6 +57238,53 @@ char sub_100f6a40(int a0, int a1, int a2, int a3)
         return (char)(lifted::sub_100f6860(a1, a1, a2, a3));
     }
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f6a80 size=0x102
+#include <string.h>
+
+struct ImageFormatInfo_t
+{
+	const char *pName;
+	int numBytes;
+	int numRedBits;
+	int numGreenBits;
+	int numBlueBits;
+	int numAlphaBits;
+	bool isCompressed;
+};
+
+ImageFormatInfo_t *sub_100f4420(int fmt);
+
+// TARGET: sub_100f6a80
+bool sub_100f6a80(unsigned char *src, unsigned char *dst, int widthHeight, int imageFormat)
+{
+#define SRC(x,y) src[((x)+(y)*widthHeight)*sizeInBytes]
+#define DST(x,y) dst[((x)+(y)*widthHeight)*sizeInBytes]
+	ImageFormatInfo_t *info = sub_100f4420(imageFormat);
+	if (info->isCompressed)
+	{
+		return false;
+	}
+
+	int x, y;
+	unsigned char tmp[4];
+	int halfWidthHeight = widthHeight >> 1;
+	int sizeInBytes = info->numBytes;
+
+	for (y = 0; y < halfWidthHeight; y++)
+	{
+		for (x = 0; x < widthHeight; x++)
+		{
+			memcpy(tmp, &SRC(x, y), sizeInBytes);
+			memcpy(&SRC(x, y), &DST(x, widthHeight - y - 1), sizeInBytes);
+			memcpy(&SRC(x, widthHeight - y - 1), tmp, sizeInBytes);
+		}
+	}
+#undef SRC
+#undef DST
+	return true;
 }
 // END FUNCTION
 
@@ -55561,6 +58044,79 @@ void sub_100f9920(DXTColorBGRA8888 *pOutputImage, DXTColBlock *pColorBlock, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9b20 size=0x120
+struct DXTColBlock
+{
+	unsigned short col0;
+	unsigned short col1;
+	unsigned char row[4];
+};
+
+struct DXTColorBGRA8888
+{
+	unsigned char b;
+	unsigned char g;
+	unsigned char r;
+	unsigned char a;
+};
+
+struct DXTColorBGR888
+{
+	unsigned char b;
+	unsigned char g;
+	unsigned char r;
+	void FromBGRA8888(const DXTColorBGRA8888 &in)
+	{
+		r = in.r;
+		g = in.g;
+		b = in.b;
+	}
+};
+
+void sub_100f9b20(DXTColorBGR888 *pOutputImage, DXTColBlock *pColorBlock, int width,
+	DXTColorBGRA8888 *col_0, DXTColorBGRA8888 *col_1,
+	DXTColorBGRA8888 *col_2, DXTColorBGRA8888 *col_3)
+{
+	unsigned long bits;
+	int r, n;
+
+	const unsigned long masks[] = { 3, 12, 3 << 4, 3 << 6 };
+	const int shift[] = { 0, 2, 4, 6 };
+
+	for (r = 0; r < 4; r++, pOutputImage += width - 4)
+	{
+		for (n = 0; n < 4; n++)
+		{
+			bits = pColorBlock->row[r] & masks[n];
+			bits >>= shift[n];
+
+			switch (bits)
+			{
+			case 0:
+				pOutputImage->FromBGRA8888(*col_0);
+				pOutputImage++;
+				break;
+			case 1:
+				pOutputImage->FromBGRA8888(*col_1);
+				pOutputImage++;
+				break;
+			case 2:
+				pOutputImage->FromBGRA8888(*col_2);
+				pOutputImage++;
+				break;
+			case 3:
+				pOutputImage->FromBGRA8888(*col_3);
+				pOutputImage++;
+				break;
+			default:
+				pOutputImage++;
+				break;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbd70 size=0xe
 namespace lifted {
 extern int g_1027ba58;
@@ -56236,6 +58792,38 @@ float __stdcall sub_101025b0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101025f0 size=0xbd
+#include "CInput.h"
+#include "Vector.h"
+struct kbutton_t { int down[2]; int state; };
+struct CVar101025f0 {
+    virtual void v0();
+    virtual bool IsX();
+    char pad[0x28 - 4];
+    float m28;
+};
+extern kbutton_t g_104d3748;
+extern kbutton_t g_104d3714;
+extern kbutton_t g_104d3970;
+extern CVar101025f0 *g_104d326c;
+
+static inline float anglemod(float a)
+{
+    return (360.0f / 65536) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+}
+
+void CInput::sub_101025f0(float speed, Vector &viewangles)
+{
+    if (!(g_104d3970.state & 1))
+    {
+        float &yaw = viewangles.y;
+        yaw -= speed * (g_104d326c->IsX() ? 0.0f : g_104d326c->m28) * vfunc9(&g_104d3748);
+        yaw += speed * (g_104d326c->IsX() ? 0.0f : g_104d326c->m28) * vfunc9(&g_104d3714);
+        viewangles.y = anglemod(viewangles.y);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
@@ -56608,6 +59196,26 @@ void __stdcall sub_10106410(int x, int y, int *px, int *py, int *outx, int *outy
         *px = x;
         *py = y;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101064b0 size=0xaf
+struct CUnknown100f10c0 { float sub_100f10c0(); };
+struct ScaleCvarView { virtual void v0(); virtual bool IsDisabled(); int m_unk04[9]; float m_flValue; };
+extern ScaleCvarView *g_104d3fc4;
+extern CUnknown100f10c0 g_104cfe38;
+// TARGET: sub_101064b0
+void __stdcall sub_101064b0(int *pX, int *pY)
+{
+	if (g_104cfe38.sub_100f10c0() != 0.0f) {
+		*pX = (int)(*pX * g_104cfe38.sub_100f10c0());
+		*pY = (int)(*pY * g_104cfe38.sub_100f10c0());
+	} else {
+		float f = g_104d3fc4->IsDisabled() ? 0.0f : g_104d3fc4->m_flValue;
+		*pX = (int)(*pX * f);
+		f = g_104d3fc4->IsDisabled() ? 0.0f : g_104d3fc4->m_flValue;
+		*pY = (int)(*pY * f);
+	}
 }
 // END FUNCTION
 
@@ -60983,6 +63591,27 @@ int __stdcall sub_1010e6a0(float pos, int size, int extra)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e740 size=0xae
+int sub_100cd0f0();
+int __stdcall sub_1010e740(float x, int width)
+{
+    int xPos;
+    if (x == -1) {
+        xPos = (int)((sub_100cd0f0() - width) * 0.5);
+    } else {
+        if (x < 0)
+            xPos = (int)((1.0 + x) * sub_100cd0f0() - width);
+        else
+            xPos = (int)(sub_100cd0f0() * x);
+    }
+    if (xPos + width > sub_100cd0f0())
+        xPos = sub_100cd0f0() - width;
+    else if (xPos < 0)
+        xPos = 0;
+    return xPos;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010eb20 size=0x1e6
 #include "CHudMessage.h"
 
@@ -61902,6 +64531,17 @@ const CUtlRBTree20::Links_t &CUtlRBTree20::sub_10112840(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101130d0 size=0xb9
+#include "CUtlRBTree16.h"
+
+// TARGET: CUtlRBTree16::sub_101130d0
+bool CUtlRBTree16::sub_101130d0(unsigned short i) const
+{
+	const CUtlRBTree16At<0x104dff2c> *tree = (const CUtlRBTree16At<0x104dff2c> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113190 size=0x57
 #include "CUtlRBTree16.h"
 
@@ -61921,6 +64561,17 @@ bool CUtlRBTree16::sub_10114120(unsigned short i) const
 {
 	const CUtlRBTree16At<0x104dff1c> *tree = (const CUtlRBTree16At<0x104dff1c> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10114560 size=0xbb
+#include "CUtlRBTree16.h"
+
+// TARGET: CUtlRBTree16::sub_10114560
+bool CUtlRBTree16::sub_10114560(unsigned short i) const
+{
+	const CUtlRBTree16At<0x104dff2c> *tree = (const CUtlRBTree16At<0x104dff2c> *)this;
+	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
 
@@ -64015,6 +66666,24 @@ void C_BaseEntity::sub_1011c7f0()
 		else if (e->vel[i] < -(g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue))
 			e->vel[i] = -(g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue);
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1011d190 size=0xba
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+struct EntView_1011d190 { char pad[0xc0]; Vector m_vel; };
+void C_BaseEntity::sub_1011d190(float frametime)
+{
+	ScopeTrace trace("CBaseEntity::SimulateAngles", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	const Vector *cur = (const Vector *)vfunc41();
+	const Vector &vel = ((EntView_1011d190 *)this)->m_vel;
+	Vector n;
+	n.x = cur->x + frametime * vel.x;
+	n.y = cur->y + frametime * vel.y;
+	n.z = cur->z + frametime * vel.z;
+	vfunc42((char *)&n);
 }
 // END FUNCTION
 
@@ -66228,6 +68897,57 @@ void CPrediction::sub_10120ee0(int commands_acknowledged)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121850 size=0xc9
+void sub_10121850(bool a0, bool a1, bool a2, bool a3, int &r, int &g, int &b, int &a)
+{
+	r = 255;
+	g = 255;
+	b = 255;
+	a = 255;
+
+	if (a0)
+	{
+		if (a1)
+		{
+			r = 180;
+			g = 180;
+			b = 225;
+		}
+		else
+		{
+			r = 150;
+			g = 180;
+			b = 150;
+		}
+	}
+
+	if (a2)
+	{
+		if (a3)
+		{
+			r = 255;
+			g = 255;
+			b = 0;
+			a = 255;
+		}
+		else if (!a0)
+		{
+			r = 180;
+			g = 180;
+			b = 100;
+			a = 255;
+		}
+		else
+		{
+			r = 255;
+			g = 0;
+			b = 0;
+			a = 255;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10121920 size=0x75
 #include "C_BaseEntity.h"
 #include "Tier1.h"
@@ -66502,6 +69222,34 @@ CData_10123290 *CData_10123290::sub_10123290(int a1, int a2, bool a3, int a4, bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x101233b0 size=0xbb
+#include "CPredictionCopy.h"
+#include <stdarg.h>
+extern const char *g_102c2418[];
+extern int (__cdecl *g_101e31a8)(char *, int, const char *, va_list);
+typedef void (*CompareFn_101233b0)(const char *cls, const char *name, const char *type, bool a, bool b, bool c, bool d, const char *buf);
+void sub_101233b0(CPredictionCopy *self, int dt, const char *fmt, ...)
+{
+	if (!self->m_bReport || !self->m_FieldCompareFunc)
+		return;
+	const char *fieldname = "empty";
+	unsigned int flags = 0;
+	if (self->m_pCurrentField)
+	{
+		flags = (short)self->m_pCurrentField->m_Flags;
+		const char *const &name = self->m_pCurrentField->fieldName;
+		fieldname = name ? name : "NULL";
+	}
+	char data[0x1000];
+	va_list argptr;
+	va_start(argptr, fmt);
+	g_101e31a8(data, sizeof(data), fmt, argptr);
+	va_end(argptr);
+	((CompareFn_101233b0)self->m_FieldCompareFunc)(self->m_pCurrentClassName, fieldname, g_102c2418[self->m_pCurrentField->a], (flags >> 8) & 1, (flags >> 10) & 1, dt != 1, dt == 2, data);
+	self->m_bReport = false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123480 size=0x37
 #include <string.h>
 struct PCW {
@@ -66559,6 +69307,55 @@ void CUnknown10123500::sub_10123500(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123550 size=0xda
+#include "CPredictionCopy.h"
+struct IModelInfoV { virtual void v0(); virtual const char *GetModelName(const void *m); virtual const void *GetModel(int i); };
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14(); virtual void b15(); };
+struct EC : EB { virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9(); virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14(); virtual void c15(); };
+struct ED : EC { virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9(); virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13(); virtual void d14(); virtual void d15(); };
+struct IEngV : ED { virtual void e0(); virtual void COM_FileBase(const char *in, char *out); };
+extern IModelInfoV *g_104a57f8;
+extern IEngV *g_104a57d4;
+void CPredictionCopy::sub_10123550(int dt, int *outvalue, const int *invalue, int count)
+{
+	if (!m_bErrorCheck)
+		return;
+	if (dt == 0) {
+		int i = 0;
+		ReportFieldsDiffer("int differs (net %i pred %i) diff(%i)\n", invalue[i], outvalue[i], outvalue[i] - invalue[i]);
+	}
+	bool described = false;
+	if ((short)(m_pCurrentField->m_Flags & 0x2000)) {
+		const void *m = g_104a57f8->GetModel(outvalue[0]);
+		if (m) {
+			described = true;
+			char shortfile[512];
+			shortfile[0] = 0;
+			g_104a57d4->COM_FileBase(g_104a57f8->GetModelName(m), shortfile);
+			sub_101233b0(dt, "integer (%i->%s)\n", outvalue[0], shortfile);
+		}
+	}
+	if (!described)
+		sub_101233b0(dt, "integer (%i)\n", outvalue[0]);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10123630 size=0x71
+#include "CPredictionCopy.h"
+void CPredictionCopy::sub_10123630(int dt, bool *outvalue, const bool *invalue, int count)
+{
+    if (!m_bErrorCheck)
+        return;
+    if (dt == 0)
+    {
+        int i = 0;
+        ReportFieldsDiffer("bool differs (net %s pred %s)\n", (invalue[i]) ? "true" : "false", (outvalue[i]) ? "true" : "false");
+    }
+    sub_101233b0(dt, "bool (%s)\n", (outvalue[0]) ? "true" : "false");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101236b0 size=0x5d
 class CPredictionCopy_101236b0
 {
@@ -66602,6 +69399,45 @@ void CUnknown10123710::sub_10123710(int a0, int a1, int a2)
         }
         lifted::sub_101233b0((int)this, a0, (int)&lifted::g_102c26ec, a1);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10123760 size=0x9f
+#include "CPredictionCopy.h"
+#include "Vector.h"
+void CPredictionCopy::sub_10123760(int dt, Vector &outValue, const Vector &inValue)
+{
+    if (!m_bErrorCheck)
+        return;
+    if (dt == 0)
+    {
+        Vector delta = outValue - inValue;
+        ReportFieldsDiffer("vec differs (net %f %f %f - pred %f %f %f) delta(%f %f %f)\n",
+            inValue.x, inValue.y, inValue.z,
+            outValue.x, outValue.y, outValue.z,
+            delta.x, delta.y, delta.z);
+    }
+    sub_101233b0(dt, "vector (%f %f %f)\n", outValue.x, outValue.y, outValue.z);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10123800 size=0x9f
+#include "Vector.h"
+#include "CPredictionCopy.h"
+// TARGET: CPredictionCopy::sub_10123800
+void CPredictionCopy::sub_10123800(int dt, Vector *outValue, const Vector *inValue, int count)
+{
+    if (!m_bErrorCheck)
+        return;
+    if (dt == 0) {
+        int i = 0;
+        Vector delta = outValue[i] - inValue[i];
+        ReportFieldsDiffer("vec[] differs (1st diff) (net %f %f %f - pred %f %f %f) delta(%f %f %f)\n",
+            inValue[i].x, inValue[i].y, inValue[i].z,
+            outValue[i].x, outValue[i].y, outValue[i].z,
+            delta.x, delta.y, delta.z);
+    }
+    sub_101233b0(dt, "vector (%f %f %f)\n", outValue[0].x, outValue[0].y, outValue[0].z);
 }
 // END FUNCTION
 
@@ -66745,6 +69581,54 @@ struct CCopy { char pad[0x2c]; bool m_b; void sub_10123ba0(int type, void *dst, 
 void CCopy::sub_10123ba0(int type, void *dst, const void *src, int n) { if (m_b && type != 1) memcpy(dst, src, n * 4); }
 // END FUNCTION
 
+// FUNCTION: 0x10123bd0 size=0xba
+#include "CPredictionCopy.h"
+#include <math.h>
+char CPredictionCopy::sub_10123470()
+{
+	unsigned short t = m_pCurrentField->m_Flags;
+	t >>= 10;
+	char c = ~t;
+	c &= 1;
+	return c;
+}
+// TARGET: ?sub_10123bd0@CPredictionCopy@@QAEHPBM0H@Z
+int CPredictionCopy::sub_10123bd0(const float *outvalue, const float *invalue, int count)
+{
+	if (!m_bErrorCheck)
+		return 0;
+	int retval = 1;
+	if (sub_10123470())
+	{
+		float tolerance = 0.0f;
+		short flags = m_pCurrentField->m_Flags;
+		bool usetolerance = (flags & 0x1800) != 0;
+		if (usetolerance)
+		{
+			if (flags & 0x800)
+				tolerance = 0.125f;
+			else
+				tolerance = 0.001f;
+		}
+		for (int i = 0; i < count; i++)
+		{
+			if (outvalue[i] == invalue[i])
+				continue;
+			if (usetolerance)
+			{
+				if (fabs(outvalue[i] - invalue[i]) < tolerance)
+				{
+					retval = 2;
+					continue;
+				}
+			}
+			return 0;
+		}
+	}
+	return retval;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123c90 size=0x36
 #include <string.h>
 struct CPC {
@@ -66801,6 +69685,76 @@ void PCV::sub_10123e30(int type, void *dst, void *src, int count)
 {
   if (m_b2c && type != 1)
     memcpy(dst, src, count * 12);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10123e70 size=0x11a
+#include <math.h>
+#include "Vector.h"
+
+struct tdesc_ext_t
+{
+	int a;
+	const char *fieldName;
+	char pad[10];
+	unsigned short flags;
+};
+
+struct PredCopyLocal
+{
+	char pad0[0x14];
+	bool m_bErrorCheck;
+	char pad1[3];
+	tdesc_ext_t *m_pCurrentField;
+
+	char sub_10123470();
+	int sub_10123e70(Vector *outValue, const Vector *inValue, int count);
+};
+
+char PredCopyLocal::sub_10123470()
+{
+	return (m_pCurrentField->flags & 0x0400) == 0;
+}
+
+// TARGET: PredCopyLocal::sub_10123e70
+int PredCopyLocal::sub_10123e70(Vector *outValue, const Vector *inValue, int count)
+{
+	if (!m_bErrorCheck)
+		return 0;
+
+	int retval = 1;
+
+	if (sub_10123470())
+	{
+		float tolerance = 0.0f;
+		bool usetolerance = (m_pCurrentField->flags & 0x0800) != 0;
+		if (usetolerance)
+		{
+			tolerance = 0.125f;
+		}
+
+		for (int i = 0; i < count; i++)
+		{
+			if (outValue[i] == inValue[i])
+				continue;
+
+			Vector delta = outValue[i] - inValue[i];
+
+			if (usetolerance)
+			{
+				if (fabs(delta.x) <= tolerance &&
+					fabs(delta.y) <= tolerance &&
+					fabs(delta.z) <= tolerance)
+				{
+					retval = 2;
+					continue;
+				}
+			}
+			return 0;
+		}
+	}
+
+	return retval;
 }
 // END FUNCTION
 
@@ -69823,6 +72777,26 @@ extern int g_105e5540;
 void sub_1012cc40() { ((O2cc40 *)&g_105e5540)->v2(); ((O2cc40 *)&g_105e5540)->v1(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012cc60 size=0xb6
+#include "vector.h"
+#include "C_RecipientFilter.h"
+struct CUnknown1012cc60 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const Vector &GetOrigin();
+	struct CSub { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual int s9(); };
+	int m_unk4;
+	CSub m_sub;
+	void sub_1012cc60(const char *name);
+};
+void sub_1012cd40(IRecipientFilter *, int, const char *, int, int, int);
+void CUnknown1012cc60::sub_1012cc60(const char *name)
+{
+	CPASAttenuationFilter filter(GetOrigin());
+	sub_1012cd40(&filter, m_sub.s9(), name, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cd20 size=0x1a
 struct B1012 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int v9(); };
 struct V1012 { int pad0; int pad4; B1012 b; void sub_1012cd20(int p); };
@@ -69863,6 +72837,92 @@ void sub_1012d3f0(int a, int b, const char *name)
         g_104a5818->v7(a, si.a, si.name);
         ((void (__cdecl *)(void *, const char *, ...))g_105e5540.vt[3])(&g_105e5540, g_102c3fa4, name, si.name, a);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1012d530 size=0x268
+#include "IClientEntity.h"
+#include "Tier1.h"
+#include "CSoundParameters.h"
+#include "CSoundEmitterSystemBase.h"
+
+int sub_1012d510(const char *pName);
+void sub_1012c9e0(int, const char *, ...);
+
+struct IEngineSoundTmp
+{
+	virtual void v0();
+	virtual float GetSoundDuration(const char *pSample);
+	virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9();
+	virtual void EmitAmbientSound(const char *pSample, float flVolume, int iPitch, int flags, float soundtime);
+};
+
+extern IEngineSoundTmp *g_104a5818;
+
+struct CSoundEmitterVtbl
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void TraceEmitSound(const char *fmt, ...);
+};
+
+void sub_1012d530(IClientEntity *entity, const Vector &pos, const char *samp, float vol, int soundlevel, int fFlags, int pitch, float soundtime, float *duration)
+{
+	if (samp)
+	{
+		if (samp[0] == '!')
+		{
+			int sentenceIndex = sub_1012d510(samp);
+			if (sentenceIndex >= 0)
+			{
+				char name[32];
+				g_101e3190(name, sizeof(name), "!%d", sentenceIndex);
+				g_104a5818->EmitAmbientSound(name, vol, pitch, fFlags, soundtime);
+				if (duration)
+				{
+					*duration = g_104a5818->GetSoundDuration(name);
+				}
+				sub_1012c9e0((int)&g_105e5540, "UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, entity ? entity->entindex() : -1);
+			}
+			return;
+		}
+		char *(*stristr)(const char *, const char *) = g_101e31ac;
+		if (stristr(samp, ".wav") || stristr(samp, ".mp3"))
+		{
+			g_104a5818->EmitAmbientSound(samp, vol, pitch, fFlags, soundtime);
+			if (duration)
+			{
+				*duration = g_104a5818->GetSoundDuration(samp);
+			}
+			((CSoundEmitterVtbl *)&g_105e5540)->TraceEmitSound("EmitAmbientSound:  Raw wave emitted '%s' (ent %i)\n", samp, entity ? entity->entindex() : -1);
+			return;
+		}
+	}
+
+	CSoundParameters params;
+	if (!g_105e5540.sub_1012e6d0(samp, params))
+	{
+		return;
+	}
+
+	if (fFlags & 2)
+	{
+		params.pitch = pitch;
+	}
+	if (fFlags & 1)
+	{
+		params.volume = vol;
+	}
+
+	g_104a5818->EmitAmbientSound(params.soundname, params.volume, params.pitch, fFlags, soundtime);
+	if (duration)
+	{
+		*duration = g_104a5818->GetSoundDuration(params.soundname);
+	}
+	((CSoundEmitterVtbl *)&g_105e5540)->TraceEmitSound("EmitAmbientSound:  '%s' emitted as '%s' (ent %i)\n", samp, params.soundname, entity ? entity->entindex() : -1);
 }
 // END FUNCTION
 
@@ -72992,6 +76052,60 @@ int CUnknown101365c0::sub_101365c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101367e0 size=0xa9
+struct EngV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float Time(int a);
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual int v44();
+};
+extern EngV *g_104a57d4;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+struct ThingV
+{
+	char m_pad0[0x30];
+	int m_n30;
+	char m_pad1[0x70 - 0x34];
+	int m_n70;
+	char m_pad2[0x42c - 0x74];
+	int m_n42c;
+	char m_pad3[0x434 - 0x430];
+	float m_f434;
+	char m_pad4[0x444 - 0x438];
+	float m_f444;
+	float m_f448;
+	float m_f44c;
+	int m_n450;
+	int m_n454;
+	float m_f458;
+	void sub_100a1200();
+	void sub_101367e0();
+};
+// TARGET: ThingV::sub_101367e0
+void ThingV::sub_101367e0()
+{
+	if (m_n70 != -1 && m_n30 == 0)
+		Msg("problem at %i\n", g_104a57d4->v44());
+	sub_100a1200();
+	if (m_f434 != m_f448)
+	{
+		m_f444 = m_f448;
+		m_f448 = m_f434;
+		m_f44c = g_104a57d4->Time(0);
+	}
+	if (m_n42c != m_n454)
+	{
+		m_n450 = m_n454;
+		m_n454 = m_n42c;
+		m_f458 = g_104a57d4->Time(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136c50 size=0x51
 // TARGET: sub_10136c50
 #include "Vector.h"
@@ -73025,6 +76139,29 @@ void __fastcall sub_10136c50(VtblObj *self, int edx, Vector *a, Vector *b)
 	Vector *v = self->v1();
 	*a += *v;
 	*b += *v;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10136cb0 size=0xb1
+int sub_100cd100();
+int sub_100cd0f0();
+extern int g_105e5d70;
+extern int g_105e5d74;
+extern int g_105e5d78;
+extern int g_105e5d7c;
+extern bool g_105e5d80;
+#define CLAMPV(v, lo, hi) ((v) > (hi) ? (hi) : ((v) < (lo) ? (lo) : (v)))
+void sub_10136cb0(int x, int y, int w, int h)
+{
+	x = (x > sub_100cd100()) ? sub_100cd100() : ((x < 0) ? 0 : x);
+	y = (y > sub_100cd0f0()) ? sub_100cd0f0() : ((y < 0) ? 0 : y);
+	w = (w > sub_100cd100() - x) ? sub_100cd100() - x : ((w < 0) ? 0 : w);
+	h = (h > sub_100cd0f0() - y) ? sub_100cd0f0() - y : ((h < 0) ? 0 : h);
+	g_105e5d70 = x;
+	g_105e5d74 = y;
+	g_105e5d78 = w;
+	g_105e5d7c = h;
+	g_105e5d80 = true;
 }
 // END FUNCTION
 
@@ -73705,6 +76842,17 @@ const CUtlRBTree16::Links_t &CUtlRBTree16::sub_101397f0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139850 size=0xb9
+#include "CUtlRBTree16.h"
+
+// TARGET: CUtlRBTree16::sub_10139850
+bool CUtlRBTree16::sub_10139850(unsigned short i) const
+{
+	const CUtlRBTree16At<0x105e5d8c> *tree = (const CUtlRBTree16At<0x105e5d8c> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139d00 size=0x19
 namespace lifted {
 extern char g_10247bc0;
@@ -73848,6 +76996,46 @@ bool sub_1013a4d0(CreateInterfaceFn factory)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a5c0 size=0xaa
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+struct IFS1013a5c0
+{
+	virtual void *v0(const char *name, const char *mode, int a);
+	virtual void v1(void *h);
+	virtual int v2(void *buf, int size, void *h);
+	virtual void v3();
+	virtual void v4(void *h, int a, int b);
+	virtual void v5();
+	virtual int v6(void *h);
+};
+extern IFS1013a5c0 *g_105e74bc;
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+struct Buf1013a5c0 { void *m_pData; int m_nSize; int m_nGrow; };
+
+bool sub_1013a5c0(const char *name, Buf1013a5c0 *buf, int size)
+{
+	if (!g_105e74bc)
+		return false; else { void *h = g_105e74bc->v0(name, "rb", 0);
+	if (!h)
+		return false;
+	if (size < 0)
+		size = g_105e74bc->v6(h);
+	if (buf->m_nSize < size && buf->m_nGrow != -1)
+	{
+		buf->m_nSize = size;
+		if (buf->m_pData)
+			buf->m_pData = g_101e3104(buf->m_pData, size);
+		else
+			buf->m_pData = g_101e3100(size);
+	}
+	g_105e74bc->v4(h, 0, 0);
+	int n; n = g_105e74bc->v2(pcd_stage(buf->m_pData), size, h);
+	g_105e74bc->v1(h);
+	return n == size; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a670 size=0x53
 // TARGET: sub_1013a670
 #include "CUnknown1006c1c0.h"
@@ -73935,6 +77123,24 @@ void sub_1013a7e0(CUnknown1006c1c0 *buf, CUnknownImgInfo *info, unsigned char *d
             *dst = (unsigned char)(int)(p[2] * 0.114f + p[1] * 0.587f + p[0] * 0.299f);
         buf->sub_1013cbe0(1, 4);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x1013a880 size=0xb6
+struct CSrc1013a880 { unsigned char *m_pData; int m_unk4; int m_unk8; int m_nOffset; void sub_1013cbe0(int a, int b); };
+struct CHdr1013a880 { char m_pad[0xc]; unsigned short m_nCount; };
+void sub_1013a880(CSrc1013a880 *src, CHdr1013a880 *hdr, unsigned char *dst)
+{
+	for (int i = 0; i < hdr->m_nCount; i++, dst += 2)
+	{
+		unsigned char *p = src->m_pData + src->m_nOffset;
+		if (p[0] == p[1] && p[1] == p[2])
+			dst[0] = p[0];
+		else
+			dst[0] = (unsigned char)(p[2] * 0.114f + p[1] * 0.587f + p[0] * 0.299f);
+		dst[1] = p[3];
+		src->sub_1013cbe0(1, 4);
+	}
 }
 // END FUNCTION
 
@@ -76193,6 +79399,21 @@ StatDefault3 *CStatDefault3List::sub_10140000(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140060 size=0x55
+#include "CStatDefault3List.h"
+#include "C_BaseVCombatCharacter.h"
+
+// TARGET: CStatDefault3List::sub_10140060
+StatDefault3 *CStatDefault3List::sub_10140060(void *pChar)
+{
+    int idx = ((C_BaseVCombatCharacter *)pChar)->sub_1008ebb0();
+    if (idx >= 0 && idx < m_count)
+        return m_pItems[idx];
+    static StatDefault3 s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101400d0 size=0x23
 void __fastcall sub_1013f490(void *pObj);
 
@@ -78434,6 +81655,59 @@ void sub_101444b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101444c0 size=0x7b
+#include "CUnknown10144490.h"
+#include "StatOwner2.h"
+
+extern int g_102c6ef0;
+
+class CNamedListX
+{
+public:
+	int sub_1013fdf0(const char *name);
+};
+
+extern CNamedListX g_105e74fc;
+extern StatOwner2 g_105f93c0;
+
+struct KVNodeV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual const char *vfunc13(const char *key, const char *def);
+};
+
+// TARGET: CUnknown10144490::sub_101444c0
+bool CUnknown10144490::sub_101444c0(void *pNode)
+{
+	if (pNode)
+	{
+		KVNodeV *node = (KVNodeV *)pNode;
+		const char *name = node->vfunc13("CharTemplate", "");
+		if (name[0])
+			m_n4 = g_105e74fc.sub_1013fdf0(name);
+		int i = 0;
+		int *pOut = &m_n8;
+		for (; i < 3; i++, pOut += 2)
+			sub_10144540(node, g_105f93c0.sub_1015f270(g_102c6ef0)->sub_1015ecd0(i), pOut);
+		m_n20 = 0;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101445f0 size=0xf
 namespace lifted {
 extern char g_105e74fc;
@@ -80303,6 +83577,41 @@ extern int g_102c7c04[];
 int sub_10147000(int i) { return g_102c7c04[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10147010 size=0xb4
+#include "CWeaponAmmoInfo.h"
+#include "CUnknown101da960.h"
+#include "CStatDefault60List.h"
+int sub_10146f10(const char *);
+int sub_10146f90(const char *);
+struct CUnknown10147010 {
+	int m_nRange;
+	int m_nSource;
+	int m_nAffects;
+	int m_nMinRadius;
+	int m_nMaxRadius;
+	CUnknown101da960 m_Filter;
+	CStatDefault60List m_Affected;
+	bool sub_10147010(IKVNode *pKV);
+};
+bool CUnknown10147010::sub_10147010(IKVNode *pKV)
+{
+	if (pKV) {
+		IKVNode *aoe = pKV->vfunc2("AoE");
+		if (aoe) {
+			m_nRange = aoe->vfunc10("Range", 0);
+			m_nSource = sub_10146f10(aoe->vfunc13("Source", ""));
+			m_nAffects = sub_10146f90(aoe->vfunc13("Affects", ""));
+			m_nMinRadius = aoe->vfunc10("MinRadius", 0);
+			m_nMaxRadius = aoe->vfunc10("MaxRadius", 0);
+			m_Filter.sub_101466c0((VKeyValuesInterface *)aoe);
+			m_Affected.sub_10146cb0((IKVNodeView *)aoe, &m_Filter);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101470d0 size=0x10e
 #include "CUnknown101dbc60.h"
 
@@ -80904,6 +84213,51 @@ bool __fastcall sub_10147e80(CSelf10147e80 *self)
 {
 	if (self->m_unk00 != -1)
 		return true;
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10147e90 size=0xac
+#include "VKeyValues.h"
+#include "string_t.h"
+
+string_t sub_1015f830(VKeyValuesInterface *kv, const char *name);
+struct CSub101dc5a0 { void sub_101475e0(VKeyValuesInterface *kv); };
+struct CSub101dce30 { void sub_10147be0(VKeyValuesInterface *kv, const char *name); };
+
+struct CProj10147e90
+{
+	int m_nSpeed;
+	string_t m_Model;
+	string_t m_Particle;
+	char m_bDiesOnHit;
+	char m_bSyncs;
+	char m_pad[2];
+	CSub101dc5a0 m_Sub10;
+	char m_pad2[0x20 - 0x11];
+	CSub101dce30 m_Sub20;
+
+	bool sub_10147e90(VKeyValuesInterface *kv);
+};
+
+bool CProj10147e90::sub_10147e90(VKeyValuesInterface *kv)
+{
+	if (kv)
+	{
+		VKeyValuesInterface *p = kv->vfunc2("Projectile");
+		if (p)
+		{
+			m_nSpeed = p->vfunc10("Speed", 0);
+			m_Model = sub_1015f830(p, "Model");
+			m_Particle = sub_1015f830(p, "Particle");
+			m_bDiesOnHit = p->vfunc12("ParticleDiesOnHit", 0);
+			if (*p->vfunc13("Syncs", ""))
+				m_bSyncs = 1;
+			m_Sub10.sub_101475e0(p);
+			m_Sub20.sub_10147be0(p, "Effect_Src_Proj_Interrupt");
+		}
+		return true;
+	}
 	return false;
 }
 // END FUNCTION
@@ -82624,6 +85978,65 @@ int __stdcall sub_1014b580(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014b590 size=0x11a
+#include "CVStatList_t.h"
+
+class CUnk10204c20 {
+public:
+    int m_type;
+    int m_stat;
+    int m_unk08;
+    int m_unk0c;
+    int sub_10160db0(int val);
+};
+
+struct CharStatView {
+    char pad[0x1178];
+    int m_nLists;
+    CVStatList_t **m_pLists;
+
+    CVStatList_t *Find(int type) {
+        for (int i = 0; i < m_nLists; i++) {
+            if (m_pLists[i]->m_field10 == type)
+                return m_pLists[i];
+        }
+        static CVStatList_t s_default(-1);
+        return &s_default;
+    }
+};
+
+struct S1014b590 {
+    char pad[0x2c];
+    int m_nCount;
+    CUnk10204c20 *m_pEntries;
+    int sub_1014b590(CharStatView *pEnt);
+};
+
+// TARGET: S1014b590::sub_1014b590
+int S1014b590::sub_1014b590(CharStatView *pEnt)
+{
+    int sum = 0;
+    if (pEnt) {
+        CUnk10204c20 *pEffects = m_pEntries;
+        for (int i = 0; i < m_nCount; i++) {
+            switch (pEffects[i].m_type) {
+            case 0: {
+                int nStat = pEffects[i].m_stat;
+                sum += pEffects[i].sub_10160db0(pEnt->Find(0)->sub_1015dbd0(nStat));
+                break;
+            }
+            case 1: {
+                int nStat = pEffects[i].m_stat;
+                sum += pEffects[i].sub_10160db0(pEnt->Find(1)->sub_1015dbd0(nStat));
+                break;
+            }
+            }
+        }
+    }
+    return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b6b0 size=0x31
 __declspec(dllimport) void Msg(const char *pMsg, ...);
 struct CFeatChar1014b { char pad[0x3f8]; int m_p3f8; };
@@ -83020,6 +86433,119 @@ int __stdcall sub_1014d270(CCharView *p, int idx, unsigned char flags)
     if (flags & 0x20)
         v++;
     return v;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1014d390 size=0x78
+#include "CVStatList_t.h"
+
+struct StatCallbackVtbl
+{
+	virtual void v0();
+	virtual void v1(int);
+	virtual void v2(int);
+	virtual void v3(int);
+	virtual void v4(int);
+};
+
+struct StatCallback
+{
+	void sub_1014d390(char *o);
+};
+
+// TARGET: StatCallback::sub_1014d390
+void StatCallback::sub_1014d390(char *o)
+{
+	CVStatListSet *set = (CVStatListSet *)(o + 0x1164);
+	((StatCallbackVtbl *)this)->v1(set->Find(0)->sub_1015dbd0(1) - 1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1014d410 size=0x78
+#include "CVStatList_t.h"
+
+struct CharView {
+    char m_pad[0x1178];
+    int m_nSize;
+    CVStatList_t **m_pElements;
+};
+
+struct StatNotifier {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2(int);
+    virtual void v3(int);
+    virtual void v4(int);
+    void sub_1014d410(CharView *cv);
+};
+
+// TARGET: StatNotifier::sub_1014d410
+void StatNotifier::sub_1014d410(CharView *cv)
+{
+    CVStatList_t *pList;
+    for (int i = 0; i < cv->m_nSize; i++)
+    {
+        if (cv->m_pElements[i]->m_field10 == 0)
+        {
+            pList = cv->m_pElements[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    v2(pList->sub_1015dbd0(1) - 1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1014d490 size=0x78
+#include "CVStatList_t.h"
+
+struct StatCallbackVtbl
+{
+	virtual void v0();
+	virtual void v1(int);
+	virtual void v2(int);
+	virtual void v3(int);
+};
+
+struct StatCallback
+{
+	void sub_1014d490(char *o);
+};
+
+// TARGET: StatCallback::sub_1014d490
+void StatCallback::sub_1014d490(char *o)
+{
+	CVStatListSet *set = (CVStatListSet *)(o + 0x1164);
+	((StatCallbackVtbl *)this)->v3(set->Find(0)->sub_1015dbd0(1) - 1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1014d510 size=0x78
+#include "CVStatList_t.h"
+
+struct StatCallbackVtbl
+{
+	virtual void v0();
+	virtual void v1(int);
+	virtual void v2(int);
+	virtual void v3(int);
+	virtual void v4(int);
+};
+
+struct StatCallback
+{
+	void sub_1014d510(char *o);
+};
+
+// TARGET: StatCallback::sub_1014d510
+void StatCallback::sub_1014d510(char *o)
+{
+	CVStatListSet *set = (CVStatListSet *)(o + 0x1164);
+	((StatCallbackVtbl *)this)->v4(set->Find(0)->sub_1015dbd0(1) - 1);
 }
 // END FUNCTION
 
@@ -84182,6 +87708,91 @@ void * CUnknown1014f1d0::sub_1014f1d0(int a0)
 // FUNCTION: 0x1014f1f0 size=0x1
 void sub_1014f1f0()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x1014f200 size=0xff
+#include <string.h>
+
+extern char g_102de300[];
+
+static inline const char *STRINGR_F(const char *const &s)
+{
+	return s ? s : g_102de300;
+}
+
+#define SV(n) virtual void s##n();
+struct CInvKV
+{
+	SV(0) SV(1) SV(2) SV(3) SV(4) SV(5) SV(6) SV(7) SV(8) SV(9)
+	virtual int GetInt(const char *pszKey, int nDefault);
+	SV(11) SV(12)
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+struct CPooledStringX
+{
+	int m_iString;
+	CPooledStringX() {}
+};
+
+CPooledStringX sub_1015f7e0(CInvKV *pKV, const char *pszKey);
+CPooledStringX sub_1015f810(CInvKV *pKV);
+
+struct CInvSectionName
+{
+	int m_nId;
+	const char *m_psz;
+};
+
+extern int g_105e8588;
+extern CInvSectionName **g_105e858c;
+
+static inline const char *NameOf(int *pBase)
+{
+	const char *const *pp = (const char *const *)(pBase + 1);
+	return STRINGR_F(*pp);
+}
+
+static inline int FindSection(const char *pszWanted)
+{
+	for (int i = 0; i < g_105e8588; i++)
+	{
+		if (!_strcmpi(NameOf((int *)g_105e858c[i]), pszWanted))
+			return g_105e858c[i]->m_nId;
+	}
+	return -1;
+}
+
+class CInvItem_1014f200
+{
+public:
+	void *m_pVtbl;
+	int m_iInternalName;
+	int m_i08;
+	int m_nFlags;
+	int m_nSection;
+
+	bool sub_1014f200(CInvKV *pKV);
+};
+
+// TARGET: CInvItem_1014f200::sub_1014f200
+bool CInvItem_1014f200::sub_1014f200(CInvKV *pKV)
+{
+	if (pKV)
+	{
+		m_iInternalName = sub_1015f7e0(pKV, "InternalName").m_iString;
+		m_i08 = sub_1015f810(pKV).m_iString;
+		if (pKV->GetInt("IsWielded", 0))
+			m_nFlags |= 1;
+		if (pKV->GetInt("IsWorn", 0))
+			m_nFlags |= 2;
+		if (pKV->GetInt("IsWeapon", 0))
+			m_nFlags |= 4;
+		m_nSection = FindSection(pKV->GetString("InventorySection", g_102de300));
+		return true;
+	}
+	return false;
 }
 // END FUNCTION
 
@@ -91453,6 +95064,36 @@ int CUnknown1015c0e0::sub_1015c0e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c120 size=0xa4
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatInfo_t::sub_1015c120
+int CVStatInfo_t::sub_1015c120(int arg)
+{
+	ScopeTrace t("CVStatInfo_t::MinSell", g_102de300);
+	if (((CVStatValue_t *)((char *)this + 0x74))->sub_10161440(arg) > sub_1015c0a0(arg))
+		return ((CVStatValue_t *)((char *)this + 0x74))->sub_10161440(arg);
+	return sub_1015c0a0(arg);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1015c1d0 size=0xa7
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+#include "ScopeTrace.h"
+// TARGET: CVStatInfo_t::sub_1015c1d0
+int CVStatInfo_t::sub_1015c1d0(int arg)
+{
+	ScopeTrace trace("CVStatInfo_t::MaxBuy", g_102de300, g_102de300);
+	CVStatValue_t *pMaxBuy = (CVStatValue_t *)((char *)this + 0x88);
+	if (pMaxBuy->sub_10161440(arg) < sub_1015c0e0(arg))
+		return pMaxBuy->sub_10161440(arg);
+	return sub_1015c0e0(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c280 size=0x6b
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
@@ -91754,6 +95395,19 @@ int CVStatInfoList_t::sub_1015cb90(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015cf10 size=0xb5
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+int sub_1015eb00(int);
+CVDmgBlock16_t *CVStatInfoList_t::sub_1015cf10(const char *name)
+{
+	ScopeTrace st("CVStatInfoList_t::LookupDependency", g_102de300);
+	static CVDmgBlock16_t s_block;
+	s_block.sub_10160690(sub_1015eb00(m_field2c), sub_1015c9b0(name));
+	return &s_block;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015cfe0 size=0x53
 #include "CVStatInfoList_t.h"
 CVStatInfo_t *CVStatInfoList_t::sub_1015cfe0(int idx)
@@ -91855,6 +95509,18 @@ void CVStatList_t::sub_1015d4a0(int stat)
 	ScopeTrace trace("CVStatList_t::SetBaseToDefault", g_102de300);
 	if (sub_1015d3e0(stat))
 		sub_1015d400(stat, ((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)->sub_1015c280(((CVStatOwner *)m_pad0000)->sub_1015e610()));
+}
+// END FUNCTION
+
+// FUNCTION: 0x1015d530 size=0x75
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+
+// TARGET: CVStatList_t::sub_1015d530
+void CVStatList_t::sub_1015d530(int stat, int source)
+{
+    ScopeTrace trace("CVStatList_t::SetBaseToStatValue", g_102de300);
+    sub_1015d400(stat, sub_1015dbd0(source));
 }
 // END FUNCTION
 
@@ -92010,6 +95676,26 @@ bool CVStatList_t::sub_1015dfa0(int a, int b)
 	}
 	(*g_101e3128)--;
 	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1015e030 size=0xb1
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatInfo_t.h"
+char CVStatList_t::sub_1015d3e0(int stat)
+{
+	return stat >= 0 && stat < m_field04;
+}
+// TARGET: CVStatList_t::sub_1015e030
+CVStatInfo_t *CVStatList_t::sub_1015e030(int stat)
+{
+	ScopeTrace trace("CVStatList_t::GetStatInfo", g_102de300);
+	if (sub_1015d3e0(stat))
+		return ((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat);
+	static CVStatInfo_t s_default;
+	return &s_default;
 }
 // END FUNCTION
 
@@ -95808,6 +99494,49 @@ int sub_10166f00(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166f50 size=0xa9
+struct IFace_10166f50
+{
+	virtual void v0(int);
+	virtual int v1(int);
+	virtual void v2(int);
+	virtual void v3(int);
+	virtual void v4(int);
+};
+
+extern IFace_10166f50 *g_104a57fc;
+extern IFace_10166f50 *g_102cf598;
+extern IFace_10166f50 *g_102cdad8;
+extern IFace_10166f50 *g_102cea98;
+extern IFace_10166f50 *g_102cdcd0;
+extern IFace_10166f50 *g_102ce210;
+extern IFace_10166f50 *g_102cef78;
+extern IFace_10166f50 *g_102ce3e8;
+extern IFace_10166f50 *g_102cecd8;
+extern IFace_10166f50 *g_102cf150;
+extern IFace_10166f50 *g_102ce050;
+extern IFace_10166f50 *g_10286860;
+extern IFace_10166f50 *g_10288318;
+
+void sub_10166f50()
+{
+	int a = g_104a57fc->v1(1);
+	int b = g_104a57fc->v1(2);
+	g_102cf598->v0(a);
+	g_102cdad8->v4(a);
+	g_102cea98->v0(a);
+	g_102cdcd0->v0(a);
+	g_102ce210->v0(a);
+	g_102cef78->v0(a);
+	g_102ce3e8->v0(b);
+	g_102cecd8->v0(b);
+	g_102cf150->v0(b);
+	g_102ce050->v0(b);
+	g_10286860->v0(a);
+	g_10288318->v3(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167000 size=0x95
 struct IFaceView {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
@@ -96193,6 +99922,31 @@ void CNetGraphPanel::sub_10169c20(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10169c80 size=0x82
+#include "CNetGraphPanel.h"
+struct NGGlobals { virtual void v0(); virtual bool v1(); int m_4; int m_8; int m_c; int m_10; int m_14; int m_18; int m_1c; int m_20; int m_24; float m_f28; };
+extern NGGlobals *g_105fadb4;
+int CNetGraphPanel::sub_10169c80(NGState *s, int a1, unsigned char r, unsigned char g, unsigned char b, int a5)
+{
+	unsigned char col[3];
+	float f;
+	if (g_105fadb4->v1())
+		f = 0.0f;
+	else
+		f = g_105fadb4->m_f28;
+	int n = (int)(a1 / f);
+	col[0] = r;
+	col[1] = g;
+	col[2] = b;
+	s->m_c = n;
+	s->m_4 -= n;
+	if (s->m_4 < 2)
+		return 0;
+	sub_1016a550(s, col, a5);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a690 size=0x1
 void sub_1016a690()
 {
@@ -96342,6 +100096,34 @@ int CUnknown1016b1a0::sub_1016b1a0()
 {
     *(int *)this = (int)&lifted::g_1024a4ac;
     return lifted::sub_101b20a0();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1016cf30 size=0x90
+#include "vgui2__Panel.h"
+// TARGET: sub_1016cf30
+struct CInvView {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual bool v10();
+    void sub_1016f2c0();
+    void sub_10170580();
+    void sub_10170440();
+    void sub_10170470();
+};
+struct CInvSec : public vgui2::Panel {
+    void sub_1016cf30(const char *cmd);
+    typedef vgui2::Panel BaseClass;
+};
+extern "C" int _strcmpi(const char *, const char *);
+void CInvSec::sub_1016cf30(const char *cmd)
+{
+    CInvView *p = (CInvView *)((char *)this - 0x10);
+    if (!p->v10()) { p->sub_1016f2c0(); return; }
+    if (!_strcmpi(cmd, "ActionClicked")) { p->sub_10170580(); return; }
+    if (!_strcmpi(cmd, "DropClicked")) { p->sub_10170470(); return; }
+    if (!_strcmpi(cmd, "ExitClicked")) { p->sub_10170440(); return; }
+    BaseClass::vfunc78((int)cmd);
 }
 // END FUNCTION
 
@@ -96575,6 +100357,47 @@ char * CUnknown1016f530::sub_1016f530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016f540 size=0xa6
+struct BarterView
+{
+	char m_pad0[0x181];
+	char m_bFlag;
+	char m_pad1[0x44c - 0x182];
+	int m_nIndex;
+	void sub_1016d150();
+	void sub_1016f540(int bUp);
+};
+// TARGET: BarterView::sub_1016f540
+void BarterView::sub_1016f540(int bUp)
+{
+	if (bUp)
+	{
+		if (++m_nIndex == 3)
+			m_nIndex = 4;
+		if (m_bFlag)
+		{
+			if (m_nIndex == 6)
+				m_nIndex = 1;
+		}
+		else if (m_nIndex == 7)
+			m_nIndex = 1;
+	}
+	else
+	{
+		if (--m_nIndex == 3)
+			m_nIndex = 2;
+		if (m_bFlag)
+		{
+			if (m_nIndex == 0)
+				m_nIndex = 5;
+		}
+		else if (m_nIndex == 0)
+			m_nIndex = 6;
+	}
+	sub_1016d150();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170030 size=0x11
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29(); virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39(); virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49(); virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59(); virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69(); virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79(); virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89(); virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99(); virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109(); virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116(); virtual void u117(); virtual void u118(); virtual void u119(); virtual void u120(); virtual void u121(); virtual void u122(); virtual void u123(); virtual void u124(); virtual void u125(); virtual void u126(); virtual void u127(); virtual void u128(); virtual void u129(); virtual void u130(); virtual void u131(); virtual void u132(); virtual void u133(); virtual void u134(); virtual void u135(); virtual void u136(); virtual void u137(); virtual void u138(); virtual void u139(); virtual void u140(); virtual void u141(); virtual void u142(); virtual void u143(); virtual void u144(); virtual void u145(); virtual void u146(); virtual void u147(); virtual void u148(); virtual int f149(int); };
@@ -96689,6 +100512,105 @@ void sub_10170440()
     if (t0 != 0) {
         lifted::sub_101a7ac0(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_10272378));
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10170470 size=0x102
+#include "CHud.h"
+#include "ehandle.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+
+struct V_101869c0;
+void __fastcall sub_101869c0(V_101869c0 *);
+
+struct IEngineTmp
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void ClientCmd(const char *szCmdString);
+};
+
+extern IEngineTmp *g_104a57d4;
+extern CHud g_104cfe38;
+
+struct MyHandle
+{
+	unsigned long m_Index;
+
+	IHandleEntity *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		const CBaseEntityListEntry *pInfo = &g_102b8e98->m_EntPtrArray[m_Index & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(m_Index >> 13))
+			return (IHandleEntity *)pInfo->m_pEntity;
+		return 0;
+	}
+};
+
+struct InvItemBtn
+{
+	char pad0[0xba];
+	bool m_bSelected;
+	char padbb;
+	MyHandle m_hItem;
+};
+
+struct InvSlotEntry
+{
+	InvItemBtn *btn;
+	int unk4;
+	int unk8;
+};
+
+class CInv_10170470
+{
+public:
+	char pad0[0x188];
+	InvSlotEntry m_slots1[24];
+	InvSlotEntry m_slots2[24];
+
+	IHandleEntity *GetSelectedItem1()
+	{
+		for (int i = 0; i < 24; i++)
+		{
+			if (m_slots1[i].btn->m_bSelected)
+				return m_slots1[i].btn->m_hItem.Get();
+		}
+		return 0;
+	}
+
+	IHandleEntity *GetSelectedItem2()
+	{
+		for (int i = 0; i < 24; i++)
+		{
+			if (m_slots2[i].btn->m_bSelected)
+				return m_slots2[i].btn->m_hItem.Get();
+		}
+		return 0;
+	}
+
+	void sub_10170470();
+};
+
+void CInv_10170470::sub_10170470()
+{
+	IHandleEntity *ent = GetSelectedItem1();
+	if (!ent)
+		ent = GetSelectedItem2();
+	if (ent)
+	{
+		char cmd[64];
+		sprintf(cmd, "dropitem %d", *(int *)((char *)ent + 0x79c));
+		g_104a57d4->ClientCmd(cmd);
+	}
+	sub_101869c0((V_101869c0 *)g_104cfe38.sub_100f0ed0("VItemInfoUI"));
 }
 // END FUNCTION
 
@@ -97211,6 +101133,34 @@ void CUnknown101733b0::sub_101733b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101733d0 size=0xb0
+#include "CharEditPanel.h"
+struct IEngineCmd { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(const char *cmd, int bWait); virtual void v28(const char *cmd); };
+extern IEngineCmd *g_104a57d4;
+void CharEditPanel::sub_101733d0(bool bDisconnect)
+{
+	if (!m_bCf9) {
+		m_bCf9 = true;
+		if (!m_unk274)
+			return;
+	}
+	m_bEd8 = false;
+	if ((char)vfunc22()) {
+		vfunc21(0);
+		sub_101740e0(1);
+		if (sub_10172ac0())
+			g_104a57d4->v27("vclan teamchoose done", 1);
+		if (m_bEe8)
+			g_104a57d4->v27("vskip_intro", 1);
+		if (bDisconnect && m_unk274)
+			g_104a57d4->v28("disconnect");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173480 size=0x27
 namespace lifted {
 struct C10173350 { int sub_10173350(); };
@@ -97314,6 +101264,54 @@ int CUnknown10173570::sub_10173570()
     int t0 = ((lifted::C101744c0 *)this)->sub_101744c0(2);
     *(char *)((char *)this + 0xcf9) = 0;
     return t0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101735a0 size=0x41
+#include "CharEditPanel.h"
+#include "CharEditCharPanel.h"
+struct ISheetView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87();
+virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95();
+virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103();
+virtual void v104(); virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110(); virtual void v111();
+virtual int v112(); };
+struct IDlgView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87();
+virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95();
+virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103();
+virtual void v104(); virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110(); virtual void v111();
+virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118(); virtual void v119();
+virtual void v120(); virtual void v121(); virtual void v122(); virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126(); virtual void v127();
+virtual void v128(); virtual void v129(); virtual void v130(); virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134(); virtual void v135();
+virtual void v136(); virtual void v137(); virtual void v138(); virtual void v139(); virtual void v140(); virtual void v141(); virtual void v142(); virtual void v143();
+virtual void v144(); virtual ISheetView *v145(); };
+void CharEditPanel::sub_101735a0()
+{
+	if (((IDlgView *)((char *)this + 0x10))->v145()->v112() == m_unk27c) {
+		sub_101733d0(true);
+		return;
+	}
+	if (!m_unk274)
+		((CharEditCharPanel *)this)->sub_101744c0(2);
 }
 // END FUNCTION
 
@@ -97427,6 +101425,144 @@ extern CUnk102036e0Table g_104cfe38;
 void sub_10174450(int a)
 {
 	g_104cfe38.sub_100f0ed0("CharEditPanel")->sub_10174470(a);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101744c0 size=0xa9
+#include "CharEditCharPanel.h"
+
+struct Target_101744c0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106(); virtual void v107();
+	virtual void vfunc108(int);
+};
+
+struct Holder_101744c0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109();
+	virtual void v110(); virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114();
+	virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void v120(); virtual void v121(); virtual void v122();
+	virtual void vfunc123(int, int, int);
+};
+
+struct Image_101744c0
+{
+	virtual void v0();
+	virtual int vfunc1(const char *name);
+};
+
+struct Sub_101744c0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109();
+	virtual void v110(); virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114();
+	virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void v120(); virtual void v121(); virtual void v122(); virtual void v123(); virtual void v124();
+	virtual void v125(); virtual void v126(); virtual void v127(); virtual void v128(); virtual void v129();
+	virtual void v130(); virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134();
+	virtual void v135(); virtual void v136(); virtual void v137(); virtual void v138(); virtual void v139();
+	virtual void v140(); virtual void v141(); virtual void v142(); virtual void v143(); virtual void v144();
+	virtual Target_101744c0 *vfunc145();
+	Image_101744c0 *sub_101ac830();
+};
+
+struct Panel_101744c0
+{
+	char pad[0x10];
+	Sub_101744c0 m_sub;
+};
+
+void CharEditCharPanel::sub_101744c0(int mode)
+{
+	Panel_101744c0 *self = (Panel_101744c0 *)this;
+	Holder_101744c0 *holder = *(Holder_101744c0 **)((char *)this + 0x284);
+	if (mode == 1)
+	{
+		if (!*(int *)((char *)this + 0xedc))
+			return;
+		Target_101744c0 *t = self->m_sub.vfunc145();
+		t->vfunc108(*(int *)((char *)this + 0xedc));
+	}
+	else if (mode == 2)
+	{
+		if (!*(int *)((char *)this + 0x27c))
+			return;
+		Target_101744c0 *t = self->m_sub.vfunc145();
+		t->vfunc108(*(int *)((char *)this + 0x27c));
+	}
+	else if (mode == 0)
+	{
+		if (*(int *)((char *)this + 0xee0))
+		{
+			int img = self->m_sub.sub_101ac830()->vfunc1("interface/charactermaintenance/background");
+			(*(Holder_101744c0 **)((char *)this + 0x284))->vfunc123(0, img, 0);
+		}
+		return;
+	}
+	(*(Holder_101744c0 **)((char *)this + 0x284))->vfunc123(0, 0, 0);
 }
 // END FUNCTION
 
@@ -97924,6 +102060,30 @@ void CBasePanel::sub_10175da0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175e10 size=0x6a
+#include "CHud.h"
+struct IFoo { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual char v6(); };
+struct WizV { int sub_10175f40(int a); };
+struct CUnkPanelX { int sub_10175f00(int a); };
+extern IFoo *g_104a57d4;
+extern char g_105fb201;
+extern CHud g_104cfe38;
+int __stdcall sub_10175e10(int a, int b, int c)
+{
+    if (!g_104a57d4->v6() && g_105fb201 && a) {
+        int i = b - 0x31;
+        if (i >= 0 && i < 4) {
+            CHudElement *e = g_104cfe38.sub_100f0ed0("VCharWizardUI");
+            if (e) {
+                if (!((CUnkPanelX *)e)->sub_10175f00(((WizV *)e)->sub_10175f40(i)))
+                    return 0;
+            }
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175e80 size=0x2c
 #include "CHud.h"
 extern char g_105fb1fe;
@@ -97956,6 +102116,93 @@ int CUnkPanelX::sub_10175f00(int i)
 		return 0;
 	}
 	return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10175f40 size=0xac
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+struct SubItemV
+{
+	char m_pad0[0x10];
+	int m_nId;
+	char m_pad1[0x48 - 0x14];
+	bool sub_10141ac0();
+};
+struct BigV
+{
+	char m_pad0[0x54];
+	SubItemV m_subs[4];
+	BigV *sub_10142340(int a);
+	void sub_101423a0();
+	BigV() { sub_10142340(-1); }
+	~BigV() { sub_101423a0(); }
+};
+extern int g_105e77d8;
+extern BigV **g_105e77dc;
+struct WizV
+{
+	char m_pad0[0x3b0];
+	int m_nIdx;
+	void sub_10174d10();
+	int sub_10175f40(int id);
+};
+// TARGET: WizV::sub_10175f40
+int WizV::sub_10175f40(int id)
+{
+	BigV *pBig;
+	if (m_nIdx >= 0 && m_nIdx < g_105e77d8)
+	{
+		pBig = g_105e77dc[m_nIdx];
+		if (!pBig)
+		{
+			DevMsg(1, "ERROR: CharGenWizard: KeyToIdx: Couldn't Match PopUp: %d!\n", m_nIdx);
+			sub_10174d10();
+			return id;
+		}
+	}
+	else
+	{
+		static BigV s_Default;
+		pBig = &s_Default;
+	}
+	int i = 0;
+	SubItemV *ps = pBig->m_subs;
+	for (; i < 4; i++, ps++)
+	{
+		if (ps->sub_10141ac0() && ps->m_nId == id)
+			return i;
+	}
+	return id;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10175ff0 size=0x6b
+#include "CHud.h"
+extern "C" int atoi(const char *);
+struct IFoo {
+virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61(); virtual void v62();
+virtual int v63(); virtual const char *v64(int a); };
+struct WizV { int sub_10175f40(int a); };
+struct CUnkPanelX { int sub_10175f00(int a); };
+extern IFoo *g_104a57d4;
+extern char g_105fb201;
+extern char g_105fb1fe;
+extern CHud g_104cfe38;
+void sub_10175ff0()
+{
+    if (g_105fb201 && g_105fb1fe && g_104a57d4->v63() == 2) {
+        int i = atoi(g_104a57d4->v64(1)) - 1;
+        CHudElement *e = g_104cfe38.sub_100f0ed0("VCharWizardUI");
+        if (e)
+            ((CUnkPanelX *)e)->sub_10175f00(((WizV *)e)->sub_10175f40(i));
+    }
 }
 // END FUNCTION
 
@@ -98010,6 +102257,33 @@ void CUnknown101764f0::sub_101764f0(char a0)
         *(char *)((char *)this + 0x100) = a0;
         ((lifted::V *)this)->f57(1, 1);
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10176e90 size=0x97
+#include "CVStatList_t.h"
+
+extern void *g_104a0d50;
+extern int g_102d0820;
+
+struct CHudPanel
+{
+	void sub_1014e600(void *, int, int, int);
+};
+extern CHudPanel g_105e8544;
+
+// TARGET: sub_10176e90
+bool sub_10176e90(int index)
+{
+	if (index == -1)
+		return true;
+
+	void *pPlayer = g_104a0d50;
+	int bounded = 0;
+	if (pPlayer)
+		bounded = ((CVStatListSet *)((char *)pPlayer + 0x1164))->Find(0)->sub_1015dbd0(11);
+
+	g_105e8544.sub_1014e600(pPlayer, g_102d0820, bounded, index);
 }
 // END FUNCTION
 
@@ -98180,6 +102454,39 @@ void __stdcall sub_101779b0(int a) {
 // FUNCTION: 0x10177a10 size=0x1
 void sub_10177a10()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x10177a20 size=0x71
+#include "CharEditCharPanel.h"
+#include "C_BaseVCombatCharacter.h"
+
+static int g_102d093c;
+static int g_102d0940;
+
+extern C_BaseVCombatCharacter *g_104a0d50;
+
+// TARGET: CharEditCharPanel::sub_10177a20
+void CharEditCharPanel::sub_10177a20()
+{
+	C_BaseVCombatCharacter *pPlayer = g_104a0d50;
+	if (!pPlayer)
+		return;
+
+	if (g_102d093c != pPlayer->sub_1008ebb0())
+	{
+		sub_10177000();
+		sub_101766e0();
+		g_102d093c = pPlayer->sub_1008ebb0();
+	}
+	else if (g_102d0940 != pPlayer->m_unkfd0)
+	{
+		sub_10177000();
+		sub_101766e0();
+		g_102d0940 = pPlayer->m_unkfd0;
+	}
+
+	vfunc101();
 }
 // END FUNCTION
 
@@ -98998,6 +103305,60 @@ bool sub_1017f0d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f0f0 size=0xaf
+#include "CVStatList_t.h"
+struct PlayerV1178 { char p[0x1178]; int m_nLists; CVStatList_t **m_pLists; };
+extern PlayerV1178 *g_104a0d50;
+int sub_10170f60();
+int sub_1017f0f0(char flag)
+{
+	int result = -1;
+	if (sub_10170f60() && !flag) {
+		result = *(int *)(sub_10170f60() + 0xed0);
+	} else {
+		PlayerV1178 *p = g_104a0d50;
+		if (p) {
+			CVStatList_t *pList;
+			for (int i = 0; i < p->m_nLists; i++) {
+				if (p->m_pLists[i]->m_field10 == 0) {
+					pList = p->m_pLists[i];
+					goto found;
+				}
+			}
+			{
+				static CVStatList_t s_default(-1);
+				pList = &s_default;
+			}
+found:
+			result = pList->sub_1015dbd0(0x21);
+		}
+	}
+	if (result == 0xf)
+		result = -1;
+	else if (result == 0x3f)
+		result = -1;
+	return result;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1017f1a0 size=0x30
+struct ScoreV {
+	char m_pad[0x434];
+	char m_bAuto;
+	void sub_1017f1a0();
+	void sub_1017f1d0();
+};
+int sub_1017f0f0(char);
+void ScoreV::sub_1017f1a0()
+{
+	if (sub_1017f0f0(1) == -1)
+		m_bAuto = 0;
+	else
+		m_bAuto = 1;
+	sub_1017f1d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f1d0 size=0xbf
 #include "CUnknown10203240.h"
 struct CUnknown1017b270 { int sub_1017b270(int); };
@@ -99285,6 +103646,60 @@ int sub_10180cd0(int a0)
         return -1;
     }
     return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10180ce0 size=0x3e
+struct StatOrder10180ce0 { char pad[0x30]; int count; char pad2[4]; int start; };
+extern void *g_104a0d50;
+struct ScoreV10180ce0
+{
+    void sub_10180d20(StatOrder10180ce0 *, int, char);
+    void sub_10180ce0(StatOrder10180ce0 *p, char c);
+};
+void ScoreV10180ce0::sub_10180ce0(StatOrder10180ce0 *p, char c)
+{
+    if (g_104a0d50)
+    {
+        for (int i = 0; i < p->count; i++)
+            sub_10180d20(p, p->start + i, c);
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10180d20 size=0xbe
+#include "CVStatInfoList_t.h"
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+bool sub_101713e0();
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void ClientCmd(const char *, int); };
+extern EB *g_104a57d4;
+struct StatOrder { int m0; int m4; CVStatInfoList_t *m_pList; int *m_pCur; int m10; int *m_pWant; };
+extern const char g_102de300[];
+int sub_10180cd0(int x)
+{
+	if (x == 15)
+		x = -1;
+	return x;
+}
+// TARGET: sub_10180d20
+void __stdcall sub_10180d20(StatOrder *p, int idx, char flag)
+{
+	char cmd[0x50];
+	int cur = sub_10180cd0(p->m_pCur[idx]);
+	int want = sub_10180cd0(p->m_pWant[idx]);
+	if (want != cur) {
+		cmd[0] = 0;
+		if (want > cur) {
+			const char *const &name = p->m_pList->sub_1015cfe0(idx)->m_pszName;
+			sprintf(cmd, "vstats buy %s %d", name ? name : g_102de300, want - cur);
+		} else if (want < cur) {
+			const char *const &name = p->m_pList->sub_1015cfe0(idx)->m_pszName;
+			sprintf(cmd, "vstats sell %s %d", name ? name : g_102de300, cur - want);
+		}
+		if (!sub_101713e0() || flag)
+			g_104a57d4->ClientCmd(cmd, 1);
+	}
 }
 // END FUNCTION
 
@@ -100975,6 +105390,38 @@ void CUnknown1018a6f0::sub_1018a6f0(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a730 size=0x94
+#include "CGUIClientRenderable.h"
+
+struct SHdrCtl {
+    char m_pad[0xf8];
+    int m_nControllers;      // 0xf8
+    int m_nControllerIndex;  // 0xfc
+};
+
+// TARGET: CGUIClientRenderable::sub_1018a730
+void CGUIClientRenderable::sub_1018a730(float *controllers, float curTime)
+{
+    if (!m_pStudioHdr)
+    {
+        for (int k = 0; k < 4; k++)
+            controllers[k] = 0.0f;
+        return;
+    }
+    int i;
+    for (i = 0; i < ((SHdrCtl *)m_pStudioHdr)->m_nControllers; i++)
+    {
+        controllers[i] = sub_1018a8c0(
+            *(float *)((char *)this + 0x16c + i * 4),
+            *(float *)((char *)this + 0x17c + i * 4),
+            curTime,
+            (*(unsigned char *)((char *)m_pStudioHdr + ((SHdrCtl *)m_pStudioHdr)->m_nControllerIndex + i * 0x18 + 4) & 0x38) != 0);
+    }
+    for (; i < 4; i++)
+        controllers[i] = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a7d0 size=0x8a
 #include "CGUIClientRenderable.h"
 struct EngTime {
@@ -100998,6 +105445,27 @@ float CGUIClientRenderable::sub_1018a7d0()
 			f = 0.0f;
 	}
 	return f;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018a860 size=0x53
+#include "CGUIClientRenderable.h"
+
+struct SPoseHdr
+{
+	char pad[0x10];
+	float m_fl10;
+};
+
+SPoseHdr *sub_1008d930(SPoseHdr *, int);
+
+// TARGET: CGUIClientRenderable::sub_1018a860
+float CGUIClientRenderable::sub_1018a860(int i, float cur, float prev, float curTime)
+{
+	SPoseHdr *p = sub_1008d930((SPoseHdr *)m_pStudioHdr, i);
+	if (!p)
+		return 0.0f;
+	return sub_1018a8c0(cur, prev, curTime, p->m_fl10 != 0.0f);
 }
 // END FUNCTION
 
@@ -101171,6 +105639,66 @@ void VRend::sub_1018aef0(Vector &absMins, Vector &absMaxs)
 		absMins += origin;
 		absMaxs += origin;
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018b010 size=0x4e
+#include <string.h>
+struct StudioHdr;
+struct CAnimState {
+    int m_unk0; int m_unk4; char *m_pName; int m_nSeq;
+    int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
+    float m_flCycle;
+    int m_unk34[13];
+    StudioHdr *m_pHdr;
+    void sub_1018b060();
+    void sub_1018b010(const char *name);
+};
+void CAnimState::sub_1018b010(const char *name)
+{
+    delete m_pName;
+    int len = strlen(name);
+    m_pName = new char[len + 1];
+    memcpy(m_pName, name, len + 1);
+    sub_1018b060();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018b060 size=0xac
+extern "C" int _strcmpi(const char *, const char *);
+struct StudioHdr;
+struct SeqDesc { int m_unk0; int m_nameofs; };
+SeqDesc *sub_1008d9d0(StudioHdr *h, int i);
+int sub_100681e0(const char *s);
+int sub_10079a90(StudioHdr *h, int a, int b, int c, int d);
+struct CAnimState {
+    int m_unk0; int m_unk4; const char *m_pName; int m_nSeq;
+    int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
+    float m_flCycle;
+    int m_unk34[13];
+    StudioHdr *m_pHdr;
+    void sub_1018b060();
+};
+void CAnimState::sub_1018b060()
+{
+    if (m_pHdr) {
+        SeqDesc *s = sub_1008d9d0(m_pHdr, m_nSeq);
+        if (s && m_flCycle < 1.0f && !_strcmpi((char *)s + s->m_nameofs, m_pName)) {
+            if (m_flCycle < 0.0)
+                m_flCycle = 0;
+            return;
+        }
+        int n = sub_100681e0(m_pName);
+        if (n >= 0) {
+            int r = sub_10079a90(m_pHdr, n, 0, 0, -1);
+            if (r >= 0) {
+                m_nSeq = r;
+                m_flCycle = 0;
+            }
+            if (m_flCycle >= 1.0f)
+                m_flCycle = 0;
+        }
+    }
 }
 // END FUNCTION
 
@@ -102087,6 +106615,120 @@ int sub_1018f600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101907a0 size=0xaa
+#include "Vector.h"
+#include "QAngle.h"
+
+extern "C" double fabs(double);
+#pragma intrinsic(fabs)
+
+struct IEngineLike_101907a0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28();
+	virtual int vfunc29();
+};
+
+extern IEngineLike_101907a0 *g_1027ba58;
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+float __stdcall sub_101907a0(const QAngle &angles, const Vector &velocity, float rollangle, float rollspeed)
+{
+	if (g_1027ba58->vfunc29())
+		return 0.0f;
+
+	float sign;
+	float side;
+	float value;
+	Vector forward, right, up;
+
+	sub_101090a0(angles, &forward, &right, &up);
+
+	side = DotProduct(velocity, right);
+	sign = side < 0 ? -1 : 1;
+	side = fabs(side);
+	value = rollangle;
+	if (side < rollspeed)
+		side = side * value / rollspeed;
+	else
+		side = value;
+	return side * sign;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10190850 size=0xae
+#include "CViewRender.h"
+#include "C_BaseEntity.h"
+#include "QAngle.h"
+#include "Vector.h"
+struct VarV { virtual void v0(); virtual bool v1(); int p[9]; float m28; };
+struct GV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual bool v26(); };
+extern C_BaseEntity *g_104a0d50;
+extern VarV *g_105fc5b4;
+extern VarV *g_105fc554;
+extern GV *g_1027ba58;
+void CViewRender::sub_10190850()
+{
+	C_BaseEntity *pPlayer = g_104a0d50;
+	float f1, f2;
+	if (g_105fc5b4->v1())
+		f1 = 0;
+	else
+		f1 = g_105fc5b4->m28;
+	if (g_105fc554->v1())
+		f2 = 0;
+	else
+		f2 = g_105fc554->m28;
+	float r = sub_101907a0(pPlayer->GetAbsAngles(), *(Vector *)((char *)pPlayer + 0xa8), f2, f1);
+	if (g_1027ba58->v26())
+		r = 0;
+	*(float *)((char *)this + 0x68) += r;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10192bf0 size=0xb2
+struct MatVarView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void *GetTextureValue();
+	virtual void SetTextureValue(void *tex);
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual bool IsTexture();
+	virtual void v25();
+	virtual void SetMatrixValue(void *m);
+	virtual void *GetMatrixValue();
+};
+struct MatView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual MatVarView *FindVar(const char *name, bool *found, bool complain);
+};
+static MatView *g_105fc318;
+// TARGET: sub_10192bf0
+MatView *sub_10192bf0(MatView *pSrc)
+{
+	MatView *pDstMat = g_105fc318;
+	bool found = false;
+	MatVarView *pSrcVar = pSrc->FindVar("$basetexture", &found, false);
+	if (found && pSrcVar->IsTexture()) {
+		MatVarView *pDstVar = pDstMat->FindVar("$basetexture", &found, true);
+		pDstVar->SetTextureValue(pSrcVar->GetTextureValue());
+		pSrcVar = pSrc->FindVar("$basetexturetransform", &found, false);
+		pDstVar = pDstMat->FindVar("$basetexturetransform", &found, true);
+		pDstVar->SetMatrixValue(pSrcVar->GetMatrixValue());
+		return pDstMat;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192cb0 size=0x8
 struct CUnknown10192cb0 { void sub_10192cb0(); };
 void CUnknown10192cb0::sub_10192cb0()
@@ -102721,6 +107363,45 @@ void UtlMem::sub_10197a20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198260 size=0xb6
+#include "ScopeTrace.h"
+struct IMat10198260 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual int v64(int a);
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109();
+	virtual void v110(); virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void v120(void (*fn)()); virtual void v121(); virtual void v122(); virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126(); virtual void v127();
+	virtual void *v128(int w, int h, int fmt);
+};
+extern IMat10198260 *g_104a57ec;
+extern void *g_106198f8;
+extern char g_106198fc;
+void sub_10198320();
+void *sub_10198260()
+{
+	ScopeTrace t("::GetPowerOfTwoFrameBufferTexture", g_102de300);
+	if (!g_106198f8)
+	{
+		g_106198f8 = g_104a57ec->v128(512, 512, g_104a57ec->v64(0));
+		if (!g_106198fc)
+		{
+			g_104a57ec->v120(sub_10198320);
+			g_106198fc = 1;
+		}
+	}
+	return g_106198f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198320 size=0x60
 #include "ScopeTrace.h"
 
@@ -102746,6 +107427,67 @@ void sub_10198460()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101987e0 size=0xa4
+#include "ScopeTrace.h"
+
+struct MatView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void *FindTexture(const char *name, const char *group, int a);
+	virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32();
+	virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36();
+	virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40();
+	virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52();
+	virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60();
+	virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68();
+	virtual void v69(); virtual void v70(); virtual void v71(); virtual void v72();
+	virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76();
+	virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80();
+	virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88();
+	virtual void v89(); virtual void v90(); virtual void v91(); virtual void v92();
+	virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96();
+	virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100();
+	virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108();
+	virtual void v109(); virtual void v110(); virtual void v111(); virtual void v112();
+	virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116();
+	virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void AddRestoreFunc(void (*fn)());
+};
+
+extern MatView *g_104a57ec;
+extern void *g_10619910;
+extern unsigned char g_10619914;
+void sub_10198890();
+
+// TARGET: sub_101987e0
+void *sub_101987e0()
+{
+	ScopeTrace t("::GetWaterReflectionTexture", g_102de300);
+	if (!g_10619910)
+	{
+		g_10619910 = g_104a57ec->FindTexture("_rt_WaterReflection", "RenderTargets", 1);
+		if (!g_10619914)
+		{
+			g_104a57ec->AddRestoreFunc(sub_10198890);
+			g_10619914 = 1;
+		}
+	}
+	return g_10619910;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198890 size=0x60
 #include "ScopeTrace.h"
 
@@ -102755,6 +107497,67 @@ void sub_10198890()
 {
 	ScopeTrace scope("::WaterReflectionTextureRestoreFunc", g_102de300);
 	g_10619910 = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101988f0 size=0xa4
+#include "ScopeTrace.h"
+
+struct IMaterialSystemV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void *FindTexture(const char *name, const char *group, int a);   // slot 28
+	virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32();
+	virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36();
+	virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40();
+	virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52();
+	virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60();
+	virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68();
+	virtual void v69(); virtual void v70(); virtual void v71(); virtual void v72();
+	virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76();
+	virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80();
+	virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88();
+	virtual void v89(); virtual void v90(); virtual void v91(); virtual void v92();
+	virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96();
+	virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100();
+	virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108();
+	virtual void v109(); virtual void v110(); virtual void v111(); virtual void v112();
+	virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116();
+	virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void AddRestoreFunc(void (*fn)(void));   // slot 120
+};
+
+extern IMaterialSystemV *g_104a57ec;
+void sub_101989a0();
+static void *g_10619918;
+static bool g_1061991c;
+
+// TARGET: sub_101988f0
+void *sub_101988f0(void)
+{
+	ScopeTrace trace("::GetWaterRefractionTexture", g_102de300);
+	if (!g_10619918)
+	{
+		g_10619918 = g_104a57ec->FindTexture("_rt_WaterRefraction", "RenderTargets", 1);
+		if (!g_1061991c)
+		{
+			g_104a57ec->AddRestoreFunc(sub_101989a0);
+			g_1061991c = true;
+		}
+	}
+	return g_10619918;
 }
 // END FUNCTION
 
@@ -103203,6 +108006,265 @@ float CUnk102a9640::sub_1019c230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019c260 size=0x3c2
+struct IMaterial
+{
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual int GetMappingWidth() const = 0;
+	virtual int GetMappingHeight() const = 0;
+};
+
+struct MeshDesc_local
+{
+	int m_VertexSize_Position;
+	int m_VertexSize_BoneWeight;
+	int m_VertexSize_BoneMatrixIndex;
+	int m_VertexSize_Normal;
+	int m_VertexSize_Color;
+	int m_VertexSize_Specular;
+	int m_VertexSize_TexCoord[4];
+	int m_VertexSize_TangentS;
+	int m_VertexSize_TangentT;
+	int m_VertexSize_TangentSxT;
+	int m_VertexSize_UserData;
+	int m_ActualVertexSize;
+	int m_FirstVertex;
+	int m_NumBoneWeights;
+	float *m_pPosition;
+	float *m_pBoneWeight;
+	unsigned char *m_pBoneMatrixIndex;
+	float *m_pNormal;
+	unsigned char *m_pColor;
+	unsigned char *m_pSpecular;
+	float *m_pTexCoord[4];
+	float *m_pTangentS;
+	float *m_pTangentT;
+	float *m_pTangentSxT;
+	float *m_pUserData;
+	unsigned short *m_pIndices;
+};
+
+struct IMesh
+{
+	virtual void LockMesh(int numVerts, int numIndices, MeshDesc_local &desc) = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual void v4() = 0;
+	virtual void v5() = 0;
+	virtual void v6() = 0;
+	virtual void v7() = 0;
+	virtual void v8() = 0;
+	virtual void v9() = 0;
+	virtual void SetPrimitiveType(int type) = 0;
+	virtual void v11() = 0;
+	virtual void Draw(int firstIndex = -1, int numIndices = 0) = 0;
+};
+
+struct IMaterialSystem
+{
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0;
+	virtual IMaterial *FindMaterial(const char *pMaterialName, bool *pFound, bool complain = true) = 0;
+	virtual void v26() = 0; virtual void v27() = 0; virtual void v28() = 0; virtual void v29() = 0;
+	virtual void v30() = 0; virtual void v31() = 0; virtual void v32() = 0; virtual void v33() = 0;
+	virtual void v34() = 0; virtual void v35() = 0; virtual void v36() = 0; virtual void v37() = 0;
+	virtual void v38() = 0; virtual void v39() = 0; virtual void v40() = 0; virtual void v41() = 0;
+	virtual void v42() = 0; virtual void v43() = 0; virtual void v44() = 0; virtual void v45() = 0;
+	virtual void v46() = 0; virtual void v47() = 0; virtual void v48() = 0; virtual void v49() = 0;
+	virtual void v50() = 0; virtual void v51() = 0; virtual void v52() = 0;
+	virtual void Bind(IMaterial *material, void *proxyData = 0) = 0;
+	virtual void v54() = 0; virtual void v55() = 0; virtual void v56() = 0; virtual void v57() = 0;
+	virtual void v58() = 0; virtual void v59() = 0; virtual void v60() = 0; virtual void v61() = 0;
+	virtual void v62() = 0; virtual void v63() = 0; virtual void v64() = 0; virtual void v65() = 0;
+	virtual void v66() = 0; virtual void v67() = 0; virtual void v68() = 0; virtual void v69() = 0;
+	virtual void v70() = 0; virtual void v71() = 0; virtual void v72() = 0; virtual void v73() = 0;
+	virtual void v74() = 0; virtual void v75() = 0; virtual void v76() = 0; virtual void v77() = 0;
+	virtual void v78() = 0; virtual void v79() = 0; virtual void v80() = 0; virtual void v81() = 0;
+	virtual void v82() = 0; virtual void v83() = 0; virtual void v84() = 0; virtual void v85() = 0;
+	virtual void v86() = 0; virtual void v87() = 0; virtual void v88() = 0; virtual void v89() = 0;
+	virtual void v90() = 0; virtual void v91() = 0; virtual void v92() = 0; virtual void v93() = 0;
+	virtual void v94() = 0; virtual void v95() = 0; virtual void v96() = 0; virtual void v97() = 0;
+	virtual void v98() = 0; virtual void v99() = 0; virtual void v100() = 0; virtual void v101() = 0;
+	virtual void v102() = 0; virtual void v103() = 0; virtual void v104() = 0; virtual void v105() = 0;
+	virtual void v106() = 0; virtual void v107() = 0; virtual void v108() = 0; virtual void v109() = 0;
+	virtual void v110() = 0;
+	virtual IMesh *GetDynamicMesh(bool buffered = true, IMesh *pVertexOverride = 0, IMesh *pIndexOverride = 0, IMaterial *pAutoBind = 0) = 0;
+};
+
+extern IMaterialSystem *g_104a57ec;
+
+#define Assert(_exp) ((void)0)
+
+class MeshBuilderLocal : private MeshDesc_local
+{
+public:
+	inline MeshBuilderLocal()
+		: m_pMesh(0), m_NumIndices(0), m_NumVertices(0),
+		  m_CurrentVertex(0), m_CurrentIndex(0), m_MaxVertices(0),
+		  m_MaxIndices(0), m_GenerateIndices(false)
+	{
+	}
+
+	inline void Begin(IMesh *pMesh, int type, int numPrimitives)
+	{
+		Assert(pMesh && (!m_pMesh));
+		m_pMesh = pMesh;
+		m_bModify = false;
+		Assert(type != 8);
+		sub_100421f0(type, numPrimitives);
+		m_NumIndices = 0; m_NumVertices = 0;
+		m_GenerateIndices = true;
+		m_Type = type;
+		if ((type == 7) || (type == 6))
+			m_pMesh->SetPrimitiveType(2);
+		else if ((type == 4) || (type == 5))
+			m_pMesh->SetPrimitiveType(1);
+		else
+			m_pMesh->SetPrimitiveType(type);
+		m_pMesh->LockMesh(m_MaxVertices, m_MaxIndices, *this);
+		sub_100422e0();
+	}
+
+	inline void sub_100421f0(int type, int numPrimitives)
+	{
+		switch (type)
+		{
+		case 0: m_MaxVertices = m_MaxIndices = numPrimitives; break;
+		case 1: m_MaxVertices = m_MaxIndices = numPrimitives * 2; break;
+		case 4: m_MaxVertices = numPrimitives + 1; m_MaxIndices = numPrimitives * 2; break;
+		case 5: m_MaxVertices = numPrimitives; m_MaxIndices = numPrimitives * 2; break;
+		case 2: m_MaxVertices = m_MaxIndices = numPrimitives * 3; break;
+		case 3: m_MaxVertices = m_MaxIndices = numPrimitives + 2; break;
+		case 7: m_MaxVertices = numPrimitives * 4; m_MaxIndices = numPrimitives * 6; break;
+		case 6: m_MaxVertices = numPrimitives; m_MaxIndices = (numPrimitives - 2) * 3; break;
+		default: Assert(0); break;
+		}
+	}
+	inline void sub_100422e0()
+	{
+		m_CurrentVertex = 0;
+		m_CurrentIndex = 0;
+		m_pCurrPosition = m_pPosition;
+		m_pCurrNormal = m_pNormal;
+		m_pCurrTexCoord[0] = m_pTexCoord[0];
+		m_pCurrTexCoord[1] = m_pTexCoord[1];
+		m_pCurrTexCoord[2] = m_pTexCoord[2];
+		m_pCurrTexCoord[3] = m_pTexCoord[3];
+		m_pCurrColor = m_pColor;
+	}
+	void sub_10041c90(bool spewData = false, bool bDraw = false);
+
+	inline void IncrementFloatPointer(float *&pBufferPointer, int vertexSize)
+	{
+		pBufferPointer = reinterpret_cast<float *>(reinterpret_cast<unsigned char *>(pBufferPointer) + vertexSize);
+	}
+
+	inline void sub_100319d0(float x, float y, float z)
+	{
+		Assert(m_pPosition && m_pCurrPosition);
+		Assert(IsFinite(x) && IsFinite(y) && IsFinite(z));
+		float *pDst = m_pCurrPosition;
+		*pDst++ = x;
+		*pDst++ = y;
+		*pDst = z;
+	}
+
+	inline void sub_10031a20(int stage, float s, float t)
+	{
+		Assert(m_pTexCoord[stage] && m_pCurrTexCoord[stage]);
+		Assert(IsFinite(s) && IsFinite(t));
+		float *pDst = m_pCurrTexCoord[stage];
+		*pDst++ = s;
+		*pDst = t;
+	}
+
+	inline void sub_10042960(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+	{
+		Assert(m_pColor && m_pCurrColor);
+		int col = b | (g << 8) | (r << 16) | (a << 24);
+		*(int *)m_pCurrColor = col;
+	}
+
+	inline void sub_10005230()
+	{
+		if (++m_CurrentVertex > m_NumVertices)
+			m_NumVertices = m_CurrentVertex;
+		IncrementFloatPointer(m_pCurrPosition, m_VertexSize_Position);
+		IncrementFloatPointer(m_pCurrNormal, m_VertexSize_Normal);
+		IncrementFloatPointer(m_pCurrTexCoord[0], m_VertexSize_TexCoord[0]);
+		IncrementFloatPointer(m_pCurrTexCoord[1], m_VertexSize_TexCoord[1]);
+		IncrementFloatPointer(m_pCurrTexCoord[2], m_VertexSize_TexCoord[2]);
+		IncrementFloatPointer(m_pCurrTexCoord[3], m_VertexSize_TexCoord[3]);
+		m_pCurrColor += m_VertexSize_Color;
+	}
+
+private:
+	IMesh *m_pMesh;
+	bool m_bModify;
+	int m_MaxVertices;
+	int m_MaxIndices;
+	int m_NumVertices;
+	int m_NumIndices;
+	mutable int m_CurrentVertex;
+	mutable int m_CurrentIndex;
+	int m_Type;
+	bool m_GenerateIndices;
+	mutable float *m_pCurrPosition;
+	mutable float *m_pCurrNormal;
+	mutable float *m_pCurrTexCoord[4];
+	mutable unsigned char *m_pCurrColor;
+};
+
+// TARGET: sub_1019c260
+void sub_1019c260(const char *pMaterialName)
+{
+	float x = 100.0f, y = 100.0f;
+
+	bool bFound;
+	IMaterial *pMaterial = g_104a57ec->FindMaterial(pMaterialName, &bFound, false);
+	if (bFound)
+	{
+		g_104a57ec->Bind(pMaterial);
+		IMesh *pMesh = g_104a57ec->GetDynamicMesh(true);
+
+		MeshBuilderLocal meshBuilder;
+		meshBuilder.Begin(pMesh, 7, 1);
+
+		meshBuilder.sub_100319d0(x, y, 0.0f);
+		meshBuilder.sub_10031a20(0, 0.0f, 0.0f);
+		meshBuilder.sub_10042960(255, 255, 255, 255);
+		meshBuilder.sub_10005230();
+
+		meshBuilder.sub_100319d0(x + pMaterial->GetMappingWidth(), y, 0.0f);
+		meshBuilder.sub_10031a20(0, 1.0f, 0.0f);
+		meshBuilder.sub_10042960(255, 255, 255, 255);
+		meshBuilder.sub_10005230();
+
+		meshBuilder.sub_100319d0(x + pMaterial->GetMappingWidth(), y + pMaterial->GetMappingHeight(), 0.0f);
+		meshBuilder.sub_10031a20(0, 1.0f, 1.0f);
+		meshBuilder.sub_10042960(255, 255, 255, 255);
+		meshBuilder.sub_10005230();
+
+		meshBuilder.sub_100319d0(x, y + pMaterial->GetMappingHeight(), 0.0f);
+		meshBuilder.sub_10031a20(0, 0.0f, 1.0f);
+		meshBuilder.sub_10042960(255, 255, 255, 255);
+		meshBuilder.sub_10005230();
+
+		meshBuilder.sub_10041c90();
+		pMesh->Draw();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d590 size=0x66
 #include "ScopeTrace.h"
 
@@ -103272,6 +108334,47 @@ void CViewRender::sub_1019d8f0( const char *view )
 	{
 		g_104a57e4->ViewSetupVis( p->m_bForceNoVis, 1, (const float *)( view + 0x38 ) );
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x1019e2a0 size=0xbb
+#include "Vector.h"
+struct VMatrix1019e2a0 {
+    float m[4][4];
+    float *operator[](int i) { return m[i]; }
+    const float *operator[](int i) const { return m[i]; }
+};
+struct IEng1019e2a0 {
+#define V8(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7();
+    V8(0) V8(1) V8(2) V8(3) V8(4) V8(5) V8(6) V8(7) V8(8) V8(9)
+    virtual void b0();
+    virtual const VMatrix1019e2a0 &WorldToScreenMatrix();
+};
+extern IEng1019e2a0 *g_104a57d4;
+
+// TARGET: sub_1019e2a0
+int sub_1019e2a0(const Vector &point, Vector &screen)
+{
+    const VMatrix1019e2a0 &worldToScreen = g_104a57d4->WorldToScreenMatrix();
+    screen.x = worldToScreen[0][0] * point[0] + worldToScreen[0][1] * point[1] + worldToScreen[0][2] * point[2] + worldToScreen[0][3];
+    screen.y = worldToScreen[1][0] * point[0] + worldToScreen[1][1] * point[1] + worldToScreen[1][2] * point[2] + worldToScreen[1][3];
+    float w = worldToScreen[3][0] * point[0] + worldToScreen[3][1] * point[1] + worldToScreen[3][2] * point[2] + worldToScreen[3][3];
+    screen.z = 0.0f;
+    bool behind;
+    if (w < 0.001f)
+    {
+        behind = true;
+        screen.x *= 100000;
+        screen.y *= 100000;
+    }
+    else
+    {
+        behind = false;
+        float invw = 1.0f / w;
+        screen.x *= invw;
+        screen.y *= invw;
+    }
+    return behind;
 }
 // END FUNCTION
 
@@ -103813,6 +108916,32 @@ VMatrix VMatrix::sub_101a1e50() const
 	mRet.m[3][0] = mRet.m[3][1] = mRet.m[3][2] = 0.0f;
 	mRet.m[3][3] = 1.0f;
 	return mRet;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a1f60 size=0xa9
+#include "VMatrix.h"
+
+VMatrix *VMatrix::sub_101a1f60(VMatrix &out) const
+{
+	out.Init(m[0][0], m[1][0], m[2][0], m[3][0],
+		m[0][1], m[1][1], m[2][1], m[3][1],
+		m[0][2], m[1][2], m[2][2], m[3][2],
+		m[0][3], m[1][3], m[2][3], m[3][3]);
+	return &out;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a2010 size=0xa9
+#include "VMatrix.h"
+
+VMatrix *VMatrix::sub_101a2010(VMatrix &out) const
+{
+	out.Init(m[0][0], m[1][0], m[2][0], m[0][3],
+		m[0][1], m[1][1], m[2][1], m[1][3],
+		m[0][2], m[1][2], m[2][2], m[2][3],
+		m[3][0], m[3][1], m[3][2], m[3][3]);
+	return &out;
 }
 // END FUNCTION
 
@@ -104375,6 +109504,44 @@ int sub_101a3000();
 int sub_101a2f30()
 {
     return lifted::sub_101a3000();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101a2f40 size=0xba
+#include "CTable18.h"
+struct IFS101a2f40 {
+	virtual int Open(const char *name, const char *mode, const char *path);
+	virtual void Close(int h);
+	virtual int Read(void *dest, int size, int h);
+	virtual int v3();
+	virtual void Seek(int h, int pos, int type);
+	virtual unsigned int Tell(int h);
+};
+extern IFS101a2f40 *g_104a580c;
+extern const char *g_102d64c0;
+bool CTable18::sub_101a2f40(int unused)
+{
+	sub_101a3000();
+	int h = g_104a580c->Open(g_102d64c0, "rb", 0);
+	if (h)
+	{
+		int version;
+		char buf[16];
+		g_104a580c->Read(&version, 4, h);
+		if (version == 1)
+		{
+			g_104a580c->Seek(h, 0, 2);
+			int n = (g_104a580c->Tell(h) - 4) >> 4;
+			g_104a580c->Seek(h, 4, 1);
+			for (; n > 0; n--)
+			{
+				g_104a580c->Read(buf, 16, h);
+				sub_101a31e0(buf);
+			}
+		}
+		g_104a580c->Close(h);
+	}
+	return true;
 }
 // END FUNCTION
 
@@ -107439,6 +112606,42 @@ int CUnknown101b3570::sub_101b3570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3580 size=0xa9
+#include "vgui2__Button.h"
+
+int sub_101ac8d0();
+struct ISurf101b3580
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *a, int *b);
+};
+
+void vgui2::Button::sub_101b3580()
+{
+	*(char *)((char *)this + 0xed) = 1;
+	*(char *)((char *)this + 0xb8) = 0;
+	*(char *)((char *)this + 0xba) = 0;
+	*(char *)((char *)this + 0xb9) = 0;
+	*(char *)((char *)this + 0xbb) = 0;
+	*(char *)((char *)this + 0xbc) = 1;
+	*(char *)((char *)this + 0xbd) = 1;
+	*(char *)((char *)this + 0xbe) = 0;
+	*(int *)((char *)this + 0xc0) = 0;
+	*(int *)((char *)this + 0xc4) = 0;
+	*(int *)((char *)this + 0xc8) = 0;
+	*(int *)((char *)this + 0xcc) = 0;
+	*(char *)((char *)this + 0xec) = 0;
+	int wide, tall;
+	((ISurf101b3580 *)sub_101ac8d0())->v39(&wide, &tall);
+	double scale = wide / 1024.0;
+	vfunc112((int)(scale * 6.0), 0);
+	vfunc148(0, true);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3630 size=0xbe
 extern void *g_102506b4[];
 
@@ -108638,6 +113841,61 @@ void MenuV::sub_101bfbe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bfc60 size=0xa8
+#include "vgui2__Menu.h"
+
+struct Child_101bfc60
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45();
+	virtual void vfunc46(int);
+	virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50();
+	virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60();
+	virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65();
+	virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69(); virtual void v70();
+	virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75();
+	virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80();
+	virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85();
+	virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89(); virtual void v90();
+	virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95();
+	virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100();
+	virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105();
+	virtual void v106(); virtual void v107(); virtual void v108();
+	virtual void vfunc109(int, int);
+	virtual void vfunc110(int);
+	virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115();
+	virtual void v116(); virtual void v117();
+	virtual void vfunc118(int);
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+};
+
+#define CHILD (*(Child_101bfc60 **)((char *)this + 0x70))
+
+void vgui2::Menu::sub_101bfc60()
+{
+	int a, q, b, r, s, p;
+	CHILD->vfunc46(0);
+	CHILD->vfunc110(*(int *)((char *)this + 0x60));
+	CHILD->vfunc109(0, *(int *)((char *)this + 0x64));
+	CHILD->vfunc118(1);
+	sub_101a9920(&a, &b);
+	vfunc8((int)&p, (int)&q, (int)&r, (int)&s);
+	a -= q;
+	CHILD->sub_101a9890(a - 0x12, 0);
+	CHILD->sub_101a98f0(0x12, b - r - s);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0080 size=0x4f
 #include "vgui2__Menu.h"
 
@@ -109456,6 +114714,76 @@ void BMView::sub_101c4ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4b30 size=0xa5
+#include "vgui2__BuildModeDialog.h"
+#include "vgui2__Panel.h"
+#include "vgui2__BuildGroup.h"
+
+void *sub_101ac8d0();
+
+struct SurfaceV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void vfunc72(int *, int *);
+};
+
+struct BuildGroupV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	virtual vgui2::Panel *vfunc9();
+	void sub_101c2860(char *, vgui2::Panel *);
+};
+
+struct BuildModeView
+{
+	char pad[0x120];
+	BuildGroupV *m_pGroup;   // +0x120
+	char pad2[0x130 - 0x124];
+	int m_n130;              // +0x130
+	int m_n134;              // +0x134
+	vgui2::Panel *sub_101c4e60(int *, int, int);
+};
+
+// TARGET: vgui2::BuildModeDialog::sub_101c4b30
+void vgui2::BuildModeDialog::sub_101c4b30()
+{
+	int a, b;
+	char name[256];
+	BuildModeView *me = (BuildModeView *)this;
+	SurfaceV *surface = (SurfaceV *)sub_101ac8d0();
+	surface->vfunc72(&a, &b);
+	vgui2::Panel *p = me->m_pGroup->vfunc9();
+	p->vfunc27(&a, &b);
+	vgui2::Panel *pNew = me->sub_101c4e60(&me->m_n134, a, b);
+	if (pNew)
+	{
+		pNew->vfunc75(me->m_n130);
+		pNew->sub_101a9890(a, b);
+		me->m_pGroup->sub_101c2860(name, pNew);
+		pNew->sub_101a9810(name);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4cf0 size=0x88
 #include <string.h>
 
@@ -110133,6 +115461,32 @@ int CUnknown101c95d0::sub_101c95d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9b00 size=0x4f
+#include "BlankImage.h"
+struct CVec
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_size;
+	int *m_pElements;
+	int sub_101c9c60(int value);
+};
+struct ImageList : CVec
+{
+	char m_flag;
+	ImageList *sub_101c9b00(char flag);
+};
+// TARGET: ImageList::sub_101c9b00
+ImageList *ImageList::sub_101c9b00(char flag)
+{
+	m_pMemory = 0; m_nAllocationCount = 0; m_nGrowSize = 0; m_size = 0; m_pElements = 0;
+	m_flag = flag;
+	sub_101c9c60((int)new BlankImage);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9bd0 size=0x82
 #include "CUtlVectorDel4.h"
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
@@ -110163,6 +115517,60 @@ void CUtlVectorDel4::sub_101c9bd0()
 		}
 		m_allocationCount = 0;
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c9c60 size=0xa5
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+struct CVec
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_size;
+	int *m_pElements;
+	int sub_101c9c60(int value);
+	void Grow(int num)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		while (m_nAllocationCount < num)
+		{
+			if (m_nAllocationCount)
+			{
+				if (m_nGrowSize)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			}
+			else
+				m_nAllocationCount = 8;
+		}
+		if (m_pMemory)
+			m_pMemory = (int *)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+		else
+			m_pMemory = (int *)Plat_Alloc(m_nAllocationCount * 4);
+	}
+};
+
+// TARGET: CVec::sub_101c9c60
+int CVec::sub_101c9c60(int value)
+{
+	int elem = m_size;
+	if (m_size + 1 > m_nAllocationCount)
+		Grow(m_size + 1);
+	m_size++;
+	m_pElements = m_pMemory;
+	int shift = m_size - elem - 1;
+	if (shift > 0)
+		memmove(&m_pMemory[elem + 1], &m_pMemory[elem], shift * 4);
+	int *p = &m_pMemory[elem];
+	if (p)
+		*p = value;
+	return elem;
 }
 // END FUNCTION
 

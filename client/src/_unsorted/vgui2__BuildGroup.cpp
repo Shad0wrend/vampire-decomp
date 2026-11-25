@@ -349,6 +349,43 @@ void vgui2::BuildGroup::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2970 size=0xb0
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+extern "C" int __cdecl strcmp(const char *, const char *);
+struct BGHandleView { vgui2::Panel *sub_101ac670(); };
+struct BGKeyValuesView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual int FindKey(const char *name, int create);
+};
+// TARGET: vgui2::BuildGroup::vfunc6
+void vgui2::BuildGroup::vfunc6(void *resourceData)
+{
+	for (int i = 0; i < m_Panels.Count(); i++) {
+		vgui2::Panel *panel = ((BGHandleView *)&m_Panels[i])->sub_101ac670();
+		if (*(bool *)((char *)this + 0xb0)) {
+			for (int j = 0; j < 4; j++) {
+				if (panel == ((vgui2::Panel **)((char *)this + 0xa0))[j])
+					goto next;
+			}
+		}
+		if (!strcmp(panel->vfunc18(), "BuildDialog"))
+			goto next;
+		if (!panel->vfunc18())
+			goto next;
+		if (!*panel->vfunc18())
+			goto next;
+		{
+			BGKeyValuesView *kv = (BGKeyValuesView *)resourceData;
+			int dat = kv->FindKey(panel->vfunc18(), 1);
+			panel->vfunc76(dat);
+		}
+next:;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b00 size=0xa
 #include "vgui2__BuildGroup.h"
 int vgui2::BuildGroup::vfunc8(int a0)

@@ -39,6 +39,93 @@ void CViewEffects::vfunc8(Vector &origin, QAngle &angles, float factor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101974c0 size=0xbe
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+struct FadeV101974c0 { int pad[4]; int flags; };
+struct VecV101974c0 {
+    FadeV101974c0 **m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    FadeV101974c0 **m_pElements;
+    int Find(FadeV101974c0 *const &src)
+    {
+        for (int i = 0; i < m_size; i++)
+            if (m_pMemory[i] == src)
+                return i;
+        return -1;
+    }
+    void Remove(int elem)
+    {
+        int n = m_size - elem - 1;
+        if (n > 0)
+            memmove(&m_pMemory[elem], &m_pMemory[elem + 1], n * 4);
+        m_size--;
+    }
+    void FindAndRemove(FadeV101974c0 *const &src)
+    {
+        int elem = Find(src);
+        if (elem != -1)
+            Remove(elem);
+    }
+    FadeV101974c0 *&operator[](int i) { return m_pElements[i]; }
+};
+struct ViewV101974c0 { int pad0; VecV101974c0 m_Fades; };
+
+void CViewEffects::vfunc5()
+{
+    ScopeTrace scope("CViewEffects::ClearPermanentFades", g_102de300);
+    ViewV101974c0 *v = (ViewV101974c0 *)this;
+    for (int i = v->m_Fades.m_size - 1; i >= 0; i--)
+    {
+        FadeV101974c0 *pFade = v->m_Fades.m_pMemory[i];
+        if (pFade->flags & 8)
+        {
+            v->m_Fades.FindAndRemove(pFade);
+            delete pFade;
+        }
+    }
+}
+// END FUNCTION
+
+// FUNCTION: 0x10197580 size=0xa5
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+struct CUtlVectorPtrView
+{
+	void **m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_size;
+	void **m_pElements;
+};
+extern void (__cdecl *g_101e30fc)(void *);
+
+// TARGET: CViewEffects::vfunc17
+void CViewEffects::vfunc17()
+{
+	ScopeTrace trace("CViewEffects::ClearAllFades", g_102de300);
+	CUtlVectorPtrView *v = (CUtlVectorPtrView *)((char *)this + 4);
+	for (int i = v->m_size - 1; i >= 0; i--)
+		::operator delete(v->m_pMemory[i]);
+	v->m_size = 0;
+	if (v->m_nGrowSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			g_101e30fc(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_nAllocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	vfunc11();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197630 size=0x9f
 #include "CViewEffects.h"
 #include "ScopeTrace.h"
@@ -89,6 +176,29 @@ bool CViewEffects::sub_101977a0()
 {
 	ScopeTrace trace("CViewEffects::IsHolyLightActive", g_102de300);
 	return *(bool *)((char *)this + 0x99);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10197800 size=0xb9
+#include "CViewEffects.h"
+#include "CGodLight.h"
+#include "ScopeTrace.h"
+struct IRenderView10197800 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46();
+	virtual void v47(const char *name, float a, float b, float c);
+};
+extern IRenderView10197800 *g_104a57e4;
+void CViewEffects::vfunc13()
+{
+	ScopeTrace t("CViewEffects::RenderHolyLightBox", g_102de300);
+	g_104a57e4->v47("holylight", 1.0f, 1.0f, 1.0f);
+	static CGodLight s_light;
+	s_light.vfunc1();
+	s_light.vfunc3();
 }
 // END FUNCTION
 

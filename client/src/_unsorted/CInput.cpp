@@ -328,6 +328,24 @@ void CInput::vfunc6(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103ba0 size=0xbc
+#include "CInput.h"
+#include "CUserCmd.h"
+void sub_10103c60(void *buf, CUserCmd *to, CUserCmd *from, int isnew);
+
+void CInput::vfunc4(void *buf, int from, int to, int isnew)
+{
+    CUserCmd nullcmd;
+    CUserCmd *f;
+    if (from == -1)
+        f = &nullcmd;
+    else
+        f = (CUserCmd *)vfunc7(from);
+    CUserCmd *t = (CUserCmd *)vfunc7(to);
+    sub_10103c60(buf, t, f, isnew);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104440 size=0x15
 #include "CInput.h"
 char *CInput::vfunc7(int i)

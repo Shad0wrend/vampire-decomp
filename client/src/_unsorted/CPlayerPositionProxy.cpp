@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10124ed0 size=0x37
+#include "CPlayerPositionProxy.h"
+#include "CKeyValuesX.h"
+bool CPlayerPositionProxy::vfunc0(void *pMaterial, void *pKeyValues)
+{
+	if (!CResultProxy::vfunc0(pMaterial, pKeyValues))
+		return false;
+	m_flScale = ((CKeyValuesX *)pKeyValues)->sub_10128540("scale", 0.005f);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124f10 size=0x52
 #include "CPlayerPositionProxy.h"
 #include "C_BasePlayer.h"

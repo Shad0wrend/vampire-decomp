@@ -28,7 +28,9 @@ class C_BaseVCombatCharacter : public C_BaseCombatCharacter
 public:
 	C_BaseVCombatCharacter();
 	virtual ~C_BaseVCombatCharacter();
-	char m_pad0014[0x10e0 - 0x14];
+	char m_pad0014[0xfd0 - 0x14];
+	int m_unkfd0;
+	char m_pad0fd4[0x10e0 - 0xfd4];
 	CBaseVCombatUnk10e0 m_unk10e0;
 	CVStatListManager_t m_StatListManager;
 	int m_base0[35];
@@ -43,4 +45,5 @@ public:
 	int m_base3[17];
 	int m_mod3[17];
 	VStatBindPair_t m_pair3;
+	int sub_1008ebb0();
 };
