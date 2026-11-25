@@ -27,7 +27,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc141();
 	virtual bool vfunc142();
 	// the slots C_BaseViewModel adds to its base's vtable: 143-145, vfuncK at slot K
-	virtual void vfunc143();
+	virtual void vfunc143(int);
+	virtual int vfunc51();
 	virtual void vfunc144();
 	virtual void *vfunc145();
 	char m_pad0014[0x7bc - 0x14];
