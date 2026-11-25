@@ -30,7 +30,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc108();
 	virtual char * vfunc109();
 	virtual void vfunc119(int);
-	virtual void vfunc147();
+	virtual bool vfunc147(class C_BaseCombatWeapon *pWeapon, int);
 	// the slots C_BasePlayer adds to its base's vtable: 149-196, vfuncK at slot K
 	virtual void vfunc149();
 	virtual Vector vfunc150(const Vector &v);
