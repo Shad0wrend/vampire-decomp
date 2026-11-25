@@ -55614,6 +55614,27 @@ int CGameMovement::sub_100ec3a0(const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec660 size=0x92
+#include "CGameMovement.h"
+#include "C_BaseEntity.h"
+#include "CGameMovementViews.h"
+struct EntVecView { char m_pad[0xb4]; Vector m_vecB4; };
+void CGameMovement::sub_100ec660(C_BaseEntity *pNew)
+{
+	C_BaseEntity *pOld = ((CMoveDataView *)m_pMove)->g104();
+	if (!pOld) {
+		if (pNew) {
+			pNew->sub_1009fa70();
+			((CMovePlayerView *)m_pPlayer)->m_vecVelocity -= ((EntVecView *)pNew)->m_vecB4;
+		}
+	} else if (!pNew) {
+		pOld->sub_1009fa70();
+		((CMovePlayerView *)m_pPlayer)->m_vecVelocity += ((EntVecView *)pOld)->m_vecB4;
+	}
+	((CMoveDataView *)m_pMove)->g103(pNew);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecfb0 size=0x21
 // TARGET: sub_100ecfb0
 float __stdcall sub_100ecfb0(float a, float b)
