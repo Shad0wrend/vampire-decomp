@@ -32,3 +32,7 @@ public:
 		sub_100bdeb0();
 	}
 };
+
+class CSingleUserRecipientFilter : public C_RecipientFilter
+{
+};
