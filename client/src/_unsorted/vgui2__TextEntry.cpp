@@ -394,6 +394,52 @@ int vgui2::TextEntry::vfunc110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afb80 size=0x70
+#include "vgui2__TextEntry.h"
+
+struct TEView
+{
+	char pad0[0x58];
+	int m_n58;	// 0x58
+	char pad1[0x70 - 0x5c];
+	int m_pos70;	// 0x70
+	char m_b74;	// 0x74
+	char m_b75;	// 0x75
+	bool sub_101afaf0(int);
+	void sub_101aff20();
+};
+
+int vgui2::TextEntry::vfunc111()
+{
+	TEView *v = (TEView *)this;
+	vfunc165();
+	int pos = v->m_pos70;
+	if ( v->sub_101afaf0(pos) )
+	{
+		if ( v->m_b74 )
+		{
+			v->m_b75 = 0;
+		}
+		else if ( pos < v->m_n58 )
+		{
+			v->m_pos70 = ++pos;
+		}
+	}
+	else
+	{
+		if ( pos < v->m_n58 )
+		{
+			v->m_pos70 = ++pos;
+		}
+		if ( v->sub_101afaf0(v->m_pos70) && !v->m_b74 )
+			v->m_b75 = 1;
+	}
+	v->sub_101aff20();
+	vfunc109();
+	return vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afd20 size=0x49
 #include "vgui2__TextEntry.h"
 struct SurfView63 {
