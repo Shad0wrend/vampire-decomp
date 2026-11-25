@@ -19,6 +19,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 
 	C_RopeKeyframe();
     void sub_100c0850(float **pSubdivs, int *pSubdivCount);
+    bool sub_100c0630(struct AttV *pEnt, int iAttachment, Vector &vPos, QAngle &angles);
     // the base slots the game's vtable fills with C_RopeKeyframe's own function
     virtual int vfunc15();
     virtual int vfunc16();
