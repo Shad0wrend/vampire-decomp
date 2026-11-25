@@ -43,3 +43,17 @@ void C_EnvParticle::vfunc122(int p)
 	c = b = a = *v;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100aece0 size=0x69
+#include "C_EnvParticle.h"
+#include "Vector.h"
+
+void C_EnvParticle::vfunc123(int p)
+{
+	Vector *v = (Vector *)p;
+	Vector &a = *(Vector *)((char *)this + 0x2c0);
+	Vector &b = *(Vector *)((char *)this + 0x248);
+	Vector &c = *(Vector *)((char *)this + 0x260);
+	c = b = a = *v;
+}
+// END FUNCTION
