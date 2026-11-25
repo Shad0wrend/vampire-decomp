@@ -103050,6 +103050,33 @@ int PV::sub_101b1c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1cb0 size=0x87
+#include "CIntBufView.h"
+#include <stdlib.h>
+#include <string.h>
+// TARGET: CIntBufView::sub_101b1cb0
+void CIntBufView::sub_101b1cb0(int nNeeded)
+{
+	if (nNeeded > m_nCapacity)
+	{
+		int nCap = m_nCapacity;
+		if (nCap == 0)
+			nCap = 1;
+		while (nCap < nNeeded)
+			nCap += nCap;
+		int *p = (int *)operator new(nCap * 4);
+		if (!p)
+			exit(0);
+		memset(p, 0, nCap * 4);
+		m_nCapacity = nCap;
+		for (int i = 0; i < m_nCount; i++)
+			p[i] = m_pData[i];
+		operator delete(m_pData);
+		m_pData = p;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1e60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
