@@ -2373,6 +2373,7 @@
 0x10040950 func   ??_GC_TETracer@@UAEPAXI@Z ??_GC_TETracer@@UAEPAXI@Z
 0x10040970 func   ??1C_TETracer@@UAE@XZ C_TETracer::~C_TETracer
 0x10040970 func   ?sub_10040970@CUnknown10040970@@QAEHXZ CUnknown10040970::sub_10040970
+0x10040990 func   ?sub_10040990@@YAXPAXMPBVVector@@1H@Z sub_10040990
 0x10040a60 func   ?PostDataUpdate@C_TETracer@@UAEXH@Z C_TETracer::PostDataUpdate
 0x10040af0 func   ?vfunc9@C_TETracer@@UAEHXZ C_TETracer::vfunc9
 0x10040b00 func   ?vfunc8@C_TETracer@@UAEHXZ C_TETracer::vfunc8

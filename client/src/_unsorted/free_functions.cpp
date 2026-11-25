@@ -17400,6 +17400,55 @@ int CUnknown10040970::sub_10040970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040990 size=0xc3
+#include "Vector.h"
+#include "QAngle.h"
+struct IEngV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48();
+	virtual void GetViewAngles(QAngle &va);
+};
+struct PlayerV { char m_pad[0x44]; int m_entindex; int entindex() { return m_entindex; } };
+extern PlayerV *g_104a0d50;
+extern IEngV *g_104a57d4;
+void sub_101090a0(QAngle &a, Vector *f, Vector *r, Vector *u);
+void sub_10108fd0(const Vector &start, float scale, const Vector &dir, Vector &dest);
+void sub_100d9830(Vector &start, Vector &end);
+void sub_100d9da0(Vector &start, Vector &end, int velocity, bool whiz);
+// TARGET: sub_10040990
+void sub_10040990(void *filter, float delay, const Vector *start, const Vector *end, int iEntIndex)
+{
+	PlayerV *player = g_104a0d50;
+	if (player == 0)
+		return;
+	if (iEntIndex && iEntIndex == player->entindex())
+	{
+		Vector foo = *start;
+		QAngle vangles;
+		Vector vforward, vright, vup;
+		g_104a57d4->GetViewAngles(vangles);
+		sub_101090a0(vangles, &vforward, &vright, &vup);
+		sub_10108fd0(*start, 4.0f, vright, foo);
+		foo.z -= 0.5f;
+		sub_100d9830(foo, *(Vector *)end);
+		return;
+	}
+	sub_100d9da0(*(Vector *)start, *(Vector *)end, 5000, true);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040b10 size=0x6
 namespace lifted {
 extern char g_103ec400;
