@@ -90691,6 +90691,20 @@ CVStatInfo_t *CVStatInfoList_t::sub_1015cfe0(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d2c0 size=0x8a
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+void CVStatList_t::sub_1015d2c0()
+{
+	ScopeTrace st("CVStatList_t::Init", g_102de300);
+	for (int i = 0; i < m_field04; i++) {
+		CVStatInfo_t *info = ((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(i);
+		this->sub_1015d400(i, info->m_default09c.sub_10161510());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d350 size=0x87
 #include "CVStatList_t.h"
 
