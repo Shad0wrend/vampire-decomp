@@ -9,6 +9,7 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	void sub_100a2ee0();
 	void sub_100a2f50();
 	void sub_100a0450();
 	void sub_1009e2d0(int bForce);	// UpdateShadows
