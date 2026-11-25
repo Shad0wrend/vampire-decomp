@@ -22,5 +22,6 @@ public:
 	void sub_100f06d0();
 	void sub_100f07a0();
 	void sub_100f28d0();
+	void sub_100f12b0(bool b);
 	int m_unk50; struct CHudSub *m_pSubs; int m_unk58; int m_unk5c; int m_unk60; int m_nSubs;
 };
