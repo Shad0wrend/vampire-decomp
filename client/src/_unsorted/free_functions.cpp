@@ -13015,6 +13015,18 @@ int CUnknown10032a40::sub_10032a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032a60 size=0x8d
+struct BeamsIface {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void CreateBeamEntPoint(int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, int p11, float p12, int p13, float p14, float p15, int p16, float p17, float p18, float p19, float p20);
+};
+extern BeamsIface *g_102d5050;
+void sub_10032a60(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19)
+{
+	g_102d5050->CreateBeamEntPoint(a2, a3, a4, a5, a6, a7, 0, a10, a11, a12, (float)a13, a14, (float)a18, (float)(a19 * 0.1), a8, a9 * 0.1f, (float)a15, (float)a16, (float)a17);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032af0 size=0x81
 #include "C_TEBeamEntPointNW.h"
 struct TEBeamsIface {
