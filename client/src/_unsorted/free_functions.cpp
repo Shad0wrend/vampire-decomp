@@ -98975,6 +98975,65 @@ void sub_1018c710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c770 size=0x95
+struct SubV_1018c770 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21();
+	virtual bool vfunc22();
+};
+struct ObjV_1018c770 {
+	char m_pad[0x10];
+	SubV_1018c770 m_sub;
+};
+struct ParentV_1018c770 {
+	virtual void v0();
+	virtual bool vfunc1();
+	int m_pad[10];
+	int m_n2c;
+};
+struct CVarV_1018c770 {
+	int m_n0;
+	ParentV_1018c770 *m_pParent;
+};
+struct CvarIfV_1018c770 {
+	virtual void v0(); virtual void v1();
+	virtual CVarV_1018c770 *FindVar(const char *name);
+};
+struct FloatV_1018c770 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51();
+	virtual float vfunc52();
+};
+extern ObjV_1018c770 *sub_10170f60();
+extern CvarIfV_1018c770 *g_104a57e0;
+extern FloatV_1018c770 *g_1027ba58;
+
+bool sub_1018c770()
+{
+	if (sub_10170f60() && sub_10170f60()->m_sub.vfunc22())
+		return true;
+	static CVarV_1018c770 *s_pHide = g_104a57e0->FindVar("v_hidevgui");
+	CVarV_1018c770 *cv = s_pHide;
+	if (cv && !cv->m_pParent->vfunc1() && cv->m_pParent->m_n2c)
+		return true;
+	if (g_1027ba58->vfunc52() > 0.0f)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c810 size=0x24
 namespace lifted {
 struct C1007b160 { int sub_1007b160(); };
