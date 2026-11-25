@@ -46,4 +46,6 @@ public:
 	void vfunc43(int filter, int a, int b, int c, int d, int e);
 	void vfunc15(int, int, int, int, int, int, int, int, int, int);
 	void vfunc20(int, int, int, int, int, int, int, int, int, int);
+	void vfunc16(int filter, int delay, int pos, int dir, int extra);	// as in C_TempEntsSystem (transplant)
+	void vfunc39(int filter, int delay, int pos, int dir, int extra);	// as in C_TempEntsSystem (transplant)
 };

@@ -8,11 +8,12 @@ struct CCollisionEventData {
 class CCollisionEvent : public IPhysicsCollisionEvent, public IPhysicsCollisionSolver {
 public:
  CCollisionEvent();
- virtual void vfunc0(); virtual void vfunc1(struct CCollisionImpact *); virtual void vfunc2(int,int,int,int,int); virtual void vfunc3(struct IObj *, struct IObj *, int); virtual void vfunc4(); virtual void vfunc5(struct IObjA *, struct IObjA *); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+ virtual void vfunc0(); virtual void vfunc1(struct CCollisionImpact *); virtual void vfunc2(int,int,int,int,int); virtual void vfunc3(struct IObj *, struct IObj *, int); virtual void vfunc4(struct IObj *, struct IObj *, int); virtual void vfunc5(struct IObjA *, struct IObjA *); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
  virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
  CCollisionEventData m_data;
  char m_flag;
  void sub_10119730(int, int);
  float sub_10119e60(int);
  void sub_101194c0(int index, struct CCollisionImpact *pImpact);
+ void sub_101197b0(int, int);	// as in CCollisionEvent (transplant)
 };
