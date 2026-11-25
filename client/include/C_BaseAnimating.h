@@ -16,6 +16,7 @@ public:
 	bool sub_10095ac0(int idx, int arg);
 	int sub_1008f900(int index);
 	void sub_10096c30();
+	int sub_100965d0(int, int);
 	void sub_100bdbd0(Vector &, Vector &);
 	void sub_100947b0(Vector &, Vector &);
 	void sub_100bdb60(Vector &, Vector &);
