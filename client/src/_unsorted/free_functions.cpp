@@ -109391,6 +109391,37 @@ void CAnimState::sub_1018b110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b1f0 size=0x4b
+#include "CStudiomodelPanel.h"
+
+struct PanelCtorView
+{
+	void sub_101a9530(void *parent, const char *name);
+};
+
+struct ModelView
+{
+	ModelView *sub_10189af0();
+};
+
+void *__cdecl operator new(unsigned int);
+extern void *vt_1024ef4c;
+
+void *CStudiomodelPanel::sub_1018b1f0(void *parent, const char *name)
+{
+	((PanelCtorView *)this)->sub_101a9530(parent, name);
+	*(void **)this = &vt_1024ef4c;
+
+	void *p = ::operator new(0x1b0);
+	*(void **)((char *)this + 0x58) = p ? (void *)((ModelView *)p)->sub_10189af0() : 0;
+
+	*(char *)((char *)this + 0x5c) = 0;
+	*(char *)((char *)this + 0x75) = 0;
+	*(char *)((char *)this + 0x74) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b2a0 size=0x7f
 #include "Vector.h"
 
