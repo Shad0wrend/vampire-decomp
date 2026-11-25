@@ -20644,6 +20644,63 @@ void CUnknown100613a0::sub_100613a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100613d0 size=0x77
+#include "CSignUI.h"
+
+extern CSignUI *g_103eee40;
+extern int g_103eee44;
+extern void *g_104a57d4;
+
+char *sub_1004ba40(const char *, ...);
+
+class CUnknown100613a0
+{
+public:
+	void sub_100613a0();
+};
+
+struct HudElemView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual bool v6();
+};
+
+struct IEngineClientView
+{
+	virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
+	virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
+	virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void ClientCmd(const char *pszCmd);
+};
+
+void sub_100613d0()
+{
+	if (!g_103eee40)
+		return;
+	if (!((HudElemView *)((char *)g_103eee40 + 0x170))->v6())
+		return;
+
+	((CUnknown100613a0 *)g_103eee40)->sub_100613a0();
+
+	((IEngineClientView *)g_104a57d4)->ClientCmd(sub_1004ba40("player_stopuse %d", g_103eee44));
+
+	if (g_103eee40->m_b1c9)
+	{
+		((IEngineClientView *)g_104a57d4)->ClientCmd(&g_103eee40->m_b1c9);
+		g_103eee40->m_b1c9 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061640 size=0x46
 extern "C" unsigned int strlen(const char *);
 #pragma intrinsic(strlen)
