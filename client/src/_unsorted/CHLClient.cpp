@@ -375,6 +375,26 @@ int CHLClient::vfunc36()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc840 size=0x73
+#include "CHLClient.h"
+#include "CSave.h"
+
+struct SaveMgrView
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void SaveGame(CSave *pSave);
+};
+extern SaveMgrView *g_102c37a0;
+
+void CHLClient::vfunc37(void *pData)
+{
+    CSave save(pData);
+    g_102c37a0->SaveGame(&save);
+    ((CUtlVector<int> *)((char *)&save + 4))->~CUtlVector();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cca70 size=0x27
 #include "CHLClient.h"
 struct VX { void sub_10056bc0(int, int, int); };
