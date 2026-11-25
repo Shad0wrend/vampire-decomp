@@ -1788,6 +1788,7 @@
 0x1002b390 func   ?vfunc38@C_BatSwarm@@UAEXHH@Z C_BatSwarm::vfunc38
 0x1002b3e0 func   ?sub_1002b3e0@@YG_NPAUS_1002b3e0@@HH@Z sub_1002b3e0
 0x1002b400 func   ?sub_1002b400@V2b400@@QAEXXZ V2b400::sub_1002b400
+0x1002b420 func   ?sub_1002b420@CUtlLinkedList776@@QAEXG@Z CUtlLinkedList776::sub_1002b420
 0x1002b4e0 func   ?sub_1002b4e0@CUnknown1002b4e0@@QAEPAXXZ CUnknown1002b4e0::sub_1002b4e0
 0x1002b4f0 func   ?sub_1002b4f0@LLView2@@QAEHG@Z LLView2::sub_1002b4f0
 0x1002b530 func   ?sub_1002b530@BigMem@@QAEXH@Z BigMem::sub_1002b530

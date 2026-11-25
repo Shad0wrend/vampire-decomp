@@ -11923,6 +11923,28 @@ struct V2b400 { char pad[0xc]; unsigned short a, b, c, d, e; void sub_1002b400()
 void V2b400::sub_1002b400() { a = 0xffff; b = 0xffff; c = 0xffff; e = 0; d = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1002b420 size=0xc0
+#include "CUtlLinkedList776.h"
+// TARGET: CUtlLinkedList776::sub_1002b420
+void CUtlLinkedList776::sub_1002b420(unsigned short elem)
+{
+    if (elem < m_TotalElements && m_Memory.m_pMemory[elem].m_Previous != elem) {
+        CUtlLinkedList776Node *pBase = m_Memory.m_pMemory;
+        CUtlLinkedList776Node *pOldElem = &pBase[elem];
+        if (pOldElem->m_Previous != InvalidIndex())
+            pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+        else
+            m_Head = pOldElem->m_Next;
+        if (pOldElem->m_Next != InvalidIndex())
+            pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+        else
+            m_Tail = pOldElem->m_Previous;
+        pOldElem->m_Previous = pOldElem->m_Next = elem;
+        --m_ElementCount;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b4e0 size=0x3
 struct CUnknown1002b4e0 { void * sub_1002b4e0(); };
 void * CUnknown1002b4e0::sub_1002b4e0()
