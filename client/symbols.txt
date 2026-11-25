@@ -7654,6 +7654,7 @@
 0x10162420 func   ?vfunc3@CVampModeManager@@UAEXXZ CVampModeManager::vfunc3
 0x10162430 func   ?vfunc4@CVampModeManager@@UAEHM@Z CVampModeManager::vfunc4
 0x101624d0 func   ?sub_101624d0@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_101624d0
+0x10162560 func   ??1QuestJournal@@QAE@XZ QuestJournal::~QuestJournal
 0x10162650 func   ?sub_10162650@QuestJournal@@QAEXXZ QuestJournal::sub_10162650
 0x10162710 func   ?sub_10162710@QuestJournal@@QAEXXZ QuestJournal::sub_10162710
 0x10162840 func   ?sub_10162840@QuestJournal@@QAEXXZ QuestJournal::sub_10162840
