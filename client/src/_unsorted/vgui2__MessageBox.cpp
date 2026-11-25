@@ -39,6 +39,42 @@ void vgui2::MessageBox::vfunc145()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c69d0 size=0xc3
+#include "vgui2__MessageBox.h"
+#define D(n) virtual void d##n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+struct PVM
+{
+	int sub_101ab130(int);
+	int sub_101ab1a0();
+	void sub_101a9890(int);
+};
+struct MBView
+{
+	D10(0) D10(1) D10(2) D10(3) D10(4) D10(5) D10(6) D10(7) D10(8) D10(9)
+	D10(10) D10(11) D10(12) D10(13) D(140)
+	virtual void v141(int *, int *, int *, int *);
+};
+struct MBMembers
+{
+	char m_pad[0xe4];
+	PVM *m_pE4;
+	PVM *m_pE8;
+};
+struct XY { int x, y; };
+void vgui2::MessageBox::vfunc101()
+{
+	XY q, p;
+	MBMembers *m = (MBMembers *)this;
+	((MBView *)this)->v141(&p.x, &p.y, &q.x, &q.y);
+	q.x += p.x;
+	q.y += p.y;
+	m->m_pE8->sub_101a9890(q.y / 2 - m->m_pE8->sub_101ab130(p.y + 15) / 2 + p.y);
+	m->m_pE4->sub_101a9890(q.y / 2 - m->m_pE4->sub_101ab130(q.y - m->m_pE4->sub_101ab1a0() - 15) / 2 + p.y);
+	sub_101b88c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6aa0 size=0x4f
 #include "vgui2__MessageBox.h"
 namespace lifted {

@@ -9335,6 +9335,7 @@
 0x101c68c0 func   ??_GMessageBox@vgui2@@UAEPAXI@Z ??_GMessageBox@vgui2@@UAEPAXI@Z
 0x101c68e0 func   ??1MessageBox@vgui2@@UAE@XZ vgui2::MessageBox::~MessageBox
 0x101c6900 func   ?vfunc145@MessageBox@vgui2@@UAEXXZ vgui2::MessageBox::vfunc145
+0x101c69d0 func   ?vfunc101@MessageBox@vgui2@@UAEXXZ vgui2::MessageBox::vfunc101
 0x101c6aa0 func   ?vfunc130@MessageBox@vgui2@@UAEHXZ vgui2::MessageBox::vfunc130
 0x101c6af0 func   ?vfunc146@MessageBox@vgui2@@UAEHH@Z vgui2::MessageBox::vfunc146
 0x101c6b10 func   ?vfunc149@MessageBox@vgui2@@UAEHXZ vgui2::MessageBox::vfunc149
