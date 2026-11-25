@@ -45516,6 +45516,24 @@ void sub_100cd9a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd9e0 size=0x89
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+float sub_100cd9e0(float cur, float target, float rate, float dt)
+{
+    if (cur < target)
+    {
+        float v = cur + rate * dt;
+        return clamp(v, cur, target);
+    }
+    if (cur > target)
+    {
+        float v = cur - rate * dt;
+        return clamp(v, target, cur);
+    }
+    return cur;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cda70 size=0x5d
 #include "Vector.h"
 
