@@ -70380,6 +70380,57 @@ bool CUnknown101d7520Rule::sub_10140450(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140530 size=0x64
+struct ElemBase10140530
+{
+    void sub_10161420();
+};
+
+struct Elem10140530
+{
+    char m_pad0[0x18];
+    ElemBase10140530 m_base18;
+};
+
+struct CPartList10140530
+{
+    int m_unk0[7];
+    int m_1c;
+    int m_unk20[2];
+    int m_28;
+    int m_nCount;
+    Elem10140530 **m_pArray;
+    void sub_101406b0();
+    void sub_10140530();
+};
+
+void operator delete(void *);
+
+// TARGET: CPartList10140530::sub_10140530
+void CPartList10140530::sub_10140530()
+{
+    sub_101406b0();
+    if (m_pArray)
+    {
+        for (int i = 0; i < m_nCount; i++)
+        {
+            Elem10140530 *p = m_pArray[i];
+            if (p)
+            {
+                p->m_base18.sub_10161420();
+                operator delete(p);
+            }
+            m_pArray[i] = 0;
+        }
+        operator delete(m_pArray);
+        m_pArray = 0;
+    }
+    m_1c = 0;
+    m_nCount = 0;
+    m_28 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101405a0 size=0x1
 void sub_101405a0()
 {
