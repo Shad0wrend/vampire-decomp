@@ -110245,6 +110245,42 @@ int CUnknown101b3570::sub_101b3570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3580 size=0xa9
+#include "vgui2__Button.h"
+
+int sub_101ac8d0();
+struct ISurf101b3580
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(int *a, int *b);
+};
+
+void vgui2::Button::sub_101b3580()
+{
+	*(char *)((char *)this + 0xed) = 1;
+	*(char *)((char *)this + 0xb8) = 0;
+	*(char *)((char *)this + 0xba) = 0;
+	*(char *)((char *)this + 0xb9) = 0;
+	*(char *)((char *)this + 0xbb) = 0;
+	*(char *)((char *)this + 0xbc) = 1;
+	*(char *)((char *)this + 0xbd) = 1;
+	*(char *)((char *)this + 0xbe) = 0;
+	*(int *)((char *)this + 0xc0) = 0;
+	*(int *)((char *)this + 0xc4) = 0;
+	*(int *)((char *)this + 0xc8) = 0;
+	*(int *)((char *)this + 0xcc) = 0;
+	*(char *)((char *)this + 0xec) = 0;
+	int wide, tall;
+	((ISurf101b3580 *)sub_101ac8d0())->v39(&wide, &tall);
+	double scale = wide / 1024.0;
+	vfunc112((int)(scale * 6.0), 0);
+	vfunc148(0, true);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3630 size=0xbe
 extern void *g_102506b4[];
 
