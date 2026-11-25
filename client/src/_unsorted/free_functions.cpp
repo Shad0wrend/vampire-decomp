@@ -96766,6 +96766,34 @@ int sub_1018c850(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c870 size=0x80
+int sub_100cd100();
+int sub_100cd0f0();
+int sub_1018c850(int w);
+extern "C" int sprintf(char *, const char *, ...);
+extern int g_102d3e90[5];
+extern int g_102d3ea4;
+extern int g_102d3ea8;
+extern char g_105fbbe8[];
+char *sub_1018c870(const char *name)
+{
+	if (sub_100cd100() != g_102d3ea4) {
+		int best = sub_100cd100();
+		for (int i = 0; i < 5; i++) {
+			int w = g_102d3e90[i];
+			int h = sub_1018c850(w);
+			if (w > sub_100cd100() || h > sub_100cd0f0())
+				break;
+			best = g_102d3e90[i];
+		}
+		g_102d3ea8 = best;
+		g_102d3ea4 = sub_100cd100();
+	}
+	sprintf(g_105fbbe8, "%s_%d", name, g_102d3ea8);
+	return g_105fbbe8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ca20 size=0x25
 namespace lifted {
 extern char g_1024f33c;
