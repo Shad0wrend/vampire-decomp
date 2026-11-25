@@ -64260,6 +64260,17 @@ const CUtlRBTree20::Links_t &CUtlRBTree20::sub_10112840(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101130d0 size=0xb9
+#include "CUtlRBTree16.h"
+
+// TARGET: CUtlRBTree16::sub_101130d0
+bool CUtlRBTree16::sub_101130d0(unsigned short i) const
+{
+	const CUtlRBTree16At<0x104dff2c> *tree = (const CUtlRBTree16At<0x104dff2c> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113190 size=0x57
 #include "CUtlRBTree16.h"
 
