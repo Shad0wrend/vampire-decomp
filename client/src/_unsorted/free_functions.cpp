@@ -61818,6 +61818,28 @@ CUtlHash_1011e890 *CUtlHash_1011e890::sub_1011e890(int bucketCount, int growCoun
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e910 size=0x85
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUtlHashView.h"
+// TARGET: CUtlHashView::sub_1011e910
+int CUtlHashView::sub_1011e910(const void *pKey)
+{
+	int i;
+	int h; h = m_pfnHash(pKey);
+	if (m_bPowerOfTwo)
+		i = h & m_nMask;
+	else
+		i = h % m_nBuckets;
+	int j; j = 0;
+	int n = m_pBuckets[i].m_Size;
+	while ((int)j < n) { if (m_pfnCompare(&*(pcd_stage(m_pBuckets[i].m_pElements) + j), pKey))
+			break; j = 1 + j; }
+	if (j == n)
+		return -1;
+	return j | (i << 16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e9a0 size=0x80
 struct E8
 {

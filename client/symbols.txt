@@ -5729,6 +5729,7 @@
 0x1011e860 func   ?sub_1011e860@@YA_NPBH0@Z sub_1011e860
 0x1011e880 func   ?sub_1011e880@@YAHH@Z sub_1011e880
 0x1011e890 func   ?sub_1011e890@CUtlHash_1011e890@@QAEPAV1@HHHPAX0@Z CUtlHash_1011e890::sub_1011e890
+0x1011e910 func   ?sub_1011e910@CUtlHashView@@QAEHPBX@Z CUtlHashView::sub_1011e910
 0x1011e9a0 func   ?sub_1011e9a0@CUtlHash_1011e9a0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011e9a0::sub_1011e9a0
 0x1011eab0 func   ?sub_1011eab0@CUtlHash_1011eab0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011eab0::sub_1011eab0
 0x1011ebc0 func   ?sub_1011ebc0@CUtlHash_1011ebc0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011ebc0::sub_1011ebc0
