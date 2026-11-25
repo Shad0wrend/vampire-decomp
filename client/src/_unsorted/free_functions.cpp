@@ -46481,6 +46481,52 @@ void CUtlMemory12::sub_100caa80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb220 size=0xa2
+#include "Vector.h"
+
+struct RandomView
+{
+	virtual void v0();
+	virtual float RandomFloat(float a, float b);
+};
+
+extern RandomView *g_104a5738;
+
+struct RandArrayView
+{
+	char pad0[0xc];
+	int m_c;
+	int m_pad10;
+	Vector *m_pVec14;
+	int m_nCount18;
+	char pad1c[0x328 - 0x1c];
+	Vector m_vecMin;
+	Vector m_vecMax;
+	void sub_100cb220();
+};
+
+// TARGET: RandArrayView::sub_100cb220
+void RandArrayView::sub_100cb220()
+{
+	m_pVec14 = (Vector *)::operator new(m_nCount18 * sizeof(Vector));
+	if (!m_pVec14)
+	{
+		m_c = 0;
+		return;
+	}
+	for (int i = 0; i < m_nCount18; i++)
+	{
+		float *p;
+		p = &m_pVec14[i].x;
+		*p = g_104a5738->RandomFloat(m_vecMin.x, m_vecMax.x);
+		p = &m_pVec14[i].y;
+		*p = g_104a5738->RandomFloat(m_vecMin.y, m_vecMax.y);
+		p = &m_pVec14[i].z;
+		*p = g_104a5738->RandomFloat(m_vecMin.z, m_vecMax.z);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb300 size=0x1b
 namespace lifted {
 struct C100cab10 { int sub_100cab10(); };

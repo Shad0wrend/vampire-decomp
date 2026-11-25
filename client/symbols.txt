@@ -4471,6 +4471,7 @@
 0x100cab90 func   ??1CCamoMaterialProxy@@UAE@XZ CCamoMaterialProxy::~CCamoMaterialProxy
 0x100cabd0 func   ?vfunc0@CCamoMaterialProxy@@UAE_NPAX0@Z CCamoMaterialProxy::vfunc0
 0x100cb0a0 func   ?vfunc1@CCamoMaterialProxy@@UAEXH@Z CCamoMaterialProxy::vfunc1
+0x100cb220 func   ?sub_100cb220@RandArrayView@@QAEXXZ RandArrayView::sub_100cb220
 0x100cb300 func   ?sub_100cb300@@YAHXZ sub_100cb300
 0x100cb560 func   ?sub_100cb560@@YAHXZ sub_100cb560
 0x100cb570 func   ?sub_100cb570@CUnknown100cb570@@QAEPAXXZ CUnknown100cb570::sub_100cb570
