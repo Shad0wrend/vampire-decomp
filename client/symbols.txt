@@ -5480,6 +5480,7 @@
 0x10118150 func   ?sub_10118150@CUnknown10118150@@QAEHXZ CUnknown10118150::sub_10118150
 0x10118160 func   ?sub_10118160@@YA?AV?$CSmartPtr@VCUnknown10118100@@@@H@Z sub_10118160
 0x101181b0 func   ?sub_101181b0@CUnknown101181b0@@QAEHHH@Z CUnknown101181b0::sub_101181b0
+0x101181d0 func   ?sub_101181d0@PMgr@@QAEXHPBVVector@@HE@Z PMgr::sub_101181d0
 0x10118240 func   ?vfunc8@CSimpleEmitter@@QAEMPAUSimpleParticle8@@H@Z CSimpleEmitter::vfunc8
 0x10118280 func   ?vfunc9@CSimpleEmitter@@QAEMPAUXSP@@H@Z CSimpleEmitter::vfunc9
 0x10118360 func   ?vfunc10@CSimpleEmitter@@UAEMPAUSimpleParticleAux_t@@M@Z CSimpleEmitter::vfunc10

@@ -57889,6 +57889,58 @@ int CUnknown101181b0::sub_101181b0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101181d0 size=0x64
+#include "Vector.h"
+
+struct PItem
+{
+	int m_pad00[3];
+	Vector m_pos;
+	Vector m_unk18;
+	int m_unk24;
+	int m_unk28;
+	int m_unk2c;
+	unsigned char m_c30;
+	unsigned char m_c31;
+	unsigned char m_c32;
+	unsigned char m_c33;
+	unsigned char m_c34;
+	unsigned char m_c35;
+	unsigned char m_c36;
+	unsigned char m_c37;
+	int m_unk38;
+};
+
+class PMgr
+{
+public:
+	PItem *sub_101180c0(int, int, const Vector *);
+	void sub_101181d0(int a, const Vector *pos, int b, unsigned char c);
+};
+
+// TARGET: PMgr::sub_101181d0
+void PMgr::sub_101181d0(int a, const Vector *pos, int b, unsigned char c)
+{
+	PItem *p = sub_101180c0(0x3c, a, pos);
+	if (!p)
+		return;
+	VectorCopy(*pos, p->m_pos);
+	p->m_unk18.Init();
+	p->m_unk28 = b;
+	p->m_unk24 = 0;
+	p->m_c34 = 0xff;
+	p->m_c33 = 0xff;
+	p->m_unk38 = 0;
+	p->m_unk2c = 0;
+	p->m_c32 = 0;
+	p->m_c31 = 0;
+	p->m_c30 = 0;
+	p->m_c36 = c;
+	p->m_c35 = c;
+	p->m_c37 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101187e0 size=0x19
 namespace lifted {
 extern char g_10235994;
