@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10124b20 size=0x37
+#include "CPlayerProximityProxy.h"
+#include "CKeyValuesX.h"
+bool CPlayerProximityProxy::vfunc0(void *pMaterial, void *pKeyValues)
+{
+	if (!CResultProxy::vfunc0(pMaterial, pKeyValues))
+		return false;
+	m_flRadius = ((CKeyValuesX *)pKeyValues)->sub_10128540("scale", 0.002f);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124b60 size=0x6b
 #include "CPlayerProximityProxy.h"
 #include "Vector.h"

@@ -6033,6 +6033,7 @@
 0x10124870 func   ?sub_10124870@CUnknown10124870@@QAEHHH@Z CUnknown10124870::sub_10124870
 0x10124ae0 func   ?sub_10124ae0@CView@@QAEXXZ CView::sub_10124ae0
 0x10124af0 func   ?vfunc1@CBreakableSurfaceProxy@@UAEXH@Z CBreakableSurfaceProxy::vfunc1
+0x10124b20 func   ?vfunc0@CPlayerProximityProxy@@UAE_NPAX0@Z CPlayerProximityProxy::vfunc0
 0x10124b60 func   ?vfunc1@CPlayerProximityProxy@@UAEXH@Z CPlayerProximityProxy::vfunc1
 0x10124c00 func   ?sub_10124c00@@YAHXZ sub_10124c00
 0x10124c30 func   ??_GCPlayerProximityProxy@@UAEPAXI@Z ??_GCPlayerProximityProxy@@UAEPAXI@Z
