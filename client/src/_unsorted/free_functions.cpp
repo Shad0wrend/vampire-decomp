@@ -40108,6 +40108,23 @@ bool __cdecl sub_100b4150(ObjV *obj, Vector v1, Vector v2, Vector v3, float scal
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b42a0 size=0x89
+class Vector { public: float x, y, z; };
+class C_EnvParticle;
+struct ObjV;
+extern C_EnvParticle *sub_100b3560();
+extern void sub_100b4150(ObjV *, Vector, Vector, Vector, float, int, int, int);
+bool sub_100b42a0(Vector a, int a3, Vector b, Vector c, float f, int i1, int i2, int i3)
+{
+	ObjV *p = (ObjV *)sub_100b3560();
+	if (!p)
+		return false;
+	*(int *)((char *)p + 0x414) = a3;
+	*(int *)((char *)p + 0x410) = 0;
+	sub_100b4150(p, a, b, c, f, i1, i2, i3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4560 size=0x18
 #include <string.h>
 extern char g_104a1d10[0x200];

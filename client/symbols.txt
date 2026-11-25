@@ -3953,6 +3953,7 @@
 0x100b35c0 func   ?sub_100b35c0@@YA_NVVector@@PBD@Z sub_100b35c0
 0x100b3640 func   ?sub_100b3640@@YA_NVVector@@H@Z sub_100b3640
 0x100b4150 func   ?sub_100b4150@@YA_NPAUObjV@@VVector@@11MHH@Z sub_100b4150
+0x100b42a0 func   ?sub_100b42a0@@YA_NVVector@@H00MHHH@Z sub_100b42a0
 0x100b4560 func   ?sub_100b4560@@YAXXZ sub_100b4560
 0x100b4750 func   ?sub_100b4750@@YAXXZ sub_100b4750
 0x100b4780 func   ?sub_100b4780@@YAXXZ sub_100b4780
