@@ -169,6 +169,36 @@ int vgui2::Slider::vfunc74(int pScheme)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bba60 size=0x85
+#include "vgui2__Slider.h"
+struct SurfV121
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
+	virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34();
+	virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38();
+	virtual void GetScreenSize(int &wide, int &tall);
+};
+SurfV121 *sub_101ac8d0();
+// TARGET: vgui2::Slider::vfunc121
+void vgui2::Slider::vfunc121(int &x, int &y, int &w, int &h)
+{
+	int wide, tall;
+	vfunc65(wide, tall);
+	int sw, st;
+	sub_101ac8d0()->GetScreenSize(sw, st);
+	double f = st * 0.0013020833333333333;
+	x = (int)m_p58 / 2;
+	y = (int)(f * 36.0);
+	w = wide - (int)m_p58;
+	h = (int)(f * 4.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbaf0 size=0x17
 #include "vgui2__Slider.h"
 namespace lifted {
