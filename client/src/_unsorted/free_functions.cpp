@@ -58426,6 +58426,51 @@ int __stdcall sub_100f1330(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f13a0 size=0x76
+#include "CHudChatLine.h"
+
+namespace lifted {
+extern char g_102de300;
+extern char g_10234d9c;
+extern char g_102bc138;
+struct C101b1fc0 { int sub_101b1fc0(int, int, int); };
+struct C101ab060 { void sub_101ab060(int); };
+struct C101b2950 { void sub_101b2950(int); };
+struct C101b2450 { void sub_101b2450(int, int); };
+}
+
+struct CScheme7 {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7(const char *, int *, int);
+};
+
+int sub_101ac920();
+
+// TARGET: CHudChatLine::sub_100f13a0
+void *CHudChatLine::sub_100f13a0(vgui2::Panel *parent, const char *name)
+{
+	((lifted::C101b1fc0 *)this)->sub_101b1fc0((int)parent, (int)name, (int)&lifted::g_102de300);
+	*(int *)this = (int)&lifted::g_10234d9c;
+	*(int *)((char *)this + 0xc8) = 0;
+	*(int *)((char *)this + 0xc4) = 0;
+	*(int *)((char *)this + 0xb8) = 0;
+	*(int *)((char *)this + 0xbc) = 0;
+	((lifted::C101ab060 *)this)->sub_101ab060(0);
+	((lifted::C101b2950 *)this)->sub_101b2950(3);
+	((lifted::C101b2450 *)this)->sub_101b2450(0xa, 0);
+	CScheme7 *s = (CScheme7 *)sub_101ac920();
+	int *pFmt = (int *)((char *)this + 0xd8);
+	s->v7(&lifted::g_102bc138, pFmt, 1);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f14a0 size=0x21
 struct CUnknown100f14a0 { int sub_100f14a0(int, int, int); };
 int CUnknown100f14a0::sub_100f14a0(int a0, int a1, int a2)
