@@ -9071,6 +9071,7 @@
 0x101baf70 func   ?vfunc164@LabelComboBoxButton@vgui2@@UAEHHHHH@Z vgui2::LabelComboBoxButton::vfunc164
 0x101baf80 func   ?vfunc156@LabelComboBoxButton@vgui2@@UAEHH@Z vgui2::LabelComboBoxButton::vfunc156
 0x101bafc0 func   ?vfunc157@LabelComboBoxButton@vgui2@@UAEHH@Z vgui2::LabelComboBoxButton::vfunc157
+0x101bb000 func   ?sub_101bb000@LabelComboBoxCtor_101bb000@@QAEPAXPAVPanel@vgui2@@PBD@Z LabelComboBoxCtor_101bb000::sub_101bb000
 0x101bb0f0 func   ??_GLabelComboBox@vgui2@@UAEPAXI@Z ??_GLabelComboBox@vgui2@@UAEPAXI@Z
 0x101bb110 func   ??1LabelComboBox@vgui2@@UAE@XZ vgui2::LabelComboBox::~LabelComboBox
 0x101bb180 func   ?vfunc166@LabelComboBox@vgui2@@UAEHXZ vgui2::LabelComboBox::vfunc166
