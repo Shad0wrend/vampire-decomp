@@ -269,6 +269,52 @@ void CTempEnts::vfunc4(const void *pos, int r, int g, int b, int a, int modelInd
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003c9b0 size=0x77
+#include "CTempEnts.h"
+
+class CUnknown1003a840
+{
+public:
+	void sub_1003a840(int, int, int);
+};
+
+struct CV1009f670
+{
+	float sub_1009f670(int);
+};
+
+struct IRandomView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int, int);
+};
+
+extern IRandomView *g_104a5738;
+
+void CTempEnts::vfunc13(C_LocalTempEntity *pEnt, int n)
+{
+	if (!pEnt)
+		return;
+
+	*(int *)((char *)pEnt + 0x48) = 4;
+	*(int *)((char *)pEnt + 0x4c) = 0;
+	((CUnknown1003a840 *)pEnt)->sub_1003a840(0, 0, 0x41f00000);
+
+	int r = g_104a5738->RandomInt(20, 35);
+	((char *)pEnt)[0x50] = (char)r;
+	((char *)pEnt)[0x51] = (char)r;
+	((char *)pEnt)[0x52] = (char)r;
+	((char *)pEnt)[0x53] = (char)0xff;
+
+	float f = ((CV1009f670 *)pEnt)->sub_1009f670(2);
+	pEnt->sub_1009f680(2, f + 20.0f);
+
+	((int *)pEnt)[0x7ac / 4] = 0x200000;
+	pEnt->m_unk7f0 = n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ca30 size=0x260
 #include "CTempEnts.h"
 #include "ConVar.h"
