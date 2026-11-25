@@ -19,6 +19,7 @@ public:
 	void sub_1015d4a0(int stat);
 	void sub_1015ded0(int stat);	// "CVStatList_t::SetMax"
 	void sub_1015d400(int stat, int value);
+	void sub_1015de00(int stat);
 	void sub_1015d530(int stat, int source);
 	void sub_1015d650(int stat, int value);
 	const char *sub_1015dc80(int stat);
