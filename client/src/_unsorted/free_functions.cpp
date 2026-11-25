@@ -66877,6 +66877,76 @@ void PCV::sub_10123e30(int type, void *dst, void *src, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123e70 size=0x11a
+#include <math.h>
+#include "Vector.h"
+
+struct tdesc_ext_t
+{
+	int a;
+	const char *fieldName;
+	char pad[10];
+	unsigned short flags;
+};
+
+struct PredCopyLocal
+{
+	char pad0[0x14];
+	bool m_bErrorCheck;
+	char pad1[3];
+	tdesc_ext_t *m_pCurrentField;
+
+	char sub_10123470();
+	int sub_10123e70(Vector *outValue, const Vector *inValue, int count);
+};
+
+char PredCopyLocal::sub_10123470()
+{
+	return (m_pCurrentField->flags & 0x0400) == 0;
+}
+
+// TARGET: PredCopyLocal::sub_10123e70
+int PredCopyLocal::sub_10123e70(Vector *outValue, const Vector *inValue, int count)
+{
+	if (!m_bErrorCheck)
+		return 0;
+
+	int retval = 1;
+
+	if (sub_10123470())
+	{
+		float tolerance = 0.0f;
+		bool usetolerance = (m_pCurrentField->flags & 0x0800) != 0;
+		if (usetolerance)
+		{
+			tolerance = 0.125f;
+		}
+
+		for (int i = 0; i < count; i++)
+		{
+			if (outValue[i] == inValue[i])
+				continue;
+
+			Vector delta = outValue[i] - inValue[i];
+
+			if (usetolerance)
+			{
+				if (fabs(delta.x) <= tolerance &&
+					fabs(delta.y) <= tolerance &&
+					fabs(delta.z) <= tolerance)
+				{
+					retval = 2;
+					continue;
+				}
+			}
+			return 0;
+		}
+	}
+
+	return retval;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123f90 size=0x30
 struct PC {
 	char pad[0x2c]; char m_b;
