@@ -7870,6 +7870,7 @@
 0x1018a1f0 func   ?vfunc10@CGUIClientRenderable@@UAEXPAVVector@@PAVQuaternion@@@Z CGUIClientRenderable::vfunc10
 0x1018a6d0 func   ?sub_1018a6d0@@YI_NPAUS_1018a6d0@@HH@Z sub_1018a6d0
 0x1018a6f0 func   ?sub_1018a6f0@CUnknown1018a6f0@@QAEXHD@Z CUnknown1018a6f0::sub_1018a6f0
+0x1018a7d0 func   ?sub_1018a7d0@CGUIClientRenderable@@QAEMXZ CGUIClientRenderable::sub_1018a7d0
 0x1018ae50 func   ?sub_1018ae50@LHold@@QAEXXZ LHold::sub_1018ae50
 0x1018ae80 func   ?sub_1018ae80@CFoo@@QAEXPAVVector@@0@Z CFoo::sub_1018ae80
 0x1018b240 func   ?vfunc88@CStudiomodelPanel@@UAEXXZ CStudiomodelPanel::vfunc88

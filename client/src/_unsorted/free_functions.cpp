@@ -97713,6 +97713,32 @@ void CUnknown1018a6f0::sub_1018a6f0(int a0, char a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a7d0 size=0x8a
+#include "CGUIClientRenderable.h"
+struct EngTime {
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void f8(); virtual void f9(); virtual void f10(); virtual void f11(); virtual void f12(); virtual void f13(); virtual void f14(); virtual void f15();
+	virtual void f16(); virtual void f17(); virtual void f18(); virtual void f19(); virtual void f20(); virtual void f21(); virtual void f22(); virtual void f23();
+	virtual void f24(); virtual void f25(); virtual void f26(); virtual void f27(); virtual void f28(); virtual void f29(); virtual void f30(); virtual void f31();
+	virtual void f32(); virtual void f33(); virtual void f34(); virtual void f35(); virtual void f36(); virtual void f37(); virtual void f38();
+	virtual double Time(int);
+};
+extern EngTime *g_104a57d4;
+float CGUIClientRenderable::sub_1018a7d0()
+{
+	float dur = m_f190 - m_f1ac;
+	float f = 1.0f;
+	if (dur > 0.0f) {
+		f = 1.0 - (m_f190 - g_104a57d4->Time(0)) / dur;
+		if (f > 2.0f)
+			f = 2.0f;
+		else if (f < 0.0f)
+			f = 0.0f;
+	}
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ae50 size=0x2f
 struct CUnknown100ac740 { CUnknown100ac740 *m_pNext; void sub_100ac740(); };
 struct LHold {
