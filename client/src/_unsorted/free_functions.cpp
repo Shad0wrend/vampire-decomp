@@ -56238,6 +56238,39 @@ void sub_100f1870(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1e20 size=0xbc
+#pragma auto_inline(off)
+struct CUnknown100f1850 { char pad[0xbc]; float m_bc; float sub_100f1850(); };
+float CUnknown100f1850::sub_100f1850() { return m_bc; }
+struct CUnknown100f17e0 { int sub_100f17e0(); };
+int CUnknown100f17e0::sub_100f17e0() { return *(int *)((char *)this + 0x10); }
+struct ChatItem {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21();
+    virtual bool vfunc22();
+    float F() { return ((CUnknown100f1850 *)this)->sub_100f1850(); }
+    int I() { return ((CUnknown100f17e0 *)this)->sub_100f17e0(); }
+};
+// TARGET: sub_100f1e20
+int __cdecl sub_100f1e20(ChatItem **pa, ChatItem **pb)
+{
+    ChatItem *a = *pa;
+    ChatItem *b = *pb;
+    if (a->vfunc22() && !b->vfunc22())
+        return -1;
+    if (!a->vfunc22() && b->vfunc22())
+        return 1;
+    if (a->F() < b->F())
+        return -1;
+    if (a->F() > b->F())
+        return 1;
+    if (a->I() < b->I())
+        return -1;
+    return a->I() > b->I();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2410 size=0x75
 extern char g_104cff48[];
 
