@@ -316,6 +316,42 @@ void CHLClient::vfunc30(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbef0 size=0x67
+#include "CHLClient.h"
+
+extern int (*g_101e31b4)(const char *, const char *);
+
+struct IAppSystemV
+{
+	virtual void *v0(const char *pName);
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(int a, void *b, int (*cb)(int, int, int, int));
+};
+
+extern IAppSystemV *g_104a5804;
+extern void *g_102b848c;
+extern void *g_102b8490;
+
+int sub_100cbee0(int a, int b, int c, int d);
+
+// TARGET: CHLClient::vfunc31
+void CHLClient::vfunc31(const char *name)
+{
+	int (*cmp)(const char *, const char *) = g_101e31b4;
+	if (cmp(name, "VguiScreen") == 0)
+	{
+		g_102b848c = g_104a5804->v0(name);
+		return;
+	}
+	if (cmp(name, "Materials") == 0)
+	{
+		void *pMat = g_104a5804->v0(name);
+		g_102b8490 = pMat;
+		g_104a5804->v6(0, pMat, sub_100cbee0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc700 size=0x10
 #include "CHLClient.h"
 namespace lifted {
