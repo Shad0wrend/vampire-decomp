@@ -13873,6 +13873,31 @@ int CUnknown10034200::sub_10034200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10034220 size=0xcd
+#include "Vector.h"
+
+struct ITempEntsV4
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4(void *origin, int a, int b, int c, int d, int e, int f, float g);
+};
+
+extern ITempEntsV4 *g_1028073c;
+extern short g_104a5474;
+extern short g_104a56f4;
+void sub_1002ebc0(Vector *v, Vector *dir, float a, float b, float c, float d);
+
+void sub_10034220(int f1, int f2, Vector *pos, Vector *dir, int a4, int a5, int a6, int a7, int a8)
+{
+	Vector v = *pos + *dir * 4.0f;
+	g_1028073c->v4(&v, a4, a5, a6, a7, g_104a56f4, g_104a5474, (float)a8);
+	sub_1002ebc0(&v, dir, (float)a4, (float)a5, (float)a6, (float)a7);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100342f0 size=0xbf
 #include "Vector.h"
 struct ITempEntsV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void BloodSprite(const Vector &org, int r, int g, int b, int a, int m38, int m34, float size); };

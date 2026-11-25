@@ -1992,6 +1992,7 @@
 0x100341e0 func   ??_GC_TEBloodSprite@@UAEPAXI@Z ??_GC_TEBloodSprite@@UAEPAXI@Z
 0x10034200 func   ??1C_TEBloodSprite@@UAE@XZ C_TEBloodSprite::~C_TEBloodSprite
 0x10034200 func   ?sub_10034200@CUnknown10034200@@QAEHXZ CUnknown10034200::sub_10034200
+0x10034220 func   ?sub_10034220@@YAXHHPAVVector@@0HHHHH@Z sub_10034220
 0x100342f0 func   ?sub_100342f0@@YIXPAUTEBloodView@@HH@Z sub_100342f0
 0x100343b0 func   ?vfunc9@C_TEBloodSprite@@UAEHXZ C_TEBloodSprite::vfunc9
 0x100343c0 func   ?vfunc8@C_TEBloodSprite@@UAEHXZ C_TEBloodSprite::vfunc8
