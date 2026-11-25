@@ -39284,6 +39284,24 @@ char * CUnknown1009f770::sub_1009f770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f780 size=0x65
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+#include "ehandle.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+void C_BaseEntity::sub_1009f780()
+{
+	C_BaseEntity *pParent = (C_BaseEntity *)((CBaseHandle *)((char *)this + 0x208))->Get();
+	Vector origin;
+	QAngle angles;
+	vfunc64((int)pParent, (int)&origin, (int)&angles);
+	sub_100a2030(&origin);
+	sub_100a2100(angles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f7f0 size=0xa3
 #include "C_BaseEntity.h"
 #include "CBaseHandle.h"

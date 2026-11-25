@@ -3704,6 +3704,7 @@
 0x1009f730 func   ?sub_1009f730@CUnknown1009f730@@QAEHH@Z CUnknown1009f730::sub_1009f730
 0x1009f760 func   ?sub_1009f760@CUnknown1009f760@@QAEPADXZ CUnknown1009f760::sub_1009f760
 0x1009f770 func   ?sub_1009f770@CUnknown1009f770@@QAEPADXZ CUnknown1009f770::sub_1009f770
+0x1009f780 func   ?sub_1009f780@C_BaseEntity@@QAEXXZ C_BaseEntity::sub_1009f780
 0x1009f7f0 func   ?sub_1009f7f0@C_BaseEntity@@QAEPAXPAX@Z C_BaseEntity::sub_1009f7f0
 0x1009f8a0 func   ?sub_1009f8a0@C_BaseEntity@@QAEXXZ C_BaseEntity::sub_1009f8a0
 0x1009fa70 func   ?sub_1009fa70@C_BaseEntity@@QAEXXZ C_BaseEntity::sub_1009fa70
