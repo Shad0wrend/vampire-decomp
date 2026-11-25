@@ -441,6 +441,30 @@ int CHLClient::vfunc33(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc710 size=0x85
+#include "CHLClient.h"
+#include "CSave.h"
+// TARGET: CHLClient::vfunc34
+void CHLClient::vfunc34(void *pData, int a, int b, int c, int d, int e)
+{
+	CSave save(pData);
+	save.vfunc3(a, b, c, d, e);
+	save.m_nSections = 0;
+	if (save.m_nGrow != -1)
+	{
+		if (save.m_pSections)
+		{
+			Plat_Free(save.m_pSections);
+			save.m_pSections = 0;
+		}
+		save.m_nAlloc = 0;
+	}
+	save.m_pElements = save.m_pSections;
+	if (save.m_nGrow != -1 && save.m_pElements)
+		Plat_Free(save.m_pElements);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc830 size=0xb
 #include "CHLClient.h"
 namespace lifted {

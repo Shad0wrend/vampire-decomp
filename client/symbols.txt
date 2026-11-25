@@ -4433,6 +4433,7 @@
 0x100cc620 func   ?sub_100cc620@@YAHXZ sub_100cc620
 0x100cc650 func   ?sub_100cc650@@YAHXZ sub_100cc650
 0x100cc700 func   ?vfunc33@CHLClient@@UAEHH@Z CHLClient::vfunc33
+0x100cc710 func   ?vfunc34@CHLClient@@UAEXPAXHHHHH@Z CHLClient::vfunc34
 0x100cc830 func   ?vfunc36@CHLClient@@UAEHXZ CHLClient::vfunc36
 0x100cc840 func   ?vfunc37@CHLClient@@UAEXPAX@Z CHLClient::vfunc37
 0x100cc8c0 func   ?vfunc38@CHLClient@@UAEXPAX@Z CHLClient::vfunc38
