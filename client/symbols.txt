@@ -2880,6 +2880,7 @@
 0x10065230 func   ?sub_10065230@TargetedV@@QAEHH@Z TargetedV::sub_10065230
 0x100652c0 func   ?sub_100652c0@@YAXXZ sub_100652c0
 0x100652e0 func   ?sub_100652e0@@YAXXZ sub_100652e0
+0x10065300 func   ??0CVMenuButton@@QAE@HHH@Z CVMenuButton::CVMenuButton
 0x10065390 func   ??_GCVMenuButton@@UAEPAXI@Z ??_GCVMenuButton@@UAEPAXI@Z
 0x10065440 func   ?vfunc87@CVMenuButton@@UAEXH@Z CVMenuButton::vfunc87
 0x10065470 func   ?vfunc85@CVMenuButton@@UAEXXZ CVMenuButton::vfunc85
