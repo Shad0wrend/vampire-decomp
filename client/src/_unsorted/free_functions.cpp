@@ -69036,6 +69036,23 @@ void sub_1013ab40(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ac10 size=0x6e
+#include "CUnknown1006c1c0.h"
+
+// TARGET: sub_1013ac10
+void sub_1013ac10(CUnknown1006c1c0 *reader, CUnknownImgInfo *info, unsigned char *out)
+{
+	{ int i = 0; while (i < info->m_nCount) { unsigned char *p = reader->m_pData + reader->m_nC;
+		unsigned short v = p[0] | 0xffe0;
+		v = (v << 5) | (p[1] & 0x1f);
+		unsigned short t0 = 0x1f & p[2]; v = (v << 5) | (t0);
+		out[1] = (unsigned char)(v >> 8);
+		out[0] = (unsigned char)v;
+		reader->sub_1013cbe0(1, 4);
+		++i; out += 2; } }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b160 size=0x6f
 extern "C" __declspec(dllimport) void Plat_Free(void *pMem);
 
