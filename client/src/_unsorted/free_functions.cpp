@@ -18614,6 +18614,29 @@ int sub_10052ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100544d0 size=0x75
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct CHudDialogView
+{
+	char m_pad00[0x190];
+	bool m_b190;
+	char m_pad191[0x1b1 - 0x191];
+	bool m_b1b1;
+};
+
+// TARGET: ?sub_100544d0@CHudDialog@@QAEX_N@Z
+void CHudDialog::sub_100544d0(bool bEnabled)
+{
+	CHudDialogView *v = (CHudDialogView *)this;
+	ScopeTrace trace("CHudDialog::SetResponsesEnabled", g_102de300);
+	if (v->m_b1b1 != bEnabled)
+		v->m_b190 = true;
+	v->m_b1b1 = bEnabled;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054670 size=0x125
 #include <string.h>
 #include "CHudDialog.h"
