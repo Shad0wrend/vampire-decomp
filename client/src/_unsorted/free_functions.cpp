@@ -68642,6 +68642,28 @@ int sub_101377b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101377e0 size=0x70
+#define MAXI(a, b) ((a) > (b) ? (a) : (b))
+#define MINI(a, b) ((a) < (b) ? (a) : (b))
+
+int __cdecl sub_101377e0(int *a, int *b, int *out)
+{
+	int local[4];
+	if ( !out )
+		out = local;
+	out[0] = MAXI(a[0], b[0]);
+	out[1] = MINI(a[1], b[1]);
+	if ( out[0] < out[1] )
+	{
+		out[2] = MAXI(a[2], b[2]);
+		out[3] = MINI(a[3], b[3]);
+		if ( out[2] < out[3] )
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ce0 size=0x51
 #include <string.h>
 #pragma intrinsic(strcmp)
