@@ -108044,6 +108044,74 @@ int sub_1018ccd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ccf0 size=0xac
+#include "CVMainMenu.h"
+
+struct V3View
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+};
+
+extern int g_102d3eac[];
+extern CVMainMenu *g_103ef0b4;
+extern V3View *g_102cea98;
+
+void sub_101746d0();
+void sub_10184510();
+void sub_10170360();
+void sub_10186c40();
+void sub_10187f00();
+void sub_100613d0();
+
+void sub_1018ccf0(int n)
+{
+	int nState = g_102d3eac[n];
+	for (int i = 0; i < 10; i++)
+	{
+		if (n == i)
+			continue;
+		switch (i)
+		{
+		case 0:
+			if (nState != 1 && g_103ef0b4)
+				g_103ef0b4->sub_10066440();
+			break;
+		case 1:
+			sub_101746d0();
+			break;
+		case 2:
+			sub_10184510();
+			break;
+		case 3:
+			continue;
+		case 4:
+			if (g_102cea98)
+				g_102cea98->v3();
+			break;
+		case 5:
+			if (nState != 2)
+				sub_10170360();
+			break;
+		case 6:
+			if (nState != 2)
+				sub_10186c40();
+			break;
+		case 7:
+			sub_10187f00();
+			break;
+		case 8:
+			sub_100613d0();
+			break;
+		case 9:
+			continue;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018cdd0 size=0x39
 #include <stdlib.h>
 struct IEng63 {
