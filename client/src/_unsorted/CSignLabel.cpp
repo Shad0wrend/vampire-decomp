@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100606d0 size=0x57
+#include "CSignLabel.h"
+
+// TARGET: CSignLabel::CSignLabel
+CSignLabel::CSignLabel(vgui2::Panel *parent, const char *name, const char *text)
+	: vgui2::Label(parent, name, text), m_col()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060730 size=0x1e
 #include "CSignLabel.h"
 
