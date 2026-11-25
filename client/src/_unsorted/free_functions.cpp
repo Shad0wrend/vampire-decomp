@@ -13096,6 +13096,19 @@ int CUnknown10032df0::sub_10032df0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032e10 size=0x85
+struct BeamsV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(int a0, int a1, int a2, int a3, float a4, int a5, int a6, int a7, float a8, int a9, float a10, float a11, int a12, float a13, float a14, float a15, float a16, int a17);
+};
+extern BeamsV *g_102d5050;
+// TARGET: sub_10032e10
+void sub_10032e10(int i0, int i1, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17)
+{
+	g_102d5050->v7(i2, i3, i4, i5, 0.0f, i8, i9, i10, (float)i11, i12, (float)i16, (float)(i17 * 0.1), i6, (float)(i7 * 0.1), (float)i13, (float)i14, (float)i15, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032ea0 size=0x7b
 #include "C_TEBeamEnts.h"
 
