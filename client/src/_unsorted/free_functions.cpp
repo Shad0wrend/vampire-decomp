@@ -11804,6 +11804,30 @@ void sub_1002b6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b710 size=0x70
+#include "FileSystemViews.h"
+
+char *sub_1004ba40(const char *, ...);
+
+// TARGET: sub_1002b710
+void sub_1002b710()
+{
+	int handle;
+	const char *s = g_104a580c->FindFirst("logs/*.*", &handle);
+	if ( s )
+	{
+		do
+		{
+			char *full = sub_1004ba40("logs/%s", s);
+			if ( !g_104a580c->vfunc16(full) )
+				g_104a580c->vfunc14(full, 0);
+			s = g_104a580c->FindNext(handle);
+		} while ( s );
+	}
+	g_104a580c->FindClose(handle);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002bfb0 size=0x63
 class IEngine_1002bfb0
 {
