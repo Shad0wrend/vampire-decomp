@@ -465,6 +465,17 @@ void CHLClient::vfunc34(void *pData, int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc7a0 size=0x85
+#include "CHLClient.h"
+#include "CRestore.h"
+// TARGET: CHLClient::vfunc35
+void CHLClient::vfunc35(void *pData, int a1, int a2, int a3, int a4, int a5)
+{
+	CRestore restore(pData);
+	restore.sub_1012a840(a1, a2, a3, a4, a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc830 size=0xb
 #include "CHLClient.h"
 namespace lifted {
