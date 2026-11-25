@@ -6,6 +6,7 @@
 
 namespace vgui2
 {
+class KeyValues;
 class Label : public vgui2::Panel
 {
 public:
@@ -17,6 +18,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Label's own function
 	virtual void vfunc11(int, int);
 	virtual void vfunc14();
+	bool vfunc14(vgui2::KeyValues *data);
 	virtual int vfunc46(int);
 	virtual int vfunc51(int);
 	virtual int vfunc53(int);
