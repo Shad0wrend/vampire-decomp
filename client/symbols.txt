@@ -7280,6 +7280,7 @@
 0x10164280 func   ??_GCBitmapButton@@UAEPAXI@Z ??_GCBitmapButton@@UAEPAXI@Z
 0x101642a0 func   ??1CBitmapButton@@UAE@XZ CBitmapButton::~CBitmapButton
 0x101642d0 func   ?sub_101642d0@@YGDH@Z sub_101642d0
+0x101642e0 func   ?vfunc75@CBitmapButton@@UAEXH@Z CBitmapButton::vfunc75
 0x10164350 func   ?sub_10164350@CBitmapButton_10164350@@QAEXHPBDUcolor32_10164350@@@Z CBitmapButton_10164350::sub_10164350
 0x101643b0 func   ?sub_101643b0@CByteView101643b0@@QAEDH@Z CByteView101643b0::sub_101643b0
 0x10164430 func   ??0BitmapImage@@QAE@XZ BitmapImage::BitmapImage
