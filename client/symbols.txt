@@ -6350,6 +6350,7 @@
 0x1012c9c0 func   ?sub_1012c9c0@@YIXPAD@Z sub_1012c9c0
 0x1012c9d0 func   ?sub_1012c9d0@@YIXPAD@Z sub_1012c9d0
 0x1012c9e0 func   ?sub_1012c9e0@@YAXHPBDZZ sub_1012c9e0
+0x1012ca50 func   ?sub_1012ca50@SESView@@QAEPAXI@Z SESView::sub_1012ca50
 0x1012cc40 func   ?sub_1012cc40@@YAXXZ sub_1012cc40
 0x1012cc60 func   ?sub_1012cc60@CUnknown1012cc60@@QAEXPBD@Z CUnknown1012cc60::sub_1012cc60
 0x1012cd20 func   ?sub_1012cd20@V1012@@QAEXH@Z V1012::sub_1012cd20
