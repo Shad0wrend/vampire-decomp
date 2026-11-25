@@ -6043,6 +6043,7 @@
 0x10124e00 func   ?vfunc1@CPlayerSpeedProxy@@UAEXH@Z CPlayerSpeedProxy::vfunc1
 0x10124e80 func   ?sub_10124e80@@YAHXZ sub_10124e80
 0x10124eb0 func   ??_GCPlayerSpeedProxy@@UAEPAXI@Z ??_GCPlayerSpeedProxy@@UAEPAXI@Z
+0x10124ed0 func   ?vfunc0@CPlayerPositionProxy@@UAE_NPAX0@Z CPlayerPositionProxy::vfunc0
 0x10124f10 func   ?vfunc1@CPlayerPositionProxy@@UAEXH@Z CPlayerPositionProxy::vfunc1
 0x10124fa0 func   ?sub_10124fa0@@YAHXZ sub_10124fa0
 0x10124fd0 func   ??_GCPlayerPositionProxy@@UAEPAXI@Z ??_GCPlayerPositionProxy@@UAEPAXI@Z
