@@ -935,6 +935,39 @@ void vgui2::TextEntry::vfunc130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0f90 size=0xb1
+#include "vgui2__TextEntry.h"
+extern "C" __declspec(noreturn) void __cdecl exit(int);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern "C" void *__cdecl memcpy(void *, const void *, unsigned int);
+struct TECharBuf { int size; int alloc; char *data; };
+// TARGET: vgui2::TextEntry::vfunc131
+void vgui2::TextEntry::vfunc131()
+{
+	*(int *)((char *)this + 0x84) = *(int *)((char *)this + 0x70);
+	TECharBuf *src = (TECharBuf *)((char *)this + 0x58);
+	TECharBuf *dst = (TECharBuf *)((char *)this + 0x78);
+	if (src->size > dst->alloc) {
+		int n = dst->alloc;
+		if (n == 0)
+			n = 1;
+		while (n < src->size)
+			n += n;
+		char *p = new char[n];
+		if (!p)
+			exit((int)p);
+		memset(p, 0, n);
+		dst->alloc = n;
+		for (int i = 0; i < dst->size; i++)
+			p[i] = dst->data[i];
+		delete[] dst->data;
+		dst->data = p;
+	}
+	memcpy(dst->data, src->data, src->size);
+	dst->size = src->size;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1050 size=0x3c
 #include "vgui2__TextEntry.h"
 bool vgui2::TextEntry::vfunc164(int a1, int a2, int a3, int a4)
