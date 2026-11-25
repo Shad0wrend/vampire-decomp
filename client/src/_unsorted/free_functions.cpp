@@ -52784,6 +52784,47 @@ int sub_100da5c0(const Vector &p0, const Vector &p1, const Vector &p2, const flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100da870 size=0xcd
+#include "vector.h"
+
+inline float fabs_inline(float x)
+{
+	int i = *(int *)&x;
+	i &= 0x7fffffff;
+	return *(float *)&i;
+}
+
+// TARGET: sub_100da870
+int sub_100da870(const Vector &vCenter, const Vector &vExtents, const Vector &vPoint, float flRadius)
+{
+	float flDistSq = 0.0f;
+	float flDelta;
+
+	flDelta = fabs_inline(vPoint.x - vCenter.x);
+	if (flDelta > vExtents.x)
+	{
+		flDelta -= vExtents.x;
+		flDistSq += flDelta * flDelta;
+	}
+
+	flDelta = fabs_inline(vPoint.y - vCenter.y);
+	if (flDelta > vExtents.y)
+	{
+		flDelta -= vExtents.y;
+		flDistSq += flDelta * flDelta;
+	}
+
+	flDelta = fabs_inline(vPoint.z - vCenter.z);
+	if (flDelta > vExtents.z)
+	{
+		flDelta -= vExtents.z;
+		flDistSq += flDelta * flDelta;
+	}
+
+	return flDistSq < flRadius * flRadius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100da940 size=0x91
 #include "Vector.h"
 
