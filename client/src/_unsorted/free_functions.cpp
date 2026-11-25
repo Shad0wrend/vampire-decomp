@@ -41077,6 +41077,16 @@ void sub_100b4a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4b70 size=0xa1
+#include "CUtlVector12.h"
+int CUtlVector12::sub_100b4b70(int elem)
+{
+	GrowVector();
+	ShiftElementsRight(elem);
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4c20 size=0x92
 #include "CSaveRestoreBlockSet.h"
 extern void *(__cdecl *g_101e3100)(unsigned int);

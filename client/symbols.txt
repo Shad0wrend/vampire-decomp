@@ -4000,6 +4000,7 @@
 0x100b4780 func   ?sub_100b4780@@YAXXZ sub_100b4780
 0x100b48d0 func   ?sub_100b48d0@@YAPAVC_EnvParticle@@PBDHHHH@Z sub_100b48d0
 0x100b4a60 func   ?sub_100b4a60@@YAXXZ sub_100b4a60
+0x100b4b70 func   ?sub_100b4b70@CUtlVector12@@QAEHH@Z CUtlVector12::sub_100b4b70
 0x100b4c20 func   ?sub_100b4c20@CUtlVector100@@QAEXH@Z CUtlVector100::sub_100b4c20
 0x100b4cc0 func   ?sub_100b4cc0@VecView@@QAEXHH@Z VecView::sub_100b4cc0
 0x100b4d10 func   ?sub_100b4d10@@YAXPAUS100_100b4d10@@PBU1@@Z sub_100b4d10
