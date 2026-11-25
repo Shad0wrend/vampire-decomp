@@ -90171,6 +90171,21 @@ char CUnknown1015d3e0::sub_1015d3e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d5b0 size=0x99
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatOwner.h"
+#include "CVStatInfoList_t.h"
+// TARGET: CVStatList_t::sub_1015d5b0
+int CVStatList_t::sub_1015d5b0(int stat)
+{
+	ScopeTrace trace("CVStatList_t::GetMax", g_102de300);
+	if (sub_1015d3e0(stat))
+		return ((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)->sub_1015c0e0(((CVStatOwner *)m_pad0000)->sub_1015e610());
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d6e0 size=0x83
 #include "CVStatList_t.h"
 
