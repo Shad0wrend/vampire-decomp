@@ -241,6 +241,55 @@ int vgui2::KeyValues::vfunc17(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b66d0 size=0xd0
+#include "vgui2__KeyValues.h"
+#include <string.h>
+#include <stdlib.h>
+
+namespace vgui2
+{
+
+KeyValues *KeyValues::vfunc18()
+{
+	KeyValues *dat = new KeyValues((const char *)vfunc0());
+	dat->m_unk10 = m_unk10;
+	switch (m_unk10)
+	{
+	case 1:
+		if (m_pName)
+		{
+			int len = strlen((char *)m_pName);
+			dat->m_pName = malloc(len + 1);
+			memcpy(dat->m_pName, m_pName, len + 1);
+		}
+		break;
+	case 2:
+		dat->m_unkc = m_unkc;
+		break;
+	case 3:
+		dat->m_flValue = m_flValue;
+		break;
+	case 4:
+		dat->m_unkc = m_unkc;
+		break;
+	}
+	KeyValues *prev = 0;
+	for (KeyValues *p = m_pSub; p != 0; p = p->m_pPeer)
+	{
+		KeyValues *c = p->vfunc18();
+		if (prev)
+			prev->m_pPeer = c;
+		else
+			dat->m_pSub = c;
+		c->m_pPeer = 0;
+		prev = c;
+	}
+	return dat;
+}
+
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b67a0 size=0x2d
 #include "vgui2__KeyValues.h"
 namespace lifted {

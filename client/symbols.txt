@@ -8977,6 +8977,7 @@
 0x101b6640 func   ?vfunc15@KeyValues@vgui2@@UAEHHH@Z vgui2::KeyValues::vfunc15
 0x101b6670 func   ?vfunc16@KeyValues@vgui2@@UAEHHH@Z vgui2::KeyValues::vfunc16
 0x101b66a0 func   ?vfunc17@KeyValues@vgui2@@UAEHHH@Z vgui2::KeyValues::vfunc17
+0x101b66d0 func   ?vfunc18@KeyValues@vgui2@@UAEPAV12@XZ vgui2::KeyValues::vfunc18
 0x101b67a0 func   ?vfunc13@KeyValues@vgui2@@UAE_NH@Z vgui2::KeyValues::vfunc13
 0x101b67d0 func   ?vfunc19@KeyValues@vgui2@@UAEXXZ vgui2::KeyValues::vfunc19
 0x101b6800 func   ?vfunc20@KeyValues@vgui2@@UAEHH@Z vgui2::KeyValues::vfunc20
