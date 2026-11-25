@@ -70165,6 +70165,41 @@ char CUnk1011d310::sub_1013c7b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c7d0 size=0x77
+#include "bf_read.h"
+
+unsigned int bf_read::sub_1013c7d0(int numbits)
+{
+	if ((m_iCurBit + numbits) > m_nDataBits)
+	{
+		m_iCurBit = m_nDataBits;
+		m_bOverflow = true;
+		return 0;
+	}
+
+	int idword1 = m_iCurBit >> 5;
+	unsigned int dword1 = m_pData[idword1];
+	dword1 >>= (m_iCurBit & 31);
+
+	m_iCurBit += numbits;
+	unsigned int ret = dword1;
+
+	if ((m_iCurBit - 1) >> 5 == idword1)
+	{
+		if (numbits != 32)
+			ret &= g_10487130[numbits];
+	}
+	else
+	{
+		int nExtraBits = m_iCurBit & 31;
+		unsigned int dword2 = m_pData[idword1 + 1];
+		dword2 &= g_10487130[nExtraBits];
+		ret |= (dword2 << (numbits - nExtraBits));
+	}
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c8a0 size=0x33
 struct CInitView {
     int m_n0;
