@@ -98174,6 +98174,35 @@ int CVStatList_t::sub_1015d6e0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d870 size=0xd8
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatOwner.h"
+#include "CVStatInfoList_t.h"
+
+struct CVStatActionTarget;
+class CVStatActionList_t { public: void sub_1015af10(CVStatActionTarget *, int, int); };
+
+// TARGET: CVStatList_t::sub_1015d870
+bool CVStatList_t::sub_1015d870(int stat)
+{
+	ScopeTrace trace("CVStatList_t::DecBase", g_102de300);
+	if (sub_1015d3e0(stat))
+	{
+		int cur = ((int **)m_field08)[0][stat];
+		int min = ((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat)->sub_1015c0a0(((CVStatOwner *)m_pad0000)->sub_1015e610());
+		if (cur > min)
+		{
+			int newVal = cur - 1;
+			((CVStatActionList_t *)((char *)((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat) + 0x10c))->sub_1015af10((CVStatActionTarget *)((CVStatOwner *)m_pad0000)->sub_1015e610(), cur, newVal);
+			((int **)m_field08)[0][stat] = newVal;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015da50 size=0x6c
 #include "CVStatList_t.h"
 
