@@ -24,6 +24,18 @@ CTextConsoleProxy *pcd_emit_100c8530() { return new CTextConsoleProxy; }
 // TARGET: ??_GCTextConsoleProxy@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100c8550 size=0x21
+#define PCDECOMP_CTEXTCONSOLE_PROXY
+#include "CTextConsoleProxy.h"
+
+// TARGET: CTextConsoleProxy::~CTextConsoleProxy
+CTextConsoleProxy::~CTextConsoleProxy()
+{
+	m_pMaterial = 0;
+	sub_100c8670(m_pTerminal);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c86f0 size=0x28
 #include "CTextConsoleProxy.h"
 struct M100c86f0 {
