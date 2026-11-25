@@ -66491,6 +66491,19 @@ void sub_10127680(int a, IHandleSrc *pEnt, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127720 size=0x41
+#include "RecvTable.h"
+void sub_10127680(const char *, void *, void *, int);
+// TARGET: RecvProxy_IntToEHandle
+void RecvProxy_IntToEHandle(const CRecvProxyData *pData, void *pStruct, void *pOut)
+{
+	if (pData->m_Value.m_Int != 0x7ff)
+		sub_10127680(pData->m_pRecvProp->m_pVarName, pStruct, pOut, pData->m_Value.m_Int);
+	else
+		sub_10127680(pData->m_pRecvProp->m_pVarName, pStruct, pOut, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127770 size=0x28
 #include "RecvTable.h"
 
