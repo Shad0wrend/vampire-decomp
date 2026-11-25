@@ -25,4 +25,5 @@ public:
 	int m_unk180[(0x360 - 0x180) / 4];
 	PanelGroup m_groups[4];
 	void sub_10175b30();
+	void sub_10175b90(int idx);
 };
