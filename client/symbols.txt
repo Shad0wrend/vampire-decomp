@@ -5544,6 +5544,7 @@
 0x1010d2c0 func   ??_GCEqualsProxy@@UAEPAXI@Z ??_GCEqualsProxy@@UAEPAXI@Z
 0x1010d410 func   ?sub_1010d410@@YAHXZ sub_1010d410
 0x1010d440 func   ??_GCFracProxy@@UAEPAXI@Z ??_GCFracProxy@@UAEPAXI@Z
+0x1010d4c0 func   ?vfunc1@CLinearRampProxy@@UAEXH@Z CLinearRampProxy::vfunc1
 0x1010d540 func   ?sub_1010d540@@YAHXZ sub_1010d540
 0x1010d570 func   ??_GCLinearRampProxy@@UAEPAXI@Z ??_GCLinearRampProxy@@UAEPAXI@Z
 0x1010d5f0 func   ?vfunc1@CUniformNoiseProxy@@UAEXH@Z CUniformNoiseProxy::vfunc1
