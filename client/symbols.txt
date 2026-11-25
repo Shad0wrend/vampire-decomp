@@ -9160,6 +9160,7 @@
 0x101c5ae0 func   ?vfunc77@ImagePanel@vgui2@@UAEHXZ vgui2::ImagePanel::vfunc77
 0x101c5b60 func   ?vfunc102@ImagePanel@vgui2@@UAEHXZ vgui2::ImagePanel::vfunc102
 0x101c5b70 func   ?sub_101c5b70@CUnknown101c5b70@@QAEHXZ CUnknown101c5b70::sub_101c5b70
+0x101c5c60 func   ?vfunc0@RadioImage@@UAEHXZ RadioImage::vfunc0
 0x101c5d10 func   ??_GRadioImage@@UAEPAXI@Z ??_GRadioImage@@UAEPAXI@Z
 0x101c5d30 func   ??_GRadioButton@vgui2@@UAEPAXI@Z ??_GRadioButton@vgui2@@UAEPAXI@Z
 0x101c5d50 func   ??1RadioButton@vgui2@@UAE@XZ vgui2::RadioButton::~RadioButton
