@@ -18278,6 +18278,32 @@ void sub_10044450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044460 size=0x43
+struct HandleList { void sub_10042d00(void *pEnt); };
+extern HandleList g_103eca30;
+struct SubObj8 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int v9(); };
+struct TraceEnt {
+	int m0, m4;
+	SubObj8 m_sub8;
+	char pad[0x184 - 0xc];
+	unsigned int m_flags;
+	bool IsFlagged() const { return ((m_flags >> 15) & 1) != 0; }
+	void SetFlag() { m_flags |= 0x8000; }
+};
+struct CUnknown10044460 {
+	char pad[0x3c];
+	TraceEnt *m_pEnt;
+	void sub_10044460();
+};
+void CUnknown10044460::sub_10044460()
+{
+	if (m_pEnt->m_sub8.v9() && !m_pEnt->IsFlagged()) {
+		m_pEnt->SetFlag();
+		g_103eca30.sub_10042d00(m_pEnt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100445d0 size=0xc
 struct CIdxView100445d0 { int *m_pData; int *sub_100445d0(int i); };
 // TARGET: CIdxView100445d0::sub_100445d0
