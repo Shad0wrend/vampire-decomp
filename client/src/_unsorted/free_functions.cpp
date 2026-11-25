@@ -39261,6 +39261,87 @@ struct IMatX { virtual int v0(); virtual int v1(); virtual int v2(); virtual int
 void *sub_100b7620(IMatX *m) { IMatVar *v = m->FindVar("$basetexture", &m, false); if (!*(bool *)&m) return 0; return v->v18(); }
 // END FUNCTION
 
+// FUNCTION: 0x100b7b40 size=0x66
+#include "C_BreakableSurface.h"
+
+struct IBrushRendererV;
+
+struct IRenderViewV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual void v28();
+	virtual void v29();
+	virtual void v30();
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual void v39();
+	virtual void v40();
+	virtual void v41();
+	virtual void v42();
+	virtual void v43();
+	virtual void v44();
+	virtual void v45(IBrushRendererV *p);
+};
+
+struct CEntityV
+{
+	int sub_1009feb0(int flags, int a1);
+};
+
+extern IRenderViewV *g_104a57e4;
+
+// TARGET: C_BreakableSurface::sub_100b7b40
+int C_BreakableSurface::sub_100b7b40(int flags, int a1)
+{
+	char *self = (char *)this;
+	if (!self[0xdc])
+		return 0;
+	if (self[0x438])
+	{
+		char *pBase = self - 4;
+		void *pBrush = pBase ? (void *)(self + 0x40c) : 0;
+		g_104a57e4->v45((IBrushRendererV *)pBrush);
+		flags |= 0x80000000;
+	}
+	((CEntityV *)self)->sub_1009feb0(flags, a1);
+	g_104a57e4->v45(0);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7bb0 size=0x37
 namespace lifted {
 struct C100b7bf0 { int sub_100b7bf0(int); };
