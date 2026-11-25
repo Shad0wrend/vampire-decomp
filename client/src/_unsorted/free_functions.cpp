@@ -13851,6 +13851,27 @@ int CUnknown10034200::sub_10034200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100342f0 size=0xbf
+#include "Vector.h"
+struct ITempEntsV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void BloodSprite(const Vector &org, int r, int g, int b, int a, int m38, int m34, float size); };
+extern ITempEntsV *g_1028073c;
+void sub_1002ebc0(const Vector &, const Vector &, float, float, float, float);
+struct TEBloodView {
+	int m_vtbl;
+	int m_pad4; int m_pad8;
+	Vector m_vecOrigin;
+	Vector m_vecDirection;
+	int m_r; int m_g; int m_b; int m_a; int m_34; int m_38; int m_size;
+};
+// TARGET: sub_100342f0
+void __fastcall sub_100342f0(TEBloodView *self, int edx, int updateType)
+{
+	Vector vecPosition = self->m_vecOrigin + self->m_vecDirection * 4.0f;
+	g_1028073c->BloodSprite(vecPosition, self->m_r, self->m_g, self->m_b, self->m_a, self->m_38, self->m_34, (float)self->m_size);
+	sub_1002ebc0(vecPosition, self->m_vecDirection, (float)self->m_r, (float)self->m_g, (float)self->m_b, (float)self->m_a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100343d0 size=0x6
 namespace lifted {
 extern char g_102ec560;
