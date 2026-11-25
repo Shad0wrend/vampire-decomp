@@ -11780,6 +11780,49 @@ int LLView2::sub_1002b4f0(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002bfb0 size=0x63
+class IEngine_1002bfb0
+{
+public:
+    virtual void v0() = 0;  virtual void v1() = 0;  virtual void v2() = 0;  virtual void v3() = 0;
+    virtual void v4() = 0;  virtual void v5() = 0;  virtual void v6() = 0;  virtual void v7() = 0;
+    virtual void v8() = 0;  virtual void v9() = 0;  virtual void v10() = 0; virtual void v11() = 0;
+    virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+    virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+    virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+    virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+    virtual void ClientCmd(const char *szCmdString) = 0;
+};
+
+extern char g_102eabb0[260];
+extern bool g_102eacf8;
+extern bool g_102eacf9;
+extern int g_102eacfc;
+extern IEngine_1002bfb0 *g_104a57d4;
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+void sub_1002bde0();
+
+// TARGET: sub_1002bfb0
+void sub_1002bfb0()
+{
+    if (!g_102eacf9)
+        return;
+    if (++g_102eacfc < 10)
+        return;
+    g_104a57d4->ClientCmd("unpause");
+    if (g_102eacfc > 500)
+    {
+        Warning("Node graphs may not be built for: %s\n", g_102eabb0);
+        g_102eacf8 = true;
+        sub_1002bde0();
+        return;
+    }
+    if (!g_102eacf8)
+        return;
+    sub_1002bde0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c020 size=0x8
 namespace lifted {
 extern char g_102eacf8;
