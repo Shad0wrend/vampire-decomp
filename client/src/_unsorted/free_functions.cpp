@@ -39815,6 +39815,174 @@ float CUnknown100a9de0::sub_100a9de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa040 size=0x1f8
+#include <string.h>
+#include "CBaseEntityList.h"
+#include "utlmemory.h"
+
+extern CBaseEntityList *g_102b8e98;
+
+struct EntView_100aa040 {
+    bool sub_1007dba0();
+    void sub_1011d5b0();
+    bool sub_1011ac80();
+    void sub_1011b9a0();
+};
+
+struct CBaseHandle_100aa040;
+
+struct EntListHelper_100aa040 : public CBaseEntityList
+{
+    inline void *sub_1007aca0(const CBaseHandle_100aa040 &h) const;
+};
+
+struct CBaseHandle_100aa040
+{
+    unsigned long m_Index;
+
+    inline CBaseHandle_100aa040() { m_Index = 0xffffffff; }
+    inline CBaseHandle_100aa040(const CBaseHandle_100aa040 &other) { m_Index = other.m_Index; }
+
+    inline bool IsValid() const { return m_Index != 0xffffffff; }
+    inline int GetEntryIndex() const { return m_Index & 0x1fff; }
+    inline int GetSerialNumber() const { return m_Index >> 13; }
+
+    inline void *Get() const
+    {
+        return ((EntListHelper_100aa040 *)g_102b8e98)->sub_1007aca0(*this);
+    }
+};
+
+inline void *EntListHelper_100aa040::sub_1007aca0(const CBaseHandle_100aa040 &h) const
+{
+    if (h.m_Index == 0xffffffff)
+        return 0;
+    const CBaseEntityListEntry *pInfo = &m_EntPtrArray[h.GetEntryIndex()];
+    if (pInfo->m_SerialNumber == h.GetSerialNumber())
+        return pInfo->m_pEntity;
+    else
+        return 0;
+}
+
+typedef void *(EntListHelper_100aa040::*LookupFn_t)(const CBaseHandle_100aa040 &) const;
+LookupFn_t g_force_emit = &EntListHelper_100aa040::sub_1007aca0;
+
+template <class T>
+struct CHandle_100aa040 : public CBaseHandle_100aa040
+{
+    inline CHandle_100aa040() {}
+    inline CHandle_100aa040(const CBaseHandle_100aa040 &h) : CBaseHandle_100aa040(h) {}
+
+    inline T *Get() const
+    {
+        return (T *)CBaseHandle_100aa040::Get();
+    }
+
+    inline operator T *() const
+    {
+        return Get();
+    }
+
+    inline bool operator==(T *val) const
+    {
+        return Get() == val;
+    }
+};
+
+template <class T>
+inline void Destruct_100aa040(T *pMemory)
+{
+    pMemory->~T();
+}
+
+struct IntVec
+{
+    CUtlMemory< CHandle_100aa040<EntView_100aa040> > m_Memory;
+    int m_Size;
+    CHandle_100aa040<EntView_100aa040> *m_pElements;
+
+    inline int Count() const { return m_Size; }
+    static inline int InvalidIndex() { return -1; }
+    inline CHandle_100aa040<EntView_100aa040> &operator[](int i) { return Element(i); }
+    inline const CHandle_100aa040<EntView_100aa040> &Element(int i) const { return m_Memory[i]; }
+    inline CHandle_100aa040<EntView_100aa040> &Element(int i) { return m_Memory[i]; }
+
+    inline void sub_100aad10(int elem, int num = 1)
+    {
+        int numToMove = m_Size - elem - num;
+        if ((numToMove > 0) && (num > 0))
+            memmove(&Element(elem), &Element(elem + num), numToMove * sizeof(CHandle_100aa040<EntView_100aa040>));
+    }
+
+    inline int Find(const CHandle_100aa040<EntView_100aa040> &src) const
+    {
+        for (int i = 0; i < Count(); ++i)
+        {
+            if (Element(i) == src)
+                return i;
+        }
+        return -1;
+    }
+
+    inline void Remove(int elem)
+    {
+        Destruct_100aa040(&Element(elem));
+        sub_100aad10(elem);
+        --m_Size;
+    }
+
+    inline void FindAndRemove(const CHandle_100aa040<EntView_100aa040> &src)
+    {
+        int elem = Find(src);
+        if (elem != -1)
+            Remove(elem);
+    }
+};
+
+typedef void (IntVec::*ShiftFn_t)(int, int);
+ShiftFn_t g_force_shift = &IntVec::sub_100aad10;
+
+struct S100aa040 {
+    char pad[0x1a14];
+    IntVec m_vec;
+    void sub_100aa040();
+};
+
+// TARGET: S100aa040::sub_100aa040
+void S100aa040::sub_100aa040()
+{
+    int i;
+    for (i = m_vec.Count() - 1; i >= 0; i--)
+    {
+        CHandle_100aa040<EntView_100aa040> h = m_vec[i];
+        EntView_100aa040 *p = h.Get();
+        if (p && p->sub_1007dba0())
+        {
+            p->sub_1011d5b0();
+        }
+        else
+        {
+            m_vec.FindAndRemove(h);
+        }
+    }
+
+    for (i = m_vec.Count() - 1; i >= 0; i--)
+    {
+        CHandle_100aa040<EntView_100aa040> h = m_vec[i];
+        EntView_100aa040 *p = h.Get();
+        if (p && p->sub_1007dba0())
+        {
+            if (p->sub_1011ac80())
+                p->sub_1011b9a0();
+        }
+        else
+        {
+            m_vec.FindAndRemove(h);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa320 size=0x2b
 extern int g_104a0d4c;
 struct PV {
