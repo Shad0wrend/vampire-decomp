@@ -98202,6 +98202,31 @@ void sub_101989a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198a00 size=0x81
+#include "ScopeTrace.h"
+struct CViewModelInfo {
+	char m_b0;
+	int m_n4, m_n8, m_nC, m_n10, m_n14, m_n18, m_n1c, m_n20, m_n24, m_n28;
+	CViewModelInfo *sub_10198a00();
+};
+CViewModelInfo *CViewModelInfo::sub_10198a00()
+{
+	ScopeTrace trace("::CViewModelInfo", g_102de300);
+	m_b0 = 0;
+	m_n4 = 0;
+	m_n8 = 0;
+	m_nC = 0;
+	m_n10 = 0;
+	m_n14 = 0;
+	m_n18 = 0;
+	m_n1c = 0;
+	m_n20 = 0;
+	m_n24 = 0;
+	m_n28 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198d30 size=0x6
 namespace lifted {
 extern char g_10618f7c;
