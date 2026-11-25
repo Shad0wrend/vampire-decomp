@@ -9,6 +9,7 @@ struct SHudNode { SHudElem *m_pElem; SHudNode *m_pNext; };
 class CHudManager : public CBasePanel
 {
 public:
+	CHudManager(vgui2::Panel *parent);
 	virtual ~CHudManager();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CHudManager adds to its base's vtable: 112-116, vfuncK at slot K
