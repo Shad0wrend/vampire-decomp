@@ -245,6 +245,68 @@ int vgui2::ScrollBar::vfunc111()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf330 size=0x67
+#include "vgui2__ScrollBar.h"
+#include "vgui2__Panel.h"
+
+class PanelBoolView
+{
+public:
+	virtual void u00(); virtual void u01(); virtual void u02(); virtual void u03();
+	virtual void u04(); virtual void u05(); virtual void u06(); virtual void u07();
+	virtual void u08(); virtual void u09(); virtual void u10(); virtual void u11();
+	virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15();
+	virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21();
+	virtual bool vfunc22();
+	int sub_101ab1a0();
+	int sub_101ab130();
+};
+
+class ChildView : public vgui2::Panel
+{
+public:
+	virtual void c107();
+	virtual void c108();
+	virtual bool vfunc109();
+	virtual void c110();
+	virtual void c111();
+	virtual void c112();
+	virtual void c113();
+	virtual void c114();
+	virtual void c115();
+	virtual void c116();
+	virtual void vfunc117(int);
+};
+
+struct SBView
+{
+	char m_pad58[0x58];
+	PanelBoolView *m_pButtons[2];
+	ChildView *m_pChild;
+};
+
+void vgui2::ScrollBar::vfunc119()
+{
+	SBView *v = (SBView *)this;
+	if ( v->m_pChild )
+	{
+		int sum = 0;
+		for ( int i = 0; i < 2; i++ )
+		{
+			if ( v->m_pButtons[i] && v->m_pButtons[i]->vfunc22() )
+			{
+				if ( v->m_pChild->vfunc109() )
+					sum += v->m_pButtons[i]->sub_101ab1a0();
+				else
+					sum += v->m_pButtons[i]->sub_101ab130();
+			}
+		}
+		v->m_pChild->vfunc117( sum );
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf410 size=0x6
 #include "vgui2__ScrollBar.h"
 namespace lifted {
