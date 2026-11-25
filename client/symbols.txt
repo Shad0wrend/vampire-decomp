@@ -7091,6 +7091,7 @@
 0x1014d250 func   ?sub_1014d250@@YGHHHH@Z sub_1014d250
 0x1014d260 func   ?sub_1014d260@@YGHHHH@Z sub_1014d260
 0x1014d270 func   ?sub_1014d270@@YGHPAUCCharView@@HE@Z sub_1014d270
+0x1014d2b0 func   ?sub_1014d2b0@StatCallback@@QAEXPAUCharView@@@Z StatCallback::sub_1014d2b0
 0x1014d390 func   ?sub_1014d390@StatCallback@@QAEXPAD@Z StatCallback::sub_1014d390
 0x1014d410 func   ?sub_1014d410@StatNotifier@@QAEXPAUCharView@@@Z StatNotifier::sub_1014d410
 0x1014d490 func   ?sub_1014d490@StatCallback@@QAEXPAD@Z StatCallback::sub_1014d490

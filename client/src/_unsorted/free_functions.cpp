@@ -89323,6 +89323,52 @@ int __stdcall sub_1014d270(CCharView *p, int idx, unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d2b0 size=0xdf
+#include "CVStatList_t.h"
+
+struct StatMgr
+{
+	char m_pad[0x14];
+	int m_nLists;
+	CVStatList_t **m_pLists;
+	CVStatList_t *Find(int type);
+};
+
+inline CVStatList_t *StatMgr::Find(int type)
+{
+	for (int i = 0; i < m_nLists; i++)
+	{
+		if (m_pLists[i]->m_field10 == type)
+			return m_pLists[i];
+	}
+	static CVStatList_t s_default(-1);
+	return &s_default;
+}
+
+struct CharView
+{
+	char m_pad[0x1164];
+	StatMgr m_mgr;
+};
+
+struct StatCallback
+{
+	virtual void vfunc0(int);
+	virtual void vfunc1(int);
+	virtual void vfunc2(int);
+	virtual void vfunc3(int);
+	virtual void vfunc4(int);
+	void sub_1014d2b0(CharView *p);
+};
+
+void StatCallback::sub_1014d2b0(CharView *p)
+{
+	int base = p->m_mgr.Find(0)->sub_1015dbd0(1) - 1;
+	base += p->m_mgr.Find(0)->sub_1015dbd0(0x18);
+	vfunc0(base);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d390 size=0x78
 #include "CVStatList_t.h"
 
