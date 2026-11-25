@@ -141,6 +141,41 @@ bool C_BaseAnimating::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f960 size=0x78
+#include "C_BaseAnimating.h"
+
+extern void *g_104a57d4;
+
+struct EngV
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+	virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18(); virtual void e19();
+	virtual void e20(); virtual void e21(); virtual void e22(); virtual void e23(); virtual void e24();
+	virtual void e25(); virtual void e26(); virtual void e27(); virtual void e28(); virtual void e29();
+	virtual void e30(); virtual void e31(); virtual void e32(); virtual void e33(); virtual void e34();
+	virtual void e35(); virtual void e36(); virtual void e37(); virtual void e38();
+	virtual float vfunc39(int);
+};
+
+float C_BaseAnimating::vfunc122()
+{
+	float flBlend = *(float *)((char *)this + 0x70) - *(float *)((char *)this + 0x6c);
+	float f = 1.0f;
+	if (flBlend > 0.0f)
+	{
+		float x = ((EngV *)g_104a57d4)->vfunc39(0);
+		f = 1.0 - (*(float *)((char *)this + 0x70) - x) / flBlend;
+		if (f > 2.0f)
+			return 2.0f;
+		if (f < 0.0f)
+			return 0.0f;
+	}
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b60 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc124(int a0, int a1)
