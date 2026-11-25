@@ -83909,6 +83909,31 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d510 size=0x78
+#include "CVStatList_t.h"
+
+struct StatCallbackVtbl
+{
+	virtual void v0();
+	virtual void v1(int);
+	virtual void v2(int);
+	virtual void v3(int);
+	virtual void v4(int);
+};
+
+struct StatCallback
+{
+	void sub_1014d510(char *o);
+};
+
+// TARGET: StatCallback::sub_1014d510
+void StatCallback::sub_1014d510(char *o)
+{
+	CVStatListSet *set = (CVStatListSet *)(o + 0x1164);
+	((StatCallbackVtbl *)this)->v4(set->Find(0)->sub_1015dbd0(1) - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d760 size=0x7
 struct CUnknown1014d760 { float sub_1014d760(); };
 float CUnknown1014d760::sub_1014d760()
