@@ -74286,6 +74286,24 @@ bool CUnknown101d7520Rule::sub_10140450(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140470 size=0x8c
+#include "CUnknown101d7520.h"
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern void *g_104a0d50;
+void CUnknown101d7520Rule::sub_10140470()
+{
+	char buf[0x200];
+	Q_snprintf(buf, sizeof(buf), "\nLevel Group(%d):\n", m_nGroup);
+	Msg("%s", buf);
+	m_sub.sub_10161bf0();
+	if (g_104a0d50 && !m_sub.sub_10161bb0(g_104a0d50))
+		Msg("%s", "<<Note: LevelGroup Will FAIL to process due to dependencies.>>\n");
+	for (int i = 0; i < m_nElements; i++)
+		m_ppElements[i]->sub_101401a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140530 size=0x64
 struct ElemBase10140530
 {
