@@ -11,10 +11,13 @@ public:
 	virtual ~CharEditPanel();
 	void sub_101740e0(int a);
 	void sub_101733d0(bool bDisconnect);
+	void sub_101735a0();
 	bool sub_10172ac0();
 	char m_padA[0x274 - sizeof(CHudElement) - sizeof(vgui2::PropertyDialog)];
 	int m_unk274;
-	char m_padB[0xcf9 - 0x278];
+	int m_unk278;
+	int m_unk27c;
+	char m_padB[0xcf9 - 0x280];
 	bool m_bCf9;
 	char m_padC[0xed8 - 0xcfa];
 	bool m_bEd8;
