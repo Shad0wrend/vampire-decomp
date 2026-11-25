@@ -54,6 +54,87 @@ void CViewRenderBeams::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194040 size=0x11a
+#include "CViewRenderBeams.h"
+#include "Vector.h"
+
+struct BeamInfo_t
+{
+	int m_nType;
+	void *m_pStartEnt;
+	int m_nStartAttachment;
+	void *m_pEndEnt;
+	int m_nEndAttachment;
+	Vector m_vecStart;
+	Vector m_vecEnd;
+	int m_nModelIndex;
+	const char *m_pszModelName;
+	int m_nHaloIndex;
+	const char *m_pszHaloName;
+	float m_flHaloScale;
+	float m_flLife;
+	float m_flWidth;
+	float m_flEndWidth;
+	float m_flFadeLength;
+	float m_flAmplitude;
+	float m_flBrightness;
+	float m_flSpeed;
+	int m_nStartFrame;
+	float m_flFrameRate;
+	float m_flRed;
+	float m_flGreen;
+	float m_flBlue;
+	bool m_bRenderable;
+	int m_nSegments;
+	int m_nFlags;
+	Vector m_vecCenter;
+	float m_flStartRadius;
+	float m_flEndRadius;
+
+	BeamInfo_t()
+	{
+		m_nType = 0;
+		m_nSegments = -1;
+		m_pszModelName = 0;
+		m_pszHaloName = 0;
+		m_nModelIndex = -1;
+		m_nHaloIndex = -1;
+		m_bRenderable = true;
+		m_nFlags = 0;
+	}
+};
+
+// TARGET: CViewRenderBeams::vfunc17
+void CViewRenderBeams::vfunc17(int type, Vector &start, Vector &end,
+	int modelIndex, int haloIndex, float haloScale, float life, float width,
+	float endWidth, float fadeLength, float amplitude, float brightness,
+	float speed, int startFrame, float framerate, float r, float g, float b)
+{
+	BeamInfo_t beamInfo;
+
+	beamInfo.m_nType = type;
+	beamInfo.m_vecStart = start;
+	beamInfo.m_vecEnd = end;
+	beamInfo.m_nModelIndex = modelIndex;
+	beamInfo.m_nHaloIndex = haloIndex;
+	beamInfo.m_flHaloScale = haloScale;
+	beamInfo.m_flLife = life;
+	beamInfo.m_flWidth = width;
+	beamInfo.m_flEndWidth = endWidth;
+	beamInfo.m_flFadeLength = fadeLength;
+	beamInfo.m_flAmplitude = amplitude;
+	beamInfo.m_flBrightness = brightness;
+	beamInfo.m_flSpeed = speed;
+	beamInfo.m_nStartFrame = startFrame;
+	beamInfo.m_flFrameRate = framerate;
+	beamInfo.m_flRed = r;
+	beamInfo.m_flGreen = g;
+	beamInfo.m_flBlue = b;
+
+	vfunc18(beamInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194160 size=0x48
 #include "CViewRenderBeams.h"
 
