@@ -99063,6 +99063,34 @@ void sub_101a7b70(CHudElement *e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7c00 size=0x74
+#include <string.h>
+
+struct ElemView
+{
+    char m_szName[0x84];
+    int m_n84;
+    char m_pad88[0x10];
+};
+
+ElemView *__cdecl sub_101a7c00(ElemView *pArray, const char *pName, int nId, int count)
+{
+    if (!pArray)
+        return 0;
+    ElemView *p = pArray;
+    int n = count;
+    if (!n)
+        return 0;
+    while (n--)
+    {
+        if (!strcmp(pName, p->m_szName) && p->m_n84 == nId)
+            return p;
+        p = (ElemView *)((char *)p + 0x98);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7f20 size=0x7f
 #include "CHudWeaponSelection.h"
 
