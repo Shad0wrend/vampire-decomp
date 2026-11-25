@@ -55561,6 +55561,79 @@ void sub_100f9920(DXTColorBGRA8888 *pOutputImage, DXTColBlock *pColorBlock, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9b20 size=0x120
+struct DXTColBlock
+{
+	unsigned short col0;
+	unsigned short col1;
+	unsigned char row[4];
+};
+
+struct DXTColorBGRA8888
+{
+	unsigned char b;
+	unsigned char g;
+	unsigned char r;
+	unsigned char a;
+};
+
+struct DXTColorBGR888
+{
+	unsigned char b;
+	unsigned char g;
+	unsigned char r;
+	void FromBGRA8888(const DXTColorBGRA8888 &in)
+	{
+		r = in.r;
+		g = in.g;
+		b = in.b;
+	}
+};
+
+void sub_100f9b20(DXTColorBGR888 *pOutputImage, DXTColBlock *pColorBlock, int width,
+	DXTColorBGRA8888 *col_0, DXTColorBGRA8888 *col_1,
+	DXTColorBGRA8888 *col_2, DXTColorBGRA8888 *col_3)
+{
+	unsigned long bits;
+	int r, n;
+
+	const unsigned long masks[] = { 3, 12, 3 << 4, 3 << 6 };
+	const int shift[] = { 0, 2, 4, 6 };
+
+	for (r = 0; r < 4; r++, pOutputImage += width - 4)
+	{
+		for (n = 0; n < 4; n++)
+		{
+			bits = pColorBlock->row[r] & masks[n];
+			bits >>= shift[n];
+
+			switch (bits)
+			{
+			case 0:
+				pOutputImage->FromBGRA8888(*col_0);
+				pOutputImage++;
+				break;
+			case 1:
+				pOutputImage->FromBGRA8888(*col_1);
+				pOutputImage++;
+				break;
+			case 2:
+				pOutputImage->FromBGRA8888(*col_2);
+				pOutputImage++;
+				break;
+			case 3:
+				pOutputImage->FromBGRA8888(*col_3);
+				pOutputImage++;
+				break;
+			default:
+				pOutputImage++;
+				break;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbd70 size=0xe
 namespace lifted {
 extern int g_1027ba58;
