@@ -12994,6 +12994,27 @@ int CUnknown10032a40::sub_10032a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032af0 size=0x81
+#include "C_TEBeamEntPointNW.h"
+struct TEBeamsIface {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void CreateBeamEntPoint(int nStartEntity, const float *pStart, int nEndEntity, const float *pEnd,
+		int modelIndex, int haloIndex, float haloScale, float life, float width, float endWidth,
+		float fadeLength, float amplitude, float brightness, float speed, int startFrame,
+		float framerate, float r, float g, float b);
+};
+extern TEBeamsIface *g_102d5050;
+// TARGET: ?sub_10032af0@C_TEBeamEntPointNW@@QAEXH@Z
+void C_TEBeamEntPointNW::sub_10032af0(int updateType)
+{
+	g_102d5050->CreateBeamEntPoint(m_nStartEntity, m_vecStart, m_nEndEntity, m_vecEnd,
+		m_nModelIndex, m_nHaloIndex, 0, m_fLife, m_fWidth, m_fEndWidth,
+		m_nFadeLength, m_fAmplitude, m_nBrightness, m_nSpeed * 0.1, m_nStartFrame,
+		m_nFrameRate * 0.1, m_nR, m_nG, m_nB);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032ba0 size=0x6
 namespace lifted {
 extern char g_102ebbdc;
