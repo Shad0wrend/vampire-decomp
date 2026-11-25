@@ -74536,6 +74536,60 @@ int CUnknown101365c0::sub_101365c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101367e0 size=0xa9
+struct EngV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float Time(int a);
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual int v44();
+};
+extern EngV *g_104a57d4;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+struct ThingV
+{
+	char m_pad0[0x30];
+	int m_n30;
+	char m_pad1[0x70 - 0x34];
+	int m_n70;
+	char m_pad2[0x42c - 0x74];
+	int m_n42c;
+	char m_pad3[0x434 - 0x430];
+	float m_f434;
+	char m_pad4[0x444 - 0x438];
+	float m_f444;
+	float m_f448;
+	float m_f44c;
+	int m_n450;
+	int m_n454;
+	float m_f458;
+	void sub_100a1200();
+	void sub_101367e0();
+};
+// TARGET: ThingV::sub_101367e0
+void ThingV::sub_101367e0()
+{
+	if (m_n70 != -1 && m_n30 == 0)
+		Msg("problem at %i\n", g_104a57d4->v44());
+	sub_100a1200();
+	if (m_f434 != m_f448)
+	{
+		m_f444 = m_f448;
+		m_f448 = m_f434;
+		m_f44c = g_104a57d4->Time(0);
+	}
+	if (m_n42c != m_n454)
+	{
+		m_n450 = m_n454;
+		m_n454 = m_n42c;
+		m_f458 = g_104a57d4->Time(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136c50 size=0x51
 // TARGET: sub_10136c50
 #include "Vector.h"
