@@ -23,4 +23,5 @@ public:
 	unsigned int m_nMask;
 	int sub_1011e910(const void *pKey);
 	int sub_1011eb30(const void *pKey);
+	int sub_1011ec40(const void *pKey);
 };
