@@ -3221,6 +3221,7 @@
 0x1007de30 func   ?vfunc91@C_BaseEntity@@UAEHHH@Z C_BaseEntity::vfunc91
 0x1007de70 func   ?vfunc30@C_BaseEntity@@UAEHXZ C_BaseEntity::vfunc30
 0x1007de80 func   ?vfunc31@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc31
+0x1007de90 func   ?vfunc89@C_BaseEntity@@UAEXPAVIPhysicsObject@@@Z C_BaseEntity::vfunc89
 0x1007df40 func   ?vfunc88@C_BaseEntity@@UAEXXZ C_BaseEntity::vfunc88
 0x1007df70 func   ?vfunc87@C_BaseEntity@@UAE_NXZ C_BaseEntity::vfunc87
 0x1007df80 func   ?sub_1007df80@EntityV_1007df80@@QAE_NXZ EntityV_1007df80::sub_1007df80

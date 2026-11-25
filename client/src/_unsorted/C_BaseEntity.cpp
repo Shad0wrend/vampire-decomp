@@ -321,6 +321,33 @@ int C_BaseEntity::vfunc31(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007de90 size=0xab
+#include "Vector.h"
+#include "QAngle.h"
+#include "C_BaseEntity.h"
+#include "IPhysicsObject.h"
+#include "Tier1.h"
+
+static inline bool IsFiniteF(float f)
+{
+	return (*(unsigned int *)&f & 0x7f800000) != 0x7f800000;
+}
+
+void C_BaseEntity::vfunc89(IPhysicsObject *pPhysics)
+{
+	if (GetSolid() != 7)
+		return;
+	Vector origin;
+	QAngle angles;
+	pPhysics->vfunc37(&origin, (int)&angles);
+	if (!IsFiniteF(angles.x) || !IsFiniteF(angles.y) || !IsFiniteF(angles.x))
+		g_101e3108("Infinite values from vphysics!\n");
+	sub_100a2030(&origin);
+	sub_100a2100(angles);
+	vfunc111();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007df40 size=0x23
 #include "C_BaseEntity.h"
 namespace lifted {
