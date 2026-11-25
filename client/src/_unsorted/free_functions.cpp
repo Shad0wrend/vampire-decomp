@@ -75462,6 +75462,46 @@ bool sub_1013a4d0(CreateInterfaceFn factory)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a5c0 size=0xaa
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+struct IFS1013a5c0
+{
+	virtual void *v0(const char *name, const char *mode, int a);
+	virtual void v1(void *h);
+	virtual int v2(void *buf, int size, void *h);
+	virtual void v3();
+	virtual void v4(void *h, int a, int b);
+	virtual void v5();
+	virtual int v6(void *h);
+};
+extern IFS1013a5c0 *g_105e74bc;
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+struct Buf1013a5c0 { void *m_pData; int m_nSize; int m_nGrow; };
+
+bool sub_1013a5c0(const char *name, Buf1013a5c0 *buf, int size)
+{
+	if (!g_105e74bc)
+		return false; else { void *h = g_105e74bc->v0(name, "rb", 0);
+	if (!h)
+		return false;
+	if (size < 0)
+		size = g_105e74bc->v6(h);
+	if (buf->m_nSize < size && buf->m_nGrow != -1)
+	{
+		buf->m_nSize = size;
+		if (buf->m_pData)
+			buf->m_pData = g_101e3104(buf->m_pData, size);
+		else
+			buf->m_pData = g_101e3100(size);
+	}
+	g_105e74bc->v4(h, 0, 0);
+	int n; n = g_105e74bc->v2(pcd_stage(buf->m_pData), size, h);
+	g_105e74bc->v1(h);
+	return n == size; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a670 size=0x53
 // TARGET: sub_1013a670
 #include "CUnknown1006c1c0.h"
