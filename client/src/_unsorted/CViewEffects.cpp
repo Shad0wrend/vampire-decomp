@@ -51,6 +51,19 @@ void CViewEffects::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197730 size=0x64
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewEffects::vfunc11
+void CViewEffects::vfunc11()
+{
+    ScopeTrace trace("CViewEffects::EndHolyLight", g_102de300);
+    *((char *)this + 0x99) = 0;
+    vfunc15();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101977a0 size=0x5f
 #include "CViewEffects.h"
 #include "ScopeTrace.h"
