@@ -3244,6 +3244,7 @@
 0x1007f6f0 func   ??_GC_BaseViewModel@@UAEPAXI@Z ??_GC_BaseViewModel@@UAEPAXI@Z
 0x1007f710 func   ??1C_BaseViewModel@@UAE@XZ C_BaseViewModel::~C_BaseViewModel
 0x1007f7b0 func   ?vfunc21@C_BaseViewModel@@UAEXXZ C_BaseViewModel::vfunc21
+0x1007f7c0 func   ?vfunc19@C_BaseViewModel@@UAEXXZ C_BaseViewModel::vfunc19
 0x1007f830 func   ?sub_1007f830@CUnknown1007f830@@QAEXH@Z CUnknown1007f830::sub_1007f830
 0x1007f860 func   ?sub_1007f860@CUnknown1007f860@@QAEHH@Z CUnknown1007f860::sub_1007f860
 0x1007f870 func   ?sub_1007f870@CUnknown1007f870@@QAEHXZ CUnknown1007f870::sub_1007f870
