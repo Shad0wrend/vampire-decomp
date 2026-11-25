@@ -18,5 +18,6 @@ public:
 	int m_unk2c; int m_unk30; int m_unk34; int m_unk38;
 	void *m_pBuffer;	// +0x3c
 
+	bool sub_1015a750();
 	void sub_1015a1b0();	// the destructor body (scope trace "CVStatAction_t::~CVStatAction_t")
 };
