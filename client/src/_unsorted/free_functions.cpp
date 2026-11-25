@@ -40138,6 +40138,32 @@ void __cdecl sub_100b13d0(Vector &outPos, Vector &outRight, Vector &outUp, Parti
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1aa0 size=0x9a
+#include "Vector.h"
+struct Sub100b1aa0 { virtual void s0(); virtual Vector *s1(); };
+struct Ent100b1aa0 {
+	void *vptr0; Sub100b1aa0 sub; char pad[0x428 - 8];
+	float m428; float m42c; float m430; float m434; float m438; int m43c; char pad2[0x470 - 0x440];
+	char *m470; char pad3[0x47c - 0x474]; int m47c;
+};
+void sub_100b1aa0(Vector *out, int a, int b, float *p, char flag, int c, Ent100b1aa0 *ent)
+{
+	if (ent->m47c < 1) {
+		*out = *ent->sub.s1();
+		return;
+	}
+	*out = *(Vector *)(ent->m470 + 0x10);
+	if (flag) {
+		p[0] *= ent->m42c;
+		p[1] *= ent->m430;
+		p[2] *= ent->m434;
+		p[4] *= ent->m438;
+		p[10] *= ent->m428;
+		*(int *)(p + 8) = ent->m43c;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b1b40 size=0x152
 #include "Vector.h"
 #include "utlvector.h"
