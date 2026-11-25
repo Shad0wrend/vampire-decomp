@@ -4458,6 +4458,7 @@
 0x100c7f30 func   ?sub_100c7f30@CUnknown100c7f30@@QAEXXZ CUnknown100c7f30::sub_100c7f30
 0x100c7f40 func   ?sub_100c7f40@CUnknown100c7f40@@QAEXXZ CUnknown100c7f40::sub_100c7f40
 0x100c7f50 func   ?sub_100c7f50@C_BaseTerminal@@QAEXXZ C_BaseTerminal::sub_100c7f50
+0x100c82e0 func   ?sub_100c82e0@C_BaseTerminal@@QAEXXZ C_BaseTerminal::sub_100c82e0
 0x100c84c0 func   ??0CTextConsoleRegenerator@@QAE@PAVC_BaseTerminal@@@Z CTextConsoleRegenerator::CTextConsoleRegenerator
 0x100c84c0 func   ?sub_100c84c0@CUnknown100c84c0@@QAEPAXH@Z CUnknown100c84c0::sub_100c84c0
 0x100c84e0 func   ?sub_100c84e0@@YIXPAUV_100c84e0@@HHHH@Z sub_100c84e0

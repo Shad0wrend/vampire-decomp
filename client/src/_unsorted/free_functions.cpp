@@ -47082,6 +47082,37 @@ void C_BaseTerminal::sub_100c7f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c82e0 size=0xbb
+#include "C_BaseTerminal.h"
+struct IEng_100c82e0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void v11(void (*cb)(), void *arg);
+	virtual void v12(int a);
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual double Time(int a);
+};
+extern IEng_100c82e0 *g_104a57d4;
+extern void sub_100c6b10();
+struct Entry_100c82e0 { int d[18]; };
+void C_BaseTerminal::sub_100c82e0()
+{
+	if (m_nE78 >= 0 && m_nE78 < m_nStride - m_nE84 - 1 && m_nE7c >= 0 && m_nE7c < m_nMax && !m_bE88)
+	{
+		*(Entry_100c82e0 *)m_aE90 = ((Entry_100c82e0 *)m_rgData)[m_nE7c];
+		m_nE8c = m_nE78;
+		m_bEd8 = false;
+		m_bE88 = true;
+		g_104a57d4->v12(0);
+		g_104a57d4->v11(sub_100c6b10, this);
+		vfunc83(g_104a57d4->Time(0) + 0.25);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c84c0 size=0x12
 namespace lifted {
 extern char g_102336ec;
