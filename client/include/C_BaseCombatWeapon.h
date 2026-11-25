@@ -9,6 +9,7 @@ class C_BaseCombatWeapon : public C_BaseAnimating
 public:
 	C_BaseCombatWeapon();
 	void *sub_1007b160();
+	int sub_1007ccc0();
 	void sub_1007cc30(const char *arg);
 	void *sub_10003060();
 	void *sub_1007bab0();
