@@ -11,6 +11,30 @@ CHudManager *pcd_emit_100575b0(const CHudManager &other) { return new CHudManage
 // TARGET: ??_GCHudManager@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x100575d0 size=0x66
+#include "CHudManager.h"
+
+// TARGET: CHudManager::~CHudManager
+CHudManager::~CHudManager()
+{
+	while (m_pHead)
+	{
+		SHudNode *p = m_pHead;
+		m_pHead = p->m_pNext;
+		delete p;
+	}
+	for (int i = 0; i < 8; i++)
+	{
+		while (m_pLists174[i])
+		{
+			SHudNode *p = m_pLists174[i];
+			m_pLists174[i] = p->m_pNext;
+			delete p;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057640 size=0x1
 #include "CHudManager.h"
 void CHudManager::vfunc112()
