@@ -83030,6 +83030,56 @@ int CUnknown10143500::sub_10143500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143520 size=0xcf
+struct CUnknown101433a0
+{
+	int a, b, c;
+	void *sub_101433a0();
+};
+
+void *__cdecl operator new(unsigned int);
+void __cdecl operator delete(void *);
+
+struct CUnknown10143520
+{
+	char m_pad00[0x24];
+	int m_nCount;
+	CUnknown101433a0 **m_pArray;
+	CUnknown101433a0 *sub_10143520();
+};
+
+CUnknown101433a0 *CUnknown10143520::sub_10143520()
+{
+	int newCount = m_nCount + 1;
+
+	if (m_pArray)
+	{
+		CUnknown101433a0 **newArr = (CUnknown101433a0 **)::operator new(newCount * sizeof(CUnknown101433a0 *));
+		int i;
+		for (i = 0; i < m_nCount; i++)
+			newArr[i] = m_pArray[i];
+		for (; i < newCount; i++)
+			newArr[i] = 0;
+		::operator delete(m_pArray);
+		m_pArray = newArr;
+	}
+	else
+	{
+		m_pArray = (CUnknown101433a0 **)::operator new(newCount * sizeof(CUnknown101433a0 *));
+		for (int i = 0; i < newCount; i++)
+			m_pArray[i] = 0;
+	}
+
+	m_nCount++;
+	if (m_pArray[m_nCount - 1] == 0)
+	{
+		CUnknown101433a0 *n = (CUnknown101433a0 *)::operator new(sizeof(CUnknown101433a0));
+		m_pArray[m_nCount - 1] = (CUnknown101433a0 *)(n ? n->sub_101433a0() : 0);
+	}
+	return m_pArray[m_nCount - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101435f0 size=0x57
 void operator delete(void *p);
 
