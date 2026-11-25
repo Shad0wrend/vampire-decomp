@@ -20758,6 +20758,29 @@ void CSignUI::sub_100617b0(CKeyValuesX *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061c40 size=0x78
+#include "CKeyValuesX.h"
+
+int sub_100cd100();
+
+const char *__stdcall sub_10061c40(CKeyValuesX *kv)
+{
+	const char *font = "Font";
+	switch (sub_100cd100())
+	{
+	case 0x280: font = "Font_640"; break;
+	case 0x320: font = "Font_800"; break;
+	case 0x400: font = "Font_1024"; break;
+	case 0x500: font = "Font_1280"; break;
+	case 0x640: font = "Font_1600"; break;
+	}
+	const char *ret = kv->sub_10128590(font, 0);
+	if (!ret)
+		ret = kv->sub_10128590("Font", "Default");
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062280 size=0x1e
 struct CUnknown10062280 { char sub_10062280(char, char, char, char); };
 char CUnknown10062280::sub_10062280(char a0, char a1, char a2, char a3)
