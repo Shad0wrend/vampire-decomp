@@ -7993,6 +7993,7 @@
 0x1018adb0 func   ?sub_1018adb0@LHold@@QAEXXZ LHold::sub_1018adb0
 0x1018ae50 func   ?sub_1018ae50@LHold@@QAEXXZ LHold::sub_1018ae50
 0x1018ae80 func   ?sub_1018ae80@CFoo@@QAEXPAVVector@@0@Z CFoo::sub_1018ae80
+0x1018aef0 func   ?sub_1018aef0@VRend@@QAEXAAVVector@@0@Z VRend::sub_1018aef0
 0x1018b240 func   ?vfunc88@CStudiomodelPanel@@UAEXXZ CStudiomodelPanel::vfunc88
 0x1018b250 func   ??_GCStudiomodelPanel@@UAEPAXI@Z ??_GCStudiomodelPanel@@UAEPAXI@Z
 0x1018b270 func   ??1CStudiomodelPanel@@UAE@XZ CStudiomodelPanel::~CStudiomodelPanel
