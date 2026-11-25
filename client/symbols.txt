@@ -4242,6 +4242,7 @@
 0x100bc7f0 func   ?ClientClassInit@@YAHPAUignored@DT_LightGlow@@@Z ClientClassInit
 0x100bc8b0 func   ??0C_LightGlow@@QAE@XZ C_LightGlow::C_LightGlow
 0x100bc8b0 func   ?sub_100bc8b0@CUnknown100bc8b0@@QAEPAXXZ CUnknown100bc8b0::sub_100bc8b0
+0x100bc900 func   ??_GC_LightGlow@@UAEPAXI@Z ??_GC_LightGlow@@UAEPAXI@Z
 0x100bc930 func   ?sub_100bc930@Self_100bc930@@UAEXH@Z Self_100bc930::sub_100bc930
 0x100bca30 func   ?vfunc16@C_PhysBox@@UAEHXZ C_PhysBox::vfunc16
 0x100bca40 func   ?vfunc15@C_PhysBox@@UAEHXZ C_PhysBox::vfunc15
