@@ -35766,6 +35766,34 @@ void Class1009c2e0::sub_1009c2e0(bool bEnable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c470 size=0x85
+#include "C_BaseCombatWeapon.h"
+#include "ehandle.h"
+struct SubV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int v9(); };
+extern CBaseHandle *g_1049d964;
+extern int g_1049d970;
+extern void (*g_101e3108)(const char *, ...);
+// TARGET: sub_1009c470
+void sub_1009c470()
+{
+	int i = 0;
+	if (g_1049d970 > 0) {
+		void (*pMsg)(const char *, ...) = g_101e3108;
+		do {
+			C_BaseCombatWeapon *pWeapon = (C_BaseCombatWeapon *)g_1049d964[i].Get();
+			if (pWeapon) {
+				char *p = (char *)pWeapon->sub_1007bab0();
+				int id = 0;
+				if (p)
+					id = ((SubV *)(p + 8))->v9();
+				pMsg("%d: (%d) (%s)  \n", i, id, (char *)pWeapon->sub_1007b160() + 0x88);
+			}
+			i++;
+		} while (i < g_1049d970);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c7e0 size=0xb
 namespace lifted {
 extern int g_1049d984;

@@ -3483,6 +3483,7 @@
 0x1009c180 func   ?sub_1009c180@CUnknown1009c180@@QAEHXZ CUnknown1009c180::sub_1009c180
 0x1009c1a0 func   ?sub_1009c1a0@@YAXXZ sub_1009c1a0
 0x1009c2e0 func   ?sub_1009c2e0@Class1009c2e0@@QAEX_N@Z Class1009c2e0::sub_1009c2e0
+0x1009c470 func   ?sub_1009c470@@YAXXZ sub_1009c470
 0x1009c7e0 func   ?sub_1009c7e0@@YAXXZ sub_1009c7e0
 0x1009c7f0 func   ?sub_1009c7f0@@YAPAVC_BaseCombatWeapon@@HH@Z sub_1009c7f0
 0x1009c950 func   ?sub_1009c950@@YAHXZ sub_1009c950
