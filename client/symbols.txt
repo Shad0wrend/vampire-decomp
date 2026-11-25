@@ -6455,6 +6455,7 @@
 0x1013b160 func   ?sub_1013b160@@YAXPAX00@Z sub_1013b160
 0x1013b350 func   ?sub_1013b350@@YAXPAX00@Z sub_1013b350
 0x1013b5e0 func   ?sub_1013b5e0@@YA_NPAVCUnknown1006bea0@@PAUXImgHdr@@@Z sub_1013b5e0
+0x1013ba50 func   ?vfunc1@CTimeMaterialProxy@@UAEXH@Z CTimeMaterialProxy::vfunc1
 0x1013bab0 func   ?sub_1013bab0@@YAHXZ sub_1013bab0
 0x1013bae0 func   ??_GCTimeMaterialProxy@@UAEPAXI@Z ??_GCTimeMaterialProxy@@UAEPAXI@Z
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
