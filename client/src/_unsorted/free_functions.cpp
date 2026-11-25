@@ -82898,6 +82898,41 @@ extern int g_102c7c04[];
 int sub_10147000(int i) { return g_102c7c04[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x10147010 size=0xb4
+#include "CWeaponAmmoInfo.h"
+#include "CUnknown101da960.h"
+#include "CStatDefault60List.h"
+int sub_10146f10(const char *);
+int sub_10146f90(const char *);
+struct CUnknown10147010 {
+	int m_nRange;
+	int m_nSource;
+	int m_nAffects;
+	int m_nMinRadius;
+	int m_nMaxRadius;
+	CUnknown101da960 m_Filter;
+	CStatDefault60List m_Affected;
+	bool sub_10147010(IKVNode *pKV);
+};
+bool CUnknown10147010::sub_10147010(IKVNode *pKV)
+{
+	if (pKV) {
+		IKVNode *aoe = pKV->vfunc2("AoE");
+		if (aoe) {
+			m_nRange = aoe->vfunc10("Range", 0);
+			m_nSource = sub_10146f10(aoe->vfunc13("Source", ""));
+			m_nAffects = sub_10146f90(aoe->vfunc13("Affects", ""));
+			m_nMinRadius = aoe->vfunc10("MinRadius", 0);
+			m_nMaxRadius = aoe->vfunc10("MaxRadius", 0);
+			m_Filter.sub_101466c0((VKeyValuesInterface *)aoe);
+			m_Affected.sub_10146cb0((IKVNodeView *)aoe, &m_Filter);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101470d0 size=0x10e
 #include "CUnknown101dbc60.h"
 
