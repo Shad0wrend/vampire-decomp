@@ -13195,6 +13195,19 @@ int CUnknown10033160::sub_10033160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033180 size=0x85
+struct IBeam18 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void Create(int, int, int, int, int, int, int, int, float, int, float, float, int, float, float, float, float, int);
+};
+extern IBeam18 *g_102d5050;
+// TARGET: sub_10033180
+void sub_10033180(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18)
+{
+	g_102d5050->Create(a3, a4, a5, a6, 0, a9, a10, a11, (float)a12, a13, (float)a17, (float)a18 * 0.1, a7, (float)a8 * 0.1, (float)a14, (float)a15, (float)a16, 0x1b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033210 size=0x7b
 #include "C_TEBeamLaser.h"
 
