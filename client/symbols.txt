@@ -6557,6 +6557,7 @@
 0x10134d70 func   ?vfunc16@CSoundControllerImp@@UAEMPAXHPAUenvelopePoint_t@@H@Z CSoundControllerImp::vfunc16
 0x10134e80 func   ?sub_10134e80@SC_10134e80@@QAEXHHPAUPair_10134e80@@@Z SC_10134e80::sub_10134e80
 0x10134ea0 func   ?sub_10134ea0@VSndCtl@@QAEXH@Z VSndCtl::sub_10134ea0
+0x10134ed0 func   ?vfunc18@CSoundControllerImp@@UAEXXZ CSoundControllerImp::vfunc18
 0x10134f80 func   ?sub_10134f80@CView@@QAEXH@Z CView::sub_10134f80
 0x10134f90 func   ?sub_10134f90@@YIXPADH@Z sub_10134f90
 0x10134fa0 func   ?sub_10134fa0@CAutoGameSystem@@QAEPAXI@Z CAutoGameSystem::sub_10134fa0
