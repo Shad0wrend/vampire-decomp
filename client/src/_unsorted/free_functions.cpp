@@ -104829,6 +104829,43 @@ int CUnknown101b1780::sub_101b1780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1790 size=0x97
+#include "vgui2__TextEntry.h"
+int sub_101ac8d0();
+int sub_101ad550(int font, char ch);
+struct ISurf101b1790 {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7();
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4(); virtual void h5(); virtual void h6(); virtual int GetFontTall(int font);
+};
+struct CharVec101b1790 {
+	int m_Size; int pad; char *m_pData;
+	int Count() { return m_Size; }
+	bool IsValidIndex(int i) { return i >= 0 && i < m_Size; }
+	char Get(int i) { char c; if (IsValidIndex(i)) c = m_pData[i]; else c = 0; return c; }
+};
+struct TEView101b1790 {
+	char pad[0x58]; CharVec101b1790 v; char pad3[0x124 - 0x64]; int m_hFont;
+};
+void vgui2::TextEntry::sub_101b1790()
+{
+	TEView101b1790 *t = (TEView101b1790 *)this;
+	if (*((char *)this + 0xb1)) return;
+	vfunc101();
+	int w = 6;
+	for (int i = 0; i < t->v.Count(); i++)
+		w += sub_101ad550(t->m_hFont, t->v.Get(i));
+	int h = ((ISurf101b1790 *)sub_101ac8d0())->GetFontTall(t->m_hFont);
+	sub_101a98f0(w, h + 4);
+	vfunc101();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1830 size=0xd
 struct CUnknown101b1830 { char sub_101b1830(char); };
 char CUnknown101b1830::sub_101b1830(char a0)
