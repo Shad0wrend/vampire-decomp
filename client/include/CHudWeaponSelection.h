@@ -7,6 +7,8 @@ class CHudWeaponSelection : public CHudElement
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CHudWeaponSelection's own function
+    void *m_pBucket1;
+    void *m_pSelection;
     virtual void vfunc1();
     virtual void vfunc2();
     virtual void vfunc5(int);
