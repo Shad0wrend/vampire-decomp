@@ -91857,6 +91857,21 @@ void Img_101649a0::sub_101649a0(int *r, int *g, int *b, int *a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164a20 size=0x2f
+#include "BitmapImage.h"
+#include "CKeyValuesX.h"
+bool sub_10164a20(CKeyValuesX *pKV, const char *pszName, int arg2, BitmapImage *pImage)
+{
+	if (pszName)
+	{
+		pKV = pKV->sub_10128350(pszName, 0);
+		if (!pKV)
+			return false;
+	}
+	return pImage->sub_10164570(arg2, pKV);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164a80 size=0x26
 struct CUnknown10164a80 { int sub_10164a80(char, int, int, int, int); };
 int CUnknown10164a80::sub_10164a80(char a0, int a1, int a2, int a3, int a4)
