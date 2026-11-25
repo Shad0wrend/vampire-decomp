@@ -35,4 +35,5 @@ public:
 	virtual void GetRenderBounds(Vector &mins, Vector &maxs) = 0;	// slot 18: C_BaseEntity: 337 B, modelinfo's model type, else the collision bounds; ret 8; right after DoAnimationEvents as in Source 2003
 	virtual void GetRenderBoundsWorldspace(Vector &mins, Vector &maxs) = 0;	// slot 19: C_BaseEntity: modelinfo's model type, else slot 15 of the member at +0x190 (Source 2004 ICollideable::WorldSpaceSurroundingBounds) with both; ret 8
 	virtual bool Renderable_vfunc20() = 0;	// slot 20: C_BaseEntity: false
+	const Vector &sub_10094040();
 };
