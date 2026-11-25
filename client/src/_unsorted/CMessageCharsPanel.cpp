@@ -1,6 +1,59 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10168150 size=0x92
+#include "CMessageCharsPanel.h"
+
+int sub_100cd0f0();
+int sub_100cd100();
+int sub_101ac8f0();
+
+struct PanelV21
+{
+	void sub_101a99f0(int);
+};
+
+struct MsgView
+{
+	void sub_10168270();
+};
+
+struct IVGui
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17();
+	virtual void AddTickSignal(int vpanel, int tick);
+};
+
+struct Color
+{
+	unsigned char r, g, b, a;
+	Color(int _r, int _g, int _b, int _a) { r = _r; g = _g; b = _b; a = _a; }
+};
+
+CMessageCharsPanel::CMessageCharsPanel(vgui2::Panel *parent)
+	: vgui2::Panel(parent, "CMessageCharsPanel")
+{
+	sub_101a98f0(sub_100cd100(), sub_100cd0f0());
+	sub_101a9890(0, 0);
+	((PanelV21 *)(void *)this)->sub_101a99f0(1);
+	vfunc54(0);
+
+	Color col(0, 0, 0, 0xff);
+	*(int *)((char *)this + 0x58) = 0;
+	vfunc51(*(int *)&col);
+	vfunc63(0);
+
+	((MsgView *)(void *)this)->sub_10168270();
+
+	int vp = *(int *)((char *)this + 4);
+	((IVGui *)(void *)sub_101ac8f0())->AddTickSignal(vp, 100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101681f0 size=0x5
 #include "CMessageCharsPanel.h"
 bool CMessageCharsPanel::vfunc25(int a0, int a1)
