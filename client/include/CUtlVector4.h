@@ -13,6 +13,30 @@ public:
 	int m_size;
 	int *m_pElements;
 
+	void sub_100d3ed0(int num);
+	void GrowN(int num)
+	{
+		if (m_size + num > m_allocationCount)
+			sub_100d3ed0(m_size + num - m_allocationCount);
+		m_size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftRightN(int elem, int num)
+	{
+		int n = m_size - elem - num;
+		if (n > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], n * 4);
+	}
+	int AddToTailNew(const int &src)
+	{
+		int elem = m_size;
+		GrowN(1);
+		ShiftRightN(elem, 1);
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+		return elem;
+	}
 	void sub_101c2c10(const int *pArray, int size);
 	void sub_101c9d10(int i, int val);
 	void sub_101c2b40(const int *pArray, int size);
