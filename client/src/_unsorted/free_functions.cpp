@@ -92107,6 +92107,33 @@ void CNetGraphPanel::sub_10168d20(NGEntry *e, unsigned char *a, int *flag, unsig
 }
 // END FUNCTION
 
+// FUNCTION: 0x101694c0 size=0x81
+struct NetChanV {
+	virtual int v0(); virtual int v1(); virtual int v2(); virtual int v3(); virtual int v4();
+	virtual int v5(); virtual int v6(); virtual int v7(); virtual int v8();
+	virtual float v9(int i);
+	virtual char v10(int i);
+	virtual int v11(int i);
+};
+struct NetEntryV {
+	float m_fl;
+	int m_n;
+	char m_c;
+	char m_pad[3];
+};
+extern NetChanV *g_104a5800;
+void __stdcall sub_101694c0(NetEntryV *entries)
+{
+	int i = 1 - g_104a5800->v2() + g_104a5800->v0();
+	for (; i <= g_104a5800->v0(); i++) {
+		NetEntryV *e = &entries[i & 0x3ff];
+		e->m_fl = g_104a5800->v9(i);
+		e->m_c = g_104a5800->v10(i);
+		e->m_n = g_104a5800->v11(i);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10169900 size=0x1a4
 #include "ConVar.h"
 
