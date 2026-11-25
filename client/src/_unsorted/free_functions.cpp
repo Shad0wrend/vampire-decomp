@@ -65037,6 +65037,44 @@ void __stdcall sub_10122930(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10122b20 size=0x98
+struct Ent_10122b20 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16();
+	virtual int *v17();
+	bool sub_100a2600();
+	int sub_100a2fa0(int);
+};
+struct Data_10122b20 {
+	int m[13];
+	Data_10122b20 *sub_10123290(int, Ent_10122b20 *, int, int, int, int, int, int, int);
+	void sub_10124440(int *, int, int);
+};
+struct IPV_10122b20 {
+	virtual Ent_10122b20 *GetPredictable(int i);
+	virtual int GetPredictableCount();
+};
+extern IPV_10122b20 *g_102af678;
+
+// TARGET: sub_10122b20
+void __stdcall sub_10122b20(int a)
+{
+	int n = g_102af678->GetPredictableCount();
+	for (int i = 0; i < n; i++) {
+		Ent_10122b20 *ent = g_102af678->GetPredictable(i);
+		if (ent && ent->sub_100a2600()) {
+			Data_10122b20 d;
+			int f = ent->sub_100a2fa0(a);
+			d.sub_10123290(0, (Ent_10122b20 *)f, 1, (int)ent, 0, 0, 1, 0, 0);
+			int *p = ent->v17();
+			d.sub_10124440(ent->v17(), p[0], ent->v17()[1]);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123290 size=0x67
 struct CData_10123290
 {
