@@ -20560,6 +20560,27 @@ int sub_100561f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056460 size=0xa7
+#include "CHudInfoBar.h"
+#include "CHUDSprite.h"
+
+char *sub_1004ba40(const char *fmt, ...);
+const char *__stdcall sub_10056510(int);
+bool __fastcall sub_1005d6e0(void *self);
+
+CHUDSprite *CHudInfoBar::sub_10056460(int a)
+{
+	char *name = sub_1004ba40("hud/InfoBar_Icons/%s", sub_10056510(a));
+	CHUDSprite *sprite = new CHUDSprite(name, 0, 0, m_unk194, m_unk198, 0x20, 0x20);
+	if (!sub_1005d6e0(sprite))
+	{
+		delete sprite;
+		return new CHUDSprite("hud/InfoBar_Icons/Default", 0, 0, m_unk194, m_unk198, 0x20, 0x20);
+	}
+	return sprite;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056510 size=0x38
 struct HudEntry56 { const char *name; int pad[6]; };
 extern HudEntry56 g_103ee160[];

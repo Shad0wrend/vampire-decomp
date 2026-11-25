@@ -2703,6 +2703,7 @@
 0x10056200 func   ??1CHudInfoBar@@UAE@XZ CHudInfoBar::~CHudInfoBar
 0x10056300 func   ?vfunc112@CHudInfoBar@@UAEXXZ CHudInfoBar::vfunc112
 0x100563b0 func   ?vfunc113@CHudInfoBar@@UAEXXZ CHudInfoBar::vfunc113
+0x10056460 func   ?sub_10056460@CHudInfoBar@@QAEPAVCHUDSprite@@H@Z CHudInfoBar::sub_10056460
 0x10056510 func   ?sub_10056510@@YGPBDH@Z sub_10056510
 0x10056550 func   ?sub_10056550@@YGPADH@Z sub_10056550
 0x100565b0 func   ?sub_100565b0@CHudInfoBar@@QAEXXZ CHudInfoBar::sub_100565b0
