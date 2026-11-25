@@ -20630,6 +20630,26 @@ void sub_10064c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064c70 size=0x71
+struct GTab {
+	void *d0,*d1,*d2,*d3,*d4,*d5,*d6,*d7,*d8,*d9,*d10,*d11,*d12,*d13,*d14;
+	int (*slot15)(void *self, int a, int b);
+};
+struct GObj { GTab *tab; };
+extern GObj *g_104a5820;
+int sub_100cd100();
+
+extern double g_10227ec8;
+
+// TARGET: sub_10064c70
+void __stdcall sub_10064c70(int a0, int a1, int *out)
+{
+	int v = g_104a5820->tab->slot15(g_104a5820, a0, a1);
+	double d = ((double)sub_100cd100() * g_10227ec8 * 128.0 - v) * 0.5;
+	*out = (int)(d - (double)sub_100cd100() * g_10227ec8 * 13.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064dd0 size=0x14
 namespace lifted {
 extern char g_103eee59;
