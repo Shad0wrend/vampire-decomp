@@ -737,6 +737,47 @@ int vgui2::TextEntry::vfunc169()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1440 size=0x76
+#include <string.h>
+#include "vgui2__TextEntry.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct TEView
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3();
+	virtual void k4(); virtual void k5(); virtual void k6(); virtual void k7();
+	virtual void GetText(int start, char *buf, int len);
+};
+
+struct KVv
+{
+	virtual const char *GetName();
+	virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8();
+	virtual void d9(); virtual void d10(); virtual void d11(); virtual void d12();
+	virtual void d13();
+	virtual void SetString(const char *key, const char *value);
+};
+
+struct PanelV
+{
+	bool sub_101ac540(vgui2::KeyValues *data);
+};
+
+bool vgui2::TextEntry::vfunc14(vgui2::KeyValues *data)
+{
+	if (!strcmp(((KVv *)data)->GetName(), "GetText"))
+	{
+		char buf[256];
+		((TEView *)this)->GetText(0, buf, 255);
+		((KVv *)data)->SetString("text", buf);
+		return true;
+	}
+	return ((PanelV *)this)->sub_101ac540(data);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b14c0 size=0x8
 #include "vgui2__TextEntry.h"
 namespace lifted {
