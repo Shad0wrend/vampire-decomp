@@ -139,6 +139,39 @@ float CGameMovement::vfunc23()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7e20 size=0x70
+#include "CGameMovement.h"
+
+struct GlobalsView
+{
+	char pad0[0x10];
+	float frametime;	// 0x10
+};
+extern GlobalsView *g_102b8494;
+
+struct G104dfa5cV
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char pad0[0x24];
+	float m_field28;	// 0x28
+};
+extern G104dfa5cV *g_104dfa5c;
+
+void CGameMovement::vfunc1(void *pMove, void *pPlayer)
+{
+	float savedTime = g_102b8494->frametime;
+	sub_100ec390();
+	m_bDc = 0;
+	m_pMove = pMove;
+	m_pPlayer = pPlayer;
+	*(float *)((char *)m_pPlayer + 0x38) = g_104dfa5c->vfunc1() ? 0.0f : g_104dfa5c->m_field28;
+	vfunc5();
+	sub_100e7e90();
+	g_102b8494->frametime = savedTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7ec0 size=0x2ac
 #include "CGameMovement.h"
 
