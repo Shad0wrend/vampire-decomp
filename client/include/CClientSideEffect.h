@@ -5,6 +5,8 @@
 
 class CClientSideEffect
 {
+public:
+	CClientSideEffect(int a1);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots CClientSideEffect adds to its base's vtable: 0-4, vfuncK at slot K
 	virtual ~CClientSideEffect();

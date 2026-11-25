@@ -6,7 +6,7 @@
 
 // VC6 writes CClientSideEffect's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CClientSideEffect *pcd_emit_100d9140() { return new CClientSideEffect; }
+CClientSideEffect *pcd_emit_100d9140(const CClientSideEffect &other) { return new CClientSideEffect(other); }
 
 // TARGET: ??_GCClientSideEffect@@UAEPAXI@Z
 // END FUNCTION
