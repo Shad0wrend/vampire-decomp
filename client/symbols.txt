@@ -5731,6 +5731,7 @@
 0x1011e890 func   ?sub_1011e890@CUtlHash_1011e890@@QAEPAV1@HHHPAX0@Z CUtlHash_1011e890::sub_1011e890
 0x1011e910 func   ?sub_1011e910@CUtlHashView@@QAEHPBX@Z CUtlHashView::sub_1011e910
 0x1011e9a0 func   ?sub_1011e9a0@CUtlHash_1011e9a0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011e9a0::sub_1011e9a0
+0x1011ea20 func   ?sub_1011ea20@CUtlHashView@@QAEHPBX@Z CUtlHashView::sub_1011ea20
 0x1011eab0 func   ?sub_1011eab0@CUtlHash_1011eab0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011eab0::sub_1011eab0
 0x1011eb30 func   ?sub_1011eb30@CUtlHashView@@QAEHPBX@Z CUtlHashView::sub_1011eb30
 0x1011ebc0 func   ?sub_1011ebc0@CUtlHash_1011ebc0@@QAEPAV1@HHHPAX0@Z CUtlHash_1011ebc0::sub_1011ebc0
