@@ -237,6 +237,53 @@ void vgui2::TreeView::vfunc111(int itemIndex, bool bPromoteChildren)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd670 size=0x9a
+#include "vgui2__TreeView.h"
+#include "CUtlLinkedList12.h"
+#include "vgui2__TextEntry.h"
+#define D8(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7();
+struct Dat101bd670 {
+	D8(a) virtual void b0(); virtual void b1(); virtual void b2();
+	virtual const char *v11(const char *key, const char *def);
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5();
+	virtual int v18();
+};
+struct Lbl101bd670 {
+	D8(a) D8(b) D8(c) D8(d) D8(e) D8(f) D8(g) D8(h) D8(i) D8(j) D8(k) D8(l) D8(m)
+	virtual void n0(); virtual void n1(); virtual void n2();
+	virtual void s107(const char *);
+};
+struct Rel101bd670 { D8(a) D8(b) virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void v21(); };
+struct Node101bd670 {
+	D8(a) D8(b) D8(c) D8(d) D8(e) D8(f) D8(g)
+	virtual void h0();
+	virtual int v57(int, int);
+	char pad[0x54]; Rel101bd670 *m58; int pad2; int pad3; Lbl101bd670 *m64;
+};
+struct TVV101bd670 {
+	char pad0[0x78];
+	CUtlLinkedList12 m_list;
+	Node101bd670 *Get(int i) { return (Node101bd670 *)m_list.m_pMemory[i].m_pData; }
+	bool Valid(int i) { return m_list.IsValidIndex(i); }
+};
+bool vgui2::TreeView::vfunc113(int idx, int data)
+{
+	TVV101bd670 *v = (TVV101bd670 *)this;
+	if (!v->Valid(idx))
+		return 0;
+	Node101bd670 *n = v->Get(idx);
+	if (n->m58) n->m58->v21();
+	Dat101bd670 *d = (Dat101bd670 *)data;
+	n->m58 = (Rel101bd670 *)d->v18();
+	const char *t = d->v11("Text", "");
+	n->m64->s107(t);
+	((vgui2::TextEntry *)n->m64)->sub_101b1790();
+	n->v57(0, 0);
+	vfunc57(0, 0);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd710 size=0x5f
 #include "vgui2__TreeView.h"
 namespace vgui2 {
