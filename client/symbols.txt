@@ -6585,6 +6585,7 @@
 0x10144f40 func   ?sub_10144f40@CClanNames@@QAEHPBDPAH@Z CClanNames::sub_10144f40
 0x10145000 func   ?sub_10145000@CUnknown101d7ec0@@QAE_NHHPAUCUnknown101d7ec0_Check@@@Z CUnknown101d7ec0::sub_10145000
 0x10145090 func   ?sub_10145090@CUnknown101d7ec0@@QAEPAUCUnknown101d7ec0_Entry@@H@Z CUnknown101d7ec0::sub_10145090
+0x10145110 func   ??0CUnknown101d82d0_Elem@@QAE@XZ CUnknown101d82d0_Elem::CUnknown101d82d0_Elem
 0x10145110 func   ?sub_10145110@CUnknown10145110@@QAEPAXXZ CUnknown10145110::sub_10145110
 0x10145130 func   ?sub_10145130@@YAXXZ sub_10145130
 0x10145140 func   ?sub_10145140@CUnknown101d82d0_Elem@@QAEPBDXZ CUnknown101d82d0_Elem::sub_10145140
