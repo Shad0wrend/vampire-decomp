@@ -65,3 +65,32 @@ Beam_t *CViewRenderBeams::sub_10194160(void *pInfo)
 	return pBeam;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10195c90 size=0x6f
+#include "CViewRenderBeams.h"
+#include "Vector.h"
+
+struct BeamInfoV
+{
+	char pad0[0x14];
+	Vector m_vecStart;	// 0x14
+	Vector m_vecEnd;	// 0x20
+};
+
+struct BeamV
+{
+	char pad0[0x34];
+	Vector m_vecStart;	// 0x34
+	Vector m_vecEnd;	// 0x40
+	char pad1[0xac - 0x4c];
+	Vector m_vecDelta;	// 0xac
+};
+
+void CViewRenderBeams::vfunc22(BeamV *pBeam, BeamInfoV *pInfo)
+{
+	pBeam->m_vecStart = pInfo->m_vecStart;
+	pBeam->m_vecEnd = pInfo->m_vecEnd;
+	pBeam->m_vecDelta = pInfo->m_vecEnd - pInfo->m_vecStart;
+	sub_10193790(pBeam, pInfo);
+}
+// END FUNCTION
