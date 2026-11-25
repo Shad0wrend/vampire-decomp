@@ -39824,6 +39824,24 @@ void sub_100a1200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1230 size=0x3d
+#include "CClientEntityList.h"
+#include "C_BaseEntity.h"
+
+extern CClientEntityList *g_102b8e9c;
+
+void sub_100a1230()
+{
+	int n = g_102b8e9c->vfunc6();
+	for (int i = 0; i <= n; i++)
+	{
+		C_BaseEntity *p = g_102b8e9c->sub_100d0cf0(i);
+		if (p)
+			p->sub_100a0d10();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1270 size=0xcc
 #include "C_BaseEntity.h"
 #include "CClientEntityList.h"
