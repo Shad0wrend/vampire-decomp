@@ -18,6 +18,25 @@ void __stdcall sub_100e1b10(int, int, int, int, int, int, int, int, int, int, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1e30 size=0xa9
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+void sub_10046b50(const Vector &origin, int a);
+
+// TARGET: CEffectsClient::vfunc6
+void CEffectsClient::vfunc6(const Vector &origin, int a)
+{
+    CPVSFilter filter(origin);
+    C_RecipientFilter *pFilter = &filter;
+    if (CanSend()) {
+        if (pFilter->vfunc2())
+            sub_10046b50(origin, a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1ee0 size=0xae
 #include "CEffectsClient.h"
 #include "CPVSFilter.h"
