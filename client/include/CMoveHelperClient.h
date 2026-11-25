@@ -3,6 +3,7 @@
 // the destructor is slot 14 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "IMoveHelper.h"
+#include "Vector.h"
 
 class CMoveHelperClient : public IMoveHelper
 {
@@ -14,6 +15,7 @@ public:
 	virtual bool vfunc7();
 	virtual void vfunc12();
 	virtual void vfunc15(bool bDevMsg, const char *fmt, ...);
+	int vfunc16(Vector *p);
 	virtual ~CMoveHelperClient();
 	void vfunc19();
 	virtual void *vfunc20(const char *name, int *pSize);
