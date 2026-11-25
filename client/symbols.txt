@@ -3833,6 +3833,7 @@
 0x100aad10 func   ?sub_100aad10@IntVec@@QAEXHH@Z IntVec::sub_100aad10
 0x100aad50 func   ?sub_100aad50@UtlMem@@QAEXXZ UtlMem::sub_100aad50
 0x100aad80 func   ?sub_100aad80@UtlMem@@QAEXH@Z UtlMem::sub_100aad80
+0x100aaeb0 func   ?sub_100aaeb0@@YAXXZ sub_100aaeb0
 0x100aaf30 func   ?sub_100aaf30@@YAHXZ sub_100aaf30
 0x100ab500 func   ?vfunc142@C_BaseViewModel@@UAE_NXZ C_BaseViewModel::vfunc142
 0x100ab510 func   ?vfunc139@C_BaseViewModel@@UAEHH@Z C_BaseViewModel::vfunc139

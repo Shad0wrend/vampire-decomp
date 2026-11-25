@@ -38573,6 +38573,29 @@ void UtlMem::sub_100aad80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aaeb0 size=0x7d
+#include "ehandle.h"
+#include <string.h>
+extern CBaseHandle *g_104a0d64;
+extern int g_104a0d70;
+// TARGET: ?sub_100aaeb0@@YAXXZ
+void sub_100aaeb0()
+{
+	for (int i = 0; i < g_104a0d70; )
+	{
+		if (!g_104a0d64[i].Get())
+		{
+			int n = g_104a0d70 - i - 1;
+			if (n > 0)
+				memmove(&g_104a0d64[i], &g_104a0d64[i + 1], n * 4);
+			g_104a0d70--;
+		}
+		else
+			i++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aaf30 size=0xb
 namespace lifted {
 extern int g_104a0d70;
