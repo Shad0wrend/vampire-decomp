@@ -98853,6 +98853,24 @@ int CUnknown10189c20::sub_10189c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189f80 size=0x97
+#include "Vector.h"
+struct CVarX { virtual void v0(); virtual bool IsOff(); char pad[0x24]; float m28; };
+struct RenderX { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(Vector *); };
+extern CVarX *g_105fbae4;
+extern CVarX *g_105fba9c;
+extern CVarX *g_105fbb2c;
+extern RenderX *g_104a57d8;
+// TARGET: sub_10189f80
+void sub_10189f80()
+{
+    Vector v(g_105fbb2c->IsOff() ? 0.0f : g_105fbb2c->m28,
+             g_105fba9c->IsOff() ? 0.0f : g_105fba9c->m28,
+             g_105fbae4->IsOff() ? 0.0f : g_105fbae4->m28);
+    g_104a57d8->v8(&v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a6d0 size=0x15
 struct S_1018a6d0 { char pad[0x18c]; int m_fl; };
 bool __fastcall sub_1018a6d0(S_1018a6d0 *self, int edx, int mask)
