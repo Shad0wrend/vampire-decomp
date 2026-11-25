@@ -662,6 +662,41 @@ int vgui2::TextEntry::vfunc162()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101affe0 size=0xc1
+#include "vgui2__TextEntry.h"
+extern "C" int __cdecl isspace(int);
+struct TextEntryCharVec
+{
+	int size; int m4; char *data;
+	char Get(int i) const { if (i < 0 || i >= size) return 0; return data[i]; }
+};
+struct TEView { char pad[0x58]; TextEntryCharVec v; char pad2[0x70 - 0x64]; int pos; };
+// TARGET: vgui2::TextEntry::vfunc114
+void vgui2::TextEntry::vfunc114()
+{
+	TEView *t = (TEView *)this;
+	vfunc165();
+	t->pos++;
+	while (t->pos < t->v.size) {
+		if (isspace(t->v.Get(t->pos)))
+			break;
+		t->pos++;
+	}
+	t->pos++;
+	while (t->pos < t->v.size) {
+		if (!isspace(t->v.Get(t->pos)))
+			break;
+		t->pos++;
+	}
+	if (t->pos > t->v.size)
+		t->pos = t->v.size;
+	sub_101aff20();
+	vfunc150();
+	vfunc109();
+	vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b00b0 size=0xac
 #include "vgui2__TextEntry.h"
 extern "C" int __cdecl isspace(int);
