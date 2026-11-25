@@ -93151,6 +93151,46 @@ void CharEditCharPanel::sub_10176f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177000 size=0x7a
+#include "CharEditCharPanel.h"
+
+struct CharPanelGroup
+{
+	vgui2::Panel *p0;
+	vgui2::Panel *p4;
+	vgui2::Panel *p8;
+	vgui2::Panel *pc;
+};
+
+struct CharPanelView
+{
+	char m_pad[0x7c];
+	vgui2::Panel *m_p7c;
+	vgui2::Panel *m_p80;
+	vgui2::Panel *m_p84;
+	vgui2::Panel *m_p88;
+	CharPanelGroup m_groups[3];
+	void sub_10177320(CharPanelGroup *group);
+};
+
+void CharEditCharPanel::sub_10177000()
+{
+	CharPanelView *p = (CharPanelView *)this;
+
+	for (int i = 0; i < 3; i++)
+		p->sub_10177320(&p->m_groups[i]);
+
+	delete p->m_p84;
+	p->m_p84 = 0;
+	delete p->m_p7c;
+	p->m_p7c = 0;
+	delete p->m_p80;
+	p->m_p80 = 0;
+	delete p->m_p88;
+	p->m_p88 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177320 size=0x4f
 namespace lifted {
 struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19(); virtual int f20(int); };

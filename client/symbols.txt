@@ -7518,6 +7518,7 @@
 0x10176f30 func   ?sub_10176f30@@YADH@Z sub_10176f30
 0x10176f60 func   ?sub_10176f60@@YAXH@Z sub_10176f60
 0x10176f80 func   ?sub_10176f80@CharEditCharPanel@@QAEXXZ CharEditCharPanel::sub_10176f80
+0x10177000 func   ?sub_10177000@CharEditCharPanel@@QAEXXZ CharEditCharPanel::sub_10177000
 0x10177320 func   ?sub_10177320@@YGXH@Z sub_10177320
 0x10177370 func   ?vfunc78@CharEditCharPanel@@UAEXH@Z CharEditCharPanel::vfunc78
 0x10177990 func   ?vfunc102@CharEditCharPanel@@UAEHXZ CharEditCharPanel::vfunc102
