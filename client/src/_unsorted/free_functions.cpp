@@ -49240,6 +49240,14 @@ ClassMapEntry *CClassMap::sub_100ce920(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf230 size=0xc3
+#include "CUtlRBTree148.h"
+bool CUtlRBTree148::sub_100cf230(unsigned short i) const
+{
+	return Links(Links(i).m_Parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfa20 size=0x1d1
 #include "CClassMap.h"
 
