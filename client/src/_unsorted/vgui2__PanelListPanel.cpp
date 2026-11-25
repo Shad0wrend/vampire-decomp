@@ -32,6 +32,45 @@ int vgui2::PanelListPanel::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cab80 size=0x6e
+#include "vgui2__PanelListPanel.h"
+
+namespace vgui2
+{
+struct PanelListPanelItem
+{
+	Panel *m_pPanel;
+};
+
+struct PanelListPanelView
+{
+	char m_pad[0x58];
+	int m_nItems;		// 0x58
+	int m_unk5c;		// 0x5c
+	PanelListPanelItem **m_ppItems;	// 0x60
+};
+
+void PanelListPanel::sub_101cab80(int itemID)
+{
+	PanelListPanelView *v = (PanelListPanelView *)this;
+
+	PanelListPanelItem *data = ( itemID >= 0 && itemID < v->m_nItems ) ? v->m_ppItems[itemID] : 0;
+
+	delete data->m_pPanel;
+	delete data;
+
+	if ( itemID >= 0 && itemID < v->m_nItems )
+	{
+		for ( int i = itemID; i < v->m_nItems - 1; i++ )
+			v->m_ppItems[i] = v->m_ppItems[i + 1];
+		v->m_nItems--;
+	}
+
+	vfunc57(0, 0);
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cac80 size=0x26
 #include "vgui2__PanelListPanel.h"
 namespace lifted {
