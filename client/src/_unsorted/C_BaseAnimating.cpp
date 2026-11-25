@@ -388,3 +388,49 @@ bool C_BaseAnimating::vfunc57(int index, int arg2, int arg3)
     return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100965d0 size=0x72
+#include "C_BaseAnimating.h"
+
+struct EntryV
+{
+	int m_0;
+	int m_4;
+	int m_8;
+	int m_c;
+};
+
+struct SeqV
+{
+	char pad0[0x140];
+	int m_n140;	// 0x140
+	int m_n144;	// 0x144
+};
+
+struct AnimView
+{
+	char pad0[0x560];
+	int m_time;	// 0x560
+	char pad1[0x6ac - 0x564];
+	SeqV *m_pSeq;	// 0x6ac
+};
+
+int C_BaseAnimating::sub_100965d0(int arg1, int arg2)
+{
+	AnimView *v = (AnimView *)this;
+	SeqV *seq = v->m_pSeq;
+	if ( !seq )
+		return 0;
+	if ( arg1 > seq->m_n140 )
+		return -1;
+	int cur = v->m_time;
+	EntryV *e = (EntryV *)((char *)seq + seq->m_n144 + arg1 * 16);
+	int unit = e->m_8;
+	int numFrames = e->m_4;
+	int frame = (cur / unit) % numFrames;
+	if ( arg2 >= numFrames )
+		return frame;
+	v->m_time = cur + (arg2 - frame) * unit;
+	return arg2;
+}
+// END FUNCTION
