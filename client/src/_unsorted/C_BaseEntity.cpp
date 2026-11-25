@@ -1013,6 +1013,25 @@ char * C_BaseEntity::vfunc41()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2500 size=0x75
+#include "C_BaseEntity.h"
+// TARGET: ?vfunc42@C_BaseEntity@@UAEXPAD@Z
+void C_BaseEntity::vfunc42(char *p)
+{
+	float *v = (float *)p;
+	float *cur = (float *)((char *)this + 0x260);
+	if (v[0] != cur[0] || v[1] != cur[1] || v[2] != cur[2])
+	{
+		sub_1007e180(0x800, 0x3000);
+		sub_1007e040();
+		sub_1007e100();
+		cur[0] = v[0];
+		cur[1] = v[1];
+		cur[2] = v[2];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2840 size=0x6
 #include "C_BaseEntity.h"
 namespace lifted {
