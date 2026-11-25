@@ -39218,6 +39218,21 @@ int __stdcall sub_100a2910(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2930 size=0x36
+#include "C_BaseEntity.h"
+#include "CCollisionProperty.h"
+bool sub_100a2ba0();
+void C_BaseEntity::sub_100a2930()
+{
+	if (sub_100a2600() || sub_100a2ba0())
+	{
+		CCollisionProperty *p = (CCollisionProperty *)((char *)this + 0x190);
+		p->sub_100432a0(p->m_unk44 | 4);
+		sub_1009fc60(0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2970 size=0x2a
 namespace lifted {
 struct V { virtual void u0(); virtual int f1(); };

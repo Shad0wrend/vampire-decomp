@@ -3766,6 +3766,7 @@
 0x100a28b0 func   ?vfunc114@C_BaseEntity@@UAEPADXZ C_BaseEntity::vfunc114
 0x100a2900 func   ?sub_100a2900@@YAHXZ sub_100a2900
 0x100a2910 func   ?sub_100a2910@@YGHH@Z sub_100a2910
+0x100a2930 func   ?sub_100a2930@C_BaseEntity@@QAEXXZ C_BaseEntity::sub_100a2930
 0x100a2970 func   ?sub_100a2970@CUnknown100a2970@@QAEXH@Z CUnknown100a2970::sub_100a2970
 0x100a29a0 func   ?sub_100a29a0@CUnknown100a29a0@@QAEDXZ CUnknown100a29a0::sub_100a29a0
 0x100a29b0 func   ?sub_100a29b0@C_BaseEntity@@QAE_NH@Z C_BaseEntity::sub_100a29b0
