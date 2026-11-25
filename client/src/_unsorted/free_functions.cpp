@@ -18751,6 +18751,29 @@ bool sub_10054800(const char *pStr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054bd0 size=0x75
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct CHudDialogView
+{
+	char m_pad00[0x190];
+	bool m_b190;
+	char m_pad191[0x1b2 - 0x191];
+	bool m_b1b2;
+};
+
+// TARGET: ?sub_10054bd0@CHudDialog@@QAEX_N@Z
+void CHudDialog::sub_10054bd0(bool bEnabled)
+{
+	CHudDialogView *v = (CHudDialogView *)this;
+	ScopeTrace trace("CHudDialog::ShowHistory", g_102de300);
+	if (v->m_b1b2 != bEnabled)
+		v->m_b190 = true;
+	v->m_b1b2 = bEnabled;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054cb0 size=0x5f
 #include "CHudDialog.h"
 #include "ScopeTrace.h"
