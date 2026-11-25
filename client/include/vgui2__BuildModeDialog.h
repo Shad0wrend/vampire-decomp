@@ -6,6 +6,7 @@
 
 namespace vgui2
 {
+class KeyValues;
 class BuildModeDialog : public vgui2::Frame
 {
 public:
@@ -23,6 +24,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc145();
 	virtual void vfunc146(int);
 	virtual int vfunc147();
-	virtual void vfunc148();
+	virtual KeyValues *vfunc148();
 };
 }
