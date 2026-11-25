@@ -97706,6 +97706,44 @@ void * CUnknown1017f850::sub_1017f850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f870 size=0x9c
+#include "CVStatInfoList_t.h"
+struct CStatPageX {
+	int sub_1017f870(int idx);
+	int m_0, m_4;
+	CVStatInfoList_t *m_8;
+	int *m_c;
+	int m_10[8];
+	int m_30, m_34, m_38, m_3c;
+	char m_40;
+};
+// TARGET: CStatPageX::sub_1017f870
+int CStatPageX::sub_1017f870(int idx)
+{
+	if (!m_40 && !m_8->sub_1015cfe0(idx)->sub_1015be50()) {
+		int r = idx - m_38;
+		if (r < m_34)
+			return r;
+		return -1;
+	}
+	int n = 0;
+	for (int i = 0; i < m_30; i++) {
+		int j = m_38 + i;
+		if (m_40) {
+			int v = m_c[j];
+			if (v > 5 || v < 0)
+				continue;
+		}
+		if (!m_8->sub_1015cfe0(j)->sub_1015be50()) {
+			if (j == idx)
+				return n;
+			n++;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101805e0 size=0xf5
 struct VGuiPanelStub
 {
