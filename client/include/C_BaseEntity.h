@@ -9,6 +9,7 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	int sub_100a2450();
 	void sub_1011bd60(C_BaseEntity *other);
 	void sub_1011bdf0(C_BaseEntity *other);
 	bool sub_1011b290(int type);
@@ -191,7 +192,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc99(int);
 	virtual void vfunc100(int a);
 	virtual void vfunc101(int);
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc103(int);
 	virtual void vfunc104();
 	virtual void vfunc105();
