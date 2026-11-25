@@ -75502,6 +75502,34 @@ bool CSlotChecker10142680::sub_10142680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142760 size=0x6e
+#include "CSlotChecker10142680.h"
+struct Obj101416b0 { int sub_101416b0(); };
+extern Obj101416b0 g_105e7780;
+extern void *g_104a0d50;
+__declspec(dllimport) void DevMsg(int, const char *, ...);
+struct Outer_10142310 { bool sub_10142310(); };
+struct CChk : CSlotChecker10142680 {
+	bool sub_10142760(int n);
+	bool sub_10142710();
+	int m_n14; int m_n18;
+};
+// TARGET: CChk::sub_10142760
+bool CChk::sub_10142760(int n)
+{
+	if (!g_104a0d50) {
+		DevMsg(1, "ERROR: CharGenWizard: CanDisplay: Couldn't Find Local Player!\n");
+		return false;
+	}
+	int id = g_105e7780.sub_101416b0();
+	int a = *(int *)((char *)this + 0x14);
+	if ((a == -1 || a == id) && (n == -1 || *(int *)((char *)this + 0x2c) < n)
+		&& ((Outer_10142310 *)((char *)this + 0x18))->sub_10142310() && sub_10142680() && sub_10142710())
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101427d0 size=0x1b
 struct CUnknown101427d0 { void * sub_101427d0(); };
 void * CUnknown101427d0::sub_101427d0()
