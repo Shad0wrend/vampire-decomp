@@ -8651,6 +8651,7 @@
 0x101b3de0 func   ?vfunc159@Button@vgui2@@UAEHH@Z vgui2::Button::vfunc159
 0x101b3e00 func   ?vfunc160@Button@vgui2@@UAEHH@Z vgui2::Button::vfunc160
 0x101b3e20 func   ?vfunc164@Button@vgui2@@UAEHHHHH@Z vgui2::Button::vfunc164
+0x101b3e90 func   ?vfunc151@Button@vgui2@@UAEXH@Z vgui2::Button::vfunc151
 0x101b3f40 func   ?vfunc148@Button@vgui2@@UAEXH_N@Z vgui2::Button::vfunc148
 0x101b3f80 func   ?vfunc149@Button@vgui2@@UAE_NH@Z vgui2::Button::vfunc149
 0x101b3fa0 func   ?vfunc162@Button@vgui2@@UAEXH@Z vgui2::Button::vfunc162

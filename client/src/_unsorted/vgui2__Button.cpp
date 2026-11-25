@@ -311,6 +311,57 @@ int vgui2::Button::vfunc164(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3e90 size=0xa7
+#include "vgui2__Button.h"
+
+extern void *sub_101b6840(unsigned int size);
+
+struct KV_101b3e90 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16();
+	virtual void v17(const char *key, void *value);
+	KV_101b3e90 *sub_101b5670(const char *name);
+};
+
+struct IVGui_101b3e90 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101b3e90 *sub_101ac8f0();
+
+struct PanelLike_101b3e90 {
+	virtual int GetVPanel();
+};
+
+void vgui2::Button::vfunc151(int state)
+{
+	bool *pFlag = (bool *)&m_c0ec;
+	bool b = state != 0;
+	if (*pFlag != b)
+	{
+		*pFlag = b;
+		if (state && vfunc31())
+		{
+			KV_101b3e90 *msg = (KV_101b3e90 *)sub_101b6840(0x1c);
+			if (msg)
+				msg = msg->sub_101b5670("DefaultButtonSet");
+			else
+				msg = 0;
+			msg->v17("panel", this);
+			PanelLike_101b3e90 *parent = (PanelLike_101b3e90 *)vfunc31();
+			sub_101ac8f0()->PostMessage(parent->GetVPanel(), msg, vfunc0(), 0.0f);
+		}
+		vfunc57(0, 0);
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3f40 size=0x35
 #include "vgui2__Button.h"
 // TARGET: vgui2::Button::vfunc148
