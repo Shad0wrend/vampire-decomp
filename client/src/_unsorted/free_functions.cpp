@@ -59215,6 +59215,23 @@ bool sub_101101a0(IKV11 *kv, const char *key, int *r, int *g, int *b, int *a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110230 size=0x56
+struct IKV11;
+bool sub_101101a0(IKV11 *kv, const char *pKey, int *r, int *g, int *b, int *a);
+// TARGET: sub_10110230
+bool sub_10110230(IKV11 *kv, const char *pKey, unsigned char *pOut)
+{
+	int r, g, b, a;
+	if (!sub_101101a0(kv, pKey, &r, &g, &b, &a))
+		return false;
+	pOut[0] = r;
+	pOut[1] = g;
+	pOut[2] = b;
+	pOut[3] = a;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110290 size=0x9d
 #include "CKeyValuesX.h"
 extern "C" int sscanf(const char *, const char *, ...);
