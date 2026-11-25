@@ -51,6 +51,7 @@ public:
 	virtual const char *kv13(const char *pszName, const char *pszDefault);
 	virtual void kv14(); virtual void kv15(); virtual void kv16(); virtual void kv17(); virtual void kv18();
 	virtual void kv19(); virtual void kv20();
+	VKeyValues *sub_101544e0(const char *pszName);
 	void sub_10154480();	// clears the sub keys, the string and the name
 
 	int m_n04;	// 0x04
