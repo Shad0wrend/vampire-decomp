@@ -13,5 +13,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc74(int);
 	virtual void vfunc98();
 	virtual void vfunc101();
+	VLabelComboBox *sub_101763c0(vgui2::Panel *parent, const char *panelName);
 	char m_pad0004[0x104 - 0x4];
 };
