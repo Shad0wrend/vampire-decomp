@@ -103628,6 +103628,42 @@ int sub_10180cd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180d20 size=0xbe
+#include "CVStatInfoList_t.h"
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+bool sub_101713e0();
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void ClientCmd(const char *, int); };
+extern EB *g_104a57d4;
+struct StatOrder { int m0; int m4; CVStatInfoList_t *m_pList; int *m_pCur; int m10; int *m_pWant; };
+extern const char g_102de300[];
+int sub_10180cd0(int x)
+{
+	if (x == 15)
+		x = -1;
+	return x;
+}
+// TARGET: sub_10180d20
+void __stdcall sub_10180d20(StatOrder *p, int idx, char flag)
+{
+	char cmd[0x50];
+	int cur = sub_10180cd0(p->m_pCur[idx]);
+	int want = sub_10180cd0(p->m_pWant[idx]);
+	if (want != cur) {
+		cmd[0] = 0;
+		if (want > cur) {
+			const char *const &name = p->m_pList->sub_1015cfe0(idx)->m_pszName;
+			sprintf(cmd, "vstats buy %s %d", name ? name : g_102de300, want - cur);
+		} else if (want < cur) {
+			const char *const &name = p->m_pList->sub_1015cfe0(idx)->m_pszName;
+			sprintf(cmd, "vstats sell %s %d", name ? name : g_102de300, cur - want);
+		}
+		if (!sub_101713e0() || flag)
+			g_104a57d4->ClientCmd(cmd, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180de0 size=0x37
 namespace lifted {
 extern char g_1027b3ec;

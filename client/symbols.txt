@@ -8058,6 +8058,7 @@
 0x101808d0 func   ?sub_101808d0@CharEditStatsPanel@@QAEPAXPBDPAH@Z CharEditStatsPanel::sub_101808d0
 0x10180c00 func   ?sub_10180c00@@YAPAXH@Z sub_10180c00
 0x10180cd0 func   ?sub_10180cd0@@YAHH@Z sub_10180cd0
+0x10180d20 func   ?sub_10180d20@@YGXPAUStatOrder@@HD@Z sub_10180d20
 0x10180de0 func   ?sub_10180de0@CUnknown10180de0@@QAEHXZ CUnknown10180de0::sub_10180de0
 0x10181a30 func   ?sub_10181a30@Score10181a30@@QAEXXZ Score10181a30::sub_10181a30
 0x10181ad0 func   ?sub_10181ad0@StatsPanelX@@QAEXH@Z StatsPanelX::sub_10181ad0
