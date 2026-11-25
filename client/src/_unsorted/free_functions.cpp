@@ -27225,6 +27225,47 @@ int sub_100797e0(StudioHdr *pHdr, int activity, int *pSeqOut, int *pWeightOut, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079950 size=0x7b
+struct IRandom {
+	virtual void r0();
+	virtual void r1();
+	virtual int RandomInt(int, int);
+};
+
+extern IRandom *g_104a5738;
+extern int g_102aaee0;
+
+// TARGET: sub_10079950
+int sub_10079950(int count, int *values, int *weights)
+{
+	if (count >= 1)
+	{
+		if (count == 1)
+			return values[0];
+		int sum = 0;
+		int i;
+		for (i = 0; i < count; i++)
+			sum += weights[i];
+		if (sum < 1)
+		{
+			int idx = g_104a5738->RandomInt(0, count - 1);
+			g_102aaee0 = idx;
+			return values[idx];
+		}
+		int r = g_104a5738->RandomInt(0, sum - 1);
+		g_102aaee0 = r;
+		int rem = r;
+		for (i = 0; i < count; i++)
+		{
+			if (rem < weights[i])
+				return values[i];
+			rem -= weights[i];
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100799d0 size=0x6d
 extern int g_102aaee0;
 int sub_100799d0(int n, int *items, int *w)
