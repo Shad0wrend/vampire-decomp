@@ -24058,6 +24058,64 @@ void CUnknown100675e0::sub_100675e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067750 size=0xf8
+#include "CVMainMenu.h"
+
+struct CVMenuEngine {
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
+	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
+	virtual void u8(); virtual void u9(); virtual void u10(); virtual void u11();
+	virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15();
+	virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23();
+	virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27();
+	virtual void ClientCmd(const char *cmd);
+};
+
+struct CVMenuGameUI {
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
+	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
+	virtual void u8(); virtual void u9(); virtual void u10();
+	virtual void vfunc11(int a);
+	virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15();
+	virtual void vfunc16();
+};
+
+extern CVMenuEngine *g_104a57d4;
+extern CVMenuGameUI *g_104a5828;
+
+// TARGET: CVMainMenu::sub_10067750
+bool CVMainMenu::sub_10067750(int action)
+{
+	switch (action) {
+	case 0:
+		sub_10066440();
+		g_104a57d4->ClientCmd("map sp_genesisdevice_1");
+		g_104a5828->vfunc11(1);
+		break;
+	case 2:
+		g_104a57d4->ClientCmd("reload");
+		break;
+	case 9:
+		g_104a57d4->ClientCmd("disconnect");
+		break;
+	case 5:
+		g_104a5828->vfunc16();
+		break;
+	case 10:
+		g_104a57d4->ClientCmd("quit");
+		break;
+	case 11:
+		g_104a5828->vfunc11(1);
+		sub_10066440();
+		g_104a57d4->ClientCmd("v_unpause");
+		break;
+	}
+	m_unk2e8 = -1;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067850 size=0x46
 struct EngView {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
