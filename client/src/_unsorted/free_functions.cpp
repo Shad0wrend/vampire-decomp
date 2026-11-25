@@ -72286,6 +72286,26 @@ extern int g_105e5540;
 void sub_1012cc40() { ((O2cc40 *)&g_105e5540)->v2(); ((O2cc40 *)&g_105e5540)->v1(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012cc60 size=0xb6
+#include "vector.h"
+#include "C_RecipientFilter.h"
+struct CUnknown1012cc60 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const Vector &GetOrigin();
+	struct CSub { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual int s9(); };
+	int m_unk4;
+	CSub m_sub;
+	void sub_1012cc60(const char *name);
+};
+void sub_1012cd40(IRecipientFilter *, int, const char *, int, int, int);
+void CUnknown1012cc60::sub_1012cc60(const char *name)
+{
+	CPASAttenuationFilter filter(GetOrigin());
+	sub_1012cd40(&filter, m_sub.s9(), name, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cd20 size=0x1a
 struct B1012 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int v9(); };
 struct V1012 { int pad0; int pad4; B1012 b; void sub_1012cd20(int p); };
