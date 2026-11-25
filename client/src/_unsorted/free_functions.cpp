@@ -30455,6 +30455,42 @@ void C_Beam::sub_100804f0(char *arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100805a0 size=0xab
+#include "C_Beam.h"
+#include "ehandle.h"
+#include "matrix3x4_t.h"
+#include "Vector.h"
+
+struct EntityView2 {
+    char m_pad0[0x208];
+    CBaseHandle m_hParent;      // 0x208
+    char m_pad1[0x26c - 0x20c];
+    matrix3x4_t m_frame;        // 0x26c
+    char m_pad2[0x498 - 0x26c - sizeof(matrix3x4_t)];
+    Vector m_vecEnd;            // 0x498
+};
+
+void sub_10108450(const matrix3x4_t &src, matrix3x4_t &dst);
+void sub_10107f80(const float *in, const float *matrix, float *out);
+
+// TARGET: C_Beam::sub_100805a0
+void C_Beam::sub_100805a0(char *arg)
+{
+    EntityView2 *v = (EntityView2 *)this;
+    if (!v->m_hParent.Get())
+    {
+        v->m_vecEnd = *(Vector *)arg;
+        return;
+    }
+    sub_1009f8a0();
+    matrix3x4_t m;
+    sub_10108450(v->m_frame, m);
+    Vector out;
+    sub_10107f80((const float *)arg, (const float *)&m, (float *)&out);
+    v->m_vecEnd = out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080650 size=0x8b
 #include "C_Beam.h"
 #include "ehandle.h"
