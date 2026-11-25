@@ -17,7 +17,8 @@ public:
 	VIEW_SLOT(10) VIEW_SLOT(11) VIEW_SLOT(12) VIEW_SLOT(13)
 	virtual void vfunc14(const char *pszFile, int arg);	// slot 14 (+0x38): removes a file
 	virtual void vfunc15(const char *pszPath, const char *pszID);
-	VIEW_SLOT(16) VIEW_SLOT(17) VIEW_SLOT(18) VIEW_SLOT(19)
+	virtual bool vfunc16(const char *pszFile);	// slot 16 (+0x40)
+	VIEW_SLOT(17) VIEW_SLOT(18) VIEW_SLOT(19)
 	VIEW_SLOT(20) virtual void vfunc21(int hFile, const char *pszFormat, ...);	// slot 21 (+0x54): Printf (variadic __cdecl, `this` + handle + format)
 	virtual const char *FindFirst(const char *pWildCard, int *pHandle);	// slot 22 (+0x58)
 	virtual const char *FindNext(int handle);	// slot 23 (+0x5c)
