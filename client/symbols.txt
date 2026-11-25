@@ -6647,6 +6647,7 @@
 0x1013a1e0 func   ?vfunc0@CTextureScrollMaterialProxy@@UAE_NPAX0@Z CTextureScrollMaterialProxy::vfunc0
 0x1013a3d0 func   ?sub_1013a3d0@@YAHXZ sub_1013a3d0
 0x1013a4d0 func   ?sub_1013a4d0@@YA_NP6APAXPBDPAH@Z@Z sub_1013a4d0
+0x1013a4f0 func   ?sub_1013a4f0@@YA_NPBDPAI1PAHPAM@Z sub_1013a4f0
 0x1013a5c0 func   ?sub_1013a5c0@@YA_NPBDPAUBuf1013a5c0@@H@Z sub_1013a5c0
 0x1013a670 func   ?sub_1013a670@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013a670
 0x1013a6d0 func   ?sub_1013a6d0@@YAXPAVCUnknown1006c1c0@@PAUCUnknownImgInfo@@PAE@Z sub_1013a6d0

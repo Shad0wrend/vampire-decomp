@@ -78831,6 +78831,65 @@ bool sub_1013a4d0(CreateInterfaceFn factory)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a4f0 size=0xc6
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+struct Buf1013a5c0
+{
+	void *m_pData;
+	int m_nSize;
+	int m_nGrow;
+};
+
+class CInitView
+{
+public:
+	char *m_pBuffer;	// 0x00
+	int m_nSize;	// 0x04
+	int m_nGrow;	// 0x08
+	int m_nGet;	// 0x0c
+	int m_nPut;	// 0x10
+	unsigned char m_nError;	// 0x14
+	unsigned char m_nFlags;	// 0x15
+
+	CInitView *sub_1013c8a0(int a, int b, unsigned char c);
+};
+
+bool sub_1013a5c0(const char *pPath, Buf1013a5c0 *pBuf, int nSize);
+bool sub_1013a3f0(void *bfread, unsigned int *a2, unsigned int *a3, int *a4, float *a5);
+
+bool sub_1013a4f0(const char *pPath, unsigned int *pLo, unsigned int *pHi, int *pState, float *pRate)
+{
+	Buf1013a5c0 buf;
+	buf.m_pData = 0;
+	buf.m_nSize = 0;
+	buf.m_nGrow = 0;
+
+	if (!sub_1013a5c0(pPath, &buf, 0x12))
+	{
+		if (buf.m_nGrow != -1 && buf.m_pData)
+			Plat_Free(buf.m_pData);
+		return false;
+	}
+
+	CInitView view;
+	view.sub_1013c8a0((int)buf.m_pData, buf.m_nSize, 0);
+	bool bOk = sub_1013a3f0(&view, pLo, pHi, pState, pRate);
+	if (view.m_nGrow != -1)
+	{
+		if (view.m_pBuffer)
+		{
+			Plat_Free(view.m_pBuffer);
+			view.m_pBuffer = 0;
+		}
+		view.m_nSize = 0;
+	}
+	if (buf.m_nGrow != -1 && buf.m_pData)
+		Plat_Free(buf.m_pData);
+	return bOk;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a5c0 size=0xaa
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 struct IFS1013a5c0
