@@ -8249,6 +8249,7 @@
 0x1018a7d0 func   ?sub_1018a7d0@CGUIClientRenderable@@QAEMXZ CGUIClientRenderable::sub_1018a7d0
 0x1018a860 func   ?sub_1018a860@CGUIClientRenderable@@QAEMHMMM@Z CGUIClientRenderable::sub_1018a860
 0x1018a8c0 func   ?sub_1018a8c0@@YGMMMM_N@Z sub_1018a8c0
+0x1018a990 func   ?sub_1018a990@CGUIClientRenderable@@QAEMMHPAMMM@Z CGUIClientRenderable::sub_1018a990
 0x1018adb0 func   ?sub_1018adb0@LHold@@QAEXXZ LHold::sub_1018adb0
 0x1018ae50 func   ?sub_1018ae50@LHold@@QAEXXZ LHold::sub_1018ae50
 0x1018ae80 func   ?sub_1018ae80@CFoo@@QAEXPAVVector@@0@Z CFoo::sub_1018ae80

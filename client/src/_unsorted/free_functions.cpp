@@ -106531,6 +106531,36 @@ float __stdcall sub_1018a8c0(float a, float b, float t, bool wrap)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a990 size=0xc7
+#include "CGUIClientRenderable.h"
+#include "StudioHdr.h"
+#include <math.h>
+struct SeqDesc
+{
+	char m_pad00[8];
+	unsigned int m_flags;	// 0x08
+};
+float sub_1008c2d0(StudioHdr *pHdr, int nSequence, float *pPoseParameter);
+SeqDesc *sub_1008d9d0(StudioHdr *pHdr, int nSequence);
+float CGUIClientRenderable::sub_1018a990(float flCycle, int nSequence, float *poseParameter, float flPlaybackRate, float dt)
+{
+	float flSeqDuration = sub_1008c2d0((StudioHdr *)m_pStudioHdr, nSequence, poseParameter);
+	if (flSeqDuration == 0)
+		return 0;
+	SeqDesc *pSeq = sub_1008d9d0((StudioHdr *)m_pStudioHdr, nSequence);
+	if (!pSeq)
+		return 0;
+	flCycle += dt / flSeqDuration * flPlaybackRate;
+	if (pSeq->m_flags & 1)
+		return flCycle - floor(flCycle);
+	if (flCycle >= 0.999)
+		flCycle = 0.999f;
+	if (flCycle < 0.0)
+		flCycle = 0;
+	return flCycle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018adb0 size=0x92
 struct Model_1018adb0 {
 	char pad[0x18c];
