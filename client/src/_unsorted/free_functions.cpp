@@ -40577,6 +40577,28 @@ void __fastcall sub_100b5b40(C_FireSmokeView *self, int edx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5d00 size=0x89
+#include "C_FireSmoke.h"
+float sub_10117ae0();
+// TARGET: C_FireSmoke::sub_100b5d00
+void C_FireSmoke::sub_100b5d00()
+{
+    float time = sub_10117ae0();
+    if (m_flScaleRegister != m_flScaleEnd)
+    {
+        if (time > m_flScaleTimeEnd)
+        {
+            m_flScaleRegister = m_flStartScale = m_flScaleEnd;
+        }
+        else
+        {
+            float t = 1.0f - (m_flScaleTimeEnd - time) / (m_flScaleTimeEnd - m_flScaleTimeStart);
+            m_flScaleRegister = m_flStartScale = m_flScaleStart + (m_flScaleEnd - m_flScaleStart) * t;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b63f0 size=0x6
 namespace lifted {
 extern char g_104a1f4c;
