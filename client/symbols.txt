@@ -1781,6 +1781,7 @@
 0x1002b400 func   ?sub_1002b400@V2b400@@QAEXXZ V2b400::sub_1002b400
 0x1002b4e0 func   ?sub_1002b4e0@CUnknown1002b4e0@@QAEPAXXZ CUnknown1002b4e0::sub_1002b4e0
 0x1002b4f0 func   ?sub_1002b4f0@LLView2@@QAEHG@Z LLView2::sub_1002b4f0
+0x1002b6a0 func   ?sub_1002b6a0@@YAXXZ sub_1002b6a0
 0x1002bfb0 func   ?sub_1002bfb0@@YAXXZ sub_1002bfb0
 0x1002c020 func   ?sub_1002c020@@YAXXZ sub_1002c020
 0x1002c080 func   ?sub_1002c080@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_1002c080
