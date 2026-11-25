@@ -58727,6 +58727,38 @@ float __stdcall sub_101025b0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101025f0 size=0xbd
+#include "CInput.h"
+#include "Vector.h"
+struct kbutton_t { int down[2]; int state; };
+struct CVar101025f0 {
+    virtual void v0();
+    virtual bool IsX();
+    char pad[0x28 - 4];
+    float m28;
+};
+extern kbutton_t g_104d3748;
+extern kbutton_t g_104d3714;
+extern kbutton_t g_104d3970;
+extern CVar101025f0 *g_104d326c;
+
+static inline float anglemod(float a)
+{
+    return (360.0f / 65536) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+}
+
+void CInput::sub_101025f0(float speed, Vector &viewangles)
+{
+    if (!(g_104d3970.state & 1))
+    {
+        float &yaw = viewangles.y;
+        yaw -= speed * (g_104d326c->IsX() ? 0.0f : g_104d326c->m28) * vfunc9(&g_104d3748);
+        yaw += speed * (g_104d326c->IsX() ? 0.0f : g_104d326c->m28) * vfunc9(&g_104d3714);
+        viewangles.y = anglemod(viewangles.y);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
