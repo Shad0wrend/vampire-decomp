@@ -81721,6 +81721,60 @@ struct S { int a[5]; unsigned m14; bool sub_1014a7c0(); };
 bool S::sub_1014a7c0() { if (m14 == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x1014a7d0 size=0x1ee
+#include "C_BasePlayer.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "ConVar.h"
+#include "QAngle.h"
+
+extern ConVar *g_103edd9c;
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_101659b0(const Vector &start, const Vector &end, int r, int g, int b, bool noDepthTest, float duration);
+
+static inline void UTIL_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.Init(vecAbsStart, vecAbsEnd);
+	CTraceFilterSimple traceFilter;
+	traceFilter.sub_1004b5c0(ignore, collisionGroup);
+	g_104a582c->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if ((g_103edd9c->vfunc1() ? 0 : g_103edd9c->m_nValue) != 0)
+	{
+		sub_101659b0(*(const Vector *)ptr->m_startpos, *(const Vector *)ptr->m_endpos, 255, 0, 0, true, -1.0f);
+	}
+}
+
+C_BaseEntity *__stdcall sub_1014a7d0(void *pObj)
+{
+	if (!pObj)
+		return 0;
+
+	C_BasePlayer *pPlayer = *(C_BasePlayer **)((char *)pObj + 0x3f8);
+	if (!pPlayer)
+		return 0;
+
+	Vector forward, right;
+	sub_101090a0(*(const QAngle *)((char *)pPlayer + 0x1888), &forward, &right, 0);
+
+	Vector start;
+	start = pPlayer->vfunc150(*(const Vector *)pPlayer->vfunc43());
+	Vector end = forward * 4096.0f + start;
+	CGameTrace tr;
+	UTIL_TraceLine(start, end, 0x46004003, pPlayer, 0, &tr);
+
+	if (tr.m_fraction < 1.0f && tr.m_pEnt)
+	{
+		C_BaseEntity *pEnt = (C_BaseEntity *)tr.m_pEnt;
+		if (pEnt->vfunc26())
+			return pEnt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a9c0 size=0x1c
 namespace lifted {
 int __stdcall sub_1014a7d0(int);
