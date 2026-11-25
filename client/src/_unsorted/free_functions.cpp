@@ -40534,6 +40534,46 @@ void sub_100b4a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4c20 size=0x92
+#include "CSaveRestoreBlockSet.h"
+extern void *(__cdecl *g_101e3100)(unsigned int);
+struct UtlElem100 { char b[100]; };
+class CUtlVector100
+{
+public:
+	UtlElem100 *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	UtlElem100 *m_pElements;
+	void sub_100b4c20(int num);
+};
+void CUtlVector100::sub_100b4c20(int num)
+{
+	if (m_size + num > m_allocationCount) {
+		if (m_growSize != -1) {
+			int nRequested = m_allocationCount + (m_size + num - m_allocationCount);
+			while (m_allocationCount < nRequested) {
+				if (m_allocationCount != 0) {
+					if (m_growSize)
+						m_allocationCount += m_growSize;
+					else
+						m_allocationCount += m_allocationCount;
+				} else {
+					m_allocationCount = 1;
+				}
+			}
+			if (m_pMemory)
+				m_pMemory = (UtlElem100 *)g_101e3104(m_pMemory, m_allocationCount * 100);
+			else
+				m_pMemory = (UtlElem100 *)g_101e3100(m_allocationCount * 100);
+		}
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4cc0 size=0x47
 extern "C" void *memmove(void *, const void *, unsigned int);
 struct Elem100 { int d[25]; };
