@@ -38882,6 +38882,45 @@ void UtlMem::sub_100b4e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4e30 size=0x6d
+struct UtlMemView
+{
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+};
+
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+extern void *(__cdecl *g_101e3100)(unsigned int);
+
+void __fastcall sub_100b4e30(UtlMemView *self, int edx, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+
+	int nAllocationRequested = self->m_nAllocationCount + num;
+	while (self->m_nAllocationCount < nAllocationRequested)
+	{
+		if (self->m_nAllocationCount != 0)
+		{
+			if (self->m_nGrowSize)
+				self->m_nAllocationCount += self->m_nGrowSize;
+			else
+				self->m_nAllocationCount += self->m_nAllocationCount;
+		}
+		else
+		{
+			self->m_nAllocationCount = (31 + 100) / 100;
+		}
+	}
+
+	if (self->m_pMemory)
+		self->m_pMemory = g_101e3104(self->m_pMemory, self->m_nAllocationCount * 100);
+	else
+		self->m_pMemory = g_101e3100(self->m_nAllocationCount * 100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4fd0 size=0x3e
 struct A { int u0; float v; };
 struct B { char pad[0x414]; float cur; int u418, u41c, u420; float old; float prev; float prevv; };
