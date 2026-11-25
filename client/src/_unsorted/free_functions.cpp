@@ -119683,6 +119683,44 @@ void CBuildGroup_101c2310::sub_101c2310(CPanel *panel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2500 size=0xda
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+#include "utlvector.h"
+
+struct XH { void *sub_101ac670(); };
+struct S { bool sub_101aab80(); };
+
+// TARGET: vgui2::BuildGroup::sub_101c2500
+void vgui2::BuildGroup::sub_101c2500()
+{
+    delete (vgui2::Panel *)m_unk58;
+    m_unk58 = 0;
+
+    for (int i = 1; i < m_Panels.Count(); i++)
+    {
+        vgui2::Panel *p = (vgui2::Panel *)((XH *)&m_Panels[i])->sub_101ac670();
+        if (!p)
+        {
+            m_Panels.Remove(i);
+            i--;
+            continue;
+        }
+        if (!((S *)((XH *)&m_Panels[i])->sub_101ac670())->sub_101aab80())
+            continue;
+        delete (vgui2::Panel *)((XH *)&m_Panels[i])->sub_101ac670();
+        m_Panels.Remove(i);
+        i--;
+    }
+
+    if (m_unk54)
+        vfunc3((const char *)m_unk54);
+
+    m_Controls.RemoveAll();
+    sub_101c2180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c26d0 size=0x98
 #include "vgui2__BuildGroup.h"
 #include "vgui2__Panel.h"
