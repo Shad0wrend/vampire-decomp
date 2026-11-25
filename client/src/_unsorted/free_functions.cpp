@@ -55920,6 +55920,43 @@ void * CUnknown100f06b0::sub_100f06b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f06d0 size=0xc1
+#include "CHud.h"
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+struct EngHook {
+    V4(a) V4(b) V4(c) V4(d) V4(e) V4(f) V4(g) virtual void s28();
+    virtual void HookMessage(const char *name, void *pfn);
+};
+struct ElemV { virtual void s0(); virtual void Init(); };
+struct XHud { void sub_100f2770(int, int, int); };
+extern EngHook *g_104a57d4;
+void sub_100f0610();
+void sub_100f0630();
+void sub_100f0650();
+void sub_100f0670();
+void sub_100f0690();
+void sub_100f2750();
+// TARGET: CHud::sub_100f06d0
+void CHud::sub_100f06d0()
+{
+    g_104a57d4->HookMessage("Logo", sub_100f0610);
+    g_104a57d4->HookMessage("ResetHUD", sub_100f0630);
+    g_104a57d4->HookMessage("GameMode", sub_100f0670);
+    g_104a57d4->HookMessage("InitHUD", sub_100f0650);
+    g_104a57d4->HookMessage("TeamChange", sub_100f0690);
+    sub_100f07a0();
+    *(char *)((char *)this + 0x5c) = 0;
+    m_unk20 = 0;
+    m_unk60 = 0;
+    *(float *)&m_unk4 = 1.0f;
+    sub_100f2750();
+    for (int i = 0; i < m_HudListSize; i++)
+        ((ElemV *)m_HudListMem[i])->Init();
+    ((XHud *)this)->sub_100f2770(0, 0, 0);
+    *(char *)this = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f07a0 size=0x42
 namespace lifted {
 extern char g_102bbf34;
