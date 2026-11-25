@@ -101261,6 +101261,51 @@ int XTN::sub_101bdcf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bdd30 size=0x71
+#include "vgui2__TreeNode.h"
+
+struct Helper9920
+{
+	void sub_101a9920(int &, int &);
+};
+
+struct TreeNodeView
+{
+	char m_pad00[0x64];
+	Helper9920 *m_p64;			// 0x64
+	char m_pad68[8];			// 0x68..0x6f
+	bool m_bExpanded;			// 0x70
+	char m_pad71[3];			// 0x71..0x73
+	vgui2::TreeNode **m_pChildren;	// 0x74
+	char m_pad78[8];			// 0x78..0x7f
+	int m_nChildren;			// 0x80
+};
+
+// TARGET: ?sub_101bdd30@TreeNode@vgui2@@QAEHXZ
+int vgui2::TreeNode::sub_101bdd30()
+{
+	TreeNodeView *v = (TreeNodeView *)this;
+	int tall;
+	int width;
+	v->m_p64->sub_101a9920(tall, width);
+	int nHeight = tall + 0x28;
+	int nChildHeight = 0;
+	if (v->m_bExpanded)
+	{
+		for (int i = 0; i < v->m_nChildren; i++)
+		{
+			if (v->m_pChildren[i]->sub_101bdd30() > nChildHeight)
+			{
+				vgui2::TreeNode **pArr = v->m_pChildren;
+				nChildHeight = pArr[i]->sub_101bdd30();
+			}
+		}
+		nChildHeight += 0x14;
+	}
+	return nHeight > nChildHeight ? nHeight : nChildHeight;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bddb0 size=0xb2
 #include "vgui2__TreeNode.h"
 
