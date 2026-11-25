@@ -100647,6 +100647,35 @@ bool CVStatList_t::sub_1015d870(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d950 size=0xfa
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatOwner.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown101d7520.h"
+
+struct CVStatActionTarget;
+class CVStatActionList_t { public: void sub_1015af10(CVStatActionTarget *, int, int); };
+
+char CVStatList_t::sub_1015d950(int stat, int amount)
+{
+    ScopeTrace trace("CVStatList_t::AddBase", g_102de300);
+    if ( sub_1015d3e0(stat) )
+    {
+        if ( ((CUnknown101d7520Sub *)((char *)((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat) + 0x120))->sub_10161bb0((void *)((CVStatOwner *)m_pad0000)->sub_1015e610()) || amount < 0 )
+        {
+            int newBase = ((int **)m_field08)[0][stat] + amount;
+            int oldVal = sub_1015dbd0(stat);
+            ((int **)m_field08)[0][stat] = newBase;
+            int newVal = sub_1015dbd0(stat);
+            ((CVStatActionList_t *)((char *)((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat) + 0x10c))->sub_1015af10((CVStatActionTarget *)((CVStatOwner *)m_pad0000)->sub_1015e610(), oldVal, newVal);
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015da50 size=0x6c
 #include "CVStatList_t.h"
 
