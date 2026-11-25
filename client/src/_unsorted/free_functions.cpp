@@ -70361,6 +70361,92 @@ void sub_1012d3f0(int a, int b, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d530 size=0x268
+#include "IClientEntity.h"
+#include "Tier1.h"
+#include "CSoundParameters.h"
+#include "CSoundEmitterSystemBase.h"
+
+int sub_1012d510(const char *pName);
+void sub_1012c9e0(int, const char *, ...);
+
+struct IEngineSoundTmp
+{
+	virtual void v0();
+	virtual float GetSoundDuration(const char *pSample);
+	virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9();
+	virtual void EmitAmbientSound(const char *pSample, float flVolume, int iPitch, int flags, float soundtime);
+};
+
+extern IEngineSoundTmp *g_104a5818;
+
+struct CSoundEmitterVtbl
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void TraceEmitSound(const char *fmt, ...);
+};
+
+void sub_1012d530(IClientEntity *entity, const Vector &pos, const char *samp, float vol, int soundlevel, int fFlags, int pitch, float soundtime, float *duration)
+{
+	if (samp)
+	{
+		if (samp[0] == '!')
+		{
+			int sentenceIndex = sub_1012d510(samp);
+			if (sentenceIndex >= 0)
+			{
+				char name[32];
+				g_101e3190(name, sizeof(name), "!%d", sentenceIndex);
+				g_104a5818->EmitAmbientSound(name, vol, pitch, fFlags, soundtime);
+				if (duration)
+				{
+					*duration = g_104a5818->GetSoundDuration(name);
+				}
+				sub_1012c9e0((int)&g_105e5540, "UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, entity ? entity->entindex() : -1);
+			}
+			return;
+		}
+		char *(*stristr)(const char *, const char *) = g_101e31ac;
+		if (stristr(samp, ".wav") || stristr(samp, ".mp3"))
+		{
+			g_104a5818->EmitAmbientSound(samp, vol, pitch, fFlags, soundtime);
+			if (duration)
+			{
+				*duration = g_104a5818->GetSoundDuration(samp);
+			}
+			((CSoundEmitterVtbl *)&g_105e5540)->TraceEmitSound("EmitAmbientSound:  Raw wave emitted '%s' (ent %i)\n", samp, entity ? entity->entindex() : -1);
+			return;
+		}
+	}
+
+	CSoundParameters params;
+	if (!g_105e5540.sub_1012e6d0(samp, params))
+	{
+		return;
+	}
+
+	if (fFlags & 2)
+	{
+		params.pitch = pitch;
+	}
+	if (fFlags & 1)
+	{
+		params.volume = vol;
+	}
+
+	g_104a5818->EmitAmbientSound(params.soundname, params.volume, params.pitch, fFlags, soundtime);
+	if (duration)
+	{
+		*duration = g_104a5818->GetSoundDuration(params.soundname);
+	}
+	((CSoundEmitterVtbl *)&g_105e5540)->TraceEmitSound("EmitAmbientSound:  '%s' emitted as '%s' (ent %i)\n", samp, params.soundname, entity ? entity->entindex() : -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d7a0 size=0x42
 struct SSoundCache { char *sub_1012f090(char *name, int a); };
 extern SSoundCache g_105e5540;
