@@ -42692,6 +42692,65 @@ int HV100a::sub_100a6b90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7890 size=0xfb
+#include "C_BasePlayer.h"
+#include "ehandle.h"
+
+struct GameRulesV {
+	virtual void d0();
+	virtual bool vfunc1();		// slot 1 (+4)
+	int m_pad[10];
+	int m_field2c;				// 0x2c
+};
+
+struct EntListV {
+	void *sub_100d0cf0(int idx);
+};
+
+struct ICNV {
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8();
+	virtual int entindex();		// slot 9 (+0x24)
+};
+
+struct EntV {
+	virtual void d0();
+	virtual void *vfunc1();		// slot 1 (+4)
+};
+
+extern GameRulesV *g_104a0c5c;
+extern EntListV *g_102b8e9c;
+
+struct PlayerV {
+	char m_pad0000[0x1640];
+	CBaseHandle m_hSomething;	// 0x1640
+	char m_pad1644[0x16e0 - 0x1644];
+	volatile int m_iSomething;	// 0x16e0
+};
+
+// TARGET: C_BasePlayer::sub_100a7890
+C_BaseEntity *C_BasePlayer::sub_100a7890()
+{
+	if (!g_104a0c5c->vfunc1() && g_104a0c5c->m_field2c)
+		return 0;
+	if (!((PlayerV *)this)->m_iSomething)
+		return 0;
+	if (((PlayerV *)this)->m_hSomething.Get()) {
+		if (((ICNV *)((char *)((PlayerV *)this)->m_hSomething.Get() + 8))->entindex() == ((PlayerV *)this)->m_iSomething)
+			goto usehandle;
+		((PlayerV *)this)->m_hSomething.m_Index = -1;
+	}
+	{
+		void *e = g_102b8e9c->sub_100d0cf0(((PlayerV *)this)->m_iSomething);
+		if (!e)
+			return 0;
+		((PlayerV *)this)->m_hSomething.m_Index = *(int *)(((EntV *)e)->vfunc1());
+	}
+usehandle:
+	return (C_BaseEntity *)((PlayerV *)this)->m_hSomething.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8ba0 size=0x1b
 int __stdcall sub_100a8ba0(int a)
 {
