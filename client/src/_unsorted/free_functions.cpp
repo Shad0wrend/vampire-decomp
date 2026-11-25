@@ -112498,6 +112498,52 @@ void CViewRender_101997e0::sub_101997e0(WorldListInfo_t &info, CRenderList &rend
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ab90 size=0xbd
+#include "CViewRender.h"
+
+struct WaterLocals { char B[0x10]; char A[0x48018]; };
+
+struct IRV2
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29();
+	virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39();
+	virtual void u40(); virtual void u41(); virtual void u42();
+	virtual void v43(int, int);
+	virtual float v44(int);
+};
+extern IRV2 *g_104a57e4;
+
+void CViewRender::sub_1019ab90(bool a1, int a2, int a3, int a4)
+{
+	WaterLocals l;
+	float waterHeight = g_104a57e4->v44(a4);
+	int flags = a1 ? 0x800 : 0;
+	switch (a3)
+	{
+	case 1:
+		flags |= 0x10;
+		g_104a57e4->v43(a4, 1);
+		break;
+	case 2:
+		flags |= 0x30;
+		g_104a57e4->v43(a4, 1);
+		break;
+	case 3:
+		flags |= 0x20;
+		sub_1019c970();
+		break;
+	default:
+		flags |= 0x40;
+		sub_1019c970();
+		break;
+	}
+	flags |= 0x1500;
+	sub_1019a950(a2, l.B, l.A, *(int *)&waterHeight, flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019add0 size=0xf2
 #include "CViewRender.h"
 #include "ScopeTrace.h"

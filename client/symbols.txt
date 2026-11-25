@@ -8547,6 +8547,7 @@
 0x101995a0 func   ?vfunc12@CViewRender@@UAEPADXZ CViewRender::vfunc12
 0x101995b0 func   ?sub_101995b0@VView384@@QAEDXZ VView384::sub_101995b0
 0x101997e0 func   ?sub_101997e0@CViewRender_101997e0@@QAEXAAUWorldListInfo_t@@AAUCRenderList@@_N@Z CViewRender_101997e0::sub_101997e0
+0x1019ab90 func   ?sub_1019ab90@CViewRender@@QAEX_NHHH@Z CViewRender::sub_1019ab90
 0x1019add0 func   ?sub_1019add0@CViewRender@@QAEXHHH@Z CViewRender::sub_1019add0
 0x1019aed0 func   ?sub_1019aed0@CViewRender@@QAEX_NH@Z CViewRender::sub_1019aed0
 0x1019af80 func   ?sub_1019af80@CViewRender@@QAEX_NH@Z CViewRender::sub_1019af80
