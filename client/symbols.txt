@@ -3902,6 +3902,7 @@
 0x100a9be0 func   ?sub_100a9be0@@YGXHHH@Z sub_100a9be0
 0x100a9bf0 func   ?sub_100a9bf0@Player_100a9bf0@@QAEXPBD@Z Player_100a9bf0::sub_100a9bf0
 0x100a9c10 func   ?vfunc185@C_BasePlayer@@UAEXH@Z C_BasePlayer::vfunc185
+0x100a9c40 func   ?vfunc147@C_BasePlayer@@UAE_NPAVC_BaseCombatWeapon@@H@Z C_BasePlayer::vfunc147
 0x100a9c90 func   ?sub_100a9c90@CUnknown100a9c90@@QAEXXZ CUnknown100a9c90::sub_100a9c90
 0x100a9ca0 func   ?vfunc94@C_BasePlayer@@UAE_NXZ C_BasePlayer::vfunc94
 0x100a9cb0 func   ?vfunc181@C_BasePlayer@@UAEXXZ C_BasePlayer::vfunc181

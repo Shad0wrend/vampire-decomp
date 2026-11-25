@@ -525,6 +525,27 @@ void C_BasePlayer::vfunc185(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9c40 size=0x44
+#include "C_BasePlayer.h"
+extern C_BasePlayer *g_104a0d50;
+
+bool C_BasePlayer::vfunc147(C_BaseCombatWeapon *pWeapon, int n)
+{
+	if (C_BaseCombatCharacter::vfunc147(pWeapon, n))
+	{
+		if (this == g_104a0d50)
+		{
+			char *p = sub_100a9af0(n);
+			if (p)
+				*(unsigned int *)(p + 0x74) &= 0xffffffbf;
+		}
+		sub_100a9c90();
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ca0 size=0xb
 #include "C_BasePlayer.h"
 struct Obj_100a99d0 { char sub_100a99d0(); };
