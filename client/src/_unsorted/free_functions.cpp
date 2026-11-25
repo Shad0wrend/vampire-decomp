@@ -21068,6 +21068,45 @@ void UtlMem::sub_10067a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067ac0 size=0x6d
+struct UtlMemView
+{
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+};
+
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
+extern void *(__cdecl *g_101e3100)(unsigned int);
+
+void __fastcall sub_10067ac0(UtlMemView *self, int edx, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+
+	int nAllocationRequested = self->m_nAllocationCount + num;
+	while (self->m_nAllocationCount < nAllocationRequested)
+	{
+		if (self->m_nAllocationCount != 0)
+		{
+			if (self->m_nGrowSize)
+				self->m_nAllocationCount += self->m_nGrowSize;
+			else
+				self->m_nAllocationCount += self->m_nAllocationCount;
+		}
+		else
+		{
+			self->m_nAllocationCount = (31 + 100) / 100;
+		}
+	}
+
+	if (self->m_pMemory)
+		self->m_pMemory = g_101e3104(self->m_pMemory, self->m_nAllocationCount * 100);
+	else
+		self->m_pMemory = g_101e3100(self->m_nAllocationCount * 100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067d00 size=0x46
 #include "ConVar.h"
 extern ConVar *g_10477114;
