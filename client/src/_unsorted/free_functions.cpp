@@ -13303,6 +13303,17 @@ int CUnknown100334d0::sub_100334d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100334f0 size=0x83
+struct IBeamsV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+ virtual void Create(int, int, int, int, int, int, int, int, float, int, float, float, int, float, float, float, float); };
+extern IBeamsV *g_102d5050;
+// TARGET: sub_100334f0
+void sub_100334f0(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17)
+{
+	g_102d5050->Create(a2, a3, a4, a5, 0, a8, a9, a10, a11, a12, a16, a17 * 0.1, a6, a7 * 0.1, a13, a14, a15);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033580 size=0x79
 #include "C_TEBeamPoints.h"
 #include "Vector.h"
