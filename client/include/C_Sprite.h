@@ -17,4 +17,5 @@ public:
 	virtual int vfunc16();
 	virtual int vfunc17();
 	float vfunc121();
+	virtual int vfunc122();
 };
