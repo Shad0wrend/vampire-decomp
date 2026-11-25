@@ -79593,6 +79593,59 @@ void sub_101444b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101444c0 size=0x7b
+#include "CUnknown10144490.h"
+#include "StatOwner2.h"
+
+extern int g_102c6ef0;
+
+class CNamedListX
+{
+public:
+	int sub_1013fdf0(const char *name);
+};
+
+extern CNamedListX g_105e74fc;
+extern StatOwner2 g_105f93c0;
+
+struct KVNodeV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual const char *vfunc13(const char *key, const char *def);
+};
+
+// TARGET: CUnknown10144490::sub_101444c0
+bool CUnknown10144490::sub_101444c0(void *pNode)
+{
+	if (pNode)
+	{
+		KVNodeV *node = (KVNodeV *)pNode;
+		const char *name = node->vfunc13("CharTemplate", "");
+		if (name[0])
+			m_n4 = g_105e74fc.sub_1013fdf0(name);
+		int i = 0;
+		int *pOut = &m_n8;
+		for (; i < 3; i++, pOut += 2)
+			sub_10144540(node, g_105f93c0.sub_1015f270(g_102c6ef0)->sub_1015ecd0(i), pOut);
+		m_n20 = 0;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101445f0 size=0xf
 namespace lifted {
 extern char g_105e74fc;
