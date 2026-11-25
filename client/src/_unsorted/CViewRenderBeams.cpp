@@ -20,6 +20,27 @@ CViewRenderBeams *pcd_emit_10193320(const CViewRenderBeams &other) { return new 
 // TARGET: ??_GCViewRenderBeams@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101933b0 size=0x95
+#include "CViewRenderBeams.h"
+void CViewRenderBeams::vfunc2()
+{
+	m_unk1bc04 = 0;
+	m_unk1bc08 = (int)&m_Beams[0];
+	for (int i = 0; i < 128; i++) {
+		m_Beams[i].sub_10192db0();
+		*(Beam_t **)((char *)&m_Beams[i] + 0x24) = &m_Beams[i + 1];
+	}
+	*(int *)((char *)&m_Beams[127] + 0x24) = 0;
+	m_unk1bc14 = (int)m_pFirst;
+	m_unk1bc10 = 0;
+	for (int j = 0; j < m_nNumBeamTrails; j++) {
+		char *p = (char *)m_pFirst;
+		*(char **)(p + j * 0x20) = p + j * 0x20 + 0x20;
+	}
+	*(int *)((char *)m_pFirst + m_nNumBeamTrails * 0x20 - 0x20) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193450 size=0x12
 #include "CViewRenderBeams.h"
 namespace lifted {
