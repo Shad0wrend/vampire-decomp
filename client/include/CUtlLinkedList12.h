@@ -25,6 +25,11 @@ public:
 		// "CUtlLinkedList::IsInList": i is below the number of allocated nodes, not negative and the node's previous index is not itself (called through the stub at 0x1000ac54)
 	void sub_100caa00(int elem);	// "CUtlLinkedList::Unlink": takes the node out of the list when it is in it (IsInList inlined)
 
+	bool IsValidIndex(int i) const
+	{
+		return (i < m_NumAlloced) && (i >= 0) && ((m_pMemory[i].m_Previous != i) || (m_pMemory[i].m_Next == i));
+	}
+
 	bool IsInList(int i) const
 	{
 		return i < m_NumAlloced && i >= 0 && m_pMemory[i].m_Previous != i;

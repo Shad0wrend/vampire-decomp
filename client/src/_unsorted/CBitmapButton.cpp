@@ -17,3 +17,27 @@ CBitmapButton *pcd_emit_10164280(const CBitmapButton &other) { return new CBitma
 
 // TARGET: ??_GCBitmapButton@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x101642e0 size=0x67
+#include "CBitmapButton.h"
+#include "BitmapImage.h"
+struct IKV11;
+bool sub_10164a50(IKV11 *, const char *, int, BitmapImage *);
+struct BitmapImage4c { char pad[0x4c]; };
+// TARGET: CBitmapButton::vfunc75
+void CBitmapButton::vfunc75(int pInitData)
+{
+    Button::vfunc75(pInitData);
+    const char *pSectionName[4] =
+    {
+        "enabledImage",
+        "mouseOverImage",
+        "pressedImage",
+        "disabledImage"
+    };
+    for (int i = 0; i < 4; ++i)
+    {
+        ((char *)this)[0x220 + i] = sub_10164a50((IKV11 *)pInitData, pSectionName[i], (int)this, (BitmapImage *)((BitmapImage4c *)((char *)this + 0xf0) + i));
+    }
+}
+// END FUNCTION

@@ -94,3 +94,26 @@ void CHudDialog::ScrollDn()
 		((DialogView *)this)->m_unk18c--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10054d80 size=0x91
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct DV_10054d80 { char pad[0x184]; int m184; char pad2[4]; int m18c; };
+
+void CHudDialog::ScrollUp()
+{
+	ScopeTrace trace("CHudDialog::ScrollUp", g_102de300);
+	DV_10054d80 *v = (DV_10054d80 *)this;
+	int top;
+	int a = v->m184;
+	if (a - sub_10055650() < 0)
+		top = 0;
+	else {
+		int b = v->m184;
+		top = b - sub_10055650();
+	}
+	if (v->m18c < top)
+		v->m18c++;
+}
+// END FUNCTION

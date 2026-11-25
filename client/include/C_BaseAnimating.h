@@ -9,6 +9,12 @@ class C_BaseAnimating : public C_BaseEntity
 public:
 	C_BaseAnimating();
 	void sub_100966e0();
+	void sub_10095880();
+	int sub_100958f0(int);
+	float sub_100955f0(int);
+	float sub_10095640(int);
+	void sub_10095680(int, Vector *);
+	float sub_10095910(int, void *);
 	bool sub_10094020();
 	bool sub_10091910(int idx, int arg);
 	bool sub_10093e40();
@@ -30,6 +36,7 @@ public:
 	void sub_101364b0();
 	void sub_100a2930();
 	void sub_100948d0(int);
+	bool sub_10095d00(Vector *pVecWorldMins, Vector *pVecWorldMaxs);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
@@ -62,7 +69,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc129();
 	virtual void vfunc130();
 	virtual void vfunc131(int, int, int, int, int, int);
-	virtual void vfunc132();
+	virtual void vfunc132(bool);
 	virtual int vfunc133();
 	virtual void vfunc134();
 	virtual void vfunc135();

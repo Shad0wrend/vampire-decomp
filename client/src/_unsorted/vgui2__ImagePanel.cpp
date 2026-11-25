@@ -69,6 +69,34 @@ int vgui2::ImagePanel::vfunc76(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5a50 size=0x82
+#include "vgui2__ImagePanel.h"
+extern "C" unsigned int strlen(const char *);
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strlen)
+#pragma intrinsic(strcpy)
+struct IKV10 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual const char *GetString(const char *key, const char *def); };
+struct ILoc10 { virtual void v0(); virtual IImg *Find(const char *s); };
+struct ISch10 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual ILoc10 *Get(int); };
+ISch10 *sub_101ac8c0();
+namespace vgui2 {
+// TARGET: vgui2::ImagePanel::vfunc75
+void ImagePanel::vfunc75(int p)
+{
+	Panel::vfunc75(p);
+	const char *name = ((IKV10 *)p)->GetString("image", 0);
+	if (name)
+	{
+		delete [] m_psz5c;
+		m_psz5c = new char[strlen(name) + 1];
+		strcpy(m_psz5c, name);
+		ISch10 *s = sub_101ac8c0();
+		vfunc107(s->Get(sub_101aa220())->Find(name));
+	}
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5ae0 size=0x23
 #include "vgui2__ImagePanel.h"
 namespace lifted {

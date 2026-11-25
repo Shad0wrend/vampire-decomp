@@ -229,6 +229,25 @@ bool C_BaseAnimating::vfunc67()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093f40 size=0x90
+#include "C_BaseAnimating.h"
+struct S96 { int d[24]; };
+struct S16 { int d[4]; };
+struct V3 { int x, y, z; V3 &operator=(const V3 &o) { x = o.x; y = o.y; z = o.z; return *this; } };
+void C_BaseAnimating::vfunc132(bool b)
+{
+	char *p = (char *)this;
+	if (b) {
+		*(S96 *)(p + 0x574) = *(S96 *)(p + 0x5d4);
+		*(int *)(p + 0x644) = *(int *)(p + 0x648);
+		*(S16 *)(p + 0x65c) = *(S16 *)(p + 0x66c);
+	}
+	*(float *)(p + 0x6c) = *(float *)(p + 0x70) = *(float *)(p + 0x144);
+	*(V3 *)(p + 0x54) = *(const V3 *)&GetAbsOrigin();
+	*(V3 *)(p + 0x60) = *(const V3 *)&GetAbsAngles();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093fd0 size=0x4e
 #include "C_BaseAnimating.h"
 
@@ -332,6 +351,17 @@ int C_BaseAnimating::vfunc133()
 		return p->v4(*(int *)((char *)this + 0x6b4));
 	}
 	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10095490 size=0x34
+#include "C_BaseAnimating.h"
+float C_BaseAnimating::vfunc138(int iSequence)
+{
+	float f = sub_10095910(iSequence, (void *)((char *)this + 0x5d4));
+	if (f > 0.0f)
+		return 1.0 / f;
+	return 10.0f;
 }
 // END FUNCTION
 

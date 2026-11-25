@@ -60,6 +60,19 @@ void SmokeView::sub_10030830(int index, int a, int b, int c, int d, int e, int f
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030890 size=0x20
+#include "CParticleMgr.h"
+#include "CParticleSource.h"
+#include "CLitSmokeEmitter.h"
+extern CParticleMgr g_104e0768;
+// TARGET: CLitSmokeEmitter::vfunc1
+void CLitSmokeEmitter::vfunc1(int a)
+{
+	((CParticleSource *)&m_aux)->sub_1004a8b0(&g_104e0768);
+	sub_10118060(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5470 size=0x1e
 #include "CLitSmokeEmitter.h"
 

@@ -189,6 +189,35 @@ int vgui2::ScrollBar::vfunc117()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf210 size=0x7f
+#include "vgui2__ScrollBar.h"
+#include "vgui2__Button.h"
+struct ISys4 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int GetTime(); };
+ISys4 *sub_101ac8e0();
+void vgui2::ScrollBar::vfunc96()
+{
+	int dir;
+	if ((*(vgui2::Button **)((char *)this + 0x58))->vfunc140()) {
+		dir = -1;
+	} else if ((*(vgui2::Button **)((char *)this + 0x5c))->vfunc140()) {
+		dir = 1;
+	} else {
+		int t = sub_101ac8e0()->GetTime() + 400;
+		*(bool *)((char *)this + 0x6c) = true;
+		*(int *)((char *)this + 0x68) = t;
+		return;
+	}
+	vfunc122(dir);
+	if (*(int *)((char *)this + 0x68) < sub_101ac8e0()->GetTime()) {
+		int t = sub_101ac8e0()->GetTime() + 50;
+		*(bool *)((char *)this + 0x6c) = true;
+		*(int *)((char *)this + 0x68) = t;
+	} else {
+		*(bool *)((char *)this + 0x6c) = false;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf290 size=0x3e
 #include "vgui2__ScrollBar.h"
 struct ISliderV {

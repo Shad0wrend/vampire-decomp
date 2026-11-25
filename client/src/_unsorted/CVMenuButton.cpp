@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10065300 size=0x88
+#include "CVMenuButton.h"
+struct CVMenuButtonView { char pad[0x30]; char b30; char pad2[4]; char b35; };
+// TARGET: ??0CVMenuButton@@QAE@HHH@Z
+CVMenuButton::CVMenuButton(int a, int b, int c) : vgui2::Button(a, b, c)
+{
+    m_b0ed = 0;
+    vfunc64(1);
+    vfunc63(0);
+    vfunc62(0);
+    sub_101aaaa0(1);
+    vfunc49();
+    vfunc111(4);
+    vfunc136(2);
+    ((CVMenuButtonView *)vfunc127())->b30 = 1;
+    ((CVMenuButtonView *)vfunc127())->b35 = 0;
+    sub_101aa0a0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065390 size=0x1e
 #include "CVMenuButton.h"
 

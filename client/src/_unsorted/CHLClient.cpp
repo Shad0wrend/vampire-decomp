@@ -12,6 +12,47 @@ int CHLClient::vfunc41(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb990 size=0x88
+#include "CHLClient.h"
+struct SaveMgrV1 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(int a); };
+struct ObjA1 { virtual void v0(); virtual void v1(); };
+struct ObjB1 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); };
+struct ObjC1 { virtual void v0(); virtual void v1(); virtual void v2(); };
+extern SaveMgrV1 *g_102c37a0;
+extern ObjA1 *g_102bc800;
+extern ObjB1 *g_105f99d8;
+extern ObjA1 *g_1027ba58;
+extern ObjC1 *g_102d43d8;
+extern int g_104a5820;
+int sub_1012b820();
+void sub_10106bb0();
+void sub_1002c400();
+void sub_1004a9c0();
+void sub_100f4180();
+void sub_10167000();
+struct S100cc040 { void sub_100cc040(); };
+struct CHud { void sub_100f07f0(); };
+extern CHud g_104cfe38;
+// TARGET: CHLClient::vfunc1
+void CHLClient::vfunc1()
+{
+	g_102c37a0->v10(sub_1012b820());
+	g_102bc800->v1();
+	sub_10106bb0();
+	g_105f99d8->v4();
+	g_105f99d8->v2();
+	g_1027ba58->v1();
+	sub_1002c400();
+	sub_1004a9c0();
+	g_102d43d8->v2();
+	((S100cc040 *)this)->sub_100cc040();
+	sub_100f4180();
+	g_104cfe38.sub_100f07f0();
+	sub_10167000();
+	g_104a5820 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cba20 size=0x1a
 #include "CHLClient.h"
 namespace lifted {
@@ -441,6 +482,41 @@ int CHLClient::vfunc33(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc710 size=0x85
+#include "CHLClient.h"
+#include "CSave.h"
+// TARGET: CHLClient::vfunc34
+void CHLClient::vfunc34(void *pData, int a, int b, int c, int d, int e)
+{
+	CSave save(pData);
+	save.vfunc3(a, b, c, d, e);
+	save.m_nSections = 0;
+	if (save.m_nGrow != -1)
+	{
+		if (save.m_pSections)
+		{
+			Plat_Free(save.m_pSections);
+			save.m_pSections = 0;
+		}
+		save.m_nAlloc = 0;
+	}
+	save.m_pElements = save.m_pSections;
+	if (save.m_nGrow != -1 && save.m_pElements)
+		Plat_Free(save.m_pElements);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc7a0 size=0x85
+#include "CHLClient.h"
+#include "CRestore.h"
+// TARGET: CHLClient::vfunc35
+void CHLClient::vfunc35(void *pData, int a1, int a2, int a3, int a4, int a5)
+{
+	CRestore restore(pData);
+	restore.sub_1012a840(a1, a2, a3, a4, a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc830 size=0xb
 #include "CHLClient.h"
 namespace lifted {
@@ -470,6 +546,74 @@ void CHLClient::vfunc37(void *pData)
     CSave save(pData);
     g_102c37a0->SaveGame(&save);
     ((CUtlVector<int> *)((char *)&save + 4))->~CUtlVector();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc8c0 size=0x7e
+#include "CHLClient.h"
+#include "CSave.h"
+struct SaveMgrView38 {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void SaveGame(CSave *);
+	virtual void v4();
+};
+extern SaveMgrView38 *g_102c37a0;
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+// TARGET: ?vfunc38@CHLClient@@UAEXPAX@Z
+void CHLClient::vfunc38(void *pData)
+{
+	CSave save(pData);
+	g_102c37a0->SaveGame(&save);
+	g_102c37a0->v4();
+	save.m_nSections = 0;
+	if (save.m_nGrow != -1)
+	{
+		if (save.m_pSections)
+		{
+			Plat_Free(save.m_pSections);
+			save.m_pSections = 0;
+		}
+		save.m_nAlloc = 0;
+	}
+	save.m_pElements = save.m_pSections;
+	if (save.m_nGrow != -1 && save.m_pSections)
+		Plat_Free(save.m_pSections);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc940 size=0x7e
+#include "CHLClient.h"
+#include "CRestore.h"
+struct SaveMgrV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void Prepare();
+	virtual void Restore(CRestore *pRestore);
+};
+extern SaveMgrV *g_102c37a0;
+void CHLClient::vfunc39(void *pData)
+{
+	CRestore restore(pData);
+	g_102c37a0->Prepare();
+	g_102c37a0->Restore(&restore);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc9c0 size=0x85
+#include "CHLClient.h"
+#include "CRestore.h"
+struct SaveMgrV40
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(CRestore *pRestore, int a, int b);
+	virtual void v8();
+};
+extern SaveMgrV40 *g_102c37a0;
+// TARGET: CHLClient::vfunc40
+void CHLClient::vfunc40(void *pData, int a)
+{
+	CRestore restore(pData);
+	g_102c37a0->v7(&restore, a, 0);
+	g_102c37a0->v8();
 }
 // END FUNCTION
 

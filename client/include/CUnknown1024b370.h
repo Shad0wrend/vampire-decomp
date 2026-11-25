@@ -19,9 +19,12 @@ struct CUnknown1024b370Symbol
 	CUnknown1024b370Symbol(const CUnknown1024b370Symbol &o) : m_Id(o.m_Id) {}
 };
 
+#include "CUnknown1024b2d0.h"
+
 class CUnknown1024b370
 {
 public:
+	CUnknown1024b370(int arg, int count, char flag) { ((CUnknown1024b2d0 *)this)->sub_1013d2b0(arg, count, flag); }
 	char m_pad0000[4];
 	CUnknown1024b370Mem m_mem0;	// 0x04
 	unsigned short m_s10;	// 0x10: list head (0xffff when empty)

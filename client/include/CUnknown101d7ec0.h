@@ -25,12 +25,21 @@ struct CUnknown101d7ec0_Check	// 12 bytes: one condition tested by sub_101d7fb0
 	unsigned char m_nFlags;	// 0x08: bit 0 inverts the comparison
 };
 
+struct CUnknown101d7ec0_CheckList	// count + array of 12-byte checks
+{
+	int m_nCount;
+	CUnknown101d7ec0_Check *m_pChecks;
+	bool sub_10145370(int, int);
+};
+
 class CUnknown101d7ec0
 {
 public:
 	int m_n0;
 	CUnknown101d7ec0_Entry *m_pEntries;	// 0x04
 
+	bool sub_10145000(int, int, CUnknown101d7ec0_Check *);
+	char sub_10144f20(int);
 	void sub_10144dc0();	// the constructor: three entries (keys / types 0..2) whose texts come from the CritterScopes section of vdata\system\reaction.txt
 	CUnknown101d7ec0_Entry *sub_10145090(int iKey);	// stub 0x100015af: the entry with that key, else the shared default record at 0x10739148
 	int sub_10144f40(const char *pszName, int *pOut);	// stub 0x1000dd37: the id of the entry of that name (case-insensitive) and, through pOut, its sub id (-1 for a direct hit); -1 when there is none

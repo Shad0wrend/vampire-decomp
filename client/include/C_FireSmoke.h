@@ -7,6 +7,8 @@
 #include "CParticleEffect.h"
 #include "CSmartPtr.h"
 
+class CFireSmokeOwned { public: virtual ~CFireSmokeOwned() {} };
+
 class C_FireSmoke : public C_BaseEntity
 {
 public:
@@ -19,6 +21,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc37();
 
 	void sub_100b55b0();
+	void sub_100b5d00();
 	char m_pad0014[0x410 - 0x14];
 	float m_flStartScale;
 	float m_flScale;
@@ -39,5 +42,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	char m_pad27d8[0x27f8 - 0x27d8];
 	float m_flChildFlameSpread;
 	int m_nUnk27fc;
-	char m_pad2800[0x2808 - 0x2800];
+	class CFireSmokeOwned *m_p2800;
+	int m_unk2804;
 };

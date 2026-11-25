@@ -166,6 +166,202 @@ void CClientShadowMgr::vfunc14(const void *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d71d0 size=0x3c3
+#include "CClientShadowMgr.h"
+#include "CBaseHandle.h"
+#include "IClientEntity.h"
+#include "IClientRenderable.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct Shadow240
+{
+	CBaseHandle m_Entity;          // 0x00
+	unsigned short m_ShadowHandle; // 0x04
+	unsigned short m_pad06;        // 0x06
+	unsigned short m_Flags;        // 0x08
+	char m_pad0a[0x4a];            // 0x0a
+	Vector m_LightOrigin;          // 0x54
+	Vector m_Dir;                  // 0x60
+	Vector m_LastOrigin;           // 0x6c
+	QAngle m_LastAngles;           // 0x78
+	int m_unk84;                   // 0x84
+	Vector m_Color;                // 0x88
+	Vector m_Unk94;                // 0x94
+	float m_CenterZ;               // 0xa0
+	float m_HalfHeight;            // 0xa4
+	char m_padA8[0x48];            // 0xa8 (total 0xf0 = 240)
+};
+
+struct ShadowArray_100d8620
+{
+	Shadow240 *m_pMemory;
+	Shadow240 *sub_100d8620(unsigned int i);
+};
+
+extern int sub_1009e230();
+
+struct IClientEntityList_100d71d0
+{
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual IClientEntity *GetClientEntityFromHandle(CBaseHandle h) = 0; // slot 4 (+0x10)
+};
+
+struct IMaterialSystem_100d71d0
+{
+	virtual void v0() = 0;  virtual void v1() = 0;  virtual void v2() = 0;  virtual void v3() = 0;
+	virtual void v4() = 0;  virtual void v5() = 0;  virtual void v6() = 0;  virtual void v7() = 0;
+	virtual void v8() = 0;  virtual void v9() = 0;  virtual void v10() = 0; virtual void v11() = 0;
+	virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0; virtual void v15() = 0;
+	virtual void v16() = 0; virtual void v17() = 0; virtual void v18() = 0; virtual void v19() = 0;
+	virtual void v20() = 0; virtual void v21() = 0; virtual void v22() = 0; virtual void v23() = 0;
+	virtual void v24() = 0; virtual void v25() = 0; virtual void v26() = 0; virtual void v27() = 0;
+	virtual void v28() = 0; virtual void v29() = 0; virtual void v30() = 0; virtual void v31() = 0;
+	virtual void v32() = 0; virtual void v33() = 0; virtual void v34() = 0; virtual void v35() = 0;
+	virtual void v36() = 0; virtual void v37() = 0; virtual void v38() = 0; virtual void v39() = 0;
+	virtual void v40() = 0; virtual void v41() = 0; virtual void v42() = 0; virtual void v43() = 0;
+	virtual void v44() = 0; virtual void v45() = 0; virtual void v46() = 0; virtual void v47() = 0;
+	virtual void v48() = 0; virtual void v49() = 0; virtual void v50() = 0; virtual void v51() = 0;
+	virtual void v52() = 0; virtual void v53() = 0; virtual void v54() = 0; virtual void v55() = 0;
+	virtual void v56() = 0; virtual void v57() = 0; virtual void v58() = 0; virtual void v59() = 0;
+	virtual void v60() = 0; virtual void v61() = 0; virtual void v62() = 0; virtual void v63() = 0;
+	virtual void v64() = 0; virtual void v65() = 0; virtual void v66() = 0; virtual void v67() = 0;
+	virtual void v68() = 0; virtual void v69() = 0; virtual void v70() = 0; virtual void v71() = 0;
+	virtual void v72() = 0; virtual void v73() = 0; virtual void v74() = 0; virtual void v75() = 0;
+	virtual void v76() = 0; virtual void v77() = 0; virtual void v78() = 0; virtual void v79() = 0;
+	virtual void v80() = 0; virtual void v81() = 0; virtual void v82() = 0; virtual void v83() = 0;
+	virtual void v84() = 0; virtual void v85() = 0; virtual void v86() = 0; virtual void v87() = 0;
+	virtual void v88() = 0; virtual void v89() = 0; virtual void v90() = 0; virtual void v91() = 0;
+	virtual void v92() = 0; virtual void v93() = 0;
+	virtual void v94(int state) = 0; // +0x178
+	virtual void v95() = 0; virtual void v96() = 0; virtual void v97() = 0;
+	virtual int v98() = 0; // +0x188
+};
+
+struct IVModelInfo_100d71d0
+{
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0;
+	virtual void v3() = 0; virtual void v4() = 0; virtual void v5() = 0;
+	virtual int GetModelType(const model_t *model) const = 0; // slot 6 (+0x18)
+};
+
+struct IShadowMgr_100d71d0
+{
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0; virtual void v10() = 0;
+	virtual void SetShadowColor(unsigned short handle, const Vector &color) = 0; // slot 11 (+0x2c)
+};
+
+extern IMaterialSystem_100d71d0 *g_104a57ec;
+extern IVModelInfo_100d71d0 *g_104a57f8;
+extern IShadowMgr_100d71d0 *g_104a5810;
+
+struct Bounds_100d71d0
+{
+	Vector mins;
+	Vector maxs;
+};
+
+struct IClientShadowMgr_100d71d0
+{
+	virtual void v0() = 0; virtual void v1() = 0; virtual void v2() = 0; virtual void v3() = 0;
+	virtual void v4() = 0; virtual void v5() = 0; virtual void v6() = 0; virtual void v7() = 0;
+	virtual void v8() = 0; virtual void v9() = 0;
+	virtual void DestroyShadow(unsigned short handle) = 0; // slot 10 (+0x28)
+};
+
+struct CClientShadowMgr_100d71d0 : public CClientShadowMgr
+{
+	void sub_100d71d0(unsigned int handle, const Vector &lightOrigin, const Vector &color,
+		const Vector &v3, const Bounds_100d71d0 *pBounds, bool bForce);
+};
+
+void CClientShadowMgr_100d71d0::sub_100d71d0(unsigned int handle, const Vector &lightOrigin,
+	const Vector &color, const Vector &v3, const Bounds_100d71d0 *pBounds, bool bForce)
+{
+	if ((unsigned short)handle == 0xffff)
+		return;
+
+	CBaseHandle hEnt = ((ShadowArray_100d8620 *)&m_Shadows)->sub_100d8620(handle)->m_Entity;
+	IClientEntity *pEnt = ((IClientEntityList_100d71d0 *)(sub_1009e230() + 0x1803c))->GetClientEntityFromHandle(hEnt);
+	if (!pEnt)
+	{
+		((IClientShadowMgr_100d71d0 *)this)->DestroyShadow((unsigned short)handle);
+		return;
+	}
+
+	IClientRenderable *pRenderable = pEnt;
+	if (!pRenderable->GetModel())
+		return;
+
+	Shadow240 &shadow = *(Shadow240 *)&m_Shadows.InternalElement((unsigned short)handle);
+	if (shadow.m_ShadowHandle == 0xffff)
+		return;
+
+	const Vector &origin = pRenderable->GetRenderOrigin();
+	const QAngle &angles = pRenderable->GetRenderAngles();
+
+	Vector center = origin;
+	center.z += pBounds->mins.z;
+	float halfHeight = (pBounds->maxs.z - pBounds->mins.z) * 0.5f;
+
+	if (bForce ||
+		origin != shadow.m_LastOrigin ||
+		angles != shadow.m_LastAngles ||
+		lightOrigin != shadow.m_LightOrigin ||
+		color != shadow.m_Color ||
+		v3 != shadow.m_Unk94 ||
+		halfHeight != shadow.m_HalfHeight ||
+		center.z != shadow.m_CenterZ)
+	{
+		shadow.m_LastOrigin = origin;
+		shadow.m_LastAngles = angles;
+		shadow.m_LightOrigin = lightOrigin;
+
+		VectorSubtract(center, lightOrigin, shadow.m_Dir);
+		VectorNormalize(shadow.m_Dir);
+		shadow.m_Dir.z -= 0.33f;
+		VectorNormalize(shadow.m_Dir);
+
+		shadow.m_Color = color;
+		shadow.m_Unk94 = v3;
+		shadow.m_HalfHeight = halfHeight;
+		shadow.m_CenterZ = center.z;
+
+		Vector &defaultDir = *(Vector *)&m_unk08;
+		Vector oldDir = defaultDir;
+		defaultDir = shadow.m_Dir;
+
+		shadow.m_Flags |= 4;
+
+		const model_t *pModel = pRenderable->GetModel();
+		int oldState = g_104a57ec->v98();
+		g_104a57ec->v94(0);
+
+		switch (g_104a57f8->GetModelType(pModel))
+		{
+		case 1:
+			sub_100d7180((int)pEnt, handle, (int *)pBounds);
+			break;
+		case 3:
+			sub_100d7130((int)pEnt, handle, (int *)pBounds);
+			break;
+		}
+
+		g_104a57ec->v94(oldState);
+		defaultDir = oldDir;
+	}
+
+	g_104a5810->SetShadowColor(shadow.m_ShadowHandle, color);
+}
+
+// TARGET: CClientShadowMgr_100d71d0::sub_100d71d0
+// END FUNCTION
+
 // FUNCTION: 0x100d7e50 size=0x1c
 #include "CClientShadowMgr.h"
 void *CClientShadowMgr::vfunc16(unsigned short h)

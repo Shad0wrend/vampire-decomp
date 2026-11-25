@@ -158,6 +158,43 @@ int vgui2::PropertySheet::vfunc125(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8db0 size=0x8b
+#include "vgui2__PropertySheet.h"
+#include <string.h>
+struct CSheetPageView {
+virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24(); virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
+virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38(); virtual void a39();
+virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43(); virtual void a44(); virtual void a45(); virtual void vfunc46(int);
+virtual void a47(); virtual void a48(); virtual void a49();
+virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54(); virtual void a55(); virtual void a56(); virtual void a57(); virtual void a58(); virtual void a59();
+virtual void a60(); virtual void a61(); virtual void a62(); virtual void a63(); virtual void a64(); virtual void a65(); virtual void a66(); virtual void a67(); virtual void a68(); virtual void a69();
+virtual void a70(); virtual void a71(); virtual void a72(); virtual void a73(); virtual void a74(); virtual void a75(); virtual void a76(); virtual void a77(); virtual void a78(); virtual void a79();
+virtual void a80(); virtual void a81(); virtual void a82(); virtual void a83(); virtual void a84(); virtual void a85(); virtual void a86(); virtual void a87(); virtual void a88(); virtual void a89();
+virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93(); virtual void a94(); virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
+virtual void a100(); virtual void a101(); virtual void a102(); virtual void a103(); virtual void a104(); virtual void a105(); virtual void a106(); virtual void a107(); virtual void a108();
+virtual void vfunc109(char *, int);
+};
+struct CPageVec
+{
+	int m_unk60; int m_nCount; int m_unk68; CSheetPageView **m_pData;
+	bool IsValidIndex(int i) const { return (i >= 0) && (i < m_nCount); }
+	CSheetPageView *Get(int i) const { return IsValidIndex(i) ? m_pData[i] : 0; }
+};
+void vgui2::PropertySheet::vfunc129(const char *pszName, int a1)
+{
+	for (int i = 0; i < ((CPageVec *)((char *)this + 0x60))->m_nCount; i++)
+	{
+		char szTitle[50];
+		((CPageVec *)((char *)this + 0x60))->Get(i)->vfunc109(szTitle, 50);
+		int n = strlen(szTitle);
+		if (!_strnicmp(pszName, szTitle, n))
+			((CPageVec *)((char *)this + 0x60))->Get(i)->vfunc46(a1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9390 size=0x51
 #include "vgui2__PropertySheet.h"
 

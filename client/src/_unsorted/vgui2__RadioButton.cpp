@@ -140,6 +140,39 @@ void vgui2::RadioButton::vfunc143(char state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c60e0 size=0x92
+#include "vgui2__RadioButton.h"
+struct ColorX { int c; };
+struct ISchemeX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4();
+	virtual ColorX *GetColor(ColorX *out, const char *name, ColorX def);
+	virtual ColorX *GetColor2(ColorX *out, const char *name);
+};
+struct ISchemeMgrX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual ISchemeX *GetIScheme(int h);
+};
+struct IKVX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual int GetInt(const char *name, int def);
+};
+ISchemeMgrX *sub_101ac8c0();
+struct RB { char pad[0xf4]; int m_nf4; int m_nf8; ColorX m_cfc; int m_n100; };
+void vgui2::RadioButton::vfunc75(int a)
+{
+	Button::vfunc75(a);
+	ISchemeX *pScheme = sub_101ac8c0()->GetIScheme(sub_101aa220());
+	ColorX t1, t2;
+	RB *p = (RB *)this;
+	p->m_cfc = *pScheme->GetColor(&t2, "BrightControlText", *pScheme->GetColor2(&t1, "ControlText"));
+	p->m_n100 = ((IKVX *)a)->GetInt("SubTabPosition", 0);
+	p->m_nf8 = vfunc30();
+	vfunc123(0, p->m_nf4, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6180 size=0x26
 #include "vgui2__RadioButton.h"
 namespace lifted {

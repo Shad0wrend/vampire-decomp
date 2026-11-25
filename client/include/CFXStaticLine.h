@@ -3,10 +3,12 @@
 // the destructor is slot 0 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "CClientSideEffect.h"
+#include "Vector.h"
 
 class CFXStaticLine : public CClientSideEffect
 {
 public:
+	CFXStaticLine(int a1, const Vector *start, const Vector *end, float width, float f5, const char *material, float f7);
 	virtual ~CFXStaticLine();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CFXStaticLine's own function

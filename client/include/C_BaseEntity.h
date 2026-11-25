@@ -9,6 +9,12 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	int sub_100a2450();
+	void sub_1011bd60(C_BaseEntity *other);
+	void sub_1011bdf0(C_BaseEntity *other);
+	bool sub_1011b290(int type);
+	void sub_1011b320(int type);
+	void sub_1011b3b0(int type);
 	void sub_100a2ee0();
 	void sub_100a2f50();
 	void sub_100a0450();
@@ -21,6 +27,7 @@ public:
 	bool sub_1009e0f0(int a, int b);
 	void sub_1009f8a0();
 	void sub_1009f780();
+	float sub_1009f190();
 	void *sub_1009f7f0(void *);
 	void sub_1011c7f0();
 	bool sub_1009f140(int mask);
@@ -28,6 +35,7 @@ public:
 	C_BaseEntity *sub_100a11a0();
 	void sub_1011ac90(void (C_BaseEntity::*thinkFunc)(), int a, int b);	// PhysicsDispatchThink: the two trailing ints are the rest of the 16-byte member pointer
 	void sub_100a2030(const void *);
+	void sub_100a2100(const QAngle &absAngles);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
 	void sub_1009f2e0(int a, int b);
@@ -139,7 +147,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual const Vector &vfunc53();
 	virtual char * vfunc54();
 	virtual int vfunc55(int);
-	virtual void vfunc56();
+	virtual const Vector &vfunc56();
 	virtual bool vfunc57(int, int, int);
 	virtual bool vfunc58();
 	virtual int vfunc59();
@@ -181,11 +189,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc95();
 	virtual void vfunc96(int, int, int, int);
 	virtual void vfunc97();
-	virtual void vfunc98();
+	virtual bool vfunc98();
 	virtual void vfunc99(int);
-	virtual void vfunc100();
+	virtual void vfunc100(int a);
 	virtual void vfunc101(int);
-	virtual void vfunc102();
+	virtual int vfunc102();
 	virtual void vfunc103(int);
 	virtual void vfunc104();
 	virtual void vfunc105();

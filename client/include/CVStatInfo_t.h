@@ -58,6 +58,7 @@ public:
 
 	int DefaultValue() { return m_default09c.sub_10161510(); }
 	bool sub_1005d6e0();
+	bool sub_1015be50();
 	const char *sub_1005d750();
 	CVStatInfo_t();	// 0x101fdaf0 (called through the stub at 0x1000dfb2): constructs the five records, the cost and the list, then scope trace and the plain fields
 	~CVStatInfo_t();	// 0x101fdc30 (called through the stub at 0x1000f0a6): scope trace around the free of the level table, frees the action pointer array (each action's part at +0x18 first), clears the fields, then the list at +0x10c (sub_101fd4c0) and the five records (+0x9c .. +0x4c, last first)
@@ -71,6 +72,8 @@ public:
 	bool sub_1015bcc0();
 	bool sub_1015bfe0(int arg);
 		// "CVStatInfo_t::IsRenewable": same shape, bit 3 of the flags, global at 0x1074e77c
+	int sub_1015c0a0(int arg);
+	int sub_1015c0e0(int arg);
 	int sub_1015c280(int arg);	// "CVStatInfo_t::Default": scope trace, then evaluates the fifth value record (+0x9c) for arg
 		// stub 0x10003152: evaluates a value record of the stat for arg (the caller picks the stat record by index)
 		// evaluates the stat's value record (stub 0x10003a08), used by MinSell

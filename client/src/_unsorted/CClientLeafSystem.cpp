@@ -110,6 +110,22 @@ void CClientLeafSystem::vfunc7(int idx, unsigned int *a, unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2770 size=0x68
+#include "CClientLeafSystem.h"
+struct IVf { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(void *, void *); };
+struct LSView { unsigned short sub_100d1e10(unsigned short); };
+// TARGET: CClientLeafSystem::vfunc2
+void CClientLeafSystem::vfunc2(unsigned short arg, int count, unsigned short *list)
+{
+    for (int i = 0; i < count; i++)
+        sub_100d2560(list[i], arg);
+    char *base = (char *)m_pData + (arg & 0xffff) * 0x34;
+    *(unsigned short *)(base + 0x16) = ((LSView *)this)->sub_100d1e10(arg);
+    char *item = (char *)m_pData + (arg & 0xffff) * 0x34;
+    (*(IVf **)item)->v19(item + 0x18, item + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2a10 size=0x25
 #include "CClientLeafSystem.h"
 namespace lifted {

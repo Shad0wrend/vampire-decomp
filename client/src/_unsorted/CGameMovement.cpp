@@ -237,6 +237,29 @@ char CGameMovement::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9670 size=0x98
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+struct GlobalsX { char pad[0x10]; float frametime; };
+extern GlobalsX *g_102b8494;
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+// TARGET: CGameMovement::vfunc10
+void CGameMovement::vfunc10(Vector &wishdir, float wishspeed, float accel)
+{
+    if (!vfunc9())
+        return;
+    Vector &vel = PLAYER->m_vecVelocity;
+    float t1 = wishdir.x; float addspeed = wishspeed - (vel.z * wishdir.z + vel.y * wishdir.y + t1 * vel.x);
+    if (addspeed <= 0)
+        return;
+    float t0 = g_102b8494->frametime * m_fieldA0 * wishspeed; float accelspeed = t0 * accel;
+    if (accelspeed > addspeed)
+        accelspeed = addspeed;
+    for (int i = 0; i < 3; ++i)
+        PLAYER->m_vecVelocity[i] += wishdir[i] * accelspeed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eaa70 size=0x77
 #include "CGameMovement.h"
 

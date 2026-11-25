@@ -12,6 +12,7 @@ class Label : public vgui2::Panel
 public:
 	Label(vgui2::Panel *, const char *, const char *);
 	void sub_101aa230(void *);
+	void sub_101b2610();
 	void sub_101a9920(int *, int *);
 	virtual ~Label();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -59,7 +60,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc130(const char *);
 	virtual void vfunc131();
 	virtual int vfunc132();
-	virtual void vfunc133();
+	virtual void vfunc133(int, int, int, int, int, int);
 	virtual void vfunc134();
 	virtual void vfunc135(int);
 	virtual int vfunc136(int);

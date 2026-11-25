@@ -2,6 +2,7 @@
 // declared: its bases, the game's vtable slots it adds or fills on the entity chain (vtable-slot layer, 2026-11-22)
 #pragma once
 #include "C_BaseEntity.h"
+#include "CBaseHandle.h"
 
 struct Vector3;
 struct EntV;
@@ -20,10 +21,16 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc19();
 	virtual void vfunc21();
 	virtual void vfunc37();
-	virtual void vfunc56();
+	virtual const Vector &vfunc56();
 	virtual int vfunc113(int, int);
 	// the slots C_Beam adds to its base's vtable: 120-121, vfuncK at slot K
 	virtual void vfunc120(const char *szModelName);
 	virtual int vfunc121();
-	char m_pad0014[0x4b8 - 0x14];
+	int m_unk0014[(0x424 - 0x14) / 4];
+	int m_nBeamType;
+	CBaseHandle m_hStart;
+	int m_unk042c[(0x450 - 0x42c) / 4];
+	int m_nAttach;
+	int m_unk0454[(0x4b8 - 0x454) / 4];
+	const Vector &sub_10080650();
 };

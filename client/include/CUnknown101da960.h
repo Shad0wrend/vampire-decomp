@@ -15,6 +15,7 @@ public:
 
 	const char *sub_10146650(int index);
 	bool sub_10146660(int index);	// true when the entry exists (called through the stub at 0x1000d788)
+	bool sub_101466c0(class VKeyValuesInterface *pKV);
 	void sub_10146750();	// prints "[AffectsFilter]:" and every existing entry (0..14) with Msg
 		// whether the filter lets pChar (acting on pTarget) through
 };

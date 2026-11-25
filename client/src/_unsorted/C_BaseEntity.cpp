@@ -584,6 +584,56 @@ bool C_BaseEntity::vfunc57(int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fd30 size=0xf7
+#include <math.h>
+#include "C_BaseEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct IVModelInfo_104a57f8
+{
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual void v4() = 0;
+	virtual void v5() = 0;
+	virtual int GetModelType(const model_t *model) const = 0;
+	virtual void v7() = 0;
+	virtual bool IsTranslucent(const model_t *model) const = 0;
+};
+
+extern IVModelInfo_104a57f8 *g_104a57f8;
+
+struct CBaseEntityModelView
+{
+	char pad[0x40];
+	const model_t *m_model;
+};
+
+bool C_BaseEntity::vfunc79()
+{
+	if (g_104a57f8->GetModelType(((CBaseEntityModelView *)this)->m_model) != 1)
+		return false;
+
+	if (IsTransparent())
+		return false;
+
+	if (GetAbsOrigin().x != 0.0f || GetAbsOrigin().y != 0.0f || GetAbsOrigin().z != 0.0f)
+		return false;
+
+	if (fmod(GetAbsAngles().x, 360.0) != 0.0 ||
+		fmod(GetAbsAngles().y, 360.0) != 0.0 ||
+		fmod(GetAbsAngles().z, 360.0) != 0.0)
+		return false;
+
+	if (g_104a57f8->IsTranslucent(((CBaseEntityModelView *)this)->m_model))
+		return false;
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fe30 size=0x7a
 #include "C_BaseEntity.h"
 
@@ -958,6 +1008,27 @@ int C_BaseEntity::vfunc17()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a28b0 size=0x4c
+#include "C_BaseEntity.h"
+#include "CClassMap.h"
+CClassMap *sub_100cde00();
+struct IClassMapView1 { virtual void v0(); virtual const char *Lookup(int id); };
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+struct SClientClass { int m_unk0; int m_unk4; int m_ClassID; };
+char *C_BaseEntity::vfunc114()
+{
+	static char outstring[256];
+	outstring[0] = 0;
+	SClientClass *pClass = (SClientClass *)vfunc17();
+	if (pClass) {
+		const char *p = ((IClassMapView1 *)sub_100cde00())->Lookup(pClass->m_ClassID);
+		if (p && p[0])
+			Q_snprintf(outstring, sizeof(outstring), "%s", p);
+	}
+	return outstring;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2d40 size=0x2a
 #include "C_BaseEntity.h"
 namespace lifted {
@@ -1278,5 +1349,33 @@ void __fastcall sub_1011ac60(S_1011ac60 *self, int edx, bool b)
 	self->f = b;
 	if (b)
 		self->cnt++;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1011b920 size=0x79
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+// TARGET: C_BaseEntity::vfunc98
+bool C_BaseEntity::vfunc98()
+{
+	ScopeTrace t("CBaseEntity::IsCurrentlyTouching", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	if (sub_1011b290(1))
+		return true;
+	return false;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1011c520 size=0x9d
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+// TARGET: C_BaseEntity::vfunc102
+int C_BaseEntity::vfunc102()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsSolidMaskForEntity", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	if (sub_100a2450() & 0x2000)
+		return 0x202400b;
+	if (*(int *)((char *)this + 0x3f8))
+		return 0x201400b;
+	return 0x200400b;
 }
 // END FUNCTION

@@ -17,6 +17,7 @@ public:
 			return false;
 		return !m_bSuppressEvent;
 	}
+	void vfunc10(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16);
 	void vfunc24(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
 	void vfunc27(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
 	void vfunc40(int filter, int a1, int a2, int a3, int a4, int a5, int a6);
@@ -33,6 +34,7 @@ public:
 	void vfunc28(int filter, int delay, int pos, int dir, int extra);
 	void vfunc29(int filter, int delay, int pos);
 	void vfunc2(int filter, int delay, int pos, int dir, int extra);
+	void vfunc36(int filter, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
 	void vfunc30(int filter, int delay, int pos, int dir);
 	void vfunc5(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc12(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
@@ -43,4 +45,7 @@ public:
 	void vfunc41(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc43(int filter, int a, int b, int c, int d, int e);
 	void vfunc15(int, int, int, int, int, int, int, int, int, int);
+	void vfunc20(int, int, int, int, int, int, int, int, int, int);
+	void vfunc16(int filter, int delay, int pos, int dir, int extra);	// as in C_TempEntsSystem (transplant)
+	void vfunc39(int filter, int delay, int pos, int dir, int extra);	// as in C_TempEntsSystem (transplant)
 };

@@ -11,6 +11,42 @@ CHUDSprite *pcd_emit_10059330(const CHUDSprite &other) { return new CHUDSprite(o
 // TARGET: ??_GCHUDSprite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10059350 size=0x87
+#include "CHUDSprite.h"
+#include "ScopeTrace.h"
+struct HudObj59350
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12();
+	virtual void v13(int a);
+};
+struct HudMgr59350
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(void *p);
+};
+extern HudMgr59350 *g_104a57ec;
+// TARGET: CHUDSprite::~CHUDSprite
+CHUDSprite::~CHUDSprite()
+{
+	ScopeTrace trace("CHUDSprite::~CHUDSprite", g_102de300, g_102de300);
+	if (m_unk04)
+	{
+		((HudObj59350 *)m_unk04)->v13(0);
+		g_104a57ec->v40((void *)m_unk04);
+		m_unk04 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d7d0 size=0x74
 #include "CHUDSprite.h"
 #include "ScopeTrace.h"

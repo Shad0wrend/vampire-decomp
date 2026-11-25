@@ -13,4 +13,27 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc7();
     virtual bool vfunc9();
     float sub_1010e600(float fadein, float fadeout, float hold, float localTime);
+    int sub_1010e6a0(float f, int width, int totalWidth);
+    int sub_1010e740(float f, int totalHeight);
+    void sub_1010e7f0();
+    void sub_1010e9b0();
+    void sub_1010eb20(struct client_textmessage_s *pMessage, float time);
+
+    char m_pad10[0x80];
+    struct client_textmessage_s *m_pMessage;
+    float m_time;
+    int m_x;
+    int m_y;
+    int m_totalWidth;
+    int m_totalHeight;
+    int m_width;
+    int m_lines;
+    int m_lineLength;
+    int m_length;
+    int m_r;
+    int m_g;
+    int m_b;
+    int m_text;
+    int m_fadeBlend;
+    float m_charTime;
 };

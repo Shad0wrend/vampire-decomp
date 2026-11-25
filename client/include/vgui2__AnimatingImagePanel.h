@@ -17,7 +17,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc101();
     virtual int vfunc102();
     // the slots AnimatingImagePanel adds to its base's vtable: 107-108, vfuncK at slot K
-    virtual void vfunc107();
+    virtual void vfunc107(void *pImage);
     virtual void vfunc108(const char *, int);
 };
 }

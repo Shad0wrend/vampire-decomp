@@ -362,6 +362,64 @@ C_BaseCombatWeapon *C_BasePlayer::vfunc165(int slot, int pos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8bc0 size=0x87
+#include "C_BasePlayer.h"
+struct CEntInfo8bc0 { void *m_pEntity; int m_Serial; int m_unk; };
+struct CEntList8bc0 { int m_unk; CEntInfo8bc0 m_Ent[0x2000]; };
+extern CEntList8bc0 *g_102b8e98;
+static inline void *HandleToEnt(unsigned long h)
+{
+	if (h != 0xffffffff)
+	{
+		CEntInfo8bc0 *e = &g_102b8e98->m_Ent[h & 0x1fff];
+		if (e->m_Serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+void C_BasePlayer::vfunc172(C_BaseCombatWeapon *pWeapon)
+{
+	if (HandleToEnt(*(unsigned long *)((char *)this + 0x1a08)) == pWeapon)
+		vfunc168(0);
+	if (HandleToEnt(*(unsigned long *)((char *)this + 0x1a0c)) == pWeapon)
+		*(unsigned long *)((char *)this + 0x1a0c) = 0xffffffff;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a9920 size=0x86
+#include "C_BasePlayer.h"
+#include "ehandle.h"
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
+struct IName223 { V100(p) V100(q) V10(r) V10(s) virtual void a0(); virtual void a1(); virtual void a2(); virtual const char *GetName(); };
+struct HandleVec { CBaseHandle *m_pMem; int m_alloc; int m_grow; int m_size; };
+extern HandleVec g_1049d8f8;
+extern HandleVec g_1049d978;
+extern "C" int _strcmpi(const char *, const char *);
+static inline IName223 *ResolveH(const CBaseHandle &r)
+{
+	if (r.m_Index != 0xffffffff) {
+		CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[r.m_Index & 0x1fff];
+		if (e.m_SerialNumber == (int)(r.m_Index >> 13))
+			return (IName223 *)e.m_pEntity;
+	}
+	return 0;
+}
+// TARGET: C_BasePlayer::vfunc194
+C_BaseEntity *C_BasePlayer::vfunc194(const char *pName)
+{
+	HandleVec *pVec = &g_1049d8f8;
+	if (*(int *)((char *)this + 0x1624))
+		pVec = &g_1049d978;
+	for (int i = 0; i < pVec->m_size; i++) {
+		IName223 *pEnt = ResolveH(*(pVec->m_pMem + i));
+		if (!_strcmpi(pEnt->GetName(), pName))
+			return (C_BaseEntity *)pEnt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a99b0 size=0x1e
 #include "C_BasePlayer.h"
 namespace lifted {

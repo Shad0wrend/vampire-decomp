@@ -30,6 +30,19 @@ void SoundCtl_101342e0::sub_101342e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101349b0 size=0x28
+#include "CSoundControllerImp.h"
+#include "CSoundList101340a0.h"
+void CSoundControllerImp::vfunc5(void *pSound)
+{
+	if (pSound) {
+		((SoundV_10133a20 *)pSound)->sub_10133a20();
+		vfunc4(pSound);
+		((CSoundList101340a0 *)this)->sub_101340a0((SoundV_10133a20 *)pSound);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101349e0 size=0xc2
 #include "Pool.h"
 #include "CBaseHandle.h"

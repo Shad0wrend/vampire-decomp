@@ -18,7 +18,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3(void *pSound, float executeDeltaTime, int command, float commandTime, float value);	// CommandAdd
 	virtual void vfunc4(void *pSound);	// CommandClear
-	virtual void vfunc5();
+	virtual void vfunc5(void *pSound);
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();

@@ -3,6 +3,7 @@
 // the destructor is slot 20 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "vgui2__IClientPanel.h"
+#include "CUtlVectorDel4.h"
 
 struct CHUDSprite10059620 { void sub_10059620(int, int, int, int); };
 namespace vgui2
@@ -13,6 +14,8 @@ public:
 	static void operator delete(void *pMem);
 	Panel(Panel *parent, const char *name);
 	void sub_101ab300(bool, bool);
+	void sub_101aab60(int);
+	void sub_101aab90(int);
 	void sub_101ab2d0();
 	void sub_101aa260(int a, int b);
 	void sub_101a9810(const char *pszName);
@@ -24,16 +27,18 @@ public:
 	void sub_101aa0a0(int);
 	int sub_101a99f0(int);
 	void sub_101aa6f0(int);
+	void sub_101aa720(int);
 	int m_unk4[(0x18 - 4) / 4];
 	bool m_b18;
 	char m_c19; char m_c1a; char m_c1b;
 	int m_unk1c[(0x58 - 0x1c) / 4];
 	void *m_p58;
-	int m_unk5c[(0x70 - 0x5c) / 4];
+	union { int m_unk5c[(0x70 - 0x5c) / 4]; char *m_psz5c; struct { int m_unk5c_a; int m_unk60; char m_bTree64; char m_unk65; char m_unk66; char m_unk67; CUtlVectorDel4 *m_pTree68; }; };
 	int m_i70;
 	int m_i74;
 	int m_unk78;
 	void sub_101a9920(int *, int *);
+	void sub_101a9950(int, int, int, int);
 	void sub_101ab0d0(int *wide, int *tall);
 	void sub_101ab4e0(int);
 	int m_w7c;
@@ -48,7 +53,13 @@ public:
 	int m_n0b8;
 	int m_n0bc;
 	CHUDSprite10059620 *m_pSprite;
-	int m_unk0c4[(0x170 - 0xc4) / 4];
+	int m_unk0c4[(0xdc - 0xc4) / 4];
+	unsigned int m_nFgColor;
+	unsigned int m_nBgColor;
+	int m_unk0e4[(0xec - 0xe4) / 4];
+	char m_c0ec; char m_b0ed; char m_c0ee; char m_c0ef;
+	int m_unk0f0[(0x170 - 0xf0) / 4];
+	void sub_101aaaa0(int);
 	void sub_101a98c0(int *, int *);
 	int sub_101ab1a0();
 	void sub_101a9890(int, int);
@@ -82,7 +93,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc24(int, int, int);
 	virtual bool vfunc25(int, int);
 	virtual void vfunc26();
-	virtual void vfunc27();
+	virtual void vfunc27(int *, int *);
 	virtual int vfunc28(int);
 	virtual int vfunc29(int);
 	virtual int vfunc30();

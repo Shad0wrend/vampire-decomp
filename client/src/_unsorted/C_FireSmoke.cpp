@@ -60,3 +60,14 @@ C_FireSmoke *pcd_emit_100b5490(const C_FireSmoke &other) { return new C_FireSmok
 
 // TARGET: ??_GC_FireSmoke@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100b54f0 size=0x95
+#include "C_FireSmoke.h"
+C_FireSmoke::~C_FireSmoke()
+{
+	if (m_p2800) {
+		delete m_p2800;
+		m_p2800 = 0;
+	}
+}
+// END FUNCTION

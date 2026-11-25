@@ -13,6 +13,13 @@ struct SimpleParticleAux_t
 	float m_fl38;
 };
 
+struct SimpleParticleC_t
+{
+	char m_unk00[0x30];
+	unsigned char m_uchColor[3];
+};
+
+class Vector;
 class CSimpleEmitter : public CParticleEffect
 {
 public:
@@ -21,4 +28,5 @@ public:
 	float vfunc8(struct SimpleParticle8 *p, int unused);
 	float vfunc9(struct XSP *p, int unused);
 	virtual float vfunc10(SimpleParticleAux_t *p, float dt);
+	Vector vfunc12(const SimpleParticleC_t *p, float unused);
 };

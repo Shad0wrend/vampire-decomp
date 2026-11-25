@@ -1,8 +1,7 @@
 // IClientThinkable: client.dll's IClientThinkable as the game's vtables show it (client entity layer, 2026-11-22); slot numbers are the game's
 // Names are Source 2003/2004's where the game's code in that slot does what Source's function does; vfuncN
 // (primary chain) and <Stem>_vfuncN (a secondary interface: a plain vfuncN would merge with another
-// interface's slot N in a class deriving from both): name unknown. Evidence: G:/decomp/projects/
-// vtmb-client-experiments/2026-11-22-client-entity-layer/slotmap.py
+// interface's slot N in a class deriving from both): name unknown.
 #pragma once
 
 class IClientThinkable

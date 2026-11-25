@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100ce2b0 size=0x8b
+#include "CClassMap.h"
+#include <string.h>
+void *CClassMap::vfunc2(const char *classname)
+{
+	for (int i = 0; i < m_NumElements; i++)
+	{
+		const char *pszName = (const char *)&m_Memory[(unsigned short)i] + 0xc;
+		if (pszName && !strcmp(pszName, classname))
+		{
+			if (*(void *(**)())(pszName + 0x80))
+				return (*(void *(**)())(pszName + 0x80))();
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce340 size=0x82
 #include <string.h>
 #include "CClassMap.h"

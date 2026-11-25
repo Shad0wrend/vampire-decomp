@@ -19,6 +19,43 @@ CTextMessagePanel *pcd_emit_1016a770(const CTextMessagePanel &other) { return ne
 // TARGET: ??_GCTextMessagePanel@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1016a7a0 size=0x88
+#include "CTextMessagePanel.h"
+struct ABC { int a, b, c, sum; };
+struct ISurfV {
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void f8(); virtual void f9(); virtual void f10(); virtual void f11(); virtual void f12(); virtual void f13(); virtual void f14(); virtual void f15();
+	virtual void f16(); virtual void f17(); virtual void f18(); virtual void f19(); virtual void f20(); virtual void f21(); virtual void f22(); virtual void f23();
+	virtual void f24(); virtual void f25(); virtual void f26(); virtual void f27(); virtual void f28(); virtual void f29(); virtual void f30(); virtual void f31();
+	virtual void f32(); virtual void f33(); virtual void f34(); virtual void f35(); virtual void f36(); virtual void f37(); virtual void f38(); virtual void f39();
+	virtual void f40(); virtual void f41(); virtual void f42(); virtual void f43(); virtual void f44(); virtual void f45(); virtual void f46(); virtual void f47();
+	virtual void f48(); virtual void f49(); virtual void f50(); virtual void f51(); virtual void f52(); virtual void f53(); virtual void f54(); virtual void f55();
+	virtual void f56(); virtual void f57(); virtual void f58(); virtual void f59(); virtual void f60(); virtual void f61(); virtual void f62();
+	virtual int SetFont(int font);
+	virtual void GetCharABCwide(int font, int ch, int *a, int *b, int *c);
+};
+extern ISurfV *sub_101ac8d0();
+int CTextMessagePanel::vfunc113(ABC *table, int font)
+{
+	if (!font) {
+		font = *(int *)((char *)this + 0x58);
+		if (!font)
+			return 0;
+	}
+	if (table) {
+		for (int i = 0; i < 256; i++) {
+			int a, b, c;
+			sub_101ac8d0()->GetCharABCwide(font, (char)i, &a, &b, &c);
+			table[i].a = a;
+			table[i].b = b;
+			table[i].c = c;
+			table[i].sum = a + b + c;
+		}
+	}
+	return sub_101ac8d0()->SetFont(font);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a8c0 size=0x20
 #include "CTextMessagePanel.h"
 namespace lifted {

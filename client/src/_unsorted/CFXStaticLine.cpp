@@ -1,12 +1,37 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100e6580 size=0x82
+#include "Vector.h"
+#include "CFXStaticLine.h"
+struct IMatSys25 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual struct IMatObj *Find(const char *name, int a, int b); };
+struct IMatObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void Ref(int a); };
+extern IMatSys25 *g_104a57ec;
+CFXStaticLine::CFXStaticLine(int a1, const Vector *start, const Vector *end, float width, float f5, const char *material, float f7)
+	: CClientSideEffect(a1)
+{
+	if (g_104a57ec) {
+		IMatObj *mat = g_104a57ec->Find(material, 0, 1);
+		*(IMatObj **)((char *)this + 0xc) = mat;
+		mat->Ref(0);
+		*(Vector *)((char *)this + 0x10) = *start;
+		*(Vector *)((char *)this + 0x1c) = *end;
+		*(float *)((char *)this + 0x28) = f7;
+		*(float *)((char *)this + 0x2c) = f5;
+		*(float *)((char *)this + 0x30) = width * 0.5f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6610 size=0x1e
 #include "CFXStaticLine.h"
 
 // VC6 writes CFXStaticLine's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CFXStaticLine *pcd_emit_100e6610() { return new CFXStaticLine; }
+CFXStaticLine *pcd_emit_100e6610(const CFXStaticLine &other) { return new CFXStaticLine(other); }
 
 // TARGET: ??_GCFXStaticLine@@UAEPAXI@Z
 // END FUNCTION

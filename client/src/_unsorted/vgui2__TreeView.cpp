@@ -237,6 +237,125 @@ void vgui2::TreeView::vfunc111(int itemIndex, bool bPromoteChildren)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd5d0 size=0x9e
+#include "vgui2__TreeView.h"
+#include "CUtlLinkedList12.h"
+struct TVView112 { char pad0[0x6c]; int m6c; char pad1[0x78 - 0x70]; CUtlLinkedList12 m_list; };
+void vgui2::TreeView::vfunc112()
+{
+	TVView112 *v = (TVView112 *)this;
+	for (int i = 0; i < v->m_list.m_NumAlloced; i++) {
+		if (v->m_list.IsValidIndex(i)) {
+			vgui2::Panel *p = (vgui2::Panel *)v->m_list.m_pMemory[i].m_pData;
+			if (p) delete p;
+		}
+	}
+	if (v->m_list.m_NumAlloced) {
+		int prev = -1;
+		for (int i = v->m_list.m_NumAlloced - 1; i >= 0; i--) {
+			v->m_list.m_pMemory[i].m_Next = prev;
+			v->m_list.m_pMemory[i].m_Previous = i;
+			prev = i;
+		}
+		v->m_list.m_FirstFree = 0;
+		v->m_list.m_Head = -1;
+		v->m_list.m_Tail = -1;
+		v->m_list.m_ElementCount = 0;
+	}
+	v->m6c = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bd670 size=0x9a
+#include "vgui2__TreeView.h"
+#include "CUtlLinkedList12.h"
+#include "vgui2__TextEntry.h"
+#define D8(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7();
+struct Dat101bd670 {
+	D8(a) virtual void b0(); virtual void b1(); virtual void b2();
+	virtual const char *v11(const char *key, const char *def);
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5();
+	virtual int v18();
+};
+struct Lbl101bd670 {
+	D8(a) D8(b) D8(c) D8(d) D8(e) D8(f) D8(g) D8(h) D8(i) D8(j) D8(k) D8(l) D8(m)
+	virtual void n0(); virtual void n1(); virtual void n2();
+	virtual void s107(const char *);
+};
+struct Rel101bd670 { D8(a) D8(b) virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void v21(); };
+struct Node101bd670 {
+	D8(a) D8(b) D8(c) D8(d) D8(e) D8(f) D8(g)
+	virtual void h0();
+	virtual int v57(int, int);
+	char pad[0x54]; Rel101bd670 *m58; int pad2; int pad3; Lbl101bd670 *m64;
+};
+struct TVV101bd670 {
+	char pad0[0x78];
+	CUtlLinkedList12 m_list;
+	Node101bd670 *Get(int i) { return (Node101bd670 *)m_list.m_pMemory[i].m_pData; }
+	bool Valid(int i) { return m_list.IsValidIndex(i); }
+};
+bool vgui2::TreeView::vfunc113(int idx, int data)
+{
+	TVV101bd670 *v = (TVV101bd670 *)this;
+	if (!v->Valid(idx))
+		return 0;
+	Node101bd670 *n = v->Get(idx);
+	if (n->m58) n->m58->v21();
+	Dat101bd670 *d = (Dat101bd670 *)data;
+	n->m58 = (Rel101bd670 *)d->v18();
+	const char *t = d->v11("Text", "");
+	n->m64->s107(t);
+	((vgui2::TextEntry *)n->m64)->sub_101b1790();
+	n->v57(0, 0);
+	vfunc57(0, 0);
+	return 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bd710 size=0x5f
+#include "vgui2__TreeView.h"
+namespace vgui2 {
+// TARGET: vgui2::TreeView::vfunc115
+void TreeView::vfunc115(int p, char b)
+{
+	if (m_pTree68)
+	{
+		if (m_bTree64)
+			delete m_pTree68;
+	}
+	m_pTree68 = (CUtlVectorDel4 *)p;
+	m_bTree64 = b;
+}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bd780 size=0x89
+#include "vgui2__TreeView.h"
+struct TVNode { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void RequestFocus(int); };
+struct TVEntry { TVNode *m_pData; int m_Previous; int m_Next; };
+struct KVx { KVx *sub_101b56c0(const char *, const char *, int); };
+extern void *sub_101b6840(int);
+struct TVList {
+	TVEntry *m_pMemory; int m_u4[(0x94 - 0x7c) / 4]; int m_NumAlloced;
+	bool IsValidIndex(int i) const { return (i < m_NumAlloced) && (i >= 0) && ((m_pMemory[i].m_Previous != i) || (m_pMemory[i].m_Next == i)); }
+	TVEntry &Element(int i) { return m_pMemory[i]; }
+};
+struct TVView { char pad[0x78]; TVList m_list; int m_u98; TVNode *m_pSel; };
+void vgui2::TreeView::vfunc116(int itemIndex)
+{
+	TVView *t = (TVView *)this;
+	if (!t->m_list.IsValidIndex(itemIndex))
+		return;
+	t->m_pSel = t->m_list.Element(itemIndex).m_pData;
+	t->m_pSel->RequestFocus(0);
+	vfunc121(itemIndex);
+	KVx *p = (KVx *)sub_101b6840(0x1c);
+	vfunc43(p ? p->sub_101b56c0("TreeViewItemSelected", "itemIndex", itemIndex) : 0);
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd810 size=0x12
 #include "vgui2__TreeView.h"
 int vgui2::TreeView::vfunc117()

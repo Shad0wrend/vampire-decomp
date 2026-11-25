@@ -497,6 +497,31 @@ void vgui2::Frame::vfunc95()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9610 size=0x84
+#include "vgui2__Frame.h"
+#include "vgui2__KeyValues.h"
+struct ISurfV {
+	virtual int s0(); virtual int s1(); virtual int s2(); virtual int s3(); virtual int s4(); virtual int s5(); virtual int s6(); virtual int s7(); virtual int s8(); virtual int s9();
+	virtual int s10(); virtual int s11(); virtual int s12(); virtual int s13(); virtual int s14(); virtual int s15(); virtual int s16(); virtual int s17(); virtual int s18(); virtual int s19();
+	virtual int s20(); virtual int s21(); virtual int s22(); virtual int s23(); virtual int s24(); virtual int s25(); virtual int s26(); virtual int s27(); virtual int s28(); virtual int s29();
+	virtual int s30(); virtual int s31(); virtual int s32(); virtual int s33(); virtual int s34(); virtual int s35(); virtual int s36(); virtual int s37(); virtual int s38(); virtual int s39();
+	virtual int s40(); virtual int s41(); virtual int s42(); virtual int s43(); virtual int s44();
+	virtual void FlashWindow(int panel, bool flash);
+};
+ISurfV *sub_101ac8d0();
+// TARGET: vgui2::Frame::vfunc143
+void vgui2::Frame::vfunc143()
+{
+	if (*(bool *)((char *)this + 0xc8)) {
+		*(bool *)((char *)this + 0xc9) = true;
+		sub_101ac8d0()->FlashWindow(vfunc0(), *(bool *)((char *)this + 0xc9));
+		*(bool *)((char *)this + 0xc9) = !*(bool *)((char *)this + 0xc9);
+		vgui2::KeyValues *kv = new vgui2::KeyValues("FlashWindow");
+		vfunc23(this, kv, (void *)0x3fe66666);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b96b0 size=0x16
 #include "vgui2__Frame.h"
 namespace lifted {

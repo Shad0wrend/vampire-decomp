@@ -62,6 +62,41 @@ void CMoveHelperClient::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f3f0 size=0x8e
+#include "CMoveHelperClient.h"
+#include "CWaterEnum.h"
+struct Eng_1010f3f0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual int GetPointContents(int, const Vector &);
+};
+struct Part_1010f3f0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void Enum(int mask, const Vector &pt, int, CWaterEnum *);
+};
+extern Eng_1010f3f0 *g_104a57d4;
+extern Part_1010f3f0 *g_104a5808;
+
+int CMoveHelperClient::vfunc22(const Vector &pt)
+{
+	int ent = -1;
+	if (g_104a57d4->GetPointContents(0, pt) & 0x4030)
+		return 0;
+	CWaterEnum we;
+	we.m_vecPoint = pt;
+	we.m_pEntIndex = &ent;
+	we.m_nContents = 0;
+	g_104a5808->Enum(4, pt, 0, &we);
+	if (!(we.m_nContents & 0x4030))
+		return -1;
+	return ent;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f530 size=0x7b
 #include "Vector.h"
 #include "CWaterEnum.h"

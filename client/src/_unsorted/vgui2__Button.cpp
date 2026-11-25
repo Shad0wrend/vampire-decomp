@@ -184,6 +184,68 @@ void vgui2::Button::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3c40 size=0x7e
+#include "vgui2__Button.h"
+struct BtnColor {
+	unsigned char r, g, b, a;
+};
+struct BtnView {
+	char pad[0xd4];
+	BtnColor m_c1;
+	BtnColor m_c2;
+};
+#pragma warning(disable:4716)
+// TARGET: ?vfunc153@Button@vgui2@@UAEHII@Z
+int vgui2::Button::vfunc153(unsigned int c1, unsigned int c2)
+{
+	BtnView *v = (BtnView *)this;
+	BtnColor *p1 = (BtnColor *)&c1;
+	BtnColor *p2 = (BtnColor *)&c2;
+	if (!(v->m_c1.r == p1->r && v->m_c1.g == p1->g && v->m_c1.b == p1->b && v->m_c1.a == p1->a
+		&& v->m_c2.r == p2->r && v->m_c2.g == p2->g && v->m_c2.b == p2->b && v->m_c2.a == p2->a))
+	{
+		*(unsigned int *)&v->m_c1 = c1;
+		*(unsigned int *)&v->m_c2 = c2;
+		return vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b3cc0 size=0x7e
+#include "vgui2__Button.h"
+void vgui2::Button::vfunc154(unsigned int a, unsigned int b)
+{
+	unsigned char *pa = (unsigned char *)&a;
+	unsigned char *pb = (unsigned char *)&b;
+	unsigned char *fg = (unsigned char *)&m_nFgColor;
+	unsigned char *bg = (unsigned char *)&m_nBgColor;
+	if (!(fg[0] == pa[0] && fg[1] == pa[1] && fg[2] == pa[2] && fg[3] == pa[3] &&
+		bg[0] == pb[0] && bg[1] == pb[1] && bg[2] == pb[2] && bg[3] == pb[3])) {
+		m_nBgColor = b;
+		m_nFgColor = a;
+		vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b3d40 size=0x7e
+#include "vgui2__Button.h"
+struct Color4 { unsigned char r, g, b, a; };
+void vgui2::Button::vfunc155(unsigned int a, unsigned int b)
+{
+	Color4 &ca = *(Color4 *)&a;
+	Color4 &cb = *(Color4 *)&b;
+	Color4 &c1 = *(Color4 *)((char *)this + 0xe4);
+	Color4 &c2 = *(Color4 *)((char *)this + 0xe8);
+	if (c1.r == ca.r && c1.g == ca.g && c1.b == ca.b && c1.a == ca.a &&
+	    c2.r == cb.r && c2.g == cb.g && c2.b == cb.b && c2.a == cb.a)
+		return;
+	*(unsigned int *)((char *)this + 0xe4) = a;
+	*(unsigned int *)((char *)this + 0xe8) = b;
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3dc0 size=0x19
 #include "vgui2__Button.h"
 namespace lifted {
@@ -421,6 +483,26 @@ virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); 
 void __fastcall sub_101b42c0(V *self, int edx) { self->v87(); }
 // END FUNCTION
 
+// FUNCTION: 0x101b42d0 size=0x83
+#include "vgui2__Button.h"
+struct IVInput { virtual void v0(); virtual void SetMouseCapture(int); virtual void v2(); virtual void v3(); virtual int GetFocus(); };
+IVInput *sub_101ac8b0();
+// TARGET: vgui2::Button::vfunc89
+void vgui2::Button::vfunc89(int a)
+{
+	if (vfunc146())
+		sub_101ac8b0()->SetMouseCapture(0);
+	if (vfunc149(a)) {
+		if (vfunc47()) {
+			if (vfunc0() == sub_101ac8b0()->GetFocus() || *(bool *)((char *)this + 0xbe))
+				vfunc150();
+		}
+		vfunc143(0);
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4360 size=0x3f
 #include "vgui2__Button.h"
 namespace lifted {
@@ -449,6 +531,24 @@ void vgui2::Button::vfunc94(int code) {
  }
  *((char *)this + 0xbe) = 0;
  vfunc138(0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b43f0 size=0x8c
+#include "vgui2__Button.h"
+struct SurfV11 {
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void f8(); virtual void f9(); virtual void f10();
+	virtual void SetColor(int r, int g, int b, int a);
+};
+extern SurfV11 *sub_101ac8d0();
+void vgui2::Button::vfunc163(int x0, int y0, int x1, int y1)
+{
+	sub_101ac8d0()->SetColor(0, 0, 0, 255);
+	vfunc133(x0, y0, x1, y0 + 1, 1, 1);
+	vfunc133(x0, y0, x0 + 1, y1, 1, 1);
+	vfunc133(x0, y1 - 1, x1, y1, 1, 1);
+	vfunc133(x1 - 1, y0, x1, y1, 1, 1);
 }
 // END FUNCTION
 

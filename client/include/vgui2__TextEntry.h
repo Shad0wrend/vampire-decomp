@@ -17,6 +17,7 @@ public:
 	void sub_101ae490(int);
 	char sub_101ae650(int a, int b);
 	void sub_101b0650();
+	void sub_101b1790();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextEntry's own function
 	virtual void vfunc11(int, int);
@@ -92,13 +93,13 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc151(int, int);
 	virtual void vfunc152();
 	virtual void vfunc153();
-	virtual void vfunc154();
-	virtual void vfunc155();
+	virtual void vfunc154(int, int);
+	virtual bool vfunc155(int, int);
 	virtual void vfunc156();
 	virtual int vfunc157();
 	virtual bool vfunc158(int, int);
 	virtual void vfunc159(int, int *, int *);
-	virtual void vfunc160();
+	virtual int vfunc160(int, int);
 	virtual void vfunc161(int *, int *);
 	virtual int vfunc162();
 	virtual void vfunc163();

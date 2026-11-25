@@ -27,7 +27,7 @@ struct CUnknown101d7520Sub	// the object embedded at +0x18 of an entry and at +0
 
 struct CUnknown101d7520Element	// one element of a rule (the array at +0xc of the rule)
 {
-		// dumps the element (stub 0x100145a1)
+	void sub_101401a0();	// dumps the element (stub 0x100145a1)
 };
 
 struct CUnknown101d7520Rule	// one of the rules of an entry (the array at +0xc of the entry)

@@ -458,6 +458,36 @@ void vgui2::Menu::vfunc136()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bff90 size=0x9f
+#include "vgui2__Menu.h"
+struct ColX { unsigned char r, g, b, a; ColX() {} ColX(int R, int G, int B, int A) { r = R; g = G; b = B; a = A; } };
+struct ISchemeX { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual ColX GetColor(const char *, ColX); };
+struct ISchemeMgrX { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual ISchemeX *GetIScheme(int); };
+struct ISurfY {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void SetColor(ColX);
+	virtual void v11();
+	virtual void FillRect(int, int, int, int);
+};
+struct IMenuItemsX { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual bool v22(); };
+ISchemeMgrX *sub_101ac8c0();
+ISurfY *sub_101ac8d0();
+// TARGET: vgui2::Menu::vfunc98
+void vgui2::Menu::vfunc98()
+{
+	if ((*(IMenuItemsX **)&m_i70)->v22()) {
+		int w, t;
+		sub_101a9920(&w, &t);
+		ISchemeX *scheme = sub_101ac8c0()->GetIScheme(sub_101aa220());
+		ColX def(255, 255, 255, 0);
+		ColX c = scheme->GetColor("BorderDark", def);
+		sub_101ac8d0()->SetColor(c);
+		sub_101ac8d0()->FillRect(w - 18, -1, w - 17, t);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0030 size=0x16
 #include "vgui2__Menu.h"
 namespace lifted {

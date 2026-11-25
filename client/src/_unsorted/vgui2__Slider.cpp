@@ -62,6 +62,41 @@ void vgui2::Slider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb840 size=0xa0
+#include "vgui2__Slider.h"
+struct SliderV {
+	char pad0[0x58];
+	int m_nob;
+	char pad1[0x60 - 0x5c];
+	int m_nobPos0;
+	int m_nobPos1;
+	char pad2[0x78 - 0x68];
+	int m_rangeMin;
+	int m_rangeMax;
+	int m_value;
+};
+// TARGET: vgui2::Slider::vfunc118
+void vgui2::Slider::vfunc118()
+{
+	SliderV *s = (SliderV *)this;
+	int wide, tall;
+	vfunc65(wide, tall);
+	float fnob = (float)s->m_nob;
+	float fvalue = (float)(s->m_value - s->m_rangeMin);
+	float frange = (float)(s->m_rangeMax - s->m_rangeMin);
+	float fper = fvalue / frange;
+	float freepixels = (float)wide - fnob;
+	float firstpixel = freepixels * fper + fnob * 0.5f;
+	s->m_nobPos0 = (int)(firstpixel - (float)(s->m_nob / 2));
+	s->m_nobPos1 = (int)((float)(s->m_nob / 2) + firstpixel);
+	if (s->m_nobPos1 > wide) {
+		s->m_nobPos0 = wide - s->m_nob;
+		s->m_nobPos1 = wide;
+	}
+	vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb8e0 size=0x56
 #include "vgui2__Slider.h"
 
@@ -169,6 +204,36 @@ int vgui2::Slider::vfunc74(int pScheme)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bba60 size=0x85
+#include "vgui2__Slider.h"
+struct SurfV121
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
+	virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34();
+	virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38();
+	virtual void GetScreenSize(int &wide, int &tall);
+};
+SurfV121 *sub_101ac8d0();
+// TARGET: vgui2::Slider::vfunc121
+void vgui2::Slider::vfunc121(int &x, int &y, int &w, int &h)
+{
+	int wide, tall;
+	vfunc65(wide, tall);
+	int sw, st;
+	sub_101ac8d0()->GetScreenSize(sw, st);
+	double f = st * 0.0013020833333333333;
+	x = (int)m_p58 / 2;
+	y = (int)(f * 36.0);
+	w = wide - (int)m_p58;
+	h = (int)(f * 4.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbaf0 size=0x17
 #include "vgui2__Slider.h"
 namespace lifted {
@@ -190,6 +255,33 @@ int vgui2::Slider::vfunc116(int a0)
 {
     *(int *)((char *)this + 0x58) = a0;
     return a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bc020 size=0xa1
+#include "vgui2__Slider.h"
+struct ColX { unsigned char r, g, b, a; ColX() {} ColX(int R, int G, int B, int A) { r = R; g = G; b = B; a = A; } };
+struct ISurfY {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void SetColor(ColX);
+	virtual void v11();
+	virtual void FillRect(int, int, int, int);
+};
+struct IChildX { virtual void v0(); virtual void SetBounds(int, int, int, int); };
+ISurfY *sub_101ac8d0();
+// TARGET: vgui2::Slider::vfunc97
+void vgui2::Slider::vfunc97()
+{
+	Panel::vfunc97();
+	int x, y, w, h;
+	vfunc121(x, y, w, h);
+	ColX c(31, 31, 31, 255);
+	sub_101ac8d0()->SetColor(c);
+	sub_101ac8d0()->FillRect(x, y, x + w, y + h);
+	IChildX *child = *(IChildX **)&m_unk8c;
+	if (child)
+		child->SetBounds(x, y, x + w, y + h);
 }
 // END FUNCTION
 

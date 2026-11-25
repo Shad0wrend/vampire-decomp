@@ -312,6 +312,38 @@ int vgui2::EditablePanel::vfunc115(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b51a0 size=0x8c
+#include "vgui2__EditablePanel.h"
+#include "vgui2__KeyValues.h"
+#include <string.h>
+struct KVView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10();
+	virtual const char *GetString(const char *, const char *);
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+	virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void Release();
+};
+struct PView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual bool Req(KVView *);
+};
+void vgui2::EditablePanel::vfunc114(const char *name, char *dest, int len, const char *def)
+{
+	PView *p = (PView *)vfunc38((int)name, 0);
+	KVView *kv = (KVView *)new vgui2::KeyValues("GetText");
+	if (p && p->Req(kv))
+		strncpy(dest, kv->GetString("text", def), len - 1);
+	else
+		strncpy(dest, def, len - 1);
+	dest[len - 1] = 0;
+	kv->Release();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5650 size=0x6
 #include "vgui2__EditablePanel.h"
 namespace lifted {

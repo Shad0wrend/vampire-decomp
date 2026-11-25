@@ -11,6 +11,29 @@ VMapIconButton *pcd_emit_10187000(const VMapIconButton &other) { return new VMap
 // TARGET: ??_GVMapIconButton@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x10187070 size=0x93
+#include "VMapIconButton.h"
+struct PV_10187070 { void sub_101ab130(); };
+
+void VMapIconButton::vfunc98()
+{
+	int a, b;
+	sub_101a98c0(&a, &b);
+	((PV_10187070 *)this)->sub_101ab130();
+	sub_101ab1a0();
+	if (*(int *)((char *)this + 0xc8) && *(int *)((char *)this + 0xcc) && (char)vfunc22()) {
+		CHUDSprite10059620 *spr;
+		if (*((char *)this + 0xc1) || *((char *)this + 0xc0))
+			spr = *(CHUDSprite10059620 **)((char *)this + 0xcc);
+		else
+			spr = *(CHUDSprite10059620 **)((char *)this + 0xc8);
+		if (spr)
+			spr->sub_10059620(a, b, m_n0b8, m_n0bc);
+		sub_101b2610();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187110 size=0x11
 #include "VMapIconButton.h"
 namespace lifted {

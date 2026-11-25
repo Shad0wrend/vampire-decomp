@@ -33,6 +33,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     int m_unk14c;
     float m_flLastCycle;
 
+    int m_unk154[(0x190 - 0x154) / 4];
+    float m_f190;
+    int m_unk194[(0x1ac - 0x194) / 4];
+    float m_f1ac;
     float sub_1018a7d0();
     float sub_1018a860(int i, float cur, float prev, float curTime);
     float sub_1018a990(float flCycle, int nSequence, float *poseParameter, float flPlaybackRate, float dt);

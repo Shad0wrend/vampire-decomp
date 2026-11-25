@@ -78,6 +78,87 @@ int vgui2::ComboBox::vfunc181()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7a00 size=0x11c
+#include "vgui2__ComboBox.h"
+
+struct ISurface_101c7a00
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void GetScreenSize(int &wide, int &tall); // slot 39 (+0x9c)
+};
+
+ISurface_101c7a00 *sub_101ac8d0();
+
+struct CMenuView_101c7a00
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(int); // +0x70
+	virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33();
+	virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45();
+	virtual void SetEnabled(bool); // slot 46 (+0xb8)
+	virtual bool IsEnabled();      // slot 47 (+0xbc)
+	virtual bool v48();            // slot 48 (+0xc0)
+
+	void sub_101a9950(int x, int y, int w, int h);
+};
+
+struct CComboBoxView_101c7a00
+{
+	char pad0[0x12c];
+	CMenuView_101c7a00 *m_pDropDown; // 0x12c
+	CMenuView_101c7a00 *m_pButton;   // 0x130
+};
+
+// TARGET: ?vfunc101@ComboBox@vgui2@@UAEXXZ
+void vgui2::ComboBox::vfunc101()
+{
+	int wide, tall;
+	vfunc65(wide, tall);
+
+	TextEntry::vfunc101();
+
+	int screenW, screenH;
+	sub_101ac8d0()->GetScreenSize(screenW, screenH);
+
+	CComboBoxView_101c7a00 *v = (CComboBoxView_101c7a00 *)this;
+	v->m_pButton->sub_101a9950(
+		(int)((wide - tall) + 4.0 * (screenW / 1024.0)),
+		(int)(2.0 * (screenH / 768.0)),
+		(int)(tall - 2.0 * (screenW / 1024.0)),
+		(int)(tall - 2.0 * (screenH / 768.0)));
+
+	if (!v->m_pDropDown->v48())
+	{
+		v->m_pDropDown->v28(0);
+	}
+
+	if (vfunc135())
+	{
+		vfunc54(3);
+	}
+	else
+	{
+		vfunc54(2);
+	}
+
+	v->m_pButton->SetEnabled(vfunc47());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7b20 size=0x1
 #include "vgui2__ComboBox.h"
 void vgui2::ComboBox::vfunc178()
