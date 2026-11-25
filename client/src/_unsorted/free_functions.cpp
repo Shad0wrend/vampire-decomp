@@ -41449,6 +41449,33 @@ void C_BaseNetworkable::sub_100a3910(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3950 size=0x3e
+#include "C_BaseNetworkable.h"
+#include "CBaseHandle.h"
+
+struct ThinkListV
+{
+	void sub_100d0000(CBaseHandle h);
+};
+struct EntityListV
+{
+	void sub_100e2480(CBaseHandle h);
+};
+
+int sub_1002d700();
+int sub_1009e230();
+
+void C_BaseNetworkable::sub_100a3950()
+{
+	if ( m_unk14.v != -1 )
+	{
+		((ThinkListV *)(void *)sub_1002d700())->sub_100d0000(*(CBaseHandle *)&m_unk14);
+		((EntityListV *)(void *)sub_1009e230())->sub_100e2480(*(CBaseHandle *)vfunc1());
+		m_unk12 = 0xffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3990 size=0x1
 void sub_100a3990()
 {

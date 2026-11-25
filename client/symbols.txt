@@ -3891,6 +3891,7 @@
 0x100a38c0 func   ??_GC_BaseNetworkable@@UAEPAXI@Z ??_GC_BaseNetworkable@@UAEPAXI@Z
 0x100a38e0 func   ??1C_BaseNetworkable@@UAE@XZ C_BaseNetworkable::~C_BaseNetworkable
 0x100a3910 func   ?sub_100a3910@C_BaseNetworkable@@QAEXHH@Z C_BaseNetworkable::sub_100a3910
+0x100a3950 func   ?sub_100a3950@C_BaseNetworkable@@QAEXXZ C_BaseNetworkable::sub_100a3950
 0x100a3990 func   ?ClientThink@C_BaseNetworkable@@UAEXXZ C_BaseNetworkable::ClientThink
 0x100a3990 func   ?sub_100a3990@@YAXXZ sub_100a3990
 0x100a39a0 func   ?GetThinkHandle@C_BaseNetworkable@@UAEPAXXZ C_BaseNetworkable::GetThinkHandle
