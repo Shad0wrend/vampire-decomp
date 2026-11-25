@@ -1,6 +1,89 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10165ee0 size=0xc4
+#include "CFPSPanel.h"
+
+int sub_100cd100();
+int sub_101ac8d0();
+int sub_101ac8f0();
+
+struct PanelXD
+{
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	void sub_101a99f0(int);
+	void sub_101aaad0(int);
+	void sub_101ab2a0(int);
+	void sub_101ab060(int);
+};
+
+struct PV
+{
+	int sub_101ab130();
+};
+
+struct MgrS
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62();
+	virtual int vfunc63(int);
+};
+
+struct MgrViewD
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17();
+	virtual void v18(int, int);
+};
+
+struct Color4D
+{
+	unsigned char r, g, b, a;
+	Color4D(unsigned char R, unsigned char G, unsigned char B, unsigned char A) { r = R; g = G; b = B; a = A; }
+};
+
+CFPSPanel::CFPSPanel(vgui2::Panel *parent)
+	: vgui2::Panel(parent, "CFPSPanel")
+{
+	double flScaled = sub_100cd100() * 0.0009765625;
+	int nWidth = (int)(flScaled * 250.0);
+
+	((PanelXD *)this)->sub_101a9890(((PV *)(void *)parent)->sub_101ab130() - nWidth, 0);
+	((PanelXD *)this)->sub_101a99f0(0);
+	((PanelXD *)this)->sub_101aaad0(0);
+
+	Color4D c(0, 0, 0, 0xff);
+	*(int *)((char *)this + 0x58) = 0;
+	((PanelXD *)this)->sub_101ab2a0(*(int *)&c);
+	((PanelXD *)this)->sub_101ab060(0);
+
+	int nHeight = ((MgrS *)(void *)sub_101ac8d0())->vfunc63(*(int *)((char *)this + 0x58)) + 10;
+
+	((PanelXD *)this)->sub_101a98f0(nWidth, nHeight);
+
+	int vp = *(int *)((char *)this + 4);
+	((MgrViewD *)(void *)sub_101ac8f0())->v18(vp, 250);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165fb0 size=0x1e
 #include "CFPSPanel.h"
 
