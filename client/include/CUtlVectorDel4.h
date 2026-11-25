@@ -12,4 +12,5 @@ public:
 	bool m_bAutoDelete;
 
 	void sub_101c9bd0();
+	~CUtlVectorDel4() { sub_101c9bd0(); }
 };

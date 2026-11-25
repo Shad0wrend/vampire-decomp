@@ -3,6 +3,7 @@
 // the destructor is slot 20 of its vtable; the virtual functions before it are not declared yet
 #pragma once
 #include "vgui2__IClientPanel.h"
+#include "CUtlVectorDel4.h"
 
 struct CHUDSprite10059620 { void sub_10059620(int, int, int, int); };
 namespace vgui2
@@ -29,7 +30,7 @@ public:
 	char m_c19; char m_c1a; char m_c1b;
 	int m_unk1c[(0x58 - 0x1c) / 4];
 	void *m_p58;
-	union { int m_unk5c[(0x70 - 0x5c) / 4]; char *m_psz5c; };
+	union { int m_unk5c[(0x70 - 0x5c) / 4]; char *m_psz5c; struct { int m_unk5c_a; int m_unk60; char m_bTree64; char m_unk65; char m_unk66; char m_unk67; CUtlVectorDel4 *m_pTree68; }; };
 	int m_i70;
 	int m_i74;
 	int m_unk78;
