@@ -37417,6 +37417,19 @@ int C_BaseAnimating::sub_100940d0(int index, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100941d0 size=0x7a
+#include "C_BaseAnimating.h"
+#include "ScopeTrace.h"
+
+extern char g_102de300[];
+
+void C_BaseAnimating::sub_100941d0(const char *pName, int arg2, int arg3)
+{
+    ScopeTrace trace("C_BaseAnimating::GetBonePosition01", g_102de300);
+    sub_10094250(LookupBone(pName), arg2, arg3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094250 size=0xf9
 #include "C_BaseAnimating.h"
 #include "StudioHdr.h"
