@@ -11,6 +11,8 @@ class C_BasePlayer : public C_BaseVCombatCharacter
 public:
 	virtual ~C_BasePlayer();
 	int sub_100a2450();
+	char *sub_100a9af0(int);
+	void sub_100a9c90();
 	bool sub_100a54c0(int, int);
 	void sub_100aa040();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
