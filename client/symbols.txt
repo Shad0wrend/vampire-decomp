@@ -2875,6 +2875,7 @@
 0x10065840 func   ??_GCVMainMenu@@UAEPAXI@Z ??_GCVMainMenu@@UAEPAXI@Z
 0x10065860 func   ??1CVMainMenu@@UAE@XZ CVMainMenu::~CVMainMenu
 0x10065c40 func   ?vfunc97@CVMainMenu@@UAEXXZ CVMainMenu::vfunc97
+0x10066250 func   ?sub_10066250@CVMainMenu@@QAEXXZ CVMainMenu::sub_10066250
 0x10066380 func   ?sub_10066380@XSnd@@QAEXXZ XSnd::sub_10066380
 0x100663c0 func   ?sub_100663c0@XSnd2@@QAEXXZ XSnd2::sub_100663c0
 0x10066400 func   ?sub_10066400@CUnknown10066400@@QAEXXZ CUnknown10066400::sub_10066400

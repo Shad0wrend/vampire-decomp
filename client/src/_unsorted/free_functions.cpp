@@ -21154,6 +21154,26 @@ void sub_100656a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066250 size=0x77
+#include "CVMainMenu.h"
+#include "utlvector.h"
+
+struct CVMainMenuLayout
+{
+	char m_pad0[0x170];
+	CUtlVector<vgui2::Panel *> m_vec;
+	char m_pad184[0x440 - 0x184];
+	int m_unk440;
+};
+
+void CVMainMenu::sub_10066250()
+{
+	CVMainMenuLayout *v = (CVMainMenuLayout *)this;
+	v->m_vec.PurgeAndDeleteElements();
+	v->m_unk440 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066380 size=0x32
 struct XEng3 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(const char *); };
 extern XEng3 *g_104a57d4;
