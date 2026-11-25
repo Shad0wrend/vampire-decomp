@@ -211,6 +211,23 @@ int vgui2::Button::vfunc153(unsigned int c1, unsigned int c2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3cc0 size=0x7e
+#include "vgui2__Button.h"
+void vgui2::Button::vfunc154(unsigned int a, unsigned int b)
+{
+	unsigned char *pa = (unsigned char *)&a;
+	unsigned char *pb = (unsigned char *)&b;
+	unsigned char *fg = (unsigned char *)&m_nFgColor;
+	unsigned char *bg = (unsigned char *)&m_nBgColor;
+	if (!(fg[0] == pa[0] && fg[1] == pa[1] && fg[2] == pa[2] && fg[3] == pa[3] &&
+		bg[0] == pb[0] && bg[1] == pb[1] && bg[2] == pb[2] && bg[3] == pb[3])) {
+		m_nBgColor = b;
+		m_nFgColor = a;
+		vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3d40 size=0x7e
 #include "vgui2__Button.h"
 struct Color4 { unsigned char r, g, b, a; };
