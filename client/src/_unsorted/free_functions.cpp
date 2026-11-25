@@ -95790,6 +95790,41 @@ void sub_10194d30(float *table, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10195770 size=0x71
+void sub_100837c0(int, float *, void *, float, int, float *, float *, float, float, float, float, float, float, int, float *, float);
+
+struct BeamSegView
+{
+	int m_pad00[11];
+	int m_flags;
+	int m_pad30;
+	float m_start[3];
+	int m_pad40[27];
+	float m_delta[3];
+	int m_padB8[4];
+	float m_fC8;
+	float m_padCC;
+	float m_fD0;
+	float m_fD4;
+	float m_fD8;
+	float m_fDC;
+	int m_padE0[5];
+	float m_fF4;
+	int m_padF8[2];
+	float m_f100;
+	int m_pad104[24];
+	float m_rgNoise[1];
+};
+
+// TARGET: sub_10195770
+void __stdcall sub_10195770(BeamSegView *pbeam, int frame, int rendermode, float *color, void *sprite)
+{
+	sub_100837c0(0x80, pbeam->m_rgNoise, sprite, (float)frame, rendermode,
+		pbeam->m_start, pbeam->m_delta, pbeam->m_fD0, pbeam->m_fD4, pbeam->m_fDC,
+		pbeam->m_fC8, pbeam->m_fF4, pbeam->m_f100, pbeam->m_flags, color, pbeam->m_fD8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101963a0 size=0x1a
 namespace lifted {
 extern char g_10618750;
