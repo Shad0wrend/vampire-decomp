@@ -8232,6 +8232,7 @@
 0x10187920 func   ?sub_10187920@@YAXH@Z sub_10187920
 0x10187950 func   ?sub_10187950@@YAHXZ sub_10187950
 0x10187980 func   ?sub_10187980@VMapScreenUI@@QAEXXZ VMapScreenUI::sub_10187980
+0x101879b0 func   ?vfunc2@VMapScreenUI@@UAEXXZ VMapScreenUI::vfunc2
 0x10187a90 func   ?sub_10187a90@CUnknown10187a90@@QAEHH@Z CUnknown10187a90::sub_10187a90
 0x10187ae0 func   ?sub_10187ae0@CView@@QAEXXZ CView::sub_10187ae0
 0x10187b20 func   ?sub_10187b20@CScorePanelSetup@@QAEXXZ CScorePanelSetup::sub_10187b20
