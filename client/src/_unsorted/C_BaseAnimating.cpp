@@ -176,6 +176,33 @@ float C_BaseAnimating::vfunc122()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f9e0 size=0x8d
+#include "C_BaseAnimating.h"
+struct PoseDesc1008f9e0 { char pad[4]; unsigned char flags; char pad2[0x18 - 5]; };
+struct Hdr1008f9e0
+{
+    char pad[0xf8]; int numPose; int poseIndex;
+    PoseDesc1008f9e0 *GetPose(int i) { return (PoseDesc1008f9e0 *)((unsigned char *)this + poseIndex) + i; }
+};
+struct Anim1008f9e0
+{
+    char pad[0x65c]; float m_a[4]; float m_b[4]; char pad2[0x6ac - 0x67c]; Hdr1008f9e0 *m_pHdr;
+    Hdr1008f9e0 *GetHdr() { return m_pHdr; }
+};
+
+void C_BaseAnimating::vfunc120(float *out, float t)
+{
+    Anim1008f9e0 *s = (Anim1008f9e0 *)this;
+    int i;
+    for (i = 0; i < s->GetHdr()->numPose; i++)
+    {
+        out[i] = sub_10091020(s->m_a[i], s->m_b[i], t, (s->GetHdr()->GetPose(i)->flags & 0x38) != 0);
+    }
+    for (i = s->GetHdr()->numPose; i < 4; i++)
+        out[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fa70 size=0xbd
 #include "C_BaseAnimating.h"
 extern "C" double floor(double);
