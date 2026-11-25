@@ -19,6 +19,28 @@ vgui2::TextImage::~TextImage()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9d70 size=0x7c
+#include "vgui2__TextImage.h"
+extern "C" {
+size_t wcslen(const unsigned short *);
+unsigned short *wcscpy(unsigned short *, const unsigned short *);
+}
+void vgui2::TextImage::vfunc26(const unsigned short *text)
+{
+	short len = (short)wcslen(text);
+	m_unk22 = len;
+	if (len >= m_unk20) {
+		delete m_pText;
+		m_unk20 = m_unk22 + 1;
+		m_pText = (char *)new char[m_unk20 * 2];
+	}
+	wcscpy((unsigned short *)m_pText, text);
+	int w, h;
+	vfunc33(&w, &h, (int)m_pText);
+	vfunc9(w, h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9df0 size=0x21
 #include "vgui2__TextImage.h"
 namespace lifted {
