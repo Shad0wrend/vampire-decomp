@@ -90735,6 +90735,27 @@ char CUnknown1015d3e0::sub_1015d3e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d400 size=0x9f
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatOwner.h"
+#include "CVStatInfoList_t.h"
+struct CVStatActionTarget;
+class CVStatActionList_t { public: void sub_1015af10(CVStatActionTarget *, int, int); };
+// TARGET: CVStatList_t::sub_1015d400
+void CVStatList_t::sub_1015d400(int stat, int value)
+{
+	ScopeTrace trace("CVStatList_t::SetBase", g_102de300);
+	if (sub_1015d3e0(stat))
+	{
+		int *p = &((int **)m_field08)[0][stat];
+		int old = *p;
+		*p = value;
+		((CVStatActionList_t *)((char *)((CVStatInfoList_t *)m_field0c)->sub_1015cfe0(stat) + 0x10c))->sub_1015af10((CVStatActionTarget *)((CVStatOwner *)m_pad0000)->sub_1015e610(), old, value);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d5b0 size=0x99
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
