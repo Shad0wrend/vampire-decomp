@@ -37637,6 +37637,47 @@ int CUnknown1009b2a0::sub_1009b2a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009bfa0 size=0xbd
+#include "C_BaseCombatWeapon.h"
+struct Q { char pad[0x160c]; char m_160c; };
+struct P { char pad[0x3f8]; Q *m_3f8; };
+struct EA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); };
+struct EB : EA { virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10(); virtual void b11(); virtual void b12(); virtual int b13(); };
+extern EB *g_1027ba58;
+struct CWR {
+	char pad0[0x70];
+	int m_flags70;
+	char pad1[0x920 - 0x74];
+	int m_920;
+	char pad2[0x930 - 0x924];
+	int m_930;
+};
+// TARGET: sub_1009bfa0
+bool __fastcall sub_1009bfa0(CWR *self)
+{
+	if (!self->m_920)
+		return false;
+	C_BaseCombatWeapon *w = (C_BaseCombatWeapon *)((char *)self - 4);
+	if (w->sub_1007bab0()) {
+		Q *q = ((P *)w->sub_1007bab0())->m_3f8;
+		if (q && q->m_160c)
+			return false;
+	}
+	if (self->m_flags70 & 0x40)
+		return false;
+	if (w->vfunc240()) {
+		if (!w->vfunc241())
+			return false;
+		if (!g_1027ba58->b13() && w->vfunc240())
+			return false;
+	} else {
+		if (w->sub_1007bab0() && ((P *)w->sub_1007bab0())->m_3f8)
+			return self->m_930 == 2;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c070 size=0x108
 #include "Vector.h"
 #include "C_BaseCombatWeapon.h"
