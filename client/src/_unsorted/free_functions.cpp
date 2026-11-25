@@ -69586,6 +69586,69 @@ void CSoundEmitterSystemBase::sub_1012e0e0(const char *pszScript, UtlMem2 *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e3f0 size=0x116
+#include "CSoundEmitterSystemBase.h"
+#include "CUtlRBTree232.h"
+#include "CUnknown101b30d0.h"
+#include "CUtlVector16.h"
+#include "UtlMem.h"
+
+class CUnknown101a5290
+{
+public:
+	void sub_10130800();
+};
+
+class CUtlSymbolTable_1012e3f0
+{
+public:
+	CUnknown1024b2d0Id sub_1013d520(const char *pszName);
+};
+
+struct SearchRecord_1012e3f0
+{
+	CUnknown1024b2d0Id m_id;
+	char m_pad02[10];
+	CUnknown101b30d0 m_params;
+};
+
+int CSoundEmitterSystemBase::sub_1012e3f0(const char *pszName)
+{
+	CUtlRBTree232 *pTree = (CUtlRBTree232 *)&m_pfn50;
+	CUtlSymbolTable_1012e3f0 *pTable = (CUtlSymbolTable_1012e3f0 *)((char *)pTree + 0x20);
+	SearchRecord_1012e3f0 search;
+	search.m_id.m_id = 0xffff;
+	search.m_params.sub_101332a0();
+
+	search.m_id = pTable->sub_1013d520(pszName);
+
+	int current = pTree->m_Root;
+	while (current != CUtlRBTree232::InvalidIndex())
+	{
+		if (pTree->m_LessFunc(&search, pTree->m_pElements[current].m_Data))
+		{
+			current = pTree->sub_10131a70(current).m_Left;
+		}
+		else if (pTree->m_LessFunc(pTree->m_pElements[current].m_Data, &search))
+		{
+			current = ((const CUtlRBTree232At<0x105e5a20> *)pTree)->Links(current).m_Right;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	((CUtlVector16 *)&search.m_params.m_nField34)->sub_10130ba0();
+	((UtlMem *)&search.m_params.m_nField34)->sub_10130fd0();
+	((CUnknown101a5290 *)&search.m_params.m_nField20)->sub_10130800();
+
+	if (current == CUtlRBTree232::InvalidIndex())
+		return -1;
+	return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e510 size=0x17
 struct CUnknown1012e510 { char sub_1012e510(int); };
 char CUnknown1012e510::sub_1012e510(int a0)
