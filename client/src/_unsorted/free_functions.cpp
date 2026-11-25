@@ -83108,6 +83108,66 @@ void CView101435f0::sub_101435f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143650 size=0x6c
+extern void (*g_101e3108)(const char *, ...);
+
+struct KeyValues_101433c0
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual KeyValues_101433c0 *vfunc2(const char *key);
+	virtual KeyValues_101433c0 *vfunc3();
+};
+
+struct CUnknown101433a0
+{
+	int a, b, c;
+};
+
+struct CUnknown101433c0
+{
+	bool sub_101433c0(KeyValues_101433c0 *p);
+};
+
+struct CVec14View
+{
+	void sub_101421c0(KeyValues_101433c0 *p);
+};
+
+struct CUnknown10143520
+{
+	char m_pad00[0x24];
+	int m_nCount;
+	CUnknown101433a0 **m_pArray;
+	CUnknown101433a0 *sub_10143520();
+	bool sub_10143650(KeyValues_101433c0 *pData);
+};
+
+bool CUnknown10143520::sub_10143650(KeyValues_101433c0 *pData)
+{
+	if (pData)
+	{
+		((CUnknown101433c0 *)((char *)this + 8))->sub_101433c0(pData);
+		((CVec14View *)((char *)this + 0x14))->sub_101421c0(pData);
+
+		KeyValues_101433c0 *p = pData->vfunc2("Ordering");
+		while (p)
+		{
+			CUnknown101433a0 *e = sub_10143520();
+			if (!e)
+			{
+				g_101e3108("Unable to parse data file:  Memory allocation ERROR!\n");
+				return false;
+			}
+			((CUnknown101433c0 *)e)->sub_101433c0(p);
+			p = p->vfunc3();
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101436c0 size=0x72
 #include "CUnknown10142e50.h"
 
