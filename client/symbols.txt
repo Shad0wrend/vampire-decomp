@@ -8756,6 +8756,7 @@
 0x101b9bb0 func   ?sub_101b9bb0@CUnknown101b9bb0@@QAEHXZ CUnknown101b9bb0::sub_101b9bb0
 0x101b9c30 func   ??_GTextImage@vgui2@@UAEPAXI@Z ??_GTextImage@vgui2@@UAEPAXI@Z
 0x101b9c50 func   ??1TextImage@vgui2@@UAE@XZ vgui2::TextImage::~TextImage
+0x101b9c70 func   ?vfunc27@TextImage@vgui2@@UAEXPBD@Z vgui2::TextImage::vfunc27
 0x101b9d50 func   ?sub_101b9d50@CUnknown101b9d50@@QAEHH@Z CUnknown101b9d50::sub_101b9d50
 0x101b9d60 func   ?sub_101b9d60@CUnknown101b9d60@@QAEHH@Z CUnknown101b9d60::sub_101b9d60
 0x101b9d70 func   ?vfunc26@TextImage@vgui2@@UAEXPBG@Z vgui2::TextImage::vfunc26
