@@ -67,3 +67,13 @@ void CClientEffectPrecacheSystem::vfunc6()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d08d0 size=0x6e
+#include "CClientEffectPrecacheSystem.h"
+
+// TARGET: ??_GCClientEffectPrecacheSystem@@UAEPAXI@Z
+CClientEffectPrecacheSystem *pcd_emit_100d08d0()
+{
+	return new CClientEffectPrecacheSystem;
+}
+// END FUNCTION
