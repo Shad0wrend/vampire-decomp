@@ -22,6 +22,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     void sub_100c0850(float **pSubdivs, int *pSubdivCount);
     bool sub_100c0630(struct AttV *pEnt, int iAttachment, Vector &vPos, QAngle &angles);
     void sub_100c07b0(int iPoint, Vector &vPos, QAngle &angles);
+    bool sub_100c0700(int iPt, Vector &vPos);
     // the base slots the game's vtable fills with C_RopeKeyframe's own function
     virtual int vfunc15();
     virtual int vfunc16();
