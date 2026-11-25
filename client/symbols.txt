@@ -5708,6 +5708,7 @@
 0x1010f3f0 func   ?vfunc22@CMoveHelperClient@@QAEHABVVector@@@Z CMoveHelperClient::vfunc22
 0x1010f480 func   ?vfunc0@CWaterEnum@@UAEHPAVIClientEntity@@@Z CWaterEnum::vfunc0
 0x1010f530 func   ?vfunc16@CMoveHelperClient@@QAEHPAVVector@@@Z CMoveHelperClient::vfunc16
+0x1010f5b0 func   ?sub_1010f5b0@CMoveHelperClient@@QAEXABVVector@@HPBDMHHH@Z CMoveHelperClient::sub_1010f5b0
 0x1010f670 func   ?sub_1010f670@@YGXHHHHHHHHHHHH@Z sub_1010f670
 0x1010f680 func   ?sub_1010f680@@YAPAVCPhysSurfacePropsIface@@XZ sub_1010f680
 0x1010f690 func   ?vfunc15@CMoveHelperClient@@UAAX_NPBDZZ CMoveHelperClient::vfunc15

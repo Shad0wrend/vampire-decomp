@@ -134,6 +134,61 @@ int CMoveHelperClient::vfunc16(Vector *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f5b0 size=0xb4
+#include "CMoveHelperClient.h"
+#include "C_RecipientFilter.h"
+struct IEngineSound_1010f5b0
+{
+	virtual int vfunc0(const char *sample, int a);
+	virtual int vfunc1();
+	virtual void EmitSound(IRecipientFilter &filter, int ent, int channel, const char *sample, float volume, int level, int flags, int pitch, const Vector *origin, int a, int b, int c);
+};
+extern IEngineSound_1010f5b0 *g_104a5818;
+struct CUnknown100be160
+{
+	void *m_vt;
+	char m_a, m_b;
+	void *m_pMem;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_Size;
+	void *m_pElements;
+	int m_n1c, m_n20, m_n24;
+	char m_c, m_d;
+	~CUnknown100be160()
+	{
+		m_Size = 0;
+		if (m_nGrow != -1)
+		{
+			if (m_pMem)
+			{
+				Plat_Free(m_pMem);
+				m_pMem = 0;
+			}
+			m_nAlloc = 0;
+		}
+		m_pElements = m_pMem;
+		if (m_nGrow != -1)
+		{
+			if (m_pElements)
+				Plat_Free(m_pElements);
+		}
+	}
+	void *sub_100be160();
+	void sub_100be0d0();
+};
+void CMoveHelperClient::sub_1010f5b0(const Vector &origin, int channel, const char *sample, float volume, int level, int flags, int pitch)
+{
+	if (!sample)
+		return;
+	g_104a5818->vfunc0(sample, 0);
+	CUnknown100be160 filter;
+	filter.sub_100be160();
+	filter.sub_100be0d0();
+	g_104a5818->EmitSound(*(IRecipientFilter *)&filter, -1, channel, sample, volume, level, 0, pitch, &origin, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f670 size=0x3
 // TARGET: sub_1010f670
 void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, int, int)
