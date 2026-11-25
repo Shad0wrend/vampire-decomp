@@ -3,6 +3,8 @@
 #pragma once
 #include "IRecipientFilter.h"
 
+class IClientEntity;
+
 class CCopyRecipientFilter : public IRecipientFilter
 {
 public:
@@ -13,4 +15,5 @@ public:
 	virtual int vfunc5();
 	virtual bool vfunc6();
 	void *vfunc0(unsigned char bFree);
+	virtual bool vfunc8(IClientEntity *pEntity);
 };
