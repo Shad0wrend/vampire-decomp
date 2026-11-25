@@ -72287,6 +72287,33 @@ const char *CUnknown1024b2d0::sub_1013d6f0(CUnknown1024b2d0Id id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d730 size=0x86
+#include "CUnknown1024b370.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { int m_unk; };
+extern "C" void __cdecl free(void *);
+void CUnknown1024b370::sub_1013d730()
+{
+	typedef CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> Tree;
+	Tree *t = (Tree *)this;
+	unsigned short prev = Tree::InvalidIndex();
+	for (int i = (int)t->m_TotalElements; --i >= 0; )
+	{
+		unsigned short idx = (unsigned short)i;
+		t->sub_1013dcb0(idx);
+		t->SetRightChild(idx, prev);
+		t->SetLeftChild(idx, idx);
+		prev = idx;
+	}
+	t->m_FirstFree = t->m_TotalElements ? (unsigned short)0 : Tree::InvalidIndex();
+	t->m_Root = Tree::InvalidIndex();
+	t->m_NumElements = 0;
+	for (int j = 0; j < m_n24; j++)
+		free(((void **)m_mem1.m_pMemory)[j]);
+	m_n24 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d7c0 size=0x56
 #include "CUnknown1024b370.h"
 
