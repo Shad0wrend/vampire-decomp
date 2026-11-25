@@ -17940,6 +17940,14 @@ int sub_10043000(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043020 size=0x1e
+#include "CCollisionProperty.h"
+void sub_10043020(char *a, CCollisionProperty *p)
+{
+	p->sub_100433c0(&p->vfunc1(), a + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043040 size=0x22
 namespace lifted {
 struct C100442b0 { int sub_100442b0(); };
