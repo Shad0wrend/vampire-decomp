@@ -14204,6 +14204,25 @@ template <> int ClientClassInit<DT_TEExplosion::ignored>(DT_TEExplosion::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036fa0 size=0x6d
+#include "C_TEExplosion.h"
+
+extern C_TEExplosion g_102ed818;
+
+void sub_10036fa0(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, Vector *pVec, unsigned char a10)
+{
+	*(int *)((char *)&g_102ed818 + 0x1c) = a3;
+	*(int *)((char *)&g_102ed818 + 0x20) = a4;
+	*(int *)((char *)&g_102ed818 + 0x24) = a5;
+	*(int *)((char *)&g_102ed818 + 0x28) = a6;
+	*(Vector *)((char *)&g_102ed818 + 0x2c) = *pVec;
+	*(char *)((char *)&g_102ed818 + 0x38) = a10;
+	*(int *)((char *)&g_102ed818 + 0x3c) = a7;
+	*(int *)((char *)&g_102ed818 + 0x40) = a8;
+	g_102ed818.PostDataUpdate(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037010 size=0x24
 namespace lifted {
 extern char g_1022662c;
