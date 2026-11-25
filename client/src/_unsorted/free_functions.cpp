@@ -34827,6 +34827,19 @@ int CUnknown10094ee0::sub_10094ee0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100955f0 size=0x44
+#include "Vector.h"
+#include "C_BaseAnimating.h"
+// TARGET: C_BaseAnimating::sub_100955f0
+float C_BaseAnimating::sub_100955f0(int a)
+{
+	float f = sub_10095910(a, (char *)this + 0x5d4);
+	if (f > 0.0f)
+		return sub_10095640(a) / f;
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095640 size=0x3e
 #include "Vector.h"
 #include "C_BaseAnimating.h"
