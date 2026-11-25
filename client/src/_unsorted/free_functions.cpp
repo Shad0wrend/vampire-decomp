@@ -47147,6 +47147,36 @@ void UtlMem::sub_100d8690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d86c0 size=0x7e
+#include "CUtlMultiList16.h"
+// TARGET: ?sub_100d86c0@CUtlMultiList16@@QAEXXZ
+void CUtlMultiList16::sub_100d86c0()
+{
+	if (m_nCount == 0)
+		return;
+	unsigned short prev = 0xffff;
+	for (int i = (int)m_nCount; --i >= 0; )
+	{
+		m_pNodes[(unsigned short)i].m_Prev = prev;
+		m_pNodes[(unsigned short)i].m_Index = (unsigned short)i;
+		prev = (unsigned short)i;
+	}
+	m_n2c = 0;
+	unsigned short idx = m_nHead;
+	if (idx != 0xffff)
+	{
+		do
+		{
+			m_pLists[idx].m_n0 = 0xffff;
+			m_pLists[idx].m_n2 = 0xffff;
+			m_pLists[idx].m_n4 = 0;
+			idx = m_pLists[idx].m_n8;
+		} while (idx != 0xffff);
+	}
+	m_n2e = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8740 size=0x2b
 struct Elem_100d8740 { int m_unk0; int m_unk4; int m_unk8; unsigned short m_id; unsigned short m_unkE; };
 struct Pool_100d8740 {
