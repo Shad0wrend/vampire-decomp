@@ -59535,6 +59535,56 @@ int CUnknown100f4320::sub_100f4320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4330 size=0xec
+void sub_100f7730();
+void sub_100f79a0();
+void sub_100f79b0();
+void sub_100f7b10();
+void sub_100f7b20();
+void sub_100f7b30();
+void sub_100f7d40();
+void sub_100f7d50();
+void sub_100f7d60();
+void sub_100f7d70();
+void sub_100f7d80();
+void sub_100f7d90();
+void sub_100f7da0();
+void sub_100f7db0();
+void sub_100f7dc0();
+void sub_100f7dd0();
+void sub_100f7f20();
+void sub_100f7f30();
+
+// TARGET: sub_100f4330
+void *sub_100f4330(unsigned int i)
+{
+    switch (i)
+    {
+    case 0: return (void *)sub_100f7730;
+    case 1: return (void *)sub_100f79a0;
+    case 2:
+    case 9: return (void *)sub_100f79b0;
+    case 3:
+    case 10: return (void *)sub_100f7b10;
+    case 4: return (void *)sub_100f7b20;
+    case 5: return (void *)sub_100f7b30;
+    case 6: return (void *)sub_100f7d40;
+    case 8: return (void *)sub_100f7d50;
+    case 11: return (void *)sub_100f7d60;
+    case 12: return (void *)sub_100f7d70;
+    case 16: return (void *)sub_100f7d80;
+    case 17: return (void *)sub_100f7d90;
+    case 18: return (void *)sub_100f7da0;
+    case 21: return (void *)sub_100f7db0;
+    case 19: return (void *)sub_100f7dc0;
+    case 22: return (void *)sub_100f7dd0;
+    case 23: return (void *)sub_100f7f20;
+    case 26: return (void *)sub_100f7f30;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4420 size=0x15
 struct CUnknown102bc9e0 { int m_unk[7]; };
 extern CUnknown102bc9e0 g_102bc9e0[];
