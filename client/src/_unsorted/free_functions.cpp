@@ -47836,6 +47836,54 @@ void C_BaseTerminal::sub_100c7f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8210 size=0xca
+#include "C_BaseTerminal.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+struct IEngineView12
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12(void *entity);
+};
+
+extern IEngineView12 *g_104a57d4;
+
+void C_BaseTerminal::sub_100c8210(int n)
+{
+	m_bE88 = false;
+	g_104a57d4->v12(this);
+	if (n < 1)
+		return;
+	if (n >= m_nMax)
+	{
+		sub_100c7f50();
+		return;
+	}
+
+	int nBytes = n * 72;
+	memmove(m_rgData, &m_rgData[nBytes], m_nMax * 72);
+	memset(&m_rgData[(m_nMax - n) * 72], m_bE74 | 0x20, nBytes);
+
+	int nRow = m_nE7c - n;
+	m_nE7c = (nRow > m_nMax - 1) ? (m_nMax - 1) : (nRow < 0 ? 0 : nRow);
+	m_b7a8 = true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c82e0 size=0xbb
 #include "C_BaseTerminal.h"
 struct IEng_100c82e0
