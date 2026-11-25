@@ -237,6 +237,43 @@ float CineV_10001c20::sub_10001c20(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001c80 size=0xbe
+#include "C_BaseCineCamera.h"
+
+extern "C" double fabs(double);
+#pragma intrinsic(fabs)
+
+struct CamShot
+{
+	char m_pad00[0x20];
+	int m_flags20;
+	char m_pad24[0xd8 - 0x24];
+	float m_fd8;
+	float m_fdc;
+	float m_fe0;
+	volatile float m_af_e4[3];
+};
+
+float sub_100010b0(float a, float b)
+{
+	return a * a / (b + b);
+}
+float sub_10001070(float a, float b, float c, float d);
+float sub_100010f0(float a, float b, float c, float d);
+void *__fastcall sub_10001f20(void *self);
+
+float C_BaseCineCamera::sub_10001c80(int idx, float f, float d)
+{
+	CamShot *p = (CamShot *)sub_10001f20(this);
+	float r = sub_100010b0(m_af4a8[idx], p->m_fe0);
+	if (!m_b4c0 && (p->m_flags20 & 0x100))
+		return fabs(f / sub_100010f0(m_f4a4, p->m_fd8, p->m_fdc, m_f4c4));
+	if ((float)fabs(f) <= r)
+		return sub_10001070(m_af4a8[idx], 0, p->m_fe0, d);
+	return sub_10001070(m_af4a8[idx], p->m_af_e4[idx], p->m_fe0, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001f20 size=0x12
 namespace lifted {
 extern char g_102ea298;
