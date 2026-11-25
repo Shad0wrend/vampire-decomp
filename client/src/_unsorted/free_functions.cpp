@@ -69195,6 +69195,26 @@ void CPredictionCopy::sub_10123760(int dt, Vector &outValue, const Vector &inVal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123800 size=0x9f
+#include "Vector.h"
+#include "CPredictionCopy.h"
+// TARGET: CPredictionCopy::sub_10123800
+void CPredictionCopy::sub_10123800(int dt, Vector *outValue, const Vector *inValue, int count)
+{
+    if (!m_bErrorCheck)
+        return;
+    if (dt == 0) {
+        int i = 0;
+        Vector delta = outValue[i] - inValue[i];
+        ReportFieldsDiffer("vec[] differs (1st diff) (net %f %f %f - pred %f %f %f) delta(%f %f %f)\n",
+            inValue[i].x, inValue[i].y, inValue[i].z,
+            outValue[i].x, outValue[i].y, outValue[i].z,
+            delta.x, delta.y, delta.z);
+    }
+    sub_101233b0(dt, "vector (%f %f %f)\n", outValue[0].x, outValue[0].y, outValue[0].z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101238a0 size=0x126
 #include "C_BaseEntity.h"
 #include "CBaseHandle.h"
