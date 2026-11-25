@@ -70485,6 +70485,45 @@ float __fastcall sub_10133a10(void *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133a20 size=0x92
+#include "ehandle.h"
+struct NetV_10133a20 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual int entindex();
+};
+extern void sub_1012d3f0(int, int, const char *);
+struct SoundV_10133a20 {
+	char m_pad[0x2c];
+	const char *m_pszName;
+	CBaseHandle m_hEnt;
+	int m_n34;
+	int m_n38;
+	int m_nActive;
+	void sub_10133a20();
+};
+
+void SoundV_10133a20::sub_10133a20()
+{
+	if (m_nActive) {
+		if (m_hEnt.Get()) {
+			IHandleEntity *ent;
+			if (m_hEnt.m_Index == 0xffffffff)
+				ent = 0;
+			else {
+				CBaseEntityListEntry *pe = &g_102b8e98->m_EntPtrArray[m_hEnt.m_Index & 0x1fff];
+				ent = (pe->m_SerialNumber == (int)(m_hEnt.m_Index >> 13)) ? (IHandleEntity *)pe->m_pEntity : 0;
+			}
+			NetV_10133a20 *net = (NetV_10133a20 *)((char *)ent + 8);
+			int idx = net->entindex();
+			if (idx >= 0)
+				sub_1012d3f0(idx, m_n34, m_pszName ? m_pszName : "");
+		}
+		m_nActive = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133c80 size=0x8
 struct CUnknown10133c80 { void sub_10133c80(); };
 void CUnknown10133c80::sub_10133c80()
