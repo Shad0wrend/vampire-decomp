@@ -59192,6 +59192,29 @@ bool sub_10110140(void *kv, const char *pKey, unsigned char *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101101a0 size=0x83
+struct IKV11 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual const char *GetString(const char *key, const char *def); };
+extern "C" int __cdecl sscanf(const char *, const char *, ...);
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *, ...);
+// TARGET: sub_101101a0
+bool sub_101101a0(IKV11 *kv, const char *key, int *r, int *g, int *b, int *a)
+{
+	*a = 255;
+	*b = 255;
+	*g = 255;
+	*r = 255;
+	const char *s = kv->GetString(key, "255 255 255 255");
+	if (s && *s)
+	{
+		if (sscanf(s, "%i %i %i %i", r, g, b, a) != 4)
+			Warning("Couldn't scan four color values from %s\n", s);
+		else
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110290 size=0x9d
 #include "CKeyValuesX.h"
 extern "C" int sscanf(const char *, const char *, ...);
