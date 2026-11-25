@@ -85708,6 +85708,93 @@ bool CUnknown101f0e50::sub_101530c0(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101532e0 size=0x212
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CReactionData.h"
+#include "IKeyValues.h"
+#include "FileSystemViews.h"
+#include <string.h>
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+struct CVDataStrings { void sub_1015f120(IKeyValues *pKeys); };
+struct CVDataTables { void sub_101604b0(IKeyValues *pKeys, int a); };
+
+extern CVDataStrings g_105f93c0;
+extern CVDataTables g_105f985c;
+
+IKeyValues *sub_101545c0(const char *pszFile, void *pFileSystem);
+string_t sub_1015f7e0(IKeyValues *pKeys, const char *pszName);
+string_t sub_1015f810(IKeyValues *pKeys);
+string_t sub_1015fc40(const char *psz);
+
+// TARGET: CReactionData::sub_101532e0
+void CReactionData::sub_101532e0()
+{
+	char szFile[128];
+
+	sub_10152f20();
+	sprintf(szFile, "%s%s.txt", "vdata\\system\\", "Reaction");
+	IKeyValues *pKeys = pcd_stage(sub_101545c0(szFile, g_104a580c));
+	if (pKeys)
+	{
+		IKeyValues *pGeneral = pKeys->kv2("General");
+		if (pGeneral)
+		{
+			m_iszInternalName = sub_1015f7e0(pGeneral, "InternalName");
+			m_isz10 = sub_1015f810(pGeneral);
+
+			IKeyValues *pMod = pGeneral->kv2("ModifierNames");
+			if (pMod)
+			{
+				{ int i; i = 0; while ((int)i < 6) { sprintf(szFile, "%0d", i);
+					const char *pszMod = pMod->kv13(szFile, "");
+					m_ModifierNames[pcd_stage(i)] = sub_1015fc40(pcd_stage(pszMod));
+					*(m_ModifierNameLens + i) = strlen(pszMod); i += 1; } }
+			}
+			else
+			{
+				Msg("Unable to open Reaction data file for: %s\n", szFile);
+			}
+			g_105f985c.sub_101604b0(pcd_stage(pGeneral), 0);
+		}
+
+		IKeyValues *pStrings = pKeys->kv2("Strings");
+		if (pStrings)
+		{
+			g_105f93c0.sub_1015f120(pStrings);
+		}
+		int hFind;
+
+		pKeys->vfunc1();
+		int nFiles; nFiles = 0;
+		if (pcd_stage(g_104a580c)->FindFirst("vdata\\system\\Reactions*.txt", &hFind))
+		{
+			do
+			{
+				nFiles += 1;
+			} while (pcd_stage(g_104a580c)->FindNext(pcd_stage(hFind)));
+			g_104a580c->FindClose(hFind);
+
+			if (nFiles > 0)
+			{
+				{ int i = 0; while ((int)i < nFiles) { char szListFile[260];
+					sprintf(szListFile, "%sReactions%03d.txt", "vdata\\system\\", i);
+					if (!sub_10153180(szListFile))
+					{
+						Msg("Unable to open Reaction List data file for: %s\n", szListFile);
+					} i++; } }
+			}
+		}
+	}
+	else
+	{
+		Msg("Unable to load Reaction data for: %s\n", pcd_stage(szFile));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153500 size=0x110
 #include "IFileSystemFind.h"
 #include "CUnknown101f10e0.h"
