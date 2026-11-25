@@ -80728,6 +80728,54 @@ void CUnknown101d5bd0::sub_10140a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140b40 size=0xc5
+#include "CUnknown101d7380.h"
+struct CFileFinder
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21();
+    virtual int FindFirst(const char *pattern, int *pHandle);
+    virtual int FindNext(int handle);
+    virtual void v24();
+    virtual void FindClose(int handle);
+};
+extern CFileFinder *g_104a580c;
+extern const char g_102c6c24[];
+extern const char g_10286400[];
+extern const char g_102c6d50[];
+extern const char g_102c6d40[];
+extern const char g_102c6d0c[];
+extern void (*g_101e3108)(const char *, ...);
+extern "C" int sub_101d159d(char *, const char *, ...);
+
+// TARGET: ?sub_10140b40@CUnknown101d7380@@QAEXXZ
+void CUnknown101d7380::sub_10140b40()
+{
+    char path[260];
+    int handle;
+    int count = 0;
+    int idx = 0;
+    sub_101d159d(path, g_102c6c24, g_10286400, g_102c6d50);
+    if (g_104a580c->FindFirst(path, &handle)) {
+        do {
+            count++;
+        } while (g_104a580c->FindNext(handle));
+        g_104a580c->FindClose(handle);
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                sub_101d159d(path, g_102c6d40, g_10286400, g_102c6d50, i);
+                if (!sub_10140cb0(path, &idx))
+                    g_101e3108(g_102c6d0c, path);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140cb0 size=0x9b
 #include "CUnknown101d7380.h"
 #include "utlrbtree.h"
