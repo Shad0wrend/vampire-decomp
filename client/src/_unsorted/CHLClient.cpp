@@ -557,6 +557,25 @@ void CHLClient::vfunc39(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc9c0 size=0x85
+#include "CHLClient.h"
+#include "CRestore.h"
+struct SaveMgrV40
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(CRestore *pRestore, int a, int b);
+	virtual void v8();
+};
+extern SaveMgrV40 *g_102c37a0;
+// TARGET: CHLClient::vfunc40
+void CHLClient::vfunc40(void *pData, int a)
+{
+	CRestore restore(pData);
+	g_102c37a0->v7(&restore, a, 0);
+	g_102c37a0->v8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cca70 size=0x27
 #include "CHLClient.h"
 struct VX { void sub_10056bc0(int, int, int); };
