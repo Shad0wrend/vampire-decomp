@@ -108455,6 +108455,28 @@ char sub_10198d90(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198da0 size=0xb7
+#include "VMatrix.h"
+#include "ScopeTrace.h"
+void sub_1018f3c0(const Vector &origin, const QAngle &angles, Vector *forward, Vector *right, Vector *up, VMatrix &m);
+extern Vector g_10618f7c;
+extern QAngle g_10619134;
+extern Vector g_10619854;
+extern Vector g_106196e0;
+extern Vector g_10619694;
+extern VMatrix g_106196a0;
+extern char g_106198ec;
+// TARGET: sub_10198da0
+void sub_10198da0(const Vector &origin, const QAngle &angles)
+{
+	ScopeTrace trace("::SetupCurrentView", g_102de300);
+	g_10618f7c = origin;
+	g_10619134 = angles;
+	sub_1018f3c0(origin, angles, &g_10619854, &g_106196e0, &g_10619694, g_106196a0);
+	g_106198ec = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198e60 size=0x8
 namespace lifted {
 extern char g_106198ec;
