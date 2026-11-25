@@ -18,6 +18,42 @@ void __stdcall sub_100e1b10(int, int, int, int, int, int, int, int, int, int, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1b20 size=0xc9
+#include "CEffectsClient.h"
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+extern void *g_1028073c;
+
+struct ITempEntsView12
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void *v12(const Vector &origin, int a, int c, float b);
+	virtual void v13(void *result);
+};
+
+void CEffectsClient::vfunc2(const Vector &origin, int a, float b, int c)
+{
+	CPVSFilter filter(origin);
+	C_RecipientFilter *pFilter = &filter;
+	if (CanSend()) {
+		if (pFilter->vfunc2())
+			((ITempEntsView12 *)g_1028073c)->v13(((ITempEntsView12 *)g_1028073c)->v12(origin, a, c, b * 0.1f));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1bf0 size=0xb3
 #include "CEffectsClient.h"
 #include "CPVSFilter.h"

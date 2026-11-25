@@ -5095,6 +5095,7 @@
 0x100e1b00 func   ??1IPredictionSystem@@UAE@XZ IPredictionSystem::~IPredictionSystem
 0x100e1b00 func   ?sub_100e1b00@CUnknown100e1b00@@QAEXXZ CUnknown100e1b00::sub_100e1b00
 0x100e1b10 func   ?sub_100e1b10@@YGXHHHHHHHHHHHHHHHH@Z sub_100e1b10
+0x100e1b20 func   ?vfunc2@CEffectsClient@@UAEXABVVector@@HMH@Z CEffectsClient::vfunc2
 0x100e1bf0 func   ?vfunc3@CEffectsClient@@UAEXABVVector@@HHH@Z CEffectsClient::vfunc3
 0x100e1cb0 func   ?vfunc4@CEffectsClient@@UAEXABVVector@@HHH@Z CEffectsClient::vfunc4
 0x100e1d70 func   ?vfunc5@CEffectsClient@@UAEXABVVector@@HHH@Z CEffectsClient::vfunc5
