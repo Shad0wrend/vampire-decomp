@@ -227,6 +227,44 @@ int CHLClient::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbbc0 size=0x77
+#include "CHLClient.h"
+
+extern void *g_1027ba58;
+extern void *g_104a5808;
+
+void sub_1009db70(int);
+void sub_100923c0(char, char);
+
+struct EngV
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+	virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual void e8(); virtual void e9(); virtual void e10(); virtual void e11();
+	virtual void e12(); virtual void e13(); virtual void e14(); virtual void e15();
+	virtual void vfunc16(int, int);
+};
+
+struct ModeV
+{
+	virtual void m0();
+	virtual void m1();
+	virtual void m2();
+	virtual void vfunc3(int, int, int, int, int, int);
+};
+
+void CHLClient::vfunc20(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+	((EngV *)g_104a5808)->vfunc16(0xac, 0);
+	sub_1009db70(1);
+	sub_100923c0(1, 0);
+	((ModeV *)g_1027ba58)->vfunc3(a0, a1, a2, a3, a4, a5);
+	sub_100923c0(0, 0);
+	((EngV *)g_104a5808)->vfunc16(0xac, 1);
+	sub_1009db70(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbc40 size=0x13
 #include "CHLClient.h"
 namespace lifted {
