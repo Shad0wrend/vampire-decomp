@@ -106573,6 +106573,31 @@ void CBuildGroup_101c2310::sub_101c2310(CPanel *panel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2860 size=0x95
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+#include <stdio.h>
+// TARGET: vgui2::BuildGroup::sub_101c2860
+void vgui2::BuildGroup::sub_101c2860(char *buf, vgui2::Panel *panel)
+{
+    int i = 1;
+    char name[25] = "Unnamed dialog";
+    const char *src = (const char *)panel->vfunc19();
+    char *d = name;
+    char c;
+    do {
+        c = *src++;
+        *d++ = c;
+    } while (c);
+    while (1) {
+        sprintf(buf, "%s%d", name, i);
+        if (!sub_101c2900(buf))
+            return;
+        i++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2900 size=0x6e
 #include "vgui2__BuildGroup.h"
 #include "vgui2__Panel.h"
