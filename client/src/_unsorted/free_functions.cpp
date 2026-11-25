@@ -69358,6 +69358,22 @@ void CSplinePatch::sub_10135720(float s, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135c60 size=0x7b
+#include "CUnknown10135c60.h"
+void sub_101a2870(float *mat, float *vec, float *out);
+float CUnknown10135c60::sub_10135c60(int n)
+{
+	float *base = m_pTab[n];
+	float mat[16];
+	for (int i = 0; i < 4; i++)
+		for (int j = 0; j < 4; j++)
+			mat[i * 4 + j] = base[m_idx[i * 4 + j]];
+	float out[4];
+	sub_101a2870(mat, m_vec2, out);
+	return out[0] * m_vec1[0] + out[1] * m_vec1[1] + out[2] * m_vec1[2] + out[3] * m_vec1[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135da0 size=0x6
 namespace lifted {
 extern char g_105e5b30;
