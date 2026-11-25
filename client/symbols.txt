@@ -6063,6 +6063,7 @@
 0x10123b20 func   ?sub_10123b20@PC@@QAEXHPAXPBXI@Z PC::sub_10123b20
 0x10123b50 func   ?sub_10123b50@PredView@@QAEHPBD0H@Z PredView::sub_10123b50
 0x10123ba0 func   ?sub_10123ba0@CCopy@@QAEXHPAXPBXH@Z CCopy::sub_10123ba0
+0x10123bd0 func   ?sub_10123bd0@CPredictionCopy@@QAEHPBM0H@Z CPredictionCopy::sub_10123bd0
 0x10123c90 func   ?sub_10123c90@CPC@@QAEXHPADPBD@Z CPC::sub_10123c90
 0x10123cd0 func   ?sub_10123cd0@CPredictionCopy@@QAEHPBD0@Z CPredictionCopy::sub_10123cd0
 0x10123d30 func   ?sub_10123d30@CUnknown10123d30@@QAEHHHH@Z CUnknown10123d30::sub_10123d30

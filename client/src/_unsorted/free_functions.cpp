@@ -69231,6 +69231,54 @@ struct CCopy { char pad[0x2c]; bool m_b; void sub_10123ba0(int type, void *dst, 
 void CCopy::sub_10123ba0(int type, void *dst, const void *src, int n) { if (m_b && type != 1) memcpy(dst, src, n * 4); }
 // END FUNCTION
 
+// FUNCTION: 0x10123bd0 size=0xba
+#include "CPredictionCopy.h"
+#include <math.h>
+char CPredictionCopy::sub_10123470()
+{
+	unsigned short t = m_pCurrentField->m_Flags;
+	t >>= 10;
+	char c = ~t;
+	c &= 1;
+	return c;
+}
+// TARGET: ?sub_10123bd0@CPredictionCopy@@QAEHPBM0H@Z
+int CPredictionCopy::sub_10123bd0(const float *outvalue, const float *invalue, int count)
+{
+	if (!m_bErrorCheck)
+		return 0;
+	int retval = 1;
+	if (sub_10123470())
+	{
+		float tolerance = 0.0f;
+		short flags = m_pCurrentField->m_Flags;
+		bool usetolerance = (flags & 0x1800) != 0;
+		if (usetolerance)
+		{
+			if (flags & 0x800)
+				tolerance = 0.125f;
+			else
+				tolerance = 0.001f;
+		}
+		for (int i = 0; i < count; i++)
+		{
+			if (outvalue[i] == invalue[i])
+				continue;
+			if (usetolerance)
+			{
+				if (fabs(outvalue[i] - invalue[i]) < tolerance)
+				{
+					retval = 2;
+					continue;
+				}
+			}
+			return 0;
+		}
+	}
+	return retval;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10123c90 size=0x36
 #include <string.h>
 struct CPC {
