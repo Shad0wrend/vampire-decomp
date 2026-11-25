@@ -45902,6 +45902,27 @@ int CUnknown100c93a0::sub_100c93a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9680 size=0xb8
+#include "C_VGuiScreen.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10108fd0(const float *start, float scale, const float *dir, float *dest);
+
+void C_VGuiScreen::sub_100c9680(Vector &v1, Vector &v2, Vector &v3)
+{
+	Vector forward;
+	Vector origin = GetAbsOrigin();
+	Vector right;
+	sub_101090a0(GetAbsAngles(), &forward, &right, 0);
+	right *= -1.0f;
+	v3 = origin;
+	sub_10108fd0(origin.Base(), *(float *)((char *)this + 0x41c), right.Base(), v1.Base());
+	sub_10108fd0(v1.Base(), *(float *)((char *)this + 0x418), forward.Base(), v2.Base());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9790 size=0x83
 #include "C_BaseEntity.h"
 #include "Vector.h"
