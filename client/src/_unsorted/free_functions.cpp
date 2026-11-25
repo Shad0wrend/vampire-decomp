@@ -73110,6 +73110,34 @@ void CView101435f0::sub_101435f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143740 size=0x6f
+#include "CUnknown10142e50.h"
+
+struct Elem40 { int m_index; int m_value; };
+struct View40 {
+	char pad0[0x28];
+	Elem40 **m_arr;
+	int sub_10143740(int idx);
+};
+extern int g_105e77ec;
+extern void **g_105e77f0;
+
+// TARGET: sub_10143740
+int View40::sub_10143740(int idx)
+{
+	int i = m_arr[idx]->m_index;
+	CUnknown10142e50 *o;
+	if ( i >= 0 && i < g_105e77ec )
+		o = (CUnknown10142e50 *)g_105e77f0[i];
+	else
+	{
+		static CUnknown10142e50 s_default(-1);
+		o = &s_default;
+	}
+	return o->sub_10143120(m_arr[idx]->m_value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101437b0 size=0x14
 struct CUnknown101437b0 { void * sub_101437b0(); };
 void * CUnknown101437b0::sub_101437b0()
