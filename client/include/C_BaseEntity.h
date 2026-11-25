@@ -9,6 +9,7 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	void sub_1011bd60(C_BaseEntity *other);
 	bool sub_1011b290(int type);
 	void sub_1011b320(int type);
 	void sub_1011b3b0(int type);
