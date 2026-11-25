@@ -47220,6 +47220,46 @@ void UtlMem::sub_100e12c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1330 size=0x64
+#include "utlmemory.h"
+
+struct Elem5 { char m[5]; };
+
+struct Mem5
+{
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_100e1330(int num);
+};
+
+// TARGET: Mem5::sub_100e1330
+void Mem5::sub_100e1330(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int nAllocationRequested = m_nAllocationCount + num;
+	while (m_nAllocationCount < nAllocationRequested)
+	{
+		if (m_nAllocationCount != 0)
+		{
+			if (m_nGrowSize)
+				m_nAllocationCount += m_nGrowSize;
+			else
+				m_nAllocationCount += m_nAllocationCount;
+		}
+		else
+		{
+			m_nAllocationCount = (31 + sizeof(Elem5)) / sizeof(Elem5);
+		}
+	}
+	if (m_pMemory)
+		m_pMemory = (Elem5 *)_imp__Plat_Realloc(m_pMemory, m_nAllocationCount * sizeof(Elem5));
+	else
+		m_pMemory = (Elem5 *)_imp__Plat_Alloc(m_nAllocationCount * sizeof(Elem5));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e13a0 size=0x4
 struct CUnknown100e13a0 { char * sub_100e13a0(); };
 char * CUnknown100e13a0::sub_100e13a0()
