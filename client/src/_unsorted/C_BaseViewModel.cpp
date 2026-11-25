@@ -69,6 +69,27 @@ void C_BaseViewModel::vfunc21()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f890 size=0x53
+#include "Vector.h"
+#include "C_BaseViewModel.h"
+struct GV { char p[0xc]; float curtime; };
+extern GV *g_102b8494;
+#define F(T, off) (*(T *)((char *)this + off))
+// TARGET: C_BaseViewModel::vfunc143
+void C_BaseViewModel::vfunc143(int a)
+{
+	if (vfunc51())
+	{
+		F(int, 0x63c) = a;
+		F(int, 0x7e4) = (F(int, 0x7e4) + 1) & 7;
+		F(int, 0x7f0) = F(int, 0x7e4);
+		F(float, 0x6c) = F(float, 0x70) = g_102b8494->curtime;
+		F(int, 0x648) = 0;
+		sub_10095880();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f940 size=0x6
 #include "C_BaseViewModel.h"
 namespace lifted {
