@@ -25,6 +25,13 @@ struct CUnknown101d7ec0_Check	// 12 bytes: one condition tested by sub_101d7fb0
 	unsigned char m_nFlags;	// 0x08: bit 0 inverts the comparison
 };
 
+struct CUnknown101d7ec0_CheckList	// count + array of 12-byte checks
+{
+	int m_nCount;
+	CUnknown101d7ec0_Check *m_pChecks;
+	bool sub_10145370(int, int);
+};
+
 class CUnknown101d7ec0
 {
 public:
