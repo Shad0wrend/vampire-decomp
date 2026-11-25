@@ -53,6 +53,46 @@ void CHudWeaponSelection::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7710 size=0xab
+#include "CHudWeaponSelection.h"
+#include "CHud.h"
+
+extern CHud g_104cfe38;
+extern const char g_102af2e8[];
+int sub_100ccdc0(void *);
+int sub_100ccde0(void *);
+int sub_100cd100();
+struct CHudRes100f0180 { void sub_100f0180(int); };
+struct XRes101a8ca0 { void sub_101a8ca0(); };
+extern XRes101a8ca0 g_10678dd4;
+extern int g_10678d98;
+extern int g_10678dd0;
+extern int g_10678dcc;
+extern int g_10678cf0;
+
+void CHudWeaponSelection::vfunc2()
+{
+	m_pBucket1 = g_104cfe38.sub_100f11d0("bucket1");
+	m_pSelection = g_104cfe38.sub_100f11d0("selection");
+	g_10678d98 = sub_100ccdc0(m_pBucket1);
+	g_10678dd0 = sub_100ccde0(m_pBucket1);
+	CHudRes100f0180 *pRes = (CHudRes100f0180 *)g_104cfe38.sub_100f0ed0(g_102af2e8);
+	pRes->sub_100f0180(g_10678dd0);
+	g_10678dd4.sub_101a8ca0();
+	if (sub_100cd100() >= 640)
+	{
+		g_10678dcc = 20;
+		g_10678cf0 = 4;
+	}
+	else
+	{
+		g_10678dcc = 10;
+		g_10678cf0 = 2;
+	}
+	vfunc7();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a78c0 size=0x124
 #include "CHudWeaponSelection.h"
 
