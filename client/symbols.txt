@@ -6324,6 +6324,7 @@
 0x10129e90 func   ?vfunc35@CSave@@UAEXPBDPAXH@Z CSave::vfunc35
 0x10129ef0 func   ?vfunc34@CSave@@UAEXPBQAUCSaveEdict@@H@Z CSave::vfunc34
 0x10129f40 func   ?vfunc37@CSave@@UAEXPBDPAXH@Z CSave::vfunc37
+0x10129fd0 func   ?vfunc36@CSave@@UAEXPBXH@Z CSave::vfunc36
 0x1012a060 func   ?sub_1012a060@CSave@@QAE_NHPAX0PAUtypedescription_t@@@Z CSave::sub_1012a060
 0x1012a170 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1012a200 func   ?vfunc34@IRestore@@UAEPAXE@Z IRestore::vfunc34
