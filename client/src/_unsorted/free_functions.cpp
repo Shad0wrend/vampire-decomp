@@ -34827,6 +34827,18 @@ int CUnknown10094ee0::sub_10094ee0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095640 size=0x3e
+#include "Vector.h"
+#include "C_BaseAnimating.h"
+// TARGET: C_BaseAnimating::sub_10095640
+float C_BaseAnimating::sub_10095640(int a)
+{
+	Vector v;
+	sub_10095680(a, &v);
+	return v.Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100958f0 size=0x19
 namespace lifted {
 int __stdcall sub_10096830(int);
