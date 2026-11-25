@@ -23,7 +23,8 @@ public:
 
 		// "CUtlLinkedList::RemoveAll": puts every node into the free list (stub 0x10005d0d)
 		// "CUtlLinkedList::IsInList": i is below the number of allocated nodes, not negative and the node's previous index is not itself (called through the stub at 0x1000ac54)
-	void sub_100caa00(int elem);	// "CUtlLinkedList::Unlink": takes the node out of the list when it is in it (IsInList inlined)
+	void sub_100caa00(int elem);
+	void sub_101be340(int before, int elem);	// "CUtlLinkedList::Unlink": takes the node out of the list when it is in it (IsInList inlined)
 
 	bool IsValidIndex(int i) const
 	{

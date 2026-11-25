@@ -25,6 +25,7 @@ public:
 	CUtlLinkedList776Node &InternalElement(unsigned short i) { return m_Memory[i]; }
 
 	~CUtlLinkedList776() { RemoveAll(); }
+	void sub_1002b420(unsigned short elem);
 
 	void RemoveAll()
 	{

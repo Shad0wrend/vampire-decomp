@@ -110,6 +110,55 @@ void CViewRenderBeams::vfunc6(IHandleEntity *pDeadEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193f90 size=0xa9
+#include "CViewRenderBeams.h"
+#include "Vector.h"
+struct IMI
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual int GetModelIndex(const char *name);
+};
+extern IMI *g_104a57f8;
+struct BeamInfoV
+{
+	int m_nType;
+	void *m_pStartEnt;
+	int m_nStartAttachment;
+	void *m_pEndEnt;
+	int m_nEndAttachment;
+	Vector m_vecStart;
+	Vector m_vecEnd;
+	int m_nModelIndex;
+	const char *m_pszModelName;
+	int m_nHaloIndex;
+	const char *m_pszHaloName;
+	float m_flHaloScale;
+	float m_flLife;
+};
+// TARGET: ?vfunc12@CViewRenderBeams@@UAEPAUBeam_t@@PAUBeamInfoV@@@Z
+Beam_t *CViewRenderBeams::vfunc12(BeamInfoV *info)
+{
+	if (info->m_flLife != 0)
+	{
+		if (!sub_101937e0(&info->m_vecStart, &info->m_vecEnd, 1))
+			return 0;
+	}
+	if (info->m_pszModelName && info->m_nModelIndex == -1)
+		info->m_nModelIndex = g_104a57f8->GetModelIndex(info->m_pszModelName);
+	if (info->m_pszHaloName && info->m_nHaloIndex == -1)
+		info->m_nHaloIndex = g_104a57f8->GetModelIndex(info->m_pszHaloName);
+	Beam_t *pBeam = sub_101938a0(info);
+	if (!pBeam)
+		return 0;
+	sub_10193790((BeamV *)pBeam, info);
+	if (info->m_flLife == 0)
+		*(unsigned int *)((char *)pBeam + 0x2c) |= 0x80000000;
+	return pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194040 size=0x11a
 #include "CViewRenderBeams.h"
 #include "Vector.h"

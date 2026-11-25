@@ -25,4 +25,5 @@ public:
 	bool m_b80;
 	bool m_b81;
 	void sub_100f2510();
+	int sub_100f1ee0(int width, const char *text, int len);
 };

@@ -188,6 +188,50 @@ void vgui2::Label::vfunc112(int w, int h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2880 size=0xc6
+#include "vgui2__Label.h"
+struct ISurfV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void DrawLine(int x0, int y0, int x1, int y1);
+};
+int sub_101ac8d0();
+// TARGET: ?vfunc133@Label@vgui2@@UAEXHHHHHH@Z
+void vgui2::Label::vfunc133(int x0, int y0, int x1, int y1, int dashLen, int gapLen)
+{
+	if ((x1 - x0) > (y1 - y0))
+	{
+		for (;;)
+		{
+			if (x0 + dashLen > x1)
+				((ISurfV *)sub_101ac8d0())->DrawLine(x0, y0, x1, y1);
+			else
+				((ISurfV *)sub_101ac8d0())->DrawLine(x0, y0, x0 + dashLen, y1);
+			x0 += dashLen;
+			if (x0 + gapLen > x1)
+				break;
+			x0 += gapLen;
+		}
+	}
+	else
+	{
+		for (;;)
+		{
+			if (y0 + dashLen > y1)
+				((ISurfV *)sub_101ac8d0())->DrawLine(x0, y0, x1, y1);
+			else
+				((ISurfV *)sub_101ac8d0())->DrawLine(x0, y0, x1, y0 + dashLen);
+			y0 += dashLen;
+			if (y0 + gapLen > y1)
+				break;
+			y0 += gapLen;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2950 size=0xf
 #include "vgui2__Label.h"
 namespace lifted {

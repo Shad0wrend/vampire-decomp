@@ -175,6 +175,54 @@ bool TextEntry::vfunc155(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae1e0 size=0xc1
+#include "vgui2__TextEntry.h"
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##1) V4(n##2) V4(n##3) V4(n##4)
+struct TV { int sub_101ae190(int n); };
+struct PanelV53 {
+    V16(a) V16(b) V16(c) V4(d) virtual void s52(); 
+    virtual int *vfunc53(int *out);
+};
+struct TECharVec {
+    int size;
+    int m4;
+    char *data;
+    bool IsValid(int i) const { return i >= 0 && i < size; }
+    char Get(int i) const { return data[i]; }
+};
+#define F(type, off) (*(type *)((char *)this + (off)))
+// TARGET: vgui2::TextEntry::vfunc166
+void vgui2::TextEntry::vfunc166(int count)
+{
+    {
+        int tmp;
+        F(int, 0x101) = *((PanelV53 *)this)->vfunc53(&tmp);
+    }
+    F(int, 0xa4) = 0;
+    F(char, 0xd9) = 0;
+    F(int, 0xec) = ((TV *)this)->sub_101ae190(count);
+    char prev = 0;
+    for (int i = 0; i < count; i++) {
+        TECharVec *v = (TECharVec *)((char *)this + 0x58);
+        if (v->IsValid(i) && v->Get(i) == 1) {
+            int x, y;
+            i = vfunc171(v, i, (int)&x, (int)&y);
+            char cur = F(char, 0xd9);
+            if (prev != cur) {
+                if (cur)
+                    F(int, 0xec)++;
+                prev = cur;
+            }
+        }
+    }
+    F(int, 0x101) = F(int, 0xd5);
+    F(int, 0x108) = F(int, 0xa4);
+    F(char, 0x10c) = F(char, 0xd9);
+    F(char, 0x100) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae2b0 size=0x35
 #include "vgui2__TextEntry.h"
 namespace lifted {
@@ -659,6 +707,41 @@ int vgui2::TextEntry::vfunc162()
 	int a = sub_101ac8d0()->s63(v->m_124);
 	int b = ((PV *)this)->sub_101ab1a0();
 	return b / 2 - a / 2;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101affe0 size=0xc1
+#include "vgui2__TextEntry.h"
+extern "C" int __cdecl isspace(int);
+struct TextEntryCharVec
+{
+	int size; int m4; char *data;
+	char Get(int i) const { if (i < 0 || i >= size) return 0; return data[i]; }
+};
+struct TEView { char pad[0x58]; TextEntryCharVec v; char pad2[0x70 - 0x64]; int pos; };
+// TARGET: vgui2::TextEntry::vfunc114
+void vgui2::TextEntry::vfunc114()
+{
+	TEView *t = (TEView *)this;
+	vfunc165();
+	t->pos++;
+	while (t->pos < t->v.size) {
+		if (isspace(t->v.Get(t->pos)))
+			break;
+		t->pos++;
+	}
+	t->pos++;
+	while (t->pos < t->v.size) {
+		if (!isspace(t->v.Get(t->pos)))
+			break;
+		t->pos++;
+	}
+	if (t->pos > t->v.size)
+		t->pos = t->v.size;
+	sub_101aff20();
+	vfunc150();
+	vfunc109();
+	vfunc6();
 }
 // END FUNCTION
 

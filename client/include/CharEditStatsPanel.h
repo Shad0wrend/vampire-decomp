@@ -10,6 +10,16 @@ class CharEditStatsPanel : public vgui2::PropertyPage
 {
 public:
 	void sub_1017f640();
+	void sub_10182460();
+	int sub_10182450();
+	int sub_1017f290();
+	char m_pad0[0x2bc - sizeof(vgui2::PropertyPage)];
+	vgui2::Panel *m_p2bc;
+	vgui2::Panel *m_p2c0;
+	vgui2::Panel *m_p2c4;
+	vgui2::Panel *m_p2c8;
+	int m_unk2cc; int m_unk2d0; int m_unk2d4;
+	vgui2::Panel *m_p2d8;
 	void *sub_101808d0(const char *, int *);
 	virtual ~CharEditStatsPanel();
 	static void operator delete(void *pMem) { free(pMem); }

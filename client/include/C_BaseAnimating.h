@@ -20,6 +20,7 @@ public:
 	void sub_10095680(int, Vector *);
 	float sub_10095910(int, void *);
 	bool sub_10094020();
+	float sub_10091020(float, float, float, bool);
 	float sub_1008fa70(float, int, float, float, float);
 	struct PoseDesc1008fa70 *sub_10096830(int);
 	int sub_10092810();
@@ -64,7 +65,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc86();
 	virtual void vfunc112();
 	// the slots C_BaseAnimating adds to its base's vtable: 120-142, vfuncK at slot K
-	virtual void vfunc120(int, int);
+	virtual void vfunc120(float *, float);
 	virtual void vfunc121();
 	virtual float vfunc122();
 	virtual void vfunc123();
@@ -73,7 +74,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc126();
 	virtual void vfunc127();
 	virtual void vfunc128();
-	virtual void vfunc129();
+	virtual float vfunc129(int, float, float, float);
 	virtual void vfunc130();
 	virtual void vfunc131(int, int, int, int, int, int);
 	virtual void vfunc132(bool);

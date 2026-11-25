@@ -19,5 +19,7 @@ public:
 	bool sub_100f10d0(int mask);
 	void sub_100f2e80(int, int, int, int, int, int, int, int, int);
 	void sub_100f07f0();
+	void sub_100f06d0();
+	void sub_100f07a0();
 	int m_unk50; struct CHudSub *m_pSubs; int m_unk58; int m_unk5c; int m_unk60; int m_nSubs;
 };

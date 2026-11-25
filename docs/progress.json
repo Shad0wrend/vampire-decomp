@@ -9,7 +9,7 @@
   {
    "name": "client.dll",
    "code": 1973229,
-   "done": 0.4276576779597759
+   "done": 0.4346572408567692
   },
   {
    "name": "GameUI.dll",
@@ -236,30 +236,30 @@
  "client": [
   {
    "name": "no file yet",
-   "cpp": 492395,
+   "cpp": 499274,
    "asm": 5105,
-   "open": 567338,
-   "n_cpp": 6502,
+   "open": 560459,
+   "n_cpp": 6539,
    "n_asm": 32,
-   "n_open": 1404
+   "n_open": 1367
   },
   {
    "name": "cl_dll",
-   "cpp": 130370,
+   "cpp": 134691,
    "asm": 1495,
-   "open": 339744,
-   "n_cpp": 2391,
+   "open": 335423,
+   "n_cpp": 2416,
    "n_asm": 4,
-   "n_open": 813
+   "n_open": 788
   },
   {
    "name": "game_shared",
-   "cpp": 32016,
+   "cpp": 32650,
    "asm": 0,
-   "open": 48100,
-   "n_cpp": 373,
+   "open": 47466,
+   "n_cpp": 377,
    "n_asm": 0,
-   "n_open": 121
+   "n_open": 117
   },
   {
    "name": "_init",

@@ -57,4 +57,8 @@ public:
 
 class CLocalPlayerFilter : public C_RecipientFilter
 {
+#ifdef PCD_LPF_CTOR
+public:
+	CLocalPlayerFilter();	// 0x100be160, out of line; only sources that call it define PCD_LPF_CTOR (the ??_G emitter needs it inline)
+#endif
 };

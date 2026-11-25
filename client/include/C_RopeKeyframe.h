@@ -4,6 +4,7 @@
 #include "C_BaseEntity.h"
 
 #include "CBaseRopePhysics.h"
+#include "CBaseHandle.h"
 
 class C_RopeKeyframe : public C_BaseEntity
 {
@@ -19,6 +20,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 
 	C_RopeKeyframe();
     void sub_100c0850(float **pSubdivs, int *pSubdivCount);
+    bool sub_100c0630(struct AttV *pEnt, int iAttachment, Vector &vPos, QAngle &angles);
+    void sub_100c07b0(int iPoint, Vector &vPos, QAngle &angles);
+    bool sub_100c0700(int iPt, Vector &vPos);
     // the base slots the game's vtable fills with C_RopeKeyframe's own function
     virtual int vfunc15();
     virtual int vfunc16();
@@ -27,7 +31,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     bool m_bApplyWind;
     char m_pad041d[0x44c - 0x41d];
     unsigned int m_RopeFlags;
-    char m_pad0450[0x6c8 - 0x450];
+    char m_pad0450[0x6bc - 0x450];
+    CBaseHandle m_hStartPoint;
+    CBaseHandle m_hEndPoint;
+    short m_iStartAttachment;
+    short m_iEndAttachment;
     unsigned char m_nSubdivs;
     char m_pad06c9[0x6f0 - 0x6c9];
     Vector m_vForce;

@@ -15,7 +15,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc74(int);
 	virtual void vfunc98();
 	// the slots CCenterStringPanel adds to its base's vtable: 107-111, vfuncK at slot K
-	virtual void vfunc107();
+	virtual char vfunc107();
 	virtual int vfunc108(int, int, int, int);
 	virtual void vfunc109(const char *fmt, ...);
 	virtual void vfunc110(int, int, int, int, const char *fmt, ...);

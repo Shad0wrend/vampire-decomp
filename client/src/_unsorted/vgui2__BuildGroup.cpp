@@ -273,6 +273,23 @@ int vgui2::BuildGroup::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c23c0 size=0xbf
+#include "vgui2__BuildGroup.h"
+struct PHandle101c23c0
+{
+    int m_h;
+    PHandle101c23c0() : m_h(-1) {}
+    vgui2::Panel *sub_101ac6b0(vgui2::Panel *);
+};
+
+void vgui2::BuildGroup::vfunc11(vgui2::Panel *pPanel)
+{
+    PHandle101c23c0 h;
+    h.sub_101ac6b0(pPanel);
+    ((CUtlVector<int> &)m_Panels).AddToTail(h.m_h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2480 size=0x79
 #include "vgui2__BuildGroup.h"
 #include <string.h>

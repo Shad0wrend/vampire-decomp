@@ -392,6 +392,65 @@ int vgui2::TreeView::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd880 size=0xc6
+#include "vgui2__TreeView.h"
+#include "CUtlLinkedList12.h"
+struct TVLabelView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26();
+	virtual void v27(const char *psz);
+};
+struct TVNodeView
+{
+	char m_pad0[0x5c];
+	int m_n5c;
+	TVNodeView *m_pParent;	// 0x60
+	char m_pad64[4];
+	TVLabelView *m_pLabel;	// 0x68
+	char m_pad6c[4];
+	char m_b70;
+	char m_pad71[0x88 - 0x71];
+	vgui2::TreeView *m_pTree;	// 0x88
+};
+struct TVListView
+{
+	char m_pad0[0x78];
+	CUtlLinkedList12 m_list;
+};
+void vgui2::TreeView::vfunc120(int i, bool bFlag)
+{
+	TVListView *v = (TVListView *)this;
+	if (!v->m_list.IsValidIndex(i))
+		return;
+	TVNodeView *pNode = (TVNodeView *)v->m_list.m_pMemory[i].m_pData;
+	pNode->m_b70 = bFlag;
+	if (bFlag) {
+		pNode->m_pLabel->v27("-");
+	} else {
+		pNode->m_pLabel->v27("+");
+		int nSel = pNode->m_pTree->vfunc117();
+		if (nSel != -1) {
+			TVListView *t = (TVListView *)pNode->m_pTree;
+			TVNodeView *p = ((TVNodeView *)t->m_list.m_pMemory[nSel].m_pData)->m_pParent;
+			while (p) {
+				if (p == pNode) {
+					pNode->m_pTree->vfunc116(pNode->m_n5c);
+					break;
+				}
+				p = p->m_pParent;
+			}
+		}
+	}
+	pNode->m_pTree->vfunc57(0, 0);
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd950 size=0x27
 #define V10(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7(); virtual void a##n##8(); virtual void a##n##9();
 struct VBar { V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)

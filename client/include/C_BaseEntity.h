@@ -9,11 +9,16 @@ class C_BaseEntity : public IClientEntity
 public:
 	C_BaseEntity();
 	void sub_100a2580();
+	void sub_100a2610(bool flag, int a);
 	void sub_1011d190(float frametime);
 	void sub_100a2850(Vector *mins, Vector *maxs);
 	void sub_100a2480(const Vector &origin);
 	void sub_1007e180(int a, int b);
 	void sub_1007e100();
+	void sub_100a2970(C_BaseEntity *p);
+	void sub_1007eb60();
+	void sub_100a2220(Vector v);
+	void sub_1007e040();
 	void sub_100a2850(const Vector *mins, const Vector *maxs);
 	void sub_100a10b0(int a);
 	void sub_100a2930();
@@ -37,6 +42,7 @@ public:
 	void sub_100a1a70(int a);
 	bool sub_1009e0f0(int a, int b);
 	void sub_1009f8a0();
+	void sub_1009fa70();
 	void sub_1009f780();
 	float sub_1009f190();
 	void *sub_1009f7f0(void *);
