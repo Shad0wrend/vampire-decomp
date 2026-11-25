@@ -12,6 +12,7 @@ public:
 	void sub_100a2580();
 	void sub_100a2610(bool flag, int a);
 	void sub_1011d190(float frametime);
+	bool sub_100a0d10();
 	void sub_100a2850(Vector *mins, Vector *maxs);
 	void sub_100a2480(const Vector &origin);
 	void sub_1007e180(int a, int b);
@@ -184,7 +185,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc70();
 	virtual bool vfunc71();
 	virtual int vfunc72();
-	virtual void vfunc73();
+	virtual bool vfunc73();
 	virtual bool vfunc74();
 	virtual bool vfunc75();
 	virtual void vfunc76();
