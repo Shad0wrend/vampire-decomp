@@ -4560,6 +4560,7 @@
 0x100ccea0 func   ?sub_100ccea0@@YAPADPBDZZ sub_100ccea0
 0x100cced0 func   ?sub_100cced0@@YADH@Z sub_100cced0
 0x100ccf00 func   ?sub_100ccf00@@YAXPAM@Z sub_100ccf00
+0x100ccf50 func   ?sub_100ccf50@@YAXABVVector@@0AAV1@M@Z sub_100ccf50
 0x100cd000 func   ?sub_100cd000@@YAXMPBM0PAM@Z sub_100cd000
 0x100cd030 func   ?sub_100cd030@@YAXHHHZZ sub_100cd030
 0x100cd060 func   ?sub_100cd060@@YAXHHHZZ sub_100cd060

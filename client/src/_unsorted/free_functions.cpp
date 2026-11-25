@@ -47537,6 +47537,34 @@ void sub_100ccf00(float *a) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccf50 size=0xac
+#include "Vector.h"
+#include "Quaternion.h"
+void sub_1010a650(const Vector &angles, Quaternion &q);
+void sub_1010a140(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt);
+void sub_1010a690(const Quaternion &q, Vector &angles);
+
+// TARGET: sub_100ccf50
+void sub_100ccf50(const Vector &a, const Vector &b, Vector &out, float t)
+{
+	if (t < 0.001f)
+	{
+		out = a;
+		return;
+	}
+	if (t > 0.999f)
+	{
+		out = b;
+		return;
+	}
+	Quaternion qa, qb, q;
+	sub_1010a650(a, qa);
+	sub_1010a650(b, qb);
+	sub_1010a140(qa, qb, t, q);
+	sub_1010a690(q, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd000 size=0x2e
 // TARGET: sub_100cd000
 void sub_100cd000(float t, const float *a, const float *b, float *out) {
