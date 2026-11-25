@@ -271,6 +271,52 @@ bool C_BasePlayer::vfunc74()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a76a0 size=0xca
+#include "C_BasePlayer.h"
+#include "C_BaseEntity.h"
+#include "ehandle.h"
+#include "IClientRenderable.h"
+#include "CBaseEntityList.h"
+
+struct LeafView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual bool v12(void *pEntity);
+};
+struct CUnknown1009f6e0 { char *sub_1009f6e0(); };
+struct CUnknown1009f6f0 { char *sub_1009f6f0(); };
+
+extern LeafView *g_105f99d8;
+
+// TARGET: C_BasePlayer::vfunc37
+void C_BasePlayer::vfunc37()
+{
+	if ( !((IClientRenderable *)((char *)this + 4))->ShouldDraw() )
+		return;
+	if ( !((LeafView *)g_105f99d8)->v12(this) )
+		return;
+
+	CBaseHandle &h = *(CBaseHandle *)((char *)this + 0x188);
+	if ( h.Get() )
+		sub_1009fc60(0xb, 0);
+
+	if ( sub_1009f140(0x10) )
+		vfunc132(0);
+
+	if ( vfunc74() )
+	{
+		sub_100a2030(((CUnknown1009f6e0 *)this)->sub_1009f6e0());
+		sub_100a2100(*(QAngle *)((CUnknown1009f6f0 *)this)->sub_1009f6f0());
+		vfunc132(0);
+		vfunc68(0);
+	}
+
+	vfunc76();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a7ab0 size=0x1a
 #include "C_BasePlayer.h"
 namespace lifted {
