@@ -6,7 +6,6 @@
 class C_LightGlow : public C_BaseEntity
 {
 public:
-	virtual ~C_LightGlow();
 	char m_unk_pad[0x414 - sizeof(C_BaseEntity)];
 	CGlowOverlay m_Glow;
 };
