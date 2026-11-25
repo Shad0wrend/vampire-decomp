@@ -16048,6 +16048,39 @@ void *CTempEnts::sub_1003cf20(const void *org, const void *model)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d260 size=0x9d
+#include "Vector.h"
+struct VMdl { virtual void v0(); virtual void v1(); virtual void v2(); virtual void GetBounds(int m, float *mins, float *maxs); };
+#define T10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct VE0 { T10(a) T10(b) T10(c) T10(d) T10(e) T10(f) };
+struct VEng : VE0 { T10(g) virtual void h0(); virtual int IsBoxVisible(float *mins, float *maxs); };
+struct VView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void Add(void *e); };
+struct TEnt {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const Vector &GetOrigin();
+	int m_unk4[15]; int m_model; int m_flags;
+};
+extern VMdl *g_104a57f8;
+extern VEng *g_104a57d4;
+extern VView *g_102d43d8;
+int __stdcall sub_1003d260(TEnt *e) {
+	if (!e->m_model) return 0;
+	Vector mins, maxs, a, b;
+	g_104a57f8->GetBounds(e->m_model, &mins.x, &maxs.x);
+	for (int i = 0; i < 3; i++) {
+		a[i] = e->GetOrigin()[i] + mins[i];
+		b[i] = e->GetOrigin()[i] + maxs[i];
+	}
+	if (g_104a57d4->IsBoxVisible(&a.x, &b.x)) {
+		e->m_flags = -1;
+		g_102d43d8->Add(e);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dab0 size=0x12
 namespace lifted {
 extern char g_10226fec;
