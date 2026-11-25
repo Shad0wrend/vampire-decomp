@@ -58090,6 +58090,36 @@ void PMgr::sub_10116f00(PNode *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101172d0 size=0x6c
+#include "CParticleMgr.h"
+
+extern char vt_10235930;
+extern char g_104e09c0;
+
+CParticleMgr *CParticleMgr::sub_101172d0()
+{
+	int zero = 0;
+	unsigned short ffff = 0xffff;
+	volatile char *pT = (volatile char *)this;
+	*(volatile int *)(pT + 0x14c) = zero;
+	*(volatile int *)(pT + 0x150) = zero;
+	*(volatile int *)(pT + 0x154) = zero;
+	*(volatile unsigned short *)(pT + 0x158) = ffff;
+	*(volatile unsigned short *)(pT + 0x15a) = ffff;
+	*(volatile unsigned short *)(pT + 0x15c) = ffff;
+	*(volatile unsigned short *)(pT + 0x160) = 0;
+	*(volatile unsigned short *)(pT + 0x15e) = 0;
+	*(volatile int *)(pT + 0x164) = zero;
+	*(volatile void **)this = &vt_10235930;
+	*(int *)((char *)this + 0x1ac) = zero;
+	*(volatile char *)(pT + 6) = 0;
+	g_104e09c0 = 1;
+	sub_10117a80();
+	*(volatile unsigned short *)(pT + 4) = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101175a0 size=0xb
 namespace lifted {
 struct C1010e440 { int sub_1010e440(); };
