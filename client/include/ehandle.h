@@ -8,12 +8,14 @@ extern CBaseEntityList *g_102b8e98;
 
 inline IHandleEntity *CBaseHandle::Get() const
 {
-	if ( m_Index == 0xffffffff )
-		return 0;
-	int idx = (int)(m_Index & 0x1fff);
-	int serial = (int)(m_Index >> 13);
-	CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[idx];
-	if ( e.m_SerialNumber != serial )
-		return 0;
-	return (IHandleEntity *)e.m_pEntity;
+	IHandleEntity *p = 0;
+	if ( m_Index != 0xffffffff )
+	{
+		int idx = (int)(m_Index & 0x1fff);
+		int serial = (int)(m_Index >> 13);
+		CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[idx];
+		if ( e.m_SerialNumber == serial )
+			p = (IHandleEntity *)e.m_pEntity;
+	}
+	return p;
 }
