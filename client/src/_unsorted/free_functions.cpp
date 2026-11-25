@@ -42132,6 +42132,40 @@ int CUnknown100bf700::sub_100bf700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf710 size=0x76
+#include "Vector.h"
+
+struct ElemV
+{
+	Vector v0;		// 0x00
+	Vector v1;		// 0x0c
+	char m_pad18[0x24 - 0x18];
+};
+struct TrailView
+{
+	char m_pad00[0x424];
+	int m_n424;		// 0x424
+	char m_pad428[0x460 - 0x428];
+	ElemV *m_p460;	// 0x460
+	int m_n464;		// 0x464
+};
+
+// TARGET: sub_100bf710
+char __fastcall sub_100bf710(TrailView *self)
+{
+	int count = self->m_n464;
+	for (int i = 0; i < count; i++)
+	{
+		ElemV *e = &self->m_p460[i];
+		Vector delta = e->v0 - e->v1;
+		if (delta.LengthSqr() > 0.03f)
+			return 1;
+	}
+	self->m_n424 -= 1;
+	return self->m_n424 > 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0350 size=0x54
 // TARGET: sub_100c0350
 int __stdcall sub_100c0350(int type, int value)
