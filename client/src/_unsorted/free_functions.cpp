@@ -38608,6 +38608,21 @@ int sub_100aaf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab190 size=0x46
+#include "ehandle.h"
+extern CBaseHandle *g_104a0d64;
+extern int g_104a0d70;
+void sub_100aaeb0();
+// TARGET: ?sub_100ab190@@YAPAVIHandleEntity@@H@Z
+IHandleEntity *sub_100ab190(int i)
+{
+	sub_100aaeb0();
+	if (i >= 0 && i < g_104a0d70)
+		return g_104a0d64[i].Get();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab7e0 size=0x64
 struct CUnknown100ab7e0 { int sub_100ab7e0(int, int, int, int, char); };
 int CUnknown100ab7e0::sub_100ab7e0(int a0, int a1, int a2, int a3, char a4)
