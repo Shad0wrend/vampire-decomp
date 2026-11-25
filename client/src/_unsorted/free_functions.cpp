@@ -975,6 +975,29 @@ void S10005330::sub_10005330(int i, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005360 size=0xb0
+#include "Vector.h"
+void __stdcall sub_10005360(const Vector *a, const Vector *b, const Vector *color, float amount, Vector *out)
+{
+	if (amount != 0.0f) {
+		float dx = a->x - b->x;
+		float dy = a->y - b->y;
+		float dz = a->z - b->z;
+		float d = dz * dz + dy * dy + dx * dx;
+		float s;
+		if (d > 0.0001f) {
+			s = 255.0f / d * amount;
+			if (s > 255.4f)
+				s = 255.4f;
+		} else {
+			s = 255.4f;
+		}
+		Vector t = *color * s;
+		*out += t;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005410 size=0x70
 #include "Vector.h"
 
