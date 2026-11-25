@@ -18396,6 +18396,24 @@ void CUnknown100dcd00::sub_100437f0(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043860 size=0xc8
+#include "CCollisionProperty.h"
+#include "QAngle.h"
+struct matrix3x4_t;
+extern QAngle g_104d5190;
+void sub_1010b210(const matrix3x4_t &, const Vector &, const Vector &, Vector &, Vector &);
+// TARGET: CCollisionProperty::sub_10043860
+void CCollisionProperty::sub_10043860(const Vector &mins, const Vector &maxs, Vector *pWorldMins, Vector *pWorldMaxs)
+{
+	if (!(m_unk44 & 0x80) && m_unk40 != 2 && m_unk40 != 0 && !(vfunc9(0) == g_104d5190)) {
+		sub_1010b210(vfunc10(), mins, maxs, *pWorldMins, *pWorldMaxs);
+	} else {
+		VectorAdd(mins, vfunc8(), *pWorldMins);
+		VectorAdd(maxs, vfunc8(), *pWorldMaxs);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043ef0 size=0x18
 struct CUnknown10095d00 { bool sub_10095d00(int a, int b); };
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
