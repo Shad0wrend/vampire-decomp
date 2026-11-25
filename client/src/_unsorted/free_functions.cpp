@@ -86784,6 +86784,24 @@ StatAction_1015a110 *StatAction_1015a110::sub_1015a110(int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a1b0 size=0x7f
+#include "CVStatAction_t.h"
+#include "ScopeTrace.h"
+// TARGET: ?sub_1015a1b0@CVStatAction_t@@QAEXXZ
+void CVStatAction_t::sub_1015a1b0()
+{
+	{
+		ScopeTrace trace("CVStatAction_t::~CVStatAction_t", g_102de300, g_102de300);
+		if (m_nType == 4)
+		{
+			delete m_pBuffer;
+			m_pBuffer = 0;
+		}
+	}
+	m_Part.sub_10161420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a230 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_101e3124;

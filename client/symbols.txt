@@ -7024,6 +7024,7 @@
 0x10159fc0 func   ?sub_10159fc0@CVStatCost_t@@QAEPBDXZ CVStatCost_t::sub_10159fc0
 0x1015a080 func   ?sub_1015a080@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_1015a080
 0x1015a110 func   ?sub_1015a110@StatAction_1015a110@@QAEPAU1@HH@Z StatAction_1015a110::sub_1015a110
+0x1015a1b0 func   ?sub_1015a1b0@CVStatAction_t@@QAEXXZ CVStatAction_t::sub_1015a1b0
 0x1015a230 func   ?sub_1015a230@@YAXH@Z sub_1015a230
 0x1015a290 func   ?sub_1015a290@TStat@@QAEXHH@Z TStat::sub_1015a290
 0x1015a6d0 func   ?sub_1015a6d0@CUnknown1015a6d0@@QAE_NH@Z CUnknown1015a6d0::sub_1015a6d0
