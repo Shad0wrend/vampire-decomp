@@ -88144,6 +88144,20 @@ void sub_1015aeb0(int callback)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015af10 size=0x8a
+#include "ScopeTrace.h"
+struct CVStatActionObjView { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual int vfunc9(); };
+struct CVStatActionTarget { int m_unk0; int m_unk4; CVStatActionObjView m_view; };
+extern void (__cdecl *g_105f93a0)(void *, int, int, int);
+struct CVStatActionList_t { void sub_1015af10(CVStatActionTarget *pTarget, int a1, int a2); };
+void CVStatActionList_t::sub_1015af10(CVStatActionTarget *pTarget, int a1, int a2)
+{
+	ScopeTrace trace("CVStatActionList_t::Update", g_102de300, g_102de300);
+	if (g_105f93a0 && pTarget)
+		g_105f93a0(this, (&pTarget->m_view)->vfunc9(), a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015b050 size=0xf5
 #include "CVStatInfo_t.h"
 #include "CVStatCost_t.h"
