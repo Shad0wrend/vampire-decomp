@@ -1,5 +1,7 @@
 #pragma once
 class CHudElement;
+class IDel { public: virtual ~IDel() {} };
+struct CHudSub { int m_u[33]; IDel *m_pObj; int m_t[4]; };
 class CHud {
 public:
 	void *sub_100f11d0(const char *pName);
@@ -11,4 +13,6 @@ public:
 	int m_HudListGrow;
 	int m_HudListSize;
 	CHudElement *sub_100f0ed0(const char *pName);
+	void sub_100f0860();
+	int m_unk50; struct CHudSub *m_pSubs; int m_unk58; int m_unk5c; int m_unk60; int m_nSubs;
 };
