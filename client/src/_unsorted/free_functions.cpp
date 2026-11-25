@@ -50444,6 +50444,26 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100effe0 size=0x75
+struct MeshView
+{
+    int m_pad[0xc0 / 4];
+    unsigned char *m_pCurrColor;
+    void sub_100effe0(float r, float g, float b);
+};
+
+void MeshView::sub_100effe0(float r, float g, float b)
+{
+    float fb = b * 255.0f + 8388608.0f;
+    float fg; fg = g * 255.0f + 8388608.0f;
+    float fr; fr = r * 255.0f + 8388608.0f;
+    int ib = *(int *)&fb & 0xff;
+    int ig; ig = *(int *)&fg & 0xff;
+    unsigned char ir = *(int *)&fr & 0xff;
+    *(int *)m_pCurrColor = 0xff000000 | (ir << 16) | (ig << 8) | ib;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f00b0 size=0x2a
 namespace lifted {
 extern char g_102af2e8;
