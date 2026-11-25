@@ -52,7 +52,10 @@ public:
 	int m_unk0c4[(0xdc - 0xc4) / 4];
 	unsigned int m_nFgColor;
 	unsigned int m_nBgColor;
-	int m_unk0e4[(0x170 - 0xe4) / 4];
+	int m_unk0e4[(0xec - 0xe4) / 4];
+	char m_c0ec; char m_b0ed; char m_c0ee; char m_c0ef;
+	int m_unk0f0[(0x170 - 0xf0) / 4];
+	void sub_101aaaa0(int);
 	void sub_101a98c0(int *, int *);
 	int sub_101ab1a0();
 	void sub_101a9890(int, int);
