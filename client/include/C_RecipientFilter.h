@@ -40,3 +40,7 @@ class CSingleUserRecipientFilter : public C_RecipientFilter
 class CPASFilter : public C_RecipientFilter
 {
 };
+
+class CLocalPlayerFilter : public C_RecipientFilter
+{
+};
