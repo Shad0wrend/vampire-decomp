@@ -9,5 +9,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CTextureTransformProxy's own function
     virtual bool vfunc0(void*, void*);
     virtual void vfunc1(int);
-    char m_pad0004[0x1c - 0x4];
+    char m_pad0004[0xc - 0x4];
+    void *m_pCenterVar;
+    void *m_pScaleVar;
+    void *m_pRotateVar;
+    void *m_pTranslateVar;
 };
