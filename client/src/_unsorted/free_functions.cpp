@@ -50819,6 +50819,38 @@ int CUnknown100e34a0::sub_100e34a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3560 size=0x89
+#include "CFunctionProxy.h"
+struct CMatVarView { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); virtual void a16(); virtual int vfunc17(); virtual void a18(); virtual void a19(); virtual void a20(); virtual void a21(); virtual void a22(); virtual int vfunc23(); };
+void CFunctionProxy::sub_100e3560(int *pType, int *pVecSize)
+{
+	CMatVarView *pSrc1 = (CMatVarView *)m_unk04;
+	*pType = pSrc1->vfunc23();
+	if (*pType == 2)
+	{
+		if (m_unk08 >= 0)
+			*pType = 0;
+		*pVecSize = ((CMatVarView *)m_unk04)->vfunc17();
+		return;
+	}
+	if (*pType == 6)
+	{
+		*pType = ((CMatVarView *)m_unk0c)->vfunc23();
+		if (*pType == 2)
+		{
+			*pVecSize = ((CMatVarView *)m_unk0c)->vfunc17();
+			return;
+		}
+		if (*pType == 6 && m_unk10)
+		{
+			*pType = ((CMatVarView *)m_unk10)->vfunc23();
+			if (*pType == 2)
+				*pVecSize = ((CMatVarView *)m_unk10)->vfunc17();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3b10 size=0x28
 void __stdcall sub_100e3b10(float *p, int i, int j, int k, float a, float b, float c)
 {
