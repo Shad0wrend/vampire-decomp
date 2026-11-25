@@ -73432,6 +73432,43 @@ void CView101435f0::sub_101435f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101436c0 size=0x72
+#include "CUnknown10142e50.h"
+
+extern int g_105e77ec;
+extern CUnknown10142e50 **g_105e77f0;
+
+struct SubV
+{
+	bool sub_10142310();
+};
+
+struct ElemV
+{
+	char pad0[8];
+	int m_idx;	// 0x08
+	int m_c;	// 0x0c
+	int m_10;	// 0x10
+	SubV m_sub;	// 0x14
+};
+
+bool __fastcall sub_101436c0(ElemV *self)
+{
+	CUnknown10142e50 *rec;
+	int idx = self->m_idx;
+	if ( idx >= 0 && idx < g_105e77ec )
+		rec = g_105e77f0[idx];
+	else
+	{
+		static CUnknown10142e50 s_default(-1);
+		rec = &s_default;
+	}
+	if ( rec->sub_10143120(self->m_c) != self->m_10 )
+		return false;
+	return self->m_sub.sub_10142310() ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143740 size=0x6f
 #include "CUnknown10142e50.h"
 
