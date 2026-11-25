@@ -5376,6 +5376,7 @@
 0x100f3640 func   ?sub_100f3640@CUnknown100f3640@@QAEPAXXZ CUnknown100f3640::sub_100f3640
 0x100f3680 func   ?sub_100f3680@CUnknown100f3680@@QAEXXZ CUnknown100f3680::sub_100f3680
 0x100f3690 func   ?vfunc17@CHudSprite@@QAEHH@Z CHudSprite::vfunc17
+0x100f3840 func   ?vfunc2@CHudSprite@@UAEHPBD@Z CHudSprite::vfunc2
 0x100f3950 func   ?vfunc4@CHudSprite@@UAEHHH@Z CHudSprite::vfunc4
 0x100f3980 func   ?vfunc5@CHudSprite@@UAEHHH@Z CHudSprite::vfunc5
 0x100f39b0 func   ?vfunc6@CHudSprite@@UAEXHHHH@Z CHudSprite::vfunc6
