@@ -119601,6 +119601,51 @@ Pnl_101c20d0 *BG_101c20d0::sub_101c20d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2180 size=0xe2
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+#include "vgui2__KeyValues.h"
+
+extern int sub_101ac8f0();
+
+struct CObj10678de8 {
+    virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+    virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+    virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+    virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+    virtual void a20(int, void *, int, int);
+};
+
+// TARGET: vgui2::BuildGroup::sub_101c2180
+void vgui2::BuildGroup::sub_101c2180()
+{
+    if (!m_unk58)
+    {
+        if (!(m_unk58 = (int)sub_101c20d0()))
+            return;
+    }
+
+    ((vgui2::Panel *)m_unk58)->vfunc21(1);
+    m_unk3c = m_unk60;
+
+    vgui2::KeyValues *kv = new vgui2::KeyValues("SetActiveControl");
+    kv->vfunc17((int)"PanelPtr", vfunc2());
+
+    ((CObj10678de8 *)(int)sub_101ac8f0())->a20(((vgui2::Panel *)m_unk58)->vfunc0(), kv, 0, 0);
+
+    int a, b, c, d;
+    ((vgui2::Panel *)m_unk60)->sub_101a98c0(&b, &d);
+    ((vgui2::Panel *)m_unk58)->sub_101a9920(&a, &c);
+    int dx = b - a;
+    if (dx < 0)
+    {
+        ((vgui2::Panel *)m_unk60)->sub_101a9920(&a, &c);
+        dx = a + b;
+    }
+    ((vgui2::Panel *)m_unk58)->sub_101a9890(dx, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2310 size=0x91
 struct CPanel
 {
