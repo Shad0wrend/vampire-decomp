@@ -7832,6 +7832,7 @@
 0x10167ed0 func   ?vfunc2@CMeasureTimePanel@@UAEXXZ CMeasureTimePanel::vfunc2
 0x101680f0 func   ?vfunc0@CProfiling@@UAEHH@Z CProfiling::vfunc0
 0x10168120 func   ?vfunc1@CProfiling@@UAEXXZ CProfiling::vfunc1
+0x10168150 func   ??0CMessageCharsPanel@@QAE@PAVPanel@vgui2@@@Z CMessageCharsPanel::CMessageCharsPanel
 0x101681f0 func   ?vfunc25@CMessageCharsPanel@@UAE_NHH@Z CMessageCharsPanel::vfunc25
 0x10168200 func   ??_GCMessageCharsPanel@@UAEPAXI@Z ??_GCMessageCharsPanel@@UAEPAXI@Z
 0x10168220 func   ??1CMessageCharsPanel@@UAE@XZ CMessageCharsPanel::~CMessageCharsPanel
