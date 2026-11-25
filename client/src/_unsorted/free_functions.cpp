@@ -59154,6 +59154,28 @@ void S1011d6a0::sub_1010f8c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101100b0 size=0x83
+#include "CKeyValuesX.h"
+extern void (*g_101e3114)(const char *, ...);
+extern "C" int sscanf(const char *, const char *, ...);
+// TARGET: sub_101100b0
+bool sub_101100b0(CKeyValuesX *kv, const char *pKey, int *r, int *g, int *b, int *a)
+{
+	*a = 255;
+	*b = 255;
+	*g = 255;
+	*r = 255;
+	const char *p = kv->sub_10128590(pKey, "255 255 255 255");
+	if (p && *p) {
+		if (sscanf(p, "%i %i %i %i", r, g, b, a) != 4)
+			g_101e3114("Couldn't scan four color values from %s\n", p);
+		else
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110290 size=0x9d
 #include "CKeyValuesX.h"
 extern "C" int sscanf(const char *, const char *, ...);
