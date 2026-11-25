@@ -51492,6 +51492,31 @@ void Ray_t::sub_100e91e0(const Vector &start, const float *pEnd, const float *pM
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9390 size=0x91
+#include "CGameMovement.h"
+struct GlobalsV_100e9390 { char m_pad[0x10]; float m_flFrameTime; };
+struct GravObj_100e9390 {
+	virtual void v0();
+	virtual bool IsNoGravity();
+	int m_pad[9];
+	float m_flGravity;
+};
+extern GlobalsV_100e9390 *g_102b8494;
+extern GravObj_100e9390 *g_104dfce4;
+
+void CGameMovement::sub_100e9390()
+{
+	char *move = (char *)m_pMove;
+	if (*(float *)(move + 0x199c) == 0.0f) {
+		float scale = *(float *)(move + 0x160) != 0.0f ? *(float *)(move + 0x160) : 1.0f;
+		float *pz = (float *)((char *)m_pPlayer + 0x48);
+		float g = g_104dfce4->IsNoGravity() ? 0.0f : g_104dfce4->m_flGravity;
+		*pz = *pz - g * g_102b8494->m_flFrameTime * scale * 0.5;
+		sub_100eb7a0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e9e40 size=0x26
 namespace lifted {
 struct V { virtual void u0(); virtual int f1(); };
