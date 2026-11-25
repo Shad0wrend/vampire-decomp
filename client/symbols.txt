@@ -11272,6 +11272,7 @@
 0x1024804c vtable ??_7C_VampireProjectile@@6B@ C_VampireProjectile::vftable
 0x102482a4 data   ??_7VKeyValues@@6BIKeyValues@@@ ??_7VKeyValues@@6BIKeyValues@@@
 0x102482fc data   ??_7VKeyValues@@6BIKeyCacheable@@@ ??_7VKeyValues@@6BIKeyCacheable@@@
+0x1024830c data   ??_7IKeyValues@@6BIKeyCacheable@@@ ??_7IKeyValues@@6BIKeyCacheable@@@
 0x1024831c vtable ??_7IKeyValues@@6B@ IKeyValues::vftable
 0x10248374 vtable ??_7IKeyCacheable@@6B@ IKeyCacheable::vftable
 0x10248398 vtable ??_7CVTraitEffectGroup_t@@6B@ CVTraitEffectGroup_t::vftable
