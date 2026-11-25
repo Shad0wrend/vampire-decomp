@@ -20,6 +20,8 @@ public:
 	void sub_10095680(int, Vector *);
 	float sub_10095910(int, void *);
 	bool sub_10094020();
+	float sub_1008fa70(float, int, float, float, float);
+	struct PoseDesc1008fa70 *sub_10096830(int);
 	int sub_10092810();
 	bool sub_10091910(int idx, int arg);
 	bool sub_10093e40();
