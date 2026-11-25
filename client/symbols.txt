@@ -7422,6 +7422,7 @@
 0x101657d0 func   ?vfunc98@CDebugOverlay@@UAEXXZ CDebugOverlay::vfunc98
 0x10165950 func   ?vfunc0@CDebugOverlayPanel@@UAEHH@Z CDebugOverlayPanel::vfunc0
 0x10165980 func   ?vfunc1@CDebugOverlayPanel@@UAEXXZ CDebugOverlayPanel::vfunc1
+0x101659b0 func   ?sub_101659b0@@YAXABVVector@@0HHHHH@Z sub_101659b0
 0x10165b00 func   ??_GCDownloadSliderPanel@@UAEPAXI@Z ??_GCDownloadSliderPanel@@UAEPAXI@Z
 0x10165b20 func   ??1CDownloadSliderPanel@@UAE@XZ CDownloadSliderPanel::~CDownloadSliderPanel
 0x10165b20 func   ?sub_10165b20@CUnknown10165b20@@QAEHXZ CUnknown10165b20::sub_10165b20

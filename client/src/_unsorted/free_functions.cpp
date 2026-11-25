@@ -93540,6 +93540,19 @@ int CUnknown10165750::sub_10165750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101659b0 size=0x99
+#include "Vector.h"
+struct IOverlay101659b0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void AddLineOverlay(const Vector &origin, const Vector &dest, int r, int g, int b, int noDepth, int duration);
+};
+extern IOverlay101659b0 *g_104a57e8;
+void sub_101659b0(const Vector &origin, const Vector &dest, int r, int g, int b, int noDepth, int duration)
+{
+	g_104a57e8->AddLineOverlay(origin + Vector(0, 0, 0.1f), dest + Vector(0, 0, 0.1f), r, g, b, noDepth, duration);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165b20 size=0xb
 namespace lifted {
 extern char g_10249124;
