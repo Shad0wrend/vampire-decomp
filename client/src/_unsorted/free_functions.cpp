@@ -37129,6 +37129,21 @@ int sub_100a2a90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2ab0 size=0x29
+#include "CClassMap.h"
+CClassMap *sub_100cde00();
+struct IClassMapView { virtual void v0(); virtual void v1(); virtual void *CreateEntity(const char *classname); };
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+void *sub_100a2ab0(const char *className)
+{
+	void *ent = ((IClassMapView *)sub_100cde00())->CreateEntity(className);
+	if (ent)
+		return ent;
+	Warning("Can't find factory for entity: %s\n", className);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2b30 size=0x66
 #include "Tier1.h"
 
