@@ -3,6 +3,7 @@
 // the destructor is slot 8 of its vtable; its overrides are declared, the other virtual functions before it are not yet
 #pragma once
 #include "IClientEntity.h"
+class IPhysicsObject;
 
 class C_BaseEntity : public IClientEntity
 {
@@ -199,7 +200,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc86();
 	virtual bool vfunc87();
 	virtual void vfunc88();
-	virtual void vfunc89();
+	virtual void vfunc89(IPhysicsObject *pPhysics);
 	virtual void vfunc90();
 	virtual int vfunc91(int, int);
 	virtual void vfunc92(int, int);
