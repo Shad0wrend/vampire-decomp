@@ -77176,6 +77176,68 @@ void CUnknown10133c80::sub_10133c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133d70 size=0xd4
+#include "ehandle.h"
+#include "IClientNetworkable.h"
+
+extern char g_102de300[];
+
+void sub_1012d1a0(void *pFilter, int entindex, int channel, const char *name,
+				  float volume, int soundlevel, int flags, int pitch,
+				  int a, int b, int c);
+float __fastcall sub_10133a10(void *pThis);
+
+class Filter_10133d70
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8();
+	unsigned char m_nFlags;	// +4
+};
+
+class SP_10133d70
+{
+public:
+	float m_pitchValue;		// 0x00
+	int m_unk04;			// 0x04
+	int m_unk08;			// 0x08
+	int m_unk0c;			// 0x0c
+	float m_volumeValue;	// 0x10
+	int m_unk14;			// 0x14
+	int m_unk18;			// 0x18
+	int m_unk1c;			// 0x1c
+	int m_soundlevel;		// 0x20
+	float m_flShutdown;		// 0x24
+	int m_unk28;			// 0x28
+	const char *m_pszName;	// 0x2c
+	CBaseHandle m_hEnt;		// 0x30
+	int m_entityChannel;	// 0x34
+	int m_flags;			// 0x38
+	int m_bIsPlaying;		// 0x3c
+	float m_flVolumeScale;	// 0x40
+	Filter_10133d70 m_Filter;	// 0x44
+
+	void sub_10133d70();
+};
+
+// TARGET: SP_10133d70::sub_10133d70
+void SP_10133d70::sub_10133d70()
+{
+	if ( !m_bIsPlaying )
+		return;
+	if ( !(m_Filter.m_nFlags & 1) )
+		return;
+
+	float flPitch = m_pitchValue;
+	const char *pName = m_pszName ? m_pszName : g_102de300;
+	int idx = m_hEnt.Get() ? ((IClientNetworkable *)((char *)m_hEnt.Get() + 8))->entindex() : -1;
+
+	sub_1012d1a0(&m_Filter, idx, m_entityChannel, pName, sub_10133a10(this),
+				  m_soundlevel, 3, (int)flPitch, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134010 size=0x1a
 namespace lifted {
 extern int g_102c532c;
