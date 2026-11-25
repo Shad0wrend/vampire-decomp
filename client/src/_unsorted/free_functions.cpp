@@ -29948,6 +29948,84 @@ int __cdecl sub_1007a030(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a050 size=0xe1
+struct GView
+{
+	char m_pad0[0xc];
+	float m_flc;
+};
+extern GView *g_102b8494;
+
+struct SeqDescV
+{
+	char m_pad0[8];
+	int m_n8;
+	char m_padc[0x14 - 0xc];
+	int m_n14;
+	int m_n18;
+};
+
+struct SeqElem
+{
+	float m_fl0;
+	int m_n4;
+	char m_pad8[0x4c - 8];
+};
+
+struct OutV
+{
+	int m_n0;
+	void *m_p4;
+	float m_fl8;
+	float m_flc;
+	int m_n10;
+};
+
+void *sub_1008d9d0(void *hdr, int seq);
+
+int sub_1007a050(void *hdr, int seq, OutV *out, float f1, float f2, int idx)
+{
+	if ( !out )
+		return 0;
+
+	SeqDescV *pDesc = (SeqDescV *)sub_1008d9d0(hdr, seq);
+	if ( !pDesc )
+		return 0;
+
+	int count = pDesc->m_n14;
+	if ( !count )
+		return 0;
+	if ( idx > count )
+		return 0;
+
+	SeqElem *arr = (SeqElem *)((char *)pDesc + pDesc->m_n18);
+	if ( idx >= count )
+		return 0;
+
+	int i;
+	SeqElem *e;
+	for (i = idx; i < count; i++)
+	{
+		e = &arr[i];
+		if ( e->m_n4 >= 5000 )
+			continue;
+		if ( e->m_fl0 >= f1 && e->m_fl0 < f2 )
+			goto found;
+		if ( (pDesc->m_n8 & 1) && f2 >= 1.0f && (f2 - 1.0f) > e->m_fl0 )
+			goto found;
+	}
+	return 0;
+
+found:
+	out->m_n10 = 0;
+	out->m_fl8 = arr[i].m_fl0;
+	out->m_flc = g_102b8494->m_flc;
+	out->m_n0 = arr[i].m_n4;
+	out->m_p4 = (char *)&arr[i] + 0xc;
+	return i + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a140 size=0x13d
 struct CStudioHdr;
 char *sub_1008da80(CStudioHdr *pStudioHdr, int iSequence, CStudioHdr **ppOwner);
