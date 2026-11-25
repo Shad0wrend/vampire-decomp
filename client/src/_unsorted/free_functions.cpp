@@ -95633,6 +95633,34 @@ void __stdcall sub_101837b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183810 size=0x83
+#include "CUnknown10183aa0.h"
+struct IEng28 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void ClientCmd(const char *s);
+};
+extern IEng28 *g_104a57d4;
+void CUnknown10183aa0::sub_10183810()
+{
+	for (int i = 0; i < 10; i++)
+		sub_101837b0(&m_rows[i]);
+	if (m_pPanel1d44)
+		delete m_pPanel1d44;
+	m_pPanel1d44 = 0;
+	if (m_pPanel1d48)
+		delete m_pPanel1d48;
+	m_pPanel1d48 = 0;
+	if (m_pPanel1d40)
+		delete m_pPanel1d40;
+	m_pPanel1d40 = 0;
+	if (m_b1e14)
+		g_104a57d4->ClientCmd("unpause");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101838a0 size=0x2b
 #include "VItemInfoUI.h"
 int sub_1016a6b0();
