@@ -16,6 +16,8 @@ public:
 	bool sub_10095ac0(int idx, int arg);
 	int sub_1008f900(int index);
 	void sub_10096c30();
+	void sub_100bdb60(Vector &, Vector &);
+	void sub_10094350(Vector &, Vector &);
 	void sub_100948d0(int);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
