@@ -15,4 +15,9 @@ public:
 	matrix3x4_t *m_pElements;
 
 	void sub_10096fc0(int elem, int num, const matrix3x4_t *pSrc);	// "CUtlVector::InsertMultipleBefore": grows, shifts the tail up by num, copies pSrc
+
+	int Count() const { return m_size; }
+	void RemoveAll() { m_size = 0; }
+	int AddMultipleToTail(int num) { return sub_10096fc0(m_size, num, 0); }
+	void SetSize(int n) { RemoveAll(); AddMultipleToTail(n); }
 };
