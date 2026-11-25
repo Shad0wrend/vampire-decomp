@@ -18,6 +18,6 @@ public:
 
 	int Count() const { return m_size; }
 	void RemoveAll() { m_size = 0; }
-	int AddMultipleToTail(int num) { return sub_10096fc0(m_size, num, 0); }
+	void AddMultipleToTail(int num) { sub_10096fc0(m_size, num, 0); }
 	void SetSize(int n) { RemoveAll(); AddMultipleToTail(n); }
 };
