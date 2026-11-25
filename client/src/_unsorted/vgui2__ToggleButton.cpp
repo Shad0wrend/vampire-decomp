@@ -59,6 +59,26 @@ int vgui2::ToggleButton::vfunc156(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc410 size=0xa2
+#include "vgui2__ToggleButton.h"
+#include "vgui2__KeyValues.h"
+
+// TARGET: vgui2::ToggleButton::vfunc147
+int vgui2::ToggleButton::vfunc147()
+{
+    if (vfunc144())
+        vfunc141(0);
+    else if (!vfunc144())
+        vfunc141(1);
+    vfunc143(vfunc144() == 0);
+    vfunc150();
+    vgui2::KeyValues *kv = new vgui2::KeyValues("ButtonToggled");
+    kv->vfunc15((int)"state", vfunc144() & 0xff);
+    vfunc43(kv);
+    return vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc4c0 size=0x2c
 #include "vgui2__ToggleButton.h"
 struct ISch { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int *v6(int *out, const char *name); };
