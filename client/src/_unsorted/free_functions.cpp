@@ -39486,6 +39486,44 @@ char CUnknown100a2600::sub_100a2600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2610 size=0xc1
+#include "C_BaseEntity.h"
+struct Ent_100a2610 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16();
+	virtual int *v17();
+	int sub_100a2fa0(int);
+	int sub_100a2fc0();
+};
+struct Data_100a2610 {
+	int m[13];
+	Data_100a2610 *sub_10123290(int, Ent_100a2610 *, int, int, int, int, int, int, int);
+	void sub_10124440(int *, int, int);
+};
+void C_BaseEntity::sub_100a2610(bool flag, int a)
+{
+	Ent_100a2610 *ent = (Ent_100a2610 *)this;
+	Data_100a2610 d;
+	if (flag) {
+		int f = ent->sub_100a2fa0(a);
+		d.sub_10123290(1, ent, 0, f, 1, 0, 1, 0, 0);
+		int *p = ent->v17();
+		d.sub_10124440(ent->v17(), p[0], ent->v17()[1]);
+		int f2 = ent->sub_100a2fc0();
+		d.sub_10123290(2, ent, 0, f2, 1, 0, 1, 0, 0);
+		int *q = ent->v17();
+		d.sub_10124440(ent->v17(), q[0], ent->v17()[1]);
+	} else {
+		int f2 = ent->sub_100a2fc0();
+		d.sub_10123290(0, ent, 0, f2, 1, 0, 1, 0, 0);
+		int *q = ent->v17();
+		d.sub_10124440(ent->v17(), q[0], ent->v17()[1]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2850 size=0x51
 #include "C_BaseEntity.h"
 #include "vector.h"
