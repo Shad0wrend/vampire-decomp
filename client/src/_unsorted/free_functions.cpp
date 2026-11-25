@@ -115350,6 +115350,93 @@ void XRes::sub_101a8d60(XInfo *info)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a96a0 size=0xdf
+#include "vgui2__Panel.h"
+
+struct PanelSurfaceView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10();
+	virtual int v11();
+};
+
+struct PanelSchemeView
+{
+	virtual void v0(int, void *);
+};
+
+struct PanelInputView
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void *v3();
+};
+
+struct PanelSelfView
+{
+	void sub_101aa230(int);
+};
+
+int sub_101ac8f0();
+int sub_101ac900();
+int sub_101ac8c0();
+
+struct Color4
+{
+	unsigned char r, g, b, a;
+	Color4() {}
+	Color4(unsigned char R, unsigned char G, unsigned char B, unsigned char A) { r = R; g = G; b = B; a = A; }
+};
+
+void vgui2::Panel::sub_101a96a0(int x, int y, int wide, int tall)
+{
+	PanelSurfaceView *pSurface = (PanelSurfaceView *)sub_101ac8f0();
+	m_unk4[0] = pSurface->v11();
+
+	PanelSchemeView *pScheme = (PanelSchemeView *)sub_101ac900();
+	pScheme->v0(m_unk4[0], this);
+
+	PanelInputView *pInput = (PanelInputView *)sub_101ac8c0();
+	((PanelSelfView *)this)->sub_101aa230((int)pInput->v3());
+
+	sub_101a9890(x, y);
+	sub_101a98f0(wide, tall);
+
+	Color4 c1;
+	c1.r = 0;
+
+	*(char *)((char *)this + 0x32) = 1;
+	*(char *)((char *)this + 0x30) = 1;
+	*(char *)((char *)this + 0x31) = 1;
+	*(char *)((char *)this + 0x19) = 1;
+	*(char *)((char *)this + 0x28) = 1;
+	*(char *)((char *)this + 0x29) = 1;
+	*(char *)((char *)this + 0x2a) = 1;
+
+	c1.g = 0;
+	c1.b = 0;
+	c1.a = 0;
+
+	*(char *)((char *)this + 0x18) = 0;
+	*(char *)((char *)this + 0x10) = 0;
+	*(int *)((char *)this + 0x48) = 0;
+	*(int *)((char *)this + 0x44) = 0;
+	*(int *)((char *)this + 0xc) = 2;
+	*(int *)((char *)this + 0x14) = 0;
+	*(int *)((char *)this + 0x1c) = 0;
+	*(char *)((char *)this + 0x54) = 0;
+	*(int *)((char *)this + 0x2c) = 0;
+	*(int *)((char *)this + 0x34) = 0;
+	*(char *)((char *)this + 0x4c) = 0;
+	*(int *)((char *)this + 0x50) = 0;
+
+	vfunc51(*(int *)&c1);
+
+	Color4 c2(204, 204, 204, 0);
+	vfunc50(*(int *)&c2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9810 size=0x4f
 #include "vgui2__Panel.h"
 #include <string.h>
