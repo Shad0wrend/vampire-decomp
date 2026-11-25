@@ -61108,6 +61108,18 @@ struct CView { int a, b; int sub_10115520(); };
 int CView::sub_10115520() { return *(int *)((char *)this + 0x148); }
 // END FUNCTION
 
+// FUNCTION: 0x10115540 size=0x9c
+#pragma optimize("", off)
+// TARGET: sub_10115540
+void sub_10115540(const float in2[3][4], const float *in1, float *out)
+{
+	out[0] = (in2[0][0]*in1[0] + in2[0][1]*in1[1] + in2[0][2]*in1[2]) + in2[0][3];
+	out[1] = (in2[1][0]*in1[0] + in2[1][1]*in1[1] + in2[1][2]*in1[2]) + in2[1][3];
+	out[2] = (in2[2][0]*in1[0] + in2[2][1]*in1[1] + in2[2][2]*in1[2]) + in2[2][3];
+}
+#pragma optimize("", on)
+// END FUNCTION
+
 // FUNCTION: 0x10115c00 size=0x1f
 struct S_10115c00
 {
