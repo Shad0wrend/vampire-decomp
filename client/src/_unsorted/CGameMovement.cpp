@@ -237,6 +237,39 @@ char CGameMovement::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eaa70 size=0x77
+#include "CGameMovement.h"
+
+void CGameMovement::vfunc18()
+{
+	sub_100ec450();
+	if (((unsigned char *)m_pPlayer)[0x24] & 2)
+		slot17();
+	else
+		*(int *)((char *)m_pPlayer + 0x28) &= ~2;
+
+	float *p = (float *)m_pPlayer;
+	float *b = (float *)((char *)m_pMove + 0x154);
+	float fx = p[0x10];
+	p[0x10] = fx + b[0];
+	float fy = p[0x11];
+	p[0x11] = fy + b[1];
+	float fz = p[0x12];
+	p[0x12] = fz + b[2];
+
+	slot19(0, 0);
+
+	float *p2 = (float *)m_pPlayer;
+	float *b2 = (float *)((char *)m_pMove + 0x154);
+	float gx = p2[0x10];
+	p2[0x10] = gx - b2[0];
+	float gy = p2[0x11];
+	p2[0x11] = gy - b2[1];
+	float gz = p2[0x12];
+	p2[0x12] = gz - b2[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb1f0 size=0x46
 #include "CGameMovement.h"
 struct CSurfProp { char pad[0x72]; char m_bFlag; };
