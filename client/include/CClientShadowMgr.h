@@ -34,6 +34,7 @@ public:
 	void sub_100d65a0(class IClientEntity *pEnt, unsigned short handle, const Vector *vec, const Vector &mins, const Vector &maxs, const Vector &localShadowDir);
 
 	void sub_100d66d0(int a0, unsigned short h);
+	void sub_100d5bd0(unsigned short h);
 	void sub_100d6ca0(int a0, unsigned short h, int *a2, int *a3);
 	void sub_100d7130(int a0, unsigned short h, int *a2);
 	void sub_100d7180(int a0, unsigned short h, int *a2);	// provisional, like sub_100d7130 (transplant)
