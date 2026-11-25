@@ -22404,6 +22404,53 @@ void sub_100613d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061450 size=0xce
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct IEngineV39 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float v39(int);
+};
+extern IEngineV39 *g_104a57d4;
+
+struct PanelV6 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual bool vfunc6();
+};
+
+void sub_100613d0();
+
+// TARGET: CHudDialog::sub_10061450
+int CHudDialog::sub_10061450(int a1, int a2, int a3)
+{
+	ScopeTrace trace("CHudDialog::Key_Event", g_102de300);
+
+	if (a2 == 0xf1)
+	{
+		if (*(char *)((char *)this + 0x182))
+		{
+			float t = g_104a57d4->v39(1);
+			if (*(float *)((char *)this + 0x188) + *(float *)((char *)this + 0x184) <= t)
+			{
+				if (a1 == 0)
+				{
+					if (((PanelV6 *)((char *)this + 0x170))->vfunc6())
+					{
+						sub_100613d0();
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061640 size=0x46
 extern "C" unsigned int strlen(const char *);
 #pragma intrinsic(strlen)
