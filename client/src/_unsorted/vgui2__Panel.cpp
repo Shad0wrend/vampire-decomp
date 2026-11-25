@@ -689,6 +689,38 @@ void vgui2::Panel::vfunc96()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa7c0 size=0x77
+#include "vgui2__Panel.h"
+
+int sub_101ac900();
+
+struct SurfV
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void vfunc10(int, int *, int *, int *, int *);
+};
+
+struct SelfV
+{
+	virtual int vfunc0();
+};
+
+bool vgui2::Panel::vfunc25(int x, int y)
+{
+	int l, t, r, b;
+	((SurfV *)sub_101ac900())->vfunc10(((SelfV *)this)->vfunc0(), &l, &t, &r, &b);
+	if (x < l)
+		return false;
+	if (y < t)
+		return false;
+	if (x >= r)
+		return false;
+	bool inside = y < b;
+	return inside;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaad0 size=0xa
 #include "vgui2__Panel.h"
 int vgui2::Panel::vfunc54(int a0)
