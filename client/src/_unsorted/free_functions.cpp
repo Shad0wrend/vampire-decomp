@@ -41060,6 +41060,90 @@ int CUnknown100a2ff0::sub_100a2ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a31e0 size=0xd8
+#include "C_BaseEntity.h"
+
+extern int g_102afb98[];
+
+struct DataMap;
+struct FieldDesc
+{
+	int m_nType;			// 0x00
+	char m_pad04[8];		// 0x04
+	int m_nOffset;			// 0x0c
+	short m_nSize;			// 0x10
+	short m_nFlags;			// 0x12
+	char m_pad14[0x0c];		// 0x14
+	DataMap *m_pDataMap;	// 0x20
+};
+struct DataMap
+{
+	FieldDesc *m_pFields;	// 0x00
+	int m_nFields;			// 0x04
+	char *m_pClassName;		// 0x08
+	DataMap *m_pBaseMap;	// 0x0c
+	char m_pad10;			// 0x10
+	unsigned char m_bComputed;	// 0x11
+	char m_pad12[2];		// 0x12
+	int m_nSize;			// 0x14
+};
+
+int C_BaseEntity::sub_100a31e0(void *pDataMap)
+{
+	DataMap *p = (DataMap *)pDataMap;
+	if ( !p )
+		return 0;
+	if ( p->m_bComputed )
+		return p->m_nSize;
+
+	int nSize = 0;
+	if ( p->m_pBaseMap )
+		nSize = sub_100a31e0(p->m_pBaseMap);
+
+	if ( p->m_nFields > 0 )
+	{
+		int offset = 0;
+		int nFields = p->m_nFields;
+		do
+		{
+			FieldDesc *e = (FieldDesc *)((char *)p->m_pFields + offset);
+			int type = e->m_nType;
+			if ( type == 9 || !(e->m_nFlags & 0x200) )
+			{
+				switch ( type )
+				{
+				case 9:
+					{
+						int nSub = sub_100a31e0(e->m_pDataMap);
+						e->m_nOffset = nSize;
+						nSize += nSub;
+					}
+					break;
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 12:
+					e->m_nOffset = nSize;
+					nSize += g_102afb98[type] * e->m_nSize;
+					break;
+				}
+			}
+			offset += 0x2c;
+		}
+		while ( --nFields );
+	}
+
+	p->m_nSize = nSize;
+	p->m_bComputed = 1;
+	return nSize;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a32c0 size=0x3
 char sub_100a32c0()
 {
