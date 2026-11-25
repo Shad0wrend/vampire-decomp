@@ -48,6 +48,7 @@ public:
 	CHUDSprite10059620 *m_pSprite;
 	int m_unk0c4[(0x170 - 0xc4) / 4];
 	void sub_101a98c0(int *, int *);
+	int sub_101ab1a0();
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
