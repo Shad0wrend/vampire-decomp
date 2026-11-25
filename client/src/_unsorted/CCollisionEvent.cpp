@@ -32,6 +32,27 @@ void __stdcall sub_10119480(int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119550 size=0x97
+#include "CCollisionEvent.h"
+struct CCollisionImpact { void *m_pObj[2]; int m_unk8[3]; float m14; float m18; };
+struct CGlobal104e0c44 { virtual void v0(); virtual bool v1(); char pad[0x28]; int m2c; };
+extern CGlobal104e0c44 *g_104e0c44;
+void sub_101201b0(void *, float);
+// TARGET: CCollisionEvent::vfunc1
+void CCollisionEvent::vfunc1(CCollisionImpact *p)
+{
+    for (int i = 0; i < 2; i++) {
+        void *pObj = p->m_pObj[i];
+        if (pObj && p->m14 < 1.0 && !g_104e0c44->v1() && g_104e0c44->m2c)
+            sub_101201b0(pObj, p->m14);
+    }
+    if (p->m14 > 0.1f && p->m18 > 70.0f) {
+        sub_101194c0(0, p);
+        sub_101194c0(1, p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101195f0 size=0x3
 #include "CCollisionEvent.h"
 
