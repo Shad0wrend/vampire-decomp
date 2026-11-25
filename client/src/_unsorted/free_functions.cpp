@@ -109430,6 +109430,33 @@ void sub_1018f3c0(const Vector &origin, const QAngle &angles, Vector *forward, V
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f490 size=0xd3
+#include "VMatrix.h"
+#include "Vector.h"
+
+extern VMatrix g_105fc840;
+extern Vector g_105fc3d8;
+extern Vector g_105fc4c4;
+extern Vector g_105fc464;
+extern Vector g_105fc594;
+
+// TARGET: sub_1018f490
+void sub_1018f490()
+{
+	for (int i = 0; i < 3; i++)
+	{
+		g_105fc840[0][i] = g_105fc594[i];
+		g_105fc840[1][i] = g_105fc4c4[i];
+		g_105fc840[2][i] = -g_105fc3d8[i];
+		g_105fc840[3][i] = 0.0f;
+	}
+	g_105fc840[0][3] = -DotProduct(g_105fc594, g_105fc464);
+	g_105fc840[1][3] = -DotProduct(g_105fc4c4, g_105fc464);
+	g_105fc840[2][3] = DotProduct(g_105fc3d8, g_105fc464);
+	g_105fc840[3][3] = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f570 size=0x55
 #include "Vector.h"
 
