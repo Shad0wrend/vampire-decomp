@@ -825,6 +825,36 @@ int C_BaseEntity::vfunc62()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1aa0 size=0x73
+#include "C_BaseEntity.h"
+
+struct ModelInfoView
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5();
+    virtual int GetModelType(int modelindex);
+};
+extern ModelInfoView *g_104a57f8;
+
+int C_BaseEntity::vfunc66()
+{
+    if (*(int *)((char *)this + 0x80) &&
+        *(int *)((char *)this + 0x40) &&
+        *(int *)((char *)this + 0x1d0) &&
+        !(*(int *)((char *)this + 0x1d4) & 4))
+    {
+        if (g_104a57f8->GetModelType(*(int *)((char *)this + 0x40)) == 1 ||
+            g_104a57f8->GetModelType(*(int *)((char *)this + 0x40)) == 3)
+        {
+            if (*(int *)((char *)this + 0x80) == 1 ||
+                *(float *)((char *)this + 0x1d8) != 0.0f)
+                return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2000 size=0x16
 #include "C_BaseEntity.h"
 namespace lifted {
