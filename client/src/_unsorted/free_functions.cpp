@@ -35109,6 +35109,50 @@ int sub_1009c950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009cd10 size=0x71
+#include "C_BaseCombatWeapon.h"
+#include "CBaseHandle.h"
+#include "ehandle.h"
+
+struct EntView
+{
+	char pad0[0x3f8];
+	int m_pField3f8;	// 0x3f8
+};
+
+struct WepView
+{
+	char pad0[0x910];
+	CBaseHandle m_h910;	// 0x910
+};
+
+int C_BaseCombatWeapon::sub_1009cd10()
+{
+	WepView *w = (WepView *)this;
+	if ( !w->m_h910.Get() )
+		return 0;
+
+	EntView *p;
+	unsigned int h = w->m_h910.m_Index;
+	if ( h == 0xffffffff )
+		goto fail;
+	{
+		int idx = (int)(h & 0x1fff);
+		int serial = (int)(h >> 13);
+		CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[idx];
+		if ( e->m_SerialNumber == serial )
+		{
+			p = (EntView *)e->m_pEntity;
+			goto done;
+		}
+	}
+fail:
+	p = 0;
+done:
+	return p->m_pField3f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009cd90 size=0x64
 struct CUnknown1009cd90 { int sub_1009cd90(int, int, int, int, char); };
 int CUnknown1009cd90::sub_1009cd90(int a0, int a1, int a2, int a3, char a4)
