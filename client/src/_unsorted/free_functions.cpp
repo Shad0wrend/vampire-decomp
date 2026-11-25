@@ -41885,6 +41885,69 @@ extern int g_104a1f10;
 void sub_100b4780() { for (int i = (int)g_104a1d10; i < (int)(g_104a1d10 + 128); i += 4) { if (*(int *)i != 0) *(int *)i = 0; } g_104a1f10 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4820 size=0xa8
+#include "C_EnvParticle.h"
+
+extern void (__cdecl *g_101e3140)(const char *fmt, ...);
+extern C_EnvParticle *sub_100b3560();
+
+struct Helper_100b4820
+{
+	char pad_0[0x410];
+	int m_nParticleIndex;
+	char pad_414[0x0c];
+	int m_nAttachment;
+	int m_nField424;
+
+	void sub_100a2970(int pParent);
+	void sub_1009fc60(int moveType, int a2);
+};
+
+struct Sub_100b4820
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void vfunc7(int);
+};
+
+struct Ent_100b4820
+{
+	int m_n0;
+	int m_n4;
+	Sub_100b4820 m_sub;
+};
+
+C_EnvParticle *sub_100b4820(int idx, int origin, int vec, int pParent, int attachment, int arg6)
+{
+	if (idx <= 0)
+	{
+		g_101e3140("could not create particle, make sure it is precached!\n");
+		return 0;
+	}
+
+	C_EnvParticle *pParticle = sub_100b3560();
+	if (!pParticle)
+		return 0;
+
+	Helper_100b4820 *pHelper = (Helper_100b4820 *)pParticle;
+	pHelper->m_nParticleIndex = idx;
+	pParticle->vfunc123(vec);
+	pParticle->vfunc122(origin);
+
+	if (pParent)
+	{
+		pHelper->m_nAttachment = attachment;
+		pHelper->m_nField424 = arg6;
+		pHelper->sub_100a2970(pParent);
+		pHelper->sub_1009fc60(11, 0);
+	}
+	else
+		pHelper->m_nAttachment = 0;
+	((Sub_100b4820 *)((char *)pParticle + 8))->vfunc7(0);
+	return pParticle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b48d0 size=0xd1
 #include <string.h>
 #include "C_EnvParticle.h"
