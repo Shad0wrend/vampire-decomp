@@ -86101,6 +86101,24 @@ void sub_1015a840(int callback)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a920 size=0x78
+#include "ScopeTrace.h"
+
+extern void (*g_105f939c)(void *, int, int, int);
+
+struct CVStatAction_t
+{
+	void sub_1015a920(int a, int b, int c);
+};
+
+void CVStatAction_t::sub_1015a920(int a, int b, int c)
+{
+	ScopeTrace trace("CVStatAction_t::Remove", g_102de300);
+	if (g_105f939c)
+		g_105f939c(this, a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ab20 size=0x69
 struct TScope {
 	const char *name;
