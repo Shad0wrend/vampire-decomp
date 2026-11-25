@@ -8086,6 +8086,7 @@
 0x101ad530 func   ?vfunc133@TextEntry@vgui2@@UAEHD@Z vgui2::TextEntry::vfunc133
 0x101ae190 func   ?sub_101ae190@TV@@QAEHH@Z TV::sub_101ae190
 0x101ae2b0 func   ?vfunc101@TextEntry@vgui2@@UAEXXZ vgui2::TextEntry::vfunc101
+0x101ae490 func   ?sub_101ae490@TextEntry@vgui2@@QAEXH@Z vgui2::TextEntry::sub_101ae490
 0x101ae510 func   ?vfunc146@TextEntry@vgui2@@UAE_NH@Z vgui2::TextEntry::vfunc146
 0x101ae570 func   ?sub_101ae570@CUnknown101ae570@@QAEXH@Z CUnknown101ae570::sub_101ae570
 0x101ae5d0 func   ?vfunc147@TextEntry@vgui2@@UAEHXZ vgui2::TextEntry::vfunc147

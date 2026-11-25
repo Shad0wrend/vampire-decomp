@@ -107,6 +107,25 @@ void vgui2::TextEntry::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae490 size=0x71
+#include "vgui2__TextEntry.h"
+
+void vgui2::TextEntry::sub_101ae490(int arg)
+{
+	if ( *(char *)((char *)this + 0x8b) )
+	{
+		unsigned char *p = (unsigned char *)&arg;
+		vfunc120(1);
+		vfunc120(1);
+		vfunc120(*(int *)(p + 0));
+		vfunc120(*(int *)(p + 1));
+		vfunc120(*(int *)(p + 2));
+		vfunc120(*(int *)(p + 3));
+		vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae510 size=0x5d
 #include "vgui2__TextEntry.h"
 
