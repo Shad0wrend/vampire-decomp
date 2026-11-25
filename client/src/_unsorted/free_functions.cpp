@@ -39969,6 +39969,51 @@ char CUnknown100a1ff0::sub_100a1ff0(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2030 size=0xd0
+#include "C_BaseEntity.h"
+#include "ehandle.h"
+#include "Vector.h"
+
+void sub_10108540(int *src, int col, int *mat);
+void sub_10108080(const float *in, const float (*mat)[4], float *out);
+
+struct CBaseEntView2030
+{
+	char m_pad000[0x184];
+	int m_iEFlags;
+	char m_pad188[0x208 - 0x188];
+	CBaseHandle m_hMoveParent;
+	char m_pad20c[0x23c - 0x20c];
+	Vector m_vecAbsOrigin;
+	char m_pad248[0x254 - 0x248];
+	Vector m_vecOrigin;
+	char m_pad260[0x26c - 0x260];
+	float m_rgflCoordinateFrame[12];
+};
+
+void C_BaseEntity::sub_100a2030(const void *p)
+{
+	CBaseEntView2030 *v = (CBaseEntView2030 *)this;
+	const Vector &origin = *(const Vector *)p;
+
+	sub_1009f8a0();
+	sub_1007e180(0x800, 0);
+	sub_1007e100();
+	v->m_iEFlags &= ~0x800;
+	v->m_vecAbsOrigin = origin;
+	sub_10108540((int *)&origin, 3, (int *)v->m_rgflCoordinateFrame);
+
+	C_BaseEntity *pParent = (C_BaseEntity *)v->m_hMoveParent.Get();
+	if (!pParent)
+	{
+		v->m_vecOrigin = origin;
+		return;
+	}
+	pParent->sub_1009f8a0();
+	sub_10108080((const float *)&origin, (const float (*)[4])((char *)pParent + 0x26c), (float *)&v->m_vecOrigin);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2100 size=0x111
 #include "C_BaseEntity.h"
 #include "QAngle.h"
