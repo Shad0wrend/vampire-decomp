@@ -102715,6 +102715,71 @@ void sub_10167cb0(int mode, const __int64 *elapsed, char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167de0 size=0x8a
+#include "CMeasureTimePanel.h"
+
+struct PanelCtorViewB
+{
+	void sub_101a9530(void *parent, const char *name);
+};
+
+struct PanelX2
+{
+	void sub_101a9890(int, int);
+	void sub_101a98f0(int, int);
+	void sub_101a99f0(int);
+	void sub_101aaad0(int);
+	void sub_101ab2a0(int);
+	void sub_101ab060(int);
+};
+
+struct MgrViewB
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17();
+	virtual void v18(int, int);
+};
+
+struct Color4B
+{
+	unsigned char r, g, b, a;
+	Color4B() {}
+	Color4B(unsigned char R, unsigned char G, unsigned char B, unsigned char A) { r = R; g = G; b = B; a = A; }
+};
+
+int sub_100cd0f0();
+int sub_100cd100();
+int sub_101ac8f0();
+extern void *vt_102498cc;
+
+void *CMeasureTimePanel::sub_10167de0(void *parent)
+{
+	((PanelCtorViewB *)this)->sub_101a9530(parent, "CMeasureTimePanel");
+	*(void **)this = &vt_102498cc;
+
+	((PanelX2 *)this)->sub_101a98f0(sub_100cd100(), sub_100cd0f0());
+
+	((PanelX2 *)this)->sub_101a9890(0, 0);
+	((PanelX2 *)this)->sub_101a99f0(0);
+	((PanelX2 *)this)->sub_101aaad0(0);
+
+	Color4B c(0, 0, 0, 0xff);
+	*(int *)((char *)this + 0x58) = 0;
+	((PanelX2 *)this)->sub_101ab2a0(*(int *)&c);
+
+	((PanelX2 *)this)->sub_101ab060(0);
+
+	int nParent = *(int *)((char *)this + 4);
+	MgrViewB *pMgr = (MgrViewB *)sub_101ac8f0();
+	pMgr->v18(nParent, 0x64);
+
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167e90 size=0xb
 namespace lifted {
 extern char g_102498cc;
