@@ -18538,6 +18538,62 @@ char sub_1004b4b0(IEntry1004b4b0 *a1, IEntry1004b4b0 *a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b510 size=0xa5
+struct EntVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual void a3(); virtual void a4(); virtual void a5();
+	virtual void *vfunc6();
+};
+struct ColVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual void a3(); virtual void a4(); virtual void a5();
+	virtual int vfunc6();
+	virtual char vfunc7();
+	virtual int vfunc8();
+};
+struct RendVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual bool vfunc4();
+	virtual void a5(); virtual void a6(); virtual void a7();
+	virtual void *vfunc8();
+};
+struct ModelInfoVt
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual void a3(); virtual void a4(); virtual void a5();
+	virtual int vfunc6(void *model);
+};
+extern ModelInfoVt *g_104a57f8;
+
+// TARGET: sub_1004b510
+bool sub_1004b510(void *pHandleEntity, int contentsMask)
+{
+	char *pEnt = (char *)((EntVt *)pHandleEntity)->vfunc6();
+	if (!pEnt)
+		return true;
+	ColVt *pCol = (ColVt *)(pEnt + 0xc);
+	if (pCol->vfunc7() & 0x20)
+		return false;
+	int solid = pCol->vfunc6();
+	RendVt *pRend = (RendVt *)(pEnt + 4);
+	void *model = pRend->vfunc8();
+	int modelType = ((ModelInfoVt *)g_104a57f8)->vfunc6(model);
+	if (!(modelType == 1 && (solid == 1 || solid == 6)))
+	{
+		if (!(contentsMask & 0x2000000))
+			return false;
+	}
+	if (!(contentsMask & 2) && pRend->vfunc4())
+		return false;
+	if (!(contentsMask & 0x4000) && pCol->vfunc8() == 8)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b5c0 size=0x19
 namespace lifted {
 extern char g_10227c78;
