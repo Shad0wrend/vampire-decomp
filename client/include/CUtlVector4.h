@@ -14,6 +14,7 @@ public:
 	int *m_pElements;
 
 	void sub_101c2c10(const int *pArray, int size);
+	void sub_101c9d10(int i, int val);
 	void sub_101c2b40(const int *pArray, int size);
 	int sub_101be160(int elem, const int *src);	// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
 	int sub_1008e4b0(int elem, const int *src);
