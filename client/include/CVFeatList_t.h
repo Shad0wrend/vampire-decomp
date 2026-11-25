@@ -11,9 +11,12 @@ struct VFeatEntry_t
 	int m_unk14;
 };
 
+class C_BaseVCombatCharacter;
+
 class CVFeatList_t
 {
 public:
+	float sub_1014d590(C_BaseVCombatCharacter *p);
 	int m_unk04;
 	char m_unk08[0x158];
 	VFeatEntry_t m_aEntries[1];	// 0x160, 24 bytes each
