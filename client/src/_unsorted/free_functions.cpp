@@ -74096,6 +74096,42 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101447c0 size=0x75
+struct TraitListV
+{
+    void *m_pVtbl;
+    int m_unk04;
+    int m_nCount;
+    void **m_pArray;
+    int m_unk10[9];
+    int m_unk34;
+    int m_unk38;
+    void sub_101447c0();
+};
+
+void TraitListV::sub_101447c0()
+{
+    if (m_pArray)
+    {
+        for (int i = 0; i < m_nCount; i++)
+        {
+            if (m_pArray[i])
+                delete m_pArray[i];
+            m_pArray[i] = 0;
+        }
+        delete m_pArray;
+        m_pArray = 0;
+    }
+    m_nCount = 0;
+    m_unk04 = 0;
+    for (int i = 0; i < 9; i++)
+        m_unk10[i] = 0;
+    int *p = &m_unk34;
+    for (int j = 0; j < 2; j++)
+        p[j] = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144af0 size=0x35
 struct FItem { int m_0; int m_key; };
 struct FList {
