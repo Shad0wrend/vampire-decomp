@@ -39,6 +39,57 @@ void CViewEffects::vfunc8(Vector &origin, QAngle &angles, float factor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101974c0 size=0xbe
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+struct FadeV101974c0 { int pad[4]; int flags; };
+struct VecV101974c0 {
+    FadeV101974c0 **m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    FadeV101974c0 **m_pElements;
+    int Find(FadeV101974c0 *const &src)
+    {
+        for (int i = 0; i < m_size; i++)
+            if (m_pMemory[i] == src)
+                return i;
+        return -1;
+    }
+    void Remove(int elem)
+    {
+        int n = m_size - elem - 1;
+        if (n > 0)
+            memmove(&m_pMemory[elem], &m_pMemory[elem + 1], n * 4);
+        m_size--;
+    }
+    void FindAndRemove(FadeV101974c0 *const &src)
+    {
+        int elem = Find(src);
+        if (elem != -1)
+            Remove(elem);
+    }
+    FadeV101974c0 *&operator[](int i) { return m_pElements[i]; }
+};
+struct ViewV101974c0 { int pad0; VecV101974c0 m_Fades; };
+
+void CViewEffects::vfunc5()
+{
+    ScopeTrace scope("CViewEffects::ClearPermanentFades", g_102de300);
+    ViewV101974c0 *v = (ViewV101974c0 *)this;
+    for (int i = v->m_Fades.m_size - 1; i >= 0; i--)
+    {
+        FadeV101974c0 *pFade = v->m_Fades.m_pMemory[i];
+        if (pFade->flags & 8)
+        {
+            v->m_Fades.FindAndRemove(pFade);
+            delete pFade;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197580 size=0xa5
 #include "CViewEffects.h"
 #include "ScopeTrace.h"

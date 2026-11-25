@@ -8351,6 +8351,7 @@
 0x10195c90 func   ?vfunc22@CViewRenderBeams@@UAEXPAUBeamV@@PAUBeamInfoV@@@Z CViewRenderBeams::vfunc22
 0x101963a0 func   ?sub_101963a0@@YAHHHH@Z sub_101963a0
 0x10196b90 func   ?vfunc8@CViewEffects@@UAEXAAVVector@@AAVQAngle@@M@Z CViewEffects::vfunc8
+0x101974c0 func   ?vfunc5@CViewEffects@@UAEXXZ CViewEffects::vfunc5
 0x10197580 func   ?vfunc17@CViewEffects@@UAEXXZ CViewEffects::vfunc17
 0x10197630 func   ?vfunc2@CViewEffects@@UAEXHPAE0000@Z CViewEffects::vfunc2
 0x101976d0 func   ?vfunc10@CViewEffects@@UAEXXZ CViewEffects::vfunc10
