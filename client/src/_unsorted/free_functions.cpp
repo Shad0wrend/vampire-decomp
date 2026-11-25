@@ -39683,6 +39683,38 @@ bool C_BaseEntity::sub_100a0710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0d10 size=0xc7
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+#include "ehandle.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+Vector *__fastcall sub_1009f6e0(void *self) { return (Vector *)((char *)self + 0x2b4); }
+QAngle *__fastcall sub_1009f6f0(void *self) { return (QAngle *)((char *)self + 0x2c0); }
+
+bool C_BaseEntity::sub_100a0d10()
+{
+	bool bResult = false;
+	if (((CBaseHandle *)((char *)this + 0x188))->Get())
+	{
+		bResult = true;
+		if (GetSolid() != 12)
+			sub_1009fc60(0xb, 0);
+	}
+	*(unsigned char *)((char *)this + 0xe0) = vfunc73();
+	if (vfunc74())
+	{
+		sub_100a2030(sub_1009f6e0(this));
+		sub_100a2100(*sub_1009f6f0(this));
+		*(Vector *)((char *)this + 0x54) = GetAbsOrigin();
+		*(QAngle *)((char *)this + 0x60) = GetAbsAngles();
+		vfunc68(0);
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a10b0 size=0x5f
 #include "C_BaseEntity.h"
 struct CUnknown10044460 {
