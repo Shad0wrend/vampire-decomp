@@ -7718,6 +7718,7 @@
 0x10164a20 func   ?sub_10164a20@@YA_NPAVCKeyValuesX@@PBDHPAVBitmapImage@@@Z sub_10164a20
 0x10164a50 func   ?sub_10164a50@@YA_NPAUIKV11@@PBDHPAVBitmapImage@@@Z sub_10164a50
 0x10164a80 func   ?sub_10164a80@CUnknown10164a80@@QAEHDHHHH@Z CUnknown10164a80::sub_10164a80
+0x10164b50 func   ??0CCenterStringPanel@@QAE@PAVPanel@vgui2@@@Z CCenterStringPanel::CCenterStringPanel
 0x10164c20 func   ?vfunc25@CCenterStringPanel@@UAE_NHH@Z CCenterStringPanel::vfunc25
 0x10164c30 func   ??_GCCenterStringPanel@@UAEPAXI@Z ??_GCCenterStringPanel@@UAEPAXI@Z
 0x10164c50 func   ??1CCenterStringPanel@@UAE@XZ CCenterStringPanel::~CCenterStringPanel
