@@ -29,7 +29,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc7();
     virtual void vfunc8();
     virtual void vfunc9();
-    virtual void vfunc10();
+    virtual int vfunc10(class C_BaseEntity *pEntity);
     virtual char * vfunc11();
     virtual char * vfunc12();
     virtual bool vfunc13();
