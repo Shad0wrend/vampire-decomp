@@ -7181,6 +7181,7 @@
 0x10163ea0 func   ?vfunc111@CBasePanel@@UAEXH@Z CBasePanel::vfunc111
 0x10163f50 func   ?vfunc87@CBasePanel@@UAEXH@Z CBasePanel::vfunc87
 0x10163fd0 func   ?vfunc88@CBasePanel@@UAEXH@Z CBasePanel::vfunc88
+0x10164050 func   ?vfunc89@CBasePanel@@UAEXH@Z CBasePanel::vfunc89
 0x10164150 func   ?vfunc2@CBasePanel@@UAEXXZ CBasePanel::vfunc2
 0x10164160 func   ?sub_10164160@CUnknown10164160@@QAEPAXHHH@Z CUnknown10164160::sub_10164160
 0x10164190 func   ??_GCHudLabel@@UAEPAXI@Z ??_GCHudLabel@@UAEPAXI@Z
