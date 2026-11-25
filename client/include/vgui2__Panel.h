@@ -21,6 +21,7 @@ public:
 	void sub_101ab2d0();
 	void sub_101aa260(int a, int b);
 	void sub_101a9810(const char *pszName);
+	void sub_101a96a0(int x, int y, int wide, int tall);
 	int sub_101ab490(int);
 	int sub_101aa220();
 	void sub_101a9af0();
