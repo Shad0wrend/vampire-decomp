@@ -171,6 +171,23 @@ int CInput::vfunc44()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffa20 size=0x71
+#include "CInput.h"
+
+// TARGET: vfunc29
+int CInput::vfunc29()
+{
+	if ( *(char *)((char *)this + 0xf8) != 0
+		|| *(char *)((char *)this + 0xf0) != 0
+		|| *(float *)((char *)this + 0xfc) > 0.0f
+		|| *(float *)((char *)this + 0x108) > 0.0f
+		|| *(float *)((char *)this + 0x138) > 0.0f
+		|| *(float *)((char *)this + 0x100) > 0.0f )
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffaa0 size=0x4b
 #include "Vector.h"
 #include "CInput.h"
