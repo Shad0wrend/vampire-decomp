@@ -166,6 +166,29 @@ void ConVar::vfunc9(int nValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df970 size=0x99
+#include "ConVar.h"
+#include <string.h>
+#include <stdlib.h>
+extern const char *g_102b9b5c;
+void ConVar::vfunc12(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *))
+{
+	if (!pDefaultValue) pDefaultValue = g_102b9b5c;
+	m_pszDefaultValue = pDefaultValue;
+	m_nStringLength = strlen(m_pszDefaultValue) + 1;
+	m_pszString = new char[m_nStringLength];
+	memcpy(m_pszString, m_pszDefaultValue, m_nStringLength);
+	m_bHasMin = bMin;
+	m_fMinVal = fMin;
+	m_bHasMax = bMax;
+	m_fMaxVal = fMax;
+	m_fnChangeCallback = pCallback;
+	m_fValue = (float)atof(m_pszString);
+	m_nValue = (int)m_fValue;
+	ConCommandBase::vfunc2(pName, pHelpString, flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfa10 size=0x2e
 // TARGET: ConVar::vfunc6
 #include "ConVar.h"
