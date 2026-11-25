@@ -686,3 +686,32 @@ void CTempEnts::vfunc25(int a0, int a1, int a2, const char *name1, const char *n
 	sub_100b47b0(name2, a0, a1, a5, 6, a6, 1.0f, 1.0f, 1.0f, 1.0f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003d9c0 size=0x89
+#include "CTempEnts.h"
+#include "Vector.h"
+
+struct Part_1003d9c0
+{
+	void sub_100af150();
+};
+
+extern Vector g_104d5190;
+extern Part_1003d9c0 *sub_100b47b0(const char *pszName, int a1, int a2, int a3, int a4, int a5, float f1, float f2, float f3, float f4);
+
+void CTempEnts::vfunc26(int a0, int a1, int a2, const char *name1, const char *name2, int a5, int a6)
+{
+	if (name1)
+	{
+		Part_1003d9c0 *p = sub_100b47b0(name1, a0, (int)&g_104d5190, a5, 6, a6, 1.0f, 1.0f, 1.0f, 1.0f);
+		if (p)
+			p->sub_100af150();
+	}
+	if (name2)
+	{
+		Part_1003d9c0 *p = sub_100b47b0(name2, a0, (int)&g_104d5190, a5, 6, a6, 1.0f, 1.0f, 1.0f, 1.0f);
+		if (p)
+			p->sub_100af150();
+	}
+}
+// END FUNCTION
