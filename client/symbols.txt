@@ -7690,6 +7690,7 @@
 0x1016f4a0 func   ?sub_1016f4a0@VBarterUI@@QAEXXZ VBarterUI::sub_1016f4a0
 0x1016f500 func   ?sub_1016f500@VBarterUIView@@QAEXPAUNameSrc@@D@Z VBarterUIView::sub_1016f500
 0x1016f530 func   ?sub_1016f530@CUnknown1016f530@@QAEPADXZ CUnknown1016f530::sub_1016f530
+0x1016f540 func   ?sub_1016f540@BarterView@@QAEXH@Z BarterView::sub_1016f540
 0x10170030 func   ?sub_10170030@CUnknown10170030@@QAEHXZ CUnknown10170030::sub_10170030
 0x10170170 func   ?sub_10170170@@YAHXZ sub_10170170
 0x10170180 func   ?sub_10170180@@YAXXZ sub_10170180
