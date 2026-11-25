@@ -7378,6 +7378,7 @@
 0x1016cd90 func   ?vfunc164@VBarterButton@@UAEHHHHH@Z VBarterButton::vfunc164
 0x1016cda0 func   ??_GVBarterButton@@UAEPAXI@Z ??_GVBarterButton@@UAEPAXI@Z
 0x1016d110 func   ?sub_1016d110@@YGDH@Z sub_1016d110
+0x1016ebe0 func   ?sub_1016ebe0@@YAHXZ sub_1016ebe0
 0x1016ed80 func   ?sub_1016ed80@@YGDPAX@Z sub_1016ed80
 0x1016edb0 func   ?sub_1016edb0@@YGDPAUObj1016@@@Z sub_1016edb0
 0x1016edf0 func   ?sub_1016edf0@VBarterUI@@QAEXXZ VBarterUI::sub_1016edf0

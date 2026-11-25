@@ -91232,6 +91232,54 @@ char __stdcall sub_1016d110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ebe0 size=0x78
+#include "ehandle.h"
+#include "C_BaseCombatWeapon.h"
+
+struct WeaponVec
+{
+	CBaseHandle *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_Size;
+	CBaseHandle *m_pElements;
+};
+
+extern WeaponVec g_1049d978;
+
+int sub_1016ebe0()
+{
+	int n = 0;
+	for (int i = 0; i < g_1049d978.m_Size; i++)
+	{
+		CBaseHandle h = g_1049d978.m_pMemory[i];
+		C_BaseCombatWeapon *ent;
+		if (h.IsValid())
+		{
+			CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h.GetEntryIndex()];
+			if (e.m_SerialNumber == h.GetSerialNumber())
+				ent = (C_BaseCombatWeapon *)e.m_pEntity;
+			else
+				ent = 0;
+		}
+		else
+		{
+			ent = 0;
+		}
+		void *x = ent->sub_1007b160();
+		if (ent)
+		{
+			if (ent->vfunc177())
+			{
+				if (*(int *)((char *)x + 0x2444))
+					n++;
+			}
+		}
+	}
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016ed80 size=0x29
 struct CPlayerData_104a0d50 { char pad[0x16d4]; int m_n16d4; };
 extern CPlayerData_104a0d50 *g_104a0d50;
