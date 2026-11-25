@@ -4436,6 +4436,7 @@
 0x100c5490 func   ?vfunc11@C_TempEntsSystem@@QAEXHHHHHHHHHHHHHHHHHH@Z C_TempEntsSystem::vfunc11
 0x100c5540 func   ?vfunc12@C_TempEntsSystem@@QAEXHHHH@Z C_TempEntsSystem::vfunc12
 0x100c55a0 func   ?vfunc13@C_TempEntsSystem@@QAEXHHHHHHHHH@Z C_TempEntsSystem::vfunc13
+0x100c5610 func   ?vfunc14@C_TempEntsSystem@@QAEXHHPAVVector@@0HHHHH@Z C_TempEntsSystem::vfunc14
 0x100c5680 func   ?vfunc15@C_TempEntsSystem@@QAEXHHHHHHHHHH@Z C_TempEntsSystem::vfunc15
 0x100c5700 func   ?vfunc16@C_TempEntsSystem@@QAEXHHHHH@Z C_TempEntsSystem::vfunc16
 0x100c5760 func   ?vfunc17@C_TempEntsSystem@@QAEXHHHHHHHH@Z C_TempEntsSystem::vfunc17
