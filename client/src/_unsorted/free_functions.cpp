@@ -92839,6 +92839,30 @@ int CUnknown10151b20::sub_10151b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151c30 size=0x22
+struct Req;
+
+class CView
+{
+public:
+	int m_unk00;	// 0x00
+	int m_unk04;	// 0x04
+	int m_count;	// 0x08
+	int *m_pItems;	// 0x0c
+	int sub_10151b40(Req *p);
+	int sub_10151c30(Req *p);
+};
+
+// TARGET: CView::sub_10151c30
+int CView::sub_10151c30(Req *p)
+{
+	int i = sub_10151b40(p);
+	if ( i != -1 )
+		return m_pItems[i];
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151d20 size=0x6
 namespace lifted {
 extern char g_105e8894;
