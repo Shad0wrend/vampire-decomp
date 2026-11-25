@@ -97135,6 +97135,28 @@ int CUnknown1017c660::sub_1017c660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c680 size=0x9b
+#include "C_RecipientFilter.h"
+struct IEngSound1017c680 {
+	virtual void Precache(const char *name, int a);
+	virtual void s1(); virtual void s2();
+	virtual void EmitSound(IRecipientFilter *filter, int ent, int chan, const char *sample, float vol, int a, int flags, int pitch, int b, int c, int d, int e);
+};
+extern IEngSound1017c680 *g_104a5818;
+struct LPFV1017c680 {
+	void *vptr; bool m_bReliable; bool m_bInitMessage; int m_Recipients[sizeof(CUtlVector<int>) / 4]; int m_nBufSize; int m_unk20; int m_unk24; bool m_b1; bool m_b2;
+	LPFV1017c680 *sub_100be160();
+	~LPFV1017c680() { ((CUtlVector<int> *)m_Recipients)->~CUtlVector<int>(); }
+};
+void sub_1017c680(const char *name)
+{
+	g_104a5818->Precache(name, 0);
+	LPFV1017c680 filter;
+	filter.sub_100be160();
+	g_104a5818->EmitSound((IRecipientFilter *)&filter, -1, 0xbb, name, 1.0f, 0, 0x2801, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c7b0 size=0xe
 struct E_1017c7b0 { int m_n; int m_unk; };
 struct V_1017c7b0 { E_1017c7b0 m_e[7]; };
