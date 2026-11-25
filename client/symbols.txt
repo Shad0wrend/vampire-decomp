@@ -7087,6 +7087,7 @@
 0x1015a230 func   ?sub_1015a230@@YAXH@Z sub_1015a230
 0x1015a290 func   ?sub_1015a290@TStat@@QAEXHH@Z TStat::sub_1015a290
 0x1015a6d0 func   ?sub_1015a6d0@CUnknown1015a6d0@@QAE_NH@Z CUnknown1015a6d0::sub_1015a6d0
+0x1015a750 func   ?sub_1015a750@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_1015a750
 0x1015a7e0 func   ?sub_1015a7e0@@YAXH@Z sub_1015a7e0
 0x1015a840 func   ?sub_1015a840@@YAXH@Z sub_1015a840
 0x1015a8a0 func   ?sub_1015a8a0@VStatActionV@@QAEXHHHH@Z VStatActionV::sub_1015a8a0

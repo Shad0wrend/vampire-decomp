@@ -87809,6 +87809,21 @@ bool CUnknown1015a6d0::sub_1015a6d0(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a750 size=0x89
+#include "CVStatAction_t.h"
+#include "ScopeTrace.h"
+// TARGET: CVStatAction_t::sub_1015a750
+bool CVStatAction_t::sub_1015a750()
+{
+    ScopeTrace trace("CVStatAction_t::AlwaysTriggers", g_102de300);
+    if (m_nType == 4)
+        return false;
+    if (m_nType != 3 && (m_unk0 & 1))
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a7e0 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_101e3124;
