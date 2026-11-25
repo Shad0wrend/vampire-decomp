@@ -11,7 +11,7 @@ class IRestore
 public:
 	IRestore() {}
 	virtual void vfunc0() = 0;
-	virtual void vfunc1() = 0;
+	virtual void vfunc1(int pos) = 0;
 	virtual int vfunc2(CBaseEntity *pEnt, int map) = 0;
 	virtual int vfunc3(int a, int b, int c, int d, int e);
 	virtual void vfunc4(void *pBaseData, typedescription_t *pFields, int fieldCount) = 0;
