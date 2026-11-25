@@ -61522,6 +61522,170 @@ void List_10111320::sub_10111320(unsigned short h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10111350 size=0x336
+#include "utlmemory.h"
+
+class CUtlRBTree20
+{
+public:
+	enum NodeColor_t { RED = 0, BLACK };
+
+	struct Links_t
+	{
+		unsigned short m_Left;
+		unsigned short m_Right;
+		unsigned short m_Parent;
+		unsigned short m_Tag;
+	};
+
+	struct Elem_t
+	{
+		unsigned short m_First;
+		char m_Pad[10];
+		Elem_t() : m_First(0xffff) {}
+	};
+
+	struct Node_t : public Links_t
+	{
+		Elem_t m_Data;
+	};
+
+	void *m_LessFunc;
+	CUtlMemory<Node_t> m_Elements;
+	unsigned short m_Root;
+	unsigned short m_NumElements;
+	unsigned short m_FirstFree;
+	unsigned short m_TotalElements;
+
+	static unsigned short InvalidIndex() { return 0xffff; }
+
+	const Links_t &sub_10112840(unsigned short i) const;
+	bool sub_10112780(unsigned short i) const;
+	bool sub_10111690(unsigned short i) const;
+	void sub_10113a20(unsigned short i);
+	void sub_10113be0(unsigned short i);
+
+	Links_t &Links(unsigned short i) { return m_Elements[i]; }
+	unsigned short Parent(unsigned short i) const { return sub_10112840(i).m_Parent; }
+	unsigned short LeftChild(unsigned short i) const { return sub_10112840(i).m_Left; }
+	unsigned short RightChild(unsigned short i) const { return sub_10112840(i).m_Right; }
+	NodeColor_t Color(unsigned short i) const { return (NodeColor_t)sub_10112840(i).m_Tag; }
+	bool IsRed(unsigned short i) const { return Color(i) == RED; }
+	bool IsRoot(unsigned short i) const { return i == m_Root; }
+	void SetColor(unsigned short i, NodeColor_t c) { Links(i).m_Tag = (unsigned short)c; }
+
+	unsigned short NewNode()
+	{
+		unsigned short newElem;
+		if (m_FirstFree == InvalidIndex())
+		{
+			if (m_Elements.NumAllocated() == m_TotalElements)
+				m_Elements.Grow();
+			newElem = m_TotalElements++;
+		}
+		else
+		{
+			newElem = m_FirstFree;
+			m_FirstFree = RightChild(m_FirstFree);
+		}
+		Construct(&m_Elements[newElem].m_Data);
+		return newElem;
+	}
+
+	void InsertRebalance(unsigned short elem)
+	{
+		while (!IsRoot(elem) && (Color(Parent(elem)) == RED))
+		{
+			unsigned short parent = Parent(elem);
+			unsigned short grandparent = Parent(parent);
+
+			if (sub_10112780(parent))
+			{
+				unsigned short uncle = RightChild(grandparent);
+				if (IsRed(uncle))
+				{
+					SetColor(parent, BLACK);
+					SetColor(uncle, BLACK);
+					SetColor(grandparent, RED);
+					elem = grandparent;
+				}
+				else
+				{
+					if (sub_10111690(elem))
+					{
+						elem = parent;
+						sub_10113a20(elem);
+						parent = Parent(elem);
+						grandparent = Parent(parent);
+					}
+					SetColor(parent, BLACK);
+					SetColor(grandparent, RED);
+					sub_10113be0(grandparent);
+				}
+			}
+			else
+			{
+				unsigned short uncle = LeftChild(grandparent);
+				if (IsRed(uncle))
+				{
+					SetColor(parent, BLACK);
+					SetColor(uncle, BLACK);
+					SetColor(grandparent, RED);
+					elem = grandparent;
+				}
+				else
+				{
+					if (sub_10112780(elem))
+					{
+						elem = parent;
+						sub_10113be0(parent);
+						parent = Parent(elem);
+						grandparent = Parent(parent);
+					}
+					SetColor(parent, BLACK);
+					SetColor(grandparent, RED);
+					sub_10113a20(grandparent);
+				}
+			}
+		}
+		SetColor(m_Root, BLACK);
+	}
+
+	void LinkToParent(unsigned short i, unsigned short parent, bool isLeft)
+	{
+		Links_t &elem = Links(i);
+		elem.m_Parent = parent;
+		elem.m_Left = elem.m_Right = InvalidIndex();
+		elem.m_Tag = RED;
+
+		if (parent != InvalidIndex())
+		{
+			if (isLeft)
+				Links(parent).m_Left = i;
+			else
+				Links(parent).m_Right = i;
+		}
+		else
+		{
+			m_Root = i;
+		}
+
+		InsertRebalance(i);
+	}
+
+	unsigned short sub_10111350(unsigned short parent, bool leftchild);
+};
+
+// TARGET: CUtlRBTree20::sub_10111350
+unsigned short CUtlRBTree20::sub_10111350(unsigned short parent, bool leftchild)
+{
+	unsigned short i = NewNode();
+	LinkToParent(i, parent, leftchild);
+	++m_NumElements;
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10111750 size=0x36c
 #include "utlrbtree.h"
 
