@@ -40169,6 +40169,40 @@ int CUnknown100af140::sub_100af140(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1330 size=0x9c
+struct VecX { float x, y, z; };
+struct IGetPos { virtual void v0(); virtual VecX *GetPos(); };
+struct EntX {
+	int m_u0;
+	IGetPos m_4;
+	char pad[0x428 - 8];
+	int m_428; float m_42c, m_430, m_434, m_438; int m_43c;
+	char pad2[0x470 - 0x440];
+	char *m_470;
+	char pad3[0x47c - 0x474];
+	int m_47c;
+};
+struct OutX { float r, g, b, u0c, a; char pad[0x28 - 0x14]; };
+// TARGET: sub_100b1330
+void sub_100b1330(VecX *out, int, int, OutX *col, int, int, EntX *ent)
+{
+	if (ent->m_47c < 1) {
+		*out = *ent->m_4.GetPos();
+		return;
+	}
+	VecX *src = (VecX *)(ent->m_470 + 0x10);
+	out->x = src->x;
+	out->y = src->y;
+	out->z = src->z;
+	col->r = ent->m_42c * 255.0f;
+	col->g = ent->m_430 * 255.0f;
+	col->b = ent->m_434 * 255.0f;
+	col->a = ent->m_438 * 255.0f;
+	*(int *)((char *)col + 0x28) = ent->m_428;
+	*(int *)((char *)col + 0x20) = ent->m_43c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b13d0 size=0xea
 #include "vector.h"
 
