@@ -76988,6 +76988,21 @@ StatDefault3 *CStatDefault3List::sub_10140000(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140060 size=0x55
+#include "CStatDefault3List.h"
+#include "C_BaseVCombatCharacter.h"
+
+// TARGET: CStatDefault3List::sub_10140060
+StatDefault3 *CStatDefault3List::sub_10140060(void *pChar)
+{
+    int idx = ((C_BaseVCombatCharacter *)pChar)->sub_1008ebb0();
+    if (idx >= 0 && idx < m_count)
+        return m_pItems[idx];
+    static StatDefault3 s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101400d0 size=0x23
 void __fastcall sub_1013f490(void *pObj);
 
