@@ -112292,6 +112292,32 @@ int CUnknown101c95d0::sub_101c95d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9b00 size=0x4f
+#include "BlankImage.h"
+struct CVec
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_size;
+	int *m_pElements;
+	int sub_101c9c60(int value);
+};
+struct ImageList : CVec
+{
+	char m_flag;
+	ImageList *sub_101c9b00(char flag);
+};
+// TARGET: ImageList::sub_101c9b00
+ImageList *ImageList::sub_101c9b00(char flag)
+{
+	m_pMemory = 0; m_nAllocationCount = 0; m_nGrowSize = 0; m_size = 0; m_pElements = 0;
+	m_flag = flag;
+	sub_101c9c60((int)new BlankImage);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9bd0 size=0x82
 #include "CUtlVectorDel4.h"
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
