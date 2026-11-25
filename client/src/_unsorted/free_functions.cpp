@@ -66555,6 +66555,57 @@ void CPrediction::sub_10120ee0(int commands_acknowledged)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121850 size=0xc9
+void sub_10121850(bool a0, bool a1, bool a2, bool a3, int &r, int &g, int &b, int &a)
+{
+	r = 255;
+	g = 255;
+	b = 255;
+	a = 255;
+
+	if (a0)
+	{
+		if (a1)
+		{
+			r = 180;
+			g = 180;
+			b = 225;
+		}
+		else
+		{
+			r = 150;
+			g = 180;
+			b = 150;
+		}
+	}
+
+	if (a2)
+	{
+		if (a3)
+		{
+			r = 255;
+			g = 255;
+			b = 0;
+			a = 255;
+		}
+		else if (!a0)
+		{
+			r = 180;
+			g = 180;
+			b = 100;
+			a = 255;
+		}
+		else
+		{
+			r = 255;
+			g = 0;
+			b = 0;
+			a = 255;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10121920 size=0x75
 #include "C_BaseEntity.h"
 #include "Tier1.h"

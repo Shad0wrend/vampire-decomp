@@ -5922,6 +5922,7 @@
 0x10120e90 func   ?vfunc1@CPrediction@@UAEXXZ CPrediction::vfunc1
 0x10120ed0 func   ?vfunc2@CPrediction@@UAEXXZ CPrediction::vfunc2
 0x10120ee0 func   ?sub_10120ee0@CPrediction@@QAEXH@Z CPrediction::sub_10120ee0
+0x10121850 func   ?sub_10121850@@YAX_N000AAH111@Z sub_10121850
 0x10121920 func   ?sub_10121920@@YAXXZ sub_10121920
 0x10122350 func   ?sub_10122350@@YGXPAUP10122350@@H@Z sub_10122350
 0x10122380 func   ?sub_10122380@@YGXPAUPlayer_10122380@@@Z sub_10122380
