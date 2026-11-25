@@ -35432,6 +35432,31 @@ int __cdecl sub_10090790(const char *name, NameStruct *pStruct)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091860 size=0xad
+#include "C_BaseAnimating.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+struct GlobalsV91860 { int p0, p4, p8; float curtime; };
+extern GlobalsV91860 *g_102b8494;
+void sub_10108a50(const matrix3x4_t &, const matrix3x4_t &, matrix3x4_t &);
+void sub_10107eb0(const matrix3x4_t &, QAngle &);
+void sub_10108510(int *, int, int *);
+bool C_BaseAnimating::sub_10091860(int idx, Vector &origin, QAngle &angles, matrix3x4_t &local)
+{
+	if (idx < 1 || idx > *(int *)((char *)this + 0x77c))
+		return false;
+	if (!SetupBones(0, -1, 8, g_102b8494->curtime, 0))
+		return false;
+	char *hdr = *(char **)((char *)this + 0x6ac);
+	int bone = *(int *)(hdr + *(int *)(hdr + 0x14c) + idx * 120 + 8);
+	matrix3x4_t m;
+	sub_10108a50(*(matrix3x4_t *)(*(char **)((char *)this + 0x6e8) + bone * 48), local, m);
+	sub_10107eb0(m, angles);
+	sub_10108510((int *)&m, 3, (int *)&origin);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091910 size=0x4a
 #include "C_BaseAnimating.h"
 void sub_10108430(void *dst, int arg);
