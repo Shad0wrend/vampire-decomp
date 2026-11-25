@@ -102007,6 +102007,27 @@ float CGUIClientRenderable::sub_1018a7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a860 size=0x53
+#include "CGUIClientRenderable.h"
+
+struct SPoseHdr
+{
+	char pad[0x10];
+	float m_fl10;
+};
+
+SPoseHdr *sub_1008d930(SPoseHdr *, int);
+
+// TARGET: CGUIClientRenderable::sub_1018a860
+float CGUIClientRenderable::sub_1018a860(int i, float cur, float prev, float curTime)
+{
+	SPoseHdr *p = sub_1008d930((SPoseHdr *)m_pStudioHdr, i);
+	if (!p)
+		return 0.0f;
+	return sub_1018a8c0(cur, prev, curTime, p->m_fl10 != 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a8c0 size=0xc1
 #include <math.h>
 
