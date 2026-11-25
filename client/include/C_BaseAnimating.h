@@ -10,6 +10,7 @@ public:
 	C_BaseAnimating();
 	void sub_100966e0();
 	void sub_10095880();
+	int sub_10095b90(int, int, int);
 	int sub_100958f0(int);
 	float sub_100955f0(int);
 	float sub_10095640(int);
