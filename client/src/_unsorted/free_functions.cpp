@@ -19485,6 +19485,36 @@ void CDiscipline::sub_1004ed00(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004eff0 size=0xc7
+#define PCD_LPF_CTOR
+#include "C_RecipientFilter.h"
+#include "CVStatInfoList_t.h"
+extern CVStatInfoList_t g_105f8c60;
+extern const char g_102de300[];
+struct IEngSndV
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void EmitSound(IRecipientFilter &filter, int ent, int chan, const char *snd, float vol, int level, int flags, int pitch, int a, int b, int c, int d);
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void EmitAmbient(int ent, int chan, const char *snd);
+};
+extern IEngSndV *g_104a5818;
+// TARGET: sub_1004eff0
+void __stdcall sub_1004eff0(int stat, bool bFilter)
+{
+	const char *const *pp = g_105f8c60.sub_1015cfe0(stat)->m_apszSound;
+	const char *snd = *pp ? *pp : g_102de300;
+	CLocalPlayerFilter filter;
+	if (*snd)
+	{
+		if (bFilter)
+			g_104a5818->EmitSound(filter, -1, stat + 0xa9, snd, 1.0f, 0, 0x800, 0x64, 0, 0, 1, 0);
+		else
+			g_104a5818->EmitAmbient(-1, stat + 0xa9, snd);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f0c0 size=0xe1
 #include "CVStatInfoList_t.h"
 #include "utlvector.h"
