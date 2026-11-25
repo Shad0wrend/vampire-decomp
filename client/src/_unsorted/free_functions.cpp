@@ -47020,6 +47020,73 @@ ClassMapEntry *CClassMap::sub_100ce920(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cfa20 size=0x1d1
+#include "CClassMap.h"
+
+struct CClassMapRBTree
+{
+	struct Links_t
+	{
+		unsigned short m_Left;
+		unsigned short m_Right;
+		unsigned short m_Parent;
+		unsigned short m_Tag;
+	};
+
+	void *m_LessFunc;
+	ClassMapEntry *m_pElements;
+	int m_nAlloc;
+	int m_nGrow;
+	unsigned short m_Root;
+	unsigned short m_NumElements;
+	unsigned short m_FirstFree;
+	unsigned short m_TotalElements;
+
+	static unsigned short InvalidIndex() { return 0xffff; }
+
+	const Links_t &sub_100ce920(unsigned short i) const;
+
+	const Links_t &InlineLinks(unsigned short i) const
+	{
+		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return (i != InvalidIndex()) ? *(const Links_t *)&m_pElements[i] : s_Sentinel;
+	}
+
+	void SetRightChild(unsigned short i, unsigned short child) { m_pElements[i].m_iRight = child; }
+	void SetLeftChild(unsigned short i, unsigned short child) { m_pElements[i].m_iLeft = child; }
+	void SetParent(unsigned short i, unsigned short parent) { m_pElements[i].m_iParent = parent; }
+
+	void sub_100cfa20(unsigned short elem);
+};
+
+// TARGET: CClassMapRBTree::sub_100cfa20
+void CClassMapRBTree::sub_100cfa20(unsigned short elem)
+{
+	unsigned short rightchild = sub_100ce920(elem).m_Right;
+	SetRightChild(elem, sub_100ce920(rightchild).m_Left);
+	if (sub_100ce920(rightchild).m_Left != InvalidIndex())
+		SetParent(sub_100ce920(rightchild).m_Left, elem);
+
+	if (rightchild != InvalidIndex())
+		SetParent(rightchild, sub_100ce920(elem).m_Parent);
+	if (elem != m_Root)
+	{
+		if (InlineLinks(sub_100ce920(elem).m_Parent).m_Left == elem)
+			SetLeftChild(InlineLinks(elem).m_Parent, rightchild);
+		else
+			SetRightChild(InlineLinks(elem).m_Parent, rightchild);
+	}
+	else
+	{
+		m_Root = rightchild;
+	}
+
+	SetLeftChild(rightchild, elem);
+	if (elem != InvalidIndex())
+		SetParent(elem, rightchild);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfdc0 size=0xd6
 #include "IGameSystem.h"
 #include "utlrbtree.h"
