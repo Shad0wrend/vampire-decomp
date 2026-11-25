@@ -64,6 +64,26 @@ int CTextImage2::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172250 size=0x70
+#include "CTextImage2.h"
+
+struct ImgView
+{
+	virtual int vfunc0();
+	virtual int vfunc1(int, int);
+	virtual int vfunc2(int *, int *);
+};
+
+int CTextImage2::vfunc1(int x, int y)
+{
+	((ImgView *)m_p1c)->vfunc1(x, y);
+	int w1, h1, w2, h2;
+	((ImgView *)m_p1c)->vfunc2(&w1, &h1);
+	((ImgView *)m_p20)->vfunc2(&w2, &h2);
+	return ((ImgView *)m_p20)->vfunc1(x + (int)w2, (int)(y + (h1 * 0.9) - h2));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101722c0 size=0x8
 #include "CTextImage2.h"
 namespace lifted {

@@ -7380,6 +7380,7 @@
 0x10171400 func   ?sub_10171400@@YAXXZ sub_10171400
 0x101721c0 func   ?vfunc2@CTextImage2@@UAEHPAH0@Z CTextImage2::vfunc2
 0x10172230 func   ?vfunc0@CTextImage2@@UAEHXZ CTextImage2::vfunc0
+0x10172250 func   ?vfunc1@CTextImage2@@UAEHHH@Z CTextImage2::vfunc1
 0x101722c0 func   ?vfunc3@CTextImage2@@UAEXXZ CTextImage2::vfunc3
 0x101722d0 func   ??_GCTextImage2@@UAEPAXI@Z ??_GCTextImage2@@UAEPAXI@Z
 0x10172850 func   ?sub_10172850@CVSPanelX@@QAEXXZ CVSPanelX::sub_10172850
