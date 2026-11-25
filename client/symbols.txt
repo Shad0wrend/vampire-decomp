@@ -3061,6 +3061,7 @@
 0x1007bbe0 func   ?vfunc175@C_BaseCombatWeapon@@UAE_NXZ C_BaseCombatWeapon::vfunc175
 0x1007bbf0 func   ?vfunc152@C_BaseCombatWeapon@@UAE_NXZ C_BaseCombatWeapon::vfunc152
 0x1007bc70 func   ?sub_1007bc70@CWeaponAmmoCheck@@QAE_NPAUCAmmoOwner@@@Z CWeaponAmmoCheck::sub_1007bc70
+0x1007bd30 func   ?sub_1007bd30@CWeaponAmmoCheck2@@QAE_NPAUCAmmoOwner@@@Z CWeaponAmmoCheck2::sub_1007bd30
 0x1007bdd0 func   ?vfunc182@C_BaseCombatWeapon@@UAE_NXZ C_BaseCombatWeapon::vfunc182
 0x1007bdf0 func   ?vfunc183@C_BaseCombatWeapon@@UAEHH@Z C_BaseCombatWeapon::vfunc183
 0x1007be00 func   ?vfunc184@C_BaseCombatWeapon@@UAEMXZ C_BaseCombatWeapon::vfunc184
