@@ -70627,6 +70627,20 @@ void sub_1013a940(CUnknown1006c1c0 *pBuf, CUnknownImgInfo *pInfo, unsigned char 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a980 size=0x7d
+#include "CUnknown1006c1c0.h"
+void sub_1013a980(CUnknown1006c1c0 *rd, CUnknownImgInfo *info, unsigned char *dst)
+{
+	for (int i = 0; i < info->m_nCount; i++, dst += 3) {
+		unsigned char *p = rd->m_pData + rd->m_nC;
+		dst[0] = (p[3] * p[0]) >> 8;
+		dst[1] = (p[1] * p[3]) >> 8;
+		dst[2] = ((p[2] * p[3]) >> 8) - p[3] - 1;
+		rd->sub_1013cbe0(1, 4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013aa80 size=0x53
 #include "CUnknown1006c1c0.h"
 
