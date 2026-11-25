@@ -101728,6 +101728,29 @@ UtlMem *UtlMem::sub_101c2bd0(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2c10 size=0x70
+#include "CUtlVector4.h"
+#include "utlvector.h"
+
+void CUtlVector4::sub_101c2c10(const int *pArray, int size)
+{
+	CUtlVector<int> *v = (CUtlVector<int> *)this;
+	v->m_Size = 0;
+	if ( size )
+	{
+		if ( v->m_Size + size > v->m_Memory.m_nAllocationCount )
+			v->m_Memory.sub_100be200( v->m_Size + size - v->m_Memory.m_nAllocationCount );
+		v->m_Size += size;
+		v->m_pElements = v->m_Memory.m_pMemory;
+		int numToMove = v->m_Size - size;
+		if ( numToMove > 0 && size > 0 )
+			memmove( &v->m_Memory.m_pMemory[size], &v->m_Memory.m_pMemory[0], numToMove * sizeof(int) );
+	}
+	for ( int i = 0; i < size; i++ )
+		v->m_Memory.m_pMemory[i] = pArray[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2c80 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
