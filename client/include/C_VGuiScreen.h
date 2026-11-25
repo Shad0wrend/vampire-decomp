@@ -17,5 +17,6 @@ public:
 	CVGuiMemB m_c;
 	virtual int vfunc16();
 	void sub_100c9270(int);
+	void sub_100c9680(Vector &v1, Vector &v2, Vector &v3);
 	virtual int vfunc64(int, int, int);
 };
