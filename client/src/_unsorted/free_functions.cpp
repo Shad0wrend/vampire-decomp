@@ -75358,6 +75358,83 @@ int sub_1012b820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b830 size=0xe6
+#include <string.h>
+
+extern char *g_102b8e9c;
+extern int g_104d4970;
+extern int g_104d4974;
+extern int g_104d4978;
+
+struct EntSub
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4();
+	virtual int f5();
+};
+
+struct GlobalsV
+{
+	int m_unk0; int m_unk4; int m_unk8; int m_unk0c;
+	int m_unk10; int m_unk14; int m_unk18; int m_unk1c;
+	void *m_unk20;
+};
+extern GlobalsV *g_102b8494;
+
+struct Eng
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16(); virtual void u17(); virtual void u18(); virtual void u19();
+	virtual void u20(); virtual void u21(); virtual void u22(); virtual void u23(); virtual void u24(); virtual void u25(); virtual void u26(); virtual void u27(); virtual void u28(); virtual void u29();
+	virtual void u30(); virtual void u31(); virtual void u32(); virtual void u33(); virtual void u34(); virtual void u35(); virtual void u36(); virtual void u37(); virtual void u38(); virtual void u39();
+	virtual void u40(); virtual void u41(); virtual void u42(); virtual void u43(); virtual void u44(); virtual void u45(); virtual void u46(); virtual void u47(); virtual void u48(); virtual void u49();
+	virtual void u50(); virtual void u51(); virtual void u52(); virtual void u53(); virtual void u54(); virtual void u55(); virtual void u56(); virtual void u57(); virtual void u58(); virtual void u59();
+	virtual void u60(); virtual void u61(); virtual void u62(); virtual void u63(); virtual void u64(); virtual void u65(); virtual void u66(); virtual void u67(); virtual void u68(); virtual void u69();
+	virtual void u70(); virtual void u71(); virtual void u72(); virtual void u73(); virtual void u74(); virtual void u75(); virtual void u76(); virtual void u77(); virtual void u78(); virtual void u79();
+	virtual void u80(); virtual void u81(); virtual void u82(); virtual void u83(); virtual void u84(); virtual void u85(); virtual void u86(); virtual void u87(); virtual void u88(); virtual void u89();
+	virtual void u90(); virtual void u91(); virtual void u92(); virtual void u93(); virtual void u94(); virtual void u95(); virtual void u96(); virtual void u97(); virtual void u98(); virtual void u99();
+	virtual void u100(); virtual void u101(); virtual void u102(); virtual void u103(); virtual void u104(); virtual void u105(); virtual void u106(); virtual void u107(); virtual void u108(); virtual void u109();
+	virtual void u110(); virtual void u111(); virtual void u112(); virtual void u113(); virtual void u114(); virtual void u115(); virtual void u116();
+	virtual void *f117(int, int);
+};
+extern Eng *g_104a57d4;
+
+void *sub_1012b830(int n)
+{
+	if (n <= 0)
+		n = 0x400000;
+
+	int count = ((EntSub *)(g_102b8e9c + 0x1803c))->f5();
+
+	char *p = (char *)g_104a57d4->f117(count * 48 + n + 0x1338, 1);
+	if (p)
+	{
+		memset(p, 0, 0x18);
+		int *q = (int *)p + 6;
+		for (int i = 0; i < 0x4c8; i++)
+			q[i] = 0;
+	}
+	else
+	{
+		p = 0;
+	}
+	*(int *)(p + 8) = 0;
+	*(void **)p = p + 0x1338;
+	*(void **)(p + 4) = p + 0x1338;
+	*(int *)(p + 0xc) = n;
+	void *mem = g_104a57d4->f117(0x3fff, 4);
+	*(int *)(p + 0x10) = 0x3fff;
+	*(void **)(p + 0x14) = mem;
+	*(int *)(p + 0x1300) = g_102b8494->m_unk0c;
+	*(int *)(p + 0x12f4) = g_104d4970;
+	*(int *)(p + 0x12f8) = g_104d4974;
+	*(int *)(p + 0x12fc) = g_104d4978;
+	*(int *)(p + 0x12dc) = 0;
+	*(int *)(p + 0x18) = 0;
+	g_102b8494->m_unk20 = p;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b940 size=0x1a
 namespace lifted {
 extern int g_102c36d8;
