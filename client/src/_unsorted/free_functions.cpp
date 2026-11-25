@@ -42751,6 +42751,60 @@ usehandle:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7a50 size=0x5c
+#include "C_BasePlayer.h"
+
+struct ICN8V {
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual bool v8();			// slot 8 (+0x20)
+};
+
+struct CBE18V {
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9();
+	virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13(); virtual void d14();
+	virtual void d15(); virtual void d16(); virtual void d17();
+	virtual bool v18();			// slot 18 (+0x48)
+};
+
+struct VMV {
+	bool sub_10001990(void *p);	// 0x10001990
+};
+
+struct ObjV {
+	bool sub_100a99d0();		// 0x100a99d0
+};
+
+struct GV {
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9();
+	virtual void d10(); virtual void d11(); virtual void d12(); virtual void d13(); virtual void d14();
+	virtual void d15(); virtual void d16(); virtual void d17(); virtual void d18(); virtual void d19();
+	virtual void d20(); virtual void d21(); virtual void d22(); virtual void d23(); virtual void d24();
+	virtual void d25(); virtual void d26(); virtual void d27(); virtual void d28();
+	virtual int v29();			// slot 29 (+0x74)
+};
+
+extern GV *g_1027ba58;
+
+// TARGET: sub_100a7a50
+bool __fastcall sub_100a7a50(void *self)
+{
+	if (((ICN8V *)((char *)self + 4))->v8())
+		return false;
+	C_BasePlayer *base = (C_BasePlayer *)((char *)self - 4);
+	if (!((CBE18V *)base)->v18())
+		return false;
+	void *vm = base->sub_100a7890();
+	if (vm)
+		return ((VMV *)vm)->sub_10001990(base);
+	if (((ObjV *)base)->sub_100a99d0() && g_1027ba58->v29() == 0)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8ba0 size=0x1b
 int __stdcall sub_100a8ba0(int a)
 {
