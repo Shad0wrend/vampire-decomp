@@ -512,3 +512,37 @@ int C_BaseAnimating::sub_100965d0(int arg1, int arg2)
 	return arg2;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10096720 size=0xb9
+#include "C_BaseAnimating.h"
+extern void (*g_101e30fc)(void *);
+struct DelView10096720 { virtual void Destroy(int bDelete); };
+struct VecView10096720 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; void *m_pElements; };
+struct AnimViewA10096720 { char pad[0x6b0]; DelView10096720 *m_p6b0; };
+void sub_1008df90(void *vec, int hdr, void *a, int b, void *c);
+void C_BaseAnimating::vfunc112()
+{
+	DelView10096720 *&p = ((AnimViewA10096720 *)this)->m_p6b0;
+	if (p)
+		p->Destroy(1);
+	p = 0;
+	sub_100966e0();
+	vfunc132(true);
+	sub_10096650();
+	VecView10096720 *v = (VecView10096720 *)((char *)this + 0x6f4);
+	v->m_Size = 0;
+	if (v->m_nGrowSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			g_101e30fc(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_nAllocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	for (int i = 0; i < 2; i++)
+		sub_1008df90((char *)this + 0x4d0 + i * 0x14, sub_1008f900(i), (char *)this + 0x428, sub_1008f900(-1), (char *)this + 0x450);
+	sub_10096c30();
+}
+// END FUNCTION
