@@ -51,6 +51,32 @@ int *CCollisionProperty::sub_100432f0(char a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043320 size=0x88
+#include "CCollisionProperty.h"
+#include "matrix3x4_t.h"
+#include "C_BaseEntity.h"
+void sub_10109420(matrix3x4_t *);
+void sub_10108540(const Vector &, int, matrix3x4_t *);
+struct CMatRing { matrix3x4_t m[4]; ~CMatRing() {} };
+// TARGET: CCollisionProperty::vfunc10
+const matrix3x4_t &CCollisionProperty::vfunc10()
+{
+	static CMatRing s_Matrix;
+	static int s_nIndex = 0;
+	matrix3x4_t &matResult = s_Matrix.m[s_nIndex];
+	s_nIndex = (s_nIndex + 1) & 3;
+	if (m_unk44 & 0x80 || m_unk40 == 2 || m_unk40 == 0)
+	{
+		sub_10109420(&matResult);
+		sub_10108540(vfunc8(), 3, &matResult);
+		return matResult;
+	}
+	C_BaseEntity *pEnt = (C_BaseEntity *)m_unk3c;
+	pEnt->sub_1009f8a0();
+	return *(matrix3x4_t *)((char *)pEnt + 0x26c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043440 size=0x4
 #include "CCollisionProperty.h"
 
