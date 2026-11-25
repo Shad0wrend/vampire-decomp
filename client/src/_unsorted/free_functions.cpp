@@ -75830,6 +75830,41 @@ int CUnknown10141be0::sub_10141be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141bf0 size=0x97
+#include "CClanFilter.h"
+#include "CUnknown10141210.h"
+#include "CUnknown10141350.h"
+extern int g_105e7788;
+extern CUnknown10141350 **g_105e778c;
+// TARGET: CClanFilter::sub_10141bf0
+char CClanFilter::sub_10141bf0(const char **ppName)
+{
+	if (m_bEnabled)
+	{
+		const char *name = *ppName;
+		if (!name)
+			return 1;
+		if (!*name)
+			return 1;
+		if (m_pRec)
+		{
+			int idx = m_pRec->m_nIndex;
+			CUnknown10141350 *p;
+			if (idx >= 0 && idx < g_105e7788)
+				p = g_105e778c[idx];
+			else
+			{
+				static CUnknown10141210 s_def(-1);
+				p = (CUnknown10141350 *)&s_def;
+			}
+			return p->sub_101412e0() != 0;
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141eb0 size=0x1b
 struct CUnknown10141eb0 { void * sub_10141eb0(int); };
 void * CUnknown10141eb0::sub_10141eb0(int a0)
