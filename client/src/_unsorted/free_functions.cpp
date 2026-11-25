@@ -70793,6 +70793,21 @@ int sub_10141aa0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141ac0 size=0x32
+char __fastcall sub_10142310(void *self);
+
+char __fastcall sub_10141ac0(void *self, void *edx)
+{
+	if (!sub_10142310((char *)self + 0x28))
+		return 0;
+	if (*(int *)((char *)self + 4) != -1)
+		return 1;
+	if (*(int *)((char *)self + 0xc) != -1)
+		return 1;
+	return *(int *)((char *)self + 8) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141b00 size=0x4
 struct CUnknown10141b00 { int sub_10141b00(); };
 int CUnknown10141b00::sub_10141b00()
