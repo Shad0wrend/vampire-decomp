@@ -18751,6 +18751,29 @@ bool sub_10054800(const char *pStr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054b60 size=0x70
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct CHudDialogView
+{
+	char m_pad00[0x190];
+	bool m_b190;
+	char m_pad191[0x1b2 - 0x191];
+	bool m_b1b2;
+};
+
+int sub_10052ef0();
+
+// TARGET: sub_10054b60
+void sub_10054b60()
+{
+	ScopeTrace trace("CHudDialog::ToggleHistory", g_102de300);
+	((CHudDialog *)(void *)sub_10052ef0())->sub_10054bd0(
+		!((CHudDialogView *)(void *)sub_10052ef0())->m_b1b2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054bd0 size=0x75
 #include "CHudDialog.h"
 #include "ScopeTrace.h"
