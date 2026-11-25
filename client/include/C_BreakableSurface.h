@@ -36,6 +36,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	unsigned short m_n45a;
 	unsigned short m_n45c;
 	unsigned short m_n45e;
+	int sub_100b83f0(int a0, int a1, int a2);
 	int m_n460;
 	int m_nPanelFlags[1];
 	char m_pad0468[0x940 - 0x468];
