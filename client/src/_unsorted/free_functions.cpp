@@ -53313,6 +53313,30 @@ void *CHud::sub_100f11d0(const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1200 size=0xa1
+#include "CHud.h"
+int sub_100ccdc0(CHudSub *);
+int sub_100ccde0(CHudSub *);
+int sub_100cd100();
+int sub_100cd0f0();
+// TARGET: CHud::sub_100f1200
+CHudSub *CHud::sub_100f1200(const char *pName, int *pWide, int *pTall)
+{
+	int idx = sub_100f0980(pName);
+	if (idx >= 0)
+	{
+		int w = sub_100ccdc0(&m_pSubs[idx]);
+		int h = sub_100ccde0(&m_pSubs[idx]);
+		if (pWide)
+			*pWide = sub_100cd100() * w / 640;
+		if (pTall)
+			*pTall = sub_100cd0f0() * h / 480;
+		return &m_pSubs[idx];
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1330 size=0x20
 namespace lifted {
 extern int g_104cfe50;
