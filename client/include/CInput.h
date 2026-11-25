@@ -43,7 +43,7 @@ public:
     virtual void vfunc3();
     virtual void vfunc4();
     virtual void vfunc5(int, int, int);
-    virtual void vfunc6();
+    virtual void vfunc6(int, int, int);
     virtual char *vfunc7(int i);
     virtual void vfunc8(int);
     virtual void vfunc9();
