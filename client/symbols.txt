@@ -7766,6 +7766,7 @@
 0x10165bb0 func   ?vfunc108@CDownloadSliderPanel@@UAEXXZ CDownloadSliderPanel::vfunc108
 0x10165de0 func   ?vfunc0@CDownloadSlider@@UAEHH@Z CDownloadSlider::vfunc0
 0x10165e10 func   ?vfunc1@CDownloadSlider@@UAEXXZ CDownloadSlider::vfunc1
+0x10165ee0 func   ??0CFPSPanel@@QAE@PAVPanel@vgui2@@@Z CFPSPanel::CFPSPanel
 0x10165fb0 func   ??_GCFPSPanel@@UAEPAXI@Z ??_GCFPSPanel@@UAEPAXI@Z
 0x10165fd0 func   ??1CFPSPanel@@UAE@XZ CFPSPanel::~CFPSPanel
 0x10165fd0 func   ?sub_10165fd0@CUnknown10165fd0@@QAEHXZ CUnknown10165fd0::sub_10165fd0
