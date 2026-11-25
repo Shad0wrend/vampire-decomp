@@ -1301,3 +1301,16 @@ void __fastcall sub_1011ac60(S_1011ac60 *self, int edx, bool b)
 		self->cnt++;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011b920 size=0x79
+#include "C_BaseEntity.h"
+#include "ScopeTrace.h"
+// TARGET: C_BaseEntity::vfunc98
+bool C_BaseEntity::vfunc98()
+{
+	ScopeTrace t("CBaseEntity::IsCurrentlyTouching", this ? "clientside entity" : "NULL CLIENT ENTITY");
+	if (sub_1011b290(1))
+		return true;
+	return false;
+}
+// END FUNCTION
