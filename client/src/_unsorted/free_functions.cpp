@@ -47516,6 +47516,24 @@ int __stdcall sub_100d5150(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5170 size=0x91
+#include "TexAlloc_100d5050.h"
+void TexAlloc_100d5050::sub_100d5170(unsigned short idx, int *px, int *py, int *pw, int *ph)
+{
+	unsigned short *r = (unsigned short *)(m_pRects + (*(unsigned short *)(m_pEntries + idx * 10) << 4));
+	unsigned int w0 = r[0];
+	int scale = 1 << ((unsigned char *)this)[0x6a + w0 * 2];
+	unsigned int col = w0 >> 2;
+	int t = 0x100 / scale;
+	int w1 = r[1];
+	int q = w1 / t;
+	*px = (w1 - q * t) * scale + (w0 - col * 4) * 256;
+	*py = q * scale + col * 256;
+	*pw = scale;
+	*ph = scale;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d56c0 size=0x80
 #include "CClientShadowMgr.h"
 #include "Vector.h"

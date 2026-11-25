@@ -4655,6 +4655,7 @@
 0x100d5130 func   ?sub_100d5130@@YIXPAD@Z sub_100d5130
 0x100d5140 func   ?sub_100d5140@CUnknown100d5140@@QAEHXZ CUnknown100d5140::sub_100d5140
 0x100d5150 func   ?sub_100d5150@@YGHHH@Z sub_100d5150
+0x100d5170 func   ?sub_100d5170@TexAlloc_100d5050@@QAEXGPAH000@Z TexAlloc_100d5050::sub_100d5170
 0x100d5390 func   ?vfunc3@CClientShadowMgr@@QAEXXZ CClientShadowMgr::vfunc3
 0x100d53a0 func   ?vfunc4@CClientShadowMgr@@QAEXXZ CClientShadowMgr::vfunc4
 0x100d53b0 func   ?vfunc7@CClientShadowMgr@@QAEXH@Z CClientShadowMgr::vfunc7
