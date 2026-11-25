@@ -96096,6 +96096,46 @@ Beam_t *CViewRenderBeams::sub_10193470(bool bInit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101934d0 size=0x45
+#include "CViewRenderBeams.h"
+
+struct SomeV
+{
+	virtual void v0();
+	virtual void vfunc1(unsigned short h);
+};
+extern SomeV *g_102b9060;
+
+struct BeamTrailV
+{
+	char m_pad00[0x20];
+	unsigned short m_h20;	// 0x20
+	char m_pad22[0x24 - 0x22];
+	int m_next24;			// 0x24
+	char m_pad28[0x368 - 0x28];
+	void sub_10192db0();
+};
+
+struct BeamsView2
+{
+	char m_pad00[0x1bc08];
+	int m_free;		// 0x1bc08
+};
+
+// TARGET: CViewRenderBeams::sub_101934d0
+void CViewRenderBeams::sub_101934d0(void *pBeamV)
+{
+	BeamTrailV *pBeam = (BeamTrailV *)pBeamV;
+	BeamsView2 *v = (BeamsView2 *)this;
+	sub_101947b0((void **)((char *)pBeam + 0x368));
+	if (pBeam->m_h20 != 0xffff)
+		g_102b9060->vfunc1(pBeam->m_h20);
+	pBeam->sub_10192db0();
+	pBeam->m_next24 = v->m_free;
+	v->m_free = (int)pBeam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101935e0 size=0x1a9
 #include "Vector.h"
 
