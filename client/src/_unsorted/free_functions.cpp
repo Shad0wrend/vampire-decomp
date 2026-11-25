@@ -43098,6 +43098,32 @@ void C_RopeKeyframe_Net::sub_100bf1e0(int updateType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf360 size=0x8b
+#include "CFx100bf360.h"
+struct Obj10128b60 { void sub_10128b60(float); };
+struct FxView {
+	char pad0[0x414];
+	unsigned int m_bits[1];
+	int m_n418;
+	char pad1[0x458 - 0x41c];
+	char m_obj[1];
+	char pad2[0x6b8 - 0x459];
+	int m_nBits;
+};
+void CFx100bf360::sub_100bf360(float arg)
+{
+	FxView *t = (FxView *)this;
+	int i;
+	for (i = 0; i < t->m_nBits; i++)
+		t->m_bits[i >> 5] &= ~(1 << (i & 31));
+	((Obj10128b60 *)t->m_obj)->sub_10128b60(arg);
+	t->m_n418 = 0;
+	for (i = 0; i < t->m_nBits; i++)
+		if (t->m_bits[i >> 5] & (1 << (i & 31)))
+			t->m_n418++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf6b0 size=0x4b
 namespace lifted {
 struct C100bf1a0 { int sub_100bf1a0(); };
