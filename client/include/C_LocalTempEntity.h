@@ -14,5 +14,6 @@ public:
 #else
 	C_LocalTempEntity() {}
 #endif
+	void vfunc143(int, float);
 	int m_unk7f0; int m_unk7f4; int m_unk7f8; int m_unk7fc; int m_unk800; int m_unk804; int m_unk808; int m_unk80c;
 };
