@@ -22,6 +22,7 @@ public:
 	int sub_100a6780(int b, int h);
 	bool sub_100a6b10();
 	void sub_1007ede0(C_BaseEntity *pEntity);
+	void sub_100a9f40(C_BaseEntity *pEntity);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BasePlayer's own function
 	virtual int vfunc15();
