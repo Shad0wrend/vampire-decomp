@@ -18810,6 +18810,30 @@ void sub_10054cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055650 size=0x77
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+int CHudDialog::sub_10055650()
+{
+	ScopeTrace trace("CHudDialog::GetDisplayableHistoryLines", g_102de300);
+	int i = *(int *)((char *)this + 0x184);
+	int n = 0;
+	if (i > 0)
+	{
+		int *p = *(int **)((char *)this + 0x178);
+		do
+		{
+			if (*p == 0)
+				n++;
+			p += 2;
+		}
+		while (--i);
+	}
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
