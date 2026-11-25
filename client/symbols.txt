@@ -7735,6 +7735,7 @@
 0x101650b0 func   ?vfunc4@CCenterPrint@@UAEHH@Z CCenterPrint::vfunc4
 0x101650e0 func   ?vfunc5@CCenterPrint@@UAEXXZ CCenterPrint::vfunc5
 0x10165160 func   ?sub_10165160@@YAHXZ sub_10165160
+0x10165170 func   ??0CConnectMessagePanel@@QAE@PAVPanel@vgui2@@@Z CConnectMessagePanel::CConnectMessagePanel
 0x10165240 func   ??_GCConnectMessagePanel@@UAEPAXI@Z ??_GCConnectMessagePanel@@UAEPAXI@Z
 0x10165260 func   ??1CConnectMessagePanel@@UAE@XZ CConnectMessagePanel::~CConnectMessagePanel
 0x10165260 func   ?sub_10165260@CUnknown10165260@@QAEHXZ CUnknown10165260::sub_10165260
