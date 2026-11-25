@@ -12,4 +12,5 @@ public:
 	virtual bool vfunc4();
 	virtual int vfunc5();
 	virtual bool vfunc6();
+	void *vfunc0(unsigned char bFree);
 };
