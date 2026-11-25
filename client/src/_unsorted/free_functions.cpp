@@ -98352,6 +98352,51 @@ void CUnknown101aa230::sub_101aa230(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa260 size=0x6a
+#include "vgui2__Panel.h"
+
+class PanelV27View
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void vfunc27(int *pa, int *pb);
+};
+
+class Member19View
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void vfunc19(int a, int b, void *p);
+};
+
+class C101be7d0
+{
+public:
+	void sub_101be760(void *pPanel);
+};
+
+void vgui2::Panel::sub_101aa260(int a, int b)
+{
+	if ( vfunc69() )
+		return;
+
+	if ( vfunc67() )
+	{
+		((Member19View *)*(void **)((char *)this + 0x1c))->vfunc19(a, b, this);
+		return;
+	}
+
+	if ( *(void **)((char *)this + 0x50) )
+		((C101be7d0 *)*(void **)((char *)this + 0x50))->sub_101be760(this);
+
+	((PanelV27View *)this)->vfunc27(&a, &b);
+	vfunc84(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa2d0 size=0x3f
 namespace lifted {
 struct C101be720 { int sub_101be720(); };
