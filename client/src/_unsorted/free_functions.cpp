@@ -40682,6 +40682,34 @@ int CUnknown100a2220::sub_100a2220(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2260 size=0xea
+#include "C_BaseEntity.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+extern void sub_101082f0(Vector *, void *, void *);
+
+void C_BaseEntity::sub_100a2260(const Vector &origin)
+{
+	sub_1007e180(0x1000, 0);
+	*(int *)((char *)this + 0x184) &= ~0x1000;
+	*(Vector *)((char *)this + 0xb4) = origin;
+	C_BaseEntity *pParent = (C_BaseEntity *)((CBaseHandle *)((char *)this + 0x208))->Get();
+	if (!pParent)
+	{
+		*(Vector *)((char *)this + 0xa8) = origin;
+		return;
+	}
+	pParent->sub_1009fa70();
+	Vector delta;
+	delta.x = origin.x - *(float *)((char *)pParent + 0xb4);
+	delta.y = origin.y - *(float *)((char *)pParent + 0xb8);
+	delta.z = origin.z - *(float *)((char *)pParent + 0xbc);
+	pParent->sub_1009f8a0();
+	sub_101082f0(&delta, (char *)pParent + 0x26c, (char *)this + 0xa8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a23f0 size=0x15
 struct CUnknown100a23f0 { int sub_100a23f0(int); };
 int CUnknown100a23f0::sub_100a23f0(int a0)

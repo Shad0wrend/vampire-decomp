@@ -3810,6 +3810,7 @@
 0x100a2030 func   ?sub_100a2030@C_BaseEntity@@QAEXPBX@Z C_BaseEntity::sub_100a2030
 0x100a2100 func   ?sub_100a2100@C_BaseEntity@@QAEXABVQAngle@@@Z C_BaseEntity::sub_100a2100
 0x100a2220 func   ?sub_100a2220@CUnknown100a2220@@QAEHHHH@Z CUnknown100a2220::sub_100a2220
+0x100a2260 func   ?sub_100a2260@C_BaseEntity@@QAEXABVVector@@@Z C_BaseEntity::sub_100a2260
 0x100a2350 func   ?vfunc43@C_BaseEntity@@UAEPADXZ C_BaseEntity::vfunc43
 0x100a2360 func   ?vfunc44@C_BaseEntity@@UAEHH@Z C_BaseEntity::vfunc44
 0x100a2390 func   ?vfunc45@C_BaseEntity@@UAEPADXZ C_BaseEntity::vfunc45
