@@ -12,6 +12,7 @@ class C_Beam : public C_BaseEntity
 public:
 	C_Beam();
 	void sub_10080450(EntV *pEnt);
+	void sub_10081060(Vector *a, Vector *b);
 	void sub_10080490(void *pEntity);
 	void sub_100804f0(char *arg);
 	void sub_100805a0(char *arg);
