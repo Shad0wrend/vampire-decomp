@@ -55607,6 +55607,17 @@ void sub_100f2c00(int *r, int *g, int *b, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2d00 size=0x53
+extern int (*g_101e3190)(char *pDest, int nSize, const char *pFmt, ...);
+struct CUnknown100f2d00 { void sub_100f2d00(int a0, int a1, int a2, int a3, int a4, int a5, int a6); void sub_100f2d60(int a0, int a1, int a2, const char *s, int a4, int a5, int a6, int a7); };
+void CUnknown100f2d00::sub_100f2d00(int a0, int a1, int a2, int a3, int a4, int a5, int a6)
+{
+	char buf[32];
+	g_101e3190(buf, 32, "%d", a3);
+	sub_100f2d60(a0, a1, a2, buf, a4, a5, a6, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f34f0 size=0xa8
 #include "CHud.h"
 extern CHud g_104cfe38;
