@@ -3506,6 +3506,7 @@
 0x10093f40 func   ?vfunc132@C_BaseAnimating@@UAEX_N@Z C_BaseAnimating::vfunc132
 0x10093fd0 func   ?vfunc70@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc70
 0x10094020 func   ?sub_10094020@CUnknown10094020@@QAEHXZ CUnknown10094020::sub_10094020
+0x10094040 func   ?sub_10094040@IClientRenderable@@QAEABVVector@@XZ IClientRenderable::sub_10094040
 0x10094090 func   ?sub_10094090@CollView@@QAEXHH@Z CollView::sub_10094090
 0x100940d0 func   ?sub_100940d0@C_BaseAnimating@@QAEHHPAH@Z C_BaseAnimating::sub_100940d0
 0x10094150 func   ?LookupBone@C_BaseAnimating@@QAEHPBD@Z C_BaseAnimating::LookupBone

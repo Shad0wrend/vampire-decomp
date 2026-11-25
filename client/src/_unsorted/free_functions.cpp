@@ -36645,6 +36645,31 @@ int CUnknown10094020::sub_10094020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094040 size=0x45
+#include "IClientRenderable.h"
+#include "C_BaseAnimating.h"
+#include "IClientCollideable.h"
+
+struct CUnknown1009f350 { char *sub_1009f350(); };
+struct AnimRenderable { virtual void v0(); virtual void v1(); virtual void *v2(); };
+
+// TARGET: IClientRenderable::sub_10094040
+const Vector &IClientRenderable::sub_10094040()
+{
+	C_BaseAnimating *pEntity = (C_BaseAnimating *)((char *)this - 4);
+	if ( pEntity->sub_10094020() )
+	{
+		if ( ((IClientCollideable *)((char *)this + 8))->GetSolid() != 0xc )
+		{
+			AnimRenderable *pAnim = *(AnimRenderable **)((char *)this + 0x6ac);
+			pEntity->sub_100a2030(pAnim->v2());
+			return pEntity->GetAbsOrigin();
+		}
+	}
+	return *(const Vector *)((CUnknown1009f350 *)this)->sub_1009f350();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094090 size=0x3c
 #include "C_BaseEntity.h"
 struct CUnknown10094020 { int sub_10094020(); };
