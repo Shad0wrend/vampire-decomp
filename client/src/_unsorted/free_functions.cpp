@@ -91747,6 +91747,33 @@ bool BitmapImage::sub_10164520(int arg0, int arg1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164570 size=0x88
+#include "BitmapImage.h"
+#include "CKeyValuesX.h"
+struct CUnknown10164980 { int sub_10164980(int); };
+bool sub_10110140(void *, const char *, unsigned char *);
+extern const char g_102de300[];
+bool BitmapImage::sub_10164570(int arg0, CKeyValuesX *pKV)
+{
+	const char *pszMaterial = pKV->sub_10128590("material", g_102de300);
+	if (pszMaterial != 0 && *pszMaterial != 0)
+	{
+		unsigned char c[4] = { 0, 0, 0, 0 };
+		if (!sub_10110140(pKV, "color", c))
+		{
+			c[0] = 255;
+			c[1] = 255;
+			c[2] = 255;
+			c[3] = 255;
+		}
+		sub_10164520(arg0, (int)pszMaterial);
+		((CUnknown10164980 *)this)->sub_10164980((int)c);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164690 size=0xa
 struct CUnknown10164690 { int sub_10164690(int); };
 int CUnknown10164690::sub_10164690(int a0)
