@@ -41,6 +41,23 @@ void C_TempEntsSystem::vfunc5(int filter, int delay, int pos, int dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c53f0 size=0xa0
+#include "C_TempEntsSystem.h"
+#include "C_RecipientFilter.h"
+extern void *g_104a0d50;
+void sub_10033860(void *, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+void C_TempEntsSystem::vfunc10(int filter, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16)
+{
+	if (!CanPredict())
+		return;
+	C_RecipientFilter *f = (C_RecipientFilter *)filter;
+	if (!f->sub_100be140())
+		f->sub_100bdf90(g_104a0d50);
+	if (f->vfunc2())
+		sub_10033860(f, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5540 size=0x57
 #include "C_TempEntsSystem.h"
 
