@@ -81,6 +81,29 @@ CPhysSurfacePropsIface *sub_1010f680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f690 size=0x64
+#include <stdarg.h>
+#include "CMoveHelperClient.h"
+
+extern int (__cdecl *g_101e31a8)(char *, int, const char *, va_list);
+extern int (__cdecl *g_101e3118)(int, const char *, ...);
+extern int (__cdecl *g_101e3108)(const char *, ...);
+
+// TARGET: vfunc15
+void CMoveHelperClient::vfunc15(bool bDevMsg, const char *fmt, ...)
+{
+	char buf[0x2000];
+	va_list args;
+	va_start(args, fmt);
+	g_101e31a8(buf, 0x2000, fmt, args);
+	va_end(args);
+	if (bDevMsg)
+		g_101e3118(1, buf);
+	else
+		g_101e3108(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f700 size=0x4c
 #include "CMoveHelperClient.h"
 #include <stdarg.h>
