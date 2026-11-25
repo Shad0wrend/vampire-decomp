@@ -45,6 +45,7 @@ public:
     Vector m_vecHolyLight;
     float m_flHolyLightStrength;
     bool sub_101977a0();
+    int sub_10196d70(int mode, int a, int b, int c, float d);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CViewEffects adds to its base's vtable: 0-17, vfuncK at slot K
     virtual void vfunc0();
