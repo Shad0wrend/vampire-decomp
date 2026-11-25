@@ -75,3 +75,15 @@ bool CViewEffects::sub_101977a0()
 	return *(bool *)((char *)this + 0x99);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101978d0 size=0x72
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+void CViewEffects::vfunc14(float flStrength)
+{
+    ScopeTrace trace("CViewEffects::PullTowardsHolyLight", "", "");
+    if (m_flHolyLightStrength < flStrength)
+        m_flHolyLightStrength = flStrength;
+}
+// END FUNCTION
