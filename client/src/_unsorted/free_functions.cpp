@@ -105408,6 +105408,39 @@ int CUnknown101c95d0::sub_101c95d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9bd0 size=0x82
+#include "CUtlVectorDel4.h"
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+void CUtlVectorDel4::sub_101c9bd0()
+{
+	if (m_bAutoDelete)
+	{
+		for (int i = 1; i < m_size; i++)
+			delete (char *)m_pMemory[i];
+	}
+	m_size = 0;
+	if (m_growSize != -1)
+	{
+		if (m_pMemory)
+		{
+			Plat_Free(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+	if (m_growSize != -1)
+	{
+		if (m_pMemory)
+		{
+			Plat_Free(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9da0 size=0x4
 struct CUnknown101c9da0 { int sub_101c9da0(); };
 int CUnknown101c9da0::sub_101c9da0()
