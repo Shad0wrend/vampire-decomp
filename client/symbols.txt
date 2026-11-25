@@ -8731,6 +8731,7 @@
 0x101b2080 func   ??_GLabel@vgui2@@UAEPAXI@Z ??_GLabel@vgui2@@UAEPAXI@Z
 0x101b20a0 func   ??1Label@vgui2@@UAE@XZ vgui2::Label::~Label
 0x101b2230 func   ?vfunc117@Label@vgui2@@UAEXH@Z vgui2::Label::vfunc117
+0x101b2260 func   ?vfunc110@Label@vgui2@@UAEXPAH0@Z vgui2::Label::vfunc110
 0x101b2320 func   ?sub_101b2320@@YGGPBD@Z sub_101b2320
 0x101b2370 func   ?vfunc72@Label@vgui2@@UAEHH@Z vgui2::Label::vfunc72
 0x101b2390 func   ?vfunc120@Label@vgui2@@UAEFF@Z vgui2::Label::vfunc120

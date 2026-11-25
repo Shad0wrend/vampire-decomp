@@ -25,6 +25,47 @@ void vgui2::Label::vfunc117(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2260 size=0xbc
+#include "vgui2__Label.h"
+struct IObj101b2260 {
+    virtual void v0();
+    virtual void v1();
+    virtual void GetSize(int *a, int *b);
+    virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+    virtual void v30(); virtual void v31();
+    virtual void GetSize2(int *a, int *b);
+};
+struct LabelView101b2260 {
+    char pad0[0x5c];
+    IObj101b2260 *m5c;
+    char pad1[0x74 - 0x60];
+    short *m74;
+    char pad2[0x80 - 0x78];
+    int m80;
+    char pad3[0x88 - 0x84];
+    int m88;
+    int m8c;
+};
+
+void vgui2::Label::vfunc110(int *wide, int *tall)
+{
+    LabelView101b2260 *v = (LabelView101b2260 *)this;
+    int left, top, right, bottom;
+    int a, b;
+    vfunc131(&left, &right, &top, &bottom);
+    *wide = v->m88 - left + top;
+    v->m5c->GetSize(&a, &b);
+    *wide -= a;
+    v->m5c->GetSize2(&a, &b);
+    *wide += a;
+    for (int i = 0; i < v->m80; i++)
+        *wide += v->m74[i];
+    *tall = v->m8c - right + bottom;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2320 size=0x4a
 extern "C" int isalnum(int);
 extern "C" int tolower(int);
