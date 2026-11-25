@@ -58229,6 +58229,43 @@ void PMgr::sub_10116f00(PNode *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117260 size=0x6d
+#include "CParticleEffectBinding.h"
+
+extern "C" int _strcmpi(const char *s1, const char *s2);
+
+class IParticleNameView
+{
+public:
+	virtual const char *GetName();
+};
+
+void *CParticleEffectBinding::sub_10117260(const char *name, unsigned short *pIndex)
+{
+	int i = (unsigned short)m_List.m_s0c;
+	if ( i == 0xffff )
+		return 0;
+
+	do
+	{
+		unsigned long offset = (unsigned short)i * 8;
+		void *pElement = *(void **)((char *)m_List.m_a + offset);
+		IParticleNameView *pName = (IParticleNameView *)*(void **)((char *)pElement + 0x18);
+
+		if ( _strcmpi( pName->GetName(), name ) == 0 )
+		{
+			if ( pIndex )
+				*pIndex = i;
+			return pElement;
+		}
+
+		i = *(unsigned short *)((char *)m_List.m_a + offset + 6);
+	} while ( i != 0xffff );
+
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101172d0 size=0x6c
 #include "CParticleMgr.h"
 
