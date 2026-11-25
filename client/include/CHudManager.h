@@ -18,5 +18,5 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc115(int);
 	virtual bool vfunc116(int);
 	SHudNode *m_pHead;
-	int m_unk4[(0x194 - 0x8) / 4];
+	SHudNode *m_pLists174[8];
 };
