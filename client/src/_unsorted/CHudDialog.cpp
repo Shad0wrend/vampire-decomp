@@ -25,3 +25,17 @@ bool CHudDialog::vfunc116()
     return *(bool *)((char *)this + 0x1b4);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10054d10 size=0x69
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+struct DialogView { char pad[0x18c]; int m_unk18c; };
+
+void CHudDialog::ScrollDn()
+{
+	ScopeTrace scope("CHudDialog::ScrollDn", g_102de300);
+	if ( ((DialogView *)this)->m_unk18c > 0 )
+		((DialogView *)this)->m_unk18c--;
+}
+// END FUNCTION
