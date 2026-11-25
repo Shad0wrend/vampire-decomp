@@ -21448,6 +21448,82 @@ void CProgBar::sub_1005fe40(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060420 size=0x10b
+#include <string.h>
+#include "CSignTextBlock.h"
+
+extern "C" __declspec(dllimport) void __cdecl Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern void *g_1022a98c;
+
+struct TextEntryCtorView {
+	void sub_101acaa0(void *parent, const char *name);
+};
+
+struct Color4 {
+	unsigned char r, g, b, a;
+	Color4() { r = 0; g = 0; b = 0; a = 0; }
+};
+
+struct SignTextBlockLayout {
+	void *vtable;
+	char pad[0x124];
+	char *m_psz128;
+	char *m_psz12c;
+	Color4 m_c130;
+	Color4 m_c134;
+	int m_i138;
+	int m_i13c;
+	int m_i140;
+	int m_i144;
+};
+
+struct SignTextBlockRaw {
+	void *vtable;
+	char pad[0x124];
+	char *m_psz128;
+	char *m_psz12c;
+	int m_d130;
+	int m_d134;
+	int m_i138;
+	int m_i13c;
+	int m_i140;
+	int m_i144;
+};
+
+class CSignTextBlock_Copy {
+public:
+	CSignTextBlock_Copy *sub_10060420(const SignTextBlockRaw *other);
+};
+
+// TARGET: CSignTextBlock_Copy::sub_10060420
+CSignTextBlock_Copy *CSignTextBlock_Copy::sub_10060420(const SignTextBlockRaw *other)
+{
+	((TextEntryCtorView *)this)->sub_101acaa0(0, 0);
+	SignTextBlockLayout *self = (SignTextBlockLayout *)this;
+	self->m_c130.r = 0;
+	self->m_c130.g = 0;
+	self->m_c130.b = 0;
+	self->m_c130.a = 0;
+	self->m_c134.r = 0;
+	self->m_c134.g = 0;
+	self->m_c134.b = 0;
+	self->m_c134.a = 0;
+	*(void **)this = &g_1022a98c;
+	SignTextBlockRaw *raw = (SignTextBlockRaw *)this;
+	raw->m_d130 = other->m_d130;
+	raw->m_d134 = other->m_d134;
+	raw->m_i138 = other->m_i138;
+	raw->m_i13c = other->m_i13c;
+	raw->m_i140 = other->m_i140;
+	raw->m_i144 = other->m_i144;
+	raw->m_psz128 = new char[strlen(other->m_psz128) + 2];
+	Q_strncpy(raw->m_psz128, other->m_psz128, strlen(other->m_psz128) + 1);
+	raw->m_psz12c = new char[strlen(other->m_psz12c) + 2];
+	Q_strncpy(raw->m_psz12c, other->m_psz12c, strlen(other->m_psz12c) + 1);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060d60 size=0xd
 struct CView { char pad[0x18c]; float m18c; float sub_10060d60(); };
 // TARGET: ?sub_10060d60@CView@@QAEMXZ
