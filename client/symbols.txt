@@ -3518,6 +3518,7 @@
 0x10095870 func   ?vfunc17@C_BaseAnimating@@UAEHXZ C_BaseAnimating::vfunc17
 0x10095880 func   ?sub_10095880@C_BaseAnimating@@QAEXXZ C_BaseAnimating::sub_10095880
 0x100958f0 func   ?sub_100958f0@@YGHH@Z sub_100958f0
+0x10095990 func   ?sub_10095990@C_BaseAnimating@@QAEHHHPAH@Z C_BaseAnimating::sub_10095990
 0x10095a60 func   ?vfunc57@C_BaseAnimating@@UAE_NHHH@Z C_BaseAnimating::vfunc57
 0x10095ac0 func   ?sub_10095ac0@C_BaseAnimating@@QAE_NHH@Z C_BaseAnimating::sub_10095ac0
 0x10095b00 func   ?sub_10095b00@CUnknown10095b00@@QAEHH@Z CUnknown10095b00::sub_10095b00

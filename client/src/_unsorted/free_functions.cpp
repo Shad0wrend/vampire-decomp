@@ -36589,6 +36589,53 @@ int __stdcall sub_100958f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095990 size=0xcc
+#include "C_BaseAnimating.h"
+
+struct CStudioHdr;
+int sub_1007a140( CStudioHdr *hdr, int a, int b, int *p );
+
+int C_BaseAnimating::sub_10095990( int a, int b, int *p )
+{
+	if ( p == 0 )
+	{
+		int local = 1;
+		int ret = sub_10095990( a, b, &local );
+		if ( local != 1 )
+			ret = -1;
+		return ret;
+	}
+
+	int nTotal = 0;
+	for ( int i = -1; i < 2; i++ )
+	{
+		char *hdr = (char *)sub_1008f900( i );
+		if ( hdr )
+		{
+			int count;
+			int k = *(int *)(hdr + 0x194);
+			if ( k )
+			{
+				count = *(int *)(hdr + *(int *)(hdr + 0x198) + k * 116 - 0x6c)
+				      + *(int *)(hdr + *(int *)(hdr + 0x198) + k * 116 - 0x68);
+			}
+			else
+			{
+				count = *(int *)(hdr + 0x110);
+			}
+
+			if ( a >= 0 && a < count && b >= 0 && b < count )
+				return sub_1007a140( (CStudioHdr *)hdr, a, b, p ) + nTotal;
+
+			nTotal += count;
+			a -= count;
+			b -= count;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095ac0 size=0x36
 #include "C_BaseAnimating.h"
 void sub_10108430(int, void *);
