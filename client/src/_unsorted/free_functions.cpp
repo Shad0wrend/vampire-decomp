@@ -47447,6 +47447,33 @@ char CUnknown100d27e0::sub_100d27e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2800 size=0x9d
+#include "CClientLeafSystem.h"
+struct LS100d1e10 { unsigned short sub_100d1e10(unsigned short); };
+#define T10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct VE0 { T10(a) T10(b) T10(c) T10(d) T10(e) T10(f) T10(g) T10(h) };
+struct VEng : VE0 { virtual void i0(); virtual void i1(); virtual void i2(); virtual void i3(); virtual void i4(); virtual void i5(); virtual void i6(); virtual void* v87(); };
+struct VObj { virtual void x0(); virtual void x1(); virtual void Do(float *a, float *b, void *c, int d); };
+extern VEng *g_104a57d4;
+struct V3 { float x, y, z; };
+struct LRec { char pad[0x16]; unsigned short w16; V3 mins; V3 maxs; int pad2; };
+struct LView { char pad[8]; char m8[0x18]; char *m20; char pad2[0xdc-0x24]; int mdc; };
+void CClientLeafSystem::sub_100d2800(unsigned short h, float *mins, float *maxs)
+{
+	LView *v = (LView *)this;
+	v->mdc++;
+	VObj *o = (VObj *)g_104a57d4->v87();
+	o->Do(mins, maxs, v->m8, h);
+	int off = h * sizeof(LRec);
+	LRec *r = (LRec *)(v->m20 + off);
+	r->w16 = ((LS100d1e10 *)this)->sub_100d1e10(h);
+	V3 *p = (V3 *)(v->m20 + off + 0x18);
+	p->x = mins[0]; p->y = mins[1]; p->z = mins[2];
+	V3 *q = (V3 *)(v->m20 + off + 0x24);
+	q->x = maxs[0]; q->y = maxs[1]; q->z = maxs[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3330 size=0x38
 struct LLNode2 { char pad[0x30]; unsigned short a; unsigned short b; };
 struct LLView2 {
