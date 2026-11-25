@@ -22340,6 +22340,36 @@ void CUnknown1005fcb0::sub_1005fcb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fcf0 size=0x9d
+#include "CProgBar.h"
+#include "CHUDSprite.h"
+
+struct ProgBarView
+{
+	char m_pad000[0x1b8];
+	CHUDSprite *m_p1b8;
+	CHUDSprite *m_p1bc;
+};
+
+bool CProgBar::sub_1005fcf0()
+{
+	ProgBarView *v = (ProgBarView *)this;
+	if (v->m_p1b8 == 0)
+	{
+		v->m_p1b8 = new CHUDSprite("hud/Lockpick_ProgressBar", 0, 0, 0x100, 0x20, 0x100, 0x20);
+		if (v->m_p1b8 == 0)
+			return false;
+	}
+	if (v->m_p1bc == 0)
+	{
+		v->m_p1bc = new CHUDSprite("hud/Lockpick_ProgressLiquid", 0, 0, 0x100, 0x20, 0x100, 0x20);
+		if (v->m_p1b8 == 0)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fdd0 size=0x32
 struct XKey0c
 {
