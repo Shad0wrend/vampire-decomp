@@ -601,6 +601,80 @@ void CHLClient::vfunc31(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc660 size=0x98
+#include "CHLClient.h"
+#include "CHud.h"
+
+struct V5808
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void v9();
+    virtual void v10();
+    virtual void v11();
+    virtual void v12();
+    virtual void v13();
+    virtual void v14();
+    virtual void v15();
+    virtual void v16(int, int);
+};
+extern V5808 *g_104a5808;
+
+struct VProfPanel
+{
+    void sub_1018dfc0();
+};
+
+extern int g_102b8498;
+extern CHud g_104cfe38;
+
+void sub_100cc570();
+void sub_100cc620();
+void sub_100cc650();
+void sub_100cc630();
+void sub_100cc640();
+void sub_1009db80(int);
+void sub_1009db70(int);
+
+void CHLClient::vfunc32(int n)
+{
+    g_102b8498 = n;
+    switch (n)
+    {
+    case 5:
+        sub_100cc570();
+        break;
+    case 6:
+        sub_100cc620();
+        break;
+    case 1:
+        sub_1009db80(0);
+        sub_1009db70(0);
+        g_104a5808->v16(0xac, 1);
+        sub_100cc630();
+        break;
+    case 2:
+        sub_100cc640();
+        break;
+    case 3:
+        sub_100cc650();
+        break;
+    case 0:
+        ((VProfPanel *)g_104cfe38.sub_100f0ed0("CVProfPanel"))->sub_1018dfc0();
+        break;
+    case 4:
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc700 size=0x10
 #include "CHLClient.h"
 namespace lifted {
