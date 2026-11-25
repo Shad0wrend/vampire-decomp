@@ -120281,6 +120281,55 @@ vgui2::Panel *vgui2::BuildGroup::sub_101c26d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2770 size=0xe7
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+#include "vgui2__KeyValues.h"
+
+struct KVView
+{
+	virtual const char *vfunc0();
+	virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9(); virtual void u10();
+	virtual const char *vfunc11(const char *, const char *);
+	virtual void *vfunc12(const char *, void *);
+	virtual void u13(); virtual void u14(); virtual void u15(); virtual void u16();
+	virtual void vfunc17(const char *, void *);
+};
+
+struct GroupV
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13();
+	virtual void f14(void *);
+};
+
+struct BGView { char pad[0x5c]; GroupV *m5c; void *m60; };
+
+vgui2::Panel *vgui2::BuildGroup::sub_101c2770(vgui2::KeyValues *pKV, int a, int b)
+{
+	if (pKV)
+	{
+		vgui2::KeyValues *pControl = new vgui2::KeyValues("ControlFactory", "ControlName", ((KVView *)pKV)->vfunc11("ControlName", ""));
+		((KVView *)pControl)->vfunc17("ParentPtr", ((BGView *)this)->m60);
+		((BGView *)this)->m5c->f14(pControl);
+		vgui2::Panel *pPanel = (vgui2::Panel *)((KVView *)pControl)->vfunc12("PanelPtr", 0);
+		if (pPanel)
+		{
+			pPanel->vfunc66((int)this);
+			pPanel->sub_101a9890(a, b);
+			pPanel->vfunc75((int)pKV);
+			pPanel->sub_101a9810(((KVView *)pKV)->vfunc0());
+			pPanel->vfunc41((int)((BGView *)this)->m60);
+			pPanel->sub_101aab60(1);
+			pPanel->sub_101aab90(1);
+			pPanel->vfunc39(1);
+		}
+		return pPanel;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2860 size=0x95
 #include "vgui2__BuildGroup.h"
 #include "vgui2__Panel.h"
