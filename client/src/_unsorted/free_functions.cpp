@@ -68189,6 +68189,26 @@ int CUnknown101175a0::sub_101175a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101177a0 size=0x49
+#include "CParticleMgr.h"
+
+void sub_100b4780();
+
+// TARGET: CParticleMgr::sub_101177a0
+void CParticleMgr::sub_101177a0()
+{
+	sub_100b4780();
+	int i = m_list.m_Head;
+	while ( i != 0xffff )
+	{
+		int data = m_list.m_pMemory[(unsigned short)i].m_Data;
+		unsigned short next = m_list.m_pMemory[(unsigned short)i].m_Next;
+		sub_101176b0((CParticleEffectBinding *)data);
+		i = next;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117850 size=0x3a
 namespace lifted {
 extern int g_104e0760;
