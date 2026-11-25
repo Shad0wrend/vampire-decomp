@@ -9484,6 +9484,7 @@
 0x101c8010 func   ?vfunc85@ComboBox@vgui2@@UAEXXZ vgui2::ComboBox::vfunc85
 0x101c8030 func   ?vfunc86@ComboBox@vgui2@@UAEXXZ vgui2::ComboBox::vfunc86
 0x101c8060 func   ?sub_101c8060@CUnknown101c8060@@QAEHXZ CUnknown101c8060::sub_101c8060
+0x101c8070 func   ?vfunc11@ComboBox@vgui2@@UAEXHH@Z vgui2::ComboBox::vfunc11
 0x101c81b0 func   ?vfunc102@ComboBox@vgui2@@UAEHXZ vgui2::ComboBox::vfunc102
 0x101c81c0 func   ?sub_101c81c0@CUnknown101c81c0@@QAEHXZ CUnknown101c81c0::sub_101c81c0
 0x101c81d0 func   ?vfunc173@ComboBox@vgui2@@UAEXH@Z vgui2::ComboBox::vfunc173
