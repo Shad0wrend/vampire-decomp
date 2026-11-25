@@ -42,6 +42,7 @@ public:
 	void vfunc1();
 	void vfunc3();
 	void vfunc4();
+	void vfunc6();
 	void vfunc7(int);
 	void *vfunc16(unsigned short);
 	void vfunc14(const void *pDirection);
