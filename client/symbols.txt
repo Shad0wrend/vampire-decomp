@@ -2233,6 +2233,7 @@
 0x1003d610 func   ?vfunc22@CTempEnts@@UAEHHHH@Z CTempEnts::vfunc22
 0x1003d740 func   ?vfunc24@CTempEnts@@UAEHHHH@Z CTempEnts::vfunc24
 0x1003d770 func   ?vfunc21@CTempEnts@@UAEXABVVector@@ABVQAngle@@H@Z CTempEnts::vfunc21
+0x1003d950 func   ?vfunc25@CTempEnts@@UAEXHHHPBD0HH@Z CTempEnts::vfunc25
 0x1003da50 func   ??0C_TEMuzzleFlash@@QAE@XZ C_TEMuzzleFlash::C_TEMuzzleFlash
 0x1003da90 func   ??_GC_TEMuzzleFlash@@UAEPAXI@Z ??_GC_TEMuzzleFlash@@UAEPAXI@Z
 0x1003dab0 func   ??1C_TEMuzzleFlash@@UAE@XZ C_TEMuzzleFlash::~C_TEMuzzleFlash

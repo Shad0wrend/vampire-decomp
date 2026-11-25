@@ -674,3 +674,15 @@ void CTempEnts::vfunc21(const Vector &origin, const QAngle &angles, int entityIn
 	pParticle->m_vecVelocity.z = 16.0f;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003d950 size=0x66
+#include "CTempEnts.h"
+
+extern int sub_100b47b0(const char *pszName, int a1, int a2, int a3, int a4, int a5, float f1, float f2, float f3, float f4);
+
+void CTempEnts::vfunc25(int a0, int a1, int a2, const char *name1, const char *name2, int a5, int a6)
+{
+	sub_100b47b0(name1, a0, a1, a5, 6, a6, 1.0f, 1.0f, 1.0f, 1.0f);
+	sub_100b47b0(name2, a0, a1, a5, 6, a6, 1.0f, 1.0f, 1.0f, 1.0f);
+}
+// END FUNCTION
