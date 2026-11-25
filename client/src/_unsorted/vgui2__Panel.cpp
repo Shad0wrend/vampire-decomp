@@ -461,6 +461,28 @@ void vgui2::Panel::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9f20 size=0x9b
+#include "vgui2__Panel.h"
+struct ISurfX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void SetColor(int, int, int, int);
+	virtual void FillRect(int, int, int, int);
+};
+ISurfX *sub_101ac8d0();
+// TARGET: vgui2::Panel::vfunc100
+void vgui2::Panel::vfunc100()
+{
+	int w, t;
+	sub_101a9920(&w, &t);
+	sub_101ac8d0()->SetColor(0, 0, 0, 255);
+	sub_101ac8d0()->FillRect(0, 0, w, 2);
+	sub_101ac8d0()->FillRect(0, t - 2, w, t);
+	sub_101ac8d0()->FillRect(0, 2, 2, t - 2);
+	sub_101ac8d0()->FillRect(w - 2, 2, w, t - 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9fc0 size=0x21
 #include "vgui2__Panel.h"
 bool vgui2::Panel::vfunc73() { if ((char)vfunc22() && *((char *)this + 0x29) && *((unsigned char *)this + 0x27) == 0xff) return true; return false; }
