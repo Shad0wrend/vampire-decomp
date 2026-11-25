@@ -14,6 +14,26 @@ void vgui2::AnimatingImagePanel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c56b0 size=0x86
+#include "vgui2__AnimatingImagePanel.h"
+#include <stdio.h>
+struct SchemeV108 { virtual void v0(); virtual void *GetImage(const char *name); };
+struct SchemeMgrV108 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual SchemeV108 *GetScheme(int id); };
+SchemeMgrV108 *sub_101ac8c0();
+// TARGET: vgui2::AnimatingImagePanel::vfunc108
+void vgui2::AnimatingImagePanel::vfunc108(const char *pszPrefix, int nFrames)
+{
+	SchemeV108 *pScheme = sub_101ac8c0()->GetScheme(sub_101aa220());
+	m_i70 = 0;
+	for (int i = 1; i <= nFrames; i++)
+	{
+		char filename[512];
+		sprintf(filename, "%s%d", pszPrefix, i);
+		vfunc107(pScheme->GetImage(filename));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5740 size=0x48
 #include "vgui2__AnimatingImagePanel.h"
 struct ImgView { virtual void Paint(); };
