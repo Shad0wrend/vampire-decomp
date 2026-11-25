@@ -106623,6 +106623,81 @@ struct CView { char pad[0x10]; int m10; void sub_10187ae0(); };
 void CView::sub_10187ae0() { ((IV *)&m10)->v49(); }
 // END FUNCTION
 
+// FUNCTION: 0x10187b20 size=0xc1
+#include "vgui2__Panel.h"
+
+extern void sub_1018ccf0(int);
+extern int sub_101ac8d0();
+extern int sub_100f40d0();
+extern "C" int _strcmpi(const char *, const char *);
+extern const char *g_102d281c[];
+extern const char *g_102d284c[];
+
+struct ISchemeManagerView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void vfunc44(int, int);
+};
+
+struct MapButtonView
+{
+	char m_pad[0xc0];
+	char m_bC0;
+};
+
+struct CScorePanelSetup
+{
+	char m_pad00[0x10];
+	vgui2::Panel m_panel;
+	char m_b180;
+	char m_pad181[0x244 - 0x181];
+	void *m_a244[12];
+	char m_pad274[0x278 - 0x274];
+	char m_b278;
+	void sub_10187b20();
+};
+
+void CScorePanelSetup::sub_10187b20()
+{
+	sub_1018ccf0(7);
+
+	m_b278 = 1;
+	m_panel.vfunc21(1);
+	m_panel.vfunc49();
+	m_panel.vfunc15(0);
+	m_panel.vfunc46(1);
+
+	ISchemeManagerView *pScheme = (ISchemeManagerView *)sub_101ac8d0();
+	pScheme->vfunc44(m_panel.vfunc0(), 0);
+
+	char *mapName = (char *)sub_100f40d0();
+	const char **table = g_102d281c;
+	if (m_b180)
+		table = g_102d284c;
+
+	for (int i = 0; i < 12; i++)
+	{
+		if (m_a244[i])
+		{
+			if (_strcmpi(mapName, table[i]) == 0)
+				((MapButtonView *)m_a244[i])->m_bC0 = 1;
+			else
+				((MapButtonView *)m_a244[i])->m_bC0 = 0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187c10 size=0x7
 struct CUnknown10187c10 { char sub_10187c10(); };
 char CUnknown10187c10::sub_10187c10()
