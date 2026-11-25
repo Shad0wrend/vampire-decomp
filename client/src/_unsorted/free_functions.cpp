@@ -56798,6 +56798,61 @@ int __cdecl sub_100f1e20(ChatItem **pa, ChatItem **pb)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1ee0 size=0xc3
+#include "CChatLineGroupView.h"
+struct ISurfV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64();
+	virtual int GetCharacterWidth(int font, int ch);
+};
+extern int g_104d0f54;
+int sub_101ac8d0();
+#pragma optimize("", off)
+// TARGET: ?sub_100f1ee0@CChatLineGroupView@@QAEHHPBDH@Z
+int CChatLineGroupView::sub_100f1ee0(int width, const char *text, int len)
+{
+	int lastSpace;
+	int i;
+	{
+		int totalWidth = 0;
+		lastSpace = len;
+		for (i = 0; i < len; i++)
+		{
+			char c = text[i];
+			if (c <= ' ')
+				lastSpace = i;
+			totalWidth += ((ISurfV *)sub_101ac8d0())->GetCharacterWidth(g_104d0f54, c);
+			if (totalWidth >= width)
+			{
+				if (lastSpace == len)
+					lastSpace = (i - 1 < 0) ? 0 : i - 1;
+				break;
+			}
+		}
+		if (totalWidth >= width)
+			return lastSpace;
+	}
+	return len;
+}
+#pragma optimize("", on)
+// END FUNCTION
+
 // FUNCTION: 0x100f2410 size=0x75
 extern char g_104cff48[];
 
