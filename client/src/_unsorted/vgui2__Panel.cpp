@@ -820,6 +820,54 @@ void vgui2::Panel::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aae60 size=0x65
+struct P42Target
+{
+    virtual int vfunc0();
+};
+
+struct Surf42
+{
+    virtual void v0() = 0;  virtual void v1() = 0;  virtual void v2() = 0;  virtual void v3() = 0;
+    virtual void v4() = 0;  virtual void v5() = 0;  virtual void v6() = 0;  virtual void v7() = 0;
+    virtual void v8() = 0;  virtual void v9() = 0;  virtual void v10() = 0; virtual void v11() = 0;
+    virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0;
+    virtual int vfunc15(int) = 0;
+};
+Surf42 *sub_101ac8f0();
+
+struct PanelV42
+{
+    char m_pad[0x38];
+    int m_nCount;
+    int m_nAlloc;
+    int *m_pArray;
+
+    int Find(int id)
+    {
+        for (int i = 0; i < m_nCount; i++)
+            if (m_pArray[i] == id)
+                return i;
+        return -1;
+    }
+    bool IsValidIndex(int i) { return i >= 0 && i < m_nCount; }
+    void sub_101aae60(P42Target *pTarget);
+};
+
+// TARGET: PanelV42::sub_101aae60
+void PanelV42::sub_101aae60(P42Target *pTarget)
+{
+    int id = sub_101ac8f0()->vfunc15(pTarget->vfunc0());
+    int i = Find(id);
+    if (IsValidIndex(i))
+    {
+        for (int j = i; j < m_nCount - 1; j++)
+            m_pArray[j] = m_pArray[j + 1];
+        m_nCount--;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab040 size=0x4
 #include "vgui2__Panel.h"
 int vgui2::Panel::vfunc61()
