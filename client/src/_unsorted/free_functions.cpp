@@ -101155,6 +101155,31 @@ void CBuildGroup_101c2310::sub_101c2310(CPanel *panel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2900 size=0x6e
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+
+extern "C" int strcmp(const char *s1, const char *s2);
+#pragma intrinsic(strcmp)
+
+class XH
+{
+public:
+	void *sub_101ac670();
+};
+
+vgui2::Panel *vgui2::BuildGroup::sub_101c2900(const char *name)
+{
+	for ( int i = 0; i < m_Panels.Count(); i++ )
+	{
+		vgui2::Panel *p = (vgui2::Panel *)((XH *)&m_Panels[i])->sub_101ac670();
+		if ( strcmp( p->vfunc18(), name ) == 0 )
+			return p;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b20 size=0x4
 struct CUnknown101c2b20 { char * sub_101c2b20(); };
 char * CUnknown101c2b20::sub_101c2b20()
