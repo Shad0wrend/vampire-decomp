@@ -539,6 +539,65 @@ int C_BaseEntity::vfunc86()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f4d0 size=0xe9
+#include "C_BaseEntity.h"
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+
+struct MIView
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
+	virtual void f4(void *, int, void *, void *);
+	virtual void u5();
+	virtual int f6(void *);
+};
+extern MIView *g_104a57f8;
+
+struct IRV
+{
+	virtual void u0();
+	virtual Vector &GetRenderOrigin();
+	virtual QAngle &GetRenderAngles();
+	virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
+	virtual void *GetModel();
+};
+
+struct CollV
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3(); virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7(); virtual void u8(); virtual void u9();
+	virtual void u10(); virtual void u11(); virtual void u12(); virtual void u13(); virtual void u14();
+	virtual void f15(void *, void *);
+};
+
+extern void sub_101094b0(QAngle &, Vector &, matrix3x4_t &);
+extern void sub_1010b210(matrix3x4_t &, Vector &, Vector &, Vector &, Vector &);
+
+void C_BaseEntity::GetRenderBoundsWorldspace(Vector &absMins, Vector &absMaxs)
+{
+	char *r = (char *)this + 4;
+	int t = g_104a57f8->f6(*(void **)(r + 0x3c));
+	if (t == 3 || t == 1)
+	{
+		g_104a57f8->f4(((IRV *)r)->GetModel(), 0, &absMins, &absMaxs);
+		QAngle &angles = ((IRV *)r)->GetRenderAngles();
+		Vector &origin = ((IRV *)r)->GetRenderOrigin();
+		if ((*(int *)&angles.x | *(int *)&angles.y | *(int *)&angles.z) != 0)
+		{
+			matrix3x4_t matrix;
+			sub_101094b0(angles, origin, matrix);
+			sub_1010b210(matrix, absMins, absMaxs, absMins, absMaxs);
+		}
+		else
+		{
+			VectorAdd(origin, absMins, absMins);
+			VectorAdd(origin, absMaxs, absMaxs);
+		}
+		return;
+	}
+	((CollV *)(r + 0x18c))->f15(&absMins, &absMaxs);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f640 size=0x5
 #include "C_BaseEntity.h"
 bool C_BaseEntity::vfunc116(int a0, int a1)
