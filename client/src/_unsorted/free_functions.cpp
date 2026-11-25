@@ -29370,6 +29370,44 @@ void C_BaseCombatWeapon::sub_1007cc30(const char *arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ccc0 size=0xa6
+#include "C_BaseCombatWeapon.h"
+#include "CUnknown1014f1d0.h"
+
+extern int g_105e85dc;
+extern CUnknown1014f1d0 **g_105e85e0;
+extern void (*g_101e3118)(int level, const char *fmt, ...);
+
+struct WpnInfo
+{
+	char pad[0x88];
+	char m_szName[0x24d0 - 0x88];
+	int m_nSection;
+};
+
+inline CUnknown1014f1d0 *FindSection(int section)
+{
+	for (int i = 0; i < g_105e85dc; i++)
+	{
+		if (g_105e85e0[i]->m_unk00 == section)
+			return g_105e85e0[i];
+	}
+	static CUnknown1014f1d0 s_default(-1);
+	return &s_default;
+}
+
+// TARGET: C_BaseCombatWeapon::sub_1007ccc0
+int C_BaseCombatWeapon::sub_1007ccc0()
+{
+	if (((WpnInfo *)sub_1007b160())->m_nSection == -1)
+	{
+		g_101e3118(2, "Bad inventory section for '%s'\n", ((WpnInfo *)sub_1007b160())->m_szName);
+		return 0;
+	}
+	return FindSection(((WpnInfo *)sub_1007b160())->m_nSection)->sub_1014f300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cd70 size=0xb
 struct CWpnView7d8 { char pad[0x7d8]; unsigned char m_a : 1; unsigned char m_b : 1; bool sub_1007cd70(); };
 // TARGET: CWpnView7d8::sub_1007cd70
