@@ -3,6 +3,7 @@
 #pragma once
 #include "IPartitionEnumerator.h"
 #include "Ray_t.h"
+class CBaseEntity;
 
 class CRagdollBulletEnumerator : public IPartitionEnumerator
 {
@@ -27,7 +28,7 @@ public:
 
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CRagdollBulletEnumerator adds to its base's vtable: 0-0, vfuncK at slot K
-    virtual void vfunc0();
+    virtual int vfunc0(CBaseEntity *pEnt);
 
 	Ray_t m_rayShot;
 	float m_flForce;
