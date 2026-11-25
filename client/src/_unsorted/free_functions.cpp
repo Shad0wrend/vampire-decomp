@@ -11948,6 +11948,41 @@ template <> int ClientClassInit<DT_BatSwarm::ignored>(DT_BatSwarm::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a8e0 size=0xd8
+#include "C_BatSwarm.h"
+#include "Vector.h"
+
+bool __fastcall sub_1002aa30(void *self);
+
+struct RenderView
+{
+	int sub_10092540(int flags, int a1);
+};
+
+int C_BatSwarm::sub_1002a8e0(int flags, int a1)
+{
+	if ( !::sub_1002aa30((char *)this - 4) )
+		return 0;
+
+	int nResult = 0;
+	for ( int i = 0; i < 0x20; i++ )
+	{
+		if ( *(int *)((char *)this + 0x7a8) & (1 << i) )
+		{
+			*(int *)((char *)this + 0xaac) = i;
+			Vector *pVec = (Vector *)((char *)this + 0xab8 + i * 12);
+			Vector bounds[2];
+			bounds[0] = *pVec - Vector(16, 16, 16);
+			bounds[1] = *pVec + Vector(16, 16, 16);
+			nResult |= ((RenderView *)this)->sub_10092540(flags | 8, (int)bounds);
+		}
+	}
+
+	*(int *)((char *)this + 0xaac) = -1;
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002a9c0 size=0x70
 namespace lifted {
 struct C1002aa30 { bool sub_1002aa30(); };
