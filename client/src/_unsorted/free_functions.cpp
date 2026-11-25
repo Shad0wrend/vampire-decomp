@@ -43480,6 +43480,24 @@ int CUnknown100ab7e0::sub_100ab7e0(int a0, int a1, int a2, int a3, char a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab890 size=0xfa
+#include "C_BaseViewModel.h"
+#include "utlvector.h"
+
+struct SubModelView { void sub_100a2970(void *p); };
+
+// TARGET: C_BaseViewModel::sub_100ab890
+void C_BaseViewModel::sub_100ab890(void *p)
+{
+	CUtlVector<void *> &vec = *(CUtlVector<void *> *)&m_pMem;
+	for (int i = 0; i < vec.m_Size; i++)
+		if (vec.m_Memory.m_pMemory[i] == p)
+			return;
+	((SubModelView *)p)->sub_100a2970(this);
+	vec.AddToTail(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100abdb0 size=0x31
 namespace lifted {
 extern int g_104a0d50;
