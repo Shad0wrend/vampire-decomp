@@ -21496,6 +21496,25 @@ char sub_10063970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100648c0 size=0x99
+#include "CHUDSprite.h"
+int sub_100cd100();
+int sub_100cd0f0();
+// TARGET: sub_100648c0
+void __stdcall sub_100648c0(CHUDSprite *spr)
+{
+    if (spr) {
+        int w, h;
+        spr->getSize(&w, &h);
+        w = (int)(w * (sub_100cd100() * (1.0 / 1024.0)));
+        h = (int)(h * (sub_100cd0f0() * (1.0 / 768.0)));
+        int x = (sub_100cd100() - w) / 2;
+        int y = (sub_100cd0f0() - h) / 2;
+        spr->sub_10059620(x, y, w, h);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ac0 size=0x4c
 extern char g_103eef44;
 extern int g_103eef48;
