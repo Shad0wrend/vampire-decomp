@@ -45,6 +45,7 @@ public:
 	void sub_100a2930();
 	void sub_100948d0(int);
 	bool sub_10095d00(Vector *pVecWorldMins, Vector *pVecWorldMaxs);
+	int sub_10095990(int a, int b, int *p);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
