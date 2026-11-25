@@ -20,6 +20,26 @@ int C_Beam::vfunc15()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080270 size=0x90
+#include "C_Beam.h"
+#include "Vector.h"
+
+struct VD_10080270 : public Vector {
+	~VD_10080270() {}
+};
+
+const Vector &C_Beam::vfunc56()
+{
+	static VD_10080270 s_Pos[128];
+	static int nPos = 0;
+	nPos = (nPos + 1) & 0x7f;
+	Vector &out = s_Pos[nPos];
+	VectorAdd(sub_10080650(), *(Vector *)sub_100806f0(), out);
+	VectorScale(out, 0.5f, out);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080300 size=0x1e
 #include "C_Beam.h"
 
