@@ -75708,6 +75708,39 @@ int CUnknown10144b30::sub_10144b30(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144b50 size=0x85
+#include "CHud.h"
+#include "CUnit101d5e00.h"
+#include <stdio.h>
+struct VUnk416a0 { void sub_101416a0(int); };
+struct VUnk3100 { void sub_10173100(); };
+struct VUnk4f90 { void sub_10174f90(); };
+struct IConV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void ClientCmd(const char *, int); };
+extern CUnit101d5e00 g_105e74fc;
+extern VUnk416a0 g_105e7780;
+extern CHud g_104cfe38;
+extern IConV *g_104a57d4;
+extern void (*g_101e3118)(int, const char *, ...);
+VUnk3100 *sub_10170f60();
+// TARGET: sub_10144b50
+void __stdcall sub_10144b50(int clan)
+{
+	char buf[32];
+	g_101e3118(3, "[CharGenWiz]: Changing Player Clan to: ( %s )\n\n", g_105e74fc.sub_1013ffa0(clan));
+	g_105e7780.sub_101416a0(clan);
+	sprintf(buf, "vclan %d", clan);
+	g_104a57d4->ClientCmd(buf, 1);
+	VUnk3100 *p = sub_10170f60();
+	if (p)
+		p->sub_10173100();
+	VUnk4f90 *e = (VUnk4f90 *)g_104cfe38.sub_100f0ed0("VCharWizardUI");
+	if (e)
+		e->sub_10174f90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144d10 size=0x17
 struct CUnknown10144d10 { void * sub_10144d10(); };
 void * CUnknown10144d10::sub_10144d10()
