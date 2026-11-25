@@ -19173,6 +19173,41 @@ void __stdcall sub_10057d40(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057d50 size=0x65
+#include "CDiscipline.h"
+#include "IManagedHudElement.h"
+
+struct HudNode10057d50
+{
+    IManagedHudElement *m_pElement;
+    HudNode10057d50 *m_pNext;
+};
+
+struct PanelView10057d50
+{
+    char m_pad[0x170];
+    HudNode10057d50 *m_pNodes;
+    void sub_10057d50(int a, int b, int c);
+};
+
+void sub_10114660(int a, int b);
+int sub_10114690();
+
+// TARGET: PanelView10057d50::sub_10057d50
+void PanelView10057d50::sub_10057d50(int a, int b, int c)
+{
+    sub_10114660(c, b);
+    int v1 = sub_10114690();
+    int v2 = sub_10114690();
+    for (HudNode10057d50 *n = m_pNodes; n; n = n->m_pNext)
+    {
+        CDiscipline *d = dynamic_cast<CDiscipline *>(n->m_pElement);
+        if (d)
+            d->vfunc114(v1, v2);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057dc0 size=0x44
 namespace lifted {
 extern int g_104a0d50;

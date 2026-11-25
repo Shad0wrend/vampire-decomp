@@ -2638,6 +2638,7 @@
 0x10057d00 func   ?sub_10057d00@@YGXHHH@Z sub_10057d00
 0x10057d20 func   ?sub_10057d20@@YGXHHH@Z sub_10057d20
 0x10057d40 func   ?sub_10057d40@@YGXHHH@Z sub_10057d40
+0x10057d50 func   ?sub_10057d50@PanelView10057d50@@QAEXHHH@Z PanelView10057d50::sub_10057d50
 0x10057dc0 func   ?sub_10057dc0@@YGXHHH@Z sub_10057dc0
 0x10057e10 func   ?sub_10057e10@@YGXHHH@Z sub_10057e10
 0x10057e20 func   ?sub_10057e20@PanelView@@QAEXHHH@Z PanelView::sub_10057e20
