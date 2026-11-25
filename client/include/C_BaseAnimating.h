@@ -9,6 +9,8 @@ class C_BaseAnimating : public C_BaseEntity
 public:
 	C_BaseAnimating();
 	void sub_100966e0();
+	float sub_10095640(int);
+	void sub_10095680(int, Vector *);
 	float sub_10095910(int, void *);
 	bool sub_10094020();
 	bool sub_10091910(int idx, int arg);
