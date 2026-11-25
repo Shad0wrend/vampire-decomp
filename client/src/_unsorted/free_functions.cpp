@@ -914,6 +914,27 @@ Vector Vector::sub_10004d80(float fl) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005230 size=0x8c
+#include "CMeshBuilder.h"
+static inline void Adv(int &p, const int &s)
+{
+	p += s;
+}
+void CMeshBuilder::sub_10005230()
+{
+	m_i98++;
+	if (m_i98 > m_n90)
+		m_n90 = m_i98;
+	Adv(m_a8, m_i0);
+	Adv(m_ac, m_ic);
+	Adv(m_b0, m_i18);
+	Adv(m_b4, m_i1c);
+	Adv(m_b8, m_i20);
+	Adv(m_bc, m_i24);
+	Adv(m_c0, m_i10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100052c0 size=0x2e
 struct CIC {
 	char pad[0xc0]; unsigned int *m_pOut;
