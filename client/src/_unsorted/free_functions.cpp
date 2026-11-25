@@ -60577,6 +60577,61 @@ int CL::sub_101165c0(unsigned char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101165f0 size=0x8f
+extern "C" int rand(void);
+
+struct Node_101165f0 {
+	unsigned char id;
+	Node_101165f0 *prev;
+	Node_101165f0 *next;
+	char pad[0x74];
+};
+struct Ent_101165f0 {
+	Node_101165f0 *head;
+	int unk;
+};
+struct PoolOwner_101165f0 {
+	Node_101165f0 *sub_10117580(int size);
+};
+struct G_101165f0 {
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x28];
+	int m2c;
+};
+extern G_101165f0 *g_104e096c;
+
+struct CL_101165f0 {
+	char pad0[0x24];
+	unsigned short m24;
+	char pad1[0xa];
+	PoolOwner_101165f0 *m30;
+	int m34;
+	Ent_101165f0 *m38;
+	bool sub_10116580(unsigned char id);
+	Node_101165f0 *sub_101165f0(int a, unsigned char id);
+};
+
+Node_101165f0 *CL_101165f0::sub_101165f0(int a, unsigned char id)
+{
+	if (!g_104e096c->v1() && g_104e096c->m2c && rand() % 10 <= 6)
+		return 0;
+	if (!sub_10116580(id))
+		return 0;
+	Node_101165f0 *n = m30->sub_10117580(0x80);
+	if (!n)
+		return 0;
+	n->id = id;
+	Node_101165f0 *h = m38[id].head;
+	n->prev = h;
+	n->next = h->next;
+	h->next = n;
+	n->next->prev = n;
+	m24++;
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116680 size=0x4d
 struct CLNode
 {
