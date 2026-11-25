@@ -31194,6 +31194,59 @@ void C_BaseEntity::sub_1007eb60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ede0 size=0xd6
+#include "C_BasePlayer.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+class Vt_1007ede0 : public C_BaseEntity
+{
+public:
+	virtual void v120(); virtual void v121(); virtual void v122(); virtual void v123();
+	virtual void v124(); virtual void v125(); virtual void v126(); virtual void v127();
+	virtual void v128(); virtual void v129(); virtual void v130(); virtual void v131();
+	virtual void v132(); virtual void v133(); virtual void v134(); virtual void v135();
+	virtual void v136(); virtual void v137(); virtual void v138(); virtual void v139();
+	virtual void v140(); virtual void v141(); virtual void v142(); virtual void v143();
+	virtual void v144(); virtual void v145(); virtual void v146(); virtual void v147();
+	virtual void v148(); virtual void v149(); virtual void v150(); virtual void v151();
+};
+
+struct View_1007ede0
+{
+	char m_pad0[0xb4];
+	float m_absVelocity[3];	// 0xb4
+	char m_pad1[0x10e0 - 0xc0];
+	CBaseHandle m_hEntity;	// 0x10e0
+};
+
+// TARGET: C_BasePlayer::sub_1007ede0
+void C_BasePlayer::sub_1007ede0(C_BaseEntity *pEntity)
+{
+	View_1007ede0 *v = (View_1007ede0 *)this;
+	if ( pEntity == v->m_hEntity.Get() )
+		return;
+
+	if ( sub_100a2450() & 1 )
+	{
+		sub_1009fa70();
+		Vector vel;
+		vel.x = v->m_absVelocity[0] * 0.95f;
+		vel.y = v->m_absVelocity[1] * 0.95f;
+		vel.z = v->m_absVelocity[2] * 0.95f;
+		sub_100a2220(vel);
+		sub_1009fa70();
+		if ( v->m_absVelocity[0] == 0.0f )
+		{
+			sub_1009fa70();
+		}
+		return;
+	}
+
+	((Vt_1007ede0 *)this)->v151();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f0f0 size=0x38
 struct EntView { char pad[0x3f0]; int m3f0; };
 struct EntInfo { EntView *ent; int serial; int pad; };
