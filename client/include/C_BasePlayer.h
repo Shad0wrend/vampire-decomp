@@ -5,6 +5,7 @@
 #include "C_BaseVCombatCharacter.h"
 
 class C_BaseCombatWeapon;
+class C_BaseEntity;
 class C_BasePlayer : public C_BaseVCombatCharacter
 {
 public:
@@ -76,7 +77,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc191();
 	virtual C_BaseCombatWeapon *vfunc192();
 	virtual C_BaseCombatWeapon *vfunc193();
-	virtual void vfunc194();
+	virtual C_BaseEntity *vfunc194(const char *pName);
 	virtual char * vfunc195();
 	virtual int vfunc196(int, int, int);
 };
