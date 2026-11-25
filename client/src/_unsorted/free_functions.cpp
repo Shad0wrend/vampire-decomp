@@ -55923,6 +55923,22 @@ void sub_100f59b0(unsigned char *pBuf, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5a20 size=0xaa
+void sub_100f5a20(unsigned char *src, unsigned char *dst, int width, int height, unsigned char *table)
+{
+	for (int y = 0; y < height; y++)
+	{
+		for (int x = 0; x < width; x++)
+		{
+			int i = (y * width + x) * 4;
+			dst[i] = table[src[i]];
+			dst[i + 1] = table[src[i + 1]];
+			dst[i + 2] = table[src[i + 2]];
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5ad0 size=0xba
 #include <string.h>
 
