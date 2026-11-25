@@ -46018,6 +46018,57 @@ int __stdcall sub_100c0350(int type, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0630 size=0xc1
+#include "C_RopeKeyframe.h"
+#include "QAngle.h"
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##1) V4(n##2) V4(n##3) V4(n##4)
+struct CUnknown10094ec0 { int sub_10094ec0(const char *name); };
+struct AttV {
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8();
+    virtual const Vector &Center();
+    virtual const QAngle &Angles();
+    virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+    virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+    virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39();
+    virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43(); virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47(); virtual void s48(); virtual void s49();
+    virtual void s50(); virtual void s51(); virtual void s52(); virtual void s53(); virtual void s54(); virtual void s55(); virtual void s56();
+    virtual bool GetAttachment(int iAttachment, Vector &origin, QAngle &angles);
+};
+struct HolderV {
+    V16(a) V16(b) V16(c) V16(d) V16(e) V16(f) V16(g) V16(h) V16(i) V16(j)
+    V4(k) V4(l) V4(m) virtual void s172x();
+    virtual AttV *GetModel();
+};
+struct Pl {
+    char pad[0x3f8];
+    HolderV *m_p3f8;
+};
+// TARGET: C_RopeKeyframe::sub_100c0630
+bool C_RopeKeyframe::sub_100c0630(AttV *pEnt, int iAttachment, Vector &vPos, QAngle &angles)
+{
+    if (!pEnt)
+        return false;
+    vPos = pEnt->Center();
+    angles = pEnt->Angles();
+    if (m_RopeFlags & 0x80) {
+        HolderV *p = ((Pl *)pEnt)->m_p3f8;
+        if (p) {
+            AttV *pModel = p->GetModel();
+            if (!pModel)
+                return false;
+            int iAtt = ((CUnknown10094ec0 *)pModel)->sub_10094ec0("buff_attach");
+            return pModel->GetAttachment(iAtt, vPos, angles);
+        }
+    }
+    if (iAttachment > 0) {
+        if (!pEnt->GetAttachment(iAttachment, vPos, angles))
+            return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0850 size=0x5b
 #include "C_RopeKeyframe.h"
 
