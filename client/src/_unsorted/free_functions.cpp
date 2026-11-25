@@ -13329,6 +13329,35 @@ int CUnknown10033840::sub_10033840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100338f0 size=0x79
+extern void *g_102d5050;
+
+struct EffV
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void e10(); virtual void e11(); virtual void e12();
+	virtual void vfunc13(int, int, int, int, int, int, int, int, float, int, float, float, int, float, float, float, float);
+};
+
+struct TERingV
+{
+	void sub_100338f0(int unused);
+};
+
+void TERingV::sub_100338f0(int unused)
+{
+	int *p = (int *)this;
+	((EffV *)g_102d5050)->vfunc13(
+		p[0x44 / 4], p[0x48 / 4], p[0xc / 4], p[0x10 / 4], 0,
+		p[0x1c / 4], p[0x20 / 4], p[0x24 / 4],
+		(float)p[0x28 / 4], p[0x2c / 4],
+		(float)p[0x3c / 4], (float)p[0x40 / 4] * 0.1,
+		p[0x14 / 4],
+		(float)p[0x18 / 4] * 0.1, (float)p[0x30 / 4], (float)p[0x34 / 4], (float)p[0x38 / 4]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033990 size=0x6
 namespace lifted {
 extern char g_102ec078;
