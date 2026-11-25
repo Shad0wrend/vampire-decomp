@@ -184,6 +184,33 @@ void vgui2::Button::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3c40 size=0x7e
+#include "vgui2__Button.h"
+struct BtnColor {
+	unsigned char r, g, b, a;
+};
+struct BtnView {
+	char pad[0xd4];
+	BtnColor m_c1;
+	BtnColor m_c2;
+};
+#pragma warning(disable:4716)
+// TARGET: ?vfunc153@Button@vgui2@@UAEHII@Z
+int vgui2::Button::vfunc153(unsigned int c1, unsigned int c2)
+{
+	BtnView *v = (BtnView *)this;
+	BtnColor *p1 = (BtnColor *)&c1;
+	BtnColor *p2 = (BtnColor *)&c2;
+	if (!(v->m_c1.r == p1->r && v->m_c1.g == p1->g && v->m_c1.b == p1->b && v->m_c1.a == p1->a
+		&& v->m_c2.r == p2->r && v->m_c2.g == p2->g && v->m_c2.b == p2->b && v->m_c2.a == p2->a))
+	{
+		*(unsigned int *)&v->m_c1 = c1;
+		*(unsigned int *)&v->m_c2 = c2;
+		return vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3d40 size=0x7e
 #include "vgui2__Button.h"
 struct Color4 { unsigned char r, g, b, a; };
