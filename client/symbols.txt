@@ -7672,6 +7672,7 @@
 0x101642e0 func   ?vfunc75@CBitmapButton@@UAEXH@Z CBitmapButton::vfunc75
 0x10164350 func   ?sub_10164350@CBitmapButton_10164350@@QAEXHPBDUcolor32_10164350@@@Z CBitmapButton_10164350::sub_10164350
 0x101643b0 func   ?sub_101643b0@CByteView101643b0@@QAEDH@Z CByteView101643b0::sub_101643b0
+0x101643c0 func   ?vfunc98@CBitmapButton@@UAEXXZ CBitmapButton::vfunc98
 0x10164430 func   ??0BitmapImage@@QAE@XZ BitmapImage::BitmapImage
 0x10164480 func   ?vfunc7@Image@vgui2@@UAEHXZ vgui2::Image::vfunc7
 0x10164490 func   ?vfunc4@Image@vgui2@@UAE_ND@Z vgui2::Image::vfunc4
