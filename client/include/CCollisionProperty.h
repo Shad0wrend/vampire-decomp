@@ -22,5 +22,6 @@ public:
     unsigned short m_unk44;
     int *sub_100432f0(char a);
     int vfunc11();
+    bool sub_100442d0();
     int vfunc12();
 };
