@@ -22450,6 +22450,41 @@ void sub_10066720(int a, int b, int c, OutView *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067450 size=0xcd
+#include "CHUDSprite.h"
+
+class CTitle_10067450
+{
+public:
+	char pad0[0x184];
+	int m_nWide;
+	int m_nTall;
+	char pad18c[0x300 - 0x18c];
+	CHUDSprite *m_pSprite;
+	int m_nSpriteW;
+	int m_nSpriteH;
+	int m_nSpriteX;
+	int m_nSpriteY;
+
+	void sub_10067450();
+};
+
+void CTitle_10067450::sub_10067450()
+{
+	if (m_pSprite)
+		delete m_pSprite;
+
+	float yScale = (float)m_nTall / 768.0f;
+	float xScale = (float)m_nWide / 1024.0f;
+	m_nSpriteW = (int)(xScale * 636.0f);
+	m_nSpriteH = (int)(yScale * 256.0f);
+	m_nSpriteX = m_nWide / 2 - m_nSpriteW / 2;
+	m_nSpriteY = (int)(yScale * 35.0f);
+
+	m_pSprite = new CHUDSprite("Interface/MainMenu/vtm_title", 0, 0, 512, 256, 512, 256);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067520 size=0x1f
 namespace lifted {
 struct V { virtual int f0(int); };
