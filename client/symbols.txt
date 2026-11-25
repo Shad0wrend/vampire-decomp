@@ -5862,6 +5862,7 @@
 0x1011e110 func   ?vfunc3@?$CEntityDataInstantiator@UStepSimulationData@@@@UAEXI@Z CEntityDataInstantiator<StepSimulationData>::vfunc3
 0x1011e210 func   ?vfunc1@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEHI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc1
 0x1011e410 func   ?vfunc3@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEXI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc3
+0x1011e720 func   ?sub_1011e720@@YIPAXPAUInstV@@HH@Z sub_1011e720
 0x1011e7d0 func   ?sub_1011e7d0@@YA_NPBH0@Z sub_1011e7d0
 0x1011e7f0 func   ?sub_1011e7f0@@YAHH@Z sub_1011e7f0
 0x1011e800 func   ?sub_1011e800@@YA_NPBH0@Z sub_1011e800
