@@ -104542,6 +104542,51 @@ int sub_1018f600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101907a0 size=0xaa
+#include "Vector.h"
+#include "QAngle.h"
+
+extern "C" double fabs(double);
+#pragma intrinsic(fabs)
+
+struct IEngineLike_101907a0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28();
+	virtual int vfunc29();
+};
+
+extern IEngineLike_101907a0 *g_1027ba58;
+extern void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+float __stdcall sub_101907a0(const QAngle &angles, const Vector &velocity, float rollangle, float rollspeed)
+{
+	if (g_1027ba58->vfunc29())
+		return 0.0f;
+
+	float sign;
+	float side;
+	float value;
+	Vector forward, right, up;
+
+	sub_101090a0(angles, &forward, &right, &up);
+
+	side = DotProduct(velocity, right);
+	sign = side < 0 ? -1 : 1;
+	side = fabs(side);
+	value = rollangle;
+	if (side < rollspeed)
+		side = side * value / rollspeed;
+	else
+		side = value;
+	return side * sign;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192cb0 size=0x8
 struct CUnknown10192cb0 { void sub_10192cb0(); };
 void CUnknown10192cb0::sub_10192cb0()
