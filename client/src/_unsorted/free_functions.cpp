@@ -106916,6 +106916,35 @@ void CBuildGroup_101c2310::sub_101c2310(CPanel *panel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c26d0 size=0x98
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct HolderX {
+    V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k)
+    virtual vgui2::Panel *vfunc110(HolderX *, int);
+};
+struct BGViewX { char pad[0x60]; HolderX *m60; };
+// TARGET: vgui2::BuildGroup::sub_101c26d0
+vgui2::Panel *vgui2::BuildGroup::sub_101c26d0(int a, int b, int c)
+{
+    char name[256];
+    HolderX *h = ((BGViewX *)this)->m60;
+    vgui2::Panel *p = h->vfunc110(h, a);
+    if (p) {
+        p->vfunc66((int)this);
+        p->sub_101a9890(b, c);
+        sub_101c2860(name, p);
+        p->sub_101a9810(name);
+        p->vfunc41((int)((BGViewX *)this)->m60);
+        p->sub_101aab60(1);
+        p->sub_101aab90(1);
+        p->vfunc39(1);
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2860 size=0x95
 #include "vgui2__BuildGroup.h"
 #include "vgui2__Panel.h"
