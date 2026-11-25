@@ -35,6 +35,7 @@ public:
 	void sub_1011b3b0(int type);
 	void sub_100a2ee0();
 	void sub_100a2f50();
+	int sub_100a31e0(void *pDataMap);
 	void sub_100a0450();
 	void sub_1009e2d0(int bForce);	// UpdateShadows
 	void sub_100a02e0(bool force);
