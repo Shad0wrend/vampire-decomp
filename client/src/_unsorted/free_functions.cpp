@@ -14311,6 +14311,41 @@ int CUnknown10036a60::sub_10036a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036a80 size=0x74
+#include "CRagdollExplosionEnumerator.h"
+#include "Vector.h"
+
+struct PartitionV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12();
+	virtual void vfunc13(int a, Vector *pVec, float f, int b, void *pEnum, int c);
+};
+
+extern PartitionV *g_104a5808;
+
+struct EntView
+{
+	char m_pad00[0x10];
+	Vector m_vec;		// 0x10
+	char m_pad1c[0x20];	// 0x1c..0x3b
+	int m_n3c;			// 0x3c
+	int m_n40;			// 0x40
+};
+
+// TARGET: sub_10036a80
+void __fastcall sub_10036a80(EntView *self)
+{
+	if (!self->m_n3c || !self->m_n40)
+		return;
+	char obj[0x18];
+	((CRagdollExplosionEnumerator *)obj)->sub_100367b0(self->m_vec, (float)self->m_n3c, (float)self->m_n40);
+	g_104a5808->vfunc13(8, &self->m_vec, (float)self->m_n3c, 0, obj, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036d40 size=0x6
 namespace lifted {
 extern char g_102eda88;
