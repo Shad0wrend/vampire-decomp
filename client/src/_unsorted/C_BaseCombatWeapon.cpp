@@ -1313,6 +1313,35 @@ bool C_BaseCombatWeapon::vfunc241()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009bf10 size=0x81
+#include "C_BaseCombatWeapon.h"
+struct WpnVec { float x, y, z; };
+struct WpnRend {
+	virtual void v0(); virtual void v1();
+	virtual WpnVec *GetRenderOrigin();
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void GetRenderBounds(WpnVec &mins, WpnVec &maxs);
+};
+struct WpnEnt { int m_vptr; WpnRend m_Rend; };
+#pragma warning(disable:4716)
+// TARGET: ?vfunc64@C_BaseCombatWeapon@@UAEHHHH@Z
+int C_BaseCombatWeapon::vfunc64(int a0, int a1, int a2)
+{
+	WpnEnt *ent = (WpnEnt *)a0;
+	WpnVec *center = (WpnVec *)a1;
+	WpnVec *origin = (WpnVec *)a2;
+	WpnRend *r = &ent->m_Rend;
+	WpnVec mins, maxs;
+	r->GetRenderBounds(mins, maxs);
+	center->x = (maxs.x - mins.x) * 0.5f + mins.x;
+	center->y = (maxs.y - mins.y) * 0.5f + mins.y;
+	center->z = (maxs.z - mins.z) * 0.5f + mins.z;
+	*origin = *r->GetRenderOrigin();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c060 size=0x3
 #include "C_BaseCombatWeapon.h"
 bool C_BaseCombatWeapon::vfunc242()
