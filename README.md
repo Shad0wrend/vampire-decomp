@@ -17,6 +17,25 @@ needs it. It compiles one function at a time with the original compiler, compare
 and keeps the source only when the two agree. The functions came from three sources: AI agents working through that
 tool, hand work, and its automatic passes (machine drafts and copies of twin functions that had already matched).
 
+## Stage 1: the bytes first, readability later
+
+The project is in its first stage. The only aim of this stage is source that compiles to the game's exact machine
+code, and that aim decides how the code is written. It is not yet code meant to be read:
+
+- Many functions, globals and virtual slots still carry placeholder names made from their addresses or positions
+  (`sub_101c5f40`, `g_1070b22c`, `vfunc192`). The DLL does not say what they are called, and a name is only given
+  when there is evidence for it.
+- Classes are often seen through small view structs that declare only the members one function needs, at the
+  offsets the game uses, instead of one full class definition.
+- Some sources contain things that are there only because they make VC6 produce the game's instructions: an extra
+  local, a dead `if (0)` block, a constant spelled one particular way. They look like noise, but removing them breaks
+  the match.
+
+Readability is the second stage. Once the important parts of the game are matched, the code will be refactored into
+a form people can read and work with: real names taken from the game's strings and the Source SDK, complete class
+definitions in place of the views, and cleaned-up functions. Every step of that work goes through the same checks as
+today (`ninja verify` and `ninja identical`), so the readable source will still build the original DLL byte for byte.
+
 ## Status (2026-11-25)
 
 ![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
