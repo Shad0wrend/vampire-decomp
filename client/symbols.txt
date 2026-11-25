@@ -8529,6 +8529,7 @@
 0x101b95e0 func   ?vfunc91@Frame@vgui2@@UAEXH@Z vgui2::Frame::vfunc91
 0x101b95f0 func   ?vfunc94@Frame@vgui2@@UAEXH@Z vgui2::Frame::vfunc94
 0x101b9600 func   ?vfunc95@Frame@vgui2@@UAEXXZ vgui2::Frame::vfunc95
+0x101b9610 func   ?vfunc143@Frame@vgui2@@UAEXXZ vgui2::Frame::vfunc143
 0x101b96b0 func   ?vfunc132@Frame@vgui2@@UAEHXZ vgui2::Frame::vfunc132
 0x101b96d0 func   ?vfunc133@Frame@vgui2@@UAEXXZ vgui2::Frame::vfunc133
 0x101b9700 func   ?vfunc107@Frame@vgui2@@UAEXH@Z vgui2::Frame::vfunc107
