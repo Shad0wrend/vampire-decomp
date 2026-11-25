@@ -62,6 +62,22 @@ int CRestore::vfunc33()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a280 size=0x68
+#include "CRestore.h"
+#include "utlvector.h"
+
+extern char vt_1023653c;
+
+void *CRestore::vfunc34(unsigned char bFree)
+{
+	((CUtlVector<int> *)&m_vec)->~CUtlVector<int>();
+	*(void **)this = &vt_1023653c;
+	if (bFree & 1)
+		::operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a2f0 size=0x7
 #include "CRestore.h"
 
