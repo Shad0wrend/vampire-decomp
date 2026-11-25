@@ -67624,6 +67624,72 @@ int CUnknown10116b90::sub_10116b90(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116bb0 size=0xe3
+#include "CParticleEffectBinding.h"
+#include "VMatrix.h"
+
+void *sub_101a0f80(void *m);
+
+class CBlock64_t {
+public:
+	CBlock64_t *sub_101a1650(const CBlock64_t *src);
+};
+
+struct IMgr82 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55();
+	virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63();
+	virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67();
+	virtual void v68(); virtual void v69();
+	virtual void v70(int);
+	virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78();
+	virtual void v79();
+	virtual void v80(int, void *);
+	virtual void v81();
+};
+
+struct IOther3 {
+	virtual void v0(); virtual void v1(); virtual void v2();
+};
+
+// TARGET: CParticleEffectBinding::sub_10116bb0
+void CParticleEffectBinding::sub_10116bb0(VMatrix *a1, VMatrix *a2)
+{
+	if (*(unsigned char *)((char *)this + 0x34) & 0x80) {
+		((IMgr82 *)*(void **)((char *)*(void **)((char *)this + 0x30) + 0x168))->v80(0, a2);
+		((IMgr82 *)*(void **)((char *)*(void **)((char *)this + 0x30) + 0x168))->v80(10, a1);
+		VMatrix local;
+		VMatrix *pm = a2->sub_101a1f60(local);
+		char *pDst = (char *)*(void **)((char *)this + 0x30) + 0x16c;
+		((CBlock64_t *)pDst)->sub_101a1650((const CBlock64_t *)pm);
+		((IMgr82 *)*(void **)((char *)*(void **)((char *)this + 0x30) + 0x168))->v70(10);
+		((IMgr82 *)*(void **)((char *)*(void **)((char *)this + 0x30) + 0x168))->v81();
+		((IMgr82 *)*(void **)((char *)*(void **)((char *)this + 0x30) + 0x168))->v70(0);
+		((IMgr82 *)*(void **)((char *)*(void **)((char *)this + 0x30) + 0x168))->v81();
+	} else {
+		char *pDst = (char *)*(void **)((char *)this + 0x30) + 0x16c;
+		VMatrix local;
+		void *pm = sub_101a0f80(&local);
+		((CBlock64_t *)pDst)->sub_101a1650((const CBlock64_t *)pm);
+	}
+	((IOther3 *)*(void **)((char *)this + 0x2c))->v2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116ca0 size=0x60
 struct Emitter {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
