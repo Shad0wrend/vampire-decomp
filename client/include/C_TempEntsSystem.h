@@ -41,4 +41,5 @@ public:
 	void vfunc38(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc41(int filter, int delay, int pos, int dir);	// as in C_TempEntsSystem (transplant)
 	void vfunc43(int filter, int a, int b, int c, int d, int e);
+	void vfunc15(int, int, int, int, int, int, int, int, int, int);
 };
