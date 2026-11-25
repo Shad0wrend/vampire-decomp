@@ -51765,6 +51765,29 @@ void CUnknown100e7e90::sub_100e7e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8170 size=0x9a
+#include "CGameMovement.h"
+struct GravVarV { virtual void v0(); virtual char IsNoGravity(); char m_pad[0x24]; float m_flValue; };
+struct GlobalsV { char m_pad[0x10]; float frametime; };
+extern GravVarV *g_104dfce4;
+extern GlobalsV *g_102b8494;
+// TARGET: CGameMovement::sub_100e8170
+void CGameMovement::sub_100e8170()
+{
+	float ent_gravity;
+	if (*(float *)((char *)m_pMove + 0x160) != 0.0f)
+		ent_gravity = *(float *)((char *)m_pMove + 0x160);
+	else
+		ent_gravity = 1.0f;
+	float *pvz = (float *)((char *)m_pPlayer + 0x48);
+	float grav = g_104dfce4->IsNoGravity() ? 0.0f : g_104dfce4->m_flValue;
+	*pvz -= ent_gravity * grav * 0.5 * g_102b8494->frametime;
+	*(float *)((char *)m_pPlayer + 0x48) += *(float *)((char *)m_pPlayer + 0x54) * g_102b8494->frametime;
+	*(float *)((char *)m_pPlayer + 0x54) = 0.0f;
+	sub_100eb7a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e91e0 size=0x1a4
 #include "Ray_t.h"
 #include <math.h>
