@@ -108112,6 +108112,47 @@ void CViewRender::sub_1019d8f0( const char *view )
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e2a0 size=0xbb
+#include "Vector.h"
+struct VMatrix1019e2a0 {
+    float m[4][4];
+    float *operator[](int i) { return m[i]; }
+    const float *operator[](int i) const { return m[i]; }
+};
+struct IEng1019e2a0 {
+#define V8(n) virtual void a##n##0(); virtual void a##n##1(); virtual void a##n##2(); virtual void a##n##3(); virtual void a##n##4(); virtual void a##n##5(); virtual void a##n##6(); virtual void a##n##7();
+    V8(0) V8(1) V8(2) V8(3) V8(4) V8(5) V8(6) V8(7) V8(8) V8(9)
+    virtual void b0();
+    virtual const VMatrix1019e2a0 &WorldToScreenMatrix();
+};
+extern IEng1019e2a0 *g_104a57d4;
+
+// TARGET: sub_1019e2a0
+int sub_1019e2a0(const Vector &point, Vector &screen)
+{
+    const VMatrix1019e2a0 &worldToScreen = g_104a57d4->WorldToScreenMatrix();
+    screen.x = worldToScreen[0][0] * point[0] + worldToScreen[0][1] * point[1] + worldToScreen[0][2] * point[2] + worldToScreen[0][3];
+    screen.y = worldToScreen[1][0] * point[0] + worldToScreen[1][1] * point[1] + worldToScreen[1][2] * point[2] + worldToScreen[1][3];
+    float w = worldToScreen[3][0] * point[0] + worldToScreen[3][1] * point[1] + worldToScreen[3][2] * point[2] + worldToScreen[3][3];
+    screen.z = 0.0f;
+    bool behind;
+    if (w < 0.001f)
+    {
+        behind = true;
+        screen.x *= 100000;
+        screen.y *= 100000;
+    }
+    else
+    {
+        behind = false;
+        float invw = 1.0f / w;
+        screen.x *= invw;
+        screen.y *= invw;
+    }
+    return behind;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f940 size=0xee
 #include "ScopeTrace.h"
 #include "CViewRender.h"
