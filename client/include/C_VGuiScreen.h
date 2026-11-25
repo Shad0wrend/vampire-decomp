@@ -16,5 +16,6 @@ public:
 	char m_pad0458[0x498 - 0x458];
 	CVGuiMemB m_c;
 	virtual int vfunc16();
+	void sub_100c9270(int);
 	virtual int vfunc64(int, int, int);
 };
