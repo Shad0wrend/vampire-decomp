@@ -61367,6 +61367,33 @@ int __stdcall sub_101194b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101194c0 size=0x8a
+#include "CCollisionEvent.h"
+struct CPhysObjView { virtual void v0(); virtual char vfunc1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void *vfunc6(); };
+struct CCollisionImpact { CPhysObjView *m_pObj[2]; int m_nId[2]; int m_n10; float m_f14; float m_flSpeed; };
+struct CUnknown101191a0 { void sub_101191a0(void *, CPhysObjView *, int, int, float); };
+extern CUnknown101191a0 g_104e0a74;
+void CCollisionEvent::sub_101194c0(int index, CCollisionImpact *pImpact)
+{
+	CPhysObjView *pObj = pImpact->m_pObj[index];
+	if (!pObj)
+		return;
+	if (pObj->vfunc1())
+		return;
+	float flScale = pImpact->m_flSpeed * pImpact->m_flSpeed;
+	int nId = pImpact->m_nId[index];
+	void *pOther = pObj->vfunc6();
+	if (!pOther)
+		return;
+	flScale = flScale * 9.765625e-6f;
+	if (flScale > 1.0f)
+		flScale = 1.0f;
+	if (nId < 0)
+		return;
+	g_104e0a74.sub_101191a0(pOther, pObj, nId, pImpact->m_nId[index == 0], flScale);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119600 size=0x10
 namespace lifted {
 struct C10119610 { int sub_10119610(); };
