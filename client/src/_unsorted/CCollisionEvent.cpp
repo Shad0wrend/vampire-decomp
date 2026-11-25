@@ -78,6 +78,22 @@ void CCollisionEvent::vfunc3(IObj *a, IObj *b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119770 size=0x3b
+#include "CCollisionEvent.h"
+struct OwnerV12 { void sub_10119660(int, int, int); };
+struct IObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual int GetId(); };
+// TARGET: CCollisionEvent::vfunc4
+void CCollisionEvent::vfunc4(IObj *a, IObj *b, int c)
+{
+	int ia = a->GetId();
+	int ib = b->GetId();
+	if (!m_flag)
+		sub_101197b0(ia, ib);
+	else
+		((OwnerV12 *)this)->sub_10119660(ia, ib, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119f00 size=0x4a
 #include "CCollisionEvent.h"
 struct IObjA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual int a6(); };
