@@ -353,6 +353,26 @@ void *CViewRender::vfunc14()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191670 size=0x8c
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+struct CViewRenderView {
+	char pad[0xa5];
+	bool m_bA5;
+	char pad2[2];
+	int m_nVisOrigins;
+	Vector m_vecVisOrigins[1];
+};
+void CViewRender::vfunc15(const Vector &vecOrigin)
+{
+	ScopeTrace trace("CViewRender::AddVisOrigin", g_102de300);
+	CViewRenderView *v = (CViewRenderView *)this;
+	v->m_bA5 = true;
+	v->m_vecVisOrigins[v->m_nVisOrigins++] = vecOrigin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191700 size=0x8
 #include "CViewRender.h"
 void CViewRender::vfunc16()
