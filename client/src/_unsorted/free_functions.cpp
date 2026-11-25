@@ -84266,6 +84266,33 @@ int CUnknown101544d0::sub_101544d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101544e0 size=0x5d
+#include "VKeyValues.h"
+#include "Pool.h"
+inline void *operator new(unsigned int, void *p) { return p; }
+struct CUnknown101544d0 { int m_a[6]; int m_next; int sub_101544d0(int); };
+int CUnknown101544d0::sub_101544d0(int n) { m_next = n; return 0; }
+extern Pool g_105eb308;
+// TARGET: ?sub_101544e0@VKeyValues@@QAEPAV1@PBD@Z
+VKeyValues *VKeyValues::sub_101544e0(const char *pszName)
+{
+	void *p = g_105eb308.sub_1010e3e0(0x38);
+	VKeyValues *pNew = p ? new (p) VKeyValues(pszName) : 0;
+	if (!m_pChild1c)
+	{
+		m_pChild1c = pNew;
+		pNew->m_pNext18 = 0;
+		return pNew;
+	}
+	VKeyValues *pLast = m_pChild1c;
+	while (pLast->m_pNext18)
+		pLast = pLast->m_pNext18;
+	((CUnknown101544d0 *)pLast)->sub_101544d0((int)pNew);
+	pNew->m_pNext18 = 0;
+	return pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154540 size=0x49
 #include "VKeyValues.h"
 #include <string.h>
