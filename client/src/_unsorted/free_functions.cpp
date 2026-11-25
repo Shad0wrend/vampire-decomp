@@ -29406,6 +29406,20 @@ CWeaponCopy *CWeaponCopy::sub_1007b250(const CWeaponCopy *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b5b0 size=0x3f
+#include "C_BaseCombatWeapon.h"
+struct WpnSlot_t { char data[67900]; };
+struct WpnOwner_t { char pad[0x2668]; WpnSlot_t slots[1]; };
+WpnSlot_t *C_BaseCombatWeapon::sub_1007b5b0()
+{
+	int n = *(int *)(this->sub_1007b180() + 0x10c);
+	WpnOwner_t *o = (WpnOwner_t *)this->sub_1007b160();
+	if (n > -1)
+		return &o->slots[n];
+	return &o->slots[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bab0 size=0x38
 struct EntView { char pad[0x3f0]; int m3f0; };
 struct EntInfo { EntView *ent; int serial; int pad; };
