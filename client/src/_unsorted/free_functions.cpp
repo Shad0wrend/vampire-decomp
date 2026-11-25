@@ -18053,6 +18053,26 @@ void sub_10043220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043230 size=0x60
+#include "CCollisionProperty.h"
+#include "ehandle.h"
+#include "C_BaseEntity.h"
+void CCollisionProperty::sub_10043230(int state)
+{
+	if (m_unk40 == state)
+		return;
+	sub_100442b0();
+	if (state == 1)
+	{
+		CBaseHandle *h = (CBaseHandle *)((char *)m_unk3c + 0x208);
+		if (h->Get())
+			state = 6;
+	}
+	m_unk40 = state;
+	((C_BaseEntity *)m_unk3c)->vfunc111();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100432a0 size=0x3b
 #define D4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
 struct COuter10044460 {
