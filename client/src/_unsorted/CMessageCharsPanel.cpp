@@ -104,3 +104,68 @@ void CMessageCharsPanel::sub_10168480()
 // TARGET: CMessageCharsPanel::vfunc109
 bool CMessageCharsPanel::vfunc109() { int *p = *(int **)((char *)this + 0x10705c); if (p) return true; return false; }
 // END FUNCTION
+
+// FUNCTION: 0x101684b0 size=0xb9
+#include "CMessageCharsPanel.h"
+struct SurfTab_101684b0
+{
+	void *pad[12];
+	void (__cdecl *fn12)(void *self, int a, int b, int c, int d, int e, int f, int g, const char *s);
+};
+struct GObj_101684b0 { SurfTab_101684b0 *tab; };
+struct IEng_101684b0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual double Time(int a);
+};
+extern GObj_101684b0 *g_104a5820;
+extern IEng_101684b0 *g_104a57d4;
+struct MsgNode_101684b0
+{
+	MsgNode_101684b0 *m_pNext;
+	int m_4;
+	int m_8;
+	unsigned char m_c, m_d, m_e, m_f;
+	char m_text[0x400];
+	int m_410;
+	float m_414;
+};
+struct PanelView_101684b0
+{
+	char pad[0x10705c];
+	MsgNode_101684b0 *m_pHead;
+	MsgNode_101684b0 *m_pFree;
+};
+void CMessageCharsPanel::vfunc98()
+{
+	PanelView_101684b0 *v = (PanelView_101684b0 *)this;
+	MsgNode_101684b0 *n;
+	for (n = v->m_pHead; n; n = n->m_pNext)
+		g_104a5820->tab->fn12(g_104a5820, n->m_410, n->m_4, n->m_8, n->m_c, n->m_d, n->m_e, n->m_f, n->m_text);
+	MsgNode_101684b0 *prev = 0;
+	n = v->m_pHead;
+	while (n)
+	{
+		if (n->m_414 <= g_104a57d4->Time(0))
+		{
+			if (!prev)
+				v->m_pHead = n->m_pNext;
+			else
+				prev->m_pNext = n->m_pNext;
+			MsgNode_101684b0 *next = n->m_pNext;
+			n->m_pNext = v->m_pFree;
+			v->m_pFree = n;
+			n = next;
+		}
+		else
+		{
+			prev = n;
+			n = n->m_pNext;
+		}
+	}
+}
+// END FUNCTION

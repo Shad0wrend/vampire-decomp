@@ -7708,6 +7708,7 @@
 0x10168430 func   ?vfunc108@CMessageCharsPanel@@UAEXHPAH0H@Z CMessageCharsPanel::vfunc108
 0x10168480 func   ?sub_10168480@CMessageCharsPanel@@QAEXXZ CMessageCharsPanel::sub_10168480
 0x101684a0 func   ?vfunc109@CMessageCharsPanel@@UAE_NXZ CMessageCharsPanel::vfunc109
+0x101684b0 func   ?vfunc98@CMessageCharsPanel@@UAEXXZ CMessageCharsPanel::vfunc98
 0x10168570 func   ?sub_10168570@CUnkTimed@@QAEXH@Z CUnkTimed::sub_10168570
 0x10168630 func   ?vfunc1@CMessageChars@@UAEXXZ CMessageChars::vfunc1
 0x10168660 func   ?vfunc5@CMessageChars@@UAAHMHHHHHHHPBDHZZ CMessageChars::vfunc5
