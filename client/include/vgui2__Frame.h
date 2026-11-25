@@ -10,6 +10,7 @@ class Frame : public vgui2::EditablePanel
 {
 public:
 	virtual ~Frame();
+	void sub_101b88c0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Frame's own function
 	virtual void vfunc10(int);
