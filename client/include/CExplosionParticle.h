@@ -11,5 +11,6 @@ class CExplosionParticle : public CSimpleEmitter
 public:
 	Vec3x *vfunc12(Vec3x *out, ExpPartColor *p, float dt);
 	float vfunc8(PartT *p, float dt);
+	void vfunc11(PartT *p, float dt);
 	float vfunc10(SimpleParticleAux_t *p, float dt);
 };
