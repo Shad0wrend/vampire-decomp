@@ -66452,6 +66452,45 @@ void sub_101275f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127680 size=0x99
+#include "CMem16_t.h"
+#include "utlmemory.h"
+struct CQueuedLookup { int m_a; int m_hHandle; int m_c; int m_d; };
+struct CQueuedLookupVec
+{
+	CMem16_t m_Memory;
+	int m_Size;
+	CQueuedLookup *m_pElements;
+
+	CQueuedLookup &Element(int i) { return ((CQueuedLookup *)m_Memory.m_pMemory)[i]; }
+};
+struct IHandleSrc { virtual void v0(); virtual int *GetHandle(); };
+extern CQueuedLookupVec g_104e1be4;
+// TARGET: sub_10127680
+void sub_10127680(int a, IHandleSrc *pEnt, int c, int d)
+{
+	int h = pEnt ? *pEnt->GetHandle() : -1;
+	CQueuedLookupVec &v = g_104e1be4;
+	int elem = v.m_Size;
+	int next = v.m_Size + 1;
+	if (next > v.m_Memory.m_nAllocationCount)
+		v.m_Memory.sub_10127830(v.m_Size + 1 - v.m_Memory.m_nAllocationCount);
+	v.m_Size++;
+	v.m_pElements = (CQueuedLookup *)v.m_Memory.m_pMemory;
+	int numToMove = v.m_Size - elem - 1;
+	if (numToMove > 0)
+		memmove(&v.Element(next), &v.Element(elem), numToMove * sizeof(CQueuedLookup));
+	CQueuedLookup *p = &v.Element(elem);
+	if (p)
+	{
+		p->m_a = a;
+		p->m_hHandle = h;
+		p->m_c = c;
+		p->m_d = d;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127770 size=0x28
 #include "RecvTable.h"
 
