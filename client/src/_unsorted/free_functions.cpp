@@ -17890,6 +17890,61 @@ float *CUnknown100dc9f0::sub_10043580(const float *pPoint, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043740 size=0xb0
+#include "CUnknown100dc9f0.h"
+
+extern Vector g_104d5190;
+void sub_10108080(const float *in1, const void *in2, float *out);
+
+struct CCollProp_10043740
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual const Vector &GetCollisionOrigin();         // slot 8 (+0x20)
+	virtual const Vector &GetCollisionAngles(int a);    // slot 9 (+0x24)
+	virtual const void *CollisionToWorldTransform();    // slot 10 (+0x28)
+
+	char pad04[0x3c];
+	int m_nSolidType;             // 0x40
+	unsigned short m_usSolidFlags; // 0x44
+
+	bool IsBoundsDefinedInEntitySpace()
+	{
+		return ((m_usSolidFlags & 0x80) == 0) && (m_nSolidType != 2) && (m_nSolidType != 0);
+	}
+
+	void WorldToCollisionSpace(const Vector &in, Vector *pResult)
+	{
+		if (!IsBoundsDefinedInEntitySpace() || (GetCollisionAngles(0) == g_104d5190))
+		{
+			VectorSubtract(in, GetCollisionOrigin(), *pResult);
+		}
+		else
+		{
+			const void *pMat = CollisionToWorldTransform();
+			sub_10108080(&in.x, pMat, &pResult->x);
+		}
+	}
+
+	const Vector &sub_10043740(const Vector &in, Vector *pResult);
+};
+
+// TARGET: CCollProp_10043740::sub_10043740
+const Vector &CCollProp_10043740::sub_10043740(const Vector &in, Vector *pResult)
+{
+	Vector vecCollisionSpace;
+	WorldToCollisionSpace(in, &vecCollisionSpace);
+	((CUnknown100dc9f0 *)this)->sub_10043580(&vecCollisionSpace.x, &pResult->x);
+	return *pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100437f0 size=0x6d
 #include "CUnknown100dcd00.h"
 
