@@ -92273,6 +92273,36 @@ void sub_10179840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a5c0 size=0x70
+#include <stdio.h>
+#include <string.h>
+#include "CBCCSlotViews.h"
+
+struct EquipSlotEntry { char m_bOccupied; char m_pad[0x23]; };
+extern EquipSlotEntry g_105fb478[11];
+extern int g_105fb5ec;
+
+struct Eng27 {
+	VIEW_SLOT10(0) VIEW_SLOT10(1)
+	VIEW_SLOT(20) VIEW_SLOT(21) VIEW_SLOT(22) VIEW_SLOT(23) VIEW_SLOT(24) VIEW_SLOT(25) VIEW_SLOT(26)
+	virtual void vfunc27(const char *cmd, int b);
+};
+extern Eng27 *g_104a57d4;
+
+// TARGET: sub_1017a5c0
+void sub_1017a5c0()
+{
+	char buf[0x50];
+	sprintf(buf, "vmpequip %d", g_105fb5ec);
+	for ( int i = 0; i < 11; i++ )
+	{
+		if ( g_105fb478[i].m_bOccupied )
+			sprintf(buf + strlen(buf), " %d", i);
+	}
+	g_104a57d4->vfunc27(buf, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a630 size=0x51
 class CEquipItem_10178790
 {
