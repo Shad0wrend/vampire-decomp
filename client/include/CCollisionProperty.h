@@ -36,5 +36,6 @@ public:
     int vfunc12();
     void sub_10043230(int state);
     void sub_100442b0();
+    void sub_100433c0(Vector *a, char *b);
     void sub_100432a0(int a);
 };
