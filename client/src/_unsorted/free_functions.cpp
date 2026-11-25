@@ -51536,6 +51536,22 @@ int sub_100e40f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4100 size=0x9a
+#include "Vector.h"
+#include <math.h>
+extern Vector g_104d4970;
+// TARGET: sub_100e4100
+float __stdcall sub_100e4100(const Vector &a, const Vector &b, float scale, float *pOut)
+{
+	if (a == g_104d4970 || b == g_104d4970)
+		return 1.0f;
+	float d = (float)fabs(a.z * b.z + a.y * b.y + a.x * b.x) * scale;
+	if (pOut)
+		*pOut *= d;
+	return d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6ce0 size=0x7f
 #include <stdarg.h>
 struct IFileSys {
