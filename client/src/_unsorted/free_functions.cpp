@@ -53194,6 +53194,44 @@ void CFunctionProxy::sub_100e3560(int *pType, int *pVecSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e35f0 size=0xa5
+#include "FX_Cube.h"
+#include "Vector.h"
+
+extern void *g_104a57ec;
+extern void *g_102b9850;
+
+struct MatView25
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24();
+	virtual void *vfunc25(void *a, int b, int c);
+};
+
+struct EffectList
+{
+	virtual void v0();
+	virtual void AddEffect(void *p);
+};
+
+// TARGET: sub_100e35f0
+void sub_100e35f0(Vector *p1, Vector *p2, Vector *p3, int a4, void *a5)
+{
+	void *pMat = ((MatView25 *)g_104a57ec)->vfunc25(a5, 0, 1);
+	FX_Cube *pCube = new FX_Cube(pMat);
+	*(Vector *)((char *)pCube + 0xc) = *p1;
+	*(Vector *)((char *)pCube + 0x18) = *p2;
+	*(Vector *)((char *)pCube + 0x24) = *p3;
+	*(int *)((char *)pCube + 0x30) = a4;
+	((EffectList *)g_102b9850)->AddEffect(pCube);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3b10 size=0x28
 void __stdcall sub_100e3b10(float *p, int i, int j, int k, float a, float b, float c)
 {

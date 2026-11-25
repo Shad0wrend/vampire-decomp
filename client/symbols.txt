@@ -5031,6 +5031,7 @@
 0x100e34a0 func   ??1CFunctionProxy@@UAE@XZ CFunctionProxy::~CFunctionProxy
 0x100e34a0 func   ?sub_100e34a0@CUnknown100e34a0@@QAEHXZ CUnknown100e34a0::sub_100e34a0
 0x100e3560 func   ?sub_100e3560@CFunctionProxy@@QAEXPAH0@Z CFunctionProxy::sub_100e3560
+0x100e35f0 func   ?sub_100e35f0@@YAXPAVVector@@00HPAX@Z sub_100e35f0
 0x100e3b10 func   ?sub_100e3b10@@YGXPAMHHHMMM@Z sub_100e3b10
 0x100e3f10 func   ?vfunc3@FX_Cube@@UAE_NXZ FX_Cube::vfunc3
 0x100e4010 func   ?vfunc0@ClientEffectRegister@PrecacheEffectExplosion@@UAEX_N@Z PrecacheEffectExplosion::ClientEffectRegister::vfunc0
