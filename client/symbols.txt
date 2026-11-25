@@ -4354,6 +4354,7 @@
 0x100bf9f0 func   ?sub_100bf9f0@@YA_NABVVector@@0M@Z sub_100bf9f0
 0x100c0350 func   ?sub_100c0350@@YGHHH@Z sub_100c0350
 0x100c0630 func   ?sub_100c0630@C_RopeKeyframe@@QAE_NPAUAttV@@HAAVVector@@AAVQAngle@@@Z C_RopeKeyframe::sub_100c0630
+0x100c07b0 func   ?sub_100c07b0@C_RopeKeyframe@@QAEXHAAVVector@@AAVQAngle@@@Z C_RopeKeyframe::sub_100c07b0
 0x100c0850 func   ?sub_100c0850@C_RopeKeyframe@@QAEXPAPAMPAH@Z C_RopeKeyframe::sub_100c0850
 0x100c08b0 func   ?sub_100c08b0@CUnknown100c08b0@@QAEXXZ CUnknown100c08b0::sub_100c08b0
 0x100c0920 func   ?sub_100c0920@Obj100c0920@@QAEXHH@Z Obj100c0920::sub_100c0920

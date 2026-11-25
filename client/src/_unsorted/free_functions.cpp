@@ -46069,6 +46069,29 @@ bool C_RopeKeyframe::sub_100c0630(AttV *pEnt, int iAttachment, Vector &vPos, QAn
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c07b0 size=0x9b
+#include "C_RopeKeyframe.h"
+#include "ehandle.h"
+#include "QAngle.h"
+static inline IHandleEntity *GetEnt(const CBaseHandle &h)
+{
+    if (h.m_Index != 0xffffffff) {
+        CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h.m_Index & 0x1fff];
+        if (e.m_SerialNumber == (int)(h.m_Index >> 13))
+            return (IHandleEntity *)e.m_pEntity;
+    }
+    return 0;
+}
+// TARGET: C_RopeKeyframe::sub_100c07b0
+void C_RopeKeyframe::sub_100c07b0(int iPoint, Vector &vPos, QAngle &angles)
+{
+    if (iPoint == 0)
+        sub_100c0630((struct AttV *)GetEnt(m_hStartPoint), m_iStartAttachment, vPos, angles);
+    else
+        sub_100c0630((struct AttV *)GetEnt(m_hEndPoint), m_iEndAttachment, vPos, angles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0850 size=0x5b
 #include "C_RopeKeyframe.h"
 
