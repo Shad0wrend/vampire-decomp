@@ -168,6 +168,38 @@ Beam_t *CViewRenderBeams::sub_10194160(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194490 size=0xac
+#include "CViewRenderBeams.h"
+struct BeamInfoV { char p0[0x14]; int m14, m18, m1c, m20, m24, m28; char p2c[0x40 - 0x2c]; float m40; char p44[0x7c - 0x44]; int m7c, m80, m84; int m88, m8c; };
+struct BmView { char p0[0x28]; int m28; unsigned int m2c; char p30[0x4c - 0x30]; int m4c, m50, m54; char p58[0x36c - 0x58]; int m36c, m370; };
+Beam_t *CViewRenderBeams::vfunc16(BeamInfoV *info)
+{
+	const int &x = info->m7c;
+	const int &y = info->m80;
+	const int &z = info->m84;
+	info->m14 = x;
+	info->m18 = y;
+	info->m1c = z;
+	info->m20 = x;
+	info->m24 = y;
+	info->m28 = z;
+	Beam_t *b = sub_101938a0(info);
+	if (!b)
+		return 0;
+	BmView *v = (BmView *)b;
+	v->m28 = 0x1a;
+	v->m36c = info->m88;
+	v->m370 = info->m8c;
+	v->m4c = x;
+	v->m50 = y;
+	v->m54 = z;
+	sub_10193790((BeamV *)b, info);
+	if (info->m40 == 0.0f)
+		v->m2c |= 0x80000000;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194d70 size=0xa2
 #include "CViewRenderBeams.h"
 
