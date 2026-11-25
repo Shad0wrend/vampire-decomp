@@ -3,6 +3,7 @@
 #pragma once
 #include "ICollideable.h"
 #include "vector.h"
+#include "QAngle.h"
 
 class CCollisionProperty : public ICollideable
 {
@@ -16,7 +17,7 @@ public:
     virtual void vfunc6();
     virtual void vfunc7();
     virtual const Vector &vfunc8();
-    virtual void vfunc9();
+    virtual const QAngle &vfunc9(int);
     virtual const struct matrix3x4_t &vfunc10();
     virtual void vfunc11x();
     virtual void vfunc12x();
@@ -38,4 +39,5 @@ public:
     void sub_100442b0();
     void sub_100433c0(Vector *a, char *b);
     void sub_100432a0(int a);
+    void sub_10043860(const Vector &mins, const Vector &maxs, Vector *pWorldMins, Vector *pWorldMaxs);
 };
