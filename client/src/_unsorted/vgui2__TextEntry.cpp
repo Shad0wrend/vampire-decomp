@@ -1086,6 +1086,30 @@ void vgui2::TextEntry::vfunc167()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1590 size=0xb1
+#include "vgui2__TextEntry.h"
+#include "vgui2__Image.h"
+typedef vgui2::Image::ImageColor TEColor;
+struct TEKV9 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual int GetInt(const char *key, int def); };
+struct TELoc { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual TEColor GetColor(const char *name, TEColor def); };
+struct TESch { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual TELoc *Get(int); };
+TESch *sub_101ac8c0();
+struct CUnknown101aa220 { int sub_101aa220(); };
+// TARGET: vgui2::TextEntry::vfunc75
+void vgui2::TextEntry::vfunc75(int p)
+{
+	Panel::vfunc75(p);
+	TEKV9 *kv = (TEKV9 *)p;
+	vfunc133(kv->GetInt("textHidden", 0) != 0);
+	vfunc134(kv->GetInt("editable", 1) != 0);
+	vfunc143(kv->GetInt("maxchars", -1));
+	TESch *s = sub_101ac8c0();
+	TELoc *loc = s->Get(((CUnknown101aa220 *)this)->sub_101aa220());
+	TEColor def;
+	*(TEColor *)((char *)this + 0xf0) = loc->GetColor("BorderSelection", def);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b16b0 size=0x23
 #include "vgui2__TextEntry.h"
 namespace lifted {
