@@ -315,6 +315,19 @@ void CInput::vfunc5(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103b00 size=0x97
+#include "CInput.h"
+#include "CUserCmd.h"
+void sub_1013c230(int, char *, CUserCmd *);
+// TARGET: CInput::vfunc6
+void CInput::vfunc6(int a, int b, int c)
+{
+    CUserCmd cmd;
+    char *p = vfunc7(c);
+    sub_1013c230(a, p, &cmd);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104440 size=0x15
 #include "CInput.h"
 char *CInput::vfunc7(int i)
