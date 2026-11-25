@@ -56953,6 +56953,50 @@ CUnknown102bc9e0 *sub_100f4420(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4440 size=0xbe
+struct CUnknown102bc9e0 { int m_0; int m_NumBytes; };
+CUnknown102bc9e0 *sub_100f4420(int fmt);
+int sub_100f4440(int width, int height, int imageFormat, bool mipmap)
+{
+	if (!mipmap) {
+		if (imageFormat == 13 || imageFormat == 14 || imageFormat == 15) {
+			if (width < 4 && width > 0)
+				width = 4;
+			if (height < 4 && height > 0)
+				height = 4;
+			int numBlocks = (width * height) >> 4;
+			switch (imageFormat) {
+			case 13:
+				numBlocks *= 8;
+				break;
+			case 14:
+			case 15:
+				numBlocks *= 16;
+				break;
+			default:
+				numBlocks = 0;
+				break;
+			}
+			return numBlocks;
+		}
+		return width * height * sub_100f4420(imageFormat)->m_NumBytes;
+	}
+	int memSize = 0;
+	for (;;) {
+		memSize += sub_100f4440(width, height, imageFormat, false);
+		if (width == 1 && height == 1)
+			break;
+		width >>= 1;
+		height >>= 1;
+		if (width < 1)
+			width = 1;
+		if (height < 1)
+			height = 1;
+	}
+	return memSize;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4500 size=0x5b
 struct FmtInfo
 {
