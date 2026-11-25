@@ -15,4 +15,5 @@ public:
 	char m_b1e14;
 
 	void sub_10183810();
+	void sub_101837b0(CScoreRow14 *);
 };
