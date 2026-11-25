@@ -7974,6 +7974,7 @@
 0x10197730 func   ?vfunc11@CViewEffects@@UAEXXZ CViewEffects::vfunc11
 0x101977a0 func   ?sub_101977a0@CViewEffects@@QAE_NXZ CViewEffects::sub_101977a0
 0x101978d0 func   ?vfunc14@CViewEffects@@UAEXM@Z CViewEffects::vfunc14
+0x10197950 func   ?vfunc15@CViewEffects@@UAEXXZ CViewEffects::vfunc15
 0x101979e0 func   ?sub_101979e0@IntVec@@QAEXHH@Z IntVec::sub_101979e0
 0x10197a20 func   ?sub_10197a20@UtlMem@@QAEXH@Z UtlMem::sub_10197a20
 0x10198320 func   ?sub_10198320@@YAXXZ sub_10198320

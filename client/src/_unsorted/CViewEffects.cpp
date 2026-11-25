@@ -87,3 +87,15 @@ void CViewEffects::vfunc14(float flStrength)
         m_flHolyLightStrength = flStrength;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10197950 size=0x85
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+extern Vector g_104d5190;
+void CViewEffects::vfunc15()
+{
+	ScopeTrace trace("CViewEffects::ClearHolyLightPull", g_102de300);
+	m_flHolyLightStrength = 0;
+	m_vecHolyLight = g_104d5190;
+}
+// END FUNCTION
