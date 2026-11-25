@@ -35971,6 +35971,35 @@ void sub_1009c1a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c250 size=0x8c
+#include "CInput.h"
+struct CUnkIface { virtual bool vf0(); virtual bool vf1(); char pad[0x28]; int m_i2c; };
+struct CUnkLocal1007b160 { char pad[0x2440]; int m_state; };
+extern CUnkIface *g_1049d914;
+extern CUnkIface *g_1049d994;
+extern CInput *g_1027ba58;
+CUnkLocal1007b160 *sub_1007b160();
+void sub_1009c250()
+{
+    int st = sub_1007b160()->m_state;
+    if (st && !g_1049d914->vf1() && g_1049d914->m_i2c)
+    {
+        if (st == 8)
+            g_1027ba58->vfunc35();
+        else if (st == 0x10)
+            g_1027ba58->vfunc37();
+        else
+        {
+            int v = g_1049d994->vf1() ? 0 : g_1049d994->m_i2c;
+            if (st & v)
+                g_1027ba58->vfunc35();
+            else
+                g_1027ba58->vfunc34();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c2e0 size=0x66
 struct WeaponData1009c2e0
 {
