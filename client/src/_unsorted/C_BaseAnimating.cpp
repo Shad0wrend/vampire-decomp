@@ -235,6 +235,27 @@ void C_BaseAnimating::vfunc124(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090f80 size=0x98
+#include "C_BaseAnimating.h"
+struct SPoseHdr { char pad[0x10]; float m10; };
+SPoseHdr *sub_1008d930(void *hdr, int idx);
+struct GlobalV { virtual void v0(); virtual bool IsPaused(); char pad[0x28 - 4]; float m28; };
+extern GlobalV *g_1049c494;
+struct AnimV { char pad[0x3fc]; int m3fc; char pad2[0x6ac - 0x400]; void *m6ac; };
+float C_BaseAnimating::vfunc129(int idx, float a, float b, float c)
+{
+	AnimV *self = (AnimV *)this;
+	SPoseHdr *p = sub_1008d930(self->m6ac, idx);
+	if (!p)
+		return 0.0f;
+	if (!g_1049c494->IsPaused()) {
+		if (g_1049c494->m28 != 0.0f && self->m3fc && !idx)
+			c = 1.0f;
+	}
+	return sub_10091020(a, b, c, p->m10 != 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100910f0 size=0x1b
 #include "C_BaseAnimating.h"
 namespace lifted {
