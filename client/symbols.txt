@@ -5218,6 +5218,7 @@
 0x100e40f0 func   ?sub_100e40f0@@YAHXZ sub_100e40f0
 0x100e4100 func   ?sub_100e4100@@YGMABVVector@@0MPAM@Z sub_100e4100
 0x100e4c10 func   ?vfunc10@CExplosionParticle@@UAEMPAUSimpleParticleAux_t@@M@Z CExplosionParticle::vfunc10
+0x100e4c80 func   ?vfunc11@CExplosionParticle@@QAEXPAUPartT@@M@Z CExplosionParticle::vfunc11
 0x100e4d80 func   ?vfunc8@CExplosionParticle@@QAEMPAUPartT@@M@Z CExplosionParticle::vfunc8
 0x100e4db0 func   ?vfunc12@CExplosionParticle@@QAEPAUVec3x@@PAU2@PAUExpPartColor@@M@Z CExplosionParticle::vfunc12
 0x100e4e30 func   ??_GCExplosionParticle@@UAEPAXI@Z ??_GCExplosionParticle@@UAEPAXI@Z
