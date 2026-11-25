@@ -11,7 +11,8 @@ public:
 	int m_count;
 	StatDefault3 **m_pItems;
 
-	StatDefault3 *sub_10140000(int index);	// "operator[]": the item at index, or a lazily created default item when out of range
+	StatDefault3 *sub_10140000(int index);
+	StatDefault3 *sub_10140060(void *pChar);	// "operator[]": the item at index, or a lazily created default item when out of range
 	StatDefault3 *sub_10140d50(int index);
 	StatDefault3 *sub_101492b0(int index);
 	StatDefault3 *sub_10149ce0(int index);
