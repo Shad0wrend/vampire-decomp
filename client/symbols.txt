@@ -4088,6 +4088,7 @@
 0x100bdb30 func   ??1C_OrnamentProp@@UAE@XZ C_OrnamentProp::~C_OrnamentProp
 0x100bdd80 func   ??0C_RecipientFilter@@QAE@XZ C_RecipientFilter::C_RecipientFilter
 0x100bdd80 func   ?sub_100bdd80@CUnknown100bdd80@@QAEPAXXZ CUnknown100bdd80::sub_100bdd80
+0x100bddb0 func   ??_GC_RecipientFilter@@UAEPAXI@Z ??_GC_RecipientFilter@@UAEPAXI@Z
 0x100bde20 func   ?sub_100bde20@CUnknown100bde20@@QAEHXZ CUnknown100bde20::sub_100bde20
 0x100bde40 func   ?sub_100bde40@CUnknown100bde40@@QAEXXZ CUnknown100bde40::sub_100bde40
 0x100bde50 func   ?sub_100bde50@CUnknown100bde50@@QAEXXZ CUnknown100bde50::sub_100bde50
