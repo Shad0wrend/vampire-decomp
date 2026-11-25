@@ -105864,6 +105864,91 @@ int CUnknown10181b80::sub_10181b80(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181bf0 size=0xcf
+#include "CharEditStatsPanel.h"
+#include "C_BasePlayer.h"
+#include "CStatDefault3List.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+
+struct EngineView
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual void vfunc13();
+	virtual void vfunc14();
+	virtual void vfunc15();
+	virtual void vfunc16();
+	virtual void vfunc17();
+	virtual void vfunc18();
+	virtual void vfunc19();
+	virtual void vfunc20();
+	virtual void vfunc21();
+	virtual void vfunc22();
+	virtual void vfunc23();
+	virtual void vfunc24();
+	virtual void vfunc25();
+	virtual void vfunc26();
+	virtual void ClientCmd(const char *cmd, int b);
+};
+
+struct HostView
+{
+	char m_pad[0xed0];
+	int m_ed0;
+};
+
+extern C_BasePlayer *g_104a0d50;
+extern CStatDefault3List g_105e74fc;
+extern EngineView *g_104a57d4;
+extern int sub_10170f60();
+extern char sub_101713e0();
+extern int sub_1017f0f0(char);
+
+// TARGET: CharEditStatsPanel::sub_10181bf0
+void CharEditStatsPanel::sub_10181bf0()
+{
+	C_BasePlayer *pPlayer = g_104a0d50;
+	if ( !pPlayer )
+		return;
+
+	if ( m_bAutoLevel )
+	{
+		int n = g_105e74fc.sub_10140000(pPlayer->sub_1008ebb0())->m_b8;
+		if ( sub_10170f60() )
+			((HostView *)sub_10170f60())->m_ed0 = n;
+		if ( sub_101713e0() )
+			return;
+		if ( sub_1017f0f0(1) == n )
+			return;
+		char buf[32];
+		sprintf(buf, "vautolvl %d -1", n);
+		g_104a57d4->ClientCmd(buf, 1);
+	}
+	else
+	{
+		if ( sub_10170f60() )
+			((HostView *)sub_10170f60())->m_ed0 = -1;
+		if ( sub_101713e0() )
+			return;
+		if ( sub_1017f0f0(1) == -1 )
+			return;
+		g_104a57d4->ClientCmd("vautolvl -1", 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101820f0 size=0xd
 struct CUnknown101820f0 { int sub_101820f0(int); };
 int CUnknown101820f0::sub_101820f0(int a0)
