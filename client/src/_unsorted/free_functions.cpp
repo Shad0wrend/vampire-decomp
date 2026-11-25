@@ -86818,6 +86818,18 @@ void TStat::sub_1015a290(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a6d0 size=0x7e
+#include "CUnknown1015a6d0.h"
+#include "ScopeTrace.h"
+bool CUnknown1015a6d0::sub_1015a6d0(int n)
+{
+	ScopeTrace trace("CVStatAction_t::IsAffectedBy", g_102de300);
+	if (n >= m_nMin && n <= m_nMax)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a7e0 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_101e3124;
