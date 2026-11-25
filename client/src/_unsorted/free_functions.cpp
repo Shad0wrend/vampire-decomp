@@ -45482,6 +45482,52 @@ int __stdcall sub_100c1ad0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1bc0 size=0xb1
+#include <string.h>
+struct IEngTime { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual float Time(int a); };
+extern IEngTime *g_104a57d4;
+float sub_101070a0(const void *p);
+struct T64 { int m_unk0; int m_unk4; int m_unk8; float m_flTime; int m_d[12]; };
+struct CMem8b_t { T64 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; T64 *m_pElements; void sub_100c1f50(int num);
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_nAllocationCount)
+			sub_100c1f50(m_Size + num - m_nAllocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(T64));
+	}
+	int AddToTail(const T64 &src)
+	{
+		int idx = m_Size;
+		GrowVector(1);
+		ShiftElementsRight(idx, 1);
+		T64 *e = &m_pMemory[idx];
+		if (e)
+			*e = src;
+		return idx;
+	}
+};
+struct CSoundList { char m_unk[0x6c]; CMem8b_t m_List; int sub_100c1bc0(const T64 &src); };
+int CSoundList::sub_100c1bc0(const T64 &src)
+{
+	int idx = m_List.AddToTail(src);
+	T64 *base = m_List.m_pMemory;
+	double t = sub_101070a0(&src.m_d[0]) * 0.5;
+	base[idx].m_flTime = g_104a57d4->Time(0) + t;
+	return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
