@@ -704,6 +704,22 @@ int C_BaseCombatWeapon::vfunc233()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b9a0 size=0x67
+#include "C_BaseCombatWeapon.h"
+// TARGET: C_BaseCombatWeapon::vfunc222
+int C_BaseCombatWeapon::vfunc222(int n)
+{
+	switch (n) {
+	case 21: case 22: case 23: case 24:
+		return *(int *)((char *)sub_1007b160() + n * 4 + 0x5eab8);
+	case 10: case 11:
+		return *(int *)((char *)sub_1007b5b0() + n * 4 + 0x108d8);
+	default:
+		return *(int *)(sub_1007b180() + n * 4 + 0xebd0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bbe0 size=0x3
 #include "C_BaseCombatWeapon.h"
 bool C_BaseCombatWeapon::vfunc175()
