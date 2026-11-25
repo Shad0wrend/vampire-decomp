@@ -18791,6 +18791,36 @@ void CCollisionProperty::sub_10043860(const Vector &mins, const Vector &maxs, Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043b90 size=0xef
+#include "CCollisionProperty.h"
+
+extern QAngle g_104d5190;
+void sub_10108080(const Vector *, const matrix3x4_t *, Vector *);
+void sub_1010ba80(const Vector &, const Vector &, const Vector &, Vector &);
+
+float CCollisionProperty::sub_10043b90(const Vector *pPoint)
+{
+    Vector vA;
+    Vector vB;
+
+    if (!(m_unk44 & 0x80 || m_unk40 == 2 || m_unk40 == 0))
+    {
+        const QAngle &q = vfunc9(0);
+        if (q != g_104d5190)
+        {
+            const matrix3x4_t &mat = vfunc10();
+            sub_10108080(pPoint, &mat, &vA);
+            goto done;
+        }
+    }
+    VectorSubtract(*pPoint, vfunc8(), vA);
+
+done:
+    sub_1010ba80(m_vecMins, *(Vector *)&m_unk10, vA, vB);
+    return (vA - vB).Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043ef0 size=0x18
 struct CUnknown10095d00 { bool sub_10095d00(int a, int b); };
 #define V8(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7();
