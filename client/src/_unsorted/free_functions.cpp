@@ -96920,6 +96920,105 @@ void sub_10170440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170470 size=0x102
+#include "CHud.h"
+#include "ehandle.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+
+struct V_101869c0;
+void __fastcall sub_101869c0(V_101869c0 *);
+
+struct IEngineTmp
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void ClientCmd(const char *szCmdString);
+};
+
+extern IEngineTmp *g_104a57d4;
+extern CHud g_104cfe38;
+
+struct MyHandle
+{
+	unsigned long m_Index;
+
+	IHandleEntity *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		const CBaseEntityListEntry *pInfo = &g_102b8e98->m_EntPtrArray[m_Index & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(m_Index >> 13))
+			return (IHandleEntity *)pInfo->m_pEntity;
+		return 0;
+	}
+};
+
+struct InvItemBtn
+{
+	char pad0[0xba];
+	bool m_bSelected;
+	char padbb;
+	MyHandle m_hItem;
+};
+
+struct InvSlotEntry
+{
+	InvItemBtn *btn;
+	int unk4;
+	int unk8;
+};
+
+class CInv_10170470
+{
+public:
+	char pad0[0x188];
+	InvSlotEntry m_slots1[24];
+	InvSlotEntry m_slots2[24];
+
+	IHandleEntity *GetSelectedItem1()
+	{
+		for (int i = 0; i < 24; i++)
+		{
+			if (m_slots1[i].btn->m_bSelected)
+				return m_slots1[i].btn->m_hItem.Get();
+		}
+		return 0;
+	}
+
+	IHandleEntity *GetSelectedItem2()
+	{
+		for (int i = 0; i < 24; i++)
+		{
+			if (m_slots2[i].btn->m_bSelected)
+				return m_slots2[i].btn->m_hItem.Get();
+		}
+		return 0;
+	}
+
+	void sub_10170470();
+};
+
+void CInv_10170470::sub_10170470()
+{
+	IHandleEntity *ent = GetSelectedItem1();
+	if (!ent)
+		ent = GetSelectedItem2();
+	if (ent)
+	{
+		char cmd[64];
+		sprintf(cmd, "dropitem %d", *(int *)((char *)ent + 0x79c));
+		g_104a57d4->ClientCmd(cmd);
+	}
+	sub_101869c0((V_101869c0 *)g_104cfe38.sub_100f0ed0("VItemInfoUI"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170aa0 size=0x114
 // TARGET: ?sub_10170aa0@VBarterUI@@QAE_NPAX_N@Z
 #include "VBarterUI.h"
