@@ -13,6 +13,7 @@ public:
 	static void operator delete(void *pMem);
 	Panel(Panel *parent, const char *name);
 	void sub_101ab300(int, int);
+	void sub_101aa260(int a, int b);
 	void sub_101a9810(const char *pszName);
 	int sub_101ab490(int);
 	int sub_101aa220();
