@@ -473,6 +473,38 @@ void CHLClient::vfunc37(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc8c0 size=0x7e
+#include "CHLClient.h"
+#include "CSave.h"
+struct SaveMgrView38 {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void SaveGame(CSave *);
+	virtual void v4();
+};
+extern SaveMgrView38 *g_102c37a0;
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+// TARGET: ?vfunc38@CHLClient@@UAEXPAX@Z
+void CHLClient::vfunc38(void *pData)
+{
+	CSave save(pData);
+	g_102c37a0->SaveGame(&save);
+	g_102c37a0->v4();
+	save.m_nSections = 0;
+	if (save.m_nGrow != -1)
+	{
+		if (save.m_pSections)
+		{
+			Plat_Free(save.m_pSections);
+			save.m_pSections = 0;
+		}
+		save.m_nAlloc = 0;
+	}
+	save.m_pElements = save.m_pSections;
+	if (save.m_nGrow != -1 && save.m_pSections)
+		Plat_Free(save.m_pSections);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cca70 size=0x27
 #include "CHLClient.h"
 struct VX { void sub_10056bc0(int, int, int); };

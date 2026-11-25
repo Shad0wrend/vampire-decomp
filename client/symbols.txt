@@ -4422,6 +4422,7 @@
 0x100cc700 func   ?vfunc33@CHLClient@@UAEHH@Z CHLClient::vfunc33
 0x100cc830 func   ?vfunc36@CHLClient@@UAEHXZ CHLClient::vfunc36
 0x100cc840 func   ?vfunc37@CHLClient@@UAEXPAX@Z CHLClient::vfunc37
+0x100cc8c0 func   ?vfunc38@CHLClient@@UAEXPAX@Z CHLClient::vfunc38
 0x100cca70 func   ?vfunc43@CHLClient@@UAEXHHH@Z CHLClient::vfunc43
 0x100ccb30 func   ?sub_100ccb30@CMem16_t@@QAEXH@Z CMem16_t::sub_100ccb30
 0x100ccba0 func   ?vfunc0@CDLL_ConVarAccessor@@UAE_NH@Z CDLL_ConVarAccessor::vfunc0
