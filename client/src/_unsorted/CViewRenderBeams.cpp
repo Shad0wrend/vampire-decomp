@@ -54,6 +54,62 @@ void CViewRenderBeams::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193520 size=0xbb
+#include "CViewRenderBeams.h"
+#include "ehandle.h"
+struct TrailV10193520 { TrailV10193520 *next; float die; };
+struct BeamV10193520 {
+    char pad0[0x24];
+    BeamV10193520 *next;
+    int type;
+    int flags;
+    char pad1[0xcc - 0x30];
+    float die;
+    char pad2[0x104 - 0xd0];
+    CBaseHandle entity;
+    char pad3[0x368 - 0x108];
+    TrailV10193520 *trail;
+};
+struct GlobalsV10193520 { float a, b, c, curtime; };
+extern GlobalsV10193520 *g_102b8494;
+struct ActiveV10193520 { char pad[0x1bc04]; BeamV10193520 *m_pActive; };
+
+// TARGET: CViewRenderBeams::vfunc6
+void CViewRenderBeams::vfunc6(IHandleEntity *pDeadEntity)
+{
+    BeamV10193520 *pbeam, *pnext, *pnewlist = 0;
+    pbeam = ((ActiveV10193520 *)this)->m_pActive;
+    while (pbeam)
+    {
+        pnext = pbeam->next;
+        IHandleEntity *pEnt;
+        unsigned long h = pbeam->entity.m_Index;
+        CBaseEntityListEntry *e;
+        if (h != 0xffffffff && (e = &g_102b8e98->m_EntPtrArray[h & 0x1fff], e->m_SerialNumber == (int)(h >> 13)))
+            pEnt = (IHandleEntity *)e->m_pEntity;
+        else
+            pEnt = 0;
+        if (pEnt == pDeadEntity)
+        {
+            pbeam->flags &= ~3;
+            if (pbeam->type != 0x16)
+            {
+                pbeam->die = g_102b8494->curtime - 0.1;
+                for (TrailV10193520 *t = pbeam->trail; t; t = t->next)
+                    t->die = g_102b8494->curtime - 0.1;
+                sub_101934d0(pbeam);
+                pbeam = pnext;
+                continue;
+            }
+        }
+        pbeam->next = pnewlist;
+        pnewlist = pbeam;
+        pbeam = pnext;
+    }
+    ((ActiveV10193520 *)this)->m_pActive = pnewlist;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194040 size=0x11a
 #include "CViewRenderBeams.h"
 #include "Vector.h"
