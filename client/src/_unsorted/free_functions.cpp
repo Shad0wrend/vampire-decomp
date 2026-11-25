@@ -38395,6 +38395,60 @@ char CUnknown100a29a0::sub_100a29a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a29b0 size=0xa2
+#include "C_BaseEntity.h"
+
+struct CGlobalVarsV
+{
+	char m_pad00;
+	float m_f004;
+	float m_f008;
+	float curtime;    // +0xc
+	float frametime;  // +0x10
+};
+extern CGlobalVarsV *g_102b8494;
+
+struct CBaseEntThinkView
+{
+	char m_pad0000[0x78];
+	float m_flNextThink;  // +0x78
+	float m_flThinkTime;  // +0x7c
+};
+
+struct CThinkFn
+{
+	void (C_BaseEntity::*pfn)();
+	int a;
+	int b;
+};
+struct CThinkHelper
+{
+	void sub_1011ac90(CThinkFn fn);
+};
+
+// TARGET: C_BaseEntity::sub_100a29b0
+bool C_BaseEntity::sub_100a29b0(int)
+{
+	CBaseEntThinkView *p = (CBaseEntThinkView *)this;
+	float flNextThink = p->m_flNextThink;
+	if (flNextThink <= 0.0f)
+		return true;
+	if (g_102b8494->curtime + g_102b8494->frametime < flNextThink)
+		return true;
+	if (flNextThink < g_102b8494->curtime)
+		flNextThink = g_102b8494->curtime;
+
+	p->m_flNextThink = 0;
+	float flSavedCurtime = g_102b8494->curtime;
+	g_102b8494->curtime = flNextThink;
+	CThinkFn tf = { &C_BaseEntity::sub_100a36e0, 0, 0 };
+	((CThinkHelper *)this)->sub_1011ac90(tf);
+	p->m_flThinkTime = flNextThink;
+	g_102b8494->curtime = flSavedCurtime;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2a60 size=0x17
 struct CUnknown100a2a60 { int sub_100a2a60(int); };
 int CUnknown100a2a60::sub_100a2a60(int a0)
