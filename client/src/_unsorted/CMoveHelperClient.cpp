@@ -62,6 +62,43 @@ void CMoveHelperClient::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f530 size=0x7b
+#include "Vector.h"
+#include "CWaterEnum.h"
+#include "CMoveHelperClient.h"
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+
+struct IEngine {
+	V10(a)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8();
+	virtual int vfunc19(int, Vector *);
+};
+extern IEngine *g_104a57d4;
+
+struct IPartition {
+	V10(a)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void vfunc15(int, Vector *, int, CWaterEnum *);
+};
+extern IPartition *g_104a5808;
+
+// TARGET: CMoveHelperClient::vfunc16
+int CMoveHelperClient::vfunc16(Vector *p)
+{
+	int result = g_104a57d4->vfunc19(0, p);
+	if (result & 1)
+		return result;
+	CWaterEnum water;
+	water.m_vecPoint = *p;
+	water.m_nContents = 0;
+	water.m_pEntIndex = 0;
+	g_104a5808->vfunc15(4, p, 0, &water);
+	return water.m_nContents == 0 ? result : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f670 size=0x3
 // TARGET: sub_1010f670
 void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, int, int)
