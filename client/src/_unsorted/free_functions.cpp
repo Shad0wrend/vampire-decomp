@@ -76618,6 +76618,38 @@ int CClanNames::sub_10144f40(const char *pszName, int *pSubId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145000 size=0x8d
+#include "CUnknown101d7ec0.h"
+#include "CStatDefault3List.h"
+extern CStatDefault3List g_105e74fc;
+
+bool CUnknown101d7ec0::sub_10145000(int a1, int idx, CUnknown101d7ec0_Check *c)
+{
+	if (sub_10144f20(c->m_iEntry)) {
+		int val = g_105e74fc.sub_10140000(idx)->m_8c[0];
+		switch (m_pEntries[c->m_iEntry].m_nType) {
+		case 0:
+			if (!(c->m_nFlags & 1)) {
+				if (idx == c->m_nValue)
+					return true;
+			} else if (idx != c->m_nValue)
+				return true;
+			break;
+		case 1:
+			if (!(c->m_nFlags & 1)) {
+				if (val == c->m_nValue)
+					return true;
+			} else if (val != c->m_nValue)
+				return true;
+			break;
+		case 2:
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145090 size=0x61
 #include "CUnknown101d7ec0.h"
 
