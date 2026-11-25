@@ -60,6 +60,19 @@ void CHudDialog::vfunc97()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054550 size=0x75
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+void CHudDialog::SetDrawLastPickEnabled(bool bEnabled)
+{
+    ScopeTrace trace("CHudDialog::SetDrawLastPickEnabled", "", "");
+    if (*(bool *)((char *)this + 0x1b3) != bEnabled)
+        *(char *)((char *)this + 0x190) = 1;
+    *(bool *)((char *)this + 0x1b3) = bEnabled;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054b50 size=0x7
 #include "CHudDialog.h"
 bool CHudDialog::vfunc116()
