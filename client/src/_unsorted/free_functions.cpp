@@ -17147,6 +17147,60 @@ void * CUnknown10040630::sub_10040630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040680 size=0x79
+#include "CClientEntityList.h"
+#include "C_EnvParticle.h"
+
+extern CClientEntityList *g_102b8e9c;
+extern C_EnvParticle *sub_100b4820(int idx, int a1, int a2, int a3, int a4, int a5, float f1, float f2, float f3, float f4);
+
+struct Ent_10040680
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42();
+	virtual int vfunc43();
+	virtual void v44();
+	virtual int vfunc45();
+	char pad[0x404 - 4];
+	int m_n404;
+};
+
+struct Fx_10040680
+{
+	int m_n0; int m_n4; int m_n8;
+	int m_nC; int m_n10; int m_n14; char m_b18;
+	void sub_10040680(int);
+};
+
+struct Part_10040680
+{
+	char pad[0x4b8];
+	char m_b4b8;
+	void sub_100af150();
+};
+
+void Fx_10040680::sub_10040680(int)
+{
+	Ent_10040680 *ent = (Ent_10040680 *)g_102b8e9c->sub_100d0cf0(m_nC);
+	if (ent && ent->m_n404)
+	{
+		Part_10040680 *p = (Part_10040680 *)sub_100b4820(m_n10, ent->vfunc43(), ent->vfunc45(), (int)ent, m_n14, 0, 1.0f, 1.0f, 1.0f, 1.0f);
+		if (p)
+		{
+			p->m_b4b8 = m_b18;
+			p->sub_100af150();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040720 size=0x6
 namespace lifted {
 extern char g_103ec2c4;

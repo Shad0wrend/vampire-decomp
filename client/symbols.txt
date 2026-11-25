@@ -2353,6 +2353,7 @@
 0x10040540 func   ?ClientClassInit@@YAHPAUignored@DT_TETParticleAttached@@@Z ClientClassInit
 0x10040630 func   ?sub_10040630@CUnknown10040630@@QAEPAXXZ CUnknown10040630::sub_10040630
 0x10040660 func   ??_GC_TETParticleHUD@@UAEPAXI@Z ??_GC_TETParticleHUD@@UAEPAXI@Z
+0x10040680 func   ?sub_10040680@Fx_10040680@@QAEXH@Z Fx_10040680::sub_10040680
 0x10040700 func   ?vfunc9@C_TETParticleHUD@@UAEHXZ C_TETParticleHUD::vfunc9
 0x10040710 func   ?vfunc8@C_TETParticleHUD@@UAEHXZ C_TETParticleHUD::vfunc8
 0x10040720 func   ?sub_10040720@@YAHXZ sub_10040720
