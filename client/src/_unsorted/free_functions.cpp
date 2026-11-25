@@ -81212,6 +81212,30 @@ void CUnknown1014add0::sub_1014add0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ae20 size=0x9b
+#include "string_t.h"
+#include "CVStatInfo_t.h"
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+string_t sub_1015fc40(const char *psz);
+string_t sub_1015f7e0(CVStatKV *kv, const char *key);
+struct VFeat1014ae20 {
+	int m00; string_t m04; string_t m08; int m0c; string_t m10; string_t m14;
+	void sub_1014ae20(CVStatKV *kv);
+};
+void VFeat1014ae20::sub_1014ae20(CVStatKV *kv)
+{
+	if (kv) {
+		m14 = sub_1015fc40(kv->vfunc13("Name", ""));
+		m04 = sub_1015f7e0(kv, "InternalName");
+		m08 = sub_1015fc40(kv->vfunc13("HelpText", ""));
+		if (kv->vfunc10("Disabled", 0))
+			m0c |= 1;
+	} else {
+		Msg("Unable to load VFeat data\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b580 size=0x5
 int __stdcall sub_1014b580(int a0)
 {
