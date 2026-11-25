@@ -103502,6 +103502,47 @@ int CUnknown101beb70::sub_101beb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bfbe0 size=0x7d
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+struct ItemVec {
+	int m_unk0, m_Size, m_unk8;
+	vgui2::MenuItem **m_pData;
+	int Count() const { return m_Size; }
+	bool IsIdxValid(int i) const { return (i >= 0) && (i < m_Size); }
+	vgui2::MenuItem *&operator[](int i) { return m_pData[i]; }
+};
+struct MenuV {
+	int m_pad[0x58 / 4];
+	int m_i58;
+	int m_i5c;
+	ItemVec m_Items;
+	int m_unk70, m_unk74;
+	int m_i78;
+	char m_c7c;
+	void sub_101bfbe0();
+};
+void MenuV::sub_101bfbe0()
+{
+	if (m_c7c) {
+		m_i78 = 0;
+		if (m_i58 == 0) {
+			ItemVec *v = &m_Items;
+			for (int i = 0; i < v->Count(); i++) {
+				vgui2::MenuItem *item = m_Items.IsIdxValid(i) ? m_Items[i] : 0;
+				int wide, tall;
+				item->vfunc110(&wide, &tall);
+				if (wide > m_i78 - 8)
+					m_i78 = wide + 8;
+			}
+		}
+		if (m_i78 < m_i5c)
+			m_i78 = m_i5c;
+		m_c7c = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0080 size=0x4f
 #include "vgui2__Menu.h"
 
