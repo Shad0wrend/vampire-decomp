@@ -35481,6 +35481,111 @@ int __stdcall sub_10095bb0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095d00 size=0x222
+#include <float.h>
+#include "C_BaseAnimating.h"
+#include "matrix3x4_t.h"
+
+struct mstudiobbox_t
+{
+	int bone;
+	int group;
+	Vector bbmin;
+	Vector bbmax;
+};
+
+struct mstudiohitboxset_t
+{
+	int sznameindex;
+	int numhitboxes;
+	int hitboxindex;
+	inline mstudiobbox_t *pHitbox(int i) const { return (mstudiobbox_t *)(((unsigned char *)this) + hitboxindex) + i; }
+};
+
+struct studiohdr_t
+{
+	char pad[0x104];
+	int hitboxsetindex;
+	inline mstudiohitboxset_t *pHitboxSet(int i) const
+	{
+		return (mstudiohitboxset_t *)(((unsigned char *)this) + hitboxsetindex) + i;
+	}
+};
+
+struct IVModelInfoView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual studiohdr_t *GetStudiomodel(const model_t *mod);
+};
+
+struct CGlobalVarsView
+{
+	int pad[3];
+	float curtime;
+};
+
+extern IVModelInfoView *g_104a57f8;
+extern CGlobalVarsView *g_102b8494;
+
+void *sub_1008b5f0(studiohdr_t *pStudioHdr, int sequence, float animtime, const QAngle &angles, const Vector &origin, int boneMask);
+void *sub_1008b890(studiohdr_t *pStudioHdr, int sequence, float animtime, const QAngle &angles, const Vector &origin, int boneMask, matrix3x4_t *bonetoworld);
+void sub_1008b560(matrix3x4_t **hitboxbones, void *pcache, studiohdr_t *pStudioHdr, mstudiohitboxset_t *set);
+void sub_1010b210(const matrix3x4_t &transform, const Vector &vecMinsIn, const Vector &vecMaxsIn, Vector &vecMinsOut, Vector &vecMaxsOut);
+
+struct CBaseAnimatingView
+{
+	char pad0[0x70];
+	float m_flAnimTime;
+	char pad1[0x564 - 0x74];
+	int m_nHitboxSet;
+	char pad2[0x63c - 0x568];
+	int m_nSequence;
+	inline int GetSequence() const { return m_nSequence; }
+};
+
+// TARGET: C_BaseAnimating::sub_10095d00
+bool C_BaseAnimating::sub_10095d00(Vector *pVecWorldMins, Vector *pVecWorldMaxs)
+{
+	studiohdr_t *pStudioHdr = g_104a57f8->GetStudiomodel(GetModel());
+	if (!pStudioHdr)
+		return false;
+
+	CBaseAnimatingView *v = (CBaseAnimatingView *)this;
+	mstudiohitboxset_t *set = pStudioHdr->pHitboxSet(v->m_nHitboxSet);
+	if (!set || !set->numhitboxes)
+		return false;
+
+	int boneMask = 0xc;
+	void *pcache = sub_1008b5f0(pStudioHdr, v->GetSequence(), v->m_flAnimTime, GetAbsAngles(), GetAbsOrigin(), boneMask);
+	if (!pcache)
+	{
+		matrix3x4_t bonetoworld[350];
+		SetupBones(bonetoworld, 350, boneMask, g_102b8494->curtime, 0);
+		pcache = sub_1008b890(pStudioHdr, v->GetSequence(), v->m_flAnimTime, GetAbsAngles(), GetAbsOrigin(), boneMask, bonetoworld);
+	}
+	matrix3x4_t *hitboxbones[350];
+	sub_1008b560(hitboxbones, pcache, pStudioHdr, set);
+
+	pVecWorldMins->Init(FLT_MAX, FLT_MAX, FLT_MAX);
+	pVecWorldMaxs->Init(-FLT_MAX, -FLT_MAX, -FLT_MAX);
+
+	for (int i = 0; i < set->numhitboxes; i++)
+	{
+		mstudiobbox_t *pbox = set->pHitbox(i);
+		Vector worldMins, worldMaxs;
+		sub_1010b210(*hitboxbones[pbox->bone], pbox->bbmin, pbox->bbmax, worldMins, worldMaxs);
+		VectorMin(*pVecWorldMins, worldMins, *pVecWorldMins);
+		VectorMax(*pVecWorldMaxs, worldMaxs, *pVecWorldMaxs);
+	}
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095f30 size=0x58
 struct CGlobalVarsBase_10095f30
 {
