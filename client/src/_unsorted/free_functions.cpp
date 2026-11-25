@@ -59176,6 +59176,22 @@ bool sub_101100b0(CKeyValuesX *kv, const char *pKey, int *r, int *g, int *b, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110140 size=0x56
+bool sub_101100b0(void *kv, const char *pKey, int *r, int *g, int *b, int *a);
+// TARGET: sub_10110140
+bool sub_10110140(void *kv, const char *pKey, unsigned char *pOut)
+{
+	int r, g, b, a;
+	if (!sub_101100b0(kv, pKey, &r, &g, &b, &a))
+		return false;
+	pOut[0] = r;
+	pOut[1] = g;
+	pOut[2] = b;
+	pOut[3] = a;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10110290 size=0x9d
 #include "CKeyValuesX.h"
 extern "C" int sscanf(const char *, const char *, ...);
