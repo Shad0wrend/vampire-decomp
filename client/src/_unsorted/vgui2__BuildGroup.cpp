@@ -403,6 +403,40 @@ next:;
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2a20 size=0xd2
+#include "vgui2__BuildGroup.h"
+#include "vgui2__Panel.h"
+
+void *__fastcall sub_101ac670(void *pSlot);
+bool __fastcall sub_101aab80(void *p);
+
+void vgui2::BuildGroup::vfunc7()
+{
+	int i;
+	for (i = 0; i < m_Controls.Count(); i++)
+	{
+		if (sub_101aab80(sub_101ac670(&m_Controls[i])))
+		{
+			vgui2::Panel *p = (vgui2::Panel *)sub_101ac670(&m_Controls[i]);
+			if (p)
+				delete p;
+			m_Controls.Remove(i);
+			i--;
+		}
+	}
+	for (i = 0; i < m_Panels.Count(); i++)
+	{
+		if (sub_101ac670(&m_Panels[i]) != 0)
+			continue;
+		m_Panels.Remove(i);
+		i--;
+	}
+	m_unk3c = m_unk5c;
+	vfunc18();
+	((vgui2::Panel *)m_unk5c)->vfunc6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b00 size=0xa
 #include "vgui2__BuildGroup.h"
 int vgui2::BuildGroup::vfunc8(int a0)
