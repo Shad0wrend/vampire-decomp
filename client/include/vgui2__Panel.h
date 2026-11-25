@@ -29,7 +29,7 @@ public:
 	char m_c19; char m_c1a; char m_c1b;
 	int m_unk1c[(0x58 - 0x1c) / 4];
 	void *m_p58;
-	int m_unk5c[(0x70 - 0x5c) / 4];
+	union { int m_unk5c[(0x70 - 0x5c) / 4]; char *m_psz5c; };
 	int m_i70;
 	int m_i74;
 	int m_unk78;
