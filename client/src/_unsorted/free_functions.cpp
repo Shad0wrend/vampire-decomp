@@ -86781,6 +86781,21 @@ void sub_1015a840(int callback)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a8a0 size=0x7d
+#include "ScopeTrace.h"
+struct VStatActionV;
+extern void (*g_105f9398)(VStatActionV *, int, int, int, int);
+struct VStatActionV {
+	void sub_1015a8a0(int a, int b, int c, int d);
+};
+void VStatActionV::sub_1015a8a0(int a, int b, int c, int d)
+{
+	ScopeTrace trace("CVStatAction_t::Apply", g_102de300);
+	if (g_105f9398)
+		g_105f9398(this, a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a920 size=0x78
 #include "ScopeTrace.h"
 
