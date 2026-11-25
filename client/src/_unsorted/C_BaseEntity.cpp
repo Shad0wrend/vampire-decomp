@@ -584,6 +584,56 @@ bool C_BaseEntity::vfunc57(int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fd30 size=0xf7
+#include <math.h>
+#include "C_BaseEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct IVModelInfo_104a57f8
+{
+	virtual void v0() = 0;
+	virtual void v1() = 0;
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual void v4() = 0;
+	virtual void v5() = 0;
+	virtual int GetModelType(const model_t *model) const = 0;
+	virtual void v7() = 0;
+	virtual bool IsTranslucent(const model_t *model) const = 0;
+};
+
+extern IVModelInfo_104a57f8 *g_104a57f8;
+
+struct CBaseEntityModelView
+{
+	char pad[0x40];
+	const model_t *m_model;
+};
+
+bool C_BaseEntity::vfunc79()
+{
+	if (g_104a57f8->GetModelType(((CBaseEntityModelView *)this)->m_model) != 1)
+		return false;
+
+	if (IsTransparent())
+		return false;
+
+	if (GetAbsOrigin().x != 0.0f || GetAbsOrigin().y != 0.0f || GetAbsOrigin().z != 0.0f)
+		return false;
+
+	if (fmod(GetAbsAngles().x, 360.0) != 0.0 ||
+		fmod(GetAbsAngles().y, 360.0) != 0.0 ||
+		fmod(GetAbsAngles().z, 360.0) != 0.0)
+		return false;
+
+	if (g_104a57f8->IsTranslucent(((CBaseEntityModelView *)this)->m_model))
+		return false;
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fe30 size=0x7a
 #include "C_BaseEntity.h"
 
