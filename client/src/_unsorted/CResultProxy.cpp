@@ -23,3 +23,37 @@ CResultProxy *pcd_emit_100e32e0(const CResultProxy &other) { return new CResultP
 
 // TARGET: ??_GCResultProxy@@UAEPAXI@Z
 // END FUNCTION
+
+// FUNCTION: 0x100e3310 size=0xae
+#include "CResultProxy.h"
+#include "CKeyValuesX.h"
+extern "C" char *strchr(const char *, int);
+extern "C" long strtol(const char *, char **, int);
+extern int (*g_101e3188)(char *, const char *, int);
+struct IMaterialV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void *FindVar(const char *name, bool *found, bool complain); };
+struct CResultView { int vt; void *m_pResult; int m_Index; };
+bool CResultProxy::vfunc0(void *pMaterial, void *pKeyValues)
+{
+	CKeyValuesX *kv = (CKeyValuesX *)pKeyValues;
+	IMaterialV *mat = (IMaterialV *)pMaterial;
+	CResultView *self = (CResultView *)this;
+	char str[256];
+	bool found;
+	const char *pVarName = kv->sub_10128590("resultVar", "");
+	if (!pVarName)
+		return false;
+	if (strchr(pVarName, '[')) {
+		g_101e3188(str, pVarName, 256);
+		char *pIndex = strchr(str, '[');
+		*pIndex = 0;
+		pIndex++;
+		char *end;
+		self->m_Index = strtol(pIndex, &end, 10);
+		pVarName = str;
+	} else {
+		self->m_Index = -1;
+	}
+	self->m_pResult = mat->FindVar(pVarName, &found, true);
+	return (bool)(found != false);
+}
+// END FUNCTION

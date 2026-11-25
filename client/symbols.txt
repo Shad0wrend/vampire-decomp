@@ -5049,6 +5049,7 @@
 0x100e32e0 func   ??_GCResultProxy@@UAEPAXI@Z ??_GCResultProxy@@UAEPAXI@Z
 0x100e3300 func   ??1IMaterialProxy@@UAE@XZ IMaterialProxy::~IMaterialProxy
 0x100e3300 func   ?sub_100e3300@CUnknown100e3300@@QAEXXZ CUnknown100e3300::sub_100e3300
+0x100e3310 func   ?vfunc0@CResultProxy@@UAE_NPAX0@Z CResultProxy::vfunc0
 0x100e3460 func   ??0CFunctionProxy@@QAE@XZ CFunctionProxy::CFunctionProxy
 0x100e3480 func   ??_GCFunctionProxy@@UAEPAXI@Z ??_GCFunctionProxy@@UAEPAXI@Z
 0x100e34a0 func   ??1CFunctionProxy@@UAE@XZ CFunctionProxy::~CFunctionProxy
