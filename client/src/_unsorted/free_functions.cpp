@@ -34076,6 +34076,51 @@ void CollView::sub_10094090(int a, int b) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100940d0 size=0x7b
+#include "C_BaseAnimating.h"
+
+struct StudioModelView
+{
+	char m_pad0[0x110];
+	int m_n110;
+	char m_pad2[0x194 - 0x114];
+	int m_n194;
+	int m_n198;
+};
+
+int C_BaseAnimating::sub_100940d0(int index, int *pOut)
+{
+	int offset = 0;
+
+	for (int i = -1; i < 2; i++)
+	{
+		StudioModelView *m = (StudioModelView *)sub_1008f900(i);
+		if (!m)
+			continue;
+
+		int size;
+		if (m->m_n194)
+		{
+			size = *(int *)((char *)m + m->m_n194 * 116 + m->m_n198 - 0x68)
+				+ *(int *)((char *)m + m->m_n194 * 116 + m->m_n198 - 0x6c);
+		}
+		else
+		{
+			size = m->m_n110;
+		}
+
+		if (index >= offset && index < offset + size)
+		{
+			*pOut = index - offset;
+			return i;
+		}
+		offset += size;
+	}
+
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094860 size=0x27
 namespace lifted {
 int __stdcall sub_100a0240(int);
