@@ -22,7 +22,7 @@ public:
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual void vfunc9(void *pSound);
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void vfunc12();
