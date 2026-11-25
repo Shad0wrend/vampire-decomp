@@ -104015,6 +104015,28 @@ void VRend::sub_1018aef0(Vector &absMins, Vector &absMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b010 size=0x4e
+#include <string.h>
+struct StudioHdr;
+struct CAnimState {
+    int m_unk0; int m_unk4; char *m_pName; int m_nSeq;
+    int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
+    float m_flCycle;
+    int m_unk34[13];
+    StudioHdr *m_pHdr;
+    void sub_1018b060();
+    void sub_1018b010(const char *name);
+};
+void CAnimState::sub_1018b010(const char *name)
+{
+    delete m_pName;
+    int len = strlen(name);
+    m_pName = new char[len + 1];
+    memcpy(m_pName, name, len + 1);
+    sub_1018b060();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b060 size=0xac
 extern "C" int _strcmpi(const char *, const char *);
 struct StudioHdr;
