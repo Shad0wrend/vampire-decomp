@@ -18194,6 +18194,21 @@ int CUnknown10044070::sub_10044070(char a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100442b0 size=0x12
+struct CUnknown10044460_Outer { char m_pad[0x184]; unsigned int m_flags184; };
+struct CUnknown10044460 {
+	char m_pad0000[0x3c];
+	CUnknown10044460_Outer *m_pOuter;
+	void sub_10044460();
+	void sub_100442b0();
+};
+void CUnknown10044460::sub_100442b0()
+{
+	m_pOuter->m_flags184 |= 0x14000;
+	sub_10044460();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100442d0 size=0x70
 #include "CCollisionProperty.h"
 
