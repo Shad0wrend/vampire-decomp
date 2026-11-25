@@ -801,6 +801,33 @@ void C_BaseCombatWeapon::vfunc171(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bf50 size=0xa9
+#include "C_BaseCombatWeapon.h"
+
+void C_BaseCombatWeapon::vfunc211(int seqType, float rate)
+{
+	int seq = sub_10095b90(seqType, -1, -1);
+	if (seq == -1)
+	{
+		seq = sub_10095b90(0xb6, -1, -1);
+		if (seq == -1)
+			return;
+	}
+	*(int *)((char *)this + 0x63c) = seq;
+	*(int *)((char *)this + 0x92c) = seqType;
+	*(int *)((char *)this + 0x648) = 0;
+	sub_10095880();
+	if (rate > 0.0f)
+	{
+		float v = sub_10095910(seq, (char *)this + 0x5d4) / rate;
+		*(float *)((char *)this + 0x640) = v;
+		*(float *)((char *)this + 0x640) = (v < 12.0) ? v : 12.0;
+	}
+	else
+		*(float *)((char *)this + 0x640) = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c000 size=0x8
 #include "C_BaseCombatWeapon.h"
 int C_BaseCombatWeapon::vfunc174(int a0)
