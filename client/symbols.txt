@@ -6343,6 +6343,7 @@
 0x10142e30 func   ?sub_10142e30@CUnknown10142e30@@QAEHH@Z CUnknown10142e30::sub_10142e30
 0x10142e50 func   ??0CUnknown10142e50@@QAE@H@Z CUnknown10142e50::CUnknown10142e50
 0x10142e50 func   ?sub_10142e50@CUnknown10142e50@@QAEPAXH@Z CUnknown10142e50::sub_10142e50
+0x10142e70 func   ??1CUnknown10142e50@@QAE@XZ CUnknown10142e50::~CUnknown10142e50
 0x10142e80 func   ?sub_10142e80@@YIPAHPAUGrowView@@H@Z sub_10142e80
 0x10142ee0 func   ?sub_10142ee0@Buf_10142ee0@@QAEXXZ Buf_10142ee0::sub_10142ee0
 0x10142ff0 func   ?sub_10142ff0@@YIXPAUVObjView@@@Z sub_10142ff0
