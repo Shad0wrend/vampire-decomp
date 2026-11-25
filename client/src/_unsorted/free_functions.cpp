@@ -104757,6 +104757,27 @@ void vgui2::BuildModeDialog::sub_101c3bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3c10 size=0x83
+#include <ctype.h>
+extern char g_1067b420[];
+// TARGET: sub_101c3c10
+char *sub_101c3c10(const char **ppStr)
+{
+	g_1067b420[0] = 0;
+	const char *p = *ppStr;
+	while (!isalnum(*p) && *p)
+		p++;
+	int n = 0;
+	while (isalnum(p[n])) {
+		g_1067b420[n] = p[n];
+		n++;
+	}
+	g_1067b420[n] = 0;
+	*ppStr = p + n;
+	return g_1067b420;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c45b0 size=0x43
 #include "vgui2__TextEntry.h"
 extern "C" int __cdecl atoi(const char *);
