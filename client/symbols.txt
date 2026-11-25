@@ -5504,6 +5504,7 @@
 0x100ff0a0 func   ?sub_100ff0a0@CInput@@QAEDPAUCUnkPlayer@@@Z CInput::sub_100ff0a0
 0x100ff7c0 func   ?vfunc34@CInput@@UAEHXZ CInput::vfunc34
 0x100ff7e0 func   ?vfunc35@CInput@@UAEHXZ CInput::vfunc35
+0x100ff800 func   ?vfunc36@CInput@@UAEXXZ CInput::vfunc36
 0x100ff900 func   ?vfunc37@CInput@@UAEXXZ CInput::vfunc37
 0x100ff910 func   ?vfunc38@CInput@@UAEXXZ CInput::vfunc38
 0x100ff920 func   ?vfunc39@CInput@@UAEXXZ CInput::vfunc39

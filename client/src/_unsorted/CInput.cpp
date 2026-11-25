@@ -61,6 +61,133 @@ int CInput::vfunc35()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff800 size=0xf2
+#include "CInput.h"
+
+struct SelfV
+{
+	char pad0[0xf0];
+	char m_f0;		// 0xf0
+	char pad1[7];
+	char m_f8;		// 0xf8
+};
+
+class ConVarV
+{
+public:
+	void sub_100dfa90(int);
+};
+
+class PlayerV
+{
+public:
+	void sub_1009c2e0(char b);
+	void sub_1009c250();
+	int sub_1007b160();
+};
+
+class EntV
+{
+public:
+	char pad0[0x24d0];
+	int m_x24d0;			// 0x24d0
+	char pad1[0x4fe84 - 0x24d4];
+	int m_x4fe84;			// 0x4fe84
+};
+
+class GameSysV
+{
+public:
+	virtual void d000(); virtual void d001(); virtual void d002(); virtual void d003(); virtual void d004();
+	virtual void d005(); virtual void d006(); virtual void d007(); virtual void d008(); virtual void d009();
+	virtual void d010(); virtual void d011(); virtual void d012(); virtual void d013(); virtual void d014();
+	virtual void d015(); virtual void d016(); virtual void d017(); virtual void d018(); virtual void d019();
+	virtual void d020(); virtual void d021(); virtual void d022(); virtual void d023(); virtual void d024();
+	virtual void d025(); virtual void d026(); virtual void d027(); virtual void d028(); virtual void d029();
+	virtual void d030(); virtual void d031(); virtual void d032(); virtual void d033(); virtual void d034();
+	virtual void d035(); virtual void d036(); virtual void d037(); virtual void d038(); virtual void d039();
+	virtual void d040(); virtual void d041(); virtual void d042(); virtual void d043(); virtual void d044();
+	virtual void d045(); virtual void d046(); virtual void d047(); virtual void d048(); virtual void d049();
+	virtual void d050(); virtual void d051(); virtual void d052(); virtual void d053(); virtual void d054();
+	virtual void d055(); virtual void d056(); virtual void d057(); virtual void d058(); virtual void d059();
+	virtual void d060(); virtual void d061(); virtual void d062(); virtual void d063(); virtual void d064();
+	virtual void d065(); virtual void d066(); virtual void d067(); virtual void d068(); virtual void d069();
+	virtual void d070(); virtual void d071(); virtual void d072(); virtual void d073(); virtual void d074();
+	virtual void d075(); virtual void d076(); virtual void d077(); virtual void d078(); virtual void d079();
+	virtual void d080(); virtual void d081(); virtual void d082(); virtual void d083(); virtual void d084();
+	virtual void d085(); virtual void d086(); virtual void d087(); virtual void d088(); virtual void d089();
+	virtual void d090(); virtual void d091(); virtual void d092(); virtual void d093(); virtual void d094();
+	virtual void d095(); virtual void d096(); virtual void d097(); virtual void d098(); virtual void d099();
+	virtual void d100(); virtual void d101(); virtual void d102(); virtual void d103(); virtual void d104();
+	virtual void d105(); virtual void d106(); virtual void d107(); virtual void d108(); virtual void d109();
+	virtual void d110(); virtual void d111(); virtual void d112(); virtual void d113(); virtual void d114();
+	virtual void d115(); virtual void d116(); virtual void d117(); virtual void d118(); virtual void d119();
+	virtual void d120(); virtual void d121(); virtual void d122(); virtual void d123(); virtual void d124();
+	virtual void d125(); virtual void d126(); virtual void d127(); virtual void d128(); virtual void d129();
+	virtual void d130(); virtual void d131(); virtual void d132(); virtual void d133(); virtual void d134();
+	virtual void d135(); virtual void d136(); virtual void d137(); virtual void d138(); virtual void d139();
+	virtual void d140(); virtual void d141(); virtual void d142(); virtual void d143(); virtual void d144();
+	virtual void d145(); virtual void d146(); virtual void d147();
+	virtual int slot148();
+};
+
+class EngineV
+{
+public:
+	virtual void e000(); virtual void e001(); virtual void e002(); virtual void e003(); virtual void e004();
+	virtual void e005(); virtual void e006(); virtual void e007(); virtual void e008(); virtual void e009();
+	virtual void e010(); virtual void e011(); virtual void e012(); virtual void e013(); virtual void e014();
+	virtual void e015(); virtual void e016(); virtual void e017(); virtual void e018(); virtual void e019();
+	virtual void e020(); virtual void e021(); virtual void e022(); virtual void e023(); virtual void e024();
+	virtual void e025(); virtual void e026();
+	virtual void ClientCmd(const char *cmd, int a);
+};
+
+extern char g_104d2700[];
+extern GameSysV *g_104a0d50;
+extern EngineV *g_104a57d4;
+int sub_1009b210();
+
+// TARGET: CInput::vfunc36
+void CInput::vfunc36()
+{
+	SelfV *self = (SelfV *)this;
+	((ConVarV *)g_104d2700)->sub_100dfa90(0);
+	GameSysV *gp = g_104a0d50;
+	self->m_f0 = (self->m_f0 == 0);
+	int p = sub_1009b210();
+	if ( p )
+	{
+		((PlayerV *)p)->sub_1009c2e0(self->m_f0);
+		((PlayerV *)p)->sub_1009c250();
+		if ( ((PlayerV *)p)->sub_1007b160() )
+		{
+			if ( ((EntV *)((PlayerV *)p)->sub_1007b160())->m_x4fe84 > 0 )
+				g_104a57d4->ClientCmd("force_sniper_third_person", 1);
+		}
+	}
+	else
+	{
+		self->m_f0 = 0;
+	}
+	if ( self->m_f8 && gp )
+	{
+		if ( gp->slot148() )
+		{
+			if ( ((PlayerV *)gp->slot148())->sub_1007b160() )
+			{
+				if ( ((EntV *)((PlayerV *)gp->slot148())->sub_1007b160())->m_x24d0 == 0 )
+				{
+					g_104a57d4->ClientCmd("inven_holster", 1);
+					self->m_f0 = 0;
+					self->m_f8 = 0;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff900 size=0x8
 #include "CInput.h"
 void CInput::vfunc37()
