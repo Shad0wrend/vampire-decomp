@@ -469,6 +469,50 @@ int CTempEnts::vfunc6(int a0, int a1, int a2, int a3, char a4, int a5, int a6, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ccd0 size=0xb0
+#include "CTempEnts.h"
+struct CVAll
+{
+	void sub_1003a840(int, int, int);
+	void sub_1009f6c0(int, float);
+	void sub_1009f680(int, float);
+};
+float __stdcall sub_1009f670(int);
+struct IRandomView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int, int);
+};
+extern IRandomView *g_104a5738;
+// TARGET: CTempEnts::vfunc10
+void CTempEnts::vfunc10(C_LocalTempEntity *pEnt, int n, int flags)
+{
+	if (!pEnt)
+		return;
+	CVAll *e = (CVAll *)pEnt;
+	if (flags & 1) {
+		*(int *)((char *)pEnt + 0x48) = 0;
+		((unsigned char *)pEnt)[0x53] = 0xff;
+	} else {
+		((unsigned char *)pEnt)[0x53] = 0xb4;
+		if (flags & 0x10)
+			*(int *)((char *)pEnt + 0x48) = 4;
+		else
+			*(int *)((char *)pEnt + 0x48) = 5;
+	}
+	if (flags & 0x20)
+		e->sub_1009f6c0(2, (float)g_104a5738->RandomInt(0, 360));
+	*(int *)((char *)pEnt + 0x4c) = 0;
+	e->sub_1003a840(0, 0, 0x41000000);
+	((unsigned char *)pEnt)[0x50] = 0xff;
+	((unsigned char *)pEnt)[0x51] = 0xff;
+	((unsigned char *)pEnt)[0x52] = 0xff;
+	e->sub_1009f680(2, sub_1009f670(2) + 10.0f);
+	pEnt->m_unk7f0 = n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003d5e0 size=0x23
 #include "CTempEnts.h"
 // TARGET: ?vfunc1@CTempEnts@@UAEXXZ
