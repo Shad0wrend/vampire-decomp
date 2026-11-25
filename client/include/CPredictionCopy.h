@@ -19,4 +19,6 @@ public:
 	char sub_10123470();
 	int sub_10123bd0(const float *outvalue, const float *invalue, int count);
 	int sub_10123cd0(const char *, const char *);
+	void sub_10123630(int dt, bool *outvalue, const bool *invalue, int count);
+	void sub_101233b0(int dt, const char *fmt, ...);
 };
