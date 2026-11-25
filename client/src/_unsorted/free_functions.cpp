@@ -91215,6 +91215,21 @@ void StatCallback::sub_1014d510(char *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d590 size=0xf7
+#include "CVFeatList_t.h"
+#include "C_BaseVCombatCharacter.h"
+
+// TARGET: CVFeatList_t::sub_1014d590
+float CVFeatList_t::sub_1014d590(C_BaseVCombatCharacter *p)
+{
+	CVStatList_t *list = p->m_StatListManager.Find(0);
+	int n = (int)vfunc5(list->sub_1015dbd0(1) - 1);
+	CVStatList_t *list2 = p->m_StatListManager.Find(0);
+	int d = list2->sub_1015dbd0(0x1a);
+	return (float)(d / n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d760 size=0x7
 struct CUnknown1014d760 { float sub_1014d760(); };
 float CUnknown1014d760::sub_1014d760()

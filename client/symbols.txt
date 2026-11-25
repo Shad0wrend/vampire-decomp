@@ -7139,6 +7139,7 @@
 0x1014d410 func   ?sub_1014d410@StatNotifier@@QAEXPAUCharView@@@Z StatNotifier::sub_1014d410
 0x1014d490 func   ?sub_1014d490@StatCallback@@QAEXPAD@Z StatCallback::sub_1014d490
 0x1014d510 func   ?sub_1014d510@StatCallback@@QAEXPAD@Z StatCallback::sub_1014d510
+0x1014d590 func   ?sub_1014d590@CVFeatList_t@@QAEMPAVC_BaseVCombatCharacter@@@Z CVFeatList_t::sub_1014d590
 0x1014d690 func   ?vfunc0@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc0
 0x1014d6b0 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
 0x1014d6d0 func   ?sub_1014d6d0@CView@@QAEMH@Z CView::sub_1014d6d0
