@@ -60976,6 +60976,51 @@ int CUnknown10119600::sub_10119600()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119660 size=0x82
+#include "CUtlMemory12.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+struct Elem12 { int m_a, m_b, m_c; };
+struct Vec12 : CUtlMemory12 {
+	int m_Size;
+	Elem12 *m_pElements;
+	Elem12 &Element(int i) { return ((Elem12 *)m_pMemory)[i]; }
+	void GrowVector(int num)
+	{
+		if (m_Size + num > m_allocationCount)
+			sub_10119fe0(m_Size + num - m_allocationCount);
+		m_Size += num;
+		m_pElements = (Elem12 *)m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0)
+			memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(Elem12));
+	}
+	int InsertBefore(int elem, int a, int b, int c)
+	{
+		GrowVector(1);
+		ShiftElementsRight(elem, 1);
+		Elem12 *p = &Element(elem);
+		p->m_a = a;
+		p->m_b = b;
+		p->m_c = c;
+		return elem;
+	}
+	int AddToTail(int a, int b, int c) { return InsertBefore(m_Size, a, b, c); }
+};
+struct OwnerV12 {
+	char m_pad[0x1c];
+	Vec12 m_List;
+	void sub_10119660(int a, int b, int c);
+};
+void OwnerV12::sub_10119660(int a, int b, int c)
+{
+	if (a && b)
+		m_List.AddToTail(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119730 size=0x35
 namespace lifted {
 struct C1011be90 { int sub_1011be90(int); };

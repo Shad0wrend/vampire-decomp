@@ -5660,6 +5660,7 @@
 0x101194b0 func   ?sub_101194b0@@YGHH@Z sub_101194b0
 0x101195f0 func   ?vfunc2@CCollisionEvent@@UAEXHHHHH@Z CCollisionEvent::vfunc2
 0x10119600 func   ?sub_10119600@CUnknown10119600@@QAEHXZ CUnknown10119600::sub_10119600
+0x10119660 func   ?sub_10119660@OwnerV12@@QAEXHHH@Z OwnerV12::sub_10119660
 0x10119730 func   ?sub_10119730@@YGHHH@Z sub_10119730
 0x10119d90 func   ?sub_10119d90@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10119d90
 0x10119f60 func   ?sub_10119f60@@YAHXZ sub_10119f60
