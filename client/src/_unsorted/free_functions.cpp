@@ -53241,6 +53241,20 @@ void __stdcall sub_100e3b10(float *p, int i, int j, int k, float a, float b, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3f70 size=0x99
+#include "Vector.h"
+
+void sub_100e35f0(Vector *p1, Vector *p2, Vector *p3, int a4, void *a5);
+
+// TARGET: sub_100e3f70
+void sub_100e3f70(Vector *pos, float f, Vector *p3, int a4, void *a5)
+{
+	Vector vplus = *pos + Vector(f, f, f);
+	Vector vminus = *pos - Vector(f, f, f);
+	sub_100e35f0(&vminus, &vplus, p3, a4, a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e40f0 size=0x6
 namespace lifted {
 extern char g_104cf75c;
