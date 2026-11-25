@@ -15,6 +15,7 @@ public:
 	void sub_10002680(int);
 	bool sub_10095ac0(int idx, int arg);
 	int sub_1008f900(int index);
+	int LookupBone(const char *pszName);
 	void sub_10096c30();
 	int sub_100965d0(int, int);
 	void sub_100bdbd0(Vector &, Vector &);
