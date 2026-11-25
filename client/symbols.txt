@@ -7839,6 +7839,7 @@
 0x10186fa0 func   ?sub_10186fa0@CUnknown10186fa0@@QAEPAXHHH@Z CUnknown10186fa0::sub_10186fa0
 0x10187000 func   ??_GVMapIconButton@@UAEPAXI@Z ??_GVMapIconButton@@UAEPAXI@Z
 0x10187020 func   ??1VMapIconButton@@UAE@XZ VMapIconButton::~VMapIconButton
+0x10187070 func   ?vfunc98@VMapIconButton@@UAEXXZ VMapIconButton::vfunc98
 0x10187110 func   ?vfunc85@VMapIconButton@@UAEXXZ VMapIconButton::vfunc85
 0x10187130 func   ?vfunc86@VMapIconButton@@UAEXXZ VMapIconButton::vfunc86
 0x10187150 func   ?vfunc87@VMapIconButton@@UAEXH@Z VMapIconButton::vfunc87
