@@ -202,6 +202,33 @@ void CViewRender::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018fa30 size=0x78
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+extern void *g_102d5050;
+
+class CUnknown100cd260
+{
+public:
+	void sub_100cd260();
+};
+
+struct ViewEffectsView
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+void CViewRender::vfunc2()
+{
+	ScopeTrace trace("CViewRender::Shutdown", g_102de300);
+	((CUnknown100cd260 *)((char *)this + 0x388))->sub_100cd260();
+	((CUnknown100cd260 *)((char *)this + 0x38c))->sub_100cd260();
+	((ViewEffectsView *)g_102d5050)->v1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018fab0 size=0x5f
 #include "CViewRender.h"
 #include "ScopeTrace.h"
