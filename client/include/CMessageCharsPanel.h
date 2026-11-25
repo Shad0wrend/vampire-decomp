@@ -7,6 +7,7 @@
 class CMessageCharsPanel : public vgui2::Panel
 {
 public:
+	CMessageCharsPanel(vgui2::Panel *parent);
 	virtual ~CMessageCharsPanel();
 	void sub_10168480();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
