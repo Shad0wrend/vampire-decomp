@@ -45958,6 +45958,19 @@ void sub_100cd530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd760 size=0x93
+#include "Vector.h"
+#include "QAngle.h"
+void sub_101090a0(const QAngle &, Vector *, Vector *, Vector *);
+void sub_100cd610(int, int, Vector, Vector, Vector, Vector);
+void sub_100cd760(int a0, int a1, Vector v, QAngle ang)
+{
+	Vector fwd, right, up;
+	sub_101090a0(ang, &fwd, &right, &up);
+	sub_100cd610(a0, a1, v, fwd, right, up);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd9a0 size=0x39
 #include "C_BaseEntity.h"
 #include "IClientNetworkable.h"
