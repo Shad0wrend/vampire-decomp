@@ -32699,6 +32699,30 @@ float sub_1008c270(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c2d0 size=0x8a
+struct StudioAnimDesc { int m0; float fps; int m8; int numframes; };
+extern void (*g_101e3120)(int, const char *, ...);
+void sub_1008c060(void *hdr, int seq, const float *pose, StudioAnimDesc **panim, float *weight);
+float sub_1008c2d0(void *hdr, int iSequence, const float *poseParameter)
+{
+    StudioAnimDesc *panim[4];
+    float weight[4];
+    sub_1008c060(hdr, iSequence, poseParameter, panim, weight);
+    if (panim[0] == 0)
+    {
+        g_101e3120(2, "Studio_Duration sequence %d out of range\n", iSequence);
+        return 0.1f;
+    }
+    float t = 0.0f;
+    for (int i = 0; i < 4; i++)
+    {
+        if (weight[i] > 0.0f)
+            t += weight[i] * ((panim[i]->numframes - 1) / panim[i]->fps);
+    }
+    return t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008c360 size=0x1ce
 #include "Vector.h"
 #include "QAngle.h"
