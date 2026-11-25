@@ -8037,6 +8037,7 @@
 0x101ab2c0 func   ?vfunc53@Panel@vgui2@@UAEHH@Z vgui2::Panel::vfunc53
 0x101ab2d0 func   ?sub_101ab2d0@CUnknown101ab2d0@@QAEHXZ CUnknown101ab2d0::sub_101ab2d0
 0x101ab2f0 func   ?vfunc101@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc101
+0x101ab300 func   ?sub_101ab300@Panel@vgui2@@QAEX_N0@Z vgui2::Panel::sub_101ab300
 0x101ab380 func   ?vfunc69@Panel@vgui2@@UAE_NXZ vgui2::Panel::vfunc69
 0x101ab390 func   ?vfunc70@Panel@vgui2@@UAEXXZ vgui2::Panel::vfunc70
 0x101ab3d0 func   ?vfunc78@Panel@vgui2@@UAEXH@Z vgui2::Panel::vfunc78

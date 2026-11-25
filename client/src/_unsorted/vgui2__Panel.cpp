@@ -993,6 +993,28 @@ void vgui2::Panel::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab300 size=0x71
+#include "vgui2__Panel.h"
+
+void vgui2::Panel::sub_101ab300(bool arg1, bool arg2)
+{
+	((char *)this)[0x30] = 1;
+	if ( arg1 )
+	{
+		if ( arg2 )
+			((char *)this)[0x31] = 1;
+		sub_101ab2d0();
+	}
+	if ( arg2 )
+	{
+		((char *)this)[0x31] = 1;
+		vfunc6();
+		for ( int i = 0; i < vfunc36(); i++ )
+			vfunc37(i)->vfunc57(0, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab380 size=0xe
 #include "vgui2__Panel.h"
 // TARGET: vgui2::Panel::vfunc69
