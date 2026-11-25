@@ -22,4 +22,5 @@ public:
 	void sub_10123760(int dt, struct Vector &outValue, const struct Vector &inValue);
 	void sub_10123630(int dt, bool *outvalue, const bool *invalue, int count);
 	void sub_101233b0(int dt, const char *fmt, ...);
+	void sub_10123800(int dt, struct Vector *outValue, const struct Vector *inValue, int count);
 };
