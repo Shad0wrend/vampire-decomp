@@ -42760,6 +42760,59 @@ void __cdecl sub_100b28d0(Vector *pOut, int a2, int a3, char *pDst, char bScale,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2950 size=0xc9
+#include "vector.h"
+
+struct ViewRet { char pad0[0x34]; float f34; char pad38[0x2c]; float f64; };
+struct IViewRender14 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual ViewRet *v14();
+};
+extern IViewRender14 *g_102d43d8;
+extern int (*g_101e31a4)(int nMin, int nMax);
+
+struct Particle {
+	float m_fl0, m_fl4, m_fl8;
+	int m_unkC;
+	float m_fl10;
+	int m_unk14, m_unk18, m_unk1c;
+	int m_unk20;
+	int m_unk24;
+	int m_unk28;
+	union { int i; short s[2]; } m_ang;
+};
+
+// TARGET: sub_100b2950
+void sub_100b2950(Vector *out, int a2, int a3, Particle *pDest, bool bFlag, int a6, char *pSrc)
+{
+	if (bFlag)
+	{
+		struct TwoShorts { short lo; short hi; };
+		TwoShorts r;
+		int (*rnd)(int, int) = g_101e31a4;
+		r.lo = (short)rnd(-99, 99);
+		r.hi = (short)rnd(-99, 99);
+		pDest->m_ang.i = *(int *)&r;
+		pDest->m_fl0 = *(float *)(pSrc + 0x42c) * pDest->m_fl0;
+		pDest->m_fl4 = *(float *)(pSrc + 0x430) * pDest->m_fl4;
+		pDest->m_fl8 = *(float *)(pSrc + 0x434) * pDest->m_fl8;
+		pDest->m_fl10 = *(float *)(pSrc + 0x438) * pDest->m_fl10;
+		pDest->m_unk28 = *(int *)(pSrc + 0x428);
+		pDest->m_unk20 = *(int *)(pSrc + 0x43c);
+	}
+	short ang[2];
+	*(volatile int *)ang = *(int *)((char *)pDest + 0x2c);
+	ViewRet *v = g_102d43d8->v14();
+	Vector vec;
+	vec.x = v->f64 + v->f64;
+	vec.y = (float)ang[1] * 0.01f;
+	vec.z = ((float)ang[0] * 0.01f) * v->f34;
+	*out = vec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a40 size=0x6
 namespace lifted {
 extern char g_104a1c00;
