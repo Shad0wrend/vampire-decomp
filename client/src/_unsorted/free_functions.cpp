@@ -38835,6 +38835,34 @@ bool C_BaseEntity::sub_100a0710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1110 size=0x2c
+#include "C_BaseEntity.h"
+struct CUnknown10044460 {
+	char m_pad0000[0x44];
+	unsigned short m_w44;
+	void sub_100432a0(unsigned int v);
+	unsigned short GetFlags() { return m_w44; }
+	void SetFlags(unsigned int v) { sub_100432a0(v); }
+	void ClearFlag(unsigned int f) { SetFlags(GetFlags() & ~f); }
+};
+struct CUnknown1009fc60 {
+	void sub_1009fc60(int a, int b);
+};
+struct EntView1110 {
+	char m_pad0000[0x74];
+	unsigned int m_flags74;
+	char m_pad0078[0x190 - 0x78];
+	CUnknown10044460 m_coll;
+};
+void C_BaseEntity::sub_100a1110()
+{
+	EntView1110 *e = (EntView1110 *)this;
+	e->m_flags74 &= ~1;
+	e->m_coll.ClearFlag(4);
+	((CUnknown1009fc60 *)this)->sub_1009fc60(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1140 size=0x51
 #include "C_BaseEntity.h"
 #include "CBaseEntityList.h"
