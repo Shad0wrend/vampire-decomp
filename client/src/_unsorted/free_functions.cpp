@@ -105450,6 +105450,31 @@ void CUnknown101c2b30::sub_101c2b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2b40 size=0x8a
+#include "CUtlVector4.h"
+#include "UtlMem.h"
+void CUtlVector4::sub_101c2b40(const int *pArray, int size)
+{
+	m_size = 0;
+	if (size) {
+		if (size > m_allocationCount)
+			((UtlMem *)this)->sub_101c2cf0(size - m_allocationCount);
+		m_pElements = m_pMemory;
+		m_size += size;
+		int numToMove = m_size - size;
+		if (numToMove > 0 && size > 0)
+			memmove(&m_pMemory[size], &m_pMemory[0], numToMove * sizeof(int));
+		for (int i = 0; i < size; ++i) {
+			int *p = &m_pMemory[i];
+			if (p)
+				*p = -1;
+		}
+	}
+	for (int i = 0; i < size; i++)
+		m_pMemory[i] = pArray[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2bd0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
