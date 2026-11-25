@@ -20214,6 +20214,24 @@ bool CVStatInfo_t::sub_1005d6e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d750 size=0x7b
+#include "ScopeTrace.h"
+#include "CVStatInfo_t.h"
+
+struct CMaterialObj {
+	virtual const char *vfunc0();
+};
+
+// TARGET: CVStatInfo_t::sub_1005d750
+const char *CVStatInfo_t::sub_1005d750()
+{
+	ScopeTrace trace("CHUDSprite::materialName", "", "");
+	if (sub_1005d6e0())
+		return ((CMaterialObj *)m_field0004)->vfunc0();
+	return " ";
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d870 size=0x6
 namespace lifted {
 extern char g_103eeca0;
