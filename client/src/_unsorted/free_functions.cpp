@@ -38655,6 +38655,37 @@ IHandleEntity *sub_100ab190(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab1e0 size=0x68
+#include "ehandle.h"
+#include "CUnknown1007f870.h"
+extern CBaseHandle *g_104a0d64;
+extern int g_104a0d70;
+void sub_100aaeb0();
+// TARGET: ?sub_100ab1e0@@YAPAVCUnknown1007f870@@H@Z
+CUnknown1007f870 *sub_100ab1e0(int v)
+{
+	sub_100aaeb0();
+	for (int i = 0; i < g_104a0d70; i++)
+	{
+		CUnknown1007f870 *p;
+		unsigned long h = g_104a0d64[i].m_Index;
+		if (h != 0xffffffff)
+		{
+			CBaseEntityListEntry &e = g_102b8e98->m_EntPtrArray[h & 0x1fff];
+			if (e.m_SerialNumber == (int)(h >> 13))
+				p = (CUnknown1007f870 *)e.m_pEntity;
+			else
+				p = 0;
+		}
+		else
+			p = 0;
+		if (p->sub_1007f870() == v)
+			return p;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab7e0 size=0x64
 struct CUnknown100ab7e0 { int sub_100ab7e0(int, int, int, int, char); };
 int CUnknown100ab7e0::sub_100ab7e0(int a0, int a1, int a2, int a3, char a4)
