@@ -51166,6 +51166,23 @@ void sub_100f6db0(unsigned char *src, unsigned char *dst, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6e20 size=0x6d
+void sub_100f6e20(const unsigned char *src, unsigned char *dst, int count)
+{
+	const unsigned char *end = src + count * 4;
+
+	for ( ; src < end; src += 4, dst += 2 )
+	{
+		int r = src[0];
+		int g = src[1];
+		int b = src[2];
+
+		*dst = (unsigned char)( b * 0.114f + g * 0.587f + r * 0.299f );
+		dst[1] = src[3];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6e90 size=0x23
 void sub_100f6e90(unsigned char *src, unsigned char *dst, int n) { unsigned char *end = src + n * 4; while (src < end) { *dst = src[3]; src += 4; dst++; } }
 // END FUNCTION
