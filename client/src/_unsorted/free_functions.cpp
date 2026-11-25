@@ -90971,6 +90971,51 @@ int sub_101745c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101745d0 size=0x6e
+#include "CharEditPanel.h"
+#include "vgui2__Label.h"
+
+struct Prov { int sub_101ac830(); };
+struct Res1 { virtual void vfunc0(); virtual void *vfunc1(const char *); };
+
+#define BIG_BODY \
+	{ \
+		void *obj = (void *)((Prov *)pd)->sub_101ac830(); \
+		if ( obj ) \
+		{ \
+			void *res = ((Res1 *)obj)->vfunc1("interface/charactermaintenance/background"); \
+			vgui2::Label *lbl = *(vgui2::Label **)(self + 0x284); \
+			if ( lbl ) \
+				lbl->vfunc123(0, (int)res, 0); \
+		} \
+	}
+
+// TARGET: sub_101745d0
+void __fastcall sub_101745d0(char *self)
+{
+	vgui2::PropertyDialog *pd = (vgui2::PropertyDialog *)(self + 0x10);
+	int id = pd->vfunc145();
+	if ( id == *(int *)(self + 0xee0) )
+	{
+		goto big;
+	}
+	else if ( id == *(int *)(self + 0xee4) )
+	{
+	}
+	else
+	{
+		vgui2::Label *lbl = *(vgui2::Label **)(self + 0x284);
+		if ( lbl )
+			lbl->vfunc123(0, 0, 0);
+		return;
+	}
+big:
+	{
+		BIG_BODY
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174640 size=0x10
 namespace lifted {
 struct C1017dbc0 { int sub_1017dbc0(); };
