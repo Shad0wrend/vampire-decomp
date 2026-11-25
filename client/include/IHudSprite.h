@@ -22,7 +22,7 @@ class CHudSprite : public IHudSprite
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual int vfunc2(const char *pszName);
 	virtual void vfunc3();
 	virtual int vfunc4(int, int);
 	virtual int vfunc5(int idx, int unused);
