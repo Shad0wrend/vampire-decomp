@@ -90829,6 +90829,31 @@ void CGridLayout10166::sub_10166e20(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10166e60 size=0x79
+#include "vgui2__CGrid.h"
+
+bool vgui2::CGrid::sub_10166e60(int a, int b, int *pInner, int *pOuter)
+{
+	*pInner = -1;
+	*pOuter = -1;
+
+	for (int outer = 0; outer < *(int *)((char *)this + 0x5c); outer++)
+	{
+		for (int inner = 0; inner < *(int *)((char *)this + 0x60); inner++)
+		{
+			vgui2::Panel *panel = *(vgui2::Panel **)sub_10166d90(outer, inner);
+			if (panel && panel->vfunc25(a, b))
+			{
+				*pOuter = outer;
+				*pInner = inner;
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166ee0 size=0x1a
 namespace lifted {
 int sub_101ac8d0();

@@ -7288,6 +7288,7 @@
 0x10166d90 func   ?sub_10166d90@GridV@@QAEPAUGridCell@@HH@Z GridV::sub_10166d90
 0x10166dd0 func   ?sub_10166dd0@CUnk10166dd0@@QAEXH@Z CUnk10166dd0::sub_10166dd0
 0x10166e20 func   ?sub_10166e20@CGridLayout10166@@QAEXH@Z CGridLayout10166::sub_10166e20
+0x10166e60 func   ?sub_10166e60@CGrid@vgui2@@QAE_NHHPAH0@Z vgui2::CGrid::sub_10166e60
 0x10166ee0 func   ?sub_10166ee0@@YAHHH@Z sub_10166ee0
 0x10166f00 func   ?sub_10166f00@@YAHHH@Z sub_10166f00
 0x10167000 func   ?sub_10167000@@YAXXZ sub_10167000
