@@ -49609,6 +49609,35 @@ void CUnknown100d3f70::sub_100d3f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4e90 size=0xac
+#include "CUtlLinkedList10.h"
+
+struct TexAlloc_100d4e90
+{
+	int m_n0;
+	CUtlLinkedList10 m_List;
+	unsigned short sub_100d4e90(int size, int unused);
+};
+
+unsigned short TexAlloc_100d4e90::sub_100d4e90(int size, int unused)
+{
+	if (size < 16)
+		size = 16;
+	else if (size > 256)
+		size = 256;
+
+	unsigned short elem = m_List.AddToTail();
+
+	m_List.InternalElement(elem).m_Data0 = 0xffff;
+	m_List.InternalElement(elem).m_Data1 = (unsigned short)size;
+	int shift = 0;
+	for (int p = 1; p < size; p <<= 1)
+		++shift;
+	m_List.InternalElement(elem).m_Data2 = (unsigned short)shift;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5010 size=0x37
 struct E10 { unsigned short m_0; unsigned short pad[4]; };
 struct E16 { int m_0; unsigned short m_4; unsigned short pad[5]; };
