@@ -69176,6 +69176,25 @@ void CUnknown10123710::sub_10123710(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123760 size=0x9f
+#include "CPredictionCopy.h"
+#include "Vector.h"
+void CPredictionCopy::sub_10123760(int dt, Vector &outValue, const Vector &inValue)
+{
+    if (!m_bErrorCheck)
+        return;
+    if (dt == 0)
+    {
+        Vector delta = outValue - inValue;
+        ReportFieldsDiffer("vec differs (net %f %f %f - pred %f %f %f) delta(%f %f %f)\n",
+            inValue.x, inValue.y, inValue.z,
+            outValue.x, outValue.y, outValue.z,
+            delta.x, delta.y, delta.z);
+    }
+    sub_101233b0(dt, "vector (%f %f %f)\n", outValue.x, outValue.y, outValue.z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101238a0 size=0x126
 #include "C_BaseEntity.h"
 #include "CBaseHandle.h"
