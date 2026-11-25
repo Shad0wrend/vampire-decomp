@@ -17247,6 +17247,44 @@ int CUnknown10044070::sub_10044070(char a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100442d0 size=0x70
+#include "CCollisionProperty.h"
+
+struct CollSlotView {
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual void d8(); virtual void d9(); virtual void d10();
+	virtual int vfunc11();
+};
+
+struct SubView8 {
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual int vfunc8();
+};
+
+// TARGET: sub_100442d0
+bool CCollisionProperty::sub_100442d0()
+{
+	switch ( *(unsigned char *)((char *)this + 0x1c) )
+	{
+	case 0:
+		return ((CollSlotView *)this)->vfunc11() == 6
+			&& ((SubView8 *)((char *)m_unk3c + 0xc))->vfunc8() == 7
+			&& *(int *)((char *)m_unk3c + 0xec) != 0;
+	case 1:
+	case 4:
+		return true;
+	case 2:
+	case 3:
+	case 5:
+	case 6:
+		return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044400 size=0x20
 namespace lifted {
 extern int g_104a5808;
