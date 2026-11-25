@@ -79879,6 +79879,22 @@ void sub_1013ce00(CUtlBuffer *buf, const char *pFmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ce20 size=0x3e
+#include "CUtlBuffer.h"
+
+extern "C" void *memcpy(void *, const void *, unsigned int);
+#pragma intrinsic(memcpy)
+
+void CUtlBuffer::sub_1013ce20(const void *pMem, int nSize)
+{
+	if ( sub_1013cf00(nSize) )
+	{
+		memcpy(m_pBuffer + m_nPut, pMem, nSize);
+		m_nPut += nSize;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ce60 size=0x2a
 #include "CUtlBuffer.h"
 #include <string.h>
