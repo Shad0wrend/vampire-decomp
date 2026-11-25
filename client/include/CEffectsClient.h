@@ -11,4 +11,5 @@ public:
 	virtual void vfunc5(const class Vector &origin, int a, int b, int c);
 	virtual void vfunc6(const class Vector &origin, int a);
 	virtual void vfunc7(const class Vector &origin, int a, int b);
+	virtual void vfunc2(const class Vector &origin, int a, float b, int c);
 };
