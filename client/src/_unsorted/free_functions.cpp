@@ -95568,6 +95568,27 @@ void CPanelCleanup101805e0::sub_101805e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180840 size=0x85
+#include "CVisToggleView.h"
+// TARGET: CStatRowGroupView::sub_10180840
+void CStatRowGroupView::sub_10180840(bool bVisible)
+{
+	CVisToggleView *pLabel = m_pLabel;
+	if (bVisible != pLabel->IsVisible())
+	{
+		pLabel->SetVisible(bVisible);
+		for (int i = 0; i < m_nRows; i++)
+		{
+			CStatRowView *pRow = &m_pRows[i];
+			pRow->m_pFirst->SetVisible(bVisible);
+			for (int k = 0; k < 5; k++)
+				pRow->m_pCells[k]->SetVisible(bVisible);
+		}
+		m_pLast->SetVisible(bVisible);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101808d0 size=0x79
 #include "CharEditStatsPanel.h"
 
