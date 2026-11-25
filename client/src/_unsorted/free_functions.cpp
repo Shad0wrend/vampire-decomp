@@ -50411,6 +50411,214 @@ void sub_100cc560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc570 size=0xaa
+struct V5808
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void v9();
+    virtual void v10();
+    virtual void v11();
+    virtual void v12();
+    virtual void v13();
+    virtual void v14();
+    virtual void v15();
+    virtual void v16(int, int);
+};
+extern V5808 *g_104a5808;
+
+struct V43d8
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+};
+extern V43d8 *g_102d43d8;
+
+struct V8073c
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+};
+extern V8073c *g_1028073c;
+
+struct V5050
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+};
+extern V5050 *g_102d5050;
+
+struct Engine
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void v9();
+    virtual void v10();
+    virtual void v11();
+    virtual void v12();
+    virtual void v13();
+    virtual void v14();
+    virtual void v15();
+    virtual void v16();
+    virtual void v17();
+    virtual void v18();
+    virtual void v19();
+    virtual void v20();
+    virtual void v21();
+    virtual void v22();
+    virtual void v23();
+    virtual void v24();
+    virtual void v25();
+    virtual void v26();
+    virtual void v27();
+    virtual void v28();
+    virtual void v29();
+    virtual void v30();
+    virtual void v31();
+    virtual void v32();
+    virtual void v33();
+    virtual void v34();
+    virtual void v35();
+    virtual void v36();
+    virtual void v37();
+    virtual void v38();
+    virtual void v39();
+    virtual void v40();
+    virtual float v41(int);
+    virtual void v42();
+    virtual void v43();
+    virtual void v44();
+    virtual void v45();
+    virtual void v46();
+    virtual void v47();
+    virtual void v48();
+    virtual void v49();
+    virtual void v50();
+    virtual void v51();
+    virtual void v52();
+    virtual void v53();
+    virtual void v54();
+    virtual void v55();
+    virtual void v56();
+    virtual void v57();
+    virtual void v58();
+    virtual void v59();
+    virtual void v60();
+    virtual void v61();
+    virtual void v62();
+    virtual void v63();
+    virtual void v64();
+    virtual void v65();
+    virtual void v66();
+    virtual void v67();
+    virtual void v68();
+    virtual void v69();
+    virtual void v70();
+    virtual void v71();
+    virtual void v72();
+    virtual void v73();
+    virtual void v74();
+    virtual void v75();
+    virtual void v76();
+    virtual void v77();
+    virtual void v78();
+    virtual void v79();
+    virtual void v80();
+    virtual void v81();
+    virtual void v82();
+    virtual void v83();
+    virtual void v84();
+    virtual void v85();
+    virtual void v86();
+    virtual void v87();
+    virtual void v88();
+    virtual void v89();
+    virtual void v90();
+    virtual void v91();
+    virtual void v92();
+    virtual void v93();
+    virtual void v94();
+    virtual void v95();
+    virtual void v96();
+    virtual void v97();
+    virtual void v98();
+    virtual void v99();
+    virtual void v100();
+    virtual void v101();
+    virtual void v102();
+    virtual void v103();
+    virtual void v104();
+    virtual void v105();
+    virtual void v106();
+    virtual void v107();
+    virtual void v108();
+    virtual void v109();
+    virtual void v110();
+    virtual void v111();
+    virtual void v112();
+    virtual void v113();
+    virtual void v114();
+    virtual void v115();
+};
+extern Engine *g_104a57d4;
+
+struct ParticleMgrView
+{
+    void sub_10117850(float);
+};
+extern ParticleMgrView g_104e0768;
+
+void sub_1009db70(int);
+void sub_100be930();
+void sub_100a1230();
+void sub_10092530();
+void sub_100cc4a0();
+void sub_100cc3a0();
+void sub_100cc0b0();
+void sub_10119410();
+void sub_100a1270();
+
+void sub_100cc570()
+{
+    g_104a5808->v16(0xac, 1);
+    sub_1009db70(0);
+    sub_100be930();
+    sub_100a1230();
+    sub_10092530();
+    sub_1009db70(1);
+    g_102d43d8->v3();
+    sub_100cc4a0();
+    g_104a5808->v16(0xac, 0);
+    sub_100cc3a0();
+    sub_100cc0b0();
+    sub_10119410();
+    g_1028073c->v2();
+    g_102d5050->v3();
+    g_104e0768.sub_10117850(g_104a57d4->v41(0));
+    g_104a57d4->v115();
+    sub_100a1270();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc620 size=0xd
 namespace lifted {
 int sub_100923c0(int, int);
