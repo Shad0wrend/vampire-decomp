@@ -18,6 +18,7 @@ public:
     void vfunc22();
     virtual void vfunc2(unsigned short, int, unsigned short *);
     void sub_100d2560(unsigned int, unsigned short);
+    void sub_100d2800(unsigned short, float *, float *);
     void vfunc23();
 public:
     int vfunc10(int, int, int);
