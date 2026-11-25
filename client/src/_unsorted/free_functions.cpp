@@ -38882,6 +38882,34 @@ void C_BaseEntity::sub_1009f8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fa70 size=0xc3
+#include "C_BaseEntity.h"
+#include "ehandle.h"
+#include "Vector.h"
+void sub_101080e0(const void *a, const void *b, void *c);
+#define F(type, off) (*(type *)((char *)this + (off)))
+// TARGET: C_BaseEntity::sub_1009fa70
+void C_BaseEntity::sub_1009fa70()
+{
+    if (F(int, 0x184) & 0x1000) {
+        F(int, 0x184) &= ~0x1000;
+        C_BaseEntity *pParent = (C_BaseEntity *)F(CBaseHandle, 0x208).Get();
+        if (!pParent) {
+            F(Vector, 0xb4) = F(Vector, 0xa8);
+            return;
+        }
+        pParent->sub_1009f8a0();
+        sub_101080e0(&F(Vector, 0xa8), (char *)pParent + 0x26c, &F(Vector, 0xb4));
+        pParent->sub_1009fa70();
+        Vector *pAbs = &F(Vector, 0xb4);
+        Vector *pPAbs = (Vector *)((char *)pParent + 0xb4);
+        pAbs->x = pPAbs->x + pAbs->x;
+        pAbs->y = pPAbs->y + pAbs->y;
+        pAbs->z = pPAbs->z + pAbs->z;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fb40 size=0x4
 struct CUnknown1009fb40 { int sub_1009fb40(); };
 int CUnknown1009fb40::sub_1009fb40()
