@@ -40888,6 +40888,47 @@ void C_BaseAnimating::sub_100bdb60(Vector &mins, Vector &maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdbd0 size=0x6f
+#include "C_BaseAnimating.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+struct AnimView
+{
+	char pad0[0x184];
+	CBaseHandle m_hMoveParent;
+};
+
+// TARGET: sub_100bdbd0
+void C_BaseAnimating::sub_100bdbd0(Vector &mins, Vector &maxs)
+{
+	AnimView *v = (AnimView *)this;
+	if ( v->m_hMoveParent.Get() )
+	{
+		C_BaseEntity *p;
+		unsigned int h = v->m_hMoveParent.m_Index;
+		if ( h == 0xffffffff )
+			goto fail;
+		{
+			int idx = (int)(h & 0x1fff);
+			int serial = (int)(h >> 13);
+			CBaseEntityListEntry *e = &g_102b8e98->m_EntPtrArray[idx];
+			if ( e->m_SerialNumber == serial )
+			{
+				p = (C_BaseEntity *)e->m_pEntity;
+				goto done;
+			}
+		}
+	fail:
+		p = 0;
+	done:
+		((C_BaseAnimating *)p)->GetRenderBoundsWorldspace(mins, maxs);
+	}
+	else
+		sub_100947b0(mins, maxs);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdc40 size=0x6f
 #include "C_BaseAnimating.h"
 #include "Vector.h"
