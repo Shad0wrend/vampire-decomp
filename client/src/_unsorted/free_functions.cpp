@@ -99340,6 +99340,64 @@ void CUnknown101a7a60::sub_101a7a60(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7ac0 size=0x76
+#include <string.h>
+#include "C_BasePlayer.h"
+
+extern C_BasePlayer *g_104a0d50;
+extern void *g_104a57d4;
+extern int (*g_101e31bc)(const char *, const char *, int);
+
+bool sub_101746b0();
+void sub_101746d0();
+
+struct IEngineClientView
+{
+    virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
+    virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
+    virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+    virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+    virtual void ClientCmd(const char *pszCmd);
+    virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32();
+    virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36();
+    virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40();
+    virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+    virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+    virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52();
+    virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+    virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60();
+    virtual void v61(); virtual void v62(); virtual void v63();
+    virtual const char *Cmd_Argv(int iArg);
+};
+
+void sub_101a7ac0(void *pUnused)
+{
+    C_BasePlayer *player = g_104a0d50;
+    if (!player)
+        return;
+
+    bool bState = false;
+    if (player->vfunc160(0))
+        bState = true;
+
+    if (sub_101746b0())
+    {
+        sub_101746d0();
+        return;
+    }
+
+    if (bState)
+        return;
+
+    const char *cmd = ((IEngineClientView *)g_104a57d4)->Cmd_Argv(0);
+    if (!g_101e31bc(cmd, "cancelselect", strlen(cmd)))
+        ((IEngineClientView *)g_104a57d4)->ClientCmd("togglemainmenu");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7b40 size=0x30
 #include "CHudElement.h"
 struct PV {
