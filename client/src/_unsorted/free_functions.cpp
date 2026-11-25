@@ -103990,6 +103990,44 @@ void VRend::sub_1018aef0(Vector &absMins, Vector &absMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b060 size=0xac
+extern "C" int _strcmpi(const char *, const char *);
+struct StudioHdr;
+struct SeqDesc { int m_unk0; int m_nameofs; };
+SeqDesc *sub_1008d9d0(StudioHdr *h, int i);
+int sub_100681e0(const char *s);
+int sub_10079a90(StudioHdr *h, int a, int b, int c, int d);
+struct CAnimState {
+    int m_unk0; int m_unk4; const char *m_pName; int m_nSeq;
+    int m_unk10; int m_unk14; int m_unk18; int m_unk1c; int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
+    float m_flCycle;
+    int m_unk34[13];
+    StudioHdr *m_pHdr;
+    void sub_1018b060();
+};
+void CAnimState::sub_1018b060()
+{
+    if (m_pHdr) {
+        SeqDesc *s = sub_1008d9d0(m_pHdr, m_nSeq);
+        if (s && m_flCycle < 1.0f && !_strcmpi((char *)s + s->m_nameofs, m_pName)) {
+            if (m_flCycle < 0.0)
+                m_flCycle = 0;
+            return;
+        }
+        int n = sub_100681e0(m_pName);
+        if (n >= 0) {
+            int r = sub_10079a90(m_pHdr, n, 0, 0, -1);
+            if (r >= 0) {
+                m_nSeq = r;
+                m_flCycle = 0;
+            }
+            if (m_flCycle >= 1.0f)
+                m_flCycle = 0;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b2a0 size=0x7f
 #include "Vector.h"
 
