@@ -5,6 +5,7 @@
 
 namespace vgui2
 {
+class Button;
 class ScrollBar : public vgui2::Panel
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -25,7 +26,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual int vfunc111();
     virtual int vfunc112();
     virtual int vfunc113();
-    virtual void vfunc114();
+    virtual void vfunc114(vgui2::Button *, int);
     virtual int vfunc115(int);
     virtual int vfunc116(int);
     virtual int vfunc117();
