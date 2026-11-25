@@ -7974,6 +7974,7 @@
 0x10176380 func   ??_GVCTextEntry@@UAEPAXI@Z ??_GVCTextEntry@@UAEPAXI@Z
 0x101763a0 func   ??1VCTextEntry@@UAE@XZ VCTextEntry::~VCTextEntry
 0x101763a0 func   ?sub_101763a0@CUnknown101763a0@@QAEHXZ CUnknown101763a0::sub_101763a0
+0x101763c0 func   ?sub_101763c0@VLabelComboBox@@QAEPAV1@PAVPanel@vgui2@@PBD@Z VLabelComboBox::sub_101763c0
 0x10176420 func   ??_GVLabelComboBox@@UAEPAXI@Z ??_GVLabelComboBox@@UAEPAXI@Z
 0x10176440 func   ??1VLabelComboBox@@UAE@XZ VLabelComboBox::~VLabelComboBox
 0x10176440 func   ?sub_10176440@CUnknown10176440@@QAEHXZ CUnknown10176440::sub_10176440

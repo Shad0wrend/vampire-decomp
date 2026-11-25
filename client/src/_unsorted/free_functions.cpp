@@ -103439,6 +103439,50 @@ int CUnknown101763a0::sub_101763a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101763c0 size=0x5b
+#include "VLabelComboBox.h"
+#include "Tier1.h"
+
+struct LabelComboBoxCtor_101bb000
+{
+	void *sub_101bb000(vgui2::Panel *parent, const char *name);
+};
+
+struct CUnknown101bb350
+{
+	int sub_101bb350(int scheme);
+};
+
+struct IViewSchemeLoader
+{
+	virtual void vfunc0();
+	virtual void *vfunc1(const char *name);
+};
+
+struct LabelComboByte
+{
+	char pad[0x100];
+	char m_b;
+};
+
+int sub_101ac8c0();
+extern void *vt_1024bda4[];
+
+VLabelComboBox *VLabelComboBox::sub_101763c0(vgui2::Panel *parent, const char *panelName)
+{
+	((LabelComboBoxCtor_101bb000 *)this)->sub_101bb000(parent, panelName);
+	*(void ***)this = vt_1024bda4;
+	void *scheme = ((IViewSchemeLoader *)sub_101ac8c0())->vfunc1("Resource/VampireCE2Scheme.res");
+	if (!scheme)
+	{
+		g_101e3108("Error loading '%s'\n", "Resource/VampireCE2Scheme.res");
+	}
+	((CUnknown101bb350 *)this)->sub_101bb350((int)scheme);
+	((LabelComboByte *)this)->m_b = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10176440 size=0xb
 namespace lifted {
 extern char g_1024bda4;
