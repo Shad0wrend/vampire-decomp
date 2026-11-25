@@ -14,6 +14,7 @@ public:
 	virtual bool vfunc6();
 	void sub_100bdeb0();
 	void sub_100bdf90(void *pPlayer);
+	bool sub_100be140();
 	bool m_bReliable;
 	bool m_bInitMessage;
 	CUtlVector<int> m_Recipients;

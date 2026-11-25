@@ -26,6 +26,7 @@ public:
 	void vfunc32(int, int, int, int, int, int);
 	void vfunc35(int, int, int, int, int, int);
 	void vfunc42(int, int, int, int, int, int);
+	void vfunc13(int, int, int, int, int, int, int, int, int);
 	void * vfunc0(char);
 	void vfunc31(int filter, int delay, int pos, int dir, int extra);
 	void vfunc28(int filter, int delay, int pos, int dir, int extra);
