@@ -101936,6 +101936,42 @@ bool sub_1017f0d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f0f0 size=0xaf
+#include "CVStatList_t.h"
+struct PlayerV1178 { char p[0x1178]; int m_nLists; CVStatList_t **m_pLists; };
+extern PlayerV1178 *g_104a0d50;
+int sub_10170f60();
+int sub_1017f0f0(char flag)
+{
+	int result = -1;
+	if (sub_10170f60() && !flag) {
+		result = *(int *)(sub_10170f60() + 0xed0);
+	} else {
+		PlayerV1178 *p = g_104a0d50;
+		if (p) {
+			CVStatList_t *pList;
+			for (int i = 0; i < p->m_nLists; i++) {
+				if (p->m_pLists[i]->m_field10 == 0) {
+					pList = p->m_pLists[i];
+					goto found;
+				}
+			}
+			{
+				static CVStatList_t s_default(-1);
+				pList = &s_default;
+			}
+found:
+			result = pList->sub_1015dbd0(0x21);
+		}
+	}
+	if (result == 0xf)
+		result = -1;
+	else if (result == 0x3f)
+		result = -1;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f1d0 size=0xbf
 #include "CUnknown10203240.h"
 struct CUnknown1017b270 { int sub_1017b270(int); };
