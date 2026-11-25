@@ -54047,6 +54047,29 @@ Vector sub_100ff030(const Vector &in, float flYaw)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff0a0 size=0x86
+#include "CInput.h"
+struct CUnkIface { virtual bool vf0(); virtual bool vf1(); char pad[0x28]; int m_i2c; };
+extern CUnkIface *g_105fbb74;
+struct CUnkPlayer { char pad[0x16a8]; char m_b16a8; };
+
+// TARGET: CInput::sub_100ff0a0
+char CInput::sub_100ff0a0(CUnkPlayer *p)
+{
+    if (!p)
+        return 0;
+    if (m_f0fc < 0.9f)
+        return 0;
+    if (m_f138 != 0.0f)
+        return 0;
+    if (m_f100 != 0.0f)
+        return 0;
+    if (!g_105fbb74->vf1() && g_105fbb74->m_i2c)
+        return 0;
+    return p->m_b16a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100b40 size=0x58
 extern char g_104d2ce4;
 extern char g_104d2ce8;
