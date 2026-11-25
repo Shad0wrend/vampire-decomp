@@ -31,7 +31,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc7();
 	virtual void vfunc8();
 	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual void vfunc10(C_LocalTempEntity *, int, int);
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13(C_LocalTempEntity *, int);
