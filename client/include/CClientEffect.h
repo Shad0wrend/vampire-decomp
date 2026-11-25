@@ -9,3 +9,73 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CClientEffect adds to its base's vtable: 0-0, vfuncK at slot K
     virtual void vfunc0(bool on);
 };
+
+class PrecacheEffectImpacts
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
+class PrecacheEffectMuzzleFlash
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
+class PrecacheMuzzleFlash
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
+class PrecacheEffectSparks
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
+class SmokeStackMaterials
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
+class PrecacheEffectBreakableSurface
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};
+
+class PrecacheEffectExplosion
+{
+public:
+	class ClientEffectRegister : public CClientEffect
+	{
+	public:
+		virtual void vfunc0(bool on);
+	};
+};

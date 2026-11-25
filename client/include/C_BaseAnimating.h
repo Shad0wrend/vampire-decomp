@@ -14,6 +14,22 @@ public:
 	bool sub_10093e40();
 	void sub_10002680(int);
 	bool sub_10095ac0(int idx, int arg);
+	int sub_1008f900(int index);
+	int sub_100940d0(int index, int *pOut);
+	int LookupBone(const char *pszName);
+	void sub_10096c30();
+	int sub_100965d0(int, int);
+	void sub_100bdbd0(Vector &, Vector &);
+	void sub_100947b0(Vector &, Vector &);
+	void sub_100bdb60(Vector &, Vector &);
+	void sub_10094350(Vector &, Vector &);
+	void sub_100bdc40(Vector &, Vector &);
+	void sub_10094040(Vector &, Vector &);
+	void sub_100bdcb0(Vector &, Vector &);
+	void sub_1009f360(Vector &, Vector &);
+	void sub_101364b0();
+	void sub_100a2930();
+	void sub_100948d0(int);
 	virtual ~C_BaseAnimating();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BaseAnimating's own function
@@ -36,7 +52,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the slots C_BaseAnimating adds to its base's vtable: 120-142, vfuncK at slot K
 	virtual void vfunc120(int, int);
 	virtual void vfunc121();
-	virtual void vfunc122();
+	virtual float vfunc122();
 	virtual void vfunc123();
 	virtual void vfunc124(int, int);
 	virtual int vfunc125(int, int);

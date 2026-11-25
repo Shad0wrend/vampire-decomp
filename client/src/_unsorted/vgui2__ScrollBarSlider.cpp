@@ -70,6 +70,24 @@ void vgui2::ScrollBarSlider::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca190 size=0x6b
+#include "vgui2__ScrollBarSlider.h"
+
+bool vgui2::ScrollBarSlider::vfunc116()
+{
+	int wide, tall;
+	vfunc65(wide, tall);
+	float flPos = (float)*(int *)((char *)this + 0x80);
+	float flExtent = *(char *)((char *)this + 0x58) ? (float)tall : (float)wide;
+	if (flPos > 0.0f)
+	{
+		if (flPos <= (float)*(int *)((char *)this + 0x84) + flExtent)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca200 size=0x42
 #include "vgui2__ScrollBarSlider.h"
 struct KV101b56c0 { KV101b56c0 *sub_101b56c0(const char *, const char *, int); };
@@ -102,6 +120,49 @@ int vgui2::ScrollBarSlider::vfunc74(int pS)
 	t->SetFg(s->GetColor("ScrollBarSlider/ScrollBarSliderFgColor"));
 	t->SetBg(s->GetColor("ScrollBarSlider/ScrollBarSliderBgColor"));
 	return t->border = s->GetBorder("ButtonBorder");
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ca3a0 size=0x5d
+#include "vgui2__ScrollBarSlider.h"
+
+class Color_101ca3a0 {
+public:
+	int m_v;
+	Color_101ca3a0() {}
+	Color_101ca3a0(const Color_101ca3a0 &o) { m_v = o.m_v; }
+};
+
+struct ISurfaceV_101ca3a0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void DrawSetColor(int col);
+	virtual void v11();
+	virtual void DrawFilledRect(int x0, int y0, int x1, int y1);
+};
+extern ISurfaceV_101ca3a0 *sub_101ac8d0();
+
+struct PanelColorsV_101ca3a0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51();
+	virtual Color_101ca3a0 GetBgColor();
+};
+
+void vgui2::ScrollBarSlider::vfunc97()
+{
+	int wide, tall;
+	vfunc65(wide, tall);
+	sub_101ac8d0()->DrawSetColor(((PanelColorsV_101ca3a0 *)this)->GetBgColor().m_v);
+	sub_101ac8d0()->DrawFilledRect(0, 0, wide - 1, tall - 1);
 }
 // END FUNCTION
 

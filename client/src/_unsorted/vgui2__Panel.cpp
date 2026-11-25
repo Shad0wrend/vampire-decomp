@@ -110,6 +110,68 @@ int vgui2::Panel::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9a90 size=0x55
+#include "vgui2__Panel.h"
+
+extern void *sub_101ac8d0();
+extern void *sub_101ac900();
+
+struct IFontView101a9a90
+{
+	virtual void f0();
+	virtual void f1();
+	virtual void f2();
+	virtual void f3();
+	virtual void f4();
+	virtual void f5();
+	virtual void f6();
+};
+
+struct ISurfView101a9a90
+{
+	virtual void s0();
+	virtual IFontView101a9a90 *s1(int h);
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void s5();
+	virtual void s6();
+	virtual void s7();
+	virtual void s8();
+	virtual void s9();
+	virtual void s10();
+	virtual void s11();
+	virtual void s12();
+	virtual void s13();
+	virtual void s14();
+	virtual void s15();
+	virtual int s16(int x);
+	virtual int s17(int a, int b);
+};
+
+struct IOtherView101a9a90
+{
+	virtual void o0();
+	virtual void o1();
+	virtual void o2();
+	virtual void o3();
+	virtual void o4();
+	virtual void o5();
+	virtual int o6();
+};
+
+void vgui2::Panel::vfunc5()
+{
+	int b = ((IOtherView101a9a90 *)sub_101ac8d0())->o6();
+	int n = ((ISurfView101a9a90 *)sub_101ac900())->s16(b);
+	for (int i = 0; i < n; i++)
+	{
+		int h = ((ISurfView101a9a90 *)sub_101ac900())->s17(b, i);
+		((ISurfView101a9a90 *)sub_101ac900())->s1(h)->f6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9b30 size=0x35
 #include "vgui2__Panel.h"
 namespace lifted {
@@ -360,6 +422,31 @@ int vgui2::Panel::vfunc99()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9ea0 size=0x56
+#include "vgui2__Panel.h"
+
+extern void *sub_101ac8d0();
+
+struct ISurfV97
+{
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual void d8(); virtual void d9();
+	virtual void s10(int a);
+	virtual void d11();
+	virtual void s12(int a, int b, int c, int d);
+};
+
+void vgui2::Panel::vfunc97()
+{
+	int a, b, c;
+	sub_101a9920(&c, &b);
+	vfunc52((int)&a);
+	((ISurfV97 *)sub_101ac8d0())->s10(a);
+	((ISurfV97 *)sub_101ac8d0())->s12(0, 0, c, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9f00 size=0x1
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc98()
@@ -377,6 +464,33 @@ void vgui2::Panel::vfunc103()
 // FUNCTION: 0x101a9fc0 size=0x21
 #include "vgui2__Panel.h"
 bool vgui2::Panel::vfunc73() { if ((char)vfunc22() && *((char *)this + 0x29) && *((unsigned char *)this + 0x27) == 0xff) return true; return false; }
+// END FUNCTION
+
+// FUNCTION: 0x101a9ff0 size=0x60
+#include "vgui2__Panel.h"
+
+struct SurfView {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void s15(int, int);
+};
+int sub_101ac900();
+
+void vgui2::Panel::vfunc33(int p)
+{
+	if (p)
+	{
+		SurfView *surf = (SurfView *)sub_101ac900();
+		surf->s15(this->vfunc0(), ((vgui2::Panel *)p)->vfunc0());
+		if (m_unk4[1] == 1)
+			m_unk4[1] = ((vgui2::Panel *)p)->sub_101aa220();
+	}
+	else
+	{
+		SurfView *surf = (SurfView *)sub_101ac900();
+		surf->s15(this->vfunc0(), 0);
+	}
+}
 // END FUNCTION
 
 // FUNCTION: 0x101aa080 size=0x3
@@ -443,6 +557,58 @@ bool vgui2::Panel::vfunc40()
 int vgui2::Panel::vfunc72(int a0)
 {
     return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aa5c0 size=0x58
+#include "vgui2__Panel.h"
+#include "vgui2__BuildGroup.h"
+
+struct VGuiSystemView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void s5();
+	virtual void s6();
+	virtual void s7();
+	virtual void s8();
+	virtual int s9();
+};
+
+struct VGuiSchemeView
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+	virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31();
+	virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35();
+	virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39();
+	virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43();
+	virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47();
+	virtual void s48(); virtual void s49(); virtual void s50(); virtual void s51();
+	virtual int s52(int);
+};
+
+int sub_101ac8b0();
+int sub_101ac8d0();
+
+int vgui2::Panel::vfunc12()
+{
+	int i = vfunc55();
+	if (vfunc67())
+		i = (*(vgui2::BuildGroup **)((char *)this + 0x1c))->vfunc22(this);
+
+	if (((VGuiSystemView *)sub_101ac8b0())->s9() != 0)
+		i = ((VGuiSystemView *)sub_101ac8b0())->s9();
+
+	return ((VGuiSchemeView *)sub_101ac8d0())->s52(i);
 }
 // END FUNCTION
 
@@ -520,6 +686,38 @@ void vgui2::Panel::vfunc96()
     if (t0 != 0) {
         ((lifted::V *)(((lifted::V *)this)->f31()))->f96(); return;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x101aa7c0 size=0x77
+#include "vgui2__Panel.h"
+
+int sub_101ac900();
+
+struct SurfV
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void vfunc10(int, int *, int *, int *, int *);
+};
+
+struct SelfV
+{
+	virtual int vfunc0();
+};
+
+bool vgui2::Panel::vfunc25(int x, int y)
+{
+	int l, t, r, b;
+	((SurfV *)sub_101ac900())->vfunc10(((SelfV *)this)->vfunc0(), &l, &t, &r, &b);
+	if (x < l)
+		return false;
+	if (y < t)
+		return false;
+	if (x >= r)
+		return false;
+	bool inside = y < b;
+	return inside;
 }
 // END FUNCTION
 
@@ -654,6 +852,54 @@ void vgui2::Panel::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aae60 size=0x65
+struct P42Target
+{
+    virtual int vfunc0();
+};
+
+struct Surf42
+{
+    virtual void v0() = 0;  virtual void v1() = 0;  virtual void v2() = 0;  virtual void v3() = 0;
+    virtual void v4() = 0;  virtual void v5() = 0;  virtual void v6() = 0;  virtual void v7() = 0;
+    virtual void v8() = 0;  virtual void v9() = 0;  virtual void v10() = 0; virtual void v11() = 0;
+    virtual void v12() = 0; virtual void v13() = 0; virtual void v14() = 0;
+    virtual int vfunc15(int) = 0;
+};
+Surf42 *sub_101ac8f0();
+
+struct PanelV42
+{
+    char m_pad[0x38];
+    int m_nCount;
+    int m_nAlloc;
+    int *m_pArray;
+
+    int Find(int id)
+    {
+        for (int i = 0; i < m_nCount; i++)
+            if (m_pArray[i] == id)
+                return i;
+        return -1;
+    }
+    bool IsValidIndex(int i) { return i >= 0 && i < m_nCount; }
+    void sub_101aae60(P42Target *pTarget);
+};
+
+// TARGET: PanelV42::sub_101aae60
+void PanelV42::sub_101aae60(P42Target *pTarget)
+{
+    int id = sub_101ac8f0()->vfunc15(pTarget->vfunc0());
+    int i = Find(id);
+    if (IsValidIndex(i))
+    {
+        for (int j = i; j < m_nCount - 1; j++)
+            m_pArray[j] = m_pArray[j + 1];
+        m_nCount--;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab040 size=0x4
 #include "vgui2__Panel.h"
 int vgui2::Panel::vfunc61()
@@ -776,6 +1022,28 @@ int vgui2::Panel::vfunc53(int a0)
 #include "vgui2__Panel.h"
 void vgui2::Panel::vfunc101()
 {
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ab300 size=0x71
+#include "vgui2__Panel.h"
+
+void vgui2::Panel::sub_101ab300(bool arg1, bool arg2)
+{
+	((char *)this)[0x30] = 1;
+	if ( arg1 )
+	{
+		if ( arg2 )
+			((char *)this)[0x31] = 1;
+		sub_101ab2d0();
+	}
+	if ( arg2 )
+	{
+		((char *)this)[0x31] = 1;
+		vfunc6();
+		for ( int i = 0; i < vfunc36(); i++ )
+			vfunc37(i)->vfunc57(0, 1);
+	}
 }
 // END FUNCTION
 

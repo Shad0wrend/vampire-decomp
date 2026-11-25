@@ -130,6 +130,54 @@ int vgui2::MenuButton::vfunc171(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9a30 size=0x66
+#include "vgui2__MenuButton.h"
+
+extern void *sub_101b6840(unsigned int size);
+
+struct KV_101c9a30 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16();
+	virtual void v17(const char *key, int value);
+	KV_101c9a30 *sub_101b5670(const char *name);
+};
+
+struct IVGui_101c9a30 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c9a30 *sub_101ac8f0();
+
+struct PanelLike_101c9a30 {
+	virtual int GetVPanel();
+};
+
+struct ButtonV_101c9a30 {
+	void sub_101b4210();
+};
+
+// TARGET: vgui2::MenuButton::vfunc85
+void vgui2::MenuButton::vfunc85()
+{
+	((ButtonV_101c9a30 *)this)->sub_101b4210();
+
+	KV_101c9a30 *msg = (KV_101c9a30 *)sub_101b6840(0x1c);
+	if (msg)
+		msg = msg->sub_101b5670("CursorEnteredMenuButton");
+	else
+		msg = 0;
+
+	msg->v17("VPanel", vfunc0());
+	PanelLike_101c9a30 *parent = (PanelLike_101c9a30 *)vfunc31();
+	sub_101ac8f0()->PostMessage(parent->GetVPanel(), msg, 0, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9af0 size=0x6
 #include "vgui2__MenuButton.h"
 namespace lifted {

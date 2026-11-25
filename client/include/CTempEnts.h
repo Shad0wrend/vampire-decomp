@@ -2,12 +2,15 @@
 // declared: its bases, its destructor, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22)
 // the destructor is slot 20 of its vtable; the virtual functions before it are not declared yet
 #pragma once
+#define CTEMPENTS_HEADER
 #include "ITempEnts.h"
 #include "C_LocalTempEntity.h"
 
 class CTempEnts : public ITempEnts
 {
 public:
+	CTempEnts();
+	void sub_1003cd80();
 	void sub_1003ce90(void *, int);
 	void sub_1003cee0();
 	void *sub_1003cf20(const void *, const void *);
@@ -31,7 +34,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void vfunc12();
-	virtual void vfunc13();
+	virtual void vfunc13(C_LocalTempEntity *, int);
 	virtual void vfunc14();
 	virtual void vfunc15(int, int, float, float);
 	virtual void vfunc16(int);

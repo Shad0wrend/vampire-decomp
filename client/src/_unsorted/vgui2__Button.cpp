@@ -220,6 +220,35 @@ int vgui2::Button::vfunc160(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3e20 size=0x6f
+#include "vgui2__Button.h"
+
+// TARGET: vfunc164
+int vgui2::Button::vfunc164(int a0, int a1, int a2, int a3)
+{
+	if ( *(bool *)((char *)this + 0xbc) )
+	{
+		if ( *(char *)&a0 )
+			return *(int *)((char *)this + 0xcc);
+		if ( *(char *)&a3 )
+			return *(int *)((char *)this + 0xd0);
+		if ( vfunc47() )
+		{
+			if ( *(bool *)((char *)this + 0xec) )
+				return *(int *)((char *)this + 0xd0);
+		}
+	}
+	else
+	{
+		if ( *(char *)&a0 )
+			return *(int *)((char *)this + 0xcc);
+		if ( *(char *)&a1 )
+			return *(int *)((char *)this + 0xc8);
+	}
+	return *(int *)((char *)this + 0xc8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3f40 size=0x35
 #include "vgui2__Button.h"
 // TARGET: vgui2::Button::vfunc148

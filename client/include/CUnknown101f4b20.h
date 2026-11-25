@@ -12,4 +12,5 @@ public:
 	char m_pad0010[4];	// 0x10: the folder object that sub_101f3e50 dumps
 
 	void sub_10155840();	// debug dump of one element (stub 0x10012d55): "[Sound Tree]:", "-Ranges-:", then one line per record, then the folder object
+	const char *sub_101557c0(int id, int unused);
 };

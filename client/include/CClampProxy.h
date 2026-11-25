@@ -8,8 +8,9 @@ class CClampProxy : public CFunctionProxy
 public:
 	struct CInput
 	{
-		int m_a, m_b, m_c;
+		float m_a; int m_b, m_c;
 		bool sub_100e3140(void *pMaterial, void *pKeyValues, const char *pName, float flDefault);
+		float sub_100e3270();
 	};
 	CInput m_flMin;
 	CInput m_flMax;

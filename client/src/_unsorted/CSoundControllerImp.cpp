@@ -118,6 +118,67 @@ CSoundPatch *CUnknown101349e0::sub_101349e0(void *filter, int nEntIndex, const c
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134c70 size=0x75
+#include "CSoundControllerImp.h"
+
+struct ControllerV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4();
+	virtual void vfunc5(void *pSound);
+};
+struct VecV
+{
+	int m_pMemory;	// 0x00
+	int m_alloc;	// 0x04
+	int m_grow;		// 0x08
+	int m_size;		// 0x0c
+	int m_elements;	// 0x10
+	int sub_1007db70();
+	void sub_10039e60();
+};
+struct SoundView
+{
+	char m_pad00[0x44];
+	void *m_vt44;
+	char m_pad48[0x4c - 0x48];
+	VecV m_vec;
+};
+struct PoolV
+{
+	void sub_1010e440(void *);
+};
+extern PoolV g_105e5aac;
+extern char g_10226214[];
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+// TARGET: CSoundControllerImp::vfunc9
+void CSoundControllerImp::vfunc9(void *pSound)
+{
+	if (!pSound)
+		return;
+	SoundView *p = (SoundView *)pSound;
+	((ControllerV *)this)->vfunc5(pSound);
+	VecV *pVec = &p->m_vec;
+	for (int i = pVec->m_size - 1; i >= 0; i--)
+		pVec->sub_1007db70();
+	pVec->m_size = 0;
+	pVec->sub_10039e60();
+	pVec->m_elements = pVec->m_pMemory;
+	if (pVec->m_grow != -1)
+	{
+		if (pVec->m_pMemory)
+		{
+			Plat_Free((void *)pVec->m_pMemory);
+			pVec->m_pMemory = 0;
+		}
+		pVec->m_alloc = 0;
+	}
+	p->m_vt44 = (void *)g_10226214;
+	g_105e5aac.sub_1010e440(pSound);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134d30 size=0xc
 struct CSndView101339f0 { void sub_101339f0(); };
 // TARGET: sub_10134d30

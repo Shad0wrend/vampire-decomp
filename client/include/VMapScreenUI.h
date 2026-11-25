@@ -13,7 +13,10 @@ public:
 	VMapScreenUI(int a);
 	void sub_10187860();
 	void sub_10187980();
-	char m_b180;
+	void sub_10187b20();
+	void sub_10187400();
+	void sub_101878c0(int nArg0, int nArg1);
+	bool m_b180;
 	int m_n184;
 	VMapBkg m_bkg;
 	char m_b278;

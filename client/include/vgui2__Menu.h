@@ -6,14 +6,16 @@
 
 namespace vgui2
 {
+class MenuItem;
 class Menu : public vgui2::Panel
 {
 public:
+	void sub_101c0080(void *pExcept);
 	virtual ~Menu();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with Menu's own function
 	virtual int vfunc21(int);
-	virtual void vfunc60();
+	virtual void vfunc60(void *);
 	virtual int vfunc74(int);
 	virtual void vfunc78(int);
 	virtual void vfunc81();
@@ -26,7 +28,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc101();
 	virtual int vfunc102();
 	// the slots Menu adds to its base's vtable: 107-137, vfuncK at slot K
-	virtual void vfunc107();
+	virtual int vfunc107(vgui2::MenuItem *);
 	virtual int vfunc108(int, int);
 	virtual int vfunc109(int, int, int, int);
 	virtual int vfunc110(int, int, int);

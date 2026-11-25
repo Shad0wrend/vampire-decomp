@@ -32,6 +32,19 @@ int CSave::vfunc38()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128f30 size=0x68
+#include "CSave.h"
+
+void *CSave::vfunc39(unsigned char bFree)
+{
+	((CUtlVector<int> *)((char *)this + 4))->~CUtlVector<int>();
+	this->ISave::~ISave();
+	if ( bFree & 1 )
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128fa0 size=0x7
 #include "CSave.h"
 int CSave::vfunc0()
@@ -430,6 +443,45 @@ void CSave::vfunc32(const int *pHandles, int count)
 	int indices[256];
 	for (int i = 0; i < count; i++)
 		indices[i] = sub_10129a30((void *)pHandles[i]);
+	vfunc10(indices, count);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10129e90 size=0x56
+#include "CSave.h"
+
+int __stdcall sub_10129a20(int handle) { return -1; }
+
+// TARGET: CSave::vfunc35
+void CSave::vfunc35(const char *pszName, void *pData, int count)
+{
+    int buffer[256];
+    for (int i = 0; i < count; i++)
+        buffer[i] = sub_10129a20(((int *)pData)[i]);
+    vfunc9(pszName, buffer, count);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10129ef0 size=0x4e
+#include "CSave.h"
+
+int __stdcall sub_10129a20(int)
+{
+	return -1;
+}
+
+// TARGET: CSave::vfunc34
+void CSave::vfunc34(CSaveEdict *const *pEdicts, int count)
+{
+	int indices[256];
+	int i = 0;
+	if (count > 0)
+	{
+		do
+		{
+			indices[i] = sub_10129a20((int)pEdicts[i]);
+		} while (++i < count);
+	}
 	vfunc10(indices, count);
 }
 // END FUNCTION

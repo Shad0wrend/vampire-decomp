@@ -158,6 +158,25 @@ int vgui2::PropertySheet::vfunc125(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9390 size=0x51
+#include "vgui2__PropertySheet.h"
+
+// TARGET: vgui2::PropertySheet::vfunc72
+int vgui2::PropertySheet::vfunc72(int direction)
+{
+	if ( !*(vgui2::Panel **)((char *)this + 0x70) )
+		return 0;
+
+	for ( int i = 0; i < (*(vgui2::Panel **)((char *)this + 0x70))->vfunc36(); i++ )
+	{
+		int nRet = (*(vgui2::Panel **)((char *)this + 0x70))->vfunc37(i)->vfunc72(direction);
+		if ( nRet )
+			return nRet;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c93f0 size=0x39
 #include "vgui2__PropertySheet.h"
 struct KV23 { KV23 *sub_101b5670(const char *); };

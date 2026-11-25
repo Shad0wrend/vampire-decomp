@@ -40,6 +40,23 @@ void CStudiomodelPanel::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018bdc0 size=0x73
+#include "CStudiomodelPanel.h"
+
+int sub_100cd100();
+
+void CStudiomodelPanel::vfunc84(int iTime, int a2)
+{
+    if (!*(int *)((char *)this + 0x58))
+        return; if (!*(char *)((char *)this + 0x75))
+        return; else { float flDelta = (float)((int)iTime - *(int *)((char *)this + 0x70)) * 1440.0f;
+    float flAngle; flAngle = flDelta / sub_100cd100() + *(float *)(*(int *)(0x58 + (char *)this) + 0x24);
+    int iAngle = ((int)(flAngle * 182.04445f)) & 0xffff;
+    *(float *)((char *)*(int *)(0x58 + (char *)this) + 0x24) = (float)iAngle * 0.005493164f;
+    *(int *)((char *)this + 0x70) = iTime; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018be40 size=0x9
 struct CUnknown1018be40 { char pad[0x74]; char a; char b; void sub_1018be40(); };
 void CUnknown1018be40::sub_1018be40() { b = a = 0; }

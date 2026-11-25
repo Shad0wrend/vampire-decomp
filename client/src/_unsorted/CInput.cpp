@@ -101,6 +101,27 @@ bool CInput::vfunc48()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff950 size=0x56
+#include "CInput.h"
+
+struct InputView
+{
+    virtual void iv0() = 0;
+    virtual bool vfunc1() = 0;
+    char m_pad04[0x24];
+    float m_fl28;        // +0x28
+};
+
+extern InputView *g_104d2134;
+extern InputView *g_104d24f4;
+
+void CInput::vfunc49(float *a, float *b)
+{
+    *a = g_104d2134->vfunc1() ? 0.0f : g_104d2134->m_fl28;
+    *b = g_104d24f4->vfunc1() ? 0.0f : g_104d24f4->m_fl28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff9b0 size=0x1b
 #include "CInput.h"
 namespace lifted {
@@ -150,6 +171,23 @@ int CInput::vfunc44()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ffa20 size=0x71
+#include "CInput.h"
+
+// TARGET: vfunc29
+int CInput::vfunc29()
+{
+	if ( *(char *)((char *)this + 0xf8) != 0
+		|| *(char *)((char *)this + 0xf0) != 0
+		|| *(float *)((char *)this + 0xfc) > 0.0f
+		|| *(float *)((char *)this + 0x108) > 0.0f
+		|| *(float *)((char *)this + 0x138) > 0.0f
+		|| *(float *)((char *)this + 0x100) > 0.0f )
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffaa0 size=0x4b
 #include "Vector.h"
 #include "CInput.h"
@@ -164,6 +202,37 @@ float CInput::vfunc30() {
 float CInput::vfunc53()
 {
     return *(float *)((char *)this + 0x104);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100ffb00 size=0x5c
+#include "CInput.h"
+#include "Vector.h"
+
+struct CmdView
+{
+	char m_pad28[0x28];
+	Vector m_vec28;
+	char m_pad34[0x38 - 0x34];
+	Vector m_vec38;
+	char m_pad44[0x50 - 0x44];
+	Vector m_vec50;
+};
+
+struct CInputView
+{
+	char m_pad164[0x164];
+	Vector m_vec164;
+	Vector m_vec170;
+};
+
+void CInput::vfunc31(void *pCmd)
+{
+	CmdView *cmd = (CmdView *)pCmd;
+	CInputView *v = (CInputView *)this;
+	VectorAdd(cmd->m_vec38, v->m_vec164, cmd->m_vec38);
+	cmd->m_vec50 = v->m_vec170;
+	vfunc33(&cmd->m_vec38, &cmd->m_vec50, &cmd->m_vec28);
 }
 // END FUNCTION
 
@@ -467,6 +536,41 @@ void CInput::vfunc21(char b) { m_unk24 = b != 0; }
 // FUNCTION: 0x101069c0 size=0x9
 #include "CInput.h"
 bool CInput::vfunc24() { if (m_unk24) return true; return false; }
+// END FUNCTION
+
+// FUNCTION: 0x10106ac0 size=0x52
+#include "CInput.h"
+
+int sub_100cd0f0();
+int sub_100cd100();
+
+class IEngineView_104a57d4
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45();
+	virtual int vfunc46();
+	virtual int vfunc47();
+};
+
+extern IEngineView_104a57d4 *g_104a57d4;
+
+struct CInputCallView_10106ac0
+{
+	int sub_10106880(int x, int y);
+};
+
+// TARGET: CInput::vfunc23
+void CInput::vfunc23(int a1, int a2)
+{
+	((CInputCallView_10106ac0 *)this)->sub_10106880(
+		a1 - sub_100cd100() / 2 + g_104a57d4->vfunc46(),
+		a2 - sub_100cd0f0() / 2 + g_104a57d4->vfunc47());
+}
 // END FUNCTION
 
 // FUNCTION: 0x10106b20 size=0x13

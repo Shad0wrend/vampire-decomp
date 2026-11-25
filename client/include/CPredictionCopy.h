@@ -14,4 +14,6 @@ public:
 	char m_u2c[4];
 	void *m_FieldCompareFunc;
 	void ReportFieldsDiffer(const char *fmt, ...);
+	char sub_10123470();
+	int sub_10123cd0(const char *, const char *);
 };

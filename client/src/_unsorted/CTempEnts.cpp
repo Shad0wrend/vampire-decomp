@@ -1,12 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1003b530 size=0x36
+#include "CTempEnts.h"
+
+CTempEnts::CTempEnts()
+{
+	sub_1003cd80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b570 size=0x1e
 #include "CTempEnts.h"
 
 // VC6 writes CTempEnts's scalar deleting destructor where it emits the class's vtable; `new` in a function
 // nothing calls makes it emit both here
-CTempEnts *pcd_emit_1003b570() { return new CTempEnts; }
+CTempEnts *pcd_emit_1003b570(const CTempEnts &other) { return new CTempEnts(other); }
 
 // TARGET: ??_GCTempEnts@@UAEPAXI@Z
 // END FUNCTION
@@ -257,6 +266,52 @@ void CTempEnts::vfunc4(const void *pos, int r, int g, int b, int a, int modelInd
     pTemp->m_nField7c4 = 0;
 
     pTemp->sub_1009f6c0(2, (float)g_104a5738->RandomInt(0, 360));
+}
+// END FUNCTION
+
+// FUNCTION: 0x1003c9b0 size=0x77
+#include "CTempEnts.h"
+
+class CUnknown1003a840
+{
+public:
+	void sub_1003a840(int, int, int);
+};
+
+struct CV1009f670
+{
+	float sub_1009f670(int);
+};
+
+struct IRandomView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int, int);
+};
+
+extern IRandomView *g_104a5738;
+
+void CTempEnts::vfunc13(C_LocalTempEntity *pEnt, int n)
+{
+	if (!pEnt)
+		return;
+
+	*(int *)((char *)pEnt + 0x48) = 4;
+	*(int *)((char *)pEnt + 0x4c) = 0;
+	((CUnknown1003a840 *)pEnt)->sub_1003a840(0, 0, 0x41f00000);
+
+	int r = g_104a5738->RandomInt(20, 35);
+	((char *)pEnt)[0x50] = (char)r;
+	((char *)pEnt)[0x51] = (char)r;
+	((char *)pEnt)[0x52] = (char)r;
+	((char *)pEnt)[0x53] = (char)0xff;
+
+	float f = ((CV1009f670 *)pEnt)->sub_1009f670(2);
+	pEnt->sub_1009f680(2, f + 20.0f);
+
+	((int *)pEnt)[0x7ac / 4] = 0x200000;
+	pEnt->m_unk7f0 = n;
 }
 // END FUNCTION
 

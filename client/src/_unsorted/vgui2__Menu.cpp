@@ -11,6 +11,91 @@ vgui2::Menu *pcd_emit_101bf4d0(const vgui2::Menu &other) { return new vgui2::Men
 // TARGET: ??_GMenu@vgui2@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x101bf660 size=0x5f
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+void *sub_101ac650(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct MenuItemV_101bf660 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40();
+	virtual void v41(int);
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46();
+	virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61();
+	virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66();
+	virtual void v67(); virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76();
+	virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80(); virtual void v81();
+	virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86();
+	virtual void v87(); virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91();
+	virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96();
+	virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100(); virtual void v101();
+	virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105(); virtual void v106();
+	virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110(); virtual void v111();
+	virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116();
+	virtual void v117(); virtual void v118(); virtual void v119(); virtual void v120(); virtual void v121();
+	virtual void v122(); virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126();
+	virtual void v127(); virtual void v128(); virtual void v129(); virtual void v130(); virtual void v131();
+	virtual void v132(); virtual void v133(); virtual void v134(); virtual void v135(); virtual void v136();
+	virtual void v137(); virtual void v138(); virtual void v139(); virtual void v140(); virtual void v141();
+	virtual void v142(); virtual void v143(); virtual void v144(); virtual void v145(); virtual void v146();
+	virtual void v147(); virtual void v148(); virtual void v149(); virtual void v150(); virtual void v151();
+	virtual void v152(); virtual void v153(); virtual void v154(); virtual void v155(); virtual void v156();
+	virtual void v157(); virtual void v158(); virtual void v159(); virtual void v160(); virtual void v161();
+	virtual void v162(int);
+};
+
+struct MenuV_101bf660 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106();
+	virtual int v107(void *p);
+};
+
+int vgui2::Menu::vfunc111(int a1, int a2, int a3, int a4)
+{
+	vgui2::MenuItem *item = (vgui2::MenuItem *)sub_101ac650(0x104);
+	if (item)
+		item = ::new (item) vgui2::MenuItem((int)this, a1, a2, 0, 0);
+	else
+		item = 0;
+
+	((MenuItemV_101bf660 *)item)->v162(a3);
+	((MenuItemV_101bf660 *)item)->v41(a4);
+	return ((MenuV_101bf660 *)this)->v107(item);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf6c0 size=0x1b
 #include "vgui2__Menu.h"
 namespace lifted {
@@ -19,6 +104,24 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Menu::vfunc112(int a0, int a1, int a2)
 {
     return ((lifted::V *)this)->f111(a0, a0, a1, a2);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bf6e0 size=0x5f
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+extern void *sub_101ac650(int);
+
+int vgui2::Menu::vfunc109(int a, int b, int c, int d)
+{
+	void *mem = sub_101ac650(0x104);
+	vgui2::MenuItem *item = mem ? ::new(mem) vgui2::MenuItem((int)this, a, b, 0, 0) : 0;
+	item->vfunc161(c);
+	item->vfunc41(d);
+	return this->vfunc107(item);
 }
 // END FUNCTION
 
@@ -44,6 +147,91 @@ int vgui2::Menu::vfunc108(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf780 size=0x5f
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+void *sub_101ac650(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct MenuItemV_101bf780 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40();
+	virtual void v41(int);
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46();
+	virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61();
+	virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66();
+	virtual void v67(); virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76();
+	virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80(); virtual void v81();
+	virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86();
+	virtual void v87(); virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91();
+	virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96();
+	virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100(); virtual void v101();
+	virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105(); virtual void v106();
+	virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110(); virtual void v111();
+	virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116();
+	virtual void v117(); virtual void v118(); virtual void v119(); virtual void v120(); virtual void v121();
+	virtual void v122(); virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126();
+	virtual void v127(); virtual void v128(); virtual void v129(); virtual void v130(); virtual void v131();
+	virtual void v132(); virtual void v133(); virtual void v134(); virtual void v135(); virtual void v136();
+	virtual void v137(); virtual void v138(); virtual void v139(); virtual void v140(); virtual void v141();
+	virtual void v142(); virtual void v143(); virtual void v144(); virtual void v145(); virtual void v146();
+	virtual void v147(); virtual void v148(); virtual void v149(); virtual void v150(); virtual void v151();
+	virtual void v152(); virtual void v153(); virtual void v154(); virtual void v155(); virtual void v156();
+	virtual void v157(); virtual void v158(); virtual void v159(); virtual void v160(); virtual void v161();
+	virtual void v162(int);
+};
+
+struct MenuV_101bf780 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106();
+	virtual int v107(void *p);
+};
+
+int vgui2::Menu::vfunc116(int a1, int a2, int a3, int a4)
+{
+	vgui2::MenuItem *item = (vgui2::MenuItem *)sub_101ac650(0x104);
+	if (item)
+		item = ::new (item) vgui2::MenuItem((int)this, a1, a2, 0, 1);
+	else
+		item = 0;
+
+	((MenuItemV_101bf780 *)item)->v162(a3);
+	((MenuItemV_101bf780 *)item)->v41(a4);
+	return ((MenuV_101bf780 *)this)->v107(item);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf7e0 size=0x1b
 #include "vgui2__Menu.h"
 namespace lifted {
@@ -52,6 +240,92 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Menu::vfunc117(int a0, int a1, int a2)
 {
     return ((lifted::V *)this)->f116(a0, a0, a1, a2);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bf800 size=0x5f
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+void *sub_101ac650(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct MenuItemV_101bf800 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40();
+	virtual void v41(int);
+	virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46();
+	virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51();
+	virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56();
+	virtual void v57(); virtual void v58(); virtual void v59(); virtual void v60(); virtual void v61();
+	virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66();
+	virtual void v67(); virtual void v68(); virtual void v69(); virtual void v70(); virtual void v71();
+	virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76();
+	virtual void v77(); virtual void v78(); virtual void v79(); virtual void v80(); virtual void v81();
+	virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86();
+	virtual void v87(); virtual void v88(); virtual void v89(); virtual void v90(); virtual void v91();
+	virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96();
+	virtual void v97(); virtual void v98(); virtual void v99(); virtual void v100(); virtual void v101();
+	virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105(); virtual void v106();
+	virtual void v107(); virtual void v108(); virtual void v109(); virtual void v110(); virtual void v111();
+	virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116();
+	virtual void v117(); virtual void v118(); virtual void v119(); virtual void v120(); virtual void v121();
+	virtual void v122(); virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126();
+	virtual void v127(); virtual void v128(); virtual void v129(); virtual void v130(); virtual void v131();
+	virtual void v132(); virtual void v133(); virtual void v134(); virtual void v135(); virtual void v136();
+	virtual void v137(); virtual void v138(); virtual void v139(); virtual void v140(); virtual void v141();
+	virtual void v142(); virtual void v143(); virtual void v144(); virtual void v145(); virtual void v146();
+	virtual void v147(); virtual void v148(); virtual void v149(); virtual void v150(); virtual void v151();
+	virtual void v152(); virtual void v153(); virtual void v154(); virtual void v155(); virtual void v156();
+	virtual void v157(); virtual void v158(); virtual void v159(); virtual void v160();
+	virtual void v161(int);
+	virtual void v162();
+};
+
+struct MenuV_101bf800 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64();
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74();
+	virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84();
+	virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94();
+	virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104();
+	virtual void v105(); virtual void v106();
+	virtual int v107(void *p);
+};
+
+int vgui2::Menu::vfunc114(int a1, int a2, int a3, int a4)
+{
+	vgui2::MenuItem *item = (vgui2::MenuItem *)sub_101ac650(0x104);
+	if (item)
+		item = ::new (item) vgui2::MenuItem((int)this, a1, a2, 0, 1);
+	else
+		item = 0;
+
+	((MenuItemV_101bf800 *)item)->v161(a3);
+	((MenuItemV_101bf800 *)item)->v41(a4);
+	return ((MenuV_101bf800 *)this)->v107(item);
 }
 // END FUNCTION
 
@@ -77,6 +351,28 @@ int vgui2::Menu::vfunc113(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf8a0 size=0x62
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+void *sub_101ac650(unsigned int);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+// TARGET: vgui2::Menu::vfunc121
+int vgui2::Menu::vfunc121(int a1, int a2, int a3, int a4, int a5)
+{
+    void *mem = sub_101ac650(0x104);
+    vgui2::MenuItem *item;
+    if (mem)
+        item = new (mem) vgui2::MenuItem((int)this, a1, a2, a5, 0);
+    else
+        item = 0;
+    item->vfunc162(a3);
+    item->vfunc41(a4);
+    return vfunc107(item);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf910 size=0x20
 #include "vgui2__Menu.h"
 namespace lifted {
@@ -85,6 +381,28 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Menu::vfunc122(int a0, int a1, int a2, int a3)
 {
     return ((lifted::V *)this)->f121(a0, a0, a1, a2, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bf930 size=0x62
+#include "vgui2__Menu.h"
+#include "vgui2__MenuItem.h"
+
+void *sub_101ac650(unsigned int);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+// TARGET: vgui2::Menu::vfunc119
+int vgui2::Menu::vfunc119(int a1, int a2, int a3, int a4, int a5)
+{
+    void *mem = sub_101ac650(0x104);
+    vgui2::MenuItem *item;
+    if (mem)
+        item = new (mem) vgui2::MenuItem((int)this, a1, a2, a5, 0);
+    else
+        item = 0;
+    item->vfunc161(a3);
+    item->vfunc41(a4);
+    return vfunc107(item);
 }
 // END FUNCTION
 
@@ -201,6 +519,27 @@ void vgui2::Menu::vfunc90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0590 size=0x4f
+#include "vgui2__Menu.h"
+
+struct ISchemeView {
+	virtual void d0(); virtual void d1(); virtual void d2();
+	virtual void d3(); virtual void d4(); virtual void d5();
+	virtual int *v6(int *pOut, const char *name);
+};
+
+int vgui2::Menu::vfunc74(int pScheme)
+{
+	Panel::vfunc74(pScheme);
+	int color;
+	int *p1 = ((ISchemeView *)pScheme)->v6(&color, "Menu/FgColor");
+	vfunc51(*p1);
+	int *p2 = ((ISchemeView *)pScheme)->v6(&color, "Menu/BgColor");
+	int nRet = vfunc50(*p2);
+	return nRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0750 size=0x4
 #include "vgui2__Menu.h"
 int vgui2::Menu::vfunc129()
@@ -259,6 +598,42 @@ void vgui2::Menu::vfunc84(int a0, int a1)
     ((lifted::V *)(((lifted::V *)this)->f31()))->f84(a0, a1);
     ((lifted::V *)this)->f15(0);
     ((lifted::V *)this)->f57(0, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c08d0 size=0x69
+#include "vgui2__Menu.h"
+
+extern void *sub_101b6840(unsigned int size);
+
+struct KV_101c08d0 {
+	KV_101c08d0 *sub_101b5670(const char *name);
+};
+
+struct IVGui_101c08d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c08d0 *sub_101ac8f0();
+
+struct PanelLike_101c08d0 {
+	virtual int GetVPanel();
+};
+
+void vgui2::Menu::vfunc91(int)
+{
+	*(int *)((char *)this + 0x84) = 1;
+	KV_101c08d0 *msg = (KV_101c08d0 *)sub_101b6840(0x1c);
+	if (msg)
+		msg = msg->sub_101b5670("KeyModeSet");
+	else
+		msg = 0;
+
+	PanelLike_101c08d0 *parent = (PanelLike_101c08d0 *)vfunc31();
+	sub_101ac8f0()->PostMessage(parent->GetVPanel(), msg, vfunc0(), 0.0f);
 }
 // END FUNCTION
 

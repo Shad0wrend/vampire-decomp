@@ -32,6 +32,82 @@ int vgui2::PanelListPanel::vfunc109()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cab80 size=0x6e
+#include "vgui2__PanelListPanel.h"
+
+namespace vgui2
+{
+struct PanelListPanelItem
+{
+	Panel *m_pPanel;
+};
+
+struct PanelListPanelView
+{
+	char m_pad[0x58];
+	int m_nItems;		// 0x58
+	int m_unk5c;		// 0x5c
+	PanelListPanelItem **m_ppItems;	// 0x60
+};
+
+void PanelListPanel::sub_101cab80(int itemID)
+{
+	PanelListPanelView *v = (PanelListPanelView *)this;
+
+	PanelListPanelItem *data = ( itemID >= 0 && itemID < v->m_nItems ) ? v->m_ppItems[itemID] : 0;
+
+	delete data->m_pPanel;
+	delete data;
+
+	if ( itemID >= 0 && itemID < v->m_nItems )
+	{
+		for ( int i = itemID; i < v->m_nItems - 1; i++ )
+			v->m_ppItems[i] = v->m_ppItems[i + 1];
+		v->m_nItems--;
+	}
+
+	vfunc57(0, 0);
+}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101cabf0 size=0x77
+#include "vgui2__PanelListPanel.h"
+
+struct PItem
+{
+	vgui2::Panel *panel;
+};
+
+struct PVec
+{
+	char pad[0x58];
+	volatile int m_Size;
+	char pad5c[4];
+	PItem ** volatile m_pMem;
+};
+
+static inline PItem *GetItem(PVec *v, int i)
+{
+	if (i < 0 || i >= v->m_Size)
+		return 0;
+	return v->m_pMem[i];
+}
+
+void vgui2::PanelListPanel::vfunc112()
+{
+	int i;
+	for (i = 0; i < ((PVec *)this)->m_Size; i++)
+	{
+		if (GetItem((PVec *)this, i))
+			delete GetItem((PVec *)this, i)->panel;
+		delete GetItem((PVec *)this, i);
+	}
+	((PVec *)this)->m_Size = 0;
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cac80 size=0x26
 #include "vgui2__PanelListPanel.h"
 namespace lifted {
@@ -42,6 +118,33 @@ int vgui2::PanelListPanel::vfunc114(int a0, int a1)
 {
     ((lifted::C101a98f0 *)this)->sub_101a98f0(a0, a1);
     return ((lifted::V *)this)->f57(0, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101caf40 size=0x75
+#include "vgui2__PanelListPanel.h"
+
+struct ISchemeV
+{
+	virtual void vf0();
+	virtual void vf1();
+	virtual void vf2();
+	virtual void *GetBorder(const char *name);
+	virtual void vf4();
+	virtual int *GetColor(int *out, const char *name);
+	virtual int *GetColor(int *out, const char *name, int def);
+};
+
+#pragma warning(disable:4716)
+int vgui2::PanelListPanel::vfunc74(int hScheme)
+{
+	ISchemeV *pScheme = (ISchemeV *)hScheme;
+	Panel::vfunc74(hScheme);
+	vfunc60(pScheme->GetBorder("ButtonDepressedBorder"));
+	int c1, c2;
+	vfunc50(*pScheme->GetColor(&c2, "ListBgColor",
+		*pScheme->GetColor(&c1, "WindowDisabledBgColor")));
+	vfunc60(pScheme->GetBorder("DepressedButtonBorder"));
 }
 // END FUNCTION
 

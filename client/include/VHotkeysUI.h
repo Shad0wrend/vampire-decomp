@@ -12,10 +12,12 @@ class VHotkeysUI : public CBasePanel, public CHudElement
 public:
 	virtual ~VHotkeysUI();
 	void sub_10183aa0();
+	void sub_10183a20();
 	char m_pad0000[0x1c88 - 0x170 - sizeof(CHudElement)];
 	vgui2::Label m_Label;
 	VHotkeysUI(int a);
 	virtual int vfunc21(int);
+	virtual void vfunc78(int);
 	VHotkeysTail *Tail() { return (VHotkeysTail *)((char *)this + 0x1d40); }
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

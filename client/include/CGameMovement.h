@@ -84,6 +84,7 @@ public:
 	float sub_100ee720();	// compares the float at the player's +0xb4 with the global time (+0xc of 0x1070b228) minus the player's +0xb8, returns one of two constants (0x104454c0 / 0x104454c4)
 		// movement speed scale: 0.8 * a tuning value chosen by the player's state at +0xc0 (0 for other states)
 	void sub_100ea590();	// plays a random "surfaces/wade/step*.wav" footstep sound at the player's origin (+0x70) with a clamped volume
+	void sub_100ec390();
 	void sub_100e7e90();	// copies the player's +0x24 to +0x28 and the move data's +0x3e0 / +0x3e4 to the player's +0xc8 / +0xcc
 		// when the move data's +0x2314 is zero, subtracts 0.5 * frame time * (global 0x109ef2d4 value) * (move +0x3ec or 1) from the player's +0x48, then runs sub_10004ebc
 		// like sub_10120f30 without the +0x2314 test: applies the 0.5 * frame time * gravity * scale term to the player's +0x48, then adds the player's +0x54 * frame time to +0x48, clears +0x54 and runs sub_10004ebc

@@ -22,10 +22,10 @@ public:
     CUnknown101ac6b0 m_hCurrent;
     bool m_bFlag;	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots FocusNavGroup adds to its base's vtable: 0-8, vfuncK at slot K
-    virtual void vfunc0();
+    virtual Panel *vfunc0();
     virtual void vfunc1();
     virtual int vfunc2();
-    virtual void vfunc3();
+    virtual int vfunc3(int);
     virtual void vfunc4();
     virtual void vfunc5();
     virtual int vfunc6();

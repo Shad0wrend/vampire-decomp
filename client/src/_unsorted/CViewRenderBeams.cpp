@@ -32,3 +32,65 @@ void CViewRenderBeams::vfunc1()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10194160 size=0x48
+#include "CViewRenderBeams.h"
+
+struct BeamInfoView2
+{
+	int m_n0;
+	char m_pad4[0x40 - 0x4];
+	float m_fl40;
+};
+
+class BeamHelpers
+{
+public:
+	void sub_10193790(Beam_t *pBeam, void *pInfo);
+};
+
+Beam_t *CViewRenderBeams::sub_10194160(void *pInfo)
+{
+	BeamInfoView2 *info = (BeamInfoView2 *)pInfo;
+	Beam_t *pBeam = sub_101938a0(pInfo);
+	if ( !pBeam )
+		return pBeam;
+
+	*(int *)((char *)pBeam + 0x28) = info->m_n0;
+	((BeamHelpers *)this)->sub_10193790(pBeam, pInfo);
+
+	if ( info->m_fl40 == 0.0f )
+		*(int *)((char *)pBeam + 0x2c) |= (int)0x80000000;
+
+	return pBeam;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10195c90 size=0x6f
+#include "CViewRenderBeams.h"
+#include "Vector.h"
+
+struct BeamInfoV
+{
+	char pad0[0x14];
+	Vector m_vecStart;	// 0x14
+	Vector m_vecEnd;	// 0x20
+};
+
+struct BeamV
+{
+	char pad0[0x34];
+	Vector m_vecStart;	// 0x34
+	Vector m_vecEnd;	// 0x40
+	char pad1[0xac - 0x4c];
+	Vector m_vecDelta;	// 0xac
+};
+
+void CViewRenderBeams::vfunc22(BeamV *pBeam, BeamInfoV *pInfo)
+{
+	pBeam->m_vecStart = pInfo->m_vecStart;
+	pBeam->m_vecEnd = pInfo->m_vecEnd;
+	pBeam->m_vecDelta = pInfo->m_vecEnd - pInfo->m_vecStart;
+	sub_10193790(pBeam, pInfo);
+}
+// END FUNCTION

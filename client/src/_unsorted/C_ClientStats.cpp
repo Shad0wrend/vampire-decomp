@@ -145,3 +145,35 @@ void C_ClientStats::vfunc3()
 		m_Stats[j] = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100adcd0 size=0x5e
+#include "C_ClientStats.h"
+
+struct BaseStatsV_100adcd0 {
+	char m_pad00[4];
+	int m_Count[6];
+	int m_pad1c;
+	__int64 m_Total[6];
+	int m_Min[6];
+	int m_Max[6];
+	double m_Data1[27];
+	char m_padA[0x230 - 0x80 - 27 * 8];
+	double m_Data2[27];
+};
+
+void C_ClientStats::vfunc4()
+{
+	BaseStatsV_100adcd0 *s = (BaseStatsV_100adcd0 *)this;
+	for (int i = 0; i < 27; i++)
+		s->m_Data2[i] += s->m_Data1[i];
+
+	for (int j = 0; j < 6; j++)
+	{
+		s->m_Total[j] += s->m_Count[j];
+		if (s->m_Count[j] < s->m_Min[j])
+			s->m_Min[j] = s->m_Count[j];
+		if (s->m_Count[j] > s->m_Max[j])
+			s->m_Max[j] = s->m_Count[j];
+	}
+}
+// END FUNCTION

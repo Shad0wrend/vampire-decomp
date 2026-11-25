@@ -19,6 +19,28 @@ vgui2::TextImage::~TextImage()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9d70 size=0x7c
+#include "vgui2__TextImage.h"
+extern "C" {
+size_t wcslen(const unsigned short *);
+unsigned short *wcscpy(unsigned short *, const unsigned short *);
+}
+void vgui2::TextImage::vfunc26(const unsigned short *text)
+{
+	short len = (short)wcslen(text);
+	m_unk22 = len;
+	if (len >= m_unk20) {
+		delete m_pText;
+		m_unk20 = m_unk22 + 1;
+		m_pText = (char *)new char[m_unk20 * 2];
+	}
+	wcscpy((unsigned short *)m_pText, text);
+	int w, h;
+	vfunc33(&w, &h, (int)m_pText);
+	vfunc9(w, h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b9df0 size=0x21
 #include "vgui2__TextImage.h"
 namespace lifted {
@@ -28,6 +50,54 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::TextImage::vfunc28(int a0, int a1)
 {
     return ((lifted::V *)(lifted::sub_101ac920()))->f8(*(int *)((char *)this + 0x1c), a0, a1);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b9e20 size=0x59
+#include "vgui2__TextImage.h"
+
+struct CTextImageLayout
+{
+	char m_pad00[0x2c];
+	int m_i2c;
+};
+
+class ILocalizeView
+{
+public:
+	virtual void l0() = 0;
+	virtual void l1() = 0;
+	virtual void l2() = 0;
+	virtual void l3() = 0;
+	virtual void l4() = 0;
+	virtual void l5() = 0;
+	virtual void l6() = 0;
+	virtual void l7() = 0;
+	virtual void l8() = 0;
+	virtual void l9() = 0;
+	virtual void l10() = 0;
+	virtual char *l11(unsigned short) = 0;
+};
+
+void *sub_101ac920();
+
+extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
+
+// TARGET: vgui2::TextImage::vfunc29
+void vgui2::TextImage::vfunc29(char *buf, int size)
+{
+	CTextImageLayout *s = (CTextImageLayout *)this;
+	if (s->m_i2c != 0xffff)
+	{
+		const char *txt = ((ILocalizeView *)sub_101ac920())->l11((unsigned short)s->m_i2c);
+		buf[0] = '#';
+		strncpy(buf + 1, txt, size - 1);
+		buf[size - 1] = 0;
+	}
+	else
+	{
+		vfunc28((int)buf, size);
+	}
 }
 // END FUNCTION
 

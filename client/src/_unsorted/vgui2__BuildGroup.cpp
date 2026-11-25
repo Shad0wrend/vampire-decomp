@@ -264,6 +264,42 @@ void vgui2::BuildGroup::vfunc3(const char *resourceName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c25e0 size=0x52
+#include "vgui2__BuildGroup.h"
+
+extern void *sub_101b6840(unsigned int size);
+extern void *sub_101ac910();
+
+struct KV_101c25e0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void vfunc3(void *filesystem, const char *resourceName, const char *pathID);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void deleteThis();
+	KV_101c25e0 *sub_101b5670(const char *name);
+};
+
+// TARGET: vgui2::BuildGroup::vfunc4
+void vgui2::BuildGroup::vfunc4()
+{
+	if ( !*(char **)((char *)this + 0x54) )
+		return;
+
+	KV_101c25e0 *kv = (KV_101c25e0 *)sub_101b6840(0x1c);
+	if ( kv )
+		kv = kv->sub_101b5670(*(char **)((char *)this + 0x54));
+	else
+		kv = 0;
+
+	vfunc6(kv);
+	kv->vfunc3(sub_101ac910(), *(char **)((char *)this + 0x54), 0);
+	kv->deleteThis();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b00 size=0xa
 #include "vgui2__BuildGroup.h"
 int vgui2::BuildGroup::vfunc8(int a0)

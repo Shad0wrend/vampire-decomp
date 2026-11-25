@@ -12,5 +12,6 @@ public:
 	CHudChat(int a);
 	virtual ~CHudChat();
 	virtual void vfunc13(int, int);
+	void sub_100f24b0(int, int, int);
 	static void operator delete(void *pMem) { CHudElement::operator delete(pMem); }
 };

@@ -11,6 +11,8 @@ public:
 	virtual ~CBasePanel();
 	void sub_101aa230(void *);
 	void sub_10187a90(int);
+	void sub_101ab3d0(const char *name);
+	void sub_10175da0(const char *name);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CBasePanel's own function
 	virtual void vfunc2();
@@ -22,8 +24,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc97();
 	// the slots CBasePanel adds to its base's vtable: 107-111, vfuncK at slot K
 	virtual bool vfunc107();
-	virtual void vfunc108();
-	virtual void vfunc109();
+	virtual void vfunc108(const char *name, char b);
+	virtual void vfunc109(float);
 	virtual void vfunc110();
 	virtual void vfunc111(int);
 };

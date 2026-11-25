@@ -12,7 +12,10 @@ class Panel : public vgui2::IClientPanel
 public:
 	static void operator delete(void *pMem);
 	Panel(Panel *parent, const char *name);
-	void sub_101ab300(int, int);
+	void sub_101ab300(bool, bool);
+	void sub_101ab2d0();
+	void sub_101aa260(int a, int b);
+	void sub_101a9810(const char *pszName);
 	int sub_101ab490(int);
 	int sub_101aa220();
 	void sub_101a9af0();
@@ -31,6 +34,7 @@ public:
 	int m_i74;
 	int m_unk78;
 	void sub_101a9920(int *, int *);
+	void sub_101ab0d0(int *wide, int *tall);
 	void sub_101ab4e0(int);
 	int m_w7c;
 	int m_h80;
@@ -46,6 +50,7 @@ public:
 	CHUDSprite10059620 *m_pSprite;
 	int m_unk0c4[(0x170 - 0xc4) / 4];
 	void sub_101a98c0(int *, int *);
+	int sub_101ab1a0();
 	void sub_101a9890(int, int);
 	void sub_101a98f0(int, int);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -73,7 +78,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual ~Panel();
 	virtual int vfunc21(int);
 	virtual int vfunc22();
-	virtual void vfunc23();
+	virtual void vfunc23(void *, void *, void *);
 	virtual int vfunc24(int, int, int);
 	virtual bool vfunc25(int, int);
 	virtual void vfunc26();
@@ -88,10 +93,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc35();
 	virtual int vfunc36();
 	virtual Panel *vfunc37(int);
-	virtual void vfunc38();
+	virtual vgui2::Panel *vfunc38(int, int);
 	virtual bool vfunc39(char);
 	virtual bool vfunc40();
-	virtual void vfunc41();
+	virtual void vfunc41(int);
 	virtual void vfunc42();
 	virtual int vfunc43(void *);
 	virtual bool vfunc44(int, int);

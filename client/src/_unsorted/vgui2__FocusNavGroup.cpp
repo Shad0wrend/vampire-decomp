@@ -31,6 +31,37 @@ int vgui2::FocusNavGroup::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3200 size=0x4d
+#include "vgui2__Panel.h"
+#include "vgui2__FocusNavGroup.h"
+
+int vgui2::FocusNavGroup::vfunc3(int arg)
+{
+	for (int i = 0; i < this->m_pPanel->vfunc36(); i++)
+	{
+		int r = this->m_pPanel->vfunc37(i)->vfunc72(arg);
+		if (r)
+			return r;
+	}
+	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101c3250 size=0x4e
+#include "vgui2__FocusNavGroup.h"
+#include "vgui2__Panel.h"
+
+vgui2::Panel *vgui2::FocusNavGroup::vfunc0()
+{
+	for (int i = 0; i < m_pPanel->vfunc36(); i++)
+	{
+		if (m_pPanel->vfunc37(i)->vfunc30() == 1)
+			return m_pPanel->vfunc37(i);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c32a0 size=0x8
 #include "vgui2__FocusNavGroup.h"
 namespace lifted {

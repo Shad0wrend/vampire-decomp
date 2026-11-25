@@ -70,6 +70,36 @@ int vgui2::AnimatingImagePanel::vfunc76(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5810 size=0x78
+#include <string.h>
+#include "vgui2__AnimatingImagePanel.h"
+
+struct KVv
+{
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8();
+	virtual int GetInt(const char *key, int def);
+	virtual float GetFloat(const char *key, float def);
+	virtual const char *GetString(const char *key, const char *def);
+};
+
+struct PanelInvoke { void sub_101ab4e0(int); };
+
+void vgui2::AnimatingImagePanel::vfunc75(int kv_)
+{
+	KVv *kv = (KVv *)kv_;
+	((PanelInvoke *)this)->sub_101ab4e0(kv_);
+	const char *image = kv->GetString("image", 0);
+	if (image)
+	{
+		delete *(char **)((char *)this + 0x78);
+		*(char **)((char *)this + 0x78) = new char[strlen(image) + 1];
+		strcpy(*(char **)((char *)this + 0x78), image);
+		vfunc108(*(char **)((char *)this + 0x78), kv->GetInt("frames", 0));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5890 size=0x23
 #include "vgui2__AnimatingImagePanel.h"
 namespace lifted {

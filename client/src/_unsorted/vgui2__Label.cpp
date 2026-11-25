@@ -194,6 +194,41 @@ int vgui2::Label::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b29f0 size=0x52
+#include "vgui2__Label.h"
+#include "vgui2__Panel.h"
+
+typedef vgui2::Panel BasePanel;
+
+struct C4 {
+	unsigned char r, g, b, a;
+	bool operator!=(const C4 &o) const
+	{
+		return r != o.r || g != o.g || b != o.b || a != o.a;
+	}
+};
+
+struct Sub5c {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3(int);
+};
+
+// TARGET: vgui2::Label::vfunc51
+int vgui2::Label::vfunc51(int color)
+{
+	C4 cur;
+	C4 *p = (C4 *)vfunc53((int)&cur);
+	if (*p != *(C4 *)&color) {
+		((BasePanel *)this)->BasePanel::vfunc51(color);
+		(*(Sub5c **)((char *)this + 0x5c))->v3(color);
+		return vfunc6();
+	}
+	return (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2a50 size=0x19
 #include "vgui2__Label.h"
 int vgui2::Label::vfunc53(int p) { int t; Panel::vfunc53((int)&t); *(int *)p = t; return p; }
@@ -243,6 +278,52 @@ int vgui2::Label::vfunc127()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2ac0 size=0x72
+#include "vgui2__Label.h"
+#include <string.h>
+
+struct KVView
+{
+    virtual const char *GetName();
+    virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+    virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8();
+    virtual void s9(); virtual void s10(); virtual void s11(); virtual void s12();
+    virtual void s13();
+    virtual void SetString(const char *, const char *);
+};
+
+struct TextViewV
+{
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+    virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+    virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+    virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15();
+    virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+    virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+    virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+    virtual void s28(char *buf, int len);
+};
+
+struct PanelImpl
+{
+    bool sub_101ac540(vgui2::KeyValues *data);
+};
+
+bool vgui2::Label::vfunc14(vgui2::KeyValues *data)
+{
+    KVView *kv = (KVView *)data;
+    if (!strcmp(kv->GetName(), "GetText"))
+    {
+        char buf[256];
+        TextViewV *tv = (TextViewV *)(*(int *)((char *)this + 0x5c));
+        tv->s28(buf, 255);
+        kv->SetString("text", buf);
+        return true;
+    }
+    return ((PanelImpl *)this)->sub_101ac540(data);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2b40 size=0x8
 #include "vgui2__Label.h"
 namespace lifted {
@@ -251,6 +332,29 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int vgui2::Label::vfunc132()
 {
     return ((lifted::V *)this)->f108();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b2c20 size=0x4f
+#include "vgui2__Label.h"
+
+struct LabelView_123 {
+	char pad00[0x60];
+	int *m60;
+	char pad64[0x74 - 0x64];
+	short *m74;
+};
+
+void vgui2::Label::vfunc123(int index, int value, int value2)
+{
+	LabelView_123 *v = (LabelView_123 *)this;
+	vfunc135(index);
+	if (v->m60[index] != value || v->m74[index] != value2)
+	{
+		v->m60[index] = value;
+		v->m74[index] = value2;
+		vfunc57(0, 0);
+	}
 }
 // END FUNCTION
 

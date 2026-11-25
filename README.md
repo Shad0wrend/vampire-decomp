@@ -17,7 +17,7 @@ needs it. It compiles one function at a time with the original compiler, compare
 and keeps the source only when the two agree. The functions came from three sources: AI agents working through that
 tool, hand work, and its automatic passes (machine drafts and copies of twin functions that had already matched).
 
-## Status (2026-11-24)
+## Status (2026-11-25)
 
 ![Progress: the game's 23 modules by code size, vampire.dll by source folder, the standalone build's checks and client.dll by source folder](docs/progress.svg)
 
@@ -64,7 +64,7 @@ rule: the jump-stub table, the padding, `.idata`, the exports, `.reloc` and the 
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in [`client/`](client/): 12,590 of 16,017 functions (78.6%), 589,185 of 1,690,600 code bytes (34.9%) as of 2026-11-24 |
+| `client.dll` (client game code) | In progress in [`client/`](client/): 13,127 of 16,021 functions (81.9%), 640,098 of 1,690,622 code bytes (37.9%) as of 2026-11-25 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |

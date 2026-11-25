@@ -712,6 +712,30 @@ bool C_BaseCombatWeapon::vfunc175()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bbf0 size=0x7a
+#include "C_BaseCombatWeapon.h"
+
+extern void *g_104a0d50;
+
+bool C_BaseCombatWeapon::vfunc152()
+{
+	if (*(int *)((char *)this + 0x7a4) == -1 && *(int *)((char *)this + 0x7a8) == -1)
+		return true;
+
+	if (vfunc219() & 1)
+		return true;
+
+	void *p = g_104a0d50;
+	if (!p)
+		return false;
+
+	return *(int *)((char *)this + 0x7ac) > 0
+		|| *(int *)((char *)p + 0xfdc + *(int *)((char *)this + 0x7a4) * 4)
+		|| *(int *)((char *)this + 0x7b0) > 0
+		|| *(int *)((char *)p + 0xfdc + *(int *)((char *)this + 0x7a8) * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bdd0 size=0x1d
 #include "C_BaseCombatWeapon.h"
 struct CGlobals_102b8494 { float realtime, framecount, absoluteframetime, curtime; };
@@ -805,6 +829,45 @@ void C_BaseCombatWeapon::vfunc180(int a0)
 #include "C_BaseCombatWeapon.h"
 // TARGET: ?vfunc185@C_BaseCombatWeapon@@UAE_NXZ
 bool C_BaseCombatWeapon::vfunc185() { for (int i = 0; i < 2; i++) { if (vfunc153(i)) return true; } return false; }
+// END FUNCTION
+
+// FUNCTION: 0x1007c130 size=0x6d
+#include "C_BaseCombatWeapon.h"
+
+class CWeaponAmmoView
+{
+public:
+	char sub_1007c1a0(int idx);
+};
+
+class CHost_10097f80
+{
+public:
+	int sub_10097f80(int idx);
+};
+
+struct WeaponAmmoFields
+{
+	char m_pad0000[0x7a4];
+	int m_iClip[2];		// 0x7a4
+	int m_iAmmo[2];		// 0x7ac
+};
+
+bool C_BaseCombatWeapon::vfunc153(int i)
+{
+	WeaponAmmoFields *w = (WeaponAmmoFields *)this;
+
+	if ( !((CWeaponAmmoView *)this)->sub_1007c1a0(i) )
+		return true;
+
+	if ( vfunc150(i) && w->m_iAmmo[i] > 0 )
+		return true;
+
+	if ( sub_1007bab0() && ((CHost_10097f80 *)sub_1007bab0())->sub_10097f80( w->m_iClip[i] ) > 0 )
+		return true;
+
+	return false;
+}
 // END FUNCTION
 
 // FUNCTION: 0x1007c1d0 size=0xd
@@ -1048,6 +1111,35 @@ bool __fastcall sub_1007d450(V_1007d450 *self)
 #include "C_BaseCombatWeapon.h"
 // TARGET: C_BaseCombatWeapon::vfunc177
 bool C_BaseCombatWeapon::vfunc177() { void *p = *(void **)((char *)sub_1007b160() + 0x2444); if (p) return true; return false; }
+// END FUNCTION
+
+// FUNCTION: 0x1007d480 size=0x4f
+#include "C_BaseCombatWeapon.h"
+
+struct Player { int sub_100a8ba0(int i); };
+
+extern int g_104a0d50;
+
+struct WeaponView { char pad[0x79c]; int m_79c; };
+
+int C_BaseCombatWeapon::vfunc220()
+{
+	Player *pPlayer = (Player *)(void *)g_104a0d50;
+	if ( !pPlayer )
+		return -1;
+	WeaponView *pThis = (WeaponView *)this;
+	int total = 0;
+	for ( int i = 0; i < 7; i++ )
+	{
+		if ( pThis->m_79c >= total )
+		{
+			if ( pThis->m_79c < total + pPlayer->sub_100a8ba0(i) )
+				return i;
+		}
+		total += pPlayer->sub_100a8ba0(i);
+	}
+	return -1;
+}
 // END FUNCTION
 
 // FUNCTION: 0x1007d4d0 size=0x4c

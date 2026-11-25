@@ -48,3 +48,48 @@ bool CHudTimerUI::vfunc107()
 	return sub_10163bf0() && !g_10286860->Check(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005df70 size=0x79
+#include "CHudTimerUI.h"
+
+extern void *g_102b8e9c;
+
+int sub_101146c0();
+int sub_10114660(int, int);
+
+struct PanelV
+{
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4();
+	virtual void vfunc5(int);
+};
+
+struct EntityV
+{
+	virtual void e0();
+	virtual int *vfunc1();
+};
+
+struct EntListV
+{
+	void *sub_100d0cf0(int);
+};
+
+void CHudTimerUI::vfunc114(int a0, int a1, int a2)
+{
+	sub_10114660(a2, a1);
+	int a = sub_101146c0();
+	int b = sub_101146c0();
+	PanelV *p = (PanelV *)((char *)this + 0x170);
+	if (a & 2)
+	{
+		p->vfunc5(0);
+		return;
+	}
+	p->vfunc5(1);
+	EntityV *e = (EntityV *)((EntListV *)g_102b8e9c)->sub_100d0cf0(b);
+	if (e)
+		m_unk194.v = *e->vfunc1();
+	else
+		m_unk194.v = -1;
+}
+// END FUNCTION

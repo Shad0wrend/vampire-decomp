@@ -204,6 +204,22 @@ void __fastcall sub_100018d0(V_100018d0 *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dbb0 size=0x52
+// TARGET: CBaseEntView::sub_1007dbb0
+#include "C_BaseEntity.h"
+#include "Vector.h"
+
+struct CBaseEntView
+{
+	Vector sub_1007dbb0();
+};
+
+Vector CBaseEntView::sub_1007dbb0()
+{
+	return ((C_BaseEntity *)(void *)this)->GetAbsOrigin() + *(Vector *)((char *)this + 0x148);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dc10 size=0x5
 #include "C_BaseEntity.h"
 namespace lifted {
@@ -401,6 +417,24 @@ bool C_BaseEntity::Init(int entnum, int iSerialNum)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e0b0 size=0x3c
+#include "C_BaseEntity.h"
+
+struct ModelInfoView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual int v12(const char *);
+};
+extern ModelInfoView *g_104a57f8;
+
+// TARGET: C_BaseEntity::vfunc60
+void C_BaseEntity::vfunc60(int a, int b)
+{
+	sub_1009e0f0(a ? g_104a57f8->v12((const char *)a) : -1, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f050 size=0xf
 #include "C_BaseEntity.h"
 int C_BaseEntity::vfunc0(int a0)
@@ -415,6 +449,21 @@ int C_BaseEntity::vfunc0(int a0)
 unsigned int * C_BaseEntity::vfunc1()
 {
     return (unsigned int *)((char *)this + 0xe4);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1009f070 size=0x25
+#include "C_BaseEntity.h"
+
+struct V_100a2ed0;
+bool __fastcall sub_100a2ed0(V_100a2ed0 *);
+
+void C_BaseEntity::Release()
+{
+	C_BaseEntity *pEntity = (C_BaseEntity *)this;
+	if (sub_100a2ed0((V_100a2ed0 *)pEntity))
+		pEntity->sub_100a2f50();
+	delete pEntity;
 }
 // END FUNCTION
 
@@ -773,6 +822,36 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int C_BaseEntity::vfunc62()
 {
     return ((lifted::V *)this)->f37();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100a1aa0 size=0x73
+#include "C_BaseEntity.h"
+
+struct ModelInfoView
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5();
+    virtual int GetModelType(int modelindex);
+};
+extern ModelInfoView *g_104a57f8;
+
+int C_BaseEntity::vfunc66()
+{
+    if (*(int *)((char *)this + 0x80) &&
+        *(int *)((char *)this + 0x40) &&
+        *(int *)((char *)this + 0x1d0) &&
+        !(*(int *)((char *)this + 0x1d4) & 4))
+    {
+        if (g_104a57f8->GetModelType(*(int *)((char *)this + 0x40)) == 1 ||
+            g_104a57f8->GetModelType(*(int *)((char *)this + 0x40)) == 3)
+        {
+            if (*(int *)((char *)this + 0x80) == 1 ||
+                *(float *)((char *)this + 0x1d8) != 0.0f)
+                return 1;
+        }
+    }
+    return 0;
 }
 // END FUNCTION
 

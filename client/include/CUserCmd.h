@@ -8,6 +8,7 @@ class CUserCmd
 public:
 	CUserCmd() { Reset(); }
 	virtual ~CUserCmd() {}
+	void *vfunc0(char flags);
 
 	void Reset()
 	{

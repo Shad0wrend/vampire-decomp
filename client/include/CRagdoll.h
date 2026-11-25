@@ -7,6 +7,7 @@ class CRagdoll : public IRagdoll
 public:
 	virtual ~CRagdoll();
 	virtual void vfunc3(Vector &mins, Vector &maxs);
+	virtual void vfunc5();
 	int m_n0004;
 	char m_pad0008[0x2dc - 0x8];
 	int m_off[1];

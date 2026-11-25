@@ -6,6 +6,7 @@
 
 namespace vgui2
 {
+class KeyValues;
 class TextEntry : public vgui2::Panel
 {
 public:
@@ -13,11 +14,14 @@ public:
 	void sub_101af9e0(int a);
 	bool sub_101aff70(int n);
 	int sub_101afbf0();
+	void sub_101ae490(int);
 	char sub_101ae650(int a, int b);
+	void sub_101b0650();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextEntry's own function
 	virtual void vfunc11(int, int);
 	virtual void vfunc14();
+	bool vfunc14(vgui2::KeyValues *data);
 	virtual int vfunc46(int);
 	virtual int vfunc74(int);
 	virtual void vfunc75(int);
@@ -99,7 +103,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc162();
 	virtual void vfunc163();
 	virtual bool vfunc164(int, int, int, int);
-	virtual bool vfunc165();
+	virtual void vfunc165();
 	virtual void vfunc166();
 	virtual void vfunc167();
 	virtual int vfunc168();

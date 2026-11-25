@@ -38,3 +38,52 @@ void CViewEffects::vfunc8(Vector &origin, QAngle &angles, float factor)
 	VectorAdd(m_vecAppliedOffset, origin, origin);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101976d0 size=0x5f
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewEffects::vfunc10
+void CViewEffects::vfunc10()
+{
+	ScopeTrace trace("CViewEffects::StartHolyLight", g_102de300);
+	*(char *)((char *)this + 0x99) = 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10197730 size=0x64
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewEffects::vfunc11
+void CViewEffects::vfunc11()
+{
+    ScopeTrace trace("CViewEffects::EndHolyLight", g_102de300);
+    *((char *)this + 0x99) = 0;
+    vfunc15();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101977a0 size=0x5f
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewEffects::sub_101977a0
+bool CViewEffects::sub_101977a0()
+{
+	ScopeTrace trace("CViewEffects::IsHolyLightActive", g_102de300);
+	return *(bool *)((char *)this + 0x99);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101978d0 size=0x72
+#include "CViewEffects.h"
+#include "ScopeTrace.h"
+
+void CViewEffects::vfunc14(float flStrength)
+{
+    ScopeTrace trace("CViewEffects::PullTowardsHolyLight", "", "");
+    if (m_flHolyLightStrength < flStrength)
+        m_flHolyLightStrength = flStrength;
+}
+// END FUNCTION

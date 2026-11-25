@@ -13,5 +13,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc75(int);
 	virtual void vfunc97();
 	virtual void vfunc98();
+	CBitmapButton *sub_10164210(vgui2::Panel *, const char *, const char *);
 	char m_pad0004[0x224 - 0x4];
 };

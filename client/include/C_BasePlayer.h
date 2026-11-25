@@ -10,6 +10,7 @@ class C_BasePlayer : public C_BaseVCombatCharacter
 public:
 	virtual ~C_BasePlayer();
 	int sub_100a2450();
+	bool sub_100a54c0(int, int);
 	void sub_100aa040();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BasePlayer's own function
@@ -41,13 +42,13 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc157();
 	virtual void vfunc158();
 	virtual void vfunc159();
-	virtual void vfunc160(int);
+	virtual bool vfunc160(int);
 	virtual void vfunc161();
 	virtual void vfunc162();
 	virtual bool vfunc163();
 	virtual void vfunc164();
 	virtual C_BaseCombatWeapon * vfunc165(int, int);
-	virtual void vfunc166();
+	virtual C_BaseCombatWeapon *vfunc166(int, int, int);
 	virtual C_BaseCombatWeapon * vfunc167();
 	virtual void vfunc168(int);
 	virtual void vfunc169(int);
@@ -73,8 +74,8 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc189(int);
 	virtual void vfunc190();
 	virtual void vfunc191();
-	virtual void vfunc192();
-	virtual void vfunc193();
+	virtual C_BaseCombatWeapon *vfunc192();
+	virtual C_BaseCombatWeapon *vfunc193();
 	virtual void vfunc194();
 	virtual char * vfunc195();
 	virtual int vfunc196(int, int, int);

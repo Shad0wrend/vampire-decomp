@@ -145,6 +145,27 @@ void ConVar::vfunc8(float fNewValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df900 size=0x68
+#include "ConVar.h"
+#include "Tier1.h"
+
+// TARGET: ConVar::vfunc9
+void ConVar::vfunc9(int nValue)
+{
+	float fValue = (float)nValue;
+	if (vfunc10(&fValue))
+		nValue = (int)fValue;
+	m_fValue = fValue;
+	m_nValue = nValue;
+	if (!(m_nFlags & 0x1000))
+	{
+		char buf[0x20];
+		g_101e3190(buf, 0x20, "%d", nValue);
+		vfunc11(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfa10 size=0x2e
 // TARGET: ConVar::vfunc6
 #include "ConVar.h"

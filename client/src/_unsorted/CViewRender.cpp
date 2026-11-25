@@ -202,6 +202,115 @@ void CViewRender::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018fa30 size=0x78
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+extern void *g_102d5050;
+
+class CUnknown100cd260
+{
+public:
+	void sub_100cd260();
+};
+
+struct ViewEffectsView
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+void CViewRender::vfunc2()
+{
+	ScopeTrace trace("CViewRender::Shutdown", g_102de300);
+	((CUnknown100cd260 *)((char *)this + 0x388))->sub_100cd260();
+	((CUnknown100cd260 *)((char *)this + 0x38c))->sub_100cd260();
+	((ViewEffectsView *)g_102d5050)->v1();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018fab0 size=0x5f
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewRender::sub_1018fab0
+int CViewRender::sub_1018fab0()
+{
+	ScopeTrace trace("CViewRender::FrameNumber", g_102de300);
+	return *(int *)((char *)this + 0x374);
+}
+// END FUNCTION
+
+// FUNCTION: 0x1018fb10 size=0x5f
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+// TARGET: CViewRender::sub_1018fb10
+int CViewRender::sub_1018fb10()
+{
+	ScopeTrace trace("CViewRender::BuildWorldListsNumber", g_102de300);
+	return *(int *)((char *)this + 0x378);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101902e0 size=0x75
+#include "CViewRender.h"
+
+struct EngineV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35();
+	virtual void v36(); virtual void v37(); virtual void v38();
+	virtual float vfunc39(int);
+};
+struct XView
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad04[0x28 - 0x4];
+	float m_fl28;
+};
+extern EngineV *g_104a57d4;
+extern XView *g_105fc764;
+
+struct ViewRenderV
+{
+	char m_pad00[0x2a0];
+	float m_fl2a0;		// 0x2a0
+	bool m_b2a4;		// 0x2a4
+	char m_pad2a5[0x2a8 - 0x2a5];
+	int m_n2a8;			// 0x2a8
+	char m_pad2ac[0x2b0 - 0x2ac];
+	double m_d2b0;		// 0x2b0
+};
+
+// TARGET: CViewRender::vfunc8
+void CViewRender::vfunc8()
+{
+	ViewRenderV *v = (ViewRenderV *)this;
+	float fov = g_104a57d4->vfunc39(0);
+	if (fov == v->m_d2b0)
+		return;
+	if (!v->m_b2a4 && v->m_fl2a0 != 0.0f)
+		return;
+	float f;
+	if (g_105fc764->vfunc1())
+		f = 0.0f;
+	else
+		f = g_105fc764->m_fl28;
+	v->m_fl2a0 = f;
+	v->m_b2a4 = false;
+	v->m_n2a8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190360 size=0x2c
 #include "CViewRender.h"
 struct XEng39 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
@@ -217,6 +326,30 @@ void CViewRender::vfunc9()
 	p->m_d2b0 = g_104a57d4->v39(0);
 	p->m_b2a4 = 1;
 	p->m_i2a0 = 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101911a0 size=0x5a
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+#include "CUnknown101d7520.h"
+
+// TARGET: CViewRender::vfunc3
+void CViewRender::vfunc3()
+{
+	ScopeTrace trace("CViewRender::OnRenderStart", g_102de300);
+	sub_10191710();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10191610 size=0x5e
+#include "CViewRender.h"
+#include "ScopeTrace.h"
+
+void *CViewRender::vfunc14()
+{
+	ScopeTrace trace("CViewRender::GetViewSetup", g_102de300);
+	return (void *)((char *)this + 0x10);
 }
 // END FUNCTION
 

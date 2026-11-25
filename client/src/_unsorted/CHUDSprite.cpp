@@ -11,6 +11,20 @@ CHUDSprite *pcd_emit_10059330(const CHUDSprite &other) { return new CHUDSprite(o
 // TARGET: ??_GCHUDSprite@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1005d7d0 size=0x74
+#include "CHUDSprite.h"
+#include "ScopeTrace.h"
+
+void CHUDSprite::getSize(int *wide, int *tall)
+{
+    ScopeTrace trace("CHUDSprite::getSize", "", "");
+    if (wide)
+        *wide = m_unk10;
+    if (tall)
+        *tall = m_unk14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3690 size=0x18
 #include "IHudSprite.h"
 int CHudSprite::vfunc17(int a0)
@@ -51,6 +65,88 @@ int CHudSprite::vfunc5(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f39b0 size=0x57
+#include "IHudSprite.h"
+
+struct V3d50View100f39b0
+{
+	El3d50 *sub_100f3d50(int a);
+};
+
+// TARGET: CHudSprite::vfunc6
+void CHudSprite::vfunc6(int a1, int r, int g, int b)
+{
+	El3d50 *v = ((V3d50View100f39b0 *)this)->sub_100f3d50(a1);
+	if (!v)
+		return;
+	m_pSprite = (CHudSpriteInner *)sub_100f3e20(v);
+	if (!m_pSprite)
+		return;
+	m_pSprite->sub_10136f20(r * 0.00392156862745098,
+		g * 0.00392156862745098, b * 0.00392156862745098);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3a60 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc7
+void CHudSprite::vfunc7(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(false);
+	m_pSprite->sub_10137020(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3ac0 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc9
+void CHudSprite::vfunc9(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(false);
+	m_pSprite->sub_10137850(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3b70 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc10
+void CHudSprite::vfunc10(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(false);
+	m_pSprite->sub_10137020(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3bd0 size=0x4a
 #include "IHudSprite.h"
 
@@ -68,6 +164,46 @@ void CHudSprite::vfunc13(int frame, int x, int y, int a3)
 		return;
 	m_pSprite->sub_10136f60(true);
 	m_pSprite->sub_10136ff0(frame, x, y, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3c20 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc12
+void CHudSprite::vfunc12(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(true);
+	m_pSprite->sub_10137020(a1, x, y, a4, a5, a6);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3c80 size=0x54
+#include "IHudSprite.h"
+
+extern int sub_100cd100();
+extern int sub_100cd0f0();
+
+// TARGET: CHudSprite::vfunc14
+void CHudSprite::vfunc14(int a1, int x, int y, int a4, int a5, int a6)
+{
+	if (!m_pSprite)
+		return;
+	if (x >= sub_100cd100())
+		return;
+	if (y >= sub_100cd0f0())
+		return;
+	m_pSprite->sub_10136f60(true);
+	m_pSprite->sub_10137850(a1, x, y, a4, a5, a6);
 }
 // END FUNCTION
 
@@ -102,5 +238,37 @@ void CHudSprite::vfunc0()
         memset((void *)m_unk30, 0, 0x600);
         m_pSprite = 0;
     }
+}
+// END FUNCTION
+
+// FUNCTION: 0x100f3db0 size=0x70
+#include "IHudSprite.h"
+#include "CBCCSlotViews.h"
+
+struct SpriteElem { int m_iTexture; char *m_pData; int m_unk8; };
+
+struct Eng37 {
+	VIEW_SLOT10(0) VIEW_SLOT10(1) VIEW_SLOT10(2)
+	VIEW_SLOT(30) VIEW_SLOT(31) VIEW_SLOT(32) VIEW_SLOT(33) VIEW_SLOT(34) VIEW_SLOT(35) VIEW_SLOT(36)
+	virtual void vfunc37(int);
+};
+extern Eng37 *g_104a57d4;
+
+// TARGET: vfunc1
+void CHudSprite::vfunc1()
+{
+	if ( m_unk30 )
+	{
+		for ( int i = 0; i < m_unk34; i++ )
+		{
+			if ( ((SpriteElem *)m_unk30)[i].m_iTexture )
+				g_104a57d4->vfunc37( ((SpriteElem *)m_unk30)[i].m_iTexture );
+			delete ((SpriteElem *)m_unk30)[i].m_pData;
+		}
+		delete [] (SpriteElem *)m_unk30;
+	}
+	m_unk30 = 0;
+	m_unk34 = 0;
+	m_pSprite = 0;
 }
 // END FUNCTION

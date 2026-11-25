@@ -96,6 +96,86 @@ C_BaseAnimating::~C_BaseAnimating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f720 size=0x61
+#include "C_BaseAnimating.h"
+
+int C_BaseAnimating::vfunc86()
+{
+	if (!vfunc71() || !*(void **)((char *)this + 0x6ac) || sub_1009f140(0x60))
+		return 0;
+	void *p = *(void **)((char *)this + 0x6ac);
+	int n = *(int *)((char *)p + 0x108);
+	if (n == 0)
+		return 2;
+	if (n == 1)
+	{
+		void *q = *(void **)((char *)p + 0x10c);
+		if (*(int *)((char *)q + (int)p + 0xc) == 1)
+			return 2;
+	}
+	return 3;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1008f8a0 size=0x52
+#include "C_BaseAnimating.h"
+#include "StudioHdr.h"
+
+struct ModelInfoView { virtual StudioHdr *GetStudiomodel(const void *); };
+extern ModelInfoView *g_104a57d8;
+
+// TARGET: C_BaseAnimating::vfunc71
+bool C_BaseAnimating::vfunc71()
+{
+	*(void **)((char *)this + 0x6ac) = 0;
+	void *pModel = *(void **)((char *)this + 0x40);
+	if (!pModel)
+		return false;
+	StudioHdr *hdr = g_104a57d8->GetStudiomodel(pModel);
+	if (!hdr)
+		return false;
+	char *pName = hdr->m_name[0] ? hdr->m_name : 0;
+	vfunc49((int)pName);
+	*(void **)((char *)this + 0x6ac) = hdr;
+	return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1008f960 size=0x78
+#include "C_BaseAnimating.h"
+
+extern void *g_104a57d4;
+
+struct EngV
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+	virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18(); virtual void e19();
+	virtual void e20(); virtual void e21(); virtual void e22(); virtual void e23(); virtual void e24();
+	virtual void e25(); virtual void e26(); virtual void e27(); virtual void e28(); virtual void e29();
+	virtual void e30(); virtual void e31(); virtual void e32(); virtual void e33(); virtual void e34();
+	virtual void e35(); virtual void e36(); virtual void e37(); virtual void e38();
+	virtual float vfunc39(int);
+};
+
+float C_BaseAnimating::vfunc122()
+{
+	float flBlend = *(float *)((char *)this + 0x70) - *(float *)((char *)this + 0x6c);
+	float f = 1.0f;
+	if (flBlend > 0.0f)
+	{
+		float x = ((EngV *)g_104a57d4)->vfunc39(0);
+		f = 1.0 - (*(float *)((char *)this + 0x70) - x) / flBlend;
+		if (f > 2.0f)
+			return 2.0f;
+		if (f < 0.0f)
+			return 0.0f;
+	}
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b60 size=0x3
 #include "C_BaseAnimating.h"
 void C_BaseAnimating::vfunc124(int a0, int a1)
@@ -146,6 +226,48 @@ bool C_BaseAnimating::vfunc67()
   if (solid == 4 || solid == 0 || solid == 3 || solid == 5 || solid == 6)
     return false;
   return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10093fd0 size=0x4e
+#include "C_BaseAnimating.h"
+
+struct Blob60 { int d[0x18]; };
+struct Blob16 { int d[4]; };
+
+struct AnimView
+{
+	char m_pad0[0x574];
+	Blob60 m_574;
+	Blob60 m_5d4;
+	char m_pad634[0x644 - 0x634];
+	int m_644;
+	int m_648;
+	char m_pad64c[0x65c - 0x64c];
+	Blob16 m_65c;
+	Blob16 m_66c;
+};
+
+int C_BaseAnimating::vfunc70()
+{
+	AnimView *v = (AnimView *)this;
+	v->m_574 = v->m_5d4;
+	v->m_65c = v->m_66c;
+	v->m_644 = v->m_648;
+	return C_BaseEntity::vfunc70();
+}
+// END FUNCTION
+
+// FUNCTION: 0x10094150 size=0x73
+#include "C_BaseAnimating.h"
+#include "ScopeTrace.h"
+
+int sub_1008cdc0(int, const char *);
+
+int C_BaseAnimating::LookupBone(const char *pszName)
+{
+    ScopeTrace trace("C_BaseAnimating::LookupBone", "", "");
+    return sub_1008cdc0(sub_1008f900(-1), pszName);
 }
 // END FUNCTION
 
@@ -284,5 +406,79 @@ extern char g_102ad9d8;
 int C_BaseAnimating::vfunc17()
 {
     return (int)&lifted::g_102ad9d8;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10095a60 size=0x57
+#include "C_BaseAnimating.h"
+
+void __cdecl sub_10107eb0(void *entry, int a);
+void __cdecl sub_10108510(void *entry, int a, int b);
+
+struct AnimAttView
+{
+    char m_pad00[0x770];
+    char *m_pBase;              // +0x770
+    char m_pad774[0x77c - 0x774];
+    int m_nCount;               // +0x77c
+};
+
+bool C_BaseAnimating::vfunc57(int index, int arg2, int arg3)
+{
+    AnimAttView *v = (AnimAttView *)this;
+    if (index < 1 || index > v->m_nCount)
+        return false;
+    if (!vfunc140())
+        return false;
+    char *entry = v->m_pBase + index * 72 - 0x48;
+    sub_10107eb0(entry, arg3);
+    sub_10108510(entry, 3, arg2);
+    return true;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100965d0 size=0x72
+#include "C_BaseAnimating.h"
+
+struct EntryV
+{
+	int m_0;
+	int m_4;
+	int m_8;
+	int m_c;
+};
+
+struct SeqV
+{
+	char pad0[0x140];
+	int m_n140;	// 0x140
+	int m_n144;	// 0x144
+};
+
+struct AnimView
+{
+	char pad0[0x560];
+	int m_time;	// 0x560
+	char pad1[0x6ac - 0x564];
+	SeqV *m_pSeq;	// 0x6ac
+};
+
+int C_BaseAnimating::sub_100965d0(int arg1, int arg2)
+{
+	AnimView *v = (AnimView *)this;
+	SeqV *seq = v->m_pSeq;
+	if ( !seq )
+		return 0;
+	if ( arg1 > seq->m_n140 )
+		return -1;
+	int cur = v->m_time;
+	EntryV *e = (EntryV *)((char *)seq + seq->m_n144 + arg1 * 16);
+	int unit = e->m_8;
+	int numFrames = e->m_4;
+	int frame = (cur / unit) % numFrames;
+	if ( arg2 >= numFrames )
+		return frame;
+	v->m_time = cur + (arg2 - frame) * unit;
+	return arg2;
 }
 // END FUNCTION

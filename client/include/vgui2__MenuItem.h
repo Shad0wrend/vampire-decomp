@@ -25,5 +25,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc164(int, int, int, int);
 	// the slots MenuItem adds to its base's vtable: 166-166, vfuncK at slot K
 	virtual void vfunc166();
+	void sub_101c7080();
+	void sub_101c71b0();
 };
 }

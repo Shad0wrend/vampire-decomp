@@ -227,6 +227,44 @@ int CHLClient::vfunc19()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbbc0 size=0x77
+#include "CHLClient.h"
+
+extern void *g_1027ba58;
+extern void *g_104a5808;
+
+void sub_1009db70(int);
+void sub_100923c0(char, char);
+
+struct EngV
+{
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+	virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual void e8(); virtual void e9(); virtual void e10(); virtual void e11();
+	virtual void e12(); virtual void e13(); virtual void e14(); virtual void e15();
+	virtual void vfunc16(int, int);
+};
+
+struct ModeV
+{
+	virtual void m0();
+	virtual void m1();
+	virtual void m2();
+	virtual void vfunc3(int, int, int, int, int, int);
+};
+
+void CHLClient::vfunc20(int a0, int a1, int a2, int a3, int a4, int a5)
+{
+	((EngV *)g_104a5808)->vfunc16(0xac, 0);
+	sub_1009db70(1);
+	sub_100923c0(1, 0);
+	((ModeV *)g_1027ba58)->vfunc3(a0, a1, a2, a3, a4, a5);
+	sub_100923c0(0, 0);
+	((EngV *)g_104a5808)->vfunc16(0xac, 1);
+	sub_1009db70(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbc40 size=0x13
 #include "CHLClient.h"
 namespace lifted {
@@ -236,6 +274,46 @@ struct V { virtual void u0(); virtual void u1(); virtual void u2(); virtual void
 int CHLClient::vfunc21(int a0, int a1, int a2, float a3)
 {
     return ((lifted::V *)lifted::g_1027ba58)->f4(a0, a1, a2, a3);
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cbc60 size=0x76
+#include "Vector.h"
+
+struct ViewV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void vfunc4(int);
+};
+struct EngineV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22();
+	virtual Vector *vfunc23(Vector *out, void *p, int a);
+};
+extern ViewV *g_102d43d8;
+extern EngineV *g_104a57d4;
+extern float g_103ecd74;
+extern Vector g_103ecd78;
+
+int sub_10198d30();
+void sub_1004a9e0();
+
+// TARGET: sub_100cbc60
+void __stdcall sub_100cbc60(int n)
+{
+	g_103ecd74 = 0.0f;
+	g_102d43d8->vfunc4(n);
+	if (g_103ecd74 > 0.0f)
+	{
+		Vector temp;
+		g_103ecd78 = *g_104a57d4->vfunc23(&temp, (void *)sub_10198d30(), 1);
+		sub_1004a9e0();
+	}
 }
 // END FUNCTION
 
@@ -316,6 +394,42 @@ void CHLClient::vfunc30(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbef0 size=0x67
+#include "CHLClient.h"
+
+extern int (*g_101e31b4)(const char *, const char *);
+
+struct IAppSystemV
+{
+	virtual void *v0(const char *pName);
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(int a, void *b, int (*cb)(int, int, int, int));
+};
+
+extern IAppSystemV *g_104a5804;
+extern void *g_102b848c;
+extern void *g_102b8490;
+
+int sub_100cbee0(int a, int b, int c, int d);
+
+// TARGET: CHLClient::vfunc31
+void CHLClient::vfunc31(const char *name)
+{
+	int (*cmp)(const char *, const char *) = g_101e31b4;
+	if (cmp(name, "VguiScreen") == 0)
+	{
+		g_102b848c = g_104a5804->v0(name);
+		return;
+	}
+	if (cmp(name, "Materials") == 0)
+	{
+		void *pMat = g_104a5804->v0(name);
+		g_102b8490 = pMat;
+		g_104a5804->v6(0, pMat, sub_100cbee0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc700 size=0x10
 #include "CHLClient.h"
 namespace lifted {
@@ -336,6 +450,26 @@ struct V { virtual void u0(); virtual int f1(); };
 int CHLClient::vfunc36()
 {
     return ((lifted::V *)lifted::g_102c37a0)->f1();
+}
+// END FUNCTION
+
+// FUNCTION: 0x100cc840 size=0x73
+#include "CHLClient.h"
+#include "CSave.h"
+
+struct SaveMgrView
+{
+    virtual void v0();
+    virtual void v1();
+    virtual void SaveGame(CSave *pSave);
+};
+extern SaveMgrView *g_102c37a0;
+
+void CHLClient::vfunc37(void *pData)
+{
+    CSave save(pData);
+    g_102c37a0->SaveGame(&save);
+    ((CUtlVector<int> *)((char *)&save + 4))->~CUtlVector();
 }
 // END FUNCTION
 

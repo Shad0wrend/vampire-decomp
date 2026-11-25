@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100bddb0 size=0x68
+#include "C_RecipientFilter.h"
+
+C_RecipientFilter::C_RecipientFilter() {}
+
+// TARGET: ??_GC_RecipientFilter@@UAEPAXI@Z
+C_RecipientFilter *pcd_emit_100bddb0()
+{
+	return new C_RecipientFilter;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde60 size=0x4
 #include "C_RecipientFilter.h"
 // TARGET: C_RecipientFilter::vfunc1

@@ -168,6 +168,23 @@ void C_BasePlayer::vfunc154(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7640 size=0x60
+#include "C_BasePlayer.h"
+#include "Vector.h"
+
+struct CUnknown1009f6e0 { char *sub_1009f6e0(); };
+
+bool C_BasePlayer::vfunc74()
+{
+	Vector delta;
+	delta = *(Vector *)((CUnknown1009f6e0 *)this)->sub_1009f6e0() - *(Vector *)((char *)this + 0x54);
+	for (int i = 0; i < 3; i++)
+		if (delta[i] > 128.0)
+			return true;
+	return C_BaseEntity::vfunc74();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a7ab0 size=0x1a
 #include "C_BasePlayer.h"
 namespace lifted {
@@ -460,6 +477,34 @@ bool C_BasePlayer::vfunc94()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9cb0 size=0x53
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+struct CGlobals_102b8494
+{
+	char m_pad0[0xc];
+	float curtime;	// 0x0c
+};
+
+extern CGlobals_102b8494 *g_102b8494;
+
+// TARGET: C_BasePlayer::vfunc181
+void C_BasePlayer::vfunc181()
+{
+	if ( g_102b8494->curtime < *(float *)((char *)this + 0xfd8) )
+		return;
+
+	if ( !vfunc148() )
+		return;
+
+	if ( !((C_BaseCombatWeapon *)vfunc148())->vfunc168() )
+		return;
+
+	((C_BaseCombatWeapon *)vfunc148())->vfunc191();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9df0 size=0x1
 #include "C_BasePlayer.h"
 void C_BasePlayer::vfunc184()
@@ -570,5 +615,45 @@ void C_BasePlayer::vfunc191()
 		self->m_flNextTime = g_104a57d4->v39(0) + 0.01;
 		self->m_Modes[self->m_iMode].sub_100a8f90(this);
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x100aa350 size=0x55
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+// TARGET: C_BasePlayer::vfunc192
+C_BaseCombatWeapon *C_BasePlayer::vfunc192()
+{
+	for ( int i = 0; i < 6; i++ )
+	{
+		for ( int j = 0; j < 7; j++ )
+		{
+			C_BaseCombatWeapon *pWeapon = vfunc166(i, j, 0);
+			if ( pWeapon && pWeapon->vfunc176() )
+				return pWeapon;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100aa3b0 size=0x55
+#include "C_BasePlayer.h"
+#include "C_BaseCombatWeapon.h"
+
+// TARGET: C_BasePlayer::vfunc193
+C_BaseCombatWeapon *C_BasePlayer::vfunc193()
+{
+	for ( int i = 5; i >= 0; i-- )
+	{
+		for ( int j = 6; j >= 0; j-- )
+		{
+			C_BaseCombatWeapon *pWeapon = vfunc166(i, j, 0);
+			if ( pWeapon && pWeapon->vfunc176() )
+				return pWeapon;
+		}
+	}
+	return 0;
 }
 // END FUNCTION

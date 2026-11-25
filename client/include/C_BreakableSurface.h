@@ -10,6 +10,7 @@ class C_BreakableSurface : public C_BaseEntity, public IBrushRenderer
 public:
 	C_BreakableSurface();
 	virtual ~C_BreakableSurface();
+	int sub_100b7b40(int flags, int a1);
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with C_BreakableSurface's own function
 	virtual int vfunc15();
@@ -21,9 +22,22 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	int m_nHeight;
 	char m_pad041c[0x43c - 0x41c];
 	bool sub_100b7450(int x, int y);
+	int sub_100b8460(int x, int y);
+	void sub_100b7490(int x, int y, bool bSet);
 	void sub_100b74f0();
 	bool m_bUnk438;
-	char m_pad043d[0x464 - 0x43d];
+	char m_pad043d[0x448 - 0x43d];
+	void *m_pArray;
+	int m_unk44c;
+	int m_unk450;
+	unsigned short m_n454;
+	unsigned short m_n456;
+	unsigned short m_n458;
+	unsigned short m_n45a;
+	unsigned short m_n45c;
+	unsigned short m_n45e;
+	int sub_100b83f0(int a0, int a1, int a2);
+	int m_n460;
 	int m_nPanelFlags[1];
 	char m_pad0468[0x940 - 0x468];
 	bool sub_100b80f0(int x, int y);

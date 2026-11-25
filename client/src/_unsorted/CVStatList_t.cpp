@@ -21,3 +21,14 @@ CVStatList_t::CVStatList_t(int a)
     --*g_101e3128;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1015d260 size=0x5f
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+
+CVStatList_t::~CVStatList_t()
+{
+	ScopeTrace trace("CVStatList_t::~CVStatList_t", g_102de300);
+	m_field04 = 0;
+}
+// END FUNCTION

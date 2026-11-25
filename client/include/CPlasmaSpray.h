@@ -2,8 +2,14 @@
 // declared: its bases; nothing else yet
 #pragma once
 #include "CSimpleEmitter.h"
+#include "CParticleCollision.h"
 
 class CPlasmaSpray : public CSimpleEmitter
 {
-	char m_pad0004[0xf0 - 0x4];
+	char m_pad0070[0x08];
+	int m_78;
+public:
+	CParticleCollision m_collision;
+	CPlasmaSpray(const char *name) : CSimpleEmitter(name), m_78(-1) {}
+	void vfunc11(void *pVec, int arg1);
 };

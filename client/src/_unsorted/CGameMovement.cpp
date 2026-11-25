@@ -107,6 +107,27 @@ float * CGameMovement::vfunc4(char a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6f70 size=0x4f
+#include "CGameMovement.h"
+
+struct CGlobalVars_ { char pad[0x14]; int maxClients; };
+extern int g_102b8494;
+
+struct Vel { float x; float y; };
+
+char CGameMovement::vfunc15(void *pSurface, float volume)
+{
+	if ( ((CGlobalVars_ *)(void *)g_102b8494)->maxClients > 1 && m_field10 == 0 )
+	{
+		Vel *vel = (Vel *)((char *)m_pPlayer + 0x40);
+		float len = (*g_102be4dc)(vel->x * vel->x + vel->y * vel->y);
+		if ( len <= 195.0f )
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7860 size=0x7
 #include "CGameMovement.h"
 namespace lifted {
@@ -115,6 +136,39 @@ extern float g_101e34ec;
 float CGameMovement::vfunc23()
 {
     return lifted::g_101e34ec;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100e7e20 size=0x70
+#include "CGameMovement.h"
+
+struct GlobalsView
+{
+	char pad0[0x10];
+	float frametime;	// 0x10
+};
+extern GlobalsView *g_102b8494;
+
+struct G104dfa5cV
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char pad0[0x24];
+	float m_field28;	// 0x28
+};
+extern G104dfa5cV *g_104dfa5c;
+
+void CGameMovement::vfunc1(void *pMove, void *pPlayer)
+{
+	float savedTime = g_102b8494->frametime;
+	sub_100ec390();
+	m_bDc = 0;
+	m_pMove = pMove;
+	m_pPlayer = pPlayer;
+	*(float *)((char *)m_pPlayer + 0x38) = g_104dfa5c->vfunc1() ? 0.0f : g_104dfa5c->m_field28;
+	vfunc5();
+	sub_100e7e90();
+	g_102b8494->frametime = savedTime;
 }
 // END FUNCTION
 
@@ -183,6 +237,39 @@ char CGameMovement::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eaa70 size=0x77
+#include "CGameMovement.h"
+
+void CGameMovement::vfunc18()
+{
+	sub_100ec450();
+	if (((unsigned char *)m_pPlayer)[0x24] & 2)
+		slot17();
+	else
+		*(int *)((char *)m_pPlayer + 0x28) &= ~2;
+
+	float *p = (float *)m_pPlayer;
+	float *b = (float *)((char *)m_pMove + 0x154);
+	float fx = p[0x10];
+	p[0x10] = fx + b[0];
+	float fy = p[0x11];
+	p[0x11] = fy + b[1];
+	float fz = p[0x12];
+	p[0x12] = fz + b[2];
+
+	slot19(0, 0);
+
+	float *p2 = (float *)m_pPlayer;
+	float *b2 = (float *)((char *)m_pMove + 0x154);
+	float gx = p2[0x10];
+	p2[0x10] = gx - b2[0];
+	float gy = p2[0x11];
+	p2[0x11] = gy - b2[1];
+	float gz = p2[0x12];
+	p2[0x12] = gz - b2[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb1f0 size=0x46
 #include "CGameMovement.h"
 struct CSurfProp { char pad[0x72]; char m_bFlag; };
@@ -233,5 +320,24 @@ float CGameMovement::vfunc6(const QAngle &angles, const Vector &vec, float scale
 	if (a < threshold)
 		return s * (a / threshold * scale);
 	return s * scale;
+}
+// END FUNCTION
+
+// FUNCTION: 0x100ed950 size=0x4f
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+
+struct VMove_100a2450 { int sub_100a2450(); };
+
+void CGameMovement::vfunc25()
+{
+	if (m_bDc)
+		return;
+	if ((((VMove_100a2450 *)m_pMove)->sub_100a2450() & 2) == 0)
+		return;
+	((CMovePlayerView *)m_pPlayer)->m_flForwardMove *= 0.33333334f;
+	((CMovePlayerView *)m_pPlayer)->m_flSideMove *= 0.33333334f;
+	((CMovePlayerView *)m_pPlayer)->m_flUpMove *= 0.33333334f;
+	m_bDc = 1;
 }
 // END FUNCTION

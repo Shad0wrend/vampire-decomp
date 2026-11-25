@@ -9,6 +9,55 @@ char * ClientModeHLNormal::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029630 size=0x5e
+#include "ClientModeHLNormal.h"
+#include "vgui2__Panel.h"
+
+// TARGET: ClientModeHLNormal::vfunc3
+int sub_1016a6b0();
+int sub_101ac8d0();
+
+class IG1027ba58
+{
+public:
+#define D(n) virtual void d##n();
+	D(0) D(1) D(2) D(3) D(4) D(5) D(6) D(7) D(8) D(9)
+	D(10) D(11) D(12) D(13) D(14) D(15) D(16) D(17)
+#undef D
+	virtual bool vfunc18();
+};
+
+extern IG1027ba58 *g_1027ba58;
+
+class ISurfaceX
+{
+public:
+#define D(n) virtual void d##n();
+	D(0) D(1) D(2) D(3) D(4) D(5) D(6) D(7) D(8) D(9)
+	D(10) D(11) D(12) D(13) D(14) D(15) D(16) D(17) D(18) D(19)
+	D(20) D(21) D(22) D(23) D(24) D(25) D(26) D(27) D(28) D(29)
+	D(30) D(31) D(32) D(33) D(34) D(35) D(36) D(37) D(38) D(39)
+	D(40) D(41) D(42) D(43) D(44) D(45) D(46) D(47) D(48) D(49)
+	D(50) D(51)
+#undef D
+	virtual void vfunc52(int);
+};
+
+void ClientModeHLNormal::vfunc3()
+{
+	int x = sub_1016a6b0();
+	if (x)
+		((vgui2::Panel *)&m_sub)->vfunc33(x);
+	if (g_1027ba58->vfunc18())
+	{
+		((vgui2::Panel *)&m_sub)->vfunc54(m_unk04);
+		((ISurfaceX *)sub_101ac8d0())->vfunc52(m_unk04);
+	}
+	((vgui2::Panel *)&m_sub)->vfunc21(1);
+	vfunc5();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029690 size=0x27
 #include "ClientModeHLNormal.h"
 int sub_1016a6b0();

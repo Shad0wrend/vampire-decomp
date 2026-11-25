@@ -170,11 +170,237 @@ void CBasePanel::vfunc110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163dc0 size=0x5d
+#include "CBasePanel.h"
+
+struct VGuiView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26();
+	virtual void v27(int, const char *, int);
+	virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33();
+	virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37();
+	virtual int v38(int);
+};
+
+extern "C" char *(*g_101e3188)(char *, const char *, int);
+VGuiView *sub_101ac8d0();
+
+// TARGET: CBasePanel::vfunc108
+void CBasePanel::vfunc108(const char *name, char b)
+{
+	vfunc110();
+	*(char *)((char *)this + 0x58) = 1;
+	*(char *)((char *)this + 0x160) = b;
+	g_101e3188((char *)this + 0x60, name, 0x100);
+	*(int *)((char *)this + 0x5c) = sub_101ac8d0()->v38(0);
+	VGuiView *v = sub_101ac8d0();
+	v->v27(*(int *)((char *)this + 0x5c), (char *)this + 0x60, 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10163e20 size=0x7c
+#include "CBasePanel.h"
+struct ISurf { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void Set(int h, float f); };
+ISurf *sub_101ac8d0();
+void CBasePanel::vfunc109(float f)
+{
+	if (*(char *)((char *)this + 0x58)) {
+		double d;
+		if (f > 1.0) d = 1.0;
+		else if (f < 0.0) d = 0.0;
+		else d = f;
+		sub_101ac8d0()->Set(*(int *)((char *)this + 0x5c), (float)d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163ea0 size=0xa
 #include "CBasePanel.h"
 void CBasePanel::vfunc111(int a0)
 {
     *(char *)((char *)this + 0x16c) = 1;
+}
+// END FUNCTION
+
+// FUNCTION: 0x10163f50 size=0x7a
+#include "CBasePanel.h"
+
+extern void *sub_101b6840(int);
+extern void *sub_101ac8f0();
+
+class CUnknown101b56c0
+{
+public:
+	void *sub_101b56c0(const char *, const char *, int);
+};
+
+struct IVGuiView
+{
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3();
+	virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7();
+	virtual void g8(); virtual void g9(); virtual void g10(); virtual void g11();
+	virtual void g12(); virtual void g13(); virtual void g14(); virtual void g15();
+	virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20(int, void *, int, int);
+};
+
+void CBasePanel::vfunc87(int code)
+{
+	if (!((char *)this)[0x16c])
+		return;
+
+	vgui2::Panel *p = (vgui2::Panel *)vfunc31();
+	if (!p)
+		return;
+
+	void *kv;
+	void *k = sub_101b6840(0x1c);
+	if (k)
+		kv = ((CUnknown101b56c0 *)k)->sub_101b56c0("MousePressed", "code", code);
+	else
+		kv = 0;
+
+	vgui2::Panel *p2 = (vgui2::Panel *)vfunc31();
+	void *vgui = sub_101ac8f0();
+	((IVGuiView *)vgui)->g20(p2->vfunc0(), kv, vfunc0(), 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10163fd0 size=0x7a
+#include "CBasePanel.h"
+
+extern void *sub_101b6840(int);
+extern void *sub_101ac8f0();
+
+class CUnknown101b56c0
+{
+public:
+	void *sub_101b56c0(const char *, const char *, int);
+};
+
+struct IVGuiView
+{
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3();
+	virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7();
+	virtual void g8(); virtual void g9(); virtual void g10(); virtual void g11();
+	virtual void g12(); virtual void g13(); virtual void g14(); virtual void g15();
+	virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20(int, void *, int, int);
+};
+
+void CBasePanel::vfunc88(int code)
+{
+	if (!((char *)this)[0x16c])
+		return;
+
+	vgui2::Panel *p = (vgui2::Panel *)vfunc31();
+	if (!p)
+		return;
+
+	void *kv;
+	void *k = sub_101b6840(0x1c);
+	if (k)
+		kv = ((CUnknown101b56c0 *)k)->sub_101b56c0("MouseDoublePressed", "code", code);
+	else
+		kv = 0;
+
+	vgui2::Panel *p2 = (vgui2::Panel *)vfunc31();
+	void *vgui = sub_101ac8f0();
+	((IVGuiView *)vgui)->g20(p2->vfunc0(), kv, vfunc0(), 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x10164050 size=0x7a
+#include "CBasePanel.h"
+
+extern void *sub_101b6840(int);
+extern void *sub_101ac8f0();
+
+class CUnknown101b56c0
+{
+public:
+	void *sub_101b56c0(const char *, const char *, int);
+};
+
+struct IVGuiView
+{
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3();
+	virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7();
+	virtual void g8(); virtual void g9(); virtual void g10(); virtual void g11();
+	virtual void g12(); virtual void g13(); virtual void g14(); virtual void g15();
+	virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20(int, void *, int, int);
+};
+
+void CBasePanel::vfunc89(int code)
+{
+	if (!((char *)this)[0x16c])
+		return;
+
+	vgui2::Panel *p = (vgui2::Panel *)vfunc31();
+	if (!p)
+		return;
+
+	void *kv;
+	void *k = sub_101b6840(0x1c);
+	if (k)
+		kv = ((CUnknown101b56c0 *)k)->sub_101b56c0("MouseReleased", "code", code);
+	else
+		kv = 0;
+
+	vgui2::Panel *p2 = (vgui2::Panel *)vfunc31();
+	void *vgui = sub_101ac8f0();
+	((IVGuiView *)vgui)->g20(p2->vfunc0(), kv, vfunc0(), 0);
+}
+// END FUNCTION
+
+// FUNCTION: 0x101640d0 size=0x7a
+#include "CBasePanel.h"
+
+extern void *sub_101b6840(int);
+extern void *sub_101ac8f0();
+
+class CUnknown101b56c0
+{
+public:
+	void *sub_101b56c0(const char *, const char *, int);
+};
+
+struct IVGuiView
+{
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3();
+	virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7();
+	virtual void g8(); virtual void g9(); virtual void g10(); virtual void g11();
+	virtual void g12(); virtual void g13(); virtual void g14(); virtual void g15();
+	virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20(int, void *, int, int);
+};
+
+void CBasePanel::vfunc90(int code)
+{
+	if (!((char *)this)[0x16c])
+		return;
+
+	vgui2::Panel *p = (vgui2::Panel *)vfunc31();
+	if (!p)
+		return;
+
+	void *kv;
+	void *k = sub_101b6840(0x1c);
+	if (k)
+		kv = ((CUnknown101b56c0 *)k)->sub_101b56c0("MouseWheeled", "delta", code);
+	else
+		kv = 0;
+
+	vgui2::Panel *p2 = (vgui2::Panel *)vfunc31();
+	void *vgui = sub_101ac8f0();
+	((IVGuiView *)vgui)->g20(p2->vfunc0(), kv, vfunc0(), 0);
 }
 // END FUNCTION
 

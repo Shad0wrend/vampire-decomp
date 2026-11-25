@@ -4,6 +4,8 @@
 #pragma once
 #include "CManagedHudElement.h"
 
+class CKeyValuesX;
+
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
 struct SUMem {
 	void *m_pMem; int m_nAlloc; int m_nGrow;
@@ -26,8 +28,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc98();
 	virtual bool vfunc107();
 	// the slots CSignUI adds to its base's vtable: 114-114, vfuncK at slot K
-	virtual void vfunc114();
+	virtual void vfunc114(int, int, int);
 	void sub_10060c30();
+	void sub_100617b0(CKeyValuesX *pData);
 	CSignUI(int a);
 	int m_unk174; int m_unk178; int m_unk17c; char m_b180; char m_b181; short m_unk182; int m_unk184; int m_unk188; float m_f18c;
 	SUVec m_vecB;

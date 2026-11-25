@@ -27,6 +27,22 @@ CMoveHelperClient *pcd_emit_1010f1a0() { return new CMoveHelperClient; }
 // TARGET: ??_GCMoveHelperClient@@UAEPAXI@Z
 // END FUNCTION
 
+// FUNCTION: 0x1010f1c0 size=0x5f
+#include "CMoveHelperClient.h"
+#include "utlvector.h"
+
+// TARGET: CMoveHelperClient::~CMoveHelperClient
+extern int g_104df784;
+extern char vt_10235714;
+
+CMoveHelperClient::~CMoveHelperClient()
+{
+	g_104df784 = 0;
+	((CUtlVector<int> *)((char *)this + 0xc))->~CUtlVector<int>();
+	*(void **)this = &vt_10235714;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f260 size=0x8
 #include "CMoveHelperClient.h"
 
@@ -46,6 +62,43 @@ void CMoveHelperClient::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f530 size=0x7b
+#include "Vector.h"
+#include "CWaterEnum.h"
+#include "CMoveHelperClient.h"
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+
+struct IEngine {
+	V10(a)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8();
+	virtual int vfunc19(int, Vector *);
+};
+extern IEngine *g_104a57d4;
+
+struct IPartition {
+	V10(a)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void vfunc15(int, Vector *, int, CWaterEnum *);
+};
+extern IPartition *g_104a5808;
+
+// TARGET: CMoveHelperClient::vfunc16
+int CMoveHelperClient::vfunc16(Vector *p)
+{
+	int result = g_104a57d4->vfunc19(0, p);
+	if (result & 1)
+		return result;
+	CWaterEnum water;
+	water.m_vecPoint = *p;
+	water.m_nContents = 0;
+	water.m_pEntIndex = 0;
+	g_104a5808->vfunc15(4, p, 0, &water);
+	return water.m_nContents == 0 ? result : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f670 size=0x3
 // TARGET: sub_1010f670
 void __stdcall sub_1010f670(int, int, int, int, int, int, int, int, int, int, int, int)
@@ -62,6 +115,29 @@ extern CPhysSurfacePropsIface *g_104e0c94;
 CPhysSurfacePropsIface *sub_1010f680()
 {
 	return g_104e0c94;
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010f690 size=0x64
+#include <stdarg.h>
+#include "CMoveHelperClient.h"
+
+extern int (__cdecl *g_101e31a8)(char *, int, const char *, va_list);
+extern int (__cdecl *g_101e3118)(int, const char *, ...);
+extern int (__cdecl *g_101e3108)(const char *, ...);
+
+// TARGET: vfunc15
+void CMoveHelperClient::vfunc15(bool bDevMsg, const char *fmt, ...)
+{
+	char buf[0x2000];
+	va_list args;
+	va_start(args, fmt);
+	g_101e31a8(buf, 0x2000, fmt, args);
+	va_end(args);
+	if (bDevMsg)
+		g_101e3118(1, buf);
+	else
+		g_101e3108(buf);
 }
 // END FUNCTION
 
@@ -113,6 +189,29 @@ extern IView_104a57f8 *g_104a57f8;
 void CMoveHelperClient::vfunc19()
 {
 	g_104a57f8->v3();
+}
+// END FUNCTION
+
+// FUNCTION: 0x1010f780 size=0x6a
+#include "CMoveHelperClient.h"
+#include "FileSystemViews.h"
+
+extern "C" void *__cdecl malloc(unsigned int);
+
+void *CMoveHelperClient::vfunc20(const char *name, int *pSize)
+{
+	int h = g_104a580c->vfunc0(name, "rb", 0);
+	if ( h )
+	{
+		int size = g_104a580c->vfunc6(h);
+		if ( pSize )
+			*pSize = size;
+		void *buf = malloc(size);
+		g_104a580c->vfunc2(buf, size, h);
+		g_104a580c->vfunc1(h);
+		return buf;
+	}
+	return 0;
 }
 // END FUNCTION
 

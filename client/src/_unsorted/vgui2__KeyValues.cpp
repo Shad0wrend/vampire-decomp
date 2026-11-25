@@ -40,6 +40,27 @@ int vgui2::KeyValues::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6380 size=0x56
+#include "vgui2__KeyValues.h"
+
+extern "C" int atoi(const char *s);
+extern "C" char *_itoa(int value, char *string, int radix);
+
+void vgui2::KeyValues::vfunc5()
+{
+	int max = 1;
+	for (KeyValues *sub = m_pSub; sub; sub = sub->m_pPeer)
+	{
+		int n = atoi((const char *)sub->vfunc0());
+		if (max <= n)
+			max = n + 1;
+	}
+	char buf[12];
+	_itoa(max, buf, 10);
+	vfunc4(buf, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b63e0 size=0x4b
 #include "vgui2__KeyValues.h"
 void vgui2::KeyValues::vfunc6(KeyValues *sub)

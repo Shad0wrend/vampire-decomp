@@ -107,6 +107,58 @@ void vgui2::TextEntry::vfunc101()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae490 size=0x71
+#include "vgui2__TextEntry.h"
+
+void vgui2::TextEntry::sub_101ae490(int arg)
+{
+	if ( *(char *)((char *)this + 0x8b) )
+	{
+		unsigned char *p = (unsigned char *)&arg;
+		vfunc120(1);
+		vfunc120(1);
+		vfunc120(*(int *)(p + 0));
+		vfunc120(*(int *)(p + 1));
+		vfunc120(*(int *)(p + 2));
+		vfunc120(*(int *)(p + 3));
+		vfunc57(0, 0);
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101ae510 size=0x5d
+#include "vgui2__TextEntry.h"
+
+struct VTable57
+{
+	virtual void a00(); virtual void a01(); virtual void a02(); virtual void a03(); virtual void a04(); virtual void a05(); virtual void a06(); virtual void a07(); virtual void a08(); virtual void a09();
+	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14(); virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24(); virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38(); virtual void a39();
+	virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43(); virtual void a44(); virtual void a45(); virtual void a46(); virtual void a47(); virtual void a48(); virtual void a49();
+	virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54(); virtual void a55(); virtual void a56();
+	virtual bool v57(int, int);
+};
+
+// TARGET: vgui2::TextEntry::vfunc146
+bool vgui2::TextEntry::vfunc146(int index)
+{
+	bool bResult = *(bool *)((char *)this + 0x8b);
+	if (bResult)
+	{
+		if (index < 0)
+			index = 0;
+		else if (index > 0xff)
+			index = 0xff;
+		vfunc120(1);
+		vfunc120(2);
+		vfunc120(index);
+		bResult = ((VTable57 *)this)->v57(0, 0);
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae5d0 size=0x1b
 #include "vgui2__TextEntry.h"
 namespace lifted {
@@ -236,6 +288,52 @@ void vgui2::TextEntry::vfunc86()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af2f0 size=0x50
+#include "vgui2__TextEntry.h"
+int sub_101ac8b0();
+
+struct InputView { virtual void vfunc0(); virtual void vfunc1(int); };
+
+void vgui2::TextEntry::vfunc89(int)
+{
+	*(char *)((char *)this + 0x8c) = 0;
+	((InputView *)sub_101ac8b0())->vfunc1(0);
+	int a, b;
+	if (vfunc158((int)&b, (int)&a)) {
+		if (a - b == 0)
+			*(int *)((char *)this + 0x9c) = -1;
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101af340 size=0x7b
+#include "vgui2__TextEntry.h"
+extern "C" int isspace(int);
+void vgui2::TextEntry::vfunc88(int a)
+{
+	if (a == 0) {
+		vfunc87(0);
+		vfunc115();
+		int start = *(int *)((char *)this + 0x70);
+		vfunc114();
+		int end = *(int *)((char *)this + 0x70);
+		int prev = end - 1;
+		char c;
+		if (prev >= 0 && prev < *(int *)((char *)this + 0x58))
+			c = (*(char **)((char *)this + 0x60))[prev];
+		else
+			c = 0;
+		if (isspace(c)) {
+			end = prev;
+			(*(int *)((char *)this + 0x70))--;
+		}
+		*(int *)((char *)this + 0x9c) = start;
+		*(int *)((char *)this + 0xa0) = end;
+		*((char *)this + 0x8c) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af3c0 size=0x8
 #include "vgui2__TextEntry.h"
 void vgui2::TextEntry::vfunc79()
@@ -257,6 +355,36 @@ void vgui2::TextEntry::vfunc95()
 		m_i94 = m_i98 + n;
 		vfunc6();
 	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101afa60 size=0x53
+#include "vgui2__TextEntry.h"
+
+extern int sub_101ac8b0();
+
+class IInputView_101afa60
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual bool vfunc12(int keyCode);
+};
+
+// TARGET: vgui2::TextEntry::vfunc165
+void vgui2::TextEntry::vfunc165()
+{
+	if ( vfunc56() )
+	{
+		if ( ((IInputView_101afa60 *)sub_101ac8b0())->vfunc12(0x4f)
+			|| ((IInputView_101afa60 *)sub_101ac8b0())->vfunc12(0x50) )
+		{
+			if ( *(int *)((char *)this + 0x9c) == -1 )
+				*(int *)((char *)this + 0x9c) = *(int *)((char *)this + 0x70);
+			return;
+		}
+	}
+	*(int *)((char *)this + 0x9c) = -1;
 }
 // END FUNCTION
 
@@ -284,6 +412,78 @@ bool vgui2::TextEntry::vfunc142(char a0)
 {
     *(char *)((char *)this + 0xf6) = a0;
     return *(bool *)&a0;
+}
+// END FUNCTION
+
+// FUNCTION: 0x101afb30 size=0x4f
+#include "vgui2__TextEntry.h"
+
+struct VTextEntry_101afaf0 { bool sub_101afaf0(int); };
+struct VTextEntry_101afee0 { void sub_101afee0(); };
+
+int vgui2::TextEntry::vfunc110()
+{
+	vfunc165();
+	int n = *(int *)((char *)this + 0x70);
+	if (((VTextEntry_101afaf0 *)this)->sub_101afaf0(n))
+	{
+		if (!*(char *)((char *)this + 0x74))
+			*(char *)((char *)this + 0x75) = 1;
+	}
+	if (!*(char *)((char *)this + 0x75) && n > 0)
+	{
+		n--;
+		*(int *)((char *)this + 0x70) = n;
+	}
+	((VTextEntry_101afee0 *)this)->sub_101afee0();
+	vfunc109();
+	return vfunc6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101afb80 size=0x70
+#include "vgui2__TextEntry.h"
+
+struct TEView
+{
+	char pad0[0x58];
+	int m_n58;	// 0x58
+	char pad1[0x70 - 0x5c];
+	int m_pos70;	// 0x70
+	char m_b74;	// 0x74
+	char m_b75;	// 0x75
+	bool sub_101afaf0(int);
+	void sub_101aff20();
+};
+
+int vgui2::TextEntry::vfunc111()
+{
+	TEView *v = (TEView *)this;
+	vfunc165();
+	int pos = v->m_pos70;
+	if ( v->sub_101afaf0(pos) )
+	{
+		if ( v->m_b74 )
+		{
+			v->m_b75 = 0;
+		}
+		else if ( pos < v->m_n58 )
+		{
+			v->m_pos70 = ++pos;
+		}
+	}
+	else
+	{
+		if ( pos < v->m_n58 )
+		{
+			v->m_pos70 = ++pos;
+		}
+		if ( v->sub_101afaf0(v->m_pos70) && !v->m_b74 )
+			v->m_b75 = 1;
+	}
+	v->sub_101aff20();
+	vfunc109();
+	return vfunc6();
 }
 // END FUNCTION
 
@@ -562,6 +762,47 @@ int vgui2::TextEntry::vfunc169()
     lifted::sub_101b1760();
     *(char *)((char *)this + 0x100) = 1;
     return ((lifted::V *)this)->f6();
+}
+// END FUNCTION
+
+// FUNCTION: 0x101b1440 size=0x76
+#include <string.h>
+#include "vgui2__TextEntry.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct TEView
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3();
+	virtual void k4(); virtual void k5(); virtual void k6(); virtual void k7();
+	virtual void GetText(int start, char *buf, int len);
+};
+
+struct KVv
+{
+	virtual const char *GetName();
+	virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8();
+	virtual void d9(); virtual void d10(); virtual void d11(); virtual void d12();
+	virtual void d13();
+	virtual void SetString(const char *key, const char *value);
+};
+
+struct PanelV
+{
+	bool sub_101ac540(vgui2::KeyValues *data);
+};
+
+bool vgui2::TextEntry::vfunc14(vgui2::KeyValues *data)
+{
+	if (!strcmp(((KVv *)data)->GetName(), "GetText"))
+	{
+		char buf[256];
+		((TEView *)this)->GetText(0, buf, 255);
+		((KVv *)data)->SetString("text", buf);
+		return true;
+	}
+	return ((PanelV *)this)->sub_101ac540(data);
 }
 // END FUNCTION
 

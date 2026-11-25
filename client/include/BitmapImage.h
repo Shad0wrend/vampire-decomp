@@ -11,4 +11,16 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual int vfunc1(int, int);
     virtual int vfunc2(int, int);
     virtual int vfunc8(int);
+
+	BitmapImage();
+	BitmapImage(const char *pSzFilename, int nArg);
+	int m_hTexture;	// +0x1c
+	vgui2::Image::ImageColor m_clr;	// +0x20
+	int m_unk24;
+	int m_unk28;
+	int m_unk2c;
+	int m_unk30;
+	int m_unk34;
+
+	bool sub_10164520(int arg0, int arg1);
 };

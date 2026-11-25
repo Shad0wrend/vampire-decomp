@@ -8,6 +8,9 @@ class C_BaseEntity : public IClientEntity
 {
 public:
 	C_BaseEntity();
+	void sub_100a2580();
+	void sub_100a2ee0();
+	void sub_100a2f50();
 	void sub_100a0450();
 	void sub_1009e2d0(int bForce);	// UpdateShadows
 	void sub_100a02e0(bool force);
@@ -15,14 +18,19 @@ public:
 	char *sub_1009f770();
 	void *sub_100a2d70();
 	void sub_100a1a70(int a);
+	bool sub_1009e0f0(int a, int b);
 	void sub_1009f8a0();
 	void sub_1009f780();
 	void *sub_1009f7f0(void *);
 	void sub_1011c7f0();
+	bool sub_1009f140(int mask);
+	bool sub_100a1140();
+	C_BaseEntity *sub_100a11a0();
 	void sub_1011ac90(void (C_BaseEntity::*thinkFunc)(), int a, int b);	// PhysicsDispatchThink: the two trailing ints are the rest of the 16-byte member pointer
 	void sub_100a2030(const void *);
 	bool sub_100a0710(const char *name);
 	void sub_1009f680(int i, float v);	// stores v in the float array at +0x23c (the absolute origin)
+	void sub_1009f2e0(int a, int b);
 	virtual ICollideable *GetClientCollideable();	// IClientUnknown slot 2
 	virtual IClientNetworkable *GetClientNetworkable();	// IClientUnknown slot 3
 	virtual IClientRenderable *GetClientRenderable();	// IClientUnknown slot 4
@@ -135,7 +143,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual bool vfunc57(int, int, int);
 	virtual bool vfunc58();
 	virtual int vfunc59();
-	virtual int vfunc60(int, int);
+	virtual void vfunc60(int, int);
 	virtual void vfunc61();
 	virtual int vfunc62();
 	virtual int vfunc63();
@@ -158,7 +166,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual int vfunc80(int flags);
 	virtual float vfunc81();
 	virtual void vfunc82();
-	virtual void vfunc83();
+	virtual void vfunc83(float);
 	virtual int vfunc84();
 	virtual int vfunc85();
 	virtual int vfunc86();

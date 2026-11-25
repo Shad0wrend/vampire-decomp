@@ -15,7 +15,11 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc97();
 	virtual void vfunc98();
 	virtual bool vfunc107();
-	char m_pad0008[0x1b0 - 0x174];
+	void sub_10062610();
+	char m_pad0008[0x178 - 0x174];
+	int m_n178;
+	int m_n17c;
+	char m_pad0180[0x1b0 - 0x180];
 	CStealthChild *m_p1b0;
 	CStealthChild *m_arr1b4[5];
 	CStealthChild *m_p1c8;

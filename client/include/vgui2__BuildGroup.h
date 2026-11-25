@@ -1,9 +1,12 @@
 // vgui2::BuildGroup: skeleton from the game's RTTI (vtable-slot skeletons, 2026-11-22)
 // declared: its bases, the game's vtable slots it adds or fills (vtable-slot layer, 2026-11-22) (its vtable has no deleting destructor: no virtual destructor)
 #pragma once
+#include "utlvector.h"
 
 namespace vgui2
 {
+class Panel;
+
 class BuildGroup
 {
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
@@ -12,9 +15,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual bool vfunc1();
     virtual int vfunc2();
     virtual void vfunc3(const char *);
-    virtual int vfunc4();
+    virtual void vfunc4();
     virtual void vfunc5(void *);
-    virtual void vfunc6();
+    virtual void vfunc6(void *);
     virtual void vfunc7();
     virtual int vfunc8(int);
     virtual int vfunc9();
@@ -30,6 +33,9 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc19();
     virtual void vfunc20(int, int);
     virtual void vfunc21();
-    virtual void vfunc22();
+    virtual int vfunc22(Panel *);
+	Panel *sub_101c2900(const char *name);
+	char m_pad004[0x3c];
+	CUtlVector<Panel *> m_Panels;
 };
 }

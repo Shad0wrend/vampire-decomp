@@ -101,6 +101,74 @@ int vgui2::Slider::vfunc120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb990 size=0x68
+#include "vgui2__Slider.h"
+#include "vgui2__Panel.h"
+
+extern int sub_101ac8d0();
+
+using namespace vgui2;
+
+class SchemeView
+{
+public:
+	virtual void s0(); virtual void s1(); virtual void s2();
+	virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8();
+	virtual int vfunc9(const char *, int);
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13();
+	virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+	virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21();
+	virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25();
+	virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33();
+	virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37();
+	virtual void s38();
+	virtual void vfunc39(int &, int &);
+};
+
+void vgui2::Slider::vfunc75(int pScheme)
+{
+	int a, b;
+	((SchemeView *)sub_101ac8d0())->vfunc39(a, b);
+	((Panel *)this)->Panel::vfunc75(pScheme);
+	int thumbwidth = ((SchemeView *)pScheme)->vfunc9("thumbwidth", 0);
+	if ( thumbwidth )
+	{
+		double scaled = a * 0.0009765625;
+		vfunc116((int)(scaled * thumbwidth));
+	}
+}
+// END FUNCTION
+
+// FUNCTION: 0x101bba00 size=0x55
+#include "vgui2__Slider.h"
+
+struct Color101bba00 { int m_dw; };
+
+class ISchemeView101bba00
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int GetBorder(const char *pName);
+	virtual void v4();
+	virtual void v5();
+	virtual Color101bba00 &GetSchemeColor(Color101bba00 &col, const char *pName);
+};
+
+// TARGET: vgui2::Slider::vfunc74
+int vgui2::Slider::vfunc74(int pScheme)
+{
+	Panel::vfunc74(pScheme);
+	Color101bba00 col;
+	vfunc51(((ISchemeView101bba00 *)pScheme)->GetSchemeColor(col, "Slider/SliderFgColor").m_dw);
+	*(int *)((char *)this + 0x88) = ((ISchemeView101bba00 *)pScheme)->GetBorder("ButtonBorder");
+	return (*(int *)((char *)this + 0x8c) = ((ISchemeView101bba00 *)pScheme)->GetBorder("ButtonDepressedBorder"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbaf0 size=0x17
 #include "vgui2__Slider.h"
 namespace lifted {

@@ -11,6 +11,9 @@ class CHudSpriteInner
 public:
 	void sub_10136f60(bool bAdditive);
 	int sub_10136ff0(int frame, int x, int y, int a3);
+	void sub_10137020(int a1, int x, int y, int a4, int a5, int a6);
+	void sub_10137850(int a1, int x, int y, int a4, int a5, int a6);
+	void sub_10136f20(float a, float b, float c);
 };
 
 struct El3d50;
@@ -23,15 +26,16 @@ public:
 	virtual void vfunc3();
 	virtual int vfunc4(int, int);
 	virtual int vfunc5(int idx, int unused);
-	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual void vfunc6(int a1, int r, int g, int b);
+	virtual void vfunc7(int a1, int x, int y, int a4, int a5, int a6);
 	virtual void vfunc8();
-	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual void vfunc9(int a1, int x, int y, int a4, int a5, int a6);
+	virtual void vfunc10(int a1, int x, int y, int a4, int a5, int a6);
 	virtual void vfunc11();
-	virtual void vfunc12();
+	virtual void vfunc12(int a1, int x, int y, int a4, int a5, int a6);
 	int *sub_100f3e20(El3d50 *p);
 	virtual void vfunc13(int frame, int x, int y, int a3);
+	virtual void vfunc14(int a1, int x, int y, int a4, int a5, int a6);
 
 	int m_unk04;
 	int m_unk08;

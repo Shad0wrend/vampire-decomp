@@ -10,17 +10,18 @@ class TextImage : public vgui2::Image
 {
 public:
 	virtual ~TextImage();
-	int m_unk0c; int m_unk10; int m_unk14; int m_unk18;
 	char *m_pText;
+	short m_unk20;
+	short m_unk22;
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with TextImage's own function
 	virtual int vfunc0();
 	virtual int vfunc9(int, int);
 	// the slots TextImage adds to its base's vtable: 26-34, vfuncK at slot K
-	virtual void vfunc26();
+	virtual void vfunc26(const unsigned short *);
 	virtual void vfunc27();
 	virtual int vfunc28(int, int);
-	virtual void vfunc29();
+	virtual void vfunc29(char *buf, int size);
 	virtual void vfunc30(int);
 	virtual int vfunc31();
 	virtual int vfunc32(int, int);

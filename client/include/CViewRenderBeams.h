@@ -5,6 +5,9 @@
 #include "IViewRenderBeams.h"
 #include "Beam_t.h"
 
+struct BeamV;
+struct BeamInfoV;
+
 class CViewRenderBeams : public IViewRenderBeams
 {
 public:
@@ -12,6 +15,9 @@ public:
 	Beam_t m_Beams[128];
 	int m_unk1bc04;
 	int m_unk1bc08;
+	Beam_t *sub_10193470(bool bInit);
+	Beam_t *sub_101938a0(void *pInfo);
+	Beam_t *sub_10194160(void *pInfo);
 	void *m_pFirst;
 	int m_unk1bc10;
 	int m_unk1bc14;
@@ -40,7 +46,10 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	virtual void vfunc19();
 	virtual void vfunc20();
 	virtual void vfunc21();
-	virtual void vfunc22();
+	void sub_10193790(BeamV *, BeamInfoV *);
+	void sub_101934d0(void *pBeam);
+	void sub_101947b0(void **ppList);
+	virtual void vfunc22(BeamV *, BeamInfoV *);
 	// the slots CViewRenderBeams adds to its base's vtable: 23-23, vfuncK at slot K
 	virtual ~CViewRenderBeams();
 };

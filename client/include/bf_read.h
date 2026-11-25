@@ -47,6 +47,8 @@ public:
 		return ret;
 	}
 
+	unsigned int sub_1013c7d0(int numbits);
+
 	int ReadOneBit()
 	{
 		if ((m_iCurBit + 1) > m_nDataBits)
