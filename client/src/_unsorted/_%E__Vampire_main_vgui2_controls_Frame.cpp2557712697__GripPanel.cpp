@@ -1,6 +1,54 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x101b78e0 size=0xbd
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##1) V4(n##2) V4(n##3) V4(n##4)
+struct PanelV {
+    V4(a) virtual void s4(); virtual void vfunc5(); virtual void s6(); virtual void s7();
+    V16(b) V16(c) V16(d) virtual void s56(); virtual void vfunc57(int, int);
+    V16(e) V16(f) V16(g) V16(h) virtual bool vfunc122();
+    void sub_101a9890(int, int);
+    void sub_101a98f0(int, int);
+    void sub_101aab20(int *, int *);
+};
+struct GP {
+    char pad0[0x58];
+    PanelV *m_p58;
+    int m5c;
+    int m60;
+    int pad64;
+    int m68, m6c, m70, m74;
+};
+void __fastcall sub_101b78e0(GP *self, int edx, int dx, int dy)
+{
+    if (self->m_p58->vfunc122()) {
+        int x = self->m68;
+        int y = self->m6c;
+        int w = self->m70;
+        int h = self->m74;
+        int minW, minH;
+        self->m_p58->sub_101aab20(&minW, &minH);
+        w += self->m5c * dx;
+        if (self->m5c == -1) {
+            if (w < minW)
+                dx = self->m70 - minW;
+            x += dx;
+        }
+        h += self->m60 * dy;
+        if (self->m60 == -1) {
+            if (h < minH)
+                dy = self->m74 - minH;
+            y += dy;
+        }
+        self->m_p58->sub_101a9890(x, y);
+        self->m_p58->sub_101a98f0(w, h);
+        self->m_p58->vfunc57(0, 0);
+        self->m_p58->vfunc5();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b79f0 size=0xba
 #define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
 struct O72 {
