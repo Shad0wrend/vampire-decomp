@@ -7,6 +7,7 @@
 class CStudiomodelPanel : public vgui2::Panel
 {
 public:
+	void *sub_1018b1f0(void *parent, const char *name);
 	virtual ~CStudiomodelPanel();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CStudiomodelPanel's own function
