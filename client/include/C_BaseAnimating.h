@@ -9,6 +9,7 @@ class C_BaseAnimating : public C_BaseEntity
 public:
 	C_BaseAnimating();
 	void sub_100966e0();
+	bool sub_10091860(int, Vector &, QAngle &, matrix3x4_t &);
 	void sub_10095880();
 	int sub_10095b90(int, int, int);
 	int sub_100958f0(int);
