@@ -73564,6 +73564,20 @@ int __fastcall sub_101439a0(ListV *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101439d0 size=0x19
+struct ListV;
+
+int __fastcall sub_101439a0(ListV *self);
+
+int __fastcall sub_101439d0(ListV *self)
+{
+    int idx = sub_101439a0(self);
+    if (idx != -1)
+        return ((int *)(*(int **)((char *)self + 0xc)))[idx];
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101439f0 size=0x16
 struct CUnknown101439f0 { void * sub_101439f0(int); };
 void * CUnknown101439f0::sub_101439f0(int a0)
