@@ -20241,6 +20241,17 @@ void CMeshBuilder::sub_10059af0(const float *rgb)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005c3b0 size=0x7d
+#include "CHUDSprite.h"
+#include "ScopeTrace.h"
+// TARGET: ?sub_1005c3b0@CHUDSprite@@QAEXHHHHH@Z
+void CHUDSprite::sub_1005c3b0(int a, int b, int c, int d, int e)
+{
+	ScopeTrace trace("CHUDSprite::drawClipped", g_102de300, g_102de300);
+	sub_1005c430(a, b, c, d, e, 0xff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d6e0 size=0x6a
 struct TraceEnt { const char *a; void *b; void *c; };
 extern int *g_101e3128;
