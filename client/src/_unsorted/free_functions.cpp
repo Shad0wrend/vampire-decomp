@@ -53829,6 +53829,58 @@ void sub_10101e20( kbutton_t *b, bool bIgnoreKey )
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101ea0 size=0x7b
+#include <stdlib.h>
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+
+struct IEngine {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f)
+	virtual void s60(); virtual void s61(); virtual void s62(); virtual void s63();
+	virtual const char *Cmd_Argv(int index);
+};
+extern IEngine *g_104a57d4;
+
+struct kbutton_t {
+	int down[2];
+	int state;
+};
+
+// TARGET: sub_10101ea0
+void sub_10101ea0(kbutton_t *b, bool bDown)
+{
+	if (!bDown)
+	{
+		const char *arg = g_104a57d4->Cmd_Argv(1);
+		if (*arg)
+		{
+			int key = atoi(arg);
+			if (b->down[0] == key)
+			{
+				b->down[0] = 0;
+			}
+			else
+			{
+				if (b->down[1] != key)
+					return;
+				b->down[1] = 0;
+				if (b->down[0] != 0)
+					return;
+			}
+			if (b->down[1] != 0)
+				return;
+			if (!(b->state & 1))
+				return;
+			b->state = (b->state & ~1) | 4;
+			return;
+		}
+	}
+	b->down[1] = 0;
+	b->down[0] = 0;
+	b->state = 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101025b0 size=0x3b
 struct ObjX { virtual int vfunc0(); virtual bool vfunc1(); char pad[0x24]; float m_f28; };
 extern ObjX *g_104d3d9c;
