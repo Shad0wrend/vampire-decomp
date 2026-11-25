@@ -14,6 +14,7 @@ public:
 	~CVStatList_t();
 	int sub_1015dbd0(int a);
 	int sub_1015d5b0(int stat);
+	void sub_1015d650(int stat, int value);
 	const char *sub_1015dc80(int stat);
 	const char *sub_1015dd20(int stat);
 	const char *sub_1015e190(int stat, char bTimed);
