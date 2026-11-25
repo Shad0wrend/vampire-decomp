@@ -36374,6 +36374,38 @@ int __stdcall sub_10095bb0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095c40 size=0xb4
+#include "C_BaseAnimating.h"
+#include "vector.h"
+struct IDtor95c40 { virtual ~IDtor95c40(); };
+struct CUnknown10044460 { void sub_100433c0(const Vector *a, const Vector *b); };
+extern Vector g_104d4970;
+struct AnimView95c40 : public C_BaseAnimating
+{
+	char pad[0x6b0 - sizeof(C_BaseAnimating)];
+	IDtor95c40 *m_p6b0;
+	int m_6b4;
+	char m_6b8;
+	Vector m_6bc;
+	Vector m_6c8;
+};
+void C_BaseAnimating::sub_10095c40()
+{
+	AnimView95c40 *v = (AnimView95c40 *)this;
+	if (v->m_p6b0)
+	{
+		delete v->m_p6b0;
+		v->m_p6b0 = 0;
+		if (v->m_6bc != g_104d4970 || v->m_6c8 != g_104d4970)
+		{
+			((CUnknown10044460 *)((char *)this + 0x190))->sub_100433c0(&v->m_6bc, &v->m_6c8);
+			vfunc111();
+		}
+	}
+	v->m_6b8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095d00 size=0x222
 #include <float.h>
 #include "C_BaseAnimating.h"
