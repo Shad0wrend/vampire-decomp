@@ -38835,6 +38835,39 @@ bool C_BaseEntity::sub_100a0710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a10b0 size=0x5f
+#include "C_BaseEntity.h"
+struct CUnknown10044460 {
+	char m_pad0000[0x44];
+	unsigned short m_w44;
+	void sub_100432a0(unsigned int v);
+	unsigned short GetFlags() { return m_w44; }
+	void SetFlags(unsigned int v) { sub_100432a0(v); }
+	void AddFlag(unsigned int f) { SetFlags(GetFlags() | f); }
+};
+struct EntView10b0 {
+	char m_pad0000[0x74];
+	unsigned int m_flags74;
+	char m_pad0078[0x190 - 0x78];
+	CUnknown10044460 m_coll;
+};
+extern char g_104d4970[];
+extern char g_104d5190[];
+void C_BaseEntity::sub_100a10b0(int a)
+{
+	if (a) {
+		EntView10b0 *e = (EntView10b0 *)this;
+		e->m_flags74 |= 1;
+		e->m_coll.AddFlag(4);
+		sub_1009fc60(0, 0);
+		vfunc40(g_104d4970);
+		vfunc42(g_104d5190);
+	} else {
+		sub_100a1110();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1110 size=0x2c
 #include "C_BaseEntity.h"
 struct CUnknown10044460 {
