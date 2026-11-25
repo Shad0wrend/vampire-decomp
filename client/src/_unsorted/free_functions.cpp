@@ -82661,6 +82661,16 @@ void TSeg::sub_101556d0(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101557c0 size=0x71
+#include "CUnknown101f4b20.h"
+
+// TARGET: CUnknown101f4b20::sub_101557c0
+const char *CUnknown101f4b20::sub_101557c0(int id, int unused)
+{
+	return m_pTable->Find(id)->m_folder.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155840 size=0x104
 #include "utlrbtree.h"
 #include "utlsortvector.h"
