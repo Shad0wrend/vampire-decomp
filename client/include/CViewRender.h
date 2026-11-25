@@ -14,6 +14,7 @@ public:
     void sub_1019c970();
     void sub_1019d8f0(const char *view);
     void sub_1019a950(int, void *, void *, int, int);
+	void sub_1019add0(int, int, int);
     void sub_10191710();
     void CopyViewModelInfoToEntities();
     int sub_1018fab0();
