@@ -106404,6 +106404,73 @@ void __fastcall sub_10173210(void *self, void *edx, int *dst, int *src, void *fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x10173270 size=0xa8
+#include "vgui2__Panel.h"
+#include "CharEditPanel.h"
+#include "CHud.h"
+
+struct EngineView27
+{
+    virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+    virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+    virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+    virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18(); virtual void e19();
+    virtual void e20(); virtual void e21(); virtual void e22(); virtual void e23(); virtual void e24();
+    virtual void e25(); virtual void e26();
+    virtual void e27(const char *, int);
+};
+extern EngineView27 *g_104a57d4;
+
+struct P8d0V
+{
+    virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+    virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+    virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+    virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+    virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24();
+    virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
+    virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
+    virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38(); virtual void a39();
+    virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43();
+    virtual void a44(int);
+};
+
+struct V0View
+{
+    virtual int f0(int);
+};
+
+struct DERView
+{
+    void sub_10174ef0();
+};
+
+extern CHud g_104cfe38;
+
+int sub_1017f0f0(int);
+bool sub_10174ed0();
+P8d0V *sub_101ac8d0();
+
+void vgui2::Panel::sub_10173270()
+{
+    ((CharEditPanel *)((char *)this - 0x10))->sub_10173110();
+    *(int *)((char *)this + 0xec4) = *(int *)((char *)this + 0xec0);
+    if ( sub_1017f0f0(1) != -1 )
+        g_104a57d4->e27("vautolvl -1", 1);
+    if ( !sub_10174ed0() )
+    {
+        vfunc49();
+        vfunc15(0);
+    }
+    vfunc21(1);
+    vfunc46(1);
+    P8d0V *p = sub_101ac8d0();
+    p->a44(((V0View *)this)->f0(0));
+    if ( sub_10174ed0() )
+        ((DERView *)g_104cfe38.sub_100f0ed0("VCharWizardUI"))->sub_10174ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173350 size=0x54
 struct GV
 {
