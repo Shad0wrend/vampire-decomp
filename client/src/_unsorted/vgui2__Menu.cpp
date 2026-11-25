@@ -440,6 +440,67 @@ int vgui2::Menu::vfunc126(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bfea0 size=0xab
+#include "vgui2__Menu.h"
+#include "vgui2__Slider.h"
+
+struct ItemVec101bfea0
+{
+	char pad[0xc];
+	int m_Size;
+	int m_unk10;
+	vgui2::Panel **m_pElements;
+	vgui2::Panel *Get(int i)
+	{
+		if (i >= 0 && i < m_Size)
+			return m_pElements[i];
+		return 0;
+	}
+};
+
+void vgui2::Menu::vfunc137()
+{
+	ItemVec101bfea0 *items = (ItemVec101bfea0 *)((char *)this + 0x58);
+	int nShown = 0;
+	int first = (*(vgui2::Slider **)((char *)this + 0x70))->vfunc108();
+	do
+	{
+		int i;
+		for (i = 0; i < first; i++)
+		{
+			vgui2::Panel *p = items->Get(i);
+			if (p)
+				p->vfunc21(0);
+		}
+		i = first;
+		while (nShown < *(int *)((char *)this + 0x60))
+		{
+			if (i >= *(int *)((char *)this + 0x64))
+				goto done;
+			vgui2::Panel *p = items->Get(i);
+			if (p)
+			{
+				p->vfunc21(1);
+				nShown++;
+			}
+			i++;
+		}
+		for (; i < *(int *)((char *)this + 0x64); i++)
+		{
+			vgui2::Panel *p = items->Get(i);
+			if (p)
+				p->vfunc21(0);
+		}
+done:
+		if (nShown < *(int *)((char *)this + 0x60))
+		{
+			first--;
+			nShown = 0;
+		}
+	} while (nShown < *(int *)((char *)this + 0x60) - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bff50 size=0x3a
 #include "vgui2__Menu.h"
 namespace lifted {
