@@ -43293,6 +43293,25 @@ char __fastcall sub_100bf710(TrailView *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf9f0 size=0x8c
+#include "Vector.h"
+inline unsigned long &FloatBits(float &f) { return *reinterpret_cast<unsigned long *>(&f); }
+inline unsigned long const &FloatBits(float const &f) { return *reinterpret_cast<unsigned long const *>(&f); }
+inline float BitsToFloat(unsigned long i) { return *reinterpret_cast<float *>(&i); }
+inline float FloatMakePositive(float f)
+{
+	return BitsToFloat(FloatBits(f) & 0x7FFFFFFF);
+}
+bool sub_100bf9f0(const Vector &src1, const Vector &src2, float tolerance)
+{
+	if (FloatMakePositive(src1.x - src2.x) > tolerance)
+		return false;
+	if (FloatMakePositive(src1.y - src2.y) > tolerance)
+		return false;
+	return (FloatMakePositive(src1.z - src2.z) <= tolerance);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0350 size=0x54
 // TARGET: sub_100c0350
 int __stdcall sub_100c0350(int type, int value)
