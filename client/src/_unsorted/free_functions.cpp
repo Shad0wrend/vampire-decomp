@@ -60517,6 +60517,107 @@ int __stdcall sub_1010e6a0(float pos, int size, int extra)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010eb20 size=0x1e6
+#include "CHudMessage.h"
+
+struct client_textmessage_s
+{
+    int effect;
+    unsigned char r1, g1, b1, a1;
+    unsigned char r2, g2, b2, a2;
+    float x;
+    float y;
+    float fadein;
+    float fadeout;
+    float holdtime;
+    float fxtime;
+    const char *pName;
+    const char *pMessage;
+};
+
+struct IUnknown102cf598
+{
+    virtual void vfunc0() = 0;
+    virtual void vfunc1() = 0;
+    virtual void DrawSetTextPos(int x, int y) = 0;
+    virtual void DrawChar(int r, int g, int b, int a, unsigned char c) = 0;
+};
+
+extern IUnknown102cf598 *g_102cf598;
+int sub_100cd130();
+int sub_100cd140(unsigned char c);
+
+void CHudMessage::sub_1010eb20(client_textmessage_s *pMessage, float time)
+{
+    int i, j, length, width;
+    const char *pText;
+    unsigned char line[80];
+
+    pText = pMessage->pMessage;
+    m_lines = 1;
+    m_time = time;
+    m_pMessage = pMessage;
+    length = 0;
+    width = 0;
+    m_totalWidth = 0;
+
+    while (*pText)
+    {
+        if (*pText == '\n')
+        {
+            m_lines++;
+            if (width > m_totalWidth)
+                m_totalWidth = width;
+            width = 0;
+        }
+        else
+        {
+            width += sub_100cd140(*pText);
+        }
+        pText++;
+        length++;
+    }
+    m_length = length;
+    m_totalHeight = m_lines * sub_100cd130();
+
+    m_y = sub_1010e740(pMessage->y, m_totalHeight);
+    pText = pMessage->pMessage;
+
+    m_charTime = 0;
+
+    sub_1010e9b0();
+
+    for (i = 0; i < m_lines; i++)
+    {
+        m_lineLength = 0;
+        m_width = 0;
+        while (*pText && *pText != '\n')
+        {
+            unsigned char c = *pText;
+            line[m_lineLength] = c;
+            m_width += sub_100cd140(c);
+            m_lineLength++;
+            pText++;
+        }
+        pText++;
+        line[m_lineLength] = 0;
+
+        m_x = sub_1010e6a0(pMessage->x, m_width, m_totalWidth);
+
+        g_102cf598->DrawSetTextPos(m_x, m_y);
+
+        for (j = 0; j < m_lineLength; j++)
+        {
+            m_text = line[j];
+            sub_1010e7f0();
+            g_102cf598->DrawChar(m_r, m_g, m_b, 255, m_text);
+        }
+
+        m_y += sub_100cd130();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010eff0 size=0x3a
 int sub_100cd0b0(int);
 struct CView1010eff0 {
