@@ -7737,6 +7737,7 @@
 0x10192850 func   ?sub_10192850@V2850@@QAEHXZ V2850::sub_10192850
 0x10192870 func   ?vfunc45@CViewRender@@UAEMXZ CViewRender::vfunc45
 0x10192cb0 func   ?sub_10192cb0@CUnknown10192cb0@@QAEXXZ CUnknown10192cb0::sub_10192cb0
+0x10192d00 func   ?sub_10192d00@@YA_NPAVC_BaseEntity@@HPAVVector@@@Z sub_10192d00
 0x10192d70 func   ??0Beam_t@@QAE@XZ Beam_t::Beam_t
 0x10192e00 func   ?sub_10192e00@@YIPAXPAUGetterView@@H@Z sub_10192e00
 0x10192e70 func   ?sub_10192e70@@YAHXZ sub_10192e70
