@@ -100823,6 +100823,34 @@ struct S { int a, b, w, h; };
 int sub_101cbdf0(S *p) { return p->h * p->w * 4; }
 // END FUNCTION
 
+// FUNCTION: 0x101cd2a0 size=0x64
+// TARGET: sub_101cd2a0
+int sub_101cd2a0(int count, const int *a, const int *b)
+{
+	int i = 0;
+	if (count > 0)
+	{
+		while (i < count) { if (*(a + i) != b[i])
+				break; i++; }
+		if (i < count)
+		{
+			i = 0;
+			const int *pa = a;
+			const int *pb = b + count - 1;
+			do
+			{
+				if (*pa != *pb)
+					break;
+				i += 1;
+				pb--;
+				pa++;
+			} while (i < count);
+		}
+	}
+	return i == count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0d28 size=0x18
 // TARGET: sub_101d0d28
 void sub_101d0d40();

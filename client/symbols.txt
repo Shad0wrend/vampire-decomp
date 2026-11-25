@@ -8697,6 +8697,7 @@
 0x101cb0a0 func   ?sub_101cb0a0@CUnknown101cb0a0@@QAEHXZ CUnknown101cb0a0::sub_101cb0a0
 0x101cb0b0 func   ?sub_101cb0b0@@YAHH@Z sub_101cb0b0
 0x101cbdf0 func   ?sub_101cbdf0@@YAHPAUS@@@Z sub_101cbdf0
+0x101cd2a0 func   ?sub_101cd2a0@@YAHHPBH0@Z sub_101cd2a0
 0x101d0d28 func   ?sub_101d0d28@@YAXXZ sub_101d0d28
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
