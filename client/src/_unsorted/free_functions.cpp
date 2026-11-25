@@ -100505,6 +100505,30 @@ void CBasePanel::sub_10175da0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175e10 size=0x6a
+#include "CHud.h"
+struct IFoo { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual char v6(); };
+struct WizV { int sub_10175f40(int a); };
+struct CUnkPanelX { int sub_10175f00(int a); };
+extern IFoo *g_104a57d4;
+extern char g_105fb201;
+extern CHud g_104cfe38;
+int __stdcall sub_10175e10(int a, int b, int c)
+{
+    if (!g_104a57d4->v6() && g_105fb201 && a) {
+        int i = b - 0x31;
+        if (i >= 0 && i < 4) {
+            CHudElement *e = g_104cfe38.sub_100f0ed0("VCharWizardUI");
+            if (e) {
+                if (!((CUnkPanelX *)e)->sub_10175f00(((WizV *)e)->sub_10175f40(i)))
+                    return 0;
+            }
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175e80 size=0x2c
 #include "CHud.h"
 extern char g_105fb1fe;
