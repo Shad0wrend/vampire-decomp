@@ -70728,6 +70728,33 @@ void sub_1013ac10(CUnknown1006c1c0 *reader, CUnknownImgInfo *info, unsigned char
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ae60 size=0x7d
+#include "CUtlBuffer.h"
+#include "CUnknown1006c180.h"
+struct SImgInfo { char m_unk0[0xc]; unsigned short m_nCount; };
+extern char g_102c60fc[];
+void sub_1013ce00(CUtlBuffer *buf, const char *fmt, char *out);
+void sub_1013ae60(CUtlBuffer *buf, SImgInfo *info, unsigned char *dest)
+{
+	for (int i = 0; i < info->m_nCount; i++, dest += 4) {
+		char c;
+		if (!(buf->m_nFlags & 1)) {
+			if (((CUnknown1006c180 *)buf)->sub_1013cbb0(1)) {
+				c = buf->m_pBuffer[buf->m_nGet++];
+			} else {
+				c = 0;
+			}
+		} else {
+			sub_1013ce00(buf, g_102c60fc, &c);
+		}
+		dest[2] = c;
+		dest[1] = c;
+		dest[0] = c;
+		dest[3] = 0xff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b160 size=0x6f
 extern "C" __declspec(dllimport) void Plat_Free(void *pMem);
 
