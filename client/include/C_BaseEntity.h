@@ -11,6 +11,7 @@ public:
 	void sub_100a2580();
 	bool sub_1011b290(int type);
 	void sub_1011b320(int type);
+	void sub_1011b3b0(int type);
 	void sub_100a2ee0();
 	void sub_100a2f50();
 	void sub_100a0450();
