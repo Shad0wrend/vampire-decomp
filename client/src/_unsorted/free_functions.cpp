@@ -60140,6 +60140,44 @@ void CUnknown10117850::sub_10117850(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117890 size=0x81
+#include "Vector.h"
+struct RenderV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(int, Vector *);
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void v19(Vector *, Vector *);
+};
+struct ShadowV { int m_unk0; RenderV m_Render; };
+struct NodeV { ShadowV *m_pElem; unsigned short m_unk4; unsigned short m_next; };
+struct ShadowMgrV {
+	char m_pad[0x14c];
+	NodeV *m_pNodes;
+	int m_unk150, m_unk154;
+	unsigned short m_head;
+	void sub_10117890();
+};
+void ShadowMgrV::sub_10117890()
+{
+	for (int h = m_head; h != 0xffff; h = m_pNodes[h & 0xffff].m_next) {
+		ShadowV *s = m_pNodes[h & 0xffff].m_pElem;
+		unsigned int f = *(unsigned int *)((char *)s + 0x34);
+		if (f & 0x20)
+			f |= 0x40;
+		else
+			f &= ~0x40;
+		*(unsigned int *)((char *)s + 0x34) = f;
+		if (!(f & 0x20) && (f & 0x10)) {
+			Vector mins, maxs;
+			s->m_Render.v19(&mins, &maxs);
+			s->m_Render.v9(0, &mins);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117920 size=0x58
 #include "CParticleMgr.h"
 
