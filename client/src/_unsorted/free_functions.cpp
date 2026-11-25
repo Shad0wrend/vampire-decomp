@@ -55059,6 +55059,53 @@ char sub_100f6a40(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6a80 size=0x102
+#include <string.h>
+
+struct ImageFormatInfo_t
+{
+	const char *pName;
+	int numBytes;
+	int numRedBits;
+	int numGreenBits;
+	int numBlueBits;
+	int numAlphaBits;
+	bool isCompressed;
+};
+
+ImageFormatInfo_t *sub_100f4420(int fmt);
+
+// TARGET: sub_100f6a80
+bool sub_100f6a80(unsigned char *src, unsigned char *dst, int widthHeight, int imageFormat)
+{
+#define SRC(x,y) src[((x)+(y)*widthHeight)*sizeInBytes]
+#define DST(x,y) dst[((x)+(y)*widthHeight)*sizeInBytes]
+	ImageFormatInfo_t *info = sub_100f4420(imageFormat);
+	if (info->isCompressed)
+	{
+		return false;
+	}
+
+	int x, y;
+	unsigned char tmp[4];
+	int halfWidthHeight = widthHeight >> 1;
+	int sizeInBytes = info->numBytes;
+
+	for (y = 0; y < halfWidthHeight; y++)
+	{
+		for (x = 0; x < widthHeight; x++)
+		{
+			memcpy(tmp, &SRC(x, y), sizeInBytes);
+			memcpy(&SRC(x, y), &DST(x, widthHeight - y - 1), sizeInBytes);
+			memcpy(&SRC(x, widthHeight - y - 1), tmp, sizeInBytes);
+		}
+	}
+#undef SRC
+#undef DST
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6ce0 size=0x13
 extern "C" void *memcpy(void *, const void *, unsigned int);
 #pragma intrinsic(memcpy)
