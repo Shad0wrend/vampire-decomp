@@ -9,6 +9,7 @@ class CDetailObjectSystem : public IDetailObjectSystem, public ISpatialLeafEnume
 public:
     CDetailObjectSystem();
     void sub_100e0900(struct Buf_100e0900 &buf);
+    void sub_100e0bc0(struct Buf_100e0900 &buf);
     struct Data {
         int m_unk8, m_unkc, m_unk10, m_unk14, m_unk18, m_unk1c, m_unk20, m_unk24;
         unsigned short m_w28, m_w2a, m_w2c, m_w2e, m_w30;
