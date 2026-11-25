@@ -105864,6 +105864,37 @@ int CUnknown10181b80::sub_10181b80(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181ba0 size=0x4d
+#include "CharEditStatsPanel.h"
+
+struct HostView
+{
+	char m_pad[0xed0];
+	int m_ed0;
+	int m_ed4;
+};
+
+extern int sub_10170f60();
+
+// TARGET: CharEditStatsPanel::sub_10181ba0
+void CharEditStatsPanel::sub_10181ba0()
+{
+	if ( !sub_10170f60() )
+		return;
+
+	int n = ((HostView *)sub_10170f60())->m_ed4;
+	if ( n == ((HostView *)sub_10170f60())->m_ed0 )
+		return;
+
+	if ( n != -1 )
+		m_bAutoLevel = true;
+	else
+		m_bAutoLevel = false;
+
+	sub_10181bf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181bf0 size=0xcf
 #include "CharEditStatsPanel.h"
 #include "C_BasePlayer.h"
