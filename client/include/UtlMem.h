@@ -50,6 +50,7 @@ public:
 	void sub_10135350();
 	void sub_101b1e60();
 	void sub_101c2cc0();
+	void sub_101c2cf0(int num);
 	void sub_1012d830();
 	UtlMem *sub_100d3c30(int growSize, int allocationCount);	// constructor for 8-byte elements
 	UtlMem *sub_10131440(int growSize, int allocationCount);
