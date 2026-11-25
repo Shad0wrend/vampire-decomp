@@ -70998,6 +70998,27 @@ void CPtrList101d6400::sub_10142000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142310 size=0x2e
+#include "CUnknown101439f0.h"
+
+struct Outer_10142310 {
+	int m_0;
+	int m_4;
+	int m_8;
+	CUnknown101439f0 **m_pc;
+};
+
+char __fastcall sub_10142310(Outer_10142310 *self, void *edx)
+{
+	for (int i = 0; i < self->m_8; i++)
+	{
+		if (!self->m_pc[i]->sub_10141f70())
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142340 size=0x5e
 struct Sub16A_10142340 { void sub_10141fe0(); };
 struct Sub16B_10142340 { void sub_101416f0(); };
