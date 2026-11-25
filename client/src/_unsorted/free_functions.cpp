@@ -109423,6 +109423,36 @@ void CUnknown1018bcc0::sub_1018bcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018be70 size=0xdc
+#include "CUtlVector72.h"
+
+int CUtlVector72::sub_1018be70(int elem, int num, const Elem72 *pToCopy)
+{
+	if (num == 0)
+		return elem;
+
+	if (m_size + num > m_allocationCount)
+		sub_10097160(m_size + num - m_allocationCount);
+
+	m_size += num;
+	m_pElements = m_pMemory;
+
+	int nCount = m_size - elem - num;
+	if (nCount > 0 && num > 0)
+	{
+		memmove(&m_pMemory[elem + num], &m_pMemory[elem], nCount * sizeof(Elem72));
+	}
+
+	if (pToCopy != 0 && num > 0)
+	{
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToCopy[i];
+	}
+
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c560 size=0x1a3
 #include "vgui2__Label.h"
 #include <stdio.h>
