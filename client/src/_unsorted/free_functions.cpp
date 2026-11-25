@@ -59670,6 +59670,27 @@ void CInput::sub_101025f0(float speed, Vector &viewangles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102800 size=0xc8
+#include "CInput.h"
+#include "ConVar.h"
+#include "Vector.h"
+extern ConVar *g_104d3044;
+extern ConVar *g_104d351c;
+#define CVF(g) ((g)->vfunc1() ? 0.0f : (g)->m_fValue)
+// TARGET: CInput::sub_10102800
+void CInput::sub_10102800(Vector *v)
+{
+	if (CVF(g_104d3044) < v->x)
+		v->x = CVF(g_104d3044);
+	if (-CVF(g_104d351c) > v->x)
+		v->x = -CVF(g_104d351c);
+	if (v->z > 50.0f)
+		v->z = 50.0f;
+	if (v->z < -50.0f)
+		v->z = -50.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
