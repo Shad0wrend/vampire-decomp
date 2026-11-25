@@ -601,6 +601,42 @@ void vgui2::Menu::vfunc84(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c08d0 size=0x69
+#include "vgui2__Menu.h"
+
+extern void *sub_101b6840(unsigned int size);
+
+struct KV_101c08d0 {
+	KV_101c08d0 *sub_101b5670(const char *name);
+};
+
+struct IVGui_101c08d0 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void PostMessage(int target, void *params, int from, float delaySeconds);
+};
+extern IVGui_101c08d0 *sub_101ac8f0();
+
+struct PanelLike_101c08d0 {
+	virtual int GetVPanel();
+};
+
+void vgui2::Menu::vfunc91(int)
+{
+	*(int *)((char *)this + 0x84) = 1;
+	KV_101c08d0 *msg = (KV_101c08d0 *)sub_101b6840(0x1c);
+	if (msg)
+		msg = msg->sub_101b5670("KeyModeSet");
+	else
+		msg = 0;
+
+	PanelLike_101c08d0 *parent = (PanelLike_101c08d0 *)vfunc31();
+	sub_101ac8f0()->PostMessage(parent->GetVPanel(), msg, vfunc0(), 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0e60 size=0x6
 #include "vgui2__Menu.h"
 namespace lifted {
