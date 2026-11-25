@@ -86073,6 +86073,32 @@ void CUnknown101d5bd0::sub_101499f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149ac0 size=0xc5
+#include "CUnknown101e0f00.h"
+#include "FileSystemViews.h"
+#include "Tier1.h"
+#include <stdio.h>
+void CUnknown101e0f00::sub_10149ac0()
+{
+	char szFile[260];
+	int hFind;
+	int nFiles = 0;
+	int nIndex = 0;
+	sprintf(szFile, "%s%s*.txt", "vdata\\system\\", "DisciplineTgt_");
+	if (g_104a580c->FindFirst(szFile, &hFind)) {
+		do {
+			nFiles++;
+		} while (g_104a580c->FindNext(hFind));
+		g_104a580c->FindClose(hFind);
+		for (int i = 0; i < nFiles; i++) {
+			sprintf(szFile, "%s%s%03d.txt", "vdata\\system\\", "DisciplineTgt_", i);
+			if (!sub_10149c30(szFile, &nIndex))
+				g_101e3108("Unable to open Discipline Tgt data file for: %s\n", szFile);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149c30 size=0xa7
 #include "CUnknown101e0f00.h"
 #include "IFileSystemFind.h"
