@@ -46843,6 +46843,41 @@ int __stdcall sub_100d5150(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d56c0 size=0x80
+#include "CClientShadowMgr.h"
+#include "Vector.h"
+extern "C" double atof(const char *);
+struct EngV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54();
+	virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62();
+	virtual int Cmd_Argc();
+	virtual const char *Cmd_Argv(int i);
+};
+extern EngV *g_104a57d4;
+extern CClientShadowMgr g_104cf0d8;
+void sub_100d56c0()
+{
+	if (g_104a57d4->Cmd_Argc() == 4) {
+		Vector dir;
+		dir.x = atof(g_104a57d4->Cmd_Argv(1));
+		dir.y = atof(g_104a57d4->Cmd_Argv(2));
+		dir.z = atof(g_104a57d4->Cmd_Argv(3));
+		g_104cf0d8.vfunc14(&dir);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5790 size=0x74
 namespace lifted {
 extern int g_104a57d4;

@@ -4609,6 +4609,7 @@
 0x100d53a0 func   ?vfunc4@CClientShadowMgr@@QAEXXZ CClientShadowMgr::vfunc4
 0x100d53b0 func   ?vfunc7@CClientShadowMgr@@QAEXH@Z CClientShadowMgr::vfunc7
 0x100d5670 func   ?vfunc8@IClientShadowMgr@@QAEPAV1@I@Z IClientShadowMgr::vfunc8
+0x100d56c0 func   ?sub_100d56c0@@YAXXZ sub_100d56c0
 0x100d5790 func   ?sub_100d5790@@YAXXZ sub_100d5790
 0x100d5830 func   ?sub_100d5830@SM_100d5830@@QAE_NXZ SM_100d5830::sub_100d5830
 0x100d58f0 func   ?sub_100d58f0@@YAHXZ sub_100d58f0
