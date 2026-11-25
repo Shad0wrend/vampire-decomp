@@ -428,6 +428,34 @@ void vgui2::TextEntry::vfunc79()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af940 size=0x89
+#include "vgui2__TextEntry.h"
+extern int (__cdecl *g_101e31cc)(int);
+void vgui2::TextEntry::vfunc93(int code)
+{
+	char *p = (char *)this;
+	p[0x74] = p[0x75];
+	p[0x75] = 0;
+	if (g_101e31cc(code & 0xffff))
+	{
+		if (!vfunc135())
+		{
+			sub_101aa720(code);
+			return;
+		}
+		if ((short)code)
+		{
+			vfunc129();
+			vfunc131();
+			vfunc120(code);
+		}
+		*(int *)(p + 0xa0) = *(int *)(p + 0x70);
+		if (p[0xb0])
+			vfunc157();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afa20 size=0x40
 #include "vgui2__TextEntry.h"
 struct IUnk101ac8e0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual int Get(); };
