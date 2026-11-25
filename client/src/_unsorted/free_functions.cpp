@@ -100683,6 +100683,91 @@ void CUnknown1018bcc0::sub_1018bcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c560 size=0x1a3
+#include "vgui2__Label.h"
+#include <stdio.h>
+
+extern int sub_100cd0f0();
+extern int sub_100cd100();
+extern const char *sub_1018c870(const char *name);
+extern void *sub_101ac650(unsigned int size);
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct Color_1018c560
+{
+	unsigned int rgba;
+	Color_1018c560() {}
+};
+
+struct IScheme_1018c560
+{
+	virtual void v0() = 0;
+	virtual int GetImage(const char *imageName) = 0; // slot 1 (+0x4)
+	virtual void v2() = 0;
+	virtual void v3() = 0;
+	virtual int GetFont(const char *fontName) = 0;   // slot 4 (+0x10)
+	virtual void v5() = 0;
+	virtual Color_1018c560 GetColor(const char *colorName) = 0; // slot 6 (+0x18)
+};
+
+struct PanelHelper_1018c560
+{
+	IScheme_1018c560 *sub_101ac830();
+};
+
+struct LabelColorView_1018c560
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void SetBgColor(Color_1018c560 c); // slot 50 (+0xc8)
+	virtual void SetFgColor(Color_1018c560 c); // slot 51 (+0xcc)
+};
+
+// TARGET: sub_1018c560
+void sub_1018c560(vgui2::Panel *parent, vgui2::Label **out, vgui2::Panel *otherPanel, const char *name, int x, int y, int height)
+{
+	IScheme_1018c560 *scheme = ((PanelHelper_1018c560 *)parent)->sub_101ac830();
+	int font = scheme->GetFont(sub_1018c870("PercolatorMedium"));
+
+	char buf[48];
+	sprintf(buf, "%s%s", name, "Left");
+
+	void *mem = sub_101ac650(0xb8);
+	vgui2::Label *label = mem ? new (mem) vgui2::Label(parent, buf, buf) : 0;
+	*out = label;
+
+	int w, h;
+	otherPanel->sub_101a9920(&w, &h);
+	int px, py;
+	otherPanel->sub_101a98c0(&px, &py);
+	int width = w + (px - x) * 2;
+
+	label->vfunc118(font);
+	label->vfunc108("");
+	label->vfunc63(0);
+	((LabelColorView_1018c560 *)label)->SetFgColor(scheme->GetColor("TitleText"));
+	((LabelColorView_1018c560 *)label)->SetBgColor(scheme->GetColor("GhostControlBG"));
+	label->vfunc111(3);
+	label->sub_101a9950(
+		(int)(x * (sub_100cd100() / 1024.0)),
+		(int)(y * (sub_100cd0f0() / 768.0)),
+		width,
+		(int)(height * (sub_100cd0f0() / 768.0))
+	);
+	label->vfunc123(0, scheme->GetImage("interface/charactermaintenance/cm_divider"), 0);
+	label->sub_101aa0a0(-1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c710 size=0x1
 void sub_1018c710()
 {

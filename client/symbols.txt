@@ -8021,6 +8021,7 @@
 0x1018be40 func   ?sub_1018be40@CUnknown1018be40@@QAEXXZ CUnknown1018be40::sub_1018be40
 0x1018be50 func   ?vfunc89@CStudiomodelPanel@@UAEXH@Z CStudiomodelPanel::vfunc89
 0x1018c270 func   ??_GVLabel@@UAEPAXI@Z ??_GVLabel@@UAEPAXI@Z
+0x1018c560 func   ?sub_1018c560@@YAXPAVPanel@vgui2@@PAPAVLabel@2@0PBDHHH@Z sub_1018c560
 0x1018c710 func   ?sub_1018c710@@YAXXZ sub_1018c710
 0x1018c770 func   ?sub_1018c770@@YA_NXZ sub_1018c770
 0x1018c810 func   ?sub_1018c810@@YADXZ sub_1018c810
