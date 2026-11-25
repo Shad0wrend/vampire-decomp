@@ -12,5 +12,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
 	// the base slots the game's vtable fills with CVMainMenu's own function
 	virtual void vfunc97();
 	virtual void vfunc98();
+	void sub_10066250();
 	char m_pad0004[0x448 - 0x4];
 };
