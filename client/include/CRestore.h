@@ -88,6 +88,7 @@ public:
 
 	CRestore(void *pData);	// 0x101a12a0
 	int sub_1012a2f0();
+	int sub_1012a840(int a, int b, int c, int d, int e);
 
 	// Searches the field table starting from the remembered position, wrapping around.
 	CRestoreField *sub_1012a560(const char *name, CRestoreField *fields, int count, int *pStart);
