@@ -37,6 +37,13 @@ public:
     float m_flAppliedAngle;
     Vector m_vecShakeOffset;
     float m_flShakeAngle;
+    int m_unk88;
+    int m_unk8c;
+    int m_unk90;
+    int m_unk94;
+    int m_unk98;
+    Vector m_vecHolyLight;
+    float m_flHolyLightStrength;
     bool sub_101977a0();
 public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the slots CViewEffects adds to its base's vtable: 0-17, vfuncK at slot K
@@ -54,7 +61,7 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     virtual void vfunc11();
     virtual void vfunc12();
     virtual void vfunc13();
-    virtual void vfunc14();
+    virtual void vfunc14(float flStrength);
     virtual void vfunc15();
     virtual void vfunc16();
     virtual void vfunc17();
