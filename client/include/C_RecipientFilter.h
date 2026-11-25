@@ -42,6 +42,12 @@ class CPASFilter : public C_RecipientFilter
 {
 };
 
+class CPASAttenuationFilter : public CPASFilter
+{
+public:
+	void *vfunc0(int flags);
+};
+
 class CLocalPlayerFilter : public C_RecipientFilter
 {
 };
