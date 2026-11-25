@@ -39514,6 +39514,34 @@ bool C_BreakableSurface::sub_100b80f0(int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b83f0 size=0x6b
+#include "C_BreakableSurface.h"
+
+struct SurfEntry
+{
+	signed char b0, b1, b2, b3, b4, pad;
+	unsigned short prev;
+	unsigned short next;
+};
+
+int C_BreakableSurface::sub_100b83f0(int a0, int a1, int a2)
+{
+	unsigned short i = m_n454;
+	if ( i != 0xffff )
+	{
+		SurfEntry *table = (SurfEntry *)m_pArray;
+		do
+		{
+			SurfEntry &e = table[i];
+			if ( e.b2 == a2 && e.b0 == a0 && e.b1 == a1 )
+				return i;
+			i = e.next;
+		} while ( i != 0xffff );
+	}
+	return 0xffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8460 size=0x5d
 #include "C_BreakableSurface.h"
 
