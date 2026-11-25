@@ -20659,6 +20659,24 @@ int sub_10061640(const char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100617b0 size=0x75
+#include "CSignUI.h"
+#include "CKeyValuesX.h"
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+
+void CSignUI::sub_100617b0(CKeyValuesX *pData)
+{
+    if (!pData)
+        return;
+    const char *pCmd = pData->sub_10128590("ClientCommand", "");
+    if (pCmd && *pCmd)
+        Q_strncpy((char *)this + 0x1c9, pCmd, 0x80);
+    *(bool *)((char *)this + 0x182) = pData->sub_101284c0("CloseOnLeftClick", *(unsigned char *)((char *)this + 0x182)) != 0;
+    *(float *)((char *)this + 0x188) = pData->sub_10128540("MinShowTime", 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062280 size=0x1e
 struct CUnknown10062280 { char sub_10062280(char, char, char, char); };
 char CUnknown10062280::sub_10062280(char a0, char a1, char a2, char a3)
