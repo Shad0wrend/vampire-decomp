@@ -67761,6 +67761,64 @@ void Obj::sub_10116ca0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116d00 size=0xe6
+struct PNode
+{
+    void *m_pData;
+    PNode *m_pPrev;
+    PNode *m_pNext;
+    int m_a, m_b, m_c;
+};
+
+// TARGET: sub_10116d00
+void __stdcall sub_10116d00(PNode *pList, float *pValues, int nCount, float flMin, float flMax)
+{
+    PNode buckets[32];
+    for (int i = 0; i < 32; i++)
+    {
+        buckets[i].m_pNext = &buckets[i];
+        buckets[i].m_pPrev = &buckets[i];
+    }
+
+    PNode *pNode = pList->m_pNext;
+    int n = 0;
+    while (pNode != pList)
+    {
+        PNode *pNext = pNode->m_pNext;
+        if (n >= nCount)
+            break;
+
+        pNode->m_pPrev->m_pNext = pNode->m_pNext;
+        pNode->m_pNext->m_pPrev = pNode->m_pPrev;
+
+        int idx = (int)(((pValues[n] - flMin) / (flMax - flMin)) * -31.9999f);
+        PNode *pBucket = &buckets[31 + idx];
+
+        pNode->m_pPrev = pBucket;
+        pNode->m_pNext = pBucket->m_pNext;
+        pBucket->m_pNext = pNode;
+        pNode->m_pNext->m_pPrev = pNode;
+
+        n++;
+        pNode = pNext;
+    }
+
+    for (int j = 0; j < 32; j++)
+    {
+        PNode *pElem = buckets[j].m_pNext;
+        while (pElem != &buckets[j])
+        {
+            PNode *pNext = pElem->m_pNext;
+            pElem->m_pPrev = pList;
+            pElem->m_pNext = pList->m_pNext;
+            pList->m_pNext = pElem;
+            pElem->m_pNext->m_pPrev = pElem;
+            pElem = pNext;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116df0 size=0x11
 struct CUnknown10116df0 { int sub_10116df0(int, int); };
 int CUnknown10116df0::sub_10116df0(int a0, int a1)
