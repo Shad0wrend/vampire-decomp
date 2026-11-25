@@ -19248,6 +19248,19 @@ void CHudDialog::sub_10054bd0(bool bEnabled)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054c50 size=0x5f
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+extern void *sub_10052ef0();
+
+void sub_10054c50()
+{
+	ScopeTrace scope("CHudDialog::HistoryScrollUp", g_102de300);
+	((CHudDialog *)sub_10052ef0())->ScrollUp();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054cb0 size=0x5f
 #include "CHudDialog.h"
 #include "ScopeTrace.h"
