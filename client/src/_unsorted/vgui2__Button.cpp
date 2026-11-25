@@ -483,6 +483,26 @@ virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); 
 void __fastcall sub_101b42c0(V *self, int edx) { self->v87(); }
 // END FUNCTION
 
+// FUNCTION: 0x101b42d0 size=0x83
+#include "vgui2__Button.h"
+struct IVInput { virtual void v0(); virtual void SetMouseCapture(int); virtual void v2(); virtual void v3(); virtual int GetFocus(); };
+IVInput *sub_101ac8b0();
+// TARGET: vgui2::Button::vfunc89
+void vgui2::Button::vfunc89(int a)
+{
+	if (vfunc146())
+		sub_101ac8b0()->SetMouseCapture(0);
+	if (vfunc149(a)) {
+		if (vfunc47()) {
+			if (vfunc0() == sub_101ac8b0()->GetFocus() || *(bool *)((char *)this + 0xbe))
+				vfunc150();
+		}
+		vfunc143(0);
+		vfunc6();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4360 size=0x3f
 #include "vgui2__Button.h"
 namespace lifted {
