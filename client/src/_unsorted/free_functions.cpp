@@ -30073,6 +30073,23 @@ template <> int ClientClassInit<DT_BaseViewModel::ignored>(DT_BaseViewModel::ign
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fbc0 size=0xa7
+#include "ehandle.h"
+#include "C_BaseEntity.h"
+#include <string.h>
+// TARGET: sub_1007fbc0
+bool sub_1007fbc0(C_BaseEntity *pEnt)
+{
+	if (((CBaseHandle *)((char *)pEnt + 0x208))->Get())
+		return false;
+	if (!pEnt->vfunc51())
+		return true;
+	if (!strcmp(pEnt->vfunc114(), "info_target") || !strcmp(pEnt->vfunc114(), "info_landmark") || !strcmp(pEnt->vfunc114(), "path_corner"))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fc70 size=0x18
 struct SSrc_1007fc70 { int m0; float m4; };
 struct SDst_1007fc70 { char m_pad[0x490]; float m490; };
