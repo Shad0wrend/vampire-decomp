@@ -18159,6 +18159,51 @@ void * CUnknown100421e0::sub_100421e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100421f0 size=0xec
+struct MeshDim
+{
+	char m_pad[0x88];
+	int m_88;
+	int m_8c;
+	void sub_100421f0(int type, int value);
+};
+
+void MeshDim::sub_100421f0(int type, int value)
+{
+	switch (type)
+	{
+	case 0:
+		m_88 = m_8c = value;
+		break;
+	case 1:
+		m_88 = m_8c = value * 2;
+		break;
+	case 4:
+		m_88 = value + 1;
+		m_8c = value * 2;
+		break;
+	case 5:
+		m_88 = value;
+		m_8c = value * 2;
+		break;
+	case 2:
+		m_88 = m_8c = value * 3;
+		break;
+	case 3:
+		m_88 = m_8c = value + 2;
+		break;
+	case 7:
+		m_88 = value * 4;
+		m_8c = value * 6;
+		break;
+	case 6:
+		m_88 = value;
+		m_8c = value * 3 - 6;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042370 size=0x3
 struct CUnknown10042370 { void * sub_10042370(); };
 void * CUnknown10042370::sub_10042370()
