@@ -29978,6 +29978,36 @@ bool CWeaponAmmoCheck2::sub_1007bd30(CAmmoOwner *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007be10 size=0xc6
+#include "C_BaseAnimating.h"
+#include "Vector.h"
+// TARGET: sub_1007be10
+void sub_1007be10(C_BaseAnimating *pEnt, float size)
+{
+	float mx[3];
+	float mn[3];
+	float half = size * 0.5f;
+	char *p = (char *)pEnt->sub_1008f900(-1);
+	if (p) {
+		float *hi = (float *)(p + 0xc0);
+		for (int i = 0; i < 3; i++, hi++) {
+			if (*hi - hi[-3] < size) {
+				float c = (*hi + hi[-3]) * 0.5f;
+				mn[i] = c - half;
+				mx[i] = c + half;
+			} else {
+				mn[i] = hi[-3];
+				mx[i] = *hi;
+			}
+		}
+	} else {
+		*(Vector *)mn = Vector(-half, -half, -half);
+		*(Vector *)mx = Vector(half, half, half);
+	}
+	pEnt->sub_100a2850((Vector *)mn, (Vector *)mx);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bf10 size=0x3
 void __stdcall sub_1007bf10(int a0)
 {
