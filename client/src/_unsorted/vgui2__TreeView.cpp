@@ -254,6 +254,32 @@ void TreeView::vfunc115(int p, char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd780 size=0x89
+#include "vgui2__TreeView.h"
+struct TVNode { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void RequestFocus(int); };
+struct TVEntry { TVNode *m_pData; int m_Previous; int m_Next; };
+struct KVx { KVx *sub_101b56c0(const char *, const char *, int); };
+extern void *sub_101b6840(int);
+struct TVList {
+	TVEntry *m_pMemory; int m_u4[(0x94 - 0x7c) / 4]; int m_NumAlloced;
+	bool IsValidIndex(int i) const { return (i < m_NumAlloced) && (i >= 0) && ((m_pMemory[i].m_Previous != i) || (m_pMemory[i].m_Next == i)); }
+	TVEntry &Element(int i) { return m_pMemory[i]; }
+};
+struct TVView { char pad[0x78]; TVList m_list; int m_u98; TVNode *m_pSel; };
+void vgui2::TreeView::vfunc116(int itemIndex)
+{
+	TVView *t = (TVView *)this;
+	if (!t->m_list.IsValidIndex(itemIndex))
+		return;
+	t->m_pSel = t->m_list.Element(itemIndex).m_pData;
+	t->m_pSel->RequestFocus(0);
+	vfunc121(itemIndex);
+	KVx *p = (KVx *)sub_101b6840(0x1c);
+	vfunc43(p ? p->sub_101b56c0("TreeViewItemSelected", "itemIndex", itemIndex) : 0);
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd810 size=0x12
 #include "vgui2__TreeView.h"
 int vgui2::TreeView::vfunc117()
