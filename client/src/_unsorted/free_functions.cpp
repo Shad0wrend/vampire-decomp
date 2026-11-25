@@ -91892,6 +91892,21 @@ bool sub_10164a20(CKeyValuesX *pKV, const char *pszName, int arg2, BitmapImage *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164a50 size=0x2f
+#include "BitmapImage.h"
+struct IKV11 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual IKV11 *FindKey(const char *, bool); };
+bool sub_10164a50(IKV11 *kv, const char *name, int a, BitmapImage *img)
+{
+    if (name)
+    {
+        kv = kv->FindKey(name, false);
+        if (!kv)
+            return false;
+    }
+    return img->sub_10164600(a, kv);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164a80 size=0x26
 struct CUnknown10164a80 { int sub_10164a80(char, int, int, int, int); };
 int CUnknown10164a80::sub_10164a80(char a0, int a1, int a2, int a3, int a4)
