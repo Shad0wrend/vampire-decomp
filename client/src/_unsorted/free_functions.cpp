@@ -22229,6 +22229,20 @@ int CUnknown1005f800::sub_1005f800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f810 size=0x81
+#include "CPhysicsHand.h"
+#include "CHUDSprite.h"
+
+void CPhysicsHand::sub_1005f810()
+{
+	if (m_pChild1 == 0)
+	{
+		m_pChild1 = (CPhysicsHandOwned *)new CHUDSprite("hud/PhysicsHand_Open", 0, 0, 0x80, 0x80, 0, 0);
+		m_pChild2 = (CPhysicsHandOwned *)new CHUDSprite("hud/PhysicsHand_Closed", 0, 0, 0x80, 0x80, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fa40 size=0xa
 namespace lifted {
 extern char g_103eedf8;
