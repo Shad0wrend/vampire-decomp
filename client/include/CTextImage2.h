@@ -13,6 +13,6 @@ public:	// vtable-slot layer (2026-11-22), from the game's vtables
     // the base slots the game's vtable fills with CTextImage2's own function
     virtual int vfunc0();
     virtual int vfunc1(int, int);
-    virtual int vfunc2(int, int);
+    virtual int vfunc2(int *w, int *h);
     virtual void vfunc3();
 };
