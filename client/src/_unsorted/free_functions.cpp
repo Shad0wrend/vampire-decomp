@@ -80858,6 +80858,51 @@ bool CUnknown101ebd30::sub_1014fc10(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fda0 size=0x81
+extern "C" int atexit(void (*)(void));
+struct ItemV14 {
+	int m_nId;
+	int m_unk4;
+	const char *m_pName;
+	ItemV14 *sub_1014f6c0(int id);
+};
+extern int g_105e856c;
+extern ItemV14 **g_105e8570;
+extern unsigned char g_10680a18;
+extern ItemV14 g_10680a20;
+void sub_101515a0();
+struct OwnerV {
+	int m_unk0, m_unk4, m_unk8;
+	int m_ids[3];
+	const char *sub_1014fda0(int n);
+};
+const char *OwnerV::sub_1014fda0(int n)
+{
+	n--;
+	if (n < 0)
+		return "";
+	if (n >= 3)
+		n = 2;
+	int id = m_ids[n];
+	ItemV14 *p;
+	int i;
+	for (i = 0; i < g_105e856c; i++) {
+		if (g_105e8570[i]->m_nId == id) {
+			p = g_105e8570[i];
+			goto found;
+		}
+	}
+	if (!(g_10680a18 & 1)) {
+		g_10680a18 |= 1;
+		g_10680a20.sub_1014f6c0(-1);
+		atexit(sub_101515a0);
+	}
+	p = &g_10680a20;
+found:
+	return p->m_pName ? p->m_pName : "";
+}
+// END FUNCTION
+
 // FUNCTION: 0x101501b0 size=0x1c
 struct CUnk101ec450 {
 	void sub_101501b0(int a, int b);
