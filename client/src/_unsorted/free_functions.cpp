@@ -92893,6 +92893,59 @@ int CView::sub_10151c30(Req *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151c60 size=0x9d
+#include "Tier1.h"
+
+struct Req
+{
+    int a0, a1, a2, a3, a4;
+};
+
+struct CViewData
+{
+    int *sub_101517c0();
+};
+
+class CView
+{
+public:
+    char pad0[0xc];
+    int *m_arr0c;       // 0x0c
+    int m_unk10;        // 0x10
+    char m_sz14[0x7f];  // 0x14
+
+    int *sub_10151c30(Req *p);
+    void sub_10151c60(int a0, int a1, int a2, int a3, const char *pszName);
+};
+
+// TARGET: CView::sub_10151c60
+void CView::sub_10151c60(int a0, int a1, int a2, int a3, const char *pszName)
+{
+    Req r;
+    r.a0 = a0;
+    r.a1 = a1;
+    r.a2 = a2;
+    r.a3 = a3;
+    r.a4 = -1;
+
+    int *p = sub_10151c30(&r);
+    if (!p)
+    {
+        r.a2 = 0;
+        p = sub_10151c30(&r);
+        if (!p)
+            return;
+    }
+
+    m_unk10 = *((CViewData *)p)->sub_101517c0();
+
+    if (pszName && *pszName)
+        g_101e3188(m_sz14, pszName, 0x7f);
+    else
+        g_101e3188(m_sz14, "interface/TipInfoScreen/Background_Default", 0x7f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151d20 size=0x6
 namespace lifted {
 extern char g_105e8894;
