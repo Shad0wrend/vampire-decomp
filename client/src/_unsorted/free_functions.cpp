@@ -62394,6 +62394,94 @@ int __stdcall sub_10106880(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101068a0 size=0xf2
+#include "CInput.h"
+
+class EngV
+{
+public:
+	virtual void e00(); virtual void e01(); virtual void e02(); virtual void e03(); virtual void e04();
+	virtual void e05(); virtual void e06(); virtual void e07(); virtual void e08(); virtual void e09();
+	virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+	virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18(); virtual void e19();
+	virtual void e20(); virtual void e21(); virtual void e22(); virtual void e23(); virtual void e24();
+	virtual void e25(); virtual void e26(); virtual void e27(); virtual void e28(); virtual void e29();
+	virtual void e30(); virtual void e31(); virtual void e32(); virtual void e33(); virtual void e34();
+	virtual void e35(); virtual void e36(); virtual void e37(); virtual void e38(); virtual void e39();
+	virtual void e40(); virtual void e41(); virtual void e42(); virtual void e43(); virtual void e44();
+	virtual void e45(); virtual void e46(); virtual void e47(); virtual void e48();
+	virtual void eng49(float *p);
+	virtual void eng50(float *p);
+};
+
+class Vt102d43d8
+{
+public:
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8();
+	virtual void f9();
+};
+
+class Vt105f99d8
+{
+public:
+	virtual void g00(); virtual void g01(); virtual void g02(); virtual void g03(); virtual void g04();
+	virtual void g05(); virtual void g06(); virtual void g07(); virtual void g08(); virtual void g09();
+	virtual void g10(); virtual void g11(); virtual void g12(); virtual void g13(); virtual void g14();
+	virtual void g15(); virtual void g16(); virtual void g17(); virtual void g18(); virtual void g19();
+	virtual void g20();
+	virtual void g21(int *a, int *b);
+};
+
+class SelfV
+{
+public:
+	void sub_101063f0(int *a, int *b);
+	void sub_10106410(int, int, int *, int *, int *, int *);
+	void sub_101064b0(int *, int *);
+	void sub_10106560(float *delta, int arg, int a, int b);
+};
+
+extern EngV *g_104a57d4;
+extern Vt102d43d8 *g_102d43d8;
+extern Vt105f99d8 *g_105f99d8;
+extern unsigned char g_104d3514;
+extern int g_104cfe64;
+extern int g_104d3e50;
+extern int g_104d3f74;
+
+struct Locals
+{
+	int v0;			// 0x00
+	int v4;			// 0x04
+	int v8;			// 0x08
+	int vc;			// 0x0c
+	float d[3];		// 0x10
+};
+
+// TARGET: CInput::sub_101068a0
+void CInput::sub_101068a0(int arg)
+{
+	Locals L;
+	SelfV *self = (SelfV *)this;
+	((EngV *)g_104a57d4)->eng49(L.d);
+	if ( g_104d3514 & 1 )
+		((Vt102d43d8 *)g_102d43d8)->f9();
+	if ( m_unkec ) goto end;
+	if ( m_unk24 ) goto end;
+	if ( g_104cfe64 ) goto end;
+	vfunc14();
+	self->sub_101063f0(&L.vc, &L.v8);
+	self->sub_10106410(L.vc, L.v8, &g_104d3e50, &g_104d3f74, &L.v4, &L.v0);
+	self->sub_101064b0(&L.v4, &L.v0);
+	((Vt105f99d8 *)g_105f99d8)->g21(&L.v4, &L.v0);
+	self->sub_10106560(L.d, arg, L.v4, L.v0);
+	vfunc25();
+end:
+	((EngV *)g_104a57d4)->eng50(L.d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106b40 size=0x27
 namespace lifted {
 extern int g_104d404c;
