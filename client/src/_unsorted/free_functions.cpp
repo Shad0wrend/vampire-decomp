@@ -47943,6 +47943,54 @@ int sub_100cc070(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc2e0 size=0xba
+#include "CUtlLinkedList16.h"
+struct Node100cc2e0 { char m_data[12]; unsigned short m_Previous; unsigned short m_Next; };
+struct List100cc2e0 : public CUtlLinkedList16
+{
+	Node100cc2e0 *Nodes() { return (Node100cc2e0 *)m_pMemory; }
+	bool IsInList(unsigned short i)
+	{
+		return i < m_NumAlloced && Nodes()[i].m_Previous != i;
+	}
+	void Unlink(unsigned short elem)
+	{
+		if (IsInList(elem))
+		{
+			Node100cc2e0 *m = Nodes();
+			Node100cc2e0 *node = &m[elem];
+			if (node->m_Previous != 0xffff)
+				m[node->m_Previous].m_Next = node->m_Next;
+			else
+				m_Head = node->m_Next;
+			if (node->m_Next != 0xffff)
+				m[node->m_Next].m_Previous = node->m_Previous;
+			else
+				m_Tail = node->m_Previous;
+			node->m_Previous = elem;
+			node->m_Next = elem;
+			m_ElementCount--;
+		}
+	}
+	void Free(unsigned short elem)
+	{
+		Nodes()[elem].m_Next = m_FirstFree;
+		m_FirstFree = elem;
+	}
+	void Remove(unsigned short elem)
+	{
+		Unlink(elem);
+		Free(elem);
+	}
+};
+extern List100cc2e0 g_104a571c;
+void sub_100cc2e0(int elem)
+{
+	if (elem != -1)
+		g_104a571c.Remove(elem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc560 size=0x1
 void sub_100cc560()
 {
