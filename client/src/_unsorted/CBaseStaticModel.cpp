@@ -72,6 +72,38 @@ void CBaseStaticModel::GetRenderBoundsWorldspace(Vector &mins, Vector &maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0030 size=0xb8
+#include "CBaseStaticModel.h"
+struct CModelInfoView { virtual void *vfunc0(int handle); };
+struct StudioView { char m_pad[0xa8]; char m_a8[0x48]; int m_nBones; };
+extern CModelInfoView *g_104a57d8;
+void sub_101094e0(const QAngle *ang, void *matrix);
+void sub_10108430(void *a, void *b);
+void sub_10107f80(void *a, void *b, void *c);
+struct MatView { float m[12]; };
+bool CBaseStaticModel::SetupBones(matrix3x4_t *pBoneToWorldOut, int nMaxBones, int boneMask, float currentTime, int a4)
+{
+	if (m_unk38) {
+		const QAngle &ang = GetRenderAngles();
+		const Vector &org = GetRenderOrigin();
+		MatView mat;
+		sub_101094e0(&ang, &mat);
+		mat.m[3] = org.x;
+		mat.m[7] = org.y;
+		mat.m[11] = org.z;
+		StudioView *hdr = (StudioView *)g_104a57d8->vfunc0(m_unk38);
+		if (hdr) {
+			for (int i = 0; i < hdr->m_nBones; i++)
+				sub_10108430(&mat, (char *)pBoneToWorldOut + i * 0x30);
+			if (a4)
+				sub_10107f80(hdr->m_a8, &mat, (void *)a4);
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e13b0 size=0x3
 #include "CBaseStaticModel.h"
 ICollideable * CBaseStaticModel::GetClientCollideable()
