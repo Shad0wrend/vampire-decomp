@@ -90279,6 +90279,31 @@ int CVStatList_t::sub_1015d5b0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d650 size=0x88
+#include "CVStatList_t.h"
+struct ScopeEntryX { const char *m_pName; const char *m_p4; const char *m_p8; };
+extern ScopeEntryX *g_101e3124;
+extern int *g_101e3128;
+char CVStatList_t::sub_1015d3e0(int stat)
+{
+    return stat >= 0 && stat < m_field04;
+}
+// TARGET: CVStatList_t::sub_1015d650
+void CVStatList_t::sub_1015d650(int stat, int value)
+{
+    g_101e3124[*g_101e3128].m_pName = "CVStatList_t::Set";
+    g_101e3124[*g_101e3128].m_p4 = "";
+    g_101e3124[*g_101e3128].m_p8 = "";
+    ++*g_101e3128;
+    int max = sub_1015d5b0(stat);
+    if (value > max)
+        value = max;
+    if (sub_1015d3e0(stat))
+        (*(int **)m_field08)[stat] = value;
+    --*g_101e3128;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d6e0 size=0x83
 #include "CVStatList_t.h"
 
