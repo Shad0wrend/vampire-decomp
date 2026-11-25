@@ -18459,6 +18459,19 @@ bool sub_10054800(const char *pStr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054cb0 size=0x5f
+#include "CHudDialog.h"
+#include "ScopeTrace.h"
+
+extern void *sub_10052ef0();
+
+void sub_10054cb0()
+{
+	ScopeTrace scope("CHudDialog::HistoryScrollDn", g_102de300);
+	((CHudDialog *)sub_10052ef0())->ScrollDn();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
