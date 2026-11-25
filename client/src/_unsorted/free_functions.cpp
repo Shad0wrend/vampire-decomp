@@ -101972,6 +101972,24 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f1a0 size=0x30
+struct ScoreV {
+	char m_pad[0x434];
+	char m_bAuto;
+	void sub_1017f1a0();
+	void sub_1017f1d0();
+};
+int sub_1017f0f0(char);
+void ScoreV::sub_1017f1a0()
+{
+	if (sub_1017f0f0(1) == -1)
+		m_bAuto = 0;
+	else
+		m_bAuto = 1;
+	sub_1017f1d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f1d0 size=0xbf
 #include "CUnknown10203240.h"
 struct CUnknown1017b270 { int sub_1017b270(int); };
