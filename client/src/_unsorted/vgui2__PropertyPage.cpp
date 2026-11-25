@@ -50,6 +50,26 @@ int vgui2::PropertyPage::vfunc122()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb450 size=0x8e
+#include "vgui2__PropertyPage.h"
+struct CUnknown101a9980 { void sub_101a9980(int *, int *, int *, int *); };
+struct XH { CUnknown101a9980 *sub_101ac670(); };
+struct CChild {
+	virtual int v0(int, int, int, int, int, int, int);
+};
+int vgui2::PropertyPage::vfunc99()
+{
+	CChild *p = (CChild *)vfunc61();
+	if (p && ((XH *)((char *)this + 0x78))->sub_101ac670()) {
+		int x, w, e, f, h, y;
+		((XH *)((char *)this + 0x78))->sub_101ac670()->sub_101a9980(&x, &y, &w, &h);
+		sub_101a9920(&f, &e);
+		return p->v0(0, 0, f, e, 1, x, w + x);
+	}
+	return Panel::vfunc99();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb4e0 size=0x2c
 #include "vgui2__PropertyPage.h"
 namespace lifted {
