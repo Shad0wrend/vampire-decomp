@@ -7615,6 +7615,7 @@
 0x1017f610 func   ?sub_1017f610@ZPanel@@QAEXXZ ZPanel::sub_1017f610
 0x1017f850 func   ?sub_1017f850@CUnknown1017f850@@QAEPAXXZ CUnknown1017f850::sub_1017f850
 0x101805e0 func   ?sub_101805e0@CPanelCleanup101805e0@@QAEXXZ CPanelCleanup101805e0::sub_101805e0
+0x101808d0 func   ?sub_101808d0@CharEditStatsPanel@@QAEPAXPBDPAH@Z CharEditStatsPanel::sub_101808d0
 0x10180c00 func   ?sub_10180c00@@YAPAXH@Z sub_10180c00
 0x10180cd0 func   ?sub_10180cd0@@YAHH@Z sub_10180cd0
 0x10180de0 func   ?sub_10180de0@CUnknown10180de0@@QAEHXZ CUnknown10180de0::sub_10180de0

@@ -94065,6 +94065,44 @@ void CPanelCleanup101805e0::sub_101805e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101808d0 size=0x79
+#include "CharEditStatsPanel.h"
+
+class CUnknown101613a0
+{
+public:
+	void *sub_101613a0(char *);
+};
+
+struct ParsedStat
+{
+	int m_type;
+	int m_value;
+	int m_a;
+	int m_b;
+};
+
+void *CharEditStatsPanel::sub_101808d0(const char *str, int *pOut)
+{
+	ParsedStat local;
+	((CUnknown101613a0 *)&local)->sub_101613a0((char *)str + 2);
+	if (pOut)
+		*pOut = local.m_value;
+	switch (local.m_type)
+	{
+	case 0:
+		return (char *)this + 0xc0;
+	case 1:
+		return (char *)this + 0x10c;
+	case 2:
+		if (local.m_value < *(int *)((char *)this + 0x188))
+			return (char *)this + 0x158;
+		return (char *)this + 0x1a4;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180c00 size=0x31
 struct SPan { char pad[0xc0]; char m_a[0x4c]; char m_b[0x4c]; char m_c[0x4c]; };
 extern SPan *g_105fb6e4;
