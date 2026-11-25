@@ -37811,6 +37811,46 @@ char * CUnknown1009f770::sub_1009f770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f7f0 size=0xa3
+#include "C_BaseEntity.h"
+#include "CBaseHandle.h"
+#include "ehandle.h"
+#include "Vector.h"
+
+void sub_10109420(float *p);
+void sub_101094b0(int a, int b, int c);
+
+struct EntView
+{
+	char pad[0x208];
+	unsigned long m_h208;
+	unsigned char m_b20c;
+};
+
+// TARGET: C_BaseEntity::sub_1009f7f0
+void *C_BaseEntity::sub_1009f7f0(void *arg)
+{
+	EntView *v = (EntView *)this;
+	C_BaseEntity *pEnt = (C_BaseEntity *)((CBaseHandle *)&v->m_h208)->Get();
+	if (!pEnt)
+	{
+		sub_10109420((float *)arg);
+		return arg;
+	}
+	if (v->m_b20c)
+	{
+		Vector v1, v2;
+		if (pEnt->vfunc57(v->m_b20c, (int)&v1, (int)&v2))
+		{
+			sub_101094b0((int)&v2, (int)&v1, (int)arg);
+			return arg;
+		}
+	}
+	pEnt->sub_1009f8a0();
+	return (char *)pEnt + 0x26c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f8a0 size=0x1c3
 #include "C_BaseEntity.h"
 #include "CBaseHandle.h"
