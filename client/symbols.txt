@@ -8858,6 +8858,7 @@
 0x101ca910 func   ?vfunc113@PanelListPanel@vgui2@@UAEHH@Z vgui2::PanelListPanel::vfunc113
 0x101cab10 func   ?vfunc109@PanelListPanel@vgui2@@UAEHXZ vgui2::PanelListPanel::vfunc109
 0x101cab80 func   ?sub_101cab80@PanelListPanel@vgui2@@QAEXH@Z vgui2::PanelListPanel::sub_101cab80
+0x101cabf0 func   ?vfunc112@PanelListPanel@vgui2@@UAEXXZ vgui2::PanelListPanel::vfunc112
 0x101cac70 func   ?sub_101cac70@CUnknown101cac70@@QAEXXZ CUnknown101cac70::sub_101cac70
 0x101cac80 func   ?vfunc114@PanelListPanel@vgui2@@UAEHHH@Z vgui2::PanelListPanel::vfunc114
 0x101caf40 func   ?vfunc74@PanelListPanel@vgui2@@UAEHH@Z vgui2::PanelListPanel::vfunc74

@@ -71,6 +71,43 @@ void PanelListPanel::sub_101cab80(int itemID)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cabf0 size=0x77
+#include "vgui2__PanelListPanel.h"
+
+struct PItem
+{
+	vgui2::Panel *panel;
+};
+
+struct PVec
+{
+	char pad[0x58];
+	volatile int m_Size;
+	char pad5c[4];
+	PItem ** volatile m_pMem;
+};
+
+static inline PItem *GetItem(PVec *v, int i)
+{
+	if (i < 0 || i >= v->m_Size)
+		return 0;
+	return v->m_pMem[i];
+}
+
+void vgui2::PanelListPanel::vfunc112()
+{
+	int i;
+	for (i = 0; i < ((PVec *)this)->m_Size; i++)
+	{
+		if (GetItem((PVec *)this, i))
+			delete GetItem((PVec *)this, i)->panel;
+		delete GetItem((PVec *)this, i);
+	}
+	((PVec *)this)->m_Size = 0;
+	vfunc57(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cac80 size=0x26
 #include "vgui2__PanelListPanel.h"
 namespace lifted {
