@@ -112325,6 +112325,60 @@ void CUtlVectorDel4::sub_101c9bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9c60 size=0xa5
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+struct CVec
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_size;
+	int *m_pElements;
+	int sub_101c9c60(int value);
+	void Grow(int num)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		while (m_nAllocationCount < num)
+		{
+			if (m_nAllocationCount)
+			{
+				if (m_nGrowSize)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			}
+			else
+				m_nAllocationCount = 8;
+		}
+		if (m_pMemory)
+			m_pMemory = (int *)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+		else
+			m_pMemory = (int *)Plat_Alloc(m_nAllocationCount * 4);
+	}
+};
+
+// TARGET: CVec::sub_101c9c60
+int CVec::sub_101c9c60(int value)
+{
+	int elem = m_size;
+	if (m_size + 1 > m_nAllocationCount)
+		Grow(m_size + 1);
+	m_size++;
+	m_pElements = m_pMemory;
+	int shift = m_size - elem - 1;
+	if (shift > 0)
+		memmove(&m_pMemory[elem + 1], &m_pMemory[elem], shift * 4);
+	int *p = &m_pMemory[elem];
+	if (p)
+		*p = value;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9d10 size=0x8a
 #include "CUtlVector4.h"
 #include "UtlMem.h"
