@@ -302,6 +302,60 @@ void vgui2::Slider::vfunc117(const char *text)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbf20 size=0xf9
+#include "vgui2__Slider.h"
+#include "vgui2__TextImage.h"
+
+struct SchemeMgrView
+{
+    virtual void m0();
+    virtual void m1();
+    virtual void m2();
+    virtual void m3();
+    virtual void *GetFont(void *scheme);
+};
+
+struct FontObjView
+{
+    virtual void m0();
+    virtual void m1();
+    virtual void m2();
+    virtual void m3();
+    virtual void *GetFont(const char *name);
+};
+
+struct SliderView
+{
+    char pad[0x90];
+    vgui2::TextImage *m_pTextImage1;
+    vgui2::TextImage *m_pTextImage2;
+    unsigned long sub_101aa220();
+};
+
+void *sub_101ac8c0();
+
+void vgui2::Slider::vfunc114(const char *text1, const char *text2)
+{
+    SliderView *s = (SliderView *)this;
+    if ( text1 )
+    {
+        if ( s->m_pTextImage1 )
+            delete s->m_pTextImage1;
+        s->m_pTextImage1 = new vgui2::TextImage(text1, s->sub_101aa220());
+        void *obj = ((SchemeMgrView *)sub_101ac8c0())->GetFont((void *)s->sub_101aa220());
+        s->m_pTextImage1->vfunc30((int)((FontObjView *)obj)->GetFont("DefaultVerySmall"));
+    }
+    if ( text2 )
+    {
+        if ( s->m_pTextImage2 )
+            delete s->m_pTextImage2;
+        s->m_pTextImage2 = new vgui2::TextImage(text2, s->sub_101aa220());
+        void *obj = ((SchemeMgrView *)sub_101ac8c0())->GetFont((void *)s->sub_101aa220());
+        s->m_pTextImage2->vfunc30((int)((FontObjView *)obj)->GetFont("DefaultVerySmall"));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc020 size=0xa1
 #include "vgui2__Slider.h"
 struct ColX { unsigned char r, g, b, a; ColX() {} ColX(int R, int G, int B, int A) { r = R; g = G; b = B; a = A; } };
