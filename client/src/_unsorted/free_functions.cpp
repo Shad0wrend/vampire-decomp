@@ -17333,6 +17333,26 @@ void * CUnknown10042370::sub_10042370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100428d0 size=0x88
+#include "CMeshBuilder.h"
+static inline unsigned char FastFToC(float c)
+{
+	volatile float dc;
+	dc = c * 255.0f + 8388608.0f;
+	return *(unsigned char *)&dc;
+}
+// TARGET: CMeshBuilder::sub_100428d0
+void CMeshBuilder::sub_100428d0(const float *rgba)
+{
+	unsigned char *pDst = m_pCurrColor;
+	unsigned char b = FastFToC(rgba[2]);
+	unsigned char g = FastFToC(rgba[1]);
+	unsigned char r = FastFToC(rgba[0]);
+	unsigned char a = FastFToC(rgba[3]);
+	*(int *)pDst = (a << 24) | (r << 16) | (g << 8) | b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042960 size=0x33
 struct CV {
 	char pad[0xc0];
