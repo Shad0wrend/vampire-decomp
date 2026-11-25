@@ -2442,6 +2442,7 @@
 0x100432e0 func   ?vfunc8@CCollisionProperty@@UAEABVVector@@XZ CCollisionProperty::vfunc8
 0x100432f0 func   ?sub_100432f0@CCollisionProperty@@QAEPAHD@Z CCollisionProperty::sub_100432f0
 0x10043320 func   ?vfunc10@CCollisionProperty@@UAEABUmatrix3x4_t@@XZ CCollisionProperty::vfunc10
+0x100433c0 func   ?sub_100433c0@CUnknown10044460@@QAEXABVVector@@0@Z CUnknown10044460::sub_100433c0
 0x10043440 func   ?vfunc1@CCollisionProperty@@UAEAAVVector@@XZ CCollisionProperty::vfunc1
 0x10043450 func   ?vfunc2@CCollisionProperty@@UAEPAXXZ CCollisionProperty::vfunc2
 0x100434c0 func   ?sub_100434c0@CUnknown10044460@@QAEX_NH@Z CUnknown10044460::sub_100434c0

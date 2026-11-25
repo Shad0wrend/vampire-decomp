@@ -18103,6 +18103,32 @@ void CUnknown10044460::sub_100432a0(unsigned int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100433c0 size=0x74
+#include "Vector.h"
+struct CUnknown10044460
+{
+	int m_unk0;
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	int m_unk1c[11];
+	float m_flRadius;
+	void sub_100442b0();
+	void sub_100433c0(const Vector &mins, const Vector &maxs);
+};
+// TARGET: CUnknown10044460::sub_100433c0
+void CUnknown10044460::sub_100433c0(const Vector &mins, const Vector &maxs)
+{
+	m_vecMins = mins;
+	m_vecMaxs = maxs;
+	Vector d = maxs - mins;
+	float s = d.z * d.z;
+	s += d.x * d.x;
+	s += d.y * d.y;
+	m_flRadius = FastSqrt(s) * 0.5f;
+	sub_100442b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100434c0 size=0x33
 struct CUnknown10044460
 {
