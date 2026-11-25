@@ -7,4 +7,5 @@ public:
 	int m_nCapacity;
 	int *m_pData;
 	void sub_101b1cb0(int nNeeded);
+	void sub_101b1d40(int nNeeded);
 };
