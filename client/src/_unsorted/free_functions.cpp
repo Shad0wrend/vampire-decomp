@@ -49420,6 +49420,14 @@ void CClassMapRBTree::sub_100cfa20(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cfc00 size=0xc5
+#include "CUtlRBTree148.h"
+bool CUtlRBTree148::sub_100cfc00(unsigned short i) const
+{
+	return Links(Links(i).m_Parent).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfdc0 size=0xd6
 #include "IGameSystem.h"
 #include "utlrbtree.h"
