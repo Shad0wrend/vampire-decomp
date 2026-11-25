@@ -102532,6 +102532,29 @@ ElemView *__cdecl sub_101a7c00(ElemView *pArray, const char *pName, int nId, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7e90 size=0x8d
+struct Obj_101a7e90;
+struct Vt_101a7e90 {
+	void *f[15];
+	int (__cdecl *f15)(Obj_101a7e90 *, int, int);
+};
+struct Obj_101a7e90 {
+	Vt_101a7e90 *vt;
+};
+extern Obj_101a7e90 *g_104a5820;
+extern int sub_100cd0f0();
+
+void __stdcall sub_101a7e90(int a1, int a2, int *px, int *py, int cx, int cy)
+{
+	int w = g_104a5820->vt->f15(g_104a5820, a1, a2);
+	double s = sub_100cd0f0() * 0.0013020833333333333;
+	int y = (int)(s * 17.0);
+	double s2 = sub_100cd0f0() * 0.0013020833333333333;
+	*px = (int)((double)(cx - w) - s2 * 5.0);
+	*py = cy - y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7f20 size=0x7f
 #include "CHudWeaponSelection.h"
 
