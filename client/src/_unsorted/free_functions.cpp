@@ -21575,6 +21575,30 @@ bool CVMainMenu::sub_10065d30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065eb0 size=0x87
+struct ILoc65eb0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual const unsigned short *Find(const char *key); virtual void v7(); virtual void ConvertUnicodeToANSI(const unsigned short *w, char *out, int size); };
+ILoc65eb0 *sub_101ac920();
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, unsigned int, const char *, ...);
+extern "C" __declspec(dllimport) char *__cdecl Q_strncpy(char *, const char *, int);
+extern "C" unsigned int __cdecl wcslen(const unsigned short *);
+extern char *g_1028831c[];
+extern char *g_1028834c[];
+extern char g_103ef048[64];
+// TARGET: sub_10065eb0
+char * __stdcall sub_10065eb0(int index)
+{
+	Q_snprintf(g_103ef048, 0x40, "VMainMenu_%s", g_1028831c[index]);
+	const unsigned short *w = sub_101ac920()->Find(g_103ef048);
+	if (w && wcslen(w))
+	{
+		sub_101ac920()->ConvertUnicodeToANSI(w, g_103ef048, 0x40);
+		return g_103ef048;
+	}
+	Q_strncpy(g_103ef048, g_1028834c[index], 0x40);
+	return g_103ef048;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066250 size=0x77
 #include "CVMainMenu.h"
 #include "utlvector.h"
